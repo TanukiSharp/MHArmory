@@ -24,6 +24,14 @@ namespace MHArmory
             Title = $"{asmName.Name} {asmName.Version}";
 
             DataContext = rootViewModel;
+
+            Loaded += MainWindow_Loaded;
+        }
+
+        private async void MainWindow_Loaded(object sender, RoutedEventArgs e)
+        {
+            var source = new MhwDbDataSource.DataSource(null);
+            Console.WriteLine(await source.GetSkills());
         }
     }
 }

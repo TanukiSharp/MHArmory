@@ -13,36 +13,20 @@ namespace MHArmory.Core.DataStructures
         Legs,
     }
 
-    public class ArmorPieceDefense
+    public interface ArmorPieceDefense
     {
-        public int Base { get; }
-        public int Max { get; }
-        public int Augmented { get; }
-
-        public ArmorPieceDefense(int baseDefense, int maxDefense, int augmentedDefense)
-        {
-            Base = baseDefense;
-            Max = maxDefense;
-            Augmented = augmentedDefense;
-        }
+        int Base { get; }
+        int Max { get; }
+        int Augmented { get; }
     }
 
-    public class ArmorPieceResistances
+    public interface ArmorPieceResistances
     {
-        public int Fire { get; }
-        public int Water { get; }
-        public int Thunder { get; }
-        public int Ice { get; }
-        public int Dragon { get; }
-
-        public ArmorPieceResistances(int fire = 0, int water = 0, int thunder = 0, int ice = 0, int dragon = 0)
-        {
-            Fire = fire;
-            Water = water;
-            Thunder = thunder;
-            Ice = ice;
-            Dragon = dragon;
-        }
+        int Fire { get; }
+        int Water { get; }
+        int Thunder { get; }
+        int Ice { get; }
+        int Dragon { get; }
     }
 
     public enum Gender
@@ -53,26 +37,15 @@ namespace MHArmory.Core.DataStructures
         Both,
     }
 
-    public class ArmorPieceAttributes
+    public interface ArmorPieceAttributes
     {
-        public Gender RequiredGender { get; }
-
-        public ArmorPieceAttributes(Gender requiredGender = Gender.None)
-        {
-            RequiredGender = requiredGender;
-        }
+        Gender RequiredGender { get; }
     }
 
-    public class ArmorPieceAssets
+    public interface ArmorPieceAssets
     {
-        public string ImageMale { get; }
-        public string ImageFemale { get; }
-
-        public ArmorPieceAssets(string imageMale, string imageFemale)
-        {
-            ImageMale = imageMale;
-            ImageFemale = imageFemale;
-        }
+        string ImageMale { get; }
+        string ImageFemale { get; }
     }
 
     public interface IArmorPiece

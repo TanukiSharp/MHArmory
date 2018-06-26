@@ -9,4 +9,10 @@ namespace MHArmory.Core
     {
         Task<IList<IArmorPiece>> GetArmorPieces();
     }
+
+    public interface ISkillDataSource
+    {
+        Task<ISkill[]> GetSkills();
+        Task<IAbility[]> GetAbilities();
+    }
 }

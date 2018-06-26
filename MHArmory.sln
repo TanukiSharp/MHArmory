@@ -5,7 +5,9 @@ VisualStudioVersion = 15.0.27703.2035
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MHArmory", "MHArmory\MHArmory.csproj", "{B0A72C5D-4CE0-4417-BD68-B902B8C00EC6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MHArmory.Core", "MHArmory.Core\MHArmory.Core.csproj", "{BD19A211-15EA-4896-8257-83A14F3C634F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MHArmory.Core", "MHArmory.Core\MHArmory.Core.csproj", "{BD19A211-15EA-4896-8257-83A14F3C634F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MHArmory.MhwDbDataSource", "MHArmory.MhwDbDataSource\MHArmory.MhwDbDataSource.csproj", "{2054894C-E3E9-4F52-AB0C-ACB544FB1C54}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{BD19A211-15EA-4896-8257-83A14F3C634F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BD19A211-15EA-4896-8257-83A14F3C634F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BD19A211-15EA-4896-8257-83A14F3C634F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2054894C-E3E9-4F52-AB0C-ACB544FB1C54}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2054894C-E3E9-4F52-AB0C-ACB544FB1C54}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2054894C-E3E9-4F52-AB0C-ACB544FB1C54}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2054894C-E3E9-4F52-AB0C-ACB544FB1C54}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
