@@ -5,6 +5,8 @@ using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
+using MHArmory.Core;
+using MHArmory.Core.DataStructures;
 using MHArmory.ViewModels;
 
 namespace MHArmory
@@ -21,7 +23,7 @@ namespace MHArmory
             InitializeComponent();
 
             AssemblyName asmName = Assembly.GetEntryAssembly().GetName();
-            Title = $"{asmName.Name} {asmName.Version}";
+            Title = $"{asmName.Name} {asmName.Version.Major}.{asmName.Version.Minor}.{asmName.Version.Build}";
 
             DataContext = rootViewModel;
 
@@ -31,7 +33,15 @@ namespace MHArmory
         private async void MainWindow_Loaded(object sender, RoutedEventArgs e)
         {
             var source = new MhwDbDataSource.DataSource(null);
-            Console.WriteLine(await source.GetSkills());
+            ISkill[] skills = await source.GetSkills();
+
+            SkillViewModel[] allSkills = skills
+                .OrderBy(x => x.Name)
+                .Select(x => new SkillViewModel(x))
+                .ToArray();
+
+            GlobalData.Instance.SetSkills(allSkills);
+            GlobalData.Instance.SetAbilities(allSkills.SelectMany(x => x.Abilities).ToArray());
         }
     }
 }
