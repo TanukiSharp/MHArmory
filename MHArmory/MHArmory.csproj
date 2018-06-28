@@ -55,6 +55,7 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="AnonymousCommand.cs" />
+    <Compile Include="CollapsedVisibilityValueConverter.cs" />
     <Compile Include="GlobalData.cs" />
     <Compile Include="SkillSelectorWindow.xaml.cs">
       <DependentUpon>SkillSelectorWindow.xaml</DependentUpon>

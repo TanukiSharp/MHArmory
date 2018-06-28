@@ -2,6 +2,21 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:local="clr-namespace:MHArmory">
 
+    <local:CollapsedVisibilityValueConverter x:Key="CollapsedVisibilityValueConverter"/>
+
+    <DataTemplate x:Key="SelectedAbilityView">
+        <TextBlock Name="root" ToolTipService.ToolTip="{Binding Description, Mode=OneTime}" ToolTipService.ShowDuration="9999" Focusable="False">
+            <Run Text="{Binding SkillName, Mode=OneTime}" FontWeight="Bold"/>
+            <Run Text=" level"/>
+            <Run Text="{Binding Level, Mode=OneTime}"/>
+        </TextBlock>
+        <DataTemplate.Triggers>
+            <DataTrigger Binding="{Binding IsChecked, Mode=OneWay}" Value="False">
+                <Setter TargetName="root" Property="Visibility" Value="Collapsed"/>
+            </DataTrigger>
+        </DataTemplate.Triggers>
+    </DataTemplate>
+
     <DataTemplate x:Key="AbilityView">
         <TextBlock ToolTipService.ToolTip="{Binding Skill.Description, Mode=OneTime}" Focusable="False">
             <!--<Run Text="{Binding SkillName, Mode=OneTime}" FontWeight="Bold"/>-->
@@ -14,8 +29,8 @@
     <DataTemplate x:Key="SkillView">
         <Border BorderBrush="Gray" BorderThickness="0 0 0 0">
             <StackPanel Orientation="Vertical" Focusable="False">
-                <Label Content="{Binding Name, Mode=OneTime}" FontSize="12" FontWeight="Bold"/>
-                <Label Content="{Binding Description, Mode=OneTime}" Foreground="DarkGray" Padding="32 0 5 5"/>
+                <TextBlock Text="{Binding Name, Mode=OneTime}" FontSize="12" FontWeight="Bold"/>
+                <TextBlock Text="{Binding Description, Mode=OneTime}" Foreground="DarkGray" Padding="32 0 5 5"/>
 
                 <!--<ListBox ItemsSource="{Binding Abilities, Mode=OneTime}" ItemTemplate="{StaticResource AbilityView}" BorderThickness="0" ScrollViewer.CanContentScroll="False" ScrollViewer.IsDeferredScrollingEnabled="False" ScrollViewer.VerticalScrollBarVisibility="Disabled">
                     <ListBox.ItemContainerStyle>
@@ -58,8 +73,13 @@
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
 
-            <TextBox Grid.Row="0" Margin="2" Text="{Binding SearchText, Mode=OneWayToSource, UpdateSourceTrigger=PropertyChanged}"/>
+            <TextBlock Grid.Row="0" Grid.Column="0" Text="Filter: "/>
+            <TextBox Grid.Row="0" Grid.Column="1" Margin="2" Text="{Binding SearchText, Mode=OneWayToSource, UpdateSourceTrigger=PropertyChanged}"/>
             
             <!--<ListBox Grid.Row="1" ItemsSource="{Binding Abilities, Mode=OneWay}" ItemTemplate="{StaticResource AbilityView}" VirtualizingPanel.IsVirtualizing="True" VirtualizingPanel.ScrollUnit="Pixel">
                 <ListBox.ItemContainerStyle>
@@ -77,7 +97,7 @@
                 </ListBox.ItemContainerStyle>
             </ListBox>-->
 
-            <ListBox Grid.Row="1" ItemsSource="{Binding Skills, Mode=OneWay}" ItemTemplate="{StaticResource SkillView}" VirtualizingPanel.IsVirtualizing="False" VirtualizingPanel.ScrollUnit="Pixel" Focusable="False">
+            <ListBox Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" ItemsSource="{Binding Skills, Mode=OneWay}" ItemTemplate="{StaticResource SkillView}" VirtualizingPanel.IsVirtualizing="False" VirtualizingPanel.ScrollUnit="Pixel" Focusable="False">
                 <ListBox.ItemContainerStyle>
                     <Style TargetType="{x:Type ListBoxItem}">
                         <Setter Property="Template">
@@ -102,7 +122,11 @@
     </DataTemplate>
     
     <DataTemplate x:Key="RootView">
-        <ContentControl Content="{Binding SkillSelector, Mode=OneTime}" ContentTemplate="{StaticResource SkillSelectorView}" />
+        <!--<ContentControl Content="{Binding SkillSelector, Mode=OneTime}" ContentTemplate="{StaticResource SkillSelectorView}" />-->
+        <DockPanel LastChildFill="True">
+            <Button DockPanel.Dock="Top" Content="Set skills" Command="{Binding OpenSkillSelectorCommand, Mode=OneTime}"/>
+            <ItemsControl ItemsSource="{Binding SelectedAbilities, Mode=OneWay}" ItemTemplate="{StaticResource SelectedAbilityView}"/>
+        </DockPanel>
     </DataTemplate>
 
 </ResourceDictionary>

@@ -1,19 +1,40 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Input;
 using MHArmory.Core;
 
 namespace MHArmory.ViewModels
 {
     public class RootViewModel : ViewModelBase
     {
-        public SkillSelectorViewModel SkillSelector { get; }
+        public ICommand OpenSkillSelectorCommand { get; }
+
+        private readonly SkillSelectorWindow skillSelectorWindow = new SkillSelectorWindow();
+
+        private IEnumerable<AbilityViewModel> selectedAbilities;
+        public IEnumerable<AbilityViewModel> SelectedAbilities
+        {
+            get { return selectedAbilities; }
+            set { SetValue(ref selectedAbilities, value); }
+        }
 
         public RootViewModel()
         {
-            SkillSelector = new SkillSelectorViewModel();
+            OpenSkillSelectorCommand = new AnonymousCommand(OpenSkillSelector);
+        }
+
+        private void OpenSkillSelector(object parameter)
+        {
+            skillSelectorWindow.ShowDialog();
+        }
+
+        public void ApplicationClose()
+        {
+            skillSelectorWindow.ApplicationClose();
         }
     }
 }

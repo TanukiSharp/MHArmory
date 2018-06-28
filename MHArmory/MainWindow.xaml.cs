@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Reflection;
 using System.Text;
@@ -40,8 +41,20 @@ namespace MHArmory
                 .Select(x => new SkillViewModel(x))
                 .ToArray();
 
+            AbilityViewModel[] allAbilities = allSkills
+                .SelectMany(x => x.Abilities)
+                .ToArray();
+
+            rootViewModel.SelectedAbilities = allAbilities;
+
             GlobalData.Instance.SetSkills(allSkills);
-            GlobalData.Instance.SetAbilities(allSkills.SelectMany(x => x.Abilities).ToArray());
+            GlobalData.Instance.SetAbilities(allAbilities);
+        }
+
+        protected override void OnClosing(CancelEventArgs e)
+        {
+            base.OnClosing(e);
+            rootViewModel.ApplicationClose();
         }
     }
 }

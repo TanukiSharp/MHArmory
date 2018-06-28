@@ -45,7 +45,6 @@ namespace MHArmory.ViewModels
         public SkillSelectorViewModel()
         {
             //GlobalData.Instance.GetAbilities().ContinueWith(x => Abilities = x.Result);
-            GlobalData.Instance.GetSkills().ContinueWith(x => Skills = x.Result);
         }
     }
 }
