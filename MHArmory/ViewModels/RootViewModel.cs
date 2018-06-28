@@ -13,8 +13,6 @@ namespace MHArmory.ViewModels
     {
         public ICommand OpenSkillSelectorCommand { get; }
 
-        private readonly SkillSelectorWindow skillSelectorWindow = new SkillSelectorWindow();
-
         private IEnumerable<AbilityViewModel> selectedAbilities;
         public IEnumerable<AbilityViewModel> SelectedAbilities
         {
@@ -29,12 +27,7 @@ namespace MHArmory.ViewModels
 
         private void OpenSkillSelector(object parameter)
         {
-            skillSelectorWindow.ShowDialog();
-        }
-
-        public void ApplicationClose()
-        {
-            skillSelectorWindow.ApplicationClose();
+            RoutedCommands.OpenSkillsSelector.Execute(null);
         }
     }
 }

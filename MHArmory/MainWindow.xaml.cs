@@ -6,6 +6,7 @@ using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
+using System.Windows.Input;
 using System.Windows.Threading;
 using MHArmory.Core;
 using MHArmory.Core.DataStructures;
@@ -20,9 +21,13 @@ namespace MHArmory
     {
         public readonly RootViewModel rootViewModel = new RootViewModel();
 
+        private SkillSelectorWindow skillSelectorWindow;
+
         public MainWindow()
         {
             InitializeComponent();
+
+            CommandBindings.Add(RoutedCommands.CreateCommandBinding(RoutedCommands.OpenSkillsSelector, OpenSkillSelector));
 
             AssemblyName asmName = Assembly.GetEntryAssembly().GetName();
             Title = $"{asmName.Name} {asmName.Version.Major}.{asmName.Version.Minor}.{asmName.Version.Build}";
@@ -34,6 +39,12 @@ namespace MHArmory
 
         private async void MainWindow_Loaded(object sender, RoutedEventArgs e)
         {
+            skillSelectorWindow = new SkillSelectorWindow
+            {
+                WindowStartupLocation = WindowStartupLocation.CenterOwner,
+                Owner = this
+            };
+
             var source = new MhwDbDataSource.DataSource(null);
             ISkill[] skills = await source.GetSkills();
             IArmorPiece[] armors = await source.GetArmorPieces();
@@ -66,6 +77,11 @@ namespace MHArmory
             GlobalData.Instance.SetAbilities(allAbilities);
         }
 
+        private void OpenSkillSelector(object parameter)
+        {
+            skillSelectorWindow.ShowDialog();
+        }
+
         private void CloseApplicationBecauseOfDataSource(string description)
         {
             string message = $"Could not load required data from '{description}'\nContact the data source owner for more information.";
@@ -76,7 +92,7 @@ namespace MHArmory
         protected override void OnClosing(CancelEventArgs e)
         {
             base.OnClosing(e);
-            rootViewModel.ApplicationClose();
+            skillSelectorWindow.ApplicationClose();
         }
     }
 }

@@ -57,6 +57,7 @@
     <Compile Include="AnonymousCommand.cs" />
     <Compile Include="CollapsedVisibilityValueConverter.cs" />
     <Compile Include="GlobalData.cs" />
+    <Compile Include="RoutedCommands.cs" />
     <Compile Include="SkillSelectorWindow.xaml.cs">
       <DependentUpon>SkillSelectorWindow.xaml</DependentUpon>
     </Compile>

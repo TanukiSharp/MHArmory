@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:MHArmory"
         mc:Ignorable="d"
         Title="SkillSelectorWindow" Height="450" Width="800">
-    <Grid>
+    <Grid Margin="2">
         <TextBlock x:Name="loading" Text="Loading..." HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="20" Visibility="{Binding IsDataLoading, Converter={StaticResource CollapsedVisibilityValueConverter}, Mode=OneWay}"/>
         <ContentControl Name="content" Content="{Binding SkillSelector, Mode=OneTime}" ContentTemplate="{StaticResource SkillSelectorView}" Visibility="{Binding IsDataLoaded, Converter={StaticResource CollapsedVisibilityValueConverter}, Mode=OneWay}" Focusable="False"/>
     </Grid>
