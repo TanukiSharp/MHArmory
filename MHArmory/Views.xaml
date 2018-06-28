@@ -79,7 +79,7 @@
             </Grid.ColumnDefinitions>
 
             <TextBlock Grid.Row="0" Grid.Column="0" Text="Filter: "/>
-            <TextBox Grid.Row="0" Grid.Column="1" Margin="2" Text="{Binding SearchText, Mode=OneWayToSource, UpdateSourceTrigger=PropertyChanged}"/>
+            <TextBox Grid.Row="0" Grid.Column="1" Margin="2" Padding="4" Text="{Binding SearchText, Mode=OneWayToSource, UpdateSourceTrigger=PropertyChanged}"/>
             
             <!--<ListBox Grid.Row="1" ItemsSource="{Binding Abilities, Mode=OneWay}" ItemTemplate="{StaticResource AbilityView}" VirtualizingPanel.IsVirtualizing="True" VirtualizingPanel.ScrollUnit="Pixel">
                 <ListBox.ItemContainerStyle>

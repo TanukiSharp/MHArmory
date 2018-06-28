@@ -13,6 +13,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using System.Windows.Threading;
 using MHArmory.ViewModels;
 
 namespace MHArmory
@@ -49,7 +50,7 @@ namespace MHArmory
 
         private async void SkillSelectorWindow_Loaded(object sender, RoutedEventArgs e)
         {
-            await Task.Yield();
+            await Dispatcher.Yield(DispatcherPriority.Render);
 
             SkillViewModel[] skills = await GlobalData.Instance.GetSkills();
             SkillSelector.Skills = skills;

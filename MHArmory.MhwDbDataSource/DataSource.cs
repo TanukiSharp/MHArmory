@@ -11,7 +11,7 @@ using Microsoft.Extensions.Logging;
 
 namespace MHArmory.MhwDbDataSource
 {
-    public class DataSource : ISkillDataSource
+    public class DataSource : ISkillDataSource, IArmorDataSource
     {
         private readonly ILogger logger;
 
@@ -40,17 +40,34 @@ namespace MHArmory.MhwDbDataSource
             return skills;
         }
 
+        public async Task<IArmorPiece[]> GetArmorPieces()
+        {
+            if (loadTask == null)
+                loadTask = LoadData(null);
+
+            await loadTask;
+
+            return armors;
+        }
+
         private Task loadTask;
 
         private IAbility[] abilities;
         private ISkill[] skills;
+        private IArmorPiece[] armors;
+
+        string ISkillDataSource.Description { get { return "http://mhw-db.com (skills API)"; } }
+        string IArmorDataSource.Description { get { return "http://mhw-db.com (armor API)"; } }
 
         private async Task LoadData(ILogger logger)
         {
-            string content;
-            IList<SkillPrimitive> result = null;
+            await LoadSkillsData(logger);
+            await LoadArmorsData(logger); // <- this must be called after LoadSkillsData
+        }
 
-            const string api = "skills";
+        private async Task<IList<T>> LoadBase<T>(string api, ILogger logger)
+        {
+            string content;
 
             var dataAccess = new HttpDataAccess(
                 logger,
@@ -63,16 +80,40 @@ namespace MHArmory.MhwDbDataSource
             {
                 content = await dataAccess.GetRawData(api);
 
+                if (content == null)
+                {
+                    dataAccess.InvalidateCache(api);
+                    continue;
+                }
+
                 try
                 {
-                    result = JsonConvert.DeserializeObject<IList<SkillPrimitive>>(content);
-                    break;
+                    return JsonConvert.DeserializeObject<IList<T>>(content);
                 }
                 catch
                 {
                     dataAccess.InvalidateCache(api);
                 }
             }
+
+            return null;
+        }
+
+        private async Task LoadArmorsData(ILogger logger)
+        {
+            IList<ArmorPiecePrimitive> result = await LoadBase<ArmorPiecePrimitive>("armor", logger);
+
+            var allArmors = new IArmorPiece[result.Count];
+
+            for (int i = 0; i < allArmors.Length; i++)
+                allArmors[i] = new ArmorPiece(result[i], abilities);
+
+            armors = allArmors;
+        }
+
+        private async Task LoadSkillsData(ILogger logger)
+        {
+            IList<SkillPrimitive> result = await LoadBase<SkillPrimitive>("skills", logger);
 
             if (result == null)
                 return;
@@ -91,7 +132,7 @@ namespace MHArmory.MhwDbDataSource
                 {
                     var ability = new Ability(abilityPrimitive.Id, skill, abilityPrimitive.Level, abilityPrimitive.Description);
                     if (allAbilities.Add(ability) == false)
-                        throw new FormatException($"Ability identifier '{ability.Id}' is a duplicate");
+                        logger?.LogError($"Ability identifier '{ability.Id}' is a duplicate");
                     localAbilities[localAbilityCount++] = ability;
                 }
 

@@ -7,20 +7,20 @@ namespace MHArmory.Core.DataStructures
     public enum ArmorPieceType
     {
         Head,
-        Body,
-        Arms,
+        Chest,
+        Gloves,
         Waist,
         Legs,
     }
 
-    public interface ArmorPieceDefense
+    public interface IArmorPieceDefense
     {
         int Base { get; }
         int Max { get; }
         int Augmented { get; }
     }
 
-    public interface ArmorPieceResistances
+    public interface IArmorPieceResistances
     {
         int Fire { get; }
         int Water { get; }
@@ -37,12 +37,12 @@ namespace MHArmory.Core.DataStructures
         Both,
     }
 
-    public interface ArmorPieceAttributes
+    public interface IArmorPieceAttributes
     {
         Gender RequiredGender { get; }
     }
 
-    public interface ArmorPieceAssets
+    public interface IArmorPieceAssets
     {
         string ImageMale { get; }
         string ImageFemale { get; }
@@ -51,13 +51,14 @@ namespace MHArmory.Core.DataStructures
     public interface IArmorPiece
     {
         int Id { get; }
-        int Name { get; }
+        string Name { get; }
         ArmorPieceType Type { get; }
         int Rarity { get; }
-        ArmorPieceDefense Defense { get; }
-        ArmorPieceResistances Resistances { get; }
+        IArmorPieceDefense Defense { get; }
+        IArmorPieceResistances Resistances { get; }
+        IArmorPieceAttributes Attributes { get; }
         int[] Slots { get; }
-        ISkill[] Skills { get; }
-        ArmorPieceAssets Assets { get; }
+        IAbility[] Abilities { get; }
+        IArmorPieceAssets Assets { get; }
     }
 }

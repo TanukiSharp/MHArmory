@@ -6,6 +6,7 @@ using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
+using System.Windows.Threading;
 using MHArmory.Core;
 using MHArmory.Core.DataStructures;
 using MHArmory.ViewModels;
@@ -35,6 +36,20 @@ namespace MHArmory
         {
             var source = new MhwDbDataSource.DataSource(null);
             ISkill[] skills = await source.GetSkills();
+            IArmorPiece[] armors = await source.GetArmorPieces();
+
+            if (skills == null)
+            {
+                CloseApplicationBecauseOfDataSource(((ISkillDataSource)source).Description);
+                return;
+            }
+            else if (skills == null)
+            {
+                CloseApplicationBecauseOfDataSource(((IArmorDataSource)source).Description);
+                return;
+            }
+
+            await Dispatcher.Yield(DispatcherPriority.Render);
 
             SkillViewModel[] allSkills = skills
                 .OrderBy(x => x.Name)
@@ -49,6 +64,13 @@ namespace MHArmory
 
             GlobalData.Instance.SetSkills(allSkills);
             GlobalData.Instance.SetAbilities(allAbilities);
+        }
+
+        private void CloseApplicationBecauseOfDataSource(string description)
+        {
+            string message = $"Could not load required data from '{description}'\nContact the data source owner for more information.";
+            MessageBox.Show(this, message, "Data source error", MessageBoxButton.OK, MessageBoxImage.Error);
+            Close();
         }
 
         protected override void OnClosing(CancelEventArgs e)

@@ -7,11 +7,13 @@ namespace MHArmory.Core
 {
     public interface IArmorDataSource
     {
-        Task<IList<IArmorPiece>> GetArmorPieces();
+        string Description { get; }
+        Task<IArmorPiece[]> GetArmorPieces();
     }
 
     public interface ISkillDataSource
     {
+        string Description { get; }
         Task<ISkill[]> GetSkills();
         Task<IAbility[]> GetAbilities();
     }

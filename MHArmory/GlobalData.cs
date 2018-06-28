@@ -11,6 +11,10 @@ namespace MHArmory
     {
         public static readonly GlobalData Instance = new GlobalData();
 
+        // ================================================================================================================
+
+        #region Abilities
+
         private readonly TaskCompletionSource<AbilityViewModel[]> abilitiesTaskCompletionSource = new TaskCompletionSource<AbilityViewModel[]>();
 
         public void SetAbilities(AbilityViewModel[] abilities)
@@ -23,6 +27,12 @@ namespace MHArmory
             return abilitiesTaskCompletionSource.Task;
         }
 
+        #endregion // Abilities
+
+        // ================================================================================================================
+
+        #region Skills
+
         private readonly TaskCompletionSource<SkillViewModel[]> skillsTaskCompletionSource = new TaskCompletionSource<SkillViewModel[]>();
 
         public void SetSkills(SkillViewModel[] skills)
@@ -34,5 +44,25 @@ namespace MHArmory
         {
             return skillsTaskCompletionSource.Task;
         }
+
+        #endregion // Skills
+
+        // ================================================================================================================
+
+        #region Armors
+
+        private readonly TaskCompletionSource<SkillViewModel[]> armorsTaskCompletionSource = new TaskCompletionSource<SkillViewModel[]>();
+
+        public void SetArmors(SkillViewModel[] skills)
+        {
+            skillsTaskCompletionSource.TrySetResult(skills);
+        }
+
+        public Task<SkillViewModel[]> GetArmors()
+        {
+            return skillsTaskCompletionSource.Task;
+        }
+
+        #endregion // Armors
     }
 }
