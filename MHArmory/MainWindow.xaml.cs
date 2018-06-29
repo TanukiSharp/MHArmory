@@ -46,6 +46,7 @@ namespace MHArmory
             };
 
             var source = new MhwDbDataSource.DataSource(null);
+
             ISkill[] skills = await source.GetSkills();
             IArmorPiece[] armors = await source.GetArmorPieces();
 
@@ -54,7 +55,7 @@ namespace MHArmory
                 CloseApplicationBecauseOfDataSource(((ISkillDataSource)source).Description);
                 return;
             }
-            else if (skills == null)
+            else if (armors == null)
             {
                 CloseApplicationBecauseOfDataSource(((IArmorDataSource)source).Description);
                 return;
@@ -64,7 +65,7 @@ namespace MHArmory
 
             SkillViewModel[] allSkills = skills
                 .OrderBy(x => x.Name)
-                .Select(x => new SkillViewModel(x))
+                .Select(x => new SkillViewModel(x, rootViewModel))
                 .ToArray();
 
             AbilityViewModel[] allAbilities = allSkills
@@ -75,6 +76,18 @@ namespace MHArmory
 
             GlobalData.Instance.SetSkills(allSkills);
             GlobalData.Instance.SetAbilities(allAbilities);
+
+            var skillsToArmorsMap = new Dictionary<int, IArmorPiece[]>();
+
+            foreach (ISkill skill in skills)
+            {
+                skillsToArmorsMap.Add(skill.Id, armors
+                    .Where(x => x.Abilities.Any(a => a.Skill.Id == skill.Id))
+                    .ToArray()
+                );
+            }
+
+            GlobalData.Instance.SetSkillsToArmorsMap(skillsToArmorsMap);
         }
 
         private void OpenSkillSelector(object parameter)

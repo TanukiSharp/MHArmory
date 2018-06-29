@@ -3,6 +3,7 @@
                     xmlns:local="clr-namespace:MHArmory">
 
     <local:CollapsedVisibilityValueConverter x:Key="CollapsedVisibilityValueConverter"/>
+    <local:InverseBooleanValueConverter x:Key="InverseBooleanValueConverter"/>
 
     <DataTemplate x:Key="SelectedAbilityView">
         <TextBlock Name="root" ToolTipService.ToolTip="{Binding Description, Mode=OneTime}" ToolTipService.ShowDuration="9999" Focusable="False">
@@ -122,11 +123,22 @@
     </DataTemplate>
     
     <DataTemplate x:Key="RootView">
-        <!--<ContentControl Content="{Binding SkillSelector, Mode=OneTime}" ContentTemplate="{StaticResource SkillSelectorView}" />-->
-        <DockPanel LastChildFill="True">
-            <Button DockPanel.Dock="Top" Content="Set skills" Command="{Binding OpenSkillSelectorCommand, Mode=OneTime}"/>
-            <ItemsControl ItemsSource="{Binding SelectedAbilities, Mode=OneWay}" ItemTemplate="{StaticResource SelectedAbilityView}"/>
-        </DockPanel>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="4"/>
+                <ColumnDefinition Width="4*"/>
+            </Grid.ColumnDefinitions>
+            <DockPanel Grid.Column="0" LastChildFill="True">
+                <Button DockPanel.Dock="Top" Content="Set skills" Margin="2" Padding="2" Command="{Binding OpenSkillSelectorCommand, Mode=OneTime}"/>
+                <Button DockPanel.Dock="Bottom" Content="Search" Margin="2" Padding="2" IsEnabled="{Binding IsSearching, Mode=OneWay, Converter={StaticResource InverseBooleanValueConverter}}" Command="{Binding SearchArmorSetsCommand, Mode=OneTime}"/>
+                <ItemsControl ItemsSource="{Binding SelectedAbilities, Mode=OneWay}" ItemTemplate="{StaticResource SelectedAbilityView}"/>
+            </DockPanel>
+            <GridSplitter Grid.Column="1" HorizontalAlignment="Stretch"/>
+
+            <TextBlock Grid.Column="2" Text="{Binding SearchResult, Mode=OneWay}"/>
+
+        </Grid>
     </DataTemplate>
 
 </ResourceDictionary>

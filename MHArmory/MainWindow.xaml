@@ -5,6 +5,6 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MHArmory"
         mc:Ignorable="d"
-        Title="-" Width="800" Height="450" Background="WhiteSmoke" WindowStartupLocation="CenterScreen">
+        Title="-" Width="800" Height="600" Background="WhiteSmoke" WindowStartupLocation="CenterScreen">
     <ContentControl Content="{Binding}" ContentTemplate="{StaticResource RootView}" Focusable="False"/>
 </Window>

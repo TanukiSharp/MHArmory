@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using MHArmory.Core.DataStructures;
 using MHArmory.ViewModels;
 
 namespace MHArmory
@@ -64,5 +65,23 @@ namespace MHArmory
         }
 
         #endregion // Armors
+
+        // ================================================================================================================
+
+        #region SkillsToArmorsMap
+
+        private readonly TaskCompletionSource<IDictionary<int, IArmorPiece[]>> skillsToArmorsMapTaskCompletionSource = new TaskCompletionSource<IDictionary<int, IArmorPiece[]>>();
+
+        public void SetSkillsToArmorsMap(IDictionary<int, IArmorPiece[]> skillsToArmorsMap)
+        {
+            skillsToArmorsMapTaskCompletionSource.TrySetResult(skillsToArmorsMap);
+        }
+
+        public Task<IDictionary<int, IArmorPiece[]>> GetSkillsToArmorsMap()
+        {
+            return skillsToArmorsMapTaskCompletionSource.Task;
+        }
+
+        #endregion // Skills
     }
 }

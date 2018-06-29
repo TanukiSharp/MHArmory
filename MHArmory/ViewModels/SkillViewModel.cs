@@ -23,6 +23,8 @@ namespace MHArmory.ViewModels
             }
         }
 
+        public int Id => ability.Id;
+        public int SkillId => ability.Skill.Id;
         public string SkillName => ability.Skill.Name;
         public int Level => ability.Level;
         public string Description => ability.Description;
@@ -49,15 +51,17 @@ namespace MHArmory.ViewModels
     public class SkillViewModel : ViewModelBase
     {
         private readonly ISkill skill;
+        private readonly RootViewModel root;
 
         public string Name => skill.Name;
         public string Description => skill.Description;
 
         public AbilityViewModel[] Abilities { get; }
 
-        public SkillViewModel(ISkill skill)
+        public SkillViewModel(ISkill skill, RootViewModel root)
         {
             this.skill = skill;
+            this.root = root;
 
             Abilities = skill.Abilities
                 .OrderBy(x => x.Level)
@@ -99,6 +103,8 @@ namespace MHArmory.ViewModels
                 if (vm.Level != level)
                     vm.IsChecked = false;
             }
+
+            root.SearchArmorSets();
         }
     }
 }

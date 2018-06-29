@@ -57,10 +57,12 @@
     <Compile Include="AnonymousCommand.cs" />
     <Compile Include="CollapsedVisibilityValueConverter.cs" />
     <Compile Include="GlobalData.cs" />
+    <Compile Include="InverseBooleanValueConverter.cs" />
     <Compile Include="RoutedCommands.cs" />
     <Compile Include="SkillSelectorWindow.xaml.cs">
       <DependentUpon>SkillSelectorWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ViewModels\ArmorSetViewModel.cs" />
     <Compile Include="ViewModels\RootViewModel.cs" />
     <Compile Include="ViewModels\SkillSelectorViewModel.cs" />
     <Compile Include="ViewModels\SkillViewModel.cs" />
