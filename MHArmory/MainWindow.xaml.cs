@@ -88,6 +88,12 @@ namespace MHArmory
             }
 
             GlobalData.Instance.SetSkillsToArmorsMap(skillsToArmorsMap);
+
+            rootViewModel.FoundArmotSets = new ArmorSetViewModel[]
+            {
+                new ArmorSetViewModel { ArmorPieces = armors.Skip(armors.Length - 10).Take(5).ToArray() },
+                new ArmorSetViewModel { ArmorPieces = armors.Skip(armors.Length - 5).ToArray() }
+            };
         }
 
         private void OpenSkillSelector(object parameter)

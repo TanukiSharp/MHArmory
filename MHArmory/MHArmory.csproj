@@ -55,9 +55,11 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="AnonymousCommand.cs" />
-    <Compile Include="CollapsedVisibilityValueConverter.cs" />
+    <Compile Include="ValueConverters\SlotToImagePathValueConverter.cs" />
+    <Compile Include="ValueConverters\CollapsedVisibilityValueConverter.cs" />
     <Compile Include="GlobalData.cs" />
-    <Compile Include="InverseBooleanValueConverter.cs" />
+    <Compile Include="ValueConverters\EnumToImagePathValueConverter.cs" />
+    <Compile Include="ValueConverters\InverseBooleanValueConverter.cs" />
     <Compile Include="RoutedCommands.cs" />
     <Compile Include="SkillSelectorWindow.xaml.cs">
       <DependentUpon>SkillSelectorWindow.xaml</DependentUpon>
@@ -119,6 +121,25 @@
       <Project>{2054894c-e3e9-4f52-ab0c-acb544fb1c54}</Project>
       <Name>MHArmory.MhwDbDataSource</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icons\Chest.png" />
+    <Resource Include="Icons\Gloves.png" />
+    <Resource Include="Icons\Head.png" />
+    <Resource Include="Icons\Legs.png" />
+    <Resource Include="Icons\Waist.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icons\Jewel1.png" />
+    <Resource Include="Icons\Jewel2.png" />
+    <Resource Include="Icons\Jewel3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icons\Dragon.png" />
+    <Resource Include="Icons\Fire.png" />
+    <Resource Include="Icons\Ice.png" />
+    <Resource Include="Icons\Thunder.png" />
+    <Resource Include="Icons\Water.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
