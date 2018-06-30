@@ -55,6 +55,7 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="AnonymousCommand.cs" />
+    <Compile Include="Searching\IndicesTruthTable.cs" />
     <Compile Include="ValueConverters\SlotSizeToolTipValueConverter.cs" />
     <Compile Include="ValueConverters\SlotToImagePathValueConverter.cs" />
     <Compile Include="ValueConverters\CollapsedVisibilityValueConverter.cs" />

@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 using System.Windows.Input;
 using MHArmory.Core;
 using MHArmory.Core.DataStructures;
+using MHArmory.Searching;
 
 namespace MHArmory.ViewModels
 {
@@ -87,7 +88,6 @@ namespace MHArmory.ViewModels
             MaximizedSearchCriteria.SlotSize
         };
 
-
         private async Task SearchArmorSetsInternal()
         {
             // ========================================================
@@ -117,6 +117,29 @@ namespace MHArmory.ViewModels
                 legs.AddRange(CreateArmorPieceSorter(matchingArmorPieces.Where(x => x.Type == ArmorPieceType.Legs), sortCriterias));
             }
 
+            int[] output = new int[5];
+            var indicesTruthTable = new IndicesTruthTable();
+
+            indicesTruthTable.Next(output);
+
+            var foundArmorPieces = new List<IArmorPiece>();
+
+            if (heads.Count > 0)
+                foundArmorPieces.Add(heads[output[0] % heads.Count]);
+            if (chests.Count > 0)
+                foundArmorPieces.Add(chests[output[1] % chests.Count]);
+            if (gloves.Count > 0)
+                foundArmorPieces.Add(gloves[output[2] % gloves.Count]);
+            if (waists.Count > 0)
+                foundArmorPieces.Add(waists[output[3] % waists.Count]);
+            if (legs.Count > 0)
+                foundArmorPieces.Add(legs[output[4] % legs.Count]);
+
+            test.Add(new ArmorSetViewModel
+            {
+                ArmorPieces = foundArmorPieces.ToArray()
+            });
+
             //foreach (var h in heads)
             //{
             //    foreach (var c in chests)
@@ -136,6 +159,8 @@ namespace MHArmory.ViewModels
             //        }
             //    }
             //}
+
+            FoundArmorSets = test;
 
             sw.Stop();
 
