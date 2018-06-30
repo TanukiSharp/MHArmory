@@ -11,7 +11,7 @@ using Microsoft.Extensions.Logging;
 
 namespace MHArmory.MhwDbDataSource
 {
-    public class DataSource : ISkillDataSource, IArmorDataSource
+    public class DataSource : ISkillDataSource, IArmorDataSource, ICharmDataSource
     {
         private readonly ILogger logger;
 
@@ -50,19 +50,35 @@ namespace MHArmory.MhwDbDataSource
             return armors;
         }
 
+        public async Task<ICharm[]> GetCharms()
+        {
+            if (loadTask == null)
+                loadTask = LoadData(null);
+
+            await loadTask;
+
+            return charms;
+        }
+
         private Task loadTask;
 
         private IAbility[] abilities;
         private ISkill[] skills;
         private IArmorPiece[] armors;
+        private ICharm[] charms;
 
         string ISkillDataSource.Description { get { return "http://mhw-db.com (skills API)"; } }
         string IArmorDataSource.Description { get { return "http://mhw-db.com (armor API)"; } }
+        string ICharmDataSource.Description { get { return "http://mhw-db.com (charms API)"; } }
 
         private async Task LoadData(ILogger logger)
         {
             await LoadSkillsData(logger);
-            await LoadArmorsData(logger); // <- this must be called after LoadSkillsData
+
+            await Task.WhenAll( // <- this must be called after LoadSkillsData
+                LoadArmorsData(logger),
+                LoadCharmsData(logger)
+            );
         }
 
         private async Task<IList<T>> LoadBase<T>(string api, ILogger logger)
@@ -143,6 +159,27 @@ namespace MHArmory.MhwDbDataSource
 
             abilities = allAbilities.ToArray();
             skills = allSkills;
+        }
+
+        private async Task LoadCharmsData(ILogger logger)
+        {
+            IList<CharmPrimitive> result = await LoadBase<CharmPrimitive>("charms", logger);
+
+            var localCharms = new Charm[result.Count];
+
+            for (int i = 0; i < localCharms.Length; i++)
+            {
+                CharmPrimitive currentCharmPrimitive = result[i];
+
+                var charmLevels = new CharmLevel[currentCharmPrimitive.Levels.Length];
+
+                for (int j = 0; j < charmLevels.Length; j++)
+                    charmLevels[j] = new CharmLevel(currentCharmPrimitive.Levels[j], abilities);
+
+                localCharms[i] = new Charm(currentCharmPrimitive.Name, charmLevels);
+            }
+
+            charms = localCharms;
         }
     }
 }

@@ -17,4 +17,10 @@ namespace MHArmory.Core
         Task<ISkill[]> GetSkills();
         Task<IAbility[]> GetAbilities();
     }
+
+    public interface ICharmDataSource
+    {
+        string Description { get; }
+        Task<ICharm[]> GetCharms();
+    }
 }
