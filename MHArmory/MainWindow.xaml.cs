@@ -39,6 +39,8 @@ namespace MHArmory
 
         private async void MainWindow_Loaded(object sender, RoutedEventArgs e)
         {
+            await Dispatcher.Yield(DispatcherPriority.Render);
+
             skillSelectorWindow = new SkillSelectorWindow
             {
                 WindowStartupLocation = WindowStartupLocation.CenterOwner,
@@ -60,8 +62,6 @@ namespace MHArmory
                 CloseApplicationBecauseOfDataSource(((IArmorDataSource)source).Description);
                 return;
             }
-
-            await Dispatcher.Yield(DispatcherPriority.Render);
 
             SkillViewModel[] allSkills = skills
                 .OrderBy(x => x.Name)
@@ -94,6 +94,9 @@ namespace MHArmory
                 new ArmorSetViewModel { ArmorPieces = armors.Skip(armors.Length - 10).Take(5).ToArray() },
                 new ArmorSetViewModel { ArmorPieces = armors.Skip(armors.Length - 5).ToArray() }
             };
+
+            rootViewModel.IsDataLoading = false;
+            rootViewModel.IsDataLoaded = true;
         }
 
         private void OpenSkillSelector(object parameter)

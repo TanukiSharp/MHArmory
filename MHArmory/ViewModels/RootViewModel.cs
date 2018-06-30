@@ -32,6 +32,20 @@ namespace MHArmory.ViewModels
         public ICommand OpenSkillSelectorCommand { get; }
         public ICommand SearchArmorSetsCommand { get; }
 
+        private bool isDataLoading = true;
+        public bool IsDataLoading
+        {
+            get { return isDataLoading; }
+            set { SetValue(ref isDataLoading, value); }
+        }
+
+        private bool isDataLoaded;
+        public bool IsDataLoaded
+        {
+            get { return isDataLoaded; }
+            set { SetValue(ref isDataLoaded, value); }
+        }
+
         private IEnumerable<AbilityViewModel> selectedAbilities;
         public IEnumerable<AbilityViewModel> SelectedAbilities
         {

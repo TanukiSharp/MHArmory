@@ -233,22 +233,25 @@
 
             <DockPanel Grid.Column="2" LastChildFill="True">
                 <TextBlock DockPanel.Dock="Top" Text="{Binding SearchResult, Mode=OneWay}"/>
-                <ListBox ItemsSource="{Binding FoundArmorSets, Mode=OneWay}" ItemTemplate="{StaticResource ArmorSetView}" ScrollViewer.VerticalScrollBarVisibility="Visible" Focusable="False" VirtualizingPanel.IsVirtualizing="True" VirtualizingPanel.ScrollUnit="Pixel">
-                    <ListBox.ItemContainerStyle>
-                        <Style TargetType="{x:Type ListBoxItem}">
-                            <Setter Property="Template">
-                                <Setter.Value>
-                                    <ControlTemplate TargetType="{x:Type ListBoxItem}">
-                                        <Border Name="root" Padding="2" SnapsToDevicePixels="True" Focusable="False">
-                                            <ContentPresenter Focusable="False"/>
-                                        </Border>
-                                    </ControlTemplate>
-                                </Setter.Value>
-                            </Setter>
-                            <Setter Property="Focusable" Value="False"/>
-                        </Style>
-                    </ListBox.ItemContainerStyle>
-                </ListBox>
+                <Grid>
+                    <TextBlock x:Name="loading" Text="Loading..." HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="20" Visibility="{Binding IsDataLoading, Converter={StaticResource CollapsedVisibilityValueConverter}, Mode=OneWay}"/>
+                    <ListBox ItemsSource="{Binding FoundArmorSets, Mode=OneWay}" ItemTemplate="{StaticResource ArmorSetView}" ScrollViewer.VerticalScrollBarVisibility="Visible" Visibility="{Binding IsDataLoaded, Converter={StaticResource CollapsedVisibilityValueConverter}, Mode=OneWay}" Focusable="False" VirtualizingPanel.IsVirtualizing="True" VirtualizingPanel.ScrollUnit="Pixel">
+                        <ListBox.ItemContainerStyle>
+                            <Style TargetType="{x:Type ListBoxItem}">
+                                <Setter Property="Template">
+                                    <Setter.Value>
+                                        <ControlTemplate TargetType="{x:Type ListBoxItem}">
+                                            <Border Name="root" Padding="2" SnapsToDevicePixels="True" Focusable="False">
+                                                <ContentPresenter Focusable="False"/>
+                                            </Border>
+                                        </ControlTemplate>
+                                    </Setter.Value>
+                                </Setter>
+                                <Setter Property="Focusable" Value="False"/>
+                            </Style>
+                        </ListBox.ItemContainerStyle>
+                    </ListBox>
+                </Grid>
             </DockPanel>
 
         </Grid>
