@@ -21,7 +21,7 @@
                         <Image Source="{Binding Type, Mode=OneTime, Converter={StaticResource EnumToImagePathValueConverter}}" Width="20" Height="20" VerticalAlignment="Center"/>
                         <TextBlock Text="{Binding Name, Mode=OneTime}" FontSize="12" FontWeight="Bold" VerticalAlignment="Center"/>
                     </StackPanel>
-                    <TextBlock Margin="2">
+                    <TextBlock Margin="2" Foreground="Gray">
                         <Run Text="Defense: "/>
                         <Run Text="{Binding Defense.Base, Mode=OneTime}"/>
                         <Run Text=" / "/>
@@ -29,28 +29,41 @@
                         <Run Text=" / "/>
                         <Run Text="{Binding Defense.Augmented, Mode=OneTime}"/>
                     </TextBlock>
-                    <StackPanel Orientation="Horizontal">
+                    <StackPanel Orientation="Horizontal" TextBlock.Foreground="Gray">
+                        <StackPanel.Resources>
+                            <Style TargetType="Image">
+                                <Setter Property="Width" Value="16"/>
+                                <Setter Property="Height" Value="16"/>
+                                <Setter Property="Opacity" Value="0.63"/>
+                            </Style>
+                        </StackPanel.Resources>
                         <StackPanel Orientation="Horizontal">
-                            <Image Source="Icons/Fire.png" Width="16" Height="16"/>
+                            <Image Source="Icons/Fire.png"/>
                             <TextBlock Text="{Binding Resistances.Fire, Mode=OneTime}" VerticalAlignment="Center" Margin="1 0 4 0"/>
                         </StackPanel>
                         <StackPanel Orientation="Horizontal">
-                            <Image Source="Icons/Water.png" Width="16" Height="16"/>
+                            <Image Source="Icons/Water.png"/>
                             <TextBlock Text="{Binding Resistances.Water, Mode=OneTime}" VerticalAlignment="Center" Margin="1 0 4 0"/>
                         </StackPanel>
                         <StackPanel Orientation="Horizontal">
-                            <Image Source="Icons/Thunder.png" Width="16" Height="16"/>
+                            <Image Source="Icons/Thunder.png"/>
                             <TextBlock Text="{Binding Resistances.Thunder, Mode=OneTime}" VerticalAlignment="Center" Margin="1 0 4 0"/>
                         </StackPanel>
                         <StackPanel Orientation="Horizontal">
-                            <Image Source="Icons/Ice.png" Width="16" Height="16"/>
+                            <Image Source="Icons/Ice.png"/>
                             <TextBlock Text="{Binding Resistances.Ice, Mode=OneTime}" VerticalAlignment="Center" Margin="1 0 4 0"/>
                         </StackPanel>
                         <StackPanel Orientation="Horizontal">
-                            <Image Source="Icons/Dragon.png" Width="16" Height="16"/>
+                            <Image Source="Icons/Dragon.png"/>
                             <TextBlock Text="{Binding Resistances.Dragon, Mode=OneTime}" VerticalAlignment="Center" Margin="1 0 4 0"/>
                         </StackPanel>
                     </StackPanel>
+                </StackPanel>
+                <StackPanel Grid.Column="1" Margin="6 0 6 0" Orientation="Vertical">
+                    <TextBlock VerticalAlignment="Top" HorizontalAlignment="Left">
+                        <Run Text="Rarity"/>
+                        <Run Text="{Binding Rarity, Mode=OneTime}"/>
+                    </TextBlock>
                     <ItemsControl ItemsSource="{Binding Slots, Mode=OneTime}" Margin="2">
                         <ItemsControl.ItemTemplate>
                             <DataTemplate>
@@ -64,20 +77,6 @@
                         </ItemsControl.ItemsPanel>
                     </ItemsControl>
                 </StackPanel>
-                <StackPanel Grid.Column="1" Margin="6 0 6 0">
-                    <TextBlock VerticalAlignment="Top" HorizontalAlignment="Left">
-                        <Run Text="Rarity "/>
-                        <Run Text="{Binding Rarity, Mode=OneTime}"/>
-                    </TextBlock>
-                </StackPanel>
-                <StackPanel Grid.Column="2" Orientation="Horizontal" Margin="6 0 6 0">
-                    <Viewbox>
-                        <Image Source="{Binding Assets.ImageMale, Mode=OneTime}" Margin="2" Stretch="UniformToFill"/>
-                    </Viewbox>
-                    <Viewbox>
-                        <Image Source="{Binding Assets.ImageFemale, Mode=OneTime}" Margin="2" Stretch="UniformToFill"/>
-                    </Viewbox>
-                </StackPanel>
             </Grid>
         </Border>
     </DataTemplate>
@@ -85,13 +84,7 @@
     <DataTemplate x:Key="ArmorSetView">
         <Border CornerRadius="2" BorderThickness="2" BorderBrush="#300077aa" Background="#100077aa" Margin="2 2 2 12" Padding="2">
             <StackPanel Orientation="Horizontal">
-                <ItemsControl ItemsSource="{Binding ArmorPieces, Mode=OneTime}" ItemTemplate="{StaticResource ArmorPieceView}" Grid.IsSharedSizeScope="True">
-                    <ItemsControl.ItemsPanel>
-                        <ItemsPanelTemplate>
-                            <StackPanel Orientation="Vertical"/>
-                        </ItemsPanelTemplate>
-                    </ItemsControl.ItemsPanel>
-                </ItemsControl>
+                <ItemsControl ItemsSource="{Binding ArmorPieces, Mode=OneTime}" ItemTemplate="{StaticResource ArmorPieceView}" Grid.IsSharedSizeScope="True"/>
                 <TextBlock Text="Tu bluff Martoni!"/>
             </StackPanel>
         </Border>
