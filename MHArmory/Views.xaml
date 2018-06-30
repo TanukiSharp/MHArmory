@@ -223,7 +223,7 @@
 
             <DockPanel Grid.Column="2" LastChildFill="True">
                 <TextBlock DockPanel.Dock="Top" Text="{Binding SearchResult, Mode=OneWay}"/>
-                <ListBox ItemsSource="{Binding FoundArmotSets, Mode=OneWay}" ItemTemplate="{StaticResource ArmorSetView}" ScrollViewer.VerticalScrollBarVisibility="Visible" Focusable="False" VirtualizingPanel.IsVirtualizing="True" VirtualizingPanel.ScrollUnit="Pixel">
+                <ListBox ItemsSource="{Binding FoundArmorSets, Mode=OneWay}" ItemTemplate="{StaticResource ArmorSetView}" ScrollViewer.VerticalScrollBarVisibility="Visible" Focusable="False" VirtualizingPanel.IsVirtualizing="True" VirtualizingPanel.ScrollUnit="Pixel">
                     <ListBox.ItemContainerStyle>
                         <Style TargetType="{x:Type ListBoxItem}">
                             <Setter Property="Template">

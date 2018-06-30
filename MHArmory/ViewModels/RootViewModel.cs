@@ -39,7 +39,7 @@ namespace MHArmory.ViewModels
         }
 
         private IEnumerable<ArmorSetViewModel> foundArmorSets;
-        public IEnumerable<ArmorSetViewModel> FoundArmotSets
+        public IEnumerable<ArmorSetViewModel> FoundArmorSets
         {
             get { return foundArmorSets; }
             set { SetValue(ref foundArmorSets, value); }
