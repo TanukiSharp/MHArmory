@@ -202,6 +202,9 @@ namespace MHArmory.ViewModels
 
         private IEnumerable<IArmorPiece> CreateArmorPieceSorter(IEnumerable<IArmorPiece> items, IEnumerable<MaximizedSearchCriteria> sortCriterias)
         {
+            if (items.Any() == false)
+                return items;
+
             IOrderedEnumerable<IArmorPiece> result = items.OrderBy(x => 1); // wasting a bit of CPU cycles for productivity purpose :(
 
             foreach (MaximizedSearchCriteria sortCriteria in sortCriterias)
