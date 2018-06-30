@@ -37,6 +37,11 @@ namespace MHArmory.MhwDbDataSource.DataStructures
         {
             return Id;
         }
+
+        public override string ToString()
+        {
+            return $"{Skill.Name} level {Level} ({Description})";
+        }
     }
 
     internal class SkillPrimitive
@@ -68,6 +73,11 @@ namespace MHArmory.MhwDbDataSource.DataStructures
         internal void SetAbilities(IAbility[] abilities)
         {
             Abilities = abilities;
+        }
+
+        public override string ToString()
+        {
+            return $"{Name} [{Abilities.Length} levels] ({Description})";
         }
     }
 }
