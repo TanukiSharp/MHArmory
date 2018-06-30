@@ -101,7 +101,7 @@ namespace MHArmory
 
         private void OpenSkillSelector(object parameter)
         {
-            skillSelectorWindow.ShowDialog();
+            skillSelectorWindow.Show();
         }
 
         private void CloseApplicationBecauseOfDataSource(string description)
