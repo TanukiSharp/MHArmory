@@ -7,13 +7,35 @@
     <cvt:InverseBooleanValueConverter x:Key="InverseBooleanValueConverter"/>
     <cvt:EnumToImagePathValueConverter x:Key="EnumToImagePathValueConverter"/>
     <cvt:SlotToImagePathValueConverter x:Key="SlotToImagePathValueConverter"/>
+    <cvt:SlotSizeToolTipValueConverter x:Key="SlotSizeToolTipValueConverter"/>
+
+    <DataTemplate x:Key="StandaloneAbilityView">
+        <TextBlock ToolTipService.ToolTip="{Binding Description, Mode=OneTime}" ToolTipService.ShowDuration="9999" Focusable="False">
+            <Run Text="{Binding Skill.Name, Mode=OneTime}" FontWeight="Bold"/>
+            <Run Text="level"/>
+            <Run Text="{Binding Level, Mode=OneTime}"/>
+        </TextBlock>
+    </DataTemplate>
+
+    <DataTemplate x:Key="SelectedAbilityView">
+        <TextBlock Name="root" ToolTipService.ToolTip="{Binding Description, Mode=OneTime}" ToolTipService.ShowDuration="9999" Focusable="False">
+            <Run Text="{Binding SkillName, Mode=OneTime}" FontWeight="Bold"/>
+            <Run Text=" level"/>
+            <Run Text="{Binding Level, Mode=OneTime}"/>
+        </TextBlock>
+        <DataTemplate.Triggers>
+            <DataTrigger Binding="{Binding IsChecked, Mode=OneWay}" Value="False">
+                <Setter TargetName="root" Property="Visibility" Value="Collapsed"/>
+            </DataTrigger>
+        </DataTemplate.Triggers>
+    </DataTemplate>
 
     <DataTemplate x:Key="ArmorPieceView">
         <Border CornerRadius="2" BorderThickness="1" BorderBrush="#30000000" Background="#10000000" Margin="2" Padding="4" HorizontalAlignment="Left">
             <Grid>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="Auto" SharedSizeGroup="A"/>
-                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto" SharedSizeGroup="B"/>
                     <ColumnDefinition Width="Auto"/>
                 </Grid.ColumnDefinitions>
                 <StackPanel Grid.Column="0" Orientation="Vertical">
@@ -38,23 +60,23 @@
                             </Style>
                         </StackPanel.Resources>
                         <StackPanel Orientation="Horizontal">
-                            <Image Source="Icons/Fire.png"/>
+                            <Image Source="Icons/Fire.png" ToolTipService.ToolTip="Fire"/>
                             <TextBlock Text="{Binding Resistances.Fire, Mode=OneTime}" VerticalAlignment="Center" Margin="1 0 4 0"/>
                         </StackPanel>
                         <StackPanel Orientation="Horizontal">
-                            <Image Source="Icons/Water.png"/>
+                            <Image Source="Icons/Water.png" ToolTipService.ToolTip="Water"/>
                             <TextBlock Text="{Binding Resistances.Water, Mode=OneTime}" VerticalAlignment="Center" Margin="1 0 4 0"/>
                         </StackPanel>
                         <StackPanel Orientation="Horizontal">
-                            <Image Source="Icons/Thunder.png"/>
+                            <Image Source="Icons/Thunder.png" ToolTipService.ToolTip="Thunder"/>
                             <TextBlock Text="{Binding Resistances.Thunder, Mode=OneTime}" VerticalAlignment="Center" Margin="1 0 4 0"/>
                         </StackPanel>
                         <StackPanel Orientation="Horizontal">
-                            <Image Source="Icons/Ice.png"/>
+                            <Image Source="Icons/Ice.png" ToolTipService.ToolTip="Ice"/>
                             <TextBlock Text="{Binding Resistances.Ice, Mode=OneTime}" VerticalAlignment="Center" Margin="1 0 4 0"/>
                         </StackPanel>
                         <StackPanel Orientation="Horizontal">
-                            <Image Source="Icons/Dragon.png"/>
+                            <Image Source="Icons/Dragon.png" ToolTipService.ToolTip="Dragon"/>
                             <TextBlock Text="{Binding Resistances.Dragon, Mode=OneTime}" VerticalAlignment="Center" Margin="1 0 4 0"/>
                         </StackPanel>
                     </StackPanel>
@@ -67,7 +89,7 @@
                     <ItemsControl ItemsSource="{Binding Slots, Mode=OneTime}" Margin="2">
                         <ItemsControl.ItemTemplate>
                             <DataTemplate>
-                                <Image Source="{Binding Converter={StaticResource SlotToImagePathValueConverter}}" Width="24" Height="24"/>
+                                <Image Source="{Binding Converter={StaticResource SlotToImagePathValueConverter}}" ToolTip="{Binding Converter={StaticResource SlotSizeToolTipValueConverter}}" Width="24" Height="24"/>
                             </DataTemplate>
                         </ItemsControl.ItemTemplate>
                         <ItemsControl.ItemsPanel>
@@ -77,6 +99,7 @@
                         </ItemsControl.ItemsPanel>
                     </ItemsControl>
                 </StackPanel>
+                <ItemsControl Grid.Column="2" ItemsSource="{Binding Abilities, Mode=OneTime}" ItemTemplate="{StaticResource StandaloneAbilityView}"/>
             </Grid>
         </Border>
     </DataTemplate>
@@ -88,19 +111,6 @@
                 <TextBlock Text="Tu bluff Martoni!"/>
             </StackPanel>
         </Border>
-    </DataTemplate>
-    
-    <DataTemplate x:Key="SelectedAbilityView">
-        <TextBlock Name="root" ToolTipService.ToolTip="{Binding Description, Mode=OneTime}" ToolTipService.ShowDuration="9999" Focusable="False">
-            <Run Text="{Binding SkillName, Mode=OneTime}" FontWeight="Bold"/>
-            <Run Text=" level"/>
-            <Run Text="{Binding Level, Mode=OneTime}"/>
-        </TextBlock>
-        <DataTemplate.Triggers>
-            <DataTrigger Binding="{Binding IsChecked, Mode=OneWay}" Value="False">
-                <Setter TargetName="root" Property="Visibility" Value="Collapsed"/>
-            </DataTrigger>
-        </DataTemplate.Triggers>
     </DataTemplate>
 
     <DataTemplate x:Key="AbilityView">
@@ -166,7 +176,7 @@
 
             <TextBlock Grid.Row="0" Grid.Column="0" Text="Filter: " VerticalAlignment="Center"/>
             <TextBox Grid.Row="0" Grid.Column="1" Margin="2" Padding="3" Text="{Binding SearchText, Mode=OneWayToSource, UpdateSourceTrigger=PropertyChanged}"/>
-            
+
             <!--<ListBox Grid.Row="1" ItemsSource="{Binding Abilities, Mode=OneWay}" ItemTemplate="{StaticResource AbilityView}" VirtualizingPanel.IsVirtualizing="True" VirtualizingPanel.ScrollUnit="Pixel">
                 <ListBox.ItemContainerStyle>
                     <Style TargetType="{x:Type ListBoxItem}">
