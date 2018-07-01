@@ -11,7 +11,7 @@ using Microsoft.Extensions.Logging;
 
 namespace MHArmory.MhwDbDataSource
 {
-    public class DataSource : ISkillDataSource, IArmorDataSource, ICharmDataSource
+    public class DataSource : ISkillDataSource, IArmorDataSource, ICharmDataSource, IJewelDataSource
     {
         private readonly ILogger logger;
 
@@ -60,16 +60,28 @@ namespace MHArmory.MhwDbDataSource
             return charms;
         }
 
+        public async Task<IJewel[]> GetJewels()
+        {
+            if (loadTask == null)
+                loadTask = LoadData(null);
+
+            await loadTask;
+
+            return jewels;
+        }
+
         private Task loadTask;
 
         private IAbility[] abilities;
         private ISkill[] skills;
         private IArmorPiece[] armors;
         private ICharm[] charms;
+        private IJewel[] jewels;
 
         string ISkillDataSource.Description { get { return "http://mhw-db.com (skills API)"; } }
         string IArmorDataSource.Description { get { return "http://mhw-db.com (armor API)"; } }
         string ICharmDataSource.Description { get { return "http://mhw-db.com (charms API)"; } }
+        string IJewelDataSource.Description { get { return "http://mhw-db.com (jewels API)"; } }
 
         private async Task LoadData(ILogger logger)
         {
@@ -77,7 +89,8 @@ namespace MHArmory.MhwDbDataSource
 
             await Task.WhenAll( // <- this must be called after LoadSkillsData
                 LoadArmorsData(logger),
-                LoadCharmsData(logger)
+                LoadCharmsData(logger),
+                LoadJewelsData(logger)
             );
         }
 
@@ -180,6 +193,21 @@ namespace MHArmory.MhwDbDataSource
             }
 
             charms = localCharms;
+        }
+
+        private async Task LoadJewelsData(ILogger logger)
+        {
+            IList<JewelPrimitive> result = await LoadBase<JewelPrimitive>("decorations", logger);
+
+            if (result == null)
+                return;
+
+            var localJewels = new Jewel[result.Count];
+
+            for (int i = 0; i < localJewels.Length; i++)
+                localJewels[i] = new Jewel(result[i], abilities);
+
+            jewels = localJewels;
         }
     }
 }

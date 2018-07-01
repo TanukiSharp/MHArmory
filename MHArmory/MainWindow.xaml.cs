@@ -51,6 +51,8 @@ namespace MHArmory
 
             ISkill[] skills = await source.GetSkills();
             IArmorPiece[] armors = await source.GetArmorPieces();
+            ICharm[] charms = await source.GetCharms();
+            IJewel[] jewels = await source.GetJewels();
 
             if (skills == null)
             {
@@ -60,6 +62,16 @@ namespace MHArmory
             else if (armors == null)
             {
                 CloseApplicationBecauseOfDataSource(((IArmorDataSource)source).Description);
+                return;
+            }
+            else if (charms == null)
+            {
+                CloseApplicationBecauseOfDataSource(((ICharmDataSource)source).Description);
+                return;
+            }
+            else if (jewels == null)
+            {
+                CloseApplicationBecauseOfDataSource(((IJewelDataSource)source).Description);
                 return;
             }
 
@@ -78,6 +90,8 @@ namespace MHArmory
             GlobalData.Instance.SetAbilities(allAbilities);
 
             var skillsToArmorsMap = new Dictionary<int, IArmorPiece[]>();
+            var skillsToCharmsMap = new Dictionary<int, ICharm[]>();
+            var skillsToJewelsMap = new Dictionary<int, IJewel[]>();
 
             foreach (ISkill skill in skills)
             {
@@ -85,9 +99,21 @@ namespace MHArmory
                     .Where(x => x.Abilities.Any(a => a.Skill.Id == skill.Id))
                     .ToArray()
                 );
+
+                skillsToCharmsMap.Add(skill.Id, charms
+                    .Where(x => x.Levels.Any(l => l.Abilities.Any(a => a.Skill.Id == skill.Id)))
+                    .ToArray()
+                );
+
+                skillsToJewelsMap.Add(skill.Id, jewels
+                    .Where(x => x.Abilities.Any(a => a.Skill.Id == skill.Id))
+                    .ToArray()
+                );
             }
 
             GlobalData.Instance.SetSkillsToArmorsMap(skillsToArmorsMap);
+            GlobalData.Instance.SetSkillsToCharmsMap(skillsToCharmsMap);
+            GlobalData.Instance.SetSkillsToJewelsMap(skillsToJewelsMap);
 
             rootViewModel.FoundArmorSets = new ArmorSetViewModel[]
             {

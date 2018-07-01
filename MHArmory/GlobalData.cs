@@ -82,6 +82,42 @@ namespace MHArmory
             return skillsToArmorsMapTaskCompletionSource.Task;
         }
 
-        #endregion // Skills
+        #endregion // SkillsToArmorsMap
+
+        // ================================================================================================================
+
+        #region SkillsToCharmsMap
+
+        private readonly TaskCompletionSource<IDictionary<int, ICharm[]>> skillsToCharmsMapTaskCompletionSource = new TaskCompletionSource<IDictionary<int, ICharm[]>>();
+
+        public void SetSkillsToCharmsMap(IDictionary<int, ICharm[]> skillsToCharmsMap)
+        {
+            skillsToCharmsMapTaskCompletionSource.TrySetResult(skillsToCharmsMap);
+        }
+
+        public Task<IDictionary<int, ICharm[]>> GetSkillsToCharmsMap()
+        {
+            return skillsToCharmsMapTaskCompletionSource.Task;
+        }
+
+        #endregion // SkillsToCharmsMap
+
+        // ================================================================================================================
+
+        #region SkillsToJewelsMap
+
+        private readonly TaskCompletionSource<IDictionary<int, IJewel[]>> skillsToJewelsMapTaskCompletionSource = new TaskCompletionSource<IDictionary<int, IJewel[]>>();
+
+        public void SetSkillsToJewelsMap(IDictionary<int, IJewel[]> skillsToJewelsMap)
+        {
+            skillsToJewelsMapTaskCompletionSource.TrySetResult(skillsToJewelsMap);
+        }
+
+        public Task<IDictionary<int, IJewel[]>> GetSkillsToJewelsMap()
+        {
+            return skillsToJewelsMapTaskCompletionSource.Task;
+        }
+
+        #endregion // SkillsToJewelsMap
     }
 }

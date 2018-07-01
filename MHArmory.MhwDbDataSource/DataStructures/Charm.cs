@@ -7,10 +7,10 @@ using Newtonsoft.Json;
 
 namespace MHArmory.MhwDbDataSource.DataStructures
 {
-    internal class CharmAbilityPrimitive
+    internal class AbilityIdPrimitive
     {
         [JsonProperty("id")]
-        public int Id { get; set; }
+        public int AbilityId { get; set; }
     }
 
     internal class CharmLevelPrimitive
@@ -22,7 +22,7 @@ namespace MHArmory.MhwDbDataSource.DataStructures
         [JsonProperty("rarity")]
         public int Rarity { get; set; }
         [JsonProperty("skills")]
-        public CharmAbilityPrimitive[] Abilitites { get; set; }
+        public AbilityIdPrimitive[] Abilitites { get; set; }
     }
 
     internal class CharmPrimitive
@@ -46,7 +46,7 @@ namespace MHArmory.MhwDbDataSource.DataStructures
             Level = currentCharmLevelPrimitive.Level;
             Rarity = currentCharmLevelPrimitive.Rarity;
             Abilities = currentCharmLevelPrimitive.Abilitites
-                .Select(x => abilities.FirstOrDefault(a => a.Id == x.Id))
+                .Select(x => abilities.FirstOrDefault(a => a.Id == x.AbilityId))
                 .ToArray();
         }
 

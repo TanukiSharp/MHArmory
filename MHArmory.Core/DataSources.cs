@@ -23,4 +23,10 @@ namespace MHArmory.Core
         string Description { get; }
         Task<ICharm[]> GetCharms();
     }
+
+    public interface IJewelDataSource
+    {
+        string Description { get; }
+        Task<IJewel[]> GetJewels();
+    }
 }
