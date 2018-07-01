@@ -9,6 +9,7 @@ namespace MHArmory.Core.DataStructures
         string Name { get; }
         int Level { get; }
         int Rarity { get; }
+        int[] Slots { get; }
         IAbility[] Abilities { get; }
     }
 
