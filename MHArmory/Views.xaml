@@ -164,19 +164,18 @@
     </DataTemplate>
 
     <DataTemplate x:Key="SkillSelectorView">
-        <Grid>
-            <Grid.RowDefinitions>
-                <RowDefinition Height="Auto"/>
-                <RowDefinition Height="*"/>
-            </Grid.RowDefinitions>
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="Auto"/>
-                <ColumnDefinition Width="*"/>
-            </Grid.ColumnDefinitions>
+        <DockPanel LastChildFill="True">
 
-            <TextBlock Grid.Row="0" Grid.Column="0" Text="Filter: " VerticalAlignment="Center"/>
-            <TextBox Grid.Row="0" Grid.Column="1" Margin="2" Padding="3" Text="{Binding SearchText, Mode=OneWayToSource, UpdateSourceTrigger=PropertyChanged}"/>
-
+            <DockPanel DockPanel.Dock="Top" LastChildFill="True">
+                <TextBlock DockPanel.Dock="Left" Text="Filter: " VerticalAlignment="Center"/>
+                <StackPanel DockPanel.Dock="Right" Orientation="Horizontal">
+                    <RadioButton Content="All" IsChecked="{Binding VisibilityModeAll, Mode=OneWayToSource, FallbackValue=true}" ToolTip="See all available skills" Margin="2" VerticalAlignment="Center"/>
+                    <RadioButton Content="Selected" IsChecked="{Binding VisibilityModeSelected, Mode=OneWayToSource}" ToolTip="See only selected skills" Margin="2" VerticalAlignment="Center"/>
+                    <RadioButton Content="Unselected" IsChecked="{Binding VisibilityModeUnselected, Mode=OneWayToSource}" ToolTip="See only unselected skills" Margin="2" VerticalAlignment="Center"/>
+                </StackPanel>
+                <TextBox Margin="2" Padding="3" Text="{Binding SearchText, Mode=OneWayToSource, UpdateSourceTrigger=PropertyChanged}"/>
+            </DockPanel>
+           
             <!--<ListBox Grid.Row="1" ItemsSource="{Binding Abilities, Mode=OneWay}" ItemTemplate="{StaticResource AbilityView}" VirtualizingPanel.IsVirtualizing="True" VirtualizingPanel.ScrollUnit="Pixel">
                 <ListBox.ItemContainerStyle>
                     <Style TargetType="{x:Type ListBoxItem}">
@@ -214,7 +213,7 @@
                     </Style>
                 </ListBox.ItemContainerStyle>
             </ListBox>
-        </Grid>
+        </DockPanel>
     </DataTemplate>
 
     <DataTemplate x:Key="RootView">

@@ -9,6 +9,13 @@ using MHArmory.Core.DataStructures;
 
 namespace MHArmory.ViewModels
 {
+    public enum VisibilityMode
+    {
+        All,
+        Selected,
+        Unselected
+    }
+
     public class SkillSelectorViewModel : ViewModelBase
     {
         private IEnumerable<SkillViewModel> skills;
@@ -16,6 +23,44 @@ namespace MHArmory.ViewModels
         {
             get { return skills; }
             set { SetValue(ref skills, value); }
+        }
+
+        private VisibilityMode visibilityMode = VisibilityMode.All;
+
+        public bool VisibilityModeAll
+        {
+            set
+            {
+                if (value && visibilityMode != VisibilityMode.All)
+                {
+                    visibilityMode = VisibilityMode.All;
+                    ComputeVisibility();
+                }
+            }
+        }
+
+        public bool VisibilityModeSelected
+        {
+            set
+            {
+                if (value && visibilityMode != VisibilityMode.Selected)
+                {
+                    visibilityMode = VisibilityMode.Selected;
+                    ComputeVisibility();
+                }
+            }
+        }
+
+        public bool VisibilityModeUnselected
+        {
+            set
+            {
+                if (value && visibilityMode != VisibilityMode.Unselected)
+                {
+                    visibilityMode = VisibilityMode.Unselected;
+                    ComputeVisibility();
+                }
+            }
         }
 
         //private IEnumerable<AbilityViewModel> abilities;
@@ -34,12 +79,37 @@ namespace MHArmory.ViewModels
                 if (SetValue(ref searchText, value))
                 {
                     if (Skills != null)
-                    {
-                        foreach (SkillViewModel vm in Skills)
-                            vm.ApplySearchText(searchText);
-                    }
+                        ComputeVisibility();
                 }
             }
+        }
+
+        private void ComputeVisibility()
+        {
+            foreach (SkillViewModel vm in Skills)
+                ComputeVisibility(vm);
+        }
+
+        internal void ComputeVisibility(SkillViewModel skillViewModel)
+        {
+            if (visibilityMode == VisibilityMode.Selected)
+            {
+                if (skillViewModel.HasCheckedAbility == false)
+                {
+                    skillViewModel.IsVisible = false;
+                    return;
+                }
+            }
+            else if (visibilityMode == VisibilityMode.Unselected)
+            {
+                if (skillViewModel.HasCheckedAbility)
+                {
+                    skillViewModel.IsVisible = false;
+                    return;
+                }
+            }
+
+            skillViewModel.ApplySearchText(searchText);
         }
 
         public SkillSelectorViewModel()

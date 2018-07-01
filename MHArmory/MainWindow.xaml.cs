@@ -65,7 +65,7 @@ namespace MHArmory
 
             SkillViewModel[] allSkills = skills
                 .OrderBy(x => x.Name)
-                .Select(x => new SkillViewModel(x, rootViewModel))
+                .Select(x => new SkillViewModel(x, rootViewModel, skillSelectorWindow.SkillSelector))
                 .ToArray();
 
             AbilityViewModel[] allAbilities = allSkills

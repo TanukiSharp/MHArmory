@@ -52,21 +52,31 @@ namespace MHArmory.ViewModels
     {
         private readonly ISkill skill;
         private readonly RootViewModel root;
+        private readonly SkillSelectorViewModel skillSelector;
 
         public string Name => skill.Name;
         public string Description => skill.Description;
 
         public AbilityViewModel[] Abilities { get; }
 
-        public SkillViewModel(ISkill skill, RootViewModel root)
+        public SkillViewModel(ISkill skill, RootViewModel root, SkillSelectorViewModel skillSelector)
         {
             this.skill = skill;
             this.root = root;
+            this.skillSelector = skillSelector;
 
             Abilities = skill.Abilities
                 .OrderBy(x => x.Level)
                 .Select(x => new AbilityViewModel(x, this))
                 .ToArray();
+        }
+
+        public bool HasCheckedAbility
+        {
+            get
+            {
+                return Abilities.Any(x => x.IsChecked);
+            }
         }
 
         private bool isVisible = true;
@@ -90,12 +100,6 @@ namespace MHArmory.ViewModels
                 skill.Abilities.Any(x => x.Description.IndexOf(searchText, StringComparison.OrdinalIgnoreCase) > -1);
         }
 
-        public void FilterLevel(int minVisibleLevel)
-        {
-            foreach (AbilityViewModel abilityViewModel in Abilities)
-                abilityViewModel.FilterLevel(minVisibleLevel);
-        }
-
         internal void CheckChanged(int level)
         {
             foreach (AbilityViewModel vm in Abilities)
@@ -105,6 +109,7 @@ namespace MHArmory.ViewModels
             }
 
             root.SearchArmorSets();
+            skillSelector?.ComputeVisibility(this);
         }
     }
 }
