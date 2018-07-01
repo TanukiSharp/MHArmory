@@ -132,6 +132,9 @@ namespace MHArmory.MhwDbDataSource
         {
             IList<ArmorPiecePrimitive> result = await LoadBase<ArmorPiecePrimitive>("armor", logger);
 
+            if (result == null)
+                return;
+
             var allArmors = new IArmorPiece[result.Count];
 
             for (int i = 0; i < allArmors.Length; i++)
@@ -177,6 +180,9 @@ namespace MHArmory.MhwDbDataSource
         private async Task LoadCharmsData(ILogger logger)
         {
             IList<CharmPrimitive> result = await LoadBase<CharmPrimitive>("charms", logger);
+
+            if (result == null)
+                return;
 
             var localCharms = new Charm[result.Count];
 
