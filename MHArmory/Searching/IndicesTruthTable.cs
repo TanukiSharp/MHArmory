@@ -6,18 +6,26 @@ namespace MHArmory.Searching
     {
         private int currentValue;
         private int currentBitsValue;
-        private readonly int[] indices = new int[5];
+        private int[] indices;
         private readonly int maxBitsValue;
 
-        public IndicesTruthTable()
+        public int IndicesCount => indices.Length;
+
+        public IndicesTruthTable(int indicesCount)
         {
+            if (indicesCount <= 0 || indicesCount > 32)
+                throw new ArgumentException($"Invalid '{nameof(indicesCount)}' argument. Must be comprised between 1 and 32 included.", nameof(indicesCount));
+
+            indices = new int[indicesCount];
             maxBitsValue = (int)Math.Pow(2, indices.Length);
         }
 
         public void Next(int[] output)
         {
-            if (output == null || output.Length != indices.Length)
-                throw new ArgumentException(nameof(output));
+            if (output == null)
+                throw new ArgumentNullException(nameof(output));
+            if (output.Length != indices.Length)
+                throw new ArgumentException($"Invalid '{nameof(output)}' argument. Must be of size {indices.Length} but is of size {output.Length}.", nameof(output));
 
             for (int i = 0; i < indices.Length; i++)
                 output[i] = indices[i];
