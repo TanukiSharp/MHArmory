@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Diagnostics;
@@ -119,7 +120,7 @@ namespace MHArmory.ViewModels
             var gloves = new List<IArmorPiece>();
             var waists = new List<IArmorPiece>();
             var legs = new List<IArmorPiece>();
-            var charms = new List<ICharm>();
+            var charms = new List<ICharmLevel>();
             var jewels = new List<IJewel>();
 
             var test = new List<ArmorSetViewModel>();
@@ -128,14 +129,28 @@ namespace MHArmory.ViewModels
             {
                 IArmorPiece[] matchingArmorPieces = skillsToArmorsMap[selectedAbility.SkillId];
 
-                heads.AddRange(CreateArmorPieceSorter(matchingArmorPieces.Where(x => x.Type == ArmorPieceType.Head), sortCriterias));
-                chests.AddRange(CreateArmorPieceSorter(matchingArmorPieces.Where(x => x.Type == ArmorPieceType.Chest), sortCriterias));
-                gloves.AddRange(CreateArmorPieceSorter(matchingArmorPieces.Where(x => x.Type == ArmorPieceType.Gloves), sortCriterias));
-                waists.AddRange(CreateArmorPieceSorter(matchingArmorPieces.Where(x => x.Type == ArmorPieceType.Waist), sortCriterias));
-                legs.AddRange(CreateArmorPieceSorter(matchingArmorPieces.Where(x => x.Type == ArmorPieceType.Legs), sortCriterias));
+                IArmorPiece temp = CreateArmorPieceSorter(matchingArmorPieces.Where(x => x.Type == ArmorPieceType.Head), sortCriterias).FirstOrDefault();
+                if (temp != null)
+                    heads.Add(temp);
+
+                temp = CreateArmorPieceSorter(matchingArmorPieces.Where(x => x.Type == ArmorPieceType.Chest), sortCriterias).FirstOrDefault();
+                if (temp != null)
+                    chests.Add(temp);
+
+                temp = CreateArmorPieceSorter(matchingArmorPieces.Where(x => x.Type == ArmorPieceType.Gloves), sortCriterias).FirstOrDefault();
+                if (temp != null)
+                    gloves.Add(temp);
+
+                temp = CreateArmorPieceSorter(matchingArmorPieces.Where(x => x.Type == ArmorPieceType.Waist), sortCriterias).FirstOrDefault();
+                if (temp != null)
+                    waists.Add(temp);
+
+                temp = CreateArmorPieceSorter(matchingArmorPieces.Where(x => x.Type == ArmorPieceType.Legs), sortCriterias).FirstOrDefault();
+                if (temp != null)
+                    legs.Add(temp);
 
                 if (skillsToCharmsMap.TryGetValue(selectedAbility.SkillId, out ICharm[] matchingCharms))
-                    charms.AddRange(matchingCharms);
+                    charms.AddRange(matchingCharms.SelectMany(x => x.Levels));
 
                 if (skillsToJewelsMap.TryGetValue(selectedAbility.SkillId, out IJewel[] matchingJewels))
                     jewels.AddRange(matchingJewels);
@@ -148,7 +163,7 @@ namespace MHArmory.ViewModels
 
             int[] weaponSlots = new int[] { 3 };
             IArmorPiece[] armorPieces = new IArmorPiece[5];
-            ICharm currentCharm;
+            ICharmLevel currentCharm;
 
             for (int i = 0; i < iterations; i++)
             {
@@ -201,10 +216,10 @@ namespace MHArmory.ViewModels
                 {
                 }
 
-                //test.Add(new ArmorSetViewModel
-                //{
-                //    ArmorPieces = foundArmorPieces.ToArray()
-                //});
+                test.Add(new ArmorSetViewModel
+                {
+                    ArmorPieces = armorPieces
+                });
             }
 
             //foreach (var h in heads)
@@ -244,7 +259,7 @@ namespace MHArmory.ViewModels
             //    }
             //}
 
-            //FoundArmorSets = test;
+            FoundArmorSets = test;
 
             sw.Stop();
 
@@ -255,13 +270,15 @@ namespace MHArmory.ViewModels
             long gg = gloves.Count;
             long ww = waists.Count;
             long ll = legs.Count;
+            long ch = charms.Count;
 
             sb.AppendLine($"Heads count:  {heads.Count }");
             sb.AppendLine($"Chests count: {chests.Count }");
             sb.AppendLine($"Gloves count: {gloves.Count }");
             sb.AppendLine($"Waists count: {waists.Count }");
             sb.AppendLine($"Legs count:   {legs.Count }");
-            sb.AppendLine($"Combination count: {hh * cc * gg * ww * ll}");
+            sb.AppendLine($"Charms count:   {charms.Count }");
+            sb.AppendLine($"Combination count: {hh * cc * gg * ww * ll * ch}");
             sb.AppendLine($"Took: {sw.ElapsedMilliseconds} ms");
 
             SearchResult = sb.ToString();
@@ -331,13 +348,38 @@ namespace MHArmory.ViewModels
 
                         IJewel foundJewel = jewels.FirstOrDefault(j => j.Abilities.Any(a => a.Id == ability.Id));
                         if (foundJewel == null)
-                            return null;
+                            return false;
 
                     }
                 }
             }
 
             return false;
+        }
+
+        private class OrderedEnumerable<T> : IOrderedEnumerable<T>
+        {
+            private readonly IEnumerable<T> source;
+
+            public OrderedEnumerable(IEnumerable<T> source)
+            {
+                this.source = source;
+            }
+
+            public IOrderedEnumerable<T> CreateOrderedEnumerable<TKey>(Func<T, TKey> keySelector, IComparer<TKey> comparer, bool descending)
+            {
+                return this;
+            }
+
+            public IEnumerator<T> GetEnumerator()
+            {
+                return source.GetEnumerator();
+            }
+
+            IEnumerator IEnumerable.GetEnumerator()
+            {
+                return source.GetEnumerator();
+            }
         }
 
         // values bellow are max slot size (3) to the power of the slot index (0-based)
@@ -348,7 +390,8 @@ namespace MHArmory.ViewModels
             if (items.Any() == false)
                 return items;
 
-            IOrderedEnumerable<IArmorPiece> result = items.OrderBy(x => 1); // wasting a bit of CPU cycles for productivity purpose :(
+            //IOrderedEnumerable<IArmorPiece> result = items.OrderBy(x => 1); // wasting a bit of CPU cycles for productivity purpose :(
+            IOrderedEnumerable<IArmorPiece> result = new OrderedEnumerable<IArmorPiece>(items);
 
             foreach (MaximizedSearchCriteria sortCriteria in sortCriterias)
             {
