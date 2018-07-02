@@ -89,6 +89,8 @@ namespace MHArmory
             GlobalData.Instance.SetSkills(allSkills);
             GlobalData.Instance.SetAbilities(allAbilities);
 
+            GlobalData.Instance.SetArmors(armors);
+
             var skillsToArmorsMap = new Dictionary<int, IArmorPiece[]>();
             var skillsToCharmsMap = new Dictionary<int, ICharm[]>();
             var skillsToJewelsMap = new Dictionary<int, IJewel[]>();

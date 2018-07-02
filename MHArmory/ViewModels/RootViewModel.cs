@@ -115,6 +115,23 @@ namespace MHArmory.ViewModels
             IDictionary<int, ICharm[]> skillsToCharmsMap = await GlobalData.Instance.GetSkillsToCharmsMap();
             IDictionary<int, IJewel[]> skillsToJewelsMap = await GlobalData.Instance.GetSkillsToJewelsMap();
 
+            IArmorPiece[] allHeads = await GlobalData.Instance.GetHeads();
+            IArmorPiece[] allChests = await GlobalData.Instance.GetChests();
+            IArmorPiece[] allGloves = await GlobalData.Instance.GetGloves();
+            IArmorPiece[] allWaists = await GlobalData.Instance.GetWaists();
+            IArmorPiece[] allLegs = await GlobalData.Instance.GetLegs();
+
+            int maxLength = Math.Max(allHeads.Length, Math.Max(allChests.Length, Math.Max(allGloves.Length, Math.Max(allWaists.Length, allLegs.Length))));
+            int[] weights = new int[maxLength];
+
+            var desiredAblities = SelectedAbilities.Where(x => x.IsChecked);
+
+            allHeads = GetMaxWeightedArmorPieces(allHeads, weights, desiredAblities);
+            allChests = GetMaxWeightedArmorPieces(allChests, weights, desiredAblities);
+            allGloves = GetMaxWeightedArmorPieces(allGloves, weights, desiredAblities);
+            allWaists = GetMaxWeightedArmorPieces(allWaists, weights, desiredAblities);
+            allLegs = GetMaxWeightedArmorPieces(allLegs, weights, desiredAblities);
+
             var heads = new List<IArmorPiece>();
             var chests = new List<IArmorPiece>();
             var gloves = new List<IArmorPiece>();
@@ -125,170 +142,208 @@ namespace MHArmory.ViewModels
 
             var test = new List<ArmorSetViewModel>();
 
-            foreach (AbilityViewModel selectedAbility in SelectedAbilities.Where(x => x.IsChecked))
-            {
-                IArmorPiece[] matchingArmorPieces = skillsToArmorsMap[selectedAbility.SkillId];
+            var armorPieceWeights = new Dictionary<int, int>();
 
-                IArmorPiece temp = CreateArmorPieceSorter(matchingArmorPieces.Where(x => x.Type == ArmorPieceType.Head), sortCriterias).FirstOrDefault();
-                if (temp != null)
-                    heads.Add(temp);
+            //foreach (AbilityViewModel selectedAbility in SelectedAbilities.Where(x => x.IsChecked))
+            //{
+            //    IArmorPiece[] matchingArmorPieces = skillsToArmorsMap[selectedAbility.SkillId];
 
-                temp = CreateArmorPieceSorter(matchingArmorPieces.Where(x => x.Type == ArmorPieceType.Chest), sortCriterias).FirstOrDefault();
-                if (temp != null)
-                    chests.Add(temp);
+            //    foreach (IArmorPiece armorPiece in matchingArmorPieces)
+            //    {
+            //        if (armorPieceWeights.TryGetValue(armorPiece.Id, out int weight) == false)
+            //            armorPieceWeights.Add(armorPiece.Id, 1);
+            //        else
+            //            armorPieceWeights[armorPiece.Id] = weight + 1;
+            //    }
 
-                temp = CreateArmorPieceSorter(matchingArmorPieces.Where(x => x.Type == ArmorPieceType.Gloves), sortCriterias).FirstOrDefault();
-                if (temp != null)
-                    gloves.Add(temp);
+            //    //IArmorPiece temp = CreateArmorPieceSorter(matchingArmorPieces.Where(x => x.Type == ArmorPieceType.Head), sortCriterias).FirstOrDefault();
+            //    //if (temp != null)
+            //    //    heads.Add(temp);
 
-                temp = CreateArmorPieceSorter(matchingArmorPieces.Where(x => x.Type == ArmorPieceType.Waist), sortCriterias).FirstOrDefault();
-                if (temp != null)
-                    waists.Add(temp);
+            //    //temp = CreateArmorPieceSorter(matchingArmorPieces.Where(x => x.Type == ArmorPieceType.Chest), sortCriterias).FirstOrDefault();
+            //    //if (temp != null)
+            //    //    chests.Add(temp);
 
-                temp = CreateArmorPieceSorter(matchingArmorPieces.Where(x => x.Type == ArmorPieceType.Legs), sortCriterias).FirstOrDefault();
-                if (temp != null)
-                    legs.Add(temp);
+            //    //temp = CreateArmorPieceSorter(matchingArmorPieces.Where(x => x.Type == ArmorPieceType.Gloves), sortCriterias).FirstOrDefault();
+            //    //if (temp != null)
+            //    //    gloves.Add(temp);
 
-                if (skillsToCharmsMap.TryGetValue(selectedAbility.SkillId, out ICharm[] matchingCharms))
-                    charms.AddRange(matchingCharms.SelectMany(x => x.Levels));
+            //    //temp = CreateArmorPieceSorter(matchingArmorPieces.Where(x => x.Type == ArmorPieceType.Waist), sortCriterias).FirstOrDefault();
+            //    //if (temp != null)
+            //    //    waists.Add(temp);
 
-                if (skillsToJewelsMap.TryGetValue(selectedAbility.SkillId, out IJewel[] matchingJewels))
-                    jewels.AddRange(matchingJewels);
-            }
+            //    //temp = CreateArmorPieceSorter(matchingArmorPieces.Where(x => x.Type == ArmorPieceType.Legs), sortCriterias).FirstOrDefault();
+            //    //if (temp != null)
+            //    //    legs.Add(temp);
 
-            var indicesTruthTable = new IndicesTruthTable(6);
-            int[] output = new int[indicesTruthTable.IndicesCount];
-            int iterationsPerIndex = (int)Math.Pow(2.0, indicesTruthTable.IndicesCount);
-            int iterations = iterationsPerIndex * 200;
+            //    //if (skillsToCharmsMap.TryGetValue(selectedAbility.SkillId, out ICharm[] matchingCharms))
+            //    //    charms.AddRange(matchingCharms.SelectMany(x => x.Levels));
+
+            //    //if (skillsToJewelsMap.TryGetValue(selectedAbility.SkillId, out IJewel[] matchingJewels))
+            //    //    jewels.AddRange(matchingJewels);
+            //}
 
             int[] weaponSlots = new int[] { 3 };
-            IArmorPiece[] armorPieces = new IArmorPiece[5];
-            ICharmLevel currentCharm;
+            IEquipment[] equipments = new IEquipment[6];
 
-            for (int i = 0; i < iterations; i++)
+            foreach (IEquipment h in allHeads)
             {
-                indicesTruthTable.Next(output);
-
-                //var foundArmorPieces = new List<IArmorPiece>();
-
-                //if (heads.Count > 0)
-                //    foundArmorPieces.Add(heads[output[0] % heads.Count]);
-                //if (chests.Count > 0)
-                //    foundArmorPieces.Add(chests[output[1] % chests.Count]);
-                //if (gloves.Count > 0)
-                //    foundArmorPieces.Add(gloves[output[2] % gloves.Count]);
-                //if (waists.Count > 0)
-                //    foundArmorPieces.Add(waists[output[3] % waists.Count]);
-                //if (legs.Count > 0)
-                //    foundArmorPieces.Add(legs[output[4] % legs.Count]);
-
-                if (heads.Count > 0)
-                    armorPieces[0] = heads[output[0] % heads.Count];
-                else
-                    armorPieces[0] = null;
-
-                if (chests.Count > 0)
-                    armorPieces[1] = chests[output[1] % chests.Count];
-                else
-                    armorPieces[1] = null;
-
-                if (gloves.Count > 0)
-                    armorPieces[2] = gloves[output[2] % gloves.Count];
-                else
-                    armorPieces[2] = null;
-
-                if (waists.Count > 0)
-                    armorPieces[3] = waists[output[3] % waists.Count];
-                else
-                    armorPieces[3] = null;
-
-                if (legs.Count > 0)
-                    armorPieces[4] = legs[output[4] % legs.Count];
-                else
-                    armorPieces[4] = null;
-
-                if (charms.Count > 0)
-                    currentCharm = charms[output[5] % charms.Count];
-                else
-                    currentCharm = null;
-
-                if (IsArmorSetMatching(weaponSlots, armorPieces, currentCharm, selectedAbilities, skillsToJewelsMap))
+                equipments[0] = h;
+                foreach (IEquipment c in allChests)
                 {
+                    equipments[1] = c;
+                    foreach (IEquipment g in allGloves)
+                    {
+                        equipments[2] = g;
+                        foreach (IEquipment w in allWaists)
+                        {
+                            equipments[3] = w;
+                            foreach (IEquipment l in allLegs)
+                            {
+                                equipments[4] = l;
+                                foreach (ICharmLevel ch_ in charms)
+                                {
+                                    equipments[5] = ch_;
+
+                                    if (IsArmorSetMatching(weaponSlots, equipments, selectedAbilities, skillsToJewelsMap) != ArmorSetSearchResult.Mismatch)
+                                    {
+                                    }
+                                }
+                            }
+                        }
+                    }
                 }
-
-                test.Add(new ArmorSetViewModel
-                {
-                    ArmorPieces = armorPieces
-                });
             }
 
-            //foreach (var h in heads)
+
+
+            //var indicesTruthTable = new IndicesTruthTable(6);
+            //int[] output = new int[indicesTruthTable.IndicesCount];
+            //int iterationsPerIndex = (int)Math.Pow(2.0, indicesTruthTable.IndicesCount);
+            //int iterations = iterationsPerIndex * 100;
+
+
+            //for (int i = 0; i < iterations; i++)
             //{
-            //    armorPieces[0] = h;
+            //    indicesTruthTable.Next(output);
 
-            //    foreach (var c in chests)
+            //    //var foundArmorPieces = new List<IArmorPiece>();
+
+            //    //if (heads.Count > 0)
+            //    //    foundArmorPieces.Add(heads[output[0] % heads.Count]);
+            //    //if (chests.Count > 0)
+            //    //    foundArmorPieces.Add(chests[output[1] % chests.Count]);
+            //    //if (gloves.Count > 0)
+            //    //    foundArmorPieces.Add(gloves[output[2] % gloves.Count]);
+            //    //if (waists.Count > 0)
+            //    //    foundArmorPieces.Add(waists[output[3] % waists.Count]);
+            //    //if (legs.Count > 0)
+            //    //    foundArmorPieces.Add(legs[output[4] % legs.Count]);
+
+            //    if (heads.Count > 0)
+            //        equipments[0] = heads[output[0] % heads.Count];
+            //    else
+            //        equipments[0] = null;
+
+            //    if (chests.Count > 0)
+            //        equipments[1] = chests[output[1] % chests.Count];
+            //    else
+            //        equipments[1] = null;
+
+            //    if (gloves.Count > 0)
+            //        equipments[2] = gloves[output[2] % gloves.Count];
+            //    else
+            //        equipments[2] = null;
+
+            //    if (waists.Count > 0)
+            //        equipments[3] = waists[output[3] % waists.Count];
+            //    else
+            //        equipments[3] = null;
+
+            //    if (legs.Count > 0)
+            //        equipments[4] = legs[output[4] % legs.Count];
+            //    else
+            //        equipments[4] = null;
+
+            //    if (charms.Count > 0)
+            //        equipments[5] = charms[output[5] % charms.Count];
+            //    else
+            //        equipments[5] = null;
+
+            //    if (IsArmorSetMatching(weaponSlots, equipments, selectedAbilities, skillsToJewelsMap))
             //    {
-            //        armorPieces[1] = c;
-
-            //        foreach (var g in gloves)
+            //        test.Add(new ArmorSetViewModel
             //        {
-            //            armorPieces[2] = g;
-
-            //            foreach (var w in waists)
-            //            {
-            //                armorPieces[3] = w;
-
-            //                foreach (var l in legs)
-            //                {
-            //                    armorPieces[4] = l;
-
-            //                    //test.Add(new ArmorSetViewModel
-            //                    //{
-            //                    //    ArmorPieces = new IArmorPiece[] { h, c, g, w, l }
-            //                    //});
-            //                    foreach (ICharm currentCharm in charms)
-            //                    {
-
-            //                        if (IsArmorSetMatching(weaponSlots, armorPieces, currentCharm, selectedAbilities))
-            //                        {
-            //                        }
-            //                    }
-            //                }
-            //            }
-            //        }
+            //            ArmorPieces = equipments.OfType<IArmorPiece>().ToArray()
+            //        });
             //    }
             //}
 
-            FoundArmorSets = test;
+            //FoundArmorSets = test;
 
             sw.Stop();
 
             var sb = new StringBuilder();
 
-            long hh = heads.Count;
-            long cc = chests.Count;
-            long gg = gloves.Count;
-            long ww = waists.Count;
-            long ll = legs.Count;
+            long hh = allHeads.LongLength;
+            long cc = allChests.LongLength;
+            long gg = allGloves.LongLength;
+            long ww = allWaists.LongLength;
+            long ll = allLegs.LongLength;
             long ch = charms.Count;
 
-            sb.AppendLine($"Heads count:  {heads.Count }");
-            sb.AppendLine($"Chests count: {chests.Count }");
-            sb.AppendLine($"Gloves count: {gloves.Count }");
-            sb.AppendLine($"Waists count: {waists.Count }");
-            sb.AppendLine($"Legs count:   {legs.Count }");
-            sb.AppendLine($"Charms count:   {charms.Count }");
-            sb.AppendLine($"Combination count: {hh * cc * gg * ww * ll * ch}");
+            sb.AppendLine($"Heads count:  {hh}");
+            sb.AppendLine($"Chests count: {cc}");
+            sb.AppendLine($"Gloves count: {gg}");
+            sb.AppendLine($"Waists count: {ww}");
+            sb.AppendLine($"Legs count:   {ll}");
+            sb.AppendLine($"Charms count:   {ch}");
+            sb.AppendLine($"Combination count: {hh * cc * gg * ww * ll}");
             sb.AppendLine($"Took: {sw.ElapsedMilliseconds} ms");
 
             SearchResult = sb.ToString();
         }
 
-        private bool IsArmorSetMatching(
-            int[] weaponSlots, IArmorPiece[] armorPieces, ICharmLevel charm, 
+        private IArmorPiece[] GetMaxWeightedArmorPieces(IArmorPiece[] armorPieces, int[] weights, IEnumerable<AbilityViewModel> desiredAbilities)
+        {
+            int max = 0;
+
+            for (int i = 0; i < armorPieces.Length; i++)
+            {
+                weights[i] = 0;
+
+                foreach (AbilityViewModel ability in desiredAbilities)
+                {
+                    weights[i] += armorPieces[i].Abilities.Where(a => a.Skill.Id == ability.SkillId).Sum(a => a.Level);
+                    if (weights[i] > max)
+                        max = weights[i];
+                }
+            }
+
+            if (max == 0)
+                return Array.Empty<IArmorPiece>();
+
+            int maxMin = Math.Max(1, max - 1);
+
+            return armorPieces
+                .Where((x, i) => max >= weights[i] && weights[i] >= maxMin)
+                .ToArray();
+        }
+
+        private enum ArmorSetSearchResult
+        {
+            Mismatch,
+            SuccessOptimal,
+            SuccessNonOptimal
+        }
+
+        private ArmorSetSearchResult IsArmorSetMatching(
+            int[] weaponSlots, IEquipment[] equipments,
             IEnumerable<AbilityViewModel> desiredAbilities,
             IDictionary<int, IJewel[]> availableJewels)
         {
+            bool isOptimal = true;
+
             int availableSlot1 = 0;
             int availableSlot2 = 0;
             int availableSlot3 = 0;
@@ -300,61 +355,51 @@ namespace MHArmory.ViewModels
                 availableSlot3 = weaponSlots.Count(x => x == 3);
             }
 
-            foreach (IArmorPiece armorPiece in armorPieces)
+            foreach (IEquipment equipment in equipments)
             {
-                if (armorPiece == null)
+                if (equipment == null)
                     continue;
 
-                availableSlot1 += armorPiece.Slots.Count(x => x == 1);
-                availableSlot2 += armorPiece.Slots.Count(x => x == 2);
-                availableSlot3 += armorPiece.Slots.Count(x => x == 3);
-            }
-
-            if (charm != null)
-            {
-                availableSlot1 += charm.Slots.Count(x => x == 1);
-                availableSlot2 += charm.Slots.Count(x => x == 2);
-                availableSlot3 += charm.Slots.Count(x => x == 3);
+                availableSlot1 += equipment.Slots.Count(x => x == 1);
+                availableSlot2 += equipment.Slots.Count(x => x == 2);
+                availableSlot3 += equipment.Slots.Count(x => x == 3);
             }
 
             foreach (AbilityViewModel ability in desiredAbilities)
             {
                 int armorAbilityTotal = 0;
 
-                if (charm != null)
+                foreach (IEquipment equipment in equipments)
                 {
-                    IAbility foundAbility = charm.Abilities.FirstOrDefault(a => a.Id == ability.Id);
-                    if (foundAbility != null)
-                        armorAbilityTotal += foundAbility.Level;
+                    if (equipment != null)
+                        armorAbilityTotal += equipment.Abilities.Where(x => x.Id == ability.Id).Sum(a => a.Level);
                 }
 
-                // CHECK EARLY BREAK ???
+                int remaingAbilityLevels = ability.Level - armorAbilityTotal;
 
-                foreach (IArmorPiece armorPiece in armorPieces)
+                if (remaingAbilityLevels > 0)
                 {
-                    if (armorPiece == null)
-                        continue;
+                    if (availableSlot1 <= 0 && availableSlot2 <= 0 && availableSlot3 <= 0)
+                        return ArmorSetSearchResult.Mismatch;
 
-                    armorAbilityTotal += armorPiece.Abilities.Where(x => x.Id == ability.Id).Sum(a => a.Level);
+                    if (availableJewels.TryGetValue(ability.SkillId, out IJewel[] jewels) == false)
+                        return ArmorSetSearchResult.Mismatch;
 
-                    int remaingAbilityLevels = ability.Level - armorAbilityTotal;
-                    if (remaingAbilityLevels > 0)
+                    foreach (IAbility a in jewels.SelectMany(j => j.Abilities).Where(a => a.Id == ability.Id))
                     {
-                        if (availableSlot1 <= 0 && availableSlot2 <= 0 && availableSlot3 <= 0)
-                            return false;
-
-                        if (availableJewels.TryGetValue(ability.SkillId, out IJewel[] jewels) == false)
-                            return false;
-
-                        IJewel foundJewel = jewels.FirstOrDefault(j => j.Abilities.Any(a => a.Id == ability.Id));
-                        if (foundJewel == null)
-                            return false;
 
                     }
                 }
+                else
+                {
+                    if (remaingAbilityLevels < 0)
+                        isOptimal = false;
+
+                    break;
+                }
             }
 
-            return false;
+            return ArmorSetSearchResult.Mismatch;
         }
 
         private class OrderedEnumerable<T> : IOrderedEnumerable<T>

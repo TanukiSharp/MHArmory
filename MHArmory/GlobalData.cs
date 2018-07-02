@@ -52,16 +52,53 @@ namespace MHArmory
 
         #region Armors
 
-        private readonly TaskCompletionSource<SkillViewModel[]> armorsTaskCompletionSource = new TaskCompletionSource<SkillViewModel[]>();
+        private readonly TaskCompletionSource<object> armorsTaskCompletionSource = new TaskCompletionSource<object>();
 
-        public void SetArmors(SkillViewModel[] skills)
+        private IArmorPiece[] heads;
+        private IArmorPiece[] chests;
+        private IArmorPiece[] gloves;
+        private IArmorPiece[] waists;
+        private IArmorPiece[] legs;
+
+        public void SetArmors(IArmorPiece[] armorPieces)
         {
-            skillsTaskCompletionSource.TrySetResult(skills);
+            heads = armorPieces.Where(x => x.Type == ArmorPieceType.Head).ToArray();
+            chests = armorPieces.Where(x => x.Type == ArmorPieceType.Chest).ToArray();
+            gloves = armorPieces.Where(x => x.Type == ArmorPieceType.Gloves).ToArray();
+            waists = armorPieces.Where(x => x.Type == ArmorPieceType.Waist).ToArray();
+            legs = armorPieces.Where(x => x.Type == ArmorPieceType.Legs).ToArray();
+
+            armorsTaskCompletionSource.TrySetResult(null);
         }
 
-        public Task<SkillViewModel[]> GetArmors()
+        public async Task<IArmorPiece[]> GetHeads()
         {
-            return skillsTaskCompletionSource.Task;
+            await armorsTaskCompletionSource.Task;
+            return heads;
+        }
+
+        public async Task<IArmorPiece[]> GetChests()
+        {
+            await armorsTaskCompletionSource.Task;
+            return chests;
+        }
+
+        public async Task<IArmorPiece[]> GetGloves()
+        {
+            await armorsTaskCompletionSource.Task;
+            return gloves;
+        }
+
+        public async Task<IArmorPiece[]> GetWaists()
+        {
+            await armorsTaskCompletionSource.Task;
+            return waists;
+        }
+
+        public async Task<IArmorPiece[]> GetLegs()
+        {
+            await armorsTaskCompletionSource.Task;
+            return legs;
         }
 
         #endregion // Armors

@@ -48,17 +48,21 @@ namespace MHArmory.Core.DataStructures
         string ImageFemale { get; }
     }
 
-    public interface IArmorPiece
+    public interface IArmorPiece : IEquipment
     {
         int Id { get; }
-        string Name { get; }
         ArmorPieceType Type { get; }
-        int Rarity { get; }
         IArmorPieceDefense Defense { get; }
         IArmorPieceResistances Resistances { get; }
         IArmorPieceAttributes Attributes { get; }
+        IArmorPieceAssets Assets { get; }
+    }
+
+    public interface IEquipment
+    {
+        string Name { get; }
+        int Rarity { get; }
         int[] Slots { get; }
         IAbility[] Abilities { get; }
-        IArmorPieceAssets Assets { get; }
     }
 }

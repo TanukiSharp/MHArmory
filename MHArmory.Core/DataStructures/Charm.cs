@@ -4,13 +4,9 @@ using System.Text;
 
 namespace MHArmory.Core.DataStructures
 {
-    public interface ICharmLevel
+    public interface ICharmLevel : IEquipment
     {
-        string Name { get; }
         int Level { get; }
-        int Rarity { get; }
-        int[] Slots { get; }
-        IAbility[] Abilities { get; }
     }
 
     public interface ICharm
