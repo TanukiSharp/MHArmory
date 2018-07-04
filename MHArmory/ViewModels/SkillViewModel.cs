@@ -19,7 +19,7 @@ namespace MHArmory.ViewModels
             set
             {
                 if (SetValue(ref isChecked, value))
-                    parent.CheckChanged(Level);
+                    parent.CheckChanged(Level, isChecked);
             }
         }
 
@@ -100,12 +100,15 @@ namespace MHArmory.ViewModels
                 skill.Abilities.Any(x => x.Description.IndexOf(searchText, StringComparison.OrdinalIgnoreCase) > -1);
         }
 
-        internal void CheckChanged(int level)
+        internal void CheckChanged(int level, bool resetChecked)
         {
-            foreach (AbilityViewModel vm in Abilities)
+            if (resetChecked)
             {
-                if (vm.Level != level)
-                    vm.IsChecked = false;
+                foreach (AbilityViewModel vm in Abilities)
+                {
+                    if (vm.Level != level)
+                        vm.IsChecked = false;
+                }
             }
 
             root.SearchArmorSets();
