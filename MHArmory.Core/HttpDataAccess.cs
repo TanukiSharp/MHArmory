@@ -53,7 +53,7 @@ namespace MHArmory.Core
             {
                 httpClient = new HttpClient
                 {
-                    Timeout = TimeSpan.FromSeconds(5.0)
+                    Timeout = TimeSpan.FromSeconds(15.0)
                 };
             }
 
