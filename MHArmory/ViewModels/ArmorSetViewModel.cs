@@ -15,5 +15,12 @@ namespace MHArmory.ViewModels
             get { return armorPieces; }
             set { SetValue(ref armorPieces, value); }
         }
+
+        private ICharmLevel charm;
+        public ICharmLevel Charm
+        {
+            get { return charm; }
+            set { SetValue(ref charm, value); }
+        }
     }
 }

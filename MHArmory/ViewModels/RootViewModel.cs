@@ -5,6 +5,7 @@ using System.Collections.ObjectModel;
 using System.Diagnostics;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Input;
 using MHArmory.Core;
@@ -81,19 +82,19 @@ namespace MHArmory.ViewModels
 
         public async void SearchArmorSets()
         {
-            if (IsSearching)
-                return;
+            //if (IsSearching)
+            //    return;
 
-            IsSearching = true;
+            //IsSearching = true;
 
-            try
-            {
+            //try
+            //{
                 await SearchArmorSetsInternal();
-            }
-            finally
-            {
-                IsSearching = false;
-            }
+            //}
+            //finally
+            //{
+            //    IsSearching = false;
+            //}
         }
 
         private MaximizedSearchCriteria[] sortCriterias = new MaximizedSearchCriteria[]
@@ -103,7 +104,40 @@ namespace MHArmory.ViewModels
             MaximizedSearchCriteria.SlotSize
         };
 
+        private CancellationTokenSource searchCancellationTokenSource;
+        private Task previousSearchTask;
+
         private async Task SearchArmorSetsInternal()
+        {
+            if (searchCancellationTokenSource != null)
+            {
+                if (searchCancellationTokenSource.IsCancellationRequested)
+                    return;
+
+                searchCancellationTokenSource.Cancel();
+
+                if (previousSearchTask != null)
+                {
+                    try
+                    {
+                        await previousSearchTask;
+                    }
+                    catch
+                    {
+                    }
+                }
+            }
+
+            searchCancellationTokenSource = new CancellationTokenSource();
+            previousSearchTask = Task.Run(() => SearchArmorSetsInternalInternal(searchCancellationTokenSource.Token));
+
+            await previousSearchTask;
+
+            previousSearchTask = null;
+            searchCancellationTokenSource = null;
+        }
+
+        private async Task SearchArmorSetsInternalInternal(CancellationToken cancellationToken)
         {
             // ========================================================
             // above are inputs
@@ -121,6 +155,9 @@ namespace MHArmory.ViewModels
             IList<IArmorPiece> allWaists = await GlobalData.Instance.GetWaists();
             IList<IArmorPiece> allLegs = await GlobalData.Instance.GetLegs();
 
+            if (cancellationToken.IsCancellationRequested)
+                return;
+
             int maxLength = Math.Max(allHeads.Count, Math.Max(allChests.Count, Math.Max(allGloves.Count, Math.Max(allWaists.Count, allLegs.Count))));
             int[] weights = new int[maxLength];
 
@@ -131,6 +168,9 @@ namespace MHArmory.ViewModels
             allGloves = GetMaxWeightedArmorPieces(allGloves, weights, desiredAblities);
             allWaists = GetMaxWeightedArmorPieces(allWaists, weights, desiredAblities);
             allLegs = GetMaxWeightedArmorPieces(allLegs, weights, desiredAblities);
+
+            if (cancellationToken.IsCancellationRequested)
+                return;
 
             var heads = new List<IArmorPiece>();
             var chests = new List<IArmorPiece>();
@@ -144,6 +184,9 @@ namespace MHArmory.ViewModels
 
             foreach (AbilityViewModel selectedAbility in desiredAblities)
             {
+                if (cancellationToken.IsCancellationRequested)
+                    return;
+
                 if (skillsToCharmsMap.TryGetValue(selectedAbility.SkillId, out IList<ICharm> matchingCharms))
                     charms.AddRange(matchingCharms.SelectMany(x => x.Levels));
 
@@ -197,28 +240,45 @@ namespace MHArmory.ViewModels
             int[] weaponSlots = new int[] { 3 };
             IEquipment[] equipments = new IEquipment[6];
 
+            var equipmentsList = new List<IEquipment[]>();
+
             foreach (IEquipment h in allHeads)
             {
+                if (cancellationToken.IsCancellationRequested)
+                    return;
+
                 equipments[0] = h;
                 foreach (IEquipment c in allChests)
                 {
+                    if (cancellationToken.IsCancellationRequested)
+                        return;
+
                     equipments[1] = c;
                     foreach (IEquipment g in allGloves)
                     {
+                        if (cancellationToken.IsCancellationRequested)
+                            return;
+
                         equipments[2] = g;
                         foreach (IEquipment w in allWaists)
                         {
+                            if (cancellationToken.IsCancellationRequested)
+                                return;
+
                             equipments[3] = w;
                             foreach (IEquipment l in allLegs)
                             {
-                                equipments[4] = l;
-                                foreach (ICharmLevel ch_ in charms)
-                                {
-                                    equipments[5] = ch_;
+                                if (cancellationToken.IsCancellationRequested)
+                                    return;
 
-                                    if (IsArmorSetMatching(weaponSlots, equipments, jewels, desiredAblities) != ArmorSetSearchResult.Mismatch)
-                                    {
-                                    }
+                                equipments[4] = l;
+                                foreach (IEquipment ch_ in charms)
+                                {
+                                    if (cancellationToken.IsCancellationRequested)
+                                        return;
+
+                                    equipments[5] = ch_;
+                                    equipmentsList.Add(equipments.ToArray());
                                 }
                             }
                         }
@@ -226,7 +286,23 @@ namespace MHArmory.ViewModels
                 }
             }
 
+            ParallelLoopResult parallelResult = Parallel.ForEach(equipmentsList, equips =>
+            {
+                if (cancellationToken.IsCancellationRequested)
+                    return;
 
+                if (IsArmorSetMatching(weaponSlots, equips, jewels, desiredAblities) == ArmorSetSearchResult.Mismatch)
+                {
+                    lock (test)
+                    {
+                        test.Add(new ArmorSetViewModel
+                        {
+                            ArmorPieces = equips.Take(5).Cast<IArmorPiece>().ToList(),
+                            Charm = (ICharmLevel)equips[5]
+                        });
+                    }
+                }
+            });
 
             //var indicesTruthTable = new IndicesTruthTable(6);
             //int[] output = new int[indicesTruthTable.IndicesCount];
@@ -290,7 +366,7 @@ namespace MHArmory.ViewModels
             //    }
             //}
 
-            //FoundArmorSets = test;
+            FoundArmorSets = test;
 
             sw.Stop();
 
