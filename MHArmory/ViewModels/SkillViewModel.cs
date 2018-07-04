@@ -57,7 +57,7 @@ namespace MHArmory.ViewModels
         public string Name => skill.Name;
         public string Description => skill.Description;
 
-        public AbilityViewModel[] Abilities { get; }
+        public IList<AbilityViewModel> Abilities { get; }
 
         public SkillViewModel(ISkill skill, RootViewModel root, SkillSelectorViewModel skillSelector)
         {
@@ -68,7 +68,7 @@ namespace MHArmory.ViewModels
             Abilities = skill.Abilities
                 .OrderBy(x => x.Level)
                 .Select(x => new AbilityViewModel(x, this))
-                .ToArray();
+                .ToList();
         }
 
         public bool HasCheckedAbility

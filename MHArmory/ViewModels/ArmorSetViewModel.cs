@@ -9,8 +9,8 @@ namespace MHArmory.ViewModels
 {
     public class ArmorSetViewModel : ViewModelBase
     {
-        private IArmorPiece[] armorPieces;
-        public IArmorPiece[] ArmorPieces
+        private IList<IArmorPiece> armorPieces;
+        public IList<IArmorPiece> ArmorPieces
         {
             get { return armorPieces; }
             set { SetValue(ref armorPieces, value); }

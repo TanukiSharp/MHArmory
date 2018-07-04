@@ -75,14 +75,14 @@ namespace MHArmory
                 return;
             }
 
-            SkillViewModel[] allSkills = skills
+            IList<SkillViewModel> allSkills = skills
                 .OrderBy(x => x.Name)
                 .Select(x => new SkillViewModel(x, rootViewModel, skillSelectorWindow.SkillSelector))
-                .ToArray();
+                .ToList();
 
-            AbilityViewModel[] allAbilities = allSkills
+            IList<AbilityViewModel> allAbilities = allSkills
                 .SelectMany(x => x.Abilities)
-                .ToArray();
+                .ToList();
 
             rootViewModel.SelectedAbilities = allAbilities;
 
@@ -91,25 +91,25 @@ namespace MHArmory
 
             GlobalData.Instance.SetArmors(armors);
 
-            var skillsToArmorsMap = new Dictionary<int, IArmorPiece[]>();
-            var skillsToCharmsMap = new Dictionary<int, ICharm[]>();
-            var skillsToJewelsMap = new Dictionary<int, IJewel[]>();
+            var skillsToArmorsMap = new Dictionary<int, IList<IArmorPiece>>();
+            var skillsToCharmsMap = new Dictionary<int, IList<ICharm>>();
+            var skillsToJewelsMap = new Dictionary<int, IList<IJewel>>();
 
             foreach (ISkill skill in skills)
             {
                 skillsToArmorsMap.Add(skill.Id, armors
                     .Where(x => x.Abilities.Any(a => a.Skill.Id == skill.Id))
-                    .ToArray()
+                    .ToList()
                 );
 
                 skillsToCharmsMap.Add(skill.Id, charms
                     .Where(x => x.Levels.Any(l => l.Abilities.Any(a => a.Skill.Id == skill.Id)))
-                    .ToArray()
+                    .ToList()
                 );
 
                 skillsToJewelsMap.Add(skill.Id, jewels
                     .Where(x => x.Abilities.Any(a => a.Skill.Id == skill.Id))
-                    .ToArray()
+                    .ToList()
                 );
             }
 
@@ -119,8 +119,8 @@ namespace MHArmory
 
             rootViewModel.FoundArmorSets = new ArmorSetViewModel[]
             {
-                new ArmorSetViewModel { ArmorPieces = armors.Skip(armors.Length - 10).Take(5).ToArray() },
-                new ArmorSetViewModel { ArmorPieces = armors.Skip(armors.Length - 5).ToArray() }
+                new ArmorSetViewModel { ArmorPieces = armors.Skip(armors.Length - 10).Take(5).ToList() },
+                new ArmorSetViewModel { ArmorPieces = armors.Skip(armors.Length - 5).ToList() }
             };
 
             rootViewModel.IsDataLoading = false;

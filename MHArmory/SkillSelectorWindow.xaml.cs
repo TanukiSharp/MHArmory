@@ -52,7 +52,7 @@ namespace MHArmory
         {
             await Dispatcher.Yield(DispatcherPriority.Render);
 
-            SkillViewModel[] skills = await GlobalData.Instance.GetSkills();
+            IList<SkillViewModel> skills = await GlobalData.Instance.GetSkills();
             SkillSelector.Skills = skills;
 
             IsDataLoading = false;

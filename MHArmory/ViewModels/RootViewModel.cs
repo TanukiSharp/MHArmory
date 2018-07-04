@@ -111,17 +111,17 @@ namespace MHArmory.ViewModels
 
             var sw = Stopwatch.StartNew();
 
-            IDictionary<int, IArmorPiece[]> skillsToArmorsMap = await GlobalData.Instance.GetSkillsToArmorsMap();
-            IDictionary<int, ICharm[]> skillsToCharmsMap = await GlobalData.Instance.GetSkillsToCharmsMap();
-            IDictionary<int, IJewel[]> skillsToJewelsMap = await GlobalData.Instance.GetSkillsToJewelsMap();
+            IDictionary<int, IList<IArmorPiece>> skillsToArmorsMap = await GlobalData.Instance.GetSkillsToArmorsMap();
+            IDictionary<int, IList<ICharm>> skillsToCharmsMap = await GlobalData.Instance.GetSkillsToCharmsMap();
+            IDictionary<int, IList<IJewel>> skillsToJewelsMap = await GlobalData.Instance.GetSkillsToJewelsMap();
 
-            IArmorPiece[] allHeads = await GlobalData.Instance.GetHeads();
-            IArmorPiece[] allChests = await GlobalData.Instance.GetChests();
-            IArmorPiece[] allGloves = await GlobalData.Instance.GetGloves();
-            IArmorPiece[] allWaists = await GlobalData.Instance.GetWaists();
-            IArmorPiece[] allLegs = await GlobalData.Instance.GetLegs();
+            IList<IArmorPiece> allHeads = await GlobalData.Instance.GetHeads();
+            IList<IArmorPiece> allChests = await GlobalData.Instance.GetChests();
+            IList<IArmorPiece> allGloves = await GlobalData.Instance.GetGloves();
+            IList<IArmorPiece> allWaists = await GlobalData.Instance.GetWaists();
+            IList<IArmorPiece> allLegs = await GlobalData.Instance.GetLegs();
 
-            int maxLength = Math.Max(allHeads.Length, Math.Max(allChests.Length, Math.Max(allGloves.Length, Math.Max(allWaists.Length, allLegs.Length))));
+            int maxLength = Math.Max(allHeads.Count, Math.Max(allChests.Count, Math.Max(allGloves.Count, Math.Max(allWaists.Count, allLegs.Count))));
             int[] weights = new int[maxLength];
 
             var desiredAblities = SelectedAbilities.Where(x => x.IsChecked);
@@ -144,10 +144,10 @@ namespace MHArmory.ViewModels
 
             foreach (AbilityViewModel selectedAbility in desiredAblities)
             {
-                if (skillsToCharmsMap.TryGetValue(selectedAbility.SkillId, out ICharm[] matchingCharms))
+                if (skillsToCharmsMap.TryGetValue(selectedAbility.SkillId, out IList<ICharm> matchingCharms))
                     charms.AddRange(matchingCharms.SelectMany(x => x.Levels));
 
-                if (skillsToJewelsMap.TryGetValue(selectedAbility.SkillId, out IJewel[] matchingJewels))
+                if (skillsToJewelsMap.TryGetValue(selectedAbility.SkillId, out IList<IJewel> matchingJewels))
                     jewels.AddRange(matchingJewels);
             }
 
@@ -285,7 +285,7 @@ namespace MHArmory.ViewModels
             //    {
             //        test.Add(new ArmorSetViewModel
             //        {
-            //            ArmorPieces = equipments.OfType<IArmorPiece>().ToArray()
+            //            ArmorPieces = equipments.OfType<IArmorPiece>().ToList()
             //        });
             //    }
             //}
@@ -296,13 +296,12 @@ namespace MHArmory.ViewModels
 
             var sb = new StringBuilder();
 
-            long hh = allHeads.LongLength;
-            long cc = allChests.LongLength;
-            long gg = allGloves.LongLength;
-            long ww = allWaists.LongLength;
-            long ll = allLegs.LongLength;
+            long hh = allHeads.Count;
+            long cc = allChests.Count;
+            long gg = allGloves.Count;
+            long ww = allWaists.Count;
+            long ll = allLegs.Count;
             long ch = charms.Count;
-
 
             sb.AppendLine($"Heads count:  {hh}");
             sb.AppendLine($"Chests count: {cc}");
@@ -316,11 +315,11 @@ namespace MHArmory.ViewModels
             SearchResult = sb.ToString();
         }
 
-        private IArmorPiece[] GetMaxWeightedArmorPieces(IArmorPiece[] armorPieces, int[] weights, IEnumerable<AbilityViewModel> desiredAbilities)
+        private IList<IArmorPiece> GetMaxWeightedArmorPieces(IList<IArmorPiece> armorPieces, int[] weights, IEnumerable<AbilityViewModel> desiredAbilities)
         {
             int max = 0;
 
-            for (int i = 0; i < armorPieces.Length; i++)
+            for (int i = 0; i < armorPieces.Count; i++)
             {
                 weights[i] = 0;
 
@@ -339,7 +338,7 @@ namespace MHArmory.ViewModels
 
             return armorPieces
                 .Where((x, i) => max >= weights[i] && weights[i] >= maxMin)
-                .ToArray();
+                .ToList();
         }
 
         private enum ArmorSetSearchResult

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using MHArmory.Core;
 using MHArmory.Core.DataStructures;
 using MHArmory.ViewModels;
 
@@ -16,14 +17,14 @@ namespace MHArmory
 
         #region Abilities
 
-        private readonly TaskCompletionSource<AbilityViewModel[]> abilitiesTaskCompletionSource = new TaskCompletionSource<AbilityViewModel[]>();
+        private readonly TaskCompletionSource<IList<AbilityViewModel>> abilitiesTaskCompletionSource = new TaskCompletionSource<IList<AbilityViewModel>>();
 
-        public void SetAbilities(AbilityViewModel[] abilities)
+        public void SetAbilities(IList<AbilityViewModel> abilities)
         {
             abilitiesTaskCompletionSource.TrySetResult(abilities);
         }
 
-        public Task<AbilityViewModel[]> GetAbilities()
+        public Task<IList<AbilityViewModel>> GetAbilities()
         {
             return abilitiesTaskCompletionSource.Task;
         }
@@ -34,14 +35,14 @@ namespace MHArmory
 
         #region Skills
 
-        private readonly TaskCompletionSource<SkillViewModel[]> skillsTaskCompletionSource = new TaskCompletionSource<SkillViewModel[]>();
+        private readonly TaskCompletionSource<IList<SkillViewModel>> skillsTaskCompletionSource = new TaskCompletionSource<IList<SkillViewModel>>();
 
-        public void SetSkills(SkillViewModel[] skills)
+        public void SetSkills(IList<SkillViewModel> skills)
         {
             skillsTaskCompletionSource.TrySetResult(skills);
         }
 
-        public Task<SkillViewModel[]> GetSkills()
+        public Task<IList<SkillViewModel>> GetSkills()
         {
             return skillsTaskCompletionSource.Task;
         }
@@ -54,48 +55,48 @@ namespace MHArmory
 
         private readonly TaskCompletionSource<object> armorsTaskCompletionSource = new TaskCompletionSource<object>();
 
-        private IArmorPiece[] heads;
-        private IArmorPiece[] chests;
-        private IArmorPiece[] gloves;
-        private IArmorPiece[] waists;
-        private IArmorPiece[] legs;
+        private IList<IArmorPiece> heads;
+        private IList<IArmorPiece> chests;
+        private IList<IArmorPiece> gloves;
+        private IList<IArmorPiece> waists;
+        private IList<IArmorPiece> legs;
 
         public void SetArmors(IArmorPiece[] armorPieces)
         {
-            heads = armorPieces.Where(x => x.Type == ArmorPieceType.Head).ToArray();
-            chests = armorPieces.Where(x => x.Type == ArmorPieceType.Chest).ToArray();
-            gloves = armorPieces.Where(x => x.Type == ArmorPieceType.Gloves).ToArray();
-            waists = armorPieces.Where(x => x.Type == ArmorPieceType.Waist).ToArray();
-            legs = armorPieces.Where(x => x.Type == ArmorPieceType.Legs).ToArray();
+            heads = ArmorUtility.ExcludeLessPoweredEquivalent(armorPieces.Where(x => x.Type == ArmorPieceType.Head).ToList());
+            chests = ArmorUtility.ExcludeLessPoweredEquivalent(armorPieces.Where(x => x.Type == ArmorPieceType.Chest).ToList());
+            gloves = ArmorUtility.ExcludeLessPoweredEquivalent(armorPieces.Where(x => x.Type == ArmorPieceType.Gloves).ToList());
+            waists = ArmorUtility.ExcludeLessPoweredEquivalent(armorPieces.Where(x => x.Type == ArmorPieceType.Waist).ToList());
+            legs = ArmorUtility.ExcludeLessPoweredEquivalent(armorPieces.Where(x => x.Type == ArmorPieceType.Legs).ToList());
 
             armorsTaskCompletionSource.TrySetResult(null);
         }
 
-        public async Task<IArmorPiece[]> GetHeads()
+        public async Task<IList<IArmorPiece>> GetHeads()
         {
             await armorsTaskCompletionSource.Task;
             return heads;
         }
 
-        public async Task<IArmorPiece[]> GetChests()
+        public async Task<IList<IArmorPiece>> GetChests()
         {
             await armorsTaskCompletionSource.Task;
             return chests;
         }
 
-        public async Task<IArmorPiece[]> GetGloves()
+        public async Task<IList<IArmorPiece>> GetGloves()
         {
             await armorsTaskCompletionSource.Task;
             return gloves;
         }
 
-        public async Task<IArmorPiece[]> GetWaists()
+        public async Task<IList<IArmorPiece>> GetWaists()
         {
             await armorsTaskCompletionSource.Task;
             return waists;
         }
 
-        public async Task<IArmorPiece[]> GetLegs()
+        public async Task<IList<IArmorPiece>> GetLegs()
         {
             await armorsTaskCompletionSource.Task;
             return legs;
@@ -107,14 +108,14 @@ namespace MHArmory
 
         #region SkillsToArmorsMap
 
-        private readonly TaskCompletionSource<IDictionary<int, IArmorPiece[]>> skillsToArmorsMapTaskCompletionSource = new TaskCompletionSource<IDictionary<int, IArmorPiece[]>>();
+        private readonly TaskCompletionSource<IDictionary<int, IList<IArmorPiece>>> skillsToArmorsMapTaskCompletionSource = new TaskCompletionSource<IDictionary<int, IList<IArmorPiece>>>();
 
-        public void SetSkillsToArmorsMap(IDictionary<int, IArmorPiece[]> skillsToArmorsMap)
+        public void SetSkillsToArmorsMap(IDictionary<int, IList<IArmorPiece>> skillsToArmorsMap)
         {
             skillsToArmorsMapTaskCompletionSource.TrySetResult(skillsToArmorsMap);
         }
 
-        public Task<IDictionary<int, IArmorPiece[]>> GetSkillsToArmorsMap()
+        public Task<IDictionary<int, IList<IArmorPiece>>> GetSkillsToArmorsMap()
         {
             return skillsToArmorsMapTaskCompletionSource.Task;
         }
@@ -125,14 +126,14 @@ namespace MHArmory
 
         #region SkillsToCharmsMap
 
-        private readonly TaskCompletionSource<IDictionary<int, ICharm[]>> skillsToCharmsMapTaskCompletionSource = new TaskCompletionSource<IDictionary<int, ICharm[]>>();
+        private readonly TaskCompletionSource<IDictionary<int, IList<ICharm>>> skillsToCharmsMapTaskCompletionSource = new TaskCompletionSource<IDictionary<int, IList<ICharm>>>();
 
-        public void SetSkillsToCharmsMap(IDictionary<int, ICharm[]> skillsToCharmsMap)
+        public void SetSkillsToCharmsMap(IDictionary<int, IList<ICharm>> skillsToCharmsMap)
         {
             skillsToCharmsMapTaskCompletionSource.TrySetResult(skillsToCharmsMap);
         }
 
-        public Task<IDictionary<int, ICharm[]>> GetSkillsToCharmsMap()
+        public Task<IDictionary<int, IList<ICharm>>> GetSkillsToCharmsMap()
         {
             return skillsToCharmsMapTaskCompletionSource.Task;
         }
@@ -143,14 +144,14 @@ namespace MHArmory
 
         #region SkillsToJewelsMap
 
-        private readonly TaskCompletionSource<IDictionary<int, IJewel[]>> skillsToJewelsMapTaskCompletionSource = new TaskCompletionSource<IDictionary<int, IJewel[]>>();
+        private readonly TaskCompletionSource<IDictionary<int, IList<IJewel>>> skillsToJewelsMapTaskCompletionSource = new TaskCompletionSource<IDictionary<int, IList<IJewel>>>();
 
-        public void SetSkillsToJewelsMap(IDictionary<int, IJewel[]> skillsToJewelsMap)
+        public void SetSkillsToJewelsMap(IDictionary<int, IList<IJewel>> skillsToJewelsMap)
         {
             skillsToJewelsMapTaskCompletionSource.TrySetResult(skillsToJewelsMap);
         }
 
-        public Task<IDictionary<int, IJewel[]>> GetSkillsToJewelsMap()
+        public Task<IDictionary<int, IList<IJewel>>> GetSkillsToJewelsMap()
         {
             return skillsToJewelsMapTaskCompletionSource.Task;
         }
