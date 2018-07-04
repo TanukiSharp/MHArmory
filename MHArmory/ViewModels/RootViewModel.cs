@@ -142,7 +142,18 @@ namespace MHArmory.ViewModels
 
             var test = new List<ArmorSetViewModel>();
 
-            var armorPieceWeights = new Dictionary<int, int>();
+            foreach (AbilityViewModel selectedAbility in desiredAblities)
+            {
+                if (skillsToCharmsMap.TryGetValue(selectedAbility.SkillId, out ICharm[] matchingCharms))
+                    charms.AddRange(matchingCharms.SelectMany(x => x.Levels));
+
+                if (skillsToJewelsMap.TryGetValue(selectedAbility.SkillId, out IJewel[] matchingJewels))
+                    jewels.AddRange(matchingJewels);
+            }
+
+            jewels.Sort((a, b) => b.SlotSize.CompareTo(a.SlotSize));
+
+            //var armorPieceWeights = new Dictionary<int, int>();
 
             //foreach (AbilityViewModel selectedAbility in SelectedAbilities.Where(x => x.IsChecked))
             //{
@@ -205,7 +216,7 @@ namespace MHArmory.ViewModels
                                 {
                                     equipments[5] = ch_;
 
-                                    if (IsArmorSetMatching(weaponSlots, equipments, selectedAbilities, skillsToJewelsMap) != ArmorSetSearchResult.Mismatch)
+                                    if (IsArmorSetMatching(weaponSlots, equipments, jewels, desiredAblities) != ArmorSetSearchResult.Mismatch)
                                     {
                                     }
                                 }
@@ -292,13 +303,14 @@ namespace MHArmory.ViewModels
             long ll = allLegs.LongLength;
             long ch = charms.Count;
 
+
             sb.AppendLine($"Heads count:  {hh}");
             sb.AppendLine($"Chests count: {cc}");
             sb.AppendLine($"Gloves count: {gg}");
             sb.AppendLine($"Waists count: {ww}");
             sb.AppendLine($"Legs count:   {ll}");
             sb.AppendLine($"Charms count:   {ch}");
-            sb.AppendLine($"Combination count: {hh * cc * gg * ww * ll}");
+            sb.AppendLine($"Combination count: {hh * cc * gg * ww * ll * ch}");
             sb.AppendLine($"Took: {sw.ElapsedMilliseconds} ms");
 
             SearchResult = sb.ToString();
@@ -321,7 +333,7 @@ namespace MHArmory.ViewModels
             }
 
             if (max == 0)
-                return Array.Empty<IArmorPiece>();
+                return new IArmorPiece[] { null };
 
             int maxMin = Math.Max(1, max - 1);
 
@@ -339,8 +351,8 @@ namespace MHArmory.ViewModels
 
         private ArmorSetSearchResult IsArmorSetMatching(
             int[] weaponSlots, IEquipment[] equipments,
-            IEnumerable<AbilityViewModel> desiredAbilities,
-            IDictionary<int, IJewel[]> availableJewels)
+            IList<IJewel> matchingJewels,
+            IEnumerable<AbilityViewModel> desiredAbilities)
         {
             bool isOptimal = true;
 
@@ -382,12 +394,8 @@ namespace MHArmory.ViewModels
                     if (availableSlot1 <= 0 && availableSlot2 <= 0 && availableSlot3 <= 0)
                         return ArmorSetSearchResult.Mismatch;
 
-                    if (availableJewels.TryGetValue(ability.SkillId, out IJewel[] jewels) == false)
-                        return ArmorSetSearchResult.Mismatch;
-
-                    foreach (IAbility a in jewels.SelectMany(j => j.Abilities).Where(a => a.Id == ability.Id))
+                    foreach (IJewel a in matchingJewels.Where(j => j.Abilities.Any(a => a.Id == ability.Id)))
                     {
-
                     }
                 }
                 else
