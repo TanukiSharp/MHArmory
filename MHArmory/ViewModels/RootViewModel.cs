@@ -383,7 +383,13 @@ namespace MHArmory.ViewModels
                 foreach (IEquipment equipment in equipments)
                 {
                     if (equipment != null)
-                        armorAbilityTotal += equipment.Abilities.Where(x => x.Id == ability.Id).Sum(a => a.Level);
+                    {
+                        foreach (IAbility a in equipment.Abilities)
+                        {
+                            if (a.Id == ability.Id)
+                                armorAbilityTotal += a.Level;
+                        }
+                    }
                 }
 
                 int remaingAbilityLevels = ability.Level - armorAbilityTotal;
@@ -393,8 +399,15 @@ namespace MHArmory.ViewModels
                     if (availableSlot1 <= 0 && availableSlot2 <= 0 && availableSlot3 <= 0)
                         return ArmorSetSearchResult.Mismatch;
 
-                    foreach (IJewel a in matchingJewels.Where(j => j.Abilities.Any(a => a.Id == ability.Id)))
+                    foreach (IJewel j in matchingJewels)
                     {
+                        foreach (IAbility a in j.Abilities)
+                        {
+                            if (a.Id == ability.Id)
+                            {
+
+                            }
+                        }
                     }
                 }
                 else
