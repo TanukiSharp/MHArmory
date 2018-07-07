@@ -417,11 +417,11 @@ namespace MHArmory.ViewModels
                 .ToList();
         }
 
-        private enum ArmorSetSearchResult
+        private struct ArmorSetSearchResult
         {
-            Mismatch,
-            SuccessOptimal,
-            SuccessNonOptimal
+            public bool IsMatch;
+            public bool IsOptimal;
+
         }
 
         private ArmorSetSearchResult IsArmorSetMatching(
@@ -430,6 +430,7 @@ namespace MHArmory.ViewModels
             IEnumerable<AbilityViewModel> desiredAbilities)
         {
             bool isOptimal = true;
+            var requiredJewelIndices = new List<IJewel>();
 
             int availableSlot1 = 0;
             int availableSlot2 = 0;
@@ -473,29 +474,40 @@ namespace MHArmory.ViewModels
                 if (remaingAbilityLevels > 0)
                 {
                     if (availableSlot1 <= 0 && availableSlot2 <= 0 && availableSlot3 <= 0)
-                        return ArmorSetSearchResult.Mismatch;
+                        return new ArmorSetSearchResult { IsMatch = false };
 
                     foreach (IJewel j in matchingJewels)
                     {
+                        bool isMatch = false;
+
                         foreach (IAbility a in j.Abilities)
                         {
-                            if (a.Id == ability.Id)
+                            if (a.Skill.Id == ability.SkillId)
                             {
-
+                                remaingAbilityLevels -= a.Level;
+                                isMatch = true;
                             }
                         }
+
+                        if (isMatch)
+                            requiredJewelIndices.Add(j);
                     }
                 }
-                else
-                {
-                    if (remaingAbilityLevels < 0)
-                        isOptimal = false;
 
+                if (remaingAbilityLevels < 0)
+                {
+                    isOptimal = false;
                     break;
                 }
+                else if (remaingAbilityLevels == 0)
+                    break;
             }
 
-            return ArmorSetSearchResult.Mismatch;
+            return new ArmorSetSearchResult
+            {
+                IsMatch = true,
+                IsOptimal = isOptimal
+            };
         }
 
         private class OrderedEnumerable<T> : IOrderedEnumerable<T>
