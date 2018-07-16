@@ -185,6 +185,8 @@ namespace MHArmory.ViewModels
             allWaists = GetMaxWeightedArmorPieces(allWaists, weights, desiredAblities);
             allLegs = GetMaxWeightedArmorPieces(allLegs, weights, desiredAblities);
 
+            var allCharms = new List<ICharmLevel>();
+
             if (cancellationToken.IsCancellationRequested)
                 return;
 
@@ -193,7 +195,6 @@ namespace MHArmory.ViewModels
             var gloves = new List<IArmorPiece>();
             var waists = new List<IArmorPiece>();
             var legs = new List<IArmorPiece>();
-            var charms = new List<ICharmLevel>();
             var jewels = new List<IJewel>();
 
             var test = new List<ArmorSetViewModel>();
@@ -204,11 +205,13 @@ namespace MHArmory.ViewModels
                     return;
 
                 if (skillsToCharmsMap.TryGetValue(selectedAbility.SkillId, out IList<ICharm> matchingCharms))
-                    charms.AddRange(matchingCharms.SelectMany(x => x.Levels));
+                    allCharms.AddRange(matchingCharms.SelectMany(x => x.Levels));
 
                 if (skillsToJewelsMap.TryGetValue(selectedAbility.SkillId, out IList<IJewel> matchingJewels))
                     jewels.AddRange(matchingJewels);
             }
+
+            IList<ICharmLevel> charms = GetMaxWeightedArmorPieces(allCharms, weights, desiredAblities);
 
             jewels.Sort((a, b) => b.SlotSize.CompareTo(a.SlotSize));
 
@@ -417,7 +420,7 @@ namespace MHArmory.ViewModels
             SearchResult = sb.ToString();
         }
 
-        private IList<IArmorPiece> GetMaxWeightedArmorPieces(IList<IArmorPiece> armorPieces, int[] weights, IEnumerable<AbilityViewModel> desiredAbilities)
+        private IList<T> GetMaxWeightedArmorPieces<T>(IList<T> armorPieces, int[] weights, IEnumerable<AbilityViewModel> desiredAbilities) where T : IEquipment
         {
             int max = 0;
 
@@ -434,7 +437,7 @@ namespace MHArmory.ViewModels
             }
 
             if (max == 0)
-                return new IArmorPiece[] { null };
+                return new T[] { default(T) };
 
             int maxMin = Math.Max(1, max - 1);
 
