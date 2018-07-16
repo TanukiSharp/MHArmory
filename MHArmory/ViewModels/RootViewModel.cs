@@ -62,6 +62,20 @@ namespace MHArmory.ViewModels
             set { SetValue(ref foundArmorSets, value); }
         }
 
+        private bool isSearching;
+        public bool IsSearching
+        {
+            get { return isSearching; }
+            private set { SetValue(ref isSearching, value); }
+        }
+
+        private bool isAutoSearch;
+        public bool IsAutoSearch
+        {
+            get { return isAutoSearch; }
+            set { SetValue(ref isAutoSearch, value); }
+        }
+
         public RootViewModel()
         {
             OpenSkillSelectorCommand = new AnonymousCommand(OpenSkillSelector);
@@ -71,13 +85,6 @@ namespace MHArmory.ViewModels
         private void OpenSkillSelector(object parameter)
         {
             RoutedCommands.OpenSkillsSelector.Execute(null);
-        }
-
-        private bool isSearching;
-        public bool IsSearching
-        {
-            get { return isSearching; }
-            private set { SetValue(ref isSearching, value); }
         }
 
         public async void SearchArmorSets()
@@ -131,10 +138,19 @@ namespace MHArmory.ViewModels
             searchCancellationTokenSource = new CancellationTokenSource();
             previousSearchTask = Task.Run(() => SearchArmorSetsInternalInternal(searchCancellationTokenSource.Token));
 
-            await previousSearchTask;
+            IsSearching = true;
 
-            previousSearchTask = null;
-            searchCancellationTokenSource = null;
+            try
+            {
+                await previousSearchTask;
+            }
+            finally
+            {
+                IsSearching = false;
+
+                previousSearchTask = null;
+                searchCancellationTokenSource = null;
+            }
         }
 
         private async Task SearchArmorSetsInternalInternal(CancellationToken cancellationToken)

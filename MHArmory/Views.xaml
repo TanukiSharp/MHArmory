@@ -3,6 +3,7 @@
                     xmlns:local="clr-namespace:MHArmory"
                     xmlns:cvt="clr-namespace:MHArmory.ValueConverters">
 
+    <cvt:HiddenVisibilityValueConverter x:Key="HiddenVisibilityValueConverter"/>
     <cvt:CollapsedVisibilityValueConverter x:Key="CollapsedVisibilityValueConverter"/>
     <cvt:InverseBooleanValueConverter x:Key="InverseBooleanValueConverter"/>
     <cvt:EnumToImagePathValueConverter x:Key="EnumToImagePathValueConverter"/>
@@ -228,7 +229,13 @@
             </Grid.ColumnDefinitions>
             <DockPanel Grid.Column="0" LastChildFill="True">
                 <Button DockPanel.Dock="Top" Content="Set skills" Margin="2" Padding="2" Command="{Binding OpenSkillSelectorCommand, Mode=OneTime}"/>
+                <CheckBox DockPanel.Dock="Bottom" Margin="2" Padding="2" IsChecked="{Binding IsAutoSearch}" IsThreeState="False" VerticalAlignment="Center" VerticalContentAlignment="Center">
+                    <CheckBox.Content>
+                        <TextBlock Text="Auto-search" VerticalAlignment="Center"/>
+                    </CheckBox.Content>
+                </CheckBox>
                 <Button DockPanel.Dock="Bottom" Content="Search" Margin="2" Padding="2" IsEnabled="{Binding IsSearching, Mode=OneWay, Converter={StaticResource InverseBooleanValueConverter}}" Command="{Binding SearchArmorSetsCommand, Mode=OneTime}"/>
+                <ProgressBar DockPanel.Dock="Bottom" HorizontalAlignment="Stretch" Margin="2" Padding="2" IsIndeterminate="{Binding IsSearching}" Visibility="{Binding IsSearching, Converter={StaticResource HiddenVisibilityValueConverter}}"  Value="0" Height="16"/>
                 <ItemsControl ItemsSource="{Binding SelectedAbilities, Mode=OneWay}" ItemTemplate="{StaticResource SelectedAbilityView}"/>
             </DockPanel>
             <GridSplitter Grid.Column="1" HorizontalAlignment="Stretch"/>

@@ -121,7 +121,9 @@ namespace MHArmory.ViewModels
                 }
             }
 
-            root.SearchArmorSets();
+            if (root.IsAutoSearch)
+                root.SearchArmorSets();
+
             skillSelector?.ComputeVisibility(this);
         }
     }
