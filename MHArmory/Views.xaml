@@ -32,18 +32,19 @@
     </DataTemplate>
 
     <DataTemplate x:Key="ArmorPieceView">
-        <Border CornerRadius="2" BorderThickness="1" BorderBrush="#30000000" Background="#10000000" Margin="2" Padding="4" HorizontalAlignment="Left">
+        <Border CornerRadius="2" BorderThickness="1" BorderBrush="#30000000" Background="#10000000" Margin="2" Padding="4" HorizontalAlignment="Stretch">
             <Grid>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="Auto" SharedSizeGroup="A"/>
                     <ColumnDefinition Width="Auto" SharedSizeGroup="B"/>
                     <ColumnDefinition Width="Auto"/>
                 </Grid.ColumnDefinitions>
-                <StackPanel Grid.Column="0" Orientation="Vertical">
+                <StackPanel Grid.Column="0" Orientation="Vertical" Margin="0 0 8 0">
                     <StackPanel Orientation="Horizontal" Grid.IsSharedSizeScope="True">
                         <Image Source="{Binding Type, Mode=OneTime, Converter={StaticResource EnumToImagePathValueConverter}}" Width="20" Height="20" VerticalAlignment="Center"/>
                         <TextBlock Text="{Binding Name, Mode=OneTime}" FontSize="12" FontWeight="Bold" VerticalAlignment="Center"/>
                     </StackPanel>
+                    <!--
                     <TextBlock Margin="2" Foreground="Gray">
                         <Run Text="Defense: "/>
                         <Run Text="{Binding Defense.Base, Mode=OneTime}"/>
@@ -81,8 +82,9 @@
                             <TextBlock Text="{Binding Resistances.Dragon, Mode=OneTime}" VerticalAlignment="Center" Margin="1 0 4 0"/>
                         </StackPanel>
                     </StackPanel>
+                    -->
                 </StackPanel>
-                <StackPanel Grid.Column="1" Margin="6 0 6 0" Orientation="Vertical">
+                <StackPanel Grid.Column="1" Margin="0 0 8 0" Orientation="Vertical">
                     <TextBlock VerticalAlignment="Top" HorizontalAlignment="Left">
                         <Run Text="Rarity"/>
                         <Run Text="{Binding Rarity, Mode=OneTime}"/>
