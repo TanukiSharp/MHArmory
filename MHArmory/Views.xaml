@@ -110,8 +110,20 @@
     <DataTemplate x:Key="ArmorSetView">
         <Border CornerRadius="2" BorderThickness="2" BorderBrush="#300077aa" Background="#100077aa" Margin="2 2 2 12" Padding="2">
             <StackPanel Orientation="Horizontal">
-                <ItemsControl ItemsSource="{Binding ArmorPieces, Mode=OneTime}" ItemTemplate="{StaticResource ArmorPieceView}" Grid.IsSharedSizeScope="True"/>
-                <TextBlock Text="Tu bluff Martoni!"/>
+                <StackPanel Orientation="Vertical" Grid.IsSharedSizeScope="True">
+                    <ItemsControl ItemsSource="{Binding ArmorPieces, Mode=OneTime}" ItemTemplate="{StaticResource ArmorPieceView}" Focusable="False"/>
+                    <ContentControl Content="{Binding Charm, Mode=OneTime}" ContentTemplate="{StaticResource ArmorPieceView}" Focusable="False"/>
+                </StackPanel>
+                <ItemsControl ItemsSource="{Binding Jewels}" Focusable="False">
+                    <ItemsControl.ItemTemplate>
+                        <DataTemplate>
+                            <TextBlock>
+                                <Run Text="{Binding Jewel.Name, Mode=OneTime}"/>
+                                <Run Text="{Binding Count, Mode=OneTime, StringFormat=x{0}}"/>
+                            </TextBlock>
+                        </DataTemplate>
+                    </ItemsControl.ItemTemplate>
+                </ItemsControl>
             </StackPanel>
         </Border>
     </DataTemplate>

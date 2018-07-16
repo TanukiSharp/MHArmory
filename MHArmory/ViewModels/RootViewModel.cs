@@ -307,14 +307,17 @@ namespace MHArmory.ViewModels
                 if (cancellationToken.IsCancellationRequested)
                     return;
 
-                if (IsArmorSetMatching(weaponSlots, equips, jewels, desiredAblities) == ArmorSetSearchResult.Mismatch)
+                ArmorSetSearchResult searchResult = IsArmorSetMatching(weaponSlots, equips, jewels, desiredAblities);
+
+                if (searchResult.IsMatch)
                 {
                     lock (test)
                     {
                         test.Add(new ArmorSetViewModel
                         {
                             ArmorPieces = equips.Take(5).Cast<IArmorPiece>().ToList(),
-                            Charm = (ICharmLevel)equips[5]
+                            Charm = (ICharmLevel)equips[5],
+                            Jewels = searchResult.Jewels.Select(x => new ArmorSetJewelViewModel { Jewel = x.Jewel, Count = x.Count }).ToList()
                         });
                     }
                 }
@@ -402,6 +405,7 @@ namespace MHArmory.ViewModels
             sb.AppendLine($"Legs count:   {ll}");
             sb.AppendLine($"Charms count:   {ch}");
             sb.AppendLine($"Combination count: {hh * cc * gg * ww * ll * ch}");
+            sb.AppendLine($"Matching result: {test.Count}");
             sb.AppendLine($"Took: {sw.ElapsedMilliseconds} ms");
 
             SearchResult = sb.ToString();
@@ -433,11 +437,17 @@ namespace MHArmory.ViewModels
                 .ToList();
         }
 
+        private struct ArmorSetJewelResult
+        {
+            public IJewel Jewel;
+            public int Count;
+        }
+
         private struct ArmorSetSearchResult
         {
             public bool IsMatch;
             public bool IsOptimal;
-
+            public IList<ArmorSetJewelResult> Jewels;
         }
 
         private ArmorSetSearchResult IsArmorSetMatching(
@@ -446,17 +456,15 @@ namespace MHArmory.ViewModels
             IEnumerable<AbilityViewModel> desiredAbilities)
         {
             bool isOptimal = true;
-            var requiredJewelIndices = new List<IJewel>();
+            var requiredJewels = new List<ArmorSetJewelResult>();
 
-            int availableSlot1 = 0;
-            int availableSlot2 = 0;
-            int availableSlot3 = 0;
+
+            int[] availableSlots = new int[3];
 
             if (weaponSlots != null)
             {
-                availableSlot1 = weaponSlots.Count(x => x == 1);
-                availableSlot2 = weaponSlots.Count(x => x == 2);
-                availableSlot3 = weaponSlots.Count(x => x == 3);
+                foreach (int slotSize in weaponSlots)
+                    availableSlots[slotSize - 1]++;
             }
 
             foreach (IEquipment equipment in equipments)
@@ -464,9 +472,8 @@ namespace MHArmory.ViewModels
                 if (equipment == null)
                     continue;
 
-                availableSlot1 += equipment.Slots.Count(x => x == 1);
-                availableSlot2 += equipment.Slots.Count(x => x == 2);
-                availableSlot3 += equipment.Slots.Count(x => x == 3);
+                foreach (int slotSize in equipment.Slots)
+                    availableSlots[slotSize - 1]++;
             }
 
             foreach (AbilityViewModel ability in desiredAbilities)
@@ -479,7 +486,7 @@ namespace MHArmory.ViewModels
                     {
                         foreach (IAbility a in equipment.Abilities)
                         {
-                            if (a.Id == ability.Id)
+                            if (a.Skill.Id == ability.SkillId)
                                 armorAbilityTotal += a.Level;
                         }
                     }
@@ -489,41 +496,65 @@ namespace MHArmory.ViewModels
 
                 if (remaingAbilityLevels > 0)
                 {
-                    if (availableSlot1 <= 0 && availableSlot2 <= 0 && availableSlot3 <= 0)
+                    if (availableSlots.All(x => x <= 0))
                         return new ArmorSetSearchResult { IsMatch = false };
 
                     foreach (IJewel j in matchingJewels)
                     {
-                        bool isMatch = false;
+                        // bold assumption, will be fucked if they decide to create jewels with multiple skills
+                        IAbility a = j.Abilities[0];
 
-                        foreach (IAbility a in j.Abilities)
+                        if (a.Skill.Id == ability.SkillId)
                         {
-                            if (a.Skill.Id == ability.SkillId)
-                            {
-                                remaingAbilityLevels -= a.Level;
-                                isMatch = true;
-                            }
-                        }
+                            int requiredJewelCount = remaingAbilityLevels / a.Level;
 
-                        if (isMatch)
-                            requiredJewelIndices.Add(j);
+                            if (ConsumeSlots(availableSlots, j.SlotSize, requiredJewelCount) == false)
+                                return new ArmorSetSearchResult { IsMatch = false };
+
+                            remaingAbilityLevels -= requiredJewelCount * a.Level;
+
+                            requiredJewels.Add(new ArmorSetJewelResult { Jewel = j, Count = requiredJewelCount });
+
+                            break;
+                        }
                     }
+
+                    if (remaingAbilityLevels > 0)
+                        return new ArmorSetSearchResult { IsMatch = false };
                 }
 
                 if (remaingAbilityLevels < 0)
-                {
                     isOptimal = false;
-                    break;
-                }
-                else if (remaingAbilityLevels == 0)
-                    break;
             }
 
             return new ArmorSetSearchResult
             {
                 IsMatch = true,
-                IsOptimal = isOptimal
+                IsOptimal = isOptimal,
+                Jewels = requiredJewels
             };
+        }
+
+        private bool ConsumeSlots(int[] availableSlots, int jewelSize, int jewelCount)
+        {
+            for (int i = jewelSize - 1; i < availableSlots.Length; i++)
+            {
+                if (availableSlots[i] <= 0)
+                    continue;
+
+                if (availableSlots[i] >= jewelCount)
+                {
+                    availableSlots[i] -= jewelCount;
+                    return true;
+                }
+                else
+                {
+                    jewelCount -= availableSlots[i];
+                    availableSlots[i] = 0;
+                }
+            }
+
+            return jewelCount <= 0;
         }
 
         private class OrderedEnumerable<T> : IOrderedEnumerable<T>
