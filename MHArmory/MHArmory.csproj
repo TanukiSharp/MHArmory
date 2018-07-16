@@ -58,7 +58,7 @@
     <Compile Include="Searching\IndicesTruthTable.cs" />
     <Compile Include="ValueConverters\SlotSizeToolTipValueConverter.cs" />
     <Compile Include="ValueConverters\SlotToImagePathValueConverter.cs" />
-    <Compile Include="ValueConverters\CollapsedVisibilityValueConverter.cs" />
+    <Compile Include="ValueConverters\VisibilityValueConverter.cs" />
     <Compile Include="GlobalData.cs" />
     <Compile Include="ValueConverters\EnumToImagePathValueConverter.cs" />
     <Compile Include="ValueConverters\InverseBooleanValueConverter.cs" />
