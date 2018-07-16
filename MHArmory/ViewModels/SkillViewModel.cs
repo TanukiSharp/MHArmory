@@ -51,19 +51,28 @@ namespace MHArmory.ViewModels
     public class SkillViewModel : ViewModelBase
     {
         private readonly ISkill skill;
+        private readonly IList<IJewel> jewels;
         private readonly RootViewModel root;
         private readonly SkillSelectorViewModel skillSelector;
 
         public string Name => skill.Name;
         public string Description => skill.Description;
 
+        public string JewelsText { get; private set; }
+
         public IList<AbilityViewModel> Abilities { get; }
 
-        public SkillViewModel(ISkill skill, RootViewModel root, SkillSelectorViewModel skillSelector)
+        public SkillViewModel(ISkill skill, IList<IJewel> jewels, RootViewModel root, SkillSelectorViewModel skillSelector)
         {
             this.skill = skill;
+            this.jewels = jewels;
             this.root = root;
             this.skillSelector = skillSelector;
+
+            if (jewels == null || jewels.Count == 0)
+                JewelsText = "(no jewel)";
+            else
+                JewelsText = $"({string.Join(", ", jewels.Select(x => x.Name))})";
 
             Abilities = skill.Abilities
                 .OrderBy(x => x.Level)
@@ -97,7 +106,8 @@ namespace MHArmory.ViewModels
             IsVisible =
                 skill.Name.IndexOf(searchText, StringComparison.OrdinalIgnoreCase) > -1 ||
                 skill.Description.IndexOf(searchText, StringComparison.OrdinalIgnoreCase) > -1 ||
-                skill.Abilities.Any(x => x.Description.IndexOf(searchText, StringComparison.OrdinalIgnoreCase) > -1);
+                skill.Abilities.Any(x => x.Description.IndexOf(searchText, StringComparison.OrdinalIgnoreCase) > -1) ||
+                jewels.Any(j => j.Name.IndexOf(searchText, StringComparison.OrdinalIgnoreCase) > -1);
         }
 
         internal void CheckChanged(int level, bool resetChecked)

@@ -125,7 +125,10 @@
     <DataTemplate x:Key="SkillView">
         <Border BorderBrush="Gray" BorderThickness="0 0 0 0">
             <StackPanel Orientation="Vertical" Focusable="False">
-                <TextBlock Text="{Binding Name, Mode=OneTime}" FontSize="12" FontWeight="Bold"/>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="{Binding Name, Mode=OneTime}" FontSize="12" FontWeight="Bold" VerticalAlignment="Center"/>
+                    <TextBlock Text="{Binding JewelsText, Mode=OneTime}" Margin="4 0 0 0" FontSize="11" Foreground="DarkGray" FontStyle="Italic" VerticalAlignment="Center"/>
+                </StackPanel>
                 <TextBlock Text="{Binding Description, Mode=OneTime}" Foreground="DarkGray" Padding="32 0 5 5"/>
 
                 <!--<ListBox ItemsSource="{Binding Abilities, Mode=OneTime}" ItemTemplate="{StaticResource AbilityView}" BorderThickness="0" ScrollViewer.CanContentScroll="False" ScrollViewer.IsDeferredScrollingEnabled="False" ScrollViewer.VerticalScrollBarVisibility="Disabled">

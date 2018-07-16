@@ -77,7 +77,7 @@ namespace MHArmory
 
             IList<SkillViewModel> allSkills = skills
                 .OrderBy(x => x.Name)
-                .Select(x => new SkillViewModel(x, rootViewModel, skillSelectorWindow.SkillSelector))
+                .Select(x => new SkillViewModel(x, jewels.Where(j => j.Abilities.Any(a => a.Skill.Id == x.Id)).ToList(), rootViewModel, skillSelectorWindow.SkillSelector))
                 .ToList();
 
             IList<AbilityViewModel> allAbilities = allSkills
