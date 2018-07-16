@@ -302,7 +302,13 @@ namespace MHArmory.ViewModels
                 }
             }
 
-            ParallelLoopResult parallelResult = Parallel.ForEach(equipmentsList, equips =>
+            ParallelOptions parallelOptions = new ParallelOptions
+            {
+                CancellationToken = cancellationToken,
+                //MaxDegreeOfParallelism = 1, // to ease debugging
+            };
+
+            ParallelLoopResult parallelResult = Parallel.ForEach(equipmentsList, parallelOptions, equips =>
             {
                 if (cancellationToken.IsCancellationRequested)
                     return;
