@@ -90,7 +90,7 @@ namespace MHArmory.MhwDbDataSource.DataStructures
         [JsonProperty("name")]
         public string Name { get; set; }
         [JsonProperty("type")]
-        public ArmorPieceType Type { get; set; }
+        public EquipmentType Type { get; set; }
         [JsonProperty("rarity")]
         public int Rarity { get; set; }
         [JsonProperty("defense")]
@@ -111,7 +111,7 @@ namespace MHArmory.MhwDbDataSource.DataStructures
     {
         public int Id { get; }
         public string Name { get; }
-        public ArmorPieceType Type { get; }
+        public EquipmentType Type { get; }
         public int Rarity { get; }
         public IArmorPieceDefense Defense { get; }
         public IArmorPieceResistances Resistances { get; }

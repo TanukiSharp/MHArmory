@@ -35,6 +35,7 @@ namespace MHArmory.MhwDbDataSource.DataStructures
 
     internal class CharmLevel : ICharmLevel
     {
+        public EquipmentType Type => EquipmentType.Charm;
         public string Name { get; }
         public int Level { get; }
         public int Rarity { get; }

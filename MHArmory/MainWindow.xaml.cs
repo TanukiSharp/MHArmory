@@ -80,42 +80,44 @@ namespace MHArmory
                 .Select(x => new SkillViewModel(x, jewels.Where(j => j.Abilities.Any(a => a.Skill.Id == x.Id)).ToList(), rootViewModel, skillSelectorWindow.SkillSelector))
                 .ToList();
 
+            skillSelectorWindow.SkillSelector.Skills = allSkills;
+
             IList<AbilityViewModel> allAbilities = allSkills
                 .SelectMany(x => x.Abilities)
                 .ToList();
 
             rootViewModel.SelectedAbilities = allAbilities;
 
-            GlobalData.Instance.SetSkills(allSkills);
-            GlobalData.Instance.SetAbilities(allAbilities);
-
+            GlobalData.Instance.SetSkills(skills);
             GlobalData.Instance.SetArmors(armors);
+            GlobalData.Instance.Charms = charms.SelectMany(x => x.Levels).ToList();
+            GlobalData.Instance.Jewels = jewels;
 
-            var skillsToArmorsMap = new Dictionary<int, IList<IArmorPiece>>();
-            var skillsToCharmsMap = new Dictionary<int, IList<ICharm>>();
-            var skillsToJewelsMap = new Dictionary<int, IList<IJewel>>();
+            //var skillsToArmorsMap = new Dictionary<int, IList<IArmorPiece>>();
+            //var skillsToCharmsMap = new Dictionary<int, IList<ICharm>>();
+            //var skillsToJewelsMap = new Dictionary<int, IList<IJewel>>();
 
-            foreach (ISkill skill in skills)
-            {
-                skillsToArmorsMap.Add(skill.Id, armors
-                    .Where(x => x.Abilities.Any(a => a.Skill.Id == skill.Id))
-                    .ToList()
-                );
+            //foreach (ISkill skill in skills)
+            //{
+            //    skillsToArmorsMap.Add(skill.Id, armors
+            //        .Where(x => x.Abilities.Any(a => a.Skill.Id == skill.Id))
+            //        .ToList()
+            //    );
 
-                skillsToCharmsMap.Add(skill.Id, charms
-                    .Where(x => x.Levels.Any(l => l.Abilities.Any(a => a.Skill.Id == skill.Id)))
-                    .ToList()
-                );
+            //    skillsToCharmsMap.Add(skill.Id, charms
+            //        .Where(x => x.Levels.Any(l => l.Abilities.Any(a => a.Skill.Id == skill.Id)))
+            //        .ToList()
+            //    );
 
-                skillsToJewelsMap.Add(skill.Id, jewels
-                    .Where(x => x.Abilities.Any(a => a.Skill.Id == skill.Id))
-                    .ToList()
-                );
-            }
+            //    skillsToJewelsMap.Add(skill.Id, jewels
+            //        .Where(x => x.Abilities.Any(a => a.Skill.Id == skill.Id))
+            //        .ToList()
+            //    );
+            //}
 
-            GlobalData.Instance.SetSkillsToArmorsMap(skillsToArmorsMap);
-            GlobalData.Instance.SetSkillsToCharmsMap(skillsToCharmsMap);
-            GlobalData.Instance.SetSkillsToJewelsMap(skillsToJewelsMap);
+            //GlobalData.Instance.SetSkillsToArmorsMap(skillsToArmorsMap);
+            //GlobalData.Instance.SetSkillsToCharmsMap(skillsToCharmsMap);
+            //GlobalData.Instance.SetSkillsToJewelsMap(skillsToJewelsMap);
 
             rootViewModel.FoundArmorSets = new ArmorSetViewModel[]
             {

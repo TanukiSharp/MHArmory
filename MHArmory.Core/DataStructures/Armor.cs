@@ -4,13 +4,15 @@ using System.Text;
 
 namespace MHArmory.Core.DataStructures
 {
-    public enum ArmorPieceType
+    public enum EquipmentType
     {
+        Weapon,
         Head,
         Chest,
         Gloves,
         Waist,
         Legs,
+        Charm
     }
 
     public interface IArmorPieceDefense
@@ -51,7 +53,6 @@ namespace MHArmory.Core.DataStructures
     public interface IArmorPiece : IEquipment
     {
         int Id { get; }
-        ArmorPieceType Type { get; }
         IArmorPieceDefense Defense { get; }
         IArmorPieceResistances Resistances { get; }
         IArmorPieceAttributes Attributes { get; }
@@ -60,6 +61,7 @@ namespace MHArmory.Core.DataStructures
 
     public interface IEquipment
     {
+        EquipmentType Type { get; }
         string Name { get; }
         int Rarity { get; }
         int[] Slots { get; }

@@ -9,7 +9,7 @@ namespace MHArmory.ViewModels
 {
     public class AbilityViewModel : ViewModelBase
     {
-        private readonly IAbility ability;
+        public readonly IAbility Ability;
         private readonly SkillViewModel parent;
 
         private bool isChecked;
@@ -23,15 +23,15 @@ namespace MHArmory.ViewModels
             }
         }
 
-        public int Id => ability.Id;
-        public int SkillId => ability.Skill.Id;
-        public string SkillName => ability.Skill.Name;
-        public int Level => ability.Level;
-        public string Description => ability.Description;
+        public int Id => Ability.Id;
+        public int SkillId => Ability.Skill.Id;
+        public string SkillName => Ability.Skill.Name;
+        public int Level => Ability.Level;
+        public string Description => Ability.Description;
 
         public AbilityViewModel(IAbility ability, SkillViewModel parent)
         {
-            this.ability = ability;
+            this.Ability = ability;
             this.parent = parent;
         }
 
@@ -44,7 +44,7 @@ namespace MHArmory.ViewModels
 
         public void FilterLevel(int minVisibleLevel)
         {
-            IsVisible = ability.Level >= minVisibleLevel;
+            IsVisible = Ability.Level >= minVisibleLevel;
         }
     }
 

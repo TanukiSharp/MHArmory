@@ -52,8 +52,8 @@ namespace MHArmory
         {
             await Dispatcher.Yield(DispatcherPriority.Render);
 
-            IList<SkillViewModel> skills = await GlobalData.Instance.GetSkills();
-            SkillSelector.Skills = skills;
+            //IList<SkillViewModel> skills = await GlobalData.Instance.GetSkills();
+            //SkillSelector.Skills = skills;
 
             IsDataLoading = false;
             IsDataLoaded = true;
