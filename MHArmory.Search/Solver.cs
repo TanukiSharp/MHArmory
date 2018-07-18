@@ -303,15 +303,18 @@ namespace MHArmory.Search
             long ll = data.AllLegs.Count;
             long ch = data.AllCharms.Count;
 
+            var nfi = new System.Globalization.NumberFormatInfo();
+            nfi.NumberGroupSeparator = "'";
+
             sb.AppendLine($"Heads count:  {hh}");
             sb.AppendLine($"Chests count: {cc}");
             sb.AppendLine($"Gloves count: {gg}");
             sb.AppendLine($"Waists count: {ww}");
             sb.AppendLine($"Legs count:   {ll}");
             sb.AppendLine($"Charms count:   {ch}");
-            sb.AppendLine($"Combination count: {hh * cc * gg * ww * ll * ch}");
-            sb.AppendLine($"Matching result: {test.Count}");
-            sb.AppendLine($"Took: {sw.ElapsedMilliseconds} ms");
+            sb.AppendLine($"Combination count: {(hh * cc * gg * ww * ll * ch).ToString("N0", nfi)}");
+            sb.AppendLine($"Matching result: {test.Count.ToString("N0", nfi)}");
+            sb.AppendLine($"Took: {sw.ElapsedMilliseconds.ToString("N0", nfi)} ms");
 
             DebugData?.Invoke(sb.ToString());
 
