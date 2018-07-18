@@ -58,13 +58,4 @@ namespace MHArmory.Core.DataStructures
         IArmorPieceAttributes Attributes { get; }
         IArmorPieceAssets Assets { get; }
     }
-
-    public interface IEquipment
-    {
-        EquipmentType Type { get; }
-        string Name { get; }
-        int Rarity { get; }
-        int[] Slots { get; }
-        IAbility[] Abilities { get; }
-    }
 }
