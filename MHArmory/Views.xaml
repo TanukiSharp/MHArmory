@@ -166,7 +166,7 @@
                     <ItemsControl.ItemTemplate>
                         <DataTemplate>
                             <StackPanel Orientation="Horizontal" Focusable="False">
-                                <CheckBox Focusable="False" HorizontalContentAlignment="Left" Content="{Binding}" ContentTemplate="{StaticResource AbilityView}" Margin="2" Padding="3 1 3 1" IsChecked="{Binding IsChecked, Mode=TwoWay}">
+                                <CheckBox Focusable="False" HorizontalContentAlignment="Left" Content="{Binding}" ContentTemplate="{StaticResource AbilityView}" Margin="0" Padding="5 3 5 3" IsChecked="{Binding IsChecked, Mode=TwoWay}" VerticalContentAlignment="Center">
                                     <!--<TextBlock>
                                         <Run Text="Level"/>
                                         <Run Text="{Binding Level, Mode=OneTime}"/>
