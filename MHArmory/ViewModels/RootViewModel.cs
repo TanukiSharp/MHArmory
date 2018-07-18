@@ -94,6 +94,7 @@ namespace MHArmory.ViewModels
                 .ToList();
 
             solverData = new SolverData(
+                null,
                 GlobalData.Instance.Heads,
                 GlobalData.Instance.Chests,
                 GlobalData.Instance.Gloves,
@@ -159,90 +160,8 @@ namespace MHArmory.ViewModels
         {
             MaximizedSearchCriteria.BaseDefense,
             MaximizedSearchCriteria.DragonResistance,
-            MaximizedSearchCriteria.SlotSize
+            MaximizedSearchCriteria.SlotSizeCube
         };
-
-
-
-
-        private class OrderedEnumerable<T> : IOrderedEnumerable<T>
-        {
-            private readonly IEnumerable<T> source;
-
-            public OrderedEnumerable(IEnumerable<T> source)
-            {
-                this.source = source;
-            }
-
-            public IOrderedEnumerable<T> CreateOrderedEnumerable<TKey>(Func<T, TKey> keySelector, IComparer<TKey> comparer, bool descending)
-            {
-                return this;
-            }
-
-            public IEnumerator<T> GetEnumerator()
-            {
-                return source.GetEnumerator();
-            }
-
-            IEnumerator IEnumerable.GetEnumerator()
-            {
-                return source.GetEnumerator();
-            }
-        }
-
-        // values bellow are max slot size (3) to the power of the slot index (0-based)
-        private static readonly int[] slotSizeSortWeight = new[] { 9, 3, 1 };
-
-        private IEnumerable<IArmorPiece> CreateArmorPieceSorter(IEnumerable<IArmorPiece> items, IEnumerable<MaximizedSearchCriteria> sortCriterias)
-        {
-            if (items.Any() == false)
-                return items;
-
-            //IOrderedEnumerable<IArmorPiece> result = items.OrderBy(x => 1); // wasting a bit of CPU cycles for productivity purpose :(
-            IOrderedEnumerable<IArmorPiece> result = new OrderedEnumerable<IArmorPiece>(items);
-
-            foreach (MaximizedSearchCriteria sortCriteria in sortCriterias)
-            {
-                switch (sortCriteria)
-                {
-                    case MaximizedSearchCriteria.BaseDefense:
-                        result = result.ThenByDescending(x => x.Defense.Base);
-                        break;
-                    case MaximizedSearchCriteria.MaxUnaugmentedDefense:
-                        result = result.ThenByDescending(x => x.Defense.Max);
-                        break;
-                    case MaximizedSearchCriteria.MaxAugmentedDefense:
-                        result = result.ThenByDescending(x => x.Defense.Augmented);
-                        break;
-                    case MaximizedSearchCriteria.Rarity:
-                        result = result.ThenBy(x => x.Rarity);
-                        break;
-                    case MaximizedSearchCriteria.SlotCount:
-                        result = result.ThenByDescending(x => x.Slots.Length);
-                        break;
-                    case MaximizedSearchCriteria.SlotSize:
-                        result = result.ThenByDescending(x => x.Slots.Select((v, i) => v * slotSizeSortWeight[i]).Sum());
-                        break;
-                    case MaximizedSearchCriteria.FireResistance:
-                        result = result.ThenByDescending(x => x.Resistances.Fire);
-                        break;
-                    case MaximizedSearchCriteria.WaterResistance:
-                        result = result.ThenByDescending(x => x.Resistances.Water);
-                        break;
-                    case MaximizedSearchCriteria.ThunderResistance:
-                        result = result.ThenByDescending(x => x.Resistances.Thunder);
-                        break;
-                    case MaximizedSearchCriteria.IceResistance:
-                        result = result.ThenByDescending(x => x.Resistances.Ice);
-                        break;
-                    case MaximizedSearchCriteria.DragonResistance:
-                        result = result.ThenByDescending(x => x.Resistances.Dragon);
-                        break;
-                }
-            }
-
-            return result;
-        }
 
         private string searchResult;
         public string SearchResult
