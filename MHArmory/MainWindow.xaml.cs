@@ -41,12 +41,31 @@ namespace MHArmory
         {
             await Dispatcher.Yield(DispatcherPriority.Render);
 
+            LoadConfiguration();
+
             skillSelectorWindow = new SkillSelectorWindow
             {
                 WindowStartupLocation = WindowStartupLocation.CenterOwner,
                 Owner = this
             };
 
+            await LoadData();
+
+            rootViewModel.IsDataLoading = false;
+            rootViewModel.IsDataLoaded = true;
+        }
+
+        private void LoadConfiguration()
+        {
+            Configuration configuration = Configuration.Load();
+
+            // Possibly process stuffs.
+
+            GlobalData.Instance.Configuration = configuration;
+        }
+
+        private async Task LoadData()
+        {
             var source = new MhwDbDataSource.DataSource(null);
 
             ISkill[] skills = await source.GetSkills();
@@ -87,6 +106,16 @@ namespace MHArmory
                 .ToList();
 
             rootViewModel.SelectedAbilities = allAbilities;
+
+            int[] configSelectedAbilities = GlobalData.Instance.Configuration.SelectedAbilities;
+            if (configSelectedAbilities != null)
+            {
+                foreach (AbilityViewModel vm in allAbilities)
+                {
+                    if (configSelectedAbilities.Contains(vm.Id))
+                        vm.IsChecked = true;
+                }
+            }
 
             GlobalData.Instance.SetSkills(skills);
             GlobalData.Instance.SetArmors(armors);

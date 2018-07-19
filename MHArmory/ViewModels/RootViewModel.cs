@@ -146,9 +146,14 @@ namespace MHArmory.ViewModels
             solver.DebugData -= Solver_DebugData;
         }
 
-        private void Solver_SearchingChanged(bool isSearching)
+        internal void SelectedAbilitiesChanged()
         {
-            IsSearching = isSearching;
+            GlobalData.Instance.Configuration.SelectedAbilities = SelectedAbilities
+                .Where(x => x.IsChecked)
+                .Select(x => x.Id)
+                .ToArray();
+
+            GlobalData.Instance.Configuration.Save();
         }
 
         private void Solver_DebugData(string debugData)

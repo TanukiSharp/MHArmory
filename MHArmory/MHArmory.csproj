@@ -55,6 +55,7 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="AnonymousCommand.cs" />
+    <Compile Include="Configuration.cs" />
     <Compile Include="Searching\IndicesTruthTable.cs" />
     <Compile Include="ValueConverters\SlotSizeToolTipValueConverter.cs" />
     <Compile Include="ValueConverters\SlotToImagePathValueConverter.cs" />
@@ -146,6 +147,11 @@
     <Resource Include="Icons\Ice.png" />
     <Resource Include="Icons\Thunder.png" />
     <Resource Include="Icons\Water.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json">
+      <Version>11.0.2</Version>
+    </PackageReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

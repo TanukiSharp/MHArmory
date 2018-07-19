@@ -125,6 +125,8 @@ namespace MHArmory.ViewModels
                 root.SearchArmorSets();
 
             skillSelector?.ComputeVisibility(this);
+
+            root.SelectedAbilitiesChanged();
         }
     }
 }
