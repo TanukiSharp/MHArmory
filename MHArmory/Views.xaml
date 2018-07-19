@@ -19,7 +19,7 @@
     </DataTemplate>
 
     <DataTemplate x:Key="SelectedAbilityView">
-        <TextBlock Name="root" ToolTipService.ToolTip="{Binding Description, Mode=OneTime}" ToolTipService.ShowDuration="9999" Focusable="False">
+        <TextBlock Name="root" ToolTipService.ToolTip="{Binding Description, Mode=OneTime}" Margin="0 1 0 1" ToolTipService.ShowDuration="9999" Focusable="False">
             <Run Text="{Binding SkillName, Mode=OneTime}" FontWeight="Bold"/>
             <Run Text=" level"/>
             <Run Text="{Binding Level, Mode=OneTime}"/>
@@ -250,7 +250,7 @@
                 </CheckBox>
                 <Button DockPanel.Dock="Bottom" Content="Search" Margin="2" Padding="2" IsEnabled="{Binding IsSearching, Mode=OneWay, Converter={StaticResource InverseBooleanValueConverter}}" Command="{Binding SearchArmorSetsCommand, Mode=OneTime}"/>
                 <ProgressBar DockPanel.Dock="Bottom" HorizontalAlignment="Stretch" Margin="2" Padding="2" IsIndeterminate="{Binding IsSearching}" Visibility="{Binding IsSearching, Converter={StaticResource HiddenVisibilityValueConverter}}"  Value="0" Height="16"/>
-                <ItemsControl ItemsSource="{Binding SelectedAbilities, Mode=OneWay}" ItemTemplate="{StaticResource SelectedAbilityView}"/>
+                <ItemsControl ItemsSource="{Binding SelectedAbilities, Mode=OneWay}" ItemTemplate="{StaticResource SelectedAbilityView}" Margin="2" Padding="2"/>
             </DockPanel>
             <GridSplitter Grid.Column="1" HorizontalAlignment="Stretch"/>
 
