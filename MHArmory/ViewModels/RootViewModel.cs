@@ -71,16 +71,6 @@ namespace MHArmory.ViewModels
             SearchArmorSetsCommand = new AnonymousCommand(SearchArmorSets);
         }
 
-        public void Initialize()
-        {
-            //IDictionary<int, IList<ICharm>> skillsToCharmsMap = await GlobalData.Instance.GetSkillsToCharmsMap();
-            //IDictionary<int, IList<IJewel>> skillsToJewelsMap = await GlobalData.Instance.GetSkillsToJewelsMap();
-
-
-
-            IList <IArmorPiece> allHeads = GlobalData.Instance.Heads;
-        }
-
         private void OpenSkillSelector(object parameter)
         {
             RoutedCommands.OpenSkillsSelector.Execute(null);
@@ -88,6 +78,62 @@ namespace MHArmory.ViewModels
 
         public async void SearchArmorSets()
         {
+            try
+            {
+                await SearchArmorSetsInternal();
+            }
+            catch (TaskCanceledException)
+            {
+            }
+        }
+
+        private CancellationTokenSource searchCancellationTokenSource;
+        private Task previousSearchTask;
+
+        private async Task SearchArmorSetsInternal()
+        {
+            if (searchCancellationTokenSource != null)
+            {
+                if (searchCancellationTokenSource.IsCancellationRequested)
+                    return;
+
+                searchCancellationTokenSource.Cancel();
+
+                if (previousSearchTask != null)
+                {
+                    try
+                    {
+                        await previousSearchTask;
+                    }
+                    catch
+                    {
+                    }
+                }
+            }
+
+            searchCancellationTokenSource = new CancellationTokenSource();
+            previousSearchTask = Task.Run(() => SearchArmorSetsInternal(searchCancellationTokenSource.Token));
+
+            IsSearching = true;
+
+            try
+            {
+                await previousSearchTask;
+            }
+            finally
+            {
+                IsSearching = false;
+
+                previousSearchTask = null;
+                searchCancellationTokenSource = null;
+            }
+        }
+
+        private async Task SearchArmorSetsInternal(CancellationToken cancellationToken)
+        {
+            if (SelectedAbilities == null)
+                return;
+
             var desiredAbilities = SelectedAbilities
                 .Where(x => x.IsChecked)
                 .Select(x => x.Ability)
@@ -110,9 +156,8 @@ namespace MHArmory.ViewModels
             solver = new Solver(solverData);
 
             solver.DebugData += Solver_DebugData;
-            solver.SearchingChanged += Solver_SearchingChanged;
 
-            IList<ArmorSetSearchResult> result = await solver.SearchArmorSets();
+            IList<ArmorSetSearchResult> result = await solver.SearchArmorSets(cancellationToken);
 
             if (result == null)
                 FoundArmorSets = null;
@@ -142,7 +187,6 @@ namespace MHArmory.ViewModels
 
             //solverData.
 
-            solver.SearchingChanged -= Solver_SearchingChanged;
             solver.DebugData -= Solver_DebugData;
         }
 

@@ -18,12 +18,6 @@ namespace MHArmory.Search
             this.data = data;
         }
 
-        private CancellationTokenSource previousSearchCancellationTokenSource;
-        private Task<IList<ArmorSetSearchResult>> previousSearchTask;
-
-        public delegate void SearchingChangedHandler(bool isSearching);
-
-        public event SearchingChangedHandler SearchingChanged;
         public event Action<string> DebugData;
 
         public Task<IList<ArmorSetSearchResult>> SearchArmorSets()
@@ -31,60 +25,18 @@ namespace MHArmory.Search
             return SearchArmorSets(CancellationToken.None);
         }
 
-        public async Task<IList<ArmorSetSearchResult>> SearchArmorSets(CancellationToken cancellationToken)
+        public Task<IList<ArmorSetSearchResult>> SearchArmorSets(CancellationToken cancellationToken)
         {
-            if (previousSearchCancellationTokenSource != null)
+            return Task.Run(() =>
             {
-                if (previousSearchCancellationTokenSource.IsCancellationRequested)
-                    return null;
-
-                previousSearchCancellationTokenSource.Cancel();
-
-                if (previousSearchTask != null)
-                {
-                    try
-                    {
-                        await previousSearchTask;
-                    }
-                    catch
-                    {
-                    }
-                }
-            }
-
-            //CancellationTokenSource.CreateLinkedTokenSource(
-
-            previousSearchCancellationTokenSource = new CancellationTokenSource();
-
-            CancellationTokenSource cancellationTokenSource = CancellationTokenSource.CreateLinkedTokenSource(
-                previousSearchCancellationTokenSource.Token,
-                cancellationToken
-            );
-
-            previousSearchTask = Task.Run(() =>
-            {
-                return SearchArmorSetsInternalInternal(
+                return SearchArmorSetsInternal(
                     data.DesiredAbilities,
-                    cancellationTokenSource.Token
+                    cancellationToken
                 );
             });
-
-            SearchingChanged?.Invoke(true);
-
-            try
-            {
-                return await previousSearchTask;
-            }
-            finally
-            {
-                SearchingChanged?.Invoke(false);
-
-                previousSearchTask = null;
-                previousSearchCancellationTokenSource = null;
-            }
         }
 
-        private IList<ArmorSetSearchResult> SearchArmorSetsInternalInternal(
+        private async Task<IList<ArmorSetSearchResult>> SearchArmorSetsInternal(
             IEnumerable<IAbility> desiredAbilities,
             CancellationToken cancellationToken
         )
@@ -205,30 +157,62 @@ namespace MHArmory.Search
                 }
             }
 
+            var sb = new StringBuilder();
+
+            long hh = data.AllHeads.Count;
+            long cc = data.AllChests.Count;
+            long gg = data.AllGloves.Count;
+            long ww = data.AllWaists.Count;
+            long ll = data.AllLegs.Count;
+            long ch = data.AllCharms.Count;
+
+            var nfi = new System.Globalization.NumberFormatInfo();
+            nfi.NumberGroupSeparator = "'";
+
+            sb.AppendLine($"Heads count:  {hh}");
+            sb.AppendLine($"Chests count: {cc}");
+            sb.AppendLine($"Gloves count: {gg}");
+            sb.AppendLine($"Waists count: {ww}");
+            sb.AppendLine($"Legs count:   {ll}");
+            sb.AppendLine($"Charms count:   {ch}");
+            sb.AppendLine($"Combination count: {equipmentsList.Count.ToString("N0", nfi)}");
+            sb.AppendLine($"Took: {sw.ElapsedMilliseconds.ToString("N0", nfi)} ms");
+
+            DebugData?.Invoke(sb.ToString());
+
+            await Task.Yield();
+
             ParallelOptions parallelOptions = new ParallelOptions
             {
                 CancellationToken = cancellationToken,
                 //MaxDegreeOfParallelism = 1, // to ease debugging
             };
 
-            ParallelLoopResult parallelResult = Parallel.ForEach(equipmentsList, parallelOptions, equips =>
+            try
             {
-                if (cancellationToken.IsCancellationRequested)
-                    return;
-
-                ArmorSetSearchResult searchResult = IsArmorSetMatching(weaponSlots, equips, data.AllJewels, desiredAbilities);
-
-                searchResult.ArmorPieces = equips.Take(5).Cast<IArmorPiece>().ToList();
-                searchResult.Charm = (ICharmLevel)equips[5];
-
-                if (searchResult.IsMatch)
+                ParallelLoopResult parallelResult = Parallel.ForEach(equipmentsList, parallelOptions, equips =>
                 {
-                    lock (test)
+                    if (cancellationToken.IsCancellationRequested)
+                        return;
+
+                    ArmorSetSearchResult searchResult = IsArmorSetMatching(weaponSlots, equips, data.AllJewels, desiredAbilities);
+
+                    searchResult.ArmorPieces = equips.Take(5).Cast<IArmorPiece>().ToList();
+                    searchResult.Charm = (ICharmLevel)equips[5];
+
+                    if (searchResult.IsMatch)
                     {
-                        test.Add(searchResult);
+                        lock (test)
+                        {
+                            test.Add(searchResult);
+                        }
                     }
-                }
-            });
+                });
+            }
+            catch (OperationCanceledException)
+            {
+                return null;
+            }
 
             //var indicesTruthTable = new IndicesTruthTable(6);
             //int[] output = new int[indicesTruthTable.IndicesCount];
@@ -294,25 +278,6 @@ namespace MHArmory.Search
 
             sw.Stop();
 
-            var sb = new StringBuilder();
-
-            long hh = data.AllHeads.Count;
-            long cc = data.AllChests.Count;
-            long gg = data.AllGloves.Count;
-            long ww = data.AllWaists.Count;
-            long ll = data.AllLegs.Count;
-            long ch = data.AllCharms.Count;
-
-            var nfi = new System.Globalization.NumberFormatInfo();
-            nfi.NumberGroupSeparator = "'";
-
-            sb.AppendLine($"Heads count:  {hh}");
-            sb.AppendLine($"Chests count: {cc}");
-            sb.AppendLine($"Gloves count: {gg}");
-            sb.AppendLine($"Waists count: {ww}");
-            sb.AppendLine($"Legs count:   {ll}");
-            sb.AppendLine($"Charms count:   {ch}");
-            sb.AppendLine($"Combination count: {(hh * cc * gg * ww * ll * ch).ToString("N0", nfi)}");
             sb.AppendLine($"Matching result: {test.Count.ToString("N0", nfi)}");
             sb.AppendLine($"Took: {sw.ElapsedMilliseconds.ToString("N0", nfi)} ms");
 
