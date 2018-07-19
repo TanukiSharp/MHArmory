@@ -122,40 +122,11 @@ namespace MHArmory
             GlobalData.Instance.Charms = charms.SelectMany(x => x.Levels).ToList();
             GlobalData.Instance.Jewels = jewels;
 
-            //var skillsToArmorsMap = new Dictionary<int, IList<IArmorPiece>>();
-            //var skillsToCharmsMap = new Dictionary<int, IList<ICharm>>();
-            //var skillsToJewelsMap = new Dictionary<int, IList<IJewel>>();
-
-            //foreach (ISkill skill in skills)
-            //{
-            //    skillsToArmorsMap.Add(skill.Id, armors
-            //        .Where(x => x.Abilities.Any(a => a.Skill.Id == skill.Id))
-            //        .ToList()
-            //    );
-
-            //    skillsToCharmsMap.Add(skill.Id, charms
-            //        .Where(x => x.Levels.Any(l => l.Abilities.Any(a => a.Skill.Id == skill.Id)))
-            //        .ToList()
-            //    );
-
-            //    skillsToJewelsMap.Add(skill.Id, jewels
-            //        .Where(x => x.Abilities.Any(a => a.Skill.Id == skill.Id))
-            //        .ToList()
-            //    );
-            //}
-
-            //GlobalData.Instance.SetSkillsToArmorsMap(skillsToArmorsMap);
-            //GlobalData.Instance.SetSkillsToCharmsMap(skillsToCharmsMap);
-            //GlobalData.Instance.SetSkillsToJewelsMap(skillsToJewelsMap);
-
             rootViewModel.FoundArmorSets = new ArmorSetViewModel[]
             {
                 new ArmorSetViewModel { ArmorPieces = armors.Skip(armors.Length - 10).Take(5).ToList(), Charm = charms[0].Levels[0] },
                 new ArmorSetViewModel { ArmorPieces = armors.Skip(armors.Length - 5).ToList(), Charm = charms[1].Levels[0] }
             };
-
-            rootViewModel.IsDataLoading = false;
-            rootViewModel.IsDataLoaded = true;
         }
 
         private void OpenSkillSelector(object parameter)
