@@ -51,6 +51,8 @@ namespace MHArmory.ViewModels
             set { SetValue(ref foundArmorSets, value); }
         }
 
+        public InParametersViewModel InParameters { get; }
+
         private bool isSearching;
         public bool IsSearching
         {
@@ -69,6 +71,8 @@ namespace MHArmory.ViewModels
         {
             OpenSkillSelectorCommand = new AnonymousCommand(OpenSkillSelector);
             SearchArmorSetsCommand = new AnonymousCommand(SearchArmorSets);
+
+            InParameters = new InParametersViewModel();
         }
 
         private void OpenSkillSelector(object parameter)
@@ -140,6 +144,7 @@ namespace MHArmory.ViewModels
                 .ToList();
 
             solverData = new SolverData(
+                InParameters.Slots,
                 null,
                 GlobalData.Instance.Heads,
                 GlobalData.Instance.Chests,

@@ -19,6 +19,7 @@ namespace MHArmory.Search
 
     public class SolverData
     {
+        public int[] WeaponSlots { get; private set; }
         public IList<SolverDataEquipmentModel> AllHeads { get; private set; }
         public IList<SolverDataEquipmentModel> AllChests { get; private set; }
         public IList<SolverDataEquipmentModel> AllGloves { get; private set; }
@@ -46,6 +47,7 @@ namespace MHArmory.Search
         private IList<IJewel> allJewels;
 
         public SolverData(
+            int[] weaponSlots,
             IList<MaximizedSearchCriteria> searchCriterias,
             IList<IArmorPiece> heads,
             IList<IArmorPiece> chests,
@@ -70,6 +72,7 @@ namespace MHArmory.Search
 
             inputSearchCriterias = searchCriterias;
 
+            WeaponSlots = weaponSlots.ToArray();
             DesiredAbilities = desiredAbilities;
 
             ProcessInputData();

@@ -108,7 +108,6 @@ namespace MHArmory.Search
             //    //    jewels.AddRange(matchingJewels);
             //}
 
-            int[] weaponSlots = new int[] { 3 };
             IEquipment[] equipments = new IEquipment[6];
 
             var equipmentsList = new List<IEquipment[]>();
@@ -195,7 +194,7 @@ namespace MHArmory.Search
                     if (cancellationToken.IsCancellationRequested)
                         return;
 
-                    ArmorSetSearchResult searchResult = IsArmorSetMatching(weaponSlots, equips, data.AllJewels, desiredAbilities);
+                    ArmorSetSearchResult searchResult = IsArmorSetMatching(data.WeaponSlots, equips, data.AllJewels, desiredAbilities);
 
                     searchResult.ArmorPieces = equips.Take(5).Cast<IArmorPiece>().ToList();
                     searchResult.Charm = (ICharmLevel)equips[5];
@@ -311,7 +310,10 @@ namespace MHArmory.Search
             if (weaponSlots != null)
             {
                 foreach (int slotSize in weaponSlots)
-                    availableSlots[slotSize - 1]++;
+                {
+                    if (slotSize > 0)
+                        availableSlots[slotSize - 1]++;
+                }
             }
 
             foreach (IEquipment equipment in equipments)

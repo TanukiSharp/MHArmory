@@ -68,6 +68,7 @@
       <DependentUpon>SkillSelectorWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="ViewModels\ArmorSetViewModel.cs" />
+    <Compile Include="ViewModels\InParametersViewModel.cs" />
     <Compile Include="ViewModels\RootViewModel.cs" />
     <Compile Include="ViewModels\SkillSelectorViewModel.cs" />
     <Compile Include="ViewModels\SkillViewModel.cs" />

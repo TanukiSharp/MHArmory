@@ -10,6 +10,35 @@
     <cvt:SlotToImagePathValueConverter x:Key="SlotToImagePathValueConverter"/>
     <cvt:SlotSizeToolTipValueConverter x:Key="SlotSizeToolTipValueConverter"/>
 
+    <Style x:Key="ComboBoxItemSlotStyle" TargetType="FrameworkElement">
+        <Setter Property="Width" Value="16"/>
+        <Setter Property="Height" Value="16"/>
+    </Style>
+
+    <DataTemplate x:Key="InParametersView">
+        <StackPanel Orientation="Horizontal">
+            <TextBlock Text="Weapon slots:" VerticalAlignment="Center" Margin="2"/>
+            <ComboBox SelectedIndex="{Binding Slots[0]}" Margin="2">
+                <TextBlock Text="-" Style="{StaticResource ComboBoxItemSlotStyle}"/>
+                <Image Source="Icons/Jewel1.png" Style="{StaticResource ComboBoxItemSlotStyle}"/>
+                <Image Source="Icons/Jewel2.png" Style="{StaticResource ComboBoxItemSlotStyle}"/>
+                <Image Source="Icons/Jewel3.png" Style="{StaticResource ComboBoxItemSlotStyle}"/>
+            </ComboBox>
+            <ComboBox SelectedIndex="{Binding Slots[1]}" Margin="2">
+                <TextBlock Text="-" Style="{StaticResource ComboBoxItemSlotStyle}"/>
+                <Image Source="Icons/Jewel1.png" Style="{StaticResource ComboBoxItemSlotStyle}"/>
+                <Image Source="Icons/Jewel2.png" Style="{StaticResource ComboBoxItemSlotStyle}"/>
+                <Image Source="Icons/Jewel3.png" Style="{StaticResource ComboBoxItemSlotStyle}"/>
+            </ComboBox>
+            <ComboBox SelectedIndex="{Binding Slots[2]}" Margin="2">
+                <TextBlock Text="-" Style="{StaticResource ComboBoxItemSlotStyle}"/>
+                <Image Source="Icons/Jewel1.png" Style="{StaticResource ComboBoxItemSlotStyle}"/>
+                <Image Source="Icons/Jewel2.png" Style="{StaticResource ComboBoxItemSlotStyle}"/>
+                <Image Source="Icons/Jewel3.png" Style="{StaticResource ComboBoxItemSlotStyle}"/>
+            </ComboBox>
+        </StackPanel>
+    </DataTemplate>
+
     <DataTemplate x:Key="StandaloneAbilityView">
         <TextBlock ToolTipService.ToolTip="{Binding Description, Mode=OneTime}" ToolTipService.ShowDuration="9999" Focusable="False">
             <Run Text="{Binding Skill.Name, Mode=OneTime}" FontWeight="Bold"/>
