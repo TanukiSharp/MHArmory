@@ -17,6 +17,25 @@ namespace MHArmory.Search
         }
     }
 
+    public class SolverDataJewelModel : IHasAbilities
+    {
+        public IJewel Jewel { get; }
+        public int Available { get; set; }
+
+        IAbility[] IHasAbilities.Abilities => Jewel.Abilities;
+
+        public SolverDataJewelModel(IJewel jewel)
+            : this(jewel, 999)
+        {
+        }
+
+        public SolverDataJewelModel(IJewel jewel, int available)
+        {
+            Jewel = jewel;
+            Available = available;
+        }
+    }
+
     public class SolverData
     {
         public int[] WeaponSlots { get; private set; }
@@ -26,7 +45,7 @@ namespace MHArmory.Search
         public IList<SolverDataEquipmentModel> AllWaists { get; private set; }
         public IList<SolverDataEquipmentModel> AllLegs { get; private set; }
         public IList<SolverDataEquipmentModel> AllCharms { get; private set; }
-        public IList<IJewel> AllJewels { get; private set; }
+        public IList<SolverDataJewelModel> AllJewels { get; private set; }
         public IList<IAbility> DesiredAbilities { get; }
 
         private readonly IList<MaximizedSearchCriteria> inputSearchCriterias;
@@ -36,7 +55,7 @@ namespace MHArmory.Search
         private readonly IList<IArmorPiece> inputWaists;
         private readonly IList<IArmorPiece> inputLegs;
         private readonly IList<ICharmLevel> inputCharms;
-        private readonly IList<IJewel> inputJewels;
+        private readonly IList<SolverDataJewelModel> inputJewels;
 
         private IList<SolverDataEquipmentModel> allHeads;
         private IList<SolverDataEquipmentModel> allChests;
@@ -44,7 +63,7 @@ namespace MHArmory.Search
         private IList<SolverDataEquipmentModel> allWaists;
         private IList<SolverDataEquipmentModel> allLegs;
         private IList<SolverDataEquipmentModel> allCharms;
-        private IList<IJewel> allJewels;
+        private IList<SolverDataJewelModel> allJewels;
 
         public SolverData(
             int[] weaponSlots,
@@ -55,7 +74,7 @@ namespace MHArmory.Search
             IList<IArmorPiece> waists,
             IList<IArmorPiece> legs,
             IList<ICharmLevel> charms,
-            IList<IJewel> jewels,
+            IList<SolverDataJewelModel> jewels,
             IList<IAbility> desiredAbilities
         )
         {

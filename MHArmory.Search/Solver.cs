@@ -287,7 +287,7 @@ namespace MHArmory.Search
 
         private ArmorSetSearchResult IsArmorSetMatching(
             int[] weaponSlots, IEquipment[] equipments,
-            IList<IJewel> matchingJewels,
+            IList<SolverDataJewelModel> matchingJewels,
             IEnumerable<IAbility> desiredAbilities
         )
         {
@@ -348,21 +348,24 @@ namespace MHArmory.Search
                     if (availableSlots.All(x => x <= 0))
                         return new ArmorSetSearchResult { IsMatch = false };
 
-                    foreach (IJewel j in matchingJewels)
+                    foreach (SolverDataJewelModel j in matchingJewels)
                     {
                         // bold assumption, will be fucked if they decide to create jewels with multiple skills
-                        IAbility a = j.Abilities[0];
+                        IAbility a = j.Jewel.Abilities[0];
 
                         if (a.Skill.Id == ability.Skill.Id)
                         {
                             int requiredJewelCount = remaingAbilityLevels / a.Level;
 
-                            if (ConsumeSlots(availableSlots, j.SlotSize, requiredJewelCount) == false)
+                            if (j.Available < requiredJewelCount)
+                                return new ArmorSetSearchResult { IsMatch = false };
+
+                            if (ConsumeSlots(availableSlots, j.Jewel.SlotSize, requiredJewelCount) == false)
                                 return new ArmorSetSearchResult { IsMatch = false };
 
                             remaingAbilityLevels -= requiredJewelCount * a.Level;
 
-                            requiredJewels.Add(new ArmorSetJewelResult { Jewel = j, Count = requiredJewelCount });
+                            requiredJewels.Add(new ArmorSetJewelResult { Jewel = j.Jewel, Count = requiredJewelCount });
 
                             break;
                         }

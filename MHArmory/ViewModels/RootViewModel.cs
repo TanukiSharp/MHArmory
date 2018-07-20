@@ -152,7 +152,7 @@ namespace MHArmory.ViewModels
                 GlobalData.Instance.Waists,
                 GlobalData.Instance.Legs,
                 GlobalData.Instance.Charms,
-                GlobalData.Instance.Jewels,
+                GlobalData.Instance.Jewels.Select(x => new SolverDataJewelModel(x)).ToList(),
                 desiredAbilities
             );
 
