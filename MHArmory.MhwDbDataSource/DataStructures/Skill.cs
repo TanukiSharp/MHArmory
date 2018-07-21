@@ -18,32 +18,6 @@ namespace MHArmory.MhwDbDataSource.DataStructures
         public int SkillId { get; set; }
     }
 
-    internal class Ability : IAbility
-    {
-        public int Id { get; }
-        public ISkill Skill { get; }
-        public int Level { get; }
-        public string Description { get; }
-
-        internal Ability(int id, ISkill skill, int level, string description)
-        {
-            Id = id;
-            Skill = skill;
-            Level = level;
-            Description = description;
-        }
-
-        public override int GetHashCode()
-        {
-            return Id;
-        }
-
-        public override string ToString()
-        {
-            return $"{Skill.Name} level {Level} ({Description})";
-        }
-    }
-
     internal class SkillPrimitive
     {
         [JsonProperty("id")]

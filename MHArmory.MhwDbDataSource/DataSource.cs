@@ -138,7 +138,7 @@ namespace MHArmory.MhwDbDataSource
             var allArmors = new IArmorPiece[result.Count];
 
             for (int i = 0; i < allArmors.Length; i++)
-                allArmors[i] = new ArmorPiece(result[i], abilities);
+                allArmors[i] = new DataStructures.ArmorPiece(result[i], abilities);
 
             armors = allArmors;
         }
@@ -156,7 +156,7 @@ namespace MHArmory.MhwDbDataSource
 
             foreach (SkillPrimitive skillPrimitive in result)
             {
-                var skill = new Skill(skillPrimitive.Id, skillPrimitive.Name, skillPrimitive.Description);
+                var skill = new DataStructures.Skill(skillPrimitive.Id, skillPrimitive.Name, skillPrimitive.Description);
                 var localAbilities = new IAbility[skillPrimitive.Abilities.Count];
                 int localAbilityCount = 0;
 
@@ -190,10 +190,10 @@ namespace MHArmory.MhwDbDataSource
             {
                 CharmPrimitive currentCharmPrimitive = result[i];
 
-                var charmLevels = new CharmLevel[currentCharmPrimitive.Levels.Length];
+                var charmLevels = new DataStructures.CharmLevel[currentCharmPrimitive.Levels.Length];
 
                 for (int j = 0; j < charmLevels.Length; j++)
-                    charmLevels[j] = new CharmLevel(currentCharmPrimitive.Levels[j], abilities);
+                    charmLevels[j] = new DataStructures.CharmLevel(currentCharmPrimitive.Levels[j], abilities);
 
                 localCharms[i] = new Charm(currentCharmPrimitive.Name, charmLevels);
             }
@@ -208,10 +208,10 @@ namespace MHArmory.MhwDbDataSource
             if (result == null)
                 return;
 
-            var localJewels = new Jewel[result.Count];
+            var localJewels = new DataStructures.Jewel[result.Count];
 
             for (int i = 0; i < localJewels.Length; i++)
-                localJewels[i] = new Jewel(result[i], abilities);
+                localJewels[i] = new DataStructures.Jewel(result[i], abilities);
 
             jewels = localJewels;
         }

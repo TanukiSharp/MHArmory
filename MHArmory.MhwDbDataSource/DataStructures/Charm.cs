@@ -57,21 +57,4 @@ namespace MHArmory.MhwDbDataSource.DataStructures
             return $"{Name}";
         }
     }
-
-    internal class Charm : ICharm
-    {
-        public string Name { get; }
-        public ICharmLevel[] Levels { get; }
-
-        internal Charm(string name, ICharmLevel[] charmLevels)
-        {
-            Name = name;
-            Levels = charmLevels;
-        }
-
-        public override string ToString()
-        {
-            return $"{Name} ({Levels.Length})";
-        }
-    }
 }
