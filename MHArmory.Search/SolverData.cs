@@ -15,6 +15,11 @@ namespace MHArmory.Search
         {
             Equipment = equipment;
         }
+
+        public override string ToString()
+        {
+            return $"[{(IsSelected ? "O" : "X")}] {Equipment.Name}";
+        }
     }
 
     public class SolverDataJewelModel : IHasAbilities
@@ -194,6 +199,31 @@ namespace MHArmory.Search
         public SolverData Done()
         {
             UpdateReferences();
+
+            if (AllHeads.Where(x => x != null).Any(x => x.Equipment.Name == "Strategist Spectacles α"))
+            {
+            }
+
+            if (AllChests.Where(x => x != null).Any(x => x.Equipment.Name == "Kulve Taroth's Ire α"))
+            {
+            }
+
+            if (AllGloves.Where(x => x != null).Any(x => x.Equipment.Name == "Vaal Hazak Braces β"))
+            {
+            }
+
+            if (AllWaists.Where(x => x != null).Any(x => x.Equipment.Name == "Odogaron Coil β"))
+            {
+            }
+
+            if (AllLegs.Where(x => x != null).Any(x => x.Equipment.Name == "Dante's Leather Boots α"))
+            {
+            }
+
+            if (AllCharms.Where(x => x != null).Any(x => x.Equipment.Name == "Master's Charm III"))
+            {
+            }
+
             return this;
         }
 
