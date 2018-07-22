@@ -16,7 +16,7 @@ namespace MHArmory
             try
             {
                 string filename = Path.Combine(AppContext.BaseDirectory, "config.json");
-                string content = JsonConvert.SerializeObject(this);
+                string content = JsonConvert.SerializeObject(this, Formatting.Indented);
                 File.WriteAllText(filename, content);
             }
             catch (Exception ex)
