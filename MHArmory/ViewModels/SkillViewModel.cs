@@ -121,6 +121,8 @@ namespace MHArmory.ViewModels
                 }
             }
 
+            root.CreateSolverData();
+
             if (root.IsAutoSearch)
                 root.SearchArmorSets();
 

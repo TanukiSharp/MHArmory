@@ -45,10 +45,14 @@ namespace MHArmory.ViewModels
 
     public class InParametersViewModel : ViewModelBase
     {
+        private readonly RootViewModel root;
+
         public ValueViewModel<int>[] Slots { get; }
 
-        public InParametersViewModel()
+        public InParametersViewModel(RootViewModel root)
         {
+            this.root = root;
+
             Slots = new ValueViewModel<int>[3];
             for (int i = 0; i < Slots.Length; i++)
                 Slots[i] = new ValueViewModel<int>(WeaponSlotsChanged);
@@ -80,6 +84,8 @@ namespace MHArmory.ViewModels
         {
             if (isLoadingConfiguration)
                 return;
+
+            root.CreateSolverData();
 
             GlobalData.Instance.Configuration.InParameters.WeaponSlots = Slots.Select(x => x.Value).ToArray();
             GlobalData.Instance.Configuration.Save();

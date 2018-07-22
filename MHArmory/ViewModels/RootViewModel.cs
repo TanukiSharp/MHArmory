@@ -76,14 +76,20 @@ namespace MHArmory.ViewModels
         public RootViewModel()
         {
             OpenSkillSelectorCommand = new AnonymousCommand(OpenSkillSelector);
-            SearchArmorSetsCommand = new AnonymousCommand(SearchArmorSets);
+            SearchArmorSetsCommand = new AnonymousCommand(CreateSolverDataAndSearchArmorSets);
 
-            InParameters = new InParametersViewModel();
+            InParameters = new InParametersViewModel(this);
         }
 
         private void OpenSkillSelector(object parameter)
         {
             RoutedCommands.OpenSkillsSelector.Execute(null);
+        }
+
+        public void CreateSolverDataAndSearchArmorSets()
+        {
+            CreateSolverData();
+            SearchArmorSets();
         }
 
         public async void SearchArmorSets()
@@ -139,9 +145,11 @@ namespace MHArmory.ViewModels
             }
         }
 
-        private async Task SearchArmorSetsInternal(CancellationToken cancellationToken)
+        public void CreateSolverData()
         {
-            if (SelectedAbilities == null)
+            solverData = null;
+
+            if (IsDataLoaded == false || SelectedAbilities == null)
                 return;
 
             var desiredAbilities = SelectedAbilities
@@ -163,7 +171,10 @@ namespace MHArmory.ViewModels
             );
 
             solverData.Done();
+        }
 
+        private async Task SearchArmorSetsInternal(CancellationToken cancellationToken)
+        {
             solver = new Solver(solverData);
 
             solver.DebugData += Solver_DebugData;
@@ -181,22 +192,6 @@ namespace MHArmory.ViewModels
                     Jewels = x.Jewels.Select(j => new ArmorSetJewelViewModel { Jewel = j.Jewel, Count = j.Count }).ToList()
                 });
             }
-
-            //if (IsSearching)
-            //    return;
-
-            //IsSearching = true;
-
-            //try
-            //{
-            //await SearchArmorSetsInternal();
-            //}
-            //finally
-            //{
-            //    IsSearching = false;
-            //}
-
-            //solverData.
 
             solver.DebugData -= Solver_DebugData;
         }
