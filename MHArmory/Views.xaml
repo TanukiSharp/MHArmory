@@ -220,7 +220,7 @@
                     <RadioButton Content="Selected" IsChecked="{Binding VisibilityModeSelected, Mode=OneWayToSource}" ToolTip="See only selected skills" Margin="2" VerticalAlignment="Center"/>
                     <RadioButton Content="Unselected" IsChecked="{Binding VisibilityModeUnselected, Mode=OneWayToSource}" ToolTip="See only unselected skills" Margin="2" VerticalAlignment="Center"/>
                 </StackPanel>
-                <TextBox Margin="2" Padding="3" Text="{Binding SearchText, Mode=OneWayToSource, UpdateSourceTrigger=PropertyChanged}"/>
+                <TextBox Margin="2" Padding="3" FocusManager.FocusedElement="{Binding RelativeSource={RelativeSource Self}}" Text="{Binding SearchText, Mode=OneWayToSource, UpdateSourceTrigger=PropertyChanged}"/>
             </DockPanel>
            
             <!--<ListBox Grid.Row="1" ItemsSource="{Binding Abilities, Mode=OneWay}" ItemTemplate="{StaticResource AbilityView}" VirtualizingPanel.IsVirtualizing="True" VirtualizingPanel.ScrollUnit="Pixel">
