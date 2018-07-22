@@ -27,6 +27,9 @@ namespace MHArmory
         {
             InitializeComponent();
 
+            LoadConfiguration();
+            rootViewModel.NotifyConfigurationLoaded();
+
             CommandBindings.Add(RoutedCommands.CreateCommandBinding(RoutedCommands.OpenSkillsSelector, OpenSkillSelector));
 
             AssemblyName asmName = Assembly.GetEntryAssembly().GetName();
@@ -40,8 +43,6 @@ namespace MHArmory
         private async void MainWindow_Loaded(object sender, RoutedEventArgs e)
         {
             await Dispatcher.Yield(DispatcherPriority.Render);
-
-            LoadConfiguration();
 
             skillSelectorWindow = new SkillSelectorWindow
             {

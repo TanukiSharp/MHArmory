@@ -4,10 +4,19 @@ using Newtonsoft.Json;
 
 namespace MHArmory
 {
+    public class InParametersConfiguration
+    {
+        [JsonProperty("weaponSlots")]
+        public int[] WeaponSlots { get; set; }
+    }
+
     public class Configuration
     {
         [JsonProperty("selectedAbilities")]
         public int[] SelectedAbilities { get; set; }
+
+        [JsonProperty("inParameters")]
+        public InParametersConfiguration InParameters { get; } = new InParametersConfiguration();
 
         #region Read/Write
 

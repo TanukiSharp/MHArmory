@@ -15,27 +15,21 @@
         <Setter Property="Height" Value="16"/>
     </Style>
 
+    <DataTemplate x:Key="WeaponSlotView">
+        <ComboBox SelectedIndex="{Binding Value}" Margin="2">
+            <TextBlock Text="-" Style="{StaticResource ComboBoxItemSlotStyle}"/>
+            <Image Source="Icons/Jewel1.png" Style="{StaticResource ComboBoxItemSlotStyle}"/>
+            <Image Source="Icons/Jewel2.png" Style="{StaticResource ComboBoxItemSlotStyle}"/>
+            <Image Source="Icons/Jewel3.png" Style="{StaticResource ComboBoxItemSlotStyle}"/>
+        </ComboBox>
+    </DataTemplate>
+    
     <DataTemplate x:Key="InParametersView">
         <StackPanel Orientation="Horizontal">
             <TextBlock Text="Weapon slots:" VerticalAlignment="Center" Margin="2"/>
-            <ComboBox SelectedIndex="{Binding Slots[0]}" Margin="2">
-                <TextBlock Text="-" Style="{StaticResource ComboBoxItemSlotStyle}"/>
-                <Image Source="Icons/Jewel1.png" Style="{StaticResource ComboBoxItemSlotStyle}"/>
-                <Image Source="Icons/Jewel2.png" Style="{StaticResource ComboBoxItemSlotStyle}"/>
-                <Image Source="Icons/Jewel3.png" Style="{StaticResource ComboBoxItemSlotStyle}"/>
-            </ComboBox>
-            <ComboBox SelectedIndex="{Binding Slots[1]}" Margin="2">
-                <TextBlock Text="-" Style="{StaticResource ComboBoxItemSlotStyle}"/>
-                <Image Source="Icons/Jewel1.png" Style="{StaticResource ComboBoxItemSlotStyle}"/>
-                <Image Source="Icons/Jewel2.png" Style="{StaticResource ComboBoxItemSlotStyle}"/>
-                <Image Source="Icons/Jewel3.png" Style="{StaticResource ComboBoxItemSlotStyle}"/>
-            </ComboBox>
-            <ComboBox SelectedIndex="{Binding Slots[2]}" Margin="2">
-                <TextBlock Text="-" Style="{StaticResource ComboBoxItemSlotStyle}"/>
-                <Image Source="Icons/Jewel1.png" Style="{StaticResource ComboBoxItemSlotStyle}"/>
-                <Image Source="Icons/Jewel2.png" Style="{StaticResource ComboBoxItemSlotStyle}"/>
-                <Image Source="Icons/Jewel3.png" Style="{StaticResource ComboBoxItemSlotStyle}"/>
-            </ComboBox>
+            <ContentControl Content="{Binding Slots[0], Mode=OneTime}" ContentTemplate="{StaticResource WeaponSlotView}" Focusable="False"/>
+            <ContentControl Content="{Binding Slots[1], Mode=OneTime}" ContentTemplate="{StaticResource WeaponSlotView}" Focusable="False"/>
+            <ContentControl Content="{Binding Slots[2], Mode=OneTime}" ContentTemplate="{StaticResource WeaponSlotView}" Focusable="False"/>
         </StackPanel>
     </DataTemplate>
 

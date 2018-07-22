@@ -71,7 +71,7 @@ namespace MHArmory.Search
         private IList<SolverDataJewelModel> allJewels;
 
         public SolverData(
-            int[] weaponSlots,
+            IList<int> weaponSlots,
             IList<MaximizedSearchCriteria> searchCriterias,
             IList<IArmorPiece> heads,
             IList<IArmorPiece> chests,

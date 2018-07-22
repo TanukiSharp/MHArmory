@@ -45,6 +45,12 @@ namespace MHArmory.ViewModels
         }
 
         private IEnumerable<ArmorSetViewModel> foundArmorSets;
+
+        internal void NotifyConfigurationLoaded()
+        {
+            InParameters.NotifyConfigurationLoaded();
+        }
+
         public IEnumerable<ArmorSetViewModel> FoundArmorSets
         {
             get { return foundArmorSets; }
@@ -144,7 +150,7 @@ namespace MHArmory.ViewModels
                 .ToList();
 
             solverData = new SolverData(
-                InParameters.Slots,
+                InParameters.Slots.Select(x => x.Value).ToList(),
                 null,
                 GlobalData.Instance.Heads,
                 GlobalData.Instance.Chests,
