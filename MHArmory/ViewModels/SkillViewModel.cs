@@ -72,7 +72,7 @@ namespace MHArmory.ViewModels
             if (jewels == null || jewels.Count == 0)
                 JewelsText = "(no jewel)";
             else
-                JewelsText = $"({string.Join(", ", jewels.Select(x => x.Name))})";
+                JewelsText = $"({string.Join(", ", jewels.Select(x => $"{x.Name} [{x.SlotSize}]"))})";
 
             Abilities = skill.Abilities
                 .OrderBy(x => x.Level)
@@ -107,7 +107,7 @@ namespace MHArmory.ViewModels
                 skill.Name.IndexOf(searchText, StringComparison.OrdinalIgnoreCase) > -1 ||
                 skill.Description.IndexOf(searchText, StringComparison.OrdinalIgnoreCase) > -1 ||
                 skill.Abilities.Any(x => x.Description.IndexOf(searchText, StringComparison.OrdinalIgnoreCase) > -1) ||
-                jewels.Any(j => j.Name.IndexOf(searchText, StringComparison.OrdinalIgnoreCase) > -1);
+                JewelsText.IndexOf(searchText, StringComparison.OrdinalIgnoreCase) > -1;
         }
 
         internal void CheckChanged(int level, bool resetChecked)
