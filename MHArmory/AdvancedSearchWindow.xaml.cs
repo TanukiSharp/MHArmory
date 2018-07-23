@@ -26,7 +26,7 @@ namespace MHArmory
 
         public ArmorPieceTypesViewModel(IEnumerable<SolverDataEquipmentModel> equipments)
         {
-            Equipments = equipments;
+            Equipments = equipments.OrderBy(x => x.Equipment.Name).ToList();
         }
     }
 
