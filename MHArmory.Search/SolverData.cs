@@ -106,94 +106,60 @@ namespace MHArmory.Search
         {
             var isLessPoweredEquivalentArmorPiece = new Func<IArmorPiece, IArmorPiece, bool>(DataUtility.IsLessPoweredEquivalentArmorPiece);
 
+            allJewels = inputJewels
+                .ExcludeNonMatchingAbilities(DesiredAbilities)
+                .ToList();
+
             allHeads = inputHeads
                 .RemoveWhere(isLessPoweredEquivalentArmorPiece)
                 .Sort(inputSearchCriterias)
                 .ExcludeNonMatchingAbilities(DesiredAbilities)
                 .MapToSolverDataModel()
-                .ToList();
+                .ToList()
+                .UnselectOddlySkilled(DesiredAbilities)
+                ;
 
             allChests = inputChests
                 .RemoveWhere(isLessPoweredEquivalentArmorPiece)
                 .Sort(inputSearchCriterias)
                 .ExcludeNonMatchingAbilities(DesiredAbilities)
                 .MapToSolverDataModel()
-                .ToList();
+                .ToList()
+                .UnselectOddlySkilled(DesiredAbilities)
+                ;
 
             allGloves = inputGloves
                 .RemoveWhere(isLessPoweredEquivalentArmorPiece)
                 .Sort(inputSearchCriterias)
                 .ExcludeNonMatchingAbilities(DesiredAbilities)
                 .MapToSolverDataModel()
-                .ToList();
+                .ToList()
+                .UnselectOddlySkilled(DesiredAbilities)
+                ;
 
             allWaists = inputWaists
                 .RemoveWhere(isLessPoweredEquivalentArmorPiece)
                 .Sort(inputSearchCriterias)
                 .ExcludeNonMatchingAbilities(DesiredAbilities)
                 .MapToSolverDataModel()
-                .ToList();
+                .ToList()
+                .UnselectOddlySkilled(DesiredAbilities)
+                ;
 
             allLegs = inputLegs
                 .RemoveWhere(isLessPoweredEquivalentArmorPiece)
                 .Sort(inputSearchCriterias)
                 .ExcludeNonMatchingAbilities(DesiredAbilities)
                 .MapToSolverDataModel()
-                .ToList();
+                .ToList()
+                .UnselectOddlySkilled(DesiredAbilities)
+                ;
 
             allCharms = inputCharms
                 .RemoveWhere(DataUtility.IsLessPoweredEquivalentEquipment)
                 .ExcludeNonMatchingAbilities(DesiredAbilities)
                 .MapToSolverDataModel()
                 .ToList();
-
-            allJewels = inputJewels
-                .ExcludeNonMatchingAbilities(DesiredAbilities)
-                .ToList();
-        }
-
-        private void Meh()
-        {
-            //int maxLength = Math.Max(
-            //    allHeads.Count,
-            //    Math.Max(
-            //        allChests.Count,
-            //        Math.Max(
-            //            AllGloves.Count,
-            //            Math.Max(
-            //                allWaists.Count,
-            //                Math.Max(
-            //                    allLegs.Count,
-            //                    allCharms.Count
-            //                )
-            //            )
-            //        )
-            //    )
-            //);
-
-            //int[] weights = new int[maxLength];
-
-            //allHeads = GetMaxWeightedArmorPieces(allHeads, weights, desiredAbilities);
-            //allChests = GetMaxWeightedArmorPieces(allChests, weights, desiredAbilities);
-            //allGloves = GetMaxWeightedArmorPieces(allGloves, weights, desiredAbilities);
-            //allWaists = GetMaxWeightedArmorPieces(allWaists, weights, desiredAbilities);
-            //allLegs = GetMaxWeightedArmorPieces(allLegs, weights, desiredAbilities);
-            //allCharms = GetMaxWeightedArmorPieces(allCharms, weights, desiredAbilities);
-
-            //foreach (IAbility selectedAbility in desiredAbilities)
-            //{
-            //    if (skillsToCharmsMap.TryGetValue(selectedAbility.Skill.Id, out IList<ICharm> matchingCharms))
-            //        allCharms.AddRange(matchingCharms.SelectMany(x => x.Levels));
-
-            //    if (skillsToJewelsMap.TryGetValue(selectedAbility.Skill.Id, out IList<IJewel> matchingJewels))
-            //        jewels.AddRange(matchingJewels);
-            //}
-
-            //IList<ICharmLevel> charms = GetMaxWeightedArmorPieces(allCharms, weights, desiredAbilities);
-        }
-
-        public void SecondPass()
-        {
         }
 
         public SolverData Done()
@@ -271,9 +237,65 @@ namespace MHArmory.Search
 
     public static class SolverDataOperators
     {
+        public static IList<SolverDataEquipmentModel> UnselectOddlySkilled(this IList<SolverDataEquipmentModel> equipments, IEnumerable<IAbility> desiredAbilities)
+        {
+            foreach (SolverDataEquipmentModel equipment in equipments)
+            {
+                foreach (IAbility ability in equipment.Equipment.Abilities)
+                {
+                    bool isAbilityMatching = ability.IsMatchingDesiredAbilities(desiredAbilities);
+
+                    if (isAbilityMatching)
+                    {
+                        if (IsWorthBySlots(equipment.Equipment.Slots))
+                            continue;
+                    }
+                    else
+                    {
+                        equipment.IsSelected = false;
+                        break;
+                    }
+                }
+            }
+
+            return equipments;
+        }
+
         public static IEnumerable<IArmorPiece> Sort(this IEnumerable<IArmorPiece> unsorted, IEnumerable<MaximizedSearchCriteria> criterias)
         {
             return DataUtility.CreateArmorPieceSorter(unsorted, criterias);
+        }
+
+        public static bool IsWorthBySlots(int[] slots)
+        {
+            //int equipmentScore = DataUtility.SlotSizeScoreCube(slots);
+            //int minMaxScore = minRequiredSlotSize * minRequiredSlotSize * minRequiredSlotSize + maxRequiredSlotSize * maxRequiredSlotSize * maxRequiredSlotSize;
+            //return equipmentScore >= minMaxScore;
+
+            //bool a = slots.Count(s => s >= minRequiredSlotSize) >= 1;
+            //bool b = slots.Count(s => s >= maxRequiredSlotSize) >= 1;
+            //bool c = slots.Count(s => s >= 1) >= 2;
+            //return a && b && c;
+
+            bool a = slots.Count(s => s >= 1) >= Heuristics.WorthBySlotsMinCount;
+            bool b = slots.Sum() >= Heuristics.WorthBySlotsMinSum;
+            return a && b;
+        }
+
+        public static IEnumerable<IEquipment> ExcludeNonMatchingAbilities(this IEnumerable<IEquipment> equipments, IEnumerable<IAbility> desiredAbilities)
+        {
+            IEnumerable<IEquipment> filtered = equipments.Where(x =>
+            {
+                bool isAbilityWorth = x.Abilities.Any(y => y.IsMatchingDesiredAbilities(desiredAbilities));
+                bool isSlotsWorth = IsWorthBySlots(x.Slots);
+
+                return isAbilityWorth || isSlotsWorth;
+            });
+
+            if (filtered.Any())
+                return filtered;
+
+            return new[] { equipments.FirstOrDefault() };
         }
 
         public static IEnumerable<T> ExcludeNonMatchingAbilities<T>(this IEnumerable<T> equipments, IEnumerable<IAbility> desiredAbilities) where T : IHasAbilities
@@ -285,11 +307,6 @@ namespace MHArmory.Search
 
             return new[] { equipments.FirstOrDefault() };
         }
-
-        //public static IEnumerable<IJewel> ExcludeNonMatchingAbilities(this IEnumerable<IJewel> jewels, IEnumerable<IAbility> desiredAbilities)
-        //{
-        //    return jewels.Where(x => x.Abilities.Any(y => y.IsMatchingDesiredAbilities(desiredAbilities)));
-        //}
 
         public static IEnumerable<SolverDataEquipmentModel> MapToSolverDataModel(this IEnumerable<IEquipment> equipments)
         {
