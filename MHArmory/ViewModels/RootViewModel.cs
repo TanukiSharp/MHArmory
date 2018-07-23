@@ -19,6 +19,7 @@ namespace MHArmory.ViewModels
     {
         public ICommand OpenSkillSelectorCommand { get; }
         public ICommand SearchArmorSetsCommand { get; }
+        public ICommand AdvancedSearchCommand { get; }
 
         private SolverData solverData;
         private Solver solver;
@@ -77,6 +78,7 @@ namespace MHArmory.ViewModels
         {
             OpenSkillSelectorCommand = new AnonymousCommand(OpenSkillSelector);
             SearchArmorSetsCommand = new AnonymousCommand(CreateSolverDataAndSearchArmorSets);
+            AdvancedSearchCommand = new AnonymousCommand(AdvancedSearch);
 
             InParameters = new InParametersViewModel(this);
         }
@@ -84,6 +86,14 @@ namespace MHArmory.ViewModels
         private void OpenSkillSelector(object parameter)
         {
             RoutedCommands.OpenSkillsSelector.Execute(null);
+        }
+
+        private void AdvancedSearch(object parameter)
+        {
+            var window = new AdvancedSearchWindow(this, solverData)
+            {
+            };
+            window.ShowDialog();
         }
 
         public void CreateSolverDataAndSearchArmorSets()

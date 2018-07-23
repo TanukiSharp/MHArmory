@@ -54,6 +54,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="AdvancedSearchWindow.xaml.cs">
+      <DependentUpon>AdvancedSearchWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="AnonymousCommand.cs" />
     <Compile Include="Configuration.cs" />
     <Compile Include="Searching\IndicesTruthTable.cs" />
@@ -73,6 +76,10 @@
     <Compile Include="ViewModels\SkillSelectorViewModel.cs" />
     <Compile Include="ViewModels\SkillViewModel.cs" />
     <Compile Include="ViewModels\ViewModelBase.cs" />
+    <Page Include="AdvancedSearchWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>

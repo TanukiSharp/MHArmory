@@ -23,7 +23,7 @@
             <Image Source="Icons/Jewel3.png" Style="{StaticResource ComboBoxItemSlotStyle}"/>
         </ComboBox>
     </DataTemplate>
-    
+
     <DataTemplate x:Key="InParametersView">
         <StackPanel Orientation="Horizontal">
             <TextBlock Text="Weapon slots:" VerticalAlignment="Center" Margin="2"/>
@@ -271,6 +271,7 @@
                         <TextBlock Text="Auto-search" VerticalAlignment="Center"/>
                     </CheckBox.Content>
                 </CheckBox>
+                <Button DockPanel.Dock="Bottom" Content="Advanced Search" Margin="2" Padding="2" Command="{Binding AdvancedSearchCommand, Mode=OneTime}"/>
                 <Button DockPanel.Dock="Bottom" Content="Search" Margin="2" Padding="2" IsEnabled="{Binding IsSearching, Mode=OneWay, Converter={StaticResource InverseBooleanValueConverter}}" Command="{Binding SearchArmorSetsCommand, Mode=OneTime}"/>
                 <ProgressBar DockPanel.Dock="Bottom" HorizontalAlignment="Stretch" Margin="2" Padding="2" IsIndeterminate="{Binding IsSearching}" Visibility="{Binding IsSearching, Converter={StaticResource HiddenVisibilityValueConverter}}"  Value="0" Height="16"/>
                 <ItemsControl ItemsSource="{Binding SelectedAbilities, Mode=OneWay}" ItemTemplate="{StaticResource SelectedAbilityView}" Margin="2" Padding="2"/>
@@ -304,6 +305,26 @@
             </DockPanel>
 
         </Grid>
+    </DataTemplate>
+
+    <DataTemplate x:Key="ArmorPieceTypeView">
+        <ListBox ItemsSource="{Binding Equipments, Mode=OneTime}" Margin="2" VirtualizingPanel.IsVirtualizing="True" VirtualizingPanel.IsContainerVirtualizable="True" VirtualizingPanel.ScrollUnit="Pixel">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <CheckBox IsThreeState="False" IsChecked="{Binding IsSelected}" Content="{Binding Equipment.Name, Mode=OneTime}"/>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+    </DataTemplate>
+
+    <DataTemplate x:Key="AdvancedSearchView">
+        <ItemsControl ItemsSource="{Binding ArmorPieceTypes}" ItemTemplate="{StaticResource ArmorPieceTypeView}">
+            <ItemsControl.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <UniformGrid Columns="6"/>
+                </ItemsPanelTemplate>
+            </ItemsControl.ItemsPanel>
+        </ItemsControl>
     </DataTemplate>
 
 </ResourceDictionary>
