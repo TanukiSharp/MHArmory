@@ -171,6 +171,30 @@ namespace MHArmory.ViewModels
             );
 
             solverData.Done();
+
+            /*************************************************************/
+            var sb = new StringBuilder();
+
+            long hh = solverData.AllHeads.Count;
+            long cc = solverData.AllChests.Count;
+            long gg = solverData.AllGloves.Count;
+            long ww = solverData.AllWaists.Count;
+            long ll = solverData.AllLegs.Count;
+            long ch = solverData.AllCharms.Count;
+
+            var nfi = new System.Globalization.NumberFormatInfo();
+            nfi.NumberGroupSeparator = "'";
+
+            sb.AppendLine($"Heads count:  {hh}");
+            sb.AppendLine($"Chests count: {cc}");
+            sb.AppendLine($"Gloves count: {gg}");
+            sb.AppendLine($"Waists count: {ww}");
+            sb.AppendLine($"Legs count:   {ll}");
+            sb.AppendLine($"Charms count:   {ch}");
+            sb.AppendLine($"Combination count: {(hh * cc * gg * ww * ll * ch).ToString("N0", nfi)}");
+
+            SearchResult = sb.ToString();
+            /*************************************************************/
         }
 
         private async Task SearchArmorSetsInternal(CancellationToken cancellationToken)
