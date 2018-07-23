@@ -54,6 +54,8 @@ namespace MHArmory
 
             rootViewModel.IsDataLoading = false;
             rootViewModel.IsDataLoaded = true;
+
+            rootViewModel.CreateSolverData();
         }
 
         private void LoadConfiguration()
