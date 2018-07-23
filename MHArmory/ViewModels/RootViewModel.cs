@@ -77,7 +77,7 @@ namespace MHArmory.ViewModels
         public RootViewModel()
         {
             OpenSkillSelectorCommand = new AnonymousCommand(OpenSkillSelector);
-            SearchArmorSetsCommand = new AnonymousCommand(CreateSolverDataAndSearchArmorSets);
+            SearchArmorSetsCommand = new AnonymousCommand(/*CreateSolverDataAnd*/SearchArmorSets);
             AdvancedSearchCommand = new AnonymousCommand(AdvancedSearch);
 
             InParameters = new InParametersViewModel(this);
