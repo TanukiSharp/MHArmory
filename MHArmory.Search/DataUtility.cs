@@ -14,6 +14,16 @@ namespace MHArmory.Search
             return ability1 != null && ability2 != null && ability1.Skill.Id == ability2.Skill.Id;
         }
 
+        public static int SlotSizeScoreSquare(int[] slots)
+        {
+            return slots.Sum(x => x * x);
+        }
+
+        public static int SlotSizeScoreCube(int[] slots)
+        {
+            return slots.Sum(x => x * x * x);
+        }
+
         public static IEnumerable<IArmorPiece> CreateArmorPieceSorter(IEnumerable<IArmorPiece> items, IEnumerable<MaximizedSearchCriteria> sortCriterias)
         {
             if (items.Any() == false)
@@ -44,11 +54,11 @@ namespace MHArmory.Search
                         break;
                     case MaximizedSearchCriteria.SlotSizeSquare:
                         result = result
-                            .ThenByDescending(x => x.Slots.Sum(s => s * s))
+                            .ThenByDescending(x => SlotSizeScoreSquare(x.Slots))
                             .ThenByDescending(x => x.Slots.Count(s => s > 0)); // For same score, gives precedence to slot count. (only 221 and 3--, sets 221 before 3--)
                         break;
                     case MaximizedSearchCriteria.SlotSizeCube:
-                        result = result.ThenByDescending(x => x.Slots.Sum(s => s * s * s));
+                        result = result.ThenByDescending(x => SlotSizeScoreCube(x.Slots));
                         break;
                     case MaximizedSearchCriteria.FireResistance:
                         result = result.ThenByDescending(x => x.Resistances.Fire);
