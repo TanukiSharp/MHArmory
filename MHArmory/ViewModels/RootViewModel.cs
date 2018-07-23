@@ -185,12 +185,12 @@ namespace MHArmory.ViewModels
             /*************************************************************/
             var sb = new StringBuilder();
 
-            long hh = solverData.AllHeads.Count;
-            long cc = solverData.AllChests.Count;
-            long gg = solverData.AllGloves.Count;
-            long ww = solverData.AllWaists.Count;
-            long ll = solverData.AllLegs.Count;
-            long ch = solverData.AllCharms.Count;
+            long hh = solverData.AllHeads.Count(x => x.IsSelected);
+            long cc = solverData.AllChests.Count(x => x.IsSelected);
+            long gg = solverData.AllGloves.Count(x => x.IsSelected);
+            long ww = solverData.AllWaists.Count(x => x.IsSelected);
+            long ll = solverData.AllLegs.Count(x => x.IsSelected);
+            long ch = solverData.AllCharms.Count(x => x.IsSelected);
 
             var nfi = new System.Globalization.NumberFormatInfo();
             nfi.NumberGroupSeparator = "'";

@@ -158,12 +158,12 @@ namespace MHArmory.Search
 
             var sb = new StringBuilder();
 
-            long hh = data.AllHeads.Count;
-            long cc = data.AllChests.Count;
-            long gg = data.AllGloves.Count;
-            long ww = data.AllWaists.Count;
-            long ll = data.AllLegs.Count;
-            long ch = data.AllCharms.Count;
+            long hh = data.AllHeads.Count(x => x.IsSelected);
+            long cc = data.AllChests.Count(x => x.IsSelected);
+            long gg = data.AllGloves.Count(x => x.IsSelected);
+            long ww = data.AllWaists.Count(x => x.IsSelected);
+            long ll = data.AllLegs.Count(x => x.IsSelected);
+            long ch = data.AllCharms.Count(x => x.IsSelected);
 
             var nfi = new System.Globalization.NumberFormatInfo();
             nfi.NumberGroupSeparator = "'";
