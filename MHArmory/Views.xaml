@@ -311,7 +311,11 @@
         <ListBox ItemsSource="{Binding Equipments, Mode=OneTime}" Margin="2" VirtualizingPanel.IsVirtualizing="True" VirtualizingPanel.IsContainerVirtualizable="True" VirtualizingPanel.ScrollUnit="Pixel">
             <ListBox.ItemTemplate>
                 <DataTemplate>
-                    <CheckBox IsThreeState="False" IsChecked="{Binding IsSelected}" Content="{Binding Equipment.Name, Mode=OneTime}"/>
+                    <CheckBox IsThreeState="False" IsChecked="{Binding IsSelected}" Content="{Binding Equipment.Name, Mode=OneTime}" ToolTipService.ShowDuration="99999999">
+                        <ToolTipService.ToolTip>
+                            <ContentControl Content="{Binding Equipment, Mode=OneTime}" ContentTemplate="{StaticResource ArmorPieceView}" Focusable="False"/>
+                        </ToolTipService.ToolTip>
+                    </CheckBox>
                 </DataTemplate>
             </ListBox.ItemTemplate>
         </ListBox>
