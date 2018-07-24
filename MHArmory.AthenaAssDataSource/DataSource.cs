@@ -192,15 +192,28 @@ namespace MHArmory.AthenaAssDataSource
 
             try
             {
-                armorPieces = Task.FromResult(
-                    LoadArmorPieceParts(EquipmentType.Head, headsFilePath)
-                    .Concat(LoadArmorPieceParts(EquipmentType.Chest, chestsFilePath))
-                    .Concat(LoadArmorPieceParts(EquipmentType.Gloves, glovesFilePath))
-                    .Concat(LoadArmorPieceParts(EquipmentType.Waist, waistsFilePath))
-                    .Concat(LoadArmorPieceParts(EquipmentType.Legs, legsFilePath))
-                    .Select((x, i) => MapArmorPiecePrimitive(i + 1, x))
-                    .ToArray()
-                );
+                var heads = LoadArmorPieceParts(EquipmentType.Head, headsFilePath).ToList();
+                var chests = LoadArmorPieceParts(EquipmentType.Chest, chestsFilePath).ToList();
+                var gloves = LoadArmorPieceParts(EquipmentType.Gloves, glovesFilePath).ToList();
+                var waists = LoadArmorPieceParts(EquipmentType.Waist, waistsFilePath).ToList();
+                var legs = LoadArmorPieceParts(EquipmentType.Legs, legsFilePath).ToList();
+
+                var allPrimitives = heads
+                    .Concat(chests)
+                    .Concat(gloves)
+                    .Concat(waists)
+                    .Concat(legs)
+                    .ToList();
+
+                PreUpdateArmorSets(allPrimitives);
+
+                IList<ArmorPiece> nonTaskAllPieces = allPrimitives
+                    .Select(x => MapArmorPiecePrimitive(x))
+                    .ToList();
+
+                PostUpdateArmorSets(allPrimitives, nonTaskAllPieces);
+
+                armorPieces = Task.FromResult(nonTaskAllPieces.Cast<IArmorPiece>().ToArray());
             }
             catch (Exception ex)
             {
@@ -226,10 +239,10 @@ namespace MHArmory.AthenaAssDataSource
             return (-1, -1);
         }
 
-        private IArmorPiece MapArmorPiecePrimitive(int id, ArmorPiecePrimitive primitive)
+        private ArmorPiece MapArmorPiecePrimitive(ArmorPiecePrimitive primitive)
         {
             return new ArmorPiece(
-                id,
+                primitive.Id,
                 primitive.Name,
                 primitive.Type,
                 primitive.Rarity,
@@ -237,9 +250,84 @@ namespace MHArmory.AthenaAssDataSource
                 ParseAbilities(primitive),
                 new ArmorPieceDefense(primitive.MinDef, primitive.MaxDef, primitive.AugmentedDef),
                 new ArmorPieceResistances(primitive.FireRes, primitive.WaterRes, primitive.ThunderRes, primitive.IceRes, primitive.DragonRes),
-                new ArmorPieceAttributes(Gender.Both),
-                ArmorPieceAssets.Null
+                CreateArmorPieceAttributes(primitive),
+                ArmorPieceAssets.Null,
+                null // TODO: update armor set
             );
+        }
+
+        private void PreUpdateArmorSets(IList<ArmorPiecePrimitive> allPrimitives)
+        {
+            UpdateFullSetName(allPrimitives);
+
+            var list = allPrimitives.Where(x => x.FullSetName != null).ToList();
+
+            foreach (ArmorPiecePrimitive piece in list)
+            {
+                if (piece.FullArmorSetIds != null)
+                    continue;
+
+                string setName = piece.FullSetName;
+
+                int[] armorPieceIds = list
+                    .Where(x => x.FullSetName == setName)
+                    .Select(x => x.Id)
+                    .ToArray();
+
+                if (armorPieceIds.Length != 5)
+                    continue; // TODO: fix it using events.txt
+
+                foreach (ArmorPiecePrimitive setPiece in list.Where(x => x.FullSetName == setName))
+                    setPiece.FullArmorSetIds = armorPieceIds;
+            }
+        }
+
+        private void PostUpdateArmorSets(IList<ArmorPiecePrimitive> allPrimitives, IList<ArmorPiece> allArmorPieces)
+        {
+            foreach (ArmorPiecePrimitive primitive in allPrimitives.Where(x => x.FullArmorSetIds != null))
+            {
+                if (primitive.FullArmorSet != null)
+                    continue;
+
+                IArmorPiece[] setPieces = primitive.FullArmorSetIds
+                    .Select(id => allArmorPieces.First(p => p.Id == id))
+                    .Cast<IArmorPiece>()
+                    .ToArray();
+
+                IEnumerable<ArmorPiecePrimitive> setPrimitives = primitive.FullArmorSetIds
+                    .Select(id => allPrimitives.First(p => p.Id == id));
+
+                IArmorSet armorSet = new ArmorSet(true, setPieces, null);
+
+                foreach (ArmorPiecePrimitive setPrimitive in setPrimitives)
+                    setPrimitive.FullArmorSet = armorSet;
+            }
+        }
+
+        private static void UpdateFullSetName(IList<ArmorPiecePrimitive> armorPieces)
+        {
+            foreach (ArmorPiecePrimitive x in armorPieces.Where(x => x.Restriction == "Full"))
+                x.FullSetName = GetSetName(x.Name);
+        }
+
+        private static string GetSetName(string fullname)
+        {
+            string[] parts = fullname.Split(' ');
+
+            if (parts.Length <= 2)
+                return $"{parts[0]} Regular";
+
+            return $"{parts[0]} {parts[parts.Length - 1]}";
+        }
+
+        private IArmorPieceAttributes CreateArmorPieceAttributes(ArmorPiecePrimitive primitive)
+        {
+            switch (primitive.Restriction)
+            {
+                case "M": return new ArmorPieceAttributes(Gender.Male);
+                case "F": return new ArmorPieceAttributes(Gender.Female);
+            }
+            return new ArmorPieceAttributes(Gender.Both);
         }
 
         private int[] ParseSlots(string slots)
@@ -284,6 +372,8 @@ namespace MHArmory.AthenaAssDataSource
             return skill.Abilities.FirstOrDefault(a => a.Level == level);
         }
 
+        private int armorPieceId = 1;
+
         private IEnumerable<ArmorPiecePrimitive> LoadArmorPieceParts(EquipmentType type, string filename)
         {
             string[] allLines = File.ReadAllLines(filename);
@@ -304,6 +394,7 @@ namespace MHArmory.AthenaAssDataSource
                 if (string.IsNullOrWhiteSpace(armorPiece.Name))
                     continue;
 
+                armorPiece.Id = armorPieceId++;
                 armorPiece.Type = type;
 
                 yield return armorPiece;

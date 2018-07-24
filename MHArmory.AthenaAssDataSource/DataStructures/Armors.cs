@@ -7,6 +7,8 @@ namespace MHArmory.AthenaAssDataSource.DataStructures
 {
     internal class ArmorPiecePrimitive
     {
+        [Hidden]
+        internal int Id;
         internal string Name = null;
         [Name("Restriction", "Gender")]
         internal string Restriction = null;
@@ -42,5 +44,11 @@ namespace MHArmory.AthenaAssDataSource.DataStructures
         internal int PointSkill3 = 0;
         [Hidden]
         internal EquipmentType Type;
+        [Hidden]
+        internal string FullSetName;
+        [Hidden]
+        internal int[] FullArmorSetIds;
+        [Hidden]
+        internal IArmorSet FullArmorSet;
     }
 }
