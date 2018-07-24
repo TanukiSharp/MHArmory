@@ -192,6 +192,8 @@ namespace MHArmory.ViewModels
             sb.AppendLine($"Waists count: {ww}");
             sb.AppendLine($"Legs count:   {ll}");
             sb.AppendLine($"Charms count:   {ch}");
+            sb.AppendLine($"Min sLot size: {SolverData.MinJewelSize}");
+            sb.AppendLine($"Max sLot size: {SolverData.MaxJewelSize}");
             sb.AppendLine($"Combination count: {(hh * cc * gg * ww * ll * ch).ToString("N0", nfi)}");
 
             SearchResult = sb.ToString();

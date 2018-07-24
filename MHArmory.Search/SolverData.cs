@@ -70,6 +70,9 @@ namespace MHArmory.Search
         private IList<SolverDataEquipmentModel> allCharms;
         private IList<SolverDataJewelModel> allJewels;
 
+        public int MinJewelSize { get; private set; }
+        public int MaxJewelSize { get; private set; }
+
         public SolverData(
             IList<int> weaponSlots,
             IList<MaximizedSearchCriteria> searchCriterias,
@@ -109,6 +112,9 @@ namespace MHArmory.Search
             allJewels = inputJewels
                 .ExcludeNonMatchingAbilities(DesiredAbilities)
                 .ToList();
+
+            MinJewelSize = allJewels.Min(x => x.Jewel.SlotSize);
+            MaxJewelSize = allJewels.Max(x => x.Jewel.SlotSize);
 
             allHeads = inputHeads
                 .RemoveWhere(isLessPoweredEquivalentArmorPiece)
