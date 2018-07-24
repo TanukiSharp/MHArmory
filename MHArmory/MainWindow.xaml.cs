@@ -31,6 +31,7 @@ namespace MHArmory
             rootViewModel.NotifyConfigurationLoaded();
 
             CommandBindings.Add(RoutedCommands.CreateCommandBinding(RoutedCommands.OpenSkillsSelector, OpenSkillSelector));
+            CommandBindings.Add(RoutedCommands.CreateCommandBinding(RoutedCommands.OpenAdvancedSearch, OpenAdvancedSearch));
 
             AssemblyName asmName = Assembly.GetEntryAssembly().GetName();
             Title = $"{asmName.Name} {asmName.Version.Major}.{asmName.Version.Minor}.{asmName.Version.Build}";
@@ -136,6 +137,15 @@ namespace MHArmory
         private void OpenSkillSelector(object parameter)
         {
             skillSelectorWindow.Show();
+        }
+
+        private void OpenAdvancedSearch(object parameter)
+        {
+            var window = new AdvancedSearchWindow(rootViewModel)
+            {
+                Owner = this
+            };
+            window.ShowDialog();
         }
 
         private void CloseApplicationBecauseOfDataSource(string description)

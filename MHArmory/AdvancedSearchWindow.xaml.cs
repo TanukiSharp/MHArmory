@@ -16,15 +16,15 @@ namespace MHArmory
     public partial class AdvancedSearchWindow : Window
     {
         private readonly RootViewModel root;
-        private readonly SolverData solverData;
         private readonly AdvancedSearchViewModel advancedSearchViewModel;
 
-        public AdvancedSearchWindow(RootViewModel root, SolverData solverData)
+        public AdvancedSearchWindow(RootViewModel root)
         {
             InitializeComponent();
 
             this.root = root;
-            this.solverData = solverData;
+
+            SolverData solverData = root.SolverData;
 
             var armorPieceTypesViewModels = new ArmorPieceTypesViewModel[]
             {

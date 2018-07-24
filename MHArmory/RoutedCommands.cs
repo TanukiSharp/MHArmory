@@ -10,6 +10,7 @@ namespace MHArmory
     public static class RoutedCommands
     {
         public static readonly ICommand OpenSkillsSelector = new RoutedCommand("OpenSkillsSelector", typeof(RoutedCommands));
+        public static readonly ICommand OpenAdvancedSearch = new RoutedCommand("OpenAdvancedSearch", typeof(RoutedCommands));
 
         public static CommandBinding CreateCommandBinding(ICommand source, Action<object> target)
         {

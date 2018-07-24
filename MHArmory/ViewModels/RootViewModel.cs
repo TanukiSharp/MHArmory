@@ -21,7 +21,8 @@ namespace MHArmory.ViewModels
         public ICommand SearchArmorSetsCommand { get; }
         public ICommand AdvancedSearchCommand { get; }
 
-        private SolverData solverData;
+        public SolverData SolverData { get; private set; }
+
         private Solver solver;
 
         private bool isDataLoading = true;
@@ -90,10 +91,7 @@ namespace MHArmory.ViewModels
 
         private void AdvancedSearch(object parameter)
         {
-            var window = new AdvancedSearchWindow(this, solverData)
-            {
-            };
-            window.ShowDialog();
+            RoutedCommands.OpenAdvancedSearch.Execute(null);
         }
 
         public void CreateSolverDataAndSearchArmorSets()
@@ -157,7 +155,7 @@ namespace MHArmory.ViewModels
 
         public void CreateSolverData()
         {
-            solverData = null;
+            SolverData = null;
 
             if (IsDataLoaded == false || SelectedAbilities == null)
                 return;
@@ -167,7 +165,7 @@ namespace MHArmory.ViewModels
                 .Select(x => x.Ability)
                 .ToList();
 
-            solverData = new SolverData(
+            SolverData = new SolverData(
                 InParameters.Slots.Select(x => x.Value).ToList(),
                 null,
                 GlobalData.Instance.Heads,
@@ -180,17 +178,17 @@ namespace MHArmory.ViewModels
                 desiredAbilities
             );
 
-            solverData.Done();
+            SolverData.Done();
 
             /*************************************************************/
             var sb = new StringBuilder();
 
-            long hh = solverData.AllHeads.Count(x => x.IsSelected);
-            long cc = solverData.AllChests.Count(x => x.IsSelected);
-            long gg = solverData.AllGloves.Count(x => x.IsSelected);
-            long ww = solverData.AllWaists.Count(x => x.IsSelected);
-            long ll = solverData.AllLegs.Count(x => x.IsSelected);
-            long ch = solverData.AllCharms.Count(x => x.IsSelected);
+            long hh = SolverData.AllHeads.Count(x => x.IsSelected);
+            long cc = SolverData.AllChests.Count(x => x.IsSelected);
+            long gg = SolverData.AllGloves.Count(x => x.IsSelected);
+            long ww = SolverData.AllWaists.Count(x => x.IsSelected);
+            long ll = SolverData.AllLegs.Count(x => x.IsSelected);
+            long ch = SolverData.AllCharms.Count(x => x.IsSelected);
 
             var nfi = new System.Globalization.NumberFormatInfo();
             nfi.NumberGroupSeparator = "'";
@@ -209,7 +207,7 @@ namespace MHArmory.ViewModels
 
         private async Task SearchArmorSetsInternal(CancellationToken cancellationToken)
         {
-            solver = new Solver(solverData);
+            solver = new Solver(SolverData);
 
             solver.DebugData += Solver_DebugData;
 
