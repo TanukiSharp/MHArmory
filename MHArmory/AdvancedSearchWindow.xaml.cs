@@ -10,26 +10,6 @@ using MHArmory.ViewModels;
 
 namespace MHArmory
 {
-    public class AdvancedSearchViewModel : ViewModelBase
-    {
-        public ArmorPieceTypesViewModel[] ArmorPieceTypes { get; }
-
-        public AdvancedSearchViewModel(ArmorPieceTypesViewModel[] armorPieceTypes)
-        {
-            ArmorPieceTypes = armorPieceTypes;
-        }
-    }
-
-    public class ArmorPieceTypesViewModel : ViewModelBase
-    {
-        public IEnumerable<SolverDataEquipmentModel> Equipments { get; }
-
-        public ArmorPieceTypesViewModel(IEnumerable<SolverDataEquipmentModel> equipments)
-        {
-            Equipments = equipments.OrderBy(x => x.Equipment.Name).ToList();
-        }
-    }
-
     /// <summary>
     /// Interaction logic for AdvancedSearchWindow.xaml
     /// </summary>
