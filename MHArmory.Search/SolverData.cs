@@ -247,16 +247,12 @@ namespace MHArmory.Search
         {
             foreach (SolverDataEquipmentModel equipment in equipments)
             {
+                if (IsWorthBySlots(equipment.Equipment.Slots))
+                    continue;
+
                 foreach (IAbility ability in equipment.Equipment.Abilities)
                 {
-                    bool isAbilityMatching = ability.IsMatchingDesiredAbilities(desiredAbilities);
-
-                    if (isAbilityMatching)
-                    {
-                        if (IsWorthBySlots(equipment.Equipment.Slots))
-                            continue;
-                    }
-                    else
+                    if (ability.IsMatchingDesiredAbilities(desiredAbilities) == false)
                     {
                         equipment.IsSelected = false;
                         break;
