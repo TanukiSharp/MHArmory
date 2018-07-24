@@ -14,11 +14,11 @@ namespace MHArmory.AthenaAssDataSource
     [AttributeUsage(AttributeTargets.Field | AttributeTargets.Property, AllowMultiple = false, Inherited = true)]
     public class NameAttribute : Attribute
     {
-        public string Name { get; }
+        public string[] Names { get; }
 
-        public NameAttribute(string name)
+        public NameAttribute(params string[] names)
         {
-            Name = name;
+            Names = names;
         }
     }
 
@@ -52,17 +52,27 @@ namespace MHArmory.AthenaAssDataSource
             {
                 NameAttribute nameAttribute = member.GetCustomAttribute<NameAttribute>();
 
-                string name = nameAttribute?.Name ?? member.Name;
+                string[] names = nameAttribute?.Names;
 
-                if (header.TryGetValue(name, out int index) == false)
+                if (names == null || names.Length == 0)
+                    names = new[] { member.Name };
+
+                int index = -1;
+
+                foreach (string name in names)
                 {
-                    Console.WriteLine($"[WARN] property '{name}' not in header");
-                    continue;
+                    if (header.TryGetValue(name, out index) == false)
+                    {
+                        index = -1;
+                        Console.WriteLine($"[WARN] property '{name}' not in header");
+                        continue;
+                    }
+                    break;
                 }
 
                 if (index >= lineData.Length)
                 {
-                    Console.WriteLine($"[ERROR] line {lineNum}: data is shorter ({lineData.Length} columns) than {name} index ({index})");
+                    Console.WriteLine($"[ERROR] line {lineNum}: data is shorter ({lineData.Length} columns) than {string.Join("/", names)} index ({index})");
                     continue;
                 }
 
@@ -75,7 +85,7 @@ namespace MHArmory.AthenaAssDataSource
                     {
                         if (int.TryParse(strValue, out int numValue) == false)
                         {
-                            Console.WriteLine($"[ERROR] line {lineNum}: data of property {name} is integer but could not parse '{strValue}'");
+                            Console.WriteLine($"[ERROR] line {lineNum}: data of property {string.Join("/", names)} is integer but could not parse '{strValue}'");
                             continue;
                         }
 
@@ -93,7 +103,7 @@ namespace MHArmory.AthenaAssDataSource
                     {
                         if (int.TryParse(strValue, out int numValue) == false)
                         {
-                            Console.WriteLine($"[ERROR] line {lineNum}: data of property {name} is integer but could not parse '{strValue}'");
+                            Console.WriteLine($"[ERROR] line {lineNum}: data of property {string.Join("/", names)} is integer but could not parse '{strValue}'");
                             continue;
                         }
 

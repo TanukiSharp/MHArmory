@@ -8,6 +8,7 @@ namespace MHArmory.AthenaAssDataSource.DataStructures
     internal class ArmorPiecePrimitive
     {
         internal string Name = null;
+        [Name("Restriction", "Gender")]
         internal string Restriction = null;
         internal int Rarity = 0;
         internal string Slots = null;
