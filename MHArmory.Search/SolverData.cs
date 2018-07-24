@@ -119,7 +119,7 @@ namespace MHArmory.Search
             allHeads = inputHeads
                 .RemoveWhere(isLessPoweredEquivalentArmorPiece)
                 .Sort(inputSearchCriterias)
-                .ExcludeNonMatchingAbilities(DesiredAbilities)
+                .ExcludeEquipmentsNonMatchingAbilities(DesiredAbilities)
                 .MapToSolverDataModel()
                 .ToList()
                 .UnselectOddlySkilled(DesiredAbilities)
@@ -128,7 +128,7 @@ namespace MHArmory.Search
             allChests = inputChests
                 .RemoveWhere(isLessPoweredEquivalentArmorPiece)
                 .Sort(inputSearchCriterias)
-                .ExcludeNonMatchingAbilities(DesiredAbilities)
+                .ExcludeEquipmentsNonMatchingAbilities(DesiredAbilities)
                 .MapToSolverDataModel()
                 .ToList()
                 .UnselectOddlySkilled(DesiredAbilities)
@@ -137,7 +137,7 @@ namespace MHArmory.Search
             allGloves = inputGloves
                 .RemoveWhere(isLessPoweredEquivalentArmorPiece)
                 .Sort(inputSearchCriterias)
-                .ExcludeNonMatchingAbilities(DesiredAbilities)
+                .ExcludeEquipmentsNonMatchingAbilities(DesiredAbilities)
                 .MapToSolverDataModel()
                 .ToList()
                 .UnselectOddlySkilled(DesiredAbilities)
@@ -146,7 +146,7 @@ namespace MHArmory.Search
             allWaists = inputWaists
                 .RemoveWhere(isLessPoweredEquivalentArmorPiece)
                 .Sort(inputSearchCriterias)
-                .ExcludeNonMatchingAbilities(DesiredAbilities)
+                .ExcludeEquipmentsNonMatchingAbilities(DesiredAbilities)
                 .MapToSolverDataModel()
                 .ToList()
                 .UnselectOddlySkilled(DesiredAbilities)
@@ -155,7 +155,7 @@ namespace MHArmory.Search
             allLegs = inputLegs
                 .RemoveWhere(isLessPoweredEquivalentArmorPiece)
                 .Sort(inputSearchCriterias)
-                .ExcludeNonMatchingAbilities(DesiredAbilities)
+                .ExcludeEquipmentsNonMatchingAbilities(DesiredAbilities)
                 .MapToSolverDataModel()
                 .ToList()
                 .UnselectOddlySkilled(DesiredAbilities)
@@ -163,7 +163,7 @@ namespace MHArmory.Search
 
             allCharms = inputCharms
                 .RemoveWhere(DataUtility.IsLessPoweredEquivalentEquipment)
-                .ExcludeNonMatchingAbilities(DesiredAbilities)
+                .ExcludeEquipmentsNonMatchingAbilities(DesiredAbilities)
                 .MapToSolverDataModel()
                 .ToList();
         }
@@ -288,7 +288,7 @@ namespace MHArmory.Search
             return a && b;
         }
 
-        public static IEnumerable<IEquipment> ExcludeNonMatchingAbilities(this IEnumerable<IEquipment> equipments, IEnumerable<IAbility> desiredAbilities)
+        public static IEnumerable<IEquipment> ExcludeEquipmentsNonMatchingAbilities(this IEnumerable<IEquipment> equipments, IEnumerable<IAbility> desiredAbilities)
         {
             IEnumerable<IEquipment> filtered = equipments.Where(x =>
             {
