@@ -59,7 +59,6 @@
     </Compile>
     <Compile Include="AnonymousCommand.cs" />
     <Compile Include="Configuration.cs" />
-    <Compile Include="Searching\IndicesTruthTable.cs" />
     <Compile Include="ValueConverters\SlotSizeToolTipValueConverter.cs" />
     <Compile Include="ValueConverters\SlotToImagePathValueConverter.cs" />
     <Compile Include="ValueConverters\VisibilityValueConverter.cs" />

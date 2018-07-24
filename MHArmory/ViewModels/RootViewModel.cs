@@ -11,7 +11,6 @@ using System.Windows.Input;
 using MHArmory.Core;
 using MHArmory.Core.DataStructures;
 using MHArmory.Search;
-using MHArmory.Searching;
 
 namespace MHArmory.ViewModels
 {
