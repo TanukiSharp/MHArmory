@@ -55,6 +55,8 @@ namespace MHArmory.AthenaAssDataSource
             LoadArmorPieces();
         }
 
+        private IList<string[]> eventArmors;
+
         private void LoadJewels()
         {
             string[] allLines = File.ReadAllLines(jewelsFilePath);
@@ -192,6 +194,10 @@ namespace MHArmory.AthenaAssDataSource
 
             try
             {
+                eventArmors = File.ReadAllLines(Path.Combine(dataFolderPath, "events.txt"))
+                    .Select(x => x.Split(','))
+                    .ToList();
+
                 var heads = LoadArmorPieceParts(EquipmentType.Head, headsFilePath).ToList();
                 var chests = LoadArmorPieceParts(EquipmentType.Chest, chestsFilePath).ToList();
                 var gloves = LoadArmorPieceParts(EquipmentType.Gloves, glovesFilePath).ToList();
@@ -258,26 +264,37 @@ namespace MHArmory.AthenaAssDataSource
 
         private void PreUpdateArmorSets(IList<ArmorPiecePrimitive> allPrimitives)
         {
-            UpdateFullSetName(allPrimitives);
-
-            var list = allPrimitives.Where(x => x.FullSetName != null).ToList();
+            var list = allPrimitives.Where(x => x.Restriction == "Full").ToList();
 
             foreach (ArmorPiecePrimitive piece in list)
             {
                 if (piece.FullArmorSetIds != null)
                     continue;
 
-                string setName = piece.FullSetName;
+                int armorSetIndex = -1;
+                for (int i = 0; i < eventArmors.Count; i++)
+                {
+                    if (eventArmors[i].Contains(piece.Name))
+                    {
+                        armorSetIndex = i;
+                        break;
+                    }
+                }
 
-                int[] armorPieceIds = list
-                    .Where(x => x.FullSetName == setName)
+                if (armorSetIndex < 0)
+                    continue;
+
+                string[] setPieces = eventArmors[armorSetIndex];
+
+                int[] armorPieceIds = allPrimitives
+                    .Where(x => setPieces.Contains(x.Name))
                     .Select(x => x.Id)
                     .ToArray();
 
                 if (armorPieceIds.Length != 5)
-                    continue; // TODO: fix it using events.txt
+                    continue;
 
-                foreach (ArmorPiecePrimitive setPiece in list.Where(x => x.FullSetName == setName))
+                foreach (ArmorPiecePrimitive setPiece in allPrimitives.Where(x => setPieces.Contains(x.Name)))
                     setPiece.FullArmorSetIds = armorPieceIds;
             }
         }
@@ -302,22 +319,6 @@ namespace MHArmory.AthenaAssDataSource
                 foreach (ArmorPiecePrimitive setPrimitive in setPrimitives)
                     setPrimitive.FullArmorSet = armorSet;
             }
-        }
-
-        private static void UpdateFullSetName(IList<ArmorPiecePrimitive> armorPieces)
-        {
-            foreach (ArmorPiecePrimitive x in armorPieces.Where(x => x.Restriction == "Full"))
-                x.FullSetName = GetSetName(x.Name);
-        }
-
-        private static string GetSetName(string fullname)
-        {
-            string[] parts = fullname.Split(' ');
-
-            if (parts.Length <= 2)
-                return $"{parts[0]} Regular";
-
-            return $"{parts[0]} {parts[parts.Length - 1]}";
         }
 
         private IArmorPieceAttributes CreateArmorPieceAttributes(ArmorPiecePrimitive primitive)

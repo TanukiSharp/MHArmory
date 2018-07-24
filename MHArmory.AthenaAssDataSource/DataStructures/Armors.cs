@@ -45,8 +45,6 @@ namespace MHArmory.AthenaAssDataSource.DataStructures
         [Hidden]
         internal EquipmentType Type;
         [Hidden]
-        internal string FullSetName;
-        [Hidden]
         internal int[] FullArmorSetIds;
         [Hidden]
         internal IArmorSet FullArmorSet;
