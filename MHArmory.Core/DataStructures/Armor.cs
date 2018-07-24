@@ -113,6 +113,7 @@ namespace MHArmory.Core.DataStructures
         IArmorPieceResistances Resistances { get; }
         IArmorPieceAttributes Attributes { get; }
         IArmorPieceAssets Assets { get; }
+        IArmorSet ArmorSet { get; }
     }
 
     public class ArmorPiece : IArmorPiece
@@ -127,7 +128,8 @@ namespace MHArmory.Core.DataStructures
             IArmorPieceDefense defense,
             IArmorPieceResistances resistances,
             IArmorPieceAttributes attributes,
-            IArmorPieceAssets assets
+            IArmorPieceAssets assets,
+            IArmorSet armorSet
         )
         {
             Id = id;
@@ -140,6 +142,7 @@ namespace MHArmory.Core.DataStructures
             Resistances = resistances;
             Attributes = attributes;
             Assets = assets;
+            ArmorSet = armorSet;
         }
 
         public int Id { get; }
@@ -152,5 +155,50 @@ namespace MHArmory.Core.DataStructures
         public IArmorPieceResistances Resistances { get; }
         public IArmorPieceAttributes Attributes { get; }
         public IArmorPieceAssets Assets { get; }
+        public IArmorSet ArmorSet { get; private set; }
+
+        public void UpdateArmorSet(IArmorSet armorSet)
+        {
+            ArmorSet = armorSet;
+        }
+    }
+
+    public interface IArmorSetSkill
+    {
+        int RequiredArmorPieces { get; }
+        IAbility[] GrantedSkills { get; }
+    }
+
+    public class ArmorSetSkill : IArmorSetSkill
+    {
+        public ArmorSetSkill(int requiredArmorPieces, IAbility[] grantedSkills)
+        {
+            RequiredArmorPieces = requiredArmorPieces;
+            GrantedSkills = grantedSkills;
+        }
+
+        public int RequiredArmorPieces { get; }
+        public IAbility[] GrantedSkills { get; }
+    }
+
+    public interface IArmorSet
+    {
+        bool IsFull { get; }
+        IArmorPiece[] ArmorPieces { get; }
+        IArmorSetSkill[] Skills { get; }
+    }
+
+    public class ArmorSet : IArmorSet
+    {
+        public ArmorSet(bool isFull, IArmorPiece[] armorPieces, IArmorSetSkill[] skills)
+        {
+            IsFull = isFull;
+            ArmorPieces = armorPieces;
+            Skills = skills;
+        }
+
+        public bool IsFull { get; }
+        public IArmorPiece[] ArmorPieces { get; }
+        public IArmorSetSkill[] Skills { get; }
     }
 }

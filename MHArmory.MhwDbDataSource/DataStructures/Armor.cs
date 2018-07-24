@@ -119,6 +119,7 @@ namespace MHArmory.MhwDbDataSource.DataStructures
         public int[] Slots { get; }
         public IAbility[] Abilities { get; }
         public IArmorPieceAssets Assets { get; }
+        public IArmorSet ArmorSet { get; }
 
         public ArmorPiece(ArmorPiecePrimitive primitive, IAbility[] abilities)
         {
@@ -132,6 +133,7 @@ namespace MHArmory.MhwDbDataSource.DataStructures
             Slots = primitive.Slots.Select(x => x.Rank).ToArray();
             Abilities = primitive.Abilities.Select(x => abilities.FirstOrDefault(a => a.Id == x.AbilityId)).ToArray();
             Assets = primitive.Assets;
+            ArmorSet = null; // TODO: update armor set
         }
     }
 }
