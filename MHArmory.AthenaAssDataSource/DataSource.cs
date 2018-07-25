@@ -49,13 +49,16 @@ namespace MHArmory.AthenaAssDataSource
 
         private void LoadData()
         {
+            LoadArmorSetSkillsPhase1();
             LoadSkills();
             LoadJewels();
             LoadCharms();
             LoadArmorPieces();
+            LoadArmorSetSkillsPhase2();
         }
 
         private IList<string[]> eventArmors;
+        private IList<ArmorSetSkillPrimitive> armorSetSkillPrimitives;
 
         private void LoadJewels()
         {
@@ -149,6 +152,40 @@ namespace MHArmory.AthenaAssDataSource
             return (name, 1);
         }
 
+        private void LoadArmorSetSkillsPhase1()
+        {
+            string filename = Path.Combine(dataFolderPath, "set_skills.txt");
+            armorSetSkillPrimitives = LoadArmorSetSkills(filename).ToList();
+        }
+
+        private void LoadArmorSetSkillsPhase2()
+        {
+            var armorSets = new List<IArmorSet>();
+
+            foreach (IGrouping<string, ArmorSetSkillPrimitive> armorSetSkillGroup in armorSetSkillPrimitives.GroupBy(x => x.Name))
+            {
+                IArmorSetSkill[] armorSetSkills = armorSetSkillGroup
+                    .Select(FromArmorSetSkillPrimitive)
+                    .ToArray();
+
+                IArmorPiece[] armorSetPieces = armorPieces.Result
+                    .Where(x => x.Abilities.Any(a => a.Skill.Name == armorSetSkillGroup.Key))
+                    .ToArray();
+
+                var armorSet = new ArmorSet(false, armorSetPieces, armorSetSkills);
+
+                armorSets.Add(armorSet);
+            }
+
+            // TODO: do something with armorSets
+        }
+
+        private IArmorSetSkill FromArmorSetSkillPrimitive(ArmorSetSkillPrimitive primitive)
+        {
+            ISkill skillGranted = nonTaskSkills.First(x => x.Name == primitive.SkillGranted);
+            return new ArmorSetSkill(primitive.PiecesNeeded, skillGranted.Abilities.Where(a => a.Level == 1).ToArray());
+        }
+
         private void LoadSkills()
         {
             string[] allLines = File.ReadAllLines(skillsFilePath);
@@ -164,6 +201,7 @@ namespace MHArmory.AthenaAssDataSource
 
             var dataLoader = new DataLoader<SkillPrimitive>(allLines[headerIndex].Substring(1).Split(','));
 
+            int id = 1;
             var localSkills = new List<ISkill>();
 
             for (int i = dataIndex; i < allLines.Length; i++)
@@ -173,7 +211,12 @@ namespace MHArmory.AthenaAssDataSource
                 if (string.IsNullOrWhiteSpace(skillPrimitive.Name))
                     continue;
 
-                localSkills.Add(new DataStructures.Skill(i, skillPrimitive));
+                localSkills.Add(new DataStructures.Skill(id++, skillPrimitive));
+            }
+
+            foreach (ArmorSetSkillPrimitive armorSetSkillPrimitive in armorSetSkillPrimitives)
+            {
+                localSkills.Add(new DataStructures.Skill(id++, armorSetSkillPrimitive));
             }
 
             nonTaskAbilities = localSkills
@@ -341,7 +384,7 @@ namespace MHArmory.AthenaAssDataSource
 
         private IAbility[] ParseAbilities(ArmorPiecePrimitive primitive)
         {
-            var result = new List<IAbility>();
+            var result = new List<IAbility>(3);
 
             result.Add(ParseOneAbility(primitive.Skill1, primitive.PointSkill1));
             result.Add(ParseOneAbility(primitive.Skill2, primitive.PointSkill2));
@@ -352,7 +395,7 @@ namespace MHArmory.AthenaAssDataSource
 
         private IAbility[] ParseAbilities(CharmPrimitive primitive)
         {
-            var result = new List<IAbility>();
+            var result = new List<IAbility>(2);
 
             result.Add(ParseOneAbility(primitive.Skill1, primitive.Points1));
             result.Add(ParseOneAbility(primitive.Skill2, primitive.Points2));
@@ -399,6 +442,32 @@ namespace MHArmory.AthenaAssDataSource
                 armorPiece.Type = type;
 
                 yield return armorPiece;
+            }
+        }
+
+        private IEnumerable<ArmorSetSkillPrimitive> LoadArmorSetSkills(string filename)
+        {
+            string[] allLines = File.ReadAllLines(filename);
+
+            (int headerIndex, int dataIndex) = FindIndexes(allLines);
+            if (headerIndex < 0)
+            {
+                Console.WriteLine($"[ERROR] Failed to create data loader for armor set skills");
+                yield break;
+            }
+
+            var dataLoader = new DataLoader<ArmorSetSkillPrimitive>(allLines[headerIndex].Substring(1).Split(','));
+
+            for (int i = dataIndex; i < allLines.Length; i++)
+            {
+                ArmorSetSkillPrimitive armorSetSkill = dataLoader.CreateObject(allLines[i].Split(','), i + 1);
+
+                if (string.IsNullOrWhiteSpace(armorSetSkill.Name))
+                    continue;
+
+                armorSetSkill.Id = i + 1;
+
+                yield return armorSetSkill;
             }
         }
 
