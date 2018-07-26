@@ -27,15 +27,12 @@ namespace MHArmory.AthenaAssDataSource.DataStructures
                 .ToArray();
         }
 
-        public Skill(int id, ArmorSetSkillPrimitive setSkillPrimitive)
+        public Skill(int id, string name, IAbility ability)
         {
             Id = id;
-            Name = setSkillPrimitive.Name;
+            Name = name;
             Description = "(no description)";
-            Abilities = new IAbility[]
-            {
-                new Ability(uniqueAbilityId++, this, 1, setSkillPrimitive.SkillGranted)
-            };
+            Abilities = new IAbility[] { ability };
         }
 
         public int Id { get; }

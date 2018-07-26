@@ -161,6 +161,11 @@ namespace MHArmory.Core.DataStructures
         {
             ArmorSet = armorSet;
         }
+
+        public override string ToString()
+        {
+            return Name;
+        }
     }
 
     public interface IArmorSetSkill

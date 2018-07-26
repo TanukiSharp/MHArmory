@@ -5,6 +5,15 @@ using MHArmory.Core.DataStructures;
 
 namespace MHArmory.AthenaAssDataSource.DataStructures
 {
+    internal class ArmorPieceContainer
+    {
+        internal ArmorPiecePrimitive Primitive;
+        internal EquipmentType Type;
+        internal int[] FullArmorSetIds;
+        internal IArmorSet FullArmorSet;
+        internal ArmorPiece ArmorPiece;
+    }
+
     internal class ArmorPiecePrimitive
     {
         [Hidden]
@@ -42,11 +51,5 @@ namespace MHArmory.AthenaAssDataSource.DataStructures
         internal string Skill3 = null;
         [Name("Points 3")]
         internal int PointSkill3 = 0;
-        [Hidden]
-        internal EquipmentType Type;
-        [Hidden]
-        internal int[] FullArmorSetIds;
-        [Hidden]
-        internal IArmorSet FullArmorSet;
     }
 }
