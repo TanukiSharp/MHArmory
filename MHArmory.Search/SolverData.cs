@@ -153,8 +153,6 @@ namespace MHArmory.Search
 
             ExcludeNonCompleteFullArmorSets(tempAllHeads, tempAllChests, tempAllGloves, tempAllWaists, tempAllLegs);
 
-            // --------------------------------------------------------
-
             allHeads = tempAllHeads
                 .MapToSolverDataModel()
                 .ToList()
@@ -184,6 +182,8 @@ namespace MHArmory.Search
                 .ToList()
                 .UnselectOddlySkilled(DesiredAbilities)
                 ;
+
+            CheckFullArmorSetSection();
 
             allCharms = inputCharms
                 .RemoveWhere(DataUtility.IsLessPoweredEquivalentEquipment)
@@ -232,6 +232,30 @@ namespace MHArmory.Search
             AllLegs = allLegs;
             AllCharms = allCharms;
             AllJewels = allJewels;
+        }
+
+        /// <summary>
+        /// This method unselect other armor pieces if at least one in the full set is unselected.
+        /// </summary>
+        private void CheckFullArmorSetSection()
+        {
+            IEnumerable<SolverDataEquipmentModel> all = allHeads.Concat(allChests).Concat(allGloves).Concat(allWaists).Concat(allLegs);
+
+            foreach (SolverDataEquipmentModel head in allHeads)
+            {
+                if (head.IsSelected)
+                    continue;
+
+                if (head.Equipment is IArmorPiece armorPiece && armorPiece.ArmorSet != null && armorPiece.ArmorSet.IsFull)
+                {
+                    foreach (IArmorPiece setArmorPiece in armorPiece.ArmorSet.ArmorPieces)
+                    {
+                        SolverDataEquipmentModel result = all.FirstOrDefault(x => x.Equipment.Id == setArmorPiece.Id);
+                        if (result != null)
+                            result.IsSelected = false;
+                    }
+                }
+            }
         }
 
         private void ExcludeNonCompleteFullArmorSets(
