@@ -108,7 +108,6 @@ namespace MHArmory.Core.DataStructures
 
     public interface IArmorPiece : IEquipment
     {
-        int Id { get; }
         IArmorPieceDefense Defense { get; }
         IArmorPieceResistances Resistances { get; }
         IArmorPieceAttributes Attributes { get; }

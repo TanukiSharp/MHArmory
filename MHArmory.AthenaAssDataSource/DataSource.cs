@@ -124,7 +124,7 @@ namespace MHArmory.AthenaAssDataSource
                     localCharms.Add(charmName, charmLevels);
                 }
 
-                charmLevels.Add(new CharmLevel(level, charmPrimitive.Name, 0, noSlots, ParseAbilities(charmPrimitive)));
+                charmLevels.Add(new CharmLevel(i + 1, level, charmPrimitive.Name, 0, noSlots, ParseAbilities(charmPrimitive)));
             }
 
             charms = Task.FromResult(localCharms

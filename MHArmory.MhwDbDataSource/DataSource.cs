@@ -193,7 +193,7 @@ namespace MHArmory.MhwDbDataSource
                 var charmLevels = new DataStructures.CharmLevel[currentCharmPrimitive.Levels.Length];
 
                 for (int j = 0; j < charmLevels.Length; j++)
-                    charmLevels[j] = new DataStructures.CharmLevel(currentCharmPrimitive.Levels[j], abilities);
+                    charmLevels[j] = new DataStructures.CharmLevel(i + 1, currentCharmPrimitive.Levels[j], abilities);
 
                 localCharms[i] = new Charm(currentCharmPrimitive.Name, charmLevels);
             }

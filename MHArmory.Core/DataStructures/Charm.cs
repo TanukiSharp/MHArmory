@@ -11,8 +11,9 @@ namespace MHArmory.Core.DataStructures
 
     public class CharmLevel : ICharmLevel
     {
-        public CharmLevel(int level, string name, int rarity, int[] slots, IAbility[] abilities)
+        public CharmLevel(int id, int level, string name, int rarity, int[] slots, IAbility[] abilities)
         {
+            Id = id;
             Level = level;
             Type = EquipmentType.Charm;
             Name = name;
@@ -21,6 +22,7 @@ namespace MHArmory.Core.DataStructures
             Abilities = abilities;
         }
 
+        public int Id { get; }
         public int Level { get; }
         public EquipmentType Type { get; }
         public string Name { get; }

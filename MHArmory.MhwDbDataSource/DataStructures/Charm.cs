@@ -35,6 +35,7 @@ namespace MHArmory.MhwDbDataSource.DataStructures
 
     internal class CharmLevel : ICharmLevel
     {
+        public int Id { get; }
         public EquipmentType Type => EquipmentType.Charm;
         public string Name { get; }
         public int Level { get; }
@@ -42,8 +43,9 @@ namespace MHArmory.MhwDbDataSource.DataStructures
         public int[] Slots { get; } = Array.Empty<int>();
         public IAbility[] Abilities { get; }
 
-        internal CharmLevel(CharmLevelPrimitive currentCharmLevelPrimitive, IAbility[] abilities)
+        internal CharmLevel(int id, CharmLevelPrimitive currentCharmLevelPrimitive, IAbility[] abilities)
         {
+            Id = id;
             Name = currentCharmLevelPrimitive.Name;
             Level = currentCharmLevelPrimitive.Level;
             Rarity = currentCharmLevelPrimitive.Rarity;
