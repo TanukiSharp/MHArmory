@@ -364,17 +364,17 @@ namespace MHArmory.AthenaAssDataSource
 
         private void PostUpdateArmorSets(IList<ArmorPieceContainer> allArmorPieceContainers, IList<ArmorPiece> allArmorPieces)
         {
-            foreach (ArmorPieceContainer primitive in allArmorPieceContainers.Where(x => x.FullArmorSetIds != null))
+            foreach (ArmorPieceContainer container in allArmorPieceContainers.Where(x => x.FullArmorSetIds != null))
             {
-                if (primitive.FullArmorSet != null)
+                if (container.FullArmorSet != null)
                     continue;
 
-                IArmorPiece[] setPieces = primitive.FullArmorSetIds
+                IArmorPiece[] setPieces = container.FullArmorSetIds
                     .Select(id => allArmorPieces.First(p => p.Id == id))
                     .Cast<IArmorPiece>()
                     .ToArray();
 
-                IEnumerable<ArmorPieceContainer> setContainers = primitive.FullArmorSetIds
+                IEnumerable<ArmorPieceContainer> setContainers = container.FullArmorSetIds
                     .Select(id => allArmorPieceContainers.First(p => p.Primitive.Id == id));
 
                 IArmorSet armorSet = new ArmorSet(true, setPieces, null);

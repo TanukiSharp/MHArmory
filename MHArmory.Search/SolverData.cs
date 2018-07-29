@@ -284,15 +284,17 @@ namespace MHArmory.Search
             return a && b;
         }
 
-        public static IEnumerable<IEquipment> ExcludeEquipmentsNonMatchingAbilities(this IEnumerable<IEquipment> equipments, IEnumerable<IAbility> desiredAbilities)
+        public static IEnumerable<T> ExcludeEquipmentsNonMatchingAbilities<T>(this IEnumerable<T> equipments, IEnumerable<IAbility> desiredAbilities) where T : IEquipment
         {
-            IEnumerable<IEquipment> filtered = equipments.Where(x =>
+            bool whereFunc(T x)
             {
                 bool isAbilityWorth = x.Abilities.Any(y => y.IsMatchingDesiredAbilities(desiredAbilities));
                 bool isSlotsWorth = IsWorthBySlots(x.Slots);
 
                 return isAbilityWorth || isSlotsWorth;
-            });
+            }
+
+            IEnumerable<T> filtered = equipments.Where(whereFunc);
 
             if (filtered.Any())
                 return filtered;
