@@ -159,7 +159,10 @@ namespace MHArmory.Core.DataStructures
 
         public void UpdateArmorSet(IArmorSet armorSet)
         {
-            ArmorSet = armorSet;
+            if (ArmorSet == null)
+                ArmorSet = armorSet;
+            else
+                ArmorSet = ArmorSet.Merge(armorSet);
         }
 
         public override string ToString()
@@ -191,6 +194,26 @@ namespace MHArmory.Core.DataStructures
         bool IsFull { get; }
         IArmorPiece[] ArmorPieces { get; }
         IArmorSetSkill[] Skills { get; }
+    }
+
+    public static class ArmorSetExtensions
+    {
+        public static IArmorSet Merge(this IArmorSet armorSet1, IArmorSet armorSet2)
+        {
+            if (armorSet1 == null && armorSet2 == null)
+                return null;
+
+            if (armorSet1 == null)
+                return armorSet2;
+            if (armorSet2 == null)
+                return armorSet1;
+
+            return new ArmorSet(
+                armorSet1.IsFull || armorSet2.IsFull,
+                armorSet1.ArmorPieces,
+                armorSet1.Skills ?? armorSet2.Skills
+            );
+        }
     }
 
     public class ArmorSet : IArmorSet

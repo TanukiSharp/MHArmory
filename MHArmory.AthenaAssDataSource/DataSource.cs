@@ -380,7 +380,10 @@ namespace MHArmory.AthenaAssDataSource
                 IArmorSet armorSet = new ArmorSet(true, setPieces, null);
 
                 foreach (ArmorPieceContainer setContainer in setContainers)
+                {
                     setContainer.FullArmorSet = armorSet;
+                    setContainer.ArmorPiece.UpdateArmorSet(armorSet);
+                }
             }
         }
 

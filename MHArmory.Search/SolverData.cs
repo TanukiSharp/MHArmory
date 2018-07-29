@@ -116,46 +116,70 @@ namespace MHArmory.Search
             MinJewelSize = allJewels.Min(x => x.Jewel.SlotSize);
             MaxJewelSize = allJewels.Max(x => x.Jewel.SlotSize);
 
-            allHeads = inputHeads
+            List<IArmorPiece> tempAllHeads = inputHeads
                 .RemoveWhere(isLessPoweredEquivalentArmorPiece)
                 .Sort(inputSearchCriterias)
                 .ExcludeEquipmentsNonMatchingAbilities(DesiredAbilities)
+                .ToList()
+                ;
+
+            List<IArmorPiece> tempAllChests = inputChests
+                .RemoveWhere(isLessPoweredEquivalentArmorPiece)
+                .Sort(inputSearchCriterias)
+                .ExcludeEquipmentsNonMatchingAbilities(DesiredAbilities)
+                .ToList()
+                ;
+
+            List<IArmorPiece> tempAllGloves = inputGloves
+                .RemoveWhere(isLessPoweredEquivalentArmorPiece)
+                .Sort(inputSearchCriterias)
+                .ExcludeEquipmentsNonMatchingAbilities(DesiredAbilities)
+                .ToList()
+                ;
+
+            List<IArmorPiece> tempAllWaists = inputWaists
+                .RemoveWhere(isLessPoweredEquivalentArmorPiece)
+                .Sort(inputSearchCriterias)
+                .ExcludeEquipmentsNonMatchingAbilities(DesiredAbilities)
+                .ToList()
+                ;
+
+            List<IArmorPiece> tempAllLegs = inputLegs
+                .RemoveWhere(isLessPoweredEquivalentArmorPiece)
+                .Sort(inputSearchCriterias)
+                .ExcludeEquipmentsNonMatchingAbilities(DesiredAbilities)
+                .ToList()
+                ;
+
+            ExcludeNonCompleteFullArmorSets(tempAllHeads, tempAllChests, tempAllGloves, tempAllWaists, tempAllLegs);
+
+            // --------------------------------------------------------
+
+            allHeads = tempAllHeads
                 .MapToSolverDataModel()
                 .ToList()
                 .UnselectOddlySkilled(DesiredAbilities)
                 ;
 
-            allChests = inputChests
-                .RemoveWhere(isLessPoweredEquivalentArmorPiece)
-                .Sort(inputSearchCriterias)
-                .ExcludeEquipmentsNonMatchingAbilities(DesiredAbilities)
+            allChests = tempAllChests
                 .MapToSolverDataModel()
                 .ToList()
                 .UnselectOddlySkilled(DesiredAbilities)
                 ;
 
-            allGloves = inputGloves
-                .RemoveWhere(isLessPoweredEquivalentArmorPiece)
-                .Sort(inputSearchCriterias)
-                .ExcludeEquipmentsNonMatchingAbilities(DesiredAbilities)
+            allGloves = tempAllGloves
                 .MapToSolverDataModel()
                 .ToList()
                 .UnselectOddlySkilled(DesiredAbilities)
                 ;
 
-            allWaists = inputWaists
-                .RemoveWhere(isLessPoweredEquivalentArmorPiece)
-                .Sort(inputSearchCriterias)
-                .ExcludeEquipmentsNonMatchingAbilities(DesiredAbilities)
+            allWaists = tempAllWaists
                 .MapToSolverDataModel()
                 .ToList()
                 .UnselectOddlySkilled(DesiredAbilities)
                 ;
 
-            allLegs = inputLegs
-                .RemoveWhere(isLessPoweredEquivalentArmorPiece)
-                .Sort(inputSearchCriterias)
-                .ExcludeEquipmentsNonMatchingAbilities(DesiredAbilities)
+            allLegs = tempAllLegs
                 .MapToSolverDataModel()
                 .ToList()
                 .UnselectOddlySkilled(DesiredAbilities)
@@ -208,6 +232,59 @@ namespace MHArmory.Search
             AllLegs = allLegs;
             AllCharms = allCharms;
             AllJewels = allJewels;
+        }
+
+        private void ExcludeNonCompleteFullArmorSets(
+            List<IArmorPiece> heads,
+            List<IArmorPiece> chests,
+            List<IArmorPiece> gloves,
+            List<IArmorPiece> waists,
+            List<IArmorPiece> legs
+        )
+        {
+            ExcludeNonCompleteFullArmorSets(heads, heads, chests, gloves, waists, legs);
+            ExcludeNonCompleteFullArmorSets(chests, heads, chests, gloves, waists, legs);
+            ExcludeNonCompleteFullArmorSets(gloves, heads, chests, gloves, waists, legs);
+            ExcludeNonCompleteFullArmorSets(waists, heads, chests, gloves, waists, legs);
+            ExcludeNonCompleteFullArmorSets(legs, heads, chests, gloves, waists, legs);
+        }
+
+        private void ExcludeNonCompleteFullArmorSets(
+            List<IArmorPiece> source,
+            List<IArmorPiece> heads,
+            List<IArmorPiece> chests,
+            List<IArmorPiece> gloves,
+            List<IArmorPiece> waists,
+            List<IArmorPiece> legs
+        )
+        {
+            for (int i = 0; i < heads.Count; i++)
+            {
+                if (heads[i].ArmorSet == null || heads[i].ArmorSet.IsFull == false)
+                    continue;
+
+                IArmorPiece[] setPieces = heads[i].ArmorSet.ArmorPieces;
+
+                IArmorPiece head = setPieces.First(x => x.Type == EquipmentType.Head);
+                IArmorPiece chest = setPieces.First(x => x.Type == EquipmentType.Chest);
+                IArmorPiece glove = setPieces.First(x => x.Type == EquipmentType.Gloves);
+                IArmorPiece waist = setPieces.First(x => x.Type == EquipmentType.Waist);
+                IArmorPiece leg = setPieces.First(x => x.Type == EquipmentType.Legs);
+
+                if (heads.Any(x => x.Id == head.Id) == false ||
+                    chests.Any(x => x.Id == chest.Id) == false ||
+                    gloves.Any(x => x.Id == glove.Id) == false ||
+                    waists.Any(x => x.Id == waist.Id) == false ||
+                    legs.Any(x => x.Id == leg.Id) == false)
+                {
+                    heads.RemoveAll(x => x.Id == head.Id);
+                    chests.RemoveAll(x => x.Id == chest.Id);
+                    gloves.RemoveAll(x => x.Id == glove.Id);
+                    waists.RemoveAll(x => x.Id == waist.Id);
+                    legs.RemoveAll(x => x.Id == leg.Id);
+                    i--;
+                }
+            }
         }
 
         //private IList<T> GetMaxWeightedArmorPieces<T>(IList<T> armorPieces, int[] weights, IEnumerable<IAbility> desiredAbilities) where T : IEquipment
