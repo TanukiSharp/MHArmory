@@ -19,7 +19,7 @@ namespace MHArmory.ViewModels
             set
             {
                 if (SetValue(ref isChecked, value))
-                    parent.CheckChanged(Level, isChecked);
+                    parent?.CheckChanged(Level, isChecked);
             }
         }
 
