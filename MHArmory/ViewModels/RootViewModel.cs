@@ -85,12 +85,12 @@ namespace MHArmory.ViewModels
 
         private void OpenSkillSelector(object parameter)
         {
-            RoutedCommands.OpenSkillsSelector.Execute(null);
+            RoutedCommands.OpenSkillsSelector.ExecuteIfPossible(null);
         }
 
         private void AdvancedSearch(object parameter)
         {
-            RoutedCommands.OpenAdvancedSearch.Execute(null);
+            RoutedCommands.OpenAdvancedSearch.ExecuteIfPossible(null);
         }
 
         public async void SearchArmorSets()

@@ -46,8 +46,8 @@ namespace MHArmory
     /// </summary>
     public class AnonymousCommand<T> : ICommand
     {
-        private Action<T> execute;
-        private Predicate<T> canExecute;
+        private readonly Action<T> execute;
+        private readonly Predicate<T> canExecute;
 
         /// <summary>
         /// Initializes the AnonymousCommand instance.
@@ -121,6 +121,43 @@ namespace MHArmory
         {
             add { CommandManager.RequerySuggested += value; }
             remove { CommandManager.RequerySuggested -= value; }
+        }
+    }
+
+    /// <summary>
+    /// Contains helper extenions method for ICommand based types.
+    /// </summary>
+    public static class CommandExtensions
+    {
+        /// <summary>
+        /// Executes a command if possible.
+        /// This method checks if the command instance is null or not, and checks whether it can be executed before executing it.
+        /// </summary>
+        /// <param name="command">The command to check for execution.</param>
+        /// <param name="parameter">The custom command parameter.</param>
+        /// <rereturns>Returns true if the command could be executed, false otherwise.</rereturns>
+        public static bool ExecuteIfPossible(this ICommand command, object parameter)
+        {
+            if (command == null)
+                return false;
+
+            if (command.CanExecute(parameter) == false)
+                return false;
+
+            command.Execute(parameter);
+
+            return true;
+        }
+
+        /// <summary>
+        /// Executes a command if possible.
+        /// This method checks if the command instance is null or not, and checks whether it can be executed before executing it.
+        /// </summary>
+        /// <param name="command">The command to check for execution.</param>
+        /// <rereturns>Returns true if the command could be executed, false otherwise.</rereturns>
+        public static bool ExecuteIfPossible(this ICommand command)
+        {
+            return ExecuteIfPossible(command, null);
         }
     }
 }
