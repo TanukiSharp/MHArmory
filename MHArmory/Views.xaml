@@ -261,7 +261,7 @@
         <Grid>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="4"/>
+                <ColumnDefinition Width="6"/>
                 <ColumnDefinition Width="4*"/>
             </Grid.ColumnDefinitions>
             <DockPanel Grid.Column="0" LastChildFill="True">
