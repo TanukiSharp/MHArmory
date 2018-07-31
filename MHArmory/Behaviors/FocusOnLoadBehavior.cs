@@ -28,6 +28,22 @@ namespace MHArmory.Behaviors
             new PropertyMetadata(OnIsAttachedChanged)
         );
 
+        public static bool GetTextBoxSelectAll(FrameworkElement target)
+        {
+            return (bool)target.GetValue(TextBoxSelectAllProperty);
+        }
+
+        public static void SetTextBoxSelectAll(FrameworkElement target, bool value)
+        {
+            target.SetValue(TextBoxSelectAllProperty, value);
+        }
+
+        public static readonly DependencyProperty TextBoxSelectAllProperty = DependencyProperty.RegisterAttached(
+            "TextBoxSelectAll",
+            typeof(bool),
+            typeof(FocusOnLoadBehavior)
+        );
+
         private static void OnIsAttachedChanged(DependencyObject sender, DependencyPropertyChangedEventArgs e)
         {
             var item = (FrameworkElement)sender;
@@ -55,6 +71,10 @@ namespace MHArmory.Behaviors
 
                 if (listItem is ListBoxItem listBoxItem)
                     listBoxItem.Focus();
+            }
+            else if (item is TextBox textBox && GetTextBoxSelectAll(item))
+            {
+                textBox.SelectAll();
             }
         }
     }
