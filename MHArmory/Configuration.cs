@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.IO;
 using Newtonsoft.Json;
 
@@ -12,8 +13,11 @@ namespace MHArmory
 
     public class Configuration
     {
-        [JsonProperty("selectedAbilities")]
-        public int[] SelectedAbilities { get; set; }
+        [JsonProperty("lastOpenedLoadout")]
+        public string LastOpenedLoadout { get; set; }
+
+        [JsonProperty("loadout")]
+        public Dictionary<string, int[]> Loadout { get; set; }
 
         [JsonProperty("inParameters")]
         public InParametersConfiguration InParameters { get; } = new InParametersConfiguration();

@@ -11,6 +11,12 @@ namespace MHArmory
     {
         public static readonly ICommand OpenSkillsSelector = new RoutedCommand("OpenSkillsSelector", typeof(RoutedCommands));
         public static readonly ICommand OpenAdvancedSearch = new RoutedCommand("OpenAdvancedSearch", typeof(RoutedCommands));
+        public static readonly ICommand OpenLoadoutSelector = new RoutedCommand("OpenLoadoutSelector", typeof(RoutedCommands));
+
+        public static readonly ICommand NewLoadout = new RoutedCommand("NewLoadout", typeof(RoutedCommands));
+        public static readonly ICommand OpenLoadout = new RoutedCommand("OpenLoadout", typeof(RoutedCommands));
+        public static readonly ICommand SaveLoadout = new RoutedCommand("SaveLoadout", typeof(RoutedCommands));
+        public static readonly ICommand SaveLoadoutAs = new RoutedCommand("SaveLoadoutAs", typeof(RoutedCommands));
 
         public static CommandBinding CreateCommandBinding(ICommand source, Action<object> target)
         {

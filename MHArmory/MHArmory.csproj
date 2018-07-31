@@ -61,6 +61,13 @@
     <Compile Include="Behaviors\DoubleClickBehavior.cs" />
     <Compile Include="Behaviors\FocusOnLoadBehavior.cs" />
     <Compile Include="Configuration.cs" />
+    <Compile Include="LoadoutManager.cs" />
+    <Compile Include="LoadoutWindow.xaml.cs">
+      <DependentUpon>LoadoutWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="TextInputWindow.xaml.cs">
+      <DependentUpon>TextInputWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="ValueConverters\SlotSizeToolTipValueConverter.cs" />
     <Compile Include="ValueConverters\SlotToImagePathValueConverter.cs" />
     <Compile Include="ValueConverters\VisibilityValueConverter.cs" />
@@ -75,11 +82,17 @@
     <Compile Include="ViewModels\ArmorPieceTypesViewModel.cs" />
     <Compile Include="ViewModels\ArmorSetViewModel.cs" />
     <Compile Include="ViewModels\InParametersViewModel.cs" />
+    <Compile Include="ViewModels\LoadoutViewModel.cs" />
     <Compile Include="ViewModels\RootViewModel.cs" />
     <Compile Include="ViewModels\SkillSelectorViewModel.cs" />
     <Compile Include="ViewModels\SkillViewModel.cs" />
+    <Compile Include="ViewModels\TextInputViewModel.cs" />
     <Compile Include="ViewModels\ViewModelBase.cs" />
     <Page Include="AdvancedSearchWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="LoadoutWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -96,6 +109,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="SkillSelectorWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="TextInputWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

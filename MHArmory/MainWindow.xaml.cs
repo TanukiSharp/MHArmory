@@ -32,6 +32,12 @@ namespace MHArmory
 
             CommandBindings.Add(RoutedCommands.CreateCommandBinding(RoutedCommands.OpenSkillsSelector, OpenSkillSelector));
             CommandBindings.Add(RoutedCommands.CreateCommandBinding(RoutedCommands.OpenAdvancedSearch, OpenAdvancedSearch));
+            CommandBindings.Add(RoutedCommands.CreateCommandBinding(RoutedCommands.OpenLoadoutSelector, OpenLoadoutSelector));
+
+            CommandBindings.Add(RoutedCommands.CreateCommandBinding(RoutedCommands.NewLoadout, OnNewLoadout));
+            CommandBindings.Add(RoutedCommands.CreateCommandBinding(RoutedCommands.OpenLoadout, OnOpenLoadout));
+            CommandBindings.Add(RoutedCommands.CreateCommandBinding(RoutedCommands.SaveLoadout, OnSaveLoadout));
+            CommandBindings.Add(RoutedCommands.CreateCommandBinding(RoutedCommands.SaveLoadoutAs, OnSaveLoadoutAs));
 
             AssemblyName asmName = Assembly.GetEntryAssembly().GetName();
             Title = $"{asmName.Name} {asmName.Version.Major}.{asmName.Version.Minor}.{asmName.Version.Build}";
@@ -52,6 +58,15 @@ namespace MHArmory
             };
 
             await LoadData();
+
+            loadoutManager = new LoadoutManager(rootViewModel);
+            rootViewModel.SetLoadoutManager(loadoutManager);
+
+            string lastOpenedLoadout = GlobalData.Instance.Configuration?.LastOpenedLoadout;
+            Dictionary<string, int[]> loadout = GlobalData.Instance.Configuration?.Loadout;
+
+            if (loadout != null && lastOpenedLoadout != null && loadout.TryGetValue(lastOpenedLoadout, out int[] abilities))
+                loadoutManager.Open(lastOpenedLoadout, abilities);
 
             rootViewModel.IsDataLoading = false;
             rootViewModel.IsDataLoaded = true;
@@ -112,16 +127,6 @@ namespace MHArmory
 
             rootViewModel.SelectedAbilities = allAbilities;
 
-            int[] configSelectedAbilities = GlobalData.Instance.Configuration.SelectedAbilities;
-            if (configSelectedAbilities != null)
-            {
-                foreach (AbilityViewModel vm in allAbilities)
-                {
-                    if (configSelectedAbilities.Contains(vm.Id))
-                        vm.IsChecked = true;
-                }
-            }
-
             GlobalData.Instance.SetSkills(skills);
             GlobalData.Instance.SetArmors(armors);
             GlobalData.Instance.Charms = charms.SelectMany(x => x.Levels).ToList();
@@ -148,6 +153,46 @@ namespace MHArmory
             window.ShowDialog();
         }
 
+        private void OpenLoadoutSelector(object parameter)
+        {
+            if (parameter is LoadoutDialogResult result)
+            {
+                var window = new LoadoutWindow(rootViewModel.SelectedAbilities)
+                {
+                    Owner = this
+                };
+
+                bool? dlgResult = window.ShowDialog();
+
+                if (dlgResult == true)
+                    result.Update(true, window.SelectedLoadout);
+                else
+                    result.Update(false, null);
+            }
+        }
+
+        private LoadoutManager loadoutManager;
+
+        private void OnNewLoadout(object parameter)
+        {
+            loadoutManager.Close();
+        }
+
+        private void OnOpenLoadout(object parameter)
+        {
+            loadoutManager.Open();
+        }
+
+        private void OnSaveLoadout(object parameter)
+        {
+            loadoutManager.Save();
+        }
+
+        private void OnSaveLoadoutAs(object parameter)
+        {
+            loadoutManager.SaveAs();
+        }
+
         private void CloseApplicationBecauseOfDataSource(string description)
         {
             string message = $"Could not load required data from '{description}'\nContact the data source owner for more information.";
@@ -158,6 +203,15 @@ namespace MHArmory
         protected override void OnClosing(CancelEventArgs e)
         {
             base.OnClosing(e);
+
+            if (loadoutManager.ApplicationClose() == false)
+            {
+                e.Cancel = true;
+                return;
+            }
+
+            loadoutManager.Dispose();
+
             skillSelectorWindow.ApplicationClose();
         }
     }

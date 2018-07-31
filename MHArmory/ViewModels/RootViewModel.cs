@@ -14,11 +14,13 @@ using MHArmory.Search;
 
 namespace MHArmory.ViewModels
 {
-    public class RootViewModel : ViewModelBase
+    public class RootViewModel : ViewModelBase, IDisposable
     {
         public ICommand OpenSkillSelectorCommand { get; }
         public ICommand SearchArmorSetsCommand { get; }
         public ICommand AdvancedSearchCommand { get; }
+
+        public event EventHandler AbilitiesChanged;
 
         public SolverData SolverData { get; private set; }
 
@@ -81,6 +83,56 @@ namespace MHArmory.ViewModels
             AdvancedSearchCommand = new AnonymousCommand(AdvancedSearch);
 
             InParameters = new InParametersViewModel(this);
+        }
+
+        public void Dispose()
+        {
+            if (loadoutManager != null)
+            {
+                loadoutManager.LoadoutChanged -= LoadoutManager_LoadoutChanged;
+                loadoutManager.ModifiedChanged -= LoadoutManager_ModifiedChanged;
+            }
+        }
+
+        private LoadoutManager loadoutManager;
+
+        public void SetLoadoutManager(LoadoutManager loadoutManager)
+        {
+            if (this.loadoutManager != null)
+            {
+                this.loadoutManager.LoadoutChanged -= LoadoutManager_LoadoutChanged;
+                this.loadoutManager.ModifiedChanged -= LoadoutManager_ModifiedChanged;
+            }
+
+            this.loadoutManager = loadoutManager;
+
+            if (this.loadoutManager != null)
+            {
+                this.loadoutManager.LoadoutChanged += LoadoutManager_LoadoutChanged;
+                this.loadoutManager.ModifiedChanged += LoadoutManager_ModifiedChanged;
+            }
+        }
+
+        private string loadoutText;
+        public string LoadoutText
+        {
+            get { return loadoutText; }
+            private set { SetValue(ref loadoutText, value); }
+        }
+
+        private void UpdateLoadoutText()
+        {
+            LoadoutText = $"{loadoutManager.CurrentLoadoutName ?? "(no loadout)"}{(loadoutManager.IsModified ? " *" : string.Empty)}";
+        }
+
+        private void LoadoutManager_LoadoutChanged(object sender, LoadoutNameEventArgs e)
+        {
+            UpdateLoadoutText();
+        }
+
+        private void LoadoutManager_ModifiedChanged(object sender, EventArgs e)
+        {
+            UpdateLoadoutText();
         }
 
         private void OpenSkillSelector(object parameter)
@@ -225,12 +277,7 @@ namespace MHArmory.ViewModels
 
         internal void SelectedAbilitiesChanged()
         {
-            GlobalData.Instance.Configuration.SelectedAbilities = SelectedAbilities
-                .Where(x => x.IsChecked)
-                .Select(x => x.Id)
-                .ToArray();
-
-            GlobalData.Instance.Configuration.Save();
+            AbilitiesChanged?.Invoke(this, EventArgs.Empty);
         }
 
         private void Solver_DebugData(string debugData)

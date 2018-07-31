@@ -1,7 +1,8 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:local="clr-namespace:MHArmory"
-                    xmlns:cvt="clr-namespace:MHArmory.ValueConverters">
+                    xmlns:cvt="clr-namespace:MHArmory.ValueConverters"
+                    xmlns:bhv="clr-namespace:MHArmory.Behaviors">
 
     <cvt:HiddenVisibilityValueConverter x:Key="HiddenVisibilityValueConverter"/>
     <cvt:CollapsedVisibilityValueConverter x:Key="CollapsedVisibilityValueConverter"/>
@@ -258,53 +259,70 @@
     </DataTemplate>
 
     <DataTemplate x:Key="RootView">
-        <Grid>
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="6"/>
-                <ColumnDefinition Width="4*"/>
-            </Grid.ColumnDefinitions>
-            <DockPanel Grid.Column="0" LastChildFill="True">
-                <Button DockPanel.Dock="Top" Content="Set skills" Margin="2" Padding="2" Command="{Binding OpenSkillSelectorCommand, Mode=OneTime}"/>
-                <CheckBox DockPanel.Dock="Bottom" Margin="2" Padding="2" IsChecked="{Binding IsAutoSearch}" IsThreeState="False" VerticalAlignment="Center" VerticalContentAlignment="Center">
-                    <CheckBox.Content>
-                        <TextBlock Text="Auto-search" VerticalAlignment="Center"/>
-                    </CheckBox.Content>
-                </CheckBox>
-                <Button DockPanel.Dock="Bottom" Content="Advanced Search" Margin="2" Padding="2" Command="{Binding AdvancedSearchCommand, Mode=OneTime}"/>
-                <Button DockPanel.Dock="Bottom" Content="Search" Margin="2" Padding="2" IsEnabled="{Binding IsSearching, Mode=OneWay, Converter={StaticResource InverseBooleanValueConverter}}" Command="{Binding SearchArmorSetsCommand, Mode=OneTime}"/>
-                <ProgressBar DockPanel.Dock="Bottom" HorizontalAlignment="Stretch" Margin="2" Padding="2" IsIndeterminate="{Binding IsSearching}" Visibility="{Binding IsSearching, Converter={StaticResource HiddenVisibilityValueConverter}}"  Value="0" Height="16"/>
-                <ItemsControl ItemsSource="{Binding SelectedAbilities, Mode=OneWay}" ItemTemplate="{StaticResource SelectedAbilityView}" Margin="2" Padding="2"/>
-            </DockPanel>
-            <GridSplitter Grid.Column="1" HorizontalAlignment="Stretch"/>
-
-            <DockPanel Grid.Column="2" LastChildFill="True">
-                <TextBlock DockPanel.Dock="Bottom" Text="{Binding SearchResult, Mode=OneWay}"/>
-                <Grid>
-                    <TextBlock x:Name="loading" Text="Loading..." HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="20" Visibility="{Binding IsDataLoading, Converter={StaticResource CollapsedVisibilityValueConverter}, Mode=OneWay}"/>
+        <DockPanel LastChildFill="True">
+            <Menu DockPanel.Dock="Top">
+                <MenuItem Header="File">
+                    <MenuItem Header="New loadout" Command="{x:Static local:RoutedCommands.NewLoadout}"/>
+                    <MenuItem Header="Open loadout..." Command="{x:Static local:RoutedCommands.OpenLoadout}"/>
+                    <MenuItem Header="Save loadout" Command="{x:Static local:RoutedCommands.SaveLoadout}"/>
+                    <MenuItem Header="Save loadout as..." Command="{x:Static local:RoutedCommands.SaveLoadoutAs}"/>
+                </MenuItem>
+            </Menu>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="6"/>
+                    <ColumnDefinition Width="3*"/>
+                </Grid.ColumnDefinitions>
+                <DockPanel Grid.Column="0" LastChildFill="True">
+                    <Button DockPanel.Dock="Top" Content="Set skills" Margin="2" Padding="2" Command="{Binding OpenSkillSelectorCommand, Mode=OneTime}"/>
+                    <CheckBox DockPanel.Dock="Bottom" Margin="2" Padding="2" IsChecked="{Binding IsAutoSearch}" IsThreeState="False" VerticalAlignment="Center" VerticalContentAlignment="Center">
+                        <CheckBox.Content>
+                            <TextBlock Text="Auto-search" VerticalAlignment="Center"/>
+                        </CheckBox.Content>
+                    </CheckBox>
+                    <Button DockPanel.Dock="Bottom" Content="Advanced Search" Margin="2" Padding="2" Command="{Binding AdvancedSearchCommand, Mode=OneTime}"/>
+                    <Button DockPanel.Dock="Bottom" Content="Search" Margin="2" Padding="2" IsEnabled="{Binding IsSearching, Mode=OneWay, Converter={StaticResource InverseBooleanValueConverter}}" Command="{Binding SearchArmorSetsCommand, Mode=OneTime}"/>
+                    <ProgressBar DockPanel.Dock="Bottom" HorizontalAlignment="Stretch" Margin="2" Padding="2" IsIndeterminate="{Binding IsSearching}" Visibility="{Binding IsSearching, Converter={StaticResource HiddenVisibilityValueConverter}}"  Value="0" Height="16"/>
                     <DockPanel LastChildFill="True">
-                        <ContentControl DockPanel.Dock="Top" Content="{Binding InParameters, Mode=OneTime}" ContentTemplate="{StaticResource InParametersView}" Focusable="False"/>
-                        <ListBox ItemsSource="{Binding FoundArmorSets, Mode=OneWay}" ItemTemplate="{StaticResource ArmorSetView}" ScrollViewer.VerticalScrollBarVisibility="Visible" Visibility="{Binding IsDataLoaded, Converter={StaticResource CollapsedVisibilityValueConverter}, Mode=OneWay}" Focusable="False" VirtualizingPanel.IsVirtualizing="True" VirtualizingPanel.ScrollUnit="Pixel">
-                            <ListBox.ItemContainerStyle>
-                                <Style TargetType="{x:Type ListBoxItem}">
-                                    <Setter Property="Template">
-                                        <Setter.Value>
-                                            <ControlTemplate TargetType="{x:Type ListBoxItem}">
-                                                <Border Name="root" Padding="2" SnapsToDevicePixels="True" Focusable="False">
-                                                    <ContentPresenter Focusable="False"/>
-                                                </Border>
-                                            </ControlTemplate>
-                                        </Setter.Value>
-                                    </Setter>
-                                    <Setter Property="Focusable" Value="False"/>
-                                </Style>
-                            </ListBox.ItemContainerStyle>
-                        </ListBox>
+                        <TextBlock Text="{Binding LoadoutText, Mode=OneWay}" Margin="2" DockPanel.Dock="Left" VerticalAlignment="Top" Background="#08000000">
+                            <TextBlock.LayoutTransform>
+                                <RotateTransform Angle="-90"/>
+                            </TextBlock.LayoutTransform>
+                        </TextBlock>
+                        <ItemsControl ItemsSource="{Binding SelectedAbilities, Mode=OneWay}" ItemTemplate="{StaticResource SelectedAbilityView}" Margin="2" Padding="2"/>
                     </DockPanel>
-                </Grid>
-            </DockPanel>
+                </DockPanel>
+                <GridSplitter Grid.Column="1" HorizontalAlignment="Stretch"/>
 
-        </Grid>
+                <DockPanel Grid.Column="2" LastChildFill="True">
+                    <TextBlock DockPanel.Dock="Bottom" Text="{Binding SearchResult, Mode=OneWay}"/>
+                    <Grid>
+                        <TextBlock x:Name="loading" Text="Loading..." HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="20" Visibility="{Binding IsDataLoading, Converter={StaticResource CollapsedVisibilityValueConverter}, Mode=OneWay}"/>
+                        <DockPanel LastChildFill="True">
+                            <ContentControl DockPanel.Dock="Top" Content="{Binding InParameters, Mode=OneTime}" ContentTemplate="{StaticResource InParametersView}" Focusable="False"/>
+                            <ListBox ItemsSource="{Binding FoundArmorSets, Mode=OneWay}" ItemTemplate="{StaticResource ArmorSetView}" ScrollViewer.VerticalScrollBarVisibility="Visible" Visibility="{Binding IsDataLoaded, Converter={StaticResource CollapsedVisibilityValueConverter}, Mode=OneWay}" Focusable="False" VirtualizingPanel.IsVirtualizing="True" VirtualizingPanel.ScrollUnit="Pixel">
+                                <ListBox.ItemContainerStyle>
+                                    <Style TargetType="{x:Type ListBoxItem}">
+                                        <Setter Property="Template">
+                                            <Setter.Value>
+                                                <ControlTemplate TargetType="{x:Type ListBoxItem}">
+                                                    <Border Name="root" Padding="2" SnapsToDevicePixels="True" Focusable="False">
+                                                        <ContentPresenter Focusable="False"/>
+                                                    </Border>
+                                                </ControlTemplate>
+                                            </Setter.Value>
+                                        </Setter>
+                                        <Setter Property="Focusable" Value="False"/>
+                                    </Style>
+                                </ListBox.ItemContainerStyle>
+                            </ListBox>
+                        </DockPanel>
+                    </Grid>
+                </DockPanel>
+
+            </Grid>
+        </DockPanel>
     </DataTemplate>
 
     <DataTemplate x:Key="ArmorPieceTypeView">
@@ -329,6 +347,38 @@
                 </ItemsPanelTemplate>
             </ItemsControl.ItemsPanel>
         </ItemsControl>
+    </DataTemplate>
+
+    <DataTemplate x:Key="LoadoutView">
+        <TextBlock Text="{Binding Name, Mode=OneTime}" Focusable="False"/>
+    </DataTemplate>
+
+    <DataTemplate x:Key="LoadoutSelectorView">
+
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" MinWidth="120"/>
+                <ColumnDefinition Width="6"/>
+                <ColumnDefinition Width="3*"/>
+            </Grid.ColumnDefinitions>
+
+            <ListBox x:Name="lst" Grid.Column="0" SelectedItem="{Binding SelectedLoadout}" ItemsSource="{Binding Loadout, Mode=OneTime}" ItemTemplate="{StaticResource LoadoutView}" bhv:DoubleClickBehavior.Command="{Binding AcceptCommand}" bhv:FocusOnLoadBehavior.IsAttached="True"/>
+
+            <GridSplitter Grid.Column="1" HorizontalAlignment="Stretch" Focusable="False"/>
+
+            <ItemsControl Grid.Column="2" ItemsSource="{Binding SelectedLoadout.Abilities}" Focusable="False">
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate>
+                        <TextBlock ToolTipService.ToolTip="{Binding Description, Mode=OneTime}" Margin="0 1 0 1" ToolTipService.ShowDuration="9999" Focusable="False">
+                            <Run Text="{Binding SkillName, Mode=OneTime}" FontWeight="Bold"/>
+                            <Run Text=" level"/>
+                            <Run Text="{Binding Level, Mode=OneTime}"/>
+                        </TextBlock>
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
+            </ItemsControl>
+
+        </Grid>
     </DataTemplate>
 
 </ResourceDictionary>
