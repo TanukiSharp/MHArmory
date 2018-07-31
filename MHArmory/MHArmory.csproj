@@ -58,6 +58,8 @@
       <DependentUpon>AdvancedSearchWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="AnonymousCommand.cs" />
+    <Compile Include="Behaviors\DoubleClickBehavior.cs" />
+    <Compile Include="Behaviors\FocusOnLoadBehavior.cs" />
     <Compile Include="Configuration.cs" />
     <Compile Include="ValueConverters\SlotSizeToolTipValueConverter.cs" />
     <Compile Include="ValueConverters\SlotToImagePathValueConverter.cs" />
