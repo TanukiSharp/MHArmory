@@ -205,15 +205,27 @@
         </Border>
     </DataTemplate>
 
+    <Style x:Key="SkillSelectorRadioButton" TargetType="RadioButton" BasedOn="{StaticResource {x:Type ToggleButton}}">
+        <Setter Property="Margin" Value="2"/>
+        <Setter Property="Padding" Value="4"/>
+        <Setter Property="MinWidth" Value="50"/>
+        <Setter Property="VerticalAlignment" Value="Center"/>
+        <Style.Triggers>
+            <Trigger Property="IsChecked" Value="True">
+                <Setter Property="FontWeight" Value="Bold"/>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+    
     <DataTemplate x:Key="SkillSelectorView">
         <DockPanel LastChildFill="True">
 
             <DockPanel DockPanel.Dock="Top" LastChildFill="True">
-                <TextBlock DockPanel.Dock="Left" Text="Filter: " VerticalAlignment="Center"/>
+                <TextBlock DockPanel.Dock="Left" Text="Filter: " Margin="4" VerticalAlignment="Center"/>
                 <StackPanel DockPanel.Dock="Right" Orientation="Horizontal">
-                    <RadioButton Content="All" IsChecked="{Binding VisibilityModeAll, Mode=OneWayToSource, FallbackValue=true}" ToolTip="See all available skills" Margin="2" VerticalAlignment="Center"/>
-                    <RadioButton Content="Selected" IsChecked="{Binding VisibilityModeSelected, Mode=OneWayToSource}" ToolTip="See only selected skills" Margin="2" VerticalAlignment="Center"/>
-                    <RadioButton Content="Unselected" IsChecked="{Binding VisibilityModeUnselected, Mode=OneWayToSource}" ToolTip="See only unselected skills" Margin="2" VerticalAlignment="Center"/>
+                    <RadioButton Content="All" IsChecked="{Binding VisibilityModeAll, Mode=OneWayToSource, FallbackValue=true}" ToolTip="See all available skills" Style="{StaticResource SkillSelectorRadioButton}"/>
+                    <RadioButton Content="Selected" IsChecked="{Binding VisibilityModeSelected, Mode=OneWayToSource}" ToolTip="See only selected skills" Style="{StaticResource SkillSelectorRadioButton}"/>
+                    <RadioButton Content="Unselected" IsChecked="{Binding VisibilityModeUnselected, Mode=OneWayToSource}" ToolTip="See only unselected skills" Style="{StaticResource SkillSelectorRadioButton}"/>
                 </StackPanel>
                 <TextBox Margin="2" Padding="3" FocusManager.FocusedElement="{Binding RelativeSource={RelativeSource Self}}" Text="{Binding SearchText, Mode=OneWayToSource, UpdateSourceTrigger=PropertyChanged}"/>
             </DockPanel>
@@ -275,7 +287,7 @@
                     <ColumnDefinition Width="3*"/>
                 </Grid.ColumnDefinitions>
                 <DockPanel Grid.Column="0" LastChildFill="True">
-                    <Button DockPanel.Dock="Top" Content="Set skills" Margin="2" Padding="2" Command="{Binding OpenSkillSelectorCommand, Mode=OneTime}"/>
+                    <Button DockPanel.Dock="Top" Content="Change skills" Margin="2" Padding="2" Command="{Binding OpenSkillSelectorCommand, Mode=OneTime}"/>
                     <CheckBox DockPanel.Dock="Bottom" Margin="2" Padding="2" IsChecked="{Binding IsAutoSearch}" IsThreeState="False" VerticalAlignment="Center" VerticalContentAlignment="Center">
                         <CheckBox.Content>
                             <TextBlock Text="Auto-search" VerticalAlignment="Center"/>
@@ -285,7 +297,7 @@
                     <Button DockPanel.Dock="Bottom" Content="Search" Margin="2" Padding="2" IsEnabled="{Binding IsSearching, Mode=OneWay, Converter={StaticResource InverseBooleanValueConverter}}" Command="{Binding SearchArmorSetsCommand, Mode=OneTime}"/>
                     <ProgressBar DockPanel.Dock="Bottom" HorizontalAlignment="Stretch" Margin="2" Padding="2" IsIndeterminate="{Binding IsSearching}" Visibility="{Binding IsSearching, Converter={StaticResource HiddenVisibilityValueConverter}}"  Value="0" Height="16"/>
                     <DockPanel LastChildFill="True">
-                        <TextBlock Text="{Binding LoadoutText, Mode=OneWay}" Margin="2" DockPanel.Dock="Left" VerticalAlignment="Top" Background="#08000000">
+                        <TextBlock Text="{Binding LoadoutText, Mode=OneWay}" FontSize="12" FontWeight="Bold" Foreground="Blue" Padding="3" DockPanel.Dock="Left" VerticalAlignment="Top" Background="#08000000">
                             <TextBlock.LayoutTransform>
                                 <RotateTransform Angle="-90"/>
                             </TextBlock.LayoutTransform>
