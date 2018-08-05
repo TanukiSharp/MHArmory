@@ -24,56 +24,56 @@ namespace MHArmory.Search
             return slots.Sum(x => x * x * x);
         }
 
-        public static IEnumerable<IArmorPiece> CreateArmorPieceSorter(IEnumerable<IArmorPiece> items, IEnumerable<MaximizedSearchCriteria> sortCriterias)
+        public static IEnumerable<SolverDataEquipmentModel> CreateArmorPieceSorter(IEnumerable<SolverDataEquipmentModel> items, IEnumerable<MaximizedSearchCriteria> sortCriterias)
         {
             if (items.Any() == false)
                 return items;
 
-            IOrderedEnumerable<IArmorPiece> result = items.OrderBy(x => 1); // wasting a bit of CPU cycles for productivity purpose :(
+            IOrderedEnumerable<SolverDataEquipmentModel> result = items.OrderBy(x => 1); // wasting a bit of CPU cycles for productivity purpose :(
 
             foreach (MaximizedSearchCriteria sortCriteria in sortCriterias)
             {
                 switch (sortCriteria)
                 {
                     case MaximizedSearchCriteria.BaseDefense:
-                        result = result.ThenByDescending(x => x.Defense.Base);
+                        result = result.ThenByDescending(x => ((IArmorPiece)x.Equipment).Defense.Base);
                         break;
                     case MaximizedSearchCriteria.MaxUnaugmentedDefense:
-                        result = result.ThenByDescending(x => x.Defense.Max);
+                        result = result.ThenByDescending(x => ((IArmorPiece)x.Equipment).Defense.Max);
                         break;
                     case MaximizedSearchCriteria.MaxAugmentedDefense:
-                        result = result.ThenByDescending(x => x.Defense.Augmented);
+                        result = result.ThenByDescending(x => ((IArmorPiece)x.Equipment).Defense.Augmented);
                         break;
                     case MaximizedSearchCriteria.Rarity:
-                        result = result.ThenBy(x => x.Rarity);
+                        result = result.ThenBy(x => x.Equipment.Rarity);
                         break;
                     case MaximizedSearchCriteria.SlotCount:
                         result = result
-                            .ThenByDescending(x => x.Slots.Count(s => s > 0))
-                            .ThenByDescending(x => x.Slots.Sum()); // For same amount of slots, set larger slots first.
+                            .ThenByDescending(x => x.Equipment.Slots.Count(s => s > 0))
+                            .ThenByDescending(x => x.Equipment.Slots.Sum()); // For same amount of slots, set larger slots first.
                         break;
                     case MaximizedSearchCriteria.SlotSizeSquare:
                         result = result
-                            .ThenByDescending(x => SlotSizeScoreSquare(x.Slots))
-                            .ThenByDescending(x => x.Slots.Count(s => s > 0)); // For same score, gives precedence to slot count. (only 221 and 3--, sets 221 before 3--)
+                            .ThenByDescending(x => SlotSizeScoreSquare(x.Equipment.Slots))
+                            .ThenByDescending(x => x.Equipment.Slots.Count(s => s > 0)); // For same score, gives precedence to slot count. (only 221 and 3--, sets 221 before 3--)
                         break;
                     case MaximizedSearchCriteria.SlotSizeCube:
-                        result = result.ThenByDescending(x => SlotSizeScoreCube(x.Slots));
+                        result = result.ThenByDescending(x => SlotSizeScoreCube(x.Equipment.Slots));
                         break;
                     case MaximizedSearchCriteria.FireResistance:
-                        result = result.ThenByDescending(x => x.Resistances.Fire);
+                        result = result.ThenByDescending(x => ((IArmorPiece)x.Equipment).Resistances.Fire);
                         break;
                     case MaximizedSearchCriteria.WaterResistance:
-                        result = result.ThenByDescending(x => x.Resistances.Water);
+                        result = result.ThenByDescending(x => ((IArmorPiece)x.Equipment).Resistances.Water);
                         break;
                     case MaximizedSearchCriteria.ThunderResistance:
-                        result = result.ThenByDescending(x => x.Resistances.Thunder);
+                        result = result.ThenByDescending(x => ((IArmorPiece)x.Equipment).Resistances.Thunder);
                         break;
                     case MaximizedSearchCriteria.IceResistance:
-                        result = result.ThenByDescending(x => x.Resistances.Ice);
+                        result = result.ThenByDescending(x => ((IArmorPiece)x.Equipment).Resistances.Ice);
                         break;
                     case MaximizedSearchCriteria.DragonResistance:
-                        result = result.ThenByDescending(x => x.Resistances.Dragon);
+                        result = result.ThenByDescending(x => ((IArmorPiece)x.Equipment).Resistances.Dragon);
                         break;
                 }
             }

@@ -9,6 +9,7 @@ namespace MHArmory.Search
     public class SolverDataEquipmentModel
     {
         public IEquipment Equipment { get; }
+        public bool ToBeRemoved { get; set; }
         public bool IsSelected { get; set; } = true;
 
         public SolverDataEquipmentModel(IEquipment equipment)
@@ -54,20 +55,20 @@ namespace MHArmory.Search
         public IList<IAbility> DesiredAbilities { get; }
 
         private readonly IList<MaximizedSearchCriteria> inputSearchCriterias;
-        private readonly IList<IArmorPiece> inputHeads;
-        private readonly IList<IArmorPiece> inputChests;
-        private readonly IList<IArmorPiece> inputGloves;
-        private readonly IList<IArmorPiece> inputWaists;
-        private readonly IList<IArmorPiece> inputLegs;
-        private readonly IList<ICharmLevel> inputCharms;
+        private readonly List<SolverDataEquipmentModel> inputHeads;
+        private readonly List<SolverDataEquipmentModel> inputChests;
+        private readonly List<SolverDataEquipmentModel> inputGloves;
+        private readonly List<SolverDataEquipmentModel> inputWaists;
+        private readonly List<SolverDataEquipmentModel> inputLegs;
+        private readonly List<SolverDataEquipmentModel> inputCharms;
         private readonly IList<SolverDataJewelModel> inputJewels;
 
-        private IList<SolverDataEquipmentModel> allHeads;
-        private IList<SolverDataEquipmentModel> allChests;
-        private IList<SolverDataEquipmentModel> allGloves;
-        private IList<SolverDataEquipmentModel> allWaists;
-        private IList<SolverDataEquipmentModel> allLegs;
-        private IList<SolverDataEquipmentModel> allCharms;
+        private List<SolverDataEquipmentModel> allHeads;
+        private List<SolverDataEquipmentModel> allChests;
+        private List<SolverDataEquipmentModel> allGloves;
+        private List<SolverDataEquipmentModel> allWaists;
+        private List<SolverDataEquipmentModel> allLegs;
+        private List<SolverDataEquipmentModel> allCharms;
         private IList<SolverDataJewelModel> allJewels;
 
         public int MinJewelSize { get; private set; }
@@ -76,22 +77,22 @@ namespace MHArmory.Search
         public SolverData(
             IList<int> weaponSlots,
             IList<MaximizedSearchCriteria> searchCriterias,
-            IList<IArmorPiece> heads,
-            IList<IArmorPiece> chests,
-            IList<IArmorPiece> gloves,
-            IList<IArmorPiece> waists,
-            IList<IArmorPiece> legs,
-            IList<ICharmLevel> charms,
+            IEnumerable<IArmorPiece> heads,
+            IEnumerable<IArmorPiece> chests,
+            IEnumerable<IArmorPiece> gloves,
+            IEnumerable<IArmorPiece> waists,
+            IEnumerable<IArmorPiece> legs,
+            IEnumerable<ICharmLevel> charms,
             IList<SolverDataJewelModel> jewels,
             IList<IAbility> desiredAbilities
         )
         {
-            inputHeads = heads;
-            inputChests = chests;
-            inputGloves = gloves;
-            inputWaists = waists;
-            inputLegs = legs;
-            inputCharms = charms;
+            inputHeads = heads.Select(x => new SolverDataEquipmentModel(x)).ToList();
+            inputChests = chests.Select(x => new SolverDataEquipmentModel(x)).ToList();
+            inputGloves = gloves.Select(x => new SolverDataEquipmentModel(x)).ToList();
+            inputWaists = waists.Select(x => new SolverDataEquipmentModel(x)).ToList();
+            inputLegs = legs.Select(x => new SolverDataEquipmentModel(x)).ToList();
+            inputCharms = charms.Select(x => new SolverDataEquipmentModel(x)).ToList();
             inputJewels = jewels;
 
             if (searchCriterias == null || searchCriterias.Count == 0)
@@ -116,35 +117,35 @@ namespace MHArmory.Search
             MinJewelSize = allJewels.Min(x => x.Jewel.SlotSize);
             MaxJewelSize = allJewels.Max(x => x.Jewel.SlotSize);
 
-            List<IArmorPiece> tempAllHeads = inputHeads
+            List<SolverDataEquipmentModel> tempAllHeads = inputHeads
                 .RemoveWhere(isLessPoweredEquivalentArmorPiece)
                 .Sort(inputSearchCriterias)
                 .ExcludeEquipmentsNonMatchingAbilities(DesiredAbilities)
                 .ToList()
                 ;
 
-            List<IArmorPiece> tempAllChests = inputChests
+            List<SolverDataEquipmentModel> tempAllChests = inputChests
                 .RemoveWhere(isLessPoweredEquivalentArmorPiece)
                 .Sort(inputSearchCriterias)
                 .ExcludeEquipmentsNonMatchingAbilities(DesiredAbilities)
                 .ToList()
                 ;
 
-            List<IArmorPiece> tempAllGloves = inputGloves
+            List<SolverDataEquipmentModel> tempAllGloves = inputGloves
                 .RemoveWhere(isLessPoweredEquivalentArmorPiece)
                 .Sort(inputSearchCriterias)
                 .ExcludeEquipmentsNonMatchingAbilities(DesiredAbilities)
                 .ToList()
                 ;
 
-            List<IArmorPiece> tempAllWaists = inputWaists
+            List<SolverDataEquipmentModel> tempAllWaists = inputWaists
                 .RemoveWhere(isLessPoweredEquivalentArmorPiece)
                 .Sort(inputSearchCriterias)
                 .ExcludeEquipmentsNonMatchingAbilities(DesiredAbilities)
                 .ToList()
                 ;
 
-            List<IArmorPiece> tempAllLegs = inputLegs
+            List<SolverDataEquipmentModel> tempAllLegs = inputLegs
                 .RemoveWhere(isLessPoweredEquivalentArmorPiece)
                 .Sort(inputSearchCriterias)
                 .ExcludeEquipmentsNonMatchingAbilities(DesiredAbilities)
@@ -154,41 +155,30 @@ namespace MHArmory.Search
             ExcludeNonCompleteFullArmorSets(tempAllHeads, tempAllChests, tempAllGloves, tempAllWaists, tempAllLegs);
 
             allHeads = tempAllHeads
-                .MapToSolverDataModel()
-                .ToList()
                 .UnselectOddlySkilled(DesiredAbilities)
                 ;
 
             allChests = tempAllChests
-                .MapToSolverDataModel()
-                .ToList()
                 .UnselectOddlySkilled(DesiredAbilities)
                 ;
 
             allGloves = tempAllGloves
-                .MapToSolverDataModel()
-                .ToList()
                 .UnselectOddlySkilled(DesiredAbilities)
                 ;
 
             allWaists = tempAllWaists
-                .MapToSolverDataModel()
-                .ToList()
                 .UnselectOddlySkilled(DesiredAbilities)
                 ;
 
             allLegs = tempAllLegs
-                .MapToSolverDataModel()
-                .ToList()
                 .UnselectOddlySkilled(DesiredAbilities)
                 ;
 
-            CheckFullArmorSetSection();
+            CheckFullArmorSetSelection();
 
             allCharms = inputCharms
-                .RemoveWhere(DataUtility.IsLessPoweredEquivalentEquipment)
+                .RemoveWhere<IEquipment>(DataUtility.IsLessPoweredEquivalentEquipment)
                 .ExcludeEquipmentsNonMatchingAbilities(DesiredAbilities)
-                .MapToSolverDataModel()
                 .ToList();
         }
 
@@ -237,9 +227,13 @@ namespace MHArmory.Search
         /// <summary>
         /// This method unselect other armor pieces if at least one in the full set is unselected.
         /// </summary>
-        private void CheckFullArmorSetSection()
+        private void CheckFullArmorSetSelection()
         {
-            IEnumerable<SolverDataEquipmentModel> all = allHeads.Concat(allChests).Concat(allGloves).Concat(allWaists).Concat(allLegs);
+            IEnumerable<SolverDataEquipmentModel> all = allHeads
+                .Concat(allChests)
+                .Concat(allGloves)
+                .Concat(allWaists)
+                .Concat(allLegs);
 
             foreach (SolverDataEquipmentModel head in allHeads)
             {
@@ -258,12 +252,16 @@ namespace MHArmory.Search
             }
         }
 
+        private void CheckNonFullArmorSetSelection()
+        {
+        }
+
         private void ExcludeNonCompleteFullArmorSets(
-            List<IArmorPiece> heads,
-            List<IArmorPiece> chests,
-            List<IArmorPiece> gloves,
-            List<IArmorPiece> waists,
-            List<IArmorPiece> legs
+            List<SolverDataEquipmentModel> heads,
+            List<SolverDataEquipmentModel> chests,
+            List<SolverDataEquipmentModel> gloves,
+            List<SolverDataEquipmentModel> waists,
+            List<SolverDataEquipmentModel> legs
         )
         {
             ExcludeNonCompleteFullArmorSets(heads, heads, chests, gloves, waists, legs);
@@ -274,20 +272,22 @@ namespace MHArmory.Search
         }
 
         private void ExcludeNonCompleteFullArmorSets(
-            List<IArmorPiece> source,
-            List<IArmorPiece> heads,
-            List<IArmorPiece> chests,
-            List<IArmorPiece> gloves,
-            List<IArmorPiece> waists,
-            List<IArmorPiece> legs
+            List<SolverDataEquipmentModel> source,
+            List<SolverDataEquipmentModel> heads,
+            List<SolverDataEquipmentModel> chests,
+            List<SolverDataEquipmentModel> gloves,
+            List<SolverDataEquipmentModel> waists,
+            List<SolverDataEquipmentModel> legs
         )
         {
             for (int i = 0; i < heads.Count; i++)
             {
-                if (heads[i].ArmorSet == null || heads[i].ArmorSet.IsFull == false)
+                IArmorSet armorSet = ((IArmorPiece)heads[i].Equipment).ArmorSet;
+
+                if (armorSet == null || armorSet.IsFull == false)
                     continue;
 
-                IArmorPiece[] setPieces = heads[i].ArmorSet.ArmorPieces;
+                IArmorPiece[] setPieces = armorSet.ArmorPieces;
 
                 IArmorPiece head = setPieces.First(x => x.Type == EquipmentType.Head);
                 IArmorPiece chest = setPieces.First(x => x.Type == EquipmentType.Chest);
@@ -295,17 +295,17 @@ namespace MHArmory.Search
                 IArmorPiece waist = setPieces.First(x => x.Type == EquipmentType.Waist);
                 IArmorPiece leg = setPieces.First(x => x.Type == EquipmentType.Legs);
 
-                if (heads.Any(x => x.Id == head.Id) == false ||
-                    chests.Any(x => x.Id == chest.Id) == false ||
-                    gloves.Any(x => x.Id == glove.Id) == false ||
-                    waists.Any(x => x.Id == waist.Id) == false ||
-                    legs.Any(x => x.Id == leg.Id) == false)
+                if (heads.Any(x => x.Equipment.Id == head.Id) == false ||
+                    chests.Any(x => x.Equipment.Id == chest.Id) == false ||
+                    gloves.Any(x => x.Equipment.Id == glove.Id) == false ||
+                    waists.Any(x => x.Equipment.Id == waist.Id) == false ||
+                    legs.Any(x => x.Equipment.Id == leg.Id) == false)
                 {
-                    heads.RemoveAll(x => x.Id == head.Id);
-                    chests.RemoveAll(x => x.Id == chest.Id);
-                    gloves.RemoveAll(x => x.Id == glove.Id);
-                    waists.RemoveAll(x => x.Id == waist.Id);
-                    legs.RemoveAll(x => x.Id == leg.Id);
+                    heads.RemoveAll(x => x.Equipment.Id == head.Id);
+                    chests.RemoveAll(x => x.Equipment.Id == chest.Id);
+                    gloves.RemoveAll(x => x.Equipment.Id == glove.Id);
+                    waists.RemoveAll(x => x.Equipment.Id == waist.Id);
+                    legs.RemoveAll(x => x.Equipment.Id == leg.Id);
                     i--;
                 }
             }
@@ -344,7 +344,7 @@ namespace MHArmory.Search
 
     public static class SolverDataOperators
     {
-        public static IList<SolverDataEquipmentModel> UnselectOddlySkilled(this IList<SolverDataEquipmentModel> equipments, IEnumerable<IAbility> desiredAbilities)
+        public static List<SolverDataEquipmentModel> UnselectOddlySkilled(this List<SolverDataEquipmentModel> equipments, IEnumerable<IAbility> desiredAbilities)
         {
             foreach (SolverDataEquipmentModel equipment in equipments)
             {
@@ -364,7 +364,7 @@ namespace MHArmory.Search
             return equipments;
         }
 
-        public static IEnumerable<IArmorPiece> Sort(this IEnumerable<IArmorPiece> unsorted, IEnumerable<MaximizedSearchCriteria> criterias)
+        public static IEnumerable<SolverDataEquipmentModel> Sort(this IEnumerable<SolverDataEquipmentModel> unsorted, IEnumerable<MaximizedSearchCriteria> criterias)
         {
             return DataUtility.CreateArmorPieceSorter(unsorted, criterias);
         }
@@ -385,17 +385,17 @@ namespace MHArmory.Search
             return a && b;
         }
 
-        public static IEnumerable<T> ExcludeEquipmentsNonMatchingAbilities<T>(this IEnumerable<T> equipments, IEnumerable<IAbility> desiredAbilities) where T : IEquipment
+        public static IEnumerable<SolverDataEquipmentModel> ExcludeEquipmentsNonMatchingAbilities(this IEnumerable<SolverDataEquipmentModel> equipments, IEnumerable<IAbility> desiredAbilities)
         {
-            bool whereFunc(T x)
+            bool whereFunc(SolverDataEquipmentModel x)
             {
-                bool isAbilityWorth = x.Abilities.Any(y => y.IsMatchingDesiredAbilities(desiredAbilities));
-                bool isSlotsWorth = IsWorthBySlots(x.Slots);
+                bool isAbilityWorth = x.Equipment.Abilities.Any(y => y.IsMatchingDesiredAbilities(desiredAbilities));
+                bool isSlotsWorth = IsWorthBySlots(x.Equipment.Slots);
 
                 return isAbilityWorth || isSlotsWorth;
             }
 
-            IEnumerable<T> filtered = equipments.Where(whereFunc);
+            IEnumerable<SolverDataEquipmentModel> filtered = equipments.Where(whereFunc);
 
             if (filtered.Any())
                 return filtered;
@@ -413,11 +413,6 @@ namespace MHArmory.Search
             return new[] { equipments.FirstOrDefault() };
         }
 
-        public static IEnumerable<SolverDataEquipmentModel> MapToSolverDataModel(this IEnumerable<IEquipment> equipments)
-        {
-            return equipments.Select(x => new SolverDataEquipmentModel(x));
-        }
-
         public static bool IsMatchingDesiredAbilities(this IAbility ability, IEnumerable<IAbility> desiredAbilities)
         {
             foreach (IAbility desiredAbility in desiredAbilities)
@@ -429,7 +424,7 @@ namespace MHArmory.Search
             return false;
         }
 
-        public static IList<T> RemoveWhere<T>(this IList<T> equipments, Func<T, T, bool> matchFunc)
+        public static List<SolverDataEquipmentModel> RemoveWhere<T>(this List<SolverDataEquipmentModel> equipments, Func<T, T, bool> matchFunc) where T : IEquipment
         {
             for (int i = 0; i < equipments.Count; i++)
             {
@@ -438,15 +433,8 @@ namespace MHArmory.Search
                     if (i == j)
                         continue;
 
-                    if (matchFunc(equipments[i], equipments[j]))
-                    {
-                        equipments.RemoveAt(j);
-
-                        if (i >= j)
-                            i--;
-
-                        j--;
-                    }
+                    if (matchFunc((T)equipments[i].Equipment, (T)equipments[j].Equipment))
+                        equipments[j].ToBeRemoved = true;
                 }
             }
 
