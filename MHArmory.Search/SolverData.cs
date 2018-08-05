@@ -410,10 +410,11 @@ namespace MHArmory.Search
         {
             bool whereFunc(SolverDataEquipmentModel x)
             {
+                bool isArmorSetSkillMatching = x.Equipment.IsEquipmentMatchingAbility(desiredAbilities);
                 bool isAbilityWorth = x.Equipment.Abilities.Any(y => y.IsMatchingDesiredAbilities(desiredAbilities));
                 bool isSlotsWorth = IsWorthBySlots(x.Equipment.Slots);
 
-                return isAbilityWorth || isSlotsWorth;
+                return isArmorSetSkillMatching || isAbilityWorth || isSlotsWorth;
             }
 
             IEnumerable<SolverDataEquipmentModel> filtered = equipments.Where(whereFunc);
@@ -422,6 +423,20 @@ namespace MHArmory.Search
                 return filtered;
 
             return new[] { equipments.FirstOrDefault() };
+        }
+
+        private static bool IsEquipmentMatchingAbility(this IEquipment equipment, IEnumerable<IAbility> desiredAbilities)
+        {
+            if (equipment is IArmorPiece armorPiece && armorPiece.ArmorSet != null && armorPiece.ArmorSet.IsFull == false)
+            {
+                foreach (IArmorSetSkill skill in armorPiece.ArmorSet.Skills)
+                {
+                    if (skill.GrantedSkills.Any(x => x.IsMatchingDesiredAbilities(desiredAbilities)))
+                        return true;
+                }
+            }
+
+            return false;
         }
 
         public static IEnumerable<T> ExcludeNonMatchingAbilities<T>(this IEnumerable<T> equipments, IEnumerable<IAbility> desiredAbilities) where T : IHasAbilities
