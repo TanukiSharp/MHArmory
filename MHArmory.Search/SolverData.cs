@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using MHArmory.Core.DataStructures;
 
 namespace MHArmory.Search
@@ -10,7 +9,22 @@ namespace MHArmory.Search
     {
         public IEquipment Equipment { get; }
         public bool ToBeRemoved { get; set; }
-        public bool IsSelected { get; set; } = true;
+
+        public event EventHandler SelectionChanged;
+
+        private bool isSelected = true;
+        public bool IsSelected
+        {
+            get { return isSelected; }
+            set
+            {
+                if (isSelected != value)
+                {
+                    isSelected = value;
+                    SelectionChanged?.Invoke(this, EventArgs.Empty);
+                }
+            }
+        }
 
         public SolverDataEquipmentModel(IEquipment equipment)
         {

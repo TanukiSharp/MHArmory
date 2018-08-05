@@ -337,22 +337,26 @@
         </DockPanel>
     </DataTemplate>
 
-    <DataTemplate x:Key="ArmorPieceTypeView">
-        <ListBox ItemsSource="{Binding Equipments, Mode=OneTime}" Margin="2" VirtualizingPanel.IsVirtualizing="True" VirtualizingPanel.IsContainerVirtualizable="True" VirtualizingPanel.ScrollUnit="Pixel">
-            <ListBox.ItemTemplate>
-                <DataTemplate>
-                    <CheckBox IsThreeState="False" IsChecked="{Binding IsSelected}" Content="{Binding Equipment.Name, Mode=OneTime}" ToolTipService.ShowDuration="99999999">
-                        <ToolTipService.ToolTip>
-                            <ContentControl Content="{Binding Equipment, Mode=OneTime}" ContentTemplate="{StaticResource ArmorPieceView}" Focusable="False"/>
-                        </ToolTipService.ToolTip>
-                    </CheckBox>
-                </DataTemplate>
-            </ListBox.ItemTemplate>
-        </ListBox>
+    <DataTemplate x:Key="ArmorPieceTypesView">
+        <DockPanel LastChildFill="True" Background="#0F000000" Margin="4">
+            <TextBlock DockPanel.Dock="Bottom" Margin="2" Text="{Binding Equipments.Count, Mode=OneTime, StringFormat=Total: {0}}"/>
+            <TextBlock DockPanel.Dock="Bottom" Margin="2" Text="{Binding SelectedCount, StringFormat=Selected: {0}}"/>
+            <ListBox ItemsSource="{Binding Equipments, Mode=OneTime}" Margin="2" VirtualizingPanel.IsVirtualizing="True" VirtualizingPanel.IsContainerVirtualizable="True" VirtualizingPanel.ScrollUnit="Pixel">
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <CheckBox IsThreeState="False" IsChecked="{Binding IsSelected}" Content="{Binding Equipment.Name, Mode=OneTime}" ToolTipService.ShowDuration="99999999">
+                            <ToolTipService.ToolTip>
+                                <ContentControl Content="{Binding Equipment, Mode=OneTime}" ContentTemplate="{StaticResource ArmorPieceView}" Focusable="False"/>
+                            </ToolTipService.ToolTip>
+                        </CheckBox>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
+        </DockPanel>
     </DataTemplate>
 
     <DataTemplate x:Key="AdvancedSearchView">
-        <ItemsControl ItemsSource="{Binding ArmorPieceTypes}" ItemTemplate="{StaticResource ArmorPieceTypeView}">
+        <ItemsControl ItemsSource="{Binding ArmorPieceTypes}" ItemTemplate="{StaticResource ArmorPieceTypesView}">
             <ItemsControl.ItemsPanel>
                 <ItemsPanelTemplate>
                     <UniformGrid Columns="6"/>

@@ -40,5 +40,12 @@ namespace MHArmory
 
             DataContext = advancedSearchViewModel;
         }
+
+        protected override void OnClosed(EventArgs e)
+        {
+            base.OnClosed(e);
+
+            advancedSearchViewModel.Dispose();
+        }
     }
 }
