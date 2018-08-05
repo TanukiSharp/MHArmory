@@ -180,6 +180,13 @@ namespace MHArmory.Search
                 .RemoveWhere<IEquipment>(DataUtility.IsLessPoweredEquivalentEquipment)
                 .ExcludeEquipmentsNonMatchingAbilities(DesiredAbilities)
                 .ToList();
+
+            allHeads.RemoveAll(x => x.ToBeRemoved);
+            allCharms.RemoveAll(x => x.ToBeRemoved);
+            allGloves.RemoveAll(x => x.ToBeRemoved);
+            allWaists.RemoveAll(x => x.ToBeRemoved);
+            allLegs.RemoveAll(x => x.ToBeRemoved);
+            allCharms.RemoveAll(x => x.ToBeRemoved);
         }
 
         public SolverData Done()
