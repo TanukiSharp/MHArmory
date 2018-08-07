@@ -340,6 +340,9 @@ namespace MHArmory.Search
             {
                 int armorAbilityTotal = 0;
 
+                if (IsAbilityMatchingArmorSet(ability, equipments.OfType<IArmorPiece>()))
+                    continue;
+
                 foreach (IEquipment equipment in equipments)
                 {
                     if (equipment != null)
@@ -398,6 +401,42 @@ namespace MHArmory.Search
             };
         }
 
+        private bool IsAbilityMatchingArmorSet(IAbility ability, IEnumerable<IArmorPiece> armorPieces)
+        {
+            var armorSets = new Dictionary<IArmorSet, int>(ArmorSetEqualityComparer.Default);
+
+            foreach (IArmorPiece armorPiece in armorPieces)
+            {
+                if (armorPiece.ArmorSet == null || armorPiece.ArmorSet.IsFull)
+                    continue;
+
+                if (armorPiece.ArmorSet.Skills.SelectMany(x => x.GrantedSkills).Any(a => a.Id == ability.Id))
+                {
+                    if (armorSets.TryGetValue(armorPiece.ArmorSet, out int value) == false)
+                        value = 0;
+
+                    armorSets[armorPiece.ArmorSet] = value + 1;
+                }
+            }
+
+            if (armorSets.Count > 0)
+            {
+                foreach (KeyValuePair<IArmorSet, int> armorSetKeyValue in armorSets)
+                {
+                    foreach (IArmorSetSkill armorSetSkill in armorSetKeyValue.Key.Skills)
+                    {
+                        if (armorSetKeyValue.Value >= armorSetSkill.RequiredArmorPieces)
+                        {
+                            if (armorSetSkill.GrantedSkills.Any(x => x.Id == ability.Id))
+                                return true;
+                        }
+                    }
+                }
+            }
+
+            return false;
+        }
+
         private bool ConsumeSlots(int[] availableSlots, int jewelSize, int jewelCount)
         {
             for (int i = jewelSize - 1; i < availableSlots.Length; i++)
@@ -418,6 +457,27 @@ namespace MHArmory.Search
             }
 
             return jewelCount <= 0;
+        }
+
+        private class ArmorSetEqualityComparer : IEqualityComparer<IArmorSet>
+        {
+            public static readonly IEqualityComparer<IArmorSet> Default = new ArmorSetEqualityComparer();
+
+            public bool Equals(IArmorSet x, IArmorSet y)
+            {
+                if (x == null || y == null)
+                    return false;
+
+                return x.Id == y.Id;
+            }
+
+            public int GetHashCode(IArmorSet obj)
+            {
+                if (obj == null)
+                    return 0;
+
+                return obj.Id;
+            }
         }
     }
 }
