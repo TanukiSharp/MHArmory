@@ -20,5 +20,6 @@ namespace MHArmory.Search
         public IList<IArmorPiece> ArmorPieces;
         public ICharmLevel Charm;
         public IList<ArmorSetJewelResult> Jewels;
+        public int[] SpareSlots;
     }
 }

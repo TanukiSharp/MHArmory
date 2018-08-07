@@ -264,12 +264,12 @@ namespace MHArmory.ViewModels
                 FoundArmorSets = null;
             else
             {
-                FoundArmorSets = result.Where(x => x.IsMatch).Select(x => new ArmorSetViewModel
-                {
-                    ArmorPieces = x.ArmorPieces,
-                    Charm = x.Charm,
-                    Jewels = x.Jewels.Select(j => new ArmorSetJewelViewModel { Jewel = j.Jewel, Count = j.Count }).ToList()
-                });
+                FoundArmorSets = result.Where(x => x.IsMatch).Select(x => new ArmorSetViewModel(
+                    x.ArmorPieces,
+                    x.Charm,
+                    x.Jewels.Select(j => new ArmorSetJewelViewModel(j.Jewel, j.Count)).ToList(),
+                    x.SpareSlots
+                ));
             }
 
             solver.DebugData -= Solver_DebugData;

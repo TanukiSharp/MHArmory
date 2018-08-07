@@ -134,8 +134,8 @@ namespace MHArmory
 
             rootViewModel.FoundArmorSets = new ArmorSetViewModel[]
             {
-                new ArmorSetViewModel { ArmorPieces = armors.Skip(armors.Length - 10).Take(5).ToList(), Charm = charms[0].Levels[0] },
-                new ArmorSetViewModel { ArmorPieces = armors.Skip(armors.Length - 5).ToList(), Charm = charms[1].Levels[0] }
+                new ArmorSetViewModel(armors.Skip(armors.Length - 10).Take(5).ToList(), charms[0].Levels[0], null, null),
+                new ArmorSetViewModel(armors.Skip(armors.Length - 5).ToList(), charms[1].Levels[0], null, null)
             };
         }
 

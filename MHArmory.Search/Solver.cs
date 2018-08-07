@@ -397,7 +397,8 @@ namespace MHArmory.Search
             {
                 IsMatch = true,
                 IsOptimal = isOptimal,
-                Jewels = requiredJewels
+                Jewels = requiredJewels,
+                SpareSlots = availableSlots
             };
         }
 
