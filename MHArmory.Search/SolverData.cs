@@ -422,7 +422,10 @@ namespace MHArmory.Search
             if (filtered.Any())
                 return filtered;
 
-            return new[] { equipments.FirstOrDefault() };
+            SolverDataEquipmentModel equipment = equipments.FirstOrDefault();
+            equipment.ToBeRemoved = false;
+
+            return new[] { equipment };
         }
 
         private static bool IsEquipmentMatchingAbility(this IEquipment equipment, IEnumerable<IAbility> desiredAbilities)
