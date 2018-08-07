@@ -157,6 +157,8 @@ namespace MHArmory.AthenaAssDataSource
             armorSetSkillPrimitives = LoadArmorSetSkills(filename).ToList();
         }
 
+        private int armorSetUniqueId = 1;
+
         private void LoadArmorSetSkillsPhase2(IList<ArmorPieceContainer> allArmorSetContainers)
         {
             foreach (IGrouping<string, ArmorSetSkillPrimitive> armorSetSkillGroup in armorSetSkillPrimitives.GroupBy(x => x.Name))
@@ -170,7 +172,10 @@ namespace MHArmory.AthenaAssDataSource
                     .Select(x => x.ArmorPiece)
                     .ToArray();
 
-                var armorSet = new ArmorSet(false, armorSetPieces, armorSetSkills);
+                int armorSetId = armorSetUniqueId;
+                armorSetUniqueId++;
+
+                var armorSet = new ArmorSet(armorSetId, false, armorSetPieces, armorSetSkills);
 
                 foreach (ArmorPiece armorPiece in armorSetPieces)
                     armorPiece.UpdateArmorSet(armorSet);
@@ -377,7 +382,10 @@ namespace MHArmory.AthenaAssDataSource
                 IEnumerable<ArmorPieceContainer> setContainers = container.FullArmorSetIds
                     .Select(id => allArmorPieceContainers.First(p => p.Primitive.Id == id));
 
-                IArmorSet armorSet = new ArmorSet(true, setPieces, null);
+                int armorSetId = armorSetUniqueId;
+                armorSetUniqueId++;
+
+                IArmorSet armorSet = new ArmorSet(armorSetId, true, setPieces, null);
 
                 foreach (ArmorPieceContainer setContainer in setContainers)
                 {

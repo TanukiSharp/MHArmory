@@ -190,6 +190,7 @@ namespace MHArmory.Core.DataStructures
 
     public interface IArmorSet
     {
+        int Id { get; }
         bool IsFull { get; }
         IArmorPiece[] ArmorPieces { get; }
         IArmorSetSkill[] Skills { get; }
@@ -208,6 +209,7 @@ namespace MHArmory.Core.DataStructures
                 return armorSet1;
 
             return new ArmorSet(
+                armorSet1.Id,
                 armorSet1.IsFull || armorSet2.IsFull,
                 armorSet1.ArmorPieces,
                 armorSet1.Skills ?? armorSet2.Skills
@@ -217,13 +219,15 @@ namespace MHArmory.Core.DataStructures
 
     public class ArmorSet : IArmorSet
     {
-        public ArmorSet(bool isFull, IArmorPiece[] armorPieces, IArmorSetSkill[] skills)
+        public ArmorSet(int id, bool isFull, IArmorPiece[] armorPieces, IArmorSetSkill[] skills)
         {
+            Id = id;
             IsFull = isFull;
             ArmorPieces = armorPieces;
             Skills = skills;
         }
 
+        public int Id { get; }
         public bool IsFull { get; }
         public IArmorPiece[] ArmorPieces { get; }
         public IArmorSetSkill[] Skills { get; }
