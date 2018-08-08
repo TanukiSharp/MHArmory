@@ -95,19 +95,19 @@ namespace MHArmory.ViewModels
             set { SetValue(ref isVisible, value); }
         }
 
-        public void ApplySearchText(string searchText)
+        public void ApplySearchText(SearchStatement searchStatement)
         {
-            if (string.IsNullOrWhiteSpace(searchText))
+            if (searchStatement == null || searchStatement.IsEmpty)
             {
                 IsVisible = true;
                 return;
             }
 
             IsVisible =
-                skill.Name.IndexOf(searchText, StringComparison.OrdinalIgnoreCase) > -1 ||
-                skill.Description.IndexOf(searchText, StringComparison.OrdinalIgnoreCase) > -1 ||
-                skill.Abilities.Any(x => x.Description.IndexOf(searchText, StringComparison.OrdinalIgnoreCase) > -1) ||
-                JewelsText.IndexOf(searchText, StringComparison.OrdinalIgnoreCase) > -1;
+                searchStatement.IsMatching(skill.Name) ||
+                searchStatement.IsMatching(skill.Description) ||
+                skill.Abilities.Any(x => searchStatement.IsMatching(x.Description)) ||
+                searchStatement.IsMatching(JewelsText);
         }
 
         internal void CheckChanged(int level, bool resetChecked)

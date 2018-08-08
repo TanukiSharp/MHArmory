@@ -109,7 +109,7 @@ namespace MHArmory.ViewModels
                 }
             }
 
-            skillViewModel.ApplySearchText(searchText);
+            skillViewModel.ApplySearchText(SearchStatement.Create(searchText));
         }
 
         public SkillSelectorViewModel()
