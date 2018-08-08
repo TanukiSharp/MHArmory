@@ -65,6 +65,7 @@
     <Compile Include="LoadoutWindow.xaml.cs">
       <DependentUpon>LoadoutWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="SearchUtilities.cs" />
     <Compile Include="TextInputWindow.xaml.cs">
       <DependentUpon>TextInputWindow.xaml</DependentUpon>
     </Compile>
