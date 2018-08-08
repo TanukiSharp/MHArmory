@@ -33,6 +33,7 @@ namespace MHArmory
             CommandBindings.Add(RoutedCommands.CreateCommandBinding(RoutedCommands.OpenSkillsSelector, OpenSkillSelector));
             CommandBindings.Add(RoutedCommands.CreateCommandBinding(RoutedCommands.OpenAdvancedSearch, OpenAdvancedSearch));
             CommandBindings.Add(RoutedCommands.CreateCommandBinding(RoutedCommands.OpenLoadoutSelector, OpenLoadoutSelector));
+            CommandBindings.Add(RoutedCommands.CreateCommandBinding(RoutedCommands.OpenDecorationsOverride, OpenDecorationsOverride));
 
             CommandBindings.Add(RoutedCommands.CreateCommandBinding(RoutedCommands.NewLoadout, OnNewLoadout));
             CommandBindings.Add(RoutedCommands.CreateCommandBinding(RoutedCommands.OpenLoadout, OnOpenLoadout));
@@ -169,6 +170,15 @@ namespace MHArmory
                 else
                     result.Update(false, null);
             }
+        }
+
+        private void OpenDecorationsOverride(object obj)
+        {
+            var window = new DecorationsOverrideWindow(rootViewModel)
+            {
+                Owner = this
+            };
+            window.ShowDialog();
         }
 
         private LoadoutManager loadoutManager;

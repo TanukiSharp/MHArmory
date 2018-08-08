@@ -44,11 +44,6 @@ namespace MHArmory.Search
 
         IAbility[] IHasAbilities.Abilities => Jewel.Abilities;
 
-        public SolverDataJewelModel(IJewel jewel)
-            : this(jewel, 999)
-        {
-        }
-
         public SolverDataJewelModel(IJewel jewel, int available)
         {
             Jewel = jewel;

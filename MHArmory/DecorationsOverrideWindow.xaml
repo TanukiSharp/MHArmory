@@ -1,0 +1,10 @@
+﻿<Window x:Class="MHArmory.DecorationsOverrideWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MHArmory"
+        mc:Ignorable="d"
+        Title="Override decorations" Width="600" Height="900" Background="WhiteSmoke" WindowStartupLocation="CenterOwner">
+    <ContentControl Content="{Binding}" ContentTemplate="{StaticResource DecorationsOverrideView}" Focusable="False"/>
+</Window>

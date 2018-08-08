@@ -19,6 +19,7 @@ namespace MHArmory.ViewModels
         public ICommand OpenSkillSelectorCommand { get; }
         public ICommand SearchArmorSetsCommand { get; }
         public ICommand AdvancedSearchCommand { get; }
+        public ICommand OpenDecorationsOverrideCommand { get; }
 
         public event EventHandler AbilitiesChanged;
 
@@ -81,6 +82,7 @@ namespace MHArmory.ViewModels
             OpenSkillSelectorCommand = new AnonymousCommand(OpenSkillSelector);
             SearchArmorSetsCommand = new AnonymousCommand(SearchArmorSets);
             AdvancedSearchCommand = new AnonymousCommand(AdvancedSearch);
+            OpenDecorationsOverrideCommand = new AnonymousCommand(OpenDecorationsOverride);
 
             InParameters = new InParametersViewModel(this);
         }
@@ -143,6 +145,11 @@ namespace MHArmory.ViewModels
         private void AdvancedSearch(object parameter)
         {
             RoutedCommands.OpenAdvancedSearch.ExecuteIfPossible(null);
+        }
+
+        private void OpenDecorationsOverride()
+        {
+            RoutedCommands.OpenDecorationsOverride.ExecuteIfPossible(null);
         }
 
         public async void SearchArmorSets()
@@ -219,7 +226,7 @@ namespace MHArmory.ViewModels
                 GlobalData.Instance.Waists,
                 GlobalData.Instance.Legs,
                 GlobalData.Instance.Charms,
-                GlobalData.Instance.Jewels.Select(x => new SolverDataJewelModel(x)).ToList(),
+                GlobalData.Instance.Jewels.Select(CreateSolverDataJewelModel).ToList(),
                 desiredAbilities
             );
 
@@ -273,6 +280,24 @@ namespace MHArmory.ViewModels
             }
 
             solver.DebugData -= Solver_DebugData;
+        }
+
+        private SolverDataJewelModel CreateSolverDataJewelModel(IJewel jewel)
+        {
+            DecorationOverrideConfiguration decorationOverrideConfig = GlobalData.Instance.Configuration.InParameters?.DecorationOverride;
+
+            if (decorationOverrideConfig != null && decorationOverrideConfig.UseOverride)
+            {
+                Dictionary<int, DecorationOverrideConfigurationItem> decoOverrides = decorationOverrideConfig?.Items;
+
+                if (decoOverrides != null)
+                {
+                    if (decoOverrides.TryGetValue(jewel.Id, out DecorationOverrideConfigurationItem found) && found.IsOverriding)
+                        return new SolverDataJewelModel(jewel, found.Count);
+                }
+            }
+
+            return new SolverDataJewelModel(jewel, 999);
         }
 
         internal void SelectedAbilitiesChanged()

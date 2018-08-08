@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Input;
 
 namespace MHArmory.ViewModels
 {
@@ -49,6 +50,19 @@ namespace MHArmory.ViewModels
 
         public ValueViewModel<int>[] Slots { get; }
 
+        private bool useOverride;
+        public bool UseOverride
+        {
+            get { return useOverride; }
+            set
+            {
+                if (SetValue(ref useOverride, value))
+                    UseOverrideChanged();
+            }
+        }
+
+        public ICommand OpenDecorationsOverrideCommand { get { return root.OpenDecorationsOverrideCommand; } }
+
         public InParametersViewModel(RootViewModel root)
         {
             this.root = root;
@@ -68,11 +82,14 @@ namespace MHArmory.ViewModels
             {
                 InParametersConfiguration config = GlobalData.Instance.Configuration.InParameters;
 
-                if (config.WeaponSlots == null)
-                    return;
+                if (config != null)
+                {
+                    if (config.WeaponSlots == null)
+                        return;
 
-                for (int i = 0; i < Slots.Length && i < config.WeaponSlots.Length; i++)
-                    Slots[i].Value = config.WeaponSlots[i];
+                    for (int i = 0; i < Slots.Length && i < config.WeaponSlots.Length; i++)
+                        Slots[i].Value = config.WeaponSlots[i];
+                }
             }
             finally
             {
@@ -85,10 +102,25 @@ namespace MHArmory.ViewModels
             if (isLoadingConfiguration)
                 return;
 
-            root.CreateSolverData();
+            InParametersConfiguration config = GlobalData.Instance.Configuration.InParameters;
 
-            GlobalData.Instance.Configuration.InParameters.WeaponSlots = Slots.Select(x => x.Value).ToArray();
+            config.WeaponSlots = Slots.Select(x => x.Value).ToArray();
             GlobalData.Instance.Configuration.Save();
+
+            root.CreateSolverData();
+        }
+
+        private void UseOverrideChanged()
+        {
+            if (isLoadingConfiguration)
+                return;
+
+            InParametersConfiguration config = GlobalData.Instance.Configuration.InParameters;
+
+            config.DecorationOverride.UseOverride = UseOverride;
+            GlobalData.Instance.Configuration.Save();
+
+            root.CreateSolverData();
         }
     }
 }
