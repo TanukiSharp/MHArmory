@@ -6,6 +6,7 @@ namespace MHArmory.Core.DataStructures
 {
     public interface IJewel : IHasAbilities
     {
+        int Id { get; }
         string Name { get; }
         int Rarity { get; }
         int SlotSize { get; }
@@ -13,14 +14,16 @@ namespace MHArmory.Core.DataStructures
 
     public class Jewel : IJewel
     {
-        public Jewel(string name, int rarity, int slotSize, IAbility[] abilities)
+        public Jewel(int id, string name, int rarity, int slotSize, IAbility[] abilities)
         {
+            Id = id;
             Name = name;
             Rarity = rarity;
             SlotSize = slotSize;
             Abilities = abilities;
         }
 
+        public int Id { get; }
         public string Name { get; }
         public int Rarity { get; }
         public int SlotSize { get; }

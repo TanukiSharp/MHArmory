@@ -9,6 +9,8 @@ namespace MHArmory.MhwDbDataSource.DataStructures
 {
     internal class JewelPrimitive
     {
+        [JsonProperty("id")]
+        internal int Id { get; set; }
         [JsonProperty("name")]
         internal string Name { get; set; }
         [JsonProperty("rarity")]
@@ -21,6 +23,7 @@ namespace MHArmory.MhwDbDataSource.DataStructures
 
     internal class Jewel : IJewel
     {
+        public int Id { get; }
         public string Name { get; }
         public int Rarity { get; }
         public int SlotSize { get; }
@@ -28,6 +31,7 @@ namespace MHArmory.MhwDbDataSource.DataStructures
 
         internal Jewel(JewelPrimitive primitive, IAbility[] abilities)
         {
+            Id = primitive.Id;
             Name = primitive.Name;
             Rarity = primitive.Rarity;
             SlotSize = primitive.SlotSize;
