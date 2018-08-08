@@ -82,14 +82,13 @@ namespace MHArmory.ViewModels
             {
                 InParametersConfiguration config = GlobalData.Instance.Configuration.InParameters;
 
-                if (config != null)
+                if (config.WeaponSlots != null)
                 {
-                    if (config.WeaponSlots == null)
-                        return;
-
                     for (int i = 0; i < Slots.Length && i < config.WeaponSlots.Length; i++)
                         Slots[i].Value = config.WeaponSlots[i];
                 }
+
+                UseOverride = config.DecorationOverride.UseOverride;
             }
             finally
             {
