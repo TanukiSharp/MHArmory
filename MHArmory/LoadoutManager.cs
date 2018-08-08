@@ -167,13 +167,7 @@ namespace MHArmory
                 return InternalSaveAs();
             else
             {
-                Dictionary<string, int[]> loadoutConfig = GlobalData.Instance.Configuration?.Loadout;
-
-                if (loadoutConfig == null)
-                {
-                    loadoutConfig = new Dictionary<string, int[]>();
-                    GlobalData.Instance.Configuration.Loadout = loadoutConfig;
-                }
+                Dictionary<string, int[]> loadoutConfig = GlobalData.Instance.Configuration.Loadout;
 
                 loadoutConfig[CurrentLoadoutName] = rootViewModel.SelectedAbilities.Where(a => a.IsChecked).Select(a => a.Id).ToArray();
 
@@ -192,21 +186,13 @@ namespace MHArmory
             if (inputWindow.ShowDialog() != true)
                 return false;
 
-            Dictionary<string, int[]> loadoutConfig = GlobalData.Instance.Configuration?.Loadout;
+            Dictionary<string, int[]> loadoutConfig = GlobalData.Instance.Configuration.Loadout;
 
-            if (loadoutConfig != null)
+            if (loadoutConfig.ContainsKey(inputWindow.Text))
             {
-                if (loadoutConfig.ContainsKey(inputWindow.Text))
-                {
-                    MessageBoxResult dlgResult = MessageBox.Show($"The loadout '{inputWindow.Text}' already exist. Do you want to overwrite it ?", "Overwrite loadout ?", MessageBoxButton.YesNo);
-                    if (dlgResult == MessageBoxResult.No)
-                        return false;
-                }
-            }
-            else
-            {
-                loadoutConfig = new Dictionary<string, int[]>();
-                GlobalData.Instance.Configuration.Loadout = loadoutConfig;
+                MessageBoxResult dlgResult = MessageBox.Show($"The loadout '{inputWindow.Text}' already exist. Do you want to overwrite it ?", "Overwrite loadout ?", MessageBoxButton.YesNo);
+                if (dlgResult == MessageBoxResult.No)
+                    return false;
             }
 
             loadoutConfig[inputWindow.Text] = rootViewModel.SelectedAbilities.Where(a => a.IsChecked).Select(a => a.Id).ToArray();

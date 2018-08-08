@@ -17,7 +17,7 @@ namespace MHArmory
         public string LastOpenedLoadout { get; set; }
 
         [JsonProperty("loadout")]
-        public Dictionary<string, int[]> Loadout { get; set; }
+        public Dictionary<string, int[]> Loadout { get; } = new Dictionary<string, int[]>();
 
         [JsonProperty("inParameters")]
         public InParametersConfiguration InParameters { get; } = new InParametersConfiguration();
