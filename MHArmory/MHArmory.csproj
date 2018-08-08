@@ -83,6 +83,7 @@
     <Compile Include="ViewModels\ArmorPieceTypesViewModel.cs" />
     <Compile Include="ViewModels\ArmorSetViewModel.cs" />
     <Compile Include="ViewModels\InParametersViewModel.cs" />
+    <Compile Include="ViewModels\JewelOverrideViewModel.cs" />
     <Compile Include="ViewModels\LoadoutViewModel.cs" />
     <Compile Include="ViewModels\RootViewModel.cs" />
     <Compile Include="ViewModels\SkillSelectorViewModel.cs" />
