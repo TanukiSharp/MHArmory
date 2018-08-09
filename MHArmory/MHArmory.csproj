@@ -72,6 +72,7 @@
     <Compile Include="TextInputWindow.xaml.cs">
       <DependentUpon>TextInputWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ValueConverters\HasDefenseVisibilityValueConverter.cs" />
     <Compile Include="ValueConverters\SlotSizeToolTipValueConverter.cs" />
     <Compile Include="ValueConverters\SlotToImagePathValueConverter.cs" />
     <Compile Include="ValueConverters\VisibilityValueConverter.cs" />

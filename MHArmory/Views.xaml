@@ -10,6 +10,7 @@
     <cvt:EnumToImagePathValueConverter x:Key="EnumToImagePathValueConverter"/>
     <cvt:SlotToImagePathValueConverter x:Key="SlotToImagePathValueConverter"/>
     <cvt:SlotSizeToolTipValueConverter x:Key="SlotSizeToolTipValueConverter"/>
+    <cvt:HasDefenseVisibilityValueConverter x:Key="HasDefenseVisibilityValueConverter"/>
 
     <Style x:Key="ComboBoxItemSlotStyle" TargetType="FrameworkElement">
         <Setter Property="Width" Value="16"/>
@@ -81,15 +82,15 @@
                         <Image Source="{Binding Type, Mode=OneTime, Converter={StaticResource EnumToImagePathValueConverter}}" Width="20" Height="20" VerticalAlignment="Center"/>
                         <TextBlock Text="{Binding Name, Mode=OneTime}" FontSize="12" FontWeight="Bold" VerticalAlignment="Center"/>
                     </StackPanel>
-                    <!--
-                    <TextBlock Margin="2" Foreground="Gray">
-                        <Run Text="Defense: "/>
+                    <TextBlock Margin="2" Foreground="Gray" Visibility="{Binding Mode=OneTime, Converter={StaticResource HasDefenseVisibilityValueConverter}}">
+                        <Run Text="Def: "/>
                         <Run Text="{Binding Defense.Base, Mode=OneTime}"/>
                         <Run Text=" / "/>
                         <Run Text="{Binding Defense.Max, Mode=OneTime}"/>
                         <Run Text=" / "/>
                         <Run Text="{Binding Defense.Augmented, Mode=OneTime}"/>
                     </TextBlock>
+                    <!--
                     <StackPanel Orientation="Horizontal" TextBlock.Foreground="Gray">
                         <StackPanel.Resources>
                             <Style TargetType="Image">
