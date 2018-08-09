@@ -65,7 +65,7 @@ namespace MHArmory.Behaviors
         {
             item.Focus();
 
-            if (item is ListBox listBox)
+            if (item is ListBox listBox && listBox.SelectedIndex >= 0)
             {
                 DependencyObject listItem = listBox.ItemContainerGenerator.ContainerFromIndex(listBox.SelectedIndex);
 
