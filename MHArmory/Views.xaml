@@ -79,10 +79,10 @@
                 </Grid.ColumnDefinitions>
                 <StackPanel Grid.Column="0" Orientation="Vertical" Margin="0 0 8 0">
                     <StackPanel Orientation="Horizontal" Grid.IsSharedSizeScope="True">
-                        <Image Source="{Binding Type, Mode=OneTime, Converter={StaticResource EnumToImagePathValueConverter}}" Width="20" Height="20" VerticalAlignment="Center"/>
-                        <TextBlock Text="{Binding Name, Mode=OneTime}" FontSize="12" FontWeight="Bold" VerticalAlignment="Center"/>
+                        <Image Source="{Binding Type, Mode=OneTime, Converter={StaticResource EnumToImagePathValueConverter}}" Width="20" Height="20" VerticalAlignment="Center" Focusable="False"/>
+                        <TextBlock Text="{Binding Name, Mode=OneTime}" FontSize="12" FontWeight="Bold" VerticalAlignment="Center" Focusable="False"/>
                     </StackPanel>
-                    <TextBlock Margin="2" Foreground="Gray" Visibility="{Binding Mode=OneTime, Converter={StaticResource HasDefenseVisibilityValueConverter}}">
+                    <TextBlock Margin="2" Foreground="Gray" Visibility="{Binding Mode=OneTime, Converter={StaticResource HasDefenseVisibilityValueConverter}}" Focusable="False">
                         <Run Text="Def: "/>
                         <Run Text="{Binding Defense.Base, Mode=OneTime}"/>
                         <Run Text=" / "/>
@@ -123,11 +123,11 @@
                     -->
                 </StackPanel>
                 <StackPanel Grid.Column="1" Margin="0 0 8 0" Orientation="Vertical">
-                    <TextBlock VerticalAlignment="Top" HorizontalAlignment="Left">
+                    <TextBlock VerticalAlignment="Top" HorizontalAlignment="Left" Focusable="False">
                         <Run Text="Rarity"/>
                         <Run Text="{Binding Rarity, Mode=OneTime}"/>
                     </TextBlock>
-                    <ItemsControl ItemsSource="{Binding Slots, Mode=OneTime}" Margin="2">
+                    <ItemsControl ItemsSource="{Binding Slots, Mode=OneTime}" Margin="2" Focusable="False">
                         <ItemsControl.ItemTemplate>
                             <DataTemplate>
                                 <Image Source="{Binding Converter={StaticResource SlotToImagePathValueConverter}}" ToolTip="{Binding Converter={StaticResource SlotSizeToolTipValueConverter}}" Width="24" Height="24"/>
@@ -140,7 +140,7 @@
                         </ItemsControl.ItemsPanel>
                     </ItemsControl>
                 </StackPanel>
-                <ItemsControl Grid.Column="2" ItemsSource="{Binding Abilities, Mode=OneTime}" ItemTemplate="{StaticResource StandaloneAbilityView}"/>
+                <ItemsControl Grid.Column="2" ItemsSource="{Binding Abilities, Mode=OneTime}" ItemTemplate="{StaticResource StandaloneAbilityView}" Focusable="False"/>
             </Grid>
         </Border>
     </DataTemplate>
@@ -393,7 +393,7 @@
                                 <RotateTransform Angle="-90"/>
                             </TextBlock.LayoutTransform>
                         </TextBlock>
-                        <ItemsControl ItemsSource="{Binding SelectedAbilities, Mode=OneWay}" ItemTemplate="{StaticResource SelectedAbilityView}" Margin="2" Padding="2"/>
+                        <ItemsControl ItemsSource="{Binding SelectedAbilities, Mode=OneWay}" ItemTemplate="{StaticResource SelectedAbilityView}" Margin="2" Padding="2" Focusable="False"/>
                     </DockPanel>
                 </DockPanel>
                 <GridSplitter Grid.Column="1" HorizontalAlignment="Stretch"/>
