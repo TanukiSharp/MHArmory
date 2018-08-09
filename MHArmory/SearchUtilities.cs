@@ -8,13 +8,19 @@ namespace MHArmory
 {
     public struct SearchInfo
     {
-        public bool IsExact;
-        public string Text;
+        public readonly bool IsExact;
+        public readonly string Text;
+
+        public SearchInfo(bool isExact, string text)
+        {
+            IsExact = isExact;
+            Text = text;
+        }
 
         public override bool Equals(object obj)
         {
             if (obj is SearchInfo si)
-                return si.IsExact = IsExact && si.Text == Text;
+                return si.IsExact == IsExact && si.Text == Text;
             return false;
         }
 
@@ -68,11 +74,7 @@ namespace MHArmory
                 if (isExact)
                     subText = subText.Substring(1).TrimStart();
 
-                searchInfo.Add(new SearchInfo
-                {
-                    IsExact = isExact,
-                    Text = subText
-                });
+                searchInfo.Add(new SearchInfo(isExact, subText));
             }
 
             IsEmpty = searchInfo.Count == 0;
