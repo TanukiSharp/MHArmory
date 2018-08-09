@@ -174,6 +174,10 @@ namespace MHArmory.Search
             sb.AppendLine($"Waists count: {ww}");
             sb.AppendLine($"Legs count:   {ll}");
             sb.AppendLine($"Charms count:   {ch}");
+            sb.AppendLine("-----");
+            sb.AppendLine($"Min sLot size: {data.MinJewelSize}");
+            sb.AppendLine($"Max sLot size: {data.MaxJewelSize}");
+            sb.AppendLine("-----");
             sb.AppendLine($"Combination count: {equipmentsList.Count.ToString("N0", nfi)}");
             sb.AppendLine($"Took: {sw.ElapsedMilliseconds.ToString("N0", nfi)} ms");
 
@@ -277,6 +281,7 @@ namespace MHArmory.Search
 
             sw.Stop();
 
+            sb.AppendLine("-----");
             sb.AppendLine($"Matching result: {test.Count.ToString("N0", nfi)}");
             sb.AppendLine($"Took: {sw.ElapsedMilliseconds.ToString("N0", nfi)} ms");
 
