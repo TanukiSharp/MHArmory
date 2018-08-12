@@ -2,7 +2,8 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:local="clr-namespace:MHArmory"
                     xmlns:cvt="clr-namespace:MHArmory.ValueConverters"
-                    xmlns:bhv="clr-namespace:MHArmory.Behaviors">
+                    xmlns:bhv="clr-namespace:MHArmory.Behaviors"
+                    xmlns:pnl="clr-namespace:MHArmory.Panels">
 
     <cvt:HiddenVisibilityValueConverter x:Key="HiddenVisibilityValueConverter"/>
     <cvt:CollapsedVisibilityValueConverter x:Key="CollapsedVisibilityValueConverter"/>
@@ -15,6 +16,19 @@
     <Style x:Key="ComboBoxItemSlotStyle" TargetType="FrameworkElement">
         <Setter Property="Width" Value="16"/>
         <Setter Property="Height" Value="16"/>
+    </Style>
+
+    <Style x:Key="NoSelectionItemContainerStyle" TargetType="{x:Type ListBoxItem}">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type ListBoxItem}">
+                    <Border Name="root" Padding="2" SnapsToDevicePixels="True" Focusable="False">
+                        <ContentPresenter HorizontalAlignment="Stretch" Focusable="False"/>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="Focusable" Value="False"/>
     </Style>
 
     <DataTemplate x:Key="WeaponSlotView">
@@ -369,6 +383,8 @@
                     <MenuItem Header="Open loadout..." Command="{x:Static local:RoutedCommands.OpenLoadout}"/>
                     <MenuItem Header="Save loadout" Command="{x:Static local:RoutedCommands.SaveLoadout}"/>
                     <MenuItem Header="Save loadout as..." Command="{x:Static local:RoutedCommands.SaveLoadoutAs}"/>
+                    <Separator/>
+                    <MenuItem Header="Manage loadouts..." Command="{x:Static local:RoutedCommands.ManageLoadouts}"/>
                 </MenuItem>
             </Menu>
             <Grid>
@@ -399,7 +415,7 @@
                 <GridSplitter Grid.Column="1" HorizontalAlignment="Stretch"/>
 
                 <DockPanel Grid.Column="2" LastChildFill="True">
-                    <TextBlock DockPanel.Dock="Bottom" Text="{Binding SearchResult, Mode=OneWay}"/>
+                    <TextBox DockPanel.Dock="Bottom" Text="{Binding SearchResult, Mode=OneWay}" IsReadOnly="True"/>
                     <Grid>
                         <TextBlock x:Name="loading" Text="Loading..." HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="20" Visibility="{Binding IsDataLoading, Converter={StaticResource CollapsedVisibilityValueConverter}, Mode=OneWay}"/>
                         <DockPanel LastChildFill="True">
@@ -457,19 +473,38 @@
     </DataTemplate>
 
     <DataTemplate x:Key="LoadoutView">
-        <TextBlock Text="{Binding Name, Mode=OneTime}" Focusable="False"/>
+
+        <pnl:TooledContentPanel>
+            <Grid HorizontalAlignment="Stretch" VerticalAlignment="Center">
+                <TextBlock x:Name="readonly" Text="{Binding Name, Mode=OneTime}" Focusable="False"/>
+                <TextBox x:Name="editable" Text="{Binding Name, Mode=TwoWay}" TextWrapping="WrapWithOverflow" HorizontalAlignment="Stretch" Margin="24 2 2 2" Padding="2" Visibility="Collapsed"/>
+            </Grid>
+            <StackPanel x:Name="tools" HorizontalAlignment="Right" Orientation="Horizontal" VerticalAlignment="Center" Visibility="Collapsed">
+                <Button Width="{Binding ActualHeight, RelativeSource={RelativeSource Mode=Self}}" Content="Up" Command="{Binding MoveUpCommand, Mode=OneTime}" ToolTip="Move up" Margin="1 0 1 0"/>
+                <Button Width="{Binding ActualHeight, RelativeSource={RelativeSource Mode=Self}}" Content="Dn" Command="{Binding MoveDownCommand, Mode=OneTime}" ToolTip="Move down" Margin="1 0 1 0"/>
+                <Button Width="{Binding ActualHeight, RelativeSource={RelativeSource Mode=Self}}" Content="X" Command="{Binding DeleteCommand, Mode=OneTime}" ToolTip="Delete" Margin="1 0 1 0"/>
+            </StackPanel>
+        </pnl:TooledContentPanel>
+
+        <DataTemplate.Triggers>
+            <DataTrigger Binding="{Binding IsManageMode, Mode=OneTime}" Value="True">
+                <Setter TargetName="readonly" Property="Visibility" Value="Collapsed"/>
+                <Setter TargetName="editable" Property="Visibility" Value="Visible"/>
+                <Setter TargetName="tools" Property="Visibility" Value="Visible"/>
+            </DataTrigger>
+        </DataTemplate.Triggers>
     </DataTemplate>
 
     <DataTemplate x:Key="LoadoutSelectorView">
 
         <Grid>
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*" MinWidth="120"/>
+                <ColumnDefinition Width="*" MinWidth="220"/>
                 <ColumnDefinition Width="6"/>
-                <ColumnDefinition Width="3*"/>
+                <ColumnDefinition Width="1.5*"/>
             </Grid.ColumnDefinitions>
 
-            <ListBox x:Name="lst" Grid.Column="0" SelectedItem="{Binding SelectedLoadout}" ItemsSource="{Binding Loadout, Mode=OneTime}" ItemTemplate="{StaticResource LoadoutView}" bhv:DoubleClickBehavior.Command="{Binding AcceptCommand}" bhv:FocusOnLoadBehavior.IsAttached="True"/>
+            <ListBox x:Name="lst" Grid.Column="0" SelectedItem="{Binding SelectedLoadout}" HorizontalContentAlignment="Stretch" ItemsSource="{Binding Loadouts, Mode=OneTime}" ItemTemplate="{StaticResource LoadoutView}"/>
 
             <GridSplitter Grid.Column="1" HorizontalAlignment="Stretch" Focusable="False"/>
 
@@ -486,6 +521,16 @@
             </ItemsControl>
 
         </Grid>
+
+        <DataTemplate.Triggers>
+            <DataTrigger Binding="{Binding IsManageMode, Mode=OneTime}" Value="False">
+                <Setter TargetName="lst" Property="bhv:DoubleClickBehavior.Command" Value="{Binding AcceptCommand}"/>
+                <Setter TargetName="lst" Property="bhv:FocusOnLoadBehavior.IsAttached" Value="True"/>
+            </DataTrigger>
+            <!--<DataTrigger Binding="{Binding IsManageMode, Mode=OneTime}" Value="True">
+                <Setter TargetName="lst" Property="ItemContainerStyle" Value="{StaticResource NoSelectionItemContainerStyle}"/>
+            </DataTrigger>-->
+        </DataTemplate.Triggers>
     </DataTemplate>
 
 </ResourceDictionary>

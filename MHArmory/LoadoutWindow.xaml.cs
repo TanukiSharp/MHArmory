@@ -9,18 +9,6 @@ using MHArmory.ViewModels;
 
 namespace MHArmory
 {
-    public class LoadoutDialogResult
-    {
-        public bool? Result { get; private set; }
-        public LoadoutViewModel SelectedLoadout { get; private set; }
-
-        public void Update(bool? result, LoadoutViewModel selectedLoadout)
-        {
-            Result = result;
-            SelectedLoadout = selectedLoadout;
-        }
-    }
-
     /// <summary>
     /// Interaction logic for LoadoutWindow.xaml
     /// </summary>
@@ -36,11 +24,16 @@ namespace MHArmory
             }
         }
 
-        public LoadoutWindow(IEnumerable<AbilityViewModel> abilities)
+        public LoadoutWindow(bool isManageMode, string selectedLoadoutName, IEnumerable<AbilityViewModel> abilities)
         {
             InitializeComponent();
 
-            loadoutSelectorViewModel = new LoadoutSelectorViewModel(OnEnd, abilities);
+            loadoutSelectorViewModel = new LoadoutSelectorViewModel(isManageMode, OnEnd, abilities);
+
+            if (selectedLoadoutName == null)
+                loadoutSelectorViewModel.SelectedLoadout = null;
+            else
+                loadoutSelectorViewModel.SelectedLoadout = loadoutSelectorViewModel.Loadouts.FirstOrDefault(x => x.Name == selectedLoadoutName);
 
             InputBindings.Add(new KeyBinding(loadoutSelectorViewModel.AcceptCommand, new KeyGesture(Key.Enter, ModifierKeys.None)));
             InputBindings.Add(new KeyBinding(loadoutSelectorViewModel.CancelCommand, new KeyGesture(Key.Escape, ModifierKeys.None)));
@@ -51,6 +44,20 @@ namespace MHArmory
         private void OnEnd(bool? value)
         {
             DialogResult = value;
+        }
+
+        protected override void OnClosed(EventArgs e)
+        {
+            base.OnClosed(e);
+
+            if (loadoutSelectorViewModel.IsManageMode)
+            {
+                Dictionary<string, int[]> loadoutConfig = GlobalData.Instance.Configuration.Loadout;
+
+                loadoutConfig.Clear();
+                foreach (LoadoutViewModel x in loadoutSelectorViewModel.Loadouts)
+                    loadoutConfig[x.Name] = x.Abilities.Select(a => a.Id).ToArray();
+            }
         }
     }
 }

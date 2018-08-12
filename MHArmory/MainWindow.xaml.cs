@@ -32,13 +32,13 @@ namespace MHArmory
 
             CommandBindings.Add(RoutedCommands.CreateCommandBinding(RoutedCommands.OpenSkillsSelector, OpenSkillSelector));
             CommandBindings.Add(RoutedCommands.CreateCommandBinding(RoutedCommands.OpenAdvancedSearch, OpenAdvancedSearch));
-            CommandBindings.Add(RoutedCommands.CreateCommandBinding(RoutedCommands.OpenLoadoutSelector, OpenLoadoutSelector));
             CommandBindings.Add(RoutedCommands.CreateCommandBinding(RoutedCommands.OpenDecorationsOverride, OpenDecorationsOverride));
 
             CommandBindings.Add(RoutedCommands.CreateCommandBinding(RoutedCommands.NewLoadout, OnNewLoadout));
             CommandBindings.Add(RoutedCommands.CreateCommandBinding(RoutedCommands.OpenLoadout, OnOpenLoadout));
             CommandBindings.Add(RoutedCommands.CreateCommandBinding(RoutedCommands.SaveLoadout, OnSaveLoadout));
             CommandBindings.Add(RoutedCommands.CreateCommandBinding(RoutedCommands.SaveLoadoutAs, OnSaveLoadoutAs));
+            CommandBindings.Add(RoutedCommands.CreateCommandBinding(RoutedCommands.ManageLoadouts, OnManageLoadouts));
 
             AssemblyName asmName = Assembly.GetEntryAssembly().GetName();
             Title = $"{asmName.Name} {asmName.Version.Major}.{asmName.Version.Minor}.{asmName.Version.Build}";
@@ -154,24 +154,6 @@ namespace MHArmory
             window.ShowDialog();
         }
 
-        private void OpenLoadoutSelector(object parameter)
-        {
-            if (parameter is LoadoutDialogResult result)
-            {
-                var window = new LoadoutWindow(rootViewModel.SelectedAbilities)
-                {
-                    Owner = this
-                };
-
-                bool? dlgResult = window.ShowDialog();
-
-                if (dlgResult == true)
-                    result.Update(true, window.SelectedLoadout);
-                else
-                    result.Update(false, null);
-            }
-        }
-
         private void OpenDecorationsOverride(object obj)
         {
             var window = new DecorationsOverrideWindow(rootViewModel)
@@ -201,6 +183,11 @@ namespace MHArmory
         private void OnSaveLoadoutAs(object parameter)
         {
             loadoutManager.SaveAs();
+        }
+
+        private void OnManageLoadouts(object parameter)
+        {
+            loadoutManager.ManageLoadouts();
         }
 
         private void CloseApplicationBecauseOfDataSource(string description)

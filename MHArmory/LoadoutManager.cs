@@ -134,7 +134,11 @@ namespace MHArmory
 
             if (loadoutName == null || abilities == null)
             {
-                var loadoutWindow = new LoadoutWindow(rootViewModel.SelectedAbilities);
+                var loadoutWindow = new LoadoutWindow(false, currentLoadoutName, rootViewModel.SelectedAbilities)
+                {
+                    Owner = Application.Current.MainWindow
+                };
+
                 if (loadoutWindow.ShowDialog() != true)
                     return false;
 
@@ -206,6 +210,25 @@ namespace MHArmory
             return true;
         }
 
+        private bool InternalManage()
+        {
+            if (IsModified)
+            {
+                if (InternalClose(true) == false)
+                    return false;
+            }
+
+            var loadoutWindow = new LoadoutWindow(true, currentLoadoutName, rootViewModel.SelectedAbilities)
+            {
+                Owner = Application.Current.MainWindow
+            };
+            loadoutWindow.ShowDialog();
+
+            GlobalData.Instance.Configuration.Save();
+
+            return true;
+        }
+
         public bool Close()
         {
             return InternalClose(true);
@@ -239,6 +262,11 @@ namespace MHArmory
         public void SaveAs()
         {
             InternalSaveAs();
+        }
+
+        internal void ManageLoadouts()
+        {
+            InternalManage();
         }
     }
 }
