@@ -114,11 +114,11 @@ namespace MHArmory.Search
 
                     ArmorSetSearchResult searchResult = IsArmorSetMatching(data.WeaponSlots, equips, data.AllJewels, desiredAbilities);
 
-                    searchResult.ArmorPieces = equips.Take(5).Cast<IArmorPiece>().ToList();
-                    searchResult.Charm = (ICharmLevel)equips[5];
-
                     if (searchResult.IsMatch)
                     {
+                        searchResult.ArmorPieces = equips.Take(5).Cast<IArmorPiece>().ToList();
+                        searchResult.Charm = (ICharmLevel)equips[5];
+
                         lock (test)
                         {
                             test.Add(searchResult);
