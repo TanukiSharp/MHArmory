@@ -77,8 +77,10 @@ namespace MHArmory.Search
             long ll = data.AllLegs.Count(x => x.IsSelected);
             long ch = data.AllCharms.Count(x => x.IsSelected);
 
-            var nfi = new System.Globalization.NumberFormatInfo();
-            nfi.NumberGroupSeparator = "'";
+            var nfi = new System.Globalization.NumberFormatInfo
+            {
+                NumberGroupSeparator = "'"
+            };
 
             sb.AppendLine($"Heads count:  {hh}");
             sb.AppendLine($"Chests count: {cc}");
@@ -97,7 +99,7 @@ namespace MHArmory.Search
 
             await Task.Yield();
 
-            ParallelOptions parallelOptions = new ParallelOptions
+            var parallelOptions = new ParallelOptions
             {
                 CancellationToken = cancellationToken,
                 //MaxDegreeOfParallelism = 1, // to ease debugging
