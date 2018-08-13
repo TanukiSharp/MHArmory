@@ -41,10 +41,6 @@ namespace MHArmory.Search
             CancellationToken cancellationToken
         )
         {
-            // ========================================================
-            // above are inputs
-            // ========================================================
-
             var sw = Stopwatch.StartNew();
 
             if (cancellationToken.IsCancellationRequested)
@@ -60,53 +56,8 @@ namespace MHArmory.Search
             var gloves = new List<IArmorPiece>();
             var waists = new List<IArmorPiece>();
             var legs = new List<IArmorPiece>();
-            //var jewels = new List<IJewel>();
 
             var test = new List<ArmorSetSearchResult>();
-
-
-            //jewels.Sort((a, b) => b.SlotSize.CompareTo(a.SlotSize));
-
-            //var armorPieceWeights = new Dictionary<int, int>();
-
-            //foreach (AbilityViewModel selectedAbility in SelectedAbilities.Where(x => x.IsChecked))
-            //{
-            //    IArmorPiece[] matchingArmorPieces = skillsToArmorsMap[selectedAbility.SkillId];
-
-            //    foreach (IArmorPiece armorPiece in matchingArmorPieces)
-            //    {
-            //        if (armorPieceWeights.TryGetValue(armorPiece.Id, out int weight) == false)
-            //            armorPieceWeights.Add(armorPiece.Id, 1);
-            //        else
-            //            armorPieceWeights[armorPiece.Id] = weight + 1;
-            //    }
-
-            //    //IArmorPiece temp = CreateArmorPieceSorter(matchingArmorPieces.Where(x => x.Type == ArmorPieceType.Head), sortCriterias).FirstOrDefault();
-            //    //if (temp != null)
-            //    //    heads.Add(temp);
-
-            //    //temp = CreateArmorPieceSorter(matchingArmorPieces.Where(x => x.Type == ArmorPieceType.Chest), sortCriterias).FirstOrDefault();
-            //    //if (temp != null)
-            //    //    chests.Add(temp);
-
-            //    //temp = CreateArmorPieceSorter(matchingArmorPieces.Where(x => x.Type == ArmorPieceType.Gloves), sortCriterias).FirstOrDefault();
-            //    //if (temp != null)
-            //    //    gloves.Add(temp);
-
-            //    //temp = CreateArmorPieceSorter(matchingArmorPieces.Where(x => x.Type == ArmorPieceType.Waist), sortCriterias).FirstOrDefault();
-            //    //if (temp != null)
-            //    //    waists.Add(temp);
-
-            //    //temp = CreateArmorPieceSorter(matchingArmorPieces.Where(x => x.Type == ArmorPieceType.Legs), sortCriterias).FirstOrDefault();
-            //    //if (temp != null)
-            //    //    legs.Add(temp);
-
-            //    //if (skillsToCharmsMap.TryGetValue(selectedAbility.SkillId, out ICharm[] matchingCharms))
-            //    //    charms.AddRange(matchingCharms.SelectMany(x => x.Levels));
-
-            //    //if (skillsToJewelsMap.TryGetValue(selectedAbility.SkillId, out IJewel[] matchingJewels))
-            //    //    jewels.AddRange(matchingJewels);
-            //}
 
             IEquipment[] equipments = new IEquipment[6];
 
@@ -216,68 +167,6 @@ namespace MHArmory.Search
             {
                 return null;
             }
-
-            //var indicesTruthTable = new IndicesTruthTable(6);
-            //int[] output = new int[indicesTruthTable.IndicesCount];
-            //int iterationsPerIndex = (int)Math.Pow(2.0, indicesTruthTable.IndicesCount);
-            //int iterations = iterationsPerIndex * 100;
-
-
-            //for (int i = 0; i < iterations; i++)
-            //{
-            //    indicesTruthTable.Next(output);
-
-            //    //var foundArmorPieces = new List<IArmorPiece>();
-
-            //    //if (heads.Count > 0)
-            //    //    foundArmorPieces.Add(heads[output[0] % heads.Count]);
-            //    //if (chests.Count > 0)
-            //    //    foundArmorPieces.Add(chests[output[1] % chests.Count]);
-            //    //if (gloves.Count > 0)
-            //    //    foundArmorPieces.Add(gloves[output[2] % gloves.Count]);
-            //    //if (waists.Count > 0)
-            //    //    foundArmorPieces.Add(waists[output[3] % waists.Count]);
-            //    //if (legs.Count > 0)
-            //    //    foundArmorPieces.Add(legs[output[4] % legs.Count]);
-
-            //    if (heads.Count > 0)
-            //        equipments[0] = heads[output[0] % heads.Count];
-            //    else
-            //        equipments[0] = null;
-
-            //    if (chests.Count > 0)
-            //        equipments[1] = chests[output[1] % chests.Count];
-            //    else
-            //        equipments[1] = null;
-
-            //    if (gloves.Count > 0)
-            //        equipments[2] = gloves[output[2] % gloves.Count];
-            //    else
-            //        equipments[2] = null;
-
-            //    if (waists.Count > 0)
-            //        equipments[3] = waists[output[3] % waists.Count];
-            //    else
-            //        equipments[3] = null;
-
-            //    if (legs.Count > 0)
-            //        equipments[4] = legs[output[4] % legs.Count];
-            //    else
-            //        equipments[4] = null;
-
-            //    if (charms.Count > 0)
-            //        equipments[5] = charms[output[5] % charms.Count];
-            //    else
-            //        equipments[5] = null;
-
-            //    if (IsArmorSetMatching(weaponSlots, equipments, selectedAbilities, skillsToJewelsMap))
-            //    {
-            //        test.Add(new ArmorSetViewModel
-            //        {
-            //            ArmorPieces = equipments.OfType<IArmorPiece>().ToList()
-            //        });
-            //    }
-            //}
 
             sw.Stop();
 
