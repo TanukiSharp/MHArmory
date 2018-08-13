@@ -59,53 +59,14 @@ namespace MHArmory.Search
 
             var test = new List<ArmorSetSearchResult>();
 
-            IEquipment[] equipments = new IEquipment[6];
-
-            var equipmentsList = new List<IEquipment[]>();
-
-            foreach (IEquipment h in data.AllHeads.Where(x => x.IsSelected).Select(x => x.Equipment))
-            {
-                if (cancellationToken.IsCancellationRequested)
-                    return null;
-
-                equipments[0] = h;
-                foreach (IEquipment c in data.AllChests.Where(x => x.IsSelected).Select(x => x.Equipment))
-                {
-                    if (cancellationToken.IsCancellationRequested)
-                        return null;
-
-                    equipments[1] = c;
-                    foreach (IEquipment g in data.AllGloves.Where(x => x.IsSelected).Select(x => x.Equipment))
-                    {
-                        if (cancellationToken.IsCancellationRequested)
-                            return null;
-
-                        equipments[2] = g;
-                        foreach (IEquipment w in data.AllWaists.Where(x => x.IsSelected).Select(x => x.Equipment))
-                        {
-                            if (cancellationToken.IsCancellationRequested)
-                                return null;
-
-                            equipments[3] = w;
-                            foreach (IEquipment l in data.AllLegs.Where(x => x.IsSelected).Select(x => x.Equipment))
-                            {
-                                if (cancellationToken.IsCancellationRequested)
-                                    return null;
-
-                                equipments[4] = l;
-                                foreach (IEquipment ch_ in data.AllCharms.Where(x => x.IsSelected).Select(x => x.Equipment))
-                                {
-                                    if (cancellationToken.IsCancellationRequested)
-                                        return null;
-
-                                    equipments[5] = ch_;
-                                    equipmentsList.Add(equipments.ToArray());
-                                }
-                            }
-                        }
-                    }
-                }
-            }
+            var generator = new EquipmentCombinationGenerator(
+                data.AllHeads.Where(x => x.IsSelected).Select(x => x.Equipment),
+                data.AllChests.Where(x => x.IsSelected).Select(x => x.Equipment),
+                data.AllGloves.Where(x => x.IsSelected).Select(x => x.Equipment),
+                data.AllWaists.Where(x => x.IsSelected).Select(x => x.Equipment),
+                data.AllLegs.Where(x => x.IsSelected).Select(x => x.Equipment),
+                data.AllCharms.Where(x => x.IsSelected).Select(x => x.Equipment)
+            );
 
             var sb = new StringBuilder();
 
@@ -129,7 +90,7 @@ namespace MHArmory.Search
             sb.AppendLine($"Min sLot size: {data.MinJewelSize}");
             sb.AppendLine($"Max sLot size: {data.MaxJewelSize}");
             sb.AppendLine("-----");
-            sb.AppendLine($"Combination count: {equipmentsList.Count.ToString("N0", nfi)}");
+            sb.AppendLine($"Combination count: {generator.CombinationCount.ToString("N0", nfi)}");
             sb.AppendLine($"Took: {sw.ElapsedMilliseconds.ToString("N0", nfi)} ms");
 
             DebugData?.Invoke(sb.ToString());
@@ -144,7 +105,7 @@ namespace MHArmory.Search
 
             try
             {
-                ParallelLoopResult parallelResult = Parallel.ForEach(equipmentsList, parallelOptions, equips =>
+                ParallelLoopResult parallelResult = Parallel.ForEach(generator.All(cancellationToken), parallelOptions, equips =>
                 {
                     if (cancellationToken.IsCancellationRequested)
                         return;
@@ -166,6 +127,10 @@ namespace MHArmory.Search
             catch (OperationCanceledException)
             {
                 return null;
+            }
+            finally
+            {
+                generator.Reset();
             }
 
             sw.Stop();
@@ -352,6 +317,95 @@ namespace MHArmory.Search
             }
 
             return jewelCount <= 0;
+        }
+
+        public class EquipmentCombinationGenerator
+        {
+            private readonly object syncRoot = new object();
+            private readonly IList<IEquipment>[] allEquipements;
+            private readonly int[] indexes;
+            private bool isEnd;
+
+            public int CombinationCount { get; }
+
+            public EquipmentCombinationGenerator(
+                IEnumerable<IEquipment> heads,
+                IEnumerable<IEquipment> chests,
+                IEnumerable<IEquipment> gloves,
+                IEnumerable<IEquipment> waists,
+                IEnumerable<IEquipment> legs,
+                IEnumerable<IEquipment> charms
+            )
+            {
+                allEquipements = new IList<IEquipment>[]
+                {
+                    heads.ToList(),
+                    chests.ToList(),
+                    gloves.ToList(),
+                    waists.ToList(),
+                    legs.ToList(),
+                    charms.ToList()
+                };
+
+                indexes = new int[allEquipements.Length];
+
+                int combinationCount = 1;
+                for (int i = 0; i < allEquipements.Length; i++)
+                    combinationCount *= allEquipements[i].Count;
+                CombinationCount = combinationCount;
+            }
+
+            private bool Increment()
+            {
+                for (int i = 0; i < indexes.Length; i++)
+                {
+                    indexes[i]++;
+
+                    if (indexes[i] < allEquipements[i].Count)
+                        return true;
+
+                    indexes[i] = 0;
+                }
+
+                return false;
+            }
+
+            public IEquipment[] Next(CancellationToken cancellationToken)
+            {
+                if (cancellationToken.IsCancellationRequested)
+                    return null;
+
+                lock (syncRoot)
+                {
+                    if (isEnd)
+                        return null;
+
+                    var equipments = new IEquipment[allEquipements.Length];
+
+                    for (int i = 0; i < equipments.Length; i++)
+                        equipments[i] = allEquipements[i][indexes[i]];
+
+                    isEnd = Increment() == false;
+
+                    return equipments;
+                }
+            }
+
+            public IEnumerable<IEquipment[]> All(CancellationToken cancellationToken)
+            {
+                IEquipment[] result;
+
+                while ((result = Next(cancellationToken)) != null)
+                     yield return result;
+            }
+
+            public void Reset()
+            {
+                for (int i = 0; i < indexes.Length; i++)
+                    indexes[i] = 0;
+
+                isEnd = false;
+            }
         }
 
         private class ArmorSetEqualityComparer : IEqualityComparer<IArmorSet>
