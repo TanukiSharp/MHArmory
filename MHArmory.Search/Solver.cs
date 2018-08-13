@@ -93,7 +93,6 @@ namespace MHArmory.Search
             sb.AppendLine($"Max sLot size: {data.MaxJewelSize}");
             sb.AppendLine("-----");
             sb.AppendLine($"Combination count: {generator.CombinationCount.ToString("N0", nfi)}");
-            sb.AppendLine($"Took: {sw.ElapsedMilliseconds.ToString("N0", nfi)} ms");
 
             DebugData?.Invoke(sb.ToString());
 
