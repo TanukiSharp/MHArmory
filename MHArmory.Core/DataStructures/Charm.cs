@@ -29,6 +29,11 @@ namespace MHArmory.Core.DataStructures
         public int Rarity { get; }
         public int[] Slots { get; }
         public IAbility[] Abilities { get; }
+
+        public override string ToString()
+        {
+            return Name;
+        }
     }
 
     public interface ICharm
