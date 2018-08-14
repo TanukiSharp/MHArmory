@@ -69,6 +69,8 @@ Skill loadouts:
 
 ## Phase 1
 
+Measurements without any optimizations.
+
 ### Machine A
 
 #### Attack Defense skill loadout
@@ -265,6 +267,9 @@ Took: 16'370 ms
 
 ## Phase 2
 
+Alloction of all combination in one single list has been replaced by a generator.<br/>
+Massive gain of memory. Now no matter how many combination are to be tested, the application allocates about 40 MB for it.
+
 ### Machine A
 
 #### Attack Defense skill loadout
@@ -357,4 +362,104 @@ Combination count: 3'401'190
 -----
 Matching result: 4
 Took: 5'040 ms
+```
+
+### Machine B
+
+#### Attack Defense skill loadout
+
+- Power cord unplugged.
+- No decoration override.
+- Weapon slots 22-.
+- Memory consumption up to 45 MB
+
+```
+Heads count:  16
+Chests count: 14
+Gloves count: 8
+Waists count: 13
+Legs count:   7
+Charms count:   6
+-----
+Min sLot size: 1
+Max sLot size: 3
+-----
+Combination count: 978'432
+-----
+Matching result: 243
+Took: 5'851 ms
+```
+
+#### Resistances
+
+For some reasons, measurements of this skills loadout on this machine produced very strange results, up to more than 450 seconds sometimes.
+
+- Power cord unplugged.
+- No decoration override.
+- Weapon slots 22-.
+- Memory consumption up to 47 MB
+
+```
+Heads count:  21
+Chests count: 22
+Gloves count: 12
+Waists count: 19
+Legs count:   15
+Charms count:   17
+-----
+Min sLot size: 1
+Max sLot size: 2
+-----
+Combination count: 26'860'680
+-----
+Matching result: 0
+Took: 378'180 ms
+```
+
+#### Versus Behemoth Support 1
+
+- Power cord unplugged.
+- No decoration override.
+- Weapon slots 22-.
+- Memory consumption up to 43 MB
+
+```
+Heads count:  17
+Chests count: 16
+Gloves count: 10
+Waists count: 13
+Legs count:   8
+Charms count:   8
+-----
+Min sLot size: 1
+Max sLot size: 3
+-----
+Combination count: 2'263'040
+-----
+Matching result: 102
+Took: 9'118 ms
+```
+
+#### Versus Behemoth Support 2
+
+- Power cord unplugged.
+- No decoration override.
+- Weapon slots 22-.
+- Memory consumption up to 48 MB
+
+```
+Heads count:  19
+Chests count: 17
+Gloves count: 10
+Waists count: 13
+Legs count:   9
+Charms count:   9
+-----
+Min sLot size: 1
+Max sLot size: 3
+-----
+Combination count: 3'401'190
+-----
+Matching result: 4
+Took: 15'045 ms
 ```
