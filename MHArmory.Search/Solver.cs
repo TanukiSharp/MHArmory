@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
@@ -109,11 +110,14 @@ namespace MHArmory.Search
             {
                 CancellationToken = cancellationToken,
                 //MaxDegreeOfParallelism = 1, // to ease debugging
+                MaxDegreeOfParallelism = Environment.ProcessorCount
             };
 
             try
             {
-                ParallelLoopResult parallelResult = Parallel.ForEach(generator.All(cancellationToken), parallelOptions, equips =>
+                OrderablePartitioner<IEquipment[]> partitioner = Partitioner.Create(generator.All(cancellationToken), EnumerablePartitionerOptions.NoBuffering);
+
+                ParallelLoopResult parallelResult = Parallel.ForEach(partitioner, parallelOptions, equips =>
                 {
                     if (cancellationToken.IsCancellationRequested)
                     {
