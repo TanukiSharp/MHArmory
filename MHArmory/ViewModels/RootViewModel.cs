@@ -217,7 +217,7 @@ namespace MHArmory.ViewModels
                 .Select(x => x.Ability)
                 .ToList();
 
-            SolverData = new SolverData(
+            SolverData = new SolverData2(
                 InParameters.Slots.Select(x => x.Value).ToList(),
                 null,
                 GlobalData.Instance.Heads,
