@@ -64,6 +64,9 @@
     <Compile Include="DecorationsOverrideWindow.xaml.cs">
       <DependentUpon>DecorationsOverrideWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="EquipmentExplorerWindow.xaml.cs">
+      <DependentUpon>EquipmentExplorerWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="LoadoutManager.cs" />
     <Compile Include="LoadoutWindow.xaml.cs">
       <DependentUpon>LoadoutWindow.xaml</DependentUpon>
@@ -88,6 +91,7 @@
     <Compile Include="ViewModels\ArmorPieceTypesViewModel.cs" />
     <Compile Include="ViewModels\ArmorSetViewModel.cs" />
     <Compile Include="ViewModels\DecorationsOverrideViewModel.cs" />
+    <Compile Include="ViewModels\EquipmentExplorerViewModel.cs" />
     <Compile Include="ViewModels\InParametersViewModel.cs" />
     <Compile Include="ViewModels\JewelOverrideViewModel.cs" />
     <Compile Include="ViewModels\LoadoutViewModel.cs" />
@@ -101,6 +105,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="DecorationsOverrideWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="EquipmentExplorerWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

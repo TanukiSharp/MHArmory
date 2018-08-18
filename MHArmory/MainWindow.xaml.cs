@@ -33,6 +33,7 @@ namespace MHArmory
             CommandBindings.Add(RoutedCommands.CreateCommandBinding(RoutedCommands.OpenSkillsSelector, OpenSkillSelector));
             CommandBindings.Add(RoutedCommands.CreateCommandBinding(RoutedCommands.OpenAdvancedSearch, OpenAdvancedSearch));
             CommandBindings.Add(RoutedCommands.CreateCommandBinding(RoutedCommands.OpenDecorationsOverride, OpenDecorationsOverride));
+            CommandBindings.Add(RoutedCommands.CreateCommandBinding(RoutedCommands.OpenEquipmentExplorer, OpenEquipmentExplorer));
 
             CommandBindings.Add(RoutedCommands.CreateCommandBinding(RoutedCommands.NewLoadout, OnNewLoadout));
             CommandBindings.Add(RoutedCommands.CreateCommandBinding(RoutedCommands.OpenLoadout, OnOpenLoadout));
@@ -161,6 +162,11 @@ namespace MHArmory
                 Owner = this
             };
             window.ShowDialog();
+        }
+
+        private void OpenEquipmentExplorer(object obj)
+        {
+            EquipmentExplorerWindow.Show(this);
         }
 
         private LoadoutManager loadoutManager;
