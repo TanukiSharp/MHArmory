@@ -23,7 +23,7 @@ namespace MHArmory.ViewModels
 
         public event EventHandler AbilitiesChanged;
 
-        public SolverData SolverData { get; private set; }
+        public ISolverData SolverData { get; private set; }
 
         private Solver solver;
 
@@ -226,7 +226,7 @@ namespace MHArmory.ViewModels
                 GlobalData.Instance.Waists,
                 GlobalData.Instance.Legs,
                 GlobalData.Instance.Charms,
-                GlobalData.Instance.Jewels.Select(CreateSolverDataJewelModel).ToList(),
+                GlobalData.Instance.Jewels.Select(CreateSolverDataJewelModel),
                 desiredAbilities
             );
 

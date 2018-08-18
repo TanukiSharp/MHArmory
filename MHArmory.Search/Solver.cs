@@ -13,9 +13,9 @@ namespace MHArmory.Search
 {
     public class Solver
     {
-        private readonly SolverData data;
+        private readonly ISolverData data;
 
-        public Solver(SolverData data)
+        public Solver(ISolverData data)
         {
             this.data = data;
         }

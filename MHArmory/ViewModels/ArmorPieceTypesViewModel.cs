@@ -9,7 +9,7 @@ namespace MHArmory.ViewModels
 {
     public class ArmorPieceTypesViewModel : ViewModelBase, IDisposable
     {
-        public IEnumerable<SolverDataEquipmentModel> Equipments { get; }
+        public IEnumerable<ISolverDataEquipmentModel> Equipments { get; }
 
         private int selectedCount;
         public int SelectedCount
@@ -18,11 +18,11 @@ namespace MHArmory.ViewModels
             private set { SetValue(ref selectedCount, value); }
         }
 
-        public ArmorPieceTypesViewModel(IEnumerable<SolverDataEquipmentModel> equipments)
+        public ArmorPieceTypesViewModel(IEnumerable<ISolverDataEquipmentModel> equipments)
         {
             Equipments = equipments.OrderBy(x => x.Equipment.Name).ToList();
 
-            foreach (SolverDataEquipmentModel x in Equipments)
+            foreach (ISolverDataEquipmentModel x in Equipments)
                 x.SelectionChanged += ItemSelectionChanged;
 
             UpdateSelectedCount();
@@ -40,7 +40,7 @@ namespace MHArmory.ViewModels
 
         public void Dispose()
         {
-            foreach (SolverDataEquipmentModel x in Equipments)
+            foreach (ISolverDataEquipmentModel x in Equipments)
                 x.SelectionChanged -= ItemSelectionChanged;
         }
     }

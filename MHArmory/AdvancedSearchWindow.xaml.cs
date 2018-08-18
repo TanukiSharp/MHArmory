@@ -24,7 +24,7 @@ namespace MHArmory
 
             this.root = root;
 
-            SolverData solverData = root.SolverData;
+            ISolverData solverData = root.SolverData;
 
             var armorPieceTypesViewModels = new ArmorPieceTypesViewModel[]
             {

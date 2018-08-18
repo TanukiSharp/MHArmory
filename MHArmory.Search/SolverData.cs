@@ -5,7 +5,7 @@ using MHArmory.Core.DataStructures;
 
 namespace MHArmory.Search
 {
-    public class SolverDataEquipmentModel
+    public class SolverDataEquipmentModel : ISolverDataEquipmentModel
     {
         public IEquipment Equipment { get; }
         public bool ToBeRemoved { get; set; }
@@ -51,17 +51,17 @@ namespace MHArmory.Search
         }
     }
 
-    public class SolverData
+    public class SolverData : ISolverData
     {
         public int[] WeaponSlots { get; private set; }
-        public IList<SolverDataEquipmentModel> AllHeads { get; private set; }
-        public IList<SolverDataEquipmentModel> AllChests { get; private set; }
-        public IList<SolverDataEquipmentModel> AllGloves { get; private set; }
-        public IList<SolverDataEquipmentModel> AllWaists { get; private set; }
-        public IList<SolverDataEquipmentModel> AllLegs { get; private set; }
-        public IList<SolverDataEquipmentModel> AllCharms { get; private set; }
-        public IList<SolverDataJewelModel> AllJewels { get; private set; }
-        public IList<IAbility> DesiredAbilities { get; }
+        public ISolverDataEquipmentModel[] AllHeads { get; private set; }
+        public ISolverDataEquipmentModel[] AllChests { get; private set; }
+        public ISolverDataEquipmentModel[] AllGloves { get; private set; }
+        public ISolverDataEquipmentModel[] AllWaists { get; private set; }
+        public ISolverDataEquipmentModel[] AllLegs { get; private set; }
+        public ISolverDataEquipmentModel[] AllCharms { get; private set; }
+        public SolverDataJewelModel[] AllJewels { get; private set; }
+        public IAbility[] DesiredAbilities { get; }
 
         private readonly IList<MaximizedSearchCriteria> inputSearchCriterias;
         private readonly List<SolverDataEquipmentModel> inputHeads;
@@ -92,7 +92,7 @@ namespace MHArmory.Search
             IEnumerable<IArmorPiece> waists,
             IEnumerable<IArmorPiece> legs,
             IEnumerable<ICharmLevel> charms,
-            IList<SolverDataJewelModel> jewels,
+            IEnumerable<SolverDataJewelModel> jewels,
             IList<IAbility> desiredAbilities
         )
         {
@@ -102,7 +102,7 @@ namespace MHArmory.Search
             inputWaists = waists.Select(x => new SolverDataEquipmentModel(x)).ToList();
             inputLegs = legs.Select(x => new SolverDataEquipmentModel(x)).ToList();
             inputCharms = charms.Select(x => new SolverDataEquipmentModel(x)).ToList();
-            inputJewels = jewels;
+            inputJewels = jewels.ToList();
 
             if (searchCriterias == null || searchCriterias.Count == 0)
                 searchCriterias = new[] { MaximizedSearchCriteria.SlotSizeCube };
@@ -110,7 +110,7 @@ namespace MHArmory.Search
             inputSearchCriterias = searchCriterias;
 
             WeaponSlots = weaponSlots.ToArray();
-            DesiredAbilities = desiredAbilities;
+            DesiredAbilities = desiredAbilities.ToArray();
 
             ProcessInputData();
         }
@@ -198,7 +198,7 @@ namespace MHArmory.Search
             allCharms.RemoveAll(x => x.ToBeRemoved);
         }
 
-        public SolverData Done()
+        public ISolverData Done()
         {
             UpdateReferences();
 
@@ -231,13 +231,13 @@ namespace MHArmory.Search
 
         private void UpdateReferences()
         {
-            AllHeads = allHeads;
-            AllChests = allChests;
-            AllGloves = allGloves;
-            AllWaists = allWaists;
-            AllLegs = allLegs;
-            AllCharms = allCharms;
-            AllJewels = allJewels;
+            AllHeads = allHeads.ToArray<ISolverDataEquipmentModel>();
+            AllChests = allChests.ToArray<ISolverDataEquipmentModel>();
+            AllGloves = allGloves.ToArray<ISolverDataEquipmentModel>();
+            AllWaists = allWaists.ToArray<ISolverDataEquipmentModel>();
+            AllLegs = allLegs.ToArray<ISolverDataEquipmentModel>();
+            AllCharms = allCharms.ToArray<ISolverDataEquipmentModel>();
+            AllJewels = allJewels.ToArray();
         }
 
         /// <summary>

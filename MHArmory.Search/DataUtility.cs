@@ -24,12 +24,12 @@ namespace MHArmory.Search
             return slots.Sum(x => x * x * x);
         }
 
-        public static IEnumerable<SolverDataEquipmentModel> CreateArmorPieceSorter(IEnumerable<SolverDataEquipmentModel> items, IEnumerable<MaximizedSearchCriteria> sortCriterias)
+        public static IEnumerable<T> CreateArmorPieceSorter<T>(IEnumerable<T> items, IEnumerable<MaximizedSearchCriteria> sortCriterias) where T : ISolverDataEquipmentModel
         {
             if (items.Any() == false)
                 return items;
 
-            IOrderedEnumerable<SolverDataEquipmentModel> result = items.OrderBy(x => 1); // wasting a bit of CPU cycles for productivity purpose :(
+            IOrderedEnumerable<T> result = items.OrderBy(x => 1); // wasting a bit of CPU cycles for productivity purpose :(
 
             foreach (MaximizedSearchCriteria sortCriteria in sortCriterias)
             {
