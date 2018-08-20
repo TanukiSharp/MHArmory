@@ -141,7 +141,7 @@
                         <Run Text="Rarity"/>
                         <Run Text="{Binding Rarity, Mode=OneTime}"/>
                     </TextBlock>
-                    <ItemsControl ItemsSource="{Binding Slots, Mode=OneTime}" Margin="2" Focusable="False">
+                    <ItemsControl ItemsSource="{Binding Slots, Mode=OneTime}" Margin="2" Height="24" Focusable="False">
                         <ItemsControl.ItemTemplate>
                             <DataTemplate>
                                 <Image Source="{Binding Converter={StaticResource SlotToImagePathValueConverter}}" ToolTip="{Binding Converter={StaticResource SlotSizeToolTipValueConverter}}" Width="24" Height="24"/>
