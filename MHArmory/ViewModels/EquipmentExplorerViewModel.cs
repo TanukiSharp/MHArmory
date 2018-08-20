@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -7,26 +8,11 @@ using MHArmory.Core.DataStructures;
 
 namespace MHArmory.ViewModels
 {
-    public class EquipmentExplorerEquipmentViewModel : ViewModelBase
-    {
-        public IEquipment Equipment { get; }
-
-        private bool isVisible = true;
-        public bool IsVisible
-        {
-            get { return isVisible; }
-            set { SetValue(ref isVisible, value); }
-        }
-
-        public EquipmentExplorerEquipmentViewModel(IEquipment equipment)
-        {
-            Equipment = equipment;
-        }
-    }
-
     public class EquipmentExplorerViewModel : ViewModelBase
     {
-        public IList<EquipmentExplorerEquipmentViewModel> Equipments { get; private set; }
+        private IList<IEquipment> allEquipments;
+
+        public ObservableCollection<IEquipment> Equipments { get; } = new ObservableCollection<IEquipment>();
 
         private string searchText;
         public string SearchText
@@ -41,23 +27,29 @@ namespace MHArmory.ViewModels
 
         private void OnSearchTextChanged()
         {
+            Equipments.Clear();
+
             if (string.IsNullOrWhiteSpace(searchText))
             {
-                foreach (EquipmentExplorerEquipmentViewModel x in Equipments)
-                    x.IsVisible = true;
+                foreach (IEquipment x in allEquipments)
+                    Equipments.Add(x);
             }
             else
             {
                 var searchStatement = SearchStatement.Create(searchText);
 
-                foreach (EquipmentExplorerEquipmentViewModel x in Equipments)
-                    x.IsVisible = searchStatement.IsMatching(x.Equipment.Name);
+                foreach (IEquipment x in allEquipments)
+                {
+                    bool isVisible = searchStatement.IsMatching(x.Name);
+                    if (isVisible)
+                        Equipments.Add(x);
+                }
             }
         }
 
         public void CreateItems()
         {
-            if (Equipments != null)
+            if (allEquipments != null)
                 return;
 
             IList<IArmorPiece> heads = GlobalData.Instance.Heads;
@@ -67,14 +59,16 @@ namespace MHArmory.ViewModels
             IList<IArmorPiece> legs = GlobalData.Instance.Legs;
             IList<ICharmLevel> charms = GlobalData.Instance.Charms;
 
-            Equipments = heads
+            allEquipments = heads
                 .Concat<IEquipment>(chests)
                 .Concat<IEquipment>(gloves)
                 .Concat<IEquipment>(waists)
                 .Concat<IEquipment>(legs)
                 .Concat<IEquipment>(charms)
-                .Select(x => new EquipmentExplorerEquipmentViewModel(x))
                 .ToList();
+
+            foreach (IEquipment x in allEquipments)
+                Equipments.Add(x);
         }
     }
 }

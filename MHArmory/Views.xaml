@@ -543,39 +543,28 @@
                 <TextBox x:Name="txt" Text="{Binding SearchText, UpdateSourceTrigger=PropertyChanged}" Margin="2" Padding="2" VerticalAlignment="Center" MinWidth="160" MaxWidth="350"/>
             </StackPanel>
 
-            <ScrollViewer VerticalScrollBarVisibility="Visible" HorizontalScrollBarVisibility="Disabled" Margin="2">
-                <ItemsControl ItemsSource="{Binding Equipments}">
-                    <ItemsControl.ItemTemplate>
-                        <DataTemplate>
-                            <ContentControl x:Name="root" Content="{Binding Equipment, Mode=OneTime}" ContentTemplate="{StaticResource ArmorPieceView}"/>
-                            <DataTemplate.Triggers>
-                                <DataTrigger Binding="{Binding IsVisible}" Value="False">
-                                    <Setter TargetName="root" Property="Visibility" Value="Collapsed"/>
-                                </DataTrigger>
-                            </DataTemplate.Triggers>
-                        </DataTemplate>
-                    </ItemsControl.ItemTemplate>
-                </ItemsControl>
-            </ScrollViewer>
+            <ItemsControl ItemsSource="{Binding Equipments, Mode=OneTime}" ItemTemplate="{StaticResource ArmorPieceView}" VirtualizingStackPanel.IsVirtualizing="True" VirtualizingStackPanel.ScrollUnit="Pixel" VirtualizingStackPanel.VirtualizationMode="Recycling" ScrollViewer.CanContentScroll="True">
+                <ItemsControl.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <VirtualizingStackPanel />
+                    </ItemsPanelTemplate>
+                </ItemsControl.ItemsPanel>
+                <ItemsControl.Template>
+                    <ControlTemplate>
+                        <Border
+                            BorderThickness="{TemplateBinding Border.BorderThickness}"
+                            Padding="{TemplateBinding Control.Padding}"
+                            BorderBrush="{TemplateBinding Border.BorderBrush}"
+                            Background="{TemplateBinding Panel.Background}"
+                            SnapsToDevicePixels="True">
+                            <ScrollViewer Padding="{TemplateBinding Control.Padding}" Focusable="False">
+                                <ItemsPresenter SnapsToDevicePixels="{TemplateBinding UIElement.SnapsToDevicePixels}" />
+                            </ScrollViewer>
+                        </Border>
+                    </ControlTemplate>
+                </ItemsControl.Template>
+            </ItemsControl>
 
-            <!--<ListBox ItemsSource="{Binding Equipments}" VirtualizingPanel.IsVirtualizing="True">
-                <ItemsControl.ItemContainerStyle>
-                    <Style TargetType="{x:Type ListBoxItem}">
-                        <Setter Property="Template">
-                            <Setter.Value>
-                                <ControlTemplate TargetType="{x:Type ListBoxItem}">
-                                    <ContentPresenter Visibility="{Binding IsVisible, Converter={StaticResource CollapsedVisibilityValueConverter}}"/>
-                                </ControlTemplate>
-                            </Setter.Value>
-                        </Setter>
-                    </Style>
-                </ItemsControl.ItemContainerStyle>
-                <ListBox.ItemTemplate>
-                    <DataTemplate>
-                        <ContentControl x:Name="root" Content="{Binding Equipment, Mode=OneTime}" ContentTemplate="{StaticResource ArmorPieceView}"/>
-                    </DataTemplate>
-                </ListBox.ItemTemplate>
-            </ListBox>-->
         </DockPanel>
     </DataTemplate>
 
