@@ -115,8 +115,16 @@ namespace MHArmory.Search
         {
             RemoveJewelsNotMatchingAnySkill();
 
-            MinJewelSize = inputJewels.Min(x => x.Jewel.SlotSize);
-            MaxJewelSize = inputJewels.Max(x => x.Jewel.SlotSize);
+            if (inputJewels.Count > 0)
+            {
+                MinJewelSize = inputJewels.Min(x => x.Jewel.SlotSize);
+                MaxJewelSize = inputJewels.Max(x => x.Jewel.SlotSize);
+            }
+            else
+            {
+                MinJewelSize = 0;
+                MaxJewelSize = 0;
+            }
 
             ComputeMatchingSkillCount();
 
