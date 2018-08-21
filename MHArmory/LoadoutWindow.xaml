@@ -5,6 +5,6 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MHArmory"
         mc:Ignorable="d"
-        Title="Loadout" Width="800" Height="450" WindowStartupLocation="CenterOwner" Background="WhiteSmoke">
+        Title="Skill loadouts" Width="800" Height="450" WindowStartupLocation="CenterOwner" Background="WhiteSmoke">
     <ContentControl Content="{Binding Mode=OneTime}" ContentTemplate="{StaticResource LoadoutSelectorView}" Focusable="False"/>
 </Window>
