@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Input;
 using MHArmory.Core.DataStructures;
 
 namespace MHArmory.ViewModels
@@ -86,6 +87,8 @@ namespace MHArmory.ViewModels
             }
         }
 
+        public ICommand CancelCommand { get; }
+
         private readonly bool isLoadingConfiguration;
 
         public DecorationsOverrideViewModel(IList<IJewel> jewels)
@@ -95,6 +98,8 @@ namespace MHArmory.ViewModels
                 .ToList();
 
             Dictionary<int, DecorationOverrideConfigurationItem> decorationOverrides = GlobalData.Instance.Configuration.InParameters?.DecorationOverride?.Items;
+
+            CancelCommand = new AnonymousCommand(OnCancel);
 
             if (decorationOverrides != null)
             {
@@ -115,6 +120,18 @@ namespace MHArmory.ViewModels
                 finally
                 {
                     isLoadingConfiguration = false;
+                }
+            }
+        }
+
+        private void OnCancel(object parameter)
+        {
+            if (parameter is CancellationCommandArgument cancellable)
+            {
+                if (string.IsNullOrWhiteSpace(SearchText) == false)
+                {
+                    SearchText = string.Empty;
+                    cancellable.IsCancelled = true;
                 }
             }
         }

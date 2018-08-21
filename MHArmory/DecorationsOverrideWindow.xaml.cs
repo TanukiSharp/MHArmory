@@ -33,7 +33,19 @@ namespace MHArmory
 
             decorationsOverrideViewModel = new DecorationsOverrideViewModel(GlobalData.Instance.Jewels);
 
+            InputBindings.Add(new InputBinding(new AnonymousCommand(OnCancel), new KeyGesture(Key.Escape, ModifierKeys.None)));
+
             DataContext = decorationsOverrideViewModel;
+        }
+
+        private void OnCancel(object parameter)
+        {
+            var cancellable = new CancellationCommandArgument();
+
+            decorationsOverrideViewModel.CancelCommand.ExecuteIfPossible(cancellable);
+
+            if (cancellable.IsCancelled == false)
+                Close();
         }
 
         protected override void OnClosed(EventArgs e)

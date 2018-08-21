@@ -112,9 +112,23 @@ namespace MHArmory.ViewModels
             skillViewModel.ApplySearchText(SearchStatement.Create(searchText));
         }
 
+        public ICommand CancelCommand { get; }
+
         public SkillSelectorViewModel()
         {
-            //GlobalData.Instance.GetAbilities().ContinueWith(x => Abilities = x.Result);
+            CancelCommand = new AnonymousCommand(OnCancel);
+        }
+
+        private void OnCancel(object parameter)
+        {
+            if (parameter is CancellationCommandArgument cancellable)
+            {
+                if (string.IsNullOrWhiteSpace(SearchText) == false)
+                {
+                    SearchText = string.Empty;
+                    cancellable.IsCancelled = true;
+                }
+            }
         }
     }
 }

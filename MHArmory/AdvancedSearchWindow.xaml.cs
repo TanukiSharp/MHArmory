@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
+using System.Windows.Input;
 using MHArmory.Core.DataStructures;
 using MHArmory.Search;
 using MHArmory.ViewModels;
@@ -37,6 +38,8 @@ namespace MHArmory
             };
 
             advancedSearchViewModel = new AdvancedSearchViewModel(armorPieceTypesViewModels);
+
+            InputBindings.Add(new InputBinding(new AnonymousCommand(Close), new KeyGesture(Key.Escape, ModifierKeys.None)));
 
             DataContext = advancedSearchViewModel;
         }

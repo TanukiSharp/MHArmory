@@ -7,6 +7,11 @@ using System.Windows.Input;
 
 namespace MHArmory
 {
+    public class CancellationCommandArgument
+    {
+        public bool IsCancelled { get; set; }
+    }
+
     /// <summary>
     /// An ICommand that maps to delegate methods.
     /// </summary>

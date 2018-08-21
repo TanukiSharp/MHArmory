@@ -55,8 +55,20 @@ namespace MHArmory
             //IList<SkillViewModel> skills = await GlobalData.Instance.GetSkills();
             //SkillSelector.Skills = skills;
 
+            InputBindings.Add(new InputBinding(new AnonymousCommand(OnCancel), new KeyGesture(Key.Escape, ModifierKeys.None)));
+
             IsDataLoading = false;
             IsDataLoaded = true;
+        }
+
+        private void OnCancel(object parameter)
+        {
+            var cancellable = new CancellationCommandArgument();
+
+            SkillSelector.CancelCommand.ExecuteIfPossible(cancellable);
+
+            if (cancellable.IsCancelled == false)
+                Close();
         }
 
         private bool isApplicationClose;

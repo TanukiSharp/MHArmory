@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
+using System.Windows.Input;
 using MHArmory.ViewModels;
 
 namespace MHArmory
@@ -23,7 +24,19 @@ namespace MHArmory
 
             equipmentExplorerViewModel = new EquipmentExplorerViewModel();
 
+            InputBindings.Add(new InputBinding(new AnonymousCommand(OnCancel), new KeyGesture(Key.Escape, ModifierKeys.None)));
+
             Loaded += EquipmentExplorerWindow_Loaded;
+        }
+
+        private void OnCancel(object parameter)
+        {
+            var cancellable = new CancellationCommandArgument();
+
+            equipmentExplorerViewModel.CancelCommand.ExecuteIfPossible(cancellable);
+
+            if (cancellable.IsCancelled == false)
+                Close();
         }
 
         public static void Show(Window owner)

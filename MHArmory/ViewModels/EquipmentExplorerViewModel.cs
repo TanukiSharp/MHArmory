@@ -4,6 +4,7 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Input;
 using MHArmory.Core.DataStructures;
 
 namespace MHArmory.ViewModels
@@ -43,6 +44,25 @@ namespace MHArmory.ViewModels
                     bool isVisible = searchStatement.IsMatching(x.Name);
                     if (isVisible)
                         Equipments.Add(x);
+                }
+            }
+        }
+
+        public ICommand CancelCommand { get; }
+
+        public EquipmentExplorerViewModel()
+        {
+            CancelCommand = new AnonymousCommand(OnCancel);
+        }
+
+        private void OnCancel(object parameter)
+        {
+            if (parameter is CancellationCommandArgument cancellable)
+            {
+                if (string.IsNullOrWhiteSpace(SearchText) == false)
+                {
+                    SearchText = string.Empty;
+                    cancellable.IsCancelled = true;
                 }
             }
         }
