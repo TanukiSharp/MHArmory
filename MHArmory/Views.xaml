@@ -83,12 +83,35 @@
         </DataTemplate.Triggers>
     </DataTemplate>
 
+    <DataTemplate x:Key="ArmorSetSkillView">
+        <StackPanel Orientation="Horizontal">
+            <Border CornerRadius="2" BorderThickness="2" BorderBrush="#20000000" Background="#10000000" VerticalAlignment="Top" Width="{Binding ActualHeight, RelativeSource={RelativeSource Mode=Self}}" Margin="2">
+                <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" Text="{Binding RequiredArmorPieces, Mode=OneTime}" FontWeight="Bold"/>
+            </Border>
+            <ItemsControl ItemsSource="{Binding GrantedSkills, Mode=OneTime}" Margin="2" Focusable="False">
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate>
+                        <TextBlock Text="{Binding Skill.Name, Mode=OneTime}"/>
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
+            </ItemsControl>
+        </StackPanel>
+    </DataTemplate>
+    
+    <DataTemplate x:Key="ArmorSetView">
+        <StackPanel Orientation="Horizontal">
+            <ItemsControl ItemsSource="{Binding Skills, Mode=OneTime}" ItemTemplate="{StaticResource ArmorSetSkillView}" Margin="0 0 8 0" Focusable="False"/>
+            <TextBlock Text="{Binding IsFull, Mode=OneTime, StringFormat=Full: {0}}" FontSize="10" VerticalAlignment="Center"/>
+        </StackPanel>
+    </DataTemplate>
+
     <DataTemplate x:Key="ArmorPieceView">
         <Border CornerRadius="2" BorderThickness="1" BorderBrush="#30000000" Background="#10000000" Margin="2" Padding="4" HorizontalAlignment="Stretch">
             <Grid>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="Auto" SharedSizeGroup="A"/>
                     <ColumnDefinition Width="Auto" SharedSizeGroup="B"/>
+                    <ColumnDefinition Width="Auto" SharedSizeGroup="C"/>
                     <ColumnDefinition Width="Auto"/>
                 </Grid.ColumnDefinitions>
                 <StackPanel Grid.Column="0" Orientation="Vertical" Margin="0 0 8 0">
@@ -154,12 +177,13 @@
                         </ItemsControl.ItemsPanel>
                     </ItemsControl>
                 </StackPanel>
-                <ItemsControl Grid.Column="2" ItemsSource="{Binding Abilities, Mode=OneTime}" ItemTemplate="{StaticResource StandaloneAbilityView}" Focusable="False"/>
+                <ItemsControl Grid.Column="2" ItemsSource="{Binding Abilities, Mode=OneTime}" ItemTemplate="{StaticResource StandaloneAbilityView}" Margin="0 0 8 0" Focusable="False"/>
+                <ContentControl Grid.Column="3" Content="{Binding ArmorSet, Mode=OneTime}" ContentTemplate="{StaticResource ArmorSetView}" Focusable="False"/>
             </Grid>
         </Border>
     </DataTemplate>
 
-    <DataTemplate x:Key="ArmorSetView">
+    <DataTemplate x:Key="SearchResultArmorSetView">
         <Border CornerRadius="2" BorderThickness="2" BorderBrush="#300077aa" Background="#100077aa" Margin="2 2 2 12" Padding="2">
             <StackPanel Orientation="Horizontal">
                 <StackPanel Orientation="Vertical" Grid.IsSharedSizeScope="True">
@@ -423,7 +447,7 @@
                         <TextBlock x:Name="loading" Text="Loading..." HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="20" Visibility="{Binding IsDataLoading, Converter={StaticResource CollapsedVisibilityValueConverter}, Mode=OneWay}"/>
                         <DockPanel LastChildFill="True">
                             <ContentControl DockPanel.Dock="Top" Content="{Binding InParameters, Mode=OneTime}" ContentTemplate="{StaticResource InParametersView}" Focusable="False"/>
-                            <ListBox ItemsSource="{Binding FoundArmorSets, Mode=OneWay}" ItemTemplate="{StaticResource ArmorSetView}" ScrollViewer.VerticalScrollBarVisibility="Visible" Visibility="{Binding IsDataLoaded, Converter={StaticResource CollapsedVisibilityValueConverter}, Mode=OneWay}" Focusable="False" VirtualizingPanel.IsVirtualizing="True" VirtualizingPanel.ScrollUnit="Pixel">
+                            <ListBox ItemsSource="{Binding FoundArmorSets, Mode=OneWay}" ItemTemplate="{StaticResource SearchResultArmorSetView}" ScrollViewer.VerticalScrollBarVisibility="Visible" Visibility="{Binding IsDataLoaded, Converter={StaticResource CollapsedVisibilityValueConverter}, Mode=OneWay}" Focusable="False" VirtualizingPanel.IsVirtualizing="True" VirtualizingPanel.ScrollUnit="Pixel">
                                 <ListBox.ItemContainerStyle>
                                     <Style TargetType="{x:Type ListBoxItem}">
                                         <Setter Property="Template">
@@ -522,7 +546,6 @@
                     </DataTemplate>
                 </ItemsControl.ItemTemplate>
             </ItemsControl>
-
         </Grid>
 
         <DataTemplate.Triggers>
