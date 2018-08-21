@@ -10,10 +10,6 @@ namespace MHArmory.Search
         public IEquipment Equipment { get; }
 
         public int MatchingSkillCount { get; set; }
-        public int SlotsScoreSquare { get; set; }
-        public int SlotsScoreCube { get; set; }
-
-        //public bool IsMatchingSkills { get; set; }
         public bool IsMatchingSlotScore { get; set; }
 
         public bool ToBeRemoved { get; set; }
@@ -127,8 +123,6 @@ namespace MHArmory.Search
             }
 
             ComputeMatchingSkillCount();
-
-            ComputeSlotScore();
 
             SetBestSlotScore();
 
@@ -256,25 +250,6 @@ namespace MHArmory.Search
             }
         }
 
-        private void ComputeSlotScore()
-        {
-            ComputeSlotScore(inputHeads);
-            ComputeSlotScore(inputChests);
-            ComputeSlotScore(inputGloves);
-            ComputeSlotScore(inputWaists);
-            ComputeSlotScore(inputLegs);
-            ComputeSlotScore(inputCharms);
-        }
-
-        private void ComputeSlotScore(IEnumerable<SolverDataEquipmentModel2> equipments)
-        {
-            foreach (SolverDataEquipmentModel2 e in equipments)
-            {
-                e.SlotsScoreSquare = DataUtility.SlotSizeScoreSquare(e.Equipment.Slots);
-                e.SlotsScoreCube = DataUtility.SlotSizeScoreCube(e.Equipment.Slots);
-            }
-        }
-
         private void SetBestSlotScore()
         {
             SetBestSlotScore(inputHeads);
@@ -285,47 +260,32 @@ namespace MHArmory.Search
             SetBestSlotScore(inputCharms);
         }
 
-        private void SetBestSlotScore2(IEnumerable<SolverDataEquipmentModel2> equipments)
-        {
-            foreach (SolverDataEquipmentModel2 e in equipments.Where(x => x.MatchingSkillCount == 0))
-            {
-                if (e.Equipment.Slots.Any(x => x >= MaxJewelSize) || e.Equipment.Slots.Length >= 3)
-                {
-                    e.IsMatchingSlotScore = true;
-                    e.IsSelected = true;
-                    e.ToBeRemoved = false;
-                }
-            }
-        }
-
         private void SetBestSlotScore(IEnumerable<SolverDataEquipmentModel2> equipments)
         {
-            SolverDataEquipmentModel2 bestSquare = null;
-            SolverDataEquipmentModel2 bestCube = null;
+            SetBestSlotScore(equipments, 3);
+            SetBestSlotScore(equipments, 2);
+        }
 
-            //SetBestSlotScore2(equipments);
+        private void SetBestSlotScore(IEnumerable<SolverDataEquipmentModel2> equipments, int slotCount)
+        {
+            IEnumerable<SolverDataEquipmentModel2> bestSlots = equipments
+                .Where(x => x.Equipment.Slots.Length == slotCount)
+                .OrderByDescending(x => x.Equipment.Slots.Sum())
+                .ThenByDescending(x => x.Equipment is IArmorPiece armorPiece ? armorPiece.Defense.Augmented : 0)
+                .Take(3);
 
-            foreach (SolverDataEquipmentModel2 e in equipments.Where(x => x.MatchingSkillCount == 0))
+            bool isFirst = true;
+
+            foreach (SolverDataEquipmentModel2 x in bestSlots)
             {
-                if (bestSquare == null || e.SlotsScoreSquare > bestSquare.SlotsScoreSquare)
-                    bestSquare = e;
+                if (isFirst)
+                {
+                    x.IsSelected = true;
+                    isFirst = false;
+                }
 
-                if (bestCube == null || e.SlotsScoreCube > bestCube.SlotsScoreCube)
-                    bestCube = e;
-            }
-
-            if (bestSquare != null)
-            {
-                bestSquare.IsMatchingSlotScore = true;
-                bestSquare.IsSelected = true;
-                bestSquare.ToBeRemoved = false;
-            }
-
-            if (bestCube != null)
-            {
-                bestCube.IsMatchingSlotScore = true;
-                bestCube.IsSelected = true;
-                bestCube.ToBeRemoved = false;
+                x.IsMatchingSlotScore = true;
+                x.ToBeRemoved = false;
             }
         }
 
