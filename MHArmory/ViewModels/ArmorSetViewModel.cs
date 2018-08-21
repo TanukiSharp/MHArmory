@@ -67,9 +67,9 @@ namespace MHArmory.ViewModels
 
             SpareSlots = spareSlots;
 
-            TotalBaseDefense = armorPieces.Sum(x => x.Defense.Base);
-            TotalMaxDefense = armorPieces.Sum(x => x.Defense.Max);
-            TotalAugmentedDefense = armorPieces.Sum(x => x.Defense.Augmented);
+            TotalBaseDefense = armorPieces.Sum(x => x?.Defense.Base ?? 0);
+            TotalMaxDefense = armorPieces.Sum(x => x?.Defense.Max ?? 0);
+            TotalAugmentedDefense = armorPieces.Sum(x => x?.Defense.Augmented ?? 0);
         }
     }
 }

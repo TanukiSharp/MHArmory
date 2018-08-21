@@ -440,7 +440,14 @@ namespace MHArmory.Search
                     IEquipment[] equipments = searchEquipmentsObjectPool.GetObject();
 
                     for (int i = 0; i < equipments.Length; i++)
-                        equipments[i] = allEquipements[i][indexes[i]];
+                    {
+                        IList<IEquipment> allCategoryEquipments = allEquipements[i];
+
+                        if (allCategoryEquipments.Count > indexes[i])
+                            equipments[i] = allCategoryEquipments[indexes[i]];
+                        else
+                            equipments[i] = null;
+                    }
 
                     isEnd = Increment() == false;
 
