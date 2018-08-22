@@ -184,7 +184,7 @@ namespace MHArmory.MhwDbDataSource
             if (result == null)
                 return;
 
-            var localCharms = new Charm[result.Count];
+            var localCharms = new ICharm[result.Count];
 
             for (int i = 0; i < localCharms.Length; i++)
             {
@@ -195,7 +195,7 @@ namespace MHArmory.MhwDbDataSource
                 for (int j = 0; j < charmLevels.Length; j++)
                     charmLevels[j] = new DataStructures.CharmLevel(i + 1, currentCharmPrimitive.Levels[j], abilities);
 
-                localCharms[i] = new Charm(currentCharmPrimitive.Name, charmLevels);
+                localCharms[i] = new Charm(i + 1, currentCharmPrimitive.Name, charmLevels);
             }
 
             charms = localCharms;

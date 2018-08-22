@@ -6,6 +6,7 @@ namespace MHArmory.Core.DataStructures
 {
     public interface ICharmLevel : IEquipment
     {
+        ICharm Charm { get; }
         int Level { get; }
     }
 
@@ -22,6 +23,7 @@ namespace MHArmory.Core.DataStructures
             Abilities = abilities;
         }
 
+        public ICharm Charm { get; private set; }
         public int Id { get; }
         public int Level { get; }
         public EquipmentType Type { get; }
@@ -29,6 +31,11 @@ namespace MHArmory.Core.DataStructures
         public int Rarity { get; }
         public int[] Slots { get; }
         public IAbility[] Abilities { get; }
+
+        internal void UpdateCharm(ICharm charm)
+        {
+            Charm = charm;
+        }
 
         public override string ToString()
         {
@@ -38,18 +45,24 @@ namespace MHArmory.Core.DataStructures
 
     public interface ICharm
     {
+        int Id { get; }
         string Name { get; }
         ICharmLevel[] Levels { get; }
     }
 
     public class Charm : ICharm
     {
-        public Charm(string name, ICharmLevel[] levels)
+        public Charm(int id, string name, ICharmLevel[] levels)
         {
+            Id = id;
             Name = name;
             Levels = levels;
+
+            foreach (CharmLevel charmLevel in levels)
+                charmLevel.UpdateCharm(this);
         }
 
+        public int Id { get; }
         public string Name { get; }
         public ICharmLevel[] Levels { get; }
 

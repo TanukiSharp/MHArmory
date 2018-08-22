@@ -35,6 +35,7 @@ namespace MHArmory.MhwDbDataSource.DataStructures
 
     internal class CharmLevel : ICharmLevel
     {
+        public ICharm Charm { get; private set; }
         public int Id { get; }
         public EquipmentType Type => EquipmentType.Charm;
         public string Name { get; }
@@ -52,6 +53,11 @@ namespace MHArmory.MhwDbDataSource.DataStructures
             Abilities = currentCharmLevelPrimitive.Abilitites
                 .Select(x => abilities.FirstOrDefault(a => a.Id == x.AbilityId))
                 .ToArray();
+        }
+
+        internal void UpdateCharm(ICharm charm)
+        {
+            Charm = charm;
         }
 
         public override string ToString()
