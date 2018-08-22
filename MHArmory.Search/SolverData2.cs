@@ -210,12 +210,15 @@ namespace MHArmory.Search
         {
             int count = 0;
 
-            if (equipment is IArmorPiece armorPiece && armorPiece.ArmorSet != null && armorPiece.ArmorSet.IsFull == false)
+            if (equipment is IArmorPiece armorPiece && armorPiece.ArmorSet != null)
             {
-                foreach (IAbility ability in armorPiece.ArmorSet.Skills.SelectMany(x => x.GrantedSkills))
+                if (armorPiece.ArmorSet.Skills != null)
                 {
-                    if (IsMatchingDesiredAbilities(ability))
-                        count++;
+                    foreach (IAbility ability in armorPiece.ArmorSet.Skills.SelectMany(x => x.GrantedSkills))
+                    {
+                        if (IsMatchingDesiredAbilities(ability))
+                            count++;
+                    }
                 }
             }
 
