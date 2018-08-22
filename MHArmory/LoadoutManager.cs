@@ -185,7 +185,7 @@ namespace MHArmory
 
         private bool InternalSaveAs()
         {
-            var inputWindow = new TextInputWindow("Save loadout", "Enter loadout unique name:", null, true);
+            var inputWindow = new TextInputWindow("Save loadout", "Enter loadout unique name:", currentLoadoutName, true);
 
             if (inputWindow.ShowDialog() != true)
                 return false;
