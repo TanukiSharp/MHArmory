@@ -129,6 +129,8 @@ namespace MHArmory.Search
             DeleteMarkedEquipments();
 
             UpdateSelection();
+
+            UnselectLessPoweredCharms();
         }
 
         public ISolverData Done()
@@ -300,6 +302,19 @@ namespace MHArmory.Search
             foreach (SolverDataEquipmentModel2 e in equipments.Where(x => x.IsSelected == false))
             {
                 e.IsSelected = e.MatchingSkillCount >= MaxSkillCountPerArmorPiece;
+            }
+        }
+
+        private void UnselectLessPoweredCharms()
+        {
+            foreach (IGrouping<int, SolverDataEquipmentModel2> group in inputCharms.Where(x => x.Equipment is ICharmLevel).GroupBy(x => ((ICharmLevel)x.Equipment).Charm.Id))
+            {
+                int max = group.Max(x => ((ICharmLevel)x.Equipment).Level);
+
+                foreach (SolverDataEquipmentModel2 charmLevel in group)
+                {
+                    charmLevel.IsSelected = ((ICharmLevel)charmLevel.Equipment).Level == max;
+                }
             }
         }
 
