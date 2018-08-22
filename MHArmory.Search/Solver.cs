@@ -186,6 +186,15 @@ namespace MHArmory.Search
                 availableSlotsObjectPool.PutObject(availableSlots);
             }
 
+            if (equipments.OfType<IArmorPiece>().Any(x => x.ArmorSet != null && x.ArmorSet.IsFull))
+            {
+                if (DataUtility.AreOnSameFullArmorSet(equipments.OfType<IArmorPiece>()) == false)
+                {
+                    OnArmorSetMismatch();
+                    return new ArmorSetSearchResult { IsMatch = false };
+                }
+            }
+
             //if (
             //    equipments.Where(x => x != null).Any(x => x.Name == "Bazel Helm Beta") &&
             //    equipments.Where(x => x != null).Any(x => x.Name == "Kushala Cista Beta") &&

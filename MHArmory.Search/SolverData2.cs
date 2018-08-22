@@ -10,8 +10,6 @@ namespace MHArmory.Search
         public IEquipment Equipment { get; }
 
         public int MatchingSkillCount { get; set; }
-        public bool IsMatchingSlotScore { get; set; }
-
         public bool ToBeRemoved { get; set; }
 
         public event EventHandler SelectionChanged;
@@ -239,10 +237,6 @@ namespace MHArmory.Search
         {
             foreach (SolverDataEquipmentModel2 e in equipments)
             {
-                if (e.Equipment.Name.StartsWith("Xeno'jiiva Claws"))
-                {
-                }
-
                 int skillCount = EquipmentMatchingArmorSetAbility(e.Equipment);
                 skillCount += e.Equipment.Abilities.Where(a => IsMatchingDesiredAbilities(a)).Sum(a => a.Level);
 
@@ -287,7 +281,6 @@ namespace MHArmory.Search
                     isFirst = false;
                 }
 
-                x.IsMatchingSlotScore = true;
                 x.ToBeRemoved = false;
             }
         }
@@ -306,9 +299,7 @@ namespace MHArmory.Search
         {
             foreach (SolverDataEquipmentModel2 e in equipments.Where(x => x.IsSelected == false))
             {
-                e.IsSelected =
-                    e.IsMatchingSlotScore ||
-                    e.MatchingSkillCount >= MaxSkillCountPerArmorPiece;
+                e.IsSelected = e.MatchingSkillCount >= MaxSkillCountPerArmorPiece;
             }
         }
 

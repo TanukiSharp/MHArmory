@@ -9,6 +9,24 @@ namespace MHArmory.Search
 {
     public static class DataUtility
     {
+        public static bool AreOnSameFullArmorSet(IEnumerable<IArmorPiece> armorPieces)
+        {
+            int armorSetId = -1;
+
+            foreach (IArmorPiece armorPiece in armorPieces)
+            {
+                if (armorPiece.ArmorSet == null || armorPiece.ArmorSet.IsFull == false)
+                    return false;
+
+                if (armorSetId < 0)
+                    armorSetId = armorPiece.ArmorSet.Id;
+                else if (armorSetId != armorPiece.ArmorSet.Id)
+                    return false;
+            }
+
+            return true;
+        }
+
         public static bool AreAbilitiesOnSameSkill(IAbility ability1, IAbility ability2)
         {
             return ability1 != null && ability2 != null && ability1.Skill.Id == ability2.Skill.Id;
