@@ -16,7 +16,7 @@ namespace MHArmory.Search
 
         public event EventHandler SelectionChanged;
 
-        private bool isSelected = true;
+        private bool isSelected;
         public bool IsSelected
         {
             get { return isSelected; }
@@ -126,7 +126,7 @@ namespace MHArmory.Search
 
             SetBestSlotScore();
 
-            CheckNonFullArmorSets();
+            CheckFullArmorSets();
 
             DeleteMarkedEquipments();
 
@@ -301,7 +301,7 @@ namespace MHArmory.Search
 
         private void UpdateSelection(List<SolverDataEquipmentModel2> equipments)
         {
-            foreach (SolverDataEquipmentModel2 e in equipments)
+            foreach (SolverDataEquipmentModel2 e in equipments.Where(x => x.IsSelected == false))
             {
                 e.IsSelected =
                     e.IsMatchingSlotScore ||
@@ -309,16 +309,16 @@ namespace MHArmory.Search
             }
         }
 
-        private void CheckNonFullArmorSets()
+        private void CheckFullArmorSets()
         {
-            CheckNonFullArmorSets(inputHeads, inputHeads, inputChests, inputGloves, inputWaists, inputLegs);
-            CheckNonFullArmorSets(inputChests, inputHeads, inputChests, inputGloves, inputWaists, inputLegs);
-            CheckNonFullArmorSets(inputGloves, inputHeads, inputChests, inputGloves, inputWaists, inputLegs);
-            CheckNonFullArmorSets(inputWaists, inputHeads, inputChests, inputGloves, inputWaists, inputLegs);
-            CheckNonFullArmorSets(inputLegs, inputHeads, inputChests, inputGloves, inputWaists, inputLegs);
+            CheckFullArmorSets(inputHeads, inputHeads, inputChests, inputGloves, inputWaists, inputLegs);
+            CheckFullArmorSets(inputChests, inputHeads, inputChests, inputGloves, inputWaists, inputLegs);
+            CheckFullArmorSets(inputGloves, inputHeads, inputChests, inputGloves, inputWaists, inputLegs);
+            CheckFullArmorSets(inputWaists, inputHeads, inputChests, inputGloves, inputWaists, inputLegs);
+            CheckFullArmorSets(inputLegs, inputHeads, inputChests, inputGloves, inputWaists, inputLegs);
         }
 
-        private void CheckNonFullArmorSets(
+        private void CheckFullArmorSets(
             List<SolverDataEquipmentModel2> source,
             List<SolverDataEquipmentModel2> heads,
             List<SolverDataEquipmentModel2> chests,
@@ -348,6 +348,8 @@ namespace MHArmory.Search
                     waists.Where(x => x.ToBeRemoved == false).Any(x => x.Equipment.Id == waist.Id) == false ||
                     legs.Where(x => x.ToBeRemoved == false).Any(x => x.Equipment.Id == leg.Id) == false)
                 {
+                    // if one piece is marked as to be removed, remove them all
+
                     heads.Where(x => x.Equipment.Id == head.Id).MarkAsToBeRemoved();
                     chests.Where(x => x.Equipment.Id == chest.Id).MarkAsToBeRemoved();
                     gloves.Where(x => x.Equipment.Id == glove.Id).MarkAsToBeRemoved();
@@ -356,6 +358,8 @@ namespace MHArmory.Search
                 }
                 else
                 {
+                    // otherwise, ensure they are all selected and not marked as to be removed
+
                     heads.Where(x => x.Equipment.Id == head.Id).MarkAsSelected();
                     chests.Where(x => x.Equipment.Id == chest.Id).MarkAsSelected();
                     gloves.Where(x => x.Equipment.Id == glove.Id).MarkAsSelected();
