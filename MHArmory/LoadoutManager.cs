@@ -224,6 +224,12 @@ namespace MHArmory
             };
             loadoutWindow.ShowDialog();
 
+            if (loadoutWindow.CurrentLoadoutName != currentLoadoutName)
+            {
+                currentLoadoutName = loadoutWindow.CurrentLoadoutName;
+                LoadoutChanged?.Invoke(this, new LoadoutNameEventArgs(currentLoadoutName));
+            }
+
             GlobalData.Instance.Configuration.Save();
 
             return true;

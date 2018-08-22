@@ -24,6 +24,11 @@ namespace MHArmory
             }
         }
 
+        public string CurrentLoadoutName { get; private set; }
+        private readonly LoadoutViewModel currentLoadout;
+
+        public bool IsCurrentLoadoutRenamed { get; private set; }
+
         public LoadoutWindow(bool isManageMode, string selectedLoadoutName, IEnumerable<AbilityViewModel> abilities)
         {
             InitializeComponent();
@@ -33,7 +38,11 @@ namespace MHArmory
             if (selectedLoadoutName == null)
                 loadoutSelectorViewModel.SelectedLoadout = null;
             else
-                loadoutSelectorViewModel.SelectedLoadout = loadoutSelectorViewModel.Loadouts.FirstOrDefault(x => x.Name == selectedLoadoutName);
+            {
+                currentLoadout = loadoutSelectorViewModel.Loadouts.FirstOrDefault(x => x.Name == selectedLoadoutName);
+                CurrentLoadoutName = currentLoadout.Name;
+                loadoutSelectorViewModel.SelectedLoadout = currentLoadout;
+            }
 
             InputBindings.Add(new KeyBinding(loadoutSelectorViewModel.AcceptCommand, new KeyGesture(Key.Enter, ModifierKeys.None)));
             InputBindings.Add(new KeyBinding(loadoutSelectorViewModel.CancelCommand, new KeyGesture(Key.Escape, ModifierKeys.None)));
@@ -57,6 +66,8 @@ namespace MHArmory
                 loadoutConfig.Clear();
                 foreach (LoadoutViewModel x in loadoutSelectorViewModel.Loadouts)
                     loadoutConfig[x.Name] = x.Abilities.Select(a => a.Id).ToArray();
+
+                CurrentLoadoutName = currentLoadout.Name;
             }
         }
     }
