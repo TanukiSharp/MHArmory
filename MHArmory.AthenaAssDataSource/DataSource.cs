@@ -56,7 +56,6 @@ namespace MHArmory.AthenaAssDataSource
             LoadArmorPieces(); // <-- LoadArmorSetSkillsPhase2() is called here
         }
 
-        private IList<string[]> eventArmors;
         private IList<ArmorSetSkillPrimitive> armorSetSkillPrimitives;
 
         private void LoadJewels()
@@ -256,10 +255,6 @@ namespace MHArmory.AthenaAssDataSource
 
             try
             {
-                eventArmors = File.ReadAllLines(Path.Combine(dataFolderPath, "events.txt"))
-                    .Select(x => x.Split(','))
-                    .ToList();
-
                 var heads = LoadArmorPieceParts(EquipmentType.Head, headsFilePath).ToList();
                 var chests = LoadArmorPieceParts(EquipmentType.Chest, chestsFilePath).ToList();
                 var gloves = LoadArmorPieceParts(EquipmentType.Gloves, glovesFilePath).ToList();
@@ -340,30 +335,15 @@ namespace MHArmory.AthenaAssDataSource
                 if (container.FullArmorSetIds != null)
                     continue;
 
-                int armorSetIndex = -1;
-                for (int i = 0; i < eventArmors.Count; i++)
-                {
-                    if (eventArmors[i].Contains(container.Primitive.Name))
-                    {
-                        armorSetIndex = i;
-                        break;
-                    }
-                }
-
-                if (armorSetIndex < 0)
-                    continue;
-
-                string[] setPieces = eventArmors[armorSetIndex];
-
-                int[] armorPieceIds = allArmorPieceContainers
-                    .Where(x => setPieces.Contains(x.Primitive.Name))
+                int[] armorPieceIds = list
+                    .Where(x => x.PerTypeId == container.PerTypeId)
                     .Select(x => x.Primitive.Id)
                     .ToArray();
 
                 if (armorPieceIds.Length != 5)
                     continue;
 
-                foreach (ArmorPieceContainer setPieceContainer in allArmorPieceContainers.Where(x => setPieces.Contains(x.Primitive.Name)))
+                foreach (ArmorPieceContainer setPieceContainer in list.Where(x => x.PerTypeId == container.PerTypeId))
                     setPieceContainer.FullArmorSetIds = armorPieceIds;
             }
         }
@@ -474,6 +454,7 @@ namespace MHArmory.AthenaAssDataSource
 
                 var container = new ArmorPieceContainer
                 {
+                    PerTypeId = i,
                     Primitive = armorPiecePrimitive,
                     Type = type
                 };

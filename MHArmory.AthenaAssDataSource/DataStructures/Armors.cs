@@ -7,6 +7,7 @@ namespace MHArmory.AthenaAssDataSource.DataStructures
 {
     internal class ArmorPieceContainer
     {
+        internal int PerTypeId;
         internal ArmorPiecePrimitive Primitive;
         internal EquipmentType Type;
         internal int[] FullArmorSetIds;
