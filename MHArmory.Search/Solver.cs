@@ -97,8 +97,8 @@ namespace MHArmory.Search
             sb.AppendLine($"Legs count:   {ll}");
             sb.AppendLine($"Charms count:   {ch}");
             sb.AppendLine("-----");
-            sb.AppendLine($"Min sLot size: {data.MinJewelSize}");
-            sb.AppendLine($"Max sLot size: {data.MaxJewelSize}");
+            sb.AppendLine($"Min slot size: {data.MinJewelSize}");
+            sb.AppendLine($"Max slot size: {data.MaxJewelSize}");
             sb.AppendLine("-----");
             sb.AppendLine($"Combination count: {generator.CombinationCount.ToString("N0", nfi)}");
 
