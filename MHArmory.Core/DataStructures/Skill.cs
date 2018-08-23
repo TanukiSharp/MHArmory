@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 
 namespace MHArmory.Core.DataStructures
@@ -43,6 +44,7 @@ namespace MHArmory.Core.DataStructures
         int Id { get; }
         string Name { get; }
         string Description { get; }
+        int MaxLevel { get; }
         IAbility[] Abilities { get; }
     }
 
@@ -53,12 +55,14 @@ namespace MHArmory.Core.DataStructures
             Id = id;
             Name = name;
             Description = description;
+            MaxLevel = abilities.Max(x => x.Level);
             Abilities = abilities;
         }
 
         public int Id { get; }
         public string Name { get; }
         public string Description { get; }
+        public int MaxLevel { get; }
         public IAbility[] Abilities { get; }
 
         public override int GetHashCode()

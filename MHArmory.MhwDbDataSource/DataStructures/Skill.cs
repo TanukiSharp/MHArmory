@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 using MHArmory.Core.DataStructures;
 using Newtonsoft.Json;
@@ -35,6 +36,7 @@ namespace MHArmory.MhwDbDataSource.DataStructures
         public int Id { get; }
         public string Name { get; }
         public string Description { get; }
+        public int MaxLevel { get; private set; }
         public IAbility[] Abilities { get; private set; }
 
         internal Skill(int id, string name, string description)
@@ -46,6 +48,7 @@ namespace MHArmory.MhwDbDataSource.DataStructures
 
         internal void SetAbilities(IAbility[] abilities)
         {
+            MaxLevel = abilities.Max(x => x.Level);
             Abilities = abilities;
         }
 
