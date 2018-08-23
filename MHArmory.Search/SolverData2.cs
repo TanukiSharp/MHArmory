@@ -9,7 +9,9 @@ namespace MHArmory.Search
     {
         public IEquipment Equipment { get; }
 
-        public int MatchingSkillCount { get; set; }
+        public bool IsMatchingArmorSetSkill { get; set; }
+        public int MatchingSkillTotalLevel { get; set; }
+        public double AverageSkillCompletionRatio { get; set; }
         public bool ToBeRemoved { get; set; }
 
         public event EventHandler SelectionChanged;
@@ -240,12 +242,22 @@ namespace MHArmory.Search
             foreach (SolverDataEquipmentModel2 e in equipments)
             {
                 int skillCount = EquipmentMatchingArmorSetAbility(e.Equipment);
+
+                if (skillCount > 0)
+                    e.IsMatchingArmorSetSkill = true;
+
                 skillCount += e.Equipment.Abilities.Where(a => IsMatchingDesiredAbilities(a)).Sum(a => a.Level);
 
                 if (skillCount == 0)
                     e.ToBeRemoved = true;
                 else
-                    e.MatchingSkillCount = skillCount;
+                {
+                    e.AverageSkillCompletionRatio = e.Equipment.Abilities
+                        .Where(a => IsMatchingDesiredAbilities(a))
+                        .AverageOrZero(a => a.Level / (double)a.Skill.MaxLevel);
+
+                    e.MatchingSkillTotalLevel = skillCount;
+                }
             }
         }
 
@@ -301,7 +313,10 @@ namespace MHArmory.Search
         {
             foreach (SolverDataEquipmentModel2 e in equipments.Where(x => x.IsSelected == false))
             {
-                e.IsSelected = e.MatchingSkillCount >= MaxSkillCountPerArmorPiece;
+                e.IsSelected =
+                    e.IsMatchingArmorSetSkill ||
+                    e.AverageSkillCompletionRatio >= Heuristics.MinimumAverageSkillCompletionRatio ||
+                    e.MatchingSkillTotalLevel >= MaxSkillCountPerArmorPiece;
             }
         }
 
@@ -381,6 +396,14 @@ namespace MHArmory.Search
 
     public static class Operators
     {
+        public static double AverageOrZero(this IEnumerable<IAbility> source, Func<IAbility, double> func)
+        {
+            if (source.Any() == false)
+                return 0.0;
+
+            return source.Average(func);
+        }
+
         public static IEnumerable<SolverDataEquipmentModel2> MarkAsToBeRemoved(this IEnumerable<SolverDataEquipmentModel2> source)
         {
             foreach (SolverDataEquipmentModel2 e in source.Where(x => x.ToBeRemoved == false))

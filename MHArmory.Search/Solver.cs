@@ -325,7 +325,7 @@ namespace MHArmory.Search
 
             foreach (IArmorPiece armorPiece in armorPieces)
             {
-                if (armorPiece.ArmorSet == null || armorPiece.ArmorSet.IsFull)
+                if (armorPiece.ArmorSet == null || armorPiece.ArmorSet.Skills == null)
                     continue;
 
                 if (armorPiece.ArmorSet.Skills.SelectMany(x => x.GrantedSkills).Any(a => a.Id == ability.Id))
