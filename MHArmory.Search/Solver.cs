@@ -415,10 +415,15 @@ namespace MHArmory.Search
 
                 indexes = new int[allEquipements.Length];
 
-                int combinationCount = 1;
-                for (int i = 0; i < allEquipements.Length; i++)
-                    combinationCount *= allEquipements[i].Count;
-                CombinationCount = combinationCount;
+                if (allEquipements.All(x => x.Count == 0))
+                    CombinationCount = 0;
+                else
+                {
+                    int combinationCount = 1;
+                    for (int i = 0; i < allEquipements.Length; i++)
+                        combinationCount *= Math.Max(allEquipements[i].Count, 1);
+                    CombinationCount = combinationCount;
+                }
             }
 
             private bool Increment()

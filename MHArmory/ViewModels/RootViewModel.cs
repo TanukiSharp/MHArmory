@@ -255,7 +255,7 @@ namespace MHArmory.ViewModels
             sb.AppendLine($"Min slot size: {SolverData.MinJewelSize}");
             sb.AppendLine($"Max slot size: {SolverData.MaxJewelSize}");
             sb.AppendLine("-----");
-            sb.AppendLine($"Combination count: {(hh * cc * gg * ww * ll * ch).ToString("N0", nfi)}");
+            sb.AppendLine($"Combination count: {(Math.Max(hh, 1) * Math.Max(cc, 1) * Math.Max(gg, 1) * Math.Max(ww, 1) * Math.Max(ll, 1) * Math.Max(ch, 1)).ToString("N0", nfi)}");
 
             SearchResult = sb.ToString();
             /*************************************************************/
