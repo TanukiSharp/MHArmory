@@ -298,7 +298,7 @@ namespace MHArmory.ViewModels
                 }
             }
 
-            return new SolverDataJewelModel(jewel, 999);
+            return new SolverDataJewelModel(jewel, int.MaxValue);
         }
 
         internal void SelectedAbilitiesChanged()
