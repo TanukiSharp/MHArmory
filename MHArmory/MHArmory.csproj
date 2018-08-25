@@ -64,6 +64,7 @@
     <Compile Include="DecorationsOverrideWindow.xaml.cs">
       <DependentUpon>DecorationsOverrideWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="EnumDataSource.cs" />
     <Compile Include="EquipmentExplorerWindow.xaml.cs">
       <DependentUpon>EquipmentExplorerWindow.xaml</DependentUpon>
     </Compile>
@@ -73,6 +74,10 @@
     </Compile>
     <Compile Include="Panels\TooledContentPanel.cs" />
     <Compile Include="ReorganizableCollectionUtilities.cs" />
+    <Compile Include="SearchResultProcessingWindow.xaml.cs">
+      <DependentUpon>SearchResultProcessingWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SearchResultSortCriteria.cs" />
     <Compile Include="SearchUtilities.cs" />
     <Compile Include="TextInputWindow.xaml.cs">
       <DependentUpon>TextInputWindow.xaml</DependentUpon>
@@ -80,6 +85,7 @@
     <Compile Include="ValueConverters\HasDefenseVisibilityValueConverter.cs" />
     <Compile Include="ValueConverters\SlotSizeToolTipValueConverter.cs" />
     <Compile Include="ValueConverters\SlotToImagePathValueConverter.cs" />
+    <Compile Include="ValueConverters\SortCriteriaNameValueConverter.cs" />
     <Compile Include="ValueConverters\VisibilityValueConverter.cs" />
     <Compile Include="GlobalData.cs" />
     <Compile Include="ValueConverters\EnumToImagePathValueConverter.cs" />
@@ -97,8 +103,11 @@
     <Compile Include="ViewModels\JewelOverrideViewModel.cs" />
     <Compile Include="ViewModels\LoadoutViewModel.cs" />
     <Compile Include="ViewModels\RootViewModel.cs" />
+    <Compile Include="ViewModels\SearchResultProcessingViewModel.cs" />
     <Compile Include="ViewModels\SkillSelectorViewModel.cs" />
     <Compile Include="ViewModels\SkillViewModel.cs" />
+    <Compile Include="ViewModels\SearchResultProcessingContainerViewModel.cs" />
+    <Compile Include="ViewModels\SearchResultSortItemViewModel.cs" />
     <Compile Include="ViewModels\TextInputViewModel.cs" />
     <Compile Include="ViewModels\ViewModelBase.cs" />
     <Page Include="AdvancedSearchWindow.xaml">
@@ -129,6 +138,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="SearchResultProcessingWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="SkillSelectorWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

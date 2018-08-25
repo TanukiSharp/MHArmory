@@ -34,6 +34,7 @@ namespace MHArmory
             CommandBindings.Add(RoutedCommands.CreateCommandBinding(RoutedCommands.OpenAdvancedSearch, OpenAdvancedSearch));
             CommandBindings.Add(RoutedCommands.CreateCommandBinding(RoutedCommands.OpenDecorationsOverride, OpenDecorationsOverride));
             CommandBindings.Add(RoutedCommands.CreateCommandBinding(RoutedCommands.OpenEquipmentExplorer, OpenEquipmentExplorer));
+            CommandBindings.Add(RoutedCommands.CreateCommandBinding(RoutedCommands.OpenSearchResultProcessing, OpenSearchResultProcessing));
 
             CommandBindings.Add(RoutedCommands.CreateCommandBinding(RoutedCommands.NewLoadout, OnNewLoadout));
             CommandBindings.Add(RoutedCommands.CreateCommandBinding(RoutedCommands.OpenLoadout, OnOpenLoadout));
@@ -173,6 +174,18 @@ namespace MHArmory
         private void OpenEquipmentExplorer(object obj)
         {
             EquipmentExplorerWindow.Show(this);
+        }
+
+        private void OpenSearchResultProcessing(object parameter)
+        {
+            if (SearchResultProcessingWindow.IsOpened)
+                return;
+
+            var window = new SearchResultProcessingWindow(rootViewModel)
+            {
+                Owner = this
+            };
+            window.Show();
         }
 
         private LoadoutManager loadoutManager;

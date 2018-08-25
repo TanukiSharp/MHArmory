@@ -20,6 +20,7 @@ namespace MHArmory.ViewModels
         public ICommand SearchArmorSetsCommand { get; }
         public ICommand AdvancedSearchCommand { get; }
         public ICommand OpenDecorationsOverrideCommand { get; }
+        public ICommand OpenSearchResultProcessingCommand { get; }
 
         public event EventHandler AbilitiesChanged;
 
@@ -51,6 +52,8 @@ namespace MHArmory.ViewModels
         }
 
         private IEnumerable<ArmorSetViewModel> foundArmorSets;
+
+        public ObservableCollection<SearchResultProcessingContainerViewModel> SearchResultProcessingItems { get; } = new ObservableCollection<SearchResultProcessingContainerViewModel>();
 
         internal void NotifyConfigurationLoaded()
         {
@@ -85,6 +88,7 @@ namespace MHArmory.ViewModels
             SearchArmorSetsCommand = new AnonymousCommand(SearchArmorSets);
             AdvancedSearchCommand = new AnonymousCommand(AdvancedSearch);
             OpenDecorationsOverrideCommand = new AnonymousCommand(OpenDecorationsOverride);
+            OpenSearchResultProcessingCommand = new AnonymousCommand(OpenSearchResultProcessing);
 
             InParameters = new InParametersViewModel(this);
         }
@@ -152,6 +156,11 @@ namespace MHArmory.ViewModels
         private void OpenDecorationsOverride()
         {
             RoutedCommands.OpenDecorationsOverride.ExecuteIfPossible(null);
+        }
+
+        private void OpenSearchResultProcessing()
+        {
+            RoutedCommands.OpenSearchResultProcessing.ExecuteIfPossible(null);
         }
 
         public async void SearchArmorSets()

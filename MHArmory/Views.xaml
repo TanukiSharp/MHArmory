@@ -12,6 +12,7 @@
     <cvt:SlotToImagePathValueConverter x:Key="SlotToImagePathValueConverter"/>
     <cvt:SlotSizeToolTipValueConverter x:Key="SlotSizeToolTipValueConverter"/>
     <cvt:HasDefenseVisibilityValueConverter x:Key="HasDefenseVisibilityValueConverter"/>
+    <cvt:SortCriteriaNameValueConverter x:Key="SortCriteriaNameValueConverter"/>
 
     <Style x:Key="ComboBoxItemSlotStyle" TargetType="FrameworkElement">
         <Setter Property="Width" Value="16"/>
@@ -446,7 +447,10 @@
                     <Grid>
                         <TextBlock x:Name="loading" Text="Loading..." HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="20" Visibility="{Binding IsDataLoading, Converter={StaticResource CollapsedVisibilityValueConverter}, Mode=OneWay}"/>
                         <DockPanel LastChildFill="True">
-                            <ContentControl DockPanel.Dock="Top" Content="{Binding InParameters, Mode=OneTime}" ContentTemplate="{StaticResource InParametersView}" Focusable="False"/>
+                            <DockPanel DockPanel.Dock="Top" HorizontalAlignment="Stretch">
+                                <ContentControl DockPanel.Dock="Left" Content="{Binding InParameters, Mode=OneTime}" ContentTemplate="{StaticResource InParametersView}" Focusable="False"/>
+                                <Button DockPanel.Dock="Right" HorizontalAlignment="Right" Content="Result processing..." Command="{Binding OpenSearchResultProcessingCommand, Mode=OneTime}" Margin="2" Padding="4 0 4 0"/>
+                            </DockPanel>
                             <ListBox ItemsSource="{Binding FoundArmorSets, Mode=OneWay}" ItemTemplate="{StaticResource SearchResultArmorSetView}" ScrollViewer.VerticalScrollBarVisibility="Visible" Visibility="{Binding IsDataLoaded, Converter={StaticResource CollapsedVisibilityValueConverter}, Mode=OneWay}" Focusable="False" VirtualizingPanel.IsVirtualizing="True" VirtualizingPanel.ScrollUnit="Pixel">
                                 <ListBox.ItemContainerStyle>
                                     <Style TargetType="{x:Type ListBoxItem}">
@@ -589,6 +593,79 @@
             </ItemsControl>
 
         </DockPanel>
+    </DataTemplate>
+
+    <DataTemplate x:Key="SearchResultProcessingContainerMasterView">
+        <Grid HorizontalAlignment="Stretch">
+            <TextBlock x:Name="readonly" Text="{Binding Name}" VerticalAlignment="Center"/>
+            <DockPanel x:Name="edit" LastChildFill="True" Visibility="Hidden" VerticalAlignment="Center" Margin="24 0 0 0">
+                <Button DockPanel.Dock="Right" Content="X" ToolTip="Remove" Width="{Binding ActualHeight, RelativeSource={RelativeSource Mode=Self}}" Command="{Binding RemoveSelfCommand, Mode=OneTime}" Margin="1"/>
+                <UniformGrid Rows="2" DockPanel.Dock="Right" Width="{Binding ActualHeight, RelativeSource={RelativeSource Mode=Self}}">
+                    <Button Command="{Binding MoveSelfUpCommand, Mode=OneTime}" ToolTip="Move up" Margin="1"/>
+                    <Button Command="{Binding MoveSelfDownCommand, Mode=OneTime}" ToolTip="Move down" Margin="1"/>
+                </UniformGrid>
+                <TextBox Text="{Binding Name}" HorizontalAlignment="Stretch" Margin="1" Padding="2"/>
+            </DockPanel>
+        </Grid>
+        <DataTemplate.Triggers>
+            <DataTrigger Binding="{Binding IsEditMode}" Value="True">
+                <Setter TargetName="readonly" Property="Visibility" Value="Hidden"/>
+                <Setter TargetName="edit" Property="Visibility" Value="Visible"/>
+            </DataTrigger>
+        </DataTemplate.Triggers>
+    </DataTemplate>
+
+    <DataTemplate x:Key="SearchResultSortItemView">
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" SharedSizeGroup="A"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+            <TextBlock Grid.Column="0" Text="{Binding HeaderText}" VerticalAlignment="Center" Margin="1"/>
+            <ComboBox Grid.Column="1" SelectedItem="{Binding SortCriteria}" ItemsSource="{x:Static local:SearchResultSortCriteriaDataSource.Instance}" VerticalAlignment="Center" Margin="1">
+                <ComboBox.ItemTemplate>
+                    <DataTemplate>
+                        <TextBlock Text="{Binding Converter={StaticResource SortCriteriaNameValueConverter}}" Margin="2"/>
+                    </DataTemplate>
+                </ComboBox.ItemTemplate>
+            </ComboBox>
+            <StackPanel Grid.Column="2" Orientation="Horizontal" VerticalAlignment="Stretch" Margin="0">
+                <UniformGrid Rows="2" Width="{Binding ActualHeight, RelativeSource={RelativeSource Mode=Self}}" Margin="0">
+                    <Button Command="{Binding MoveSelfUpCommand, Mode=OneTime}" ToolTip="Move up" Margin="1"/>
+                    <Button Command="{Binding MoveSelfDownCommand, Mode=OneTime}" ToolTip="Move down" Margin="1"/>
+                </UniformGrid>
+                <Button Content="X" ToolTip="Remove" Width="{Binding ActualHeight, RelativeSource={RelativeSource Mode=Self}}" Command="{Binding RemoveSelfCommand, Mode=OneTime}" Margin="1"/>
+            </StackPanel>
+        </Grid>
+    </DataTemplate>
+
+    <DataTemplate x:Key="SearchResultProcessingContainerDetailView">
+        <DockPanel LastChildFill="True">
+            <StackPanel Orientation="Horizontal" DockPanel.Dock="Top">
+                <Button Content="Add" Command="{Binding AddSortItemCommand}" Margin="2" Padding="4"/>
+            </StackPanel>
+            <ItemsControl Margin="2" ItemsSource="{Binding SortItems}" ItemTemplate="{StaticResource SearchResultSortItemView}" Grid.IsSharedSizeScope="True"/>
+        </DockPanel>
+    </DataTemplate>
+
+    <DataTemplate x:Key="SearchResultProcessingView">
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="6"/>
+                <ColumnDefinition Width="2.5*"/>
+            </Grid.ColumnDefinitions>
+            <DockPanel Grid.Column="0" LastChildFill="True">
+                <DockPanel DockPanel.Dock="Top">
+                    <Button Content="New" DockPanel.Dock="Left" HorizontalAlignment="Left" Command="{Binding CreateNewCommand, Mode=OneTime}" Margin="2" Padding="3"/>
+                    <ToggleButton Content="Edit Mode" DockPanel.Dock="Right" HorizontalAlignment="Right" IsChecked="{Binding IsEditMode, Mode=OneWayToSource}" Margin="2" Padding="4"/>
+                </DockPanel>
+                <ListBox ItemsSource="{Binding Containers, Mode=OneWay}" ItemTemplate="{StaticResource SearchResultProcessingContainerMasterView}" HorizontalContentAlignment="Stretch" SelectedItem="{Binding SelectedContainer}" Margin="2"/>
+            </DockPanel>
+            <GridSplitter Grid.Column="1" HorizontalAlignment="Stretch"/>
+            <ContentControl Grid.Column="2" Content="{Binding SelectedContainer}" ContentTemplate="{StaticResource SearchResultProcessingContainerDetailView}" Visibility="{Binding HasSelection, Converter={StaticResource CollapsedVisibilityValueConverter}}"/>
+        </Grid>
     </DataTemplate>
 
 </ResourceDictionary>
