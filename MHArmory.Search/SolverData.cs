@@ -63,7 +63,7 @@ namespace MHArmory.Search
         public SolverDataJewelModel[] AllJewels { get; private set; }
         public IAbility[] DesiredAbilities { get; }
 
-        private readonly IList<MaximizedSearchCriteria> inputSearchCriterias;
+        //private readonly IList<MaximizedSearchCriteria> inputSearchCriterias;
         private readonly List<SolverDataEquipmentModel> inputHeads;
         private readonly List<SolverDataEquipmentModel> inputChests;
         private readonly List<SolverDataEquipmentModel> inputGloves;
@@ -85,7 +85,7 @@ namespace MHArmory.Search
 
         public SolverData(
             IList<int> weaponSlots,
-            IList<MaximizedSearchCriteria> searchCriterias,
+            //IList<MaximizedSearchCriteria> searchCriterias,
             IEnumerable<IArmorPiece> heads,
             IEnumerable<IArmorPiece> chests,
             IEnumerable<IArmorPiece> gloves,
@@ -104,10 +104,10 @@ namespace MHArmory.Search
             inputCharms = charms.Select(x => new SolverDataEquipmentModel(x)).ToList();
             inputJewels = jewels.ToList();
 
-            if (searchCriterias == null || searchCriterias.Count == 0)
-                searchCriterias = new[] { MaximizedSearchCriteria.SlotSizeCube };
+            //if (searchCriterias == null || searchCriterias.Count == 0)
+            //    searchCriterias = new[] { MaximizedSearchCriteria.SlotSizeCube };
 
-            inputSearchCriterias = searchCriterias;
+            //inputSearchCriterias = searchCriterias;
 
             WeaponSlots = weaponSlots.ToArray();
             DesiredAbilities = desiredAbilities.ToArray();
@@ -128,35 +128,35 @@ namespace MHArmory.Search
 
             List<SolverDataEquipmentModel> tempAllHeads = inputHeads
                 .RemoveWhere(isLessPoweredEquivalentArmorPiece)
-                .Sort(inputSearchCriterias)
+                //.Sort(inputSearchCriterias)
                 .ExcludeEquipmentsNonMatchingAbilities(DesiredAbilities)
                 .ToList()
                 ;
 
             List<SolverDataEquipmentModel> tempAllChests = inputChests
                 .RemoveWhere(isLessPoweredEquivalentArmorPiece)
-                .Sort(inputSearchCriterias)
+                //.Sort(inputSearchCriterias)
                 .ExcludeEquipmentsNonMatchingAbilities(DesiredAbilities)
                 .ToList()
                 ;
 
             List<SolverDataEquipmentModel> tempAllGloves = inputGloves
                 .RemoveWhere(isLessPoweredEquivalentArmorPiece)
-                .Sort(inputSearchCriterias)
+                //.Sort(inputSearchCriterias)
                 .ExcludeEquipmentsNonMatchingAbilities(DesiredAbilities)
                 .ToList()
                 ;
 
             List<SolverDataEquipmentModel> tempAllWaists = inputWaists
                 .RemoveWhere(isLessPoweredEquivalentArmorPiece)
-                .Sort(inputSearchCriterias)
+                //.Sort(inputSearchCriterias)
                 .ExcludeEquipmentsNonMatchingAbilities(DesiredAbilities)
                 .ToList()
                 ;
 
             List<SolverDataEquipmentModel> tempAllLegs = inputLegs
                 .RemoveWhere(isLessPoweredEquivalentArmorPiece)
-                .Sort(inputSearchCriterias)
+                //.Sort(inputSearchCriterias)
                 .ExcludeEquipmentsNonMatchingAbilities(DesiredAbilities)
                 .ToList()
                 ;
@@ -380,10 +380,10 @@ namespace MHArmory.Search
             return equipments;
         }
 
-        public static IEnumerable<SolverDataEquipmentModel> Sort(this IEnumerable<SolverDataEquipmentModel> unsorted, IEnumerable<MaximizedSearchCriteria> criterias)
-        {
-            return DataUtility.CreateArmorPieceSorter(unsorted, criterias);
-        }
+        //public static IEnumerable<SolverDataEquipmentModel> Sort(this IEnumerable<SolverDataEquipmentModel> unsorted, IEnumerable<MaximizedSearchCriteria> criterias)
+        //{
+        //    return DataUtility.CreateArmorPieceSorter(unsorted, criterias);
+        //}
 
         public static bool IsWorthBySlots(int[] slots)
         {

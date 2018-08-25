@@ -219,7 +219,6 @@ namespace MHArmory.ViewModels
 
             SolverData = new SolverData2(
                 InParameters.Slots.Select(x => x.Value).ToList(),
-                null,
                 GlobalData.Instance.Heads,
                 GlobalData.Instance.Chests,
                 GlobalData.Instance.Gloves,
@@ -311,13 +310,6 @@ namespace MHArmory.ViewModels
         {
             SearchResult = debugData;
         }
-
-        private MaximizedSearchCriteria[] sortCriterias = new MaximizedSearchCriteria[]
-        {
-            MaximizedSearchCriteria.BaseDefense,
-            MaximizedSearchCriteria.DragonResistance,
-            MaximizedSearchCriteria.SlotSizeCube
-        };
 
         private string searchResult;
         public string SearchResult

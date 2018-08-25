@@ -53,7 +53,7 @@ namespace MHArmory.Search
         public SolverDataJewelModel[] AllJewels { get; private set; }
         public IAbility[] DesiredAbilities { get; }
 
-        private readonly IList<MaximizedSearchCriteria> inputSearchCriterias;
+        //private readonly IList<MaximizedSearchCriteria> inputSearchCriterias;
         private readonly List<SolverDataEquipmentModel2> inputHeads;
         private readonly List<SolverDataEquipmentModel2> inputChests;
         private readonly List<SolverDataEquipmentModel2> inputGloves;
@@ -69,7 +69,7 @@ namespace MHArmory.Search
 
         public SolverData2(
             IList<int> weaponSlots,
-            IList<MaximizedSearchCriteria> searchCriterias,
+            //IList<MaximizedSearchCriteria> searchCriterias,
             IEnumerable<IArmorPiece> heads,
             IEnumerable<IArmorPiece> chests,
             IEnumerable<IArmorPiece> gloves,
@@ -96,10 +96,10 @@ namespace MHArmory.Search
 
             MaxSkillCountPerArmorPiece = maxSkills;
 
-            if (searchCriterias == null || searchCriterias.Count == 0)
-                searchCriterias = new[] { MaximizedSearchCriteria.SlotSizeCube };
+            //if (searchCriterias == null || searchCriterias.Count == 0)
+            //    searchCriterias = new[] { MaximizedSearchCriteria.SlotSizeCube };
 
-            inputSearchCriterias = searchCriterias;
+            //inputSearchCriterias = searchCriterias;
 
             WeaponSlots = weaponSlots.ToArray();
             DesiredAbilities = desiredAbilities.ToArray();
