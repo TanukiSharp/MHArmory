@@ -6,19 +6,24 @@ using System.Threading.Tasks;
 
 namespace MHArmory.ViewModels
 {
-    public class AdvancedSearchViewModel : ViewModelBase, IDisposable
+    public class AdvancedSearchViewModel : ViewModelBase
     {
-        public ArmorPieceTypesViewModel[] ArmorPieceTypes { get; }
-
-        public AdvancedSearchViewModel(ArmorPieceTypesViewModel[] armorPieceTypes)
+        private ArmorPieceTypesViewModel[] armorPieceTypes;
+        public ArmorPieceTypesViewModel[] ArmorPieceTypes
         {
-            ArmorPieceTypes = armorPieceTypes;
+            get { return armorPieceTypes; }
+            private set { SetValue(ref armorPieceTypes, value); }
         }
 
-        public void Dispose()
+        public void Update(ArmorPieceTypesViewModel[] armorPieceTypes)
         {
-            foreach (ArmorPieceTypesViewModel x in ArmorPieceTypes)
-                x.Dispose();
+            if (ArmorPieceTypes != null)
+            {
+                foreach (ArmorPieceTypesViewModel x in ArmorPieceTypes)
+                    x.Dispose();
+            }
+
+            ArmorPieceTypes = armorPieceTypes;
         }
     }
 }

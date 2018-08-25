@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -17,7 +18,8 @@ namespace MHArmory
     public partial class AdvancedSearchWindow : Window
     {
         private readonly RootViewModel root;
-        private readonly AdvancedSearchViewModel advancedSearchViewModel;
+
+        public bool IsOpened { get; private set; }
 
         public AdvancedSearchWindow(RootViewModel root)
         {
@@ -25,30 +27,34 @@ namespace MHArmory
 
             this.root = root;
 
-            ISolverData solverData = root.SolverData;
-
-            var armorPieceTypesViewModels = new ArmorPieceTypesViewModel[]
-            {
-                new ArmorPieceTypesViewModel(solverData.AllHeads),
-                new ArmorPieceTypesViewModel(solverData.AllChests),
-                new ArmorPieceTypesViewModel(solverData.AllGloves),
-                new ArmorPieceTypesViewModel(solverData.AllWaists),
-                new ArmorPieceTypesViewModel(solverData.AllLegs),
-                new ArmorPieceTypesViewModel(solverData.AllCharms)
-            };
-
-            advancedSearchViewModel = new AdvancedSearchViewModel(armorPieceTypesViewModels);
-
             InputBindings.Add(new InputBinding(new AnonymousCommand(Close), new KeyGesture(Key.Escape, ModifierKeys.None)));
 
-            DataContext = advancedSearchViewModel;
+            DataContext = root.AdvancedSearchViewModel;
         }
 
-        protected override void OnClosed(EventArgs e)
+        public new void Show()
         {
-            base.OnClosed(e);
+            if (IsOpened)
+                return;
 
-            advancedSearchViewModel.Dispose();
+            IsOpened = true;
+            base.Show();
+        }
+
+        public void Update()
+        {
+            if (IsOpened)
+                root.UpdateAdvancedSearch();
+        }
+
+        protected override void OnClosing(CancelEventArgs e)
+        {
+            base.OnClosing(e);
+            e.Cancel = true;
+
+            IsOpened = false;
+
+            Hide();
         }
     }
 }

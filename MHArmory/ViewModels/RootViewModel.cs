@@ -41,6 +41,8 @@ namespace MHArmory.ViewModels
             set { SetValue(ref isDataLoaded, value); }
         }
 
+        public AdvancedSearchViewModel AdvancedSearchViewModel { get; } = new AdvancedSearchViewModel();
+
         private IEnumerable<AbilityViewModel> selectedAbilities;
         public IEnumerable<AbilityViewModel> SelectedAbilities
         {
@@ -258,6 +260,25 @@ namespace MHArmory.ViewModels
 
             SearchResult = sb.ToString();
             /*************************************************************/
+
+            UpdateAdvancedSearch();
+        }
+
+        public void UpdateAdvancedSearch()
+        {
+            ISolverData solverData = SolverData;
+
+            var armorPieceTypesViewModels = new ArmorPieceTypesViewModel[]
+            {
+                new ArmorPieceTypesViewModel(solverData.AllHeads),
+                new ArmorPieceTypesViewModel(solverData.AllChests),
+                new ArmorPieceTypesViewModel(solverData.AllGloves),
+                new ArmorPieceTypesViewModel(solverData.AllWaists),
+                new ArmorPieceTypesViewModel(solverData.AllLegs),
+                new ArmorPieceTypesViewModel(solverData.AllCharms)
+            };
+
+            AdvancedSearchViewModel.Update(armorPieceTypesViewModels);
         }
 
         private async Task SearchArmorSetsInternal(CancellationToken cancellationToken)

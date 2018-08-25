@@ -146,13 +146,20 @@ namespace MHArmory
             skillSelectorWindow.Show();
         }
 
+        private AdvancedSearchWindow advancedSearchWindow;
+
         private void OpenAdvancedSearch(object parameter)
         {
-            var window = new AdvancedSearchWindow(rootViewModel)
+            if (advancedSearchWindow == null)
             {
-                Owner = this
-            };
-            window.ShowDialog();
+                advancedSearchWindow = new AdvancedSearchWindow(rootViewModel)
+                {
+                    Owner = this
+                };
+            }
+
+            advancedSearchWindow.Update();
+            advancedSearchWindow.Show();
         }
 
         private void OpenDecorationsOverride(object obj)
