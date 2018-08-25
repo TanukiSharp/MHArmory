@@ -72,6 +72,7 @@
       <DependentUpon>LoadoutWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="Panels\TooledContentPanel.cs" />
+    <Compile Include="ReorganizableCollectionUtilities.cs" />
     <Compile Include="SearchUtilities.cs" />
     <Compile Include="TextInputWindow.xaml.cs">
       <DependentUpon>TextInputWindow.xaml</DependentUpon>

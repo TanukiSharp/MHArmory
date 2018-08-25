@@ -109,57 +109,32 @@ namespace MHArmory.ViewModels
 
         public bool MoveLoadoutUp(LoadoutViewModel loadout)
         {
-            if (loadout == null)
-                return false;
-
-            int index = Loadouts.IndexOf(loadout);
-            if (index <= 0)
-                return false;
-
-            LoadoutViewModel selected = SelectedLoadout;
-
-            Loadouts.RemoveAt(index);
-            Loadouts.Insert(index - 1, loadout);
-
-            SelectedLoadout = selected;
-
-            return true;
+            return ReorganizableCollectionUtilities<LoadoutViewModel>.MoveUp(
+                Loadouts,
+                loadout,
+                () => SelectedLoadout,
+                x => SelectedLoadout = x
+            );
         }
 
         public bool MoveLoadoutDown(LoadoutViewModel loadout)
         {
-            if (loadout == null)
-                return false;
-
-            int index = Loadouts.IndexOf(loadout);
-            if (index == -1 || index == Loadouts.Count - 1)
-                return false;
-
-            LoadoutViewModel selected = SelectedLoadout;
-
-            Loadouts.RemoveAt(index);
-            Loadouts.Insert(index + 1, loadout);
-
-            SelectedLoadout = selected;
-
-            return true;
+            return ReorganizableCollectionUtilities<LoadoutViewModel>.MoveDown(
+                Loadouts,
+                loadout,
+                () => SelectedLoadout,
+                x => SelectedLoadout = x
+            );
         }
 
         public bool DeleteLoadout(LoadoutViewModel loadout)
         {
-            if (loadout == null)
-                return false;
-
-            int index = Loadouts.IndexOf(loadout);
-            if (index < 0 || index >= Loadouts.Count - 1)
-                return false;
-
-            if (SelectedLoadout == loadout)
-                SelectedLoadout = null;
-
-            Loadouts.RemoveAt(index);
-
-            return true;
+            return ReorganizableCollectionUtilities<LoadoutViewModel>.Remove(
+                Loadouts,
+                loadout,
+                x => SelectedLoadout == x,
+                () => SelectedLoadout = null
+            );
         }
 
         private void OnAccept(object parameter)
