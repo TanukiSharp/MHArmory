@@ -55,7 +55,6 @@ namespace MHArmory
 
             skillSelectorWindow = new SkillSelectorWindow
             {
-                WindowStartupLocation = WindowStartupLocation.CenterOwner,
                 Owner = this
             };
 
