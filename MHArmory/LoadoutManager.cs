@@ -128,7 +128,7 @@ namespace MHArmory
         {
             if (IsModified)
             {
-                if (InternalClose(true) == false)
+                if (InternalClose(false) == false)
                     return false;
             }
 
