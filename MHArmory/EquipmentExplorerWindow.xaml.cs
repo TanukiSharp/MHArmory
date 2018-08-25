@@ -42,7 +42,7 @@ namespace MHArmory
         public static void Show(Window owner)
         {
             instance.Owner = owner;
-            instance.ShowDialog();
+            instance.Show();
         }
 
         private async void EquipmentExplorerWindow_Loaded(object sender, RoutedEventArgs e)
