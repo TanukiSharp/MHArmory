@@ -590,7 +590,17 @@
 
     <DataTemplate x:Key="SearchResultProcessingContainerMasterView">
         <Grid HorizontalAlignment="Stretch">
-            <TextBlock x:Name="readonly" Text="{Binding Name}" VerticalAlignment="Center"/>
+            <Grid x:Name="readonly">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+                <TextBlock Grid.Column="0" Text="{Binding Name}" VerticalAlignment="Center"/>
+                <TextBlock Grid.Column="1" Text="{Binding SortItems.Count, StringFormat=({0})}" Margin="4" VerticalAlignment="Center"/>
+                <TextBlock x:Name="activeTxt" Grid.Column="2" Text="(Active)" Margin="4" Visibility="Hidden" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                <Button x:Name="activeBtn" Grid.Column="2" DockPanel.Dock="Right" Content="Make active" Command="{Binding MakeActiveCommand, Mode=OneTime}" Padding="4 0 4 0" VerticalAlignment="Stretch"/>
+            </Grid>
             <DockPanel x:Name="edit" LastChildFill="True" Visibility="Hidden" VerticalAlignment="Center" Margin="24 0 0 0">
                 <Button DockPanel.Dock="Right" Content="X" ToolTip="Remove" Width="{Binding ActualHeight, RelativeSource={RelativeSource Mode=Self}}" Command="{Binding RemoveSelfCommand, Mode=OneTime}" Margin="1"/>
                 <UniformGrid Rows="2" DockPanel.Dock="Right" Width="{Binding ActualHeight, RelativeSource={RelativeSource Mode=Self}}">
@@ -601,6 +611,10 @@
             </DockPanel>
         </Grid>
         <DataTemplate.Triggers>
+            <DataTrigger Binding="{Binding IsActive}" Value="True">
+                <Setter TargetName="activeTxt" Property="Visibility" Value="Visible"/>
+                <Setter TargetName="activeBtn" Property="Visibility" Value="Hidden"/>
+            </DataTrigger>
             <DataTrigger Binding="{Binding IsEditMode}" Value="True">
                 <Setter TargetName="readonly" Property="Visibility" Value="Hidden"/>
                 <Setter TargetName="edit" Property="Visibility" Value="Visible"/>

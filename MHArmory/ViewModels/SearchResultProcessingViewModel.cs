@@ -84,6 +84,12 @@ namespace MHArmory.ViewModels
             );
         }
 
+        public void MakeContainerActive(SearchResultProcessingContainerViewModel container)
+        {
+            foreach (SearchResultProcessingContainerViewModel x in Containers)
+                x.IsActive = x == container;
+        }
+
         private void OnCreateNew(object parameter)
         {
             Containers.Add(new SearchResultProcessingContainerViewModel(this));

@@ -26,6 +26,14 @@ namespace MHArmory.ViewModels
             private set { SetValue(ref isEditMode, value); }
         }
 
+        private bool isActive;
+        public bool IsActive
+        {
+            get { return isActive; }
+            set { SetValue(ref isActive, value); }
+        }
+
+        public ICommand MakeActiveCommand { get; }
         public ICommand AddSortItemCommand { get; }
 
         public ObservableCollection<SearchResultSortItemViewModel> SortItems { get; } = new ObservableCollection<SearchResultSortItemViewModel>();
@@ -40,6 +48,7 @@ namespace MHArmory.ViewModels
 
             IsEditMode = parent.IsEditMode;
 
+            MakeActiveCommand = new AnonymousCommand(OnMakeActive);
             AddSortItemCommand = new AnonymousCommand(OnAddSortItem);
 
             MoveSelfUpCommand = new AnonymousCommand(OnMoveSelfUp);
@@ -47,6 +56,11 @@ namespace MHArmory.ViewModels
             RemoveSelfCommand = new AnonymousCommand(OnRemoveSelf);
 
             parent.EditModeChanged += Parent_EditModeChanged;
+        }
+
+        private void OnMakeActive(object parameter)
+        {
+            parent.MakeContainerActive(this);
         }
 
         private void OnAddSortItem(object parameter)
