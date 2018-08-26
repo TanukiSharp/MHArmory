@@ -134,12 +134,6 @@ namespace MHArmory
             GlobalData.Instance.SetArmors(armors);
             GlobalData.Instance.Charms = charms.SelectMany(x => x.Levels).ToList();
             GlobalData.Instance.Jewels = jewels;
-
-            rootViewModel.FoundArmorSets = new ArmorSetViewModel[]
-            {
-                new ArmorSetViewModel(armors.Skip(armors.Length - 10).Take(5).ToList(), charms[0].Levels[0], null, null),
-                new ArmorSetViewModel(armors.Skip(armors.Length - 5).ToList(), charms[1].Levels[0], null, null)
-            };
         }
 
         private void OpenSkillSelector(object parameter)
