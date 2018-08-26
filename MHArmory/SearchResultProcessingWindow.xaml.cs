@@ -35,6 +35,7 @@ namespace MHArmory
         protected override void OnClosed(EventArgs e)
         {
             base.OnClosed(e);
+            searchResultProcessingViewModel.SaveConfiguration();
             Interlocked.Decrement(ref openedCount);
         }
     }

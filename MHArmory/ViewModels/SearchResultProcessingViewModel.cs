@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
+using MHArmory.Configurations;
 
 namespace MHArmory.ViewModels
 {
@@ -52,6 +53,59 @@ namespace MHArmory.ViewModels
             this.rootViewModel = rootViewModel;
 
             CreateNewCommand = new AnonymousCommand(OnCreateNew);
+
+            LoadConfiguration();
+        }
+
+        private void LoadConfiguration()
+        {
+            SearchResultProcessingConfiguration config = GlobalData.Instance.Configuration.SearchResultProcessing;
+
+            if (config.Sorting != null)
+            {
+                Containers.Clear();
+                foreach (SearchResultSortItemConfiguration x in config.Sorting)
+                {
+                    var container = new SearchResultProcessingContainerViewModel(this)
+                    {
+                        Name = x.Name
+                    };
+
+                    foreach (SearchResultSortCriteria criteria in x.Criterias)
+                        container.SortItems.Add(new SearchResultSortItemViewModel(container) { SortCriteria = criteria });
+
+                    Containers.Add(container);
+                }
+
+                if (config.ActiveSortingIndex >= 0 && config.ActiveSortingIndex < Containers.Count)
+                    MakeContainerActive(Containers[config.ActiveSortingIndex]);
+            }
+        }
+
+        public void SaveConfiguration()
+        {
+            SearchResultProcessingConfiguration config = GlobalData.Instance.Configuration.SearchResultProcessing;
+
+            config.Sorting = Containers
+                .Select(x => new SearchResultSortItemConfiguration
+                {
+                    Name = x.Name,
+                    Criterias = x.SortItems.Select(s => s.SortCriteria).ToArray()
+                })
+                .ToArray();
+
+            int index = -1;
+            for (int i = 0; i < Containers.Count; i++)
+            {
+                if (Containers[i].IsActive)
+                {
+                    index = i;
+                    break;
+                }
+            }
+            config.ActiveSortingIndex = index;
+
+            ConfigurationManager.Save(GlobalData.Instance.Configuration);
         }
 
         public bool MoveContainerUp(SearchResultProcessingContainerViewModel container)

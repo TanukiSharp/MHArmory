@@ -41,7 +41,7 @@ namespace MHArmory.Configurations
     public class SearchResultProcessingConfiguration
     {
         [JsonProperty("sortingActiveIndex")]
-        public int ActiveSortingIndex { get; set; }
+        public int ActiveSortingIndex { get; set; } = -1;
         [JsonProperty("sorting")]
         public SearchResultSortItemConfiguration[] Sorting { get; set; }
     }
@@ -59,6 +59,9 @@ namespace MHArmory.Configurations
 
         [JsonProperty("skillLoadouts")]
         public Dictionary<string, int[]> SkillLoadouts { get; } = new Dictionary<string, int[]>();
+
+        [JsonProperty("searchResultProcessing")]
+        public SearchResultProcessingConfiguration SearchResultProcessing { get; } = new SearchResultProcessingConfiguration();
 
         [JsonProperty("inParameters")]
         public InParametersConfiguration InParameters { get; } = new InParametersConfiguration();
