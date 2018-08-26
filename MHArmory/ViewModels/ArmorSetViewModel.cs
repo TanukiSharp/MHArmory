@@ -59,6 +59,12 @@ namespace MHArmory.ViewModels
         public int TotalMaxDefense { get; }
         public int TotalAugmentedDefense { get; }
 
+        public int TotalFireResistance { get; }
+        public int TotalWaterResistance { get; }
+        public int TotalThunderResistance { get; }
+        public int TotalIceResistance { get; }
+        public int TotalDragonResistance { get; }
+
         public ArmorSetViewModel(IList<IArmorPiece> armorPieces, ICharmLevel charm, IList<ArmorSetJewelViewModel> jewels, int[] spareSlots)
         {
             this.armorPieces = armorPieces;
@@ -70,6 +76,12 @@ namespace MHArmory.ViewModels
             TotalBaseDefense = armorPieces.Sum(x => x?.Defense.Base ?? 0);
             TotalMaxDefense = armorPieces.Sum(x => x?.Defense.Max ?? 0);
             TotalAugmentedDefense = armorPieces.Sum(x => x?.Defense.Augmented ?? 0);
+
+            TotalFireResistance = armorPieces.Sum(a => a.Resistances.Fire);
+            TotalWaterResistance = armorPieces.Sum(a => a.Resistances.Water);
+            TotalThunderResistance = armorPieces.Sum(a => a.Resistances.Thunder);
+            TotalIceResistance = armorPieces.Sum(a => a.Resistances.Ice);
+            TotalDragonResistance = armorPieces.Sum(a => a.Resistances.Dragon);
         }
     }
 }
