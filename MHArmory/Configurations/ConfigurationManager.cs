@@ -32,6 +32,7 @@ namespace MHArmory.Configurations
                 catch (Exception ex)
                 {
                     logger?.LogError(ex, $"Failed to write configuration file '{filename}'.");
+                    return; // do not proceed to backups if write failed
                 }
 
                 if (configurationObject.BackupLocations != null)
@@ -45,7 +46,17 @@ namespace MHArmory.Configurations
 
                         string path = Path.GetDirectoryName(filename);
                         if (Directory.Exists(path) == false)
-                            Directory.CreateDirectory(path);
+                        {
+                            try
+                            {
+                                Directory.CreateDirectory(path);
+                            }
+                            catch (Exception ex)
+                            {
+                                logger?.LogError(ex, $"Failed to create directory for configuration file backup '{path}'.");
+                                continue;
+                            }
+                        }
 
                         try
                         {
