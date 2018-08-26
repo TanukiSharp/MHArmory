@@ -30,6 +30,22 @@ namespace MHArmory.Configurations
         public DecorationOverrideConfiguration DecorationOverride { get; } = new DecorationOverrideConfiguration();
     }
 
+    public class SearchResultSortItemConfiguration
+    {
+        [JsonProperty("name")]
+        public string Name { get; set; }
+        [JsonProperty("criterias")]
+        public SearchResultSortCriteria[] Criterias { get; set; }
+    }
+
+    public class SearchResultProcessingConfiguration
+    {
+        [JsonProperty("sortingActiveIndex")]
+        public int ActiveSortingIndex { get; set; }
+        [JsonProperty("sorting")]
+        public SearchResultSortItemConfiguration[] Sorting { get; set; }
+    }
+
     public class ConfigurationV1 : IConfiguration
     {
         [JsonProperty("version")]
