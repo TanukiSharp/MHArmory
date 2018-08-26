@@ -30,7 +30,11 @@ namespace MHArmory.ViewModels
         public bool IsActive
         {
             get { return isActive; }
-            set { SetValue(ref isActive, value); }
+            set
+            {
+                if (SetValue(ref isActive, value))
+                    parent.ActiveContainerChanged();
+            }
         }
 
         public ICommand MakeActiveCommand { get; }

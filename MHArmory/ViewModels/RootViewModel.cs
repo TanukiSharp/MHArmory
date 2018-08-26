@@ -52,8 +52,6 @@ namespace MHArmory.ViewModels
             set { SetValue(ref selectedAbilities, value); }
         }
 
-        private IEnumerable<ArmorSetViewModel> foundArmorSets;
-
         public SearchResultProcessingViewModel SearchResultProcessing { get; }
 
         internal void NotifyConfigurationLoaded()
@@ -62,10 +60,11 @@ namespace MHArmory.ViewModels
             InParameters.NotifyConfigurationLoaded();
         }
 
+        private IEnumerable<ArmorSetViewModel> foundArmorSets;
         public IEnumerable<ArmorSetViewModel> FoundArmorSets
         {
             get { return foundArmorSets; }
-            set { SetValue(ref foundArmorSets, value); }
+            private set { SetValue(ref foundArmorSets, value); }
         }
 
         public InParametersViewModel InParameters { get; }
@@ -104,6 +103,17 @@ namespace MHArmory.ViewModels
                 loadoutManager.LoadoutChanged -= LoadoutManager_LoadoutChanged;
                 loadoutManager.ModifiedChanged -= LoadoutManager_ModifiedChanged;
             }
+        }
+
+        public void ApplySorting()
+        {
+            if (FoundArmorSets == null)
+                return;
+
+            IEnumerable<ArmorSetViewModel> result = FoundArmorSets;
+
+            if (SearchResultProcessing.ApplySort(ref result))
+                FoundArmorSets = result;
         }
 
         private LoadoutManager loadoutManager;
@@ -312,6 +322,8 @@ namespace MHArmory.ViewModels
                     x.Jewels.Select(j => new ArmorSetJewelViewModel(j.Jewel, j.Count)).ToList(),
                     x.SpareSlots
                 ));
+
+                ApplySorting();
             }
 
             solver.DebugData -= Solver_DebugData;

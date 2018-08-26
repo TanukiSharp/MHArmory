@@ -55,6 +55,12 @@ namespace MHArmory.ViewModels
 
         public int[] SpareSlots { get; }
 
+        public int SpareSlotCount { get; }
+        public int SpareSlotSizeSquare { get; }
+        public int SpareSlotSizeCube { get; }
+
+        public int TotalRarity { get; }
+
         public int TotalBaseDefense { get; }
         public int TotalMaxDefense { get; }
         public int TotalAugmentedDefense { get; }
@@ -72,6 +78,12 @@ namespace MHArmory.ViewModels
             this.jewels = jewels;
 
             SpareSlots = spareSlots;
+
+            TotalRarity = armorPieces.Sum(x => x.Rarity);
+
+            SpareSlotCount = SpareSlots.Count(x => x > 0);
+            SpareSlotSizeSquare = Search.DataUtility.SlotSizeScoreSquare(SpareSlots);
+            SpareSlotSizeCube = Search.DataUtility.SlotSizeScoreCube(SpareSlots);
 
             TotalBaseDefense = armorPieces.Sum(x => x?.Defense.Base ?? 0);
             TotalMaxDefense = armorPieces.Sum(x => x?.Defense.Max ?? 0);

@@ -45,6 +45,13 @@ namespace MHArmory.ViewModels
             }
         }
 
+        private bool hasContainers;
+        public bool HasContainers
+        {
+            get { return hasContainers; }
+            private set { SetValue(ref hasContainers, value); }
+        }
+
         public ObservableCollection<SearchResultProcessingContainerViewModel> Containers { get; } = new ObservableCollection<SearchResultProcessingContainerViewModel>();
 
         private readonly RootViewModel rootViewModel;
@@ -63,11 +70,9 @@ namespace MHArmory.ViewModels
             LoadConfiguration();
         }
 
-        private bool hasContainers;
-        public bool HasContainers
+        internal void ActiveContainerChanged()
         {
-            get { return hasContainers; }
-            private set { SetValue(ref hasContainers, value); }
+            rootViewModel.ApplySorting();
         }
 
         private void Containers_CollectionChanged(object sender, NotifyCollectionChangedEventArgs e)
@@ -126,6 +131,73 @@ namespace MHArmory.ViewModels
             config.ActiveSortingIndex = index;
 
             ConfigurationManager.Save(GlobalData.Instance.Configuration);
+        }
+
+        public bool ApplySort(ref IEnumerable<ArmorSetViewModel> input)
+        {
+            if (input == null || input.Any() == false)
+                return false;
+
+            SearchResultProcessingContainerViewModel activeContainer = Containers.FirstOrDefault(x => x.IsActive);
+            if (activeContainer == null || activeContainer.SortItems.Count == 0)
+                return false;
+
+            IOrderedEnumerable<ArmorSetViewModel> result = input.OrderBy(x => 1); // wasting a bit of CPU cycles for productivity purpose :(
+
+            foreach (SearchResultSortCriteria sortCriteria in activeContainer.SortItems.Select(x => x.SortCriteria))
+            {
+                switch (sortCriteria)
+                {
+                    case SearchResultSortCriteria.BaseDefense:
+                        result = result.ThenByDescending(x => x.TotalBaseDefense);
+                        break;
+                    case SearchResultSortCriteria.MaxUnaugmentedDefense:
+                        result = result.ThenByDescending(x => x.TotalMaxDefense);
+                        break;
+                    case SearchResultSortCriteria.MaxAugmentedDefense:
+                        result = result.ThenByDescending(x => x.TotalAugmentedDefense);
+                        break;
+                    case SearchResultSortCriteria.AverageRarity:
+                        result = result.ThenBy(x => x.ArmorPieces.Average(a => (float)a.Rarity));
+                        break;
+                    case SearchResultSortCriteria.HighestRarity:
+                        result = result.ThenBy(x => x.ArmorPieces.Max(a => a.Rarity));
+                        break;
+                    case SearchResultSortCriteria.TotalRarity:
+                        result = result.ThenBy(x => x.TotalRarity);
+                        break;
+                    case SearchResultSortCriteria.SpareSlotCount:
+                        result = result.ThenByDescending(x => x.SpareSlotCount);
+                        break;
+                    case SearchResultSortCriteria.SpareSlotSizeSquare:
+                        result = result
+                            .ThenByDescending(x => x.SpareSlotSizeSquare)
+                            .ThenByDescending(x => x.SpareSlots.Count(s => s > 0)); // For same score, gives precedence to slot count. (only 221 and 3--, sets 221 before 3--)
+                        break;
+                    case SearchResultSortCriteria.SpareSlotSizeCube:
+                        result = result.ThenByDescending(x => x.SpareSlotSizeCube);
+                        break;
+                    case SearchResultSortCriteria.FireResistance:
+                        result = result.ThenByDescending(x => x.TotalFireResistance);
+                        break;
+                    case SearchResultSortCriteria.WaterResistance:
+                        result = result.ThenByDescending(x => x.TotalWaterResistance);
+                        break;
+                    case SearchResultSortCriteria.ThunderResistance:
+                        result = result.ThenByDescending(x => x.TotalThunderResistance);
+                        break;
+                    case SearchResultSortCriteria.IceResistance:
+                        result = result.ThenByDescending(x => x.TotalIceResistance);
+                        break;
+                    case SearchResultSortCriteria.DragonResistance:
+                        result = result.ThenByDescending(x => x.TotalDragonResistance);
+                        break;
+                }
+            }
+
+            input = result.ToList();
+
+            return true;
         }
 
         public bool MoveContainerUp(SearchResultProcessingContainerViewModel container)
