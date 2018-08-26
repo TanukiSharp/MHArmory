@@ -34,6 +34,7 @@ namespace MHArmory.ViewModels
         }
 
         public ICommand MakeActiveCommand { get; }
+        public ICommand DeactivateCommand { get; }
         public ICommand AddSortItemCommand { get; }
 
         public ObservableCollection<SearchResultSortItemViewModel> SortItems { get; } = new ObservableCollection<SearchResultSortItemViewModel>();
@@ -49,6 +50,7 @@ namespace MHArmory.ViewModels
             IsEditMode = parent.IsEditMode;
 
             MakeActiveCommand = new AnonymousCommand(OnMakeActive);
+            DeactivateCommand = new AnonymousCommand(() => IsActive = false);
             AddSortItemCommand = new AnonymousCommand(OnAddSortItem);
 
             MoveSelfUpCommand = new AnonymousCommand(OnMoveSelfUp);
