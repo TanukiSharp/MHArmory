@@ -22,9 +22,9 @@ namespace MHArmory.ValueConverters
                     case SearchResultSortCriteria.TotalRarity: return "Total rarity (sum of rarity of armor pieces)";
                     case SearchResultSortCriteria.HighestRarity: return "Highest rarity (highest rarity among armor pieces)";
                     case SearchResultSortCriteria.AverageRarity: return "Average rarity (average rarity of armor pieces)";
-                    case SearchResultSortCriteria.SlotCount: return "Slot count (no distinction between level 1, 2 and 3)";
-                    case SearchResultSortCriteria.SlotSizeSquare: return "Slot size (square value)";
-                    case SearchResultSortCriteria.SlotSizeCube: return "Slot size (cube value)";
+                    case SearchResultSortCriteria.SpareSlotCount: return "Spare slot count (no distinction between level 1, 2 and 3)";
+                    case SearchResultSortCriteria.SpareSlotSizeSquare: return "Spare slot size (square value)";
+                    case SearchResultSortCriteria.SpareSlotSizeCube: return "Spare slot size (cube value)";
                     case SearchResultSortCriteria.FireResistance: return "Fire resistance";
                     case SearchResultSortCriteria.WaterResistance: return "Water resistance";
                     case SearchResultSortCriteria.ThunderResistance: return "Thunder resistance";
