@@ -74,10 +74,26 @@ namespace MHArmory.ViewModels
             else
                 JewelsText = $"({string.Join(", ", jewels.Select(x => $"{x.Name} [{x.SlotSize}]"))})";
 
+            root.InParameters.PropertyChanged += InParameters_PropertyChanged;
+
             Abilities = skill.Abilities
                 .OrderBy(x => x.Level)
                 .Select(x => new AbilityViewModel(x, this))
                 .ToList();
+
+            UpdateAvailability();
+        }
+
+        private void InParameters_PropertyChanged(object sender, System.ComponentModel.PropertyChangedEventArgs e)
+        {
+            if (e.PropertyName == nameof(InParametersViewModel.Rarity))
+                UpdateAvailability();
+        }
+
+        private void UpdateAvailability()
+        {
+            if (jewels != null)
+                IsAvailable = jewels.All(x => x.Rarity <= root.InParameters.Rarity);
         }
 
         public bool HasCheckedAbility
@@ -93,6 +109,13 @@ namespace MHArmory.ViewModels
         {
             get { return isVisible; }
             set { SetValue(ref isVisible, value); }
+        }
+
+        private bool isAvailable = true;
+        public bool IsAvailable
+        {
+            get { return isAvailable; }
+            set { SetValue(ref isAvailable, value); }
         }
 
         public void ApplySearchText(SearchStatement searchStatement)

@@ -261,7 +261,7 @@
     </DataTemplate>
 
     <DataTemplate x:Key="SkillView">
-        <Border BorderBrush="Gray" BorderThickness="0 0 0 0">
+        <Border x:Name="root" BorderBrush="Gray" BorderThickness="0 0 0 0" IsEnabled="{Binding IsAvailable}">
             <StackPanel Orientation="Vertical" Focusable="False">
                 <StackPanel Orientation="Horizontal">
                     <TextBlock Text="{Binding Name, Mode=OneTime}" FontSize="12" FontWeight="Bold" VerticalAlignment="Center"/>
@@ -302,6 +302,11 @@
                 </ItemsControl>
             </StackPanel>
         </Border>
+        <DataTemplate.Triggers>
+            <DataTrigger Binding="{Binding IsAvailable}" Value="False">
+                <Setter TargetName="root" Property="TextBlock.Foreground" Value="Red"/>
+            </DataTrigger>
+        </DataTemplate.Triggers>
     </DataTemplate>
 
     <Style x:Key="SelectorRadioButton" TargetType="RadioButton" BasedOn="{StaticResource {x:Type ToggleButton}}">
