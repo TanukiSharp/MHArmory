@@ -670,7 +670,7 @@
             <DockPanel Grid.Column="0" LastChildFill="True">
                 <DockPanel DockPanel.Dock="Top">
                     <Button Content="New" DockPanel.Dock="Left" HorizontalAlignment="Left" Command="{Binding CreateNewCommand, Mode=OneTime}" Margin="2" Padding="3"/>
-                    <ToggleButton Content="Edit Mode" DockPanel.Dock="Right" HorizontalAlignment="Right" IsChecked="{Binding IsEditMode, Mode=OneWayToSource}" Margin="2" Padding="4"/>
+                    <ToggleButton Content="Edit Mode" DockPanel.Dock="Right" HorizontalAlignment="Right" IsChecked="{Binding IsEditMode, Mode=TwoWay}" Visibility="{Binding HasContainers, Converter={StaticResource CollapsedVisibilityValueConverter}}" Margin="2" Padding="4"/>
                 </DockPanel>
                 <ListBox ItemsSource="{Binding Containers, Mode=OneWay}" ItemTemplate="{StaticResource SearchResultProcessingContainerMasterView}" HorizontalContentAlignment="Stretch" SelectedItem="{Binding SelectedContainer}" Margin="2"/>
             </DockPanel>

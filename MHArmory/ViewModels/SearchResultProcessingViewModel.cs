@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Collections.Specialized;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -52,9 +53,25 @@ namespace MHArmory.ViewModels
         {
             this.rootViewModel = rootViewModel;
 
+            Containers.CollectionChanged += Containers_CollectionChanged;
+
             CreateNewCommand = new AnonymousCommand(OnCreateNew);
 
             LoadConfiguration();
+        }
+
+        private bool hasContainers;
+        public bool HasContainers
+        {
+            get { return hasContainers; }
+            private set { SetValue(ref hasContainers, value); }
+        }
+
+        private void Containers_CollectionChanged(object sender, NotifyCollectionChangedEventArgs e)
+        {
+            HasContainers = Containers.Count > 0;
+            if (HasContainers == false)
+                IsEditMode = false;
         }
 
         private void LoadConfiguration()
