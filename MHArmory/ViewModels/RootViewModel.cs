@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Input;
+using MHArmory.Configurations;
 using MHArmory.Core;
 using MHArmory.Core.DataStructures;
 using MHArmory.Search;

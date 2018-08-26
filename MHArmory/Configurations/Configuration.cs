@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using Newtonsoft.Json;
 
-namespace MHArmory
+namespace MHArmory.Configurations
 {
     public class DecorationOverrideConfigurationItem
     {

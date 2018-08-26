@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using MHArmory.Core;
 using MHArmory.Core.DataStructures;
 using MHArmory.ViewModels;
+using MHArmory.Configurations;
 
 namespace MHArmory
 {
