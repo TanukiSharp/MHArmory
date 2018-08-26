@@ -79,7 +79,7 @@ namespace MHArmory
 
         private void LoadConfiguration()
         {
-            Configuration configuration = Configuration.Load();
+            ConfigurationV1 configuration = ConfigurationManager.Load<ConfigurationV1>();
 
             // Possibly process stuffs.
 

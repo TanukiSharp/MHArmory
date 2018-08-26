@@ -68,7 +68,7 @@ namespace MHArmory
                     });
                 }
 
-                GlobalData.Instance.Configuration.Save();
+                ConfigurationManager.Save(GlobalData.Instance.Configuration);
 
                 rootViewModel.CreateSolverData();
 

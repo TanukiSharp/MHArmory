@@ -105,7 +105,7 @@ namespace MHArmory.ViewModels
             InParametersConfiguration config = GlobalData.Instance.Configuration.InParameters;
 
             config.WeaponSlots = Slots.Select(x => x.Value).ToArray();
-            GlobalData.Instance.Configuration.Save();
+            ConfigurationManager.Save(GlobalData.Instance.Configuration);
 
             root.CreateSolverData();
         }
@@ -118,7 +118,7 @@ namespace MHArmory.ViewModels
             InParametersConfiguration config = GlobalData.Instance.Configuration.InParameters;
 
             config.DecorationOverride.UseOverride = UseOverride;
-            GlobalData.Instance.Configuration.Save();
+            ConfigurationManager.Save(GlobalData.Instance.Configuration);
 
             root.CreateSolverData();
         }

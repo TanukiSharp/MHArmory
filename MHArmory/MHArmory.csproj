@@ -60,7 +60,9 @@
     <Compile Include="AnonymousCommand.cs" />
     <Compile Include="Behaviors\DoubleClickBehavior.cs" />
     <Compile Include="Behaviors\FocusOnLoadBehavior.cs" />
-    <Compile Include="Configurations\Configuration.cs" />
+    <Compile Include="Configurations\ConfigurationV1.cs" />
+    <Compile Include="Configurations\ConfigurationManager.cs" />
+    <Compile Include="Configurations\IConfiguration.cs" />
     <Compile Include="DecorationsOverrideWindow.xaml.cs">
       <DependentUpon>DecorationsOverrideWindow.xaml</DependentUpon>
     </Compile>

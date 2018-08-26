@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Windows;
+using MHArmory.Configurations;
 using MHArmory.ViewModels;
 
 namespace MHArmory
@@ -106,7 +107,7 @@ namespace MHArmory
 
                 CurrentLoadoutName = null;
 
-                GlobalData.Instance.Configuration.Save();
+                ConfigurationManager.Save(GlobalData.Instance.Configuration);
             }
 
             return result;
@@ -157,8 +158,6 @@ namespace MHArmory
 
             IsModified = false;
 
-            GlobalData.Instance.Configuration.Save();
-
             return true;
         }
 
@@ -177,7 +176,7 @@ namespace MHArmory
 
                 IsModified = false;
 
-                GlobalData.Instance.Configuration.Save();
+                ConfigurationManager.Save(GlobalData.Instance.Configuration);
 
                 return true;
             }
@@ -205,7 +204,7 @@ namespace MHArmory
             CurrentLoadoutName = inputWindow.Text;
             IsModified = false;
 
-            GlobalData.Instance.Configuration.Save();
+            ConfigurationManager.Save(GlobalData.Instance.Configuration);
 
             return true;
         }
@@ -230,7 +229,7 @@ namespace MHArmory
                 LoadoutChanged?.Invoke(this, new LoadoutNameEventArgs(currentLoadoutName));
             }
 
-            GlobalData.Instance.Configuration.Save();
+            ConfigurationManager.Save(GlobalData.Instance.Configuration);
 
             return true;
         }
