@@ -244,13 +244,13 @@ namespace MHArmory.ViewModels
 
             SolverData = new SolverData2(
                 InParameters.Slots.Select(x => x.Value).ToList(),
-                GlobalData.Instance.Heads,
-                GlobalData.Instance.Chests,
-                GlobalData.Instance.Gloves,
-                GlobalData.Instance.Waists,
-                GlobalData.Instance.Legs,
-                GlobalData.Instance.Charms,
-                GlobalData.Instance.Jewels.Select(CreateSolverDataJewelModel),
+                GlobalData.Instance.Heads.Where(x => x.Rarity <= InParameters.Rarity),
+                GlobalData.Instance.Chests.Where(x => x.Rarity <= InParameters.Rarity),
+                GlobalData.Instance.Gloves.Where(x => x.Rarity <= InParameters.Rarity),
+                GlobalData.Instance.Waists.Where(x => x.Rarity <= InParameters.Rarity),
+                GlobalData.Instance.Legs.Where(x => x.Rarity <= InParameters.Rarity),
+                GlobalData.Instance.Charms.Where(x => x.Rarity <= InParameters.Rarity),
+                GlobalData.Instance.Jewels.Where(x => x.Rarity <= InParameters.Rarity).Select(CreateSolverDataJewelModel),
                 desiredAbilities
             );
 

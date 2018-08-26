@@ -28,6 +28,9 @@ namespace MHArmory.Configurations
 
         [JsonProperty("decorationOverride")]
         public DecorationOverrideConfiguration DecorationOverride { get; } = new DecorationOverrideConfiguration();
+
+        [JsonProperty("rarity")]
+        public int Rarity { get; set; }
     }
 
     public class SearchResultSortItemConfiguration

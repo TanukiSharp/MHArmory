@@ -51,9 +51,33 @@
                 <ContentControl Content="{Binding Slots[2], Mode=OneTime}" ContentTemplate="{StaticResource WeaponSlotView}" Margin="1 2 1 2" Focusable="False"/>
             </StackPanel>
 
+            <Rectangle Grid.Column="1" Width="1" Fill="LightGray" Margin="16 4 16 4" SnapsToDevicePixels="True"/>
+
             <StackPanel Grid.Column="2" Orientation="Horizontal">
                 <CheckBox Content="Use override" IsChecked="{Binding UseOverride}" Margin="2" VerticalAlignment="Center" VerticalContentAlignment="Center"/>
                 <Button Content="Decorations override..." Command="{Binding OpenDecorationsOverrideCommand, Mode=OneTime}" Margin="2" Padding="4" VerticalAlignment="Center"/>
+            </StackPanel>
+
+            <Rectangle Grid.Column="1" Width="1" Fill="LightGray" Margin="16 4 16 4" SnapsToDevicePixels="True"/>
+
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="Rarity: " VerticalAlignment="Center" Margin="2"/>
+                <ComboBox VerticalAlignment="Stretch" Margin="2" MinWidth="40" SelectedIndex="{Binding RarityIndex}">
+                    <ComboBox.Resources>
+                        <Style TargetType="TextBlock">
+                            <Setter Property="Padding" Value="1 2 1 2"/>
+                        </Style>
+                    </ComboBox.Resources>
+                    <TextBlock>1</TextBlock>
+                    <TextBlock>2</TextBlock>
+                    <TextBlock>3</TextBlock>
+                    <TextBlock>4</TextBlock>
+                    <TextBlock>5</TextBlock>
+                    <TextBlock>6</TextBlock>
+                    <TextBlock>7</TextBlock>
+                    <TextBlock>8</TextBlock>
+                    <TextBlock>9</TextBlock>
+                </ComboBox>
             </StackPanel>
         </StackPanel>
     </DataTemplate>
