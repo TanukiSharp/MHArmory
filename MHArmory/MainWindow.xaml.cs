@@ -66,7 +66,7 @@ namespace MHArmory
             rootViewModel.SetLoadoutManager(loadoutManager);
 
             string lastOpenedLoadout = GlobalData.Instance.Configuration?.LastOpenedLoadout;
-            Dictionary<string, int[]> loadout = GlobalData.Instance.Configuration?.Loadout;
+            Dictionary<string, int[]> loadout = GlobalData.Instance.Configuration?.SkillLoadouts;
 
             if (loadout != null && lastOpenedLoadout != null && loadout.TryGetValue(lastOpenedLoadout, out int[] abilities))
                 loadoutManager.Open(lastOpenedLoadout, abilities);

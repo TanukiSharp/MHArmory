@@ -80,7 +80,7 @@ namespace MHArmory.ViewModels
             AcceptCommand = new AnonymousCommand(OnAccept);
             CancelCommand = new AnonymousCommand(OnCancel);
 
-            Dictionary<string, int[]> loadoutConfig = GlobalData.Instance?.Configuration?.Loadout;
+            Dictionary<string, int[]> loadoutConfig = GlobalData.Instance?.Configuration?.SkillLoadouts;
 
             if (loadoutConfig == null)
                 return;

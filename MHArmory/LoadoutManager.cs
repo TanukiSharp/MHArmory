@@ -170,7 +170,7 @@ namespace MHArmory
                 return InternalSaveAs();
             else
             {
-                Dictionary<string, int[]> loadoutConfig = GlobalData.Instance.Configuration.Loadout;
+                Dictionary<string, int[]> loadoutConfig = GlobalData.Instance.Configuration.SkillLoadouts;
 
                 loadoutConfig[CurrentLoadoutName] = rootViewModel.SelectedAbilities.Where(a => a.IsChecked).Select(a => a.Id).ToArray();
 
@@ -189,7 +189,7 @@ namespace MHArmory
             if (inputWindow.ShowDialog() != true)
                 return false;
 
-            Dictionary<string, int[]> loadoutConfig = GlobalData.Instance.Configuration.Loadout;
+            Dictionary<string, int[]> loadoutConfig = GlobalData.Instance.Configuration.SkillLoadouts;
 
             if (loadoutConfig.ContainsKey(inputWindow.Text))
             {

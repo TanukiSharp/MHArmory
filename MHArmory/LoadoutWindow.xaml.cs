@@ -61,7 +61,7 @@ namespace MHArmory
 
             if (loadoutSelectorViewModel.IsManageMode)
             {
-                Dictionary<string, int[]> loadoutConfig = GlobalData.Instance.Configuration.Loadout;
+                Dictionary<string, int[]> loadoutConfig = GlobalData.Instance.Configuration.SkillLoadouts;
 
                 loadoutConfig.Clear();
                 foreach (LoadoutViewModel x in loadoutSelectorViewModel.Loadouts)

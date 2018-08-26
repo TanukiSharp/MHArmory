@@ -41,8 +41,8 @@ namespace MHArmory.Configurations
         [JsonProperty("lastOpenedLoadout")]
         public string LastOpenedLoadout { get; set; }
 
-        [JsonProperty("loadout")]
-        public Dictionary<string, int[]> Loadout { get; } = new Dictionary<string, int[]>();
+        [JsonProperty("skillLoadouts")]
+        public Dictionary<string, int[]> SkillLoadouts { get; } = new Dictionary<string, int[]>();
 
         [JsonProperty("inParameters")]
         public InParametersConfiguration InParameters { get; } = new InParametersConfiguration();
