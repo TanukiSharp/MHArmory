@@ -143,10 +143,15 @@ namespace MHArmory
                 if (loadoutWindow.ShowDialog() != true)
                     return false;
 
-                foreach (AbilityViewModel ability in rootViewModel.SelectedAbilities)
-                    ability.IsChecked = loadoutWindow.SelectedLoadout.Abilities.Any(a => a.Id == ability.Id);
+                if (CurrentLoadoutName != loadoutWindow.SelectedLoadout.Name)
+                {
+                    foreach (AbilityViewModel ability in rootViewModel.SelectedAbilities)
+                        ability.IsChecked = loadoutWindow.SelectedLoadout.Abilities.Any(a => a.Id == ability.Id);
 
-                CurrentLoadoutName = loadoutWindow.SelectedLoadout.Name;
+                    CurrentLoadoutName = loadoutWindow.SelectedLoadout.Name;
+
+                    ConfigurationManager.Save(GlobalData.Instance.Configuration);
+                }
             }
             else
             {
