@@ -45,7 +45,7 @@ namespace MHArmory.ViewModels
             }
         }
 
-        public ObservableCollection<SearchResultProcessingContainerViewModel> Containers { get { return rootViewModel.SearchResultProcessingItems; } }
+        public ObservableCollection<SearchResultProcessingContainerViewModel> Containers { get; } = new ObservableCollection<SearchResultProcessingContainerViewModel>();
 
         private readonly RootViewModel rootViewModel;
 
@@ -56,7 +56,10 @@ namespace MHArmory.ViewModels
             Containers.CollectionChanged += Containers_CollectionChanged;
 
             CreateNewCommand = new AnonymousCommand(OnCreateNew);
+        }
 
+        internal void NotifyConfigurationLoaded()
+        {
             LoadConfiguration();
         }
 

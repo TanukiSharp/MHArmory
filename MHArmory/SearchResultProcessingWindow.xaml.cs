@@ -15,7 +15,6 @@ namespace MHArmory
     public partial class SearchResultProcessingWindow : Window
     {
         private readonly RootViewModel rootViewModel;
-        private readonly SearchResultProcessingViewModel searchResultProcessingViewModel;
 
         private static long openedCount;
         public static bool IsOpened => Interlocked.Read(ref openedCount) > 0;
@@ -28,14 +27,13 @@ namespace MHArmory
 
             this.rootViewModel = rootViewModel;
 
-            searchResultProcessingViewModel = new SearchResultProcessingViewModel(rootViewModel);
-            DataContext = searchResultProcessingViewModel;
+            DataContext = rootViewModel.SearchResultProcessing;
         }
 
         protected override void OnClosed(EventArgs e)
         {
             base.OnClosed(e);
-            searchResultProcessingViewModel.SaveConfiguration();
+            rootViewModel.SearchResultProcessing.SaveConfiguration();
             Interlocked.Decrement(ref openedCount);
         }
     }

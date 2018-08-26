@@ -54,10 +54,11 @@ namespace MHArmory.ViewModels
 
         private IEnumerable<ArmorSetViewModel> foundArmorSets;
 
-        public ObservableCollection<SearchResultProcessingContainerViewModel> SearchResultProcessingItems { get; } = new ObservableCollection<SearchResultProcessingContainerViewModel>();
+        public SearchResultProcessingViewModel SearchResultProcessing { get; }
 
         internal void NotifyConfigurationLoaded()
         {
+            SearchResultProcessing.NotifyConfigurationLoaded();
             InParameters.NotifyConfigurationLoaded();
         }
 
@@ -90,6 +91,8 @@ namespace MHArmory.ViewModels
             AdvancedSearchCommand = new AnonymousCommand(AdvancedSearch);
             OpenDecorationsOverrideCommand = new AnonymousCommand(OpenDecorationsOverride);
             OpenSearchResultProcessingCommand = new AnonymousCommand(OpenSearchResultProcessing);
+
+            SearchResultProcessing = new SearchResultProcessingViewModel(this);
 
             InParameters = new InParametersViewModel(this);
         }
