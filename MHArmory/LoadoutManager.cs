@@ -225,7 +225,10 @@ namespace MHArmory
 
             if (loadoutWindow.CurrentLoadoutName != currentLoadoutName)
             {
+                // Currently selected skill loadout has been renamed.
+
                 currentLoadoutName = loadoutWindow.CurrentLoadoutName;
+                GlobalData.Instance.Configuration.LastOpenedLoadout = currentLoadoutName;
                 LoadoutChanged?.Invoke(this, new LoadoutNameEventArgs(currentLoadoutName));
             }
 

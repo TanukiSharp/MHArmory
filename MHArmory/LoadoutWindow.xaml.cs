@@ -67,7 +67,8 @@ namespace MHArmory
                 foreach (LoadoutViewModel x in loadoutSelectorViewModel.Loadouts)
                     loadoutConfig[x.Name] = x.Abilities.Select(a => a.Id).ToArray();
 
-                CurrentLoadoutName = currentLoadout.Name;
+                if (currentLoadout != null)
+                    CurrentLoadoutName = currentLoadout.Name;
             }
         }
     }

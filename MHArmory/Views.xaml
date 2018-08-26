@@ -504,26 +504,19 @@
     </DataTemplate>
 
     <DataTemplate x:Key="LoadoutView">
-
-        <pnl:TooledContentPanel>
-            <Grid HorizontalAlignment="Stretch" VerticalAlignment="Center">
-                <TextBlock x:Name="readonly" Text="{Binding Name, Mode=OneTime}" Focusable="False"/>
-                <TextBox x:Name="editable" Text="{Binding Name, Mode=TwoWay}" TextWrapping="WrapWithOverflow" HorizontalAlignment="Stretch" Margin="24 2 2 2" Padding="2" Visibility="Collapsed"/>
-            </Grid>
-            <StackPanel x:Name="tools" HorizontalAlignment="Right" Orientation="Horizontal" VerticalAlignment="Center" Visibility="Collapsed">
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+            <TextBlock Grid.Column="0" Text="{Binding Name, Mode=OneWay}" Focusable="False"/>
+            <StackPanel x:Name="tools" Grid.Column="1" HorizontalAlignment="Right" Orientation="Horizontal" VerticalAlignment="Center" Visibility="{Binding IsManageMode, Converter={StaticResource CollapsedVisibilityValueConverter}}">
+                <Button Content="Rename" Command="{Binding RenameCommand, Mode=OneTime}" Margin="1 0 1 0"/>
                 <Button Width="{Binding ActualHeight, RelativeSource={RelativeSource Mode=Self}}" Content="Up" Command="{Binding MoveUpCommand, Mode=OneTime}" ToolTip="Move up" Margin="1 0 1 0"/>
                 <Button Width="{Binding ActualHeight, RelativeSource={RelativeSource Mode=Self}}" Content="Dn" Command="{Binding MoveDownCommand, Mode=OneTime}" ToolTip="Move down" Margin="1 0 1 0"/>
                 <Button Width="{Binding ActualHeight, RelativeSource={RelativeSource Mode=Self}}" Content="X" Command="{Binding DeleteCommand, Mode=OneTime}" ToolTip="Delete" Margin="1 0 1 0"/>
             </StackPanel>
-        </pnl:TooledContentPanel>
-
-        <DataTemplate.Triggers>
-            <DataTrigger Binding="{Binding IsManageMode, Mode=OneTime}" Value="True">
-                <Setter TargetName="readonly" Property="Visibility" Value="Collapsed"/>
-                <Setter TargetName="editable" Property="Visibility" Value="Visible"/>
-                <Setter TargetName="tools" Property="Visibility" Value="Visible"/>
-            </DataTrigger>
-        </DataTemplate.Triggers>
+        </Grid>
     </DataTemplate>
 
     <DataTemplate x:Key="LoadoutSelectorView">

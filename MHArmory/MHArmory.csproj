@@ -81,6 +81,7 @@
     </Compile>
     <Compile Include="SearchResultSortCriteria.cs" />
     <Compile Include="SearchUtilities.cs" />
+    <Compile Include="Services\RenameService.cs" />
     <Compile Include="TextInputWindow.xaml.cs">
       <DependentUpon>TextInputWindow.xaml</DependentUpon>
     </Compile>
