@@ -31,14 +31,17 @@ namespace MHArmory.AthenaAssDataSource
             string filename = Path.Combine(AppContext.BaseDirectory, "ass_path.txt");
             if (File.Exists(filename) == false)
             {
-                File.Create(filename);
-                throw new FormatException($"Store location of ASS data folder in file '{filename}'");
+                File.Create(filename).Dispose();
+                throw new FormatException($"Please store the location of ASS data folder in file '{filename}'.");
             }
 
             dataFolderPath = File.ReadAllText(filename).Trim();
 
+            if (string.IsNullOrWhiteSpace(dataFolderPath))
+                throw new FormatException($"File '{filename}' is empty.");
+
             if (Directory.Exists(dataFolderPath) == false)
-                throw new FormatException($"Directory '{dataFolderPath}' not found");
+                throw new FormatException($"Directory '{dataFolderPath}' not found.");
 
             skillsFilePath = Path.Combine(dataFolderPath, SkillsFilename);
             charmsFilePath = Path.Combine(dataFolderPath, CharmsFilename);
