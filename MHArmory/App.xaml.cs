@@ -65,7 +65,7 @@ namespace MHArmory
                 File.WriteAllText(filename, sb.ToString());
 
                 sb.Clear();
-                sb.Append("The application encountered an unexpected error and will terminate.\n");
+                sb.Append("The application encountered an unexpected critical error and will terminate.\n");
                 sb.Append("\n");
                 sb.Append("A file containing important information to help the author(s) understand and fix the problem has been created.\n");
                 sb.Append("\n");
@@ -73,7 +73,10 @@ namespace MHArmory
                 sb.Append("\n");
                 sb.Append($"Location: '{filename}'");
 
-                MessageBox.Show(sb.ToString(), "Critical error", MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBox.Show(sb.ToString(), "Unexpected critical error", MessageBoxButton.OK, MessageBoxImage.Error);
+
+                // Helps the process to die much faster (sometimes it hangs for a very long time)
+                Process.GetCurrentProcess().Kill();
             }
             catch (Exception ex)
             {
