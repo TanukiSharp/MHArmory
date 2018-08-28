@@ -445,6 +445,7 @@
                 <MenuItem Header="Equipments" Command="{x:Static local:RoutedCommands.OpenEquipmentExplorer}">
                     
                 </MenuItem>
+                <MenuItem Header="?" Command="{Binding AboutCommand, Mode=OneTime}"/>
             </Menu>
             <Grid>
                 <Grid.ColumnDefinitions>

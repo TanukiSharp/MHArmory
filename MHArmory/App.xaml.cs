@@ -25,6 +25,17 @@ namespace MHArmory
             AppDomain.CurrentDomain.UnhandledException += OnUnhandledException;
         }
 
+        public static void GetAssemblyInfo(StringBuilder sb)
+        {
+            AssemblyName assemblyName = Assembly.GetEntryAssembly().GetName();
+
+            sb.AppendFormat("Version: {0}\n", assemblyName.Version);
+            sb.AppendFormat("CurrentCulture: {0}\n", Thread.CurrentThread.CurrentCulture);
+            sb.AppendFormat("CurrentUICulture: {0}\n", Thread.CurrentThread.CurrentUICulture);
+            sb.Append("\n");
+            sb.AppendFormat(GitInfo.Value.Trim());
+        }
+
         private void OnUnhandledException(object sender, UnhandledExceptionEventArgs e)
         {
             if (e.ExceptionObject == null)
@@ -39,19 +50,11 @@ namespace MHArmory
 
                 string filename = Path.Combine(path, $"{DateTime.UtcNow.ToString("yyyy-MM-dd_HH-mm-ss_fff")}.log");
 
-                Assembly assembly = Assembly.GetEntryAssembly();
-                AssemblyName assemblyName = assembly.GetName();
-
-                string assemblyVersion = assemblyName.Version.ToString();
-                FileVersionInfo fileVersionInfo = FileVersionInfo.GetVersionInfo(assembly.Location);
-
                 var sb = new StringBuilder();
 
                 sb.AppendFormat("Date: {0}\n", DateTimeOffset.Now.ToString());
-                sb.AppendFormat("FileVersion: {0}\n", fileVersionInfo.FileVersion);
-                sb.AppendFormat("ProductVersion: {0}\n", fileVersionInfo.ProductVersion);
-                sb.AppendFormat("CurrentCulture: {0}\n", Thread.CurrentThread.CurrentCulture);
-                sb.AppendFormat("CurrentUICulture: {0}\n", Thread.CurrentThread.CurrentUICulture);
+                GetAssemblyInfo(sb);
+                sb.Append("\n");
                 sb.Append("\n");
                 sb.AppendFormat("{0}\n", e.ExceptionObject.ToString());
                 if (e.ExceptionObject is Exception ex)

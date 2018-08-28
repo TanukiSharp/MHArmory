@@ -50,6 +50,7 @@
     <Reference Include="PresentationFramework" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="GitInfo.cs" />
     <ApplicationDefinition Include="App.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -221,12 +222,15 @@
     <PackageReference Include="Ben.Demystifier">
       <Version>0.1.1</Version>
     </PackageReference>
-    <PackageReference Include="GitVersionTask">
-      <Version>3.6.5</Version>
-    </PackageReference>
     <PackageReference Include="Newtonsoft.Json">
       <Version>11.0.2</Version>
     </PackageReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PreBuildEvent>call "$(ProjectDir)GitInfo.bat" "$(ProjectDir)"</PreBuildEvent>
+  </PropertyGroup>
+  <PropertyGroup>
+    <PostBuildEvent>del "$(ProjectDir)GitInfo.cs"</PostBuildEvent>
+  </PropertyGroup>
 </Project>

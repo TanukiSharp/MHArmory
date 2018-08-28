@@ -23,6 +23,8 @@ namespace MHArmory.ViewModels
         public ICommand OpenDecorationsOverrideCommand { get; }
         public ICommand OpenSearchResultProcessingCommand { get; }
 
+        public ICommand AboutCommand { get; }
+
         public event EventHandler AbilitiesChanged;
 
         public ISolverData SolverData { get; private set; }
@@ -91,6 +93,8 @@ namespace MHArmory.ViewModels
             OpenDecorationsOverrideCommand = new AnonymousCommand(OpenDecorationsOverride);
             OpenSearchResultProcessingCommand = new AnonymousCommand(OpenSearchResultProcessing);
 
+            AboutCommand = new AnonymousCommand(OnAbout);
+
             SearchResultProcessing = new SearchResultProcessingViewModel(this);
 
             InParameters = new InParametersViewModel(this);
@@ -103,6 +107,15 @@ namespace MHArmory.ViewModels
                 loadoutManager.LoadoutChanged -= LoadoutManager_LoadoutChanged;
                 loadoutManager.ModifiedChanged -= LoadoutManager_ModifiedChanged;
             }
+        }
+
+        private void OnAbout()
+        {
+            var sb = new StringBuilder();
+
+            App.GetAssemblyInfo(sb);
+
+            System.Windows.MessageBox.Show(sb.ToString(), "About MHArmory", System.Windows.MessageBoxButton.OK, System.Windows.MessageBoxImage.Information);
         }
 
         public void ApplySorting()
