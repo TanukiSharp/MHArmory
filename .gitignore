@@ -2,5 +2,7 @@
 **/obj/
 **/bin/Debug/
 **/bin/Release/
+**/bin/DebugDistribution/
+**/bin/ReleaseDistribution/
 
 *.csproj.user
