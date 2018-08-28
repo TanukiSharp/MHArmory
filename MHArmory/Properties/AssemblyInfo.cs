@@ -7,12 +7,12 @@ using System.Windows;
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("MHArmory")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyTitle("MH Armory")]
+[assembly: AssemblyDescription("Tool that helps finding the best armor set possible for a given set of skill - Monster Hunter World")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
 [assembly: AssemblyProduct("MHArmory")]
-[assembly: AssemblyCopyright("Copyright ©  2018")]
+[assembly: AssemblyCopyright("Copyright © Sebastien ROBERT - 2018")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
