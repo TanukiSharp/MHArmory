@@ -17,8 +17,6 @@ namespace DistributionTool
 
         static int Main(string[] args)
         {
-            args = new string[] { "Debug" };
-
             return new Program().Run(args);
         }
 
@@ -59,14 +57,14 @@ namespace DistributionTool
                 return (int)ErrorCodes.CannotFindSolutionPath;
             }
 
-            string sourceBinaryFullPath = Path.Combine(solutionFullPath, BinaryPath, buildConfiguration);
+            string sourceBinaryFullPath = PathCombine(solutionFullPath, BinaryPath, buildConfiguration);
 
-            string assemblyFullFilename = Path.Combine(sourceBinaryFullPath, BinaryFilename);
+            string assemblyFullFilename = PathCombine(sourceBinaryFullPath, BinaryFilename);
 
             if (File.Exists(assemblyFullFilename) == false)
             {
                 Console.WriteLine($"File '{assemblyFullFilename}' could not be found.");
-                Console.WriteLine($"Make sure the project is build, and that build configuration provided '{buildConfiguration}' is correct.");
+                Console.WriteLine($"Make sure the project is built, and that build configuration provided '{buildConfiguration}' is correct.");
                 Console.WriteLine();
                 PrintUsage();
                 return (int)ErrorCodes.CannotFindAssembly;
@@ -80,15 +78,15 @@ namespace DistributionTool
 
             Console.WriteLine($"Found assembly version: {assemblyVersion}.");
 
-            string outputFolderFullPath = Path.Combine(
+            string outputFolderFullPath = PathCombine(
                 solutionFullPath,
                 BinaryPath,
                 $"{buildConfiguration}{DistributionFolderSuffix}"
             );
 
-            string distributionRootFullPath = Path.Combine(outputFolderFullPath, DistributionRootFolderName);
+            string distributionRootFullPath = PathCombine(outputFolderFullPath, DistributionRootFolderName);
 
-            string distributionTargetFullPath = Path.Combine(distributionRootFullPath, assemblyVersion.ToString());
+            string distributionTargetFullPath = PathCombine(distributionRootFullPath, assemblyVersion.ToString());
 
             if (Directory.Exists(distributionRootFullPath))
             {
@@ -118,10 +116,10 @@ namespace DistributionTool
                     return (int)ErrorCodes.FileCopyFailed;
             }
 
-            if (CopyFile(assemblyFullFilename, Path.Combine(distributionTargetFullPath, BinaryFilename)) == false)
+            if (CopyFile(assemblyFullFilename, PathCombine(distributionTargetFullPath, BinaryFilename)) == false)
                 return (int)ErrorCodes.FileCopyFailed;
 
-            string targetZipArchiveFullFilename = Path.Combine(outputFolderFullPath, $"{DistributionRootFolderName}_{assemblyVersion}.zip");
+            string targetZipArchiveFullFilename = PathCombine(outputFolderFullPath, $"{DistributionRootFolderName}_{assemblyVersion}.zip");
 
             if (File.Exists(targetZipArchiveFullFilename))
             {
@@ -180,7 +178,7 @@ namespace DistributionTool
 
             foreach (string file in Directory.GetFiles(sourceFullPath, pattern).Where(x => x.EndsWith(extension)))
             {
-                if (CopyFile(file, Path.Combine(targetFullPath, Path.GetFileName(file))) == false)
+                if (CopyFile(file, PathCombine(targetFullPath, Path.GetFileName(file))) == false)
                     return false;
             }
 
@@ -238,13 +236,20 @@ namespace DistributionTool
 
             while (string.IsNullOrEmpty(currentPath) == false)
             {
-                if (File.Exists(Path.Combine(currentPath, solutionFilename)))
+                if (File.Exists(PathCombine(currentPath, solutionFilename)))
                     return currentPath;
 
                 currentPath = Path.GetDirectoryName(currentPath);
             }
 
             return null;
+        }
+
+        private string PathCombine(params string[] paths)
+        {
+            // Make all paths Linux style, since Linux does not
+            // support backslashes but Windows supports both.
+            return Path.Combine(paths).Replace('\\', '/');
         }
     }
 }
