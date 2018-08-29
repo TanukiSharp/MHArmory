@@ -26,6 +26,19 @@ namespace DistributionTool
 
         private string buildConfiguration;
 
+        public enum ErrorCodes
+        {
+            Success = 0,
+            InvalidArgumentCount = -1,
+            CannotFindSolutionPath = -2,
+            CannotFindAssembly = -3,
+            CannotLoadAssembly = -4,
+            FileCopyFailed = -5,
+            OutputDirectoryDeletionFailed = -6,
+            OutputArchiveDeletionFailed = -7,
+            ZipCreationFailed = -8
+        }
+
         private int Run(string[] args)
         {
             if (args.Length < RequiredArgumentCount)
@@ -33,7 +46,7 @@ namespace DistributionTool
                 Console.WriteLine($"Invalid number of arguments, required {RequiredArgumentCount}");
                 Console.WriteLine();
                 PrintUsage();
-                return -1;
+                return (int)ErrorCodes.InvalidArgumentCount;
             }
 
             buildConfiguration = args[0];
@@ -43,7 +56,7 @@ namespace DistributionTool
             if (solutionFullPath == null)
             {
                 Console.WriteLine($"Could not find solution path based on '{SolutionFilename}' file name.");
-                return -2;
+                return (int)ErrorCodes.CannotFindSolutionPath;
             }
 
             string sourceBinaryFullPath = Path.Combine(solutionFullPath, BinaryPath, buildConfiguration);
@@ -56,12 +69,12 @@ namespace DistributionTool
                 Console.WriteLine($"Make sure the project is build, and that build configuration provided '{buildConfiguration}' is correct.");
                 Console.WriteLine();
                 PrintUsage();
-                return -3;
+                return (int)ErrorCodes.CannotFindAssembly;
             }
 
             Assembly assembly = TryLoadAssembly(assemblyFullFilename);
             if (assembly == null)
-                return -4;
+                return (int)ErrorCodes.CannotLoadAssembly;
 
             Version assemblyVersion = assembly.GetName().Version;
 
@@ -79,24 +92,34 @@ namespace DistributionTool
 
             if (Directory.Exists(distributionRootFullPath))
             {
-                // Ensures target folder is deleted to start fresh.
-                Directory.Delete(distributionRootFullPath, true);
+                try
+                {
+                    // Ensures target folder is deleted to start fresh.
+                    Directory.Delete(distributionRootFullPath, true);
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine($"Could not delete existing directory '{distributionRootFullPath}'");
+                    Console.WriteLine();
+                    Console.WriteLine(ex.ToString());
+                    return (int)ErrorCodes.OutputDirectoryDeletionFailed;
+                }
             }
 
             Directory.CreateDirectory(distributionTargetFullPath);
 
             if (CopyFiles(sourceBinaryFullPath, "dll", distributionTargetFullPath) == false)
-                return -5;
+                return (int)ErrorCodes.FileCopyFailed;
 
             // Infer debug mode from the build configuration.
             if (buildConfiguration.Contains("debug", StringComparison.OrdinalIgnoreCase))
             {
                 if (CopyFiles(sourceBinaryFullPath, "pdb", distributionTargetFullPath) == false)
-                    return -5;
+                    return (int)ErrorCodes.FileCopyFailed;
             }
 
             if (CopyFile(assemblyFullFilename, Path.Combine(distributionTargetFullPath, BinaryFilename)) == false)
-                return -5;
+                return (int)ErrorCodes.FileCopyFailed;
 
             string targetZipArchiveFullFilename = Path.Combine(outputFolderFullPath, $"{DistributionRootFolderName}_{assemblyVersion}.zip");
 
@@ -111,20 +134,32 @@ namespace DistributionTool
                     Console.WriteLine($"Could not delete existing zip archive '{targetZipArchiveFullFilename}'");
                     Console.WriteLine();
                     Console.WriteLine(ex.ToString());
-                    return -6;
+                    return (int)ErrorCodes.OutputArchiveDeletionFailed;
                 }
             }
 
             Console.WriteLine($"Creating zip archive '{targetZipArchiveFullFilename}'.");
 
-            ZipFile.CreateFromDirectory(
-                distributionRootFullPath,
-                targetZipArchiveFullFilename,
-                CompressionLevel.Fastest,
-                true
-            );
+            try
+            {
+                ZipFile.CreateFromDirectory(
+                    distributionRootFullPath,
+                    targetZipArchiveFullFilename,
+                    CompressionLevel.Fastest,
+                    true
+                );
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Could not create output zip archive '{targetZipArchiveFullFilename}'");
+                Console.WriteLine();
+                Console.WriteLine(ex.ToString());
+                return (int)ErrorCodes.ZipCreationFailed;
+            }
 
-            return 0;
+            Console.WriteLine("Done.");
+
+            return (int)ErrorCodes.Success;
         }
 
         private void PrintUsage()
