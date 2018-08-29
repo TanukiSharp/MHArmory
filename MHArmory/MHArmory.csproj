@@ -228,9 +228,9 @@
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
-    <PreBuildEvent>call "$(ProjectDir)GitInfo.bat" "$(ProjectDir)"</PreBuildEvent>
+    <PreBuildEvent>call "$(ProjectDir)PreBuildEventGitInfo.bat" "$(ProjectDir)"</PreBuildEvent>
   </PropertyGroup>
   <PropertyGroup>
-    <PostBuildEvent>del "$(ProjectDir)GitInfo.cs"</PostBuildEvent>
+    <PostBuildEvent>call "$(ProjectDir)PostBuildEventGitInfo.bat" "$(ProjectDir)"</PostBuildEvent>
   </PropertyGroup>
 </Project>

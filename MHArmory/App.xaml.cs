@@ -18,22 +18,33 @@ namespace MHArmory
     /// </summary>
     public partial class App : Application
     {
-        protected override void OnStartup(StartupEventArgs e)
-        {
-            base.OnStartup(e);
+        public static Version Version { get; private set; }
+        public static string GitBranch { get; private set; }
+        public static string GitCommitHash { get; private set; }
+        public static string GitRepository { get; private set; }
 
-            AppDomain.CurrentDomain.UnhandledException += OnUnhandledException;
+        static App()
+        {
+            AssemblyName assemblyName = Assembly.GetEntryAssembly().GetName();
+
+            Version = assemblyName.Version;
+
+            GitBranch = GitInfo.Branch.Trim();
+            GitCommitHash = GitInfo.CommitHash.Trim();
+            GitRepository = GitInfo.Repository.Trim();
         }
 
         public static void GetAssemblyInfo(StringBuilder sb)
         {
             AssemblyName assemblyName = Assembly.GetEntryAssembly().GetName();
 
-            sb.AppendFormat("Version: {0}\n", assemblyName.Version);
+            sb.AppendFormat("Version: {0}\n", Version);
             sb.AppendFormat("CurrentCulture: {0}\n", Thread.CurrentThread.CurrentCulture);
             sb.AppendFormat("CurrentUICulture: {0}\n", Thread.CurrentThread.CurrentUICulture);
             sb.Append("\n");
-            sb.AppendFormat(GitInfo.Value.Trim());
+            sb.AppendFormat("GitBranch: {0}\n", GitBranch);
+            sb.AppendFormat("GitCommitHash: {0}\n", GitCommitHash);
+            sb.AppendFormat("GitRepository: {0}\n", GitRepository);
         }
 
         private void OnUnhandledException(object sender, UnhandledExceptionEventArgs e)
