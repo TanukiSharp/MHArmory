@@ -67,18 +67,20 @@ namespace DistributionTool
 
             Console.WriteLine($"Found assembly version: {assemblyVersion}.");
 
-            string distributionTargetFullPath = Path.Combine(
+            string outputFolderFullPath = Path.Combine(
                 solutionFullPath,
                 BinaryPath,
-                $"{buildConfiguration}{DistributionFolderSuffix}",
-                DistributionRootFolderName,
-                assemblyVersion.ToString()
+                $"{buildConfiguration}{DistributionFolderSuffix}"
             );
 
-            if (Directory.Exists(distributionTargetFullPath))
+            string distributionRootFullPath = Path.Combine(outputFolderFullPath, DistributionRootFolderName);
+
+            string distributionTargetFullPath = Path.Combine(distributionRootFullPath, assemblyVersion.ToString());
+
+            if (Directory.Exists(distributionRootFullPath))
             {
                 // Ensures target folder is deleted to start fresh.
-                Directory.Delete(distributionTargetFullPath, true);
+                Directory.Delete(distributionRootFullPath, true);
             }
 
             Directory.CreateDirectory(distributionTargetFullPath);
@@ -96,13 +98,6 @@ namespace DistributionTool
             if (CopyFile(assemblyFullFilename, Path.Combine(distributionTargetFullPath, BinaryFilename)) == false)
                 return -5;
 
-            string outputFolderFullPath = Path.Combine(
-                solutionFullPath,
-                BinaryPath,
-                $"{buildConfiguration}{DistributionFolderSuffix}"
-            );
-
-            string sourceFolderToZipFullPath = Path.Combine(outputFolderFullPath, DistributionRootFolderName);
             string targetZipArchiveFullFilename = Path.Combine(outputFolderFullPath, $"{DistributionRootFolderName}_{assemblyVersion}.zip");
 
             if (File.Exists(targetZipArchiveFullFilename))
@@ -120,8 +115,10 @@ namespace DistributionTool
                 }
             }
 
+            Console.WriteLine($"Creating zip archive '{targetZipArchiveFullFilename}'.");
+
             ZipFile.CreateFromDirectory(
-                sourceFolderToZipFullPath,
+                distributionRootFullPath,
                 targetZipArchiveFullFilename,
                 CompressionLevel.Fastest,
                 true
@@ -132,6 +129,11 @@ namespace DistributionTool
 
         private void PrintUsage()
         {
+            AssemblyName assemblyName = Assembly.GetEntryAssembly().GetName();
+            Console.WriteLine($"Usage: dotnet {assemblyName.Name} <BuildConfiguration>");
+            Console.WriteLine();
+            Console.WriteLine("<BuildConfiguration>: One of the build configuration setup in the solution of MHArmory.");
+            Console.WriteLine();
         }
 
         private bool CopyFiles(string sourceFullPath, string extension, string targetFullPath)
