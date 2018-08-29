@@ -11,7 +11,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MHArmory.MhwDbDataSource", 
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MHArmory.Search", "MHArmory.Search\MHArmory.Search.csproj", "{375922DD-84D4-46FA-9F2C-0FC45EFC0BDD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MHArmory.AthenaAssDataSource", "MHArmory.AthenaAssDataSource\MHArmory.AthenaAssDataSource.csproj", "{3796097E-B739-4F78-87B1-689DE3B66DBF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MHArmory.AthenaAssDataSource", "MHArmory.AthenaAssDataSource\MHArmory.AthenaAssDataSource.csproj", "{3796097E-B739-4F78-87B1-689DE3B66DBF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DistributionTool", "DistributionTool\DistributionTool.csproj", "{1391FFEE-A8B8-41E6-8623-16145A0D9354}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +41,10 @@ Global
 		{3796097E-B739-4F78-87B1-689DE3B66DBF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3796097E-B739-4F78-87B1-689DE3B66DBF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3796097E-B739-4F78-87B1-689DE3B66DBF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1391FFEE-A8B8-41E6-8623-16145A0D9354}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1391FFEE-A8B8-41E6-8623-16145A0D9354}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1391FFEE-A8B8-41E6-8623-16145A0D9354}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1391FFEE-A8B8-41E6-8623-16145A0D9354}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
