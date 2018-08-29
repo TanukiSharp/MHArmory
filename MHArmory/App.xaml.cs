@@ -79,7 +79,6 @@ namespace MHArmory
             sb.AppendFormat("Version: {0}\n", Version);
             sb.AppendFormat("CurrentCulture: {0}\n", Thread.CurrentThread.CurrentCulture);
             sb.AppendFormat("CurrentUICulture: {0}\n", Thread.CurrentThread.CurrentUICulture);
-            sb.Append("\n");
             sb.AppendFormat("GitBranch: {0}\n", GitBranch);
             sb.AppendFormat("GitCommitHash: {0}\n", GitCommitHash);
             sb.AppendFormat("GitRepository: {0}\n", GitRepository);
@@ -103,7 +102,6 @@ namespace MHArmory
 
                 sb.AppendFormat("Date: {0}\n", DateTimeOffset.Now.ToString());
                 GetAssemblyInfo(sb);
-                sb.Append("\n");
                 sb.Append("\n");
                 sb.AppendFormat("{0}\n", e.ExceptionObject.ToString());
                 if (e.ExceptionObject is Exception ex)
