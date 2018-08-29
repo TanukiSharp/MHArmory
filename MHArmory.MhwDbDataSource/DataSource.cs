@@ -14,10 +14,12 @@ namespace MHArmory.MhwDbDataSource
     public class DataSource : ISkillDataSource, IArmorDataSource, ICharmDataSource, IJewelDataSource
     {
         private readonly ILogger logger;
+        private readonly bool hasWriteAccess;
 
-        public DataSource(ILogger logger)
+        public DataSource(ILogger logger, bool hasWriteAccess)
         {
             this.logger = logger;
+            this.hasWriteAccess = hasWriteAccess;
         }
 
         public async Task<IAbility[]> GetAbilities()
@@ -100,6 +102,7 @@ namespace MHArmory.MhwDbDataSource
 
             var dataAccess = new HttpDataAccess(
                 logger,
+                hasWriteAccess,
                 "mhwdb",
                 TimeSpan.FromHours(24.0),
                 httpClient => httpClient.GetStringAsync($"https://mhw-db.com/{api}")

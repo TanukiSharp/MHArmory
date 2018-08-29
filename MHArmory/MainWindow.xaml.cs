@@ -88,7 +88,7 @@ namespace MHArmory
 
         private async Task LoadData()
         {
-            //var source = new MhwDbDataSource.DataSource(null);
+            //var source = new MhwDbDataSource.DataSource(null, App.HasWriteAccess);
             var source = new AthenaAssDataSource.DataSource();
 
             ISkill[] skills = await source.GetSkills();

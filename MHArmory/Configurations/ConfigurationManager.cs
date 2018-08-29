@@ -20,6 +20,9 @@ namespace MHArmory.Configurations
 
         public static void Save(IConfiguration configurationObject)
         {
+            if (App.HasWriteAccess == false)
+                return;
+
             try
             {
                 string filename = Path.Combine(AppContext.BaseDirectory, "config.json");

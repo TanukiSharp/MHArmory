@@ -18,23 +18,29 @@ namespace MHArmory.Core
         private const string TimestampFormat = "yyyyMMddHHmmss";
 
         private readonly ILogger logger;
+        private readonly bool hasWriteAccess;
         private readonly Func<HttpClient, Task<string>> dataProducer;
         private readonly string cachePath;
         private readonly TimeSpan cacheDuration;
 
-        public HttpDataAccess(ILogger logger, string dataSourceName, TimeSpan cacheDuration, Func<HttpClient, Task<string>> dataProducer)
+        public HttpDataAccess(ILogger logger, bool hasWriteAccess, string dataSourceName, TimeSpan cacheDuration, Func<HttpClient, Task<string>> dataProducer)
         {
             this.logger = logger;
-            cachePath = Path.Combine(baseCachePath, dataSourceName);
+            this.hasWriteAccess = hasWriteAccess;
 
-            if (Directory.Exists(cachePath) == false)
+            if (hasWriteAccess)
             {
-                try
+                cachePath = Path.Combine(baseCachePath, dataSourceName);
+
+                if (Directory.Exists(cachePath) == false)
                 {
-                    Directory.CreateDirectory(cachePath);
-                }
-                catch (Exception)
-                {
+                    try
+                    {
+                        Directory.CreateDirectory(cachePath);
+                    }
+                    catch (Exception)
+                    {
+                    }
                 }
             }
 
@@ -74,6 +80,9 @@ namespace MHArmory.Core
 
         public void InvalidateCache(string api)
         {
+            if (hasWriteAccess == false)
+                return;
+
             string[] files;
 
             try
@@ -124,7 +133,7 @@ namespace MHArmory.Core
                 return null;
             }
 
-            if (files.Length > 1)
+            if (files.Length > 1 && hasWriteAccess)
             {
                 foreach (string file in files)
                 {
@@ -143,19 +152,22 @@ namespace MHArmory.Core
 
             string timestampString = Path.GetFileNameWithoutExtension(files[0]).Substring(api.Length + 1); // remove heading api name and dot
 
-            if (DateTime.TryParseExact(timestampString, TimestampFormat, null, DateTimeStyles.AdjustToUniversal, out DateTime timestamp) == false ||
-                timestamp.Add(cacheDuration) < DateTime.UtcNow)
+            if (hasWriteAccess)
             {
-                try
+                if (DateTime.TryParseExact(timestampString, TimestampFormat, null, DateTimeStyles.AdjustToUniversal, out DateTime timestamp) == false ||
+                    timestamp.Add(cacheDuration) < DateTime.UtcNow)
                 {
-                    File.Delete(files[0]);
-                }
-                catch (Exception ex)
-                {
-                    logger?.LogError(ex.ToString());
-                }
+                    try
+                    {
+                        File.Delete(files[0]);
+                    }
+                    catch (Exception ex)
+                    {
+                        logger?.LogError(ex.ToString());
+                    }
 
-                return null;
+                    return null;
+                }
             }
 
             try
@@ -171,6 +183,9 @@ namespace MHArmory.Core
 
         private void WriteRawDataToCache(string content, string api, ILogger logger)
         {
+            if (hasWriteAccess == false)
+                return;
+
             string filename = Path.Combine(cachePath, $"{api}.{DateTime.UtcNow.ToString(TimestampFormat)}.json");
 
             try

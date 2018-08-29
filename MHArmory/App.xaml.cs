@@ -23,6 +23,8 @@ namespace MHArmory
         public static string GitCommitHash { get; private set; }
         public static string GitRepository { get; private set; }
 
+        public static bool HasWriteAccess { get; private set; }
+
         static App()
         {
             AssemblyName assemblyName = Assembly.GetEntryAssembly().GetName();
@@ -32,6 +34,42 @@ namespace MHArmory
             GitBranch = GitInfo.Branch.Trim();
             GitCommitHash = GitInfo.CommitHash.Trim();
             GitRepository = GitInfo.Repository.Trim();
+
+            HasWriteAccess = WriteTest();
+        }
+
+        protected override void OnStartup(StartupEventArgs e)
+        {
+            base.OnStartup(e);
+
+            AppDomain.CurrentDomain.UnhandledException += OnUnhandledException;
+
+            if (HasWriteAccess == false)
+            {
+                var sb = new StringBuilder();
+                sb.Append("The application requires write access to store your settings.\n");
+                sb.Append("\n");
+                sb.Append("It can run without, but all preferences will not be persisted and disappear once you close the application.\n");
+                sb.Append("\n");
+                sb.Append("It is recommended to close the application and move it to a location where it has write access");
+
+                MessageBox.Show(sb.ToString(), "Write access", MessageBoxButton.OK, MessageBoxImage.Warning);
+            }
+        }
+
+        public static bool WriteTest()
+        {
+            try
+            {
+                string file = Path.Combine(AppContext.BaseDirectory, Guid.NewGuid().ToString("N"));
+                File.WriteAllText(file, "test");
+                File.Delete(file);
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
         }
 
         public static void GetAssemblyInfo(StringBuilder sb)
@@ -49,7 +87,7 @@ namespace MHArmory
 
         private void OnUnhandledException(object sender, UnhandledExceptionEventArgs e)
         {
-            if (e.ExceptionObject == null)
+            if (e.ExceptionObject == null || HasWriteAccess == false)
                 return;
 
             try
