@@ -118,14 +118,17 @@ namespace MHArmory.ViewModels
         {
             var skills = new Dictionary<int, int>();
 
-            foreach (IArmorPiece armorPiece in armorPieces)
+            foreach (IArmorPiece armorPiece in armorPieces.Where(x => x != null))
             {
                 foreach (IAbility ability in armorPiece.Abilities)
                     IncrementSkillLevel(skills, ability);
             }
 
-            foreach (IAbility ability in charm.Abilities)
-                IncrementSkillLevel(skills, ability);
+            if (charm != null)
+            {
+                foreach (IAbility ability in charm.Abilities)
+                    IncrementSkillLevel(skills, ability);
+            }
 
             foreach (ArmorSetJewelViewModel jewelViewModel in jewels)
             {
