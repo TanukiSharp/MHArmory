@@ -20,11 +20,16 @@ namespace MHArmory.ViewModels
             if (EqualityComparer<T>.Default.Equals(field, value) == false)
             {
                 field = value;
-                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+                NotifyPropertyChanged(propertyName);
                 return true;
             }
 
             return false;
+        }
+
+        protected void NotifyPropertyChanged([CallerMemberName]string propertyName = null)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
 
         public event PropertyChangedEventHandler PropertyChanged;
