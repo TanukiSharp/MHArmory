@@ -13,7 +13,10 @@ namespace MHArmory.ValueConverters
 
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
-            return System.Convert.ChangeType(value, typeof(string), nfi);
+            if (value is int num)
+                return num.ToString("N0", nfi);
+
+            return null;
         }
 
         public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
