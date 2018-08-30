@@ -19,7 +19,7 @@ namespace MHArmory
     {
         private readonly RootViewModel root;
 
-        public bool IsOpened { get; private set; }
+        private bool isOpened;
 
         public AdvancedSearchWindow(RootViewModel root)
         {
@@ -34,16 +34,21 @@ namespace MHArmory
 
         public new void Show()
         {
-            if (IsOpened)
-                return;
+            if (isOpened)
+            {
+                if (WindowState == WindowState.Minimized)
+                    WindowState = WindowState.Normal;
+            }
 
-            IsOpened = true;
+            isOpened = true;
+
             base.Show();
+            Activate();
         }
 
         public void Update()
         {
-            if (IsOpened)
+            if (isOpened)
                 root.UpdateAdvancedSearch();
         }
 
@@ -52,7 +57,7 @@ namespace MHArmory
             base.OnClosing(e);
             e.Cancel = true;
 
-            IsOpened = false;
+            isOpened = false;
 
             Hide();
         }

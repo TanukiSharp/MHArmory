@@ -41,8 +41,13 @@ namespace MHArmory
 
         public static void Show(Window owner)
         {
+            if (instance.WindowState == WindowState.Minimized)
+                instance.WindowState = WindowState.Normal;
+
             instance.Owner = owner;
+
             instance.Show();
+            instance.Activate();
         }
 
         private async void EquipmentExplorerWindow_Loaded(object sender, RoutedEventArgs e)

@@ -138,6 +138,9 @@ namespace MHArmory
 
         private void OpenSkillSelector(object parameter)
         {
+            if (skillSelectorWindow.WindowState == WindowState.Minimized)
+                skillSelectorWindow.WindowState = WindowState.Normal;
+
             skillSelectorWindow.Show();
         }
 
@@ -173,14 +176,13 @@ namespace MHArmory
 
         private void OpenSearchResultProcessing(object parameter)
         {
-            if (SearchResultProcessingWindow.IsOpened)
-                return;
-
-            var window = new SearchResultProcessingWindow(rootViewModel)
+            SearchResultProcessingWindow.Open(() =>
             {
-                Owner = this
-            };
-            window.Show();
+                return new SearchResultProcessingWindow(rootViewModel)
+                {
+                    Owner = this
+                };
+            });
         }
 
         private LoadoutManager loadoutManager;

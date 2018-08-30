@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading;
@@ -16,25 +17,44 @@ namespace MHArmory
     {
         private readonly RootViewModel rootViewModel;
 
-        private static long openedCount;
-        public static bool IsOpened => Interlocked.Read(ref openedCount) > 0;
+        private static SearchResultProcessingWindow firstInstance;
 
         public SearchResultProcessingWindow(RootViewModel rootViewModel)
         {
+            if (firstInstance != null)
+                throw new InvalidOperationException($"Window {nameof(SearchResultProcessingWindow)} already created.");
+
+            if (firstInstance == null)
+                firstInstance = this;
+
             InitializeComponent();
 
-            Interlocked.Increment(ref openedCount);
 
             this.rootViewModel = rootViewModel;
 
             DataContext = rootViewModel.SearchResultProcessing;
         }
 
-        protected override void OnClosed(EventArgs e)
+        public static bool Open(Func<SearchResultProcessingWindow> factory)
         {
-            base.OnClosed(e);
+            if (firstInstance == null)
+                firstInstance = factory();
+
+            if (firstInstance.WindowState == WindowState.Minimized)
+                firstInstance.WindowState = WindowState.Normal;
+
+            firstInstance.Show();
+            firstInstance.Activate();
+
+            return true;
+        }
+
+        protected override void OnClosing(CancelEventArgs e)
+        {
+            base.OnClosing(e);
+            e.Cancel = true;
+            Hide();
             rootViewModel.SearchResultProcessing.SaveConfiguration();
-            Interlocked.Decrement(ref openedCount);
         }
     }
 }
