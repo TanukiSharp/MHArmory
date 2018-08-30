@@ -13,6 +13,8 @@
     <cvt:SlotSizeToolTipValueConverter x:Key="SlotSizeToolTipValueConverter"/>
     <cvt:HasDefenseVisibilityValueConverter x:Key="HasDefenseVisibilityValueConverter"/>
     <cvt:SortCriteriaNameValueConverter x:Key="SortCriteriaNameValueConverter"/>
+    <cvt:MillisecondsToTimeValueConverter x:Key="MillisecondsToTimeValueConverter"/>
+    <cvt:NumToSeparatedStringValueConverter x:Key="NumToSeparatedStringValueConverter"/>
 
     <Style x:Key="ComboBoxItemSlotStyle" TargetType="FrameworkElement">
         <Setter Property="Width" Value="16"/>
@@ -453,6 +455,110 @@
         </DockPanel>
     </DataTemplate>
 
+    <DataTemplate x:Key="SearchMetricsView">
+        <DataTemplate.Resources>
+            <Style x:Key="highlight" TargetType="TextBlock">
+                <Setter Property="Foreground" Value="Blue"/>
+                <Setter Property="VerticalAlignment" Value="Center"/>
+            </Style>
+            <Style TargetType="TextBlock">
+                <Setter Property="Margin" Value="1 1 4 1"/>
+                <Setter Property="VerticalAlignment" Value="Center"/>
+            </Style>
+        </DataTemplate.Resources>
+        <Expander x:Name="root" ExpandDirection="Up" IsExpanded="False">
+            <Expander.Header>
+                <StackPanel x:Name="header" Orientation="Horizontal">
+                    <TextBlock Text="Combinations: "/>
+                    <TextBlock Text="{Binding CombinationCount, Converter={StaticResource NumToSeparatedStringValueConverter}, Mode=OneTime}" Margin="0 0 16 0" Style="{StaticResource highlight}"/>
+                    <TextBlock Text="Matching results: "/>
+                    <TextBlock Text="{Binding MatchingResults, Converter={StaticResource NumToSeparatedStringValueConverter}, Mode=OneTime}" Margin="0 0 16 0" Style="{StaticResource highlight}"/>
+                    <TextBlock Text="Time: "/>
+                    <TextBlock Text="{Binding TimeElapsed, Converter={StaticResource MillisecondsToTimeValueConverter}}" ToolTip="{Binding TimeElapsed}" Margin="0 0 16 0" Style="{StaticResource highlight}"/>
+                </StackPanel>
+            </Expander.Header>
+            <Expander.Content>
+                <StackPanel Orientation="Horizontal" Margin="1 1 1 4">
+                    <StackPanel.Resources>
+                        <Style TargetType="Border">
+                            <Setter Property="BorderThickness" Value="2"/>
+                            <Setter Property="BorderBrush" Value="#20000000"/>
+                            <Setter Property="CornerRadius" Value="2"/>
+                            <Setter Property="Margin" Value="16 0 0 0"/>
+                            <Setter Property="Padding" Value="4"/>
+                            <Setter Property="Background" Value="#10000000"/>
+                        </Style>
+                    </StackPanel.Resources>
+                    <Border Margin="0">
+                        <StackPanel Orientation="Horizontal">
+                            <StackPanel>
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock Text="Heads:"/>
+                                    <TextBlock Text="{Binding Heads, Mode=OneTime}" Style="{StaticResource highlight}"/>
+                                </StackPanel>
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock Text="Chests:"/>
+                                    <TextBlock Text="{Binding Chests, Mode=OneTime}" Style="{StaticResource highlight}"/>
+                                </StackPanel>
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock Text="Gloves:"/>
+                                    <TextBlock Text="{Binding Gloves, Mode=OneTime}" Style="{StaticResource highlight}"/>
+                                </StackPanel>
+                            </StackPanel>
+                            <StackPanel Margin="16 0 0 0">
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock Text="Waists:"/>
+                                    <TextBlock Text="{Binding Waists, Mode=OneTime}" Style="{StaticResource highlight}"/>
+                                </StackPanel>
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock Text="Legs:"/>
+                                    <TextBlock Text="{Binding Legs, Mode=OneTime}" Style="{StaticResource highlight}"/>
+                                </StackPanel>
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock Text="Charms:"/>
+                                    <TextBlock Text="{Binding Charms, Mode=OneTime}" Style="{StaticResource highlight}"/>
+                                </StackPanel>
+                            </StackPanel>
+                        </StackPanel>
+                    </Border>
+                    <Border>
+                        <StackPanel>
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Text="Min slot size:"/>
+                                <TextBlock Text="{Binding MinSlotSize, Mode=OneTime}" Style="{StaticResource highlight}"/>
+                            </StackPanel>
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Text="Max slot size:"/>
+                                <TextBlock Text="{Binding MaxSlotSize, Mode=OneTime}" Style="{StaticResource highlight}"/>
+                            </StackPanel>
+                        </StackPanel>
+                    </Border>
+                    <Border>
+                        <StackPanel>
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Text="Combinations:"/>
+                                <TextBlock Text="{Binding CombinationCount, Converter={StaticResource NumToSeparatedStringValueConverter}, Mode=OneTime}" Style="{StaticResource highlight}"/>
+                            </StackPanel>
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Text="Matching results:"/>
+                                <TextBlock Text="{Binding MatchingResults, Converter={StaticResource NumToSeparatedStringValueConverter}, Mode=OneTime}" Style="{StaticResource highlight}"/>
+                            </StackPanel>
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Text="Time:"/>
+                                <TextBlock Text="{Binding TimeElapsed, Converter={StaticResource MillisecondsToTimeValueConverter}}" ToolTip="{Binding TimeElapsed}" Style="{StaticResource highlight}"/>
+                            </StackPanel>
+                        </StackPanel>
+                    </Border>
+                </StackPanel>
+            </Expander.Content>
+        </Expander>
+        <DataTemplate.Triggers>
+            <Trigger SourceName="root" Property="IsExpanded" Value="True">
+                <Setter TargetName="header" Property="Visibility" Value="Collapsed"/>
+            </Trigger>
+        </DataTemplate.Triggers>
+    </DataTemplate>
+
     <DataTemplate x:Key="RootView">
         <DockPanel LastChildFill="True">
             <Menu DockPanel.Dock="Top">
@@ -497,7 +603,7 @@
                 <GridSplitter Grid.Column="1" HorizontalAlignment="Stretch"/>
 
                 <DockPanel Grid.Column="2" LastChildFill="True">
-                    <TextBox DockPanel.Dock="Bottom" Text="{Binding SearchResult, Mode=OneWay}" IsReadOnly="True"/>
+                    <ContentControl DockPanel.Dock="Bottom" Content="{Binding SearchMetrics, Mode=OneWay}" ContentTemplate="{StaticResource SearchMetricsView}"/>
                     <Grid>
                         <TextBlock x:Name="loading" Text="Loading..." HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="20" Visibility="{Binding IsDataLoading, Converter={StaticResource CollapsedVisibilityValueConverter}, Mode=OneWay}"/>
                         <DockPanel LastChildFill="True">

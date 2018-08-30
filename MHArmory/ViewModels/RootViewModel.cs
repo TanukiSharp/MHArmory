@@ -286,7 +286,7 @@ namespace MHArmory.ViewModels
 
             metrics.UpdateCombinationCount();
 
-            SearchResultMetrics = metrics;
+            SearchMetrics = metrics;
             /*************************************************************/
 
             UpdateAdvancedSearch();
@@ -365,16 +365,20 @@ namespace MHArmory.ViewModels
 
         private void SolverSearchMetricsChanged(SearchMetrics metricsData)
         {
-            SearchResultMetrics = metricsData;
+            Dispatcher.BeginInvoke((Action)delegate ()
+            {
+                SearchMetrics = null;
+                SearchMetrics = metricsData;
+            });
         }
 
-        private SearchMetrics searchResultMetrics;
-        public SearchMetrics SearchResultMetrics
+        private SearchMetrics searchMetrics;
+        public SearchMetrics SearchMetrics
         {
-            get { return searchResultMetrics; }
+            get { return searchMetrics; }
             private set
             {
-                searchResultMetrics = value;
+                searchMetrics = value;
                 NotifyPropertyChanged();
             }
         }
