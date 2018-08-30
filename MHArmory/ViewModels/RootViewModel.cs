@@ -290,6 +290,8 @@ namespace MHArmory.ViewModels
             /*************************************************************/
 
             UpdateAdvancedSearch();
+
+            rawFoundArmorSets = null;
         }
 
         public void UpdateAdvancedSearch()

@@ -135,7 +135,7 @@ namespace MHArmory.ViewModels
 
         public bool ApplySort(ref IEnumerable<ArmorSetViewModel> input, bool force, int limit)
         {
-            if (input == null || input.Any() == false)
+            if (input == null)
                 return false;
 
             limit = Math.Max(0, limit);
