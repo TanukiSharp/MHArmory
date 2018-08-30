@@ -43,6 +43,8 @@ namespace MHArmory
         {
             InitializeComponent();
 
+            WindowManager.FitInScreen(this);
+
             DataContext = this;
 
             Loaded += SkillSelectorWindow_Loaded;

@@ -22,6 +22,8 @@ namespace MHArmory
         {
             InitializeComponent();
 
+            WindowManager.FitInScreen(this);
+
             equipmentExplorerViewModel = new EquipmentExplorerViewModel();
 
             InputBindings.Add(new InputBinding(new AnonymousCommand(OnCancel), new KeyGesture(Key.Escape, ModifierKeys.None)));

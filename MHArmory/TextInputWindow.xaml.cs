@@ -21,6 +21,8 @@ namespace MHArmory
         {
             InitializeComponent();
 
+            WindowManager.FitInScreen(this);
+
             Title = title;
             textInputViewModel = new TextInputViewModel(prompt, defaultText, isMandatory, OnEnd);
 

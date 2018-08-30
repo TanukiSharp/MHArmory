@@ -117,6 +117,7 @@
     <Compile Include="ViewModels\SearchResultSortItemViewModel.cs" />
     <Compile Include="ViewModels\TextInputViewModel.cs" />
     <Compile Include="ViewModels\ViewModelBase.cs" />
+    <Compile Include="WindowManager.cs" />
     <Page Include="AdvancedSearchWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

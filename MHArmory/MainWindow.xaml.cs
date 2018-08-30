@@ -28,6 +28,8 @@ namespace MHArmory
         {
             InitializeComponent();
 
+            WindowManager.FitInScreen(this);
+
             LoadConfiguration();
             rootViewModel.NotifyConfigurationLoaded();
 

@@ -25,6 +25,8 @@ namespace MHArmory
         {
             InitializeComponent();
 
+            WindowManager.FitInScreen(this);
+
             this.root = root;
 
             InputBindings.Add(new InputBinding(new AnonymousCommand(Close), new KeyGesture(Key.Escape, ModifierKeys.None)));
