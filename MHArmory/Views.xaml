@@ -19,6 +19,11 @@
         <Setter Property="Height" Value="16"/>
     </Style>
 
+    <Style x:Key="ElementImageStyle" TargetType="Image">
+        <Setter Property="Width" Value="16"/>
+        <Setter Property="Height" Value="16"/>
+    </Style>
+
     <Style x:Key="NoSelectionItemContainerStyle" TargetType="{x:Type ListBoxItem}">
         <Setter Property="Template">
             <Setter.Value>
@@ -43,7 +48,7 @@
 
     <DataTemplate x:Key="InParametersView">
         <StackPanel Orientation="Horizontal">
-            
+
             <StackPanel Grid.Column="0" Orientation="Horizontal" VerticalAlignment="Stretch">
                 <TextBlock Text="Weapon slots: " VerticalAlignment="Center" Margin="2"/>
                 <ContentControl Content="{Binding Slots[0], Mode=OneTime}" ContentTemplate="{StaticResource WeaponSlotView}" Margin="1 2 1 2" Focusable="False"/>
@@ -117,7 +122,7 @@
             </ItemsControl>
         </StackPanel>
     </DataTemplate>
-    
+
     <DataTemplate x:Key="ArmorPieceView">
         <Border CornerRadius="2" BorderThickness="1" BorderBrush="#30000000" Background="#10000000" Margin="2" Padding="4" HorizontalAlignment="Stretch">
             <Grid>
@@ -180,7 +185,7 @@
                     <ItemsControl ItemsSource="{Binding Slots, Mode=OneTime}" Margin="2" Height="24" Focusable="False">
                         <ItemsControl.ItemTemplate>
                             <DataTemplate>
-                                <Image Source="{Binding Converter={StaticResource SlotToImagePathValueConverter}, Mode=OneTime}" ToolTip="{Binding Converter={StaticResource SlotSizeToolTipValueConverter}, Mode=OneTime}" Width="24" Height="24"/>
+                                <Image Source="{Binding Converter={StaticResource SlotToImagePathValueConverter}, Mode=OneTime}" ToolTip="{Binding Converter={StaticResource SlotSizeToolTipValueConverter}, Mode=OneTime}" Width="24" Height="24" SnapsToDevicePixels="True"/>
                             </DataTemplate>
                         </ItemsControl.ItemTemplate>
                         <ItemsControl.ItemsPanel>
@@ -203,9 +208,10 @@
                     <ItemsControl ItemsSource="{Binding ArmorPieces, Mode=OneTime}" ItemTemplate="{StaticResource ArmorPieceView}" Focusable="False"/>
                     <ContentControl Content="{Binding Charm, Mode=OneTime}" ContentTemplate="{StaticResource ArmorPieceView}" Focusable="False"/>
                 </StackPanel>
-                <Border CornerRadius="2" BorderThickness="1" BorderBrush="#30000000" Background="#08000000" Margin="16 2 2 2" Padding="4" HorizontalAlignment="Stretch">
+                <Border CornerRadius="2" BorderThickness="1" BorderBrush="#30000000" Background="#10000000" Margin="16 2 2 2" Padding="4" HorizontalAlignment="Stretch">
                     <StackPanel Orientation="Vertical">
-                        <ItemsControl ItemsSource="{Binding Jewels}" Focusable="False">
+                        <TextBlock Text="Required decorations:" FontWeight="Bold"/>
+                        <ItemsControl ItemsSource="{Binding Jewels}" Margin="16 1 0 12" Focusable="False">
                             <ItemsControl.ItemTemplate>
                                 <DataTemplate>
                                     <TextBlock>
@@ -215,13 +221,14 @@
                                 </DataTemplate>
                             </ItemsControl.ItemTemplate>
                         </ItemsControl>
-                        <StackPanel Margin="0 12 0 0">
+                        <TextBlock Text="Defenses:" FontWeight="Bold"/>
+                        <StackPanel Margin="16 1 0 12">
                             <TextBlock Text="{Binding TotalBaseDefense, Mode=OneTime, StringFormat=Base defense: {0}}"/>
                             <TextBlock Text="{Binding TotalMaxDefense, Mode=OneTime, StringFormat=Maximum defense: {0}}"/>
                             <TextBlock Text="{Binding TotalAugmentedDefense, Mode=OneTime, StringFormat=Augmented defense: {0}}"/>
                         </StackPanel>
-                        <StackPanel Orientation="Horizontal" Margin="0 12 0 0">
-                            <TextBlock Text="Spare slots: "/>
+                        <TextBlock Text="Spare slots:" FontWeight="Bold"/>
+                        <StackPanel Orientation="Horizontal" Margin="16 1 0 12">
                             <Image Source="Icons/Jewel3.png" Style="{StaticResource ComboBoxItemSlotStyle}"/>
                             <TextBlock Text="{Binding SpareSlots[2], Mode=OneTime, StringFormat=x{0}}" Margin="2 0 8 0"/>
                             <Image Source="Icons/Jewel2.png" Style="{StaticResource ComboBoxItemSlotStyle}"/>
@@ -229,12 +236,32 @@
                             <Image Source="Icons/Jewel1.png" Style="{StaticResource ComboBoxItemSlotStyle}"/>
                             <TextBlock Text="{Binding SpareSlots[0], Mode=OneTime, StringFormat=x{0}}" Margin="2 0 8 0"/>
                         </StackPanel>
-                        <StackPanel Margin="0 12 0 0">
-                            <TextBlock Text="{Binding TotalFireResistance, Mode=OneTime, StringFormat=Fire: {0}}"/>
-                            <TextBlock Text="{Binding TotalWaterResistance, Mode=OneTime, StringFormat=Water: {0}}"/>
-                            <TextBlock Text="{Binding TotalThunderResistance, Mode=OneTime, StringFormat=Thunder: {0}}"/>
-                            <TextBlock Text="{Binding TotalIceResistance, Mode=OneTime, StringFormat=Ice: {0}}"/>
-                            <TextBlock Text="{Binding TotalDragonResistance, Mode=OneTime, StringFormat=Dragon: {0}}"/>
+                        <TextBlock Text="Additional skills:" FontWeight="Bold"/>
+                        <ItemsControl ItemsSource="{Binding AdditionalSkills}" Margin="16 1 0 12" Focusable="False">
+                            <ItemsControl.ItemTemplate>
+                                <DataTemplate>
+                                    <TextBlock>
+                                        <Run Text="{Binding Skill.Name, Mode=OneTime}"/>
+                                        <Run Text=": "/>
+                                        <Run Text="{Binding TotalLevel, Mode=OneTime}"/>
+                                        <Run Text="/"/>
+                                        <Run Text="{Binding Skill.MaxLevel, Mode=OneTime}"/>
+                                    </TextBlock>
+                                </DataTemplate>
+                            </ItemsControl.ItemTemplate>
+                        </ItemsControl>
+                        <TextBlock Text="Resistances:" FontWeight="Bold"/>
+                        <StackPanel Margin="16 1 0 0" Orientation="Horizontal">
+                            <Image Source="Icons/Fire.png" Style="{StaticResource ElementImageStyle}" VerticalAlignment="Center" SnapsToDevicePixels="True"/>
+                            <TextBlock Text="{Binding TotalFireResistance, Mode=OneTime, StringFormat=: {0}}" Margin="0 0 12 0" VerticalAlignment="Center"/>
+                            <Image Source="Icons/Water.png" Style="{StaticResource ElementImageStyle}" VerticalAlignment="Center" SnapsToDevicePixels="True"/>
+                            <TextBlock Text="{Binding TotalWaterResistance, Mode=OneTime, StringFormat=: {0}}" Margin="0 0 12 0" VerticalAlignment="Center"/>
+                            <Image Source="Icons/Thunder.png" Style="{StaticResource ElementImageStyle}" VerticalAlignment="Center" SnapsToDevicePixels="True"/>
+                            <TextBlock Text="{Binding TotalThunderResistance, Mode=OneTime, StringFormat=: {0}}" Margin="0 0 12 0" VerticalAlignment="Center"/>
+                            <Image Source="Icons/Ice.png" Style="{StaticResource ElementImageStyle}" VerticalAlignment="Center" SnapsToDevicePixels="True"/>
+                            <TextBlock Text="{Binding TotalIceResistance, Mode=OneTime, StringFormat=: {0}}" Margin="0 0 12 0" VerticalAlignment="Center"/>
+                            <Image Source="Icons/Dragon.png" Style="{StaticResource ElementImageStyle}" VerticalAlignment="Center" SnapsToDevicePixels="True"/>
+                            <TextBlock Text="{Binding TotalDragonResistance, Mode=OneTime, StringFormat=: {0}}" VerticalAlignment="Center"/>
                         </StackPanel>
                     </StackPanel>
                 </Border>
@@ -315,7 +342,7 @@
             </Trigger>
         </Style.Triggers>
     </Style>
-    
+
     <DataTemplate x:Key="SkillSelectorView">
         <DockPanel LastChildFill="True">
 
@@ -328,7 +355,7 @@
                 </StackPanel>
                 <TextBox Margin="2" Padding="3" FocusManager.FocusedElement="{Binding RelativeSource={RelativeSource Self}}" Text="{Binding SearchText, UpdateSourceTrigger=PropertyChanged}"/>
             </DockPanel>
-           
+
             <!--<ListBox Grid.Row="1" ItemsSource="{Binding Abilities, Mode=OneWay}" ItemTemplate="{StaticResource AbilityView}" VirtualizingPanel.IsVirtualizing="True" VirtualizingPanel.ScrollUnit="Pixel">
                 <ListBox.ItemContainerStyle>
                     <Style TargetType="{x:Type ListBoxItem}">
@@ -425,7 +452,7 @@
             </ListBox>
         </DockPanel>
     </DataTemplate>
-    
+
     <DataTemplate x:Key="RootView">
         <DockPanel LastChildFill="True">
             <Menu DockPanel.Dock="Top">
@@ -438,7 +465,7 @@
                     <MenuItem Header="Manage loadouts..." Command="{x:Static local:RoutedCommands.ManageLoadouts}"/>
                 </MenuItem>
                 <MenuItem Header="Equipments" Command="{x:Static local:RoutedCommands.OpenEquipmentExplorer}">
-                    
+
                 </MenuItem>
                 <MenuItem Header="?" Command="{Binding AboutCommand, Mode=OneTime}"/>
             </Menu>
