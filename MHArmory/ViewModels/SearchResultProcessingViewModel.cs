@@ -72,7 +72,7 @@ namespace MHArmory.ViewModels
 
         internal void ActiveContainerChanged()
         {
-            rootViewModel.ApplySorting();
+            rootViewModel.ApplySorting(false);
         }
 
         private void Containers_CollectionChanged(object sender, NotifyCollectionChangedEventArgs e)
@@ -133,14 +133,26 @@ namespace MHArmory.ViewModels
             ConfigurationManager.Save(GlobalData.Instance.Configuration);
         }
 
-        public bool ApplySort(ref IEnumerable<ArmorSetViewModel> input)
+        public bool ApplySort(ref IEnumerable<ArmorSetViewModel> input, bool force, int limit)
         {
             if (input == null || input.Any() == false)
                 return false;
 
+            limit = Math.Max(0, limit);
+
             SearchResultProcessingContainerViewModel activeContainer = Containers.FirstOrDefault(x => x.IsActive);
             if (activeContainer == null || activeContainer.SortItems.Count == 0)
-                return false;
+            {
+                if (force == false)
+                    return false;
+
+                input = input
+                    .OrderByDescending(x => x.TotalAugmentedDefense)
+                    .Take(limit)
+                    .ToList();
+
+                return true;
+            }
 
             IOrderedEnumerable<ArmorSetViewModel> result = input.OrderBy(x => 1); // wasting a bit of CPU cycles for productivity purpose :(
 
@@ -195,7 +207,9 @@ namespace MHArmory.ViewModels
                 }
             }
 
-            input = result.ToList();
+            input = result
+                .Take(limit)
+                .ToList();
 
             return true;
         }

@@ -62,6 +62,8 @@ namespace MHArmory.ViewModels
             InParameters.NotifyConfigurationLoaded();
         }
 
+        private IEnumerable<ArmorSetViewModel> rawFoundArmorSets;
+
         private IEnumerable<ArmorSetViewModel> foundArmorSets;
         public IEnumerable<ArmorSetViewModel> FoundArmorSets
         {
@@ -118,14 +120,14 @@ namespace MHArmory.ViewModels
             System.Windows.MessageBox.Show(sb.ToString(), "About MHArmory", System.Windows.MessageBoxButton.OK, System.Windows.MessageBoxImage.Information);
         }
 
-        public void ApplySorting()
+        public void ApplySorting(bool force, int limit = 200)
         {
-            if (FoundArmorSets == null)
+            if (rawFoundArmorSets == null)
                 return;
 
-            IEnumerable<ArmorSetViewModel> result = FoundArmorSets;
+            IEnumerable<ArmorSetViewModel> result = rawFoundArmorSets;
 
-            if (SearchResultProcessing.ApplySort(ref result))
+            if (SearchResultProcessing.ApplySort(ref result, force, limit))
                 FoundArmorSets = result;
         }
 
@@ -326,10 +328,13 @@ namespace MHArmory.ViewModels
             IList<ArmorSetSearchResult> result = await solver.SearchArmorSets(cancellationToken);
 
             if (result == null)
+            {
+                rawFoundArmorSets = null;
                 FoundArmorSets = null;
+            }
             else
             {
-                FoundArmorSets = result.Where(x => x.IsMatch).Select(x => new ArmorSetViewModel(
+                rawFoundArmorSets = result.Where(x => x.IsMatch).Select(x => new ArmorSetViewModel(
                     SolverData,
                     x.ArmorPieces,
                     x.Charm,
@@ -337,7 +342,7 @@ namespace MHArmory.ViewModels
                     x.SpareSlots
                 ));
 
-                ApplySorting();
+                ApplySorting(true);
             }
 
             solver.DebugData -= Solver_DebugData;
