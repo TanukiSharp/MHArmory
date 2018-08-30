@@ -272,31 +272,21 @@ namespace MHArmory.ViewModels
             SolverData.Done();
 
             /*************************************************************/
-            var sb = new StringBuilder();
+            var metrics = new SearchMetrics
+            {
+                Heads = SolverData.AllHeads.Count(x => x.IsSelected),
+                Chests = SolverData.AllChests.Count(x => x.IsSelected),
+                Gloves = SolverData.AllGloves.Count(x => x.IsSelected),
+                Waists = SolverData.AllWaists.Count(x => x.IsSelected),
+                Legs = SolverData.AllLegs.Count(x => x.IsSelected),
+                Charms = SolverData.AllCharms.Count(x => x.IsSelected),
+                MinSlotSize = SolverData.MinJewelSize,
+                MaxSlotSize = SolverData.MaxJewelSize,
+            };
 
-            long hh = SolverData.AllHeads.Count(x => x.IsSelected);
-            long cc = SolverData.AllChests.Count(x => x.IsSelected);
-            long gg = SolverData.AllGloves.Count(x => x.IsSelected);
-            long ww = SolverData.AllWaists.Count(x => x.IsSelected);
-            long ll = SolverData.AllLegs.Count(x => x.IsSelected);
-            long ch = SolverData.AllCharms.Count(x => x.IsSelected);
+            metrics.UpdateCombinationCount();
 
-            var nfi = new System.Globalization.NumberFormatInfo();
-            nfi.NumberGroupSeparator = "'";
-
-            sb.AppendLine($"Heads count:  {hh}");
-            sb.AppendLine($"Chests count: {cc}");
-            sb.AppendLine($"Gloves count: {gg}");
-            sb.AppendLine($"Waists count: {ww}");
-            sb.AppendLine($"Legs count:   {ll}");
-            sb.AppendLine($"Charms count:   {ch}");
-            sb.AppendLine("-----");
-            sb.AppendLine($"Min slot size: {SolverData.MinJewelSize}");
-            sb.AppendLine($"Max slot size: {SolverData.MaxJewelSize}");
-            sb.AppendLine("-----");
-            sb.AppendLine($"Combination count: {(Math.Max(hh, 1) * Math.Max(cc, 1) * Math.Max(gg, 1) * Math.Max(ww, 1) * Math.Max(ll, 1) * Math.Max(ch, 1)).ToString("N0", nfi)}");
-
-            SearchResult = sb.ToString();
+            SearchResultMetrics = metrics;
             /*************************************************************/
 
             UpdateAdvancedSearch();
@@ -323,7 +313,7 @@ namespace MHArmory.ViewModels
         {
             solver = new Solver(SolverData);
 
-            solver.DebugData += Solver_DebugData;
+            solver.SearchMetricsChanged += SolverSearchMetricsChanged;
 
             IList<ArmorSetSearchResult> result = await solver.SearchArmorSets(cancellationToken);
 
@@ -345,7 +335,7 @@ namespace MHArmory.ViewModels
                 ApplySorting(true);
             }
 
-            solver.DebugData -= Solver_DebugData;
+            solver.SearchMetricsChanged -= SolverSearchMetricsChanged;
         }
 
         private SolverDataJewelModel CreateSolverDataJewelModel(IJewel jewel)
@@ -371,16 +361,20 @@ namespace MHArmory.ViewModels
             AbilitiesChanged?.Invoke(this, EventArgs.Empty);
         }
 
-        private void Solver_DebugData(string debugData)
+        private void SolverSearchMetricsChanged(SearchMetrics metricsData)
         {
-            SearchResult = debugData;
+            SearchResultMetrics = metricsData;
         }
 
-        private string searchResult;
-        public string SearchResult
+        private SearchMetrics searchResultMetrics;
+        public SearchMetrics SearchResultMetrics
         {
-            get { return searchResult; }
-            private set { SetValue(ref searchResult, value); }
+            get { return searchResultMetrics; }
+            private set
+            {
+                searchResultMetrics = value;
+                NotifyPropertyChanged();
+            }
         }
     }
 }

@@ -20,7 +20,7 @@ namespace MHArmory.Search
             this.data = data;
         }
 
-        public event Action<string> DebugData;
+        public event Action<SearchMetrics> SearchMetricsChanged;
 
         public Task<IList<ArmorSetSearchResult>> SearchArmorSets()
         {
@@ -85,24 +85,21 @@ namespace MHArmory.Search
             long ll = data.AllLegs.Count(x => x.IsSelected);
             long ch = data.AllCharms.Count(x => x.IsSelected);
 
-            var nfi = new System.Globalization.NumberFormatInfo
+            var metrics = new SearchMetrics
             {
-                NumberGroupSeparator = "'"
+                Heads = (int)hh,
+                Chests = (int)cc,
+                Gloves = (int)gg,
+                Waists = (int)ww,
+                Legs = (int)ll,
+                Charms = (int) ch,
+                MinSlotSize = data.MinJewelSize,
+                MaxSlotSize =data.MaxJewelSize
             };
 
-            sb.AppendLine($"Heads count:  {hh}");
-            sb.AppendLine($"Chests count: {cc}");
-            sb.AppendLine($"Gloves count: {gg}");
-            sb.AppendLine($"Waists count: {ww}");
-            sb.AppendLine($"Legs count:   {ll}");
-            sb.AppendLine($"Charms count:   {ch}");
-            sb.AppendLine("-----");
-            sb.AppendLine($"Min slot size: {data.MinJewelSize}");
-            sb.AppendLine($"Max slot size: {data.MaxJewelSize}");
-            sb.AppendLine("-----");
-            sb.AppendLine($"Combination count: {generator.CombinationCount.ToString("N0", nfi)}");
+            metrics.UpdateCombinationCount();
 
-            DebugData?.Invoke(sb.ToString());
+            SearchMetricsChanged?.Invoke(metrics);
 
             await Task.Yield();
 
@@ -152,16 +149,10 @@ namespace MHArmory.Search
 
             sw.Stop();
 
-            sb.AppendLine("-----");
-            sb.AppendLine($"jewelResultObjectPool: {jewelResultObjectPool.Size}");
-            sb.AppendLine($"availableSlotsObjectPool: {availableSlotsObjectPool.Size}");
-            sb.AppendLine($"armorSetsObjectPool: {armorSetsObjectPool.Size}");
-            sb.AppendLine($"searchEquipmentsObjectPool: {searchEquipmentsObjectPool.Size}");
-            sb.AppendLine("-----");
-            sb.AppendLine($"Matching result: {test.Count.ToString("N0", nfi)}");
-            sb.AppendLine($"Took: {sw.ElapsedMilliseconds.ToString("N0", nfi)} ms");
+            metrics.MatchingResults = test.Count;
+            metrics.TimeElapsed = (int)sw.ElapsedMilliseconds;
 
-            DebugData?.Invoke(sb.ToString());
+            SearchMetricsChanged?.Invoke(metrics);
 
             return test;
         }
