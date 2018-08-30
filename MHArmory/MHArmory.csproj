@@ -87,6 +87,7 @@
       <DependentUpon>TextInputWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="ValueConverters\HasDefenseVisibilityValueConverter.cs" />
+    <Compile Include="ValueConverters\NumToSeparatedStringValueConverter.cs" />
     <Compile Include="ValueConverters\SlotSizeToolTipValueConverter.cs" />
     <Compile Include="ValueConverters\SlotToImagePathValueConverter.cs" />
     <Compile Include="ValueConverters\SortCriteriaNameValueConverter.cs" />
