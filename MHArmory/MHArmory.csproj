@@ -75,6 +75,7 @@
     <Compile Include="LoadoutWindow.xaml.cs">
       <DependentUpon>LoadoutWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Panels\KeyValueGrid.cs" />
     <Compile Include="Panels\TooledContentPanel.cs" />
     <Compile Include="ReorganizableCollectionUtilities.cs" />
     <Compile Include="SearchResultProcessingWindow.xaml.cs">
