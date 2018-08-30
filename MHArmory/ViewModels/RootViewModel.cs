@@ -19,6 +19,7 @@ namespace MHArmory.ViewModels
     {
         public ICommand OpenSkillSelectorCommand { get; }
         public ICommand SearchArmorSetsCommand { get; }
+        public ICommand CancelArmorSetsSearchCommand { get; }
         public ICommand AdvancedSearchCommand { get; }
         public ICommand OpenDecorationsOverrideCommand { get; }
         public ICommand OpenSearchResultProcessingCommand { get; }
@@ -91,6 +92,7 @@ namespace MHArmory.ViewModels
         {
             OpenSkillSelectorCommand = new AnonymousCommand(OpenSkillSelector);
             SearchArmorSetsCommand = new AnonymousCommand(SearchArmorSets);
+            CancelArmorSetsSearchCommand = new AnonymousCommand(CancelArmorSetsSearchForCommand);
             AdvancedSearchCommand = new AnonymousCommand(AdvancedSearch);
             OpenDecorationsOverrideCommand = new AnonymousCommand(OpenDecorationsOverride);
             OpenSearchResultProcessingCommand = new AnonymousCommand(OpenSearchResultProcessing);
@@ -203,10 +205,12 @@ namespace MHArmory.ViewModels
             }
         }
 
-        private CancellationTokenSource searchCancellationTokenSource;
-        private Task previousSearchTask;
+        private async void CancelArmorSetsSearchForCommand()
+        {
+            await CancelArmorSetsSearch();
+        }
 
-        private async Task SearchArmorSetsInternal()
+        public async Task CancelArmorSetsSearch()
         {
             if (searchCancellationTokenSource != null)
             {
@@ -226,6 +230,14 @@ namespace MHArmory.ViewModels
                     }
                 }
             }
+        }
+
+        private CancellationTokenSource searchCancellationTokenSource;
+        private Task previousSearchTask;
+
+        private async Task SearchArmorSetsInternal()
+        {
+            await CancelArmorSetsSearch();
 
             searchCancellationTokenSource = new CancellationTokenSource();
             previousSearchTask = Task.Run(() => SearchArmorSetsInternal(searchCancellationTokenSource.Token));
@@ -321,8 +333,8 @@ namespace MHArmory.ViewModels
 
             if (result == null)
             {
-                rawFoundArmorSets = null;
-                FoundArmorSets = null;
+                //rawFoundArmorSets = null;
+                //FoundArmorSets = null;
             }
             else
             {

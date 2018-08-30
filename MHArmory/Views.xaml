@@ -589,7 +589,10 @@
                         </CheckBox.Content>
                     </CheckBox>
                     <Button DockPanel.Dock="Bottom" Content="Advanced Search" Margin="2" Padding="4" Command="{Binding AdvancedSearchCommand, Mode=OneTime}"/>
-                    <Button DockPanel.Dock="Bottom" Content="Search" Margin="2" Padding="4" IsEnabled="{Binding IsSearching, Mode=OneWay, Converter={StaticResource InverseBooleanValueConverter}}" Command="{Binding SearchArmorSetsCommand, Mode=OneTime}"/>
+                    <Grid DockPanel.Dock="Bottom">
+                        <Button x:Name="btnSearch" Content="Search" Margin="2" Padding="4" Command="{Binding SearchArmorSetsCommand, Mode=OneTime}"/>
+                        <Button x:Name="btnCancelSearch" Content="Cancel" Margin="2" Padding="4" Command="{Binding CancelArmorSetsSearchCommand, Mode=OneTime}" Visibility="Hidden"/>
+                    </Grid>
                     <ProgressBar DockPanel.Dock="Bottom" HorizontalAlignment="Stretch" Margin="2" Padding="2" IsIndeterminate="{Binding IsSearching}" Visibility="{Binding IsSearching, Converter={StaticResource HiddenVisibilityValueConverter}}"  Value="0" Height="16"/>
                     <DockPanel LastChildFill="True">
                         <TextBlock Text="{Binding LoadoutText, Mode=OneWay}" FontSize="12" FontWeight="Bold" Foreground="Blue" Padding="3" DockPanel.Dock="Left" VerticalAlignment="Top" Background="#08000000">
@@ -633,6 +636,12 @@
 
             </Grid>
         </DockPanel>
+        <DataTemplate.Triggers>
+            <DataTrigger Binding="{Binding IsSearching, Mode=OneWay}" Value="True">
+                <Setter TargetName="btnSearch" Property="Visibility" Value="Hidden"/>
+                <Setter TargetName="btnCancelSearch" Property="Visibility" Value="Visible"/>
+            </DataTrigger>
+        </DataTemplate.Triggers>
     </DataTemplate>
 
     <DataTemplate x:Key="ArmorPieceTypesView">
