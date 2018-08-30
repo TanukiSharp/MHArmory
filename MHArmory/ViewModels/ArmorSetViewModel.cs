@@ -69,6 +69,8 @@ namespace MHArmory.ViewModels
         public SearchResultSkillViewModel[] AllSkills { get; private set; }
         public SearchResultSkillViewModel[] AdditionalSkills { get; private set; }
 
+        public int AdditionalSkillsTotalLevel { get; }
+
         public int[] SpareSlots { get; }
 
         public int SpareSlotCount { get; }
@@ -94,6 +96,8 @@ namespace MHArmory.ViewModels
             this.jewels = jewels;
 
             SetSkills(solverData);
+
+            AdditionalSkillsTotalLevel = AdditionalSkills.Sum(x => x.TotalLevel);
 
             SpareSlots = spareSlots;
 

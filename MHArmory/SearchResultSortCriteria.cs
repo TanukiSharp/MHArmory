@@ -13,6 +13,8 @@ namespace MHArmory
         SpareSlotCount,
         SpareSlotSizeSquare,
         SpareSlotSizeCube,
+        AdditionalSkillsCount,
+        AdditionalSkillsTotalLevel,
         FireResistance,
         WaterResistance,
         ThunderResistance,

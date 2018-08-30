@@ -204,6 +204,12 @@ namespace MHArmory.ViewModels
                     case SearchResultSortCriteria.DragonResistance:
                         result = result.ThenByDescending(x => x.TotalDragonResistance);
                         break;
+                    case SearchResultSortCriteria.AdditionalSkillsCount:
+                        result = result.ThenByDescending(x => x.AdditionalSkills.Length);
+                        break;
+                    case SearchResultSortCriteria.AdditionalSkillsTotalLevel:
+                        result = result.ThenByDescending(x => x.AdditionalSkillsTotalLevel);
+                        break;
                 }
             }
 

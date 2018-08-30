@@ -30,6 +30,8 @@ namespace MHArmory.ValueConverters
                     case SearchResultSortCriteria.ThunderResistance: return "Thunder resistance";
                     case SearchResultSortCriteria.IceResistance: return "Ice resistance";
                     case SearchResultSortCriteria.DragonResistance: return "Dragon resistance";
+                    case SearchResultSortCriteria.AdditionalSkillsCount: return "Additional skills count";
+                    case SearchResultSortCriteria.AdditionalSkillsTotalLevel: return "Additional skills total level";
                 }
             }
 
