@@ -4,9 +4,22 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using MHArmory.Core.DataStructures;
+using MHArmory.Search;
 
 namespace MHArmory.ViewModels
 {
+    public class SearchResultSkillViewModel : ViewModelBase
+    {
+        public ISkill Skill { get; }
+        public int TotalLevel { get; }
+
+        public SearchResultSkillViewModel(ISkill skill, int totalLevel)
+        {
+            Skill = skill;
+            TotalLevel = totalLevel;
+        }
+    }
+
     public class ArmorSetJewelViewModel : ViewModelBase
     {
         private IJewel jewel;
@@ -53,6 +66,9 @@ namespace MHArmory.ViewModels
             private set { SetValue(ref jewels, value); }
         }
 
+        public SearchResultSkillViewModel[] AllSkills { get; private set; }
+        public SearchResultSkillViewModel[] AdditionalSkills { get; private set; }
+
         public int[] SpareSlots { get; }
 
         public int SpareSlotCount { get; }
@@ -71,19 +87,21 @@ namespace MHArmory.ViewModels
         public int TotalIceResistance { get; }
         public int TotalDragonResistance { get; }
 
-        public ArmorSetViewModel(IList<IArmorPiece> armorPieces, ICharmLevel charm, IList<ArmorSetJewelViewModel> jewels, int[] spareSlots)
+        public ArmorSetViewModel(ISolverData solverData, IList<IArmorPiece> armorPieces, ICharmLevel charm, IList<ArmorSetJewelViewModel> jewels, int[] spareSlots)
         {
             this.armorPieces = armorPieces;
             this.charm = charm;
             this.jewels = jewels;
+
+            SetSkills(solverData);
 
             SpareSlots = spareSlots;
 
             TotalRarity = armorPieces.Sum(x => x.Rarity);
 
             SpareSlotCount = SpareSlots.Count(x => x > 0);
-            SpareSlotSizeSquare = Search.DataUtility.SlotSizeScoreSquare(SpareSlots);
-            SpareSlotSizeCube = Search.DataUtility.SlotSizeScoreCube(SpareSlots);
+            SpareSlotSizeSquare = DataUtility.SlotSizeScoreSquare(SpareSlots);
+            SpareSlotSizeCube = DataUtility.SlotSizeScoreCube(SpareSlots);
 
             TotalBaseDefense = armorPieces.Sum(x => x?.Defense.Base ?? 0);
             TotalMaxDefense = armorPieces.Sum(x => x?.Defense.Max ?? 0);
@@ -94,6 +112,47 @@ namespace MHArmory.ViewModels
             TotalThunderResistance = armorPieces.Sum(a => a.Resistances.Thunder);
             TotalIceResistance = armorPieces.Sum(a => a.Resistances.Ice);
             TotalDragonResistance = armorPieces.Sum(a => a.Resistances.Dragon);
+        }
+
+        private void SetSkills(ISolverData solverData)
+        {
+            var skills = new Dictionary<int, int>();
+
+            foreach (IArmorPiece armorPiece in armorPieces)
+            {
+                foreach (IAbility ability in armorPiece.Abilities)
+                    IncrementSkillLevel(skills, ability);
+            }
+
+            foreach (IAbility ability in charm.Abilities)
+                IncrementSkillLevel(skills, ability);
+
+            foreach (ArmorSetJewelViewModel jewelViewModel in jewels)
+            {
+                foreach (IAbility ability in jewelViewModel.Jewel.Abilities)
+                {
+                    for (int i = 0; i < jewelViewModel.Count; i++)
+                        IncrementSkillLevel(skills, ability);
+                }
+            }
+
+            // ------------------------------------
+
+            AllSkills = skills
+                .Select(kv => new SearchResultSkillViewModel(GlobalData.Instance.Skills.First(s => s.Id == kv.Key), kv.Value))
+                .ToArray();
+
+            AdditionalSkills = AllSkills
+                .Where(svm => solverData.DesiredAbilities.All(a => a.Skill.Id != svm.Skill.Id))
+                .ToArray();
+        }
+
+        private void IncrementSkillLevel(IDictionary<int, int> skills, IAbility ability)
+        {
+            if (skills.TryGetValue(ability.Skill.Id, out int level))
+                skills[ability.Skill.Id] = level + ability.Level;
+            else
+                skills.Add(ability.Skill.Id, ability.Level);
         }
     }
 }

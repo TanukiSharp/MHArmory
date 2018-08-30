@@ -330,6 +330,7 @@ namespace MHArmory.ViewModels
             else
             {
                 FoundArmorSets = result.Where(x => x.IsMatch).Select(x => new ArmorSetViewModel(
+                    SolverData,
                     x.ArmorPieces,
                     x.Charm,
                     x.Jewels.Select(j => new ArmorSetJewelViewModel(j.Jewel, j.Count)).ToList(),
