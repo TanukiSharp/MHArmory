@@ -26,7 +26,12 @@ namespace MHArmory.Core.DataStructures
         public int Id { get; }
         public ISkill Skill { get; }
         public int Level { get; }
-        public string Description { get; }
+        public string Description { get; private set; }
+
+        public void UpdateDescription(string description)
+        {
+            Description = description;
+        }
 
         public override int GetHashCode()
         {

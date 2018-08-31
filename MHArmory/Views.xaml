@@ -276,6 +276,7 @@
             <!--<Run Text="{Binding SkillName, Mode=OneTime}" FontWeight="Bold"/>-->
             <Run Text="Level"/>
             <Run Text="{Binding Level, Mode=OneTime}"/>
+            <Run Text="  "/>
             <Run Text="{Binding Description, Mode=OneTime}" Foreground="DarkGray"/>
         </TextBlock>
     </DataTemplate>

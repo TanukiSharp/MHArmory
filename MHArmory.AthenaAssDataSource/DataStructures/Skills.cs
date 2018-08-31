@@ -17,31 +17,36 @@ namespace MHArmory.AthenaAssDataSource.DataStructures
     {
         private static int uniqueAbilityId = 1;
 
-        public Skill(int id, SkillPrimitive skillPrimitive)
+        public Skill(int id, string description, SkillPrimitive skillPrimitive)
         {
             Id = id;
             Name = skillPrimitive.Name;
-            Description = "(no description)";
+            Description = description;
             MaxLevel = skillPrimitive.MaxLevel;
             Abilities = Enumerable.Range(1, skillPrimitive.MaxLevel)
                 .Select(i => new Ability(uniqueAbilityId++, this, i, $"{Name} level {i}"))
                 .ToArray();
         }
 
-        public Skill(int id, string name, IAbility ability)
+        public Skill(int id, string name, string description, IAbility ability)
         {
             Id = id;
             Name = name;
-            Description = "(no description)";
+            Description = description;
             MaxLevel = ability.Skill.MaxLevel;
             Abilities = new IAbility[] { ability };
         }
 
         public int Id { get; }
         public string Name { get; }
-        public string Description { get; }
+        public string Description { get; private set; }
         public int MaxLevel { get; }
         public IAbility[] Abilities { get; }
+
+        public void UpdateDescription(string description)
+        {
+            Description = description;
+        }
 
         public override string ToString()
         {

@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MHArmory"
         mc:Ignorable="d"
-        Title="Skills selector" Width="600" Height="900" WindowStartupLocation="CenterOwner" Background="WhiteSmoke">
+        Title="Skills selector" Width="800" Height="900" WindowStartupLocation="CenterOwner" Background="WhiteSmoke">
     <Grid Margin="2">
         <TextBlock x:Name="loading" Text="Constructing user interface..." HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="20" Visibility="{Binding IsDataLoading, Converter={StaticResource CollapsedVisibilityValueConverter}, Mode=OneWay}"/>
         <ContentControl Name="content" Content="{Binding SkillSelector, Mode=OneTime}" ContentTemplate="{StaticResource SkillSelectorView}" Visibility="{Binding IsDataLoaded, Converter={StaticResource CollapsedVisibilityValueConverter}, Mode=OneWay}" Focusable="False"/>

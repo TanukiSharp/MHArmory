@@ -14,6 +14,8 @@ namespace MHArmory.AthenaAssDataSource
         private readonly string dataFolderPath;
 
         private readonly string skillsFilePath;
+        private readonly string skillsDescriptionsFilePath;
+        private readonly string abilitiesDescriptionsFilePath;
         private readonly string charmsFilePath;
         private readonly string jewelsFilePath;
 
@@ -23,6 +25,8 @@ namespace MHArmory.AthenaAssDataSource
         public const string WaistsFilename = "waist.txt";
         public const string LegsFilename = "legs.txt";
         public const string SkillsFilename = "skills.txt";
+        public const string SkillsDescriptionsFilename = "Languages/English/skills.txt";
+        public const string AbilitiesDescriptionsFilename = "Languages/English/skill_descriptions.txt";
         public const string CharmsFilename = "charms.txt";
         public const string JewelsFilename = "decorations.txt";
 
@@ -44,6 +48,8 @@ namespace MHArmory.AthenaAssDataSource
                 throw new FormatException($"Directory '{dataFolderPath}' not found.");
 
             skillsFilePath = Path.Combine(dataFolderPath, SkillsFilename);
+            skillsDescriptionsFilePath = Path.Combine(dataFolderPath, SkillsDescriptionsFilename);
+            abilitiesDescriptionsFilePath = Path.Combine(dataFolderPath, AbilitiesDescriptionsFilename);
             charmsFilePath = Path.Combine(dataFolderPath, CharmsFilename);
             jewelsFilePath = Path.Combine(dataFolderPath, JewelsFilename);
 
@@ -202,6 +208,8 @@ namespace MHArmory.AthenaAssDataSource
         private void LoadSkills()
         {
             string[] allLines = File.ReadAllLines(skillsFilePath);
+            string[] allSkillsDescriptions = File.ReadAllLines(skillsDescriptionsFilePath);
+            string[] allAbilitiesDescriptions = File.ReadAllLines(abilitiesDescriptionsFilePath);
 
             (int headerIndex, int dataIndex) = FindIndexes(allLines);
             if (headerIndex < 0)
@@ -224,7 +232,7 @@ namespace MHArmory.AthenaAssDataSource
                 if (string.IsNullOrWhiteSpace(skillPrimitive.Name))
                     continue;
 
-                localSkills.Add(new DataStructures.Skill(id++, skillPrimitive));
+                localSkills.Add(new DataStructures.Skill(id++, allSkillsDescriptions[i - 1], skillPrimitive));
             }
 
             // Bellow code is just in case someday they add a skill given only by an armor set.
@@ -235,6 +243,7 @@ namespace MHArmory.AthenaAssDataSource
                     localSkills.Add(new DataStructures.Skill(
                         id++,
                         armorSetSkillPrimitive.SkillGranted,
+                        armorSetSkillPrimitive.SkillGranted,
                         localSkills.FirstOrDefault(x => x.Name == armorSetSkillPrimitive.SkillGranted).Abilities.FirstOrDefault()
                     ));
                 }
@@ -242,6 +251,7 @@ namespace MHArmory.AthenaAssDataSource
 
             nonTaskAbilities = localSkills
                 .SelectMany(s => s.Abilities)
+                .ForEach((a, i) => ((Ability)a).UpdateDescription(allAbilitiesDescriptions[i]))
                 .Distinct()
                 .ToArray();
 
@@ -526,6 +536,21 @@ namespace MHArmory.AthenaAssDataSource
         public Task<ISkill[]> GetSkills()
         {
             return Task.FromResult(nonTaskSkills);
+        }
+    }
+
+    internal static class AbiliyOperators
+    {
+        public static IEnumerable<IAbility> ForEach(this IEnumerable<IAbility> abilities, Action<IAbility, int> action)
+        {
+            int index = 0;
+            foreach (IAbility ability in abilities)
+            {
+                action(ability, index);
+                index++;
+            }
+
+            return abilities;
         }
     }
 }
