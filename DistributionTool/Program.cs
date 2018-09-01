@@ -9,7 +9,8 @@ namespace DistributionTool
 {
     class Program
     {
-        private const string DistributionFolderSuffix = "Distribution";
+        private const string OutputDistributionsFolder = "Distributions";
+        private const string TemporaryDistributionFolderSuffix = "Distribution";
         private const string SolutionFilename = "MHArmory.sln";
         private const string BinaryPath = "MHArmory\\bin";
         private const string BinaryFilename = "MHArmory.exe";
@@ -78,13 +79,13 @@ namespace DistributionTool
 
             Console.WriteLine($"Found assembly version: {assemblyVersion}.");
 
-            string outputFolderFullPath = PathCombine(
+            string teporaryOutputFolderFullPath = PathCombine(
                 solutionFullPath,
                 BinaryPath,
-                $"{buildConfiguration}{DistributionFolderSuffix}"
+                $"{buildConfiguration}{TemporaryDistributionFolderSuffix}"
             );
 
-            string distributionRootFullPath = PathCombine(outputFolderFullPath, DistributionRootFolderName);
+            string distributionRootFullPath = PathCombine(teporaryOutputFolderFullPath, DistributionRootFolderName);
 
             string distributionTargetFullPath = PathCombine(distributionRootFullPath, assemblyVersion.ToString());
 
@@ -119,7 +120,7 @@ namespace DistributionTool
             if (CopyFile(assemblyFullFilename, PathCombine(distributionTargetFullPath, BinaryFilename)) == false)
                 return (int)ErrorCodes.FileCopyFailed;
 
-            string targetZipArchiveFullFilename = PathCombine(outputFolderFullPath, $"{DistributionRootFolderName}_{assemblyVersion}.zip");
+            string targetZipArchiveFullFilename = PathCombine(solutionFullPath, OutputDistributionsFolder, $"{DistributionRootFolderName}_{assemblyVersion}.zip");
 
             if (File.Exists(targetZipArchiveFullFilename))
             {

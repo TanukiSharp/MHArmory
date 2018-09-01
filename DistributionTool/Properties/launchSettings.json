@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "DistributionTool": {
+      "commandName": "Project",
+      "commandLineArgs": "$(ConfigurationName)"
+    }
+  }
+}
