@@ -5,6 +5,7 @@ using System.Linq;
 using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using Microsoft.Extensions.Logging;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
@@ -15,9 +16,10 @@ namespace MHArmory.AutoUpdate
     {
         private static readonly AutoUpdater instance = new AutoUpdater();
         private ILogger logger;
+        private readonly HttpClient httpClient = new HttpClient();
 
         private const string DownloadBaseUrl = "https://github.com/TanukiSharp/MHArmory/raw/master/Distributions/";
-        private const string InfoFilename = "info.json";
+        private const string InfoFilename = "manifest.json";
         private const string ApplicationDirectoryName = "MHArmory";
 
         public static void Run(ILogger logger)
@@ -38,27 +40,45 @@ namespace MHArmory.AutoUpdate
 
             if (manifest == null)
                 return;
+
+            if (DetermineVersionAndArchiveName(manifest, out Version version, out string archiveName) == false)
+                return;
+
+            if (version > App.Version)
+            {
+                // TODO: download in the background, extract and do something
+
+                MessageBox.Show(
+                    $"You are currently using the version {App.Version}\n" +
+                    $"A newer version is availabe: {version}\n" +
+                    "\n" +
+                    "Note: The auto-updater is not finished yet so for now you are just informed.",
+                    "A newer version is available",
+                    MessageBoxButton.OK,
+                    MessageBoxImage.Information
+                );
+            }
         }
 
         private async Task<string> DownloadManifestContent()
         {
-            var httpClient = new HttpClient();
-
             HttpResponseMessage response;
+
+            string url = DownloadBaseUrl + InfoFilename;
 
             try
             {
-                response = await httpClient.GetAsync(DownloadBaseUrl + InfoFilename, HttpCompletionOption.ResponseContentRead);
+                response = await httpClient.GetAsync(url, HttpCompletionOption.ResponseContentRead);
             }
             catch (HttpRequestException hrex)
             {
-                logger?.LogError(hrex, "A network error occurred while downloading the manifest.");
+                logger?.LogError(hrex, $"A network error occurred while downloading the manifest at '{url}'.");
                 return null;
             }
 
             if (response.IsSuccessStatusCode == false)
             {
-                logger?.LogError($"A HTTP error occurred while downloading the manifest: {(int)response.StatusCode} ({response.StatusCode}) [{response.ReasonPhrase}].");
+                logger?.LogError($"A HTTP error occurred while downloading the manifest at '{url}': {(int)response.StatusCode} ({response.StatusCode}) [{response.ReasonPhrase}].");
                 return null;
             }
 
@@ -68,8 +88,47 @@ namespace MHArmory.AutoUpdate
             }
             catch (Exception ex)
             {
-                logger?.LogError(ex, "Impossible to download manifest content.");
+                logger?.LogError(ex, $"Impossible to download manifest content '{url}'.");
                 return null;
+            }
+        }
+
+        private async Task<bool> DownloadFile(string url, string targetFilename)
+        {
+            HttpResponseMessage response;
+
+            try
+            {
+                response = await httpClient.GetAsync(url, HttpCompletionOption.ResponseContentRead);
+            }
+            catch (HttpRequestException hrex)
+            {
+                logger?.LogError(hrex, $"A network error occurred while downloading resource '{url}'.");
+                return false;
+            }
+
+            if (response.IsSuccessStatusCode == false)
+            {
+                logger?.LogError($"A HTTP error occurred while downloading resource '{url}': {(int)response.StatusCode} ({response.StatusCode}) [{response.ReasonPhrase}].");
+                return false;
+            }
+
+            try
+            {
+                using (var targetStream = new FileStream(targetFilename, FileMode.Create, FileAccess.Write))
+                {
+                    using (Stream sourceStream = await response.Content.ReadAsStreamAsync())
+                    {
+                        await sourceStream.CopyToAsync(targetStream);
+                    }
+                }
+
+                return true;
+            }
+            catch (Exception ex)
+            {
+                logger?.LogError(ex, $"Failed to download manifest content '{url}'.");
+                return false;
             }
         }
 
@@ -84,6 +143,61 @@ namespace MHArmory.AutoUpdate
                 logger?.LogError(ex, "Failed to deseriaize manifest JSON content.");
                 return null;
             }
+        }
+
+        private const string LatestVersionPropertyName = "latestVersion";
+        private const string LatestArchivePropertyName = "latestArchive";
+
+        private bool DetermineVersionAndArchiveName(JObject manifest, out Version version, out string archiveName)
+        {
+            version = new Version();
+            archiveName = null;
+
+            var versionValue = manifest[LatestVersionPropertyName] as JValue;
+            if (versionValue == null)
+            {
+                logger?.LogError($"Could not find '{LatestVersionPropertyName}' property in manifest.");
+                return false;
+            }
+            else
+            {
+                var versionStr = versionValue.Value as string;
+                if (versionStr == null)
+                {
+                    logger?.LogError($"Property '{LatestVersionPropertyName}' is of incorrect type '{(versionValue.Value?.GetType().Name ?? "(null)")}'.");
+                    return false;
+                }
+                else
+                {
+                    if (Version.TryParse(versionStr, out Version v) == false)
+                    {
+                        logger?.LogError($"Property '{LatestVersionPropertyName}' is in incorrect format '{versionStr}'.");
+                        return false;
+                    }
+
+                    version = v;
+                }
+            }
+
+            var archiveValue = manifest[LatestArchivePropertyName] as JValue;
+            if (archiveValue == null)
+            {
+                logger?.LogError($"Could not find '{LatestArchivePropertyName}' property in manifest.");
+                return false;
+            }
+            else
+            {
+                var archiveStr = archiveValue.Value as string;
+                if (string.IsNullOrWhiteSpace(archiveStr))
+                {
+                    logger?.LogError($"Property '{LatestArchivePropertyName}' is of incorrect type or value '{(archiveValue.Value?.GetType().Name ?? "(null)")}'.");
+                    return false;
+                }
+
+                archiveName = archiveStr;
+            }
+
+            return true;
         }
 
         private void AnalyzeDirectoryStructure()

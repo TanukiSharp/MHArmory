@@ -38,7 +38,7 @@ namespace MHArmory
 
             HasWriteAccess = WriteTest();
 
-            AutoUpdater.Run();
+            //AutoUpdater.Run(null);
         }
 
         protected override void OnStartup(StartupEventArgs e)
