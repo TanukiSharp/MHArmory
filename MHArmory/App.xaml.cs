@@ -10,6 +10,7 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
+using MHArmory.AutoUpdate;
 
 namespace MHArmory
 {
@@ -36,6 +37,8 @@ namespace MHArmory
             GitRepository = GitInfo.Repository.Trim();
 
             HasWriteAccess = WriteTest();
+
+            AutoUpdater.Run();
         }
 
         protected override void OnStartup(StartupEventArgs e)
