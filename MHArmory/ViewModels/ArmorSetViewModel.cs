@@ -150,7 +150,12 @@ namespace MHArmory.ViewModels
                 .ToArray();
 
             AdditionalSkills = AllSkills
-                .Where(svm => solverData.DesiredAbilities.All(a => a.Skill.Id != svm.Skill.Id))
+                .Where(svm => solverData.DesiredAbilities.All(a =>
+                {
+                    bool undesiredSkill = a.Skill.Id != svm.Skill.Id;
+                    bool desiredSkillLevelUp = a.Skill.Id == svm.Skill.Id && svm.TotalLevel > a.Level;
+                    return undesiredSkill || desiredSkillLevelUp;
+                }))
                 .ToArray();
         }
 
