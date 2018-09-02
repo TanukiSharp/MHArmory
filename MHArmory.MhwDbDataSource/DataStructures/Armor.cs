@@ -162,7 +162,7 @@ namespace MHArmory.MhwDbDataSource.DataStructures
         public ArmorPiece(ArmorPiecePrimitive primitive, IAbility[] abilities)
         {
             Id = primitive.Id;
-            Name = primitive.Name;
+            Name = FixName(MapToGameName(primitive.Name));
             Type = primitive.Type;
             Rarity = primitive.Rarity;
             Defense = primitive.Defense;
@@ -177,6 +177,30 @@ namespace MHArmory.MhwDbDataSource.DataStructures
         internal void UpdateArmorSet(IArmorSet armorSet)
         {
             ArmorSet = armorSet;
+        }
+
+        private string MapToGameName(string name)
+        {
+            if (name.EndsWith(" Alpha"))
+                return name.Substring(0, name.Length - 5) + "α";
+
+            if (name.EndsWith(" Beta"))
+                return name.Substring(0, name.Length - 4) + "β";
+
+            if (name.EndsWith(" Gamma"))
+                return name.Substring(0, name.Length - 5) + "γ";
+
+            return name;
+        }
+
+        private string FixName(string name)
+        {
+            if (name == "Death Stench Heels")
+                return "Death Stench Heel";
+            if (name == "Kulu-Yaku Head α")
+                return "Kulu-Ya-Ku Head α";
+
+            return name;
         }
 
         public override string ToString()

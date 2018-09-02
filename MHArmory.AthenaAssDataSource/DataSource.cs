@@ -464,6 +464,9 @@ namespace MHArmory.AthenaAssDataSource
                 if (string.IsNullOrWhiteSpace(armorPiecePrimitive.Name))
                     continue;
 
+                if (armorPiecePrimitive.Name == "Chainmail Armor")
+                    armorPiecePrimitive.Name = "Chainmail Vest";
+
                 armorPiecePrimitive.Id = armorPieceId++;
 
                 var container = new ArmorPieceContainer
