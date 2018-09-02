@@ -19,7 +19,11 @@ namespace MHArmory.Core.DataStructures
             Skill = skill;
             Level = level;
             Description = description;
+
+            hashCode = $"{Skill.Name}|{Level}".GetHashCode();
         }
+
+        private int hashCode;
 
         public ISkill Skill { get; }
         public int Level { get; }
@@ -28,6 +32,11 @@ namespace MHArmory.Core.DataStructures
         public void UpdateDescription(string description)
         {
             Description = description;
+        }
+
+        public override int GetHashCode()
+        {
+            return hashCode;
         }
 
         public override string ToString()
