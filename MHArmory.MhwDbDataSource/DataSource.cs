@@ -81,7 +81,7 @@ namespace MHArmory.MhwDbDataSource
         private IJewel[] jewels;
 
         string ISkillDataSource.Description { get { return "http://mhw-db.com (skills API)"; } }
-        string IArmorDataSource.Description { get { return "http://mhw-db.com (armor API)"; } }
+        string IArmorDataSource.Description { get { return "http://mhw-db.com (armor/sets API)"; } }
         string ICharmDataSource.Description { get { return "http://mhw-db.com (charms API)"; } }
         string IJewelDataSource.Description { get { return "http://mhw-db.com (jewels API)"; } }
 
@@ -133,15 +133,60 @@ namespace MHArmory.MhwDbDataSource
 
         private async Task LoadArmorsData(ILogger logger)
         {
-            IList<ArmorPiecePrimitive> result = await LoadBase<ArmorPiecePrimitive>("armor", logger);
+            Task<IList<ArmorPiecePrimitive>> armorTask = LoadBase<ArmorPiecePrimitive>("armor", logger);
+            Task<IList<ArmorSetPrimitive>> setsTask = LoadBase<ArmorSetPrimitive>("armor/sets", logger);
 
-            if (result == null)
+            await Task.WhenAll(armorTask, setsTask);
+
+            IList<ArmorPiecePrimitive> armorResult = armorTask.Result;
+            IList<ArmorSetPrimitive> setsResult = setsTask.Result;
+
+            if (armorResult == null || setsResult == null)
                 return;
 
-            var allArmors = new IArmorPiece[result.Count];
+            var allArmors = new IArmorPiece[armorResult.Count];
 
             for (int i = 0; i < allArmors.Length; i++)
-                allArmors[i] = new DataStructures.ArmorPiece(result[i], abilities);
+            {
+                var localAbilities = new IAbility[armorResult[i].Abilities.Count];
+
+                for (int j = 0; j < localAbilities.Length; j++)
+                {
+                    int skillId = armorResult[i].Abilities[j].SkillId;
+                    int abilityLevel = armorResult[i].Abilities[j].Level;
+
+                    ISkill skill = skills.FirstOrDefault(s => s.Id == skillId);
+                    IAbility ability = abilities.FirstOrDefault(a => a.Skill.Id == skillId && a.Level == abilityLevel);
+
+                    localAbilities[j] = new Ability(skill, abilityLevel, ability.Description);
+                }
+
+                allArmors[i] = new DataStructures.ArmorPiece(armorResult[i], localAbilities);
+            }
+
+            foreach (ArmorSetPrimitive armorSetPrimitive in setsResult)
+            {
+                var setArmorPieces = new IArmorPiece[armorSetPrimitive.ArmorPieces.Length];
+                for (int i = 0; i < armorSetPrimitive.ArmorPieces.Length; i++)
+                    setArmorPieces[i] = allArmors.FirstOrDefault(x => x.Id == armorSetPrimitive.ArmorPieces[i].ArmorPieceId);
+
+                List<IArmorSetSkill> armorSetSkills = null;
+
+                if (armorSetPrimitive.Bonus != null)
+                {
+                    armorSetSkills = new List<IArmorSetSkill>();
+                    foreach (ArmorSetBonusRankPrimitive bonusRank in armorSetPrimitive.Bonus.Ranks)
+                    {
+                        IAbility[] setAbilities = abilities.Where(a => a.Skill.Id == bonusRank.Skill.SkillId && a.Level == bonusRank.Skill.Level).ToArray();
+                        armorSetSkills.Add(new ArmorSetSkill(bonusRank.PieceCount, setAbilities));
+                    }
+                }
+
+                var armorSet = new ArmorSet(armorSetPrimitive.Id, false, setArmorPieces, armorSetSkills?.ToArray());
+
+                foreach (DataStructures.ArmorPiece armorPiece in setArmorPieces)
+                    armorPiece.UpdateArmorSet(armorSet);
+            }
 
             armors = allArmors;
         }
@@ -196,7 +241,10 @@ namespace MHArmory.MhwDbDataSource
                 var charmLevels = new DataStructures.CharmLevel[currentCharmPrimitive.Levels.Length];
 
                 for (int j = 0; j < charmLevels.Length; j++)
-                    charmLevels[j] = new DataStructures.CharmLevel(i + 1, currentCharmPrimitive.Levels[j], abilities);
+                {
+                    IAbility[] localAbilities = currentCharmPrimitive.Levels[j].Abilitites.Select(x => CreateAbility(x.SkillId, x.Level)).ToArray();
+                    charmLevels[j] = new DataStructures.CharmLevel(i + 1, currentCharmPrimitive.Levels[j], localAbilities);
+                }
 
                 localCharms[i] = new Charm(i + 1, currentCharmPrimitive.Name, charmLevels);
             }
@@ -214,9 +262,20 @@ namespace MHArmory.MhwDbDataSource
             var localJewels = new DataStructures.Jewel[result.Count];
 
             for (int i = 0; i < localJewels.Length; i++)
-                localJewels[i] = new DataStructures.Jewel(result[i], abilities);
+            {
+                IAbility[] localAbilities = result[i].Abilitites.Select(a => CreateAbility(a.SkillId, a.Level)).ToArray();
+                localJewels[i] = new DataStructures.Jewel(result[i], localAbilities);
+            }
 
             jewels = localJewels;
+        }
+
+        private Ability CreateAbility(int skillId, int level)
+        {
+            IAbility localAbility = abilities.FirstOrDefault(a => a.Skill.Id == skillId && a.Level == level);
+            ISkill localSkill = skills.FirstOrDefault(s => s.Id == skillId);
+
+            return new Ability(localSkill, level, localAbility.Description);
         }
     }
 }

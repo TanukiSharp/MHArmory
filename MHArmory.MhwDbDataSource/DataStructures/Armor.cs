@@ -7,6 +7,44 @@ using Newtonsoft.Json;
 
 namespace MHArmory.MhwDbDataSource.DataStructures
 {
+    internal class ArmorSetBonusRankPrimitive
+    {
+        [JsonProperty("pieces")]
+        public int PieceCount { get; set; }
+        [JsonProperty("skill")]
+        public ArmorAbilityPrimitive Skill { get; set; }
+    }
+
+    internal class ArmorSetBonusPrimitive
+    {
+        [JsonProperty("id")]
+        public int Id { get; set; }
+        [JsonProperty("name")]
+        public string Name { get; set; }
+        [JsonProperty("ranks")]
+        public ArmorSetBonusRankPrimitive[] Ranks { get; set; }
+    }
+
+    internal class ArmorPieceIdPrimitive
+    {
+        [JsonProperty("id")]
+        public int ArmorPieceId { get; set; }
+    }
+
+    internal class ArmorSetPrimitive
+    {
+        [JsonProperty("id")]
+        public int Id { get; set; }
+        [JsonProperty("name")]
+        public string Name { get; set; }
+        [JsonProperty("rank")]
+        public string Rank { get; set; }
+        [JsonProperty("pieces")]
+        public ArmorPieceIdPrimitive[] ArmorPieces { get; set; }
+        [JsonProperty("bonus")]
+        public ArmorSetBonusPrimitive Bonus { get; set; }
+    }
+
     internal class ArmorPieceDefense : IArmorPieceDefense
     {
         [JsonProperty("base")]
@@ -119,7 +157,7 @@ namespace MHArmory.MhwDbDataSource.DataStructures
         public int[] Slots { get; }
         public IAbility[] Abilities { get; }
         public IArmorPieceAssets Assets { get; }
-        public IArmorSet ArmorSet { get; }
+        public IArmorSet ArmorSet { get; private set; }
 
         public ArmorPiece(ArmorPiecePrimitive primitive, IAbility[] abilities)
         {
@@ -133,7 +171,17 @@ namespace MHArmory.MhwDbDataSource.DataStructures
             Slots = primitive.Slots.Select(x => x.Rank).ToArray();
             Abilities = abilities;
             Assets = primitive.Assets;
-            ArmorSet = null; // TODO: update armor set
+            ArmorSet = null;
+        }
+
+        internal void UpdateArmorSet(IArmorSet armorSet)
+        {
+            ArmorSet = armorSet;
+        }
+
+        public override string ToString()
+        {
+            return $"{Name} ({Abilities.Length} abilities)";
         }
     }
 }

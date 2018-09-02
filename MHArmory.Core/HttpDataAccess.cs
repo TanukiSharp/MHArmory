@@ -110,7 +110,7 @@ namespace MHArmory.Core
 
         private string[] GetInvolvedFiles(string api)
         {
-            return Directory.GetFiles(cachePath, $"{api}.*.json");
+            return Directory.GetFiles(cachePath, $"{api.Replace('/', '_')}.*.json");
         }
 
         private string ReadRawDataFromCache(string api, ILogger logger)
@@ -186,7 +186,7 @@ namespace MHArmory.Core
             if (hasWriteAccess == false)
                 return;
 
-            string filename = Path.Combine(cachePath, $"{api}.{DateTime.UtcNow.ToString(TimestampFormat)}.json");
+            string filename = Path.Combine(cachePath, $"{api.Replace('/', '_')}.{DateTime.UtcNow.ToString(TimestampFormat)}.json");
 
             try
             {
