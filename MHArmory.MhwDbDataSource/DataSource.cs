@@ -165,9 +165,7 @@ namespace MHArmory.MhwDbDataSource
 
                 foreach (AbilityPrimitive abilityPrimitive in skillPrimitive.Abilities)
                 {
-                    var ability = new Ability(abilityPrimitive.Id, skill, abilityPrimitive.Level, abilityPrimitive.Description);
-                    if (allAbilities.Add(ability) == false)
-                        logger?.LogError($"Ability identifier '{ability.Id}' is a duplicate");
+                    var ability = new Ability(skill, abilityPrimitive.Level, abilityPrimitive.Description);
                     localAbilities[localAbilityCount++] = ability;
                 }
 

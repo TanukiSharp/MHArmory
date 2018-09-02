@@ -15,8 +15,6 @@ namespace MHArmory.AthenaAssDataSource.DataStructures
 
     internal class Skill : ISkill
     {
-        private static int uniqueAbilityId = 1;
-
         public Skill(int id, string description, SkillPrimitive skillPrimitive)
         {
             Id = id;
@@ -24,7 +22,7 @@ namespace MHArmory.AthenaAssDataSource.DataStructures
             Description = description;
             MaxLevel = skillPrimitive.MaxLevel;
             Abilities = Enumerable.Range(1, skillPrimitive.MaxLevel)
-                .Select(i => new Ability(uniqueAbilityId++, this, i, $"{Name} level {i}"))
+                .Select(i => new Ability(this, i, $"{Name} level {i}"))
                 .ToArray();
         }
 

@@ -9,8 +9,6 @@ namespace MHArmory.MhwDbDataSource.DataStructures
 {
     internal class AbilityPrimitive
     {
-        [JsonProperty("id")]
-        public int Id { get; set; }
         [JsonProperty("level")]
         public int Level { get; set; }
         [JsonProperty("description")]

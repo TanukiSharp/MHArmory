@@ -9,8 +9,10 @@ namespace MHArmory.MhwDbDataSource.DataStructures
 {
     internal class AbilityIdPrimitive
     {
-        [JsonProperty("id")]
-        public int AbilityId { get; set; }
+        [JsonProperty("level")]
+        public int Level { get; set; }
+        [JsonProperty("skill")]
+        public int SkillId { get; set; }
     }
 
     internal class CharmLevelPrimitive
@@ -50,9 +52,7 @@ namespace MHArmory.MhwDbDataSource.DataStructures
             Name = currentCharmLevelPrimitive.Name;
             Level = currentCharmLevelPrimitive.Level;
             Rarity = currentCharmLevelPrimitive.Rarity;
-            Abilities = currentCharmLevelPrimitive.Abilitites
-                .Select(x => abilities.FirstOrDefault(a => a.Id == x.AbilityId))
-                .ToArray();
+            Abilities = abilities;
         }
 
         public void UpdateCharm(ICharm charm)

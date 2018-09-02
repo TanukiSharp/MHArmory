@@ -12,7 +12,6 @@ namespace MHArmory.ViewModels
         private readonly DecorationsOverrideViewModel parent;
         private readonly IJewel jewel;
 
-        public int Id { get; }
         public string Name { get; }
         public int SlotSize { get; }
         public IAbility[] Abilities { get; }
@@ -64,7 +63,6 @@ namespace MHArmory.ViewModels
             this.parent = parent;
             this.jewel = jewel;
 
-            Id = jewel.Id;
             Name = jewel.Name;
             SlotSize = jewel.SlotSize;
             Abilities = jewel.Abilities;

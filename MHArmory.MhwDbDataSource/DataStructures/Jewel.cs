@@ -35,7 +35,7 @@ namespace MHArmory.MhwDbDataSource.DataStructures
             Name = primitive.Name;
             Rarity = primitive.Rarity;
             SlotSize = primitive.SlotSize;
-            Abilities = primitive.Abilitites.Select(x => abilities.FirstOrDefault(y => x.AbilityId == y.Id)).ToArray();
+            Abilities = abilities;
         }
 
         public override string ToString()

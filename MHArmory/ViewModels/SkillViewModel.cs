@@ -23,7 +23,6 @@ namespace MHArmory.ViewModels
             }
         }
 
-        public int Id => Ability.Id;
         public int SkillId => Ability.Skill.Id;
         public string SkillName => Ability.Skill.Name;
         public int Level => Ability.Level;

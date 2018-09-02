@@ -131,7 +131,7 @@ namespace MHArmory.MhwDbDataSource.DataStructures
             Resistances = primitive.Resistances;
             Attributes = new ArmorPieceAttributes(primitive.Attributes);
             Slots = primitive.Slots.Select(x => x.Rank).ToArray();
-            Abilities = primitive.Abilities.Select(x => abilities.FirstOrDefault(a => a.Id == x.AbilityId)).ToArray();
+            Abilities = abilities;
             Assets = primitive.Assets;
             ArmorSet = null; // TODO: update armor set
         }

@@ -319,7 +319,7 @@ namespace MHArmory.Search
                 if (armorPiece.ArmorSet == null || armorPiece.ArmorSet.Skills == null)
                     continue;
 
-                if (armorPiece.ArmorSet.Skills.SelectMany(x => x.GrantedSkills).Any(a => a.Id == ability.Id))
+                if (armorPiece.ArmorSet.Skills.SelectMany(x => x.GrantedSkills).Any(a => a.Skill.Id == ability.Skill.Id))
                 {
                     if (armorSets.TryGetValue(armorPiece.ArmorSet, out int value) == false)
                         value = 0;
@@ -336,7 +336,7 @@ namespace MHArmory.Search
                     {
                         if (armorSetKeyValue.Value >= armorSetSkill.RequiredArmorPieces)
                         {
-                            if (armorSetSkill.GrantedSkills.Any(x => x.Id == ability.Id))
+                            if (armorSetSkill.GrantedSkills.Any(x => x.Skill.Id == ability.Skill.Id))
                             {
                                 Done();
                                 return true;
