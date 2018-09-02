@@ -6,6 +6,8 @@ using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
+using System.Windows.Threading;
+using MHArmory.Logging;
 using Microsoft.Extensions.Logging;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
@@ -15,6 +17,8 @@ namespace MHArmory.AutoUpdate
     public class AutoUpdater
     {
         private static readonly AutoUpdater instance = new AutoUpdater();
+        private static Dispatcher dispatcher;
+
         private ILogger logger;
         private readonly HttpClient httpClient = new HttpClient();
 
@@ -23,7 +27,10 @@ namespace MHArmory.AutoUpdate
 
         public static void Run(ILogger logger)
         {
-            instance.RunInternal(logger);
+            dispatcher = Dispatcher.CurrentDispatcher;
+
+            logger = new DispatcherLogger(dispatcher, logger);
+            Task.Run(() => instance.RunInternal(logger));
         }
 
         private async void RunInternal(ILogger logger)
@@ -47,15 +54,18 @@ namespace MHArmory.AutoUpdate
             {
                 // TODO: download in the background, extract and do something
 
-                MessageBox.Show(
-                    $"You are currently using the version {App.Version}\n" +
-                    $"A newer version is availabe: {version}\n" +
-                    "\n" +
-                    "Note: The auto-updater is not finished yet so for now you are just informed.",
-                    "A newer version is available",
-                    MessageBoxButton.OK,
-                    MessageBoxImage.Information
-                );
+                await dispatcher.BeginInvoke((Action)delegate
+                {
+                    MessageBox.Show(
+                        $"You are currently using the version {App.Version}\n" +
+                        $"A newer version is availabe: {version}\n" +
+                        "\n" +
+                        "Note: The auto-updater is not finished yet so for now you are just informed.",
+                        "A newer version is available",
+                        MessageBoxButton.OK,
+                        MessageBoxImage.Information
+                    );
+                });
             }
         }
 
