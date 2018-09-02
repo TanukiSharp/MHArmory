@@ -45,8 +45,7 @@ namespace MHArmory
             CommandBindings.Add(RoutedCommands.CreateCommandBinding(RoutedCommands.SaveLoadoutAs, OnSaveLoadoutAs));
             CommandBindings.Add(RoutedCommands.CreateCommandBinding(RoutedCommands.ManageLoadouts, OnManageLoadouts));
 
-            AssemblyName asmName = Assembly.GetEntryAssembly().GetName();
-            Title = $"{asmName.Name} {asmName.Version.Major}.{asmName.Version.Minor}.{asmName.Version.Build}";
+            Title = $"{App.ApplicationName} {App.DisplayVersion}";
 
             DataContext = rootViewModel;
 

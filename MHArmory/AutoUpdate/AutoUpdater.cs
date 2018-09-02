@@ -20,7 +20,6 @@ namespace MHArmory.AutoUpdate
 
         private const string DownloadBaseUrl = "https://github.com/TanukiSharp/MHArmory/raw/master/Distributions/";
         private const string InfoFilename = "manifest.json";
-        private const string ApplicationDirectoryName = "MHArmory";
 
         public static void Run(ILogger logger)
         {
@@ -216,7 +215,7 @@ namespace MHArmory.AutoUpdate
 
             path = Path.GetDirectoryName(path);
 
-            if (Path.GetFileName(path) != ApplicationDirectoryName)
+            if (Path.GetFileName(path) != App.ApplicationName)
                 return false;
 
             return true;
@@ -226,7 +225,7 @@ namespace MHArmory.AutoUpdate
         {
             string path = AppContext.BaseDirectory.TrimEnd(Path.DirectorySeparatorChar, Path.AltDirectorySeparatorChar);
 
-            return Path.GetFileName(path) == $"{ApplicationDirectoryName}_{App.Version}";
+            return Path.GetFileName(path) == $"{App.ApplicationName}_{App.Version}";
         }
     }
 }

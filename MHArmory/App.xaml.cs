@@ -19,7 +19,9 @@ namespace MHArmory
     /// </summary>
     public partial class App : Application
     {
+        public static string ApplicationName { get; private set; }
         public static Version Version { get; private set; }
+        public static string DisplayVersion { get; private set; }
         public static string GitBranch { get; private set; }
         public static string GitCommitHash { get; private set; }
         public static string GitRepository { get; private set; }
@@ -30,7 +32,9 @@ namespace MHArmory
         {
             AssemblyName assemblyName = Assembly.GetEntryAssembly().GetName();
 
+            ApplicationName = assemblyName.Name;
             Version = assemblyName.Version;
+            DisplayVersion = CreateDisplayVersion(Version);
 
             GitBranch = GitInfo.Branch.Trim();
             GitCommitHash = GitInfo.CommitHash.Trim();
@@ -39,6 +43,17 @@ namespace MHArmory
             HasWriteAccess = WriteTest();
 
             //AutoUpdater.Run(null);
+        }
+
+        private static string CreateDisplayVersion(Version version)
+        {
+            if (version.Revision > 0)
+                return version.ToString();
+
+            if (version.Build > 0)
+                return $"{version.Major}.{version.Minor}.{version.Build}";
+
+            return $"{version.Major}.{version.Minor}";
         }
 
         protected override void OnStartup(StartupEventArgs e)

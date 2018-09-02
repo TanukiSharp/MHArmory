@@ -119,7 +119,7 @@ namespace MHArmory.ViewModels
 
             App.GetAssemblyInfo(sb);
 
-            System.Windows.MessageBox.Show(sb.ToString(), "About MHArmory", System.Windows.MessageBoxButton.OK, System.Windows.MessageBoxImage.Information);
+            System.Windows.MessageBox.Show(sb.ToString(), $"About {App.ApplicationName}", System.Windows.MessageBoxButton.OK, System.Windows.MessageBoxImage.Information);
         }
 
         public void ApplySorting(bool force, int limit = 200)
