@@ -420,10 +420,11 @@ namespace MHArmory.AthenaAssDataSource
 
         private IAbility[] ParseAbilities(CharmPrimitive primitive)
         {
-            var result = new List<IAbility>(2);
-
-            result.Add(ParseOneAbility(primitive.Skill1, primitive.Points1));
-            result.Add(ParseOneAbility(primitive.Skill2, primitive.Points2));
+            var result = new List<IAbility>
+            {
+                ParseOneAbility(primitive.Skill1, primitive.Points1),
+                ParseOneAbility(primitive.Skill2, primitive.Points2)
+            };
 
             return result.Where(x => x != null).ToArray();
         }

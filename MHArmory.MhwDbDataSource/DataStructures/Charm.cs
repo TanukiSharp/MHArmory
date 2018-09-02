@@ -55,7 +55,7 @@ namespace MHArmory.MhwDbDataSource.DataStructures
                 .ToArray();
         }
 
-        internal void UpdateCharm(ICharm charm)
+        public void UpdateCharm(ICharm charm)
         {
             Charm = charm;
         }

@@ -8,6 +8,8 @@ namespace MHArmory.Core.DataStructures
     {
         ICharm Charm { get; }
         int Level { get; }
+
+        void UpdateCharm(ICharm charm);
     }
 
     public class CharmLevel : ICharmLevel
@@ -32,7 +34,7 @@ namespace MHArmory.Core.DataStructures
         public int[] Slots { get; }
         public IAbility[] Abilities { get; }
 
-        internal void UpdateCharm(ICharm charm)
+        public void UpdateCharm(ICharm charm)
         {
             Charm = charm;
         }
@@ -58,7 +60,7 @@ namespace MHArmory.Core.DataStructures
             Name = name;
             Levels = levels;
 
-            foreach (CharmLevel charmLevel in levels)
+            foreach (ICharmLevel charmLevel in levels)
                 charmLevel.UpdateCharm(this);
         }
 
