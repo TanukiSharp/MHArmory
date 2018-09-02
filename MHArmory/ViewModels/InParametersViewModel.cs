@@ -106,7 +106,7 @@ namespace MHArmory.ViewModels
 
             try
             {
-                InParametersConfiguration config = GlobalData.Instance.Configuration.InParameters;
+                InParametersConfigurationV2 config = GlobalData.Instance.Configuration.InParameters;
 
                 if (config.WeaponSlots != null)
                 {
@@ -132,7 +132,7 @@ namespace MHArmory.ViewModels
             if (isLoadingConfiguration)
                 return;
 
-            InParametersConfiguration config = GlobalData.Instance.Configuration.InParameters;
+            InParametersConfigurationV2 config = GlobalData.Instance.Configuration.InParameters;
 
             config.WeaponSlots = Slots.Select(x => x.Value).ToArray();
             ConfigurationManager.Save(GlobalData.Instance.Configuration);
@@ -145,7 +145,7 @@ namespace MHArmory.ViewModels
             if (isLoadingConfiguration)
                 return;
 
-            InParametersConfiguration config = GlobalData.Instance.Configuration.InParameters;
+            InParametersConfigurationV2 config = GlobalData.Instance.Configuration.InParameters;
 
             config.DecorationOverride.UseOverride = UseOverride;
             ConfigurationManager.Save(GlobalData.Instance.Configuration);
@@ -158,7 +158,7 @@ namespace MHArmory.ViewModels
             if (isLoadingConfiguration)
                 return;
 
-            InParametersConfiguration config = GlobalData.Instance.Configuration.InParameters;
+            InParametersConfigurationV2 config = GlobalData.Instance.Configuration.InParameters;
 
             config.Rarity = Rarity;
             ConfigurationManager.Save(GlobalData.Instance.Configuration);

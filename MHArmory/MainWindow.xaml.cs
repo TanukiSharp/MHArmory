@@ -68,9 +68,9 @@ namespace MHArmory
             rootViewModel.SetLoadoutManager(loadoutManager);
 
             string lastOpenedLoadout = GlobalData.Instance.Configuration.LastOpenedLoadout;
-            Dictionary<string, int[]> loadout = GlobalData.Instance.Configuration.SkillLoadouts;
+            Dictionary<string, SkillLoadoutItemConfigurationV2[]> loadout = GlobalData.Instance.Configuration.SkillLoadouts;
 
-            if (loadout != null && lastOpenedLoadout != null && loadout.TryGetValue(lastOpenedLoadout, out int[] abilities))
+            if (loadout != null && lastOpenedLoadout != null && loadout.TryGetValue(lastOpenedLoadout, out SkillLoadoutItemConfigurationV2[] abilities))
                 loadoutManager.Open(lastOpenedLoadout, abilities);
 
             rootViewModel.IsDataLoading = false;
@@ -81,7 +81,7 @@ namespace MHArmory
 
         private void LoadConfiguration()
         {
-            ConfigurationV1 configuration = ConfigurationManager.Load<ConfigurationV1>();
+            ConfigurationV2 configuration = ConfigurationManager.Load<ConfigurationV2>();
 
             // Possibly process stuffs.
 

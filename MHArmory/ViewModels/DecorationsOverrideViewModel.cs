@@ -98,7 +98,7 @@ namespace MHArmory.ViewModels
                 .Select(x => new JewelOverrideViewModel(this, x, 0))
                 .ToList();
 
-            Dictionary<int, DecorationOverrideConfigurationItem> decorationOverrides = GlobalData.Instance.Configuration.InParameters?.DecorationOverride?.Items;
+            Dictionary<string, DecorationOverrideConfigurationItem> decorationOverrides = GlobalData.Instance.Configuration.InParameters?.DecorationOverride?.Items;
 
             CancelCommand = new AnonymousCommand(OnCancel);
 
@@ -108,9 +108,9 @@ namespace MHArmory.ViewModels
 
                 try
                 {
-                    foreach (KeyValuePair<int, DecorationOverrideConfigurationItem> decoOverride in decorationOverrides)
+                    foreach (KeyValuePair<string, DecorationOverrideConfigurationItem> decoOverride in decorationOverrides)
                     {
-                        JewelOverrideViewModel vm = Jewels.FirstOrDefault(x => x.Id == decoOverride.Key);
+                        JewelOverrideViewModel vm = Jewels.FirstOrDefault(x => x.Name == decoOverride.Key);
                         if (vm != null)
                         {
                             vm.IsOverriding = decoOverride.Value.IsOverriding;

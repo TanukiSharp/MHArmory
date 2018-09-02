@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Input;
+using MHArmory.Configurations;
 using MHArmory.ViewModels;
 
 namespace MHArmory
@@ -63,11 +64,15 @@ namespace MHArmory
 
             if (loadoutSelectorViewModel.IsManageMode)
             {
-                Dictionary<string, int[]> loadoutConfig = GlobalData.Instance.Configuration.SkillLoadouts;
+                Dictionary<string, SkillLoadoutItemConfigurationV2[]> loadoutConfig = GlobalData.Instance.Configuration.SkillLoadouts;
 
                 loadoutConfig.Clear();
                 foreach (LoadoutViewModel x in loadoutSelectorViewModel.Loadouts)
-                    loadoutConfig[x.Name] = x.Abilities.Select(a => a.Id).ToArray();
+                {
+                    loadoutConfig[x.Name] = x.Abilities
+                        .Select(item => new SkillLoadoutItemConfigurationV2 { SkillName = item.SkillName, Level = item.Level })
+                        .ToArray();
+                }
 
                 if (currentLoadout != null)
                     CurrentLoadoutName = currentLoadout.Name;

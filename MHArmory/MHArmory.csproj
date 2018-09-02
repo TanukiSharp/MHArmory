@@ -51,6 +51,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AutoUpdate\AutoUpdater.cs" />
+    <Compile Include="Configurations\ConfigurationV2.cs" />
     <Compile Include="GitInfo.cs" />
     <ApplicationDefinition Include="App.xaml">
       <Generator>MSBuild:Compile</Generator>

@@ -125,7 +125,7 @@ namespace MHArmory
             return YesNoCancel.No;
         }
 
-        private bool InternalOpen(string loadoutName, int[] abilities)
+        private bool InternalOpen(string loadoutName, SkillLoadoutItemConfigurationV2[] abilities)
         {
             if (IsModified)
             {
@@ -146,7 +146,7 @@ namespace MHArmory
                 if (CurrentLoadoutName != loadoutWindow.SelectedLoadout.Name)
                 {
                     foreach (AbilityViewModel ability in rootViewModel.SelectedAbilities)
-                        ability.IsChecked = loadoutWindow.SelectedLoadout.Abilities.Any(a => a.Id == ability.Id);
+                        ability.IsChecked = loadoutWindow.SelectedLoadout.Abilities.Any(a => a.SkillId == ability.SkillId);
 
                     CurrentLoadoutName = loadoutWindow.SelectedLoadout.Name;
 
@@ -156,7 +156,7 @@ namespace MHArmory
             else
             {
                 foreach (AbilityViewModel ability in rootViewModel.SelectedAbilities)
-                    ability.IsChecked = abilities.Any(aId => aId == ability.Id);
+                    ability.IsChecked = abilities.Any(x => x.SkillName == ability.SkillName && x.Level == ability.Level);
 
                 CurrentLoadoutName = loadoutName;
             }
@@ -175,9 +175,12 @@ namespace MHArmory
                 return InternalSaveAs();
             else
             {
-                Dictionary<string, int[]> loadoutConfig = GlobalData.Instance.Configuration.SkillLoadouts;
+                Dictionary<string, SkillLoadoutItemConfigurationV2[]> loadoutConfig = GlobalData.Instance.Configuration.SkillLoadouts;
 
-                loadoutConfig[CurrentLoadoutName] = rootViewModel.SelectedAbilities.Where(a => a.IsChecked).Select(a => a.Id).ToArray();
+                loadoutConfig[CurrentLoadoutName] = rootViewModel.SelectedAbilities
+                    .Where(x => x.IsChecked)
+                    .Select(x => new SkillLoadoutItemConfigurationV2 { SkillName = x.SkillName, Level = x.Level })
+                    .ToArray();
 
                 IsModified = false;
 
@@ -194,7 +197,7 @@ namespace MHArmory
             if (inputWindow.ShowDialog() != true)
                 return false;
 
-            Dictionary<string, int[]> loadoutConfig = GlobalData.Instance.Configuration.SkillLoadouts;
+            Dictionary<string, SkillLoadoutItemConfigurationV2[]> loadoutConfig = GlobalData.Instance.Configuration.SkillLoadouts;
 
             if (loadoutConfig.ContainsKey(inputWindow.Text))
             {
@@ -203,7 +206,11 @@ namespace MHArmory
                     return false;
             }
 
-            loadoutConfig[inputWindow.Text] = rootViewModel.SelectedAbilities.Where(a => a.IsChecked).Select(a => a.Id).ToArray();
+            loadoutConfig[inputWindow.Text] = rootViewModel.SelectedAbilities
+                .Where(x => x.IsChecked)
+                .Select(x => new SkillLoadoutItemConfigurationV2 { SkillName = x.SkillName, Level = x.Level })
+                .ToArray();
+
             GlobalData.Instance.Configuration.LastOpenedLoadout = inputWindow.Text;
 
             CurrentLoadoutName = inputWindow.Text;
@@ -252,7 +259,7 @@ namespace MHArmory
             return InternalClose(false);
         }
 
-        public void Open(string loadoutName, int[] abilities)
+        public void Open(string loadoutName, SkillLoadoutItemConfigurationV2[] abilities)
         {
             if (loadoutName == null)
                 throw new ArgumentNullException(nameof(loadoutName));

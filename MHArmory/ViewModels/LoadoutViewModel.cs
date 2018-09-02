@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
+using MHArmory.Configurations;
 using MHArmory.Services;
 
 namespace MHArmory.ViewModels
@@ -94,7 +95,7 @@ namespace MHArmory.ViewModels
             AcceptCommand = new AnonymousCommand(OnAccept);
             CancelCommand = new AnonymousCommand(OnCancel);
 
-            Dictionary<string, int[]> loadoutConfig = GlobalData.Instance?.Configuration?.SkillLoadouts;
+            Dictionary<string, SkillLoadoutItemConfigurationV2[]> loadoutConfig = GlobalData.Instance?.Configuration?.SkillLoadouts;
 
             if (loadoutConfig == null)
                 return;
@@ -107,13 +108,13 @@ namespace MHArmory.ViewModels
                 SelectedLoadout = Loadouts[1];
         }
 
-        private AbilityViewModel[] CreateAbilities(int[] abilityIds)
+        private AbilityViewModel[] CreateAbilities(SkillLoadoutItemConfigurationV2[] abilityInfo)
         {
             var result = new List<AbilityViewModel>();
 
-            foreach (int abilityId in abilityIds)
+            foreach (SkillLoadoutItemConfigurationV2 item in abilityInfo)
             {
-                AbilityViewModel found = abilities.FirstOrDefault(a => a.Id == abilityId);
+                AbilityViewModel found = abilities.FirstOrDefault(a => a.SkillName == item.SkillName && a.Level == item.Level);
                 if (found != null)
                     result.Add(found);
             }

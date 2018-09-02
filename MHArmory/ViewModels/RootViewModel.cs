@@ -354,15 +354,15 @@ namespace MHArmory.ViewModels
 
         private SolverDataJewelModel CreateSolverDataJewelModel(IJewel jewel)
         {
-            DecorationOverrideConfiguration decorationOverrideConfig = GlobalData.Instance.Configuration.InParameters?.DecorationOverride;
+            DecorationOverrideConfigurationV2 decorationOverrideConfig = GlobalData.Instance.Configuration.InParameters?.DecorationOverride;
 
             if (decorationOverrideConfig != null && decorationOverrideConfig.UseOverride)
             {
-                Dictionary<int, DecorationOverrideConfigurationItem> decoOverrides = decorationOverrideConfig?.Items;
+                Dictionary<string, DecorationOverrideConfigurationItem> decoOverrides = decorationOverrideConfig?.Items;
 
                 if (decoOverrides != null)
                 {
-                    if (decoOverrides.TryGetValue(jewel.Id, out DecorationOverrideConfigurationItem found) && found.IsOverriding)
+                    if (decoOverrides.TryGetValue(jewel.Name, out DecorationOverrideConfigurationItem found) && found.IsOverriding)
                         return new SolverDataJewelModel(jewel, found.Count);
                 }
             }

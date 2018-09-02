@@ -53,17 +53,17 @@ namespace MHArmory
 
         protected override void OnClosed(EventArgs e)
         {
-            InParametersConfiguration config = GlobalData.Instance.Configuration.InParameters;
+            InParametersConfigurationV2 config = GlobalData.Instance.Configuration.InParameters;
 
             if (decorationsOverrideViewModel.HasChanged)
             {
-                Dictionary<int, DecorationOverrideConfigurationItem> items = config.DecorationOverride.Items;
+                Dictionary<string, DecorationOverrideConfigurationItem> items = config.DecorationOverride.Items;
 
                 items.Clear();
 
                 foreach (JewelOverrideViewModel vm in decorationsOverrideViewModel.Jewels.Where(x => x.IsOverriding || x.Count > 0))
                 {
-                    items.Add(vm.Id, new DecorationOverrideConfigurationItem
+                    items.Add(vm.Name, new DecorationOverrideConfigurationItem
                     {
                         IsOverriding = vm.IsOverriding,
                         Count = vm.Count

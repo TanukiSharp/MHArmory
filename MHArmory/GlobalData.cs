@@ -14,7 +14,7 @@ namespace MHArmory
     {
         public static readonly GlobalData Instance = new GlobalData();
 
-        public ConfigurationV1 Configuration;
+        public ConfigurationV2 Configuration;
 
         public IList<IAbility> Abilities { get; private set; }
         public IList<ISkill> Skills { get; private set; }
