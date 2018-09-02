@@ -13,19 +13,11 @@ Consider having all `Alpha` replaced by `α` and `Beta` replaced by `β` and `Ga
 
 Missing:
 
-- `Drachen Armet α` (31-) (Critical Boost 1, Airborne 1) (2 - Elemental Airborne, 4 - Master's Touch)
+- `Drachen Armet α`
 - `Drachen Mail α`
 - `Drachen Vambraces α`
 - `Drachen Coil α`
 - `Drachen Greaves α`
-- Drachen common:
-  - Cost: 20'000
-  - Rarity 8
-  - Defense:
-    - Base: 72
-    - Max: ?
-    - Augmented: ?
-  - Resistances: -2, -2, 3, -2, 4
 
 - `Aloy's Head α`
 - `Aloy's Body α`
