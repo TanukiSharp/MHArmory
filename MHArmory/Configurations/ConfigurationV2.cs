@@ -5,6 +5,20 @@ using Newtonsoft.Json;
 
 namespace MHArmory.Configurations
 {
+    public class WindowConfiguration
+    {
+        [JsonProperty("isMaximized")]
+        public bool IsMaximized { get; set; }
+        [JsonProperty("left")]
+        public int? Left { get; set; }
+        [JsonProperty("top")]
+        public int? Top { get; set; }
+        [JsonProperty("width")]
+        public int? Width { get; set; }
+        [JsonProperty("height")]
+        public int? Height { get; set; }
+    }
+
     public class DecorationOverrideConfigurationV2
     {
         [JsonProperty("useOverride")]
@@ -52,5 +66,8 @@ namespace MHArmory.Configurations
 
         [JsonProperty("inParameters")]
         public InParametersConfigurationV2 InParameters { get; } = new InParametersConfigurationV2();
+
+        [JsonProperty("windows")]
+        public Dictionary<string, WindowConfiguration> Windows { get; } = new Dictionary<string, WindowConfiguration>();
     }
 }

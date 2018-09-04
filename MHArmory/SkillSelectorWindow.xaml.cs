@@ -73,18 +73,9 @@ namespace MHArmory
                 Close();
         }
 
-        private bool isApplicationClose;
-
-        public void ApplicationClose()
-        {
-            isApplicationClose = true;
-            Close();
-        }
-
         protected override void OnClosing(CancelEventArgs e)
         {
-            if (isApplicationClose)
-                return;
+            base.OnClosing(e);
 
             e.Cancel = true;
             Hide();

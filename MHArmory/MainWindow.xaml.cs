@@ -31,6 +31,8 @@ namespace MHArmory
             WindowManager.FitInScreen(this);
 
             LoadConfiguration();
+
+            WindowManager.NotifyConfigurationLoaded();
             rootViewModel.NotifyConfigurationLoaded();
 
             CommandBindings.Add(RoutedCommands.CreateCommandBinding(RoutedCommands.OpenSkillsSelector, OpenSkillSelector));
@@ -56,10 +58,8 @@ namespace MHArmory
         {
             await Dispatcher.Yield(DispatcherPriority.Render);
 
-            skillSelectorWindow = new SkillSelectorWindow
-            {
-                Owner = this
-            };
+            skillSelectorWindow = new SkillSelectorWindow { Owner = this };
+            WindowManager.InitializeWindow<SkillSelectorWindow>(skillSelectorWindow);
 
             await LoadData();
 
@@ -259,10 +259,7 @@ namespace MHArmory
 
         private void OpenSkillSelector(object parameter)
         {
-            if (skillSelectorWindow.WindowState == WindowState.Minimized)
-                skillSelectorWindow.WindowState = WindowState.Normal;
-
-            skillSelectorWindow.Show();
+            WindowManager.Show<SkillSelectorWindow>();
         }
 
         private AdvancedSearchWindow advancedSearchWindow;
@@ -292,7 +289,10 @@ namespace MHArmory
 
         private void OpenEquipmentExplorer(object obj)
         {
-            EquipmentExplorerWindow.Show(this);
+            if (WindowManager.IsInitialized<EquipmentExplorerWindow>() == false)
+                WindowManager.InitializeWindow(new EquipmentExplorerWindow { Owner = this });
+
+            WindowManager.Show<EquipmentExplorerWindow>();
         }
 
         private void OpenSearchResultProcessing(object parameter)
@@ -352,7 +352,11 @@ namespace MHArmory
 
             loadoutManager.Dispose();
 
-            skillSelectorWindow.ApplicationClose();
+            WindowManager.ApplicationClose();
+
+            WindowManager.SaveWindowsConfiguration();
+
+            Application.Current.Shutdown();
         }
     }
 }

@@ -15,10 +15,9 @@ namespace MHArmory
     /// </summary>
     public partial class EquipmentExplorerWindow : Window
     {
-        private static readonly EquipmentExplorerWindow instance = new EquipmentExplorerWindow();
         private readonly EquipmentExplorerViewModel equipmentExplorerViewModel;
 
-        private EquipmentExplorerWindow()
+        public EquipmentExplorerWindow()
         {
             InitializeComponent();
 
@@ -39,17 +38,6 @@ namespace MHArmory
 
             if (cancellable.IsCancelled == false)
                 Close();
-        }
-
-        public static void Show(Window owner)
-        {
-            if (instance.WindowState == WindowState.Minimized)
-                instance.WindowState = WindowState.Normal;
-
-            instance.Owner = owner;
-
-            instance.Show();
-            instance.Activate();
         }
 
         private async void EquipmentExplorerWindow_Loaded(object sender, RoutedEventArgs e)

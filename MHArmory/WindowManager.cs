@@ -6,11 +6,214 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Interop;
+using MHArmory.Configurations;
 
 namespace MHArmory
 {
     public static class WindowManager
     {
+        private class WindowContainer
+        {
+            public int? Left = null;
+            public int? Top = null;
+            public int? Width = null;
+            public int? Height = null;
+            public bool IsMaximized = false;
+            public Window Instance = null;
+        }
+
+        private static readonly Dictionary<string, WindowContainer> windowContainers = new Dictionary<string, WindowContainer>();
+
+        public static void NotifyConfigurationLoaded()
+        {
+            Dictionary<string, WindowConfiguration> config = GlobalData.Instance.Configuration.Windows;
+
+            foreach (KeyValuePair<string, WindowConfiguration> item in config)
+            {
+                windowContainers[item.Key] = new WindowContainer
+                {
+                    IsMaximized = item.Value.IsMaximized,
+                    Left = item.Value.Left,
+                    Top = item.Value.Top,
+                    Width = item.Value.Width,
+                    Height = item.Value.Height,
+                };
+            }
+        }
+
+        public static void SaveWindowsConfiguration()
+        {
+            Dictionary<string, WindowConfiguration> config = GlobalData.Instance.Configuration.Windows;
+
+            config.Clear();
+
+            foreach (KeyValuePair<string, WindowContainer> item in windowContainers)
+            {
+                config[item.Key] = new WindowConfiguration
+                {
+                    IsMaximized = item.Value.IsMaximized,
+                    Left = item.Value.Left,
+                    Top = item.Value.Top,
+                    Width = item.Value.Width,
+                    Height = item.Value.Height
+                };
+            }
+
+            ConfigurationManager.Save(GlobalData.Instance.Configuration);
+        }
+
+        public static bool IsInitialized<T>() where T : Window
+        {
+            return windowContainers.ContainsKey(typeof(T).FullName);
+        }
+
+        public static void InitializeWindow<T>(T windowInstance) where T : Window
+        {
+            if (windowInstance == null)
+                throw new ArgumentNullException(nameof(windowInstance));
+
+            string key = typeof(T).FullName;
+
+            if (windowContainers.TryGetValue(key, out WindowContainer container))
+            {
+                if (container.Instance != null)
+                    throw new InvalidOperationException($"Window of type '{key}' is already initialized.");
+                else
+                    container.Instance = windowInstance;
+            }
+            else
+            {
+                container = new WindowContainer { Instance = windowInstance };
+                windowContainers.Add(key, container);
+            }
+
+            windowInstance.Closing += OnWindowClosing;
+        }
+
+        private static void OnWindowClosing(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            string key = sender.GetType().FullName;
+
+            WindowContainer container = windowContainers[key];
+            Window window = container.Instance;
+
+            container.Left = (int)window.RestoreBounds.Left;
+            container.Top = (int)window.RestoreBounds.Top;
+            container.Width = (int)window.RestoreBounds.Width;
+            container.Height = (int)window.RestoreBounds.Height;
+            container.IsMaximized = window.WindowState == WindowState.Maximized;
+        }
+
+        public static void ApplicationClose()
+        {
+            foreach (KeyValuePair<string, WindowContainer> item in windowContainers)
+                item.Value?.Instance?.Close();
+        }
+
+        public static bool? ShowDialog<T>() where T : Window
+        {
+            return ShowInternal<T>(true);
+        }
+
+        public static void Show<T>() where T : Window
+        {
+            ShowInternal<T>(false);
+        }
+
+        private static bool? ShowInternal<T>(bool isModal = false) where T : Window
+        {
+            string key = typeof(T).FullName;
+
+            Window window = null;
+
+            windowContainers.TryGetValue(key, out WindowContainer container);
+
+            if (container == null)
+            {
+                container = new WindowContainer();
+                windowContainers.Add(key, container);
+            }
+
+            window = container.Instance;
+
+            if (window == null)
+            {
+                window = Activator.CreateInstance<T>();
+                window.Closing += OnWindowClosing;
+                container.Instance = window;
+            }
+
+            if (window.IsVisible == false)
+            {
+                window.WindowStartupLocation = WindowStartupLocation.Manual;
+
+                if (container.Left.HasValue)
+                    window.Left = container.Left.Value;
+                if (container.Top.HasValue)
+                    window.Top = container.Top.Value;
+                if (container.Width.HasValue)
+                    window.Width = container.Width.Value;
+                if (container.Height.HasValue)
+                    window.Height = container.Height.Value;
+            }
+            else if (window.WindowState == WindowState.Minimized)
+                window.WindowState = WindowState.Normal;
+
+            if (isModal)
+                return window.ShowDialog();
+            else
+            {
+                window.Show();
+                window.Activate();
+
+                if (container.IsMaximized)
+                    window.WindowState = WindowState.Maximized;
+
+                return true;
+            }
+        }
+
+        public static bool FitInScreen(Window window)
+        {
+            var windowInteropHelper = new WindowInteropHelper(window);
+
+            IntPtr hMonitor = MonitorFromWindow(windowInteropHelper.Handle, MONITOR_DEFAULTTONEAREST);
+            if (hMonitor == IntPtr.Zero)
+                return false;
+
+            var monitorInfo = MonitorInfoEx.Create();
+            if (GetMonitorInfo(hMonitor, ref monitorInfo) == false)
+                return false;
+
+            int top = (int)window.Top;
+            if (top < monitorInfo.WorkArea.top)
+            {
+                window.Top = monitorInfo.WorkArea.top;
+            }
+
+            int bottom = (int)(window.Top + window.Height);
+            if (bottom > monitorInfo.WorkArea.bottom)
+            {
+                window.Height -= (bottom - monitorInfo.WorkArea.bottom);
+            }
+
+            int left = (int)window.Left;
+            if (left < monitorInfo.WorkArea.left)
+            {
+                window.Left = monitorInfo.WorkArea.left;
+            }
+
+            int right = (int)(window.Left + window.Width);
+            if (right > monitorInfo.WorkArea.right)
+            {
+                window.Width -= (right - monitorInfo.WorkArea.right);
+            }
+
+            return true;
+        }
+
+        #region Native
+
         private const int MONITOR_DEFAULTTONULL = 0;
         private const int MONITOR_DEFAULTTOPRIMARY = 1;
         private const int MONITOR_DEFAULTTONEAREST = 2;
@@ -90,43 +293,6 @@ namespace MHArmory
             public int bottom;
         }
 
-        public static bool FitInScreen(Window window)
-        {
-            var windowInteropHelper = new WindowInteropHelper(window);
-
-            IntPtr hMonitor = MonitorFromWindow(windowInteropHelper.Handle, MONITOR_DEFAULTTONEAREST);
-            if (hMonitor == IntPtr.Zero)
-                return false;
-
-            var monitorInfo = MonitorInfoEx.Create();
-            if (GetMonitorInfo(hMonitor, ref monitorInfo) == false)
-                return false;
-
-            int top = (int)window.Top;
-            if (top < monitorInfo.WorkArea.top)
-            {
-                window.Top = monitorInfo.WorkArea.top;
-            }
-
-            int bottom = (int)(window.Top + window.Height);
-            if (bottom > monitorInfo.WorkArea.bottom)
-            {
-                window.Height -= (bottom - monitorInfo.WorkArea.bottom);
-            }
-
-            int left = (int)window.Left;
-            if (left < monitorInfo.WorkArea.left)
-            {
-                window.Left = monitorInfo.WorkArea.left;
-            }
-
-            int right = (int)(window.Left + window.Width);
-            if (right > monitorInfo.WorkArea.right)
-            {
-                window.Width -= (right - monitorInfo.WorkArea.right);
-            }
-
-            return true;
-        }
+        #endregion // Native
     }
 }
