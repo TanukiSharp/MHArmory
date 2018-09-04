@@ -13,7 +13,12 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MHArmory.Search", "MHArmory
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MHArmory.AthenaAssDataSource", "MHArmory.AthenaAssDataSource\MHArmory.AthenaAssDataSource.csproj", "{3796097E-B739-4F78-87B1-689DE3B66DBF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DistributionTool", "DistributionTool\DistributionTool.csproj", "{1391FFEE-A8B8-41E6-8623-16145A0D9354}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DistributionTool", "DistributionTool\DistributionTool.csproj", "{1391FFEE-A8B8-41E6-8623-16145A0D9354}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{6CDAFF2E-4CF4-40BE-AABF-E78A2EF0C1BB}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -1,0 +1,44 @@
+root = true
+
+[*.cs]
+indent_size = 4:error
+indent_style = space:error
+trim_trailing_whitespace = true:error
+
+csharp_new_line_before_open_brace = all:error
+csharp_indent_case_contents = true:error
+csharp_new_line_before_catch = true:error
+csharp_new_line_before_else = true:error
+csharp_new_line_before_finally = true:error
+csharp_preferred_modifier_order = public,private,protected,internal,extern,static,new,virtual,abstract,sealed,override,readonly,unsafe,volatile,async:error
+csharp_prefer_braces = false:warning
+csharp_preserve_single_line_statements = false:error
+csharp_space_after_cast = false:error
+csharp_space_after_colon_in_inheritance_clause = true:error
+csharp_space_after_keywords_in_control_flow_statements = true:error
+csharp_space_around_binary_operators = before_and_after:error
+csharp_space_before_colon_in_inheritance_clause = true:error
+csharp_space_between_method_call_empty_parameter_list_parentheses = false:error
+csharp_space_between_method_call_name_and_opening_parenthesis = false:error
+csharp_space_between_method_call_parameter_list_parentheses = false:error
+csharp_space_between_method_declaration_empty_parameter_list_parentheses = false:error
+csharp_space_between_method_declaration_parameter_list_parentheses = false:error
+csharp_space_between_parentheses = false:error
+csharp_style_expression_bodied_accessors = false:error
+csharp_style_expression_bodied_constructors = false:error
+csharp_style_expression_bodied_indexers = false:warning
+csharp_style_expression_bodied_methods = false:suggestion
+csharp_style_expression_bodied_operators = false:warning
+csharp_style_expression_bodied_properties = false:warning
+csharp_style_inlined_variable_declaration = true:suggestion
+csharp_style_pattern_local_over_anonymous_function = true:warning
+csharp_style_pattern_matching_over_as_with_null_check = true:suggestion
+csharp_style_pattern_matching_over_is_with_cast_check = true:suggestion
+csharp_style_throw_expression = true:error
+csharp_style_var_elsewhere = false:error
+csharp_style_var_for_built_in_types = false:error
+csharp_style_var_when_type_is_apparent = true:warning
+
+[*]
+end_of_line = lf
+charset = utf-8
