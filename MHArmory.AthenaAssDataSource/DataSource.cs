@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -94,7 +94,7 @@ namespace MHArmory.AthenaAssDataSource
                 if (ability == null)
                     throw new FormatException($"Cannot find skill '{jewelPrimitive.Name}'");
 
-                 localJewels.Add(new Jewel(i + 1, jewelPrimitive.Name, jewelPrimitive.Rarity, jewelPrimitive.SlotSize, new IAbility[] { ability }));
+                localJewels.Add(new Jewel(i + 1, jewelPrimitive.Name, jewelPrimitive.Rarity, jewelPrimitive.SlotSize, new IAbility[] { ability }));
             }
 
             jewels = Task.FromResult(localJewels.ToArray());

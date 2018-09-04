@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -92,9 +92,9 @@ namespace MHArmory.Search
                 Gloves = (int)gg,
                 Waists = (int)ww,
                 Legs = (int)ll,
-                Charms = (int) ch,
+                Charms = (int)ch,
                 MinSlotSize = data.MinJewelSize,
-                MaxSlotSize =data.MaxJewelSize
+                MaxSlotSize = data.MaxJewelSize
             };
 
             metrics.UpdateCombinationCount();

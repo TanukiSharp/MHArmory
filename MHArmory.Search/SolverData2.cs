@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using MHArmory.Core.DataStructures;
@@ -422,5 +422,5 @@ namespace MHArmory.Search
 
             return source;
         }
-   }
+    }
 }
