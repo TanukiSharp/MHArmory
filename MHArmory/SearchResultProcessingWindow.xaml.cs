@@ -17,16 +17,8 @@ namespace MHArmory
     {
         private readonly RootViewModel rootViewModel;
 
-        private static SearchResultProcessingWindow firstInstance;
-
         public SearchResultProcessingWindow(RootViewModel rootViewModel)
         {
-            if (firstInstance != null)
-                throw new InvalidOperationException($"Window {nameof(SearchResultProcessingWindow)} already created.");
-
-            if (firstInstance == null)
-                firstInstance = this;
-
             InitializeComponent();
 
             WindowManager.FitInScreen(this);
@@ -34,20 +26,6 @@ namespace MHArmory
             this.rootViewModel = rootViewModel;
 
             DataContext = rootViewModel.SearchResultProcessing;
-        }
-
-        public static bool Open(Func<SearchResultProcessingWindow> factory)
-        {
-            if (firstInstance == null)
-                firstInstance = factory();
-
-            if (firstInstance.WindowState == WindowState.Minimized)
-                firstInstance.WindowState = WindowState.Normal;
-
-            firstInstance.Show();
-            firstInstance.Activate();
-
-            return true;
         }
 
         protected override void OnClosing(CancelEventArgs e)

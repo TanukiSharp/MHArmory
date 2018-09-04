@@ -64,7 +64,94 @@ namespace MHArmory
 
         public static bool IsInitialized<T>() where T : Window
         {
-            return windowContainers.ContainsKey(typeof(T).FullName);
+            return windowContainers.TryGetValue(typeof(T).FullName, out WindowContainer container) && container.Instance != null;
+        }
+
+        public static void RestoreWindowState<T>(T instance) where T : Window
+        {
+            string key = typeof(T).FullName;
+
+            if (windowContainers.TryGetValue(key, out WindowContainer container))
+                RestorePositionInternal(container, instance);
+        }
+
+        private static WindowContainer RestorePositionInternal<T>() where T : Window
+        {
+            string key = typeof(T).FullName;
+
+            Window window = null;
+
+            windowContainers.TryGetValue(key, out WindowContainer container);
+
+            if (container == null)
+            {
+                container = new WindowContainer();
+                windowContainers.Add(key, container);
+            }
+
+            window = container.Instance;
+
+            if (window == null)
+            {
+                window = Activator.CreateInstance<T>();
+                window.Closing += OnWindowClosing;
+                container.Instance = window;
+            }
+
+            if (window.IsVisible == false)
+                RestorePositionInternal(container, window);
+            else if (window.WindowState == WindowState.Minimized)
+                window.WindowState = WindowState.Normal;
+
+            return container;
+        }
+
+        private static void RestorePositionInternal<T>(WindowContainer container, T window) where T : Window
+        {
+            if (container.Left.HasValue && container.Top.HasValue && container.Width.HasValue && container.Height.HasValue)
+                window.WindowStartupLocation = WindowStartupLocation.Manual;
+
+            if (container.Left.HasValue)
+                window.Left = container.Left.Value;
+            if (container.Top.HasValue)
+                window.Top = container.Top.Value;
+            if (container.Width.HasValue)
+                window.Width = container.Width.Value;
+            if (container.Height.HasValue)
+                window.Height = container.Height.Value;
+
+            if (container.IsMaximized)
+                window.WindowState = WindowState.Maximized;
+        }
+
+        public static void StoreWindowState<T>(T instance) where T : Window
+        {
+            string key = typeof(T).FullName;
+
+            if (windowContainers.TryGetValue(key, out WindowContainer container) == false)
+            {
+                container = new WindowContainer();
+                windowContainers.Add(key, container);
+            }
+
+            StoreInternal(container, instance);
+        }
+
+        private static void StoreInternal(WindowContainer container, Window instance)
+        {
+            if (double.IsInfinity(instance.RestoreBounds.Left) == false)
+                container.Left = (int)instance.RestoreBounds.Left;
+
+            if (double.IsInfinity(instance.RestoreBounds.Top) == false)
+                container.Top = (int)instance.RestoreBounds.Top;
+
+            if (double.IsInfinity(instance.RestoreBounds.Width) == false)
+                container.Width = (int)instance.RestoreBounds.Width;
+
+            if (double.IsInfinity(instance.RestoreBounds.Height) == false)
+                container.Height = (int)instance.RestoreBounds.Height;
+
+            container.IsMaximized = instance.WindowState == WindowState.Maximized;
         }
 
         public static void InitializeWindow<T>(T windowInstance) where T : Window
@@ -97,11 +184,7 @@ namespace MHArmory
             WindowContainer container = windowContainers[key];
             Window window = container.Instance;
 
-            container.Left = (int)window.RestoreBounds.Left;
-            container.Top = (int)window.RestoreBounds.Top;
-            container.Width = (int)window.RestoreBounds.Width;
-            container.Height = (int)window.RestoreBounds.Height;
-            container.IsMaximized = window.WindowState == WindowState.Maximized;
+            StoreInternal(container, window);
         }
 
         public static void ApplicationClose()
@@ -122,42 +205,8 @@ namespace MHArmory
 
         private static bool? ShowInternal<T>(bool isModal = false) where T : Window
         {
-            string key = typeof(T).FullName;
-
-            Window window = null;
-
-            windowContainers.TryGetValue(key, out WindowContainer container);
-
-            if (container == null)
-            {
-                container = new WindowContainer();
-                windowContainers.Add(key, container);
-            }
-
-            window = container.Instance;
-
-            if (window == null)
-            {
-                window = Activator.CreateInstance<T>();
-                window.Closing += OnWindowClosing;
-                container.Instance = window;
-            }
-
-            if (window.IsVisible == false)
-            {
-                window.WindowStartupLocation = WindowStartupLocation.Manual;
-
-                if (container.Left.HasValue)
-                    window.Left = container.Left.Value;
-                if (container.Top.HasValue)
-                    window.Top = container.Top.Value;
-                if (container.Width.HasValue)
-                    window.Width = container.Width.Value;
-                if (container.Height.HasValue)
-                    window.Height = container.Height.Value;
-            }
-            else if (window.WindowState == WindowState.Minimized)
-                window.WindowState = WindowState.Normal;
+            WindowContainer container = RestorePositionInternal<T>();
+            Window window = container.Instance;
 
             if (isModal)
                 return window.ShowDialog();
@@ -165,9 +214,6 @@ namespace MHArmory
             {
                 window.Show();
                 window.Activate();
-
-                if (container.IsMaximized)
-                    window.WindowState = WindowState.Maximized;
 
                 return true;
             }

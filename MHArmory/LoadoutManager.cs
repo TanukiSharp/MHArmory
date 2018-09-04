@@ -140,7 +140,11 @@ namespace MHArmory
                     Owner = Application.Current.MainWindow
                 };
 
-                if (loadoutWindow.ShowDialog() != true)
+                WindowManager.RestoreWindowState(loadoutWindow);
+                bool? showResult = loadoutWindow.ShowDialog();
+                WindowManager.StoreWindowState(loadoutWindow);
+
+                if (showResult != true)
                     return false;
 
                 if (CurrentLoadoutName != loadoutWindow.SelectedLoadout.Name)
@@ -233,7 +237,10 @@ namespace MHArmory
             {
                 Owner = Application.Current.MainWindow
             };
+
+            WindowManager.RestoreWindowState(loadoutWindow);
             loadoutWindow.ShowDialog();
+            WindowManager.StoreWindowState(loadoutWindow);
 
             if (loadoutWindow.CurrentLoadoutName != currentLoadoutName)
             {

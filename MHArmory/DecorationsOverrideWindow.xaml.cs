@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -78,6 +79,14 @@ namespace MHArmory
             }
 
             base.OnClosed(e);
+        }
+
+        protected override void OnClosing(CancelEventArgs e)
+        {
+            base.OnClosing(e);
+
+            e.Cancel = true;
+            Hide();
         }
     }
 }

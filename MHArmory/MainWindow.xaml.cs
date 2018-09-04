@@ -23,6 +23,7 @@ namespace MHArmory
         public readonly RootViewModel rootViewModel = new RootViewModel();
 
         private SkillSelectorWindow skillSelectorWindow;
+        private AdvancedSearchWindow advancedSearchWindow;
 
         public MainWindow()
         {
@@ -51,6 +52,8 @@ namespace MHArmory
 
             DataContext = rootViewModel;
 
+            WindowManager.RestoreWindowState(this);
+
             Loaded += MainWindow_Loaded;
         }
 
@@ -59,7 +62,10 @@ namespace MHArmory
             await Dispatcher.Yield(DispatcherPriority.Render);
 
             skillSelectorWindow = new SkillSelectorWindow { Owner = this };
-            WindowManager.InitializeWindow<SkillSelectorWindow>(skillSelectorWindow);
+            WindowManager.InitializeWindow(skillSelectorWindow);
+
+            advancedSearchWindow = new AdvancedSearchWindow(rootViewModel) { Owner = this };
+            WindowManager.InitializeWindow(advancedSearchWindow);
 
             await LoadData();
 
@@ -262,29 +268,18 @@ namespace MHArmory
             WindowManager.Show<SkillSelectorWindow>();
         }
 
-        private AdvancedSearchWindow advancedSearchWindow;
-
         private void OpenAdvancedSearch(object parameter)
         {
-            if (advancedSearchWindow == null)
-            {
-                advancedSearchWindow = new AdvancedSearchWindow(rootViewModel)
-                {
-                    Owner = this
-                };
-            }
-
             advancedSearchWindow.Update();
-            advancedSearchWindow.Show();
+            WindowManager.Show<AdvancedSearchWindow>();
         }
 
         private void OpenDecorationsOverride(object obj)
         {
-            var window = new DecorationsOverrideWindow(rootViewModel)
-            {
-                Owner = this
-            };
-            window.ShowDialog();
+            if (WindowManager.IsInitialized<DecorationsOverrideWindow>() == false)
+                WindowManager.InitializeWindow(new DecorationsOverrideWindow(rootViewModel) { Owner = this });
+
+            WindowManager.ShowDialog<DecorationsOverrideWindow>();
         }
 
         private void OpenEquipmentExplorer(object obj)
@@ -297,13 +292,10 @@ namespace MHArmory
 
         private void OpenSearchResultProcessing(object parameter)
         {
-            SearchResultProcessingWindow.Open(() =>
-            {
-                return new SearchResultProcessingWindow(rootViewModel)
-                {
-                    Owner = this
-                };
-            });
+            if (WindowManager.IsInitialized<SearchResultProcessingWindow>() == false)
+                WindowManager.InitializeWindow(new SearchResultProcessingWindow(rootViewModel) { Owner = this });
+
+            WindowManager.Show<SearchResultProcessingWindow>();
         }
 
         private LoadoutManager loadoutManager;
@@ -351,6 +343,8 @@ namespace MHArmory
             }
 
             loadoutManager.Dispose();
+
+            WindowManager.StoreWindowState(this);
 
             WindowManager.ApplicationClose();
 
