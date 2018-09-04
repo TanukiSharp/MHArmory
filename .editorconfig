@@ -5,7 +5,7 @@ indent_size = 4:error
 indent_style = space:error
 trim_trailing_whitespace = true:error
 
-csharp_new_line_before_open_brace = all:error
+csharp_new_line_before_open_brace = all
 csharp_indent_case_contents = true:error
 csharp_new_line_before_catch = true:error
 csharp_new_line_before_else = true:error
