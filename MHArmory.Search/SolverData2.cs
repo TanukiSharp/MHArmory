@@ -88,11 +88,11 @@ namespace MHArmory.Search
             inputCharms = charms.Select(x => new SolverDataEquipmentModel2(x)).ToList();
             inputJewels = jewels.ToList();
 
-            int maxSkills = inputHeads.Max(x => x.Equipment.Abilities.Length);
-            maxSkills = Math.Max(maxSkills, inputChests.Max(x => x.Equipment.Abilities.Length));
-            maxSkills = Math.Max(maxSkills, inputGloves.Max(x => x.Equipment.Abilities.Length));
-            maxSkills = Math.Max(maxSkills, inputWaists.Max(x => x.Equipment.Abilities.Length));
-            maxSkills = Math.Max(maxSkills, inputLegs.Max(x => x.Equipment.Abilities.Length));
+            int maxSkills = inputHeads.MaxOrZero(x => x.Equipment.Abilities.Length);
+            maxSkills = Math.Max(maxSkills, inputChests.MaxOrZero(x => x.Equipment.Abilities.Length));
+            maxSkills = Math.Max(maxSkills, inputGloves.MaxOrZero(x => x.Equipment.Abilities.Length));
+            maxSkills = Math.Max(maxSkills, inputWaists.MaxOrZero(x => x.Equipment.Abilities.Length));
+            maxSkills = Math.Max(maxSkills, inputLegs.MaxOrZero(x => x.Equipment.Abilities.Length));
 
             MaxSkillCountPerArmorPiece = maxSkills;
 
@@ -396,6 +396,22 @@ namespace MHArmory.Search
 
     public static class Operators
     {
+        public static int MaxOrZero<T>(this IEnumerable<T> source, Func<T, int> func)
+        {
+            if (source.Any() == false)
+                return 0;
+
+            return source.Max(func);
+        }
+
+        public static double MaxOrZero<T>(this IEnumerable<T> source, Func<T, double> func)
+        {
+            if (source.Any() == false)
+                return 0.0;
+
+            return source.Max(func);
+        }
+
         public static double AverageOrZero(this IEnumerable<IAbility> source, Func<IAbility, double> func)
         {
             if (source.Any() == false)
