@@ -74,7 +74,7 @@
             <StackPanel VerticalAlignment="Stretch">
                 <TextBlock Text="Decorations override:" Margin="2"/>
                 <StackPanel Orientation="Horizontal">
-                    <CheckBox Content="Use" IsChecked="{Binding UseOverride}" Margin="2" VerticalAlignment="Center" VerticalContentAlignment="Center"/>
+                    <CheckBox Content="Activate" IsChecked="{Binding UseOverride}" Margin="2" VerticalAlignment="Center" VerticalContentAlignment="Center"/>
                     <Button Content="Setup..." Command="{Binding OpenDecorationsOverrideCommand, Mode=OneTime}" Margin="2" Padding="4" MinWidth="70" VerticalAlignment="Center"/>
                 </StackPanel>
             </StackPanel>
@@ -639,7 +639,7 @@
                         <DockPanel LastChildFill="True">
                             <DockPanel DockPanel.Dock="Top" HorizontalAlignment="Stretch">
                                 <ContentControl DockPanel.Dock="Left" Content="{Binding InParameters, Mode=OneTime}" ContentTemplate="{StaticResource InParametersView}" Focusable="False"/>
-                                <Button DockPanel.Dock="Right" HorizontalAlignment="Right" Content="Result processing..." Command="{Binding OpenSearchResultProcessingCommand, Mode=OneTime}" Margin="2" Padding="4 0 4 0"/>
+                                <Button DockPanel.Dock="Right" HorizontalAlignment="Right" Content="Result processing..." Command="{Binding OpenSearchResultProcessingCommand, Mode=OneTime}" Margin="2" Padding="8" VerticalAlignment="Center"/>
                             </DockPanel>
                             <ListBox ItemsSource="{Binding FoundArmorSets, Mode=OneWay}" ItemTemplate="{StaticResource SearchResultArmorSetView}" ScrollViewer.VerticalScrollBarVisibility="Visible" Visibility="{Binding IsDataLoaded, Converter={StaticResource CollapsedVisibilityValueConverter}, Mode=OneWay}" Focusable="False" VirtualizingPanel.IsVirtualizing="True" VirtualizingPanel.ScrollUnit="Pixel" VirtualizingPanel.VirtualizationMode="Standard">
                                 <ListBox.ItemContainerStyle>
