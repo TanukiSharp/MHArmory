@@ -336,13 +336,15 @@ namespace MHArmory
         {
             base.OnClosing(e);
 
-            if (loadoutManager.ApplicationClose() == false)
+            if (loadoutManager != null)
             {
-                e.Cancel = true;
-                return;
+                if (loadoutManager.ApplicationClose() == false)
+                {
+                    e.Cancel = true;
+                    return;
+                }
+                loadoutManager.Dispose();
             }
-
-            loadoutManager.Dispose();
 
             WindowManager.StoreWindowState(this);
 
