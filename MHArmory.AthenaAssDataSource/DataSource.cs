@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using MHArmory.AthenaAssDataSource.DataStructures;
 using MHArmory.Core;
 using MHArmory.Core.DataStructures;
+using MHArmory.Core.ServiceContracts;
 
 namespace MHArmory.AthenaAssDataSource
 {
@@ -30,22 +31,32 @@ namespace MHArmory.AthenaAssDataSource
         public const string CharmsFilename = "charms.txt";
         public const string JewelsFilename = "decorations.txt";
 
-        public DataSource()
+        public DataSource(IDirectoryBrowserService directoryBrowserService, IMessageBoxService messageBoxService)
         {
             string filename = Path.Combine(AppContext.BaseDirectory, "ass_path.txt");
-            if (File.Exists(filename) == false)
+
+            if (File.Exists(filename))
             {
-                File.Create(filename).Dispose();
-                throw new FormatException($"Please store the location of ASS data folder in file '{filename}'.");
+                dataFolderPath = File.ReadAllText(filename).Trim();
+                if (string.IsNullOrWhiteSpace(dataFolderPath) || Directory.Exists(dataFolderPath) == false)
+                    dataFolderPath = null;
             }
 
-            dataFolderPath = File.ReadAllText(filename).Trim();
+            if (dataFolderPath == null && directoryBrowserService != null && messageBoxService != null)
+                dataFolderPath = DetermineAssPath(directoryBrowserService, messageBoxService);
 
-            if (string.IsNullOrWhiteSpace(dataFolderPath))
-                throw new FormatException($"File '{filename}' is empty.");
+            if (dataFolderPath == null)
+            {
+                messageBoxService.Show(new MessageBoxServiceOptions
+                {
+                    MessageBoxText = "Data source is missing, the application will exit.",
+                    Title = "Application will exit",
+                    Buttons = MessageBoxButton.OK,
+                    Icon = MessageBoxImage.Error
+                });
 
-            if (Directory.Exists(dataFolderPath) == false)
-                throw new FormatException($"Directory '{dataFolderPath}' not found.");
+                throw new InvalidDataSourceException();
+            }
 
             skillsFilePath = Path.Combine(dataFolderPath, SkillsFilename);
             skillsDescriptionsFilePath = Path.Combine(dataFolderPath, SkillsDescriptionsFilename);
@@ -56,6 +67,70 @@ namespace MHArmory.AthenaAssDataSource
             LoadData();
         }
 
+        private string DetermineAssPath(IDirectoryBrowserService directoryBrowserService, IMessageBoxService messageBoxService)
+        {
+            string selectedPath;
+
+            bool showIntroduction = true;
+
+            while (true)
+            {
+                while (true)
+                {
+                    if (showIntroduction)
+                    {
+                        showIntroduction = false;
+
+                        MessageBoxResult messageBoxResult = messageBoxService.Show(new MessageBoxServiceOptions
+                        {
+                            MessageBoxText = "Data from Athena's ASS application is required.\nClick OK to continue providing it, or Cancel to exit the application.",
+                            Title = "Data required",
+                            Buttons = MessageBoxButton.OKCancel,
+                            DefaultResult = MessageBoxResult.Cancel,
+                            Icon = MessageBoxImage.Question
+                        });
+
+                        if (messageBoxResult != MessageBoxResult.OK)
+                            return null;
+                    }
+
+                    var directoryOptions = new DirectoryBrowserServiceOptions
+                    {
+                        Description = "Select the 'Data' directory of the Athena's ASS application",
+                        ShowNewFolderButton = false
+                    };
+
+                    DialogResult directoryResult = directoryBrowserService.ShowDialog(directoryOptions);
+
+                    if (directoryResult == DialogResult.OK)
+                    {
+                        selectedPath = directoryOptions.SelectedPath;
+                        break;
+                    }
+
+                    showIntroduction = true;
+                }
+
+                if (File.Exists(Path.Combine(selectedPath, HeadsFilename)))
+                    return selectedPath;
+
+                string altPath = Path.Combine(selectedPath, "Data");
+                if (File.Exists(Path.Combine(altPath, HeadsFilename)))
+                    return altPath;
+
+                messageBoxService.Show(new MessageBoxServiceOptions
+                {
+                    MessageBoxText = "Selected directory is invalid.",
+                    Title = "Invalid data source",
+                    Buttons = MessageBoxButton.OK,
+                    DefaultResult = MessageBoxResult.OK,
+                    Icon = MessageBoxImage.Warning
+                });
+
+                showIntroduction = false;
+            }
+        }
+
         private void LoadData()
         {
             LoadArmorSetSkillsPhase1();
@@ -63,6 +138,9 @@ namespace MHArmory.AthenaAssDataSource
             LoadJewels();
             LoadCharms();
             LoadArmorPieces(); // <-- LoadArmorSetSkillsPhase2() is called here
+
+            string filename = Path.Combine(AppContext.BaseDirectory, "ass_path.txt");
+            File.WriteAllText(filename, dataFolderPath);
         }
 
         private IList<ArmorSetSkillPrimitive> armorSetSkillPrimitives;

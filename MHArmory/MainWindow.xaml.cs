@@ -11,6 +11,7 @@ using System.Windows.Threading;
 using MHArmory.Configurations;
 using MHArmory.Core;
 using MHArmory.Core.DataStructures;
+using MHArmory.Services;
 using MHArmory.ViewModels;
 
 namespace MHArmory
@@ -166,19 +167,12 @@ namespace MHArmory
 
         private async Task<bool> LoadData()
         {
-            //var source2 = new MhwDbDataSource.DataSource(null, App.HasWriteAccess);
-            //ISkill[] skills2 = await source2.GetSkills();
-            //IArmorPiece[] armors2 = await source2.GetArmorPieces();
-            //ICharm[] charms2 = await source2.GetCharms();
-            //IJewel[] jewels2 = await source2.GetJewels();
-
-            //// --------------------------------------------------
-
             IDataSource source = null;
 
             try
             {
-                source = new AthenaAssDataSource.DataSource();
+                source = new AthenaAssDataSource.DataSource(new DirectoryBrowserService(), new MessageBoxService());
+                //source2 = new MhwDbDataSource.DataSource(null, App.HasWriteAccess);
             }
             catch (InvalidDataSourceException)
             {
@@ -190,7 +184,10 @@ namespace MHArmory
             ICharm[] charms = await source.GetCharms();
             IJewel[] jewels = await source.GetJewels();
 
-
+            //ISkill[] skills2 = await source2.GetSkills();
+            //IArmorPiece[] armors2 = await source2.GetArmorPieces();
+            //ICharm[] charms2 = await source2.GetCharms();
+            //IJewel[] jewels2 = await source2.GetJewels();
 
             ///***********************************************************************/
 
