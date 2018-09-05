@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -87,6 +87,31 @@ namespace MHArmory.ViewModels
             }
         }
 
+        private int genderIndex;
+        public int GenderIndex
+        {
+            get { return genderIndex; }
+            set
+            {
+                if (SetValue(ref genderIndex, value))
+                    Gender = (Core.DataStructures.Gender)GenderIndex + 1;
+            }
+        }
+
+        private Core.DataStructures.Gender gender;
+        public Core.DataStructures.Gender Gender
+        {
+            get { return gender; }
+            set
+            {
+                if (SetValue(ref gender, value))
+                {
+                    GenderIndex = (int)Gender - 1;
+                    GenderChanged();
+                }
+            }
+        }
+
         public ICommand OpenDecorationsOverrideCommand { get { return root.OpenDecorationsOverrideCommand; } }
 
         public InParametersViewModel(RootViewModel root)
@@ -120,6 +145,11 @@ namespace MHArmory.ViewModels
                     Rarity = 9; // initial rarity, maximum one
                 else
                     Rarity = config.Rarity;
+
+                if (config.Gender < 0 || config.Gender > 2)
+                    Gender = Core.DataStructures.Gender.Both;
+                else
+                    GenderIndex = config.Gender;
             }
             finally
             {
@@ -161,6 +191,19 @@ namespace MHArmory.ViewModels
             InParametersConfigurationV2 config = GlobalData.Instance.Configuration.InParameters;
 
             config.Rarity = Rarity;
+            ConfigurationManager.Save(GlobalData.Instance.Configuration);
+
+            root.CreateSolverData();
+        }
+
+        private void GenderChanged()
+        {
+            if (isLoadingConfiguration)
+                return;
+
+            InParametersConfigurationV2 config = GlobalData.Instance.Configuration.InParameters;
+
+            config.Gender = GenderIndex;
             ConfigurationManager.Save(GlobalData.Instance.Configuration);
 
             root.CreateSolverData();

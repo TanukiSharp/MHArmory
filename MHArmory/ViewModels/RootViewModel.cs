@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -271,13 +271,13 @@ namespace MHArmory.ViewModels
 
             SolverData = new SolverData2(
                 InParameters.Slots.Select(x => x.Value).ToList(),
-                GlobalData.Instance.Heads.Where(x => x.Rarity <= InParameters.Rarity),
-                GlobalData.Instance.Chests.Where(x => x.Rarity <= InParameters.Rarity),
-                GlobalData.Instance.Gloves.Where(x => x.Rarity <= InParameters.Rarity),
-                GlobalData.Instance.Waists.Where(x => x.Rarity <= InParameters.Rarity),
-                GlobalData.Instance.Legs.Where(x => x.Rarity <= InParameters.Rarity),
-                GlobalData.Instance.Charms.Where(x => x.Rarity <= InParameters.Rarity),
-                GlobalData.Instance.Jewels.Where(x => x.Rarity <= InParameters.Rarity).Select(CreateSolverDataJewelModel),
+                GlobalData.Instance.Heads.Where(x => ArmorPieceMatchInParameters(x)),
+                GlobalData.Instance.Chests.Where(x => ArmorPieceMatchInParameters(x)),
+                GlobalData.Instance.Gloves.Where(x => ArmorPieceMatchInParameters(x)),
+                GlobalData.Instance.Waists.Where(x => ArmorPieceMatchInParameters(x)),
+                GlobalData.Instance.Legs.Where(x => ArmorPieceMatchInParameters(x)),
+                GlobalData.Instance.Charms.Where(x => EquipmentMatchInParameters(x)),
+                GlobalData.Instance.Jewels.Where(x => DecorationMatchInParameters(x)).Select(CreateSolverDataJewelModel),
                 desiredAbilities
             );
 
@@ -304,6 +304,29 @@ namespace MHArmory.ViewModels
             UpdateAdvancedSearch();
 
             rawFoundArmorSets = null;
+        }
+
+        private bool DecorationMatchInParameters(IJewel jewel)
+        {
+            return jewel.Rarity >= InParameters.Rarity;
+        }
+
+        private bool EquipmentMatchInParameters(IEquipment equipement)
+        {
+            return equipement.Rarity <= InParameters.Rarity;
+        }
+
+        private bool ArmorPieceMatchInParameters(IArmorPiece armorPiece)
+        {
+            return EquipmentMatchInParameters(armorPiece) && IsGenderMatching(armorPiece, InParameters.Gender);
+        }
+
+        private bool IsGenderMatching(IArmorPiece armorPiece, Gender gender)
+        {
+            if (armorPiece.Attributes.RequiredGender == Gender.Both)
+                return true;
+
+            return armorPiece.Attributes.RequiredGender == gender;
         }
 
         public void UpdateAdvancedSearch()

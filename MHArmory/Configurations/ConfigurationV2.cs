@@ -31,12 +31,12 @@ namespace MHArmory.Configurations
     {
         [JsonProperty("weaponSlots")]
         public int[] WeaponSlots { get; set; }
-
         [JsonProperty("decorationOverride")]
         public DecorationOverrideConfigurationV2 DecorationOverride { get; } = new DecorationOverrideConfigurationV2();
-
         [JsonProperty("rarity")]
         public int Rarity { get; set; }
+        [JsonProperty("gender")]
+        public int Gender { get; set; }
     }
 
     public class SkillLoadoutItemConfigurationV2

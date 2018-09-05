@@ -100,6 +100,23 @@
                     <TextBlock>9</TextBlock>
                 </ComboBox>
             </StackPanel>
+
+            <Rectangle Style="{StaticResource sep}"/>
+
+            <StackPanel VerticalAlignment="Stretch">
+                <TextBlock Text="Gender:" Margin="2"/>
+                <ComboBox VerticalAlignment="Stretch" Margin="2" MinWidth="70" SelectedIndex="{Binding GenderIndex}">
+                    <ComboBox.Resources>
+                        <Style TargetType="TextBlock">
+                            <Setter Property="Padding" Value="1 2 1 2"/>
+                        </Style>
+                    </ComboBox.Resources>
+                    <TextBlock>Male</TextBlock>
+                    <TextBlock>Female</TextBlock>
+                    <TextBlock>Both</TextBlock>
+                </ComboBox>
+            </StackPanel>
+
         </StackPanel>
     </DataTemplate>
 
