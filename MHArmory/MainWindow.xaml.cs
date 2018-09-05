@@ -67,7 +67,11 @@ namespace MHArmory
             advancedSearchWindow = new AdvancedSearchWindow(rootViewModel) { Owner = this };
             WindowManager.InitializeWindow(advancedSearchWindow);
 
-            await LoadData();
+            if (await LoadData() == false)
+            {
+                Application.Current.Shutdown();
+                return;
+            }
 
             loadoutManager = new LoadoutManager(rootViewModel);
             rootViewModel.SetLoadoutManager(loadoutManager);
@@ -160,7 +164,7 @@ namespace MHArmory
             return d[n, m];
         }
 
-        private async Task LoadData()
+        private async Task<bool> LoadData()
         {
             //var source2 = new MhwDbDataSource.DataSource(null, App.HasWriteAccess);
             //ISkill[] skills2 = await source2.GetSkills();
@@ -170,7 +174,16 @@ namespace MHArmory
 
             //// --------------------------------------------------
 
-            var source = new AthenaAssDataSource.DataSource();
+            IDataSource source = null;
+
+            try
+            {
+                source = new AthenaAssDataSource.DataSource();
+            }
+            catch (InvalidDataSourceException)
+            {
+                return false;
+            }
 
             ISkill[] skills = await source.GetSkills();
             IArmorPiece[] armors = await source.GetArmorPieces();
@@ -226,7 +239,7 @@ namespace MHArmory
             if (skills == null || armors == null || charms == null || jewels == null)
             {
                 CloseApplicationBecauseOfDataSource(source.Description);
-                return;
+                return false;
             }
 
             IList<SkillViewModel> allSkills = skills
@@ -246,6 +259,8 @@ namespace MHArmory
             GlobalData.Instance.SetArmors(armors);
             GlobalData.Instance.Charms = charms.SelectMany(x => x.Levels).ToList();
             GlobalData.Instance.Jewels = jewels;
+
+            return true;
         }
 
         private void OpenSkillSelector(object parameter)
