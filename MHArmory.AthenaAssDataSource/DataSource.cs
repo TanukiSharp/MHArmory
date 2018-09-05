@@ -524,16 +524,25 @@ namespace MHArmory.AthenaAssDataSource
 
         public Task<IArmorPiece[]> GetArmorPieces()
         {
+            if (armorPiecesTask == null)
+                return Task.FromResult<IArmorPiece[]>(null);
+
             return armorPiecesTask;
         }
 
         public Task<ICharm[]> GetCharms()
         {
+            if (charms == null)
+                return Task.FromResult<ICharm[]>(null);
+
             return charms;
         }
 
         public Task<IJewel[]> GetJewels()
         {
+            if (jewels == null)
+                return Task.FromResult<IJewel[]>(null);
+
             return jewels;
         }
 
