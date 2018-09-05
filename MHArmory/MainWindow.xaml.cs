@@ -223,24 +223,9 @@ namespace MHArmory
             /***********************************************************************/
 
 
-            if (skills == null)
+            if (skills == null || armors == null || charms == null || jewels == null)
             {
-                CloseApplicationBecauseOfDataSource(((ISkillDataSource)source).Description);
-                return;
-            }
-            else if (armors == null)
-            {
-                CloseApplicationBecauseOfDataSource(((IArmorDataSource)source).Description);
-                return;
-            }
-            else if (charms == null)
-            {
-                CloseApplicationBecauseOfDataSource(((ICharmDataSource)source).Description);
-                return;
-            }
-            else if (jewels == null)
-            {
-                CloseApplicationBecauseOfDataSource(((IJewelDataSource)source).Description);
+                CloseApplicationBecauseOfDataSource(source.Description);
                 return;
             }
 

@@ -9,7 +9,7 @@ using MHArmory.Core.DataStructures;
 
 namespace MHArmory.AthenaAssDataSource
 {
-    public class DataSource : IArmorDataSource, ISkillDataSource, ICharmDataSource, IJewelDataSource
+    public class DataSource : IDataSource
     {
         private readonly string dataFolderPath;
 
@@ -506,10 +506,7 @@ namespace MHArmory.AthenaAssDataSource
             }
         }
 
-        string IArmorDataSource.Description => $"Athena's ASS [path: '{dataFolderPath}', files: {HeadsFilename}, {ChestsFilename}, {GlovesFilename}, {WaistsFilename} or {LegsFilename}]";
-        string ISkillDataSource.Description => $"Athena's ASS [{skillsFilePath}]";
-        string ICharmDataSource.Description => $"Athena's ASS [{charmsFilePath}]";
-        string IJewelDataSource.Description => $"Athena's ASS [{jewelsFilePath}]";
+        public string Description { get; } = "Athena's ASS";
 
         private Task<IArmorPiece[]> armorPiecesTask;
         private Task<ICharm[]> charms;

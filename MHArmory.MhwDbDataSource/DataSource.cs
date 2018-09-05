@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Linq;
 using System.Collections.Generic;
 using System.IO;
@@ -11,7 +11,7 @@ using Microsoft.Extensions.Logging;
 
 namespace MHArmory.MhwDbDataSource
 {
-    public class DataSource : ISkillDataSource, IArmorDataSource, ICharmDataSource, IJewelDataSource
+    public class DataSource : IDataSource
     {
         private readonly ILogger logger;
         private readonly bool hasWriteAccess;
@@ -80,10 +80,7 @@ namespace MHArmory.MhwDbDataSource
         private ICharm[] charms;
         private IJewel[] jewels;
 
-        string ISkillDataSource.Description { get { return "http://mhw-db.com (skills API)"; } }
-        string IArmorDataSource.Description { get { return "http://mhw-db.com (armor/sets API)"; } }
-        string ICharmDataSource.Description { get { return "http://mhw-db.com (charms API)"; } }
-        string IJewelDataSource.Description { get { return "http://mhw-db.com (jewels API)"; } }
+        public string Description { get; } = "http://mhw-db.com";
 
         private async Task LoadData(ILogger logger)
         {
