@@ -4,7 +4,6 @@ This project is getting advanced enough now, and will lead.
 
 ## Will happen soon
 
-- Male/female support
 - Auto-update
 
 ## Will happen in a near future
@@ -13,3 +12,9 @@ This project is getting advanced enough now, and will lead.
 - Armor set builder
 - Asset explorer organized as tree
 - Support slot augmentations
+
+## Beta testing
+
+Special thanks to all the testers: Puck *(only one for now ^^)*
+
+Link to French documentation: https://tanukisharp.github.io/MHArmory/beta_test_fr.html
