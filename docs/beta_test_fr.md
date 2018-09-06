@@ -41,5 +41,5 @@ Ensuite, une autre boite de dialogue vous demande l'emplacement du dossier de do
 
 Vous pouvez sélectionner le dossier `Athena's Armor Set Search for MHW vX` (exemple sur l'image ci-dessus) ou le sous-dossier `Data`.
 
-Ensuite cliquez sur `OK` et c'est fini, vous pouvez utiliser **Armory** en exécutant `MHArmory.exe`.
+Ensuite cliquez sur `OK` et c'est fini, vous pouvez utiliser **Armory**.
 Cette manipulation n'est à faire qu'une seule fois.
