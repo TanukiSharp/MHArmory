@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -34,12 +34,30 @@ namespace MHArmory.Search
 
         public static int SlotSizeScoreSquare(int[] slots)
         {
-            return slots.Sum(x => x * x);
+            int total = 0;
+
+            for (int i = 0; i < slots.Length; i++)
+            {
+                int slotSize = i + 1;
+                int weight = slotSize * slotSize; // square
+                total += slots[i] * weight;
+            }
+
+            return total;
         }
 
         public static int SlotSizeScoreCube(int[] slots)
         {
-            return slots.Sum(x => x * x * x);
+            int total = 0;
+
+            for (int i = 0; i < slots.Length; i++)
+            {
+                int slotSize = i + 1;
+                int weight = slotSize * slotSize * slotSize; // cube
+                total += slots[i] * weight;
+            }
+
+            return total;
         }
 
         public static bool IsLessPoweredEquivalentEquipment(IEquipment baseEquipment, IEquipment checkedEquipment)
