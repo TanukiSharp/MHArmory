@@ -16,7 +16,7 @@ Si vous ne connaissez pas `Athena's ASS`, il n'est jamais trop tard, vous pouvez
 Pour commencer, téléchargez `Athena's ASS` et extrayez-le où bon vous semble.
 Admettons que vous l'ayez mis dans `D:\MHW\Athena's Armor Set Search for MHW v0.54b` comme ci-dessous, pour l'exemple.
 
-![Athena's ASS directory content](athena_ass_directory_content.png)
+![Athena's ASS directory content](images/athena_ass_directory_content.png)
 
 Ensuite, téléchargez le fichier zip de **Armory** à l'adresse suivante: [https://github.com/TanukiSharp/MHArmory/raw/master/Distributions/MHArmory_0.0.3.2.zip](https://github.com/TanukiSharp/MHArmory/raw/master/Distributions/MHArmory_0.0.3.2.zip)
 
@@ -25,19 +25,19 @@ Evitez `Program Files` ou autres.
 
 Une fois extrait, vous devriez avoir quelque chose comme ceci:
 
-![Armory directory content](armory_directory_content.png)
+![Armory directory content](images/armory_directory_content.png)
 
 Désormais, vous pouvez exécuter `MHArmory.exe`.
 Une boite de dialogue devrait apparaître, comme ceci:
 
-![Data access dialog](data_access_dlg01.png)
+![Data access dialog](images/data_access_dlg01.png)
 
 Vous pouvez cliquer sur `Cancel` pour annuler, ceci fermera l'application.
 Cliquez sur `OK` pour continuer.
 
 Ensuite, une autre boite de dialogue vous demande l'emplacement du dossier de données de `Athena's ASS`, comme ceci:
 
-![Data access dialog](data_access_dlg02.png)
+![Data access dialog](images/data_access_dlg02.png)
 
 Vous pouvez sélectionner le dossier `Athena's Armor Set Search for MHW vX` (exemple sur l'image ci-dessus) ou le sous-dossier `Data`.
 
