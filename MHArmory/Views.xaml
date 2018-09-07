@@ -656,7 +656,7 @@
                         <DockPanel LastChildFill="True">
                             <DockPanel DockPanel.Dock="Top" HorizontalAlignment="Stretch">
                                 <ContentControl DockPanel.Dock="Left" Content="{Binding InParameters, Mode=OneTime}" ContentTemplate="{StaticResource InParametersView}" Focusable="False"/>
-                                <Button DockPanel.Dock="Right" HorizontalAlignment="Right" Content="Result processing..." Command="{Binding OpenSearchResultProcessingCommand, Mode=OneTime}" Margin="2" Padding="8" VerticalAlignment="Center"/>
+                                <Button DockPanel.Dock="Right" HorizontalAlignment="Right" Content="Sort results..." Command="{Binding OpenSearchResultProcessingCommand, Mode=OneTime}" Margin="2" Padding="8" VerticalAlignment="Center"/>
                             </DockPanel>
                             <ListBox ItemsSource="{Binding FoundArmorSets, Mode=OneWay}" ItemTemplate="{StaticResource SearchResultArmorSetView}" ScrollViewer.VerticalScrollBarVisibility="Visible" Visibility="{Binding IsDataLoaded, Converter={StaticResource CollapsedVisibilityValueConverter}, Mode=OneWay}" Focusable="False" VirtualizingPanel.IsVirtualizing="True" VirtualizingPanel.ScrollUnit="Pixel" VirtualizingPanel.VirtualizationMode="Standard">
                                 <ListBox.ItemContainerStyle>
@@ -867,7 +867,7 @@
     <DataTemplate x:Key="SearchResultProcessingContainerDetailView">
         <DockPanel LastChildFill="True">
             <StackPanel Orientation="Horizontal" DockPanel.Dock="Top">
-                <Button Content="Add" Command="{Binding AddSortItemCommand}" Margin="2" Padding="4"/>
+                <Button Content="Add sort criteria" Command="{Binding AddSortItemCommand}" Margin="2" Padding="8 4 8 4"/>
             </StackPanel>
             <ItemsControl Margin="2" ItemsSource="{Binding SortItems}" ItemTemplate="{StaticResource SearchResultSortItemView}" Grid.IsSharedSizeScope="True"/>
         </DockPanel>
@@ -878,18 +878,23 @@
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="6"/>
-                <ColumnDefinition Width="2.5*"/>
+                <ColumnDefinition Width="1.5*"/>
             </Grid.ColumnDefinitions>
             <DockPanel Grid.Column="0" LastChildFill="True">
                 <DockPanel DockPanel.Dock="Top">
-                    <Button Content="New" DockPanel.Dock="Left" HorizontalAlignment="Left" Command="{Binding CreateNewCommand, Mode=OneTime}" Margin="2" Padding="3"/>
-                    <ToggleButton Content="Edit Mode" DockPanel.Dock="Right" HorizontalAlignment="Right" IsChecked="{Binding IsEditMode, Mode=TwoWay}" Visibility="{Binding HasContainers, Converter={StaticResource CollapsedVisibilityValueConverter}}" Margin="2" Padding="4"/>
+                    <Button Content="New sorting preference" DockPanel.Dock="Left" HorizontalAlignment="Left" Command="{Binding CreateNewCommand, Mode=OneTime}" Margin="2" Padding="8 4 8 4"/>
+                    <ToggleButton x:Name="edit" Content="Edit Mode" DockPanel.Dock="Right" HorizontalAlignment="Right" IsChecked="{Binding IsEditMode, Mode=TwoWay}" Visibility="{Binding HasContainers, Converter={StaticResource CollapsedVisibilityValueConverter}}" Margin="2" Padding="4"/>
                 </DockPanel>
                 <ListBox ItemsSource="{Binding Containers, Mode=OneWay}" ItemTemplate="{StaticResource SearchResultProcessingContainerMasterView}" HorizontalContentAlignment="Stretch" SelectedItem="{Binding SelectedContainer}" Margin="2"/>
             </DockPanel>
             <GridSplitter Grid.Column="1" HorizontalAlignment="Stretch"/>
             <ContentControl Grid.Column="2" Content="{Binding SelectedContainer}" ContentTemplate="{StaticResource SearchResultProcessingContainerDetailView}" Visibility="{Binding HasSelection, Converter={StaticResource CollapsedVisibilityValueConverter}}"/>
         </Grid>
+        <DataTemplate.Triggers>
+            <DataTrigger Binding="{Binding IsEditMode, Mode=TwoWay}" Value="True">
+                <Setter TargetName="edit" Property="Foreground" Value="Blue"/>
+            </DataTrigger>
+        </DataTemplate.Triggers>
     </DataTemplate>
 
 </ResourceDictionary>
