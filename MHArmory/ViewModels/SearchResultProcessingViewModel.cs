@@ -70,6 +70,11 @@ namespace MHArmory.ViewModels
             LoadConfiguration();
         }
 
+        internal void ApplyContainerRules(SearchResultProcessingContainerViewModel container)
+        {
+            rootViewModel.ApplySorting(container, false);
+        }
+
         internal void ActiveContainerChanged()
         {
             rootViewModel.ApplySorting(false);
@@ -135,13 +140,18 @@ namespace MHArmory.ViewModels
 
         public bool ApplySort(ref IEnumerable<ArmorSetViewModel> input, bool force, int limit)
         {
+            SearchResultProcessingContainerViewModel activeContainer = Containers.FirstOrDefault(x => x.IsActive);
+            return ApplySort(ref input, activeContainer, force, limit);
+        }
+
+        public bool ApplySort(ref IEnumerable<ArmorSetViewModel> input, SearchResultProcessingContainerViewModel container, bool force, int limit)
+        {
             if (input == null)
                 return false;
 
             limit = Math.Max(0, limit);
 
-            SearchResultProcessingContainerViewModel activeContainer = Containers.FirstOrDefault(x => x.IsActive);
-            if (activeContainer == null || activeContainer.SortItems.Count == 0)
+            if (container == null || container.SortItems.Count == 0)
             {
                 if (force == false)
                     return false;
@@ -156,7 +166,7 @@ namespace MHArmory.ViewModels
 
             IOrderedEnumerable<ArmorSetViewModel> result = input.OrderBy(x => 1); // wasting a bit of CPU cycles for productivity purpose :(
 
-            foreach (SearchResultSortCriteria sortCriteria in activeContainer.SortItems.Select(x => x.SortCriteria))
+            foreach (SearchResultSortCriteria sortCriteria in container.SortItems.Select(x => x.SortCriteria))
             {
                 switch (sortCriteria)
                 {

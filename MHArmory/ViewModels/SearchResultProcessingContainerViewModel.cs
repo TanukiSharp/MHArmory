@@ -37,6 +37,7 @@ namespace MHArmory.ViewModels
             }
         }
 
+        public ICommand ApplyCommand { get; }
         public ICommand MakeActiveCommand { get; }
         public ICommand DeactivateCommand { get; }
         public ICommand AddSortItemCommand { get; }
@@ -53,6 +54,7 @@ namespace MHArmory.ViewModels
 
             IsEditMode = parent.IsEditMode;
 
+            ApplyCommand = new AnonymousCommand(OnApply);
             MakeActiveCommand = new AnonymousCommand(OnMakeActive);
             DeactivateCommand = new AnonymousCommand(() => IsActive = false);
             AddSortItemCommand = new AnonymousCommand(OnAddSortItem);
@@ -62,6 +64,11 @@ namespace MHArmory.ViewModels
             RemoveSelfCommand = new AnonymousCommand(OnRemoveSelf);
 
             parent.EditModeChanged += Parent_EditModeChanged;
+        }
+
+        private void OnApply(object parameter)
+        {
+            parent.ApplyContainerRules(this);
         }
 
         private void OnMakeActive(object parameter)

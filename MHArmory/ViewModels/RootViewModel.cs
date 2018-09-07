@@ -133,6 +133,17 @@ namespace MHArmory.ViewModels
                 FoundArmorSets = result;
         }
 
+        public void ApplySorting(SearchResultProcessingContainerViewModel container, bool force, int limit = 200)
+        {
+            if (rawFoundArmorSets == null)
+                return;
+
+            IEnumerable<ArmorSetViewModel> result = rawFoundArmorSets;
+
+            if (SearchResultProcessing.ApplySort(ref result, container, force, limit))
+                FoundArmorSets = result;
+        }
+
         private LoadoutManager loadoutManager;
 
         public void SetLoadoutManager(LoadoutManager loadoutManager)
