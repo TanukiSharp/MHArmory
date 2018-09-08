@@ -18,7 +18,7 @@ Admettons que vous l'ayez mis dans `D:\MHW\Athena's Armor Set Search for MHW v0.
 
 ![Athena's ASS directory content](images/athena_ass_directory_content.png)
 
-Ensuite, téléchargez le fichier zip de **Armory** à l'adresse suivante: [https://github.com/TanukiSharp/MHArmory/raw/master/Distributions/MHArmory_0.0.3.2.zip](https://github.com/TanukiSharp/MHArmory/raw/master/Distributions/MHArmory_0.0.3.2.zip)
+Ensuite, téléchargez le fichier zip de **Armory** à l'adresse suivante: [https://github.com/TanukiSharp/MHArmory/raw/master/Distributions/MHArmory_0.0.3.3.zip](https://github.com/TanukiSharp/MHArmory/raw/master/Distributions/MHArmory_0.0.3.3.zip)
 
 Extrayez le zip à un endroit où l'application aura droit en écriture, pour que le programme puisse sauvegarder vos préférences. Ceci n'est pas obligatoire, mais recommandé.
 Evitez `Program Files` ou autres.
