@@ -82,6 +82,8 @@
     <Compile Include="Panels\KeyValueGrid.cs" />
     <Compile Include="Panels\TooledContentPanel.cs" />
     <Compile Include="ReorganizableCollectionUtilities.cs" />
+    <Compile Include="ScalableVectorGraphics\Loader.cs" />
+    <Compile Include="ScalableVectorGraphics\PathLexer.cs" />
     <Compile Include="SearchResultProcessingWindow.xaml.cs">
       <DependentUpon>SearchResultProcessingWindow.xaml</DependentUpon>
     </Compile>

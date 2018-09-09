@@ -30,6 +30,18 @@ namespace MHArmory
         {
             InitializeComponent();
 
+            var svgLoader = new ScalableVectorGraphics.Loader();
+            (IList<System.Windows.Shapes.Path> paths, Rect viewbox) = svgLoader.LoadFile(
+                @"D:\Codes\MHArmory\MHArmory\Icons\Jewel3.svg"
+                //@"D:\Codes\MHArmory\MHArmory\Icons\Ice.svg"
+                //@"D:\Codes\MHArmory\MHArmory\Icons\sample01.svg"
+            );
+
+            canvas.Width = viewbox.Width;
+            canvas.Height = viewbox.Height;
+            foreach (System.Windows.Shapes.Path shape in paths)
+                canvas.Children.Add(shape);
+
             WindowManager.FitInScreen(this);
 
             LoadConfiguration();
