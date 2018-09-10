@@ -10,9 +10,21 @@ using System.Xml.Linq;
 
 namespace MHArmory.ScalableVectorGraphics
 {
+    public class VectorGraphicsInfo
+    {
+        public IList<Path> Paths { get; }
+        public Rect Viewbox { get; }
+
+        public VectorGraphicsInfo(IList<Path> paths, Rect viewbox)
+        {
+            Paths = paths;
+            Viewbox = viewbox;
+        }
+    }
+
     public class Loader
     {
-        public (IList<Path> paths, Rect viewbox) LoadFile(string svgFullFilename)
+        public VectorGraphicsInfo LoadFile(string svgFullFilename)
         {
             if (svgFullFilename == null)
                 throw new ArgumentNullException(nameof(svgFullFilename));
@@ -22,7 +34,7 @@ namespace MHArmory.ScalableVectorGraphics
 
             XAttribute viewboxAttribute = root.Attribute("viewBox");
             if (viewboxAttribute == null)
-                return (null, Rect.Empty);
+                return null;
 
             var viewbox = Rect.Parse(viewboxAttribute.Value);
 
@@ -66,7 +78,7 @@ namespace MHArmory.ScalableVectorGraphics
                 });
             }
 
-            return (paths, viewbox);
+            return new VectorGraphicsInfo(paths, viewbox);
         }
     }
 }

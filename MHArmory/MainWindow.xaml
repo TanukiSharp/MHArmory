@@ -7,7 +7,10 @@
         mc:Ignorable="d"
         Title="-" Width="1200" Height="800" Background="WhiteSmoke" WindowStartupLocation="CenterScreen">
     <!--<ContentControl Content="{Binding}" ContentTemplate="{StaticResource RootView}" Focusable="False"/>-->
-    <Viewbox Width="1000" Height="1000" HorizontalAlignment="Left" VerticalAlignment="Top" Stretch="Fill">
+    <!--<Viewbox Width="1000" Height="1000" HorizontalAlignment="Left" VerticalAlignment="Top" Stretch="Fill">
         <Canvas x:Name="canvas" Width="2000" Height="2000" Background="White"/>
-    </Viewbox>
+    </Viewbox>-->
+    <Border BorderThickness="1" BorderBrush="Black" Width="64" Height="64" HorizontalAlignment="Left" VerticalAlignment="Top">
+        <Image x:Name="img"/>
+    </Border>
 </Window>
