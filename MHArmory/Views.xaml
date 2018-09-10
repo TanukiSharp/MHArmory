@@ -255,13 +255,18 @@
                         <ItemsControl ItemsSource="{Binding AdditionalSkills}" Margin="16 1 0 12" Focusable="False">
                             <ItemsControl.ItemTemplate>
                                 <DataTemplate>
-                                    <TextBlock>
-                                        <Run Text="{Binding Skill.Name, Mode=OneTime}"/>
+                                    <TextBlock ToolTip="{Binding Description, Mode=OneTime}">
+                                        <Run Text="{Binding Skill.Name, Mode=OneTime}" x:Name="skillName"/>
                                         <Run Text=": "/>
                                         <Run Text="{Binding TotalLevel, Mode=OneTime}" Foreground="Blue"/>
                                         <Run Text="/"/>
                                         <Run Text="{Binding Skill.MaxLevel, Mode=OneTime}"/>
                                     </TextBlock>
+                                    <DataTemplate.Triggers>
+                                        <DataTrigger Binding="{Binding IsExtra, Mode=OneTime}" Value="False">
+                                            <Setter TargetName="skillName" Property="TextBlock.Foreground" Value="#FFAE00FF"/>
+                                        </DataTrigger>
+                                    </DataTemplate.Triggers>
                                 </DataTemplate>
                             </ItemsControl.ItemTemplate>
                         </ItemsControl>

@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,11 +12,15 @@ namespace MHArmory.ViewModels
     {
         public ISkill Skill { get; }
         public int TotalLevel { get; }
+        public bool IsExtra { get; }
+        public string Description { get; }
 
-        public SearchResultSkillViewModel(ISkill skill, int totalLevel)
+        public SearchResultSkillViewModel(ISkill skill, int totalLevel, bool isExtra)
         {
             Skill = skill;
             TotalLevel = totalLevel;
+            IsExtra = isExtra;
+            Description = Skill.Abilities.FirstOrDefault(x => x.Level == TotalLevel)?.Description;
         }
     }
 
@@ -66,7 +70,6 @@ namespace MHArmory.ViewModels
             private set { SetValue(ref jewels, value); }
         }
 
-        public SearchResultSkillViewModel[] AllSkills { get; private set; }
         public SearchResultSkillViewModel[] AdditionalSkills { get; private set; }
 
         public int AdditionalSkillsTotalLevel { get; }
@@ -145,18 +148,21 @@ namespace MHArmory.ViewModels
 
             // ------------------------------------
 
-            AllSkills = skills
-                .Select(kv => new SearchResultSkillViewModel(GlobalData.Instance.Skills.First(s => s.Id == kv.Key), kv.Value))
-                .ToArray();
+            var additionalSkills = new List<SearchResultSkillViewModel>();
 
-            AdditionalSkills = AllSkills
-                .Where(svm => solverData.DesiredAbilities.All(a =>
-                {
-                    bool undesiredSkill = a.Skill.Id != svm.Skill.Id;
-                    bool desiredSkillLevelUp = a.Skill.Id == svm.Skill.Id && svm.TotalLevel > a.Level;
-                    return undesiredSkill || desiredSkillLevelUp;
-                }))
-                .ToArray();
+            foreach (KeyValuePair<int, int> skillKeyValue in skills)
+            {
+                ISkill skill = GlobalData.Instance.Skills.First(s => s.Id == skillKeyValue.Key);
+                int totalLevel = skillKeyValue.Value;
+
+                IAbility foundAbility = solverData.DesiredAbilities.FirstOrDefault(a => a.Skill.Id == skill.Id);
+                if (foundAbility == null)
+                    additionalSkills.Add(new SearchResultSkillViewModel(skill, totalLevel, true));
+                else if (totalLevel > foundAbility.Level)
+                    additionalSkills.Add(new SearchResultSkillViewModel(skill, totalLevel, false));
+            }
+
+            AdditionalSkills = additionalSkills.ToArray();
         }
 
         private void IncrementSkillLevel(IDictionary<int, int> skills, IAbility ability)
