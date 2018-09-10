@@ -24,12 +24,26 @@ namespace MHArmory.ScalableVectorGraphics
 
     public class Loader
     {
-        public VectorGraphicsInfo LoadFile(string svgFullFilename)
+        public VectorGraphicsInfo LoadFromFile(string svgFullFilename)
         {
             if (svgFullFilename == null)
                 throw new ArgumentNullException(nameof(svgFullFilename));
 
             var document = XDocument.Load(svgFullFilename);
+            return LoadFromXml(document);
+        }
+
+        public VectorGraphicsInfo LoadFromStream(System.IO.Stream stream)
+        {
+            if (stream == null)
+                throw new ArgumentNullException(nameof(stream));
+
+            var document = XDocument.Load(stream);
+            return LoadFromXml(document);
+        }
+
+        public VectorGraphicsInfo LoadFromXml(XDocument document)
+        {
             XElement root = document.Root;
 
             XAttribute viewboxAttribute = root.Attribute("viewBox");
