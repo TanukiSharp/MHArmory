@@ -18,7 +18,7 @@ namespace MHArmory.ScalableVectorGraphics
             DpiScale dpiInfo = VisualTreeHelper.GetDpi(App.Current.MainWindow);
             PixelFormat pixelFormat = PixelFormats.Pbgra32;
 
-            var x = new RenderTargetBitmap(width, height, dpiInfo.PixelsPerInchX, dpiInfo.PixelsPerInchY, pixelFormat);
+            var x = new RenderTargetBitmap(width, height, dpiInfo.PixelsPerInchX / dpiInfo.DpiScaleX, dpiInfo.PixelsPerInchY / dpiInfo.DpiScaleY, pixelFormat);
 
             var canvas = new Canvas
             {
