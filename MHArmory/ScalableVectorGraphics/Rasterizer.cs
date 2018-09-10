@@ -23,7 +23,9 @@ namespace MHArmory.ScalableVectorGraphics
             var canvas = new Canvas
             {
                 Width = vectorGraphicsInfo.Viewbox.Width,
-                Height = vectorGraphicsInfo.Viewbox.Height
+                Height = vectorGraphicsInfo.Viewbox.Height,
+                SnapsToDevicePixels = false,
+                UseLayoutRounding = true
             };
 
             foreach (Path path in vectorGraphicsInfo.Paths)
@@ -34,11 +36,15 @@ namespace MHArmory.ScalableVectorGraphics
                 Stretch = Stretch.Fill,
                 Width = width,
                 Height = height,
+                SnapsToDevicePixels = false,
+                UseLayoutRounding = true,
                 Child = canvas
             };
 
-            viewbox.Measure(new Size(width, height));
-            viewbox.Arrange(new Rect(new Size(width, height)));
+            var size = new Size(width, height);
+
+            viewbox.Measure(size);
+            viewbox.Arrange(new Rect(size));
 
             x.Render(viewbox);
 
