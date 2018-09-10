@@ -18,7 +18,7 @@ Let's assume you extracted it to the location `D:\MHW\Athena's Armor Set Search 
 
 ![Athena's ASS directory content](images/athena_ass_directory_content.png)
 
-Then, download the zip file of **Armory** at this address: [https://github.com/TanukiSharp/MHArmory/raw/master/Distributions/MHArmory_0.0.3.3.zip](https://github.com/TanukiSharp/MHArmory/raw/master/Distributions/MHArmory_0.0.3.3.zip)
+Then, download the zip file of **Armory** at this address: [https://github.com/TanukiSharp/MHArmory/raw/master/Distributions/MHArmory_0.0.4.0.zip](https://github.com/TanukiSharp/MHArmory/raw/master/Distributions/MHArmory_0.0.4.0.zip)
 
 Extract the zip at a location where the application will have write access rights, for it to store your preferences. This is not mandatory, but recommended.
 Avoid `Program Files` or such.
