@@ -319,7 +319,7 @@ namespace MHArmory.ViewModels
 
         private bool DecorationMatchInParameters(IJewel jewel)
         {
-            return jewel.Rarity >= InParameters.Rarity;
+            return jewel.Rarity <= InParameters.Rarity;
         }
 
         private bool EquipmentMatchInParameters(IEquipment equipement)
