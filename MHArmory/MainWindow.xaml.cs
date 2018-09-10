@@ -30,18 +30,6 @@ namespace MHArmory
         {
             InitializeComponent();
 
-            //var svgLoader = new ScalableVectorGraphics.Loader();
-            //(IList<System.Windows.Shapes.Path> paths, Rect viewbox) = svgLoader.LoadFile(
-            //    @"D:\Codes\MHArmory\MHArmory\Icons\Jewel3.svg"
-            //    //@"D:\Codes\MHArmory\MHArmory\Icons\Ice.svg"
-            //    //@"D:\Codes\MHArmory\MHArmory\Icons\sample01.svg"
-            //);
-
-            //canvas.Width = viewbox.Width;
-            //canvas.Height = viewbox.Height;
-            //foreach (System.Windows.Shapes.Path shape in paths)
-            //    canvas.Children.Add(shape);
-
             WindowManager.FitInScreen(this);
 
             LoadConfiguration();
@@ -73,28 +61,6 @@ namespace MHArmory
         private async void MainWindow_Loaded(object sender, RoutedEventArgs e)
         {
             await Dispatcher.Yield(DispatcherPriority.Render);
-
-            //System.Windows.Media.Matrix m = PresentationSource.FromVisual(this).CompositionTarget.TransformToDevice;
-            //double dx = m.M11;
-            //double dy = m.M22;
-
-            //var dpiXProperty = typeof(SystemParameters).GetProperty("DpiX", BindingFlags.NonPublic | BindingFlags.Static);
-            //var dpiYProperty = typeof(SystemParameters).GetProperty("Dpi", BindingFlags.NonPublic | BindingFlags.Static);
-
-            //var dpiX = (int)dpiXProperty.GetValue(null, null);
-            //var dpiY = (int)dpiYProperty.GetValue(null, null);
-
-            //var dpiInfo = System.Windows.Media.VisualTreeHelper.GetDpi(this);
-
-
-            var svgLoader = new ScalableVectorGraphics.Loader();
-            ScalableVectorGraphics.VectorGraphicsInfo vectorGraphicsInfo = svgLoader.LoadFile(
-                @"D:\Codes\MHArmory\MHArmory\Icons\Jewel3.svg"
-                //@"D:\Codes\MHArmory\MHArmory\Icons\Ice.svg"
-                //@"D:\Codes\MHArmory\MHArmory\Icons\sample01.svg"
-            );
-
-            img.Source = ScalableVectorGraphics.Rasterizer.Render(64, 64, vectorGraphicsInfo);
 
             skillSelectorWindow = new SkillSelectorWindow { Owner = this };
             WindowManager.InitializeWindow(skillSelectorWindow);
