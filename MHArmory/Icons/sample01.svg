@@ -1,0 +1,24 @@
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 20010904//EN" "http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd">
+<svg version="1.0" xmlns="http://www.w3.org/2000/svg" width="200px" height="200px" viewBox="0 0 2000 2000" preserveAspectRatio="xMidYMid meet">
+<!-- <g id="layer101" fill="#FF0000" stroke="none">
+ <path d="M200 200 L1800 200 1800 1800 200 1800z"/>
+</g>
+<g id="layer102" fill="#0000FF" stroke="none">
+ <path d="M0 1000 l1000 -1000 1000 1000 -1000 1000z"/>
+</g>
+<g id="layer103" fill="#00FF00" stroke="none">
+ <path d="M0 1000 c1000 -1000 1000 1000 -1000 1000z"/>
+</g> -->
+<g id="layer101" fill="#FFFF00" stroke="none">
+  <!-- <path d="M400 400 l200 0 c0 -200 800 0 0 200 l200 0 0 200 -1200 0z"/> -->
+  <path d="M10 10 C20 20, 40 20, 50 10" stroke="black" fill="transparent"/>
+  <path d="M70 10 C70 20, 120 20, 120 10" stroke="black" fill="transparent"/>
+  <path d="M130 10 C120 20, 180 20, 170 10" stroke="black" fill="transparent"/>
+  <path d="M10 60 C20 80, 40 80, 50 60" stroke="black" fill="transparent"/>
+  <path d="M70 60 C70 80, 110 80, 110 60" stroke="black" fill="transparent"/>
+  <path d="M130 60 C120 80, 180 80, 170 60" stroke="black" fill="transparent"/>
+  <path d="M10 110 C20 140, 40 140, 50 110" stroke="black" fill="transparent"/>
+  <path d="M70 110 C70 140, 110 140, 110 110" stroke="black" fill="transparent"/>
+  <path d="M130 110 C120 140, 180 140, 170 110" stroke="black" fill="transparent"/>
+</g>
+</svg>

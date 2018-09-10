@@ -79,9 +79,13 @@
       <DependentUpon>LoadoutWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="Logging\DispatcherLogger.cs" />
+    <Compile Include="MarkupExtensions\RasterizedImageExtension.cs" />
     <Compile Include="Panels\KeyValueGrid.cs" />
     <Compile Include="Panels\TooledContentPanel.cs" />
     <Compile Include="ReorganizableCollectionUtilities.cs" />
+    <Compile Include="ScalableVectorGraphics\RasterizedImageContainer.cs" />
+    <Compile Include="ScalableVectorGraphics\Loader.cs" />
+    <Compile Include="ScalableVectorGraphics\Rasterizer.cs" />
     <Compile Include="SearchResultProcessingWindow.xaml.cs">
       <DependentUpon>SearchResultProcessingWindow.xaml</DependentUpon>
     </Compile>
@@ -97,11 +101,11 @@
     <Compile Include="ValueConverters\MillisecondsToTimeValueConverter.cs" />
     <Compile Include="ValueConverters\NumToSeparatedStringValueConverter.cs" />
     <Compile Include="ValueConverters\SlotSizeToolTipValueConverter.cs" />
-    <Compile Include="ValueConverters\SlotToImagePathValueConverter.cs" />
+    <Compile Include="ValueConverters\SlotToImageSourceValueConverter.cs" />
     <Compile Include="ValueConverters\SortCriteriaNameValueConverter.cs" />
     <Compile Include="ValueConverters\VisibilityValueConverter.cs" />
     <Compile Include="GlobalData.cs" />
-    <Compile Include="ValueConverters\EnumToImagePathValueConverter.cs" />
+    <Compile Include="ValueConverters\EnumToImageSourceValueConverter.cs" />
     <Compile Include="ValueConverters\InverseBooleanValueConverter.cs" />
     <Compile Include="RoutedCommands.cs" />
     <Compile Include="SkillSelectorWindow.xaml.cs">
@@ -235,9 +239,25 @@
     <PackageReference Include="Newtonsoft.Json">
       <Version>11.0.2</Version>
     </PackageReference>
-    <PackageReference Include="SharpVectors0.3.1.41013">
-      <Version>0.3.1.41013</Version>
-    </PackageReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icons\Chest.svg" />
+    <Resource Include="Icons\Gloves.svg" />
+    <Resource Include="Icons\Head.svg" />
+    <Resource Include="Icons\Legs.svg" />
+    <Resource Include="Icons\Waist.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icons\Dragon.svg" />
+    <Resource Include="Icons\Fire.svg" />
+    <Resource Include="Icons\Ice.svg" />
+    <Resource Include="Icons\Thunder.svg" />
+    <Resource Include="Icons\Water.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icons\Jewel1.svg" />
+    <Resource Include="Icons\Jewel2.svg" />
+    <Resource Include="Icons\Jewel3.svg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
