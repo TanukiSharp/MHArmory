@@ -1,4 +1,4 @@
-*Current verion: **0.0.4.0***<br/>
+*Current version: **0.0.4.0***<br/>
 *Last modification: **2018/09/10***
 
 # Overview
@@ -24,7 +24,7 @@ This document will be updated soon to link to documentation.
 
 A temporary documentation for the beta test phase is available here: https://tanukisharp.github.io/MHArmory/beta_test_en.html
 
-# Beta testing
+# Beta testing [Download]
 
 Special thanks to:
 - **Baker80500**, owner of "Les Chasseurs de Gemmes - Clan MHW PS4"
