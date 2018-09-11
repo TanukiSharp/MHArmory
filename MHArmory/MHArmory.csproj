@@ -230,25 +230,6 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Icons\Chest.png" />
-    <Resource Include="Icons\Gloves.png" />
-    <Resource Include="Icons\Head.png" />
-    <Resource Include="Icons\Legs.png" />
-    <Resource Include="Icons\Waist.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Icons\Jewel1.png" />
-    <Resource Include="Icons\Jewel2.png" />
-    <Resource Include="Icons\Jewel3.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Icons\Dragon.png" />
-    <Resource Include="Icons\Fire.png" />
-    <Resource Include="Icons\Ice.png" />
-    <Resource Include="Icons\Thunder.png" />
-    <Resource Include="Icons\Water.png" />
-  </ItemGroup>
-  <ItemGroup>
     <PackageReference Include="Ben.Demystifier">
       <Version>0.1.1</Version>
     </PackageReference>
@@ -280,6 +261,9 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Icons\blue_shield.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icons\Charm.svg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>

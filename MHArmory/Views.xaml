@@ -168,7 +168,7 @@
                 </Grid.ColumnDefinitions>
                 <StackPanel Grid.Column="0" Orientation="Vertical" Margin="0 0 8 0">
                     <StackPanel Orientation="Horizontal" Grid.IsSharedSizeScope="True">
-                        <Image Source="{Binding Type, Mode=OneTime, Converter={StaticResource EnumToImageSourceValueConverter}, ConverterParameter=20}" Width="20" Height="20" VerticalAlignment="Center" Focusable="False"/>
+                        <Image Source="{Binding Type, Mode=OneTime, Converter={StaticResource EnumToImageSourceValueConverter}, ConverterParameter=20}" Width="20" Height="20" Margin="0 0 4 0" VerticalAlignment="Center" Focusable="False"/>
                         <TextBlock Text="{Binding Name, Mode=OneTime}" FontSize="12" FontWeight="Bold" VerticalAlignment="Center" Focusable="False"/>
                     </StackPanel>
                     <TextBlock Margin="2" Foreground="Gray" Visibility="{Binding Mode=OneTime, Converter={StaticResource HasDefenseVisibilityValueConverter}}" Focusable="False">
