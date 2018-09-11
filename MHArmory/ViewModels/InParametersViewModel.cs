@@ -146,10 +146,13 @@ namespace MHArmory.ViewModels
                 else
                     Rarity = config.Rarity;
 
-                if (config.Gender < 0 || config.Gender > 2)
+                int genderMin = (int)Core.DataStructures.Gender.Male;
+                int genderMax = (int)Core.DataStructures.Gender.Both;
+
+                if (config.Gender < genderMin || config.Gender > genderMax)
                     Gender = Core.DataStructures.Gender.Both;
                 else
-                    GenderIndex = config.Gender;
+                    Gender = (Core.DataStructures.Gender)config.Gender;
             }
             finally
             {
@@ -203,7 +206,7 @@ namespace MHArmory.ViewModels
 
             InParametersConfigurationV2 config = GlobalData.Instance.Configuration.InParameters;
 
-            config.Gender = GenderIndex;
+            config.Gender = (int)Gender;
             ConfigurationManager.Save(GlobalData.Instance.Configuration);
 
             root.CreateSolverData();
