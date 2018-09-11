@@ -115,11 +115,7 @@ namespace MHArmory.ViewModels
 
         private void OnAbout()
         {
-            var sb = new StringBuilder();
-
-            App.GetAssemblyInfo(sb);
-
-            System.Windows.MessageBox.Show(sb.ToString(), $"About {App.ApplicationName}", System.Windows.MessageBoxButton.OK, System.Windows.MessageBoxImage.Information);
+            new AboutWindow() { Owner = App.Current.MainWindow }.ShowDialog();
         }
 
         public void ApplySorting(bool force, int limit = 200)

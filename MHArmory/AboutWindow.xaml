@@ -5,8 +5,35 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MHArmory"
         mc:Ignorable="d"
-        Title="About..." Width="700" Height="450" WindowStyle="ToolWindow">
-    <Grid>
-        
-    </Grid>
+        Title="About..." Width="670" Height="423" Background="WhiteSmoke" WindowStartupLocation="CenterOwner" WindowStyle="ToolWindow" ResizeMode="NoResize">
+    <Canvas>
+        <Image Source="Icons/blue_shield.png" Width="128" Height="128" Canvas.Left="50" Canvas.Top="50"/>
+
+        <TextBlock Text="Armory" FontSize="32" FontWeight="Bold" Canvas.Left="220" Canvas.Top="50"/>
+
+        <TextBlock x:Name="txtVersion" Text="Version" Canvas.Left="340" Canvas.Top="80" FontSize="14" Foreground="Gray"/>
+
+        <StackPanel Canvas.Left="193" Canvas.Top="144" Width="444">
+            <StackPanel.Resources>
+                <Style TargetType="TextBlock">
+                    <Setter Property="Margin" Value="4"/>
+                </Style>
+            </StackPanel.Resources>
+            <TextBlock Text="Armor Set Search application for Monster Hunter: World."/>
+            <TextBlock Text="Developed by Tanuki" Foreground="Gray"/>
+            <TextBlock Margin="0"/>
+            <TextBlock Text="This project is a free and open-source project, for the community to participate, propose ideas and features requests." Foreground="Gray" TextWrapping="Wrap"/>
+            <TextBlock Margin="0"/>
+            <StackPanel Orientation="Horizontal"></StackPanel>
+            <TextBlock Text="Visit the GitHub page for more information: "/>
+            <TextBlock Margin="4 0 0 0">
+                <Hyperlink NavigateUri="https://github.com/TanukiSharp/MHArmory" RequestNavigate="HyperlinkClick" Foreground="Blue">
+                    https://github.com/TanukiSharp/MHArmory
+                </Hyperlink>
+            </TextBlock>
+        </StackPanel>
+
+        <Button Content="Developer info..." FontSize="10" Padding="4" Canvas.Right="10" Canvas.Bottom="10" Click="DeveloperInfoButtonClick"/>
+
+    </Canvas>
 </Window>

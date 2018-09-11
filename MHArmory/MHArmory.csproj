@@ -278,6 +278,9 @@
   <ItemGroup>
     <Resource Include="blue_shield.ico" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icons\blue_shield.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <PreBuildEvent>call "$(ProjectDir)PreBuildEventGitInfo.bat" "$(ProjectDir)"</PreBuildEvent>
