@@ -1,5 +1,14 @@
-*Current version: **0.0.4.1***<br/>
-*Last modification: **2018/09/11***
+<table>
+<tr style="border-collapse: collapse; border: none">
+<td style="border-collapse: collapse; border: none; padding: 0">
+<img src="docs/images/blue_shield.png" style="width: 64px; height: 64px"/>
+</td>
+<td style="border-collapse: collapse; border: none">
+<i>Current version: <b>0.0.4.1</b></i><br/>
+<i>Last modification: <b>2018/09/12</b></i>
+</td>
+</tr>
+</table>
 
 # Overview
 
@@ -35,6 +44,10 @@ Special thanks to:
 Link to the English beta test documentation: https://tanukisharp.github.io/MHArmory/beta_test_en.html<br/>
 Link to the French beta test documentation: https://tanukisharp.github.io/MHArmory/beta_test_fr.html
 
+# Stay tuned
+
+Follow **Armory** on Twitter to get latest news and updates: https://twitter.com/MHArmory
+
 # Possible future work
 
 ## Will happen soon
@@ -48,8 +61,13 @@ Link to the French beta test documentation: https://tanukisharp.github.io/MHArmo
 - Asset explorer organized as tree
 - Support slot augmentations
 
+# Terms of use
+
+[*Monster Hunter™*][6] and [*Monster Hunter: World™*][7] are registered trademarks or trademarks of [*Capcom Co., Ltd*][8].
 
 
-
-[ 9]: https://github.com/TanukiSharp/MHArmory/issues
+[6]: https://en.wikipedia.org/wiki/Monster_Hunter
+[7]: http://www.monsterhunterworld.com
+[8]: http://www.capcom.com
+[9]: https://github.com/TanukiSharp/MHArmory/issues
 [10]: https://sabercathost.com/folder/70912/MHW
