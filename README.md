@@ -1,11 +1,10 @@
 <table>
-<tr style="border-collapse: collapse; border: none">
-<td style="border-collapse: collapse; border: none; padding: 0">
-<img src="docs/images/blue_shield.png" style="width: 64px; height: 64px"/>
+<tr border-collapse="collapse" border="none">
+<td border-collapse="collapse" border="none">
+<img src="docs/images/blue_shield.png" width="64" height="64"/>
 </td>
-<td style="border-collapse: collapse; border: none">
-<i>Current version: <b>0.0.4.1</b></i><br/>
-<i>Last modification: <b>2018/09/12</b></i>
+<td border-collapse="collapse" border="none">
+<i>Current version: <b>0.0.4.1</b></i><br/><i>Last modification: <b>2018/09/12</b></i>
 </td>
 </tr>
 </table>
