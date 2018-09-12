@@ -1,4 +1,4 @@
-<table>
+<table border="none">
 <tr border-collapse="collapse" border="none">
 <td border-collapse="collapse" border="none">
 <img src="docs/images/blue_shield.png" width="64" height="64"/>
