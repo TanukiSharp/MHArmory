@@ -1,0 +1,14 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\MHArmory.AthenaAssDataSource\MHArmory.AthenaAssDataSource.csproj" />
+    <ProjectReference Include="..\MHArmory.Core\MHArmory.Core.csproj" />
+    <ProjectReference Include="..\MHArmory.MhwDbDataSource\MHArmory.MhwDbDataSource.csproj" />
+  </ItemGroup>
+
+</Project>
