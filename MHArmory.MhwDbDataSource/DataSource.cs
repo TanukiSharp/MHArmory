@@ -235,7 +235,7 @@ namespace MHArmory.MhwDbDataSource
             {
                 CharmPrimitive currentCharmPrimitive = result[i];
 
-                var charmLevels = new DataStructures.CharmLevel[currentCharmPrimitive.Levels.Length];
+                var charmLevels = new DataStructures.CharmLevel[currentCharmPrimitive.Levels.Count];
 
                 for (int j = 0; j < charmLevels.Length; j++)
                 {

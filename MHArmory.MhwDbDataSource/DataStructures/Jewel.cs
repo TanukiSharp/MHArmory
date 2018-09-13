@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -18,7 +18,7 @@ namespace MHArmory.MhwDbDataSource.DataStructures
         [JsonProperty("slot")]
         internal int SlotSize { get; set; }
         [JsonProperty("skills")]
-        internal AbilityIdPrimitive[] Abilitites { get; set; }
+        internal IList<AbilityIdPrimitive> Abilitites { get; set; }
     }
 
     internal class Jewel : IJewel

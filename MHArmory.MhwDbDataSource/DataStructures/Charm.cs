@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -24,7 +24,7 @@ namespace MHArmory.MhwDbDataSource.DataStructures
         [JsonProperty("rarity")]
         public int Rarity { get; set; }
         [JsonProperty("skills")]
-        public AbilityIdPrimitive[] Abilitites { get; set; }
+        public IList<AbilityIdPrimitive> Abilitites { get; set; }
     }
 
     internal class CharmPrimitive
@@ -32,14 +32,14 @@ namespace MHArmory.MhwDbDataSource.DataStructures
         [JsonProperty("name")]
         public string Name { get; set; }
         [JsonProperty("ranks")]
-        public CharmLevelPrimitive[] Levels { get; set; }
+        public IList<CharmLevelPrimitive> Levels { get; set; }
     }
 
     internal class CharmLevel : ICharmLevel
     {
         public ICharm Charm { get; private set; }
         public int Id { get; }
-        public EquipmentType Type => EquipmentType.Charm;
+        public EquipmentType Type { get; } = EquipmentType.Charm;
         public string Name { get; }
         public int Level { get; }
         public int Rarity { get; }
