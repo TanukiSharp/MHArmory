@@ -39,6 +39,7 @@ Special thanks to:
     - Very nice and friendly small hunters/gamers community
     - Discord invitation link here: https://discord.gg/MH67yQy
 - **Puck**, the very first tester
+- **All people who worked on Monster Hunter series**, for making such an amazing game
 
 Link to the English beta test documentation: https://tanukisharp.github.io/MHArmory/beta_test_en.html<br/>
 Link to the French beta test documentation: https://tanukisharp.github.io/MHArmory/beta_test_fr.html
@@ -54,6 +55,9 @@ Follow **Armory** on Twitter to get latest news and updates: https://twitter.com
 ## Will happen soon
 
 - Auto-update
+- Select all / Unselect all / Inverse selection in advanced search window
+- Show weapons matching selected slots (+ search / filter)
+- Move input parameters to the left pane (above skills)
 
 ## May happen in a near future
 
