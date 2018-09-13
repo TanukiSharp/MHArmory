@@ -279,15 +279,27 @@ namespace MHArmory.MhwDbDataSource
 
         public void ConvertArmorPieces(IEnumerable<IArmorPiece> armorPieces, string outputFilename)
         {
-            Convert(armorPieces, outputFilename, ConvertArmorPiece);
+            ConvertMany(armorPieces, outputFilename, ConvertArmorPiece);
         }
 
         public void ConvertSkills(IEnumerable<ISkill> skills, string outputFilename)
         {
-            Convert(skills, outputFilename, ConvertSkill);
+            ConvertMany(skills, outputFilename, ConvertSkill);
         }
 
-        private void Convert<TSource, TTarget>(IEnumerable<TSource> source, string outputFilename, Func<TSource, TTarget> convert)
+        public void ConvertCharms(IEnumerable<ICharm> charms, string outputFilename)
+        {
+            ConvertMany(charms, outputFilename, ConvertCharm);
+        }
+
+        public void ConvertJewels(IEnumerable<IJewel> jewels, string outputFilename)
+        {
+            ConvertMany(jewels, outputFilename, ConvertJewel);
+        }
+
+        // --------------------------------------------------------
+
+        private void ConvertMany<TSource, TTarget>(IEnumerable<TSource> source, string outputFilename, Func<TSource, TTarget> convert)
         {
             IList<TTarget> primitives = source
                 .Select(convert)
@@ -374,6 +386,38 @@ namespace MHArmory.MhwDbDataSource
                 SkillId = ability.Skill.Id,
                 Level = ability.Level,
                 Description = ability.Description
+            };
+        }
+
+        private CharmPrimitive ConvertCharm(ICharm charm)
+        {
+            return new CharmPrimitive
+            {
+                Name = charm.Name,
+                Levels = charm.Levels.Select(ConvertCharmLevel).ToList()
+            };
+        }
+
+        private CharmLevelPrimitive ConvertCharmLevel(ICharmLevel charmLevel)
+        {
+            return new CharmLevelPrimitive
+            {
+                Name = charmLevel.Name,
+                Level = charmLevel.Level,
+                Rarity = charmLevel.Rarity,
+                Abilitites = charmLevel.Abilities.Select(x => new AbilityIdPrimitive { SkillId = x.Skill.Id, Level = x.Level }).ToList()
+            };
+        }
+
+        private JewelPrimitive ConvertJewel(IJewel jewel)
+        {
+            return new JewelPrimitive
+            {
+                Id = jewel.Id,
+                Name = jewel.Name,
+                Rarity = jewel.Rarity,
+                SlotSize = jewel.SlotSize,
+                Abilitites = jewel.Abilities.Select(x => new AbilityIdPrimitive { SkillId = x.Skill.Id, Level = x.Level }).ToList()
             };
         }
     }
