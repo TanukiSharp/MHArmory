@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -45,7 +45,7 @@ namespace MHArmory.MhwDbDataSource.DataStructures
         public ArmorSetBonusPrimitive Bonus { get; set; }
     }
 
-    internal class ArmorPieceDefense : IArmorPieceDefense
+    internal class ArmorPieceDefensePrimitive : IArmorPieceDefense
     {
         [JsonProperty("base")]
         public int Base { get; set; }
@@ -55,7 +55,7 @@ namespace MHArmory.MhwDbDataSource.DataStructures
         public int Augmented { get; set; }
     }
 
-    internal class ArmorPieceResistances : IArmorPieceResistances
+    internal class ArmorPieceResistancesPrimitive : IArmorPieceResistances
     {
         [JsonProperty("fire")]
         public int Fire { get; set; }
@@ -107,8 +107,6 @@ namespace MHArmory.MhwDbDataSource.DataStructures
 
     internal class ArmorAbilityPrimitive
     {
-        [JsonProperty("id")]
-        public int AbilityId { get; set; }
         [JsonProperty("skill")]
         public int SkillId { get; set; }
         [JsonProperty("level")]
@@ -132,9 +130,9 @@ namespace MHArmory.MhwDbDataSource.DataStructures
         [JsonProperty("rarity")]
         public int Rarity { get; set; }
         [JsonProperty("defense")]
-        public ArmorPieceDefense Defense { get; set; }
+        public ArmorPieceDefensePrimitive Defense { get; set; }
         [JsonProperty("resistances")]
-        public ArmorPieceResistances Resistances { get; set; }
+        public ArmorPieceResistancesPrimitive Resistances { get; set; }
         [JsonProperty("attributes")]
         public ArmorPieceAttributesPrimitive Attributes { get; set; }
         [JsonProperty("slots")]
