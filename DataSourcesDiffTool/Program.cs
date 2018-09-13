@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using MHArmory.Core;
@@ -16,6 +17,20 @@ namespace DataSourcesDiffTool
         }
 
         private async Task Run()
+        {
+            ILogger logger = new ConsoleLogger();
+
+            IDataSource source1 = new MHArmory.AthenaAssDataSource.DataSource(logger, null, null);
+            var source2 = new MHArmory.MhwDbDataSource.DataSource(null, true);
+
+            IArmorPiece[] armorPieces = await source1.GetArmorPieces();
+            ISkill[] skills = await source1.GetSkills();
+
+            source2.ConvertArmorPieces(armorPieces, Path.Combine(AppContext.BaseDirectory, "armor.c.json"));
+            source2.ConvertSkills(skills, Path.Combine(AppContext.BaseDirectory, "skills.c.json"));
+        }
+
+        private async Task Run2()
         {
             ILogger logger = new ConsoleLogger();
 
@@ -38,17 +53,17 @@ namespace DataSourcesDiffTool
                 if (armorPieces2.Any(a1 => a1.Name == a2.Name))
                     continue;
 
-                IArmorPiece[] bestByNameDistance = armorPieces1
-                    .Select(a1 => new { Armor = a1, Distance = ComputeDamereauLevensheinDistance(a1.Name, a2.Name) })
-                    .OrderBy(x => x.Distance)
-                    .Select(x => x.Armor)
+                (IArmorPiece armorPiece, int distance)[] bestByNameDistance = armorPieces1
+                    .Select(a1 => (armorPiece: a1, distance: ComputeDamereauLevensheinDistance(a1.Name, a2.Name)))
+                    .OrderBy(x => x.distance)
+                    //.Select(x => x.Armor)
                     .ToArray();
 
-                if (bestByNameDistance[0].Name != a2.Name)
+                if (bestByNameDistance[0].armorPiece.Name != a2.Name)
                 {
                 }
 
-                Console.WriteLine(bestByNameDistance[0].Name);
+                Console.WriteLine(bestByNameDistance[0].armorPiece.Name);
             }
 
             foreach (IArmorPiece a1 in armorPieces1)
@@ -56,17 +71,17 @@ namespace DataSourcesDiffTool
                 if (armorPieces2.Any(a2 => a2.Name == a1.Name))
                     continue;
 
-                IArmorPiece[] bestByNameDistance = armorPieces2
-                    .Select(a2 => new { Armor = a2, Distance = ComputeDamereauLevensheinDistance(a2.Name, a1.Name) })
-                    .OrderBy(x => x.Distance)
-                    .Select(x => x.Armor)
+                (IArmorPiece armorPiece, int distance)[] bestByNameDistance = armorPieces2
+                    .Select(a2 => (armor: a2, distance: ComputeDamereauLevensheinDistance(a2.Name, a1.Name)))
+                    .OrderBy(x => x.distance)
+                    //.Select(x => x.Armor)
                     .ToArray();
 
-                if (bestByNameDistance[0].Name != a1.Name)
+                if (bestByNameDistance[0].armorPiece.Name != a1.Name)
                 {
                 }
 
-                Console.WriteLine(bestByNameDistance[0].Name);
+                Console.WriteLine(bestByNameDistance[0].armorPiece.Name);
             }
         }
 

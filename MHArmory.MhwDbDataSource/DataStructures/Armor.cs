@@ -95,6 +95,17 @@ namespace MHArmory.MhwDbDataSource.DataStructures
 
             return Gender.None;
         }
+
+        public static string GenderToString(Gender gender)
+        {
+            switch (gender)
+            {
+                case Gender.Male: return "male";
+                case Gender.Female: return "female";
+            }
+
+            return null;
+        }
     }
 
     internal class ArmorPieceAssets : IArmorPieceAssets

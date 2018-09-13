@@ -274,5 +274,107 @@ namespace MHArmory.MhwDbDataSource
 
             return new Ability(localSkill, level, localAbility.Description);
         }
+
+        // ***** Conversion methods *****
+
+        public void ConvertArmorPieces(IEnumerable<IArmorPiece> armorPieces, string outputFilename)
+        {
+            Convert(armorPieces, outputFilename, ConvertArmorPiece);
+        }
+
+        public void ConvertSkills(IEnumerable<ISkill> skills, string outputFilename)
+        {
+            Convert(skills, outputFilename, ConvertSkill);
+        }
+
+        private void Convert<TSource, TTarget>(IEnumerable<TSource> source, string outputFilename, Func<TSource, TTarget> convert)
+        {
+            IList<TTarget> primitives = source
+                .Select(convert)
+                .ToList();
+
+            string content = JsonConvert.SerializeObject(primitives, Formatting.Indented);
+
+            File.WriteAllText(outputFilename, content);
+        }
+
+        private ArmorPiecePrimitive ConvertArmorPiece(IArmorPiece armorPiece)
+        {
+            return new ArmorPiecePrimitive
+            {
+                Abilities = armorPiece.Abilities.Select(ConvertArmorAbility).ToList(),
+                Assets = null,
+                Attributes = new ArmorPieceAttributesPrimitive
+                {
+                    RequiredGender = DataStructures.ArmorPieceAttributes.GenderToString(armorPiece.Attributes.RequiredGender)
+                },
+                Defense = ConvertDefense(armorPiece.Defense),
+                Id = armorPiece.Id,
+                Name = armorPiece.Name,
+                Rarity = armorPiece.Rarity,
+                Resistances = ConvertResistances(armorPiece.Resistances),
+                Slots = ConvertSlots(armorPiece.Slots),
+                Type = armorPiece.Type
+            };
+        }
+
+        private ArmorAbilityPrimitive ConvertArmorAbility(IAbility ability)
+        {
+            return new ArmorAbilityPrimitive
+            {
+                SkillId = ability.Skill.Id,
+                Level = ability.Level,
+            };
+        }
+
+        private ArmorPieceDefensePrimitive ConvertDefense(IArmorPieceDefense defense)
+        {
+            return new ArmorPieceDefensePrimitive
+            {
+                Base = defense.Base,
+                Max = defense.Max,
+                Augmented = defense.Augmented
+            };
+        }
+
+        private ArmorPieceResistancesPrimitive ConvertResistances(IArmorPieceResistances resistances)
+        {
+            return new ArmorPieceResistancesPrimitive
+            {
+                Fire = resistances.Fire,
+                Water = resistances.Water,
+                Thunder = resistances.Thunder,
+                Ice = resistances.Ice,
+                Dragon = resistances.Dragon
+            };
+        }
+
+        private IList<ArmorSlotRank> ConvertSlots(int[] slots)
+        {
+            return slots
+                .Select(x => new ArmorSlotRank { Rank = x })
+                .ToList();
+        }
+
+        private SkillPrimitive ConvertSkill(ISkill skill)
+        {
+            return new SkillPrimitive
+            {
+                Id = skill.Id,
+                Name = skill.Name,
+                Description = skill.Description,
+                Abilities = skill.Abilities.Select(ConvertSkillAbility).ToList()
+            };
+        }
+
+        private AbilityPrimitive ConvertSkillAbility(IAbility ability)
+        {
+            return new AbilityPrimitive
+            {
+                SkillId = ability.Skill.Id,
+                Level = ability.Level,
+                Description = ability.Description
+            };
+        }
     }
 }
