@@ -1,18 +1,19 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 using System.Text;
+using Microsoft.Extensions.Logging;
 
 namespace MHArmory.AthenaAssDataSource
 {
     [AttributeUsage(AttributeTargets.Field | AttributeTargets.Property, AllowMultiple = false, Inherited = true)]
-    public class HiddenAttribute : Attribute
+    public sealed class HiddenAttribute : Attribute
     {
     }
 
     [AttributeUsage(AttributeTargets.Field | AttributeTargets.Property, AllowMultiple = false, Inherited = true)]
-    public class NameAttribute : Attribute
+    public sealed class NameAttribute : Attribute
     {
         public string[] Names { get; }
 
@@ -24,11 +25,14 @@ namespace MHArmory.AthenaAssDataSource
 
     public class DataLoader<T> where T : new()
     {
+        private readonly ILogger logger;
         private readonly IDictionary<string, int> header = new Dictionary<string, int>();
         private readonly IList<MemberInfo> members;
 
-        public DataLoader(string[] header)
+        public DataLoader(string[] header, ILogger logger)
         {
+            this.logger = logger;
+
             for (int i = 0; i < header.Length; i++)
             {
                 if (this.header.ContainsKey(header[i]) == false)
@@ -64,15 +68,20 @@ namespace MHArmory.AthenaAssDataSource
                     if (header.TryGetValue(name, out index) == false)
                     {
                         index = -1;
-                        Console.WriteLine($"[WARN] property '{name}' not in header");
                         continue;
                     }
                     break;
                 }
 
+                if (index < 0)
+                {
+                    logger?.LogError($"could not find header with '{string.Join(", ", names)}'");
+                    break;
+                }
+
                 if (index >= lineData.Length)
                 {
-                    Console.WriteLine($"[ERROR] line {lineNum}: data is shorter ({lineData.Length} columns) than {string.Join("/", names)} index ({index})");
+                    logger?.LogError($"line {lineNum}: data is shorter ({lineData.Length} columns) than {string.Join("/", names)} index ({index})");
                     continue;
                 }
 
@@ -80,16 +89,21 @@ namespace MHArmory.AthenaAssDataSource
 
                 if (member.MemberType == MemberTypes.Field)
                 {
-                    FieldInfo field = (FieldInfo)member;
+                    var field = (FieldInfo)member;
                     if (field.FieldType == typeof(int))
                     {
-                        if (int.TryParse(strValue, out int numValue) == false)
+                        if (strValue == string.Empty)
+                            field.SetValue(result, 0);
+                        else
                         {
-                            Console.WriteLine($"[ERROR] line {lineNum}: data of property {string.Join("/", names)} is integer but could not parse '{strValue}'");
-                            continue;
-                        }
+                            if (int.TryParse(strValue, out int numValue) == false)
+                            {
+                                logger?.LogError($"line {lineNum}: data of property {string.Join("/", names)} is integer but could not parse '{strValue}'");
+                                continue;
+                            }
 
-                        field.SetValue(result, numValue);
+                            field.SetValue(result, numValue);
+                        }
                     }
                     else
                     {
@@ -98,16 +112,21 @@ namespace MHArmory.AthenaAssDataSource
                 }
                 else if (member.MemberType == MemberTypes.Property)
                 {
-                    PropertyInfo property = (PropertyInfo)member;
+                    var property = (PropertyInfo)member;
                     if (property.PropertyType == typeof(int))
                     {
-                        if (int.TryParse(strValue, out int numValue) == false)
+                        if (strValue == string.Empty)
+                            property.SetValue(result, 0);
+                        else
                         {
-                            Console.WriteLine($"[ERROR] line {lineNum}: data of property {string.Join("/", names)} is integer but could not parse '{strValue}'");
-                            continue;
-                        }
+                            if (int.TryParse(strValue, out int numValue) == false)
+                            {
+                                logger?.LogError($"line {lineNum}: data of property {string.Join("/", names)} is integer but could not parse '{strValue}'");
+                                continue;
+                            }
 
-                        property.SetValue(result, numValue);
+                            property.SetValue(result, numValue);
+                        }
                     }
                     else
                     {

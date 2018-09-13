@@ -7,11 +7,13 @@ using MHArmory.AthenaAssDataSource.DataStructures;
 using MHArmory.Core;
 using MHArmory.Core.DataStructures;
 using MHArmory.Core.ServiceContracts;
+using Microsoft.Extensions.Logging;
 
 namespace MHArmory.AthenaAssDataSource
 {
     public class DataSource : IDataSource
     {
+        private readonly ILogger logger;
         private readonly string dataFolderPath;
 
         private readonly string skillsFilePath;
@@ -31,8 +33,10 @@ namespace MHArmory.AthenaAssDataSource
         public const string CharmsFilename = "charms.txt";
         public const string JewelsFilename = "decorations.txt";
 
-        public DataSource(IDirectoryBrowserService directoryBrowserService, IMessageBoxService messageBoxService)
+        public DataSource(ILogger logger, IDirectoryBrowserService directoryBrowserService, IMessageBoxService messageBoxService)
         {
+            this.logger = logger;
+
             string filename = Path.Combine(AppContext.BaseDirectory, "ass_path.txt");
 
             if (File.Exists(filename))
@@ -47,13 +51,16 @@ namespace MHArmory.AthenaAssDataSource
 
             if (dataFolderPath == null)
             {
-                messageBoxService.Show(new MessageBoxServiceOptions
+                if (messageBoxService != null)
                 {
-                    MessageBoxText = "Data source is missing, the application will exit.",
-                    Title = "Application will exit",
-                    Buttons = MessageBoxButton.OK,
-                    Icon = MessageBoxImage.Error
-                });
+                    messageBoxService.Show(new MessageBoxServiceOptions
+                    {
+                        MessageBoxText = "Data source is missing, the application will exit.",
+                        Title = "Application will exit",
+                        Buttons = MessageBoxButton.OK,
+                        Icon = MessageBoxImage.Error
+                    });
+                }
 
                 throw new InvalidDataSourceException();
             }
@@ -158,7 +165,7 @@ namespace MHArmory.AthenaAssDataSource
             }
 
             var localJewels = new List<IJewel>();
-            var dataLoader = new DataLoader<JewelPrimitive>(allLines[headerIndex].Substring(1).Split(','));
+            var dataLoader = new DataLoader<JewelPrimitive>(allLines[headerIndex].Substring(1).Split(','), logger);
 
             for (int i = dataIndex; i < allLines.Length; i++)
             {
@@ -190,10 +197,10 @@ namespace MHArmory.AthenaAssDataSource
                 return;
             }
 
-            var dataLoader = new DataLoader<CharmPrimitive>(allLines[headerIndex].Substring(1).Split(','));
+            var dataLoader = new DataLoader<CharmPrimitive>(allLines[headerIndex].Substring(1).Split(','), logger);
 
             var localCharms = new Dictionary<string, List<ICharmLevel>>();
-            var noSlots = new int[0];
+            int[] noSlots = new int[0];
 
             for (int i = dataIndex; i < allLines.Length; i++)
             {
@@ -298,7 +305,7 @@ namespace MHArmory.AthenaAssDataSource
                 return;
             }
 
-            var dataLoader = new DataLoader<SkillPrimitive>(allLines[headerIndex].Substring(1).Split(','));
+            var dataLoader = new DataLoader<SkillPrimitive>(allLines[headerIndex].Substring(1).Split(','), logger);
 
             int id = 1;
             var localSkills = new List<ISkill>();
@@ -533,7 +540,7 @@ namespace MHArmory.AthenaAssDataSource
                 yield break;
             }
 
-            var dataLoader = new DataLoader<ArmorPiecePrimitive>(allLines[headerIndex].Substring(1).Split(','));
+            var dataLoader = new DataLoader<ArmorPiecePrimitive>(allLines[headerIndex].Substring(1).Split(','), logger);
 
             for (int i = dataIndex; i < allLines.Length; i++)
             {
@@ -569,7 +576,7 @@ namespace MHArmory.AthenaAssDataSource
                 yield break;
             }
 
-            var dataLoader = new DataLoader<ArmorSetSkillPrimitive>(allLines[headerIndex].Substring(1).Split(','));
+            var dataLoader = new DataLoader<ArmorSetSkillPrimitive>(allLines[headerIndex].Substring(1).Split(','), logger);
 
             for (int i = dataIndex; i < allLines.Length; i++)
             {

@@ -171,8 +171,8 @@ namespace MHArmory
 
             try
             {
-                source = new AthenaAssDataSource.DataSource(new DirectoryBrowserService(), new MessageBoxService());
                 //source2 = new MhwDbDataSource.DataSource(null, App.HasWriteAccess);
+                source = new AthenaAssDataSource.DataSource(null, new DirectoryBrowserService(), new MessageBoxService());
             }
             catch (InvalidDataSourceException)
             {
