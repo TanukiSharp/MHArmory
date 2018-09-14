@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -128,7 +128,8 @@ namespace MHArmory.Core.DataStructures
             IArmorPieceResistances resistances,
             IArmorPieceAttributes attributes,
             IArmorPieceAssets assets,
-            IArmorSet armorSet
+            IArmorSet armorSet,
+            IEvent evt
         )
         {
             Id = id;
@@ -142,6 +143,7 @@ namespace MHArmory.Core.DataStructures
             Attributes = attributes;
             Assets = assets;
             ArmorSet = armorSet;
+            Event = evt;
         }
 
         public int Id { get; }
@@ -155,6 +157,7 @@ namespace MHArmory.Core.DataStructures
         public IArmorPieceAttributes Attributes { get; }
         public IArmorPieceAssets Assets { get; }
         public IArmorSet ArmorSet { get; private set; }
+        public IEvent Event { get; }
 
         public void UpdateArmorSet(IArmorSet armorSet)
         {

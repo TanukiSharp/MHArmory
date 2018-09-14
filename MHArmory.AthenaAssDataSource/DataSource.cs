@@ -32,6 +32,8 @@ namespace MHArmory.AthenaAssDataSource
         public const string AbilitiesDescriptionsFilename = "Languages/English/skill_descriptions.txt";
         public const string CharmsFilename = "charms.txt";
         public const string JewelsFilename = "decorations.txt";
+        public const string EventsFilename = "events.txt";
+        public const string EventNamesFilename = "Languages/English/events.txt";
 
         public DataSource(ILogger logger, IDirectoryBrowserService directoryBrowserService, IMessageBoxService messageBoxService)
         {
@@ -144,6 +146,7 @@ namespace MHArmory.AthenaAssDataSource
             LoadSkills();
             LoadJewels();
             LoadCharms();
+            LoadEvents();
             LoadArmorPieces(); // <-- LoadArmorSetSkillsPhase2() is called here
 
             string filename = Path.Combine(AppContext.BaseDirectory, "ass_path.txt");
@@ -217,7 +220,14 @@ namespace MHArmory.AthenaAssDataSource
                     localCharms.Add(charmName, charmLevels);
                 }
 
-                charmLevels.Add(new CharmLevel(i + 1, level, charmPrimitive.Name, 0, noSlots, ParseAbilities(charmPrimitive)));
+                IEvent foundEvent = CreateEvent(
+                    charmPrimitive.Material1,
+                    charmPrimitive.Material2,
+                    charmPrimitive.Material3,
+                    charmPrimitive.Material4
+                );
+
+                charmLevels.Add(new CharmLevel(i + 1, level, charmPrimitive.Name, 0, noSlots, ParseAbilities(charmPrimitive), foundEvent));
             }
 
             ICharm[] nonTaskCharms = localCharms
@@ -343,6 +353,33 @@ namespace MHArmory.AthenaAssDataSource
             nonTaskSkills = localSkills.ToArray();
         }
 
+        private readonly List<EventPrimitive> eventPrimitives = new List<EventPrimitive>();
+
+        private void LoadEvents()
+        {
+            string eventsFilePath = Path.Combine(dataFolderPath, EventsFilename);
+            string eventNamesFilePath = Path.Combine(dataFolderPath, EventNamesFilename);
+
+            string[] eventLines = File.ReadAllLines(eventsFilePath);
+            string[] eventNameLines = File.ReadAllLines(eventNamesFilePath);
+
+            int count = Math.Min(eventLines.Length, eventNameLines.Length);
+
+            for (int i = 0; i < count; i++)
+            {
+                var evenPrimitive = new EventPrimitive
+                {
+                    Id = i + 1,
+                    Name = eventNameLines[i],
+                    Items = eventLines[i]
+                        .Split(',')
+                        .Select(x => x.Trim())
+                        .ToArray()
+                };
+                eventPrimitives.Add(evenPrimitive);
+            }
+        }
+
         private void LoadArmorPieces()
         {
             string headsFilePath = Path.Combine(dataFolderPath, HeadsFilename);
@@ -405,9 +442,35 @@ namespace MHArmory.AthenaAssDataSource
             return (-1, -1);
         }
 
+        private IEvent CreateEvent(string material1, string material2, string material3, string material4)
+        {
+            IEvent foundEventPrimitive = null;
+
+            foreach (EventPrimitive eventPrimitive in eventPrimitives)
+            {
+                if (eventPrimitive.Items.Contains(material1) ||
+                    eventPrimitive.Items.Contains(material2) ||
+                    eventPrimitive.Items.Contains(material3) ||
+                    eventPrimitive.Items.Contains(material4))
+                {
+                    foundEventPrimitive = new Event(eventPrimitive.Id, eventPrimitive.Name);
+                    break;
+                }
+            }
+
+            return foundEventPrimitive;
+        }
+
         private ArmorPiece CreateArmorPiece(ArmorPieceContainer container)
         {
             ArmorPiecePrimitive primitive = container.Primitive;
+
+            IEvent foundEventPrimitive = CreateEvent(
+                container.Primitive.Material1,
+                container.Primitive.Material2,
+                container.Primitive.Material3,
+                container.Primitive.Material4
+            );
 
             return new ArmorPiece(
                 primitive.Id,
@@ -420,7 +483,8 @@ namespace MHArmory.AthenaAssDataSource
                 new ArmorPieceResistances(primitive.FireRes, primitive.WaterRes, primitive.ThunderRes, primitive.IceRes, primitive.DragonRes),
                 CreateArmorPieceAttributes(primitive),
                 ArmorPieceAssets.Null,
-                null // TODO: update armor set
+                null,
+                foundEventPrimitive
             );
         }
 

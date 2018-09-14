@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using MHArmory.Core.DataStructures;
@@ -52,5 +52,13 @@ namespace MHArmory.AthenaAssDataSource.DataStructures
         internal string Skill3 = null;
         [Name("Points 3")]
         internal int PointSkill3 = 0;
+        [Name("Material 1")]
+        internal string Material1 = null;
+        [Name("Material 2")]
+        internal string Material2 = null;
+        [Name("Material 3")]
+        internal string Material3 = null;
+        [Name("Material 4")]
+        internal string Material4 = null;
     }
 }

@@ -45,6 +45,7 @@ namespace MHArmory.MhwDbDataSource.DataStructures
         public int Rarity { get; }
         public int[] Slots { get; } = Array.Empty<int>();
         public IAbility[] Abilities { get; }
+        public IEvent Event { get; }
 
         internal CharmLevel(int id, CharmLevelPrimitive currentCharmLevelPrimitive, IAbility[] abilities)
         {

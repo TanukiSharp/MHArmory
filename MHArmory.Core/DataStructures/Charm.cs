@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -14,7 +14,7 @@ namespace MHArmory.Core.DataStructures
 
     public class CharmLevel : ICharmLevel
     {
-        public CharmLevel(int id, int level, string name, int rarity, int[] slots, IAbility[] abilities)
+        public CharmLevel(int id, int level, string name, int rarity, int[] slots, IAbility[] abilities, IEvent evt)
         {
             Id = id;
             Level = level;
@@ -23,6 +23,7 @@ namespace MHArmory.Core.DataStructures
             Rarity = rarity;
             Slots = slots;
             Abilities = abilities;
+            Event = evt;
         }
 
         public ICharm Charm { get; private set; }
@@ -33,6 +34,7 @@ namespace MHArmory.Core.DataStructures
         public int Rarity { get; }
         public int[] Slots { get; }
         public IAbility[] Abilities { get; }
+        public IEvent Event { get; }
 
         public void UpdateCharm(ICharm charm)
         {

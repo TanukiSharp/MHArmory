@@ -167,6 +167,7 @@ namespace MHArmory.MhwDbDataSource.DataStructures
         public IAbility[] Abilities { get; }
         public IArmorPieceAssets Assets { get; }
         public IArmorSet ArmorSet { get; private set; }
+        public IEvent Event { get; }
 
         public ArmorPiece(ArmorPiecePrimitive primitive, IAbility[] abilities)
         {

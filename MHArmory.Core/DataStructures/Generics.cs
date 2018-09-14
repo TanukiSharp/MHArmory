@@ -16,5 +16,6 @@ namespace MHArmory.Core.DataStructures
         string Name { get; }
         int Rarity { get; }
         int[] Slots { get; }
+        IEvent Event { get; }
     }
 }
