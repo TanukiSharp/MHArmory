@@ -25,114 +25,130 @@ namespace MHArmory.AthenaAssDataSource
 
     public class DataLoader<T> where T : new()
     {
+        private delegate bool Setter(object instance, string value);
+
         private readonly ILogger logger;
-        private readonly IDictionary<string, int> header = new Dictionary<string, int>();
-        private readonly IList<MemberInfo> members;
+        private readonly IDictionary<int, Setter> members = new Dictionary<int, Setter>();
 
         public DataLoader(string[] header, ILogger logger)
         {
             this.logger = logger;
 
-            for (int i = 0; i < header.Length; i++)
-            {
-                if (this.header.ContainsKey(header[i]) == false)
-                    this.header.Add(header[i], i);
-            }
-
             BindingFlags flags = BindingFlags.Instance | BindingFlags.Public | BindingFlags.NonPublic;
 
-            members = typeof(T).GetFields(flags)
-                .Cast<MemberInfo>()
-                .Concat(typeof(T).GetProperties(flags))
+            IList<(MemberInfo member, string[] names)> localMembers = typeof(T).GetMembers(flags)
+                .Where(m => m.MemberType == MemberTypes.Field || m.MemberType == MemberTypes.Property)
                 .Where(m => m.GetCustomAttribute<HiddenAttribute>() == null)
+                .Select(m => (member: m, names: m.GetCustomAttribute<NameAttribute>(true)?.Names ?? new string[] { m.Name }))
                 .ToList();
+
+            var headerUniqueness = new HashSet<string>();
+
+            for (int i = 0; i < header.Length; i++)
+            {
+                (MemberInfo member, string[] names) = localMembers.FirstOrDefault(x => x.names.Contains(header[i]));
+
+                if (member == null)
+                    continue;
+
+                if (headerUniqueness.Add(member.Name) == false)
+                    continue;
+
+                if (member is FieldInfo f)
+                {
+                    if (f.FieldType == typeof(int))
+                        members.Add(i, (x, y) => IntFieldSetter(f, x, y));
+                    else
+                        members.Add(i, (x, y) => StringFieldSetter(f, x, y));
+                }
+                else if (member is PropertyInfo p)
+                {
+                    if (p.PropertyType == typeof(int))
+                        members.Add(i, (x, y) => IntPropertySetter(p, x, y));
+                    else
+                        members.Add(i, (x, y) =>StringPropertySetter(p, x, y));
+                }
+            }
+        }
+
+        private bool StringFieldSetter(FieldInfo fieldInfo, object instance, string value)
+        {
+            try
+            {
+                fieldInfo.SetValue(instance, value);
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
+        private bool IntFieldSetter(FieldInfo fieldInfo, object instance, string value)
+        {
+            try
+            {
+                if (value == string.Empty)
+                    fieldInfo.SetValue(instance, 0);
+                else
+                {
+                    if (int.TryParse(value, out int numValue) == false)
+                        return false;
+
+                    fieldInfo.SetValue(instance, numValue);
+                }
+
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
+        private bool StringPropertySetter(PropertyInfo propertyInfo, object instance, string value)
+        {
+            try
+            {
+                propertyInfo.SetValue(instance, value);
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
+        private bool IntPropertySetter(PropertyInfo propertyInfo, object instance, string value)
+        {
+            try
+            {
+                if (value == string.Empty)
+                    propertyInfo.SetValue(instance, 0);
+                else
+                {
+                    if (int.TryParse(value, out int numValue) == false)
+                        return false;
+
+                    propertyInfo.SetValue(instance, numValue);
+                }
+
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
         }
 
         public T CreateObject(string[] lineData, int lineNum)
         {
             var result = new T();
 
-            foreach (MemberInfo member in members)
+            foreach (KeyValuePair<int, Setter> kv in members)
             {
-                NameAttribute nameAttribute = member.GetCustomAttribute<NameAttribute>();
-
-                string[] names = nameAttribute?.Names;
-
-                if (names == null || names.Length == 0)
-                    names = new[] { member.Name };
-
-                int index = -1;
-
-                foreach (string name in names)
-                {
-                    if (header.TryGetValue(name, out index) == false)
-                    {
-                        index = -1;
-                        continue;
-                    }
-                    break;
-                }
-
-                if (index < 0)
-                {
-                    logger?.LogError($"could not find header with '{string.Join(", ", names)}'");
-                    break;
-                }
-
-                if (index >= lineData.Length)
-                {
-                    logger?.LogError($"line {lineNum}: data is shorter ({lineData.Length} columns) than {string.Join("/", names)} index ({index})");
-                    continue;
-                }
-
-                string strValue = lineData[index];
-
-                if (member.MemberType == MemberTypes.Field)
-                {
-                    var field = (FieldInfo)member;
-                    if (field.FieldType == typeof(int))
-                    {
-                        if (strValue == string.Empty)
-                            field.SetValue(result, 0);
-                        else
-                        {
-                            if (int.TryParse(strValue, out int numValue) == false)
-                            {
-                                logger?.LogError($"line {lineNum}: data of property {string.Join("/", names)} is integer but could not parse '{strValue}'");
-                                continue;
-                            }
-
-                            field.SetValue(result, numValue);
-                        }
-                    }
-                    else
-                    {
-                        field.SetValue(result, strValue);
-                    }
-                }
-                else if (member.MemberType == MemberTypes.Property)
-                {
-                    var property = (PropertyInfo)member;
-                    if (property.PropertyType == typeof(int))
-                    {
-                        if (strValue == string.Empty)
-                            property.SetValue(result, 0);
-                        else
-                        {
-                            if (int.TryParse(strValue, out int numValue) == false)
-                            {
-                                logger?.LogError($"line {lineNum}: data of property {string.Join("/", names)} is integer but could not parse '{strValue}'");
-                                continue;
-                            }
-
-                            property.SetValue(result, numValue);
-                        }
-                    }
-                    else
-                    {
-                        property.SetValue(result, strValue);
-                    }
-                }
+                if (kv.Value(result, lineData[kv.Key]) == false)
+                    logger?.LogError($"line {lineNum}: failed to parse data at column {kv.Key + 1}.");
             }
 
             return result;
