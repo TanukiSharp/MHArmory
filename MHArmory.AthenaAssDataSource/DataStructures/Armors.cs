@@ -11,7 +11,7 @@ namespace MHArmory.AthenaAssDataSource.DataStructures
         internal ArmorPiecePrimitive Primitive;
         internal EquipmentType Type;
         internal int[] FullArmorSetIds;
-        internal IArmorSet FullArmorSet;
+        internal IFullArmorSet FullArmorSet;
         internal ArmorPiece ArmorPiece;
     }
 

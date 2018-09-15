@@ -4,7 +4,7 @@ using System.Text;
 using MHArmory.Core.DataStructures;
 using Newtonsoft.Json;
 
-namespace MHArmory.DataSource.DataStructures
+namespace MHArmory.ArmoryDataSource.DataStructures
 {
     public class ArmorAttributesPrimitive
     {
@@ -54,9 +54,11 @@ namespace MHArmory.DataSource.DataStructures
         public ArmorResistancesPrimitive Resistances { get; set; }
         [JsonProperty("attributes")]
         public ArmorAttributesPrimitive Attributes { get; set; }
-        [JsonProperty("armorSetId")]
-        public int ArmorSetId { get; set; }
-        [JsonProperty("eventId")]
+        [JsonProperty("armorSetSkillIds", NullValueHandling = NullValueHandling.Ignore)]
+        public List<int> ArmorSetSkillIds { get; set; }
+        [JsonProperty("fullArmorSetId", NullValueHandling = NullValueHandling.Ignore)]
+        public int? FullArmorSetId { get; set; }
+        [JsonProperty("eventId", NullValueHandling = NullValueHandling.Ignore)]
         public int? EventId { get; set; }
     }
 }

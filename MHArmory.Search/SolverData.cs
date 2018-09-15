@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using MHArmory.Core.DataStructures;
@@ -256,9 +256,9 @@ namespace MHArmory.Search
                 if (head.IsSelected)
                     continue;
 
-                if (head.Equipment is IArmorPiece armorPiece && armorPiece.ArmorSet != null && armorPiece.ArmorSet.IsFull)
+                if (head.Equipment is IArmorPiece armorPiece && armorPiece.FullArmorSet != null)
                 {
-                    foreach (IArmorPiece setArmorPiece in armorPiece.ArmorSet.ArmorPieces)
+                    foreach (IArmorPiece setArmorPiece in armorPiece.FullArmorSet.ArmorPieces)
                     {
                         SolverDataEquipmentModel result = all.FirstOrDefault(x => x.Equipment.Id == setArmorPiece.Id);
                         if (result != null)
@@ -298,12 +298,12 @@ namespace MHArmory.Search
         {
             for (int i = 0; i < heads.Count; i++)
             {
-                IArmorSet armorSet = ((IArmorPiece)heads[i].Equipment).ArmorSet;
+                IFullArmorSet fullArmorSet = ((IArmorPiece)heads[i].Equipment).FullArmorSet;
 
-                if (armorSet == null || armorSet.IsFull == false)
+                if (fullArmorSet == null)
                     continue;
 
-                IArmorPiece[] setPieces = armorSet.ArmorPieces;
+                IArmorPiece[] setPieces = fullArmorSet.ArmorPieces;
 
                 IArmorPiece head = setPieces.First(x => x.Type == EquipmentType.Head);
                 IArmorPiece chest = setPieces.First(x => x.Type == EquipmentType.Chest);
@@ -425,11 +425,11 @@ namespace MHArmory.Search
 
         private static bool IsEquipmentMatchingAbility(this IEquipment equipment, IEnumerable<IAbility> desiredAbilities)
         {
-            if (equipment is IArmorPiece armorPiece && armorPiece.ArmorSet != null && armorPiece.ArmorSet.IsFull == false)
+            if (equipment is IArmorPiece armorPiece && armorPiece.ArmorSetSkills == null)
             {
-                foreach (IArmorSetSkill skill in armorPiece.ArmorSet.Skills)
+                foreach (IArmorSetSkillPart skillPart in armorPiece.ArmorSetSkills.SelectMany(x => x.Parts))
                 {
-                    if (skill.GrantedSkills.Any(x => x.IsMatchingDesiredAbilities(desiredAbilities)))
+                    if (skillPart.GrantedSkills.Any(x => x.IsMatchingDesiredAbilities(desiredAbilities)))
                         return true;
                 }
             }

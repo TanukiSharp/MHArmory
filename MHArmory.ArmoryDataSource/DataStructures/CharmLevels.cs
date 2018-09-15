@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using Newtonsoft.Json;
 
-namespace MHArmory.DataSource.DataStructures
+namespace MHArmory.ArmoryDataSource.DataStructures
 {
     public class CharmLevelPrimitive
     {
@@ -17,5 +17,9 @@ namespace MHArmory.DataSource.DataStructures
         public int Rarity { get; set; }
         [JsonProperty("abilityIds")]
         public IList<int> AbilityIds { get; set; }
+        [JsonProperty("slots", NullValueHandling = NullValueHandling.Ignore)]
+        public IList<int> Slots { get; set; }
+        [JsonProperty("eventId", NullValueHandling = NullValueHandling.Ignore)]
+        public int? EventId { get; set; }
     }
 }

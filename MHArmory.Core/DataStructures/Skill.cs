@@ -7,6 +7,7 @@ namespace MHArmory.Core.DataStructures
 {
     public interface IAbility
     {
+        int Id { get; }
         ISkill Skill { get; }
         int Level { get; }
         string Description { get; }
@@ -25,12 +26,14 @@ namespace MHArmory.Core.DataStructures
 
         private int hashCode;
 
+        public int Id { get; private set; }
         public ISkill Skill { get; }
         public int Level { get; }
         public string Description { get; private set; }
 
-        public void UpdateDescription(string description)
+        public void Update(int id, string description)
         {
+            Id = id;
             Description = description;
         }
 

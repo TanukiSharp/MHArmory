@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using Newtonsoft.Json;
 
-namespace MHArmory.DataSource.DataStructures
+namespace MHArmory.ArmoryDataSource.DataStructures
 {
     public class AbilityPrimitive
     {

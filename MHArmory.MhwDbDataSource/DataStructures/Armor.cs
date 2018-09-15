@@ -165,6 +165,7 @@ namespace MHArmory.MhwDbDataSource.DataStructures
         public IArmorPieceAttributes Attributes { get; }
         public int[] Slots { get; }
         public IAbility[] Abilities { get; }
+        public IArmorSetSkill[] ArmorSetSkills { get; }
         public IArmorPieceAssets Assets { get; }
         public IArmorSet ArmorSet { get; private set; }
         public IEvent Event { get; }

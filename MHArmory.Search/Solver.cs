@@ -40,7 +40,7 @@ namespace MHArmory.Search
 
         private readonly ObjectPool<List<ArmorSetJewelResult>> jewelResultObjectPool = new ObjectPool<List<ArmorSetJewelResult>>(() => new List<ArmorSetJewelResult>());
         private readonly ObjectPool<int[]> availableSlotsObjectPool = new ObjectPool<int[]>(() => new int[3]);
-        private readonly ObjectPool<Dictionary<IArmorSet, int>> armorSetsObjectPool = new ObjectPool<Dictionary<IArmorSet, int>>(() => new Dictionary<IArmorSet, int>(ArmorSetEqualityComparer.Default));
+        private readonly ObjectPool<Dictionary<IArmorSetSkillPart, int>> armorSetSkillPartsObjectPool = new ObjectPool<Dictionary<IArmorSetSkillPart, int>>(() => new Dictionary<IArmorSetSkillPart, int>(ArmorSetSkillPartEqualityComparer.Default));
         private readonly ObjectPool<IEquipment[]> searchEquipmentsObjectPool = new ObjectPool<IEquipment[]>(() => new IEquipment[6]);
 
         private async Task<IList<ArmorSetSearchResult>> SearchArmorSetsInternal(
@@ -177,7 +177,7 @@ namespace MHArmory.Search
                 availableSlotsObjectPool.PutObject(availableSlots);
             }
 
-            if (equipments.OfType<IArmorPiece>().Any(x => x.ArmorSet != null && x.ArmorSet.IsFull))
+            if (equipments.OfType<IArmorPiece>().Any(x => x.FullArmorSet != null))
             {
                 if (DataUtility.AreOnSameFullArmorSet(equipments.OfType<IArmorPiece>()) == false)
                 {
@@ -306,41 +306,41 @@ namespace MHArmory.Search
 
         private bool IsAbilityMatchingArmorSet(IAbility ability, IEnumerable<IArmorPiece> armorPieces)
         {
-            Dictionary<IArmorSet, int> armorSets = armorSetsObjectPool.GetObject();
+            Dictionary<IArmorSetSkillPart, int> armorSetSkillParts = armorSetSkillPartsObjectPool.GetObject();
 
             void Done()
             {
-                armorSets.Clear();
-                armorSetsObjectPool.PutObject(armorSets);
+                armorSetSkillParts.Clear();
+                armorSetSkillPartsObjectPool.PutObject(armorSetSkillParts);
             }
 
             foreach (IArmorPiece armorPiece in armorPieces)
             {
-                if (armorPiece.ArmorSet == null || armorPiece.ArmorSet.Skills == null)
+                if (armorPiece.ArmorSetSkills == null)
                     continue;
 
-                if (armorPiece.ArmorSet.Skills.SelectMany(x => x.GrantedSkills).Any(a => a.Skill.Id == ability.Skill.Id))
+                foreach (IArmorSetSkillPart armorSetSkillPart in armorPiece.ArmorSetSkills.SelectMany(x => x.Parts))
                 {
-                    if (armorSets.TryGetValue(armorPiece.ArmorSet, out int value) == false)
-                        value = 0;
+                    if (armorSetSkillPart.GrantedSkills.Any(a => a.Skill.Id == ability.Skill.Id))
+                    {
+                        if (armorSetSkillParts.TryGetValue(armorSetSkillPart, out int value) == false)
+                            value = 0;
 
-                    armorSets[armorPiece.ArmorSet] = value + 1;
+                        armorSetSkillParts[armorSetSkillPart] = value + 1;
+                    }
                 }
             }
 
-            if (armorSets.Count > 0)
+            if (armorSetSkillParts.Count > 0)
             {
-                foreach (KeyValuePair<IArmorSet, int> armorSetKeyValue in armorSets)
+                foreach (KeyValuePair<IArmorSetSkillPart, int> armorSetSkillPartKeyValue in armorSetSkillParts)
                 {
-                    foreach (IArmorSetSkill armorSetSkill in armorSetKeyValue.Key.Skills)
+                    if (armorSetSkillPartKeyValue.Value >= armorSetSkillPartKeyValue.Key.RequiredArmorPieces)
                     {
-                        if (armorSetKeyValue.Value >= armorSetSkill.RequiredArmorPieces)
+                        if (armorSetSkillPartKeyValue.Key.GrantedSkills.Any(x => x.Skill.Id == ability.Skill.Id))
                         {
-                            if (armorSetSkill.GrantedSkills.Any(x => x.Skill.Id == ability.Skill.Id))
-                            {
-                                Done();
-                                return true;
-                            }
+                            Done();
+                            return true;
                         }
                     }
                 }
@@ -477,11 +477,11 @@ namespace MHArmory.Search
             }
         }
 
-        private class ArmorSetEqualityComparer : IEqualityComparer<IArmorSet>
+        private class ArmorSetSkillPartEqualityComparer : IEqualityComparer<IArmorSetSkillPart>
         {
-            public static readonly IEqualityComparer<IArmorSet> Default = new ArmorSetEqualityComparer();
+            public static readonly IEqualityComparer<IArmorSetSkillPart> Default = new ArmorSetSkillPartEqualityComparer();
 
-            public bool Equals(IArmorSet x, IArmorSet y)
+            public bool Equals(IArmorSetSkillPart x, IArmorSetSkillPart y)
             {
                 if (x == null || y == null)
                     return false;
@@ -489,7 +489,7 @@ namespace MHArmory.Search
                 return x.Id == y.Id;
             }
 
-            public int GetHashCode(IArmorSet obj)
+            public int GetHashCode(IArmorSetSkillPart obj)
             {
                 if (obj == null)
                     return 0;

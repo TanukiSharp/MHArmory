@@ -142,8 +142,8 @@ namespace MHArmory.AthenaAssDataSource
 
         private void LoadData()
         {
-            LoadArmorSetSkillsPhase1();
             LoadSkills();
+            LoadArmorSetSkills();
             LoadJewels();
             LoadCharms();
             LoadEvents();
@@ -255,35 +255,54 @@ namespace MHArmory.AthenaAssDataSource
             return (name, 1);
         }
 
-        private void LoadArmorSetSkillsPhase1()
+        private IList<IArmorSetSkill> armorSetSkills = new List<IArmorSetSkill>();
+
+        private void LoadArmorSetSkills()
         {
             string filename = Path.Combine(dataFolderPath, "set_skills.txt");
             armorSetSkillPrimitives = LoadArmorSetSkills(filename).ToList();
-        }
 
-        private int armorSetUniqueId = 1;
+            int id = 0;
+            int partId = 0;
+
+            IAbility FindAbility(string skillName)
+            {
+                return nonTaskAbilities.FirstOrDefault(a => a.Skill.Name == skillName && a.Level == 1);
+            }
+
+            foreach (IGrouping<string, ArmorSetSkillPrimitive> armorSetSkillGroup in armorSetSkillPrimitives.GroupBy(x => x.Name))
+            {
+                ArmorSetSkillPart[] armorSetSkillParts = armorSetSkillGroup
+                    .Select(x => new ArmorSetSkillPart(partId++, x.PiecesNeeded, new IAbility[] { FindAbility(x.Name) }))
+                    .ToArray();
+
+                armorSetSkills.Add(new ArmorSetSkill(id++, armorSetSkillGroup.Key, armorSetSkillParts));
+            }
+        }
 
         private void LoadArmorSetSkillsPhase2(IList<ArmorPieceContainer> allArmorSetContainers)
         {
-            foreach (IGrouping<string, ArmorSetSkillPrimitive> armorSetSkillGroup in armorSetSkillPrimitives.GroupBy(x => x.Name))
-            {
-                IArmorSetSkill[] armorSetSkills = armorSetSkillGroup
-                    .Select(FromArmorSetSkillPrimitive)
-                    .ToArray();
+            //foreach (IGrouping<string, ArmorSetSkillPrimitive> armorSetSkillGroup in armorSetSkillPrimitives.GroupBy(x => x.Name))
+            //{
+            //    IArmorSetSkillPart[] armorSetSkillParts = armorSetSkillGroup
+            //        .Select(FromArmorSetSkillPrimitive)
+            //        .ToArray();
 
-                ArmorPiece[] armorSetPieces = allArmorSetContainers
-                    .Where(x => ContainsSkillName(x.Primitive, armorSetSkillGroup.Key))
-                    .Select(x => x.ArmorPiece)
-                    .ToArray();
+            //    var armorSetSkill = new ArmorSetSkill(armorSetSkillGroup.Key, armorSetSkillParts);
 
-                int armorSetId = armorSetUniqueId;
-                armorSetUniqueId++;
+            //    ArmorPiece[] armorSetPieces = allArmorSetContainers
+            //        .Where(x => ContainsSkillName(x.Primitive, armorSetSkillGroup.Key))
+            //        .Select(x => x.ArmorPiece)
+            //        .ToArray();
 
-                var armorSet = new ArmorSet(armorSetId, false, armorSetPieces, armorSetSkills);
+            //    int armorSetId = armorSetUniqueId;
+            //    armorSetUniqueId++;
 
-                foreach (ArmorPiece armorPiece in armorSetPieces)
-                    armorPiece.UpdateArmorSet(armorSet);
-            }
+            //    var armorSet = new ArmorSet(armorSetId, false, armorSetPieces, new IArmorSetSkill[] { armorSetSkill });
+
+            //    foreach (ArmorPiece armorPiece in armorSetPieces)
+            //        armorPiece.UpdateArmorSet(armorSet);
+            //}
         }
 
         private bool ContainsSkillName(ArmorPiecePrimitive primitive, string skillName)
@@ -294,11 +313,11 @@ namespace MHArmory.AthenaAssDataSource
                 primitive.Skill3 == skillName;
         }
 
-        private IArmorSetSkill FromArmorSetSkillPrimitive(ArmorSetSkillPrimitive primitive)
-        {
-            ISkill skillGranted = nonTaskSkills.First(x => x.Name == primitive.SkillGranted);
-            return new ArmorSetSkill(primitive.PiecesNeeded, skillGranted.Abilities.Where(a => a.Level == 1).ToArray());
-        }
+        //private IArmorSetSkillPart FromArmorSetSkillPrimitive(ArmorSetSkillPrimitive primitive)
+        //{
+        //    ISkill skillGranted = nonTaskSkills.First(x => x.Name == primitive.SkillGranted);
+        //    return new ArmorSetSkillPart(primitive.PiecesNeeded, skillGranted.Abilities.Where(a => a.Level == 1).ToArray());
+        //}
 
         private void LoadSkills()
         {
@@ -346,7 +365,7 @@ namespace MHArmory.AthenaAssDataSource
 
             nonTaskAbilities = localSkills
                 .SelectMany(s => s.Abilities)
-                .ForEach((a, i) => ((Ability)a).UpdateDescription(allAbilitiesDescriptions[i]))
+                .ForEach((a, i) => ((Ability)a).Update(i, allAbilitiesDescriptions[i]))
                 .Distinct()
                 .ToArray();
 
@@ -403,7 +422,7 @@ namespace MHArmory.AthenaAssDataSource
                     .Concat(legs)
                     .ToList();
 
-                PreUpdateArmorSets(allArmorSetContainers);
+                PreUpdateFullArmorSets(allArmorSetContainers);
 
                 foreach (ArmorPieceContainer container in allArmorSetContainers)
                     container.ArmorPiece = CreateArmorPiece(container);
@@ -412,7 +431,7 @@ namespace MHArmory.AthenaAssDataSource
                     .Select(x => x.ArmorPiece)
                     .ToList();
 
-                PostUpdateArmorSets(allArmorSetContainers, allPieces);
+                PostUpdateFullArmorSets(allArmorSetContainers, allPieces);
 
                 LoadArmorSetSkillsPhase2(allArmorSetContainers);
 
@@ -479,6 +498,7 @@ namespace MHArmory.AthenaAssDataSource
                 primitive.Rarity,
                 ParseSlots(primitive.Slots),
                 ParseAbilities(primitive),
+                ParseArmorSetSkills(primitive),
                 new ArmorPieceDefense(primitive.MinDef, primitive.MaxDef, primitive.AugmentedDef),
                 new ArmorPieceResistances(primitive.FireRes, primitive.WaterRes, primitive.ThunderRes, primitive.IceRes, primitive.DragonRes),
                 CreateArmorPieceAttributes(primitive),
@@ -488,7 +508,7 @@ namespace MHArmory.AthenaAssDataSource
             );
         }
 
-        private void PreUpdateArmorSets(IList<ArmorPieceContainer> allArmorPieceContainers)
+        private void PreUpdateFullArmorSets(IList<ArmorPieceContainer> allArmorPieceContainers)
         {
             var list = allArmorPieceContainers.Where(x => x.Primitive.Restriction == "Full").ToList();
 
@@ -510,7 +530,9 @@ namespace MHArmory.AthenaAssDataSource
             }
         }
 
-        private void PostUpdateArmorSets(IList<ArmorPieceContainer> allArmorPieceContainers, IList<ArmorPiece> allArmorPieces)
+        private int armorSetUniqueId;
+
+        private void PostUpdateFullArmorSets(IList<ArmorPieceContainer> allArmorPieceContainers, IList<ArmorPiece> allArmorPieces)
         {
             foreach (ArmorPieceContainer container in allArmorPieceContainers.Where(x => x.FullArmorSetIds != null))
             {
@@ -528,12 +550,12 @@ namespace MHArmory.AthenaAssDataSource
                 int armorSetId = armorSetUniqueId;
                 armorSetUniqueId++;
 
-                IArmorSet armorSet = new ArmorSet(armorSetId, true, setPieces, null);
+                IFullArmorSet fullArmorSet = new FullArmorSet(armorSetId, setPieces);
 
                 foreach (ArmorPieceContainer setContainer in setContainers)
                 {
-                    setContainer.FullArmorSet = armorSet;
-                    setContainer.ArmorPiece.UpdateArmorSet(armorSet);
+                    setContainer.FullArmorSet = fullArmorSet;
+                    //setContainer.ArmorPiece.UpdateArmorSet(armorSet);
                 }
             }
         }
@@ -589,6 +611,17 @@ namespace MHArmory.AthenaAssDataSource
                 return null;
 
             return skill.Abilities.FirstOrDefault(a => a.Level == level);
+        }
+
+        private IArmorSetSkill[] ParseArmorSetSkills(ArmorPiecePrimitive primitive)
+        {
+            var result = new List<IArmorSetSkill>(3);
+
+            result.Add(armorSetSkills.FirstOrDefault(x => x.Name == primitive.Skill1));
+            result.Add(armorSetSkills.FirstOrDefault(x => x.Name == primitive.Skill2));
+            result.Add(armorSetSkills.FirstOrDefault(x => x.Name == primitive.Skill3));
+
+            return result.Where(x => x != null).ToArray();
         }
 
         private int armorPieceId = 1;

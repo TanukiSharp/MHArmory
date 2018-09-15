@@ -15,12 +15,12 @@ namespace MHArmory.Search
 
             foreach (IArmorPiece armorPiece in armorPieces)
             {
-                if (armorPiece.ArmorSet == null || armorPiece.ArmorSet.IsFull == false)
+                if (armorPiece.FullArmorSet == null)
                     return false;
 
                 if (armorSetId < 0)
-                    armorSetId = armorPiece.ArmorSet.Id;
-                else if (armorSetId != armorPiece.ArmorSet.Id)
+                    armorSetId = armorPiece.FullArmorSet.Id;
+                else if (armorSetId != armorPiece.FullArmorSet.Id)
                     return false;
             }
 
