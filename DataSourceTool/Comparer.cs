@@ -18,7 +18,7 @@ namespace DataSourceTool
             logger = new ConsoleLogger();
 
             IDataSource source1 = new MHArmory.AthenaAssDataSource.DataSource(logger, null, null);
-            IDataSource source2 = new MHArmory.ArmoryDataSource.DataSource();
+            IDataSource source2 = new MHArmory.ArmoryDataSource.DataSource(logger);
 
             await Equals(source1, source2);
         }

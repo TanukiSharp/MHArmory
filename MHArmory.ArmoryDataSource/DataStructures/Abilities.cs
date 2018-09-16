@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using MHArmory.Core.DataStructures;
 using Newtonsoft.Json;
 
 namespace MHArmory.ArmoryDataSource.DataStructures
@@ -13,5 +14,25 @@ namespace MHArmory.ArmoryDataSource.DataStructures
         public int Level { get; set; }
         [JsonProperty("description")]
         public string Description { get; set; }
+    }
+
+    public class Ability : IAbility
+    {
+        public int Id { get; }
+        public int Level { get; }
+        public string Description { get; }
+        public ISkill Skill { get; private set; }
+
+        public Ability(AbilityPrimitive primitive)
+        {
+            Id = primitive.Id;
+            Level = primitive.Level;
+            Description = primitive.Description;
+        }
+
+        internal void Update(ISkill skill)
+        {
+            Skill = skill;
+        }
     }
 }

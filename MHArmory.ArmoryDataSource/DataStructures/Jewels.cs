@@ -16,6 +16,6 @@ namespace MHArmory.ArmoryDataSource.DataStructures
         [JsonProperty("slotSize")]
         public int SlotSize { get; set; }
         [JsonProperty("abilityIds")]
-        public IList<int> AbilityIds;
+        public IList<int> AbilityIds { get; set; }
     }
 }
