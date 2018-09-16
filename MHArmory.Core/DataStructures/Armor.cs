@@ -163,13 +163,10 @@ namespace MHArmory.Core.DataStructures
         public IFullArmorSet FullArmorSet { get; private set; }
         public IEvent Event { get; }
 
-        //public void UpdateArmorSet(IArmorSet armorSet)
-        //{
-        //    if (ArmorSet == null)
-        //        ArmorSet = armorSet;
-        //    else
-        //        ArmorSet = ArmorSet.Merge(armorSet);
-        //}
+        public void SetFullArmorSet(IFullArmorSet fullArmorSet)
+        {
+            FullArmorSet = fullArmorSet;
+        }
 
         public override string ToString()
         {

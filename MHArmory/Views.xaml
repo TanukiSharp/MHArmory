@@ -142,7 +142,7 @@
         </DataTemplate.Triggers>
     </DataTemplate>
 
-    <DataTemplate x:Key="ArmorSetSkillView">
+    <DataTemplate x:Key="ArmorSetSkillPartView">
         <StackPanel Orientation="Horizontal">
             <Border CornerRadius="2" BorderThickness="2" BorderBrush="#20000000" Background="#10000000" VerticalAlignment="Top" Width="{Binding ActualHeight, RelativeSource={RelativeSource Mode=Self}}" Margin="2">
                 <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" Text="{Binding RequiredArmorPieces, Mode=OneTime}" FontWeight="Bold"/>
@@ -154,6 +154,13 @@
                     </DataTemplate>
                 </ItemsControl.ItemTemplate>
             </ItemsControl>
+        </StackPanel>
+    </DataTemplate>
+
+    <DataTemplate x:Key="ArmorSetSkillView">
+        <StackPanel Orientation="Horizontal">
+            <TextBlock Text="{Binding Name, Mode=OneTime}" VerticalAlignment="Top" Margin="6 0 6 0"/>
+            <ItemsControl ItemsSource="{Binding Parts, Mode=OneTime}" ItemTemplate="{StaticResource ArmorSetSkillPartView}"/>
         </StackPanel>
     </DataTemplate>
 
@@ -199,7 +206,7 @@
                     </ItemsControl>
                 </StackPanel>
                 <ItemsControl Grid.Column="2" ItemsSource="{Binding Abilities, Mode=OneTime}" ItemTemplate="{StaticResource StandaloneAbilityView}" Margin="0 0 8 0" Focusable="False"/>
-                <ItemsControl Grid.Column="3" ItemsSource="{Binding ArmorSet.Skills, Mode=OneTime}" ItemTemplate="{StaticResource ArmorSetSkillView}" Margin="0 0 8 0" Focusable="False"/>
+                <ItemsControl Grid.Column="3" ItemsSource="{Binding ArmorSetSkills, Mode=OneTime}" ItemTemplate="{StaticResource ArmorSetSkillView}" Margin="0 0 8 0" Focusable="False"/>
             </Grid>
         </Border>
     </DataTemplate>
@@ -745,13 +752,13 @@
     </DataTemplate>
 
     <DataTemplate x:Key="EquipmentExplorerView">
-        <DockPanel LastChildFill="True" FocusManager.FocusedElement="{x:Reference txt}" Margin="2">
+        <DockPanel LastChildFill="True" Margin="2">
             <StackPanel Orientation="Horizontal" DockPanel.Dock="Top" HorizontalAlignment="Stretch" Margin="2">
                 <TextBlock Text="Filter: " VerticalAlignment="Center"/>
-                <TextBox x:Name="txt" Text="{Binding SearchText, UpdateSourceTrigger=PropertyChanged}" Margin="2" Padding="2" VerticalAlignment="Center" MinWidth="160" MaxWidth="350"/>
+                <TextBox Text="{Binding SearchText, UpdateSourceTrigger=PropertyChanged}" Margin="2" Padding="2" VerticalAlignment="Center" MinWidth="160" MaxWidth="350" bhv:FocusOnLoadBehavior.IsAttached="True"/>
             </StackPanel>
 
-            <ItemsControl ItemsSource="{Binding Equipments, Mode=OneTime}" ItemTemplate="{StaticResource ArmorPieceView}" VirtualizingStackPanel.IsVirtualizing="True" VirtualizingStackPanel.ScrollUnit="Pixel" VirtualizingStackPanel.VirtualizationMode="Recycling" ScrollViewer.CanContentScroll="True">
+            <ItemsControl ItemsSource="{Binding Equipments, Mode=OneTime}" ItemTemplate="{StaticResource ArmorPieceView}" VirtualizingStackPanel.IsVirtualizing="True" VirtualizingStackPanel.ScrollUnit="Pixel" VirtualizingStackPanel.VirtualizationMode="Recycling" ScrollViewer.CanContentScroll="True" Focusable="False">
                 <ItemsControl.ItemsPanel>
                     <ItemsPanelTemplate>
                         <VirtualizingStackPanel />

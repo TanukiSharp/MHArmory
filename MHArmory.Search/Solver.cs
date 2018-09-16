@@ -197,16 +197,16 @@ namespace MHArmory.Search
             //{
             //}
 
-            if (
-                equipments.Where(x => x != null).Any(x => x.Name == "Strategist Spectacles α") &&
-                equipments.Where(x => x != null).Any(x => x.Name == "Kulve Taroth's Ire α") &&
-                equipments.Where(x => x != null).Any(x => x.Name == "Vaal Hazak Braces β") &&
-                equipments.Where(x => x != null).Any(x => x.Name == "Odogaron Coil β") &&
-                equipments.Where(x => x != null).Any(x => x.Name == "Dante's Leather Boots α") &&
-                equipments.Where(x => x != null).Any(x => x.Name == "Master's Charm III")
-            )
-            {
-            }
+            //if (
+            //    equipments.Where(x => x != null).Any(x => x.Name == "Strategist Spectacles α") &&
+            //    equipments.Where(x => x != null).Any(x => x.Name == "Kulve Taroth's Ire α") &&
+            //    equipments.Where(x => x != null).Any(x => x.Name == "Vaal Hazak Braces β") &&
+            //    equipments.Where(x => x != null).Any(x => x.Name == "Odogaron Coil β") &&
+            //    equipments.Where(x => x != null).Any(x => x.Name == "Dante's Leather Boots α") &&
+            //    equipments.Where(x => x != null).Any(x => x.Name == "Master's Charm III")
+            //)
+            //{
+            //}
 
             if (weaponSlots != null)
             {
