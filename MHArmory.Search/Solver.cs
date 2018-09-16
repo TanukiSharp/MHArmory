@@ -187,6 +187,17 @@ namespace MHArmory.Search
             }
 
             //if (
+            //    equipments.Where(x => x != null).Any(x => x.Name == "Bazel Helm β") &&
+            //    equipments.Where(x => x != null).Any(x => x.Name == "Kulve Taroth's Ire β") &&
+            //    equipments.Where(x => x != null).Any(x => x.Name == "Empress Vambraces β") &&
+            //    equipments.Where(x => x != null).Any(x => x.Name == "Vaal Hazak Coil γ") &&
+            //    equipments.Where(x => x != null).Any(x => x.Name == "Empress Greaves α") &&
+            //    equipments.Where(x => x != null).Any(x => x.Name == "Recovery Charm III")
+            //)
+            //{
+            //}
+
+            //if (
             //    equipments.Where(x => x != null).Any(x => x.Name == "Bazel Helm Beta") &&
             //    equipments.Where(x => x != null).Any(x => x.Name == "Kushala Cista Beta") &&
             //    equipments.Where(x => x != null).Any(x => x.Name == "High Metal Braces Beta") &&
