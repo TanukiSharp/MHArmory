@@ -1,6 +1,6 @@
 using System;
 
-namespace DataSourcesDiffTool
+namespace DataSourceTool
 {
     class Program
     {

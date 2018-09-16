@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace DataSourcesDiffTool
+namespace DataSourceTool
 {
     public class LambdaEqualityComparer<T> : IEqualityComparer<T>
     {

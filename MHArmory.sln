@@ -18,7 +18,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		.editorconfig = .editorconfig
 	EndProjectSection
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataSourcesDiffTool", "DataSourcesDiffTool\DataSourcesDiffTool.csproj", "{BCA6284F-684A-473A-8E4D-56CDCCE6F674}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataSourceTool", "DataSourceTool\DataSourceTool.csproj", "{BCA6284F-684A-473A-8E4D-56CDCCE6F674}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MHArmory.ArmoryDataSource", "MHArmory.ArmoryDataSource\MHArmory.ArmoryDataSource.csproj", "{9B314A16-0501-47AA-9459-966F8E540B7E}"
 EndProject

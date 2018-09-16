@@ -1,7 +1,7 @@
 using System;
 using Microsoft.Extensions.Logging;
 
-namespace DataSourcesDiffTool
+namespace DataSourceTool
 {
     public class ConsoleLogger : ILogger
     {

@@ -11,7 +11,7 @@ using MHArmory.Core.DataStructures;
 using Microsoft.Extensions.Logging;
 using Newtonsoft.Json;
 
-namespace DataSourcesDiffTool
+namespace DataSourceTool
 {
     public class Exporter
     {
