@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -150,7 +150,7 @@ namespace MHArmory
                 if (CurrentLoadoutName != loadoutWindow.SelectedLoadout.Name)
                 {
                     foreach (AbilityViewModel ability in rootViewModel.SelectedAbilities)
-                        ability.IsChecked = loadoutWindow.SelectedLoadout.Abilities.Any(a => a.SkillId == ability.SkillId);
+                        ability.IsChecked = loadoutWindow.SelectedLoadout.Abilities.Any(a => a.SkillId == ability.SkillId && a.Level == ability.Level);
 
                     CurrentLoadoutName = loadoutWindow.SelectedLoadout.Name;
 
