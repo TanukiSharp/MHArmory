@@ -13,6 +13,27 @@ namespace MHArmory.Core.DataStructures
         string Description { get; }
     }
 
+    public class AbilityEqualityComparer : IEqualityComparer<IAbility>
+    {
+        public static readonly IEqualityComparer<IAbility> Default = new AbilityEqualityComparer();
+
+        public bool Equals(IAbility x, IAbility y)
+        {
+            if (x != null && y != null)
+                return x.Id == y.Id;
+
+            return false;
+        }
+
+        public int GetHashCode(IAbility obj)
+        {
+            if (obj != null)
+                return obj.Id;
+
+            return 0;
+        }
+    }
+
     public class Ability : IAbility
     {
         public Ability(ISkill skill, int level, string description)

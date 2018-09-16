@@ -162,17 +162,17 @@ namespace MHArmory.AthenaAssDataSource
 
             for (int i = dataIndex; i < allLines.Length; i++)
             {
-                JewelPrimitive jewelPrimitive = dataLoader.CreateObject(allLines[i].Split(','), i + 1);
+                JewelPrimitive jewelPrimitive = dataLoader.CreateObject(allLines[i].Split(','), i + dataIndex);
 
                 if (string.IsNullOrWhiteSpace(jewelPrimitive.Name))
                     continue;
 
-                IAbility ability = nonTaskAbilities.FirstOrDefault(a => a.Skill.Name == jewelPrimitive.Skill && a.Level == 1);
+                IAbility ability = abilities.FirstOrDefault(a => a.Skill.Name == jewelPrimitive.Skill && a.Level == 1);
 
                 if (ability == null)
                     throw new FormatException($"Cannot find skill '{jewelPrimitive.Name}'");
 
-                localJewels.Add(new Jewel(i + 1, jewelPrimitive.Name, jewelPrimitive.Rarity, jewelPrimitive.SlotSize, new IAbility[] { ability }));
+                localJewels.Add(new Jewel(i - dataIndex, jewelPrimitive.Name, jewelPrimitive.Rarity, jewelPrimitive.SlotSize, new IAbility[] { ability }));
             }
 
             jewels = Task.FromResult(localJewels.ToArray());
@@ -199,7 +199,7 @@ namespace MHArmory.AthenaAssDataSource
 
             for (int i = dataIndex; i < allLines.Length; i++)
             {
-                CharmPrimitive charmPrimitive = dataLoader.CreateObject(allLines[i].Split(','), i + 1);
+                CharmPrimitive charmPrimitive = dataLoader.CreateObject(allLines[i].Split(','), i + dataIndex);
 
                 if (string.IsNullOrWhiteSpace(charmPrimitive.Name))
                     continue;
@@ -219,11 +219,11 @@ namespace MHArmory.AthenaAssDataSource
                     charmPrimitive.Material4
                 );
 
-                charmLevels.Add(new CharmLevel(i + 1, level, charmPrimitive.Name, 0, noSlots, ParseAbilities(charmPrimitive), foundEvent));
+                charmLevels.Add(new CharmLevel(i - dataIndex, level, charmPrimitive.Name, 0, noSlots, ParseAbilities(charmPrimitive), foundEvent));
             }
 
             ICharm[] nonTaskCharms = localCharms
-                .Select((kv, i) => new Charm(i + 1, kv.Key, kv.Value.ToArray()))
+                .Select((kv, i) => new Charm(i, kv.Key, kv.Value.ToArray()))
                 .Cast<ICharm>()
                 .ToArray();
 
@@ -259,7 +259,7 @@ namespace MHArmory.AthenaAssDataSource
 
             IAbility FindAbility(string skillName)
             {
-                return nonTaskAbilities.FirstOrDefault(a => a.Skill.Name == skillName && a.Level == 1);
+                return abilities.FirstOrDefault(a => a.Skill.Name == skillName && a.Level == 1);
             }
 
             foreach (IGrouping<string, ArmorSetSkillPrimitive> armorSetSkillGroup in armorSetSkillPrimitives.GroupBy(x => x.Name))
@@ -295,29 +295,29 @@ namespace MHArmory.AthenaAssDataSource
             {
                 Console.WriteLine($"[ERROR] Failed to create data loader for skills");
                 nonTaskSkills = null;
-                nonTaskAbilities = null;
+                abilities = null;
                 return;
             }
 
             var dataLoader = new DataLoader<SkillPrimitive>(allLines[headerIndex].Substring(1).Split(','), logger);
 
-            int id = 1;
             var localSkills = new List<ISkill>();
 
             for (int i = dataIndex; i < allLines.Length; i++)
             {
-                SkillPrimitive skillPrimitive = dataLoader.CreateObject(allLines[i].Split(','), i + 1);
+                SkillPrimitive skillPrimitive = dataLoader.CreateObject(allLines[i].Split(','), i + dataIndex);
 
                 if (string.IsNullOrWhiteSpace(skillPrimitive.Name))
                     continue;
 
-                localSkills.Add(new DataStructures.Skill(id++, allSkillsDescriptions[i - 1], skillPrimitive));
+                int index = i - dataIndex;
+                localSkills.Add(new DataStructures.Skill(index, allSkillsDescriptions[index], skillPrimitive));
             }
 
-            nonTaskAbilities = localSkills
+            abilities = localSkills
                 .SelectMany(s => s.Abilities)
                 .ForEach((a, i) => ((Ability)a).Update(i, allAbilitiesDescriptions[i]))
-                .Distinct()
+                .Distinct(AbilityEqualityComparer.Default)
                 .ToArray();
 
             nonTaskSkills = localSkills.ToArray();
@@ -339,7 +339,7 @@ namespace MHArmory.AthenaAssDataSource
             {
                 var evenPrimitive = new EventPrimitive
                 {
-                    Id = i + 1,
+                    Id = i,
                     Name = eventNameLines[i],
                     CraftItems = eventLines[i]
                         .Split(',')
@@ -469,7 +469,7 @@ namespace MHArmory.AthenaAssDataSource
                     continue;
 
                 int[] armorPieceIds = list
-                    .Where(x => x.PerTypeId == container.PerTypeId)
+                    .Where(x => x.Primitive.Id == container.Primitive.Id)
                     .Select(x => x.Primitive.Id)
                     .ToArray();
 
@@ -480,7 +480,7 @@ namespace MHArmory.AthenaAssDataSource
                 }
 
                 ArmorPiece[] fullArmorSetArmorPieces = list
-                    .Where(x => x.PerTypeId == container.PerTypeId)
+                    .Where(x => x.Primitive.Id == container.Primitive.Id)
                     .Select(x => x.ArmorPiece)
                     .ToArray();
 
@@ -560,8 +560,6 @@ namespace MHArmory.AthenaAssDataSource
             return null;
         }
 
-        private int armorPieceId = 1;
-
         private IEnumerable<ArmorPieceContainer> LoadArmorPieceParts(EquipmentType type, string filename)
         {
             string[] allLines = File.ReadAllLines(filename);
@@ -577,7 +575,7 @@ namespace MHArmory.AthenaAssDataSource
 
             for (int i = dataIndex; i < allLines.Length; i++)
             {
-                ArmorPiecePrimitive armorPiecePrimitive = dataLoader.CreateObject(allLines[i].Split(','), i + 1);
+                ArmorPiecePrimitive armorPiecePrimitive = dataLoader.CreateObject(allLines[i].Split(','), i + dataIndex);
 
                 if (string.IsNullOrWhiteSpace(armorPiecePrimitive.Name))
                     continue;
@@ -585,11 +583,10 @@ namespace MHArmory.AthenaAssDataSource
                 if (armorPiecePrimitive.Name == "Chainmail Armor")
                     armorPiecePrimitive.Name = "Chainmail Vest";
 
-                armorPiecePrimitive.Id = armorPieceId++;
+                armorPiecePrimitive.Id = i - dataIndex;
 
                 var container = new ArmorPieceContainer
                 {
-                    PerTypeId = i,
                     Primitive = armorPiecePrimitive,
                     Type = type
                 };
@@ -613,12 +610,12 @@ namespace MHArmory.AthenaAssDataSource
 
             for (int i = dataIndex; i < allLines.Length; i++)
             {
-                ArmorSetSkillPrimitive armorSetSkill = dataLoader.CreateObject(allLines[i].Split(','), i + 1);
+                ArmorSetSkillPrimitive armorSetSkill = dataLoader.CreateObject(allLines[i].Split(','), i + dataIndex);
 
                 if (string.IsNullOrWhiteSpace(armorSetSkill.Name))
                     continue;
 
-                armorSetSkill.Id = i + 1;
+                armorSetSkill.Id = i - dataIndex;
 
                 yield return armorSetSkill;
             }
@@ -630,12 +627,7 @@ namespace MHArmory.AthenaAssDataSource
         private Task<ICharm[]> charms;
         private Task<IJewel[]> jewels;
         private ISkill[] nonTaskSkills;
-        private IAbility[] nonTaskAbilities;
-
-        public Task<IAbility[]> GetAbilities()
-        {
-            return Task.FromResult(nonTaskAbilities);
-        }
+        private IAbility[] abilities;
 
         public Task<IArmorPiece[]> GetArmorPieces()
         {

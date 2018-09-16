@@ -5,6 +5,14 @@ using Newtonsoft.Json;
 
 namespace MHArmory.ArmoryDataSource.DataStructures
 {
+    public class FullArmorSetPrimitive
+    {
+        [JsonProperty("id")]
+        public int Id { get; set; }
+        [JsonProperty("armorPieceIds")]
+        public IList<int> ArmorPieceIds { get; set; }
+    }
+
     public class ArmorSetSkillPartPrimitive
     {
         [JsonProperty("requiredArmorPieceCount")]

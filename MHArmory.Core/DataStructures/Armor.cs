@@ -222,27 +222,6 @@ namespace MHArmory.Core.DataStructures
         IArmorPiece[] ArmorPieces { get; }
     }
 
-    //public static class ArmorSetExtensions
-    //{
-    //    public static IArmorSet Merge(this IArmorSet armorSet1, IArmorSet armorSet2)
-    //    {
-    //        if (armorSet1 == null && armorSet2 == null)
-    //            return null;
-
-    //        if (armorSet1 == null)
-    //            return armorSet2;
-    //        if (armorSet2 == null)
-    //            return armorSet1;
-
-    //        return new ArmorSet(
-    //            armorSet1.Id,
-    //            armorSet1.IsFull,
-    //            armorSet1.ArmorPieces,
-    //            armorSet1.Skills ?? armorSet2.Skills
-    //        );
-    //    }
-    //}
-
     public class FullArmorSet : IFullArmorSet
     {
         public FullArmorSet(int id, IArmorPiece[] armorPieces)

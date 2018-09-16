@@ -9,11 +9,6 @@ namespace MHArmory.ArmoryDataSource
     {
         public string Description { get; } = "Armory data source";
 
-        public Task<IAbility[]> GetAbilities()
-        {
-            throw new NotImplementedException();
-        }
-
         public Task<IArmorPiece[]> GetArmorPieces()
         {
             throw new NotImplementedException();

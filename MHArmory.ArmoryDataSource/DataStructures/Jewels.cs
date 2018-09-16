@@ -5,21 +5,17 @@ using Newtonsoft.Json;
 
 namespace MHArmory.ArmoryDataSource.DataStructures
 {
-    public class CharmLevelPrimitive
+    public class JewelPrimitive
     {
         [JsonProperty("id")]
         public int Id { get; set; }
         [JsonProperty("name")]
         public string Name { get; set; }
-        [JsonProperty("level")]
-        public int Level { get; set; }
         [JsonProperty("rarity")]
         public int Rarity { get; set; }
+        [JsonProperty("slotSize")]
+        public int SlotSize { get; set; }
         [JsonProperty("abilityIds")]
-        public IList<int> AbilityIds { get; set; }
-        [JsonProperty("slots")]
-        public IList<int> Slots { get; set; }
-        [JsonProperty("eventId")]
-        public int? EventId { get; set; }
+        public IList<int> AbilityIds;
     }
 }

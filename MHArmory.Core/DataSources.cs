@@ -10,7 +10,6 @@ namespace MHArmory.Core
         string Description { get; }
         Task<IArmorPiece[]> GetArmorPieces();
         Task<ISkill[]> GetSkills();
-        Task<IAbility[]> GetAbilities();
         Task<ICharm[]> GetCharms();
         Task<IJewel[]> GetJewels();
     }

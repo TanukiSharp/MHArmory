@@ -54,11 +54,11 @@ namespace MHArmory.ArmoryDataSource.DataStructures
         public ArmorResistancesPrimitive Resistances { get; set; }
         [JsonProperty("attributes")]
         public ArmorAttributesPrimitive Attributes { get; set; }
-        [JsonProperty("armorSetSkillIds", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("armorSetSkillIds")]
         public List<int> ArmorSetSkillIds { get; set; }
-        [JsonProperty("fullArmorSetId", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("fullArmorSetId")]
         public int? FullArmorSetId { get; set; }
-        [JsonProperty("eventId", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("eventId")]
         public int? EventId { get; set; }
     }
 }
