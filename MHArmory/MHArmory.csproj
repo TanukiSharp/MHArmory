@@ -220,10 +220,6 @@
       <Project>{bd19a211-15ea-4896-8257-83a14f3c634f}</Project>
       <Name>MHArmory.Core</Name>
     </ProjectReference>
-    <ProjectReference Include="..\MHArmory.MhwDbDataSource\MHArmory.MhwDbDataSource.csproj">
-      <Project>{2054894c-e3e9-4f52-ab0c-acb544fb1c54}</Project>
-      <Name>MHArmory.MhwDbDataSource</Name>
-    </ProjectReference>
     <ProjectReference Include="..\MHArmory.Search\MHArmory.Search.csproj">
       <Project>{375922DD-84D4-46FA-9F2C-0FC45EFC0BDD}</Project>
       <Name>MHArmory.Search</Name>

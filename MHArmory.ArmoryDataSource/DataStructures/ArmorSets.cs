@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Text;
 using Newtonsoft.Json;
 
-namespace MHArmory.DataSource.DataStructures
+namespace MHArmory.ArmoryDataSource.DataStructures
 {
-    public class ArmorSetSkillPrimitive
+    public class ArmorSetSkillPartPrimitive
     {
         [JsonProperty("requiredArmorPieceCount")]
         public int RequiredArmorPieceCount { get; set; }
@@ -13,15 +13,13 @@ namespace MHArmory.DataSource.DataStructures
         public IList<int> GrantedSkills { get; set; }
     }
 
-    public class ArmorSetPrimitive
+    public class ArmorSetSkillPrimitive
     {
         [JsonProperty("id")]
         public int Id { get; set; }
-        [JsonProperty("full")]
-        public bool IsFull { get; set; }
-        [JsonProperty("armorPieceIds")]
-        public IList<int> ArmorPieceIds { get; set; }
-        [JsonProperty("setSkills")]
-        public IList<ArmorSetSkillPrimitive> Skills { get; set; }
+        [JsonProperty("name")]
+        public string Name { get; set; }
+        [JsonProperty("parts")]
+        public IList<ArmorSetSkillPartPrimitive> Parts { get; set; }
     }
 }

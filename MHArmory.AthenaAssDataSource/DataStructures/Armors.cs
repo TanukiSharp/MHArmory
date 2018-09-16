@@ -10,8 +10,6 @@ namespace MHArmory.AthenaAssDataSource.DataStructures
         internal int PerTypeId;
         internal ArmorPiecePrimitive Primitive;
         internal EquipmentType Type;
-        internal int[] FullArmorSetIds;
-        internal IArmorSet FullArmorSet;
         internal ArmorPiece ArmorPiece;
     }
 

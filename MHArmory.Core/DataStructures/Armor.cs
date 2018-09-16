@@ -112,7 +112,8 @@ namespace MHArmory.Core.DataStructures
         IArmorPieceResistances Resistances { get; }
         IArmorPieceAttributes Attributes { get; }
         IArmorPieceAssets Assets { get; }
-        IArmorSet ArmorSet { get; }
+        IArmorSetSkill[] ArmorSetSkills { get; }
+        IFullArmorSet FullArmorSet { get; }
     }
 
     public class ArmorPiece : IArmorPiece
@@ -124,11 +125,12 @@ namespace MHArmory.Core.DataStructures
             int rarity,
             int[] slots,
             IAbility[] abilities,
+            IArmorSetSkill[] armorSetSkills,
             IArmorPieceDefense defense,
             IArmorPieceResistances resistances,
             IArmorPieceAttributes attributes,
             IArmorPieceAssets assets,
-            IArmorSet armorSet,
+            IFullArmorSet fullArmorSet,
             IEvent evt
         )
         {
@@ -138,11 +140,12 @@ namespace MHArmory.Core.DataStructures
             Rarity = rarity;
             Slots = slots;
             Abilities = abilities;
+            ArmorSetSkills = armorSetSkills;
             Defense = defense;
             Resistances = resistances;
             Attributes = attributes;
             Assets = assets;
-            ArmorSet = armorSet;
+            FullArmorSet = fullArmorSet;
             Event = evt;
         }
 
@@ -152,19 +155,17 @@ namespace MHArmory.Core.DataStructures
         public int Rarity { get; }
         public int[] Slots { get; }
         public IAbility[] Abilities { get; }
+        public IArmorSetSkill[] ArmorSetSkills { get; }
         public IArmorPieceDefense Defense { get; }
         public IArmorPieceResistances Resistances { get; }
         public IArmorPieceAttributes Attributes { get; }
         public IArmorPieceAssets Assets { get; }
-        public IArmorSet ArmorSet { get; private set; }
+        public IFullArmorSet FullArmorSet { get; private set; }
         public IEvent Event { get; }
 
-        public void UpdateArmorSet(IArmorSet armorSet)
+        public void SetFullArmorSet(IFullArmorSet fullArmorSet)
         {
-            if (ArmorSet == null)
-                ArmorSet = armorSet;
-            else
-                ArmorSet = ArmorSet.Merge(armorSet);
+            FullArmorSet = fullArmorSet;
         }
 
         public override string ToString()
@@ -173,66 +174,84 @@ namespace MHArmory.Core.DataStructures
         }
     }
 
-    public interface IArmorSetSkill
+    public interface IArmorSetSkillPart
     {
+        int Id { get; }
         int RequiredArmorPieces { get; }
         IAbility[] GrantedSkills { get; }
     }
 
-    public class ArmorSetSkill : IArmorSetSkill
+    public interface IArmorSetSkill
     {
-        public ArmorSetSkill(int requiredArmorPieces, IAbility[] grantedSkills)
+        int Id { get; }
+        string Name { get; }
+        IArmorSetSkillPart[] Parts { get; }
+    }
+
+    public class ArmorSetSkillPart : IArmorSetSkillPart
+    {
+        public ArmorSetSkillPart(int id, int requiredArmorPieces, IAbility[] grantedSkills)
         {
+            Id = id;
             RequiredArmorPieces = requiredArmorPieces;
             GrantedSkills = grantedSkills;
         }
 
+        public int Id { get; }
         public int RequiredArmorPieces { get; }
         public IAbility[] GrantedSkills { get; }
     }
 
-    public interface IArmorSet
+    public class ArmorSetSkill : IArmorSetSkill
     {
-        int Id { get; }
-        bool IsFull { get; }
-        IArmorPiece[] ArmorPieces { get; }
-        IArmorSetSkill[] Skills { get; }
-    }
-
-    public static class ArmorSetExtensions
-    {
-        public static IArmorSet Merge(this IArmorSet armorSet1, IArmorSet armorSet2)
-        {
-            if (armorSet1 == null && armorSet2 == null)
-                return null;
-
-            if (armorSet1 == null)
-                return armorSet2;
-            if (armorSet2 == null)
-                return armorSet1;
-
-            return new ArmorSet(
-                armorSet1.Id,
-                armorSet1.IsFull || armorSet2.IsFull,
-                armorSet1.ArmorPieces,
-                armorSet1.Skills ?? armorSet2.Skills
-            );
-        }
-    }
-
-    public class ArmorSet : IArmorSet
-    {
-        public ArmorSet(int id, bool isFull, IArmorPiece[] armorPieces, IArmorSetSkill[] skills)
+        public ArmorSetSkill(int id, string name, IArmorSetSkillPart[] parts)
         {
             Id = id;
-            IsFull = isFull;
-            ArmorPieces = armorPieces;
-            Skills = skills;
+            Name = name;
+            Parts = parts;
         }
 
         public int Id { get; }
-        public bool IsFull { get; }
+        public string Name { get; }
+        public IArmorSetSkillPart[] Parts { get; }
+    }
+
+    public interface IFullArmorSet
+    {
+        int Id { get; }
+        IArmorPiece[] ArmorPieces { get; }
+    }
+
+    //public static class ArmorSetExtensions
+    //{
+    //    public static IArmorSet Merge(this IArmorSet armorSet1, IArmorSet armorSet2)
+    //    {
+    //        if (armorSet1 == null && armorSet2 == null)
+    //            return null;
+
+    //        if (armorSet1 == null)
+    //            return armorSet2;
+    //        if (armorSet2 == null)
+    //            return armorSet1;
+
+    //        return new ArmorSet(
+    //            armorSet1.Id,
+    //            armorSet1.IsFull,
+    //            armorSet1.ArmorPieces,
+    //            armorSet1.Skills ?? armorSet2.Skills
+    //        );
+    //    }
+    //}
+
+    public class FullArmorSet : IFullArmorSet
+    {
+        public FullArmorSet(int id, IArmorPiece[] armorPieces)
+        {
+            Id = id;
+            ArmorPieces = armorPieces;
+        }
+
+        public int Id { get; }
         public IArmorPiece[] ArmorPieces { get; }
-        public IArmorSetSkill[] Skills { get; }
     }
 }

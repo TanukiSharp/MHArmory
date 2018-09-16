@@ -9,6 +9,6 @@ namespace MHArmory.AthenaAssDataSource.DataStructures
     {
         internal int Id;
         internal string Name;
-        internal string[] Items;
+        internal string[] CraftItems;
     }
 }

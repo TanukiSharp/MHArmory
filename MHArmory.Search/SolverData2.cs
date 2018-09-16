@@ -212,15 +212,12 @@ namespace MHArmory.Search
         {
             int count = 0;
 
-            if (equipment is IArmorPiece armorPiece && armorPiece.ArmorSet != null)
+            if (equipment is IArmorPiece armorPiece && armorPiece.ArmorSetSkills != null)
             {
-                if (armorPiece.ArmorSet.Skills != null)
+                foreach (IAbility ability in armorPiece.ArmorSetSkills.SelectMany(x => x.Parts).SelectMany(x => x.GrantedSkills))
                 {
-                    foreach (IAbility ability in armorPiece.ArmorSet.Skills.SelectMany(x => x.GrantedSkills))
-                    {
-                        if (IsMatchingDesiredAbilities(ability))
-                            count++;
-                    }
+                    if (IsMatchingDesiredAbilities(ability))
+                        count++;
                 }
             }
 
@@ -353,12 +350,12 @@ namespace MHArmory.Search
         {
             for (int i = 0; i < source.Count; i++)
             {
-                IArmorSet armorSet = ((IArmorPiece)source[i].Equipment).ArmorSet;
+                IFullArmorSet fullArmorSet = ((IArmorPiece)source[i].Equipment).FullArmorSet;
 
-                if (armorSet == null || armorSet.IsFull == false)
+                if (fullArmorSet == null)
                     continue;
 
-                IArmorPiece[] setPieces = armorSet.ArmorPieces;
+                IArmorPiece[] setPieces = fullArmorSet.ArmorPieces;
 
                 IArmorPiece head = setPieces.First(x => x.Type == EquipmentType.Head);
                 IArmorPiece chest = setPieces.First(x => x.Type == EquipmentType.Chest);
