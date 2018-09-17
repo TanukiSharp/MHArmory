@@ -299,6 +299,12 @@
   <ItemGroup>
     <Resource Include="Icons\Charm.svg" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icons\twitter_64x64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icons\github_64x64.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <PreBuildEvent>call "$(ProjectDir)PreBuildEventGitInfo.bat" "$(ProjectDir)"</PreBuildEvent>

@@ -5,7 +5,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Navigation;
 
 namespace MHArmory
 {
@@ -30,10 +29,9 @@ namespace MHArmory
             MessageBox.Show(sb.ToString(), $"Developer information", MessageBoxButton.OK, MessageBoxImage.Information);
         }
 
-        private void HyperlinkClick(object sender, RequestNavigateEventArgs e)
+        private void LinkButtonClick(object sender, RoutedEventArgs e)
         {
-            Process.Start(new ProcessStartInfo(e.Uri.AbsoluteUri));
-            e.Handled = true;
+            Process.Start(new ProcessStartInfo(((FrameworkElement)sender).Tag as string));
         }
     }
 }

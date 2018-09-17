@@ -5,8 +5,21 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MHArmory"
         mc:Ignorable="d"
-        Title="About..." Width="670" Height="423" Background="WhiteSmoke" WindowStartupLocation="CenterOwner" WindowStyle="ToolWindow" ResizeMode="NoResize">
+        Title="About..." Width="670" Height="450" Background="WhiteSmoke" WindowStartupLocation="CenterOwner" WindowStyle="ToolWindow" ResizeMode="NoResize">
     <Canvas>
+        <Canvas.Resources>
+            <Style x:Key="LinkButton" TargetType="Button">
+                <Setter Property="Cursor" Value="Hand"/>
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="Button">
+                            <ContentPresenter/>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+            </Style>
+        </Canvas.Resources>
+
         <Image Source="Icons/blue_shield.png" Width="128" Height="128" Canvas.Left="50" Canvas.Top="50"/>
 
         <TextBlock Text="Armory" FontSize="32" FontWeight="Bold" Canvas.Left="220" Canvas.Top="50"/>
@@ -21,16 +34,32 @@
             </StackPanel.Resources>
             <TextBlock Text="Armor Set Search application for Monster Hunter: World."/>
             <TextBlock Text="Developed by Tanuki" Foreground="Gray"/>
-            <TextBlock Margin="0"/>
+            <TextBlock Margin="0" FontSize="8"/>
             <TextBlock Text="This project is a free and open-source project, for the community to participate, propose ideas and features requests." Foreground="Gray" TextWrapping="Wrap"/>
-            <TextBlock Margin="0"/>
-            <StackPanel Orientation="Horizontal"></StackPanel>
-            <TextBlock Text="Visit the GitHub page for more information: "/>
-            <TextBlock Margin="4 0 0 0">
-                <Hyperlink NavigateUri="https://github.com/TanukiSharp/MHArmory" RequestNavigate="HyperlinkClick" Foreground="Blue">
-                    https://github.com/TanukiSharp/MHArmory
-                </Hyperlink>
-            </TextBlock>
+            <TextBlock Margin="0" FontSize="8"/>
+            <StackPanel Orientation="Horizontal" Margin="-32 0 0 0">
+                <Button Style="{StaticResource LinkButton}" Click="LinkButtonClick" Tag="https://github.com/TanukiSharp/MHArmory" VerticalAlignment="Bottom">
+                    <Image Source="Icons/github_64x64.png" Width="32" Height="32"/>
+                </Button>
+                <StackPanel VerticalAlignment="Center">
+                    <TextBlock Text="Visit the GitHub page for more information:"/>
+                    <Button Style="{StaticResource LinkButton}" Click="LinkButtonClick" Tag="https://github.com/TanukiSharp/MHArmory">
+                        <TextBlock Margin="4 0 0 0" Text="https://github.com/TanukiSharp/MHArmory" Foreground="Blue" TextDecorations="Underline"/>
+                    </Button>
+                </StackPanel>
+            </StackPanel>
+            <TextBlock Margin="0" FontSize="8"/>
+            <StackPanel Orientation="Horizontal" Margin="-32 0 0 0">
+                <Button Style="{StaticResource LinkButton}" Click="LinkButtonClick" Tag="https://twitter.com/MHArmory" VerticalAlignment="Bottom">
+                    <Image Source="Icons/twitter_64x64.png" Width="32" Height="32"/>
+                </Button>
+                <StackPanel VerticalAlignment="Center">
+                    <TextBlock Text="Follow Armory on Twitter:"/>
+                    <Button Style="{StaticResource LinkButton}" Click="LinkButtonClick" Tag="https://twitter.com/MHArmory">
+                        <TextBlock Margin="4 0 0 0" Text="https://twitter.com/MHArmory" Foreground="Blue" TextDecorations="Underline"/>
+                    </Button>
+                </StackPanel>
+            </StackPanel>
         </StackPanel>
 
         <Button Content="Developer info..." FontSize="10" Padding="4" Canvas.Right="10" Canvas.Bottom="10" Click="DeveloperInfoButtonClick"/>
