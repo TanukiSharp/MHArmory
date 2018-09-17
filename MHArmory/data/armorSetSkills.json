@@ -1,0 +1,376 @@
+[
+    {
+        "id": 0,
+        "name": "Anjanath Power",
+        "parts": [
+            {
+                "id": 0,
+                "requiredArmorPieceCount": 3,
+                "abilityIds": [
+                    310
+                ]
+            }
+        ]
+    },
+    {
+        "id": 1,
+        "name": "Legiana Blessing",
+        "parts": [
+            {
+                "id": 1,
+                "requiredArmorPieceCount": 3,
+                "abilityIds": [
+                    323
+                ]
+            }
+        ]
+    },
+    {
+        "id": 2,
+        "name": "Odogaron Power",
+        "parts": [
+            {
+                "id": 2,
+                "requiredArmorPieceCount": 3,
+                "abilityIds": [
+                    325
+                ]
+            }
+        ]
+    },
+    {
+        "id": 3,
+        "name": "Rathalos Power",
+        "parts": [
+            {
+                "id": 3,
+                "requiredArmorPieceCount": 3,
+                "abilityIds": [
+                    312
+                ]
+            }
+        ]
+    },
+    {
+        "id": 4,
+        "name": "Diablos Power",
+        "parts": [
+            {
+                "id": 4,
+                "requiredArmorPieceCount": 3,
+                "abilityIds": [
+                    314
+                ]
+            }
+        ]
+    },
+    {
+        "id": 5,
+        "name": "Kirin Blessing",
+        "parts": [
+            {
+                "id": 5,
+                "requiredArmorPieceCount": 4,
+                "abilityIds": [
+                    316
+                ]
+            }
+        ]
+    },
+    {
+        "id": 6,
+        "name": "Anjanath Will",
+        "parts": [
+            {
+                "id": 6,
+                "requiredArmorPieceCount": 2,
+                "abilityIds": [
+                    310
+                ]
+            },
+            {
+                "id": 7,
+                "requiredArmorPieceCount": 4,
+                "abilityIds": [
+                    311
+                ]
+            }
+        ]
+    },
+    {
+        "id": 7,
+        "name": "Pink Rathian Mastery",
+        "parts": [
+            {
+                "id": 8,
+                "requiredArmorPieceCount": 3,
+                "abilityIds": [
+                    309
+                ]
+            }
+        ]
+    },
+    {
+        "id": 8,
+        "name": "Zorah Magdaros Mastery",
+        "parts": [
+            {
+                "id": 9,
+                "requiredArmorPieceCount": 3,
+                "abilityIds": [
+                    322
+                ]
+            }
+        ]
+    },
+    {
+        "id": 9,
+        "name": "Legiana Favor",
+        "parts": [
+            {
+                "id": 10,
+                "requiredArmorPieceCount": 2,
+                "abilityIds": [
+                    323
+                ]
+            },
+            {
+                "id": 11,
+                "requiredArmorPieceCount": 4,
+                "abilityIds": [
+                    324
+                ]
+            }
+        ]
+    },
+    {
+        "id": 10,
+        "name": "Odogaron Mastery",
+        "parts": [
+            {
+                "id": 12,
+                "requiredArmorPieceCount": 2,
+                "abilityIds": [
+                    325
+                ]
+            },
+            {
+                "id": 13,
+                "requiredArmorPieceCount": 4,
+                "abilityIds": [
+                    326
+                ]
+            }
+        ]
+    },
+    {
+        "id": 11,
+        "name": "Rathalos Mastery",
+        "parts": [
+            {
+                "id": 14,
+                "requiredArmorPieceCount": 2,
+                "abilityIds": [
+                    312
+                ]
+            },
+            {
+                "id": 15,
+                "requiredArmorPieceCount": 4,
+                "abilityIds": [
+                    313
+                ]
+            }
+        ]
+    },
+    {
+        "id": 12,
+        "name": "Diablos Mastery",
+        "parts": [
+            {
+                "id": 16,
+                "requiredArmorPieceCount": 2,
+                "abilityIds": [
+                    314
+                ]
+            },
+            {
+                "id": 17,
+                "requiredArmorPieceCount": 4,
+                "abilityIds": [
+                    315
+                ]
+            }
+        ]
+    },
+    {
+        "id": 13,
+        "name": "Uragaan Protection",
+        "parts": [
+            {
+                "id": 18,
+                "requiredArmorPieceCount": 3,
+                "abilityIds": [
+                    317
+                ]
+            }
+        ]
+    },
+    {
+        "id": 14,
+        "name": "Bazelgeuse Protection",
+        "parts": [
+            {
+                "id": 19,
+                "requiredArmorPieceCount": 3,
+                "abilityIds": [
+                    318
+                ]
+            }
+        ]
+    },
+    {
+        "id": 15,
+        "name": "Nergigante Hunger",
+        "parts": [
+            {
+                "id": 20,
+                "requiredArmorPieceCount": 3,
+                "abilityIds": [
+                    307
+                ]
+            }
+        ]
+    },
+    {
+        "id": 16,
+        "name": "Teostra Technique",
+        "parts": [
+            {
+                "id": 21,
+                "requiredArmorPieceCount": 3,
+                "abilityIds": [
+                    319
+                ]
+            }
+        ]
+    },
+    {
+        "id": 17,
+        "name": "Kushala Daora Flight",
+        "parts": [
+            {
+                "id": 22,
+                "requiredArmorPieceCount": 3,
+                "abilityIds": [
+                    320
+                ]
+            }
+        ]
+    },
+    {
+        "id": 18,
+        "name": "Vaal Hazak Vitality",
+        "parts": [
+            {
+                "id": 23,
+                "requiredArmorPieceCount": 3,
+                "abilityIds": [
+                    308
+                ]
+            }
+        ]
+    },
+    {
+        "id": 19,
+        "name": "Kirin Favor",
+        "parts": [
+            {
+                "id": 24,
+                "requiredArmorPieceCount": 3,
+                "abilityIds": [
+                    316
+                ]
+            }
+        ]
+    },
+    {
+        "id": 20,
+        "name": "Xeno'jiiva Divinity",
+        "parts": [
+            {
+                "id": 25,
+                "requiredArmorPieceCount": 3,
+                "abilityIds": [
+                    321
+                ]
+            }
+        ]
+    },
+    {
+        "id": 21,
+        "name": "Guild Guidance",
+        "parts": [
+            {
+                "id": 26,
+                "requiredArmorPieceCount": 4,
+                "abilityIds": [
+                    332
+                ]
+            }
+        ]
+    },
+    {
+        "id": 22,
+        "name": "Commission Guidance",
+        "parts": [
+            {
+                "id": 27,
+                "requiredArmorPieceCount": 4,
+                "abilityIds": [
+                    333
+                ]
+            }
+        ]
+    },
+    {
+        "id": 23,
+        "name": "Lunastra Favor",
+        "parts": [
+            {
+                "id": 28,
+                "requiredArmorPieceCount": 2,
+                "abilityIds": [
+                    311
+                ]
+            },
+            {
+                "id": 29,
+                "requiredArmorPieceCount": 4,
+                "abilityIds": [
+                    313
+                ]
+            }
+        ]
+    },
+    {
+        "id": 24,
+        "name": "Soul of the Dragoon",
+        "parts": [
+            {
+                "id": 30,
+                "requiredArmorPieceCount": 2,
+                "abilityIds": [
+                    334
+                ]
+            },
+            {
+                "id": 31,
+                "requiredArmorPieceCount": 4,
+                "abilityIds": [
+                    319
+                ]
+            }
+        ]
+    }
+]

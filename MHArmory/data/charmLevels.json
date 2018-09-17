@@ -1,0 +1,2121 @@
+[
+    {
+        "id": 0,
+        "name": "Poison Charm I",
+        "level": 1,
+        "rarity": 0,
+        "abilityIds": [
+            0
+        ]
+    },
+    {
+        "id": 1,
+        "name": "Poison Charm II",
+        "level": 2,
+        "rarity": 0,
+        "abilityIds": [
+            1
+        ]
+    },
+    {
+        "id": 2,
+        "name": "Poison Charm III",
+        "level": 3,
+        "rarity": 0,
+        "abilityIds": [
+            2
+        ]
+    },
+    {
+        "id": 3,
+        "name": "Attack Charm I",
+        "level": 1,
+        "rarity": 0,
+        "abilityIds": [
+            38
+        ]
+    },
+    {
+        "id": 4,
+        "name": "Attack Charm II",
+        "level": 2,
+        "rarity": 0,
+        "abilityIds": [
+            39
+        ]
+    },
+    {
+        "id": 5,
+        "name": "Attack Charm III",
+        "level": 3,
+        "rarity": 0,
+        "abilityIds": [
+            40
+        ]
+    },
+    {
+        "id": 6,
+        "name": "Defense Charm I",
+        "level": 1,
+        "rarity": 0,
+        "abilityIds": [
+            45
+        ]
+    },
+    {
+        "id": 7,
+        "name": "Defense Charm II",
+        "level": 2,
+        "rarity": 0,
+        "abilityIds": [
+            46
+        ]
+    },
+    {
+        "id": 8,
+        "name": "Defense Charm III",
+        "level": 3,
+        "rarity": 0,
+        "abilityIds": [
+            47
+        ]
+    },
+    {
+        "id": 9,
+        "name": "Paralysis Charm I",
+        "level": 1,
+        "rarity": 0,
+        "abilityIds": [
+            3
+        ]
+    },
+    {
+        "id": 10,
+        "name": "Paralysis Charm II",
+        "level": 2,
+        "rarity": 0,
+        "abilityIds": [
+            4
+        ]
+    },
+    {
+        "id": 11,
+        "name": "Paralysis Charm III",
+        "level": 3,
+        "rarity": 0,
+        "abilityIds": [
+            5
+        ]
+    },
+    {
+        "id": 12,
+        "name": "Sleep Charm I",
+        "level": 1,
+        "rarity": 0,
+        "abilityIds": [
+            6
+        ]
+    },
+    {
+        "id": 13,
+        "name": "Sleep Charm II",
+        "level": 2,
+        "rarity": 0,
+        "abilityIds": [
+            7
+        ]
+    },
+    {
+        "id": 14,
+        "name": "Sleep Charm III",
+        "level": 3,
+        "rarity": 0,
+        "abilityIds": [
+            8
+        ]
+    },
+    {
+        "id": 15,
+        "name": "Stun Charm I",
+        "level": 1,
+        "rarity": 0,
+        "abilityIds": [
+            9
+        ]
+    },
+    {
+        "id": 16,
+        "name": "Stun Charm II",
+        "level": 2,
+        "rarity": 0,
+        "abilityIds": [
+            10
+        ]
+    },
+    {
+        "id": 17,
+        "name": "Stun Charm III",
+        "level": 3,
+        "rarity": 0,
+        "abilityIds": [
+            11
+        ]
+    },
+    {
+        "id": 18,
+        "name": "Windproof Charm I",
+        "level": 1,
+        "rarity": 0,
+        "abilityIds": [
+            27
+        ]
+    },
+    {
+        "id": 19,
+        "name": "Windproof Charm II",
+        "level": 2,
+        "rarity": 0,
+        "abilityIds": [
+            28
+        ]
+    },
+    {
+        "id": 20,
+        "name": "Windproof Charm III",
+        "level": 3,
+        "rarity": 0,
+        "abilityIds": [
+            29
+        ]
+    },
+    {
+        "id": 21,
+        "name": "Health Charm I",
+        "level": 1,
+        "rarity": 0,
+        "abilityIds": [
+            52
+        ]
+    },
+    {
+        "id": 22,
+        "name": "Health Charm II",
+        "level": 2,
+        "rarity": 0,
+        "abilityIds": [
+            53
+        ]
+    },
+    {
+        "id": 23,
+        "name": "Health Charm III",
+        "level": 3,
+        "rarity": 0,
+        "abilityIds": [
+            54
+        ]
+    },
+    {
+        "id": 24,
+        "name": "Recovery Charm I",
+        "level": 1,
+        "rarity": 0,
+        "abilityIds": [
+            55
+        ]
+    },
+    {
+        "id": 25,
+        "name": "Recovery Charm II",
+        "level": 2,
+        "rarity": 0,
+        "abilityIds": [
+            56
+        ]
+    },
+    {
+        "id": 26,
+        "name": "Recovery Charm III",
+        "level": 3,
+        "rarity": 0,
+        "abilityIds": [
+            57
+        ]
+    },
+    {
+        "id": 27,
+        "name": "Fire Charm I",
+        "level": 1,
+        "rarity": 0,
+        "abilityIds": [
+            61
+        ]
+    },
+    {
+        "id": 28,
+        "name": "Fire Charm II",
+        "level": 2,
+        "rarity": 0,
+        "abilityIds": [
+            62
+        ]
+    },
+    {
+        "id": 29,
+        "name": "Fire Charm III",
+        "level": 3,
+        "rarity": 0,
+        "abilityIds": [
+            63
+        ]
+    },
+    {
+        "id": 30,
+        "name": "Water Charm I",
+        "level": 1,
+        "rarity": 0,
+        "abilityIds": [
+            64
+        ]
+    },
+    {
+        "id": 31,
+        "name": "Water Charm II",
+        "level": 2,
+        "rarity": 0,
+        "abilityIds": [
+            65
+        ]
+    },
+    {
+        "id": 32,
+        "name": "Water Charm III",
+        "level": 3,
+        "rarity": 0,
+        "abilityIds": [
+            66
+        ]
+    },
+    {
+        "id": 33,
+        "name": "Thunder Charm I",
+        "level": 1,
+        "rarity": 0,
+        "abilityIds": [
+            70
+        ]
+    },
+    {
+        "id": 34,
+        "name": "Thunder Charm II",
+        "level": 2,
+        "rarity": 0,
+        "abilityIds": [
+            71
+        ]
+    },
+    {
+        "id": 35,
+        "name": "Thunder Charm III",
+        "level": 3,
+        "rarity": 0,
+        "abilityIds": [
+            72
+        ]
+    },
+    {
+        "id": 36,
+        "name": "Blaze Charm I",
+        "level": 1,
+        "rarity": 0,
+        "abilityIds": [
+            79
+        ]
+    },
+    {
+        "id": 37,
+        "name": "Blaze Charm II",
+        "level": 2,
+        "rarity": 0,
+        "abilityIds": [
+            80
+        ]
+    },
+    {
+        "id": 38,
+        "name": "Blaze Charm III",
+        "level": 3,
+        "rarity": 0,
+        "abilityIds": [
+            81
+        ]
+    },
+    {
+        "id": 39,
+        "name": "Flood Charm I",
+        "level": 1,
+        "rarity": 0,
+        "abilityIds": [
+            84
+        ]
+    },
+    {
+        "id": 40,
+        "name": "Flood Charm II",
+        "level": 2,
+        "rarity": 0,
+        "abilityIds": [
+            85
+        ]
+    },
+    {
+        "id": 41,
+        "name": "Flood Charm III",
+        "level": 3,
+        "rarity": 0,
+        "abilityIds": [
+            86
+        ]
+    },
+    {
+        "id": 42,
+        "name": "Shock Charm I",
+        "level": 1,
+        "rarity": 0,
+        "abilityIds": [
+            94
+        ]
+    },
+    {
+        "id": 43,
+        "name": "Shock Charm II",
+        "level": 2,
+        "rarity": 0,
+        "abilityIds": [
+            95
+        ]
+    },
+    {
+        "id": 44,
+        "name": "Shock Charm III",
+        "level": 3,
+        "rarity": 0,
+        "abilityIds": [
+            96
+        ]
+    },
+    {
+        "id": 45,
+        "name": "Venom Charm I",
+        "level": 1,
+        "rarity": 0,
+        "abilityIds": [
+            104
+        ]
+    },
+    {
+        "id": 46,
+        "name": "Venom Charm II",
+        "level": 2,
+        "rarity": 0,
+        "abilityIds": [
+            105
+        ]
+    },
+    {
+        "id": 47,
+        "name": "Venom Charm III",
+        "level": 3,
+        "rarity": 0,
+        "abilityIds": [
+            106
+        ]
+    },
+    {
+        "id": 48,
+        "name": "Immobilize Charm I",
+        "level": 1,
+        "rarity": 0,
+        "abilityIds": [
+            107
+        ]
+    },
+    {
+        "id": 49,
+        "name": "Immobilize Charm II",
+        "level": 2,
+        "rarity": 0,
+        "abilityIds": [
+            108
+        ]
+    },
+    {
+        "id": 50,
+        "name": "Immobilize Charm III",
+        "level": 3,
+        "rarity": 0,
+        "abilityIds": [
+            109
+        ]
+    },
+    {
+        "id": 51,
+        "name": "Tranq Charm I",
+        "level": 1,
+        "rarity": 0,
+        "abilityIds": [
+            110
+        ]
+    },
+    {
+        "id": 52,
+        "name": "Tranq Charm II",
+        "level": 2,
+        "rarity": 0,
+        "abilityIds": [
+            111
+        ]
+    },
+    {
+        "id": 53,
+        "name": "Tranq Charm III",
+        "level": 3,
+        "rarity": 0,
+        "abilityIds": [
+            112
+        ]
+    },
+    {
+        "id": 54,
+        "name": "KO Charm I",
+        "level": 1,
+        "rarity": 0,
+        "abilityIds": [
+            152
+        ]
+    },
+    {
+        "id": 55,
+        "name": "KO Charm II",
+        "level": 2,
+        "rarity": 0,
+        "abilityIds": [
+            153
+        ]
+    },
+    {
+        "id": 56,
+        "name": "KO Charm III",
+        "level": 3,
+        "rarity": 0,
+        "abilityIds": [
+            154
+        ]
+    },
+    {
+        "id": 57,
+        "name": "Enervate Charm I",
+        "level": 1,
+        "rarity": 0,
+        "abilityIds": [
+            155
+        ]
+    },
+    {
+        "id": 58,
+        "name": "Enervate Charm II",
+        "level": 2,
+        "rarity": 0,
+        "abilityIds": [
+            156
+        ]
+    },
+    {
+        "id": 59,
+        "name": "Enervate Charm III",
+        "level": 3,
+        "rarity": 0,
+        "abilityIds": [
+            157
+        ]
+    },
+    {
+        "id": 60,
+        "name": "Artillery Charm I",
+        "level": 1,
+        "rarity": 0,
+        "abilityIds": [
+            189
+        ]
+    },
+    {
+        "id": 61,
+        "name": "Artillery Charm II",
+        "level": 2,
+        "rarity": 0,
+        "abilityIds": [
+            190
+        ]
+    },
+    {
+        "id": 62,
+        "name": "Artillery Charm III",
+        "level": 3,
+        "rarity": 0,
+        "abilityIds": [
+            191
+        ]
+    },
+    {
+        "id": 63,
+        "name": "Hungerless Charm I",
+        "level": 1,
+        "rarity": 0,
+        "abilityIds": [
+            206
+        ]
+    },
+    {
+        "id": 64,
+        "name": "Hungerless Charm II",
+        "level": 2,
+        "rarity": 0,
+        "abilityIds": [
+            207
+        ]
+    },
+    {
+        "id": 65,
+        "name": "Hungerless Charm III",
+        "level": 3,
+        "rarity": 0,
+        "abilityIds": [
+            208
+        ]
+    },
+    {
+        "id": 66,
+        "name": "Ironside Charm I",
+        "level": 1,
+        "rarity": 0,
+        "abilityIds": [
+            217
+        ]
+    },
+    {
+        "id": 67,
+        "name": "Ironside Charm II",
+        "level": 2,
+        "rarity": 0,
+        "abilityIds": [
+            218
+        ]
+    },
+    {
+        "id": 68,
+        "name": "Ironside Charm III",
+        "level": 3,
+        "rarity": 0,
+        "abilityIds": [
+            219
+        ]
+    },
+    {
+        "id": 69,
+        "name": "Friendship Charm I",
+        "level": 1,
+        "rarity": 0,
+        "abilityIds": [
+            225
+        ]
+    },
+    {
+        "id": 70,
+        "name": "Friendship Charm II",
+        "level": 2,
+        "rarity": 0,
+        "abilityIds": [
+            226
+        ]
+    },
+    {
+        "id": 71,
+        "name": "Friendship Charm III",
+        "level": 3,
+        "rarity": 0,
+        "abilityIds": [
+            227
+        ]
+    },
+    {
+        "id": 72,
+        "name": "Extension Charm I",
+        "level": 1,
+        "rarity": 0,
+        "abilityIds": [
+            230
+        ]
+    },
+    {
+        "id": 73,
+        "name": "Extension Charm II",
+        "level": 2,
+        "rarity": 0,
+        "abilityIds": [
+            231
+        ]
+    },
+    {
+        "id": 74,
+        "name": "Extension Charm III",
+        "level": 3,
+        "rarity": 0,
+        "abilityIds": [
+            232
+        ]
+    },
+    {
+        "id": 75,
+        "name": "Glutton's Charm I",
+        "level": 1,
+        "rarity": 0,
+        "abilityIds": [
+            234
+        ]
+    },
+    {
+        "id": 76,
+        "name": "Glutton's Charm II",
+        "level": 2,
+        "rarity": 0,
+        "abilityIds": [
+            235
+        ]
+    },
+    {
+        "id": 77,
+        "name": "Glutton's Charm III",
+        "level": 3,
+        "rarity": 0,
+        "abilityIds": [
+            236
+        ]
+    },
+    {
+        "id": 78,
+        "name": "Blessing Charm I",
+        "level": 1,
+        "rarity": 0,
+        "abilityIds": [
+            251
+        ]
+    },
+    {
+        "id": 79,
+        "name": "Blessing Charm II",
+        "level": 2,
+        "rarity": 0,
+        "abilityIds": [
+            252
+        ]
+    },
+    {
+        "id": 80,
+        "name": "Blessing Charm III",
+        "level": 3,
+        "rarity": 0,
+        "abilityIds": [
+            253
+        ]
+    },
+    {
+        "id": 81,
+        "name": "Rally Charm I",
+        "level": 1,
+        "rarity": 0,
+        "abilityIds": [
+            254
+        ]
+    },
+    {
+        "id": 82,
+        "name": "Rally Charm II",
+        "level": 2,
+        "rarity": 0,
+        "abilityIds": [
+            255
+        ]
+    },
+    {
+        "id": 83,
+        "name": "Rally Charm III",
+        "level": 3,
+        "rarity": 0,
+        "abilityIds": [
+            256
+        ]
+    },
+    {
+        "id": 84,
+        "name": "Botany Charm I",
+        "level": 1,
+        "rarity": 0,
+        "abilityIds": [
+            259
+        ]
+    },
+    {
+        "id": 85,
+        "name": "Botany Charm II",
+        "level": 2,
+        "rarity": 0,
+        "abilityIds": [
+            260
+        ]
+    },
+    {
+        "id": 86,
+        "name": "Botany Charm III",
+        "level": 3,
+        "rarity": 0,
+        "abilityIds": [
+            261
+        ]
+    },
+    {
+        "id": 87,
+        "name": "Geology Charm I",
+        "level": 1,
+        "rarity": 0,
+        "abilityIds": [
+            263
+        ]
+    },
+    {
+        "id": 88,
+        "name": "Geology Charm II",
+        "level": 2,
+        "rarity": 0,
+        "abilityIds": [
+            264
+        ]
+    },
+    {
+        "id": 89,
+        "name": "Geology Charm III",
+        "level": 3,
+        "rarity": 0,
+        "abilityIds": [
+            265
+        ]
+    },
+    {
+        "id": 90,
+        "name": "Slinger Charm I",
+        "level": 1,
+        "rarity": 0,
+        "abilityIds": [
+            269
+        ]
+    },
+    {
+        "id": 91,
+        "name": "Slinger Charm II",
+        "level": 2,
+        "rarity": 0,
+        "abilityIds": [
+            270
+        ]
+    },
+    {
+        "id": 92,
+        "name": "Slinger Charm III",
+        "level": 3,
+        "rarity": 0,
+        "abilityIds": [
+            271
+        ]
+    },
+    {
+        "id": 93,
+        "name": "Stealth Charm I",
+        "level": 1,
+        "rarity": 0,
+        "abilityIds": [
+            272
+        ]
+    },
+    {
+        "id": 94,
+        "name": "Stealth Charm II",
+        "level": 2,
+        "rarity": 0,
+        "abilityIds": [
+            273
+        ]
+    },
+    {
+        "id": 95,
+        "name": "Stealth Charm III",
+        "level": 3,
+        "rarity": 0,
+        "abilityIds": [
+            274
+        ]
+    },
+    {
+        "id": 96,
+        "name": "Smoke Charm I",
+        "level": 1,
+        "rarity": 0,
+        "abilityIds": [
+            281
+        ]
+    },
+    {
+        "id": 97,
+        "name": "Smoke Charm II",
+        "level": 2,
+        "rarity": 0,
+        "abilityIds": [
+            282
+        ]
+    },
+    {
+        "id": 98,
+        "name": "Smoke Charm III",
+        "level": 3,
+        "rarity": 0,
+        "abilityIds": [
+            283
+        ]
+    },
+    {
+        "id": 99,
+        "name": "Mirewalker Charm I",
+        "level": 1,
+        "rarity": 0,
+        "abilityIds": [
+            284
+        ]
+    },
+    {
+        "id": 100,
+        "name": "Mirewalker Charm II",
+        "level": 2,
+        "rarity": 0,
+        "abilityIds": [
+            285
+        ]
+    },
+    {
+        "id": 101,
+        "name": "Mirewalker Charm III",
+        "level": 3,
+        "rarity": 0,
+        "abilityIds": [
+            286
+        ]
+    },
+    {
+        "id": 102,
+        "name": "Insect Charm I",
+        "level": 1,
+        "rarity": 0,
+        "abilityIds": [
+            290
+        ]
+    },
+    {
+        "id": 103,
+        "name": "Insect Charm II",
+        "level": 2,
+        "rarity": 0,
+        "abilityIds": [
+            291
+        ]
+    },
+    {
+        "id": 104,
+        "name": "Insect Charm III",
+        "level": 3,
+        "rarity": 0,
+        "abilityIds": [
+            292
+        ]
+    },
+    {
+        "id": 105,
+        "name": "Intimidator Charm I",
+        "level": 1,
+        "rarity": 0,
+        "abilityIds": [
+            304
+        ]
+    },
+    {
+        "id": 106,
+        "name": "Intimidator Charm II",
+        "level": 2,
+        "rarity": 0,
+        "abilityIds": [
+            305
+        ]
+    },
+    {
+        "id": 107,
+        "name": "Intimidator Charm III",
+        "level": 3,
+        "rarity": 0,
+        "abilityIds": [
+            306
+        ]
+    },
+    {
+        "id": 108,
+        "name": "Heavy Artillery Charm I",
+        "level": 1,
+        "rarity": 0,
+        "abilityIds": [
+            192
+        ]
+    },
+    {
+        "id": 109,
+        "name": "Heavy Artillery Charm II",
+        "level": 2,
+        "rarity": 0,
+        "abilityIds": [
+            193
+        ]
+    },
+    {
+        "id": 110,
+        "name": "Light Eater's Charm",
+        "level": 1,
+        "rarity": 0,
+        "abilityIds": [
+            233
+        ]
+    },
+    {
+        "id": 111,
+        "name": "Tracker Charm",
+        "level": 1,
+        "rarity": 0,
+        "abilityIds": [
+            296
+        ]
+    },
+    {
+        "id": 112,
+        "name": "Fortification Charm",
+        "level": 1,
+        "rarity": 0,
+        "abilityIds": [
+            178
+        ]
+    },
+    {
+        "id": 113,
+        "name": "Performer's Charm",
+        "level": 1,
+        "rarity": 0,
+        "abilityIds": [
+            185
+        ]
+    },
+    {
+        "id": 114,
+        "name": "Capacity Charm",
+        "level": 1,
+        "rarity": 0,
+        "abilityIds": [
+            186
+        ]
+    },
+    {
+        "id": 115,
+        "name": "Bleed Charm I",
+        "level": 1,
+        "rarity": 0,
+        "abilityIds": [
+            16
+        ]
+    },
+    {
+        "id": 116,
+        "name": "Bleed Charm II",
+        "level": 2,
+        "rarity": 0,
+        "abilityIds": [
+            17
+        ]
+    },
+    {
+        "id": 117,
+        "name": "Bleed Charm III",
+        "level": 3,
+        "rarity": 0,
+        "abilityIds": [
+            18
+        ]
+    },
+    {
+        "id": 118,
+        "name": "Speed Heal Charm I",
+        "level": 1,
+        "rarity": 0,
+        "abilityIds": [
+            58
+        ]
+    },
+    {
+        "id": 119,
+        "name": "Speed Heal Charm II",
+        "level": 2,
+        "rarity": 0,
+        "abilityIds": [
+            59
+        ]
+    },
+    {
+        "id": 120,
+        "name": "Speed Heal Charm III",
+        "level": 3,
+        "rarity": 0,
+        "abilityIds": [
+            60
+        ]
+    },
+    {
+        "id": 121,
+        "name": "Ice Charm I",
+        "level": 1,
+        "rarity": 0,
+        "abilityIds": [
+            67
+        ]
+    },
+    {
+        "id": 122,
+        "name": "Ice Charm II",
+        "level": 2,
+        "rarity": 0,
+        "abilityIds": [
+            68
+        ]
+    },
+    {
+        "id": 123,
+        "name": "Ice Charm III",
+        "level": 3,
+        "rarity": 0,
+        "abilityIds": [
+            69
+        ]
+    },
+    {
+        "id": 124,
+        "name": "Blight Charm I",
+        "level": 1,
+        "rarity": 0,
+        "abilityIds": [
+            76
+        ]
+    },
+    {
+        "id": 125,
+        "name": "Blight Charm II",
+        "level": 2,
+        "rarity": 0,
+        "abilityIds": [
+            77
+        ]
+    },
+    {
+        "id": 126,
+        "name": "Blight Charm III",
+        "level": 3,
+        "rarity": 0,
+        "abilityIds": [
+            78
+        ]
+    },
+    {
+        "id": 127,
+        "name": "Frost Charm I",
+        "level": 1,
+        "rarity": 0,
+        "abilityIds": [
+            89
+        ]
+    },
+    {
+        "id": 128,
+        "name": "Frost Charm II",
+        "level": 2,
+        "rarity": 0,
+        "abilityIds": [
+            90
+        ]
+    },
+    {
+        "id": 129,
+        "name": "Frost Charm III",
+        "level": 3,
+        "rarity": 0,
+        "abilityIds": [
+            91
+        ]
+    },
+    {
+        "id": 130,
+        "name": "Master's Charm I",
+        "level": 1,
+        "rarity": 0,
+        "abilityIds": [
+            122
+        ]
+    },
+    {
+        "id": 131,
+        "name": "Master's Charm II",
+        "level": 2,
+        "rarity": 0,
+        "abilityIds": [
+            123
+        ]
+    },
+    {
+        "id": 132,
+        "name": "Master's Charm III",
+        "level": 3,
+        "rarity": 0,
+        "abilityIds": [
+            124
+        ]
+    },
+    {
+        "id": 133,
+        "name": "Evasion Charm I",
+        "level": 1,
+        "rarity": 0,
+        "abilityIds": [
+            209
+        ]
+    },
+    {
+        "id": 134,
+        "name": "Evasion Charm II",
+        "level": 2,
+        "rarity": 0,
+        "abilityIds": [
+            210
+        ]
+    },
+    {
+        "id": 135,
+        "name": "Evasion Charm III",
+        "level": 3,
+        "rarity": 0,
+        "abilityIds": [
+            211
+        ]
+    },
+    {
+        "id": 136,
+        "name": "Sheath Charm I",
+        "level": 1,
+        "rarity": 0,
+        "abilityIds": [
+            222
+        ]
+    },
+    {
+        "id": 137,
+        "name": "Sheath Charm II",
+        "level": 2,
+        "rarity": 0,
+        "abilityIds": [
+            223
+        ]
+    },
+    {
+        "id": 138,
+        "name": "Sheath Charm III",
+        "level": 3,
+        "rarity": 0,
+        "abilityIds": [
+            224
+        ]
+    },
+    {
+        "id": 139,
+        "name": "Whetstone Charm I",
+        "level": 1,
+        "rarity": 0,
+        "abilityIds": [
+            237
+        ]
+    },
+    {
+        "id": 140,
+        "name": "Whetstone Charm II",
+        "level": 2,
+        "rarity": 0,
+        "abilityIds": [
+            238
+        ]
+    },
+    {
+        "id": 141,
+        "name": "Whetstone Charm III",
+        "level": 3,
+        "rarity": 0,
+        "abilityIds": [
+            239
+        ]
+    },
+    {
+        "id": 142,
+        "name": "Blast Charm I",
+        "level": 1,
+        "rarity": 0,
+        "abilityIds": [
+            13
+        ]
+    },
+    {
+        "id": 143,
+        "name": "Blast Charm II",
+        "level": 2,
+        "rarity": 0,
+        "abilityIds": [
+            14
+        ]
+    },
+    {
+        "id": 144,
+        "name": "Blast Charm III",
+        "level": 3,
+        "rarity": 0,
+        "abilityIds": [
+            15
+        ]
+    },
+    {
+        "id": 145,
+        "name": "Dragon Charm I",
+        "level": 1,
+        "rarity": 0,
+        "abilityIds": [
+            73
+        ]
+    },
+    {
+        "id": 146,
+        "name": "Dragon Charm II",
+        "level": 2,
+        "rarity": 0,
+        "abilityIds": [
+            74
+        ]
+    },
+    {
+        "id": 147,
+        "name": "Dragon Charm III",
+        "level": 3,
+        "rarity": 0,
+        "abilityIds": [
+            75
+        ]
+    },
+    {
+        "id": 148,
+        "name": "Wyrmsbane Charm I",
+        "level": 1,
+        "rarity": 0,
+        "abilityIds": [
+            99
+        ]
+    },
+    {
+        "id": 149,
+        "name": "Wyrmsbane Charm II",
+        "level": 2,
+        "rarity": 0,
+        "abilityIds": [
+            100
+        ]
+    },
+    {
+        "id": 150,
+        "name": "Wyrmsbane Charm III",
+        "level": 3,
+        "rarity": 0,
+        "abilityIds": [
+            101
+        ]
+    },
+    {
+        "id": 151,
+        "name": "Demolition Charm I",
+        "level": 1,
+        "rarity": 0,
+        "abilityIds": [
+            113
+        ]
+    },
+    {
+        "id": 152,
+        "name": "Demolition Charm II",
+        "level": 2,
+        "rarity": 0,
+        "abilityIds": [
+            114
+        ]
+    },
+    {
+        "id": 153,
+        "name": "Demolition Charm III",
+        "level": 3,
+        "rarity": 0,
+        "abilityIds": [
+            115
+        ]
+    },
+    {
+        "id": 154,
+        "name": "Draw Charm I",
+        "level": 1,
+        "rarity": 0,
+        "abilityIds": [
+            146
+        ]
+    },
+    {
+        "id": 155,
+        "name": "Draw Charm II",
+        "level": 2,
+        "rarity": 0,
+        "abilityIds": [
+            147
+        ]
+    },
+    {
+        "id": 156,
+        "name": "Special Shot Charm I",
+        "level": 1,
+        "rarity": 0,
+        "abilityIds": [
+            187
+        ]
+    },
+    {
+        "id": 157,
+        "name": "Special Shot Charm II",
+        "level": 2,
+        "rarity": 0,
+        "abilityIds": [
+            188
+        ]
+    },
+    {
+        "id": 158,
+        "name": "Marathon Charm I",
+        "level": 1,
+        "rarity": 0,
+        "abilityIds": [
+            194
+        ]
+    },
+    {
+        "id": 159,
+        "name": "Marathon Charm II",
+        "level": 2,
+        "rarity": 0,
+        "abilityIds": [
+            195
+        ]
+    },
+    {
+        "id": 160,
+        "name": "Fitness Charm I",
+        "level": 1,
+        "rarity": 0,
+        "abilityIds": [
+            197
+        ]
+    },
+    {
+        "id": 161,
+        "name": "Fitness Charm II",
+        "level": 2,
+        "rarity": 0,
+        "abilityIds": [
+            198
+        ]
+    },
+    {
+        "id": 162,
+        "name": "Fitness Charm III",
+        "level": 3,
+        "rarity": 0,
+        "abilityIds": [
+            199
+        ]
+    },
+    {
+        "id": 163,
+        "name": "Surge Charm I",
+        "level": 1,
+        "rarity": 0,
+        "abilityIds": [
+            203
+        ]
+    },
+    {
+        "id": 164,
+        "name": "Surge Charm II",
+        "level": 2,
+        "rarity": 0,
+        "abilityIds": [
+            204
+        ]
+    },
+    {
+        "id": 165,
+        "name": "Leaping Charm I",
+        "level": 1,
+        "rarity": 0,
+        "abilityIds": [
+            214
+        ]
+    },
+    {
+        "id": 166,
+        "name": "Leaping Charm II",
+        "level": 2,
+        "rarity": 0,
+        "abilityIds": [
+            215
+        ]
+    },
+    {
+        "id": 167,
+        "name": "Bombardier Charm I",
+        "level": 1,
+        "rarity": 0,
+        "abilityIds": [
+            240
+        ]
+    },
+    {
+        "id": 168,
+        "name": "Bombardier Charm II",
+        "level": 2,
+        "rarity": 0,
+        "abilityIds": [
+            241
+        ]
+    },
+    {
+        "id": 169,
+        "name": "Bombardier Charm III",
+        "level": 3,
+        "rarity": 0,
+        "abilityIds": [
+            242
+        ]
+    },
+    {
+        "id": 170,
+        "name": "Mushroom Charm I",
+        "level": 1,
+        "rarity": 0,
+        "abilityIds": [
+            243
+        ]
+    },
+    {
+        "id": 171,
+        "name": "Mushroom Charm II",
+        "level": 2,
+        "rarity": 0,
+        "abilityIds": [
+            244
+        ]
+    },
+    {
+        "id": 172,
+        "name": "Awakening Charm I",
+        "level": 1,
+        "rarity": 0,
+        "abilityIds": [
+            119
+        ]
+    },
+    {
+        "id": 173,
+        "name": "Awakening Charm II",
+        "level": 2,
+        "rarity": 0,
+        "abilityIds": [
+            120
+        ]
+    },
+    {
+        "id": 174,
+        "name": "Handicraft Charm I",
+        "level": 1,
+        "rarity": 0,
+        "abilityIds": [
+            141
+        ]
+    },
+    {
+        "id": 175,
+        "name": "Handicraft Charm II",
+        "level": 2,
+        "rarity": 0,
+        "abilityIds": [
+            142
+        ]
+    },
+    {
+        "id": 176,
+        "name": "Handicraft Charm III",
+        "level": 3,
+        "rarity": 0,
+        "abilityIds": [
+            143
+        ]
+    },
+    {
+        "id": 177,
+        "name": "Mud Puppy Charm",
+        "level": 1,
+        "rarity": 0,
+        "abilityIds": [
+            12,
+            202
+        ]
+    },
+    {
+        "id": 178,
+        "name": "Trickshot Charm",
+        "level": 1,
+        "rarity": 0,
+        "abilityIds": [
+            35,
+            288
+        ]
+    },
+    {
+        "id": 179,
+        "name": "Hunter's Life Charm",
+        "level": 1,
+        "rarity": 0,
+        "abilityIds": [
+            299,
+            246
+        ]
+    },
+    {
+        "id": 180,
+        "name": "Procurer's Charm",
+        "level": 1,
+        "rarity": 0,
+        "abilityIds": [
+            247,
+            249
+        ]
+    },
+    {
+        "id": 181,
+        "name": "Gatherer's Charm",
+        "level": 1,
+        "rarity": 0,
+        "abilityIds": [
+            248,
+            250
+        ]
+    },
+    {
+        "id": 182,
+        "name": "Guard Charm I",
+        "level": 1,
+        "rarity": 0,
+        "abilityIds": [
+            19
+        ]
+    },
+    {
+        "id": 183,
+        "name": "Guard Charm II",
+        "level": 2,
+        "rarity": 0,
+        "abilityIds": [
+            20
+        ]
+    },
+    {
+        "id": 184,
+        "name": "Guard Charm III",
+        "level": 3,
+        "rarity": 0,
+        "abilityIds": [
+            21
+        ]
+    },
+    {
+        "id": 185,
+        "name": "Earplugs Charm I",
+        "level": 1,
+        "rarity": 0,
+        "abilityIds": [
+            22
+        ]
+    },
+    {
+        "id": 186,
+        "name": "Earplugs Charm II",
+        "level": 2,
+        "rarity": 0,
+        "abilityIds": [
+            23
+        ]
+    },
+    {
+        "id": 187,
+        "name": "Earplugs Charm III",
+        "level": 3,
+        "rarity": 0,
+        "abilityIds": [
+            24
+        ]
+    },
+    {
+        "id": 188,
+        "name": "Tremor Charm I",
+        "level": 1,
+        "rarity": 0,
+        "abilityIds": [
+            32
+        ]
+    },
+    {
+        "id": 189,
+        "name": "Tremor Charm II",
+        "level": 2,
+        "rarity": 0,
+        "abilityIds": [
+            33
+        ]
+    },
+    {
+        "id": 190,
+        "name": "Exploiter Charm I",
+        "level": 1,
+        "rarity": 0,
+        "abilityIds": [
+            132
+        ]
+    },
+    {
+        "id": 191,
+        "name": "Exploiter Charm II",
+        "level": 2,
+        "rarity": 0,
+        "abilityIds": [
+            133
+        ]
+    },
+    {
+        "id": 192,
+        "name": "Focus Charm I",
+        "level": 1,
+        "rarity": 0,
+        "abilityIds": [
+            135
+        ]
+    },
+    {
+        "id": 193,
+        "name": "Focus Charm II",
+        "level": 2,
+        "rarity": 0,
+        "abilityIds": [
+            136
+        ]
+    },
+    {
+        "id": 194,
+        "name": "Breaker Charm I",
+        "level": 1,
+        "rarity": 0,
+        "abilityIds": [
+            149
+        ]
+    },
+    {
+        "id": 195,
+        "name": "Breaker Charm II",
+        "level": 2,
+        "rarity": 0,
+        "abilityIds": [
+            150
+        ]
+    },
+    {
+        "id": 196,
+        "name": "Fury Charm I",
+        "level": 1,
+        "rarity": 0,
+        "abilityIds": [
+            179
+        ]
+    },
+    {
+        "id": 197,
+        "name": "Fury Charm II",
+        "level": 2,
+        "rarity": 0,
+        "abilityIds": [
+            180
+        ]
+    },
+    {
+        "id": 198,
+        "name": "Grit Charm I",
+        "level": 1,
+        "rarity": 0,
+        "abilityIds": [
+            173
+        ]
+    },
+    {
+        "id": 199,
+        "name": "Grit Charm II",
+        "level": 2,
+        "rarity": 0,
+        "abilityIds": [
+            174
+        ]
+    },
+    {
+        "id": 200,
+        "name": "Maintenance Charm I",
+        "level": 1,
+        "rarity": 0,
+        "abilityIds": [
+            300
+        ]
+    },
+    {
+        "id": 201,
+        "name": "Maintenance Charm II",
+        "level": 2,
+        "rarity": 0,
+        "abilityIds": [
+            301
+        ]
+    },
+    {
+        "id": 202,
+        "name": "Maintenance Charm III",
+        "level": 3,
+        "rarity": 0,
+        "abilityIds": [
+            302
+        ]
+    },
+    {
+        "id": 203,
+        "name": "Power Charm I",
+        "level": 1,
+        "rarity": 0,
+        "abilityIds": [
+            160
+        ]
+    },
+    {
+        "id": 204,
+        "name": "Power Charm II",
+        "level": 2,
+        "rarity": 0,
+        "abilityIds": [
+            161
+        ]
+    },
+    {
+        "id": 205,
+        "name": "Challenger Charm I",
+        "level": 1,
+        "rarity": 0,
+        "abilityIds": [
+            165
+        ]
+    },
+    {
+        "id": 206,
+        "name": "Challenger Charm II",
+        "level": 2,
+        "rarity": 0,
+        "abilityIds": [
+            166
+        ]
+    },
+    {
+        "id": 207,
+        "name": "Unscathed Charm I",
+        "level": 1,
+        "rarity": 0,
+        "abilityIds": [
+            170
+        ]
+    },
+    {
+        "id": 208,
+        "name": "Unscathed Charm II",
+        "level": 2,
+        "rarity": 0,
+        "abilityIds": [
+            171
+        ]
+    },
+    {
+        "id": 209,
+        "name": "Mighty Charm I",
+        "level": 1,
+        "rarity": 0,
+        "abilityIds": [
+            266
+        ]
+    },
+    {
+        "id": 210,
+        "name": "Mighty Charm II",
+        "level": 2,
+        "rarity": 0,
+        "abilityIds": [
+            267
+        ]
+    },
+    {
+        "id": 211,
+        "name": "Impact Charm I",
+        "level": 1,
+        "rarity": 0,
+        "abilityIds": [
+            275
+        ]
+    },
+    {
+        "id": 212,
+        "name": "Impact Charm II",
+        "level": 2,
+        "rarity": 0,
+        "abilityIds": [
+            276
+        ]
+    },
+    {
+        "id": 213,
+        "name": "Miasma Charm I",
+        "level": 1,
+        "rarity": 0,
+        "abilityIds": [
+            293
+        ]
+    },
+    {
+        "id": 214,
+        "name": "Miasma Charm II",
+        "level": 2,
+        "rarity": 0,
+        "abilityIds": [
+            294
+        ]
+    },
+    {
+        "id": 215,
+        "name": "Miasma Charm III",
+        "level": 3,
+        "rarity": 0,
+        "abilityIds": [
+            295
+        ]
+    },
+    {
+        "id": 216,
+        "name": "Normal Shots Charm",
+        "level": 1,
+        "rarity": 0,
+        "abilityIds": [
+            116
+        ]
+    },
+    {
+        "id": 217,
+        "name": "Clearmind Charm",
+        "level": 1,
+        "rarity": 0,
+        "abilityIds": [
+            37,
+            36
+        ]
+    },
+    {
+        "id": 218,
+        "name": "Rider's Charm",
+        "level": 1,
+        "rarity": 0,
+        "abilityIds": [
+            158,
+            280
+        ]
+    },
+    {
+        "id": 219,
+        "name": "Surveyor's Charm",
+        "level": 1,
+        "rarity": 0,
+        "abilityIds": [
+            278,
+            289
+        ]
+    },
+    {
+        "id": 220,
+        "name": "Critical Charm I",
+        "level": 1,
+        "rarity": 0,
+        "abilityIds": [
+            129
+        ]
+    },
+    {
+        "id": 221,
+        "name": "Invigorate Charm I",
+        "level": 1,
+        "rarity": 0,
+        "abilityIds": [
+            138
+        ]
+    },
+    {
+        "id": 222,
+        "name": "Invigorate Charm II",
+        "level": 2,
+        "rarity": 0,
+        "abilityIds": [
+            139
+        ]
+    },
+    {
+        "id": 223,
+        "name": "Penetration Charm",
+        "level": 1,
+        "rarity": 0,
+        "abilityIds": [
+            117
+        ]
+    },
+    {
+        "id": 224,
+        "name": "Dispersal Charm",
+        "level": 1,
+        "rarity": 0,
+        "abilityIds": [
+            118
+        ]
+    },
+    {
+        "id": 225,
+        "name": "Poison Coating Charm",
+        "level": 1,
+        "rarity": 0,
+        "abilityIds": [
+            327
+        ]
+    },
+    {
+        "id": 226,
+        "name": "Para Coating Charm",
+        "level": 1,
+        "rarity": 0,
+        "abilityIds": [
+            328
+        ]
+    },
+    {
+        "id": 227,
+        "name": "Sleep Coating Charm",
+        "level": 1,
+        "rarity": 0,
+        "abilityIds": [
+            329
+        ]
+    },
+    {
+        "id": 228,
+        "name": "Blast Coating Charm",
+        "level": 1,
+        "rarity": 0,
+        "abilityIds": [
+            330
+        ]
+    },
+    {
+        "id": 229,
+        "name": "Geomancy Charm",
+        "level": 1,
+        "rarity": 0,
+        "abilityIds": [
+            297,
+            298
+        ]
+    },
+    {
+        "id": 230,
+        "name": "Gale Charm",
+        "level": 1,
+        "rarity": 0,
+        "abilityIds": [
+            303,
+            159
+        ]
+    },
+    {
+        "id": 231,
+        "name": "Wyrmslayer Charm",
+        "level": 1,
+        "rarity": 0,
+        "abilityIds": [
+            331,
+            99
+        ]
+    },
+    {
+        "id": 232,
+        "name": "Bulwark Charm",
+        "level": 1,
+        "rarity": 0,
+        "abilityIds": [
+            317,
+            184
+        ]
+    },
+    {
+        "id": 233,
+        "name": "Fair Wind Charm",
+        "level": 1,
+        "rarity": 0,
+        "abilityIds": [
+            38,
+            251
+        ]
+    }
+]

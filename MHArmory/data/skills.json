@@ -1,0 +1,1289 @@
+[
+    {
+        "id": 0,
+        "name": "Poison Resistance",
+        "description": "Poison Resistance",
+        "abilityIds": [
+            0,
+            1,
+            2
+        ]
+    },
+    {
+        "id": 1,
+        "name": "Paralysis Resistance",
+        "description": "Paralysis Resistance",
+        "abilityIds": [
+            3,
+            4,
+            5
+        ]
+    },
+    {
+        "id": 2,
+        "name": "Sleep Resistance",
+        "description": "Sleep Resistance",
+        "abilityIds": [
+            6,
+            7,
+            8
+        ]
+    },
+    {
+        "id": 3,
+        "name": "Stun Resistance",
+        "description": "Stun Resistance",
+        "abilityIds": [
+            9,
+            10,
+            11
+        ]
+    },
+    {
+        "id": 4,
+        "name": "Muck Resistance",
+        "description": "Muck Resistance",
+        "abilityIds": [
+            12
+        ]
+    },
+    {
+        "id": 5,
+        "name": "Blast Resistance",
+        "description": "Blast Resistance",
+        "abilityIds": [
+            13,
+            14,
+            15
+        ]
+    },
+    {
+        "id": 6,
+        "name": "Bleeding Resistance",
+        "description": "Bleeding Resistance",
+        "abilityIds": [
+            16,
+            17,
+            18
+        ]
+    },
+    {
+        "id": 7,
+        "name": "Iron Skin",
+        "description": "Iron Skin",
+        "abilityIds": [
+            19,
+            20,
+            21
+        ]
+    },
+    {
+        "id": 8,
+        "name": "Earplugs",
+        "description": "Earplugs",
+        "abilityIds": [
+            22,
+            23,
+            24,
+            25,
+            26
+        ]
+    },
+    {
+        "id": 9,
+        "name": "Windproof",
+        "description": "Windproof",
+        "abilityIds": [
+            27,
+            28,
+            29,
+            30,
+            31
+        ]
+    },
+    {
+        "id": 10,
+        "name": "Tremor Resistance",
+        "description": "Tremor Resistance",
+        "abilityIds": [
+            32,
+            33,
+            34
+        ]
+    },
+    {
+        "id": 11,
+        "name": "Dungmaster",
+        "description": "Dungmaster",
+        "abilityIds": [
+            35
+        ]
+    },
+    {
+        "id": 12,
+        "name": "Effluvial Expert",
+        "description": "Effluvial Expert",
+        "abilityIds": [
+            36
+        ]
+    },
+    {
+        "id": 13,
+        "name": "Heat Guard",
+        "description": "Heat Guard",
+        "abilityIds": [
+            37
+        ]
+    },
+    {
+        "id": 14,
+        "name": "Attack Boost",
+        "description": "Attack Boost",
+        "abilityIds": [
+            38,
+            39,
+            40,
+            41,
+            42,
+            43,
+            44
+        ]
+    },
+    {
+        "id": 15,
+        "name": "Defense Boost",
+        "description": "Defense Boost",
+        "abilityIds": [
+            45,
+            46,
+            47,
+            48,
+            49,
+            50,
+            51
+        ]
+    },
+    {
+        "id": 16,
+        "name": "Health Boost",
+        "description": "Health Boost",
+        "abilityIds": [
+            52,
+            53,
+            54
+        ]
+    },
+    {
+        "id": 17,
+        "name": "Recovery Up",
+        "description": "Recovery Up",
+        "abilityIds": [
+            55,
+            56,
+            57
+        ]
+    },
+    {
+        "id": 18,
+        "name": "Recovery Speed",
+        "description": "Recovery Speed",
+        "abilityIds": [
+            58,
+            59,
+            60
+        ]
+    },
+    {
+        "id": 19,
+        "name": "Fire Resistance",
+        "description": "Fire Resistance",
+        "abilityIds": [
+            61,
+            62,
+            63
+        ]
+    },
+    {
+        "id": 20,
+        "name": "Water Resistance",
+        "description": "Water Resistance",
+        "abilityIds": [
+            64,
+            65,
+            66
+        ]
+    },
+    {
+        "id": 21,
+        "name": "Ice Resistance",
+        "description": "Ice Resistance",
+        "abilityIds": [
+            67,
+            68,
+            69
+        ]
+    },
+    {
+        "id": 22,
+        "name": "Thunder Resistance",
+        "description": "Thunder Resistance",
+        "abilityIds": [
+            70,
+            71,
+            72
+        ]
+    },
+    {
+        "id": 23,
+        "name": "Dragon Resistance",
+        "description": "Dragon Resistance",
+        "abilityIds": [
+            73,
+            74,
+            75
+        ]
+    },
+    {
+        "id": 24,
+        "name": "Blight Resistance",
+        "description": "Blight Resistance",
+        "abilityIds": [
+            76,
+            77,
+            78
+        ]
+    },
+    {
+        "id": 25,
+        "name": "Fire Attack",
+        "description": "Fire Attack",
+        "abilityIds": [
+            79,
+            80,
+            81,
+            82,
+            83
+        ]
+    },
+    {
+        "id": 26,
+        "name": "Water Attack",
+        "description": "Water Attack",
+        "abilityIds": [
+            84,
+            85,
+            86,
+            87,
+            88
+        ]
+    },
+    {
+        "id": 27,
+        "name": "Ice Attack",
+        "description": "Ice Attack",
+        "abilityIds": [
+            89,
+            90,
+            91,
+            92,
+            93
+        ]
+    },
+    {
+        "id": 28,
+        "name": "Thunder Attack",
+        "description": "Thunder Attack",
+        "abilityIds": [
+            94,
+            95,
+            96,
+            97,
+            98
+        ]
+    },
+    {
+        "id": 29,
+        "name": "Dragon Attack",
+        "description": "Dragon Attack",
+        "abilityIds": [
+            99,
+            100,
+            101,
+            102,
+            103
+        ]
+    },
+    {
+        "id": 30,
+        "name": "Poison Attack",
+        "description": "Poison Attack",
+        "abilityIds": [
+            104,
+            105,
+            106
+        ]
+    },
+    {
+        "id": 31,
+        "name": "Paralysis Attack",
+        "description": "Paralysis Attack",
+        "abilityIds": [
+            107,
+            108,
+            109
+        ]
+    },
+    {
+        "id": 32,
+        "name": "Sleep Attack",
+        "description": "Sleep Attack",
+        "abilityIds": [
+            110,
+            111,
+            112
+        ]
+    },
+    {
+        "id": 33,
+        "name": "Blast Attack",
+        "description": "Blast Attack",
+        "abilityIds": [
+            113,
+            114,
+            115
+        ]
+    },
+    {
+        "id": 34,
+        "name": "Normal Shots",
+        "description": "Normal Shots",
+        "abilityIds": [
+            116
+        ]
+    },
+    {
+        "id": 35,
+        "name": "Piercing Shots",
+        "description": "Piercing Shots",
+        "abilityIds": [
+            117
+        ]
+    },
+    {
+        "id": 36,
+        "name": "Spread/Power Shots",
+        "description": "Spread/Power Shots",
+        "abilityIds": [
+            118
+        ]
+    },
+    {
+        "id": 37,
+        "name": "Free Elem/Ammo Up",
+        "description": "Free Elem/Ammo Up",
+        "abilityIds": [
+            119,
+            120,
+            121
+        ]
+    },
+    {
+        "id": 38,
+        "name": "Critical Eye",
+        "description": "Critical Eye",
+        "abilityIds": [
+            122,
+            123,
+            124,
+            125,
+            126,
+            127,
+            128
+        ]
+    },
+    {
+        "id": 39,
+        "name": "Critical Boost",
+        "description": "Critical Boost",
+        "abilityIds": [
+            129,
+            130,
+            131
+        ]
+    },
+    {
+        "id": 40,
+        "name": "Weakness Exploit",
+        "description": "Weakness Exploit",
+        "abilityIds": [
+            132,
+            133,
+            134
+        ]
+    },
+    {
+        "id": 41,
+        "name": "Focus",
+        "description": "Focus",
+        "abilityIds": [
+            135,
+            136,
+            137
+        ]
+    },
+    {
+        "id": 42,
+        "name": "Power Prolonger",
+        "description": "Power Prolonger",
+        "abilityIds": [
+            138,
+            139,
+            140
+        ]
+    },
+    {
+        "id": 43,
+        "name": "Handicraft",
+        "description": "Handicraft",
+        "abilityIds": [
+            141,
+            142,
+            143,
+            144,
+            145
+        ]
+    },
+    {
+        "id": 44,
+        "name": "Critical Draw",
+        "description": "Critical Draw",
+        "abilityIds": [
+            146,
+            147,
+            148
+        ]
+    },
+    {
+        "id": 45,
+        "name": "Partbreaker",
+        "description": "Partbreaker",
+        "abilityIds": [
+            149,
+            150,
+            151
+        ]
+    },
+    {
+        "id": 46,
+        "name": "Slugger",
+        "description": "Slugger",
+        "abilityIds": [
+            152,
+            153,
+            154
+        ]
+    },
+    {
+        "id": 47,
+        "name": "Stamina Thief",
+        "description": "Stamina Thief",
+        "abilityIds": [
+            155,
+            156,
+            157
+        ]
+    },
+    {
+        "id": 48,
+        "name": "Master Mounter",
+        "description": "Master Mounter",
+        "abilityIds": [
+            158
+        ]
+    },
+    {
+        "id": 49,
+        "name": "Airborne",
+        "description": "Airborne",
+        "abilityIds": [
+            159
+        ]
+    },
+    {
+        "id": 50,
+        "name": "Latent Power",
+        "description": "Latent Power",
+        "abilityIds": [
+            160,
+            161,
+            162,
+            163,
+            164
+        ]
+    },
+    {
+        "id": 51,
+        "name": "Agitator",
+        "description": "Agitator",
+        "abilityIds": [
+            165,
+            166,
+            167,
+            168,
+            169
+        ]
+    },
+    {
+        "id": 52,
+        "name": "Peak Performance",
+        "description": "Peak Performance",
+        "abilityIds": [
+            170,
+            171,
+            172
+        ]
+    },
+    {
+        "id": 53,
+        "name": "Heroics",
+        "description": "Heroics",
+        "abilityIds": [
+            173,
+            174,
+            175,
+            176,
+            177
+        ]
+    },
+    {
+        "id": 54,
+        "name": "Fortify",
+        "description": "Fortify",
+        "abilityIds": [
+            178
+        ]
+    },
+    {
+        "id": 55,
+        "name": "Resentment",
+        "description": "Resentment",
+        "abilityIds": [
+            179,
+            180,
+            181,
+            182,
+            183
+        ]
+    },
+    {
+        "id": 56,
+        "name": "Resuscitate",
+        "description": "Resuscitate",
+        "abilityIds": [
+            184
+        ]
+    },
+    {
+        "id": 57,
+        "name": "Horn Maestro",
+        "description": "Horn Maestro",
+        "abilityIds": [
+            185
+        ]
+    },
+    {
+        "id": 58,
+        "name": "Capacity Boost",
+        "description": "Capacity Boost",
+        "abilityIds": [
+            186
+        ]
+    },
+    {
+        "id": 59,
+        "name": "Special Ammo Boost",
+        "description": "Special Ammo Boost",
+        "abilityIds": [
+            187,
+            188
+        ]
+    },
+    {
+        "id": 60,
+        "name": "Artillery",
+        "description": "Artillery",
+        "abilityIds": [
+            189,
+            190,
+            191
+        ]
+    },
+    {
+        "id": 61,
+        "name": "Heavy Artillery",
+        "description": "Heavy Artillery",
+        "abilityIds": [
+            192,
+            193
+        ]
+    },
+    {
+        "id": 62,
+        "name": "Marathon Runner",
+        "description": "Marathon Runner",
+        "abilityIds": [
+            194,
+            195,
+            196
+        ]
+    },
+    {
+        "id": 63,
+        "name": "Constitution",
+        "description": "Constitution",
+        "abilityIds": [
+            197,
+            198,
+            199,
+            200,
+            201
+        ]
+    },
+    {
+        "id": 64,
+        "name": "Leap of Faith",
+        "description": "Leap of Faith",
+        "abilityIds": [
+            202
+        ]
+    },
+    {
+        "id": 65,
+        "name": "Stamina Surge",
+        "description": "Stamina Surge",
+        "abilityIds": [
+            203,
+            204,
+            205
+        ]
+    },
+    {
+        "id": 66,
+        "name": "Hunger Resistance",
+        "description": "Hunger Resistance",
+        "abilityIds": [
+            206,
+            207,
+            208
+        ]
+    },
+    {
+        "id": 67,
+        "name": "Evade Window",
+        "description": "Evade Window",
+        "abilityIds": [
+            209,
+            210,
+            211,
+            212,
+            213
+        ]
+    },
+    {
+        "id": 68,
+        "name": "Evade Extender",
+        "description": "Evade Extender",
+        "abilityIds": [
+            214,
+            215,
+            216
+        ]
+    },
+    {
+        "id": 69,
+        "name": "Guard",
+        "description": "Guard",
+        "abilityIds": [
+            217,
+            218,
+            219,
+            220,
+            221
+        ]
+    },
+    {
+        "id": 70,
+        "name": "Quick Sheath",
+        "description": "Quick Sheath",
+        "abilityIds": [
+            222,
+            223,
+            224
+        ]
+    },
+    {
+        "id": 71,
+        "name": "Wide-Range",
+        "description": "Wide-Range",
+        "abilityIds": [
+            225,
+            226,
+            227,
+            228,
+            229
+        ]
+    },
+    {
+        "id": 72,
+        "name": "Item Prolonger",
+        "description": "Item Prolonger",
+        "abilityIds": [
+            230,
+            231,
+            232
+        ]
+    },
+    {
+        "id": 73,
+        "name": "Free Meal",
+        "description": "Free Meal",
+        "abilityIds": [
+            233
+        ]
+    },
+    {
+        "id": 74,
+        "name": "Speed Eating",
+        "description": "Speed Eating",
+        "abilityIds": [
+            234,
+            235,
+            236
+        ]
+    },
+    {
+        "id": 75,
+        "name": "Speed Sharpening",
+        "description": "Speed Sharpening",
+        "abilityIds": [
+            237,
+            238,
+            239
+        ]
+    },
+    {
+        "id": 76,
+        "name": "Bombardier",
+        "description": "Bombardier",
+        "abilityIds": [
+            240,
+            241,
+            242
+        ]
+    },
+    {
+        "id": 77,
+        "name": "Mushroomancer",
+        "description": "Mushroomancer",
+        "abilityIds": [
+            243,
+            244,
+            245
+        ]
+    },
+    {
+        "id": 78,
+        "name": "Master Fisher",
+        "description": "Master Fisher",
+        "abilityIds": [
+            246
+        ]
+    },
+    {
+        "id": 79,
+        "name": "Pro Transporter",
+        "description": "Pro Transporter",
+        "abilityIds": [
+            247
+        ]
+    },
+    {
+        "id": 80,
+        "name": "Master Gatherer",
+        "description": "Master Gatherer",
+        "abilityIds": [
+            248
+        ]
+    },
+    {
+        "id": 81,
+        "name": "Honey Hunter",
+        "description": "Honey Hunter",
+        "abilityIds": [
+            249
+        ]
+    },
+    {
+        "id": 82,
+        "name": "Carving Pro",
+        "description": "Carving Pro",
+        "abilityIds": [
+            250
+        ]
+    },
+    {
+        "id": 83,
+        "name": "Divine Blessing",
+        "description": "Divine Blessing",
+        "abilityIds": [
+            251,
+            252,
+            253
+        ]
+    },
+    {
+        "id": 84,
+        "name": "Palico Rally",
+        "description": "Palico Rally",
+        "abilityIds": [
+            254,
+            255,
+            256,
+            257,
+            258
+        ]
+    },
+    {
+        "id": 85,
+        "name": "Botanist",
+        "description": "Botanist",
+        "abilityIds": [
+            259,
+            260,
+            261,
+            262
+        ]
+    },
+    {
+        "id": 86,
+        "name": "Geologist",
+        "description": "Geologist",
+        "abilityIds": [
+            263,
+            264,
+            265
+        ]
+    },
+    {
+        "id": 87,
+        "name": "Maximum Might",
+        "description": "Maximum Might",
+        "abilityIds": [
+            266,
+            267,
+            268
+        ]
+    },
+    {
+        "id": 88,
+        "name": "Slinger Capacity",
+        "description": "Slinger Capacity",
+        "abilityIds": [
+            269,
+            270,
+            271
+        ]
+    },
+    {
+        "id": 89,
+        "name": "Stealth",
+        "description": "Stealth",
+        "abilityIds": [
+            272,
+            273,
+            274
+        ]
+    },
+    {
+        "id": 90,
+        "name": "Flinch Free",
+        "description": "Flinch Free",
+        "abilityIds": [
+            275,
+            276,
+            277
+        ]
+    },
+    {
+        "id": 91,
+        "name": "Scoutfly Range Up",
+        "description": "Scoutfly Range Up",
+        "abilityIds": [
+            278
+        ]
+    },
+    {
+        "id": 92,
+        "name": "Speed Crawler",
+        "description": "Speed Crawler",
+        "abilityIds": [
+            279
+        ]
+    },
+    {
+        "id": 93,
+        "name": "Jump Master",
+        "description": "Jump Master",
+        "abilityIds": [
+            280
+        ]
+    },
+    {
+        "id": 94,
+        "name": "Sporepuff Expert",
+        "description": "Sporepuff Expert",
+        "abilityIds": [
+            281,
+            282,
+            283
+        ]
+    },
+    {
+        "id": 95,
+        "name": "Aquatic Expert",
+        "description": "Aquatic Expert",
+        "abilityIds": [
+            284,
+            285,
+            286
+        ]
+    },
+    {
+        "id": 96,
+        "name": "Cliffhanger",
+        "description": "Cliffhanger",
+        "abilityIds": [
+            287
+        ]
+    },
+    {
+        "id": 97,
+        "name": "Blindsider",
+        "description": "Blindsider",
+        "abilityIds": [
+            288
+        ]
+    },
+    {
+        "id": 98,
+        "name": "Scholar",
+        "description": "Scholar",
+        "abilityIds": [
+            289
+        ]
+    },
+    {
+        "id": 99,
+        "name": "Entomologist",
+        "description": "Entomologist",
+        "abilityIds": [
+            290,
+            291,
+            292
+        ]
+    },
+    {
+        "id": 100,
+        "name": "Effluvia Resistance",
+        "description": "Effluvia Resistance",
+        "abilityIds": [
+            293,
+            294,
+            295
+        ]
+    },
+    {
+        "id": 101,
+        "name": "Scenthound",
+        "description": "Scenthound",
+        "abilityIds": [
+            296
+        ]
+    },
+    {
+        "id": 102,
+        "name": "Forager's Luck",
+        "description": "Forager's Luck",
+        "abilityIds": [
+            297
+        ]
+    },
+    {
+        "id": 103,
+        "name": "Detector",
+        "description": "Detector",
+        "abilityIds": [
+            298
+        ]
+    },
+    {
+        "id": 104,
+        "name": "BBQ Master",
+        "description": "BBQ Master",
+        "abilityIds": [
+            299
+        ]
+    },
+    {
+        "id": 105,
+        "name": "Tool Specialist",
+        "description": "Tool Specialist",
+        "abilityIds": [
+            300,
+            301,
+            302
+        ]
+    },
+    {
+        "id": 106,
+        "name": "Affinity Sliding",
+        "description": "Affinity Sliding",
+        "abilityIds": [
+            303
+        ]
+    },
+    {
+        "id": 107,
+        "name": "Intimidator",
+        "description": "Intimidator",
+        "abilityIds": [
+            304,
+            305,
+            306
+        ]
+    },
+    {
+        "id": 108,
+        "name": "Hasten Recovery",
+        "description": "Hasten Recovery",
+        "abilityIds": [
+            307
+        ]
+    },
+    {
+        "id": 109,
+        "name": "Super Recovery",
+        "description": "Super Recovery",
+        "abilityIds": [
+            308
+        ]
+    },
+    {
+        "id": 110,
+        "name": "Poison Duration Up",
+        "description": "Poison Duration Up",
+        "abilityIds": [
+            309
+        ]
+    },
+    {
+        "id": 111,
+        "name": "Adrenaline",
+        "description": "Adrenaline",
+        "abilityIds": [
+            310
+        ]
+    },
+    {
+        "id": 112,
+        "name": "Stamina Cap Up",
+        "description": "Stamina Cap Up",
+        "abilityIds": [
+            311
+        ]
+    },
+    {
+        "id": 113,
+        "name": "Critical Element",
+        "description": "Critical Element",
+        "abilityIds": [
+            312
+        ]
+    },
+    {
+        "id": 114,
+        "name": "Mind's Eye/Ballistics",
+        "description": "Mind's Eye/Ballistics",
+        "abilityIds": [
+            313
+        ]
+    },
+    {
+        "id": 115,
+        "name": "Bludgeoner",
+        "description": "Bludgeoner",
+        "abilityIds": [
+            314
+        ]
+    },
+    {
+        "id": 116,
+        "name": "Non-elemental Boost",
+        "description": "Non-elemental Boost",
+        "abilityIds": [
+            315
+        ]
+    },
+    {
+        "id": 117,
+        "name": "Capture Master",
+        "description": "Capture Master",
+        "abilityIds": [
+            316
+        ]
+    },
+    {
+        "id": 118,
+        "name": "Guard Up",
+        "description": "Guard Up",
+        "abilityIds": [
+            317
+        ]
+    },
+    {
+        "id": 119,
+        "name": "Guts",
+        "description": "Guts",
+        "abilityIds": [
+            318
+        ]
+    },
+    {
+        "id": 120,
+        "name": "Master's Touch",
+        "description": "Master's Touch",
+        "abilityIds": [
+            319
+        ]
+    },
+    {
+        "id": 121,
+        "name": "Nullify Wind Pressure",
+        "description": "Nullify Wind Pressure",
+        "abilityIds": [
+            320
+        ]
+    },
+    {
+        "id": 122,
+        "name": "Razor Sharp/Spare Shot",
+        "description": "Razor Sharp/Spare Shot",
+        "abilityIds": [
+            321
+        ]
+    },
+    {
+        "id": 123,
+        "name": "Critical Status",
+        "description": "Critical Status",
+        "abilityIds": [
+            322
+        ]
+    },
+    {
+        "id": 124,
+        "name": "Good Luck",
+        "description": "Good Luck",
+        "abilityIds": [
+            323
+        ]
+    },
+    {
+        "id": 125,
+        "name": "Bow Charge Plus",
+        "description": "Bow Charge Plus",
+        "abilityIds": [
+            324
+        ]
+    },
+    {
+        "id": 126,
+        "name": "Punishing Draw",
+        "description": "Punishing Draw",
+        "abilityIds": [
+            325
+        ]
+    },
+    {
+        "id": 127,
+        "name": "Protective Polish",
+        "description": "Protective Polish",
+        "abilityIds": [
+            326
+        ]
+    },
+    {
+        "id": 128,
+        "name": "Poison Functionality",
+        "description": "Poison Functionality",
+        "abilityIds": [
+            327
+        ]
+    },
+    {
+        "id": 129,
+        "name": "Para Functionality",
+        "description": "Para Functionality",
+        "abilityIds": [
+            328
+        ]
+    },
+    {
+        "id": 130,
+        "name": "Sleep Functionality",
+        "description": "Sleep Functionality",
+        "abilityIds": [
+            329
+        ]
+    },
+    {
+        "id": 131,
+        "name": "Blast Functionality",
+        "description": "Blast Functionality",
+        "abilityIds": [
+            330
+        ]
+    },
+    {
+        "id": 132,
+        "name": "Elderseal Boost",
+        "description": "Elderseal Boost",
+        "abilityIds": [
+            331
+        ]
+    },
+    {
+        "id": 133,
+        "name": "Great Luck",
+        "description": "Great Luck",
+        "abilityIds": [
+            332
+        ]
+    },
+    {
+        "id": 134,
+        "name": "Carving Master",
+        "description": "Carving Master",
+        "abilityIds": [
+            333
+        ]
+    },
+    {
+        "id": 135,
+        "name": "Elemental Airborne",
+        "description": "Elemental Airborne",
+        "abilityIds": [
+            334
+        ]
+    }
+]

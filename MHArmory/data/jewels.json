@@ -1,0 +1,884 @@
+[
+    {
+        "id": 0,
+        "name": "Antidote Jewel",
+        "rarity": 5,
+        "slotSize": 1,
+        "abilityIds": [
+            0
+        ]
+    },
+    {
+        "id": 1,
+        "name": "Geology Jewel",
+        "rarity": 5,
+        "slotSize": 1,
+        "abilityIds": [
+            263
+        ]
+    },
+    {
+        "id": 2,
+        "name": "Heavy Artillery Jewel",
+        "rarity": 5,
+        "slotSize": 1,
+        "abilityIds": [
+            192
+        ]
+    },
+    {
+        "id": 3,
+        "name": "Hungerless Jewel",
+        "rarity": 5,
+        "slotSize": 1,
+        "abilityIds": [
+            206
+        ]
+    },
+    {
+        "id": 4,
+        "name": "Satiated Jewel",
+        "rarity": 5,
+        "slotSize": 1,
+        "abilityIds": [
+            233
+        ]
+    },
+    {
+        "id": 5,
+        "name": "Protection Jewel",
+        "rarity": 5,
+        "slotSize": 1,
+        "abilityIds": [
+            251
+        ]
+    },
+    {
+        "id": 6,
+        "name": "Meowster Jewel",
+        "rarity": 5,
+        "slotSize": 1,
+        "abilityIds": [
+            254
+        ]
+    },
+    {
+        "id": 7,
+        "name": "Botany Jewel",
+        "rarity": 5,
+        "slotSize": 1,
+        "abilityIds": [
+            259
+        ]
+    },
+    {
+        "id": 8,
+        "name": "Tip Toe Jewel",
+        "rarity": 5,
+        "slotSize": 1,
+        "abilityIds": [
+            272
+        ]
+    },
+    {
+        "id": 9,
+        "name": "Flight Jewel",
+        "rarity": 5,
+        "slotSize": 2,
+        "abilityIds": [
+            159
+        ]
+    },
+    {
+        "id": 10,
+        "name": "Smoke Jewel",
+        "rarity": 5,
+        "slotSize": 1,
+        "abilityIds": [
+            281
+        ]
+    },
+    {
+        "id": 11,
+        "name": "Mirewalker Jewel",
+        "rarity": 5,
+        "slotSize": 1,
+        "abilityIds": [
+            284
+        ]
+    },
+    {
+        "id": 12,
+        "name": "Specimen Jewel",
+        "rarity": 5,
+        "slotSize": 1,
+        "abilityIds": [
+            290
+        ]
+    },
+    {
+        "id": 13,
+        "name": "Miasma Jewel",
+        "rarity": 5,
+        "slotSize": 1,
+        "abilityIds": [
+            293
+        ]
+    },
+    {
+        "id": 14,
+        "name": "Scent Jewel",
+        "rarity": 5,
+        "slotSize": 1,
+        "abilityIds": [
+            296
+        ]
+    },
+    {
+        "id": 15,
+        "name": "Intimidator Jewel",
+        "rarity": 5,
+        "slotSize": 1,
+        "abilityIds": [
+            304
+        ]
+    },
+    {
+        "id": 16,
+        "name": "Maintenance Jewel",
+        "rarity": 5,
+        "slotSize": 1,
+        "abilityIds": [
+            300
+        ]
+    },
+    {
+        "id": 17,
+        "name": "Crisis Jewel",
+        "rarity": 5,
+        "slotSize": 1,
+        "abilityIds": [
+            184
+        ]
+    },
+    {
+        "id": 18,
+        "name": "Antipara Jewel",
+        "rarity": 5,
+        "slotSize": 1,
+        "abilityIds": [
+            3
+        ]
+    },
+    {
+        "id": 19,
+        "name": "Fortitude Jewel",
+        "rarity": 5,
+        "slotSize": 1,
+        "abilityIds": [
+            178
+        ]
+    },
+    {
+        "id": 20,
+        "name": "Water Res Jewel",
+        "rarity": 5,
+        "slotSize": 1,
+        "abilityIds": [
+            64
+        ]
+    },
+    {
+        "id": 21,
+        "name": "Suture Jewel",
+        "rarity": 5,
+        "slotSize": 1,
+        "abilityIds": [
+            16
+        ]
+    },
+    {
+        "id": 22,
+        "name": "Dragon Res Jewel",
+        "rarity": 5,
+        "slotSize": 1,
+        "abilityIds": [
+            73
+        ]
+    },
+    {
+        "id": 23,
+        "name": "Fire Res Jewel",
+        "rarity": 5,
+        "slotSize": 1,
+        "abilityIds": [
+            61
+        ]
+    },
+    {
+        "id": 24,
+        "name": "Ice Res Jewel",
+        "rarity": 5,
+        "slotSize": 1,
+        "abilityIds": [
+            67
+        ]
+    },
+    {
+        "id": 25,
+        "name": "Def Lock Jewel",
+        "rarity": 5,
+        "slotSize": 1,
+        "abilityIds": [
+            19
+        ]
+    },
+    {
+        "id": 26,
+        "name": "Thunder Res Jewel",
+        "rarity": 5,
+        "slotSize": 1,
+        "abilityIds": [
+            70
+        ]
+    },
+    {
+        "id": 27,
+        "name": "Pep Jewel",
+        "rarity": 5,
+        "slotSize": 1,
+        "abilityIds": [
+            6
+        ]
+    },
+    {
+        "id": 28,
+        "name": "Antiblast Jewel",
+        "rarity": 5,
+        "slotSize": 1,
+        "abilityIds": [
+            13
+        ]
+    },
+    {
+        "id": 29,
+        "name": "Gobbler Jewel",
+        "rarity": 6,
+        "slotSize": 1,
+        "abilityIds": [
+            234
+        ]
+    },
+    {
+        "id": 30,
+        "name": "Physique Jewel",
+        "rarity": 6,
+        "slotSize": 2,
+        "abilityIds": [
+            197
+        ]
+    },
+    {
+        "id": 31,
+        "name": "Blaze Jewel",
+        "rarity": 6,
+        "slotSize": 1,
+        "abilityIds": [
+            79
+        ]
+    },
+    {
+        "id": 32,
+        "name": "Evasion Jewel",
+        "rarity": 6,
+        "slotSize": 2,
+        "abilityIds": [
+            209
+        ]
+    },
+    {
+        "id": 33,
+        "name": "Jumping Jewel",
+        "rarity": 6,
+        "slotSize": 2,
+        "abilityIds": [
+            214
+        ]
+    },
+    {
+        "id": 34,
+        "name": "Sheath Jewel",
+        "rarity": 6,
+        "slotSize": 1,
+        "abilityIds": [
+            222
+        ]
+    },
+    {
+        "id": 35,
+        "name": "Friendship Jewel",
+        "rarity": 6,
+        "slotSize": 1,
+        "abilityIds": [
+            225
+        ]
+    },
+    {
+        "id": 36,
+        "name": "Enduring Jewel",
+        "rarity": 6,
+        "slotSize": 1,
+        "abilityIds": [
+            230
+        ]
+    },
+    {
+        "id": 37,
+        "name": "Medicine Jewel",
+        "rarity": 6,
+        "slotSize": 1,
+        "abilityIds": [
+            55
+        ]
+    },
+    {
+        "id": 38,
+        "name": "Grinder Jewel",
+        "rarity": 6,
+        "slotSize": 1,
+        "abilityIds": [
+            237
+        ]
+    },
+    {
+        "id": 39,
+        "name": "Steadfast Jewel",
+        "rarity": 6,
+        "slotSize": 1,
+        "abilityIds": [
+            9
+        ]
+    },
+    {
+        "id": 40,
+        "name": "Bomber Jewel",
+        "rarity": 6,
+        "slotSize": 1,
+        "abilityIds": [
+            240
+        ]
+    },
+    {
+        "id": 41,
+        "name": "Recovery Jewel",
+        "rarity": 6,
+        "slotSize": 1,
+        "abilityIds": [
+            58
+        ]
+    },
+    {
+        "id": 42,
+        "name": "Slider Jewel",
+        "rarity": 6,
+        "slotSize": 2,
+        "abilityIds": [
+            303
+        ]
+    },
+    {
+        "id": 43,
+        "name": "Defense Jewel",
+        "rarity": 6,
+        "slotSize": 1,
+        "abilityIds": [
+            45
+        ]
+    },
+    {
+        "id": 44,
+        "name": "Stonethrower Jewel",
+        "rarity": 6,
+        "slotSize": 1,
+        "abilityIds": [
+            269
+        ]
+    },
+    {
+        "id": 45,
+        "name": "Footing Jewel",
+        "rarity": 6,
+        "slotSize": 2,
+        "abilityIds": [
+            32
+        ]
+    },
+    {
+        "id": 46,
+        "name": "Brace Jewel",
+        "rarity": 6,
+        "slotSize": 3,
+        "abilityIds": [
+            275
+        ]
+    },
+    {
+        "id": 47,
+        "name": "Wind Resist Jewel",
+        "rarity": 6,
+        "slotSize": 2,
+        "abilityIds": [
+            27
+        ]
+    },
+    {
+        "id": 48,
+        "name": "Earplug Jewel",
+        "rarity": 6,
+        "slotSize": 3,
+        "abilityIds": [
+            22
+        ]
+    },
+    {
+        "id": 49,
+        "name": "Vitality Jewel",
+        "rarity": 6,
+        "slotSize": 1,
+        "abilityIds": [
+            52
+        ]
+    },
+    {
+        "id": 50,
+        "name": "Resistor Jewel",
+        "rarity": 6,
+        "slotSize": 1,
+        "abilityIds": [
+            76
+        ]
+    },
+    {
+        "id": 51,
+        "name": "Sonorous Jewel",
+        "rarity": 6,
+        "slotSize": 1,
+        "abilityIds": [
+            185
+        ]
+    },
+    {
+        "id": 52,
+        "name": "KO Jewel",
+        "rarity": 6,
+        "slotSize": 2,
+        "abilityIds": [
+            152
+        ]
+    },
+    {
+        "id": 53,
+        "name": "Stream Jewel",
+        "rarity": 6,
+        "slotSize": 1,
+        "abilityIds": [
+            84
+        ]
+    },
+    {
+        "id": 54,
+        "name": "Frost Jewel",
+        "rarity": 6,
+        "slotSize": 1,
+        "abilityIds": [
+            89
+        ]
+    },
+    {
+        "id": 55,
+        "name": "Bolt Jewel",
+        "rarity": 6,
+        "slotSize": 1,
+        "abilityIds": [
+            94
+        ]
+    },
+    {
+        "id": 56,
+        "name": "Dragon Jewel",
+        "rarity": 6,
+        "slotSize": 1,
+        "abilityIds": [
+            99
+        ]
+    },
+    {
+        "id": 57,
+        "name": "Venom Jewel",
+        "rarity": 6,
+        "slotSize": 1,
+        "abilityIds": [
+            104
+        ]
+    },
+    {
+        "id": 58,
+        "name": "Poisoncoat Jewel",
+        "rarity": 6,
+        "slotSize": 3,
+        "abilityIds": [
+            327
+        ]
+    },
+    {
+        "id": 59,
+        "name": "Expert Jewel",
+        "rarity": 6,
+        "slotSize": 1,
+        "abilityIds": [
+            122
+        ]
+    },
+    {
+        "id": 60,
+        "name": "Tenderizer Jewel",
+        "rarity": 6,
+        "slotSize": 2,
+        "abilityIds": [
+            132
+        ]
+    },
+    {
+        "id": 61,
+        "name": "Destroyer Jewel",
+        "rarity": 6,
+        "slotSize": 2,
+        "abilityIds": [
+            149
+        ]
+    },
+    {
+        "id": 62,
+        "name": "Elementless Jewel",
+        "rarity": 6,
+        "slotSize": 2,
+        "abilityIds": [
+            315
+        ]
+    },
+    {
+        "id": 63,
+        "name": "Drain Jewel",
+        "rarity": 6,
+        "slotSize": 1,
+        "abilityIds": [
+            155
+        ]
+    },
+    {
+        "id": 64,
+        "name": "Paracoat Jewel",
+        "rarity": 7,
+        "slotSize": 3,
+        "abilityIds": [
+            328
+        ]
+    },
+    {
+        "id": 65,
+        "name": "Sharp Jewel",
+        "rarity": 7,
+        "slotSize": 2,
+        "abilityIds": [
+            326
+        ]
+    },
+    {
+        "id": 66,
+        "name": "Shield Jewel",
+        "rarity": 7,
+        "slotSize": 2,
+        "abilityIds": [
+            317
+        ]
+    },
+    {
+        "id": 67,
+        "name": "Dragonseal Jewel",
+        "rarity": 7,
+        "slotSize": 3,
+        "abilityIds": [
+            331
+        ]
+    },
+    {
+        "id": 68,
+        "name": "Trueshot Jewel",
+        "rarity": 7,
+        "slotSize": 1,
+        "abilityIds": [
+            187
+        ]
+    },
+    {
+        "id": 69,
+        "name": "Enhancer Jewel",
+        "rarity": 7,
+        "slotSize": 2,
+        "abilityIds": [
+            138
+        ]
+    },
+    {
+        "id": 70,
+        "name": "Forceshot Jewel",
+        "rarity": 7,
+        "slotSize": 3,
+        "abilityIds": [
+            116
+        ]
+    },
+    {
+        "id": 71,
+        "name": "Furor Jewel",
+        "rarity": 7,
+        "slotSize": 2,
+        "abilityIds": [
+            179
+        ]
+    },
+    {
+        "id": 72,
+        "name": "Potential Jewel",
+        "rarity": 7,
+        "slotSize": 2,
+        "abilityIds": [
+            173
+        ]
+    },
+    {
+        "id": 73,
+        "name": "Paralyzer Jewel",
+        "rarity": 7,
+        "slotSize": 1,
+        "abilityIds": [
+            107
+        ]
+    },
+    {
+        "id": 74,
+        "name": "Sleep Jewel",
+        "rarity": 7,
+        "slotSize": 1,
+        "abilityIds": [
+            110
+        ]
+    },
+    {
+        "id": 75,
+        "name": "Ironwall Jewel",
+        "rarity": 7,
+        "slotSize": 1,
+        "abilityIds": [
+            217
+        ]
+    },
+    {
+        "id": 76,
+        "name": "Refresh Jewel",
+        "rarity": 7,
+        "slotSize": 2,
+        "abilityIds": [
+            203
+        ]
+    },
+    {
+        "id": 77,
+        "name": "Blast Jewel",
+        "rarity": 7,
+        "slotSize": 1,
+        "abilityIds": [
+            113
+        ]
+    },
+    {
+        "id": 78,
+        "name": "Sleepcoat Jewel",
+        "rarity": 7,
+        "slotSize": 3,
+        "abilityIds": [
+            329
+        ]
+    },
+    {
+        "id": 79,
+        "name": "Blastcoat Jewel",
+        "rarity": 7,
+        "slotSize": 3,
+        "abilityIds": [
+            330
+        ]
+    },
+    {
+        "id": 80,
+        "name": "Throttle Jewel",
+        "rarity": 7,
+        "slotSize": 2,
+        "abilityIds": [
+            160
+        ]
+    },
+    {
+        "id": 81,
+        "name": "Challenger Jewel",
+        "rarity": 7,
+        "slotSize": 2,
+        "abilityIds": [
+            165
+        ]
+    },
+    {
+        "id": 82,
+        "name": "Attack Jewel",
+        "rarity": 7,
+        "slotSize": 1,
+        "abilityIds": [
+            38
+        ]
+    },
+    {
+        "id": 83,
+        "name": "Flawless Jewel",
+        "rarity": 7,
+        "slotSize": 2,
+        "abilityIds": [
+            170
+        ]
+    },
+    {
+        "id": 84,
+        "name": "Magazine Jewel",
+        "rarity": 7,
+        "slotSize": 2,
+        "abilityIds": [
+            186
+        ]
+    },
+    {
+        "id": 85,
+        "name": "Mighty Jewel",
+        "rarity": 7,
+        "slotSize": 2,
+        "abilityIds": [
+            266
+        ]
+    },
+    {
+        "id": 86,
+        "name": "Sprinter Jewel",
+        "rarity": 8,
+        "slotSize": 2,
+        "abilityIds": [
+            194
+        ]
+    },
+    {
+        "id": 87,
+        "name": "Critical Jewel",
+        "rarity": 8,
+        "slotSize": 2,
+        "abilityIds": [
+            129
+        ]
+    },
+    {
+        "id": 88,
+        "name": "Artillery Jewel",
+        "rarity": 8,
+        "slotSize": 1,
+        "abilityIds": [
+            189
+        ]
+    },
+    {
+        "id": 89,
+        "name": "Fungiform Jewel",
+        "rarity": 8,
+        "slotSize": 1,
+        "abilityIds": [
+            243
+        ]
+    },
+    {
+        "id": 90,
+        "name": "Release Jewel",
+        "rarity": 8,
+        "slotSize": 3,
+        "abilityIds": [
+            119
+        ]
+    },
+    {
+        "id": 91,
+        "name": "Spread Jewel",
+        "rarity": 8,
+        "slotSize": 3,
+        "abilityIds": [
+            118
+        ]
+    },
+    {
+        "id": 92,
+        "name": "Charger Jewel",
+        "rarity": 8,
+        "slotSize": 2,
+        "abilityIds": [
+            135
+        ]
+    },
+    {
+        "id": 93,
+        "name": "Handicraft Jewel",
+        "rarity": 8,
+        "slotSize": 3,
+        "abilityIds": [
+            141
+        ]
+    },
+    {
+        "id": 94,
+        "name": "Mighty Bow Jewel",
+        "rarity": 8,
+        "slotSize": 2,
+        "abilityIds": [
+            324
+        ]
+    },
+    {
+        "id": 95,
+        "name": "Mind's Eye Jewel",
+        "rarity": 8,
+        "slotSize": 2,
+        "abilityIds": [
+            313
+        ]
+    },
+    {
+        "id": 96,
+        "name": "Draw Jewel",
+        "rarity": 8,
+        "slotSize": 2,
+        "abilityIds": [
+            146
+        ]
+    },
+    {
+        "id": 97,
+        "name": "Pierce Jewel",
+        "rarity": 8,
+        "slotSize": 3,
+        "abilityIds": [
+            117
+        ]
+    }
+]

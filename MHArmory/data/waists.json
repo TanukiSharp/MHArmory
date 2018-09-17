@@ -1,0 +1,3969 @@
+[
+    {
+        "id": 0,
+        "name": "Leather Belt",
+        "rarity": 1,
+        "defense": {
+            "base": 2,
+            "max": 38,
+            "augmented": 68
+        },
+        "resistances": {
+            "fire": 2,
+            "water": 0,
+            "thunder": 0,
+            "ice": 0,
+            "dragon": 0
+        },
+        "attributes": {
+            "gender": 3
+        }
+    },
+    {
+        "id": 1,
+        "name": "Chainmail Belt",
+        "rarity": 1,
+        "defense": {
+            "base": 2,
+            "max": 38,
+            "augmented": 68
+        },
+        "resistances": {
+            "fire": 0,
+            "water": 2,
+            "thunder": 0,
+            "ice": 0,
+            "dragon": 0
+        },
+        "attributes": {
+            "gender": 3
+        }
+    },
+    {
+        "id": 2,
+        "name": "Hunter's Coil",
+        "rarity": 1,
+        "abilityIds": [
+            296
+        ],
+        "defense": {
+            "base": 6,
+            "max": 42,
+            "augmented": 72
+        },
+        "resistances": {
+            "fire": 2,
+            "water": 2,
+            "thunder": 0,
+            "ice": 0,
+            "dragon": 0
+        },
+        "attributes": {
+            "gender": 3
+        }
+    },
+    {
+        "id": 3,
+        "name": "Bone Coil",
+        "rarity": 1,
+        "abilityIds": [
+            185
+        ],
+        "defense": {
+            "base": 6,
+            "max": 42,
+            "augmented": 72
+        },
+        "resistances": {
+            "fire": 2,
+            "water": 0,
+            "thunder": 2,
+            "ice": 0,
+            "dragon": 2
+        },
+        "attributes": {
+            "gender": 3
+        }
+    },
+    {
+        "id": 4,
+        "name": "Vespoid Coil",
+        "rarity": 1,
+        "abilityIds": [
+            3
+        ],
+        "defense": {
+            "base": 8,
+            "max": 44,
+            "augmented": 74
+        },
+        "resistances": {
+            "fire": -2,
+            "water": 1,
+            "thunder": 1,
+            "ice": 1,
+            "dragon": 2
+        },
+        "attributes": {
+            "gender": 3
+        }
+    },
+    {
+        "id": 7,
+        "name": "Jagras Coil",
+        "rarity": 1,
+        "abilityIds": [
+            178
+        ],
+        "defense": {
+            "base": 8,
+            "max": 44,
+            "augmented": 74
+        },
+        "resistances": {
+            "fire": -2,
+            "water": 2,
+            "thunder": -1,
+            "ice": -1,
+            "dragon": 1
+        },
+        "attributes": {
+            "gender": 3
+        }
+    },
+    {
+        "id": 8,
+        "name": "Kulu Coil",
+        "rarity": 1,
+        "abilityIds": [
+            230
+        ],
+        "defense": {
+            "base": 10,
+            "max": 46,
+            "augmented": 76
+        },
+        "resistances": {
+            "fire": 0,
+            "water": -3,
+            "thunder": 0,
+            "ice": 1,
+            "dragon": 0
+        },
+        "attributes": {
+            "gender": 3
+        }
+    },
+    {
+        "id": 9,
+        "name": "Alloy Coil",
+        "rarity": 2,
+        "abilityIds": [
+            0
+        ],
+        "defense": {
+            "base": 8,
+            "max": 40,
+            "augmented": 66
+        },
+        "resistances": {
+            "fire": -2,
+            "water": 1,
+            "thunder": -2,
+            "ice": -2,
+            "dragon": 1
+        },
+        "attributes": {
+            "gender": 3
+        }
+    },
+    {
+        "id": 10,
+        "name": "Pukei Coil",
+        "rarity": 2,
+        "abilityIds": [
+            104
+        ],
+        "defense": {
+            "base": 12,
+            "max": 44,
+            "augmented": 70
+        },
+        "resistances": {
+            "fire": 0,
+            "water": 3,
+            "thunder": -3,
+            "ice": 0,
+            "dragon": 1
+        },
+        "attributes": {
+            "gender": 3
+        }
+    },
+    {
+        "id": 11,
+        "name": "Barroth Coil",
+        "rarity": 2,
+        "abilityIds": [
+            12
+        ],
+        "defense": {
+            "base": 14,
+            "max": 38,
+            "augmented": 72
+        },
+        "resistances": {
+            "fire": -3,
+            "water": -1,
+            "thunder": 3,
+            "ice": -1,
+            "dragon": 0
+        },
+        "attributes": {
+            "gender": 3
+        }
+    },
+    {
+        "id": 12,
+        "name": "Jyura Coil",
+        "rarity": 2,
+        "abilityIds": [
+            67
+        ],
+        "defense": {
+            "base": 14,
+            "max": 46,
+            "augmented": 72
+        },
+        "resistances": {
+            "fire": -1,
+            "water": 2,
+            "thunder": -3,
+            "ice": 0,
+            "dragon": 0
+        },
+        "attributes": {
+            "gender": 3
+        }
+    },
+    {
+        "id": 13,
+        "name": "Kadachi Coil",
+        "rarity": 2,
+        "abilityIds": [
+            94
+        ],
+        "defense": {
+            "base": 16,
+            "max": 48,
+            "augmented": 74
+        },
+        "resistances": {
+            "fire": 0,
+            "water": -3,
+            "thunder": 3,
+            "ice": 0,
+            "dragon": 0
+        },
+        "attributes": {
+            "gender": 3
+        }
+    },
+    {
+        "id": 14,
+        "name": "High Metal Coil",
+        "rarity": 3,
+        "abilityIds": [
+            186
+        ],
+        "defense": {
+            "base": 18,
+            "max": 46,
+            "augmented": 70
+        },
+        "resistances": {
+            "fire": 0,
+            "water": -1,
+            "thunder": -2,
+            "ice": 3,
+            "dragon": 0
+        },
+        "attributes": {
+            "gender": 3
+        }
+    },
+    {
+        "id": 15,
+        "name": "King Beetle Elytra",
+        "rarity": 3,
+        "abilityIds": [
+            249
+        ],
+        "defense": {
+            "base": 22,
+            "max": 50,
+            "augmented": 74
+        },
+        "resistances": {
+            "fire": -1,
+            "water": -1,
+            "thunder": 2,
+            "ice": 0,
+            "dragon": 2
+        },
+        "attributes": {
+            "gender": 1
+        }
+    },
+    {
+        "id": 16,
+        "name": "Butterfly Elytra",
+        "rarity": 3,
+        "abilityIds": [
+            249
+        ],
+        "defense": {
+            "base": 22,
+            "max": 50,
+            "augmented": 74
+        },
+        "resistances": {
+            "fire": -1,
+            "water": -1,
+            "thunder": 2,
+            "ice": 0,
+            "dragon": 2
+        },
+        "attributes": {
+            "gender": 2
+        }
+    },
+    {
+        "id": 18,
+        "name": "Hornetaur Coil",
+        "rarity": 3,
+        "abilityIds": [
+            250
+        ],
+        "defense": {
+            "base": 18,
+            "max": 46,
+            "augmented": 70
+        },
+        "resistances": {
+            "fire": -1,
+            "water": -1,
+            "thunder": 0,
+            "ice": 0,
+            "dragon": 2
+        },
+        "attributes": {
+            "gender": 3
+        }
+    },
+    {
+        "id": 19,
+        "name": "Anja Coil",
+        "rarity": 3,
+        "abilityIds": [
+            61
+        ],
+        "defense": {
+            "base": 20,
+            "max": 48,
+            "augmented": 72
+        },
+        "resistances": {
+            "fire": 3,
+            "water": -3,
+            "thunder": -1,
+            "ice": -1,
+            "dragon": 0
+        },
+        "attributes": {
+            "gender": 3
+        },
+        "armorSetSkillIds": [
+            0
+        ]
+    },
+    {
+        "id": 20,
+        "name": "Rathian Coil",
+        "rarity": 3,
+        "abilityIds": [
+            0
+        ],
+        "defense": {
+            "base": 22,
+            "max": 50,
+            "augmented": 74
+        },
+        "resistances": {
+            "fire": 2,
+            "water": 0,
+            "thunder": -2,
+            "ice": 0,
+            "dragon": -3
+        },
+        "attributes": {
+            "gender": 3
+        }
+    },
+    {
+        "id": 21,
+        "name": "Tzitzi Coil",
+        "rarity": 3,
+        "abilityIds": [
+            225
+        ],
+        "defense": {
+            "base": 18,
+            "max": 46,
+            "augmented": 70
+        },
+        "resistances": {
+            "fire": 0,
+            "water": 0,
+            "thunder": -3,
+            "ice": -2,
+            "dragon": 0
+        },
+        "attributes": {
+            "gender": 3
+        }
+    },
+    {
+        "id": 22,
+        "name": "Lumu Coil",
+        "rarity": 3,
+        "abilityIds": [
+            251
+        ],
+        "defense": {
+            "base": 20,
+            "max": 48,
+            "augmented": 72
+        },
+        "resistances": {
+            "fire": -3,
+            "water": 2,
+            "thunder": 0,
+            "ice": 1,
+            "dragon": 0
+        },
+        "attributes": {
+            "gender": 3
+        }
+    },
+    {
+        "id": 23,
+        "name": "Girros Coil",
+        "rarity": 3,
+        "abilityIds": [
+            36
+        ],
+        "defense": {
+            "base": 20,
+            "max": 48,
+            "augmented": 72
+        },
+        "resistances": {
+            "fire": 0,
+            "water": -3,
+            "thunder": 2,
+            "ice": 0,
+            "dragon": 1
+        },
+        "attributes": {
+            "gender": 3
+        }
+    },
+    {
+        "id": 24,
+        "name": "Baan Coil",
+        "rarity": 3,
+        "abilityIds": [
+            217
+        ],
+        "defense": {
+            "base": 24,
+            "max": 52,
+            "augmented": 76
+        },
+        "resistances": {
+            "fire": 0,
+            "water": 2,
+            "thunder": 0,
+            "ice": -1,
+            "dragon": -2
+        },
+        "attributes": {
+            "gender": 3
+        }
+    },
+    {
+        "id": 25,
+        "name": "Ingot Coil",
+        "rarity": 4,
+        "abilityIds": [
+            27
+        ],
+        "defense": {
+            "base": 28,
+            "max": 52,
+            "augmented": 72
+        },
+        "resistances": {
+            "fire": -2,
+            "water": 0,
+            "thunder": 3,
+            "ice": -1,
+            "dragon": 0
+        },
+        "attributes": {
+            "gender": 3
+        }
+    },
+    {
+        "id": 26,
+        "name": "Death Stench Bowels",
+        "rarity": 4,
+        "abilityIds": [
+            99
+        ],
+        "defense": {
+            "base": 32,
+            "max": 56,
+            "augmented": 76
+        },
+        "resistances": {
+            "fire": 3,
+            "water": 2,
+            "thunder": -2,
+            "ice": 3,
+            "dragon": -4
+        },
+        "attributes": {
+            "gender": 3
+        }
+    },
+    {
+        "id": 27,
+        "name": "Brigade Coil",
+        "rarity": 4,
+        "abilityIds": [
+            263
+        ],
+        "defense": {
+            "base": 28,
+            "max": 52,
+            "augmented": 72
+        },
+        "resistances": {
+            "fire": 1,
+            "water": 0,
+            "thunder": 2,
+            "ice": 0,
+            "dragon": 2
+        },
+        "attributes": {
+            "gender": 3
+        }
+    },
+    {
+        "id": 28,
+        "name": "Legiana Coil",
+        "rarity": 4,
+        "abilityIds": [
+            89
+        ],
+        "defense": {
+            "base": 30,
+            "max": 54,
+            "augmented": 74
+        },
+        "resistances": {
+            "fire": -1,
+            "water": 2,
+            "thunder": -3,
+            "ice": 3,
+            "dragon": 0
+        },
+        "attributes": {
+            "gender": 3
+        },
+        "armorSetSkillIds": [
+            1
+        ]
+    },
+    {
+        "id": 29,
+        "name": "Odogaron Coil",
+        "rarity": 4,
+        "abilityIds": [
+            122
+        ],
+        "defense": {
+            "base": 30,
+            "max": 54,
+            "augmented": 74
+        },
+        "resistances": {
+            "fire": 2,
+            "water": 2,
+            "thunder": -2,
+            "ice": -3,
+            "dragon": 0
+        },
+        "attributes": {
+            "gender": 3
+        },
+        "armorSetSkillIds": [
+            2
+        ]
+    },
+    {
+        "id": 30,
+        "name": "Rathalos Coil",
+        "rarity": 4,
+        "abilityIds": [
+            79
+        ],
+        "defense": {
+            "base": 30,
+            "max": 54,
+            "augmented": 74
+        },
+        "resistances": {
+            "fire": 3,
+            "water": 1,
+            "thunder": -2,
+            "ice": 1,
+            "dragon": -3
+        },
+        "attributes": {
+            "gender": 3
+        },
+        "armorSetSkillIds": [
+            3
+        ]
+    },
+    {
+        "id": 31,
+        "name": "Diablos Coil",
+        "rarity": 4,
+        "abilityIds": [
+            194
+        ],
+        "defense": {
+            "base": 32,
+            "max": 56,
+            "augmented": 76
+        },
+        "resistances": {
+            "fire": 3,
+            "water": -2,
+            "thunder": 0,
+            "ice": -3,
+            "dragon": 2
+        },
+        "attributes": {
+            "gender": 3
+        },
+        "armorSetSkillIds": [
+            4
+        ]
+    },
+    {
+        "id": 32,
+        "name": "Kirin Hoop",
+        "rarity": 4,
+        "abilityIds": [
+            94
+        ],
+        "defense": {
+            "base": 34,
+            "max": 58,
+            "augmented": 78
+        },
+        "resistances": {
+            "fire": -3,
+            "water": -2,
+            "thunder": 4,
+            "ice": -2,
+            "dragon": 3
+        },
+        "attributes": {
+            "gender": 3
+        },
+        "armorSetSkillIds": [
+            5
+        ]
+    },
+    {
+        "id": 33,
+        "name": "Leather Belt α",
+        "rarity": 5,
+        "abilityIds": [
+            203
+        ],
+        "defense": {
+            "base": 32,
+            "max": 54,
+            "augmented": 70
+        },
+        "resistances": {
+            "fire": 2,
+            "water": 0,
+            "thunder": 0,
+            "ice": 0,
+            "dragon": 0
+        },
+        "attributes": {
+            "gender": 3
+        }
+    },
+    {
+        "id": 34,
+        "name": "Leather Belt β",
+        "rarity": 5,
+        "slots": [
+            1
+        ],
+        "defense": {
+            "base": 32,
+            "max": 54,
+            "augmented": 70
+        },
+        "resistances": {
+            "fire": 2,
+            "water": 0,
+            "thunder": 0,
+            "ice": 0,
+            "dragon": 0
+        },
+        "attributes": {
+            "gender": 3
+        }
+    },
+    {
+        "id": 35,
+        "name": "Chainmail Belt α",
+        "rarity": 5,
+        "abilityIds": [
+            222
+        ],
+        "defense": {
+            "base": 32,
+            "max": 54,
+            "augmented": 70
+        },
+        "resistances": {
+            "fire": 0,
+            "water": 2,
+            "thunder": 0,
+            "ice": 0,
+            "dragon": 0
+        },
+        "attributes": {
+            "gender": 3
+        }
+    },
+    {
+        "id": 36,
+        "name": "Chainmail Belt β",
+        "rarity": 5,
+        "slots": [
+            1
+        ],
+        "defense": {
+            "base": 32,
+            "max": 54,
+            "augmented": 70
+        },
+        "resistances": {
+            "fire": 0,
+            "water": 2,
+            "thunder": 0,
+            "ice": 0,
+            "dragon": 0
+        },
+        "attributes": {
+            "gender": 3
+        }
+    },
+    {
+        "id": 37,
+        "name": "Hunter's Coil α",
+        "rarity": 5,
+        "abilityIds": [
+            248,
+            272
+        ],
+        "defense": {
+            "base": 36,
+            "max": 58,
+            "augmented": 74
+        },
+        "resistances": {
+            "fire": 2,
+            "water": 2,
+            "thunder": 0,
+            "ice": 0,
+            "dragon": 0
+        },
+        "attributes": {
+            "gender": 3
+        }
+    },
+    {
+        "id": 38,
+        "name": "Hunter's Coil β",
+        "rarity": 5,
+        "slots": [
+            1
+        ],
+        "abilityIds": [
+            248
+        ],
+        "defense": {
+            "base": 36,
+            "max": 58,
+            "augmented": 74
+        },
+        "resistances": {
+            "fire": 2,
+            "water": 2,
+            "thunder": 0,
+            "ice": 0,
+            "dragon": 0
+        },
+        "attributes": {
+            "gender": 3
+        }
+    },
+    {
+        "id": 39,
+        "name": "Bone Coil α",
+        "rarity": 5,
+        "abilityIds": [
+            185,
+            246
+        ],
+        "defense": {
+            "base": 36,
+            "max": 58,
+            "augmented": 74
+        },
+        "resistances": {
+            "fire": 2,
+            "water": 0,
+            "thunder": 2,
+            "ice": 0,
+            "dragon": 2
+        },
+        "attributes": {
+            "gender": 3
+        }
+    },
+    {
+        "id": 40,
+        "name": "Bone Coil β",
+        "rarity": 5,
+        "slots": [
+            1
+        ],
+        "abilityIds": [
+            185
+        ],
+        "defense": {
+            "base": 36,
+            "max": 58,
+            "augmented": 74
+        },
+        "resistances": {
+            "fire": 2,
+            "water": 0,
+            "thunder": 2,
+            "ice": 0,
+            "dragon": 2
+        },
+        "attributes": {
+            "gender": 3
+        }
+    },
+    {
+        "id": 41,
+        "name": "Alloy Coil α",
+        "rarity": 5,
+        "abilityIds": [
+            0,
+            64
+        ],
+        "defense": {
+            "base": 36,
+            "max": 58,
+            "augmented": 74
+        },
+        "resistances": {
+            "fire": -2,
+            "water": 0,
+            "thunder": -2,
+            "ice": -2,
+            "dragon": 0
+        },
+        "attributes": {
+            "gender": 3
+        }
+    },
+    {
+        "id": 42,
+        "name": "Alloy Coil β",
+        "rarity": 5,
+        "slots": [
+            1
+        ],
+        "abilityIds": [
+            0
+        ],
+        "defense": {
+            "base": 36,
+            "max": 58,
+            "augmented": 74
+        },
+        "resistances": {
+            "fire": -2,
+            "water": 0,
+            "thunder": -2,
+            "ice": -2,
+            "dragon": 0
+        },
+        "attributes": {
+            "gender": 3
+        }
+    },
+    {
+        "id": 43,
+        "name": "King Beetle Elytra α",
+        "rarity": 5,
+        "slots": [
+            1
+        ],
+        "abilityIds": [
+            249,
+            222
+        ],
+        "defense": {
+            "base": 42,
+            "max": 64,
+            "augmented": 80
+        },
+        "resistances": {
+            "fire": -1,
+            "water": -1,
+            "thunder": 2,
+            "ice": 0,
+            "dragon": 2
+        },
+        "attributes": {
+            "gender": 1
+        }
+    },
+    {
+        "id": 44,
+        "name": "King Beetle Elytra β",
+        "rarity": 5,
+        "slots": [
+            2,
+            1
+        ],
+        "abilityIds": [
+            249
+        ],
+        "defense": {
+            "base": 42,
+            "max": 64,
+            "augmented": 80
+        },
+        "resistances": {
+            "fire": -1,
+            "water": -1,
+            "thunder": 2,
+            "ice": 0,
+            "dragon": 2
+        },
+        "attributes": {
+            "gender": 1
+        }
+    },
+    {
+        "id": 45,
+        "name": "Butterfly Elytra α",
+        "rarity": 5,
+        "slots": [
+            1
+        ],
+        "abilityIds": [
+            249,
+            222
+        ],
+        "defense": {
+            "base": 42,
+            "max": 64,
+            "augmented": 80
+        },
+        "resistances": {
+            "fire": -1,
+            "water": -1,
+            "thunder": 2,
+            "ice": 0,
+            "dragon": 2
+        },
+        "attributes": {
+            "gender": 2
+        }
+    },
+    {
+        "id": 46,
+        "name": "Butterfly Elytra β",
+        "rarity": 5,
+        "slots": [
+            2,
+            1
+        ],
+        "abilityIds": [
+            249
+        ],
+        "defense": {
+            "base": 42,
+            "max": 64,
+            "augmented": 80
+        },
+        "resistances": {
+            "fire": -1,
+            "water": -1,
+            "thunder": 2,
+            "ice": 0,
+            "dragon": 2
+        },
+        "attributes": {
+            "gender": 2
+        }
+    },
+    {
+        "id": 47,
+        "name": "Vespoid Coil α",
+        "rarity": 5,
+        "abilityIds": [
+            4
+        ],
+        "defense": {
+            "base": 38,
+            "max": 60,
+            "augmented": 76
+        },
+        "resistances": {
+            "fire": -2,
+            "water": 1,
+            "thunder": 1,
+            "ice": 1,
+            "dragon": 2
+        },
+        "attributes": {
+            "gender": 3
+        }
+    },
+    {
+        "id": 48,
+        "name": "Vespoid Coil β",
+        "rarity": 5,
+        "slots": [
+            1
+        ],
+        "abilityIds": [
+            3
+        ],
+        "defense": {
+            "base": 38,
+            "max": 60,
+            "augmented": 76
+        },
+        "resistances": {
+            "fire": -2,
+            "water": 1,
+            "thunder": 1,
+            "ice": 1,
+            "dragon": 2
+        },
+        "attributes": {
+            "gender": 3
+        }
+    },
+    {
+        "id": 49,
+        "name": "Hornetaur Coil α",
+        "rarity": 5,
+        "abilityIds": [
+            250,
+            206
+        ],
+        "defense": {
+            "base": 38,
+            "max": 60,
+            "augmented": 76
+        },
+        "resistances": {
+            "fire": -1,
+            "water": -1,
+            "thunder": 0,
+            "ice": 0,
+            "dragon": 2
+        },
+        "attributes": {
+            "gender": 3
+        }
+    },
+    {
+        "id": 50,
+        "name": "Hornetaur Coil β",
+        "rarity": 5,
+        "slots": [
+            1
+        ],
+        "abilityIds": [
+            250
+        ],
+        "defense": {
+            "base": 38,
+            "max": 60,
+            "augmented": 76
+        },
+        "resistances": {
+            "fire": -1,
+            "water": -1,
+            "thunder": 0,
+            "ice": 0,
+            "dragon": 2
+        },
+        "attributes": {
+            "gender": 3
+        }
+    },
+    {
+        "id": 58,
+        "name": "Jagras Coil α",
+        "rarity": 5,
+        "abilityIds": [
+            178,
+            234
+        ],
+        "defense": {
+            "base": 40,
+            "max": 62,
+            "augmented": 78
+        },
+        "resistances": {
+            "fire": -2,
+            "water": 2,
+            "thunder": -1,
+            "ice": -1,
+            "dragon": 1
+        },
+        "attributes": {
+            "gender": 3
+        }
+    },
+    {
+        "id": 59,
+        "name": "Jagras Coil β",
+        "rarity": 5,
+        "slots": [
+            1
+        ],
+        "abilityIds": [
+            178
+        ],
+        "defense": {
+            "base": 40,
+            "max": 62,
+            "augmented": 78
+        },
+        "resistances": {
+            "fire": -2,
+            "water": 2,
+            "thunder": -1,
+            "ice": -1,
+            "dragon": 1
+        },
+        "attributes": {
+            "gender": 3
+        }
+    },
+    {
+        "id": 60,
+        "name": "Kulu Coil α",
+        "rarity": 5,
+        "abilityIds": [
+            231
+        ],
+        "defense": {
+            "base": 40,
+            "max": 62,
+            "augmented": 78
+        },
+        "resistances": {
+            "fire": 0,
+            "water": -3,
+            "thunder": 0,
+            "ice": 1,
+            "dragon": 0
+        },
+        "attributes": {
+            "gender": 3
+        }
+    },
+    {
+        "id": 61,
+        "name": "Kulu Coil β",
+        "rarity": 5,
+        "slots": [
+            2
+        ],
+        "abilityIds": [
+            230
+        ],
+        "defense": {
+            "base": 40,
+            "max": 62,
+            "augmented": 78
+        },
+        "resistances": {
+            "fire": 0,
+            "water": -3,
+            "thunder": 0,
+            "ice": 1,
+            "dragon": 0
+        },
+        "attributes": {
+            "gender": 3
+        }
+    },
+    {
+        "id": 62,
+        "name": "Tzitzi Coil α",
+        "rarity": 5,
+        "abilityIds": [
+            226,
+            84
+        ],
+        "defense": {
+            "base": 40,
+            "max": 62,
+            "augmented": 78
+        },
+        "resistances": {
+            "fire": 0,
+            "water": 0,
+            "thunder": -3,
+            "ice": -2,
+            "dragon": 0
+        },
+        "attributes": {
+            "gender": 3
+        }
+    },
+    {
+        "id": 63,
+        "name": "Tzitzi Coil β",
+        "rarity": 5,
+        "slots": [
+            2
+        ],
+        "abilityIds": [
+            225
+        ],
+        "defense": {
+            "base": 40,
+            "max": 62,
+            "augmented": 78
+        },
+        "resistances": {
+            "fire": 0,
+            "water": 0,
+            "thunder": -3,
+            "ice": -2,
+            "dragon": 0
+        },
+        "attributes": {
+            "gender": 3
+        }
+    },
+    {
+        "id": 64,
+        "name": "Girros Coil α",
+        "rarity": 5,
+        "abilityIds": [
+            36,
+            107
+        ],
+        "defense": {
+            "base": 40,
+            "max": 62,
+            "augmented": 78
+        },
+        "resistances": {
+            "fire": 0,
+            "water": -3,
+            "thunder": 2,
+            "ice": 0,
+            "dragon": 1
+        },
+        "attributes": {
+            "gender": 3
+        }
+    },
+    {
+        "id": 65,
+        "name": "Girros Coil β",
+        "rarity": 5,
+        "slots": [
+            1
+        ],
+        "abilityIds": [
+            36
+        ],
+        "defense": {
+            "base": 40,
+            "max": 62,
+            "augmented": 78
+        },
+        "resistances": {
+            "fire": 0,
+            "water": -3,
+            "thunder": 2,
+            "ice": 0,
+            "dragon": 1
+        },
+        "attributes": {
+            "gender": 3
+        }
+    },
+    {
+        "id": 66,
+        "name": "Pukei Coil α",
+        "rarity": 5,
+        "abilityIds": [
+            105
+        ],
+        "defense": {
+            "base": 42,
+            "max": 64,
+            "augmented": 80
+        },
+        "resistances": {
+            "fire": 0,
+            "water": 3,
+            "thunder": -3,
+            "ice": 0,
+            "dragon": 1
+        },
+        "attributes": {
+            "gender": 3
+        }
+    },
+    {
+        "id": 67,
+        "name": "Pukei Coil β",
+        "rarity": 5,
+        "slots": [
+            1
+        ],
+        "abilityIds": [
+            104
+        ],
+        "defense": {
+            "base": 42,
+            "max": 64,
+            "augmented": 80
+        },
+        "resistances": {
+            "fire": 0,
+            "water": 3,
+            "thunder": -3,
+            "ice": 0,
+            "dragon": 1
+        },
+        "attributes": {
+            "gender": 3
+        }
+    },
+    {
+        "id": 68,
+        "name": "Barroth Coil α",
+        "rarity": 5,
+        "abilityIds": [
+            12,
+            217
+        ],
+        "defense": {
+            "base": 42,
+            "max": 64,
+            "augmented": 80
+        },
+        "resistances": {
+            "fire": -3,
+            "water": -1,
+            "thunder": 3,
+            "ice": -1,
+            "dragon": 0
+        },
+        "attributes": {
+            "gender": 3
+        }
+    },
+    {
+        "id": 69,
+        "name": "Barroth Coil β",
+        "rarity": 5,
+        "slots": [
+            2
+        ],
+        "abilityIds": [
+            12
+        ],
+        "defense": {
+            "base": 42,
+            "max": 64,
+            "augmented": 80
+        },
+        "resistances": {
+            "fire": -3,
+            "water": -1,
+            "thunder": 3,
+            "ice": -1,
+            "dragon": 0
+        },
+        "attributes": {
+            "gender": 3
+        }
+    },
+    {
+        "id": 70,
+        "name": "Anja Coil α",
+        "rarity": 5,
+        "abilityIds": [
+            62,
+            189
+        ],
+        "defense": {
+            "base": 44,
+            "max": 66,
+            "augmented": 82
+        },
+        "resistances": {
+            "fire": 3,
+            "water": -3,
+            "thunder": -1,
+            "ice": -1,
+            "dragon": 0
+        },
+        "attributes": {
+            "gender": 3
+        },
+        "armorSetSkillIds": [
+            6
+        ]
+    },
+    {
+        "id": 71,
+        "name": "Anja Coil β",
+        "rarity": 5,
+        "slots": [
+            2
+        ],
+        "abilityIds": [
+            62
+        ],
+        "defense": {
+            "base": 44,
+            "max": 66,
+            "augmented": 82
+        },
+        "resistances": {
+            "fire": 3,
+            "water": -3,
+            "thunder": -1,
+            "ice": -1,
+            "dragon": 0
+        },
+        "attributes": {
+            "gender": 3
+        },
+        "armorSetSkillIds": [
+            6
+        ]
+    },
+    {
+        "id": 72,
+        "name": "Jyura Coil α",
+        "rarity": 5,
+        "abilityIds": [
+            68
+        ],
+        "defense": {
+            "base": 44,
+            "max": 66,
+            "augmented": 82
+        },
+        "resistances": {
+            "fire": -1,
+            "water": 2,
+            "thunder": -3,
+            "ice": 0,
+            "dragon": 0
+        },
+        "attributes": {
+            "gender": 3
+        }
+    },
+    {
+        "id": 73,
+        "name": "Jyura Coil β",
+        "rarity": 5,
+        "slots": [
+            1
+        ],
+        "abilityIds": [
+            67
+        ],
+        "defense": {
+            "base": 44,
+            "max": 66,
+            "augmented": 82
+        },
+        "resistances": {
+            "fire": -1,
+            "water": 2,
+            "thunder": -3,
+            "ice": 0,
+            "dragon": 0
+        },
+        "attributes": {
+            "gender": 3
+        }
+    },
+    {
+        "id": 74,
+        "name": "Kadachi Coil α",
+        "rarity": 5,
+        "abilityIds": [
+            95,
+            70
+        ],
+        "defense": {
+            "base": 44,
+            "max": 66,
+            "augmented": 82
+        },
+        "resistances": {
+            "fire": 0,
+            "water": -3,
+            "thunder": 3,
+            "ice": 0,
+            "dragon": 0
+        },
+        "attributes": {
+            "gender": 3
+        }
+    },
+    {
+        "id": 75,
+        "name": "Kadachi Coil β",
+        "rarity": 5,
+        "slots": [
+            1,
+            1
+        ],
+        "abilityIds": [
+            94
+        ],
+        "defense": {
+            "base": 44,
+            "max": 66,
+            "augmented": 82
+        },
+        "resistances": {
+            "fire": 0,
+            "water": -3,
+            "thunder": 3,
+            "ice": 0,
+            "dragon": 0
+        },
+        "attributes": {
+            "gender": 3
+        }
+    },
+    {
+        "id": 76,
+        "name": "Lumu Coil α",
+        "rarity": 5,
+        "abilityIds": [
+            252
+        ],
+        "defense": {
+            "base": 44,
+            "max": 66,
+            "augmented": 82
+        },
+        "resistances": {
+            "fire": -3,
+            "water": 2,
+            "thunder": 0,
+            "ice": 1,
+            "dragon": 0
+        },
+        "attributes": {
+            "gender": 3
+        }
+    },
+    {
+        "id": 77,
+        "name": "Lumu Coil β",
+        "rarity": 5,
+        "slots": [
+            1
+        ],
+        "abilityIds": [
+            251
+        ],
+        "defense": {
+            "base": 44,
+            "max": 66,
+            "augmented": 82
+        },
+        "resistances": {
+            "fire": -3,
+            "water": 2,
+            "thunder": 0,
+            "ice": 1,
+            "dragon": 0
+        },
+        "attributes": {
+            "gender": 3
+        }
+    },
+    {
+        "id": 78,
+        "name": "Rathian Coil α",
+        "rarity": 5,
+        "abilityIds": [
+            1,
+            52
+        ],
+        "defense": {
+            "base": 46,
+            "max": 68,
+            "augmented": 84
+        },
+        "resistances": {
+            "fire": 2,
+            "water": 0,
+            "thunder": -2,
+            "ice": 0,
+            "dragon": -3
+        },
+        "attributes": {
+            "gender": 3
+        }
+    },
+    {
+        "id": 79,
+        "name": "Rathian Coil β",
+        "rarity": 5,
+        "slots": [
+            1
+        ],
+        "abilityIds": [
+            0,
+            52
+        ],
+        "defense": {
+            "base": 46,
+            "max": 68,
+            "augmented": 84
+        },
+        "resistances": {
+            "fire": 2,
+            "water": 0,
+            "thunder": -2,
+            "ice": 0,
+            "dragon": -3
+        },
+        "attributes": {
+            "gender": 3
+        }
+    },
+    {
+        "id": 80,
+        "name": "Rath Heart Coil α",
+        "rarity": 6,
+        "abilityIds": [
+            141,
+            0
+        ],
+        "defense": {
+            "base": 52,
+            "max": 72,
+            "augmented": 84
+        },
+        "resistances": {
+            "fire": 3,
+            "water": 0,
+            "thunder": -3,
+            "ice": 0,
+            "dragon": -4
+        },
+        "attributes": {
+            "gender": 3
+        },
+        "armorSetSkillIds": [
+            7
+        ]
+    },
+    {
+        "id": 81,
+        "name": "Rath Heart Coil β",
+        "rarity": 6,
+        "slots": [
+            1
+        ],
+        "abilityIds": [
+            141
+        ],
+        "defense": {
+            "base": 52,
+            "max": 72,
+            "augmented": 84
+        },
+        "resistances": {
+            "fire": 3,
+            "water": 0,
+            "thunder": -3,
+            "ice": 0,
+            "dragon": -4
+        },
+        "attributes": {
+            "gender": 3
+        },
+        "armorSetSkillIds": [
+            7
+        ]
+    },
+    {
+        "id": 82,
+        "name": "Baan Coil α",
+        "rarity": 6,
+        "abilityIds": [
+            218
+        ],
+        "defense": {
+            "base": 46,
+            "max": 66,
+            "augmented": 78
+        },
+        "resistances": {
+            "fire": 0,
+            "water": 2,
+            "thunder": 0,
+            "ice": -1,
+            "dragon": -2
+        },
+        "attributes": {
+            "gender": 3
+        }
+    },
+    {
+        "id": 83,
+        "name": "Baan Coil β",
+        "rarity": 6,
+        "slots": [
+            2
+        ],
+        "abilityIds": [
+            217
+        ],
+        "defense": {
+            "base": 46,
+            "max": 66,
+            "augmented": 78
+        },
+        "resistances": {
+            "fire": 0,
+            "water": 2,
+            "thunder": 0,
+            "ice": -1,
+            "dragon": -2
+        },
+        "attributes": {
+            "gender": 3
+        }
+    },
+    {
+        "id": 88,
+        "name": "Dodogama Coil α",
+        "rarity": 5,
+        "abilityIds": [
+            190,
+            13
+        ],
+        "defense": {
+            "base": 48,
+            "max": 70,
+            "augmented": 86
+        },
+        "resistances": {
+            "fire": 2,
+            "water": 0,
+            "thunder": -3,
+            "ice": 0,
+            "dragon": 2
+        },
+        "attributes": {
+            "gender": 3
+        }
+    },
+    {
+        "id": 89,
+        "name": "Dodogama Coil β",
+        "rarity": 5,
+        "slots": [
+            1
+        ],
+        "abilityIds": [
+            190
+        ],
+        "defense": {
+            "base": 48,
+            "max": 70,
+            "augmented": 86
+        },
+        "resistances": {
+            "fire": 2,
+            "water": 0,
+            "thunder": -3,
+            "ice": 0,
+            "dragon": 2
+        },
+        "attributes": {
+            "gender": 3
+        }
+    },
+    {
+        "id": 90,
+        "name": "Zorah Spine α",
+        "rarity": 6,
+        "abilityIds": [
+            178,
+            32
+        ],
+        "defense": {
+            "base": 44,
+            "max": 64,
+            "augmented": 76
+        },
+        "resistances": {
+            "fire": 4,
+            "water": -3,
+            "thunder": -1,
+            "ice": -2,
+            "dragon": -3
+        },
+        "attributes": {
+            "gender": 3
+        },
+        "armorSetSkillIds": [
+            8
+        ]
+    },
+    {
+        "id": 91,
+        "name": "Zorah Spine β",
+        "rarity": 6,
+        "slots": [
+            2
+        ],
+        "abilityIds": [
+            178
+        ],
+        "defense": {
+            "base": 44,
+            "max": 64,
+            "augmented": 76
+        },
+        "resistances": {
+            "fire": 4,
+            "water": -3,
+            "thunder": -1,
+            "ice": -2,
+            "dragon": -3
+        },
+        "attributes": {
+            "gender": 3
+        },
+        "armorSetSkillIds": [
+            8
+        ]
+    },
+    {
+        "id": 92,
+        "name": "High Metal Coil α",
+        "rarity": 6,
+        "abilityIds": [
+            186,
+            45
+        ],
+        "defense": {
+            "base": 50,
+            "max": 70,
+            "augmented": 82
+        },
+        "resistances": {
+            "fire": 0,
+            "water": -1,
+            "thunder": -2,
+            "ice": 3,
+            "dragon": 0
+        },
+        "attributes": {
+            "gender": 3
+        }
+    },
+    {
+        "id": 93,
+        "name": "High Metal Coil β",
+        "rarity": 6,
+        "slots": [
+            1
+        ],
+        "abilityIds": [
+            186
+        ],
+        "defense": {
+            "base": 50,
+            "max": 70,
+            "augmented": 82
+        },
+        "resistances": {
+            "fire": 0,
+            "water": -1,
+            "thunder": -2,
+            "ice": 3,
+            "dragon": 0
+        },
+        "attributes": {
+            "gender": 3
+        }
+    },
+    {
+        "id": 94,
+        "name": "Ingot Coil α",
+        "rarity": 6,
+        "abilityIds": [
+            28
+        ],
+        "defense": {
+            "base": 50,
+            "max": 70,
+            "augmented": 82
+        },
+        "resistances": {
+            "fire": -2,
+            "water": 0,
+            "thunder": 3,
+            "ice": -1,
+            "dragon": 0
+        },
+        "attributes": {
+            "gender": 3
+        }
+    },
+    {
+        "id": 95,
+        "name": "Ingot Coil β",
+        "rarity": 6,
+        "slots": [
+            3
+        ],
+        "abilityIds": [
+            27
+        ],
+        "defense": {
+            "base": 50,
+            "max": 70,
+            "augmented": 82
+        },
+        "resistances": {
+            "fire": -2,
+            "water": 0,
+            "thunder": 3,
+            "ice": -1,
+            "dragon": 0
+        },
+        "attributes": {
+            "gender": 3
+        }
+    },
+    {
+        "id": 96,
+        "name": "Brigade Coil α",
+        "rarity": 6,
+        "abilityIds": [
+            264,
+            58
+        ],
+        "defense": {
+            "base": 52,
+            "max": 72,
+            "augmented": 84
+        },
+        "resistances": {
+            "fire": 1,
+            "water": 0,
+            "thunder": 2,
+            "ice": 0,
+            "dragon": 2
+        },
+        "attributes": {
+            "gender": 3
+        }
+    },
+    {
+        "id": 97,
+        "name": "Brigade Coil β",
+        "rarity": 6,
+        "slots": [
+            1
+        ],
+        "abilityIds": [
+            264
+        ],
+        "defense": {
+            "base": 52,
+            "max": 72,
+            "augmented": 84
+        },
+        "resistances": {
+            "fire": 1,
+            "water": 0,
+            "thunder": 2,
+            "ice": 0,
+            "dragon": 2
+        },
+        "attributes": {
+            "gender": 3
+        }
+    },
+    {
+        "id": 100,
+        "name": "Lavasioth Coil α",
+        "rarity": 6,
+        "abilityIds": [
+            223,
+            55
+        ],
+        "defense": {
+            "base": 56,
+            "max": 76,
+            "augmented": 88
+        },
+        "resistances": {
+            "fire": 3,
+            "water": -3,
+            "thunder": 1,
+            "ice": -2,
+            "dragon": 2
+        },
+        "attributes": {
+            "gender": 3
+        }
+    },
+    {
+        "id": 101,
+        "name": "Lavasioth Coil β",
+        "rarity": 6,
+        "slots": [
+            1
+        ],
+        "abilityIds": [
+            223
+        ],
+        "defense": {
+            "base": 56,
+            "max": 76,
+            "augmented": 88
+        },
+        "resistances": {
+            "fire": 3,
+            "water": -3,
+            "thunder": 1,
+            "ice": -2,
+            "dragon": 2
+        },
+        "attributes": {
+            "gender": 3
+        }
+    },
+    {
+        "id": 102,
+        "name": "Legiana Coil α",
+        "rarity": 6,
+        "abilityIds": [
+            90,
+            27
+        ],
+        "defense": {
+            "base": 54,
+            "max": 74,
+            "augmented": 86
+        },
+        "resistances": {
+            "fire": -1,
+            "water": 2,
+            "thunder": -3,
+            "ice": 3,
+            "dragon": 0
+        },
+        "attributes": {
+            "gender": 3
+        },
+        "armorSetSkillIds": [
+            9
+        ]
+    },
+    {
+        "id": 103,
+        "name": "Legiana Coil β",
+        "rarity": 6,
+        "slots": [
+            2
+        ],
+        "abilityIds": [
+            90
+        ],
+        "defense": {
+            "base": 54,
+            "max": 74,
+            "augmented": 86
+        },
+        "resistances": {
+            "fire": -1,
+            "water": 2,
+            "thunder": -3,
+            "ice": 3,
+            "dragon": 0
+        },
+        "attributes": {
+            "gender": 3
+        },
+        "armorSetSkillIds": [
+            9
+        ]
+    },
+    {
+        "id": 104,
+        "name": "Odogaron Coil α",
+        "rarity": 6,
+        "abilityIds": [
+            123,
+            237
+        ],
+        "defense": {
+            "base": 54,
+            "max": 74,
+            "augmented": 86
+        },
+        "resistances": {
+            "fire": 2,
+            "water": 2,
+            "thunder": -2,
+            "ice": -3,
+            "dragon": 0
+        },
+        "attributes": {
+            "gender": 3
+        },
+        "armorSetSkillIds": [
+            10
+        ]
+    },
+    {
+        "id": 105,
+        "name": "Odogaron Coil β",
+        "rarity": 6,
+        "slots": [
+            2
+        ],
+        "abilityIds": [
+            123
+        ],
+        "defense": {
+            "base": 54,
+            "max": 74,
+            "augmented": 86
+        },
+        "resistances": {
+            "fire": 2,
+            "water": 2,
+            "thunder": -2,
+            "ice": -3,
+            "dragon": 0
+        },
+        "attributes": {
+            "gender": 3
+        },
+        "armorSetSkillIds": [
+            10
+        ]
+    },
+    {
+        "id": 106,
+        "name": "Rathalos Coil α",
+        "rarity": 6,
+        "abilityIds": [
+            80,
+            135
+        ],
+        "defense": {
+            "base": 54,
+            "max": 74,
+            "augmented": 86
+        },
+        "resistances": {
+            "fire": 3,
+            "water": 1,
+            "thunder": -2,
+            "ice": 1,
+            "dragon": -3
+        },
+        "attributes": {
+            "gender": 3
+        },
+        "armorSetSkillIds": [
+            11
+        ]
+    },
+    {
+        "id": 107,
+        "name": "Rathalos Coil β",
+        "rarity": 6,
+        "slots": [
+            2
+        ],
+        "abilityIds": [
+            80
+        ],
+        "defense": {
+            "base": 54,
+            "max": 74,
+            "augmented": 86
+        },
+        "resistances": {
+            "fire": 3,
+            "water": 1,
+            "thunder": -2,
+            "ice": 1,
+            "dragon": -3
+        },
+        "attributes": {
+            "gender": 3
+        },
+        "armorSetSkillIds": [
+            11
+        ]
+    },
+    {
+        "id": 108,
+        "name": "Rath Soul Coil α",
+        "rarity": 7,
+        "abilityIds": [
+            28,
+            117
+        ],
+        "defense": {
+            "base": 56,
+            "max": 68,
+            "augmented": 82
+        },
+        "resistances": {
+            "fire": 3,
+            "water": 2,
+            "thunder": 2,
+            "ice": -3,
+            "dragon": -4
+        },
+        "attributes": {
+            "gender": 3
+        },
+        "armorSetSkillIds": [
+            11
+        ]
+    },
+    {
+        "id": 109,
+        "name": "Rath Soul Coil β",
+        "rarity": 7,
+        "slots": [
+            3
+        ],
+        "abilityIds": [
+            28
+        ],
+        "defense": {
+            "base": 56,
+            "max": 68,
+            "augmented": 82
+        },
+        "resistances": {
+            "fire": 3,
+            "water": 2,
+            "thunder": 2,
+            "ice": -3,
+            "dragon": -4
+        },
+        "attributes": {
+            "gender": 3
+        },
+        "armorSetSkillIds": [
+            11
+        ]
+    },
+    {
+        "id": 110,
+        "name": "Diablos Coil α",
+        "rarity": 6,
+        "abilityIds": [
+            195,
+            146
+        ],
+        "defense": {
+            "base": 54,
+            "max": 74,
+            "augmented": 86
+        },
+        "resistances": {
+            "fire": 3,
+            "water": -2,
+            "thunder": 0,
+            "ice": -3,
+            "dragon": 2
+        },
+        "attributes": {
+            "gender": 3
+        },
+        "armorSetSkillIds": [
+            12
+        ]
+    },
+    {
+        "id": 111,
+        "name": "Diablos Coil β",
+        "rarity": 6,
+        "slots": [
+            2
+        ],
+        "abilityIds": [
+            195
+        ],
+        "defense": {
+            "base": 54,
+            "max": 74,
+            "augmented": 86
+        },
+        "resistances": {
+            "fire": 3,
+            "water": -2,
+            "thunder": 0,
+            "ice": -3,
+            "dragon": 2
+        },
+        "attributes": {
+            "gender": 3
+        },
+        "armorSetSkillIds": [
+            12
+        ]
+    },
+    {
+        "id": 112,
+        "name": "Diablos Nero Coil α",
+        "rarity": 7,
+        "abilityIds": [
+            179,
+            149
+        ],
+        "defense": {
+            "base": 56,
+            "max": 68,
+            "augmented": 82
+        },
+        "resistances": {
+            "fire": 2,
+            "water": -3,
+            "thunder": 0,
+            "ice": -4,
+            "dragon": 2
+        },
+        "attributes": {
+            "gender": 3
+        },
+        "armorSetSkillIds": [
+            12
+        ]
+    },
+    {
+        "id": 113,
+        "name": "Diablos Nero Coil β",
+        "rarity": 7,
+        "slots": [
+            2
+        ],
+        "abilityIds": [
+            179
+        ],
+        "defense": {
+            "base": 56,
+            "max": 68,
+            "augmented": 82
+        },
+        "resistances": {
+            "fire": 2,
+            "water": -3,
+            "thunder": 0,
+            "ice": -4,
+            "dragon": 2
+        },
+        "attributes": {
+            "gender": 3
+        },
+        "armorSetSkillIds": [
+            12
+        ]
+    },
+    {
+        "id": 114,
+        "name": "Uragaan Coil α",
+        "rarity": 7,
+        "slots": [
+            1,
+            1
+        ],
+        "abilityIds": [
+            149,
+            70
+        ],
+        "defense": {
+            "base": 60,
+            "max": 72,
+            "augmented": 86
+        },
+        "resistances": {
+            "fire": 4,
+            "water": -3,
+            "thunder": 1,
+            "ice": -2,
+            "dragon": -2
+        },
+        "attributes": {
+            "gender": 3
+        },
+        "armorSetSkillIds": [
+            13
+        ]
+    },
+    {
+        "id": 115,
+        "name": "Uragaan Coil β",
+        "rarity": 7,
+        "slots": [
+            2,
+            1
+        ],
+        "abilityIds": [
+            149
+        ],
+        "defense": {
+            "base": 60,
+            "max": 72,
+            "augmented": 86
+        },
+        "resistances": {
+            "fire": 4,
+            "water": -3,
+            "thunder": 1,
+            "ice": -2,
+            "dragon": -2
+        },
+        "attributes": {
+            "gender": 3
+        },
+        "armorSetSkillIds": [
+            13
+        ]
+    },
+    {
+        "id": 116,
+        "name": "Bazel Coil α",
+        "rarity": 7,
+        "slots": [
+            1
+        ],
+        "abilityIds": [
+            23,
+            280
+        ],
+        "defense": {
+            "base": 58,
+            "max": 70,
+            "augmented": 84
+        },
+        "resistances": {
+            "fire": 3,
+            "water": 1,
+            "thunder": -4,
+            "ice": -2,
+            "dragon": -2
+        },
+        "attributes": {
+            "gender": 3
+        },
+        "armorSetSkillIds": [
+            14
+        ]
+    },
+    {
+        "id": 117,
+        "name": "Bazel Coil β",
+        "rarity": 7,
+        "slots": [
+            3
+        ],
+        "abilityIds": [
+            23
+        ],
+        "defense": {
+            "base": 58,
+            "max": 70,
+            "augmented": 84
+        },
+        "resistances": {
+            "fire": 3,
+            "water": 1,
+            "thunder": -4,
+            "ice": -2,
+            "dragon": -2
+        },
+        "attributes": {
+            "gender": 3
+        },
+        "armorSetSkillIds": [
+            14
+        ]
+    },
+    {
+        "id": 118,
+        "name": "Damascus Coil α",
+        "rarity": 7,
+        "slots": [
+            1
+        ],
+        "abilityIds": [
+            135,
+            20
+        ],
+        "defense": {
+            "base": 60,
+            "max": 72,
+            "augmented": 86
+        },
+        "resistances": {
+            "fire": 4,
+            "water": -2,
+            "thunder": 0,
+            "ice": 0,
+            "dragon": 0
+        },
+        "attributes": {
+            "gender": 3
+        }
+    },
+    {
+        "id": 119,
+        "name": "Damascus Coil β",
+        "rarity": 7,
+        "slots": [
+            1,
+            1,
+            1
+        ],
+        "abilityIds": [
+            135
+        ],
+        "defense": {
+            "base": 60,
+            "max": 72,
+            "augmented": 86
+        },
+        "resistances": {
+            "fire": 4,
+            "water": -2,
+            "thunder": 0,
+            "ice": 0,
+            "dragon": 0
+        },
+        "attributes": {
+            "gender": 3
+        }
+    },
+    {
+        "id": 120,
+        "name": "Dober Coil α",
+        "rarity": 7,
+        "slots": [
+            2
+        ],
+        "abilityIds": [
+            74,
+            38
+        ],
+        "defense": {
+            "base": 60,
+            "max": 72,
+            "augmented": 86
+        },
+        "resistances": {
+            "fire": -2,
+            "water": 0,
+            "thunder": -1,
+            "ice": -1,
+            "dragon": 4
+        },
+        "attributes": {
+            "gender": 3
+        }
+    },
+    {
+        "id": 121,
+        "name": "Dober Coil β",
+        "rarity": 7,
+        "slots": [
+            3
+        ],
+        "abilityIds": [
+            74
+        ],
+        "defense": {
+            "base": 60,
+            "max": 72,
+            "augmented": 86
+        },
+        "resistances": {
+            "fire": -2,
+            "water": 0,
+            "thunder": -1,
+            "ice": -1,
+            "dragon": 4
+        },
+        "attributes": {
+            "gender": 3
+        }
+    },
+    {
+        "id": 122,
+        "name": "Death Stench Bowels α",
+        "rarity": 7,
+        "abilityIds": [
+            100,
+            135
+        ],
+        "defense": {
+            "base": 62,
+            "max": 74,
+            "augmented": 88
+        },
+        "resistances": {
+            "fire": 3,
+            "water": 2,
+            "thunder": -2,
+            "ice": 3,
+            "dragon": -4
+        },
+        "attributes": {
+            "gender": 3
+        }
+    },
+    {
+        "id": 123,
+        "name": "Death Stench Bowels β",
+        "rarity": 7,
+        "slots": [
+            1,
+            1
+        ],
+        "abilityIds": [
+            100
+        ],
+        "defense": {
+            "base": 62,
+            "max": 74,
+            "augmented": 88
+        },
+        "resistances": {
+            "fire": 3,
+            "water": 2,
+            "thunder": -2,
+            "ice": 3,
+            "dragon": -4
+        },
+        "attributes": {
+            "gender": 3
+        }
+    },
+    {
+        "id": 125,
+        "name": "Nergigante Coil α",
+        "rarity": 8,
+        "abilityIds": [
+            39,
+            203
+        ],
+        "defense": {
+            "base": 64,
+            "max": 70,
+            "augmented": 84
+        },
+        "resistances": {
+            "fire": 1,
+            "water": 1,
+            "thunder": -3,
+            "ice": 1,
+            "dragon": -3
+        },
+        "attributes": {
+            "gender": 3
+        },
+        "armorSetSkillIds": [
+            15
+        ]
+    },
+    {
+        "id": 126,
+        "name": "Nergigante Coil β",
+        "rarity": 8,
+        "slots": [
+            2
+        ],
+        "abilityIds": [
+            39
+        ],
+        "defense": {
+            "base": 64,
+            "max": 70,
+            "augmented": 84
+        },
+        "resistances": {
+            "fire": 1,
+            "water": 1,
+            "thunder": -3,
+            "ice": 1,
+            "dragon": -3
+        },
+        "attributes": {
+            "gender": 3
+        },
+        "armorSetSkillIds": [
+            15
+        ]
+    },
+    {
+        "id": 127,
+        "name": "Kaiser Coil α",
+        "rarity": 8,
+        "abilityIds": [
+            114,
+            132
+        ],
+        "defense": {
+            "base": 64,
+            "max": 70,
+            "augmented": 84
+        },
+        "resistances": {
+            "fire": 3,
+            "water": -3,
+            "thunder": 1,
+            "ice": -3,
+            "dragon": 1
+        },
+        "attributes": {
+            "gender": 3
+        },
+        "armorSetSkillIds": [
+            16
+        ]
+    },
+    {
+        "id": 128,
+        "name": "Kaiser Coil β",
+        "rarity": 8,
+        "slots": [
+            2
+        ],
+        "abilityIds": [
+            114
+        ],
+        "defense": {
+            "base": 64,
+            "max": 70,
+            "augmented": 84
+        },
+        "resistances": {
+            "fire": 3,
+            "water": -3,
+            "thunder": 1,
+            "ice": -3,
+            "dragon": 1
+        },
+        "attributes": {
+            "gender": 3
+        },
+        "armorSetSkillIds": [
+            16
+        ]
+    },
+    {
+        "id": 129,
+        "name": "Kushala Cocoon α",
+        "rarity": 8,
+        "abilityIds": [
+            90,
+            214
+        ],
+        "defense": {
+            "base": 64,
+            "max": 70,
+            "augmented": 84
+        },
+        "resistances": {
+            "fire": 0,
+            "water": 2,
+            "thunder": -3,
+            "ice": 4,
+            "dragon": -2
+        },
+        "attributes": {
+            "gender": 3
+        },
+        "armorSetSkillIds": [
+            17
+        ]
+    },
+    {
+        "id": 130,
+        "name": "Kushala Cocoon β",
+        "rarity": 8,
+        "slots": [
+            1,
+            1
+        ],
+        "abilityIds": [
+            90
+        ],
+        "defense": {
+            "base": 64,
+            "max": 70,
+            "augmented": 84
+        },
+        "resistances": {
+            "fire": 0,
+            "water": 2,
+            "thunder": -3,
+            "ice": 4,
+            "dragon": -2
+        },
+        "attributes": {
+            "gender": 3
+        },
+        "armorSetSkillIds": [
+            17
+        ]
+    },
+    {
+        "id": 131,
+        "name": "Vaal Hazak Coil α",
+        "rarity": 8,
+        "slots": [
+            1
+        ],
+        "abilityIds": [
+            170,
+            293
+        ],
+        "defense": {
+            "base": 64,
+            "max": 70,
+            "augmented": 84
+        },
+        "resistances": {
+            "fire": -4,
+            "water": 4,
+            "thunder": 1,
+            "ice": -1,
+            "dragon": -3
+        },
+        "attributes": {
+            "gender": 3
+        },
+        "armorSetSkillIds": [
+            18
+        ]
+    },
+    {
+        "id": 132,
+        "name": "Vaal Hazak Coil β",
+        "rarity": 8,
+        "slots": [
+            1,
+            1
+        ],
+        "abilityIds": [
+            170
+        ],
+        "defense": {
+            "base": 64,
+            "max": 70,
+            "augmented": 84
+        },
+        "resistances": {
+            "fire": -4,
+            "water": 4,
+            "thunder": 1,
+            "ice": -1,
+            "dragon": -3
+        },
+        "attributes": {
+            "gender": 3
+        },
+        "armorSetSkillIds": [
+            18
+        ]
+    },
+    {
+        "id": 133,
+        "name": "Kirin Hoop α",
+        "rarity": 6,
+        "abilityIds": [
+            76,
+            119
+        ],
+        "defense": {
+            "base": 64,
+            "max": 70,
+            "augmented": 84
+        },
+        "resistances": {
+            "fire": -3,
+            "water": -2,
+            "thunder": 4,
+            "ice": -2,
+            "dragon": 2
+        },
+        "attributes": {
+            "gender": 3
+        },
+        "armorSetSkillIds": [
+            19
+        ]
+    },
+    {
+        "id": 134,
+        "name": "Kirin Hoop β",
+        "rarity": 6,
+        "slots": [
+            1,
+            1,
+            1
+        ],
+        "abilityIds": [
+            76
+        ],
+        "defense": {
+            "base": 64,
+            "max": 70,
+            "augmented": 84
+        },
+        "resistances": {
+            "fire": -3,
+            "water": -2,
+            "thunder": 4,
+            "ice": -2,
+            "dragon": 2
+        },
+        "attributes": {
+            "gender": 3
+        },
+        "armorSetSkillIds": [
+            19
+        ]
+    },
+    {
+        "id": 135,
+        "name": "Xeno'jiiva Spine α",
+        "rarity": 8,
+        "slots": [
+            2
+        ],
+        "abilityIds": [
+            77,
+            187
+        ],
+        "defense": {
+            "base": 72,
+            "max": 78,
+            "augmented": 92
+        },
+        "resistances": {
+            "fire": -3,
+            "water": 2,
+            "thunder": 2,
+            "ice": 2,
+            "dragon": -4
+        },
+        "attributes": {
+            "gender": 3
+        },
+        "armorSetSkillIds": [
+            20
+        ]
+    },
+    {
+        "id": 136,
+        "name": "Xeno'jiiva Spine β",
+        "rarity": 8,
+        "slots": [
+            2,
+            1
+        ],
+        "abilityIds": [
+            77
+        ],
+        "defense": {
+            "base": 72,
+            "max": 78,
+            "augmented": 92
+        },
+        "resistances": {
+            "fire": -3,
+            "water": 2,
+            "thunder": 2,
+            "ice": 2,
+            "dragon": -4
+        },
+        "attributes": {
+            "gender": 3
+        },
+        "armorSetSkillIds": [
+            20
+        ]
+    },
+    {
+        "id": 137,
+        "name": "Guild Cross Coil α",
+        "rarity": 8,
+        "slots": [
+            1
+        ],
+        "abilityIds": [
+            178,
+            74
+        ],
+        "defense": {
+            "base": 62,
+            "max": 68,
+            "augmented": 82
+        },
+        "resistances": {
+            "fire": 0,
+            "water": 0,
+            "thunder": 0,
+            "ice": 0,
+            "dragon": 0
+        },
+        "attributes": {
+            "gender": 3
+        },
+        "armorSetSkillIds": [
+            21
+        ]
+    },
+    {
+        "id": 138,
+        "name": "Guild Cross Coil β",
+        "rarity": 8,
+        "slots": [
+            1,
+            1,
+            1
+        ],
+        "abilityIds": [
+            178
+        ],
+        "defense": {
+            "base": 62,
+            "max": 68,
+            "augmented": 82
+        },
+        "resistances": {
+            "fire": 0,
+            "water": 0,
+            "thunder": 0,
+            "ice": 0,
+            "dragon": 0
+        },
+        "attributes": {
+            "gender": 3
+        },
+        "armorSetSkillIds": [
+            21
+        ]
+    },
+    {
+        "id": 140,
+        "name": "Commission Belt α",
+        "rarity": 8,
+        "slots": [
+            1
+        ],
+        "abilityIds": [
+            243,
+            247
+        ],
+        "defense": {
+            "base": 70,
+            "max": 76,
+            "augmented": 90
+        },
+        "resistances": {
+            "fire": 2,
+            "water": 2,
+            "thunder": 2,
+            "ice": 2,
+            "dragon": 2
+        },
+        "attributes": {
+            "gender": 3
+        },
+        "armorSetSkillIds": [
+            22
+        ]
+    },
+    {
+        "id": 141,
+        "name": "Commission Belt β",
+        "rarity": 8,
+        "slots": [
+            2
+        ],
+        "abilityIds": [
+            243
+        ],
+        "defense": {
+            "base": 70,
+            "max": 76,
+            "augmented": 90
+        },
+        "resistances": {
+            "fire": 2,
+            "water": 2,
+            "thunder": 2,
+            "ice": 2,
+            "dragon": 2
+        },
+        "attributes": {
+            "gender": 3
+        },
+        "armorSetSkillIds": [
+            22
+        ]
+    },
+    {
+        "id": 142,
+        "name": "Vangis Coil α",
+        "rarity": 7,
+        "slots": [
+            1
+        ],
+        "abilityIds": [
+            160,
+            141
+        ],
+        "defense": {
+            "base": 58,
+            "max": 70,
+            "augmented": 84
+        },
+        "resistances": {
+            "fire": 1,
+            "water": 1,
+            "thunder": -3,
+            "ice": 2,
+            "dragon": -3
+        },
+        "attributes": {
+            "gender": 3
+        },
+        "eventId": 0
+    },
+    {
+        "id": 143,
+        "name": "Vangis Coil β",
+        "rarity": 7,
+        "slots": [
+            3,
+            1
+        ],
+        "abilityIds": [
+            160
+        ],
+        "defense": {
+            "base": 58,
+            "max": 70,
+            "augmented": 84
+        },
+        "resistances": {
+            "fire": 1,
+            "water": 1,
+            "thunder": -3,
+            "ice": 2,
+            "dragon": -3
+        },
+        "attributes": {
+            "gender": 3
+        },
+        "eventId": 0
+    },
+    {
+        "id": 144,
+        "name": "Empress Coil α",
+        "rarity": 8,
+        "slots": [
+            2,
+            1
+        ],
+        "abilityIds": [
+            301,
+            113
+        ],
+        "defense": {
+            "base": 70,
+            "max": 76,
+            "augmented": 90
+        },
+        "resistances": {
+            "fire": 3,
+            "water": 1,
+            "thunder": 1,
+            "ice": -3,
+            "dragon": -2
+        },
+        "attributes": {
+            "gender": 3
+        },
+        "armorSetSkillIds": [
+            23
+        ],
+        "eventId": 14
+    },
+    {
+        "id": 145,
+        "name": "Empress Coil β",
+        "rarity": 8,
+        "slots": [
+            2,
+            2
+        ],
+        "abilityIds": [
+            301
+        ],
+        "defense": {
+            "base": 70,
+            "max": 76,
+            "augmented": 90
+        },
+        "resistances": {
+            "fire": 3,
+            "water": 1,
+            "thunder": 1,
+            "ice": -3,
+            "dragon": -2
+        },
+        "attributes": {
+            "gender": 3
+        },
+        "armorSetSkillIds": [
+            23
+        ],
+        "eventId": 14
+    },
+    {
+        "id": 146,
+        "name": "Drachen Coil α",
+        "rarity": 8,
+        "slots": [
+            3
+        ],
+        "abilityIds": [
+            123,
+            138
+        ],
+        "defense": {
+            "base": 72,
+            "max": 78,
+            "augmented": 92
+        },
+        "resistances": {
+            "fire": -2,
+            "water": -2,
+            "thunder": 3,
+            "ice": -2,
+            "dragon": 4
+        },
+        "attributes": {
+            "gender": 3
+        },
+        "armorSetSkillIds": [
+            24
+        ],
+        "eventId": 19
+    },
+    {
+        "id": 147,
+        "name": "Aloy's Torso α",
+        "rarity": 5,
+        "slots": [
+            3
+        ],
+        "abilityIds": [
+            273
+        ],
+        "defense": {
+            "base": 46,
+            "max": 68,
+            "augmented": 84
+        },
+        "resistances": {
+            "fire": 1,
+            "water": 1,
+            "thunder": 1,
+            "ice": 1,
+            "dragon": 1
+        },
+        "attributes": {
+            "gender": 3
+        },
+        "armorSetSkillIds": [
+            6
+        ],
+        "fullArmorSetId": 0,
+        "eventId": 1
+    },
+    {
+        "id": 148,
+        "name": "Ryu's Torso",
+        "rarity": 2,
+        "abilityIds": [
+            160
+        ],
+        "defense": {
+            "base": 12,
+            "max": 44,
+            "augmented": 70
+        },
+        "resistances": {
+            "fire": 2,
+            "water": 0,
+            "thunder": 5,
+            "ice": -3,
+            "dragon": 2
+        },
+        "attributes": {
+            "gender": 3
+        },
+        "fullArmorSetId": 1,
+        "eventId": 2
+    },
+    {
+        "id": 149,
+        "name": "Ryu's Torso α",
+        "rarity": 7,
+        "slots": [
+            3
+        ],
+        "abilityIds": [
+            165
+        ],
+        "defense": {
+            "base": 60,
+            "max": 72,
+            "augmented": 86
+        },
+        "resistances": {
+            "fire": 2,
+            "water": 0,
+            "thunder": 5,
+            "ice": -3,
+            "dragon": 2
+        },
+        "attributes": {
+            "gender": 3
+        },
+        "armorSetSkillIds": [
+            11
+        ],
+        "fullArmorSetId": 2,
+        "eventId": 3
+    },
+    {
+        "id": 150,
+        "name": "Sakura's Skirt α",
+        "rarity": 6,
+        "slots": [
+            3
+        ],
+        "abilityIds": [
+            160
+        ],
+        "defense": {
+            "base": 50,
+            "max": 70,
+            "augmented": 82
+        },
+        "resistances": {
+            "fire": 0,
+            "water": 4,
+            "thunder": 0,
+            "ice": 4,
+            "dragon": -2
+        },
+        "attributes": {
+            "gender": 3
+        },
+        "armorSetSkillIds": [
+            7
+        ],
+        "fullArmorSetId": 3,
+        "eventId": 4
+    },
+    {
+        "id": 151,
+        "name": "Butterfly Elytra",
+        "rarity": 3,
+        "abilityIds": [
+            45
+        ],
+        "defense": {
+            "base": 22,
+            "max": 50,
+            "augmented": 74
+        },
+        "resistances": {
+            "fire": -1,
+            "water": -1,
+            "thunder": 2,
+            "ice": 0,
+            "dragon": 2
+        },
+        "attributes": {
+            "gender": 1
+        },
+        "eventId": 5
+    },
+    {
+        "id": 152,
+        "name": "Queen Beetle Elytra",
+        "rarity": 3,
+        "abilityIds": [
+            45
+        ],
+        "defense": {
+            "base": 22,
+            "max": 50,
+            "augmented": 74
+        },
+        "resistances": {
+            "fire": -1,
+            "water": -1,
+            "thunder": 2,
+            "ice": 0,
+            "dragon": 2
+        },
+        "attributes": {
+            "gender": 2
+        },
+        "eventId": 5
+    },
+    {
+        "id": 153,
+        "name": "Blossom Coat",
+        "rarity": 3,
+        "abilityIds": [
+            278
+        ],
+        "defense": {
+            "base": 18,
+            "max": 46,
+            "augmented": 70
+        },
+        "resistances": {
+            "fire": 1,
+            "water": 1,
+            "thunder": 4,
+            "ice": 1,
+            "dragon": 1
+        },
+        "attributes": {
+            "gender": 3
+        },
+        "eventId": 6
+    },
+    {
+        "id": 154,
+        "name": "Blossom Coat α",
+        "rarity": 5,
+        "slots": [
+            1,
+            1
+        ],
+        "abilityIds": [
+            278
+        ],
+        "defense": {
+            "base": 40,
+            "max": 62,
+            "augmented": 78
+        },
+        "resistances": {
+            "fire": 1,
+            "water": 1,
+            "thunder": 4,
+            "ice": 1,
+            "dragon": 1
+        },
+        "attributes": {
+            "gender": 3
+        },
+        "eventId": 6
+    },
+    {
+        "id": 155,
+        "name": "Kulve Taroth's Malice α",
+        "rarity": 8,
+        "slots": [
+            1
+        ],
+        "abilityIds": [
+            119,
+            142
+        ],
+        "defense": {
+            "base": 64,
+            "max": 70,
+            "augmented": 84
+        },
+        "resistances": {
+            "fire": 4,
+            "water": -2,
+            "thunder": 3,
+            "ice": -4,
+            "dragon": -2
+        },
+        "attributes": {
+            "gender": 3
+        },
+        "eventId": 7
+    },
+    {
+        "id": 156,
+        "name": "Kulve Taroth's Malice β",
+        "rarity": 8,
+        "slots": [
+            3,
+            1
+        ],
+        "abilityIds": [
+            119,
+            141
+        ],
+        "defense": {
+            "base": 64,
+            "max": 70,
+            "augmented": 84
+        },
+        "resistances": {
+            "fire": 4,
+            "water": -2,
+            "thunder": 3,
+            "ice": -4,
+            "dragon": -2
+        },
+        "attributes": {
+            "gender": 3
+        },
+        "eventId": 7
+    },
+    {
+        "id": 157,
+        "name": "Dante's Belt α",
+        "rarity": 8,
+        "slots": [
+            3
+        ],
+        "abilityIds": [
+            209,
+            160
+        ],
+        "defense": {
+            "base": 64,
+            "max": 70,
+            "augmented": 84
+        },
+        "resistances": {
+            "fire": 3,
+            "water": -3,
+            "thunder": 3,
+            "ice": -3,
+            "dragon": 3
+        },
+        "attributes": {
+            "gender": 3
+        },
+        "eventId": 8
+    },
+    {
+        "id": 158,
+        "name": "Azure Starlord Tassets α",
+        "rarity": 7,
+        "slots": [
+            2
+        ],
+        "abilityIds": [
+            141
+        ],
+        "defense": {
+            "base": 56,
+            "max": 68,
+            "augmented": 82
+        },
+        "resistances": {
+            "fire": 2,
+            "water": 2,
+            "thunder": 0,
+            "ice": 0,
+            "dragon": 3
+        },
+        "attributes": {
+            "gender": 3
+        },
+        "armorSetSkillIds": [
+            11
+        ],
+        "eventId": 9
+    },
+    {
+        "id": 159,
+        "name": "Kirin Hoop γ",
+        "rarity": 8,
+        "slots": [
+            1,
+            1
+        ],
+        "abilityIds": [
+            195
+        ],
+        "defense": {
+            "base": 72,
+            "max": 78,
+            "augmented": 92
+        },
+        "resistances": {
+            "fire": -3,
+            "water": -2,
+            "thunder": 4,
+            "ice": -2,
+            "dragon": 2
+        },
+        "attributes": {
+            "gender": 3
+        },
+        "armorSetSkillIds": [
+            19
+        ],
+        "eventId": 15
+    },
+    {
+        "id": 160,
+        "name": "Vaal Hazak Coil γ",
+        "rarity": 8,
+        "slots": [
+            2,
+            1,
+            1
+        ],
+        "abilityIds": [
+            59,
+            99
+        ],
+        "defense": {
+            "base": 72,
+            "max": 78,
+            "augmented": 92
+        },
+        "resistances": {
+            "fire": -4,
+            "water": 4,
+            "thunder": 1,
+            "ice": -1,
+            "dragon": -3
+        },
+        "attributes": {
+            "gender": 3
+        },
+        "armorSetSkillIds": [
+            18
+        ],
+        "eventId": 16
+    },
+    {
+        "id": 161,
+        "name": "Kaiser Coil γ",
+        "rarity": 8,
+        "slots": [
+            1,
+            1
+        ],
+        "abilityIds": [
+            162
+        ],
+        "defense": {
+            "base": 72,
+            "max": 78,
+            "augmented": 92
+        },
+        "resistances": {
+            "fire": 3,
+            "water": -3,
+            "thunder": 1,
+            "ice": -3,
+            "dragon": 1
+        },
+        "attributes": {
+            "gender": 3
+        },
+        "armorSetSkillIds": [
+            16
+        ],
+        "eventId": 20
+    },
+    {
+        "id": 162,
+        "name": "Kushala Cocoon γ",
+        "rarity": 8,
+        "slots": [
+            1,
+            1
+        ],
+        "abilityIds": [
+            142
+        ],
+        "defense": {
+            "base": 72,
+            "max": 78,
+            "augmented": 92
+        },
+        "resistances": {
+            "fire": 0,
+            "water": 2,
+            "thunder": -3,
+            "ice": 4,
+            "dragon": -2
+        },
+        "attributes": {
+            "gender": 3
+        },
+        "armorSetSkillIds": [
+            17
+        ],
+        "eventId": 21
+    },
+    {
+        "id": 163,
+        "name": "Diver's Belt",
+        "rarity": 3,
+        "abilityIds": [
+            284
+        ],
+        "defense": {
+            "base": 22,
+            "max": 50,
+            "augmented": 74
+        },
+        "resistances": {
+            "fire": 1,
+            "water": 4,
+            "thunder": 1,
+            "ice": 1,
+            "dragon": 1
+        },
+        "attributes": {
+            "gender": 3
+        },
+        "eventId": 17
+    },
+    {
+        "id": 164,
+        "name": "Diver's Belt α",
+        "rarity": 5,
+        "slots": [
+            2
+        ],
+        "abilityIds": [
+            284
+        ],
+        "defense": {
+            "base": 46,
+            "max": 68,
+            "augmented": 84
+        },
+        "resistances": {
+            "fire": 1,
+            "water": 4,
+            "thunder": 4,
+            "ice": 1,
+            "dragon": 1
+        },
+        "attributes": {
+            "gender": 3
+        },
+        "eventId": 17
+    },
+    {
+        "id": 165,
+        "name": "Butterfly Elytra α",
+        "rarity": 5,
+        "slots": [
+            1
+        ],
+        "abilityIds": [
+            46,
+            194
+        ],
+        "defense": {
+            "base": 42,
+            "max": 64,
+            "augmented": 80
+        },
+        "resistances": {
+            "fire": -1,
+            "water": -1,
+            "thunder": 2,
+            "ice": 0,
+            "dragon": 2
+        },
+        "attributes": {
+            "gender": 1
+        },
+        "eventId": 18
+    },
+    {
+        "id": 166,
+        "name": "Butterfly Elytra β",
+        "rarity": 5,
+        "slots": [
+            3
+        ],
+        "abilityIds": [
+            46
+        ],
+        "defense": {
+            "base": 42,
+            "max": 64,
+            "augmented": 80
+        },
+        "resistances": {
+            "fire": -1,
+            "water": -1,
+            "thunder": 2,
+            "ice": 0,
+            "dragon": 2
+        },
+        "attributes": {
+            "gender": 1
+        },
+        "eventId": 18
+    },
+    {
+        "id": 167,
+        "name": "Queen Beetle Elytra α",
+        "rarity": 5,
+        "slots": [
+            1
+        ],
+        "abilityIds": [
+            46,
+            194
+        ],
+        "defense": {
+            "base": 42,
+            "max": 64,
+            "augmented": 80
+        },
+        "resistances": {
+            "fire": -1,
+            "water": -1,
+            "thunder": 2,
+            "ice": 0,
+            "dragon": 2
+        },
+        "attributes": {
+            "gender": 2
+        },
+        "eventId": 18
+    },
+    {
+        "id": 168,
+        "name": "Queen Beetle Elytra β",
+        "rarity": 5,
+        "slots": [
+            3
+        ],
+        "abilityIds": [
+            46
+        ],
+        "defense": {
+            "base": 42,
+            "max": 64,
+            "augmented": 80
+        },
+        "resistances": {
+            "fire": -1,
+            "water": -1,
+            "thunder": 2,
+            "ice": 0,
+            "dragon": 2
+        },
+        "attributes": {
+            "gender": 2
+        },
+        "eventId": 18
+    }
+]

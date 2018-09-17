@@ -1,0 +1,4003 @@
+[
+    {
+        "id": 0,
+        "name": "Leather Mail",
+        "rarity": 1,
+        "defense": {
+            "base": 2,
+            "max": 38,
+            "augmented": 68
+        },
+        "resistances": {
+            "fire": 2,
+            "water": 0,
+            "thunder": 0,
+            "ice": 0,
+            "dragon": 0
+        },
+        "attributes": {
+            "gender": 3
+        }
+    },
+    {
+        "id": 1,
+        "name": "Chainmail Vest",
+        "rarity": 1,
+        "defense": {
+            "base": 2,
+            "max": 38,
+            "augmented": 68
+        },
+        "resistances": {
+            "fire": 0,
+            "water": 2,
+            "thunder": 0,
+            "ice": 0,
+            "dragon": 0
+        },
+        "attributes": {
+            "gender": 3
+        }
+    },
+    {
+        "id": 2,
+        "name": "Hunter's Mail",
+        "rarity": 1,
+        "abilityIds": [
+            269
+        ],
+        "defense": {
+            "base": 6,
+            "max": 42,
+            "augmented": 72
+        },
+        "resistances": {
+            "fire": 2,
+            "water": 2,
+            "thunder": 0,
+            "ice": 0,
+            "dragon": 0
+        },
+        "attributes": {
+            "gender": 3
+        }
+    },
+    {
+        "id": 3,
+        "name": "Bone Mail",
+        "rarity": 1,
+        "abilityIds": [
+            38
+        ],
+        "defense": {
+            "base": 6,
+            "max": 42,
+            "augmented": 72
+        },
+        "resistances": {
+            "fire": 2,
+            "water": 0,
+            "thunder": 2,
+            "ice": 0,
+            "dragon": 2
+        },
+        "attributes": {
+            "gender": 3
+        }
+    },
+    {
+        "id": 4,
+        "name": "Vespoid Mail",
+        "rarity": 1,
+        "abilityIds": [
+            27
+        ],
+        "defense": {
+            "base": 8,
+            "max": 44,
+            "augmented": 74
+        },
+        "resistances": {
+            "fire": -2,
+            "water": 1,
+            "thunder": 1,
+            "ice": 1,
+            "dragon": 2
+        },
+        "attributes": {
+            "gender": 3
+        }
+    },
+    {
+        "id": 7,
+        "name": "Jagras Mail",
+        "rarity": 1,
+        "abilityIds": [
+            304
+        ],
+        "defense": {
+            "base": 8,
+            "max": 44,
+            "augmented": 74
+        },
+        "resistances": {
+            "fire": -2,
+            "water": 2,
+            "thunder": -1,
+            "ice": -1,
+            "dragon": 1
+        },
+        "attributes": {
+            "gender": 3
+        }
+    },
+    {
+        "id": 8,
+        "name": "Kulu Mail",
+        "rarity": 1,
+        "abilityIds": [
+            203
+        ],
+        "defense": {
+            "base": 10,
+            "max": 46,
+            "augmented": 76
+        },
+        "resistances": {
+            "fire": 0,
+            "water": -3,
+            "thunder": 0,
+            "ice": 1,
+            "dragon": 0
+        },
+        "attributes": {
+            "gender": 3
+        }
+    },
+    {
+        "id": 9,
+        "name": "Alloy Mail",
+        "rarity": 2,
+        "abilityIds": [
+            64
+        ],
+        "defense": {
+            "base": 8,
+            "max": 40,
+            "augmented": 66
+        },
+        "resistances": {
+            "fire": -2,
+            "water": 1,
+            "thunder": -2,
+            "ice": -2,
+            "dragon": 1
+        },
+        "attributes": {
+            "gender": 3
+        }
+    },
+    {
+        "id": 10,
+        "name": "Pukei Mail",
+        "rarity": 2,
+        "abilityIds": [
+            230
+        ],
+        "defense": {
+            "base": 12,
+            "max": 44,
+            "augmented": 70
+        },
+        "resistances": {
+            "fire": 0,
+            "water": 3,
+            "thunder": -3,
+            "ice": 0,
+            "dragon": 1
+        },
+        "attributes": {
+            "gender": 3
+        }
+    },
+    {
+        "id": 11,
+        "name": "Barroth Mail",
+        "rarity": 2,
+        "abilityIds": [
+            155
+        ],
+        "defense": {
+            "base": 14,
+            "max": 38,
+            "augmented": 72
+        },
+        "resistances": {
+            "fire": -3,
+            "water": -1,
+            "thunder": 3,
+            "ice": -1,
+            "dragon": 0
+        },
+        "attributes": {
+            "gender": 3
+        }
+    },
+    {
+        "id": 12,
+        "name": "Jyura Mail",
+        "rarity": 2,
+        "abilityIds": [
+            12
+        ],
+        "defense": {
+            "base": 14,
+            "max": 46,
+            "augmented": 72
+        },
+        "resistances": {
+            "fire": -1,
+            "water": 2,
+            "thunder": -3,
+            "ice": 0,
+            "dragon": 0
+        },
+        "attributes": {
+            "gender": 3
+        }
+    },
+    {
+        "id": 13,
+        "name": "Kadachi Mail",
+        "rarity": 2,
+        "abilityIds": [
+            280
+        ],
+        "defense": {
+            "base": 16,
+            "max": 48,
+            "augmented": 74
+        },
+        "resistances": {
+            "fire": 0,
+            "water": -3,
+            "thunder": 3,
+            "ice": 0,
+            "dragon": 0
+        },
+        "attributes": {
+            "gender": 3
+        }
+    },
+    {
+        "id": 14,
+        "name": "High Metal Mail",
+        "rarity": 3,
+        "abilityIds": [
+            22
+        ],
+        "defense": {
+            "base": 18,
+            "max": 46,
+            "augmented": 70
+        },
+        "resistances": {
+            "fire": 0,
+            "water": -1,
+            "thunder": -2,
+            "ice": 3,
+            "dragon": 0
+        },
+        "attributes": {
+            "gender": 3
+        }
+    },
+    {
+        "id": 15,
+        "name": "King Beetle Thorax",
+        "rarity": 3,
+        "abilityIds": [
+            222
+        ],
+        "defense": {
+            "base": 22,
+            "max": 50,
+            "augmented": 74
+        },
+        "resistances": {
+            "fire": -1,
+            "water": -1,
+            "thunder": 2,
+            "ice": 0,
+            "dragon": 2
+        },
+        "attributes": {
+            "gender": 1
+        }
+    },
+    {
+        "id": 16,
+        "name": "Butterfly Thorax",
+        "rarity": 3,
+        "abilityIds": [
+            222
+        ],
+        "defense": {
+            "base": 22,
+            "max": 50,
+            "augmented": 74
+        },
+        "resistances": {
+            "fire": -1,
+            "water": -1,
+            "thunder": 2,
+            "ice": 0,
+            "dragon": 2
+        },
+        "attributes": {
+            "gender": 2
+        }
+    },
+    {
+        "id": 18,
+        "name": "Hornetaur Mail",
+        "rarity": 3,
+        "abilityIds": [
+            36
+        ],
+        "defense": {
+            "base": 18,
+            "max": 46,
+            "augmented": 70
+        },
+        "resistances": {
+            "fire": -1,
+            "water": -1,
+            "thunder": 0,
+            "ice": 0,
+            "dragon": 2
+        },
+        "attributes": {
+            "gender": 3
+        }
+    },
+    {
+        "id": 19,
+        "name": "Anja Mail",
+        "rarity": 3,
+        "abilityIds": [
+            194
+        ],
+        "defense": {
+            "base": 20,
+            "max": 48,
+            "augmented": 72
+        },
+        "resistances": {
+            "fire": 3,
+            "water": -3,
+            "thunder": -1,
+            "ice": -1,
+            "dragon": 0
+        },
+        "attributes": {
+            "gender": 3
+        },
+        "armorSetSkillIds": [
+            0
+        ]
+    },
+    {
+        "id": 20,
+        "name": "Rathian Mail",
+        "rarity": 3,
+        "abilityIds": [
+            259
+        ],
+        "defense": {
+            "base": 22,
+            "max": 50,
+            "augmented": 74
+        },
+        "resistances": {
+            "fire": 2,
+            "water": 0,
+            "thunder": -2,
+            "ice": 0,
+            "dragon": -3
+        },
+        "attributes": {
+            "gender": 3
+        }
+    },
+    {
+        "id": 21,
+        "name": "Tzitzi Mail",
+        "rarity": 3,
+        "abilityIds": [
+            197
+        ],
+        "defense": {
+            "base": 18,
+            "max": 46,
+            "augmented": 70
+        },
+        "resistances": {
+            "fire": 0,
+            "water": 0,
+            "thunder": -3,
+            "ice": -2,
+            "dragon": 0
+        },
+        "attributes": {
+            "gender": 3
+        }
+    },
+    {
+        "id": 22,
+        "name": "Lumu Mail",
+        "rarity": 3,
+        "abilityIds": [
+            158
+        ],
+        "defense": {
+            "base": 20,
+            "max": 48,
+            "augmented": 72
+        },
+        "resistances": {
+            "fire": -3,
+            "water": 2,
+            "thunder": 0,
+            "ice": 1,
+            "dragon": 0
+        },
+        "attributes": {
+            "gender": 3
+        }
+    },
+    {
+        "id": 23,
+        "name": "Girros Mail",
+        "rarity": 3,
+        "abilityIds": [
+            3
+        ],
+        "defense": {
+            "base": 20,
+            "max": 48,
+            "augmented": 72
+        },
+        "resistances": {
+            "fire": 0,
+            "water": -3,
+            "thunder": 2,
+            "ice": 0,
+            "dragon": 1
+        },
+        "attributes": {
+            "gender": 3
+        }
+    },
+    {
+        "id": 24,
+        "name": "Baan Mail",
+        "rarity": 3,
+        "defense": {
+            "base": 24,
+            "max": 52,
+            "augmented": 76
+        },
+        "resistances": {
+            "fire": 0,
+            "water": 2,
+            "thunder": 0,
+            "ice": -1,
+            "dragon": -2
+        },
+        "attributes": {
+            "gender": 3
+        }
+    },
+    {
+        "id": 25,
+        "name": "Ingot Mail",
+        "rarity": 4,
+        "abilityIds": [
+            70
+        ],
+        "defense": {
+            "base": 28,
+            "max": 52,
+            "augmented": 72
+        },
+        "resistances": {
+            "fire": -2,
+            "water": 0,
+            "thunder": 3,
+            "ice": -1,
+            "dragon": 0
+        },
+        "attributes": {
+            "gender": 3
+        }
+    },
+    {
+        "id": 26,
+        "name": "Death Stench Muscle",
+        "rarity": 4,
+        "abilityIds": [
+            178
+        ],
+        "defense": {
+            "base": 32,
+            "max": 56,
+            "augmented": 76
+        },
+        "resistances": {
+            "fire": 3,
+            "water": 2,
+            "thunder": -2,
+            "ice": 3,
+            "dragon": -4
+        },
+        "attributes": {
+            "gender": 3
+        }
+    },
+    {
+        "id": 27,
+        "name": "Brigade Suit",
+        "rarity": 4,
+        "abilityIds": [
+            251
+        ],
+        "defense": {
+            "base": 28,
+            "max": 52,
+            "augmented": 72
+        },
+        "resistances": {
+            "fire": 1,
+            "water": 0,
+            "thunder": 2,
+            "ice": 0,
+            "dragon": 2
+        },
+        "attributes": {
+            "gender": 3
+        }
+    },
+    {
+        "id": 28,
+        "name": "Legiana Mail",
+        "rarity": 4,
+        "abilityIds": [
+            209
+        ],
+        "defense": {
+            "base": 30,
+            "max": 54,
+            "augmented": 74
+        },
+        "resistances": {
+            "fire": -1,
+            "water": 2,
+            "thunder": -3,
+            "ice": 3,
+            "dragon": 0
+        },
+        "attributes": {
+            "gender": 3
+        },
+        "armorSetSkillIds": [
+            1
+        ]
+    },
+    {
+        "id": 29,
+        "name": "Odogaron Mail",
+        "rarity": 4,
+        "abilityIds": [
+            237
+        ],
+        "defense": {
+            "base": 30,
+            "max": 54,
+            "augmented": 74
+        },
+        "resistances": {
+            "fire": 2,
+            "water": 2,
+            "thunder": -2,
+            "ice": -3,
+            "dragon": 0
+        },
+        "attributes": {
+            "gender": 3
+        },
+        "armorSetSkillIds": [
+            2
+        ]
+    },
+    {
+        "id": 30,
+        "name": "Rathalos Mail",
+        "rarity": 4,
+        "abilityIds": [
+            132
+        ],
+        "defense": {
+            "base": 30,
+            "max": 54,
+            "augmented": 74
+        },
+        "resistances": {
+            "fire": 3,
+            "water": 1,
+            "thunder": -2,
+            "ice": 1,
+            "dragon": -3
+        },
+        "attributes": {
+            "gender": 3
+        },
+        "armorSetSkillIds": [
+            3
+        ]
+    },
+    {
+        "id": 31,
+        "name": "Diablos Mail",
+        "rarity": 4,
+        "abilityIds": [
+            152
+        ],
+        "defense": {
+            "base": 32,
+            "max": 56,
+            "augmented": 76
+        },
+        "resistances": {
+            "fire": 3,
+            "water": -2,
+            "thunder": 0,
+            "ice": -3,
+            "dragon": 2
+        },
+        "attributes": {
+            "gender": 3
+        },
+        "armorSetSkillIds": [
+            4
+        ]
+    },
+    {
+        "id": 32,
+        "name": "Kirin Jacket",
+        "rarity": 4,
+        "abilityIds": [
+            251
+        ],
+        "defense": {
+            "base": 34,
+            "max": 58,
+            "augmented": 78
+        },
+        "resistances": {
+            "fire": -3,
+            "water": -2,
+            "thunder": 4,
+            "ice": -2,
+            "dragon": 3
+        },
+        "attributes": {
+            "gender": 3
+        },
+        "armorSetSkillIds": [
+            5
+        ]
+    },
+    {
+        "id": 33,
+        "name": "Leather Mail α",
+        "rarity": 5,
+        "abilityIds": [
+            61
+        ],
+        "defense": {
+            "base": 32,
+            "max": 54,
+            "augmented": 70
+        },
+        "resistances": {
+            "fire": 2,
+            "water": 0,
+            "thunder": 0,
+            "ice": 0,
+            "dragon": 0
+        },
+        "attributes": {
+            "gender": 3
+        }
+    },
+    {
+        "id": 34,
+        "name": "Leather Mail β",
+        "rarity": 5,
+        "slots": [
+            1
+        ],
+        "defense": {
+            "base": 32,
+            "max": 54,
+            "augmented": 70
+        },
+        "resistances": {
+            "fire": 2,
+            "water": 0,
+            "thunder": 0,
+            "ice": 0,
+            "dragon": 0
+        },
+        "attributes": {
+            "gender": 3
+        }
+    },
+    {
+        "id": 35,
+        "name": "Chainmail Armor α",
+        "rarity": 5,
+        "abilityIds": [
+            64
+        ],
+        "defense": {
+            "base": 32,
+            "max": 54,
+            "augmented": 70
+        },
+        "resistances": {
+            "fire": 0,
+            "water": 2,
+            "thunder": 0,
+            "ice": 0,
+            "dragon": 0
+        },
+        "attributes": {
+            "gender": 3
+        }
+    },
+    {
+        "id": 36,
+        "name": "Chainmail Armor β",
+        "rarity": 5,
+        "slots": [
+            1
+        ],
+        "defense": {
+            "base": 32,
+            "max": 54,
+            "augmented": 70
+        },
+        "resistances": {
+            "fire": 0,
+            "water": 2,
+            "thunder": 0,
+            "ice": 0,
+            "dragon": 0
+        },
+        "attributes": {
+            "gender": 3
+        }
+    },
+    {
+        "id": 37,
+        "name": "Hunter's Mail α",
+        "rarity": 5,
+        "abilityIds": [
+            270
+        ],
+        "defense": {
+            "base": 36,
+            "max": 58,
+            "augmented": 74
+        },
+        "resistances": {
+            "fire": 2,
+            "water": 2,
+            "thunder": 0,
+            "ice": 0,
+            "dragon": 0
+        },
+        "attributes": {
+            "gender": 3
+        }
+    },
+    {
+        "id": 38,
+        "name": "Hunter's Mail β",
+        "rarity": 5,
+        "slots": [
+            1
+        ],
+        "abilityIds": [
+            269
+        ],
+        "defense": {
+            "base": 36,
+            "max": 58,
+            "augmented": 74
+        },
+        "resistances": {
+            "fire": 2,
+            "water": 2,
+            "thunder": 0,
+            "ice": 0,
+            "dragon": 0
+        },
+        "attributes": {
+            "gender": 3
+        }
+    },
+    {
+        "id": 39,
+        "name": "Bone Mail α",
+        "rarity": 5,
+        "abilityIds": [
+            39
+        ],
+        "defense": {
+            "base": 36,
+            "max": 58,
+            "augmented": 74
+        },
+        "resistances": {
+            "fire": 2,
+            "water": 0,
+            "thunder": 2,
+            "ice": 0,
+            "dragon": 2
+        },
+        "attributes": {
+            "gender": 3
+        }
+    },
+    {
+        "id": 40,
+        "name": "Bone Mail β",
+        "rarity": 5,
+        "slots": [
+            1
+        ],
+        "abilityIds": [
+            38
+        ],
+        "defense": {
+            "base": 36,
+            "max": 58,
+            "augmented": 74
+        },
+        "resistances": {
+            "fire": 2,
+            "water": 0,
+            "thunder": 2,
+            "ice": 0,
+            "dragon": 2
+        },
+        "attributes": {
+            "gender": 3
+        }
+    },
+    {
+        "id": 41,
+        "name": "Alloy Mail α",
+        "rarity": 5,
+        "abilityIds": [
+            65
+        ],
+        "defense": {
+            "base": 36,
+            "max": 58,
+            "augmented": 74
+        },
+        "resistances": {
+            "fire": -2,
+            "water": 0,
+            "thunder": -2,
+            "ice": -2,
+            "dragon": 0
+        },
+        "attributes": {
+            "gender": 3
+        }
+    },
+    {
+        "id": 42,
+        "name": "Alloy Mail β",
+        "rarity": 5,
+        "slots": [
+            1
+        ],
+        "abilityIds": [
+            64
+        ],
+        "defense": {
+            "base": 36,
+            "max": 58,
+            "augmented": 74
+        },
+        "resistances": {
+            "fire": -2,
+            "water": 0,
+            "thunder": -2,
+            "ice": -2,
+            "dragon": 0
+        },
+        "attributes": {
+            "gender": 3
+        }
+    },
+    {
+        "id": 43,
+        "name": "King Beetle Thorax α",
+        "rarity": 5,
+        "abilityIds": [
+            223,
+            259
+        ],
+        "defense": {
+            "base": 42,
+            "max": 64,
+            "augmented": 80
+        },
+        "resistances": {
+            "fire": -1,
+            "water": -1,
+            "thunder": 2,
+            "ice": 0,
+            "dragon": 2
+        },
+        "attributes": {
+            "gender": 1
+        }
+    },
+    {
+        "id": 44,
+        "name": "King Beetle Thorax β",
+        "rarity": 5,
+        "slots": [
+            1
+        ],
+        "abilityIds": [
+            223
+        ],
+        "defense": {
+            "base": 42,
+            "max": 64,
+            "augmented": 80
+        },
+        "resistances": {
+            "fire": -1,
+            "water": -1,
+            "thunder": 2,
+            "ice": 0,
+            "dragon": 2
+        },
+        "attributes": {
+            "gender": 1
+        }
+    },
+    {
+        "id": 45,
+        "name": "Butterfly Thorax α",
+        "rarity": 5,
+        "abilityIds": [
+            223,
+            259
+        ],
+        "defense": {
+            "base": 42,
+            "max": 64,
+            "augmented": 80
+        },
+        "resistances": {
+            "fire": -1,
+            "water": -1,
+            "thunder": 2,
+            "ice": 0,
+            "dragon": 2
+        },
+        "attributes": {
+            "gender": 2
+        }
+    },
+    {
+        "id": 46,
+        "name": "Butterfly Thorax β",
+        "rarity": 5,
+        "slots": [
+            1
+        ],
+        "abilityIds": [
+            223
+        ],
+        "defense": {
+            "base": 42,
+            "max": 64,
+            "augmented": 80
+        },
+        "resistances": {
+            "fire": -1,
+            "water": -1,
+            "thunder": 2,
+            "ice": 0,
+            "dragon": 2
+        },
+        "attributes": {
+            "gender": 2
+        }
+    },
+    {
+        "id": 47,
+        "name": "Vespoid Mail α",
+        "rarity": 5,
+        "abilityIds": [
+            28
+        ],
+        "defense": {
+            "base": 38,
+            "max": 60,
+            "augmented": 76
+        },
+        "resistances": {
+            "fire": -2,
+            "water": 1,
+            "thunder": 1,
+            "ice": 1,
+            "dragon": 2
+        },
+        "attributes": {
+            "gender": 3
+        }
+    },
+    {
+        "id": 48,
+        "name": "Vespoid Mail β",
+        "rarity": 5,
+        "slots": [
+            1
+        ],
+        "abilityIds": [
+            27
+        ],
+        "defense": {
+            "base": 38,
+            "max": 60,
+            "augmented": 76
+        },
+        "resistances": {
+            "fire": -2,
+            "water": 1,
+            "thunder": 1,
+            "ice": 1,
+            "dragon": 2
+        },
+        "attributes": {
+            "gender": 3
+        }
+    },
+    {
+        "id": 49,
+        "name": "Hornetaur Mail α",
+        "rarity": 5,
+        "abilityIds": [
+            36,
+            206
+        ],
+        "defense": {
+            "base": 38,
+            "max": 60,
+            "augmented": 76
+        },
+        "resistances": {
+            "fire": -1,
+            "water": -1,
+            "thunder": 0,
+            "ice": 0,
+            "dragon": 2
+        },
+        "attributes": {
+            "gender": 3
+        }
+    },
+    {
+        "id": 50,
+        "name": "Hornetaur Mail β",
+        "rarity": 5,
+        "slots": [
+            1
+        ],
+        "abilityIds": [
+            36
+        ],
+        "defense": {
+            "base": 38,
+            "max": 60,
+            "augmented": 76
+        },
+        "resistances": {
+            "fire": -1,
+            "water": -1,
+            "thunder": 0,
+            "ice": 0,
+            "dragon": 2
+        },
+        "attributes": {
+            "gender": 3
+        }
+    },
+    {
+        "id": 58,
+        "name": "Jagras Mail α",
+        "rarity": 5,
+        "abilityIds": [
+            305
+        ],
+        "defense": {
+            "base": 40,
+            "max": 62,
+            "augmented": 78
+        },
+        "resistances": {
+            "fire": -2,
+            "water": 2,
+            "thunder": -1,
+            "ice": -1,
+            "dragon": 1
+        },
+        "attributes": {
+            "gender": 3
+        }
+    },
+    {
+        "id": 59,
+        "name": "Jagras Mail β",
+        "rarity": 5,
+        "slots": [
+            1
+        ],
+        "abilityIds": [
+            304
+        ],
+        "defense": {
+            "base": 40,
+            "max": 62,
+            "augmented": 78
+        },
+        "resistances": {
+            "fire": -2,
+            "water": 2,
+            "thunder": -1,
+            "ice": -1,
+            "dragon": 1
+        },
+        "attributes": {
+            "gender": 3
+        }
+    },
+    {
+        "id": 60,
+        "name": "Kulu Mail α",
+        "rarity": 5,
+        "abilityIds": [
+            203,
+            122
+        ],
+        "defense": {
+            "base": 40,
+            "max": 62,
+            "augmented": 78
+        },
+        "resistances": {
+            "fire": 0,
+            "water": -3,
+            "thunder": 0,
+            "ice": 1,
+            "dragon": 0
+        },
+        "attributes": {
+            "gender": 3
+        }
+    },
+    {
+        "id": 61,
+        "name": "Kulu Mail β",
+        "rarity": 5,
+        "slots": [
+            1
+        ],
+        "abilityIds": [
+            203
+        ],
+        "defense": {
+            "base": 40,
+            "max": 62,
+            "augmented": 78
+        },
+        "resistances": {
+            "fire": 0,
+            "water": -3,
+            "thunder": 0,
+            "ice": 1,
+            "dragon": 0
+        },
+        "attributes": {
+            "gender": 3
+        }
+    },
+    {
+        "id": 62,
+        "name": "Tzitzi Mail α",
+        "rarity": 5,
+        "abilityIds": [
+            197,
+            85
+        ],
+        "defense": {
+            "base": 40,
+            "max": 62,
+            "augmented": 78
+        },
+        "resistances": {
+            "fire": 0,
+            "water": 0,
+            "thunder": -3,
+            "ice": -2,
+            "dragon": 0
+        },
+        "attributes": {
+            "gender": 3
+        }
+    },
+    {
+        "id": 63,
+        "name": "Tzitzi Mail β",
+        "rarity": 5,
+        "slots": [
+            1,
+            1
+        ],
+        "abilityIds": [
+            197
+        ],
+        "defense": {
+            "base": 40,
+            "max": 62,
+            "augmented": 78
+        },
+        "resistances": {
+            "fire": 0,
+            "water": 0,
+            "thunder": -3,
+            "ice": -2,
+            "dragon": 0
+        },
+        "attributes": {
+            "gender": 3
+        }
+    },
+    {
+        "id": 64,
+        "name": "Girros Mail α",
+        "rarity": 5,
+        "abilityIds": [
+            4
+        ],
+        "defense": {
+            "base": 40,
+            "max": 62,
+            "augmented": 78
+        },
+        "resistances": {
+            "fire": 0,
+            "water": -3,
+            "thunder": 2,
+            "ice": 0,
+            "dragon": 1
+        },
+        "attributes": {
+            "gender": 3
+        }
+    },
+    {
+        "id": 65,
+        "name": "Girros Mail β",
+        "rarity": 5,
+        "slots": [
+            1
+        ],
+        "abilityIds": [
+            3
+        ],
+        "defense": {
+            "base": 40,
+            "max": 62,
+            "augmented": 78
+        },
+        "resistances": {
+            "fire": 0,
+            "water": -3,
+            "thunder": 2,
+            "ice": 0,
+            "dragon": 1
+        },
+        "attributes": {
+            "gender": 3
+        }
+    },
+    {
+        "id": 66,
+        "name": "Pukei Mail α",
+        "rarity": 5,
+        "abilityIds": [
+            230,
+            259
+        ],
+        "defense": {
+            "base": 42,
+            "max": 64,
+            "augmented": 80
+        },
+        "resistances": {
+            "fire": 0,
+            "water": 3,
+            "thunder": -3,
+            "ice": 0,
+            "dragon": 1
+        },
+        "attributes": {
+            "gender": 3
+        }
+    },
+    {
+        "id": 67,
+        "name": "Pukei Mail β",
+        "rarity": 5,
+        "slots": [
+            1
+        ],
+        "abilityIds": [
+            230
+        ],
+        "defense": {
+            "base": 42,
+            "max": 64,
+            "augmented": 80
+        },
+        "resistances": {
+            "fire": 0,
+            "water": 3,
+            "thunder": -3,
+            "ice": 0,
+            "dragon": 1
+        },
+        "attributes": {
+            "gender": 3
+        }
+    },
+    {
+        "id": 68,
+        "name": "Barroth Mail α",
+        "rarity": 5,
+        "abilityIds": [
+            156
+        ],
+        "defense": {
+            "base": 42,
+            "max": 64,
+            "augmented": 80
+        },
+        "resistances": {
+            "fire": -3,
+            "water": -1,
+            "thunder": 3,
+            "ice": -1,
+            "dragon": 0
+        },
+        "attributes": {
+            "gender": 3
+        }
+    },
+    {
+        "id": 69,
+        "name": "Barroth Mail β",
+        "rarity": 5,
+        "slots": [
+            1
+        ],
+        "abilityIds": [
+            155
+        ],
+        "defense": {
+            "base": 42,
+            "max": 64,
+            "augmented": 80
+        },
+        "resistances": {
+            "fire": -3,
+            "water": -1,
+            "thunder": 3,
+            "ice": -1,
+            "dragon": 0
+        },
+        "attributes": {
+            "gender": 3
+        }
+    },
+    {
+        "id": 70,
+        "name": "Anja Mail α",
+        "rarity": 5,
+        "abilityIds": [
+            194,
+            187
+        ],
+        "defense": {
+            "base": 44,
+            "max": 66,
+            "augmented": 82
+        },
+        "resistances": {
+            "fire": 3,
+            "water": -3,
+            "thunder": -1,
+            "ice": -1,
+            "dragon": 0
+        },
+        "attributes": {
+            "gender": 3
+        },
+        "armorSetSkillIds": [
+            6
+        ]
+    },
+    {
+        "id": 71,
+        "name": "Anja Mail β",
+        "rarity": 5,
+        "slots": [
+            1,
+            1
+        ],
+        "abilityIds": [
+            194
+        ],
+        "defense": {
+            "base": 44,
+            "max": 66,
+            "augmented": 82
+        },
+        "resistances": {
+            "fire": 3,
+            "water": -3,
+            "thunder": -1,
+            "ice": -1,
+            "dragon": 0
+        },
+        "attributes": {
+            "gender": 3
+        },
+        "armorSetSkillIds": [
+            6
+        ]
+    },
+    {
+        "id": 72,
+        "name": "Jyura Mail α",
+        "rarity": 5,
+        "abilityIds": [
+            12,
+            84
+        ],
+        "defense": {
+            "base": 44,
+            "max": 66,
+            "augmented": 82
+        },
+        "resistances": {
+            "fire": -1,
+            "water": 2,
+            "thunder": -3,
+            "ice": 0,
+            "dragon": 0
+        },
+        "attributes": {
+            "gender": 3
+        }
+    },
+    {
+        "id": 73,
+        "name": "Jyura Mail β",
+        "rarity": 5,
+        "slots": [
+            1
+        ],
+        "abilityIds": [
+            12
+        ],
+        "defense": {
+            "base": 44,
+            "max": 66,
+            "augmented": 82
+        },
+        "resistances": {
+            "fire": -1,
+            "water": 2,
+            "thunder": -3,
+            "ice": 0,
+            "dragon": 0
+        },
+        "attributes": {
+            "gender": 3
+        }
+    },
+    {
+        "id": 74,
+        "name": "Kadachi Mail α",
+        "rarity": 5,
+        "abilityIds": [
+            280,
+            214
+        ],
+        "defense": {
+            "base": 44,
+            "max": 66,
+            "augmented": 82
+        },
+        "resistances": {
+            "fire": 0,
+            "water": -3,
+            "thunder": 3,
+            "ice": 0,
+            "dragon": 0
+        },
+        "attributes": {
+            "gender": 3
+        }
+    },
+    {
+        "id": 75,
+        "name": "Kadachi Mail β",
+        "rarity": 5,
+        "slots": [
+            2
+        ],
+        "abilityIds": [
+            280
+        ],
+        "defense": {
+            "base": 44,
+            "max": 66,
+            "augmented": 82
+        },
+        "resistances": {
+            "fire": 0,
+            "water": -3,
+            "thunder": 3,
+            "ice": 0,
+            "dragon": 0
+        },
+        "attributes": {
+            "gender": 3
+        }
+    },
+    {
+        "id": 76,
+        "name": "Lumu Mail α",
+        "rarity": 5,
+        "abilityIds": [
+            158,
+            189
+        ],
+        "defense": {
+            "base": 44,
+            "max": 66,
+            "augmented": 82
+        },
+        "resistances": {
+            "fire": -3,
+            "water": 2,
+            "thunder": 0,
+            "ice": 1,
+            "dragon": 0
+        },
+        "attributes": {
+            "gender": 3
+        }
+    },
+    {
+        "id": 77,
+        "name": "Lumu Mail β",
+        "rarity": 5,
+        "slots": [
+            1
+        ],
+        "abilityIds": [
+            158
+        ],
+        "defense": {
+            "base": 44,
+            "max": 66,
+            "augmented": 82
+        },
+        "resistances": {
+            "fire": -3,
+            "water": 2,
+            "thunder": 0,
+            "ice": 1,
+            "dragon": 0
+        },
+        "attributes": {
+            "gender": 3
+        }
+    },
+    {
+        "id": 78,
+        "name": "Rathian Mail α",
+        "rarity": 5,
+        "abilityIds": [
+            260,
+            55
+        ],
+        "defense": {
+            "base": 46,
+            "max": 68,
+            "augmented": 84
+        },
+        "resistances": {
+            "fire": 2,
+            "water": 0,
+            "thunder": -2,
+            "ice": 0,
+            "dragon": -3
+        },
+        "attributes": {
+            "gender": 3
+        }
+    },
+    {
+        "id": 79,
+        "name": "Rathian Mail β",
+        "rarity": 5,
+        "slots": [
+            1
+        ],
+        "abilityIds": [
+            259,
+            55
+        ],
+        "defense": {
+            "base": 46,
+            "max": 68,
+            "augmented": 84
+        },
+        "resistances": {
+            "fire": 2,
+            "water": 0,
+            "thunder": -2,
+            "ice": 0,
+            "dragon": -3
+        },
+        "attributes": {
+            "gender": 3
+        }
+    },
+    {
+        "id": 80,
+        "name": "Rath Heart Mail α",
+        "rarity": 6,
+        "abilityIds": [
+            301
+        ],
+        "defense": {
+            "base": 52,
+            "max": 72,
+            "augmented": 84
+        },
+        "resistances": {
+            "fire": 3,
+            "water": 0,
+            "thunder": -3,
+            "ice": 0,
+            "dragon": -4
+        },
+        "attributes": {
+            "gender": 3
+        },
+        "armorSetSkillIds": [
+            7
+        ]
+    },
+    {
+        "id": 81,
+        "name": "Rath Heart Mail β",
+        "rarity": 6,
+        "slots": [
+            1,
+            1
+        ],
+        "abilityIds": [
+            300
+        ],
+        "defense": {
+            "base": 52,
+            "max": 72,
+            "augmented": 84
+        },
+        "resistances": {
+            "fire": 3,
+            "water": 0,
+            "thunder": -3,
+            "ice": 0,
+            "dragon": -4
+        },
+        "attributes": {
+            "gender": 3
+        },
+        "armorSetSkillIds": [
+            7
+        ]
+    },
+    {
+        "id": 82,
+        "name": "Baan Mail α",
+        "rarity": 6,
+        "abilityIds": [
+            110,
+            16
+        ],
+        "defense": {
+            "base": 46,
+            "max": 66,
+            "augmented": 78
+        },
+        "resistances": {
+            "fire": 0,
+            "water": 2,
+            "thunder": 0,
+            "ice": -1,
+            "dragon": -2
+        },
+        "attributes": {
+            "gender": 3
+        }
+    },
+    {
+        "id": 83,
+        "name": "Baan Mail β",
+        "rarity": 6,
+        "slots": [
+            1
+        ],
+        "abilityIds": [
+            110
+        ],
+        "defense": {
+            "base": 46,
+            "max": 66,
+            "augmented": 78
+        },
+        "resistances": {
+            "fire": 0,
+            "water": 2,
+            "thunder": 0,
+            "ice": -1,
+            "dragon": -2
+        },
+        "attributes": {
+            "gender": 3
+        }
+    },
+    {
+        "id": 86,
+        "name": "Barnos Jacket α",
+        "rarity": 5,
+        "abilityIds": [
+            37,
+            19
+        ],
+        "defense": {
+            "base": 48,
+            "max": 70,
+            "augmented": 86
+        },
+        "resistances": {
+            "fire": 1,
+            "water": 1,
+            "thunder": 0,
+            "ice": 1,
+            "dragon": -2
+        },
+        "attributes": {
+            "gender": 3
+        }
+    },
+    {
+        "id": 87,
+        "name": "Barnos Jacket β",
+        "rarity": 5,
+        "slots": [
+            1
+        ],
+        "abilityIds": [
+            37
+        ],
+        "defense": {
+            "base": 48,
+            "max": 70,
+            "augmented": 86
+        },
+        "resistances": {
+            "fire": 1,
+            "water": 1,
+            "thunder": 0,
+            "ice": 1,
+            "dragon": -2
+        },
+        "attributes": {
+            "gender": 3
+        }
+    },
+    {
+        "id": 88,
+        "name": "Dodogama Mail α",
+        "rarity": 5,
+        "abilityIds": [
+            114
+        ],
+        "defense": {
+            "base": 48,
+            "max": 70,
+            "augmented": 86
+        },
+        "resistances": {
+            "fire": 2,
+            "water": 0,
+            "thunder": -3,
+            "ice": 0,
+            "dragon": 2
+        },
+        "attributes": {
+            "gender": 3
+        }
+    },
+    {
+        "id": 89,
+        "name": "Dodogama Mail β",
+        "rarity": 5,
+        "slots": [
+            1
+        ],
+        "abilityIds": [
+            113
+        ],
+        "defense": {
+            "base": 48,
+            "max": 70,
+            "augmented": 86
+        },
+        "resistances": {
+            "fire": 2,
+            "water": 0,
+            "thunder": -3,
+            "ice": 0,
+            "dragon": 2
+        },
+        "attributes": {
+            "gender": 3
+        }
+    },
+    {
+        "id": 90,
+        "name": "Zorah Hide α",
+        "rarity": 6,
+        "abilityIds": [
+            114,
+            27
+        ],
+        "defense": {
+            "base": 44,
+            "max": 64,
+            "augmented": 76
+        },
+        "resistances": {
+            "fire": 4,
+            "water": -3,
+            "thunder": -1,
+            "ice": -2,
+            "dragon": -3
+        },
+        "attributes": {
+            "gender": 3
+        },
+        "armorSetSkillIds": [
+            8
+        ]
+    },
+    {
+        "id": 91,
+        "name": "Zorah Hide β",
+        "rarity": 6,
+        "slots": [
+            2
+        ],
+        "abilityIds": [
+            114
+        ],
+        "defense": {
+            "base": 44,
+            "max": 64,
+            "augmented": 76
+        },
+        "resistances": {
+            "fire": 4,
+            "water": -3,
+            "thunder": -1,
+            "ice": -2,
+            "dragon": -3
+        },
+        "attributes": {
+            "gender": 3
+        },
+        "armorSetSkillIds": [
+            8
+        ]
+    },
+    {
+        "id": 92,
+        "name": "High Metal Mail α",
+        "rarity": 6,
+        "abilityIds": [
+            23,
+            89
+        ],
+        "defense": {
+            "base": 50,
+            "max": 70,
+            "augmented": 82
+        },
+        "resistances": {
+            "fire": 0,
+            "water": -1,
+            "thunder": -2,
+            "ice": 3,
+            "dragon": 0
+        },
+        "attributes": {
+            "gender": 3
+        }
+    },
+    {
+        "id": 93,
+        "name": "High Metal Mail β",
+        "rarity": 6,
+        "slots": [
+            2
+        ],
+        "abilityIds": [
+            22,
+            89
+        ],
+        "defense": {
+            "base": 50,
+            "max": 70,
+            "augmented": 82
+        },
+        "resistances": {
+            "fire": 0,
+            "water": -1,
+            "thunder": -2,
+            "ice": 3,
+            "dragon": 0
+        },
+        "attributes": {
+            "gender": 3
+        }
+    },
+    {
+        "id": 94,
+        "name": "Ingot Mail α",
+        "rarity": 6,
+        "abilityIds": [
+            71
+        ],
+        "defense": {
+            "base": 50,
+            "max": 70,
+            "augmented": 82
+        },
+        "resistances": {
+            "fire": -2,
+            "water": 0,
+            "thunder": 3,
+            "ice": -1,
+            "dragon": 0
+        },
+        "attributes": {
+            "gender": 3
+        }
+    },
+    {
+        "id": 95,
+        "name": "Ingot Mail β",
+        "rarity": 6,
+        "slots": [
+            1
+        ],
+        "abilityIds": [
+            70
+        ],
+        "defense": {
+            "base": 50,
+            "max": 70,
+            "augmented": 82
+        },
+        "resistances": {
+            "fire": -2,
+            "water": 0,
+            "thunder": 3,
+            "ice": -1,
+            "dragon": 0
+        },
+        "attributes": {
+            "gender": 3
+        }
+    },
+    {
+        "id": 96,
+        "name": "Brigade Suit α",
+        "rarity": 6,
+        "slots": [
+            2
+        ],
+        "abilityIds": [
+            252
+        ],
+        "defense": {
+            "base": 52,
+            "max": 72,
+            "augmented": 84
+        },
+        "resistances": {
+            "fire": 1,
+            "water": 0,
+            "thunder": 2,
+            "ice": 0,
+            "dragon": 2
+        },
+        "attributes": {
+            "gender": 3
+        }
+    },
+    {
+        "id": 97,
+        "name": "Brigade Suit β",
+        "rarity": 6,
+        "slots": [
+            2,
+            2
+        ],
+        "abilityIds": [
+            251
+        ],
+        "defense": {
+            "base": 52,
+            "max": 72,
+            "augmented": 84
+        },
+        "resistances": {
+            "fire": 1,
+            "water": 0,
+            "thunder": 2,
+            "ice": 0,
+            "dragon": 2
+        },
+        "attributes": {
+            "gender": 3
+        }
+    },
+    {
+        "id": 100,
+        "name": "Lavasioth Mail α",
+        "rarity": 6,
+        "abilityIds": [
+            80,
+            37
+        ],
+        "defense": {
+            "base": 56,
+            "max": 76,
+            "augmented": 88
+        },
+        "resistances": {
+            "fire": 3,
+            "water": -3,
+            "thunder": 1,
+            "ice": -2,
+            "dragon": 2
+        },
+        "attributes": {
+            "gender": 3
+        }
+    },
+    {
+        "id": 101,
+        "name": "Lavasioth Mail β",
+        "rarity": 6,
+        "slots": [
+            1,
+            1
+        ],
+        "abilityIds": [
+            80
+        ],
+        "defense": {
+            "base": 56,
+            "max": 76,
+            "augmented": 88
+        },
+        "resistances": {
+            "fire": 3,
+            "water": -3,
+            "thunder": 1,
+            "ice": -2,
+            "dragon": 2
+        },
+        "attributes": {
+            "gender": 3
+        }
+    },
+    {
+        "id": 102,
+        "name": "Legiana Mail α",
+        "rarity": 6,
+        "abilityIds": [
+            210,
+            251
+        ],
+        "defense": {
+            "base": 54,
+            "max": 74,
+            "augmented": 86
+        },
+        "resistances": {
+            "fire": -1,
+            "water": 2,
+            "thunder": -3,
+            "ice": 3,
+            "dragon": 0
+        },
+        "attributes": {
+            "gender": 3
+        },
+        "armorSetSkillIds": [
+            9
+        ]
+    },
+    {
+        "id": 103,
+        "name": "Legiana Mail β",
+        "rarity": 6,
+        "slots": [
+            1
+        ],
+        "abilityIds": [
+            210
+        ],
+        "defense": {
+            "base": 54,
+            "max": 74,
+            "augmented": 86
+        },
+        "resistances": {
+            "fire": -1,
+            "water": 2,
+            "thunder": -3,
+            "ice": 3,
+            "dragon": 0
+        },
+        "attributes": {
+            "gender": 3
+        },
+        "armorSetSkillIds": [
+            9
+        ]
+    },
+    {
+        "id": 104,
+        "name": "Odogaron Mail α",
+        "rarity": 6,
+        "abilityIds": [
+            238,
+            16
+        ],
+        "defense": {
+            "base": 54,
+            "max": 74,
+            "augmented": 86
+        },
+        "resistances": {
+            "fire": 2,
+            "water": 2,
+            "thunder": -2,
+            "ice": -3,
+            "dragon": 0
+        },
+        "attributes": {
+            "gender": 3
+        },
+        "armorSetSkillIds": [
+            10
+        ]
+    },
+    {
+        "id": 105,
+        "name": "Odogaron Mail β",
+        "rarity": 6,
+        "slots": [
+            1
+        ],
+        "abilityIds": [
+            238
+        ],
+        "defense": {
+            "base": 54,
+            "max": 74,
+            "augmented": 86
+        },
+        "resistances": {
+            "fire": 2,
+            "water": 2,
+            "thunder": -2,
+            "ice": -3,
+            "dragon": 0
+        },
+        "attributes": {
+            "gender": 3
+        },
+        "armorSetSkillIds": [
+            10
+        ]
+    },
+    {
+        "id": 106,
+        "name": "Rathalos Mail α",
+        "rarity": 6,
+        "abilityIds": [
+            133,
+            79
+        ],
+        "defense": {
+            "base": 54,
+            "max": 74,
+            "augmented": 86
+        },
+        "resistances": {
+            "fire": 3,
+            "water": 1,
+            "thunder": -2,
+            "ice": 1,
+            "dragon": -3
+        },
+        "attributes": {
+            "gender": 3
+        },
+        "armorSetSkillIds": [
+            11
+        ]
+    },
+    {
+        "id": 107,
+        "name": "Rathalos Mail β",
+        "rarity": 6,
+        "slots": [
+            1
+        ],
+        "abilityIds": [
+            133
+        ],
+        "defense": {
+            "base": 54,
+            "max": 74,
+            "augmented": 86
+        },
+        "resistances": {
+            "fire": 3,
+            "water": 1,
+            "thunder": -2,
+            "ice": 1,
+            "dragon": -3
+        },
+        "attributes": {
+            "gender": 3
+        },
+        "armorSetSkillIds": [
+            11
+        ]
+    },
+    {
+        "id": 108,
+        "name": "Rath Soul Mail α",
+        "rarity": 7,
+        "abilityIds": [
+            119,
+            304
+        ],
+        "defense": {
+            "base": 56,
+            "max": 68,
+            "augmented": 82
+        },
+        "resistances": {
+            "fire": 3,
+            "water": 2,
+            "thunder": 2,
+            "ice": -3,
+            "dragon": -4
+        },
+        "attributes": {
+            "gender": 3
+        },
+        "armorSetSkillIds": [
+            11
+        ]
+    },
+    {
+        "id": 109,
+        "name": "Rath Soul Mail β",
+        "rarity": 7,
+        "slots": [
+            2
+        ],
+        "abilityIds": [
+            119
+        ],
+        "defense": {
+            "base": 56,
+            "max": 68,
+            "augmented": 82
+        },
+        "resistances": {
+            "fire": 3,
+            "water": 2,
+            "thunder": 2,
+            "ice": -3,
+            "dragon": -4
+        },
+        "attributes": {
+            "gender": 3
+        },
+        "armorSetSkillIds": [
+            11
+        ]
+    },
+    {
+        "id": 110,
+        "name": "Diablos Mail α",
+        "rarity": 6,
+        "abilityIds": [
+            153,
+            173
+        ],
+        "defense": {
+            "base": 54,
+            "max": 74,
+            "augmented": 86
+        },
+        "resistances": {
+            "fire": 3,
+            "water": -2,
+            "thunder": 0,
+            "ice": -3,
+            "dragon": 2
+        },
+        "attributes": {
+            "gender": 3
+        },
+        "armorSetSkillIds": [
+            12
+        ]
+    },
+    {
+        "id": 111,
+        "name": "Diablos Mail β",
+        "rarity": 6,
+        "slots": [
+            2
+        ],
+        "abilityIds": [
+            153
+        ],
+        "defense": {
+            "base": 54,
+            "max": 74,
+            "augmented": 86
+        },
+        "resistances": {
+            "fire": 3,
+            "water": -2,
+            "thunder": 0,
+            "ice": -3,
+            "dragon": 2
+        },
+        "attributes": {
+            "gender": 3
+        },
+        "armorSetSkillIds": [
+            12
+        ]
+    },
+    {
+        "id": 112,
+        "name": "Diablos Nero Mail α",
+        "rarity": 7,
+        "slots": [
+            1
+        ],
+        "abilityIds": [
+            180
+        ],
+        "defense": {
+            "base": 56,
+            "max": 68,
+            "augmented": 82
+        },
+        "resistances": {
+            "fire": 2,
+            "water": -3,
+            "thunder": 0,
+            "ice": -4,
+            "dragon": 2
+        },
+        "attributes": {
+            "gender": 3
+        },
+        "armorSetSkillIds": [
+            12
+        ]
+    },
+    {
+        "id": 113,
+        "name": "Diablos Nero Mail β",
+        "rarity": 7,
+        "slots": [
+            2,
+            1
+        ],
+        "abilityIds": [
+            179
+        ],
+        "defense": {
+            "base": 56,
+            "max": 68,
+            "augmented": 82
+        },
+        "resistances": {
+            "fire": 2,
+            "water": -3,
+            "thunder": 0,
+            "ice": -4,
+            "dragon": 2
+        },
+        "attributes": {
+            "gender": 3
+        },
+        "armorSetSkillIds": [
+            12
+        ]
+    },
+    {
+        "id": 114,
+        "name": "Uragaan Mail α",
+        "rarity": 7,
+        "slots": [
+            1
+        ],
+        "abilityIds": [
+            150
+        ],
+        "defense": {
+            "base": 60,
+            "max": 72,
+            "augmented": 86
+        },
+        "resistances": {
+            "fire": 4,
+            "water": -3,
+            "thunder": 1,
+            "ice": -2,
+            "dragon": -2
+        },
+        "attributes": {
+            "gender": 3
+        },
+        "armorSetSkillIds": [
+            13
+        ]
+    },
+    {
+        "id": 115,
+        "name": "Uragaan Mail β",
+        "rarity": 7,
+        "slots": [
+            3
+        ],
+        "abilityIds": [
+            149
+        ],
+        "defense": {
+            "base": 60,
+            "max": 72,
+            "augmented": 86
+        },
+        "resistances": {
+            "fire": 4,
+            "water": -3,
+            "thunder": 1,
+            "ice": -2,
+            "dragon": -2
+        },
+        "attributes": {
+            "gender": 3
+        },
+        "armorSetSkillIds": [
+            13
+        ]
+    },
+    {
+        "id": 116,
+        "name": "Bazel Mail α",
+        "rarity": 7,
+        "abilityIds": [
+            218,
+            14
+        ],
+        "defense": {
+            "base": 58,
+            "max": 70,
+            "augmented": 84
+        },
+        "resistances": {
+            "fire": 3,
+            "water": 1,
+            "thunder": -4,
+            "ice": -2,
+            "dragon": -2
+        },
+        "attributes": {
+            "gender": 3
+        },
+        "armorSetSkillIds": [
+            14
+        ]
+    },
+    {
+        "id": 117,
+        "name": "Bazel Mail β",
+        "rarity": 7,
+        "slots": [
+            1,
+            1
+        ],
+        "abilityIds": [
+            218
+        ],
+        "defense": {
+            "base": 58,
+            "max": 70,
+            "augmented": 84
+        },
+        "resistances": {
+            "fire": 3,
+            "water": 1,
+            "thunder": -4,
+            "ice": -2,
+            "dragon": -2
+        },
+        "attributes": {
+            "gender": 3
+        },
+        "armorSetSkillIds": [
+            14
+        ]
+    },
+    {
+        "id": 118,
+        "name": "Damascus Mail α",
+        "rarity": 7,
+        "slots": [
+            1
+        ],
+        "abilityIds": [
+            136,
+            46
+        ],
+        "defense": {
+            "base": 60,
+            "max": 72,
+            "augmented": 86
+        },
+        "resistances": {
+            "fire": 4,
+            "water": -2,
+            "thunder": 0,
+            "ice": 0,
+            "dragon": 0
+        },
+        "attributes": {
+            "gender": 3
+        }
+    },
+    {
+        "id": 119,
+        "name": "Damascus Mail β",
+        "rarity": 7,
+        "slots": [
+            1,
+            1,
+            1
+        ],
+        "abilityIds": [
+            136
+        ],
+        "defense": {
+            "base": 60,
+            "max": 72,
+            "augmented": 86
+        },
+        "resistances": {
+            "fire": 4,
+            "water": -2,
+            "thunder": 0,
+            "ice": 0,
+            "dragon": 0
+        },
+        "attributes": {
+            "gender": 3
+        }
+    },
+    {
+        "id": 120,
+        "name": "Dober Mail α",
+        "rarity": 7,
+        "slots": [
+            1
+        ],
+        "abilityIds": [
+            39,
+            243
+        ],
+        "defense": {
+            "base": 60,
+            "max": 72,
+            "augmented": 86
+        },
+        "resistances": {
+            "fire": -2,
+            "water": 0,
+            "thunder": -1,
+            "ice": -1,
+            "dragon": 4
+        },
+        "attributes": {
+            "gender": 3
+        }
+    },
+    {
+        "id": 121,
+        "name": "Dober Mail β",
+        "rarity": 7,
+        "slots": [
+            3
+        ],
+        "abilityIds": [
+            39
+        ],
+        "defense": {
+            "base": 60,
+            "max": 72,
+            "augmented": 86
+        },
+        "resistances": {
+            "fire": -2,
+            "water": 0,
+            "thunder": -1,
+            "ice": -1,
+            "dragon": 4
+        },
+        "attributes": {
+            "gender": 3
+        }
+    },
+    {
+        "id": 122,
+        "name": "Death Stench Muscle α",
+        "rarity": 7,
+        "abilityIds": [
+            178,
+            119
+        ],
+        "defense": {
+            "base": 62,
+            "max": 74,
+            "augmented": 88
+        },
+        "resistances": {
+            "fire": 3,
+            "water": 2,
+            "thunder": -2,
+            "ice": 3,
+            "dragon": -4
+        },
+        "attributes": {
+            "gender": 3
+        }
+    },
+    {
+        "id": 123,
+        "name": "Death Stench Muscle β",
+        "rarity": 7,
+        "slots": [
+            3
+        ],
+        "abilityIds": [
+            178
+        ],
+        "defense": {
+            "base": 62,
+            "max": 74,
+            "augmented": 88
+        },
+        "resistances": {
+            "fire": 3,
+            "water": 2,
+            "thunder": -2,
+            "ice": 3,
+            "dragon": -4
+        },
+        "attributes": {
+            "gender": 3
+        }
+    },
+    {
+        "id": 125,
+        "name": "Nergigante Mail α",
+        "rarity": 8,
+        "slots": [
+            1
+        ],
+        "abilityIds": [
+            204,
+            165
+        ],
+        "defense": {
+            "base": 64,
+            "max": 70,
+            "augmented": 84
+        },
+        "resistances": {
+            "fire": 1,
+            "water": 1,
+            "thunder": -3,
+            "ice": 1,
+            "dragon": -3
+        },
+        "attributes": {
+            "gender": 3
+        },
+        "armorSetSkillIds": [
+            15
+        ]
+    },
+    {
+        "id": 126,
+        "name": "Nergigante Mail β",
+        "rarity": 8,
+        "slots": [
+            2,
+            1
+        ],
+        "abilityIds": [
+            204
+        ],
+        "defense": {
+            "base": 64,
+            "max": 70,
+            "augmented": 84
+        },
+        "resistances": {
+            "fire": 1,
+            "water": 1,
+            "thunder": -3,
+            "ice": 1,
+            "dragon": -3
+        },
+        "attributes": {
+            "gender": 3
+        },
+        "armorSetSkillIds": [
+            15
+        ]
+    },
+    {
+        "id": 127,
+        "name": "Kaiser Mail α",
+        "rarity": 8,
+        "abilityIds": [
+            188,
+            160
+        ],
+        "defense": {
+            "base": 64,
+            "max": 70,
+            "augmented": 84
+        },
+        "resistances": {
+            "fire": 3,
+            "water": -3,
+            "thunder": 1,
+            "ice": -3,
+            "dragon": 1
+        },
+        "attributes": {
+            "gender": 3
+        },
+        "armorSetSkillIds": [
+            16
+        ]
+    },
+    {
+        "id": 128,
+        "name": "Kaiser Mail β",
+        "rarity": 8,
+        "slots": [
+            1,
+            1
+        ],
+        "abilityIds": [
+            188
+        ],
+        "defense": {
+            "base": 64,
+            "max": 70,
+            "augmented": 84
+        },
+        "resistances": {
+            "fire": 3,
+            "water": -3,
+            "thunder": 1,
+            "ice": -3,
+            "dragon": 1
+        },
+        "attributes": {
+            "gender": 3
+        },
+        "armorSetSkillIds": [
+            16
+        ]
+    },
+    {
+        "id": 129,
+        "name": "Kushala Cista α",
+        "rarity": 8,
+        "abilityIds": [
+            142,
+            135
+        ],
+        "defense": {
+            "base": 64,
+            "max": 70,
+            "augmented": 84
+        },
+        "resistances": {
+            "fire": 0,
+            "water": 2,
+            "thunder": -3,
+            "ice": 4,
+            "dragon": -2
+        },
+        "attributes": {
+            "gender": 3
+        },
+        "armorSetSkillIds": [
+            17
+        ]
+    },
+    {
+        "id": 130,
+        "name": "Kushala Cista β",
+        "rarity": 8,
+        "slots": [
+            2
+        ],
+        "abilityIds": [
+            142
+        ],
+        "defense": {
+            "base": 64,
+            "max": 70,
+            "augmented": 84
+        },
+        "resistances": {
+            "fire": 0,
+            "water": 2,
+            "thunder": -3,
+            "ice": 4,
+            "dragon": -2
+        },
+        "attributes": {
+            "gender": 3
+        },
+        "armorSetSkillIds": [
+            17
+        ]
+    },
+    {
+        "id": 131,
+        "name": "Vaal Hazak Mail α",
+        "rarity": 8,
+        "slots": [
+            1
+        ],
+        "abilityIds": [
+            59,
+            99
+        ],
+        "defense": {
+            "base": 64,
+            "max": 70,
+            "augmented": 84
+        },
+        "resistances": {
+            "fire": -4,
+            "water": 4,
+            "thunder": 1,
+            "ice": -1,
+            "dragon": -3
+        },
+        "attributes": {
+            "gender": 3
+        },
+        "armorSetSkillIds": [
+            18
+        ]
+    },
+    {
+        "id": 132,
+        "name": "Vaal Hazak Mail β",
+        "rarity": 8,
+        "slots": [
+            1,
+            1
+        ],
+        "abilityIds": [
+            59
+        ],
+        "defense": {
+            "base": 64,
+            "max": 70,
+            "augmented": 84
+        },
+        "resistances": {
+            "fire": -4,
+            "water": 4,
+            "thunder": 1,
+            "ice": -1,
+            "dragon": -3
+        },
+        "attributes": {
+            "gender": 3
+        },
+        "armorSetSkillIds": [
+            18
+        ]
+    },
+    {
+        "id": 133,
+        "name": "Kirin Jacket α",
+        "rarity": 6,
+        "abilityIds": [
+            252,
+            94
+        ],
+        "defense": {
+            "base": 64,
+            "max": 70,
+            "augmented": 84
+        },
+        "resistances": {
+            "fire": -3,
+            "water": -2,
+            "thunder": 4,
+            "ice": -2,
+            "dragon": 2
+        },
+        "attributes": {
+            "gender": 3
+        },
+        "armorSetSkillIds": [
+            19
+        ]
+    },
+    {
+        "id": 134,
+        "name": "Kirin Jacket β",
+        "rarity": 6,
+        "slots": [
+            1
+        ],
+        "abilityIds": [
+            252
+        ],
+        "defense": {
+            "base": 64,
+            "max": 70,
+            "augmented": 84
+        },
+        "resistances": {
+            "fire": -3,
+            "water": -2,
+            "thunder": 4,
+            "ice": -2,
+            "dragon": 2
+        },
+        "attributes": {
+            "gender": 3
+        },
+        "armorSetSkillIds": [
+            19
+        ]
+    },
+    {
+        "id": 135,
+        "name": "Xeno'jiiva Hide α",
+        "rarity": 8,
+        "slots": [
+            1
+        ],
+        "abilityIds": [
+            139,
+            76
+        ],
+        "defense": {
+            "base": 72,
+            "max": 78,
+            "augmented": 92
+        },
+        "resistances": {
+            "fire": -3,
+            "water": 2,
+            "thunder": 2,
+            "ice": 2,
+            "dragon": -4
+        },
+        "attributes": {
+            "gender": 3
+        },
+        "armorSetSkillIds": [
+            20
+        ]
+    },
+    {
+        "id": 136,
+        "name": "Xeno'jiiva Hide β",
+        "rarity": 8,
+        "slots": [
+            1,
+            1
+        ],
+        "abilityIds": [
+            139
+        ],
+        "defense": {
+            "base": 72,
+            "max": 78,
+            "augmented": 92
+        },
+        "resistances": {
+            "fire": -3,
+            "water": 2,
+            "thunder": 2,
+            "ice": 2,
+            "dragon": -4
+        },
+        "attributes": {
+            "gender": 3
+        },
+        "armorSetSkillIds": [
+            20
+        ]
+    },
+    {
+        "id": 137,
+        "name": "Guild Cross Suit α",
+        "rarity": 8,
+        "slots": [
+            1
+        ],
+        "abilityIds": [
+            184,
+            68
+        ],
+        "defense": {
+            "base": 62,
+            "max": 68,
+            "augmented": 82
+        },
+        "resistances": {
+            "fire": 0,
+            "water": 0,
+            "thunder": 0,
+            "ice": 0,
+            "dragon": 0
+        },
+        "attributes": {
+            "gender": 3
+        },
+        "armorSetSkillIds": [
+            21
+        ]
+    },
+    {
+        "id": 138,
+        "name": "Guild Cross Suit β",
+        "rarity": 8,
+        "slots": [
+            3
+        ],
+        "abilityIds": [
+            184
+        ],
+        "defense": {
+            "base": 62,
+            "max": 68,
+            "augmented": 82
+        },
+        "resistances": {
+            "fire": 0,
+            "water": 0,
+            "thunder": 0,
+            "ice": 0,
+            "dragon": 0
+        },
+        "attributes": {
+            "gender": 3
+        },
+        "armorSetSkillIds": [
+            21
+        ]
+    },
+    {
+        "id": 140,
+        "name": "Commission Jacket α",
+        "rarity": 8,
+        "abilityIds": [
+            226,
+            287
+        ],
+        "defense": {
+            "base": 70,
+            "max": 76,
+            "augmented": 90
+        },
+        "resistances": {
+            "fire": 2,
+            "water": 2,
+            "thunder": 2,
+            "ice": 2,
+            "dragon": 2
+        },
+        "attributes": {
+            "gender": 3
+        },
+        "armorSetSkillIds": [
+            22
+        ]
+    },
+    {
+        "id": 141,
+        "name": "Commission Jacket β",
+        "rarity": 8,
+        "slots": [
+            1
+        ],
+        "abilityIds": [
+            226
+        ],
+        "defense": {
+            "base": 70,
+            "max": 76,
+            "augmented": 90
+        },
+        "resistances": {
+            "fire": 2,
+            "water": 2,
+            "thunder": 2,
+            "ice": 2,
+            "dragon": 2
+        },
+        "attributes": {
+            "gender": 3
+        },
+        "armorSetSkillIds": [
+            22
+        ]
+    },
+    {
+        "id": 142,
+        "name": "Vangis Mail α",
+        "rarity": 7,
+        "slots": [
+            2
+        ],
+        "abilityIds": [
+            234,
+            141
+        ],
+        "defense": {
+            "base": 58,
+            "max": 70,
+            "augmented": 84
+        },
+        "resistances": {
+            "fire": 1,
+            "water": 1,
+            "thunder": -3,
+            "ice": 2,
+            "dragon": -3
+        },
+        "attributes": {
+            "gender": 3
+        },
+        "eventId": 0
+    },
+    {
+        "id": 143,
+        "name": "Vangis Mail β",
+        "rarity": 7,
+        "slots": [
+            3
+        ],
+        "abilityIds": [
+            234
+        ],
+        "defense": {
+            "base": 58,
+            "max": 70,
+            "augmented": 84
+        },
+        "resistances": {
+            "fire": 1,
+            "water": 1,
+            "thunder": -3,
+            "ice": 2,
+            "dragon": -3
+        },
+        "attributes": {
+            "gender": 3
+        },
+        "eventId": 0
+    },
+    {
+        "id": 144,
+        "name": "Empress Mail α",
+        "rarity": 8,
+        "slots": [
+            1,
+            1
+        ],
+        "abilityIds": [
+            171,
+            52
+        ],
+        "defense": {
+            "base": 70,
+            "max": 76,
+            "augmented": 90
+        },
+        "resistances": {
+            "fire": 3,
+            "water": 1,
+            "thunder": 1,
+            "ice": -3,
+            "dragon": -2
+        },
+        "attributes": {
+            "gender": 3
+        },
+        "armorSetSkillIds": [
+            23
+        ],
+        "eventId": 14
+    },
+    {
+        "id": 145,
+        "name": "Empress Mail β",
+        "rarity": 8,
+        "slots": [
+            1,
+            1,
+            1
+        ],
+        "abilityIds": [
+            171
+        ],
+        "defense": {
+            "base": 70,
+            "max": 76,
+            "augmented": 90
+        },
+        "resistances": {
+            "fire": 3,
+            "water": 1,
+            "thunder": 1,
+            "ice": -3,
+            "dragon": -2
+        },
+        "attributes": {
+            "gender": 3
+        },
+        "armorSetSkillIds": [
+            23
+        ],
+        "eventId": 14
+    },
+    {
+        "id": 146,
+        "name": "Drachen Mail α",
+        "rarity": 8,
+        "slots": [
+            3
+        ],
+        "abilityIds": [
+            123,
+            129
+        ],
+        "defense": {
+            "base": 72,
+            "max": 78,
+            "augmented": 92
+        },
+        "resistances": {
+            "fire": -2,
+            "water": -2,
+            "thunder": 3,
+            "ice": -2,
+            "dragon": 4
+        },
+        "attributes": {
+            "gender": 3
+        },
+        "armorSetSkillIds": [
+            24
+        ],
+        "eventId": 19
+    },
+    {
+        "id": 147,
+        "name": "Aloy's Body α",
+        "rarity": 5,
+        "slots": [
+            1,
+            1
+        ],
+        "abilityIds": [
+            195
+        ],
+        "defense": {
+            "base": 46,
+            "max": 68,
+            "augmented": 84
+        },
+        "resistances": {
+            "fire": 1,
+            "water": 1,
+            "thunder": 1,
+            "ice": 1,
+            "dragon": 1
+        },
+        "attributes": {
+            "gender": 3
+        },
+        "armorSetSkillIds": [
+            6
+        ],
+        "fullArmorSetId": 0,
+        "eventId": 1
+    },
+    {
+        "id": 148,
+        "name": "Ryu's Karate Gi",
+        "rarity": 2,
+        "abilityIds": [
+            52
+        ],
+        "defense": {
+            "base": 12,
+            "max": 44,
+            "augmented": 70
+        },
+        "resistances": {
+            "fire": 2,
+            "water": 0,
+            "thunder": 5,
+            "ice": -3,
+            "dragon": 2
+        },
+        "attributes": {
+            "gender": 3
+        },
+        "fullArmorSetId": 1,
+        "eventId": 2
+    },
+    {
+        "id": 149,
+        "name": "Ryu's Karate Gi α",
+        "rarity": 7,
+        "slots": [
+            1,
+            1
+        ],
+        "abilityIds": [
+            52,
+            184
+        ],
+        "defense": {
+            "base": 60,
+            "max": 72,
+            "augmented": 86
+        },
+        "resistances": {
+            "fire": 2,
+            "water": 0,
+            "thunder": 5,
+            "ice": -3,
+            "dragon": 2
+        },
+        "attributes": {
+            "gender": 3
+        },
+        "armorSetSkillIds": [
+            11
+        ],
+        "fullArmorSetId": 2,
+        "eventId": 3
+    },
+    {
+        "id": 150,
+        "name": "Sakura's Work Uniform α",
+        "rarity": 6,
+        "slots": [
+            1,
+            1
+        ],
+        "abilityIds": [
+            203,
+            184
+        ],
+        "defense": {
+            "base": 50,
+            "max": 70,
+            "augmented": 82
+        },
+        "resistances": {
+            "fire": 0,
+            "water": 4,
+            "thunder": 0,
+            "ice": 4,
+            "dragon": -2
+        },
+        "attributes": {
+            "gender": 3
+        },
+        "armorSetSkillIds": [
+            7
+        ],
+        "fullArmorSetId": 3,
+        "eventId": 4
+    },
+    {
+        "id": 151,
+        "name": "Butterfly Thorax",
+        "rarity": 3,
+        "abilityIds": [
+            52
+        ],
+        "defense": {
+            "base": 22,
+            "max": 50,
+            "augmented": 74
+        },
+        "resistances": {
+            "fire": -1,
+            "water": -1,
+            "thunder": 2,
+            "ice": 0,
+            "dragon": 2
+        },
+        "attributes": {
+            "gender": 1
+        },
+        "eventId": 5
+    },
+    {
+        "id": 152,
+        "name": "Queen Beetle Thorax",
+        "rarity": 3,
+        "abilityIds": [
+            52
+        ],
+        "defense": {
+            "base": 22,
+            "max": 50,
+            "augmented": 74
+        },
+        "resistances": {
+            "fire": -1,
+            "water": -1,
+            "thunder": 2,
+            "ice": 0,
+            "dragon": 2
+        },
+        "attributes": {
+            "gender": 2
+        },
+        "eventId": 5
+    },
+    {
+        "id": 153,
+        "name": "Blossom Vest",
+        "rarity": 3,
+        "abilityIds": [
+            222
+        ],
+        "defense": {
+            "base": 18,
+            "max": 46,
+            "augmented": 70
+        },
+        "resistances": {
+            "fire": 1,
+            "water": 1,
+            "thunder": 4,
+            "ice": 1,
+            "dragon": 1
+        },
+        "attributes": {
+            "gender": 3
+        },
+        "eventId": 6
+    },
+    {
+        "id": 154,
+        "name": "Blossom Vest α",
+        "rarity": 5,
+        "slots": [
+            1,
+            1
+        ],
+        "abilityIds": [
+            222
+        ],
+        "defense": {
+            "base": 40,
+            "max": 62,
+            "augmented": 78
+        },
+        "resistances": {
+            "fire": 1,
+            "water": 1,
+            "thunder": 4,
+            "ice": 1,
+            "dragon": 1
+        },
+        "attributes": {
+            "gender": 3
+        },
+        "eventId": 6
+    },
+    {
+        "id": 155,
+        "name": "Kulve Taroth's Ire α",
+        "rarity": 8,
+        "slots": [
+            1
+        ],
+        "abilityIds": [
+            10,
+            130
+        ],
+        "defense": {
+            "base": 64,
+            "max": 70,
+            "augmented": 84
+        },
+        "resistances": {
+            "fire": 4,
+            "water": -2,
+            "thunder": 3,
+            "ice": -4,
+            "dragon": -2
+        },
+        "attributes": {
+            "gender": 3
+        },
+        "eventId": 7
+    },
+    {
+        "id": 156,
+        "name": "Kulve Taroth's Ire β",
+        "rarity": 8,
+        "slots": [
+            3,
+            1
+        ],
+        "abilityIds": [
+            10,
+            129
+        ],
+        "defense": {
+            "base": 64,
+            "max": 70,
+            "augmented": 84
+        },
+        "resistances": {
+            "fire": 4,
+            "water": -2,
+            "thunder": 3,
+            "ice": -4,
+            "dragon": -2
+        },
+        "attributes": {
+            "gender": 3
+        },
+        "eventId": 7
+    },
+    {
+        "id": 157,
+        "name": "Dante's Coat α",
+        "rarity": 8,
+        "slots": [
+            3
+        ],
+        "abilityIds": [
+            209,
+            122
+        ],
+        "defense": {
+            "base": 64,
+            "max": 70,
+            "augmented": 84
+        },
+        "resistances": {
+            "fire": 3,
+            "water": -3,
+            "thunder": 3,
+            "ice": -3,
+            "dragon": 3
+        },
+        "attributes": {
+            "gender": 3
+        },
+        "eventId": 8
+    },
+    {
+        "id": 158,
+        "name": "Azure Starlord Armor α",
+        "rarity": 7,
+        "slots": [
+            2
+        ],
+        "abilityIds": [
+            141
+        ],
+        "defense": {
+            "base": 56,
+            "max": 68,
+            "augmented": 82
+        },
+        "resistances": {
+            "fire": 2,
+            "water": 2,
+            "thunder": 0,
+            "ice": 0,
+            "dragon": 3
+        },
+        "attributes": {
+            "gender": 3
+        },
+        "armorSetSkillIds": [
+            11
+        ],
+        "eventId": 9
+    },
+    {
+        "id": 159,
+        "name": "Kirin Jacket γ",
+        "rarity": 8,
+        "slots": [
+            1,
+            1
+        ],
+        "abilityIds": [
+            120
+        ],
+        "defense": {
+            "base": 72,
+            "max": 78,
+            "augmented": 92
+        },
+        "resistances": {
+            "fire": -3,
+            "water": -2,
+            "thunder": 4,
+            "ice": -2,
+            "dragon": 2
+        },
+        "attributes": {
+            "gender": 3
+        },
+        "armorSetSkillIds": [
+            19
+        ],
+        "eventId": 15
+    },
+    {
+        "id": 160,
+        "name": "Vaal Hazak Mail γ",
+        "rarity": 8,
+        "slots": [
+            3
+        ],
+        "abilityIds": [
+            170,
+            55
+        ],
+        "defense": {
+            "base": 72,
+            "max": 78,
+            "augmented": 92
+        },
+        "resistances": {
+            "fire": -4,
+            "water": 4,
+            "thunder": 1,
+            "ice": -1,
+            "dragon": -3
+        },
+        "attributes": {
+            "gender": 3
+        },
+        "armorSetSkillIds": [
+            18
+        ],
+        "eventId": 16
+    },
+    {
+        "id": 161,
+        "name": "Kaiser Mail γ",
+        "rarity": 8,
+        "slots": [
+            2
+        ],
+        "abilityIds": [
+            161,
+            132
+        ],
+        "defense": {
+            "base": 72,
+            "max": 78,
+            "augmented": 92
+        },
+        "resistances": {
+            "fire": 3,
+            "water": -3,
+            "thunder": 1,
+            "ice": -3,
+            "dragon": 1
+        },
+        "attributes": {
+            "gender": 3
+        },
+        "armorSetSkillIds": [
+            16
+        ],
+        "eventId": 20
+    },
+    {
+        "id": 162,
+        "name": "Kushala Cista γ",
+        "rarity": 8,
+        "slots": [
+            2
+        ],
+        "abilityIds": [
+            91,
+            214
+        ],
+        "defense": {
+            "base": 72,
+            "max": 78,
+            "augmented": 92
+        },
+        "resistances": {
+            "fire": 0,
+            "water": 2,
+            "thunder": -3,
+            "ice": 4,
+            "dragon": -2
+        },
+        "attributes": {
+            "gender": 3
+        },
+        "armorSetSkillIds": [
+            17
+        ],
+        "eventId": 21
+    },
+    {
+        "id": 163,
+        "name": "Diver's Suit",
+        "rarity": 3,
+        "abilityIds": [
+            122
+        ],
+        "defense": {
+            "base": 22,
+            "max": 50,
+            "augmented": 74
+        },
+        "resistances": {
+            "fire": 1,
+            "water": 4,
+            "thunder": 1,
+            "ice": 1,
+            "dragon": 1
+        },
+        "attributes": {
+            "gender": 3
+        },
+        "eventId": 17
+    },
+    {
+        "id": 164,
+        "name": "Diver's Suit α",
+        "rarity": 5,
+        "slots": [
+            2
+        ],
+        "abilityIds": [
+            122
+        ],
+        "defense": {
+            "base": 46,
+            "max": 68,
+            "augmented": 84
+        },
+        "resistances": {
+            "fire": 1,
+            "water": 4,
+            "thunder": 4,
+            "ice": 1,
+            "dragon": 1
+        },
+        "attributes": {
+            "gender": 3
+        },
+        "eventId": 17
+    },
+    {
+        "id": 165,
+        "name": "Butterfly Thorax α",
+        "rarity": 5,
+        "abilityIds": [
+            53,
+            9
+        ],
+        "defense": {
+            "base": 42,
+            "max": 64,
+            "augmented": 80
+        },
+        "resistances": {
+            "fire": -1,
+            "water": -1,
+            "thunder": 2,
+            "ice": 0,
+            "dragon": 2
+        },
+        "attributes": {
+            "gender": 1
+        },
+        "eventId": 18
+    },
+    {
+        "id": 166,
+        "name": "Butterfly Thorax β",
+        "rarity": 5,
+        "slots": [
+            1
+        ],
+        "abilityIds": [
+            53
+        ],
+        "defense": {
+            "base": 42,
+            "max": 64,
+            "augmented": 80
+        },
+        "resistances": {
+            "fire": -1,
+            "water": -1,
+            "thunder": 2,
+            "ice": 0,
+            "dragon": 2
+        },
+        "attributes": {
+            "gender": 1
+        },
+        "eventId": 18
+    },
+    {
+        "id": 167,
+        "name": "Queen Beetle Thorax α",
+        "rarity": 5,
+        "abilityIds": [
+            53,
+            9
+        ],
+        "defense": {
+            "base": 42,
+            "max": 64,
+            "augmented": 80
+        },
+        "resistances": {
+            "fire": -1,
+            "water": -1,
+            "thunder": 2,
+            "ice": 0,
+            "dragon": 2
+        },
+        "attributes": {
+            "gender": 2
+        },
+        "eventId": 18
+    },
+    {
+        "id": 168,
+        "name": "Queen Beetle Thorax β",
+        "rarity": 5,
+        "slots": [
+            1
+        ],
+        "abilityIds": [
+            53
+        ],
+        "defense": {
+            "base": 42,
+            "max": 64,
+            "augmented": 80
+        },
+        "resistances": {
+            "fire": -1,
+            "water": -1,
+            "thunder": 2,
+            "ice": 0,
+            "dragon": 2
+        },
+        "attributes": {
+            "gender": 2
+        },
+        "eventId": 18
+    }
+]

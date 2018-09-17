@@ -15,6 +15,7 @@ namespace DistributionTool
         private const string BinaryPath = "MHArmory\\bin";
         private const string BinaryFilename = "MHArmory.exe";
         private const string DistributionRootFolderName = "MHArmory";
+        private const string DataFolderName = "data";
 
         static int Main(string[] args)
         {
@@ -118,6 +119,12 @@ namespace DistributionTool
             }
 
             if (CopyFile(assemblyFullFilename, PathCombine(distributionTargetFullPath, BinaryFilename)) == false)
+                return (int)ErrorCodes.FileCopyFailed;
+
+            string dataOutputFilePath = Path.Combine(distributionTargetFullPath, DataFolderName);
+            if (Directory.Exists(dataOutputFilePath) == false)
+                Directory.CreateDirectory(dataOutputFilePath);
+            if (CopyFiles(Path.Combine(sourceBinaryFullPath, DataFolderName), "json", dataOutputFilePath) == false)
                 return (int)ErrorCodes.FileCopyFailed;
 
             string targetZipArchiveFullFilename = PathCombine(solutionFullPath, OutputDistributionsFolder, $"{DistributionRootFolderName}_{assemblyVersion}.zip");

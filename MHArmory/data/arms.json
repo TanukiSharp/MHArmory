@@ -1,0 +1,4028 @@
+[
+    {
+        "id": 0,
+        "name": "Leather Gloves",
+        "rarity": 1,
+        "defense": {
+            "base": 2,
+            "max": 38,
+            "augmented": 68
+        },
+        "resistances": {
+            "fire": 2,
+            "water": 0,
+            "thunder": 0,
+            "ice": 0,
+            "dragon": 0
+        },
+        "attributes": {
+            "gender": 3
+        }
+    },
+    {
+        "id": 1,
+        "name": "Chainmail Gloves",
+        "rarity": 1,
+        "defense": {
+            "base": 2,
+            "max": 38,
+            "augmented": 68
+        },
+        "resistances": {
+            "fire": 0,
+            "water": 2,
+            "thunder": 0,
+            "ice": 0,
+            "dragon": 0
+        },
+        "attributes": {
+            "gender": 3
+        }
+    },
+    {
+        "id": 2,
+        "name": "Hunter's Vambraces",
+        "rarity": 1,
+        "abilityIds": [
+            272
+        ],
+        "defense": {
+            "base": 6,
+            "max": 42,
+            "augmented": 72
+        },
+        "resistances": {
+            "fire": 2,
+            "water": 2,
+            "thunder": 0,
+            "ice": 0,
+            "dragon": 0
+        },
+        "attributes": {
+            "gender": 3
+        }
+    },
+    {
+        "id": 3,
+        "name": "Bone Vambraces",
+        "rarity": 1,
+        "abilityIds": [
+            152
+        ],
+        "defense": {
+            "base": 6,
+            "max": 42,
+            "augmented": 72
+        },
+        "resistances": {
+            "fire": 2,
+            "water": 0,
+            "thunder": 2,
+            "ice": 0,
+            "dragon": 2
+        },
+        "attributes": {
+            "gender": 3
+        }
+    },
+    {
+        "id": 4,
+        "name": "Vespoid Vambraces",
+        "rarity": 1,
+        "abilityIds": [
+            107
+        ],
+        "defense": {
+            "base": 8,
+            "max": 44,
+            "augmented": 74
+        },
+        "resistances": {
+            "fire": -2,
+            "water": 1,
+            "thunder": 1,
+            "ice": 1,
+            "dragon": 2
+        },
+        "attributes": {
+            "gender": 3
+        }
+    },
+    {
+        "id": 5,
+        "name": "Kestodon Guards",
+        "rarity": 1,
+        "abilityIds": [
+            303
+        ],
+        "defense": {
+            "base": 12,
+            "max": 48,
+            "augmented": 78
+        },
+        "resistances": {
+            "fire": 4,
+            "water": 0,
+            "thunder": 0,
+            "ice": 0,
+            "dragon": 0
+        },
+        "attributes": {
+            "gender": 3
+        }
+    },
+    {
+        "id": 7,
+        "name": "Jagras Vambraces",
+        "rarity": 1,
+        "abilityIds": [
+            254
+        ],
+        "defense": {
+            "base": 8,
+            "max": 44,
+            "augmented": 74
+        },
+        "resistances": {
+            "fire": -2,
+            "water": 2,
+            "thunder": -1,
+            "ice": -1,
+            "dragon": 1
+        },
+        "attributes": {
+            "gender": 3
+        }
+    },
+    {
+        "id": 8,
+        "name": "Kulu Vambraces",
+        "rarity": 1,
+        "abilityIds": [
+            247
+        ],
+        "defense": {
+            "base": 10,
+            "max": 46,
+            "augmented": 76
+        },
+        "resistances": {
+            "fire": 0,
+            "water": -3,
+            "thunder": 0,
+            "ice": 1,
+            "dragon": 0
+        },
+        "attributes": {
+            "gender": 3
+        }
+    },
+    {
+        "id": 9,
+        "name": "Alloy Vambraces",
+        "rarity": 2,
+        "abilityIds": [
+            45
+        ],
+        "defense": {
+            "base": 8,
+            "max": 40,
+            "augmented": 66
+        },
+        "resistances": {
+            "fire": -2,
+            "water": 1,
+            "thunder": -2,
+            "ice": -2,
+            "dragon": 1
+        },
+        "attributes": {
+            "gender": 3
+        }
+    },
+    {
+        "id": 10,
+        "name": "Pukei Vambraces",
+        "rarity": 2,
+        "abilityIds": [
+            0
+        ],
+        "defense": {
+            "base": 12,
+            "max": 44,
+            "augmented": 70
+        },
+        "resistances": {
+            "fire": 0,
+            "water": 3,
+            "thunder": -3,
+            "ice": 0,
+            "dragon": 1
+        },
+        "attributes": {
+            "gender": 3
+        }
+    },
+    {
+        "id": 11,
+        "name": "Barroth Vambraces",
+        "rarity": 2,
+        "abilityIds": [
+            194
+        ],
+        "defense": {
+            "base": 14,
+            "max": 38,
+            "augmented": 72
+        },
+        "resistances": {
+            "fire": -3,
+            "water": -1,
+            "thunder": 3,
+            "ice": -1,
+            "dragon": 0
+        },
+        "attributes": {
+            "gender": 3
+        }
+    },
+    {
+        "id": 12,
+        "name": "Jyura Vambraces",
+        "rarity": 2,
+        "abilityIds": [
+            84
+        ],
+        "defense": {
+            "base": 14,
+            "max": 46,
+            "augmented": 72
+        },
+        "resistances": {
+            "fire": -1,
+            "water": 2,
+            "thunder": -3,
+            "ice": 0,
+            "dragon": 0
+        },
+        "attributes": {
+            "gender": 3
+        }
+    },
+    {
+        "id": 13,
+        "name": "Kadachi Vambraces",
+        "rarity": 2,
+        "abilityIds": [
+            214
+        ],
+        "defense": {
+            "base": 16,
+            "max": 48,
+            "augmented": 74
+        },
+        "resistances": {
+            "fire": 0,
+            "water": -3,
+            "thunder": 3,
+            "ice": 0,
+            "dragon": 0
+        },
+        "attributes": {
+            "gender": 3
+        }
+    },
+    {
+        "id": 14,
+        "name": "High Metal Braces",
+        "rarity": 3,
+        "abilityIds": [
+            45
+        ],
+        "defense": {
+            "base": 18,
+            "max": 46,
+            "augmented": 70
+        },
+        "resistances": {
+            "fire": 0,
+            "water": -1,
+            "thunder": -2,
+            "ice": 3,
+            "dragon": 0
+        },
+        "attributes": {
+            "gender": 3
+        }
+    },
+    {
+        "id": 15,
+        "name": "King Beetle Brachia",
+        "rarity": 3,
+        "abilityIds": [
+            202
+        ],
+        "defense": {
+            "base": 22,
+            "max": 50,
+            "augmented": 74
+        },
+        "resistances": {
+            "fire": -1,
+            "water": -1,
+            "thunder": 2,
+            "ice": 0,
+            "dragon": 2
+        },
+        "attributes": {
+            "gender": 1
+        }
+    },
+    {
+        "id": 16,
+        "name": "Butterfly Brachia",
+        "rarity": 3,
+        "abilityIds": [
+            202
+        ],
+        "defense": {
+            "base": 22,
+            "max": 50,
+            "augmented": 74
+        },
+        "resistances": {
+            "fire": -1,
+            "water": -1,
+            "thunder": 2,
+            "ice": 0,
+            "dragon": 2
+        },
+        "attributes": {
+            "gender": 2
+        }
+    },
+    {
+        "id": 18,
+        "name": "Hornetaur Vambraces",
+        "rarity": 3,
+        "abilityIds": [
+            233
+        ],
+        "defense": {
+            "base": 18,
+            "max": 46,
+            "augmented": 70
+        },
+        "resistances": {
+            "fire": -1,
+            "water": -1,
+            "thunder": 0,
+            "ice": 0,
+            "dragon": 2
+        },
+        "attributes": {
+            "gender": 3
+        }
+    },
+    {
+        "id": 19,
+        "name": "Anja Vambraces",
+        "rarity": 3,
+        "abilityIds": [
+            187
+        ],
+        "defense": {
+            "base": 20,
+            "max": 48,
+            "augmented": 72
+        },
+        "resistances": {
+            "fire": 3,
+            "water": -3,
+            "thunder": -1,
+            "ice": -1,
+            "dragon": 0
+        },
+        "attributes": {
+            "gender": 3
+        },
+        "armorSetSkillIds": [
+            0
+        ]
+    },
+    {
+        "id": 20,
+        "name": "Rathian Vambraces",
+        "rarity": 3,
+        "abilityIds": [
+            104
+        ],
+        "defense": {
+            "base": 22,
+            "max": 50,
+            "augmented": 74
+        },
+        "resistances": {
+            "fire": 2,
+            "water": 0,
+            "thunder": -2,
+            "ice": 0,
+            "dragon": -3
+        },
+        "attributes": {
+            "gender": 3
+        }
+    },
+    {
+        "id": 21,
+        "name": "Tzitzi Vambraces",
+        "rarity": 3,
+        "abilityIds": [
+            9
+        ],
+        "defense": {
+            "base": 18,
+            "max": 46,
+            "augmented": 70
+        },
+        "resistances": {
+            "fire": 0,
+            "water": 0,
+            "thunder": -3,
+            "ice": -2,
+            "dragon": 0
+        },
+        "attributes": {
+            "gender": 3
+        }
+    },
+    {
+        "id": 22,
+        "name": "Lumu Vambraces",
+        "rarity": 3,
+        "abilityIds": [
+            189
+        ],
+        "defense": {
+            "base": 20,
+            "max": 48,
+            "augmented": 72
+        },
+        "resistances": {
+            "fire": -3,
+            "water": 2,
+            "thunder": 0,
+            "ice": 1,
+            "dragon": 0
+        },
+        "attributes": {
+            "gender": 3
+        }
+    },
+    {
+        "id": 23,
+        "name": "Girros Vambraces",
+        "rarity": 3,
+        "abilityIds": [
+            254
+        ],
+        "defense": {
+            "base": 20,
+            "max": 48,
+            "augmented": 72
+        },
+        "resistances": {
+            "fire": 0,
+            "water": -3,
+            "thunder": 2,
+            "ice": 0,
+            "dragon": 1
+        },
+        "attributes": {
+            "gender": 3
+        }
+    },
+    {
+        "id": 24,
+        "name": "Baan Vambraces",
+        "rarity": 3,
+        "abilityIds": [
+            110
+        ],
+        "defense": {
+            "base": 24,
+            "max": 52,
+            "augmented": 76
+        },
+        "resistances": {
+            "fire": 0,
+            "water": 2,
+            "thunder": 0,
+            "ice": -1,
+            "dragon": -2
+        },
+        "attributes": {
+            "gender": 3
+        }
+    },
+    {
+        "id": 25,
+        "name": "Ingot Vambraces",
+        "rarity": 4,
+        "abilityIds": [
+            52
+        ],
+        "defense": {
+            "base": 28,
+            "max": 52,
+            "augmented": 72
+        },
+        "resistances": {
+            "fire": -2,
+            "water": 0,
+            "thunder": 3,
+            "ice": -1,
+            "dragon": 0
+        },
+        "attributes": {
+            "gender": 3
+        }
+    },
+    {
+        "id": 26,
+        "name": "Death Stench Grip",
+        "rarity": 4,
+        "abilityIds": [
+            135
+        ],
+        "defense": {
+            "base": 32,
+            "max": 56,
+            "augmented": 76
+        },
+        "resistances": {
+            "fire": 3,
+            "water": 2,
+            "thunder": -2,
+            "ice": 3,
+            "dragon": -4
+        },
+        "attributes": {
+            "gender": 3
+        }
+    },
+    {
+        "id": 27,
+        "name": "Brigade Vambraces",
+        "rarity": 4,
+        "abilityIds": [
+            192
+        ],
+        "defense": {
+            "base": 28,
+            "max": 52,
+            "augmented": 72
+        },
+        "resistances": {
+            "fire": 1,
+            "water": 0,
+            "thunder": 2,
+            "ice": 0,
+            "dragon": 2
+        },
+        "attributes": {
+            "gender": 3
+        }
+    },
+    {
+        "id": 28,
+        "name": "Legiana Vambraces",
+        "rarity": 4,
+        "abilityIds": [
+            159
+        ],
+        "defense": {
+            "base": 30,
+            "max": 54,
+            "augmented": 74
+        },
+        "resistances": {
+            "fire": -1,
+            "water": 2,
+            "thunder": -3,
+            "ice": 3,
+            "dragon": 0
+        },
+        "attributes": {
+            "gender": 3
+        },
+        "armorSetSkillIds": [
+            1
+        ]
+    },
+    {
+        "id": 29,
+        "name": "Odogaron Vambraces",
+        "rarity": 4,
+        "abilityIds": [
+            197
+        ],
+        "defense": {
+            "base": 30,
+            "max": 54,
+            "augmented": 74
+        },
+        "resistances": {
+            "fire": 2,
+            "water": 2,
+            "thunder": -2,
+            "ice": -3,
+            "dragon": 0
+        },
+        "attributes": {
+            "gender": 3
+        },
+        "armorSetSkillIds": [
+            2
+        ]
+    },
+    {
+        "id": 30,
+        "name": "Rathalos Vambraces",
+        "rarity": 4,
+        "abilityIds": [
+            61
+        ],
+        "defense": {
+            "base": 30,
+            "max": 54,
+            "augmented": 74
+        },
+        "resistances": {
+            "fire": 3,
+            "water": 1,
+            "thunder": -2,
+            "ice": 1,
+            "dragon": -3
+        },
+        "attributes": {
+            "gender": 3
+        },
+        "armorSetSkillIds": [
+            3
+        ]
+    },
+    {
+        "id": 31,
+        "name": "Diablos Vambraces",
+        "rarity": 4,
+        "abilityIds": [
+            173
+        ],
+        "defense": {
+            "base": 32,
+            "max": 56,
+            "augmented": 76
+        },
+        "resistances": {
+            "fire": 3,
+            "water": -2,
+            "thunder": 0,
+            "ice": -3,
+            "dragon": 2
+        },
+        "attributes": {
+            "gender": 3
+        },
+        "armorSetSkillIds": [
+            4
+        ]
+    },
+    {
+        "id": 32,
+        "name": "Kirin Longarms",
+        "rarity": 4,
+        "abilityIds": [
+            76
+        ],
+        "defense": {
+            "base": 34,
+            "max": 58,
+            "augmented": 78
+        },
+        "resistances": {
+            "fire": -3,
+            "water": -2,
+            "thunder": 4,
+            "ice": -2,
+            "dragon": 3
+        },
+        "attributes": {
+            "gender": 3
+        },
+        "armorSetSkillIds": [
+            5
+        ]
+    },
+    {
+        "id": 33,
+        "name": "Leather Gloves α",
+        "rarity": 5,
+        "abilityIds": [
+            58
+        ],
+        "defense": {
+            "base": 32,
+            "max": 54,
+            "augmented": 70
+        },
+        "resistances": {
+            "fire": 2,
+            "water": 0,
+            "thunder": 0,
+            "ice": 0,
+            "dragon": 0
+        },
+        "attributes": {
+            "gender": 3
+        }
+    },
+    {
+        "id": 34,
+        "name": "Leather Gloves β",
+        "rarity": 5,
+        "slots": [
+            1
+        ],
+        "defense": {
+            "base": 32,
+            "max": 54,
+            "augmented": 70
+        },
+        "resistances": {
+            "fire": 2,
+            "water": 0,
+            "thunder": 0,
+            "ice": 0,
+            "dragon": 0
+        },
+        "attributes": {
+            "gender": 3
+        }
+    },
+    {
+        "id": 35,
+        "name": "Chainmail Gloves α",
+        "rarity": 5,
+        "abilityIds": [
+            58
+        ],
+        "defense": {
+            "base": 32,
+            "max": 54,
+            "augmented": 70
+        },
+        "resistances": {
+            "fire": 0,
+            "water": 2,
+            "thunder": 0,
+            "ice": 0,
+            "dragon": 0
+        },
+        "attributes": {
+            "gender": 3
+        }
+    },
+    {
+        "id": 36,
+        "name": "Chainmail Gloves β",
+        "rarity": 5,
+        "slots": [
+            1
+        ],
+        "defense": {
+            "base": 32,
+            "max": 54,
+            "augmented": 70
+        },
+        "resistances": {
+            "fire": 0,
+            "water": 2,
+            "thunder": 0,
+            "ice": 0,
+            "dragon": 0
+        },
+        "attributes": {
+            "gender": 3
+        }
+    },
+    {
+        "id": 37,
+        "name": "Hunter's Vambraces α",
+        "rarity": 5,
+        "abilityIds": [
+            273
+        ],
+        "defense": {
+            "base": 36,
+            "max": 58,
+            "augmented": 74
+        },
+        "resistances": {
+            "fire": 2,
+            "water": 2,
+            "thunder": 0,
+            "ice": 0,
+            "dragon": 0
+        },
+        "attributes": {
+            "gender": 3
+        }
+    },
+    {
+        "id": 38,
+        "name": "Hunter's Vambraces β",
+        "rarity": 5,
+        "slots": [
+            1
+        ],
+        "abilityIds": [
+            272
+        ],
+        "defense": {
+            "base": 36,
+            "max": 58,
+            "augmented": 74
+        },
+        "resistances": {
+            "fire": 2,
+            "water": 2,
+            "thunder": 0,
+            "ice": 0,
+            "dragon": 0
+        },
+        "attributes": {
+            "gender": 3
+        }
+    },
+    {
+        "id": 39,
+        "name": "Bone Vambraces α",
+        "rarity": 5,
+        "abilityIds": [
+            152,
+            38
+        ],
+        "defense": {
+            "base": 36,
+            "max": 58,
+            "augmented": 74
+        },
+        "resistances": {
+            "fire": 2,
+            "water": 0,
+            "thunder": 2,
+            "ice": 0,
+            "dragon": 2
+        },
+        "attributes": {
+            "gender": 3
+        }
+    },
+    {
+        "id": 40,
+        "name": "Bone Vambraces β",
+        "rarity": 5,
+        "slots": [
+            1
+        ],
+        "abilityIds": [
+            152
+        ],
+        "defense": {
+            "base": 36,
+            "max": 58,
+            "augmented": 74
+        },
+        "resistances": {
+            "fire": 2,
+            "water": 0,
+            "thunder": 2,
+            "ice": 0,
+            "dragon": 2
+        },
+        "attributes": {
+            "gender": 3
+        }
+    },
+    {
+        "id": 41,
+        "name": "Alloy Vambraces α",
+        "rarity": 5,
+        "abilityIds": [
+            45,
+            237
+        ],
+        "defense": {
+            "base": 36,
+            "max": 58,
+            "augmented": 74
+        },
+        "resistances": {
+            "fire": -2,
+            "water": 0,
+            "thunder": -2,
+            "ice": -2,
+            "dragon": 0
+        },
+        "attributes": {
+            "gender": 3
+        }
+    },
+    {
+        "id": 42,
+        "name": "Alloy Vambraces β",
+        "rarity": 5,
+        "slots": [
+            1
+        ],
+        "abilityIds": [
+            45
+        ],
+        "defense": {
+            "base": 36,
+            "max": 58,
+            "augmented": 74
+        },
+        "resistances": {
+            "fire": -2,
+            "water": 0,
+            "thunder": -2,
+            "ice": -2,
+            "dragon": 0
+        },
+        "attributes": {
+            "gender": 3
+        }
+    },
+    {
+        "id": 43,
+        "name": "King Beetle Brachia α",
+        "rarity": 5,
+        "slots": [
+            1
+        ],
+        "abilityIds": [
+            260,
+            202
+        ],
+        "defense": {
+            "base": 42,
+            "max": 64,
+            "augmented": 80
+        },
+        "resistances": {
+            "fire": -1,
+            "water": -1,
+            "thunder": 2,
+            "ice": 0,
+            "dragon": 2
+        },
+        "attributes": {
+            "gender": 1
+        }
+    },
+    {
+        "id": 44,
+        "name": "King Beetle Brachia β",
+        "rarity": 5,
+        "slots": [
+            2,
+            1
+        ],
+        "abilityIds": [
+            260
+        ],
+        "defense": {
+            "base": 42,
+            "max": 64,
+            "augmented": 80
+        },
+        "resistances": {
+            "fire": -1,
+            "water": -1,
+            "thunder": 2,
+            "ice": 0,
+            "dragon": 2
+        },
+        "attributes": {
+            "gender": 1
+        }
+    },
+    {
+        "id": 45,
+        "name": "Butterfly Brachia α",
+        "rarity": 5,
+        "slots": [
+            1
+        ],
+        "abilityIds": [
+            260,
+            202
+        ],
+        "defense": {
+            "base": 42,
+            "max": 64,
+            "augmented": 80
+        },
+        "resistances": {
+            "fire": -1,
+            "water": -1,
+            "thunder": 2,
+            "ice": 0,
+            "dragon": 2
+        },
+        "attributes": {
+            "gender": 2
+        }
+    },
+    {
+        "id": 46,
+        "name": "Butterfly Brachia β",
+        "rarity": 5,
+        "slots": [
+            2,
+            1
+        ],
+        "abilityIds": [
+            260
+        ],
+        "defense": {
+            "base": 42,
+            "max": 64,
+            "augmented": 80
+        },
+        "resistances": {
+            "fire": -1,
+            "water": -1,
+            "thunder": 2,
+            "ice": 0,
+            "dragon": 2
+        },
+        "attributes": {
+            "gender": 2
+        }
+    },
+    {
+        "id": 47,
+        "name": "Vespoid Vambraces α",
+        "rarity": 5,
+        "abilityIds": [
+            108
+        ],
+        "defense": {
+            "base": 38,
+            "max": 60,
+            "augmented": 76
+        },
+        "resistances": {
+            "fire": -2,
+            "water": 1,
+            "thunder": 1,
+            "ice": 1,
+            "dragon": 2
+        },
+        "attributes": {
+            "gender": 3
+        }
+    },
+    {
+        "id": 48,
+        "name": "Vespoid Vambraces β",
+        "rarity": 5,
+        "slots": [
+            1
+        ],
+        "abilityIds": [
+            107
+        ],
+        "defense": {
+            "base": 38,
+            "max": 60,
+            "augmented": 76
+        },
+        "resistances": {
+            "fire": -2,
+            "water": 1,
+            "thunder": 1,
+            "ice": 1,
+            "dragon": 2
+        },
+        "attributes": {
+            "gender": 3
+        }
+    },
+    {
+        "id": 49,
+        "name": "Hornetaur Vambraces α",
+        "rarity": 5,
+        "abilityIds": [
+            233,
+            206
+        ],
+        "defense": {
+            "base": 38,
+            "max": 60,
+            "augmented": 76
+        },
+        "resistances": {
+            "fire": -1,
+            "water": -1,
+            "thunder": 0,
+            "ice": 0,
+            "dragon": 2
+        },
+        "attributes": {
+            "gender": 3
+        }
+    },
+    {
+        "id": 50,
+        "name": "Hornetaur Vambraces β",
+        "rarity": 5,
+        "slots": [
+            1
+        ],
+        "abilityIds": [
+            233
+        ],
+        "defense": {
+            "base": 38,
+            "max": 60,
+            "augmented": 76
+        },
+        "resistances": {
+            "fire": -1,
+            "water": -1,
+            "thunder": 0,
+            "ice": 0,
+            "dragon": 2
+        },
+        "attributes": {
+            "gender": 3
+        }
+    },
+    {
+        "id": 52,
+        "name": "Kestodon Guards α",
+        "rarity": 5,
+        "abilityIds": [
+            303,
+            135
+        ],
+        "defense": {
+            "base": 40,
+            "max": 62,
+            "augmented": 78
+        },
+        "resistances": {
+            "fire": 4,
+            "water": 0,
+            "thunder": 0,
+            "ice": 0,
+            "dragon": 0
+        },
+        "attributes": {
+            "gender": 3
+        }
+    },
+    {
+        "id": 53,
+        "name": "Kestodon Guards β",
+        "rarity": 5,
+        "slots": [
+            1
+        ],
+        "abilityIds": [
+            303
+        ],
+        "defense": {
+            "base": 40,
+            "max": 62,
+            "augmented": 78
+        },
+        "resistances": {
+            "fire": 4,
+            "water": 0,
+            "thunder": 0,
+            "ice": 0,
+            "dragon": 0
+        },
+        "attributes": {
+            "gender": 3
+        }
+    },
+    {
+        "id": 58,
+        "name": "Jagras Vambraces α",
+        "rarity": 5,
+        "abilityIds": [
+            254,
+            304
+        ],
+        "defense": {
+            "base": 40,
+            "max": 62,
+            "augmented": 78
+        },
+        "resistances": {
+            "fire": -2,
+            "water": 2,
+            "thunder": -1,
+            "ice": -1,
+            "dragon": 1
+        },
+        "attributes": {
+            "gender": 3
+        }
+    },
+    {
+        "id": 59,
+        "name": "Jagras Vambraces β",
+        "rarity": 5,
+        "slots": [
+            1
+        ],
+        "abilityIds": [
+            254
+        ],
+        "defense": {
+            "base": 40,
+            "max": 62,
+            "augmented": 78
+        },
+        "resistances": {
+            "fire": -2,
+            "water": 2,
+            "thunder": -1,
+            "ice": -1,
+            "dragon": 1
+        },
+        "attributes": {
+            "gender": 3
+        }
+    },
+    {
+        "id": 60,
+        "name": "Kulu Vambraces α",
+        "rarity": 5,
+        "abilityIds": [
+            247,
+            122
+        ],
+        "defense": {
+            "base": 40,
+            "max": 62,
+            "augmented": 78
+        },
+        "resistances": {
+            "fire": 0,
+            "water": -3,
+            "thunder": 0,
+            "ice": 1,
+            "dragon": 0
+        },
+        "attributes": {
+            "gender": 3
+        }
+    },
+    {
+        "id": 61,
+        "name": "Kulu Vambraces β",
+        "rarity": 5,
+        "slots": [
+            2
+        ],
+        "abilityIds": [
+            247
+        ],
+        "defense": {
+            "base": 40,
+            "max": 62,
+            "augmented": 78
+        },
+        "resistances": {
+            "fire": 0,
+            "water": -3,
+            "thunder": 0,
+            "ice": 1,
+            "dragon": 0
+        },
+        "attributes": {
+            "gender": 3
+        }
+    },
+    {
+        "id": 62,
+        "name": "Tzitzi Vambraces α",
+        "rarity": 5,
+        "abilityIds": [
+            10,
+            225
+        ],
+        "defense": {
+            "base": 40,
+            "max": 62,
+            "augmented": 78
+        },
+        "resistances": {
+            "fire": 0,
+            "water": 0,
+            "thunder": -3,
+            "ice": -2,
+            "dragon": 0
+        },
+        "attributes": {
+            "gender": 3
+        }
+    },
+    {
+        "id": 63,
+        "name": "Tzitzi Vambraces β",
+        "rarity": 5,
+        "slots": [
+            1
+        ],
+        "abilityIds": [
+            10
+        ],
+        "defense": {
+            "base": 40,
+            "max": 62,
+            "augmented": 78
+        },
+        "resistances": {
+            "fire": 0,
+            "water": 0,
+            "thunder": -3,
+            "ice": -2,
+            "dragon": 0
+        },
+        "attributes": {
+            "gender": 3
+        }
+    },
+    {
+        "id": 64,
+        "name": "Girros Vambraces α",
+        "rarity": 5,
+        "abilityIds": [
+            255
+        ],
+        "defense": {
+            "base": 40,
+            "max": 62,
+            "augmented": 78
+        },
+        "resistances": {
+            "fire": 0,
+            "water": -3,
+            "thunder": 2,
+            "ice": 0,
+            "dragon": 1
+        },
+        "attributes": {
+            "gender": 3
+        }
+    },
+    {
+        "id": 65,
+        "name": "Girros Vambraces β",
+        "rarity": 5,
+        "slots": [
+            1
+        ],
+        "abilityIds": [
+            254
+        ],
+        "defense": {
+            "base": 40,
+            "max": 62,
+            "augmented": 78
+        },
+        "resistances": {
+            "fire": 0,
+            "water": -3,
+            "thunder": 2,
+            "ice": 0,
+            "dragon": 1
+        },
+        "attributes": {
+            "gender": 3
+        }
+    },
+    {
+        "id": 66,
+        "name": "Pukei Vambraces α",
+        "rarity": 5,
+        "abilityIds": [
+            1,
+            104
+        ],
+        "defense": {
+            "base": 42,
+            "max": 64,
+            "augmented": 80
+        },
+        "resistances": {
+            "fire": 0,
+            "water": 3,
+            "thunder": -3,
+            "ice": 0,
+            "dragon": 1
+        },
+        "attributes": {
+            "gender": 3
+        }
+    },
+    {
+        "id": 67,
+        "name": "Pukei Vambraces β",
+        "rarity": 5,
+        "slots": [
+            1,
+            1
+        ],
+        "abilityIds": [
+            0
+        ],
+        "defense": {
+            "base": 42,
+            "max": 64,
+            "augmented": 80
+        },
+        "resistances": {
+            "fire": 0,
+            "water": 3,
+            "thunder": -3,
+            "ice": 0,
+            "dragon": 1
+        },
+        "attributes": {
+            "gender": 3
+        }
+    },
+    {
+        "id": 68,
+        "name": "Barroth Vambraces α",
+        "rarity": 5,
+        "abilityIds": [
+            194,
+            155
+        ],
+        "defense": {
+            "base": 42,
+            "max": 64,
+            "augmented": 80
+        },
+        "resistances": {
+            "fire": -3,
+            "water": -1,
+            "thunder": 3,
+            "ice": -1,
+            "dragon": 0
+        },
+        "attributes": {
+            "gender": 3
+        }
+    },
+    {
+        "id": 69,
+        "name": "Barroth Vambraces β",
+        "rarity": 5,
+        "slots": [
+            1
+        ],
+        "abilityIds": [
+            194
+        ],
+        "defense": {
+            "base": 42,
+            "max": 64,
+            "augmented": 80
+        },
+        "resistances": {
+            "fire": -3,
+            "water": -1,
+            "thunder": 3,
+            "ice": -1,
+            "dragon": 0
+        },
+        "attributes": {
+            "gender": 3
+        }
+    },
+    {
+        "id": 70,
+        "name": "Anja Vambraces α",
+        "rarity": 5,
+        "abilityIds": [
+            187,
+            79
+        ],
+        "defense": {
+            "base": 44,
+            "max": 66,
+            "augmented": 82
+        },
+        "resistances": {
+            "fire": 3,
+            "water": -3,
+            "thunder": -1,
+            "ice": -1,
+            "dragon": 0
+        },
+        "attributes": {
+            "gender": 3
+        },
+        "armorSetSkillIds": [
+            6
+        ]
+    },
+    {
+        "id": 71,
+        "name": "Anja Vambraces β",
+        "rarity": 5,
+        "slots": [
+            1
+        ],
+        "abilityIds": [
+            187
+        ],
+        "defense": {
+            "base": 44,
+            "max": 66,
+            "augmented": 82
+        },
+        "resistances": {
+            "fire": 3,
+            "water": -3,
+            "thunder": -1,
+            "ice": -1,
+            "dragon": 0
+        },
+        "attributes": {
+            "gender": 3
+        },
+        "armorSetSkillIds": [
+            6
+        ]
+    },
+    {
+        "id": 72,
+        "name": "Jyura Vambraces α",
+        "rarity": 5,
+        "abilityIds": [
+            85,
+            284
+        ],
+        "defense": {
+            "base": 44,
+            "max": 66,
+            "augmented": 82
+        },
+        "resistances": {
+            "fire": -1,
+            "water": 2,
+            "thunder": -3,
+            "ice": 0,
+            "dragon": 0
+        },
+        "attributes": {
+            "gender": 3
+        }
+    },
+    {
+        "id": 73,
+        "name": "Jyura Vambraces β",
+        "rarity": 5,
+        "slots": [
+            1
+        ],
+        "abilityIds": [
+            85
+        ],
+        "defense": {
+            "base": 44,
+            "max": 66,
+            "augmented": 82
+        },
+        "resistances": {
+            "fire": -1,
+            "water": 2,
+            "thunder": -3,
+            "ice": 0,
+            "dragon": 0
+        },
+        "attributes": {
+            "gender": 3
+        }
+    },
+    {
+        "id": 74,
+        "name": "Kadachi Vambraces α",
+        "rarity": 5,
+        "abilityIds": [
+            215
+        ],
+        "defense": {
+            "base": 44,
+            "max": 66,
+            "augmented": 82
+        },
+        "resistances": {
+            "fire": 0,
+            "water": -3,
+            "thunder": 3,
+            "ice": 0,
+            "dragon": 0
+        },
+        "attributes": {
+            "gender": 3
+        }
+    },
+    {
+        "id": 75,
+        "name": "Kadachi Vambraces β",
+        "rarity": 5,
+        "slots": [
+            2
+        ],
+        "abilityIds": [
+            214
+        ],
+        "defense": {
+            "base": 44,
+            "max": 66,
+            "augmented": 82
+        },
+        "resistances": {
+            "fire": 0,
+            "water": -3,
+            "thunder": 3,
+            "ice": 0,
+            "dragon": 0
+        },
+        "attributes": {
+            "gender": 3
+        }
+    },
+    {
+        "id": 76,
+        "name": "Lumu Vambraces α",
+        "rarity": 5,
+        "abilityIds": [
+            190
+        ],
+        "defense": {
+            "base": 44,
+            "max": 66,
+            "augmented": 82
+        },
+        "resistances": {
+            "fire": -3,
+            "water": 2,
+            "thunder": 0,
+            "ice": 1,
+            "dragon": 0
+        },
+        "attributes": {
+            "gender": 3
+        }
+    },
+    {
+        "id": 77,
+        "name": "Lumu Vambraces β",
+        "rarity": 5,
+        "slots": [
+            1
+        ],
+        "abilityIds": [
+            189
+        ],
+        "defense": {
+            "base": 44,
+            "max": 66,
+            "augmented": 82
+        },
+        "resistances": {
+            "fire": -3,
+            "water": 2,
+            "thunder": 0,
+            "ice": 1,
+            "dragon": 0
+        },
+        "attributes": {
+            "gender": 3
+        }
+    },
+    {
+        "id": 78,
+        "name": "Rathian Vambraces α",
+        "rarity": 5,
+        "abilityIds": [
+            105
+        ],
+        "defense": {
+            "base": 46,
+            "max": 68,
+            "augmented": 84
+        },
+        "resistances": {
+            "fire": 2,
+            "water": 0,
+            "thunder": -2,
+            "ice": 0,
+            "dragon": -3
+        },
+        "attributes": {
+            "gender": 3
+        }
+    },
+    {
+        "id": 79,
+        "name": "Rathian Vambraces β",
+        "rarity": 5,
+        "slots": [
+            1
+        ],
+        "abilityIds": [
+            104
+        ],
+        "defense": {
+            "base": 46,
+            "max": 68,
+            "augmented": 84
+        },
+        "resistances": {
+            "fire": 2,
+            "water": 0,
+            "thunder": -2,
+            "ice": 0,
+            "dragon": -3
+        },
+        "attributes": {
+            "gender": 3
+        }
+    },
+    {
+        "id": 80,
+        "name": "Rath Heart Braces α",
+        "rarity": 6,
+        "abilityIds": [
+            28
+        ],
+        "defense": {
+            "base": 52,
+            "max": 72,
+            "augmented": 84
+        },
+        "resistances": {
+            "fire": 3,
+            "water": 0,
+            "thunder": -3,
+            "ice": 0,
+            "dragon": -4
+        },
+        "attributes": {
+            "gender": 3
+        },
+        "armorSetSkillIds": [
+            7
+        ]
+    },
+    {
+        "id": 81,
+        "name": "Rath Heart Braces β",
+        "rarity": 6,
+        "slots": [
+            2
+        ],
+        "abilityIds": [
+            27
+        ],
+        "defense": {
+            "base": 52,
+            "max": 72,
+            "augmented": 84
+        },
+        "resistances": {
+            "fire": 3,
+            "water": 0,
+            "thunder": -3,
+            "ice": 0,
+            "dragon": -4
+        },
+        "attributes": {
+            "gender": 3
+        },
+        "armorSetSkillIds": [
+            7
+        ]
+    },
+    {
+        "id": 82,
+        "name": "Baan Vambraces α",
+        "rarity": 6,
+        "abilityIds": [
+            111,
+            217
+        ],
+        "defense": {
+            "base": 46,
+            "max": 66,
+            "augmented": 78
+        },
+        "resistances": {
+            "fire": 0,
+            "water": 2,
+            "thunder": 0,
+            "ice": -1,
+            "dragon": -2
+        },
+        "attributes": {
+            "gender": 3
+        }
+    },
+    {
+        "id": 83,
+        "name": "Baan Vambraces β",
+        "rarity": 6,
+        "slots": [
+            1
+        ],
+        "abilityIds": [
+            110,
+            217
+        ],
+        "defense": {
+            "base": 46,
+            "max": 66,
+            "augmented": 78
+        },
+        "resistances": {
+            "fire": 0,
+            "water": 2,
+            "thunder": 0,
+            "ice": -1,
+            "dragon": -2
+        },
+        "attributes": {
+            "gender": 3
+        }
+    },
+    {
+        "id": 88,
+        "name": "Dodogama Vambraces α",
+        "rarity": 5,
+        "abilityIds": [
+            241
+        ],
+        "defense": {
+            "base": 48,
+            "max": 70,
+            "augmented": 86
+        },
+        "resistances": {
+            "fire": 2,
+            "water": 0,
+            "thunder": -3,
+            "ice": 0,
+            "dragon": 2
+        },
+        "attributes": {
+            "gender": 3
+        }
+    },
+    {
+        "id": 89,
+        "name": "Dodogama Vambraces β",
+        "rarity": 5,
+        "slots": [
+            1
+        ],
+        "abilityIds": [
+            240
+        ],
+        "defense": {
+            "base": 48,
+            "max": 70,
+            "augmented": 86
+        },
+        "resistances": {
+            "fire": 2,
+            "water": 0,
+            "thunder": -3,
+            "ice": 0,
+            "dragon": 2
+        },
+        "attributes": {
+            "gender": 3
+        }
+    },
+    {
+        "id": 90,
+        "name": "Zorah Claws α",
+        "rarity": 6,
+        "abilityIds": [
+            119,
+            240
+        ],
+        "defense": {
+            "base": 44,
+            "max": 64,
+            "augmented": 76
+        },
+        "resistances": {
+            "fire": 4,
+            "water": -3,
+            "thunder": -1,
+            "ice": -2,
+            "dragon": -3
+        },
+        "attributes": {
+            "gender": 3
+        },
+        "armorSetSkillIds": [
+            8
+        ]
+    },
+    {
+        "id": 91,
+        "name": "Zorah Claws β",
+        "rarity": 6,
+        "slots": [
+            1
+        ],
+        "abilityIds": [
+            119
+        ],
+        "defense": {
+            "base": 44,
+            "max": 64,
+            "augmented": 76
+        },
+        "resistances": {
+            "fire": 4,
+            "water": -3,
+            "thunder": -1,
+            "ice": -2,
+            "dragon": -3
+        },
+        "attributes": {
+            "gender": 3
+        },
+        "armorSetSkillIds": [
+            8
+        ]
+    },
+    {
+        "id": 92,
+        "name": "High Metal Braces α",
+        "rarity": 6,
+        "abilityIds": [
+            46,
+            89
+        ],
+        "defense": {
+            "base": 50,
+            "max": 70,
+            "augmented": 82
+        },
+        "resistances": {
+            "fire": 0,
+            "water": -1,
+            "thunder": -2,
+            "ice": 3,
+            "dragon": 0
+        },
+        "attributes": {
+            "gender": 3
+        }
+    },
+    {
+        "id": 93,
+        "name": "High Metal Braces β",
+        "rarity": 6,
+        "slots": [
+            1
+        ],
+        "abilityIds": [
+            46
+        ],
+        "defense": {
+            "base": 50,
+            "max": 70,
+            "augmented": 82
+        },
+        "resistances": {
+            "fire": 0,
+            "water": -1,
+            "thunder": -2,
+            "ice": 3,
+            "dragon": 0
+        },
+        "attributes": {
+            "gender": 3
+        }
+    },
+    {
+        "id": 94,
+        "name": "Ingot Vambraces α",
+        "rarity": 6,
+        "abilityIds": [
+            53,
+            94
+        ],
+        "defense": {
+            "base": 50,
+            "max": 70,
+            "augmented": 82
+        },
+        "resistances": {
+            "fire": -2,
+            "water": 0,
+            "thunder": 3,
+            "ice": -1,
+            "dragon": 0
+        },
+        "attributes": {
+            "gender": 3
+        }
+    },
+    {
+        "id": 95,
+        "name": "Ingot Vambraces β",
+        "rarity": 6,
+        "slots": [
+            1
+        ],
+        "abilityIds": [
+            53
+        ],
+        "defense": {
+            "base": 50,
+            "max": 70,
+            "augmented": 82
+        },
+        "resistances": {
+            "fire": -2,
+            "water": 0,
+            "thunder": 3,
+            "ice": -1,
+            "dragon": 0
+        },
+        "attributes": {
+            "gender": 3
+        }
+    },
+    {
+        "id": 96,
+        "name": "Brigade Vambraces α",
+        "rarity": 6,
+        "abilityIds": [
+            193,
+            251
+        ],
+        "defense": {
+            "base": 52,
+            "max": 72,
+            "augmented": 84
+        },
+        "resistances": {
+            "fire": 1,
+            "water": 0,
+            "thunder": 2,
+            "ice": 0,
+            "dragon": 2
+        },
+        "attributes": {
+            "gender": 3
+        }
+    },
+    {
+        "id": 97,
+        "name": "Brigade Vambraces β",
+        "rarity": 6,
+        "slots": [
+            1
+        ],
+        "abilityIds": [
+            193
+        ],
+        "defense": {
+            "base": 52,
+            "max": 72,
+            "augmented": 84
+        },
+        "resistances": {
+            "fire": 1,
+            "water": 0,
+            "thunder": 2,
+            "ice": 0,
+            "dragon": 2
+        },
+        "attributes": {
+            "gender": 3
+        }
+    },
+    {
+        "id": 100,
+        "name": "Lavasioth Vambraces α",
+        "rarity": 6,
+        "slots": [
+            2
+        ],
+        "abilityIds": [
+            303,
+            225
+        ],
+        "defense": {
+            "base": 56,
+            "max": 76,
+            "augmented": 88
+        },
+        "resistances": {
+            "fire": 3,
+            "water": -3,
+            "thunder": 1,
+            "ice": -2,
+            "dragon": 2
+        },
+        "attributes": {
+            "gender": 3
+        }
+    },
+    {
+        "id": 101,
+        "name": "Lavasioth Vambraces β",
+        "rarity": 6,
+        "slots": [
+            3
+        ],
+        "abilityIds": [
+            303
+        ],
+        "defense": {
+            "base": 56,
+            "max": 76,
+            "augmented": 88
+        },
+        "resistances": {
+            "fire": 3,
+            "water": -3,
+            "thunder": 1,
+            "ice": -2,
+            "dragon": 2
+        },
+        "attributes": {
+            "gender": 3
+        }
+    },
+    {
+        "id": 102,
+        "name": "Legiana Vambraces α",
+        "rarity": 6,
+        "abilityIds": [
+            159,
+            209
+        ],
+        "defense": {
+            "base": 54,
+            "max": 74,
+            "augmented": 86
+        },
+        "resistances": {
+            "fire": -1,
+            "water": 2,
+            "thunder": -3,
+            "ice": 3,
+            "dragon": 0
+        },
+        "attributes": {
+            "gender": 3
+        },
+        "armorSetSkillIds": [
+            9
+        ]
+    },
+    {
+        "id": 103,
+        "name": "Legiana Vambraces β",
+        "rarity": 6,
+        "slots": [
+            3
+        ],
+        "abilityIds": [
+            159
+        ],
+        "defense": {
+            "base": 54,
+            "max": 74,
+            "augmented": 86
+        },
+        "resistances": {
+            "fire": -1,
+            "water": 2,
+            "thunder": -3,
+            "ice": 3,
+            "dragon": 0
+        },
+        "attributes": {
+            "gender": 3
+        },
+        "armorSetSkillIds": [
+            9
+        ]
+    },
+    {
+        "id": 104,
+        "name": "Odogaron Vambraces α",
+        "rarity": 6,
+        "abilityIds": [
+            197,
+            122
+        ],
+        "defense": {
+            "base": 54,
+            "max": 74,
+            "augmented": 86
+        },
+        "resistances": {
+            "fire": 2,
+            "water": 2,
+            "thunder": -2,
+            "ice": -3,
+            "dragon": 0
+        },
+        "attributes": {
+            "gender": 3
+        },
+        "armorSetSkillIds": [
+            10
+        ]
+    },
+    {
+        "id": 105,
+        "name": "Odogaron Vambraces β",
+        "rarity": 6,
+        "slots": [
+            1
+        ],
+        "abilityIds": [
+            197
+        ],
+        "defense": {
+            "base": 54,
+            "max": 74,
+            "augmented": 86
+        },
+        "resistances": {
+            "fire": 2,
+            "water": 2,
+            "thunder": -2,
+            "ice": -3,
+            "dragon": 0
+        },
+        "attributes": {
+            "gender": 3
+        },
+        "armorSetSkillIds": [
+            10
+        ]
+    },
+    {
+        "id": 106,
+        "name": "Rathalos Vambraces α",
+        "rarity": 6,
+        "abilityIds": [
+            62,
+            38
+        ],
+        "defense": {
+            "base": 54,
+            "max": 74,
+            "augmented": 86
+        },
+        "resistances": {
+            "fire": 3,
+            "water": 1,
+            "thunder": -2,
+            "ice": 1,
+            "dragon": -3
+        },
+        "attributes": {
+            "gender": 3
+        },
+        "armorSetSkillIds": [
+            11
+        ]
+    },
+    {
+        "id": 107,
+        "name": "Rathalos Vambraces β",
+        "rarity": 6,
+        "slots": [
+            1
+        ],
+        "abilityIds": [
+            62
+        ],
+        "defense": {
+            "base": 54,
+            "max": 74,
+            "augmented": 86
+        },
+        "resistances": {
+            "fire": 3,
+            "water": 1,
+            "thunder": -2,
+            "ice": 1,
+            "dragon": -3
+        },
+        "attributes": {
+            "gender": 3
+        },
+        "armorSetSkillIds": [
+            11
+        ]
+    },
+    {
+        "id": 108,
+        "name": "Rath Soul Braces α",
+        "rarity": 7,
+        "slots": [
+            1
+        ],
+        "abilityIds": [
+            135,
+            27
+        ],
+        "defense": {
+            "base": 56,
+            "max": 68,
+            "augmented": 82
+        },
+        "resistances": {
+            "fire": 3,
+            "water": 2,
+            "thunder": 2,
+            "ice": -3,
+            "dragon": -4
+        },
+        "attributes": {
+            "gender": 3
+        },
+        "armorSetSkillIds": [
+            11
+        ]
+    },
+    {
+        "id": 109,
+        "name": "Rath Soul Braces β",
+        "rarity": 7,
+        "slots": [
+            2
+        ],
+        "abilityIds": [
+            135
+        ],
+        "defense": {
+            "base": 56,
+            "max": 68,
+            "augmented": 82
+        },
+        "resistances": {
+            "fire": 3,
+            "water": 2,
+            "thunder": 2,
+            "ice": -3,
+            "dragon": -4
+        },
+        "attributes": {
+            "gender": 3
+        },
+        "armorSetSkillIds": [
+            11
+        ]
+    },
+    {
+        "id": 110,
+        "name": "Diablos Vambraces α",
+        "rarity": 6,
+        "abilityIds": [
+            174,
+            32
+        ],
+        "defense": {
+            "base": 54,
+            "max": 74,
+            "augmented": 86
+        },
+        "resistances": {
+            "fire": 3,
+            "water": -2,
+            "thunder": 0,
+            "ice": -3,
+            "dragon": 2
+        },
+        "attributes": {
+            "gender": 3
+        },
+        "armorSetSkillIds": [
+            12
+        ]
+    },
+    {
+        "id": 111,
+        "name": "Diablos Vambraces β",
+        "rarity": 6,
+        "slots": [
+            2
+        ],
+        "abilityIds": [
+            174
+        ],
+        "defense": {
+            "base": 54,
+            "max": 74,
+            "augmented": 86
+        },
+        "resistances": {
+            "fire": 3,
+            "water": -2,
+            "thunder": 0,
+            "ice": -3,
+            "dragon": 2
+        },
+        "attributes": {
+            "gender": 3
+        },
+        "armorSetSkillIds": [
+            12
+        ]
+    },
+    {
+        "id": 112,
+        "name": "Diablos Nero Braces α",
+        "rarity": 7,
+        "abilityIds": [
+            135,
+            194
+        ],
+        "defense": {
+            "base": 56,
+            "max": 68,
+            "augmented": 82
+        },
+        "resistances": {
+            "fire": 2,
+            "water": -3,
+            "thunder": 0,
+            "ice": -4,
+            "dragon": 2
+        },
+        "attributes": {
+            "gender": 3
+        },
+        "armorSetSkillIds": [
+            12
+        ]
+    },
+    {
+        "id": 113,
+        "name": "Diablos Nero Braces β",
+        "rarity": 7,
+        "slots": [
+            2,
+            1
+        ],
+        "abilityIds": [
+            135
+        ],
+        "defense": {
+            "base": 56,
+            "max": 68,
+            "augmented": 82
+        },
+        "resistances": {
+            "fire": 2,
+            "water": -3,
+            "thunder": 0,
+            "ice": -4,
+            "dragon": 2
+        },
+        "attributes": {
+            "gender": 3
+        },
+        "armorSetSkillIds": [
+            12
+        ]
+    },
+    {
+        "id": 114,
+        "name": "Uragaan Vambraces α",
+        "rarity": 7,
+        "slots": [
+            1
+        ],
+        "abilityIds": [
+            217,
+            45
+        ],
+        "defense": {
+            "base": 60,
+            "max": 72,
+            "augmented": 86
+        },
+        "resistances": {
+            "fire": 4,
+            "water": -3,
+            "thunder": 1,
+            "ice": -2,
+            "dragon": -2
+        },
+        "attributes": {
+            "gender": 3
+        },
+        "armorSetSkillIds": [
+            13
+        ]
+    },
+    {
+        "id": 115,
+        "name": "Uragaan Vambraces β",
+        "rarity": 7,
+        "slots": [
+            2
+        ],
+        "abilityIds": [
+            217
+        ],
+        "defense": {
+            "base": 60,
+            "max": 72,
+            "augmented": 86
+        },
+        "resistances": {
+            "fire": 4,
+            "water": -3,
+            "thunder": 1,
+            "ice": -2,
+            "dragon": -2
+        },
+        "attributes": {
+            "gender": 3
+        },
+        "armorSetSkillIds": [
+            13
+        ]
+    },
+    {
+        "id": 116,
+        "name": "Bazel Vambraces α",
+        "rarity": 7,
+        "abilityIds": [
+            147,
+            22
+        ],
+        "defense": {
+            "base": 58,
+            "max": 70,
+            "augmented": 84
+        },
+        "resistances": {
+            "fire": 3,
+            "water": 1,
+            "thunder": -4,
+            "ice": -2,
+            "dragon": -2
+        },
+        "attributes": {
+            "gender": 3
+        },
+        "armorSetSkillIds": [
+            14
+        ]
+    },
+    {
+        "id": 117,
+        "name": "Bazel Vambraces β",
+        "rarity": 7,
+        "slots": [
+            3
+        ],
+        "abilityIds": [
+            147
+        ],
+        "defense": {
+            "base": 58,
+            "max": 70,
+            "augmented": 84
+        },
+        "resistances": {
+            "fire": 3,
+            "water": 1,
+            "thunder": -4,
+            "ice": -2,
+            "dragon": -2
+        },
+        "attributes": {
+            "gender": 3
+        },
+        "armorSetSkillIds": [
+            14
+        ]
+    },
+    {
+        "id": 118,
+        "name": "Damascus Vambraces α",
+        "rarity": 7,
+        "abilityIds": [
+            141,
+            237
+        ],
+        "defense": {
+            "base": 60,
+            "max": 72,
+            "augmented": 86
+        },
+        "resistances": {
+            "fire": 4,
+            "water": -2,
+            "thunder": 0,
+            "ice": 0,
+            "dragon": 0
+        },
+        "attributes": {
+            "gender": 3
+        }
+    },
+    {
+        "id": 119,
+        "name": "Damascus Vambraces β",
+        "rarity": 7,
+        "slots": [
+            1
+        ],
+        "abilityIds": [
+            141
+        ],
+        "defense": {
+            "base": 60,
+            "max": 72,
+            "augmented": 86
+        },
+        "resistances": {
+            "fire": 4,
+            "water": -2,
+            "thunder": 0,
+            "ice": 0,
+            "dragon": 0
+        },
+        "attributes": {
+            "gender": 3
+        }
+    },
+    {
+        "id": 120,
+        "name": "Dober Vambraces α",
+        "rarity": 7,
+        "abilityIds": [
+            204,
+            243
+        ],
+        "defense": {
+            "base": 60,
+            "max": 72,
+            "augmented": 86
+        },
+        "resistances": {
+            "fire": -2,
+            "water": 0,
+            "thunder": -1,
+            "ice": -1,
+            "dragon": 4
+        },
+        "attributes": {
+            "gender": 3
+        }
+    },
+    {
+        "id": 121,
+        "name": "Dober Vambraces β",
+        "rarity": 7,
+        "slots": [
+            1,
+            1
+        ],
+        "abilityIds": [
+            203,
+            243
+        ],
+        "defense": {
+            "base": 60,
+            "max": 72,
+            "augmented": 86
+        },
+        "resistances": {
+            "fire": -2,
+            "water": 0,
+            "thunder": -1,
+            "ice": -1,
+            "dragon": 4
+        },
+        "attributes": {
+            "gender": 3
+        }
+    },
+    {
+        "id": 122,
+        "name": "Death Stench Grip α",
+        "rarity": 7,
+        "slots": [
+            1
+        ],
+        "abilityIds": [
+            135,
+            99
+        ],
+        "defense": {
+            "base": 62,
+            "max": 74,
+            "augmented": 88
+        },
+        "resistances": {
+            "fire": 3,
+            "water": 2,
+            "thunder": -2,
+            "ice": 3,
+            "dragon": -4
+        },
+        "attributes": {
+            "gender": 3
+        }
+    },
+    {
+        "id": 123,
+        "name": "Death Stench Grip β",
+        "rarity": 7,
+        "slots": [
+            1,
+            1
+        ],
+        "abilityIds": [
+            136
+        ],
+        "defense": {
+            "base": 62,
+            "max": 74,
+            "augmented": 88
+        },
+        "resistances": {
+            "fire": 3,
+            "water": 2,
+            "thunder": -2,
+            "ice": 3,
+            "dragon": -4
+        },
+        "attributes": {
+            "gender": 3
+        }
+    },
+    {
+        "id": 125,
+        "name": "Nergigante Vambraces α",
+        "rarity": 8,
+        "abilityIds": [
+            166,
+            38
+        ],
+        "defense": {
+            "base": 64,
+            "max": 70,
+            "augmented": 84
+        },
+        "resistances": {
+            "fire": 1,
+            "water": 1,
+            "thunder": -3,
+            "ice": 1,
+            "dragon": -3
+        },
+        "attributes": {
+            "gender": 3
+        },
+        "armorSetSkillIds": [
+            15
+        ]
+    },
+    {
+        "id": 126,
+        "name": "Nergigante Vambraces β",
+        "rarity": 8,
+        "slots": [
+            1
+        ],
+        "abilityIds": [
+            166
+        ],
+        "defense": {
+            "base": 64,
+            "max": 70,
+            "augmented": 84
+        },
+        "resistances": {
+            "fire": 1,
+            "water": 1,
+            "thunder": -3,
+            "ice": 1,
+            "dragon": -3
+        },
+        "attributes": {
+            "gender": 3
+        },
+        "armorSetSkillIds": [
+            15
+        ]
+    },
+    {
+        "id": 127,
+        "name": "Kaiser Vambraces α",
+        "rarity": 8,
+        "slots": [
+            1
+        ],
+        "abilityIds": [
+            133
+        ],
+        "defense": {
+            "base": 64,
+            "max": 70,
+            "augmented": 84
+        },
+        "resistances": {
+            "fire": 3,
+            "water": -3,
+            "thunder": 1,
+            "ice": -3,
+            "dragon": 1
+        },
+        "attributes": {
+            "gender": 3
+        },
+        "armorSetSkillIds": [
+            16
+        ]
+    },
+    {
+        "id": 128,
+        "name": "Kaiser Vambraces β",
+        "rarity": 8,
+        "slots": [
+            3
+        ],
+        "abilityIds": [
+            132
+        ],
+        "defense": {
+            "base": 64,
+            "max": 70,
+            "augmented": 84
+        },
+        "resistances": {
+            "fire": 3,
+            "water": -3,
+            "thunder": 1,
+            "ice": -3,
+            "dragon": 1
+        },
+        "attributes": {
+            "gender": 3
+        },
+        "armorSetSkillIds": [
+            16
+        ]
+    },
+    {
+        "id": 129,
+        "name": "Kushala Grip α",
+        "rarity": 8,
+        "abilityIds": [
+            210,
+            141
+        ],
+        "defense": {
+            "base": 64,
+            "max": 70,
+            "augmented": 84
+        },
+        "resistances": {
+            "fire": 0,
+            "water": 2,
+            "thunder": -3,
+            "ice": 4,
+            "dragon": -2
+        },
+        "attributes": {
+            "gender": 3
+        },
+        "armorSetSkillIds": [
+            17
+        ]
+    },
+    {
+        "id": 130,
+        "name": "Kushala Grip β",
+        "rarity": 8,
+        "slots": [
+            3
+        ],
+        "abilityIds": [
+            210
+        ],
+        "defense": {
+            "base": 64,
+            "max": 70,
+            "augmented": 84
+        },
+        "resistances": {
+            "fire": 0,
+            "water": 2,
+            "thunder": -3,
+            "ice": 4,
+            "dragon": -2
+        },
+        "attributes": {
+            "gender": 3
+        },
+        "armorSetSkillIds": [
+            17
+        ]
+    },
+    {
+        "id": 131,
+        "name": "Vaal Hazak Braces α",
+        "rarity": 8,
+        "slots": [
+            1
+        ],
+        "abilityIds": [
+            170,
+            58
+        ],
+        "defense": {
+            "base": 64,
+            "max": 70,
+            "augmented": 84
+        },
+        "resistances": {
+            "fire": -4,
+            "water": 4,
+            "thunder": 1,
+            "ice": -1,
+            "dragon": -3
+        },
+        "attributes": {
+            "gender": 3
+        },
+        "armorSetSkillIds": [
+            18
+        ]
+    },
+    {
+        "id": 132,
+        "name": "Vaal Hazak Braces β",
+        "rarity": 8,
+        "slots": [
+            1,
+            1,
+            1
+        ],
+        "abilityIds": [
+            170
+        ],
+        "defense": {
+            "base": 64,
+            "max": 70,
+            "augmented": 84
+        },
+        "resistances": {
+            "fire": -4,
+            "water": 4,
+            "thunder": 1,
+            "ice": -1,
+            "dragon": -3
+        },
+        "attributes": {
+            "gender": 3
+        },
+        "armorSetSkillIds": [
+            18
+        ]
+    },
+    {
+        "id": 133,
+        "name": "Kirin Longarms α",
+        "rarity": 6,
+        "abilityIds": [
+            95,
+            194
+        ],
+        "defense": {
+            "base": 64,
+            "max": 70,
+            "augmented": 84
+        },
+        "resistances": {
+            "fire": -3,
+            "water": -2,
+            "thunder": 4,
+            "ice": -2,
+            "dragon": 2
+        },
+        "attributes": {
+            "gender": 3
+        },
+        "armorSetSkillIds": [
+            19
+        ]
+    },
+    {
+        "id": 134,
+        "name": "Kirin Longarms β",
+        "rarity": 6,
+        "slots": [
+            1,
+            1
+        ],
+        "abilityIds": [
+            95
+        ],
+        "defense": {
+            "base": 64,
+            "max": 70,
+            "augmented": 84
+        },
+        "resistances": {
+            "fire": -3,
+            "water": -2,
+            "thunder": 4,
+            "ice": -2,
+            "dragon": 2
+        },
+        "attributes": {
+            "gender": 3
+        },
+        "armorSetSkillIds": [
+            19
+        ]
+    },
+    {
+        "id": 135,
+        "name": "Xeno'jiiva Claws α",
+        "rarity": 8,
+        "slots": [
+            1
+        ],
+        "abilityIds": [
+            275,
+            129
+        ],
+        "defense": {
+            "base": 72,
+            "max": 78,
+            "augmented": 92
+        },
+        "resistances": {
+            "fire": -3,
+            "water": 2,
+            "thunder": 2,
+            "ice": 2,
+            "dragon": -4
+        },
+        "attributes": {
+            "gender": 3
+        },
+        "armorSetSkillIds": [
+            20
+        ]
+    },
+    {
+        "id": 136,
+        "name": "Xeno'jiiva Claws β",
+        "rarity": 8,
+        "slots": [
+            3
+        ],
+        "abilityIds": [
+            275
+        ],
+        "defense": {
+            "base": 72,
+            "max": 78,
+            "augmented": 92
+        },
+        "resistances": {
+            "fire": -3,
+            "water": 2,
+            "thunder": 2,
+            "ice": 2,
+            "dragon": -4
+        },
+        "attributes": {
+            "gender": 3
+        },
+        "armorSetSkillIds": [
+            20
+        ]
+    },
+    {
+        "id": 137,
+        "name": "Guild Cross Vambraces α",
+        "rarity": 8,
+        "slots": [
+            1
+        ],
+        "abilityIds": [
+            300,
+            65
+        ],
+        "defense": {
+            "base": 62,
+            "max": 68,
+            "augmented": 82
+        },
+        "resistances": {
+            "fire": 0,
+            "water": 0,
+            "thunder": 0,
+            "ice": 0,
+            "dragon": 0
+        },
+        "attributes": {
+            "gender": 3
+        },
+        "armorSetSkillIds": [
+            21
+        ]
+    },
+    {
+        "id": 138,
+        "name": "Guild Cross Vambraces β",
+        "rarity": 8,
+        "slots": [
+            3
+        ],
+        "abilityIds": [
+            300
+        ],
+        "defense": {
+            "base": 62,
+            "max": 68,
+            "augmented": 82
+        },
+        "resistances": {
+            "fire": 0,
+            "water": 0,
+            "thunder": 0,
+            "ice": 0,
+            "dragon": 0
+        },
+        "attributes": {
+            "gender": 3
+        },
+        "armorSetSkillIds": [
+            21
+        ]
+    },
+    {
+        "id": 140,
+        "name": "Commission Vambraces α",
+        "rarity": 8,
+        "slots": [
+            1
+        ],
+        "abilityIds": [
+            288,
+            250
+        ],
+        "defense": {
+            "base": 70,
+            "max": 76,
+            "augmented": 90
+        },
+        "resistances": {
+            "fire": 2,
+            "water": 2,
+            "thunder": 2,
+            "ice": 2,
+            "dragon": 2
+        },
+        "attributes": {
+            "gender": 3
+        },
+        "armorSetSkillIds": [
+            22
+        ]
+    },
+    {
+        "id": 141,
+        "name": "Commission Vambraces β",
+        "rarity": 8,
+        "slots": [
+            2
+        ],
+        "abilityIds": [
+            288
+        ],
+        "defense": {
+            "base": 70,
+            "max": 76,
+            "augmented": 90
+        },
+        "resistances": {
+            "fire": 2,
+            "water": 2,
+            "thunder": 2,
+            "ice": 2,
+            "dragon": 2
+        },
+        "attributes": {
+            "gender": 3
+        },
+        "armorSetSkillIds": [
+            22
+        ]
+    },
+    {
+        "id": 142,
+        "name": "Vangis Vambraces α",
+        "rarity": 7,
+        "abilityIds": [
+            161,
+            149
+        ],
+        "defense": {
+            "base": 58,
+            "max": 70,
+            "augmented": 84
+        },
+        "resistances": {
+            "fire": 1,
+            "water": 1,
+            "thunder": -3,
+            "ice": 2,
+            "dragon": -3
+        },
+        "attributes": {
+            "gender": 3
+        },
+        "eventId": 0
+    },
+    {
+        "id": 143,
+        "name": "Vangis Vambraces β",
+        "rarity": 7,
+        "slots": [
+            2
+        ],
+        "abilityIds": [
+            161
+        ],
+        "defense": {
+            "base": 58,
+            "max": 70,
+            "augmented": 84
+        },
+        "resistances": {
+            "fire": 1,
+            "water": 1,
+            "thunder": -3,
+            "ice": 2,
+            "dragon": -3
+        },
+        "attributes": {
+            "gender": 3
+        },
+        "eventId": 0
+    },
+    {
+        "id": 144,
+        "name": "Empress Vambraces α",
+        "rarity": 8,
+        "slots": [
+            3
+        ],
+        "abilityIds": [
+            226,
+            114
+        ],
+        "defense": {
+            "base": 70,
+            "max": 76,
+            "augmented": 90
+        },
+        "resistances": {
+            "fire": 3,
+            "water": 1,
+            "thunder": 1,
+            "ice": -3,
+            "dragon": -2
+        },
+        "attributes": {
+            "gender": 3
+        },
+        "armorSetSkillIds": [
+            23
+        ],
+        "eventId": 14
+    },
+    {
+        "id": 145,
+        "name": "Empress Vambraces β",
+        "rarity": 8,
+        "slots": [
+            3,
+            2
+        ],
+        "abilityIds": [
+            226
+        ],
+        "defense": {
+            "base": 70,
+            "max": 76,
+            "augmented": 90
+        },
+        "resistances": {
+            "fire": 3,
+            "water": 1,
+            "thunder": 1,
+            "ice": -3,
+            "dragon": -2
+        },
+        "attributes": {
+            "gender": 3
+        },
+        "armorSetSkillIds": [
+            23
+        ],
+        "eventId": 14
+    },
+    {
+        "id": 146,
+        "name": "Drachen Vambraces α",
+        "rarity": 8,
+        "slots": [
+            2,
+            2
+        ],
+        "abilityIds": [
+            123,
+            38
+        ],
+        "defense": {
+            "base": 72,
+            "max": 78,
+            "augmented": 92
+        },
+        "resistances": {
+            "fire": -2,
+            "water": -2,
+            "thunder": 3,
+            "ice": -2,
+            "dragon": 4
+        },
+        "attributes": {
+            "gender": 3
+        },
+        "armorSetSkillIds": [
+            24
+        ],
+        "eventId": 19
+    },
+    {
+        "id": 147,
+        "name": "Aloy's Arms α",
+        "rarity": 5,
+        "slots": [
+            1
+        ],
+        "abilityIds": [
+            132,
+            296
+        ],
+        "defense": {
+            "base": 46,
+            "max": 68,
+            "augmented": 84
+        },
+        "resistances": {
+            "fire": 1,
+            "water": 1,
+            "thunder": 1,
+            "ice": 1,
+            "dragon": 1
+        },
+        "attributes": {
+            "gender": 3
+        },
+        "armorSetSkillIds": [
+            6
+        ],
+        "fullArmorSetId": 0,
+        "eventId": 1
+    },
+    {
+        "id": 148,
+        "name": "Ryu's Arms",
+        "rarity": 2,
+        "abilityIds": [
+            160
+        ],
+        "defense": {
+            "base": 12,
+            "max": 44,
+            "augmented": 70
+        },
+        "resistances": {
+            "fire": 2,
+            "water": 0,
+            "thunder": 5,
+            "ice": -3,
+            "dragon": 2
+        },
+        "attributes": {
+            "gender": 3
+        },
+        "fullArmorSetId": 1,
+        "eventId": 2
+    },
+    {
+        "id": 149,
+        "name": "Ryu's Arms α",
+        "rarity": 7,
+        "slots": [
+            2
+        ],
+        "abilityIds": [
+            165
+        ],
+        "defense": {
+            "base": 60,
+            "max": 72,
+            "augmented": 86
+        },
+        "resistances": {
+            "fire": 2,
+            "water": 0,
+            "thunder": 5,
+            "ice": -3,
+            "dragon": 2
+        },
+        "attributes": {
+            "gender": 3
+        },
+        "armorSetSkillIds": [
+            11
+        ],
+        "fullArmorSetId": 2,
+        "eventId": 3
+    },
+    {
+        "id": 150,
+        "name": "Sakura's Arms α",
+        "rarity": 6,
+        "slots": [
+            2
+        ],
+        "abilityIds": [
+            160
+        ],
+        "defense": {
+            "base": 50,
+            "max": 70,
+            "augmented": 82
+        },
+        "resistances": {
+            "fire": 0,
+            "water": 4,
+            "thunder": 0,
+            "ice": 4,
+            "dragon": -2
+        },
+        "attributes": {
+            "gender": 3
+        },
+        "armorSetSkillIds": [
+            7
+        ],
+        "fullArmorSetId": 3,
+        "eventId": 4
+    },
+    {
+        "id": 151,
+        "name": "Butterfly Brachia",
+        "rarity": 3,
+        "abilityIds": [
+            122
+        ],
+        "defense": {
+            "base": 22,
+            "max": 50,
+            "augmented": 74
+        },
+        "resistances": {
+            "fire": -1,
+            "water": -1,
+            "thunder": 2,
+            "ice": 0,
+            "dragon": 2
+        },
+        "attributes": {
+            "gender": 1
+        },
+        "eventId": 5
+    },
+    {
+        "id": 152,
+        "name": "Queen Beetle Brachia",
+        "rarity": 3,
+        "abilityIds": [
+            122
+        ],
+        "defense": {
+            "base": 22,
+            "max": 50,
+            "augmented": 74
+        },
+        "resistances": {
+            "fire": -1,
+            "water": -1,
+            "thunder": 2,
+            "ice": 0,
+            "dragon": 2
+        },
+        "attributes": {
+            "gender": 2
+        },
+        "eventId": 5
+    },
+    {
+        "id": 153,
+        "name": "Blossom Cuffs",
+        "rarity": 3,
+        "abilityIds": [
+            3
+        ],
+        "defense": {
+            "base": 18,
+            "max": 46,
+            "augmented": 70
+        },
+        "resistances": {
+            "fire": 1,
+            "water": 1,
+            "thunder": 4,
+            "ice": 1,
+            "dragon": 1
+        },
+        "attributes": {
+            "gender": 3
+        },
+        "eventId": 6
+    },
+    {
+        "id": 154,
+        "name": "Blossom Cuffs α",
+        "rarity": 5,
+        "slots": [
+            1,
+            1
+        ],
+        "abilityIds": [
+            3
+        ],
+        "defense": {
+            "base": 40,
+            "max": 62,
+            "augmented": 78
+        },
+        "resistances": {
+            "fire": 1,
+            "water": 1,
+            "thunder": 4,
+            "ice": 1,
+            "dragon": 1
+        },
+        "attributes": {
+            "gender": 3
+        },
+        "eventId": 6
+    },
+    {
+        "id": 155,
+        "name": "Kulve Taroth's Rage α",
+        "rarity": 8,
+        "slots": [
+            1
+        ],
+        "abilityIds": [
+            119,
+            139
+        ],
+        "defense": {
+            "base": 64,
+            "max": 70,
+            "augmented": 84
+        },
+        "resistances": {
+            "fire": 4,
+            "water": -2,
+            "thunder": 3,
+            "ice": -4,
+            "dragon": -2
+        },
+        "attributes": {
+            "gender": 3
+        },
+        "eventId": 7
+    },
+    {
+        "id": 156,
+        "name": "Kulve Taroth's Rage β",
+        "rarity": 8,
+        "slots": [
+            3,
+            1
+        ],
+        "abilityIds": [
+            119,
+            138
+        ],
+        "defense": {
+            "base": 64,
+            "max": 70,
+            "augmented": 84
+        },
+        "resistances": {
+            "fire": 4,
+            "water": -2,
+            "thunder": 3,
+            "ice": -4,
+            "dragon": -2
+        },
+        "attributes": {
+            "gender": 3
+        },
+        "eventId": 7
+    },
+    {
+        "id": 157,
+        "name": "Dante's Gloves α",
+        "rarity": 8,
+        "slots": [
+            3
+        ],
+        "abilityIds": [
+            209,
+            187
+        ],
+        "defense": {
+            "base": 64,
+            "max": 70,
+            "augmented": 84
+        },
+        "resistances": {
+            "fire": 3,
+            "water": -3,
+            "thunder": 3,
+            "ice": -3,
+            "dragon": 3
+        },
+        "attributes": {
+            "gender": 3
+        },
+        "eventId": 8
+    },
+    {
+        "id": 158,
+        "name": "Azure Starlord Gauntlets α",
+        "rarity": 7,
+        "slots": [
+            3
+        ],
+        "abilityIds": [
+            56
+        ],
+        "defense": {
+            "base": 56,
+            "max": 68,
+            "augmented": 82
+        },
+        "resistances": {
+            "fire": 2,
+            "water": 2,
+            "thunder": 0,
+            "ice": 0,
+            "dragon": 3
+        },
+        "attributes": {
+            "gender": 3
+        },
+        "armorSetSkillIds": [
+            11
+        ],
+        "eventId": 9
+    },
+    {
+        "id": 159,
+        "name": "Kirin Longarms γ",
+        "rarity": 8,
+        "slots": [
+            2,
+            2
+        ],
+        "abilityIds": [
+            76,
+            119
+        ],
+        "defense": {
+            "base": 72,
+            "max": 78,
+            "augmented": 92
+        },
+        "resistances": {
+            "fire": -3,
+            "water": -2,
+            "thunder": 4,
+            "ice": -2,
+            "dragon": 2
+        },
+        "attributes": {
+            "gender": 3
+        },
+        "armorSetSkillIds": [
+            19
+        ],
+        "eventId": 15
+    },
+    {
+        "id": 160,
+        "name": "Vaal Hazak Braces γ",
+        "rarity": 8,
+        "slots": [
+            3,
+            2
+        ],
+        "abilityIds": [
+            101
+        ],
+        "defense": {
+            "base": 72,
+            "max": 78,
+            "augmented": 92
+        },
+        "resistances": {
+            "fire": -4,
+            "water": 4,
+            "thunder": 1,
+            "ice": -1,
+            "dragon": -3
+        },
+        "attributes": {
+            "gender": 3
+        },
+        "armorSetSkillIds": [
+            18
+        ],
+        "eventId": 16
+    },
+    {
+        "id": 161,
+        "name": "Kaiser Vambraces γ",
+        "rarity": 8,
+        "slots": [
+            3
+        ],
+        "abilityIds": [
+            124
+        ],
+        "defense": {
+            "base": 72,
+            "max": 78,
+            "augmented": 92
+        },
+        "resistances": {
+            "fire": 3,
+            "water": -3,
+            "thunder": 1,
+            "ice": -3,
+            "dragon": 1
+        },
+        "attributes": {
+            "gender": 3
+        },
+        "armorSetSkillIds": [
+            16
+        ],
+        "eventId": 20
+    },
+    {
+        "id": 162,
+        "name": "Kushala Grip γ",
+        "rarity": 8,
+        "slots": [
+            1,
+            1,
+            1
+        ],
+        "abilityIds": [
+            136
+        ],
+        "defense": {
+            "base": 72,
+            "max": 78,
+            "augmented": 92
+        },
+        "resistances": {
+            "fire": 0,
+            "water": 2,
+            "thunder": -3,
+            "ice": 4,
+            "dragon": -2
+        },
+        "attributes": {
+            "gender": 3
+        },
+        "armorSetSkillIds": [
+            17
+        ],
+        "eventId": 21
+    },
+    {
+        "id": 163,
+        "name": "Diver's Braces",
+        "rarity": 3,
+        "abilityIds": [
+            222
+        ],
+        "defense": {
+            "base": 22,
+            "max": 50,
+            "augmented": 74
+        },
+        "resistances": {
+            "fire": 1,
+            "water": 4,
+            "thunder": 1,
+            "ice": 1,
+            "dragon": 1
+        },
+        "attributes": {
+            "gender": 3
+        },
+        "eventId": 17
+    },
+    {
+        "id": 164,
+        "name": "Diver's Braces α",
+        "rarity": 5,
+        "slots": [
+            2
+        ],
+        "abilityIds": [
+            222
+        ],
+        "defense": {
+            "base": 46,
+            "max": 68,
+            "augmented": 84
+        },
+        "resistances": {
+            "fire": 1,
+            "water": 4,
+            "thunder": 4,
+            "ice": 1,
+            "dragon": 1
+        },
+        "attributes": {
+            "gender": 3
+        },
+        "eventId": 17
+    },
+    {
+        "id": 165,
+        "name": "Butterfly Brachia α",
+        "rarity": 5,
+        "abilityIds": [
+            123,
+            52
+        ],
+        "defense": {
+            "base": 42,
+            "max": 64,
+            "augmented": 80
+        },
+        "resistances": {
+            "fire": -1,
+            "water": -1,
+            "thunder": 2,
+            "ice": 0,
+            "dragon": 2
+        },
+        "attributes": {
+            "gender": 1
+        },
+        "eventId": 18
+    },
+    {
+        "id": 166,
+        "name": "Butterfly Brachia β",
+        "rarity": 5,
+        "slots": [
+            1
+        ],
+        "abilityIds": [
+            123
+        ],
+        "defense": {
+            "base": 42,
+            "max": 64,
+            "augmented": 80
+        },
+        "resistances": {
+            "fire": -1,
+            "water": -1,
+            "thunder": 2,
+            "ice": 0,
+            "dragon": 2
+        },
+        "attributes": {
+            "gender": 1
+        },
+        "eventId": 18
+    },
+    {
+        "id": 167,
+        "name": "Queen Beetle Brachia α",
+        "rarity": 5,
+        "abilityIds": [
+            123,
+            52
+        ],
+        "defense": {
+            "base": 42,
+            "max": 64,
+            "augmented": 80
+        },
+        "resistances": {
+            "fire": -1,
+            "water": -1,
+            "thunder": 2,
+            "ice": 0,
+            "dragon": 2
+        },
+        "attributes": {
+            "gender": 2
+        },
+        "eventId": 18
+    },
+    {
+        "id": 168,
+        "name": "Queen Beetle Brachia β",
+        "rarity": 5,
+        "slots": [
+            1
+        ],
+        "abilityIds": [
+            123
+        ],
+        "defense": {
+            "base": 42,
+            "max": 64,
+            "augmented": 80
+        },
+        "resistances": {
+            "fire": -1,
+            "water": -1,
+            "thunder": 2,
+            "ice": 0,
+            "dragon": 2
+        },
+        "attributes": {
+            "gender": 2
+        },
+        "eventId": 18
+    }
+]

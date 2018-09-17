@@ -1,0 +1,1677 @@
+[
+    {
+        "id": 0,
+        "level": 1,
+        "description": "Reduces the duration of poison by 30%."
+    },
+    {
+        "id": 1,
+        "level": 2,
+        "description": "Reduces the duration of poison by 60%."
+    },
+    {
+        "id": 2,
+        "level": 3,
+        "description": "Prevents poison."
+    },
+    {
+        "id": 3,
+        "level": 1,
+        "description": "Reduces the duration of paralysis by 30%."
+    },
+    {
+        "id": 4,
+        "level": 2,
+        "description": "Reduces the duration of paralysis by 60%."
+    },
+    {
+        "id": 5,
+        "level": 3,
+        "description": "Prevents paralysis."
+    },
+    {
+        "id": 6,
+        "level": 1,
+        "description": "Reduces the duration of sleep by 30%."
+    },
+    {
+        "id": 7,
+        "level": 2,
+        "description": "Reduces the duration of sleep by 60%."
+    },
+    {
+        "id": 8,
+        "level": 3,
+        "description": "Prevents sleep."
+    },
+    {
+        "id": 9,
+        "level": 1,
+        "description": "Reduces the duration of stun by 30%."
+    },
+    {
+        "id": 10,
+        "level": 2,
+        "description": "Reduces the duration of stun by 60%."
+    },
+    {
+        "id": 11,
+        "level": 3,
+        "description": "Prevents stun."
+    },
+    {
+        "id": 12,
+        "level": 1,
+        "description": "Reduces limits on movement speed and evasion."
+    },
+    {
+        "id": 13,
+        "level": 1,
+        "description": "Delays blastblight and reduces blast damage."
+    },
+    {
+        "id": 14,
+        "level": 2,
+        "description": "Greatly delays blastblight and greatly reduces blast damage."
+    },
+    {
+        "id": 15,
+        "level": 3,
+        "description": "Prevents blastblight."
+    },
+    {
+        "id": 16,
+        "level": 1,
+        "description": "Reduces damage while bleeding."
+    },
+    {
+        "id": 17,
+        "level": 2,
+        "description": "Greatly reduces damage while bleeding."
+    },
+    {
+        "id": 18,
+        "level": 3,
+        "description": "Prevents bleeding."
+    },
+    {
+        "id": 19,
+        "level": 1,
+        "description": "Reduces the duration of Defense Down by 30%."
+    },
+    {
+        "id": 20,
+        "level": 2,
+        "description": "Reduces the duration of Defense Down by 60%."
+    },
+    {
+        "id": 21,
+        "level": 3,
+        "description": "Prevents Defense Down."
+    },
+    {
+        "id": 22,
+        "level": 1,
+        "description": "Slightly reduces the effects of weak monster roars."
+    },
+    {
+        "id": 23,
+        "level": 2,
+        "description": "Reduces the effects of weak monster roars."
+    },
+    {
+        "id": 24,
+        "level": 3,
+        "description": "Nullifies weak monster roars."
+    },
+    {
+        "id": 25,
+        "level": 4,
+        "description": "Nullifies weak monster roars and reduces the effects of strong monster roars."
+    },
+    {
+        "id": 26,
+        "level": 5,
+        "description": "Nullifies weak and strong monster roars."
+    },
+    {
+        "id": 27,
+        "level": 1,
+        "description": "Slightly reduces the effects of minor wind pressure."
+    },
+    {
+        "id": 28,
+        "level": 2,
+        "description": "Reduces the effects of minor wind pressure."
+    },
+    {
+        "id": 29,
+        "level": 3,
+        "description": "Negates minor wind pressure."
+    },
+    {
+        "id": 30,
+        "level": 4,
+        "description": "Negates minor wind pressure and reduces the effects of major wind pressure."
+    },
+    {
+        "id": 31,
+        "level": 5,
+        "description": "Negates minor and major wind pressure."
+    },
+    {
+        "id": 32,
+        "level": 1,
+        "description": "Nullifies minor ground tremors."
+    },
+    {
+        "id": 33,
+        "level": 2,
+        "description": "Nullifies minor ground tremors and reduces the effects of major ground tremors."
+    },
+    {
+        "id": 34,
+        "level": 3,
+        "description": "Nullifies minor and major ground tremors."
+    },
+    {
+        "id": 35,
+        "level": 1,
+        "description": "Makes slinger dung pods more effective at making monsters run away."
+    },
+    {
+        "id": 36,
+        "level": 1,
+        "description": "Nullifies damage from effluvia and reduces damage from acids."
+    },
+    {
+        "id": 37,
+        "level": 1,
+        "description": "Nullfies heat damage."
+    },
+    {
+        "id": 38,
+        "level": 1,
+        "description": "Attack +3"
+    },
+    {
+        "id": 39,
+        "level": 2,
+        "description": "Attack +6"
+    },
+    {
+        "id": 40,
+        "level": 3,
+        "description": "Attack +9"
+    },
+    {
+        "id": 41,
+        "level": 4,
+        "description": "Attack +12 Affinity +5%"
+    },
+    {
+        "id": 42,
+        "level": 5,
+        "description": "Attack +15 Affinity +5%"
+    },
+    {
+        "id": 43,
+        "level": 6,
+        "description": "Attack +18 Affinity +5%"
+    },
+    {
+        "id": 44,
+        "level": 7,
+        "description": "Attack +21 Affinity +5%"
+    },
+    {
+        "id": 45,
+        "level": 1,
+        "description": "Defense +5"
+    },
+    {
+        "id": 46,
+        "level": 2,
+        "description": "Defense +10"
+    },
+    {
+        "id": 47,
+        "level": 3,
+        "description": "Defense +15"
+    },
+    {
+        "id": 48,
+        "level": 4,
+        "description": "Defense +20 All Elemental Resistances +3"
+    },
+    {
+        "id": 49,
+        "level": 5,
+        "description": "Defense +25 All Elemental Resistances +3"
+    },
+    {
+        "id": 50,
+        "level": 6,
+        "description": "Defense +30 All Elemental Resistances +3"
+    },
+    {
+        "id": 51,
+        "level": 7,
+        "description": "Defense +35 All Elemental Resistances +3"
+    },
+    {
+        "id": 52,
+        "level": 1,
+        "description": "Health +15"
+    },
+    {
+        "id": 53,
+        "level": 2,
+        "description": "Health +30"
+    },
+    {
+        "id": 54,
+        "level": 3,
+        "description": "Health +50"
+    },
+    {
+        "id": 55,
+        "level": 1,
+        "description": "Recovery +10%"
+    },
+    {
+        "id": 56,
+        "level": 2,
+        "description": "Recovery +20%"
+    },
+    {
+        "id": 57,
+        "level": 3,
+        "description": "Recovery +30%"
+    },
+    {
+        "id": 58,
+        "level": 1,
+        "description": "Doubles the speed at which you heal recoverable damage."
+    },
+    {
+        "id": 59,
+        "level": 2,
+        "description": "Triples the speed at which you heal recoverable damage."
+    },
+    {
+        "id": 60,
+        "level": 3,
+        "description": "Quadruples the speed at which you heal recoverable damage."
+    },
+    {
+        "id": 61,
+        "level": 1,
+        "description": "Fire resistance +6"
+    },
+    {
+        "id": 62,
+        "level": 2,
+        "description": "Fire resistance +12"
+    },
+    {
+        "id": 63,
+        "level": 3,
+        "description": "Fire resistance +20 Defense +10"
+    },
+    {
+        "id": 64,
+        "level": 1,
+        "description": "Water resistance +6"
+    },
+    {
+        "id": 65,
+        "level": 2,
+        "description": "Water resistance +12"
+    },
+    {
+        "id": 66,
+        "level": 3,
+        "description": "Water resistance +20 Defense +10"
+    },
+    {
+        "id": 67,
+        "level": 1,
+        "description": "Ice resistance +6"
+    },
+    {
+        "id": 68,
+        "level": 2,
+        "description": "Ice resistance +12"
+    },
+    {
+        "id": 69,
+        "level": 3,
+        "description": "Ice resistance +20 Defense +10"
+    },
+    {
+        "id": 70,
+        "level": 1,
+        "description": "Thunder resistance +6"
+    },
+    {
+        "id": 71,
+        "level": 2,
+        "description": "Thunder resistance +12"
+    },
+    {
+        "id": 72,
+        "level": 3,
+        "description": "Thunder resistance +20 Defense +10"
+    },
+    {
+        "id": 73,
+        "level": 1,
+        "description": "Dragon resistance +6"
+    },
+    {
+        "id": 74,
+        "level": 2,
+        "description": "Dragon resistance +12"
+    },
+    {
+        "id": 75,
+        "level": 3,
+        "description": "Dragon resistance +20 Defense +10"
+    },
+    {
+        "id": 76,
+        "level": 1,
+        "description": "Reduces the duration of all elemental blights by 30%."
+    },
+    {
+        "id": 77,
+        "level": 2,
+        "description": "Reduces the duration of all elemental blights by 60%."
+    },
+    {
+        "id": 78,
+        "level": 3,
+        "description": "Nullifies all elemental blights."
+    },
+    {
+        "id": 79,
+        "level": 1,
+        "description": "Fire attack +30"
+    },
+    {
+        "id": 80,
+        "level": 2,
+        "description": "Fire attack +60"
+    },
+    {
+        "id": 81,
+        "level": 3,
+        "description": "Fire attack +100"
+    },
+    {
+        "id": 82,
+        "level": 4,
+        "description": "Fire attack +5% Bonus: +100"
+    },
+    {
+        "id": 83,
+        "level": 5,
+        "description": "Fire attack +10% Bonus: +100"
+    },
+    {
+        "id": 84,
+        "level": 1,
+        "description": "Water attack +30"
+    },
+    {
+        "id": 85,
+        "level": 2,
+        "description": "Water attack +60"
+    },
+    {
+        "id": 86,
+        "level": 3,
+        "description": "Water attack +100"
+    },
+    {
+        "id": 87,
+        "level": 4,
+        "description": "Water attack +5% Bonus: +100"
+    },
+    {
+        "id": 88,
+        "level": 5,
+        "description": "Water attack +10% Bonus: +100"
+    },
+    {
+        "id": 89,
+        "level": 1,
+        "description": "Ice attack +30"
+    },
+    {
+        "id": 90,
+        "level": 2,
+        "description": "Ice attack +60"
+    },
+    {
+        "id": 91,
+        "level": 3,
+        "description": "Ice attack +100"
+    },
+    {
+        "id": 92,
+        "level": 4,
+        "description": "Ice attack +5% Bonus: +100"
+    },
+    {
+        "id": 93,
+        "level": 5,
+        "description": "Ice attack +10% Bonus: +100"
+    },
+    {
+        "id": 94,
+        "level": 1,
+        "description": "Thunder attack +30"
+    },
+    {
+        "id": 95,
+        "level": 2,
+        "description": "Thunder attack +60"
+    },
+    {
+        "id": 96,
+        "level": 3,
+        "description": "Thunder attack +100"
+    },
+    {
+        "id": 97,
+        "level": 4,
+        "description": "Thunder attack +5% Bonus: +100"
+    },
+    {
+        "id": 98,
+        "level": 5,
+        "description": "Thunder attack +10% Bonus: +100"
+    },
+    {
+        "id": 99,
+        "level": 1,
+        "description": "Dragon attack +30"
+    },
+    {
+        "id": 100,
+        "level": 2,
+        "description": "Dragon attack +60"
+    },
+    {
+        "id": 101,
+        "level": 3,
+        "description": "Dragon attack +100"
+    },
+    {
+        "id": 102,
+        "level": 4,
+        "description": "Dragon attack +5% Bonus: +100"
+    },
+    {
+        "id": 103,
+        "level": 5,
+        "description": "Dragon attack +10% Bonus: +100"
+    },
+    {
+        "id": 104,
+        "level": 1,
+        "description": "Poison buildup +5% Bonus: +10"
+    },
+    {
+        "id": 105,
+        "level": 2,
+        "description": "Poison buildup +10% Bonus: +10"
+    },
+    {
+        "id": 106,
+        "level": 3,
+        "description": "Poison buildup +20% Bonus: +10"
+    },
+    {
+        "id": 107,
+        "level": 1,
+        "description": "Paralysis buildup +5% Bonus: +10"
+    },
+    {
+        "id": 108,
+        "level": 2,
+        "description": "Paralysis buildup +10% Bonus: +10"
+    },
+    {
+        "id": 109,
+        "level": 3,
+        "description": "Paralysis buildup +20% Bonus: +10"
+    },
+    {
+        "id": 110,
+        "level": 1,
+        "description": "Sleep buildup +5% Bonus: +10"
+    },
+    {
+        "id": 111,
+        "level": 2,
+        "description": "Sleep buildup +10% Bonus: +10"
+    },
+    {
+        "id": 112,
+        "level": 3,
+        "description": "Sleep buildup +20% Bonus: +10"
+    },
+    {
+        "id": 113,
+        "level": 1,
+        "description": "Blast buildup +5% Bonus: +10"
+    },
+    {
+        "id": 114,
+        "level": 2,
+        "description": "Blast buildup +10% Bonus: +10"
+    },
+    {
+        "id": 115,
+        "level": 3,
+        "description": "Blast buildup +20% Bonus: +10"
+    },
+    {
+        "id": 116,
+        "level": 1,
+        "description": "Increases the power of normal ammo and normal arrows."
+    },
+    {
+        "id": 117,
+        "level": 1,
+        "description": "Increases the power of piercing ammo and Dragon Piercer."
+    },
+    {
+        "id": 118,
+        "level": 1,
+        "description": "Increases the power of spread ammo and power shot arrows."
+    },
+    {
+        "id": 119,
+        "level": 1,
+        "description": "Draws out 33% of hidden element and expands clip size for some ammo."
+    },
+    {
+        "id": 120,
+        "level": 2,
+        "description": "Draws out 66% of hidden element and expands clip size for some ammo."
+    },
+    {
+        "id": 121,
+        "level": 3,
+        "description": "Draws out 100% of hidden element and expands clip size for some ammo."
+    },
+    {
+        "id": 122,
+        "level": 1,
+        "description": "Affinity +3%"
+    },
+    {
+        "id": 123,
+        "level": 2,
+        "description": "Affinity +6%"
+    },
+    {
+        "id": 124,
+        "level": 3,
+        "description": "Affinity +10%"
+    },
+    {
+        "id": 125,
+        "level": 4,
+        "description": "Affinity +15%"
+    },
+    {
+        "id": 126,
+        "level": 5,
+        "description": "Affinity +20%"
+    },
+    {
+        "id": 127,
+        "level": 6,
+        "description": "Affinity +25%"
+    },
+    {
+        "id": 128,
+        "level": 7,
+        "description": "Affinity +30%"
+    },
+    {
+        "id": 129,
+        "level": 1,
+        "description": "Increases damage dealt by critical hits by 30%."
+    },
+    {
+        "id": 130,
+        "level": 2,
+        "description": "Increases damage dealt by critical hits by 35%."
+    },
+    {
+        "id": 131,
+        "level": 3,
+        "description": "Increases damage dealt by critical hits by 40%."
+    },
+    {
+        "id": 132,
+        "level": 1,
+        "description": "Attacks that hit weak spots have 15% increased affinity."
+    },
+    {
+        "id": 133,
+        "level": 2,
+        "description": "Attacks that hit weak spots have 30% increased affinity."
+    },
+    {
+        "id": 134,
+        "level": 3,
+        "description": "Attacks that hit weak spots have 50% increased affinity."
+    },
+    {
+        "id": 135,
+        "level": 1,
+        "description": "Increases gauge fill rate by 5% and reduces charge times by 5%."
+    },
+    {
+        "id": 136,
+        "level": 2,
+        "description": "Increases gauge fill rate by 10% and reduces charge times by 10%."
+    },
+    {
+        "id": 137,
+        "level": 3,
+        "description": "Increases gauge fill rate by 20% and reduces charge times by 20%."
+    },
+    {
+        "id": 138,
+        "level": 1,
+        "description": "Bonus duration +10%"
+    },
+    {
+        "id": 139,
+        "level": 2,
+        "description": "Bonus duration +20%"
+    },
+    {
+        "id": 140,
+        "level": 3,
+        "description": "Bonus duration +30%"
+    },
+    {
+        "id": 141,
+        "level": 1,
+        "description": "Weapon sharpness +10"
+    },
+    {
+        "id": 142,
+        "level": 2,
+        "description": "Weapon sharpness +20"
+    },
+    {
+        "id": 143,
+        "level": 3,
+        "description": "Weapon sharpness +30"
+    },
+    {
+        "id": 144,
+        "level": 4,
+        "description": "Weapon sharpness +40"
+    },
+    {
+        "id": 145,
+        "level": 5,
+        "description": "Weapon sharpness +50"
+    },
+    {
+        "id": 146,
+        "level": 1,
+        "description": "Draw attack affinity +30%"
+    },
+    {
+        "id": 147,
+        "level": 2,
+        "description": "Draw attack affinity +60%"
+    },
+    {
+        "id": 148,
+        "level": 3,
+        "description": "Draw attack affinity +100%"
+    },
+    {
+        "id": 149,
+        "level": 1,
+        "description": "Part damage +10%"
+    },
+    {
+        "id": 150,
+        "level": 2,
+        "description": "Part damage +20%"
+    },
+    {
+        "id": 151,
+        "level": 3,
+        "description": "Part damage +30%"
+    },
+    {
+        "id": 152,
+        "level": 1,
+        "description": "Stun power +10%"
+    },
+    {
+        "id": 153,
+        "level": 2,
+        "description": "Stun power +20%"
+    },
+    {
+        "id": 154,
+        "level": 3,
+        "description": "Stun power +30%"
+    },
+    {
+        "id": 155,
+        "level": 1,
+        "description": "Exhaust power +10%"
+    },
+    {
+        "id": 156,
+        "level": 2,
+        "description": "Exhaust power +20%"
+    },
+    {
+        "id": 157,
+        "level": 3,
+        "description": "Exhaust power +30%"
+    },
+    {
+        "id": 158,
+        "level": 1,
+        "description": "Makes it easier to mount monsters and down mounted monsters."
+    },
+    {
+        "id": 159,
+        "level": 1,
+        "description": "Jumping attack power +10%"
+    },
+    {
+        "id": 160,
+        "level": 1,
+        "description": "While active, increases affinity by 10% and reduces stamina depletion by 10%."
+    },
+    {
+        "id": 161,
+        "level": 2,
+        "description": "While active, increases affinity by 20% and reduces stamina depletion by 10%."
+    },
+    {
+        "id": 162,
+        "level": 3,
+        "description": "While active, increases affinity by 30% and reduces stamina depletion by 30%."
+    },
+    {
+        "id": 163,
+        "level": 4,
+        "description": "While active, increases affinity by 40% and reduces stamina depletion by 30%."
+    },
+    {
+        "id": 164,
+        "level": 5,
+        "description": "While active, increases affinity by 50% and reduces stamina depletion by 50%."
+    },
+    {
+        "id": 165,
+        "level": 1,
+        "description": "While active, grants attack +4 and increases affinity by 3%."
+    },
+    {
+        "id": 166,
+        "level": 2,
+        "description": "While active, grants attack +8 and increases affinity by 6%."
+    },
+    {
+        "id": 167,
+        "level": 3,
+        "description": "While active, grants attack +12 and increases affinity by 9%."
+    },
+    {
+        "id": 168,
+        "level": 4,
+        "description": "While active, grants attack +16 and increases affinity by 12%."
+    },
+    {
+        "id": 169,
+        "level": 5,
+        "description": "While active, grants attack +20 and increases affinity by 15%."
+    },
+    {
+        "id": 170,
+        "level": 1,
+        "description": "While active, grants attack +5."
+    },
+    {
+        "id": 171,
+        "level": 2,
+        "description": "While active, grants attack +10."
+    },
+    {
+        "id": 172,
+        "level": 3,
+        "description": "While active, grants attack +20."
+    },
+    {
+        "id": 173,
+        "level": 1,
+        "description": "While active, increases attack power by 5% and increases defense by 15 points."
+    },
+    {
+        "id": 174,
+        "level": 2,
+        "description": "While active, increases attack power by 10% and increases defense by 20 points."
+    },
+    {
+        "id": 175,
+        "level": 3,
+        "description": "While active, increases attack power by 15% and increases defense by 25 points."
+    },
+    {
+        "id": 176,
+        "level": 4,
+        "description": "While active, increases attack power by 20% and increases defense by 30 points."
+    },
+    {
+        "id": 177,
+        "level": 5,
+        "description": "While active, increases attack power by 30% and increases defense by 40 points."
+    },
+    {
+        "id": 178,
+        "level": 1,
+        "description": "Increases attack by 10% and defense by 15% with each use."
+    },
+    {
+        "id": 179,
+        "level": 1,
+        "description": "While active, grants attack +5."
+    },
+    {
+        "id": 180,
+        "level": 2,
+        "description": "While active, grants attack +10."
+    },
+    {
+        "id": 181,
+        "level": 3,
+        "description": "While active, grants attack +15."
+    },
+    {
+        "id": 182,
+        "level": 4,
+        "description": "While active, grants attack +20."
+    },
+    {
+        "id": 183,
+        "level": 5,
+        "description": "While active, grants attack +25."
+    },
+    {
+        "id": 184,
+        "level": 1,
+        "description": "While active, greatly improves evasion invulnerability time and reduces stamina depletion."
+    },
+    {
+        "id": 185,
+        "level": 1,
+        "description": "Extends melody effect duration and increases health recovery."
+    },
+    {
+        "id": 186,
+        "level": 1,
+        "description": "Loading capacity +1"
+    },
+    {
+        "id": 187,
+        "level": 1,
+        "description": "Increases the power of bowgun special ammo and Dragon Piercer by 10%."
+    },
+    {
+        "id": 188,
+        "level": 2,
+        "description": "Increases the power of bowgun special ammo and Dragon Piercer by 20%."
+    },
+    {
+        "id": 189,
+        "level": 1,
+        "description": "Increases power of each attack by 10% and reduces Wyvern's Fire cooldown by 15%."
+    },
+    {
+        "id": 190,
+        "level": 2,
+        "description": "Increases power of each attack by 20% and reduces Wyvern's Fire cooldown by 30%."
+    },
+    {
+        "id": 191,
+        "level": 3,
+        "description": "Increases power of each attack by 30% and reduces Wyvern's Fire cooldown by 50%."
+    },
+    {
+        "id": 192,
+        "level": 1,
+        "description": "Firepower +10%"
+    },
+    {
+        "id": 193,
+        "level": 2,
+        "description": "Firepower +20%"
+    },
+    {
+        "id": 194,
+        "level": 1,
+        "description": "Reduces continuous stamina depletion by 15%."
+    },
+    {
+        "id": 195,
+        "level": 2,
+        "description": "Reduces continuous stamina depletion by 30%."
+    },
+    {
+        "id": 196,
+        "level": 3,
+        "description": "Reduces continuous stamina depletion by 50%."
+    },
+    {
+        "id": 197,
+        "level": 1,
+        "description": "Reduces fixed stamina depletion by 10%."
+    },
+    {
+        "id": 198,
+        "level": 2,
+        "description": "Reduces fixed stamina depletion by 20%."
+    },
+    {
+        "id": 199,
+        "level": 3,
+        "description": "Reduces fixed stamina depletion by 30%."
+    },
+    {
+        "id": 200,
+        "level": 4,
+        "description": "Reduces fixed stamina depletion by 40%."
+    },
+    {
+        "id": 201,
+        "level": 5,
+        "description": "Reduces fixed stamina depletion by 50%."
+    },
+    {
+        "id": 202,
+        "level": 1,
+        "description": "Enables Leap of Faith."
+    },
+    {
+        "id": 203,
+        "level": 1,
+        "description": "Stamina recovery speed +10%"
+    },
+    {
+        "id": 204,
+        "level": 2,
+        "description": "Stamina recovery speed +20%"
+    },
+    {
+        "id": 205,
+        "level": 3,
+        "description": "Stamina recovery speed +30%"
+    },
+    {
+        "id": 206,
+        "level": 1,
+        "description": "Extends the time until your stamina cap decreases by 30%."
+    },
+    {
+        "id": 207,
+        "level": 2,
+        "description": "Extends the time until your stamina cap decreases by 60%."
+    },
+    {
+        "id": 208,
+        "level": 3,
+        "description": "Prevents your stamina cap from decreasing."
+    },
+    {
+        "id": 209,
+        "level": 1,
+        "description": "Very slightly increases invulnerability window."
+    },
+    {
+        "id": 210,
+        "level": 2,
+        "description": "Slightly increases invulnerability window."
+    },
+    {
+        "id": 211,
+        "level": 3,
+        "description": "Increases invulnerability window."
+    },
+    {
+        "id": 212,
+        "level": 4,
+        "description": "Greatly increases invulnerability window."
+    },
+    {
+        "id": 213,
+        "level": 5,
+        "description": "Massively increases invulnerability window."
+    },
+    {
+        "id": 214,
+        "level": 1,
+        "description": "Slightly extends evasion distance."
+    },
+    {
+        "id": 215,
+        "level": 2,
+        "description": "Extends evasion distance."
+    },
+    {
+        "id": 216,
+        "level": 3,
+        "description": "Greatly extends evasion distance."
+    },
+    {
+        "id": 217,
+        "level": 1,
+        "description": "Very slightly decreases the impact of attacks."
+    },
+    {
+        "id": 218,
+        "level": 2,
+        "description": "Slightly decreases the impact of attacks and reduces stamina depletion by 15%."
+    },
+    {
+        "id": 219,
+        "level": 3,
+        "description": "Greatly decreases the impact of attacks and redcues stamina depletion by 15%."
+    },
+    {
+        "id": 220,
+        "level": 4,
+        "description": "Greatly decreases the impact of attacks and redcues stamina depletion by 30%."
+    },
+    {
+        "id": 221,
+        "level": 5,
+        "description": "Greatly decreases the impact of attacks and redcues stamina depletion by 50%."
+    },
+    {
+        "id": 222,
+        "level": 1,
+        "description": "Slightly increases sheathing speed."
+    },
+    {
+        "id": 223,
+        "level": 2,
+        "description": "Moderately increases sheathing speed."
+    },
+    {
+        "id": 224,
+        "level": 3,
+        "description": "Greatly increases sheathing speed."
+    },
+    {
+        "id": 225,
+        "level": 1,
+        "description": "Items affect nearby allies with 33% of their efficacy."
+    },
+    {
+        "id": 226,
+        "level": 2,
+        "description": "Items affect nearby allies in a wider radius with 33% of their efficacy."
+    },
+    {
+        "id": 227,
+        "level": 3,
+        "description": "Items affect nearby allies in a wider radius with 66% of their efficacy."
+    },
+    {
+        "id": 228,
+        "level": 4,
+        "description": "Items affect nearby allies in a much wider radius with 66% of their efficacy."
+    },
+    {
+        "id": 229,
+        "level": 5,
+        "description": "Items affect nearby allies in a wider radius with full efficacy."
+    },
+    {
+        "id": 230,
+        "level": 1,
+        "description": "Item effect duration +10%"
+    },
+    {
+        "id": 231,
+        "level": 2,
+        "description": "Item effect duration +25%"
+    },
+    {
+        "id": 232,
+        "level": 3,
+        "description": "Item effect duration +50%"
+    },
+    {
+        "id": 233,
+        "level": 1,
+        "description": "Activates 25% of the time."
+    },
+    {
+        "id": 234,
+        "level": 1,
+        "description": "Slightly increases item use speed."
+    },
+    {
+        "id": 235,
+        "level": 2,
+        "description": "Moderately increases item use speed."
+    },
+    {
+        "id": 236,
+        "level": 3,
+        "description": "Greatly increases item use speed."
+    },
+    {
+        "id": 237,
+        "level": 1,
+        "description": "Removes one cycle from the sharpening process."
+    },
+    {
+        "id": 238,
+        "level": 2,
+        "description": "Removes two cycles from the sharpening process."
+    },
+    {
+        "id": 239,
+        "level": 3,
+        "description": "Removes three cycles from the sharpening process."
+    },
+    {
+        "id": 240,
+        "level": 1,
+        "description": "Explosive power +10%"
+    },
+    {
+        "id": 241,
+        "level": 2,
+        "description": "Explosive power +20%"
+    },
+    {
+        "id": 242,
+        "level": 3,
+        "description": "Explosive power +30%"
+    },
+    {
+        "id": 243,
+        "level": 1,
+        "description": "Lets you digest blue mushrooms and toadstools."
+    },
+    {
+        "id": 244,
+        "level": 2,
+        "description": "Additionally lets you digest nitroshrooms and parashrooms."
+    },
+    {
+        "id": 245,
+        "level": 3,
+        "description": "Additionally lets you digest mandragoras, devil's blight, and exciteshrooms."
+    },
+    {
+        "id": 246,
+        "level": 1,
+        "description": "Increases the time window for reeling in fish, and makes it easier to catch large fish."
+    },
+    {
+        "id": 247,
+        "level": 1,
+        "description": "Increases movement speed while transporting and reduces downtime on landings."
+    },
+    {
+        "id": 248,
+        "level": 1,
+        "description": "Speeds up gathering and prevents knockbacks while gathering."
+    },
+    {
+        "id": 249,
+        "level": 1,
+        "description": "One extra honey per gather."
+    },
+    {
+        "id": 250,
+        "level": 1,
+        "description": "Prevents knockback while carving."
+    },
+    {
+        "id": 251,
+        "level": 1,
+        "description": "While active, reduces damage taken by 15%."
+    },
+    {
+        "id": 252,
+        "level": 2,
+        "description": "While active, reduces damage taken by 30%."
+    },
+    {
+        "id": 253,
+        "level": 3,
+        "description": "While active, reduces damage taken by 50%."
+    },
+    {
+        "id": 254,
+        "level": 1,
+        "description": "Increases Palico attack power and defense by 5%."
+    },
+    {
+        "id": 255,
+        "level": 2,
+        "description": "Increases Palico attack power and defense by 10%."
+    },
+    {
+        "id": 256,
+        "level": 3,
+        "description": "Increases Palico attack power and defense by 15%."
+    },
+    {
+        "id": 257,
+        "level": 4,
+        "description": "Increases Palico attack power and defense by 20%."
+    },
+    {
+        "id": 258,
+        "level": 5,
+        "description": "Increases Palico attack power and defense by 25%."
+    },
+    {
+        "id": 259,
+        "level": 1,
+        "description": "One extra consumable herb item per gather."
+    },
+    {
+        "id": 260,
+        "level": 2,
+        "description": "One extra consumable herb, fruit, nut, or seed item per gather."
+    },
+    {
+        "id": 261,
+        "level": 3,
+        "description": "One extra consumable herb, fruit, nut, seed, or insect item per gather."
+    },
+    {
+        "id": 262,
+        "level": 4,
+        "description": "One extra consumable herb, fruit, nut, seed, insect or mushroom item per gather."
+    },
+    {
+        "id": 263,
+        "level": 1,
+        "description": "Allows you to gather one extra time from bonepiles."
+    },
+    {
+        "id": 264,
+        "level": 2,
+        "description": "Allows you to gather one extra time from bonepiles and special item gathering points."
+    },
+    {
+        "id": 265,
+        "level": 3,
+        "description": "Allows you to gather one extra time from bonepiles, gathering points, and mining outcrops."
+    },
+    {
+        "id": 266,
+        "level": 1,
+        "description": "While active, increases affinity by 10%."
+    },
+    {
+        "id": 267,
+        "level": 2,
+        "description": "While active, increases affinity by 20%."
+    },
+    {
+        "id": 268,
+        "level": 3,
+        "description": "While active, increases affinity by 30%."
+    },
+    {
+        "id": 269,
+        "level": 1,
+        "description": "Increases the loading capacity for slinger ammo collected from the ground or plants."
+    },
+    {
+        "id": 270,
+        "level": 2,
+        "description": "In addition, increases the loading capacity for some slinger ammo dropped by monsters."
+    },
+    {
+        "id": 271,
+        "level": 3,
+        "description": "In addition, increases the loading capacity for all slinger ammo dropped by monsters."
+    },
+    {
+        "id": 272,
+        "level": 1,
+        "description": "Makes it slightly easier for monsters to lose sight of you."
+    },
+    {
+        "id": 273,
+        "level": 2,
+        "description": "Makes it moderately easier for monsters to lose sight of you."
+    },
+    {
+        "id": 274,
+        "level": 3,
+        "description": "Makes it much easier for monsters to lose sight of you."
+    },
+    {
+        "id": 275,
+        "level": 1,
+        "description": "Prevents knockbacks."
+    },
+    {
+        "id": 276,
+        "level": 2,
+        "description": "Prevents standard knockbacks. Tripping is reduced to a knockback instead."
+    },
+    {
+        "id": 277,
+        "level": 3,
+        "description": "Prevents knockbacks and tripping."
+    },
+    {
+        "id": 278,
+        "level": 1,
+        "description": "Expands your scoutflies' detection range."
+    },
+    {
+        "id": 279,
+        "level": 1,
+        "description": "Increases movement speed while crouching."
+    },
+    {
+        "id": 280,
+        "level": 1,
+        "description": "Negates knockback during jumps."
+    },
+    {
+        "id": 281,
+        "level": 1,
+        "description": "Sporepuffs restore 20 health."
+    },
+    {
+        "id": 282,
+        "level": 2,
+        "description": "Sporepuffs restore 35 health."
+    },
+    {
+        "id": 283,
+        "level": 3,
+        "description": "Sporepuffs restore 60 health."
+    },
+    {
+        "id": 284,
+        "level": 1,
+        "description": "Prevents water from slowing movement."
+    },
+    {
+        "id": 285,
+        "level": 2,
+        "description": "Prevents water from slowing movement and improves evasion while in water."
+    },
+    {
+        "id": 286,
+        "level": 3,
+        "description": "Prevents water from slowing movement and greatly improves evasion while in water."
+    },
+    {
+        "id": 287,
+        "level": 1,
+        "description": "Reduces stamina depletion while climbing by 25%."
+    },
+    {
+        "id": 288,
+        "level": 1,
+        "description": "Increases the success rate of flash effects."
+    },
+    {
+        "id": 289,
+        "level": 1,
+        "description": "Speeds up progress on research levels and special investigations."
+    },
+    {
+        "id": 290,
+        "level": 1,
+        "description": "Increases the chances of a corpse being left behind."
+    },
+    {
+        "id": 291,
+        "level": 2,
+        "description": "Greatly increases the chances of a corpse being left behind."
+    },
+    {
+        "id": 292,
+        "level": 3,
+        "description": "Makes it so corpses will always be left behind."
+    },
+    {
+        "id": 293,
+        "level": 1,
+        "description": "Reduces effluvial buildup."
+    },
+    {
+        "id": 294,
+        "level": 2,
+        "description": "Greatly reduces effluvial buildup."
+    },
+    {
+        "id": 295,
+        "level": 3,
+        "description": "Prevents effluvial buildup."
+    },
+    {
+        "id": 296,
+        "level": 1,
+        "description": "Increases gauge fill rate by 50%."
+    },
+    {
+        "id": 297,
+        "level": 1,
+        "description": "Increases the likelihood of rare gathering points respawning."
+    },
+    {
+        "id": 298,
+        "level": 1,
+        "description": "Marks rare sites on the wildlife map."
+    },
+    {
+        "id": 299,
+        "level": 1,
+        "description": "Makes it easier to cook well-done steaks."
+    },
+    {
+        "id": 300,
+        "level": 1,
+        "description": "Shortens time until reuse by 5%."
+    },
+    {
+        "id": 301,
+        "level": 2,
+        "description": "Shortens time until reuse by 10%."
+    },
+    {
+        "id": 302,
+        "level": 3,
+        "description": "Shortens time until reuse by 20%."
+    },
+    {
+        "id": 303,
+        "level": 1,
+        "description": "Increases affinity by 30% for a short time after sliding."
+    },
+    {
+        "id": 304,
+        "level": 1,
+        "description": "Discourages monsters from engaging you even if you've been spotted."
+    },
+    {
+        "id": 305,
+        "level": 2,
+        "description": "Highly discourages monsters from engaging you even if you've been spotted."
+    },
+    {
+        "id": 306,
+        "level": 3,
+        "description": "Prevents monsters from engaging you even if you've been spotted."
+    },
+    {
+        "id": 307,
+        "level": 1,
+        "description": "Regenerates your health as you continually attack a monster. Recovery varies by weapon."
+    },
+    {
+        "id": 308,
+        "level": 1,
+        "description": "Allows recovery to exceed the red portion of the health gauge."
+    },
+    {
+        "id": 309,
+        "level": 1,
+        "description": "Extends the duration of your poison's effect on monsters."
+    },
+    {
+        "id": 310,
+        "level": 1,
+        "description": "Temporarily reduces stamina depletion when health is at 40% or lower."
+    },
+    {
+        "id": 311,
+        "level": 1,
+        "description": "Increases stamina cap."
+    },
+    {
+        "id": 312,
+        "level": 1,
+        "description": "Increases elemental damage (fire, water, thunder, ice, dragon) when landing critical hits."
+    },
+    {
+        "id": 313,
+        "level": 1,
+        "description": "Prevents attacks from being deflected. Also shortens the distance before ammo and arrows reach maximum power."
+    },
+    {
+        "id": 314,
+        "level": 1,
+        "description": "Raises attack as your weapon loses sharpness. Also boosts ranged weapon melee attacks and odds of stunning."
+    },
+    {
+        "id": 315,
+        "level": 1,
+        "description": "Powers up non-elemental weapons you have equipped."
+    },
+    {
+        "id": 316,
+        "level": 1,
+        "description": "High chance of increased capture rewards. (No effect when joining mid-quest.)"
+    },
+    {
+        "id": 317,
+        "level": 1,
+        "description": "Allows you to guard against ordinarily unblockable attacks."
+    },
+    {
+        "id": 318,
+        "level": 1,
+        "description": "Above a certain health threshold, you withstand an attack that would normally cart you (once only)."
+    },
+    {
+        "id": 319,
+        "level": 1,
+        "description": "Prevents your weapon from losing sharpness during critical hits."
+    },
+    {
+        "id": 320,
+        "level": 1,
+        "description": "Negates all wind pressure."
+    },
+    {
+        "id": 321,
+        "level": 1,
+        "description": "Halves sharpness loss. For bows and bowguns, shots have a chance not to expend coatings or ammo."
+    },
+    {
+        "id": 322,
+        "level": 1,
+        "description": "Increases abnormal status effect damage (paralysis, poison, sleep, blast) when landing critical hits."
+    },
+    {
+        "id": 323,
+        "level": 1,
+        "description": "Good chance of increased quest rewards. (No effect when joining mid-quest.)"
+    },
+    {
+        "id": 324,
+        "level": 1,
+        "description": "Increases max bow charge level by one."
+    },
+    {
+        "id": 325,
+        "level": 1,
+        "description": "Adds a stun effect to draw attacks and slightly increases attack power."
+    },
+    {
+        "id": 326,
+        "level": 1,
+        "description": "Weapon sharpness does not decrease for a set time after sharpening."
+    },
+    {
+        "id": 327,
+        "level": 1,
+        "description": "Let you use Poison coating."
+    },
+    {
+        "id": 328,
+        "level": 1,
+        "description": "Let you use Paralysis coating."
+    },
+    {
+        "id": 329,
+        "level": 1,
+        "description": "Let you use Sleep coating."
+    },
+    {
+        "id": 330,
+        "level": 1,
+        "description": "Let you use Blast coating."
+    },
+    {
+        "id": 331,
+        "level": 1,
+        "description": "Boosts Elderseal one level."
+    },
+    {
+        "id": 332,
+        "level": 1,
+        "description": "High chance of increased game rewards. (No effect when joining mid-quest.)"
+    },
+    {
+        "id": 333,
+        "level": 1,
+        "description": "Lets you carve one additional time. (No effect when joining mid-quest.)"
+    },
+    {
+        "id": 334,
+        "level": 1,
+        "description": "Elemental damage increased for jumping attacks."
+    }
+]

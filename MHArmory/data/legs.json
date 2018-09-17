@@ -1,0 +1,4031 @@
+[
+    {
+        "id": 0,
+        "name": "Leather Trousers",
+        "rarity": 1,
+        "defense": {
+            "base": 2,
+            "max": 38,
+            "augmented": 68
+        },
+        "resistances": {
+            "fire": 2,
+            "water": 0,
+            "thunder": 0,
+            "ice": 0,
+            "dragon": 0
+        },
+        "attributes": {
+            "gender": 3
+        }
+    },
+    {
+        "id": 1,
+        "name": "Chainmail Trousers",
+        "rarity": 1,
+        "defense": {
+            "base": 2,
+            "max": 38,
+            "augmented": 68
+        },
+        "resistances": {
+            "fire": 0,
+            "water": 2,
+            "thunder": 0,
+            "ice": 0,
+            "dragon": 0
+        },
+        "attributes": {
+            "gender": 3
+        }
+    },
+    {
+        "id": 2,
+        "name": "Hunter's Greaves",
+        "rarity": 1,
+        "abilityIds": [
+            299
+        ],
+        "defense": {
+            "base": 6,
+            "max": 42,
+            "augmented": 72
+        },
+        "resistances": {
+            "fire": 2,
+            "water": 2,
+            "thunder": 0,
+            "ice": 0,
+            "dragon": 0
+        },
+        "attributes": {
+            "gender": 3
+        }
+    },
+    {
+        "id": 3,
+        "name": "Bone Greaves",
+        "rarity": 1,
+        "abilityIds": [
+            290
+        ],
+        "defense": {
+            "base": 6,
+            "max": 42,
+            "augmented": 72
+        },
+        "resistances": {
+            "fire": 2,
+            "water": 0,
+            "thunder": 2,
+            "ice": 0,
+            "dragon": 2
+        },
+        "attributes": {
+            "gender": 3
+        }
+    },
+    {
+        "id": 4,
+        "name": "Vespoid Greaves",
+        "rarity": 1,
+        "abilityIds": [
+            249
+        ],
+        "defense": {
+            "base": 8,
+            "max": 44,
+            "augmented": 74
+        },
+        "resistances": {
+            "fire": -2,
+            "water": 1,
+            "thunder": 1,
+            "ice": 1,
+            "dragon": 2
+        },
+        "attributes": {
+            "gender": 3
+        }
+    },
+    {
+        "id": 6,
+        "name": "Gajau Boots",
+        "rarity": 1,
+        "abilityIds": [
+            284
+        ],
+        "defense": {
+            "base": 12,
+            "max": 48,
+            "augmented": 78
+        },
+        "resistances": {
+            "fire": 0,
+            "water": 5,
+            "thunder": 0,
+            "ice": 0,
+            "dragon": 0
+        },
+        "attributes": {
+            "gender": 3
+        }
+    },
+    {
+        "id": 7,
+        "name": "Jagras Greaves",
+        "rarity": 1,
+        "abilityIds": [
+            279
+        ],
+        "defense": {
+            "base": 8,
+            "max": 44,
+            "augmented": 74
+        },
+        "resistances": {
+            "fire": -2,
+            "water": 2,
+            "thunder": -1,
+            "ice": -1,
+            "dragon": 1
+        },
+        "attributes": {
+            "gender": 3
+        }
+    },
+    {
+        "id": 8,
+        "name": "Kulu Greaves",
+        "rarity": 1,
+        "abilityIds": [
+            122
+        ],
+        "defense": {
+            "base": 10,
+            "max": 46,
+            "augmented": 76
+        },
+        "resistances": {
+            "fire": 0,
+            "water": -3,
+            "thunder": 0,
+            "ice": 1,
+            "dragon": 0
+        },
+        "attributes": {
+            "gender": 3
+        }
+    },
+    {
+        "id": 9,
+        "name": "Alloy Greaves",
+        "rarity": 2,
+        "abilityIds": [
+            237
+        ],
+        "defense": {
+            "base": 8,
+            "max": 40,
+            "augmented": 66
+        },
+        "resistances": {
+            "fire": -2,
+            "water": 1,
+            "thunder": -2,
+            "ice": -2,
+            "dragon": 1
+        },
+        "attributes": {
+            "gender": 3
+        }
+    },
+    {
+        "id": 10,
+        "name": "Pukei Greaves",
+        "rarity": 2,
+        "abilityIds": [
+            259
+        ],
+        "defense": {
+            "base": 12,
+            "max": 44,
+            "augmented": 70
+        },
+        "resistances": {
+            "fire": 0,
+            "water": 3,
+            "thunder": -3,
+            "ice": 0,
+            "dragon": 1
+        },
+        "attributes": {
+            "gender": 3
+        }
+    },
+    {
+        "id": 11,
+        "name": "Barroth Greaves",
+        "rarity": 2,
+        "abilityIds": [
+            9
+        ],
+        "defense": {
+            "base": 14,
+            "max": 38,
+            "augmented": 72
+        },
+        "resistances": {
+            "fire": -3,
+            "water": -1,
+            "thunder": 3,
+            "ice": -1,
+            "dragon": 0
+        },
+        "attributes": {
+            "gender": 3
+        }
+    },
+    {
+        "id": 12,
+        "name": "Jyura Greaves",
+        "rarity": 2,
+        "abilityIds": [
+            135
+        ],
+        "defense": {
+            "base": 14,
+            "max": 46,
+            "augmented": 72
+        },
+        "resistances": {
+            "fire": -1,
+            "water": 2,
+            "thunder": -3,
+            "ice": 0,
+            "dragon": 0
+        },
+        "attributes": {
+            "gender": 3
+        }
+    },
+    {
+        "id": 13,
+        "name": "Kadachi Greaves",
+        "rarity": 2,
+        "abilityIds": [
+            70
+        ],
+        "defense": {
+            "base": 16,
+            "max": 48,
+            "augmented": 74
+        },
+        "resistances": {
+            "fire": 0,
+            "water": -3,
+            "thunder": 3,
+            "ice": 0,
+            "dragon": 0
+        },
+        "attributes": {
+            "gender": 3
+        }
+    },
+    {
+        "id": 14,
+        "name": "High Metal Greaves",
+        "rarity": 3,
+        "abilityIds": [
+            192
+        ],
+        "defense": {
+            "base": 18,
+            "max": 46,
+            "augmented": 70
+        },
+        "resistances": {
+            "fire": 0,
+            "water": -1,
+            "thunder": -2,
+            "ice": 3,
+            "dragon": 0
+        },
+        "attributes": {
+            "gender": 3
+        }
+    },
+    {
+        "id": 15,
+        "name": "King Beetle Crura",
+        "rarity": 3,
+        "abilityIds": [
+            297
+        ],
+        "defense": {
+            "base": 22,
+            "max": 50,
+            "augmented": 74
+        },
+        "resistances": {
+            "fire": -1,
+            "water": -1,
+            "thunder": 2,
+            "ice": 0,
+            "dragon": 2
+        },
+        "attributes": {
+            "gender": 1
+        }
+    },
+    {
+        "id": 16,
+        "name": "Butterfly Crura",
+        "rarity": 3,
+        "abilityIds": [
+            297
+        ],
+        "defense": {
+            "base": 22,
+            "max": 50,
+            "augmented": 74
+        },
+        "resistances": {
+            "fire": -1,
+            "water": -1,
+            "thunder": 2,
+            "ice": 0,
+            "dragon": 2
+        },
+        "attributes": {
+            "gender": 2
+        }
+    },
+    {
+        "id": 18,
+        "name": "Hornetaur Greaves",
+        "rarity": 3,
+        "abilityIds": [
+            141
+        ],
+        "defense": {
+            "base": 18,
+            "max": 46,
+            "augmented": 70
+        },
+        "resistances": {
+            "fire": -1,
+            "water": -1,
+            "thunder": 0,
+            "ice": 0,
+            "dragon": 2
+        },
+        "attributes": {
+            "gender": 3
+        }
+    },
+    {
+        "id": 19,
+        "name": "Anja Greaves",
+        "rarity": 3,
+        "abilityIds": [
+            189
+        ],
+        "defense": {
+            "base": 20,
+            "max": 48,
+            "augmented": 72
+        },
+        "resistances": {
+            "fire": 3,
+            "water": -3,
+            "thunder": -1,
+            "ice": -1,
+            "dragon": 0
+        },
+        "attributes": {
+            "gender": 3
+        },
+        "armorSetSkillIds": [
+            0
+        ]
+    },
+    {
+        "id": 20,
+        "name": "Rathian Greaves",
+        "rarity": 3,
+        "abilityIds": [
+            55
+        ],
+        "defense": {
+            "base": 22,
+            "max": 50,
+            "augmented": 74
+        },
+        "resistances": {
+            "fire": 2,
+            "water": 0,
+            "thunder": -2,
+            "ice": 0,
+            "dragon": -3
+        },
+        "attributes": {
+            "gender": 3
+        }
+    },
+    {
+        "id": 21,
+        "name": "Tzitzi Greaves",
+        "rarity": 3,
+        "abilityIds": [
+            6
+        ],
+        "defense": {
+            "base": 18,
+            "max": 46,
+            "augmented": 70
+        },
+        "resistances": {
+            "fire": 0,
+            "water": 0,
+            "thunder": -3,
+            "ice": -2,
+            "dragon": 0
+        },
+        "attributes": {
+            "gender": 3
+        }
+    },
+    {
+        "id": 22,
+        "name": "Lumu Greaves",
+        "rarity": 3,
+        "abilityIds": [
+            27
+        ],
+        "defense": {
+            "base": 20,
+            "max": 48,
+            "augmented": 72
+        },
+        "resistances": {
+            "fire": -3,
+            "water": 2,
+            "thunder": 0,
+            "ice": 1,
+            "dragon": 0
+        },
+        "attributes": {
+            "gender": 3
+        }
+    },
+    {
+        "id": 23,
+        "name": "Girros Greaves",
+        "rarity": 3,
+        "abilityIds": [
+            107
+        ],
+        "defense": {
+            "base": 20,
+            "max": 48,
+            "augmented": 72
+        },
+        "resistances": {
+            "fire": 0,
+            "water": -3,
+            "thunder": 2,
+            "ice": 0,
+            "dragon": 1
+        },
+        "attributes": {
+            "gender": 3
+        }
+    },
+    {
+        "id": 24,
+        "name": "Baan Greaves",
+        "rarity": 3,
+        "abilityIds": [
+            16
+        ],
+        "defense": {
+            "base": 24,
+            "max": 52,
+            "augmented": 76
+        },
+        "resistances": {
+            "fire": 0,
+            "water": 2,
+            "thunder": 0,
+            "ice": -1,
+            "dragon": -2
+        },
+        "attributes": {
+            "gender": 3
+        }
+    },
+    {
+        "id": 25,
+        "name": "Ingot Greaves",
+        "rarity": 4,
+        "abilityIds": [
+            45
+        ],
+        "defense": {
+            "base": 28,
+            "max": 52,
+            "augmented": 72
+        },
+        "resistances": {
+            "fire": -2,
+            "water": 0,
+            "thunder": 3,
+            "ice": -1,
+            "dragon": 0
+        },
+        "attributes": {
+            "gender": 3
+        }
+    },
+    {
+        "id": 26,
+        "name": "Death Stench Heel",
+        "rarity": 4,
+        "abilityIds": [
+            141
+        ],
+        "defense": {
+            "base": 32,
+            "max": 56,
+            "augmented": 76
+        },
+        "resistances": {
+            "fire": 3,
+            "water": 2,
+            "thunder": -2,
+            "ice": 3,
+            "dragon": -4
+        },
+        "attributes": {
+            "gender": 3
+        }
+    },
+    {
+        "id": 27,
+        "name": "Brigade Boots",
+        "rarity": 4,
+        "abilityIds": [
+            289
+        ],
+        "defense": {
+            "base": 28,
+            "max": 52,
+            "augmented": 72
+        },
+        "resistances": {
+            "fire": 1,
+            "water": 0,
+            "thunder": 2,
+            "ice": 0,
+            "dragon": 2
+        },
+        "attributes": {
+            "gender": 3
+        }
+    },
+    {
+        "id": 28,
+        "name": "Legiana Greaves",
+        "rarity": 4,
+        "abilityIds": [
+            67
+        ],
+        "defense": {
+            "base": 30,
+            "max": 54,
+            "augmented": 74
+        },
+        "resistances": {
+            "fire": -1,
+            "water": 2,
+            "thunder": -3,
+            "ice": 3,
+            "dragon": 0
+        },
+        "attributes": {
+            "gender": 3
+        },
+        "armorSetSkillIds": [
+            1
+        ]
+    },
+    {
+        "id": 29,
+        "name": "Odogaron Greaves",
+        "rarity": 4,
+        "abilityIds": [
+            222
+        ],
+        "defense": {
+            "base": 30,
+            "max": 54,
+            "augmented": 74
+        },
+        "resistances": {
+            "fire": 2,
+            "water": 2,
+            "thunder": -2,
+            "ice": -3,
+            "dragon": 0
+        },
+        "attributes": {
+            "gender": 3
+        },
+        "armorSetSkillIds": [
+            2
+        ]
+    },
+    {
+        "id": 30,
+        "name": "Rathalos Greaves",
+        "rarity": 4,
+        "abilityIds": [
+            280
+        ],
+        "defense": {
+            "base": 30,
+            "max": 54,
+            "augmented": 74
+        },
+        "resistances": {
+            "fire": 3,
+            "water": 1,
+            "thunder": -2,
+            "ice": 1,
+            "dragon": -3
+        },
+        "attributes": {
+            "gender": 3
+        },
+        "armorSetSkillIds": [
+            3
+        ]
+    },
+    {
+        "id": 31,
+        "name": "Diablos Greaves",
+        "rarity": 4,
+        "abilityIds": [
+            32
+        ],
+        "defense": {
+            "base": 32,
+            "max": 56,
+            "augmented": 76
+        },
+        "resistances": {
+            "fire": 3,
+            "water": -2,
+            "thunder": 0,
+            "ice": -3,
+            "dragon": 2
+        },
+        "attributes": {
+            "gender": 3
+        },
+        "armorSetSkillIds": [
+            4
+        ]
+    },
+    {
+        "id": 32,
+        "name": "Kirin Leg Guards",
+        "rarity": 4,
+        "abilityIds": [
+            70
+        ],
+        "defense": {
+            "base": 34,
+            "max": 58,
+            "augmented": 78
+        },
+        "resistances": {
+            "fire": -3,
+            "water": -2,
+            "thunder": 4,
+            "ice": -2,
+            "dragon": 3
+        },
+        "attributes": {
+            "gender": 3
+        },
+        "armorSetSkillIds": [
+            5
+        ]
+    },
+    {
+        "id": 33,
+        "name": "Leather Trousers α",
+        "rarity": 5,
+        "abilityIds": [
+            287
+        ],
+        "defense": {
+            "base": 32,
+            "max": 54,
+            "augmented": 70
+        },
+        "resistances": {
+            "fire": 2,
+            "water": 0,
+            "thunder": 0,
+            "ice": 0,
+            "dragon": 0
+        },
+        "attributes": {
+            "gender": 3
+        }
+    },
+    {
+        "id": 34,
+        "name": "Leather Trousers β",
+        "rarity": 5,
+        "slots": [
+            1
+        ],
+        "defense": {
+            "base": 32,
+            "max": 54,
+            "augmented": 70
+        },
+        "resistances": {
+            "fire": 2,
+            "water": 0,
+            "thunder": 0,
+            "ice": 0,
+            "dragon": 0
+        },
+        "attributes": {
+            "gender": 3
+        }
+    },
+    {
+        "id": 35,
+        "name": "Chainmail Trousers α",
+        "rarity": 5,
+        "abilityIds": [
+            55
+        ],
+        "defense": {
+            "base": 32,
+            "max": 54,
+            "augmented": 70
+        },
+        "resistances": {
+            "fire": 0,
+            "water": 2,
+            "thunder": 0,
+            "ice": 0,
+            "dragon": 0
+        },
+        "attributes": {
+            "gender": 3
+        }
+    },
+    {
+        "id": 36,
+        "name": "Chainmail Trousers β",
+        "rarity": 5,
+        "slots": [
+            1
+        ],
+        "defense": {
+            "base": 32,
+            "max": 54,
+            "augmented": 70
+        },
+        "resistances": {
+            "fire": 0,
+            "water": 2,
+            "thunder": 0,
+            "ice": 0,
+            "dragon": 0
+        },
+        "attributes": {
+            "gender": 3
+        }
+    },
+    {
+        "id": 37,
+        "name": "Hunter's Greaves α",
+        "rarity": 5,
+        "abilityIds": [
+            296,
+            269
+        ],
+        "defense": {
+            "base": 36,
+            "max": 58,
+            "augmented": 74
+        },
+        "resistances": {
+            "fire": 2,
+            "water": 2,
+            "thunder": 0,
+            "ice": 0,
+            "dragon": 0
+        },
+        "attributes": {
+            "gender": 3
+        }
+    },
+    {
+        "id": 38,
+        "name": "Hunter's Greaves β",
+        "rarity": 5,
+        "slots": [
+            1
+        ],
+        "abilityIds": [
+            296
+        ],
+        "defense": {
+            "base": 36,
+            "max": 58,
+            "augmented": 74
+        },
+        "resistances": {
+            "fire": 2,
+            "water": 2,
+            "thunder": 0,
+            "ice": 0,
+            "dragon": 0
+        },
+        "attributes": {
+            "gender": 3
+        }
+    },
+    {
+        "id": 39,
+        "name": "Bone Greaves α",
+        "rarity": 5,
+        "abilityIds": [
+            291
+        ],
+        "defense": {
+            "base": 36,
+            "max": 58,
+            "augmented": 74
+        },
+        "resistances": {
+            "fire": 2,
+            "water": 0,
+            "thunder": 2,
+            "ice": 0,
+            "dragon": 2
+        },
+        "attributes": {
+            "gender": 3
+        }
+    },
+    {
+        "id": 40,
+        "name": "Bone Greaves β",
+        "rarity": 5,
+        "slots": [
+            1
+        ],
+        "abilityIds": [
+            290
+        ],
+        "defense": {
+            "base": 36,
+            "max": 58,
+            "augmented": 74
+        },
+        "resistances": {
+            "fire": 2,
+            "water": 0,
+            "thunder": 2,
+            "ice": 0,
+            "dragon": 2
+        },
+        "attributes": {
+            "gender": 3
+        }
+    },
+    {
+        "id": 41,
+        "name": "Alloy Greaves α",
+        "rarity": 5,
+        "abilityIds": [
+            238
+        ],
+        "defense": {
+            "base": 36,
+            "max": 58,
+            "augmented": 74
+        },
+        "resistances": {
+            "fire": -2,
+            "water": 0,
+            "thunder": -2,
+            "ice": -2,
+            "dragon": 0
+        },
+        "attributes": {
+            "gender": 3
+        }
+    },
+    {
+        "id": 42,
+        "name": "Alloy Greaves β",
+        "rarity": 5,
+        "slots": [
+            1
+        ],
+        "abilityIds": [
+            237
+        ],
+        "defense": {
+            "base": 36,
+            "max": 58,
+            "augmented": 74
+        },
+        "resistances": {
+            "fire": -2,
+            "water": 0,
+            "thunder": -2,
+            "ice": -2,
+            "dragon": 0
+        },
+        "attributes": {
+            "gender": 3
+        }
+    },
+    {
+        "id": 43,
+        "name": "King Beetle Crura α",
+        "rarity": 5,
+        "slots": [
+            1
+        ],
+        "abilityIds": [
+            297,
+            209
+        ],
+        "defense": {
+            "base": 42,
+            "max": 64,
+            "augmented": 80
+        },
+        "resistances": {
+            "fire": -1,
+            "water": -1,
+            "thunder": 2,
+            "ice": 0,
+            "dragon": 2
+        },
+        "attributes": {
+            "gender": 1
+        }
+    },
+    {
+        "id": 44,
+        "name": "King Beetle Crura β",
+        "rarity": 5,
+        "slots": [
+            2,
+            1
+        ],
+        "abilityIds": [
+            297
+        ],
+        "defense": {
+            "base": 42,
+            "max": 64,
+            "augmented": 80
+        },
+        "resistances": {
+            "fire": -1,
+            "water": -1,
+            "thunder": 2,
+            "ice": 0,
+            "dragon": 2
+        },
+        "attributes": {
+            "gender": 1
+        }
+    },
+    {
+        "id": 45,
+        "name": "Butterfly Crura α",
+        "rarity": 5,
+        "slots": [
+            1
+        ],
+        "abilityIds": [
+            297,
+            209
+        ],
+        "defense": {
+            "base": 42,
+            "max": 64,
+            "augmented": 80
+        },
+        "resistances": {
+            "fire": -1,
+            "water": -1,
+            "thunder": 2,
+            "ice": 0,
+            "dragon": 2
+        },
+        "attributes": {
+            "gender": 2
+        }
+    },
+    {
+        "id": 46,
+        "name": "Butterfly Crura β",
+        "rarity": 5,
+        "slots": [
+            2,
+            1
+        ],
+        "abilityIds": [
+            297
+        ],
+        "defense": {
+            "base": 42,
+            "max": 64,
+            "augmented": 80
+        },
+        "resistances": {
+            "fire": -1,
+            "water": -1,
+            "thunder": 2,
+            "ice": 0,
+            "dragon": 2
+        },
+        "attributes": {
+            "gender": 2
+        }
+    },
+    {
+        "id": 47,
+        "name": "Vespoid Greaves α",
+        "rarity": 5,
+        "abilityIds": [
+            249,
+            3
+        ],
+        "defense": {
+            "base": 38,
+            "max": 60,
+            "augmented": 76
+        },
+        "resistances": {
+            "fire": -2,
+            "water": 1,
+            "thunder": 1,
+            "ice": 1,
+            "dragon": 2
+        },
+        "attributes": {
+            "gender": 3
+        }
+    },
+    {
+        "id": 48,
+        "name": "Vespoid Greaves β",
+        "rarity": 5,
+        "slots": [
+            1
+        ],
+        "abilityIds": [
+            249
+        ],
+        "defense": {
+            "base": 38,
+            "max": 60,
+            "augmented": 76
+        },
+        "resistances": {
+            "fire": -2,
+            "water": 1,
+            "thunder": 1,
+            "ice": 1,
+            "dragon": 2
+        },
+        "attributes": {
+            "gender": 3
+        }
+    },
+    {
+        "id": 49,
+        "name": "Hornetaur Greaves α",
+        "rarity": 5,
+        "abilityIds": [
+            141,
+            99
+        ],
+        "defense": {
+            "base": 38,
+            "max": 60,
+            "augmented": 76
+        },
+        "resistances": {
+            "fire": -1,
+            "water": -1,
+            "thunder": 0,
+            "ice": 0,
+            "dragon": 2
+        },
+        "attributes": {
+            "gender": 3
+        }
+    },
+    {
+        "id": 50,
+        "name": "Hornetaur Greaves β",
+        "rarity": 5,
+        "slots": [
+            1
+        ],
+        "abilityIds": [
+            141
+        ],
+        "defense": {
+            "base": 38,
+            "max": 60,
+            "augmented": 76
+        },
+        "resistances": {
+            "fire": -1,
+            "water": -1,
+            "thunder": 0,
+            "ice": 0,
+            "dragon": 2
+        },
+        "attributes": {
+            "gender": 3
+        }
+    },
+    {
+        "id": 54,
+        "name": "Gajau Boots α",
+        "rarity": 5,
+        "abilityIds": [
+            285,
+            84
+        ],
+        "defense": {
+            "base": 40,
+            "max": 62,
+            "augmented": 78
+        },
+        "resistances": {
+            "fire": 0,
+            "water": 5,
+            "thunder": 0,
+            "ice": 0,
+            "dragon": 0
+        },
+        "attributes": {
+            "gender": 3
+        }
+    },
+    {
+        "id": 55,
+        "name": "Gajau Boots β",
+        "rarity": 5,
+        "slots": [
+            1
+        ],
+        "abilityIds": [
+            284,
+            84
+        ],
+        "defense": {
+            "base": 40,
+            "max": 62,
+            "augmented": 78
+        },
+        "resistances": {
+            "fire": 0,
+            "water": 5,
+            "thunder": 0,
+            "ice": 0,
+            "dragon": 0
+        },
+        "attributes": {
+            "gender": 3
+        }
+    },
+    {
+        "id": 58,
+        "name": "Jagras Greaves α",
+        "rarity": 5,
+        "abilityIds": [
+            279,
+            233
+        ],
+        "defense": {
+            "base": 40,
+            "max": 62,
+            "augmented": 78
+        },
+        "resistances": {
+            "fire": -2,
+            "water": 2,
+            "thunder": -1,
+            "ice": -1,
+            "dragon": 1
+        },
+        "attributes": {
+            "gender": 3
+        }
+    },
+    {
+        "id": 59,
+        "name": "Jagras Greaves β",
+        "rarity": 5,
+        "slots": [
+            1
+        ],
+        "abilityIds": [
+            279
+        ],
+        "defense": {
+            "base": 40,
+            "max": 62,
+            "augmented": 78
+        },
+        "resistances": {
+            "fire": -2,
+            "water": 2,
+            "thunder": -1,
+            "ice": -1,
+            "dragon": 1
+        },
+        "attributes": {
+            "gender": 3
+        }
+    },
+    {
+        "id": 60,
+        "name": "Kulu Greaves α",
+        "rarity": 5,
+        "abilityIds": [
+            122,
+            230
+        ],
+        "defense": {
+            "base": 40,
+            "max": 62,
+            "augmented": 78
+        },
+        "resistances": {
+            "fire": 0,
+            "water": -3,
+            "thunder": 0,
+            "ice": 1,
+            "dragon": 0
+        },
+        "attributes": {
+            "gender": 3
+        }
+    },
+    {
+        "id": 61,
+        "name": "Kulu Greaves β",
+        "rarity": 5,
+        "slots": [
+            1
+        ],
+        "abilityIds": [
+            122
+        ],
+        "defense": {
+            "base": 40,
+            "max": 62,
+            "augmented": 78
+        },
+        "resistances": {
+            "fire": 0,
+            "water": -3,
+            "thunder": 0,
+            "ice": 1,
+            "dragon": 0
+        },
+        "attributes": {
+            "gender": 3
+        }
+    },
+    {
+        "id": 62,
+        "name": "Tzitzi Greaves α",
+        "rarity": 5,
+        "abilityIds": [
+            7
+        ],
+        "defense": {
+            "base": 40,
+            "max": 62,
+            "augmented": 78
+        },
+        "resistances": {
+            "fire": 0,
+            "water": 0,
+            "thunder": -3,
+            "ice": -2,
+            "dragon": 0
+        },
+        "attributes": {
+            "gender": 3
+        }
+    },
+    {
+        "id": 63,
+        "name": "Tzitzi Greaves β",
+        "rarity": 5,
+        "slots": [
+            1
+        ],
+        "abilityIds": [
+            6
+        ],
+        "defense": {
+            "base": 40,
+            "max": 62,
+            "augmented": 78
+        },
+        "resistances": {
+            "fire": 0,
+            "water": 0,
+            "thunder": -3,
+            "ice": -2,
+            "dragon": 0
+        },
+        "attributes": {
+            "gender": 3
+        }
+    },
+    {
+        "id": 64,
+        "name": "Girros Greaves α",
+        "rarity": 5,
+        "abilityIds": [
+            108
+        ],
+        "defense": {
+            "base": 40,
+            "max": 62,
+            "augmented": 78
+        },
+        "resistances": {
+            "fire": 0,
+            "water": -3,
+            "thunder": 2,
+            "ice": 0,
+            "dragon": 1
+        },
+        "attributes": {
+            "gender": 3
+        }
+    },
+    {
+        "id": 65,
+        "name": "Girros Greaves β",
+        "rarity": 5,
+        "slots": [
+            1
+        ],
+        "abilityIds": [
+            107
+        ],
+        "defense": {
+            "base": 40,
+            "max": 62,
+            "augmented": 78
+        },
+        "resistances": {
+            "fire": 0,
+            "water": -3,
+            "thunder": 2,
+            "ice": 0,
+            "dragon": 1
+        },
+        "attributes": {
+            "gender": 3
+        }
+    },
+    {
+        "id": 66,
+        "name": "Pukei Greaves α",
+        "rarity": 5,
+        "abilityIds": [
+            260,
+            281
+        ],
+        "defense": {
+            "base": 42,
+            "max": 64,
+            "augmented": 80
+        },
+        "resistances": {
+            "fire": 0,
+            "water": 3,
+            "thunder": -3,
+            "ice": 0,
+            "dragon": 1
+        },
+        "attributes": {
+            "gender": 3
+        }
+    },
+    {
+        "id": 67,
+        "name": "Pukei Greaves β",
+        "rarity": 5,
+        "slots": [
+            2
+        ],
+        "abilityIds": [
+            259
+        ],
+        "defense": {
+            "base": 42,
+            "max": 64,
+            "augmented": 80
+        },
+        "resistances": {
+            "fire": 0,
+            "water": 3,
+            "thunder": -3,
+            "ice": 0,
+            "dragon": 1
+        },
+        "attributes": {
+            "gender": 3
+        }
+    },
+    {
+        "id": 68,
+        "name": "Barroth Greaves α",
+        "rarity": 5,
+        "abilityIds": [
+            10,
+            194
+        ],
+        "defense": {
+            "base": 42,
+            "max": 64,
+            "augmented": 80
+        },
+        "resistances": {
+            "fire": -3,
+            "water": -1,
+            "thunder": 3,
+            "ice": -1,
+            "dragon": 0
+        },
+        "attributes": {
+            "gender": 3
+        }
+    },
+    {
+        "id": 69,
+        "name": "Barroth Greaves β",
+        "rarity": 5,
+        "slots": [
+            1,
+            1
+        ],
+        "abilityIds": [
+            9
+        ],
+        "defense": {
+            "base": 42,
+            "max": 64,
+            "augmented": 80
+        },
+        "resistances": {
+            "fire": -3,
+            "water": -1,
+            "thunder": 3,
+            "ice": -1,
+            "dragon": 0
+        },
+        "attributes": {
+            "gender": 3
+        }
+    },
+    {
+        "id": 70,
+        "name": "Anja Greaves α",
+        "rarity": 5,
+        "abilityIds": [
+            190
+        ],
+        "defense": {
+            "base": 44,
+            "max": 66,
+            "augmented": 82
+        },
+        "resistances": {
+            "fire": 3,
+            "water": -3,
+            "thunder": -1,
+            "ice": -1,
+            "dragon": 0
+        },
+        "attributes": {
+            "gender": 3
+        },
+        "armorSetSkillIds": [
+            6
+        ]
+    },
+    {
+        "id": 71,
+        "name": "Anja Greaves β",
+        "rarity": 5,
+        "slots": [
+            1
+        ],
+        "abilityIds": [
+            189
+        ],
+        "defense": {
+            "base": 44,
+            "max": 66,
+            "augmented": 82
+        },
+        "resistances": {
+            "fire": 3,
+            "water": -3,
+            "thunder": -1,
+            "ice": -1,
+            "dragon": 0
+        },
+        "attributes": {
+            "gender": 3
+        },
+        "armorSetSkillIds": [
+            6
+        ]
+    },
+    {
+        "id": 72,
+        "name": "Jyura Greaves α",
+        "rarity": 5,
+        "abilityIds": [
+            136
+        ],
+        "defense": {
+            "base": 44,
+            "max": 66,
+            "augmented": 82
+        },
+        "resistances": {
+            "fire": -1,
+            "water": 2,
+            "thunder": -3,
+            "ice": 0,
+            "dragon": 0
+        },
+        "attributes": {
+            "gender": 3
+        }
+    },
+    {
+        "id": 73,
+        "name": "Jyura Greaves β",
+        "rarity": 5,
+        "slots": [
+            2
+        ],
+        "abilityIds": [
+            135
+        ],
+        "defense": {
+            "base": 44,
+            "max": 66,
+            "augmented": 82
+        },
+        "resistances": {
+            "fire": -1,
+            "water": 2,
+            "thunder": -3,
+            "ice": 0,
+            "dragon": 0
+        },
+        "attributes": {
+            "gender": 3
+        }
+    },
+    {
+        "id": 74,
+        "name": "Kadachi Greaves α",
+        "rarity": 5,
+        "abilityIds": [
+            71,
+            197
+        ],
+        "defense": {
+            "base": 44,
+            "max": 66,
+            "augmented": 82
+        },
+        "resistances": {
+            "fire": 0,
+            "water": -3,
+            "thunder": 3,
+            "ice": 0,
+            "dragon": 0
+        },
+        "attributes": {
+            "gender": 3
+        }
+    },
+    {
+        "id": 75,
+        "name": "Kadachi Greaves β",
+        "rarity": 5,
+        "slots": [
+            1,
+            1
+        ],
+        "abilityIds": [
+            70
+        ],
+        "defense": {
+            "base": 44,
+            "max": 66,
+            "augmented": 82
+        },
+        "resistances": {
+            "fire": 0,
+            "water": -3,
+            "thunder": 3,
+            "ice": 0,
+            "dragon": 0
+        },
+        "attributes": {
+            "gender": 3
+        }
+    },
+    {
+        "id": 76,
+        "name": "Lumu Greaves α",
+        "rarity": 5,
+        "abilityIds": [
+            27,
+            203
+        ],
+        "defense": {
+            "base": 44,
+            "max": 66,
+            "augmented": 82
+        },
+        "resistances": {
+            "fire": -3,
+            "water": 2,
+            "thunder": 0,
+            "ice": 1,
+            "dragon": 0
+        },
+        "attributes": {
+            "gender": 3
+        }
+    },
+    {
+        "id": 77,
+        "name": "Lumu Greaves β",
+        "rarity": 5,
+        "slots": [
+            1,
+            1
+        ],
+        "abilityIds": [
+            27
+        ],
+        "defense": {
+            "base": 44,
+            "max": 66,
+            "augmented": 82
+        },
+        "resistances": {
+            "fire": -3,
+            "water": 2,
+            "thunder": 0,
+            "ice": 1,
+            "dragon": 0
+        },
+        "attributes": {
+            "gender": 3
+        }
+    },
+    {
+        "id": 78,
+        "name": "Rathian Greaves α",
+        "rarity": 5,
+        "abilityIds": [
+            56
+        ],
+        "defense": {
+            "base": 46,
+            "max": 68,
+            "augmented": 84
+        },
+        "resistances": {
+            "fire": 2,
+            "water": 0,
+            "thunder": -2,
+            "ice": 0,
+            "dragon": -3
+        },
+        "attributes": {
+            "gender": 3
+        }
+    },
+    {
+        "id": 79,
+        "name": "Rathian Greaves β",
+        "rarity": 5,
+        "slots": [
+            1
+        ],
+        "abilityIds": [
+            55
+        ],
+        "defense": {
+            "base": 46,
+            "max": 68,
+            "augmented": 84
+        },
+        "resistances": {
+            "fire": 2,
+            "water": 0,
+            "thunder": -2,
+            "ice": 0,
+            "dragon": -3
+        },
+        "attributes": {
+            "gender": 3
+        }
+    },
+    {
+        "id": 80,
+        "name": "Rath Heart Greaves α",
+        "rarity": 6,
+        "abilityIds": [
+            300,
+            27
+        ],
+        "defense": {
+            "base": 52,
+            "max": 72,
+            "augmented": 84
+        },
+        "resistances": {
+            "fire": 3,
+            "water": 0,
+            "thunder": -3,
+            "ice": 0,
+            "dragon": -4
+        },
+        "attributes": {
+            "gender": 3
+        },
+        "armorSetSkillIds": [
+            7
+        ]
+    },
+    {
+        "id": 81,
+        "name": "Rath Heart Greaves β",
+        "rarity": 6,
+        "slots": [
+            2
+        ],
+        "abilityIds": [
+            300
+        ],
+        "defense": {
+            "base": 52,
+            "max": 72,
+            "augmented": 84
+        },
+        "resistances": {
+            "fire": 3,
+            "water": 0,
+            "thunder": -3,
+            "ice": 0,
+            "dragon": -4
+        },
+        "attributes": {
+            "gender": 3
+        },
+        "armorSetSkillIds": [
+            7
+        ]
+    },
+    {
+        "id": 82,
+        "name": "Baan Greaves α",
+        "rarity": 6,
+        "abilityIds": [
+            17
+        ],
+        "defense": {
+            "base": 46,
+            "max": 66,
+            "augmented": 78
+        },
+        "resistances": {
+            "fire": 0,
+            "water": 2,
+            "thunder": 0,
+            "ice": -1,
+            "dragon": -2
+        },
+        "attributes": {
+            "gender": 3
+        }
+    },
+    {
+        "id": 83,
+        "name": "Baan Greaves β",
+        "rarity": 6,
+        "slots": [
+            1
+        ],
+        "abilityIds": [
+            16
+        ],
+        "defense": {
+            "base": 46,
+            "max": 66,
+            "augmented": 78
+        },
+        "resistances": {
+            "fire": 0,
+            "water": 2,
+            "thunder": 0,
+            "ice": -1,
+            "dragon": -2
+        },
+        "attributes": {
+            "gender": 3
+        }
+    },
+    {
+        "id": 88,
+        "name": "Dodogama Greaves α",
+        "rarity": 5,
+        "abilityIds": [
+            186,
+            113
+        ],
+        "defense": {
+            "base": 48,
+            "max": 70,
+            "augmented": 86
+        },
+        "resistances": {
+            "fire": 2,
+            "water": 0,
+            "thunder": -3,
+            "ice": 0,
+            "dragon": 2
+        },
+        "attributes": {
+            "gender": 3
+        }
+    },
+    {
+        "id": 89,
+        "name": "Dodogama Greaves β",
+        "rarity": 5,
+        "slots": [
+            1
+        ],
+        "abilityIds": [
+            186
+        ],
+        "defense": {
+            "base": 48,
+            "max": 70,
+            "augmented": 86
+        },
+        "resistances": {
+            "fire": 2,
+            "water": 0,
+            "thunder": -3,
+            "ice": 0,
+            "dragon": 2
+        },
+        "attributes": {
+            "gender": 3
+        }
+    },
+    {
+        "id": 90,
+        "name": "Zorah Spurs α",
+        "rarity": 6,
+        "abilityIds": [
+            241,
+            22
+        ],
+        "defense": {
+            "base": 44,
+            "max": 64,
+            "augmented": 76
+        },
+        "resistances": {
+            "fire": 4,
+            "water": -3,
+            "thunder": -1,
+            "ice": -2,
+            "dragon": -3
+        },
+        "attributes": {
+            "gender": 3
+        },
+        "armorSetSkillIds": [
+            8
+        ]
+    },
+    {
+        "id": 91,
+        "name": "Zorah Spurs β",
+        "rarity": 6,
+        "slots": [
+            2
+        ],
+        "abilityIds": [
+            241
+        ],
+        "defense": {
+            "base": 44,
+            "max": 64,
+            "augmented": 76
+        },
+        "resistances": {
+            "fire": 4,
+            "water": -3,
+            "thunder": -1,
+            "ice": -2,
+            "dragon": -3
+        },
+        "attributes": {
+            "gender": 3
+        },
+        "armorSetSkillIds": [
+            8
+        ]
+    },
+    {
+        "id": 92,
+        "name": "High Metal Greaves α",
+        "rarity": 6,
+        "abilityIds": [
+            192,
+            67
+        ],
+        "defense": {
+            "base": 50,
+            "max": 70,
+            "augmented": 82
+        },
+        "resistances": {
+            "fire": 0,
+            "water": -1,
+            "thunder": -2,
+            "ice": 3,
+            "dragon": 0
+        },
+        "attributes": {
+            "gender": 3
+        }
+    },
+    {
+        "id": 93,
+        "name": "High Metal Greaves β",
+        "rarity": 6,
+        "slots": [
+            1
+        ],
+        "abilityIds": [
+            192
+        ],
+        "defense": {
+            "base": 50,
+            "max": 70,
+            "augmented": 82
+        },
+        "resistances": {
+            "fire": 0,
+            "water": -1,
+            "thunder": -2,
+            "ice": 3,
+            "dragon": 0
+        },
+        "attributes": {
+            "gender": 3
+        }
+    },
+    {
+        "id": 94,
+        "name": "Ingot Greaves α",
+        "rarity": 6,
+        "abilityIds": [
+            46,
+            27
+        ],
+        "defense": {
+            "base": 50,
+            "max": 70,
+            "augmented": 82
+        },
+        "resistances": {
+            "fire": -2,
+            "water": 0,
+            "thunder": 3,
+            "ice": -1,
+            "dragon": 0
+        },
+        "attributes": {
+            "gender": 3
+        }
+    },
+    {
+        "id": 95,
+        "name": "Ingot Greaves β",
+        "rarity": 6,
+        "slots": [
+            2
+        ],
+        "abilityIds": [
+            46
+        ],
+        "defense": {
+            "base": 50,
+            "max": 70,
+            "augmented": 82
+        },
+        "resistances": {
+            "fire": -2,
+            "water": 0,
+            "thunder": 3,
+            "ice": -1,
+            "dragon": 0
+        },
+        "attributes": {
+            "gender": 3
+        }
+    },
+    {
+        "id": 96,
+        "name": "Brigade Boots α",
+        "rarity": 6,
+        "slots": [
+            1
+        ],
+        "abilityIds": [
+            289,
+            263
+        ],
+        "defense": {
+            "base": 52,
+            "max": 72,
+            "augmented": 84
+        },
+        "resistances": {
+            "fire": 1,
+            "water": 0,
+            "thunder": 2,
+            "ice": 0,
+            "dragon": 2
+        },
+        "attributes": {
+            "gender": 3
+        }
+    },
+    {
+        "id": 97,
+        "name": "Brigade Boots β",
+        "rarity": 6,
+        "slots": [
+            3
+        ],
+        "abilityIds": [
+            289
+        ],
+        "defense": {
+            "base": 52,
+            "max": 72,
+            "augmented": 84
+        },
+        "resistances": {
+            "fire": 1,
+            "water": 0,
+            "thunder": 2,
+            "ice": 0,
+            "dragon": 2
+        },
+        "attributes": {
+            "gender": 3
+        }
+    },
+    {
+        "id": 100,
+        "name": "Lavasioth Greaves α",
+        "rarity": 6,
+        "abilityIds": [
+            118,
+            79
+        ],
+        "defense": {
+            "base": 56,
+            "max": 76,
+            "augmented": 88
+        },
+        "resistances": {
+            "fire": 3,
+            "water": -3,
+            "thunder": 1,
+            "ice": -2,
+            "dragon": 2
+        },
+        "attributes": {
+            "gender": 3
+        }
+    },
+    {
+        "id": 101,
+        "name": "Lavasioth Greaves β",
+        "rarity": 6,
+        "slots": [
+            2
+        ],
+        "abilityIds": [
+            118
+        ],
+        "defense": {
+            "base": 56,
+            "max": 76,
+            "augmented": 88
+        },
+        "resistances": {
+            "fire": 3,
+            "water": -3,
+            "thunder": 1,
+            "ice": -2,
+            "dragon": 2
+        },
+        "attributes": {
+            "gender": 3
+        }
+    },
+    {
+        "id": 102,
+        "name": "Legiana Greaves α",
+        "rarity": 6,
+        "abilityIds": [
+            68,
+            146
+        ],
+        "defense": {
+            "base": 54,
+            "max": 74,
+            "augmented": 86
+        },
+        "resistances": {
+            "fire": -1,
+            "water": 2,
+            "thunder": -3,
+            "ice": 3,
+            "dragon": 0
+        },
+        "attributes": {
+            "gender": 3
+        },
+        "armorSetSkillIds": [
+            9
+        ]
+    },
+    {
+        "id": 103,
+        "name": "Legiana Greaves β",
+        "rarity": 6,
+        "slots": [
+            3
+        ],
+        "abilityIds": [
+            68
+        ],
+        "defense": {
+            "base": 54,
+            "max": 74,
+            "augmented": 86
+        },
+        "resistances": {
+            "fire": -1,
+            "water": 2,
+            "thunder": -3,
+            "ice": 3,
+            "dragon": 0
+        },
+        "attributes": {
+            "gender": 3
+        },
+        "armorSetSkillIds": [
+            9
+        ]
+    },
+    {
+        "id": 104,
+        "name": "Odogaron Greaves α",
+        "rarity": 6,
+        "abilityIds": [
+            222,
+            122
+        ],
+        "defense": {
+            "base": 54,
+            "max": 74,
+            "augmented": 86
+        },
+        "resistances": {
+            "fire": 2,
+            "water": 2,
+            "thunder": -2,
+            "ice": -3,
+            "dragon": 0
+        },
+        "attributes": {
+            "gender": 3
+        },
+        "armorSetSkillIds": [
+            10
+        ]
+    },
+    {
+        "id": 105,
+        "name": "Odogaron Greaves β",
+        "rarity": 6,
+        "slots": [
+            1
+        ],
+        "abilityIds": [
+            222
+        ],
+        "defense": {
+            "base": 54,
+            "max": 74,
+            "augmented": 86
+        },
+        "resistances": {
+            "fire": 2,
+            "water": 2,
+            "thunder": -2,
+            "ice": -3,
+            "dragon": 0
+        },
+        "attributes": {
+            "gender": 3
+        },
+        "armorSetSkillIds": [
+            10
+        ]
+    },
+    {
+        "id": 106,
+        "name": "Rathalos Greaves α",
+        "rarity": 6,
+        "abilityIds": [
+            280,
+            132
+        ],
+        "defense": {
+            "base": 54,
+            "max": 74,
+            "augmented": 86
+        },
+        "resistances": {
+            "fire": 3,
+            "water": 1,
+            "thunder": -2,
+            "ice": 1,
+            "dragon": -3
+        },
+        "attributes": {
+            "gender": 3
+        },
+        "armorSetSkillIds": [
+            11
+        ]
+    },
+    {
+        "id": 107,
+        "name": "Rathalos Greaves β",
+        "rarity": 6,
+        "slots": [
+            3
+        ],
+        "abilityIds": [
+            280
+        ],
+        "defense": {
+            "base": 54,
+            "max": 74,
+            "augmented": 86
+        },
+        "resistances": {
+            "fire": 3,
+            "water": 1,
+            "thunder": -2,
+            "ice": 1,
+            "dragon": -3
+        },
+        "attributes": {
+            "gender": 3
+        },
+        "armorSetSkillIds": [
+            11
+        ]
+    },
+    {
+        "id": 108,
+        "name": "Rath Soul Greaves α",
+        "rarity": 7,
+        "abilityIds": [
+            135,
+            287
+        ],
+        "defense": {
+            "base": 56,
+            "max": 68,
+            "augmented": 82
+        },
+        "resistances": {
+            "fire": 3,
+            "water": 2,
+            "thunder": 2,
+            "ice": -3,
+            "dragon": -4
+        },
+        "attributes": {
+            "gender": 3
+        },
+        "armorSetSkillIds": [
+            11
+        ]
+    },
+    {
+        "id": 109,
+        "name": "Rath Soul Greaves β",
+        "rarity": 7,
+        "slots": [
+            1
+        ],
+        "abilityIds": [
+            135
+        ],
+        "defense": {
+            "base": 56,
+            "max": 68,
+            "augmented": 82
+        },
+        "resistances": {
+            "fire": 3,
+            "water": 2,
+            "thunder": 2,
+            "ice": -3,
+            "dragon": -4
+        },
+        "attributes": {
+            "gender": 3
+        },
+        "armorSetSkillIds": [
+            11
+        ]
+    },
+    {
+        "id": 110,
+        "name": "Diablos Greaves α",
+        "rarity": 6,
+        "abilityIds": [
+            33,
+            152
+        ],
+        "defense": {
+            "base": 54,
+            "max": 74,
+            "augmented": 86
+        },
+        "resistances": {
+            "fire": 3,
+            "water": -2,
+            "thunder": 0,
+            "ice": -3,
+            "dragon": 2
+        },
+        "attributes": {
+            "gender": 3
+        },
+        "armorSetSkillIds": [
+            12
+        ]
+    },
+    {
+        "id": 111,
+        "name": "Diablos Greaves β",
+        "rarity": 6,
+        "slots": [
+            1,
+            1
+        ],
+        "abilityIds": [
+            33
+        ],
+        "defense": {
+            "base": 54,
+            "max": 74,
+            "augmented": 86
+        },
+        "resistances": {
+            "fire": 3,
+            "water": -2,
+            "thunder": 0,
+            "ice": -3,
+            "dragon": 2
+        },
+        "attributes": {
+            "gender": 3
+        },
+        "armorSetSkillIds": [
+            12
+        ]
+    },
+    {
+        "id": 112,
+        "name": "Diablos Nero Greaves α",
+        "rarity": 7,
+        "slots": [
+            1
+        ],
+        "abilityIds": [
+            116,
+            173
+        ],
+        "defense": {
+            "base": 56,
+            "max": 68,
+            "augmented": 82
+        },
+        "resistances": {
+            "fire": 2,
+            "water": -3,
+            "thunder": 0,
+            "ice": -4,
+            "dragon": 2
+        },
+        "attributes": {
+            "gender": 3
+        },
+        "armorSetSkillIds": [
+            12
+        ]
+    },
+    {
+        "id": 113,
+        "name": "Diablos Nero Greaves β",
+        "rarity": 7,
+        "slots": [
+            2
+        ],
+        "abilityIds": [
+            116
+        ],
+        "defense": {
+            "base": 56,
+            "max": 68,
+            "augmented": 82
+        },
+        "resistances": {
+            "fire": 2,
+            "water": -3,
+            "thunder": 0,
+            "ice": -4,
+            "dragon": 2
+        },
+        "attributes": {
+            "gender": 3
+        },
+        "armorSetSkillIds": [
+            12
+        ]
+    },
+    {
+        "id": 114,
+        "name": "Uragaan Greaves α",
+        "rarity": 7,
+        "slots": [
+            1
+        ],
+        "abilityIds": [
+            218
+        ],
+        "defense": {
+            "base": 60,
+            "max": 72,
+            "augmented": 86
+        },
+        "resistances": {
+            "fire": 4,
+            "water": -3,
+            "thunder": 1,
+            "ice": -2,
+            "dragon": -2
+        },
+        "attributes": {
+            "gender": 3
+        },
+        "armorSetSkillIds": [
+            13
+        ]
+    },
+    {
+        "id": 115,
+        "name": "Uragaan Greaves β",
+        "rarity": 7,
+        "slots": [
+            3
+        ],
+        "abilityIds": [
+            217
+        ],
+        "defense": {
+            "base": 60,
+            "max": 72,
+            "augmented": 86
+        },
+        "resistances": {
+            "fire": 4,
+            "water": -3,
+            "thunder": 1,
+            "ice": -2,
+            "dragon": -2
+        },
+        "attributes": {
+            "gender": 3
+        },
+        "armorSetSkillIds": [
+            13
+        ]
+    },
+    {
+        "id": 116,
+        "name": "Bazel Greaves α",
+        "rarity": 7,
+        "slots": [
+            1
+        ],
+        "abilityIds": [
+            241,
+            146
+        ],
+        "defense": {
+            "base": 58,
+            "max": 70,
+            "augmented": 84
+        },
+        "resistances": {
+            "fire": 3,
+            "water": 1,
+            "thunder": -4,
+            "ice": -2,
+            "dragon": -2
+        },
+        "attributes": {
+            "gender": 3
+        },
+        "armorSetSkillIds": [
+            14
+        ]
+    },
+    {
+        "id": 117,
+        "name": "Bazel Greaves β",
+        "rarity": 7,
+        "slots": [
+            3
+        ],
+        "abilityIds": [
+            241
+        ],
+        "defense": {
+            "base": 58,
+            "max": 70,
+            "augmented": 84
+        },
+        "resistances": {
+            "fire": 3,
+            "water": 1,
+            "thunder": -4,
+            "ice": -2,
+            "dragon": -2
+        },
+        "attributes": {
+            "gender": 3
+        },
+        "armorSetSkillIds": [
+            14
+        ]
+    },
+    {
+        "id": 118,
+        "name": "Damascus Greaves α",
+        "rarity": 7,
+        "slots": [
+            1
+        ],
+        "abilityIds": [
+            46,
+            19
+        ],
+        "defense": {
+            "base": 60,
+            "max": 72,
+            "augmented": 86
+        },
+        "resistances": {
+            "fire": 4,
+            "water": -2,
+            "thunder": 0,
+            "ice": 0,
+            "dragon": 0
+        },
+        "attributes": {
+            "gender": 3
+        }
+    },
+    {
+        "id": 119,
+        "name": "Damascus Greaves β",
+        "rarity": 7,
+        "slots": [
+            3
+        ],
+        "abilityIds": [
+            46
+        ],
+        "defense": {
+            "base": 60,
+            "max": 72,
+            "augmented": 86
+        },
+        "resistances": {
+            "fire": 4,
+            "water": -2,
+            "thunder": 0,
+            "ice": 0,
+            "dragon": 0
+        },
+        "attributes": {
+            "gender": 3
+        }
+    },
+    {
+        "id": 120,
+        "name": "Dober Greaves α",
+        "rarity": 7,
+        "abilityIds": [
+            39,
+            203
+        ],
+        "defense": {
+            "base": 60,
+            "max": 72,
+            "augmented": 86
+        },
+        "resistances": {
+            "fire": -2,
+            "water": 0,
+            "thunder": -1,
+            "ice": -1,
+            "dragon": 4
+        },
+        "attributes": {
+            "gender": 3
+        }
+    },
+    {
+        "id": 121,
+        "name": "Dober Greaves β",
+        "rarity": 7,
+        "slots": [
+            1
+        ],
+        "abilityIds": [
+            39
+        ],
+        "defense": {
+            "base": 60,
+            "max": 72,
+            "augmented": 86
+        },
+        "resistances": {
+            "fire": -2,
+            "water": 0,
+            "thunder": -1,
+            "ice": -1,
+            "dragon": 4
+        },
+        "attributes": {
+            "gender": 3
+        }
+    },
+    {
+        "id": 122,
+        "name": "Death Stench Heel α",
+        "rarity": 7,
+        "abilityIds": [
+            142,
+            100
+        ],
+        "defense": {
+            "base": 62,
+            "max": 74,
+            "augmented": 88
+        },
+        "resistances": {
+            "fire": 3,
+            "water": 2,
+            "thunder": -2,
+            "ice": 3,
+            "dragon": -4
+        },
+        "attributes": {
+            "gender": 3
+        }
+    },
+    {
+        "id": 123,
+        "name": "Death Stench Heel β",
+        "rarity": 7,
+        "slots": [
+            1,
+            1
+        ],
+        "abilityIds": [
+            142
+        ],
+        "defense": {
+            "base": 62,
+            "max": 74,
+            "augmented": 88
+        },
+        "resistances": {
+            "fire": 3,
+            "water": 2,
+            "thunder": -2,
+            "ice": 3,
+            "dragon": -4
+        },
+        "attributes": {
+            "gender": 3
+        }
+    },
+    {
+        "id": 125,
+        "name": "Nergigante Greaves α",
+        "rarity": 8,
+        "slots": [
+            1
+        ],
+        "abilityIds": [
+            266,
+            165
+        ],
+        "defense": {
+            "base": 64,
+            "max": 70,
+            "augmented": 84
+        },
+        "resistances": {
+            "fire": 1,
+            "water": 1,
+            "thunder": -3,
+            "ice": 1,
+            "dragon": -3
+        },
+        "attributes": {
+            "gender": 3
+        },
+        "armorSetSkillIds": [
+            15
+        ]
+    },
+    {
+        "id": 126,
+        "name": "Nergigante Greaves β",
+        "rarity": 8,
+        "slots": [
+            2
+        ],
+        "abilityIds": [
+            266
+        ],
+        "defense": {
+            "base": 64,
+            "max": 70,
+            "augmented": 84
+        },
+        "resistances": {
+            "fire": 1,
+            "water": 1,
+            "thunder": -3,
+            "ice": 1,
+            "dragon": -3
+        },
+        "attributes": {
+            "gender": 3
+        },
+        "armorSetSkillIds": [
+            15
+        ]
+    },
+    {
+        "id": 127,
+        "name": "Kaiser Greaves α",
+        "rarity": 8,
+        "abilityIds": [
+            161,
+            113
+        ],
+        "defense": {
+            "base": 64,
+            "max": 70,
+            "augmented": 84
+        },
+        "resistances": {
+            "fire": 3,
+            "water": -3,
+            "thunder": 1,
+            "ice": -3,
+            "dragon": 1
+        },
+        "attributes": {
+            "gender": 3
+        },
+        "armorSetSkillIds": [
+            16
+        ]
+    },
+    {
+        "id": 128,
+        "name": "Kaiser Greaves β",
+        "rarity": 8,
+        "slots": [
+            1
+        ],
+        "abilityIds": [
+            161
+        ],
+        "defense": {
+            "base": 64,
+            "max": 70,
+            "augmented": 84
+        },
+        "resistances": {
+            "fire": 3,
+            "water": -3,
+            "thunder": 1,
+            "ice": -3,
+            "dragon": 1
+        },
+        "attributes": {
+            "gender": 3
+        },
+        "armorSetSkillIds": [
+            16
+        ]
+    },
+    {
+        "id": 129,
+        "name": "Kushala Crus α",
+        "rarity": 8,
+        "abilityIds": [
+            215,
+            141
+        ],
+        "defense": {
+            "base": 64,
+            "max": 70,
+            "augmented": 84
+        },
+        "resistances": {
+            "fire": 0,
+            "water": 2,
+            "thunder": -3,
+            "ice": 4,
+            "dragon": -2
+        },
+        "attributes": {
+            "gender": 3
+        },
+        "armorSetSkillIds": [
+            17
+        ]
+    },
+    {
+        "id": 130,
+        "name": "Kushala Crus β",
+        "rarity": 8,
+        "slots": [
+            3
+        ],
+        "abilityIds": [
+            215
+        ],
+        "defense": {
+            "base": 64,
+            "max": 70,
+            "augmented": 84
+        },
+        "resistances": {
+            "fire": 0,
+            "water": 2,
+            "thunder": -3,
+            "ice": 4,
+            "dragon": -2
+        },
+        "attributes": {
+            "gender": 3
+        },
+        "armorSetSkillIds": [
+            17
+        ]
+    },
+    {
+        "id": 131,
+        "name": "Vaal Hazak Greaves α",
+        "rarity": 8,
+        "slots": [
+            1
+        ],
+        "abilityIds": [
+            294,
+            99
+        ],
+        "defense": {
+            "base": 64,
+            "max": 70,
+            "augmented": 84
+        },
+        "resistances": {
+            "fire": -4,
+            "water": 4,
+            "thunder": 1,
+            "ice": -1,
+            "dragon": -3
+        },
+        "attributes": {
+            "gender": 3
+        },
+        "armorSetSkillIds": [
+            18
+        ]
+    },
+    {
+        "id": 132,
+        "name": "Vaal Hazak Greaves β",
+        "rarity": 8,
+        "slots": [
+            1,
+            1
+        ],
+        "abilityIds": [
+            294
+        ],
+        "defense": {
+            "base": 64,
+            "max": 70,
+            "augmented": 84
+        },
+        "resistances": {
+            "fire": -4,
+            "water": 4,
+            "thunder": 1,
+            "ice": -1,
+            "dragon": -3
+        },
+        "attributes": {
+            "gender": 3
+        },
+        "armorSetSkillIds": [
+            18
+        ]
+    },
+    {
+        "id": 133,
+        "name": "Kirin Leg Guards α",
+        "rarity": 6,
+        "abilityIds": [
+            120,
+            71
+        ],
+        "defense": {
+            "base": 64,
+            "max": 70,
+            "augmented": 84
+        },
+        "resistances": {
+            "fire": -3,
+            "water": -2,
+            "thunder": 4,
+            "ice": -2,
+            "dragon": 2
+        },
+        "attributes": {
+            "gender": 3
+        },
+        "armorSetSkillIds": [
+            19
+        ]
+    },
+    {
+        "id": 134,
+        "name": "Kirin Leg Guards β",
+        "rarity": 6,
+        "slots": [
+            1,
+            1
+        ],
+        "abilityIds": [
+            120
+        ],
+        "defense": {
+            "base": 64,
+            "max": 70,
+            "augmented": 84
+        },
+        "resistances": {
+            "fire": -3,
+            "water": -2,
+            "thunder": 4,
+            "ice": -2,
+            "dragon": 2
+        },
+        "attributes": {
+            "gender": 3
+        },
+        "armorSetSkillIds": [
+            19
+        ]
+    },
+    {
+        "id": 135,
+        "name": "Xeno'jiiva Spurs α",
+        "rarity": 8,
+        "slots": [
+            1
+        ],
+        "abilityIds": [
+            275,
+            138
+        ],
+        "defense": {
+            "base": 72,
+            "max": 78,
+            "augmented": 92
+        },
+        "resistances": {
+            "fire": -3,
+            "water": 2,
+            "thunder": 2,
+            "ice": 2,
+            "dragon": -4
+        },
+        "attributes": {
+            "gender": 3
+        },
+        "armorSetSkillIds": [
+            20
+        ]
+    },
+    {
+        "id": 136,
+        "name": "Xeno'jiiva Spurs β",
+        "rarity": 8,
+        "slots": [
+            1,
+            1
+        ],
+        "abilityIds": [
+            275
+        ],
+        "defense": {
+            "base": 72,
+            "max": 78,
+            "augmented": 92
+        },
+        "resistances": {
+            "fire": -3,
+            "water": 2,
+            "thunder": 2,
+            "ice": 2,
+            "dragon": -4
+        },
+        "attributes": {
+            "gender": 3
+        },
+        "armorSetSkillIds": [
+            20
+        ]
+    },
+    {
+        "id": 137,
+        "name": "Guild Cross Boots α",
+        "rarity": 8,
+        "slots": [
+            1
+        ],
+        "abilityIds": [
+            159,
+            62
+        ],
+        "defense": {
+            "base": 62,
+            "max": 68,
+            "augmented": 82
+        },
+        "resistances": {
+            "fire": 0,
+            "water": 0,
+            "thunder": 0,
+            "ice": 0,
+            "dragon": 0
+        },
+        "attributes": {
+            "gender": 3
+        },
+        "armorSetSkillIds": [
+            21
+        ]
+    },
+    {
+        "id": 138,
+        "name": "Guild Cross Boots β",
+        "rarity": 8,
+        "slots": [
+            3
+        ],
+        "abilityIds": [
+            159
+        ],
+        "defense": {
+            "base": 62,
+            "max": 68,
+            "augmented": 82
+        },
+        "resistances": {
+            "fire": 0,
+            "water": 0,
+            "thunder": 0,
+            "ice": 0,
+            "dragon": 0
+        },
+        "attributes": {
+            "gender": 3
+        },
+        "armorSetSkillIds": [
+            21
+        ]
+    },
+    {
+        "id": 140,
+        "name": "Commission Pants α",
+        "rarity": 8,
+        "abilityIds": [
+            273,
+            303
+        ],
+        "defense": {
+            "base": 70,
+            "max": 76,
+            "augmented": 90
+        },
+        "resistances": {
+            "fire": 2,
+            "water": 2,
+            "thunder": 2,
+            "ice": 2,
+            "dragon": 2
+        },
+        "attributes": {
+            "gender": 3
+        },
+        "armorSetSkillIds": [
+            22
+        ]
+    },
+    {
+        "id": 141,
+        "name": "Commission Pants β",
+        "rarity": 8,
+        "slots": [
+            2
+        ],
+        "abilityIds": [
+            273
+        ],
+        "defense": {
+            "base": 70,
+            "max": 76,
+            "augmented": 90
+        },
+        "resistances": {
+            "fire": 2,
+            "water": 2,
+            "thunder": 2,
+            "ice": 2,
+            "dragon": 2
+        },
+        "attributes": {
+            "gender": 3
+        },
+        "armorSetSkillIds": [
+            22
+        ]
+    },
+    {
+        "id": 142,
+        "name": "Vangis Greaves α",
+        "rarity": 7,
+        "abilityIds": [
+            235,
+            149
+        ],
+        "defense": {
+            "base": 58,
+            "max": 70,
+            "augmented": 84
+        },
+        "resistances": {
+            "fire": 1,
+            "water": 1,
+            "thunder": -3,
+            "ice": 2,
+            "dragon": -3
+        },
+        "attributes": {
+            "gender": 3
+        },
+        "eventId": 0
+    },
+    {
+        "id": 143,
+        "name": "Vangis Greaves β",
+        "rarity": 7,
+        "slots": [
+            1,
+            1
+        ],
+        "abilityIds": [
+            235
+        ],
+        "defense": {
+            "base": 58,
+            "max": 70,
+            "augmented": 84
+        },
+        "resistances": {
+            "fire": 1,
+            "water": 1,
+            "thunder": -3,
+            "ice": 2,
+            "dragon": -3
+        },
+        "attributes": {
+            "gender": 3
+        },
+        "eventId": 0
+    },
+    {
+        "id": 144,
+        "name": "Empress Greaves α",
+        "rarity": 8,
+        "slots": [
+            2,
+            1
+        ],
+        "abilityIds": [
+            53,
+            226
+        ],
+        "defense": {
+            "base": 70,
+            "max": 76,
+            "augmented": 90
+        },
+        "resistances": {
+            "fire": 3,
+            "water": 1,
+            "thunder": 1,
+            "ice": -3,
+            "dragon": -2
+        },
+        "attributes": {
+            "gender": 3
+        },
+        "armorSetSkillIds": [
+            23
+        ],
+        "eventId": 14
+    },
+    {
+        "id": 145,
+        "name": "Empress Greaves β",
+        "rarity": 8,
+        "slots": [
+            2,
+            2
+        ],
+        "abilityIds": [
+            53
+        ],
+        "defense": {
+            "base": 70,
+            "max": 76,
+            "augmented": 90
+        },
+        "resistances": {
+            "fire": 3,
+            "water": 1,
+            "thunder": 1,
+            "ice": -3,
+            "dragon": -2
+        },
+        "attributes": {
+            "gender": 3
+        },
+        "armorSetSkillIds": [
+            23
+        ],
+        "eventId": 14
+    },
+    {
+        "id": 146,
+        "name": "Drachen Greaves α",
+        "rarity": 8,
+        "slots": [
+            2
+        ],
+        "abilityIds": [
+            39,
+            129
+        ],
+        "defense": {
+            "base": 72,
+            "max": 78,
+            "augmented": 92
+        },
+        "resistances": {
+            "fire": -2,
+            "water": -2,
+            "thunder": 3,
+            "ice": -2,
+            "dragon": 4
+        },
+        "attributes": {
+            "gender": 3
+        },
+        "armorSetSkillIds": [
+            24
+        ],
+        "eventId": 19
+    },
+    {
+        "id": 147,
+        "name": "Aloy's Leggings α",
+        "rarity": 5,
+        "slots": [
+            2
+        ],
+        "abilityIds": [
+            270
+        ],
+        "defense": {
+            "base": 46,
+            "max": 68,
+            "augmented": 84
+        },
+        "resistances": {
+            "fire": 1,
+            "water": 1,
+            "thunder": 1,
+            "ice": 1,
+            "dragon": 1
+        },
+        "attributes": {
+            "gender": 3
+        },
+        "armorSetSkillIds": [
+            6
+        ],
+        "fullArmorSetId": 0,
+        "eventId": 1
+    },
+    {
+        "id": 148,
+        "name": "Ryu's Legs",
+        "rarity": 2,
+        "abilityIds": [
+            45
+        ],
+        "defense": {
+            "base": 12,
+            "max": 44,
+            "augmented": 70
+        },
+        "resistances": {
+            "fire": 2,
+            "water": 0,
+            "thunder": 5,
+            "ice": -3,
+            "dragon": 2
+        },
+        "attributes": {
+            "gender": 3
+        },
+        "fullArmorSetId": 1,
+        "eventId": 2
+    },
+    {
+        "id": 149,
+        "name": "Ryu's Legs α",
+        "rarity": 7,
+        "slots": [
+            1,
+            1
+        ],
+        "abilityIds": [
+            45,
+            197
+        ],
+        "defense": {
+            "base": 60,
+            "max": 72,
+            "augmented": 86
+        },
+        "resistances": {
+            "fire": 2,
+            "water": 0,
+            "thunder": 5,
+            "ice": -3,
+            "dragon": 2
+        },
+        "attributes": {
+            "gender": 3
+        },
+        "armorSetSkillIds": [
+            11
+        ],
+        "fullArmorSetId": 2,
+        "eventId": 3
+    },
+    {
+        "id": 150,
+        "name": "Sakura's Legs α",
+        "rarity": 6,
+        "slots": [
+            1,
+            1
+        ],
+        "abilityIds": [
+            45,
+            209
+        ],
+        "defense": {
+            "base": 50,
+            "max": 70,
+            "augmented": 82
+        },
+        "resistances": {
+            "fire": 0,
+            "water": 4,
+            "thunder": 0,
+            "ice": 4,
+            "dragon": -2
+        },
+        "attributes": {
+            "gender": 3
+        },
+        "armorSetSkillIds": [
+            7
+        ],
+        "fullArmorSetId": 3,
+        "eventId": 4
+    },
+    {
+        "id": 151,
+        "name": "Butterfly Crura",
+        "rarity": 3,
+        "abilityIds": [
+            194
+        ],
+        "defense": {
+            "base": 22,
+            "max": 50,
+            "augmented": 74
+        },
+        "resistances": {
+            "fire": -1,
+            "water": -1,
+            "thunder": 2,
+            "ice": 0,
+            "dragon": 2
+        },
+        "attributes": {
+            "gender": 1
+        },
+        "eventId": 5
+    },
+    {
+        "id": 152,
+        "name": "Queen Beetle Crura",
+        "rarity": 3,
+        "abilityIds": [
+            194
+        ],
+        "defense": {
+            "base": 22,
+            "max": 50,
+            "augmented": 74
+        },
+        "resistances": {
+            "fire": -1,
+            "water": -1,
+            "thunder": 2,
+            "ice": 0,
+            "dragon": 2
+        },
+        "attributes": {
+            "gender": 2
+        },
+        "eventId": 5
+    },
+    {
+        "id": 153,
+        "name": "Blossom Boots",
+        "rarity": 3,
+        "abilityIds": [
+            58
+        ],
+        "defense": {
+            "base": 18,
+            "max": 46,
+            "augmented": 70
+        },
+        "resistances": {
+            "fire": 1,
+            "water": 1,
+            "thunder": 4,
+            "ice": 1,
+            "dragon": 1
+        },
+        "attributes": {
+            "gender": 3
+        },
+        "eventId": 6
+    },
+    {
+        "id": 154,
+        "name": "Blossom Boots α",
+        "rarity": 5,
+        "slots": [
+            1,
+            1
+        ],
+        "abilityIds": [
+            58
+        ],
+        "defense": {
+            "base": 40,
+            "max": 62,
+            "augmented": 78
+        },
+        "resistances": {
+            "fire": 1,
+            "water": 1,
+            "thunder": 4,
+            "ice": 1,
+            "dragon": 1
+        },
+        "attributes": {
+            "gender": 3
+        },
+        "eventId": 6
+    },
+    {
+        "id": 155,
+        "name": "Kulve Taroth's Wrath α",
+        "rarity": 8,
+        "slots": [
+            1
+        ],
+        "abilityIds": [
+            226,
+            171
+        ],
+        "defense": {
+            "base": 64,
+            "max": 70,
+            "augmented": 84
+        },
+        "resistances": {
+            "fire": 4,
+            "water": -2,
+            "thunder": 3,
+            "ice": -4,
+            "dragon": -2
+        },
+        "attributes": {
+            "gender": 3
+        },
+        "eventId": 7
+    },
+    {
+        "id": 156,
+        "name": "Kulve Taroth's Wrath β",
+        "rarity": 8,
+        "slots": [
+            2,
+            1
+        ],
+        "abilityIds": [
+            226,
+            170
+        ],
+        "defense": {
+            "base": 64,
+            "max": 70,
+            "augmented": 84
+        },
+        "resistances": {
+            "fire": 4,
+            "water": -2,
+            "thunder": 3,
+            "ice": -4,
+            "dragon": -2
+        },
+        "attributes": {
+            "gender": 3
+        },
+        "eventId": 7
+    },
+    {
+        "id": 157,
+        "name": "Dante's Leather Boots α",
+        "rarity": 8,
+        "slots": [
+            1,
+            1
+        ],
+        "abilityIds": [
+            133
+        ],
+        "defense": {
+            "base": 64,
+            "max": 70,
+            "augmented": 84
+        },
+        "resistances": {
+            "fire": 3,
+            "water": -3,
+            "thunder": 3,
+            "ice": -3,
+            "dragon": 3
+        },
+        "attributes": {
+            "gender": 3
+        },
+        "eventId": 8
+    },
+    {
+        "id": 158,
+        "name": "Azure Starlord Guards α",
+        "rarity": 7,
+        "slots": [
+            3
+        ],
+        "abilityIds": [
+            129
+        ],
+        "defense": {
+            "base": 56,
+            "max": 68,
+            "augmented": 82
+        },
+        "resistances": {
+            "fire": 2,
+            "water": 2,
+            "thunder": 0,
+            "ice": 0,
+            "dragon": 3
+        },
+        "attributes": {
+            "gender": 3
+        },
+        "armorSetSkillIds": [
+            11
+        ],
+        "eventId": 9
+    },
+    {
+        "id": 159,
+        "name": "Kirin Leg Guards γ",
+        "rarity": 8,
+        "slots": [
+            3
+        ],
+        "abilityIds": [
+            76,
+            95
+        ],
+        "defense": {
+            "base": 72,
+            "max": 78,
+            "augmented": 92
+        },
+        "resistances": {
+            "fire": -3,
+            "water": -2,
+            "thunder": 4,
+            "ice": -2,
+            "dragon": 2
+        },
+        "attributes": {
+            "gender": 3
+        },
+        "armorSetSkillIds": [
+            19
+        ],
+        "eventId": 15
+    },
+    {
+        "id": 160,
+        "name": "Vaal Hazak Greaves γ",
+        "rarity": 8,
+        "slots": [
+            3,
+            1
+        ],
+        "abilityIds": [
+            170,
+            58
+        ],
+        "defense": {
+            "base": 72,
+            "max": 78,
+            "augmented": 92
+        },
+        "resistances": {
+            "fire": -4,
+            "water": 4,
+            "thunder": 1,
+            "ice": -1,
+            "dragon": -3
+        },
+        "attributes": {
+            "gender": 3
+        },
+        "armorSetSkillIds": [
+            18
+        ],
+        "eventId": 16
+    },
+    {
+        "id": 161,
+        "name": "Kaiser Greaves γ",
+        "rarity": 8,
+        "slots": [
+            3,
+            1
+        ],
+        "abilityIds": [
+            123
+        ],
+        "defense": {
+            "base": 72,
+            "max": 78,
+            "augmented": 92
+        },
+        "resistances": {
+            "fire": 3,
+            "water": -3,
+            "thunder": 1,
+            "ice": -3,
+            "dragon": 1
+        },
+        "attributes": {
+            "gender": 3
+        },
+        "armorSetSkillIds": [
+            16
+        ],
+        "eventId": 20
+    },
+    {
+        "id": 162,
+        "name": "Kushala Crus γ",
+        "rarity": 8,
+        "slots": [
+            3
+        ],
+        "abilityIds": [
+            210
+        ],
+        "defense": {
+            "base": 72,
+            "max": 78,
+            "augmented": 92
+        },
+        "resistances": {
+            "fire": 0,
+            "water": 2,
+            "thunder": -3,
+            "ice": 4,
+            "dragon": -2
+        },
+        "attributes": {
+            "gender": 3
+        },
+        "armorSetSkillIds": [
+            17
+        ],
+        "eventId": 21
+    },
+    {
+        "id": 163,
+        "name": "Diver's Boots",
+        "rarity": 3,
+        "abilityIds": [
+            206
+        ],
+        "defense": {
+            "base": 22,
+            "max": 50,
+            "augmented": 74
+        },
+        "resistances": {
+            "fire": 1,
+            "water": 4,
+            "thunder": 1,
+            "ice": 1,
+            "dragon": 1
+        },
+        "attributes": {
+            "gender": 3
+        },
+        "eventId": 17
+    },
+    {
+        "id": 164,
+        "name": "Diver's Boots α",
+        "rarity": 5,
+        "slots": [
+            2
+        ],
+        "abilityIds": [
+            206
+        ],
+        "defense": {
+            "base": 46,
+            "max": 68,
+            "augmented": 84
+        },
+        "resistances": {
+            "fire": 1,
+            "water": 4,
+            "thunder": 4,
+            "ice": 1,
+            "dragon": 1
+        },
+        "attributes": {
+            "gender": 3
+        },
+        "eventId": 17
+    },
+    {
+        "id": 165,
+        "name": "Butterfly Crura α",
+        "rarity": 5,
+        "abilityIds": [
+            195,
+            122
+        ],
+        "defense": {
+            "base": 42,
+            "max": 64,
+            "augmented": 80
+        },
+        "resistances": {
+            "fire": -1,
+            "water": -1,
+            "thunder": 2,
+            "ice": 0,
+            "dragon": 2
+        },
+        "attributes": {
+            "gender": 1
+        },
+        "eventId": 18
+    },
+    {
+        "id": 166,
+        "name": "Butterfly Crura β",
+        "rarity": 5,
+        "slots": [
+            1
+        ],
+        "abilityIds": [
+            195
+        ],
+        "defense": {
+            "base": 42,
+            "max": 64,
+            "augmented": 80
+        },
+        "resistances": {
+            "fire": -1,
+            "water": -1,
+            "thunder": 2,
+            "ice": 0,
+            "dragon": 2
+        },
+        "attributes": {
+            "gender": 1
+        },
+        "eventId": 18
+    },
+    {
+        "id": 167,
+        "name": "Queen Beetle Crura α",
+        "rarity": 5,
+        "abilityIds": [
+            195,
+            122
+        ],
+        "defense": {
+            "base": 42,
+            "max": 64,
+            "augmented": 80
+        },
+        "resistances": {
+            "fire": -1,
+            "water": -1,
+            "thunder": 2,
+            "ice": 0,
+            "dragon": 2
+        },
+        "attributes": {
+            "gender": 2
+        },
+        "eventId": 18
+    },
+    {
+        "id": 168,
+        "name": "Queen Beetle Crura β",
+        "rarity": 5,
+        "slots": [
+            1
+        ],
+        "abilityIds": [
+            195
+        ],
+        "defense": {
+            "base": 42,
+            "max": 64,
+            "augmented": 80
+        },
+        "resistances": {
+            "fire": -1,
+            "water": -1,
+            "thunder": 2,
+            "ice": 0,
+            "dragon": 2
+        },
+        "attributes": {
+            "gender": 2
+        },
+        "eventId": 18
+    }
+]
