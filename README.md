@@ -55,7 +55,7 @@ Link to direct download: https://github.com/TanukiSharp/MHArmory/raw/master/Dist
 
 Follow **Armory** on Twitter to get latest news and updates: https://twitter.com/MHArmory
 
-<a href="https://twitter.com/MHArmory" target="_blank"><img src="images/twitter.svg" width="32" height="32"/></a>
+<a href="https://twitter.com/MHArmory" target="_blank"><img src="docs/images/twitter.svg" width="32" height="32"/></a>
 
 # Possible future work
 
