@@ -212,6 +212,10 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\MHArmory.ArmoryDataSource\MHArmory.ArmoryDataSource.csproj">
+      <Project>{9b314a16-0501-47aa-9459-966f8e540b7e}</Project>
+      <Name>MHArmory.ArmoryDataSource</Name>
+    </ProjectReference>
     <ProjectReference Include="..\MHArmory.AthenaAssDataSource\MHArmory.AthenaAssDataSource.csproj">
       <Project>{3796097e-b739-4f78-87b1-689de3b66dbf}</Project>
       <Name>MHArmory.AthenaAssDataSource</Name>

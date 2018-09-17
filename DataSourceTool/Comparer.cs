@@ -38,7 +38,23 @@ namespace DataSourceTool
             IJewel[] jewels2 = await y.GetJewels();
             ISkill[] skills2 = await y.GetSkills();
 
-            CheckAndReport(armorPieces1, armorPieces2, ArmorPieceEqualityComparer.Default);
+            IEnumerable<IArmorPiece> heads1 = armorPieces1.Where(a => a.Type == EquipmentType.Head);
+            IEnumerable<IArmorPiece> heads2 = armorPieces2.Where(a => a.Type == EquipmentType.Head);
+            IEnumerable<IArmorPiece> chests1 = armorPieces1.Where(a => a.Type == EquipmentType.Chest);
+            IEnumerable<IArmorPiece> chests2 = armorPieces2.Where(a => a.Type == EquipmentType.Chest);
+            IEnumerable<IArmorPiece> arms1 = armorPieces1.Where(a => a.Type == EquipmentType.Gloves);
+            IEnumerable<IArmorPiece> arms2 = armorPieces2.Where(a => a.Type == EquipmentType.Gloves);
+            IEnumerable<IArmorPiece> waists1 = armorPieces1.Where(a => a.Type == EquipmentType.Waist);
+            IEnumerable<IArmorPiece> waists2 = armorPieces2.Where(a => a.Type == EquipmentType.Waist);
+            IEnumerable<IArmorPiece> legs1 = armorPieces1.Where(a => a.Type == EquipmentType.Legs);
+            IEnumerable<IArmorPiece> legs2 = armorPieces2.Where(a => a.Type == EquipmentType.Legs);
+
+            CheckAndReport(heads1, heads2, ArmorPieceEqualityComparer.Default);
+            CheckAndReport(chests1, chests2, ArmorPieceEqualityComparer.Default);
+            CheckAndReport(arms1, arms2, ArmorPieceEqualityComparer.Default);
+            CheckAndReport(waists1, waists2, ArmorPieceEqualityComparer.Default);
+            CheckAndReport(legs1, legs2, ArmorPieceEqualityComparer.Default);
+
             CheckAndReport(charms1, charms2, CharmEqualityComparer.Default);
             CheckAndReport(jewels1, jewels2, JewelEqualityComparer.Default);
             CheckAndReport(skills1, skills2, SkillEqualityComparer.Default);
@@ -60,7 +76,7 @@ namespace DataSourceTool
                 logger.LogError($"{missing.Count} {typeof(T).Name} {(missing.Count > 1 ? "are" : "is")} missing.");
 
             if (surplus.Count > 0)
-                logger.LogError($"{missing.Count} {typeof(T).Name} {(missing.Count > 1 ? "are" : "is")} in surplus.");
+                logger.LogError($"{surplus.Count} {typeof(T).Name} {(surplus.Count > 1 ? "are" : "is")} in surplus.");
 
             if (missing.Count == 0 && surplus.Count == 0)
             {
@@ -117,9 +133,6 @@ namespace DataSourceTool
 
         private static bool SlotsEquals(int[] x, int[] y)
         {
-            if (x == null || y == null)
-                return x == y;
-
             if (x.Length != y.Length)
                 return false;
 
@@ -148,9 +161,6 @@ namespace DataSourceTool
 
         private static bool Equals(IAbility x, IAbility y)
         {
-            if (x == null || y == null)
-                return false;
-
             if (x.Id != y.Id)
                 return false;
 
@@ -301,9 +311,6 @@ namespace DataSourceTool
                 IFullArmorSet FullArmorSet { get; }
             */
 
-            if (x == null || y == null)
-                return false;
-
             if (x.Id != y.Id)
                 return false;
 
@@ -316,23 +323,25 @@ namespace DataSourceTool
             if (x.Rarity != y.Rarity)
                 return false;
 
-            if (x.Type != y.Type)
-                return false;
-
             if (SlotsEquals(x.Slots, y.Slots) == false)
                 return false;
 
             if (Equals(x.Event, y.Event) == false)
                 return false;
 
-            if (x.Abilities.Length != y.Abilities.Length)
-                return false;
-
-            for (int i = 0; i < x.Abilities.Length; i++)
+            if (x.Abilities != null && y.Abilities != null)
             {
-                if (Equals(x.Abilities[i], y.Abilities[i]) == false)
+                if (x.Abilities.Length != y.Abilities.Length)
                     return false;
+
+                for (int i = 0; i < x.Abilities.Length; i++)
+                {
+                    if (Equals(x.Abilities[i], y.Abilities[i]) == false)
+                        return false;
+                }
             }
+            else if (x.Abilities == null ^ y.Abilities == null)
+                return false;
 
             if (Equals(x.Defense, y.Defense) == false)
                 return false;
@@ -341,6 +350,28 @@ namespace DataSourceTool
                 return false;
 
             if (Equals(x.Attributes, y.Attributes) == false)
+                return false;
+
+            if (x.ArmorSetSkills != null && y.ArmorSetSkills != null)
+            {
+                if (x.ArmorSetSkills.Length != y.ArmorSetSkills.Length)
+                    return false;
+
+                for (int i = 0; i < x.ArmorSetSkills.Length; i++)
+                {
+                    if (Equals(x.ArmorSetSkills[i], y.ArmorSetSkills[i]) == false)
+                        return false;
+                }
+            }
+            else if (x.ArmorSetSkills == null ^ y.ArmorSetSkills == null)
+                return false;
+
+            if (x.FullArmorSet != null && y.FullArmorSet != null)
+            {
+                if (Equals(x.FullArmorSet, y.FullArmorSet) == false)
+                    return false;
+            }
+            else if (x.FullArmorSet == null ^ y.FullArmorSet == null)
                 return false;
 
             return true;
@@ -359,9 +390,6 @@ namespace DataSourceTool
                 int Level { get; }
                 IAbility[] Abilities { get; }
             */
-
-            if (x == null || y == null)
-                return false;
 
             if (x.Id != y.Id)
                 return false;
@@ -401,9 +429,6 @@ namespace DataSourceTool
 
         private static bool Equals(ICharm x, ICharm y)
         {
-            if (x == null || y == null)
-                return false;
-
             if (x.Id != y.Id)
                 return false;
 
@@ -424,9 +449,6 @@ namespace DataSourceTool
 
         private static bool Equals(IJewel x, IJewel y)
         {
-            if (x == null || y == null)
-                return false;
-
             if (x.Id != y.Id)
                 return false;
 
@@ -453,9 +475,6 @@ namespace DataSourceTool
 
         private static bool Equals(ISkill x, ISkill y)
         {
-            if (x == null || y == null)
-                return false;
-
             if (x.Id != y.Id)
                 return false;
 

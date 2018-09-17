@@ -15,6 +15,8 @@ namespace MHArmory.ArmoryDataSource.DataStructures
 
     public class ArmorSetSkillPartPrimitive
     {
+        [JsonProperty("id")]
+        public int Id { get; set; }
         [JsonProperty("requiredArmorPieceCount")]
         public int RequiredArmorPieceCount { get; set; }
         [JsonProperty("abilityIds")]

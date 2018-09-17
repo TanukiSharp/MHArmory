@@ -186,6 +186,7 @@ namespace DataSourceTool
                 Name = x.Name,
                 Parts = x.Parts.Select(p => new ArmorSetSkillPartPrimitive
                 {
+                    Id = p.Id,
                     RequiredArmorPieceCount = p.RequiredArmorPieces,
                     GrantedSkills = p.GrantedSkills.Select(a => a.Id).ToList()
                 }).ToList(),

@@ -468,25 +468,20 @@ namespace MHArmory.AthenaAssDataSource
                 if (container.ArmorPiece.FullArmorSet != null)
                     continue;
 
-                int[] armorPieceIds = list
-                    .Where(x => x.Primitive.Id == container.Primitive.Id)
-                    .Select(x => x.Primitive.Id)
-                    .ToArray();
-
-                if (armorPieceIds.Length != 5)
-                {
-                    logger?.LogError($"Armor piece '{container.Primitive.Name}' of full armor set seems to bound to more than 5 armor pieces ({armorPieceIds.Length})");
-                    continue;
-                }
-
-                ArmorPiece[] fullArmorSetArmorPieces = list
+                ArmorPiece[] fullSetArmorPieces = list
                     .Where(x => x.Primitive.Id == container.Primitive.Id)
                     .Select(x => x.ArmorPiece)
                     .ToArray();
 
-                IFullArmorSet fullArmorSet = new FullArmorSet(id++, fullArmorSetArmorPieces);
+                if (fullSetArmorPieces.Length != 5)
+                {
+                    logger?.LogError($"Armor piece '{container.Primitive.Name}' of full armor set seems to bound to more than 5 armor pieces ({fullSetArmorPieces.Length})");
+                    continue;
+                }
 
-                foreach (ArmorPiece setPiece in fullArmorSetArmorPieces)
+                IFullArmorSet fullArmorSet = new FullArmorSet(id++, fullSetArmorPieces);
+
+                foreach (ArmorPiece setPiece in fullSetArmorPieces)
                     setPiece.SetFullArmorSet(fullArmorSet);
             }
         }
@@ -504,7 +499,7 @@ namespace MHArmory.AthenaAssDataSource
         private int[] ParseSlots(string slots)
         {
             if (slots == null || slots.Length == 0 || slots == "0")
-                return new int[0];
+                return Array.Empty<int>();
 
             return slots.Select(c => c - '0').ToArray();
         }
@@ -518,6 +513,9 @@ namespace MHArmory.AthenaAssDataSource
                 ParseOneAbility(primitive.Skill3, primitive.PointSkill3)
             };
 
+            if (result.All(x => x == null))
+                return Array.Empty<IAbility>();
+
             return result.Where(x => x != null).ToArray();
         }
 
@@ -528,6 +526,9 @@ namespace MHArmory.AthenaAssDataSource
                 ParseOneAbility(primitive.Skill1, primitive.Points1),
                 ParseOneAbility(primitive.Skill2, primitive.Points2)
             };
+
+            if (result.All(x => x == null))
+                return null;
 
             return result.Where(x => x != null).ToArray();
         }

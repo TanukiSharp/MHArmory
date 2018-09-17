@@ -105,6 +105,7 @@ namespace MHArmory
             try
             {
                 source = new AthenaAssDataSource.DataSource(null, new DirectoryBrowserService(), new MessageBoxService());
+                //source = new ArmoryDataSource.DataSource(null);
             }
             catch (InvalidDataSourceException)
             {

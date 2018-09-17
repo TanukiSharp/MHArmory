@@ -226,6 +226,9 @@ namespace MHArmory.Core.DataStructures
     {
         public FullArmorSet(int id, IArmorPiece[] armorPieces)
         {
+            if (armorPieces.Length != 5)
+                throw new ArgumentException($"Invalid armor pieces count: {armorPieces.Length}");
+
             Id = id;
             ArmorPieces = armorPieces;
         }
