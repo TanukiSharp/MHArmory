@@ -52,7 +52,17 @@ namespace MHArmory
                 Close();
         }
 
-        protected override void OnClosed(EventArgs e)
+        protected override void OnClosing(CancelEventArgs e)
+        {
+            base.OnClosing(e);
+
+            UpdateDecorationOverrideConfiguration();
+
+            e.Cancel = true;
+            Hide();
+        }
+
+        private void UpdateDecorationOverrideConfiguration()
         {
             InParametersConfigurationV2 config = GlobalData.Instance.Configuration.InParameters;
 
@@ -77,16 +87,6 @@ namespace MHArmory
 
                 HasDecorationOverrideChanged = true;
             }
-
-            base.OnClosed(e);
-        }
-
-        protected override void OnClosing(CancelEventArgs e)
-        {
-            base.OnClosing(e);
-
-            e.Cancel = true;
-            Hide();
         }
     }
 }
