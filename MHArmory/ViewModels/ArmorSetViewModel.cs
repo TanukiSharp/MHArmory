@@ -131,6 +131,8 @@ namespace MHArmory.ViewModels
                     IncrementSkillLevel(skills, ability);
             }
 
+            CheckAbilitiesOnArmorSet(skills);
+
             if (charm != null)
             {
                 foreach (IAbility ability in charm.Abilities)
@@ -163,6 +165,37 @@ namespace MHArmory.ViewModels
             }
 
             AdditionalSkills = additionalSkills.ToArray();
+        }
+
+        private void CheckAbilitiesOnArmorSet(Dictionary<int, int> skills)
+        {
+            var armorSetSkillParts = new Dictionary<IArmorSetSkillPart, int>();
+
+            foreach (IArmorPiece armorPiece in armorPieces)
+            {
+                if (armorPiece.ArmorSetSkills == null)
+                    continue;
+
+                foreach (IArmorSetSkillPart armorSetSkillPart in armorPiece.ArmorSetSkills.SelectMany(x => x.Parts))
+                {
+                    if (armorSetSkillParts.TryGetValue(armorSetSkillPart, out int value) == false)
+                        value = 0;
+
+                    armorSetSkillParts[armorSetSkillPart] = value + 1;
+                }
+            }
+
+            if (armorSetSkillParts.Count > 0)
+            {
+                foreach (KeyValuePair<IArmorSetSkillPart, int> armorSetSkillPartKeyValue in armorSetSkillParts)
+                {
+                    if (armorSetSkillPartKeyValue.Value >= armorSetSkillPartKeyValue.Key.RequiredArmorPieces)
+                    {
+                        foreach (IAbility ability in armorSetSkillPartKeyValue.Key.GrantedSkills)
+                            IncrementSkillLevel(skills, ability);
+                    }
+                }
+            }
         }
 
         private void IncrementSkillLevel(IDictionary<int, int> skills, IAbility ability)
