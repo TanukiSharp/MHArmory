@@ -69,5 +69,8 @@ namespace MHArmory.Configurations
 
         [JsonProperty("windows")]
         public Dictionary<string, WindowConfiguration> Windows { get; } = new Dictionary<string, WindowConfiguration>();
+
+        [JsonProperty("events")]
+        public Dictionary<string, bool> Events { get; } = new Dictionary<string, bool>();
     }
 }

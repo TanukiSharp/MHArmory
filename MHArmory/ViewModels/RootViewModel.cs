@@ -63,6 +63,11 @@ namespace MHArmory.ViewModels
             InParameters.NotifyConfigurationLoaded();
         }
 
+        internal void NotifyDataLoaded()
+        {
+            Events.NotifyDataLoaded();
+        }
+
         private IEnumerable<ArmorSetViewModel> rawFoundArmorSets;
 
         private IEnumerable<ArmorSetViewModel> foundArmorSets;
@@ -88,6 +93,8 @@ namespace MHArmory.ViewModels
             set { SetValue(ref isAutoSearch, value); }
         }
 
+        public EventsViewModel Events { get; }
+
         public RootViewModel()
         {
             OpenSkillSelectorCommand = new AnonymousCommand(OpenSkillSelector);
@@ -100,8 +107,8 @@ namespace MHArmory.ViewModels
             AboutCommand = new AnonymousCommand(OnAbout);
 
             SearchResultProcessing = new SearchResultProcessingViewModel(this);
-
             InParameters = new InParametersViewModel(this);
+            Events = new EventsViewModel(this);
         }
 
         public void Dispose()
@@ -320,12 +327,30 @@ namespace MHArmory.ViewModels
 
         private bool EquipmentMatchInParameters(IEquipment equipement)
         {
+            if (CheckEvent(equipement) == false)
+                return false;
+
             return equipement.Rarity <= InParameters.Rarity;
         }
 
         private bool ArmorPieceMatchInParameters(IArmorPiece armorPiece)
         {
+            if (CheckEvent(armorPiece) == false)
+                return false;
+
             return EquipmentMatchInParameters(armorPiece) && IsGenderMatching(armorPiece, InParameters.Gender);
+        }
+
+        private bool CheckEvent(IEquipment equipment)
+        {
+            if (equipment.Event != null && Events.Events != null)
+            {
+                EventViewModel vm = Events.Events.FirstOrDefault(x => x.Name == equipment.Event.Name);
+                if (vm != null && vm.IsEnabled == false)
+                    return false;
+            }
+
+            return true;
         }
 
         private bool IsGenderMatching(IArmorPiece armorPiece, Gender gender)

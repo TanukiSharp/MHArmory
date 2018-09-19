@@ -64,6 +64,10 @@
     </Compile>
     <Compile Include="AutoUpdate\AutoUpdater.cs" />
     <Compile Include="Configurations\ConfigurationV2.cs" />
+    <Compile Include="EnumerableExtensions.cs" />
+    <Compile Include="EventsWindow.xaml.cs">
+      <DependentUpon>EventsWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="GitInfo.cs" />
     <ApplicationDefinition Include="App.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -127,6 +131,7 @@
     <Compile Include="ViewModels\ArmorSetViewModel.cs" />
     <Compile Include="ViewModels\DecorationsOverrideViewModel.cs" />
     <Compile Include="ViewModels\EquipmentExplorerViewModel.cs" />
+    <Compile Include="ViewModels\EventsViewModel.cs" />
     <Compile Include="ViewModels\InParametersViewModel.cs" />
     <Compile Include="ViewModels\JewelOverrideViewModel.cs" />
     <Compile Include="ViewModels\LoadoutViewModel.cs" />
@@ -152,6 +157,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="EquipmentExplorerWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="EventsWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

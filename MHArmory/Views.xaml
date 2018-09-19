@@ -40,6 +40,18 @@
         <Setter Property="Focusable" Value="False"/>
     </Style>
 
+    <DataTemplate x:Key="EventsView">
+        <ScrollViewer HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Visible" Margin="16 4 4 4">
+            <ItemsControl ItemsSource="{Binding Events}">
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate>
+                        <CheckBox IsChecked="{Binding IsEnabled}" Content="{Binding Name, Mode=OneTime}" Padding="8" Margin="0" VerticalContentAlignment="Center"/>
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
+            </ItemsControl>
+        </ScrollViewer>
+    </DataTemplate>
+    
     <DataTemplate x:Key="WeaponSlotView">
         <ComboBox SelectedIndex="{Binding Value}" Margin="0" Padding="5" VerticalContentAlignment="Center">
             <TextBlock Text="-" Style="{StaticResource ComboBoxItemSlotStyle}"/>
@@ -596,9 +608,8 @@
                     <Separator/>
                     <MenuItem Header="Manage loadouts..." Command="{x:Static local:RoutedCommands.ManageLoadouts}"/>
                 </MenuItem>
-                <MenuItem Header="Equipments" Command="{x:Static local:RoutedCommands.OpenEquipmentExplorer}">
-
-                </MenuItem>
+                <MenuItem Header="Equipments" Command="{x:Static local:RoutedCommands.OpenEquipmentExplorer}"/>
+                <MenuItem Header="Events" Command="{x:Static local:RoutedCommands.OpenEvents}"/>
                 <MenuItem Header="?" Command="{Binding AboutCommand, Mode=OneTime}"/>
             </Menu>
             <Grid>
