@@ -66,6 +66,8 @@ namespace MHArmory.ViewModels
         internal void NotifyDataLoaded()
         {
             Events.NotifyDataLoaded();
+
+            LoadWeaponsInternal().ContinueWith(t => t.Wait());
         }
 
         private IEnumerable<ArmorSetViewModel> rawFoundArmorSets;
@@ -447,6 +449,42 @@ namespace MHArmory.ViewModels
             {
                 searchMetrics = value;
                 NotifyPropertyChanged();
+            }
+        }
+
+        private async Task LoadWeapons()
+        {
+            try
+            {
+                await LoadWeaponsInternal();
+            }
+            catch
+            {
+            }
+        }
+
+        private async Task LoadWeaponsInternal()
+        {
+            var httpClient = new System.Net.Http.HttpClient();
+            string weaponsContent = await httpClient.GetStringAsync("https://mhw-db.com/weapons");
+
+            IList<ArmoryDataSource.DataStructures.WeaponPrimitive> weapons = Newtonsoft.Json.JsonConvert.DeserializeObject<IList<ArmoryDataSource.DataStructures.WeaponPrimitive>>(weaponsContent);
+
+            IDictionary<int, WeaponViewModel> allWeaponViewModels = weapons
+                .Select(x => new WeaponViewModel(x))
+                .ToDictionary(x => x.Id, x => x);
+
+            IList<WeaponViewModel> roots = weapons.Where(x => x.Crafting.Previous == null).Select(x => allWeaponViewModels[x.Id]).ToList();
+
+            foreach (ArmoryDataSource.DataStructures.WeaponPrimitive primitive in weapons)
+            {
+                WeaponViewModel weapon = allWeaponViewModels[primitive.Id];
+
+                WeaponViewModel previous = null;
+                if (primitive.Crafting.Previous.HasValue)
+                    previous = allWeaponViewModels[primitive.Crafting.Previous.Value];
+
+                weapon.Update(previous, primitive.Crafting.Branches.Select(id => allWeaponViewModels[id]).ToArray());
             }
         }
     }
