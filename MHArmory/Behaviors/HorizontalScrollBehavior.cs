@@ -34,7 +34,7 @@ namespace MHArmory.Behaviors
 
         private static void OnPreviewMouseWheel(object sender, MouseWheelEventArgs e)
         {
-            ScrollViewer scrollViewer = ((UIElement)sender).FindDescendant<ScrollViewer>();
+            ScrollViewer scrollViewer = FindDescendant<ScrollViewer>((UIElement)sender);
 
             if (scrollViewer == null)
                 return;
@@ -58,17 +58,17 @@ namespace MHArmory.Behaviors
             e.Handled = true;
         }
 
-        public static bool GetIsAttached(ItemsControl element)
+        public static bool GetIsAttached(DependencyObject element)
         {
             return (bool)element.GetValue(IsAttachedProperty);
         }
 
-        public static void SetIsAttached(ItemsControl element, bool value)
+        public static void SetIsAttached(DependencyObject element, bool value)
         {
             element.SetValue(IsAttachedProperty, value);
         }
 
-        private static T FindDescendant<T>(this DependencyObject obj) where T : DependencyObject
+        private static T FindDescendant<T>(DependencyObject obj) where T : DependencyObject
         {
             if (obj == null)
                 return null;

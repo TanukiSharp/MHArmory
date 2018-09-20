@@ -896,14 +896,18 @@
     </DataTemplate>
 
     <HierarchicalDataTemplate x:Key="WeaponView" ItemsSource="{Binding Branches}">
-        <Border BorderBrush="Gray" Background="LightGray" BorderThickness="2" CornerRadius="3" Width="120" Height="60" Margin="12">
-            <TextBlock Text="{Binding Name}" Margin="6"/>
+        <Border BorderBrush="Gray" Background="LightGray" BorderThickness="1" CornerRadius="3" Width="120" Height="60" Margin="12">
+            <StackPanel DockPanel.Dock="Top" VerticalAlignment="Stretch">
+                <Viewbox VerticalAlignment="Top" HorizontalAlignment="Left" StretchDirection="DownOnly">
+                    <TextBlock Text="{Binding Name}" Margin="6" VerticalAlignment="Center"/>
+                </Viewbox>
+            </StackPanel>
         </Border>
     </HierarchicalDataTemplate>
 
     <DataTemplate x:Key="WeaponsView">
         <ScrollViewer HorizontalScrollBarVisibility="Visible" VerticalScrollBarVisibility="Visible" CanContentScroll="False" bhv:HorizontalScrollBehavior.IsAttached="True">
-            <local:CustomTreeView Background="Transparent" LineBrush="LightGray" LineThickness="3" ItemsSource="{Binding}" ItemTemplate="{StaticResource WeaponView}" ItemContainerStyle="{DynamicResource WeaponTreeViewItem}" ScrollViewer.HorizontalScrollBarVisibility="Disabled" ScrollViewer.VerticalScrollBarVisibility="Disabled" ScrollViewer.CanContentScroll="False"/>
+            <local:CustomTreeView Background="Transparent" LineBrush="#FFC0C0C0" LineThickness="3" ItemsSource="{Binding}" ItemTemplate="{StaticResource WeaponView}" ItemContainerStyle="{DynamicResource WeaponTreeViewItem}" ScrollViewer.HorizontalScrollBarVisibility="Disabled" ScrollViewer.VerticalScrollBarVisibility="Disabled" ScrollViewer.CanContentScroll="False"/>
         </ScrollViewer>
     </DataTemplate>
 
