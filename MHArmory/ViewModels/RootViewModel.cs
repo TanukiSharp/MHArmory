@@ -460,6 +460,7 @@ namespace MHArmory.ViewModels
             }
             catch
             {
+                // TODO: log the exception
             }
         }
 
@@ -486,6 +487,8 @@ namespace MHArmory.ViewModels
 
                 weapon.Update(previous, primitive.Crafting.Branches.Select(id => allWeaponViewModels[id]).ToArray());
             }
+
+            InParameters.Weapons = roots;
         }
     }
 }

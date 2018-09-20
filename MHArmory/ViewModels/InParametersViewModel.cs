@@ -112,6 +112,24 @@ namespace MHArmory.ViewModels
             }
         }
 
+        private bool hasWeapons;
+        public bool HasWeapons
+        {
+            get { return hasWeapons; }
+            private set { SetValue(ref hasWeapons, value); }
+        }
+
+        private IList<WeaponViewModel> weapons;
+        public IList<WeaponViewModel> Weapons
+        {
+            get { return weapons; }
+            set
+            {
+                if (SetValue(ref weapons, value))
+                    HasWeapons = Weapons != null;
+            }
+        }
+
         public ICommand OpenDecorationsOverrideCommand { get { return root.OpenDecorationsOverrideCommand; } }
 
         public InParametersViewModel(RootViewModel root)

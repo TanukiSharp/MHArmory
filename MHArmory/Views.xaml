@@ -79,6 +79,9 @@
                     <ContentControl Content="{Binding Slots[0], Mode=OneTime}" ContentTemplate="{StaticResource WeaponSlotView}" Margin="1 2 1 2" Focusable="False"/>
                     <ContentControl Content="{Binding Slots[1], Mode=OneTime}" ContentTemplate="{StaticResource WeaponSlotView}" Margin="1 2 1 2" Focusable="False"/>
                     <ContentControl Content="{Binding Slots[2], Mode=OneTime}" ContentTemplate="{StaticResource WeaponSlotView}" Margin="1 2 1 2" Focusable="False"/>
+                    <Button MinWidth="40" MaxWidth="40" Margin="1 2 1 2" IsEnabled="{Binding HasWeapons}" ToolTip="See weapons matching the currently selected slots">
+                        <Image Source="{mxt:RasterizedImage Location=Icons/GreatSword.svg, Size=20}" Height="20" Width="20"/>
+                    </Button>
                 </StackPanel>
             </StackPanel>
 
