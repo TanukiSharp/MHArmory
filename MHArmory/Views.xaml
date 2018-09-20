@@ -896,32 +896,15 @@
     </DataTemplate>
 
     <HierarchicalDataTemplate x:Key="WeaponView" ItemsSource="{Binding Branches}">
-        <StackPanel Orientation="Horizontal" Background="Lime">
-            <StackPanel Orientation="Horizontal" VerticalAlignment="Top">
-                <StackPanel x:Name="head" Orientation="Horizontal" VerticalAlignment="Stretch" Background="Blue">
-                    <Rectangle Height="3" Width="16" Fill="Transparent"/>
-                    <Rectangle Height="3" Width="16" Fill="Black"/>
-                </StackPanel>
-                <Border BorderBrush="Gray" Background="DimGray" BorderThickness="2" CornerRadius="3" Width="150" Height="70" Margin="0 24 0 24">
-                    <TextBlock Text="{Binding Name}" Margin="6"/>
-                </Border>
-            </StackPanel>
-            <StackPanel x:Name="tail" Orientation="Horizontal" VerticalAlignment="Stretch" Background="Red">
-                <Rectangle VerticalAlignment="Center" Height="3" Width="16" Fill="Black"/>
-            </StackPanel>
-        </StackPanel>
-        <HierarchicalDataTemplate.Triggers>
-            <DataTrigger Binding="{Binding HasParent}" Value="False">
-                <Setter TargetName="head" Property="Visibility" Value="Hidden"/>
-            </DataTrigger>
-            <DataTrigger Binding="{Binding HasChildren}" Value="False">
-                <Setter TargetName="tail" Property="Visibility" Value="Collapsed"/>
-            </DataTrigger>
-        </HierarchicalDataTemplate.Triggers>
+        <Border BorderBrush="Gray" Background="LightGray" BorderThickness="2" CornerRadius="3" Width="120" Height="60" Margin="12">
+            <TextBlock Text="{Binding Name}" Margin="6"/>
+        </Border>
     </HierarchicalDataTemplate>
 
     <DataTemplate x:Key="WeaponsView">
-        <TreeView Background="Transparent" ItemsSource="{Binding}" ItemTemplate="{StaticResource WeaponView}" ItemContainerStyle="{DynamicResource WeaponTreeViewItem}"/>
+        <ScrollViewer HorizontalScrollBarVisibility="Visible" VerticalScrollBarVisibility="Visible" CanContentScroll="False" bhv:HorizontalScrollBehavior.IsAttached="True">
+            <local:CustomTreeView Background="Transparent" LineBrush="LightGray" LineThickness="3" ItemsSource="{Binding}" ItemTemplate="{StaticResource WeaponView}" ItemContainerStyle="{DynamicResource WeaponTreeViewItem}" ScrollViewer.HorizontalScrollBarVisibility="Disabled" ScrollViewer.VerticalScrollBarVisibility="Disabled" ScrollViewer.CanContentScroll="False"/>
+        </ScrollViewer>
     </DataTemplate>
 
 </ResourceDictionary>

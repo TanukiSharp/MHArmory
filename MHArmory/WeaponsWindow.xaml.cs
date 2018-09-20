@@ -38,21 +38,19 @@ namespace MHArmory
             this.Loaded += WeaponsWindow_Loaded;
         }
 
-        private async void WeaponsWindow_Loaded(object sender, RoutedEventArgs e)
+        private void WeaponsWindow_Loaded(object sender, RoutedEventArgs e)
         {
             foreach (WeaponViewModel rootWeapon in rootViewModel.InParameters.Weapons)
-                await Expand(rootWeapon);
+                Expand(rootWeapon);
         }
 
-        private async Task Expand(WeaponViewModel vm)
+        private void Expand(WeaponViewModel vm)
         {
-            await System.Windows.Threading.Dispatcher.Yield(System.Windows.Threading.DispatcherPriority.Background);
-
             if (vm.Branches != null)
             {
                 vm.IsExpanded = true;
                 foreach (WeaponViewModel child in vm.Branches)
-                    await Expand(child);
+                    Expand(child);
             }
         }
 

@@ -67,7 +67,7 @@ namespace MHArmory.ViewModels
         {
             Events.NotifyDataLoaded();
 
-            LoadWeaponsInternal().ContinueWith(t => t.Wait());
+            LoadWeapons();
         }
 
         private IEnumerable<ArmorSetViewModel> rawFoundArmorSets;
@@ -452,11 +452,11 @@ namespace MHArmory.ViewModels
             }
         }
 
-        private async Task LoadWeapons()
+        private void LoadWeapons()
         {
             try
             {
-                await LoadWeaponsInternal();
+                LoadWeaponsInternal();
             }
             catch
             {
@@ -464,10 +464,14 @@ namespace MHArmory.ViewModels
             }
         }
 
-        private async Task LoadWeaponsInternal()
+        private void LoadWeaponsInternal()
         {
             var httpClient = new System.Net.Http.HttpClient();
-            string weaponsContent = await httpClient.GetStringAsync("https://mhw-db.com/weapons");
+
+            string weaponsContent;
+
+            string file = System.IO.Path.Combine(AppContext.BaseDirectory, "data", "weapons.json");
+            weaponsContent = System.IO.File.ReadAllText(file);
 
             IList<ArmoryDataSource.DataStructures.WeaponPrimitive> weapons = Newtonsoft.Json.JsonConvert.DeserializeObject<IList<ArmoryDataSource.DataStructures.WeaponPrimitive>>(weaponsContent);
 
@@ -475,7 +479,10 @@ namespace MHArmory.ViewModels
                 .Select(x => new WeaponViewModel(x))
                 .ToDictionary(x => x.Id, x => x);
 
-            IList<WeaponViewModel> roots = weapons.Where(x => x.Crafting.Previous == null).Select(x => allWeaponViewModels[x.Id]).ToList();
+            IList<WeaponViewModel> roots = weapons
+                .Where(x => x.Crafting.Previous == null)
+                .Select(x => allWeaponViewModels[x.Id])
+                .ToList();
 
             foreach (ArmoryDataSource.DataStructures.WeaponPrimitive primitive in weapons)
             {

@@ -119,8 +119,8 @@ namespace MHArmory.ViewModels
             private set { SetValue(ref hasWeapons, value); }
         }
 
-        private IList<WeaponViewModel> weapons;
-        public IList<WeaponViewModel> Weapons
+        private ICollection<WeaponViewModel> weapons;
+        public ICollection<WeaponViewModel> Weapons
         {
             get { return weapons; }
             set

@@ -63,6 +63,7 @@ namespace MHArmory.ViewModels
                 if (Previous.Branches == null)
                 {
                     // TODO: file data issue to mhw-db.com
+                    Previous.Branches = new WeaponViewModel[] { this };
                 }
             }
 
