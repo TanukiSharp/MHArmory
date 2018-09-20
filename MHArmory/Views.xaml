@@ -79,7 +79,7 @@
                     <ContentControl Content="{Binding Slots[0], Mode=OneTime}" ContentTemplate="{StaticResource WeaponSlotView}" Margin="1 2 1 2" Focusable="False"/>
                     <ContentControl Content="{Binding Slots[1], Mode=OneTime}" ContentTemplate="{StaticResource WeaponSlotView}" Margin="1 2 1 2" Focusable="False"/>
                     <ContentControl Content="{Binding Slots[2], Mode=OneTime}" ContentTemplate="{StaticResource WeaponSlotView}" Margin="1 2 1 2" Focusable="False"/>
-                    <Button MinWidth="40" MaxWidth="40" Margin="1 2 1 2" IsEnabled="{Binding HasWeapons}" ToolTip="See weapons matching the currently selected slots">
+                    <Button MinWidth="40" MaxWidth="40" Margin="1 2 1 2" Command="{x:Static local:RoutedCommands.OpenWeapons}" IsEnabled="{Binding HasWeapons}" ToolTip="See weapons matching the currently selected slots">
                         <Image Source="{mxt:RasterizedImage Location=Icons/GreatSword.svg, Size=20}" Height="20" Width="20"/>
                     </Button>
                 </StackPanel>
@@ -893,6 +893,35 @@
                 <Setter TargetName="edit" Property="Foreground" Value="Blue"/>
             </DataTrigger>
         </DataTemplate.Triggers>
+    </DataTemplate>
+
+    <HierarchicalDataTemplate x:Key="WeaponView" ItemsSource="{Binding Branches}">
+        <StackPanel Orientation="Horizontal" Background="Lime">
+            <StackPanel Orientation="Horizontal" VerticalAlignment="Top">
+                <StackPanel x:Name="head" Orientation="Horizontal" VerticalAlignment="Stretch" Background="Blue">
+                    <Rectangle Height="3" Width="16" Fill="Transparent"/>
+                    <Rectangle Height="3" Width="16" Fill="Black"/>
+                </StackPanel>
+                <Border BorderBrush="Gray" Background="DimGray" BorderThickness="2" CornerRadius="3" Width="150" Height="70" Margin="0 24 0 24">
+                    <TextBlock Text="{Binding Name}" Margin="6"/>
+                </Border>
+            </StackPanel>
+            <StackPanel x:Name="tail" Orientation="Horizontal" VerticalAlignment="Stretch" Background="Red">
+                <Rectangle VerticalAlignment="Center" Height="3" Width="16" Fill="Black"/>
+            </StackPanel>
+        </StackPanel>
+        <HierarchicalDataTemplate.Triggers>
+            <DataTrigger Binding="{Binding HasParent}" Value="False">
+                <Setter TargetName="head" Property="Visibility" Value="Hidden"/>
+            </DataTrigger>
+            <DataTrigger Binding="{Binding HasChildren}" Value="False">
+                <Setter TargetName="tail" Property="Visibility" Value="Collapsed"/>
+            </DataTrigger>
+        </HierarchicalDataTemplate.Triggers>
+    </HierarchicalDataTemplate>
+
+    <DataTemplate x:Key="WeaponsView">
+        <TreeView Background="Transparent" ItemsSource="{Binding}" ItemTemplate="{StaticResource WeaponView}" ItemContainerStyle="{DynamicResource WeaponTreeViewItem}"/>
     </DataTemplate>
 
 </ResourceDictionary>

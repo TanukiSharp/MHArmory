@@ -15,7 +15,7 @@ namespace MHArmory.ViewModels
         public int Defense { get; }
     }
 
-    public class WeaponViewModel
+    public class WeaponViewModel : ViewModelBase
     {
         public int Id { get; }
         public string Name { get; }
@@ -28,6 +28,16 @@ namespace MHArmory.ViewModels
         public bool IsCraftable { get; }
         public WeaponViewModel Previous { get; private set; }
         public WeaponViewModel[] Branches { get; private set; }
+
+        public bool HasParent { get; private set; }
+        public bool HasChildren { get; private set; }
+
+        private bool isExpanded;
+        public bool IsExpanded
+        {
+            get { return isExpanded; }
+            set { SetValue(ref isExpanded, value); }
+        }
 
         public WeaponViewModel(WeaponPrimitive primitive)
         {
@@ -46,7 +56,21 @@ namespace MHArmory.ViewModels
         internal void Update(WeaponViewModel previous, WeaponViewModel[] children)
         {
             Previous = previous;
-            Branches = children;
+
+            if (Previous != null)
+            {
+                HasParent = true;
+                if (Previous.Branches == null)
+                {
+                    // TODO: file data issue to mhw-db.com
+                }
+            }
+
+            if (children != null && children.Length > 0)
+            {
+                Branches = children;
+                HasChildren = true;
+            }
         }
 
         public override string ToString()
