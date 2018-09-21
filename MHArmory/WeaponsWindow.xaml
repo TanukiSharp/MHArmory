@@ -5,5 +5,5 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         mc:Ignorable="d"
         Title="Weapons" Width="800" Height="500" Background="WhiteSmoke">
-    <ContentControl Content="{Binding}" ContentTemplate="{StaticResource WeaponsView}" Focusable="False"/>
+    <ContentControl Content="{Binding}" ContentTemplate="{StaticResource WeaponsContainerView}" Focusable="False"/>
 </Window>

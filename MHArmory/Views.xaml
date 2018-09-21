@@ -70,7 +70,7 @@
                 <Setter Property="SnapsToDevicePixels" Value="True"/>
             </Style>
         </DataTemplate.Resources>
-        
+
         <StackPanel Orientation="Horizontal" VerticalAlignment="Stretch">
 
             <StackPanel VerticalAlignment="Stretch">
@@ -79,7 +79,7 @@
                     <ContentControl Content="{Binding Slots[0], Mode=OneTime}" ContentTemplate="{StaticResource WeaponSlotView}" Margin="1 2 1 2" Focusable="False"/>
                     <ContentControl Content="{Binding Slots[1], Mode=OneTime}" ContentTemplate="{StaticResource WeaponSlotView}" Margin="1 2 1 2" Focusable="False"/>
                     <ContentControl Content="{Binding Slots[2], Mode=OneTime}" ContentTemplate="{StaticResource WeaponSlotView}" Margin="1 2 1 2" Focusable="False"/>
-                    <Button MinWidth="40" MaxWidth="40" Margin="1 2 1 2" Command="{x:Static local:RoutedCommands.OpenWeapons}" IsEnabled="{Binding HasWeapons}" ToolTip="See weapons matching the currently selected slots">
+                    <Button x:Name="weaponsButton" MinWidth="40" MaxWidth="40" Margin="1 2 1 2" Command="{x:Static local:RoutedCommands.OpenWeapons}" ToolTip="See weapons matching the currently selected slots" ToolTipService.ShowOnDisabled="True">
                         <Image Source="{mxt:RasterizedImage Location=Icons/GreatSword.svg, Size=20}" Height="20" Width="20"/>
                     </Button>
                 </StackPanel>
@@ -134,6 +134,13 @@
             </StackPanel>
 
         </StackPanel>
+
+        <DataTemplate.Triggers>
+            <DataTrigger Binding="{Binding WeaponsContainer.IsFeatureEnabled}" Value="False">
+                <Setter TargetName="weaponsButton" Property="IsEnabled" Value="False"/>
+                <Setter TargetName="weaponsButton" Property="ToolTip" Value="{Binding WeaponsContainer.FeatureDisabledReason}"/>
+            </DataTrigger>
+        </DataTemplate.Triggers>
     </DataTemplate>
 
     <DataTemplate x:Key="StandaloneAbilityView">
@@ -905,10 +912,13 @@
         </Border>
     </HierarchicalDataTemplate>
 
-    <DataTemplate x:Key="WeaponsView">
-        <ScrollViewer HorizontalScrollBarVisibility="Visible" VerticalScrollBarVisibility="Visible" CanContentScroll="False" bhv:HorizontalScrollBehavior.IsAttached="True">
-            <local:CustomTreeView Background="Transparent" LineBrush="#FFC0C0C0" LineThickness="3" ItemsSource="{Binding}" ItemTemplate="{StaticResource WeaponView}" ItemContainerStyle="{DynamicResource WeaponTreeViewItem}" ScrollViewer.HorizontalScrollBarVisibility="Disabled" ScrollViewer.VerticalScrollBarVisibility="Disabled" ScrollViewer.CanContentScroll="False"/>
-        </ScrollViewer>
+    <DataTemplate x:Key="WeaponsContainerView">
+        <Grid>
+            <TextBlock Text="Constructing user interface..." HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="20" Visibility="{Binding IsDataLoading, Converter={StaticResource CollapsedVisibilityValueConverter}, Mode=OneWay}"/>
+            <ScrollViewer HorizontalScrollBarVisibility="Visible" VerticalScrollBarVisibility="Visible" CanContentScroll="False" bhv:HorizontalScrollBehavior.IsAttached="True" Visibility="{Binding IsDataLoaded, Converter={StaticResource HiddenVisibilityValueConverter}}">
+                <local:CustomTreeView Background="Transparent" LineBrush="#FFC0C0C0" LineThickness="3" ItemsSource="{Binding Weapons}" ItemTemplate="{StaticResource WeaponView}" ItemContainerStyle="{DynamicResource WeaponTreeViewItem}" ScrollViewer.HorizontalScrollBarVisibility="Disabled" ScrollViewer.VerticalScrollBarVisibility="Disabled" ScrollViewer.CanContentScroll="False"/>
+            </ScrollViewer>
+        </Grid>
     </DataTemplate>
 
 </ResourceDictionary>

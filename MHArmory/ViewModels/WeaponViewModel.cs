@@ -32,13 +32,6 @@ namespace MHArmory.ViewModels
         public bool HasParent { get; private set; }
         public bool HasChildren { get; private set; }
 
-        private bool isExpanded;
-        public bool IsExpanded
-        {
-            get { return isExpanded; }
-            set { SetValue(ref isExpanded, value); }
-        }
-
         public WeaponViewModel(WeaponPrimitive primitive)
         {
             Id = primitive.Id;

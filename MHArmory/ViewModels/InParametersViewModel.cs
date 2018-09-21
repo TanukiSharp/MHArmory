@@ -112,21 +112,11 @@ namespace MHArmory.ViewModels
             }
         }
 
-        private bool hasWeapons;
-        public bool HasWeapons
+        public WeaponsContainerViewModel WeaponsContainer
         {
-            get { return hasWeapons; }
-            private set { SetValue(ref hasWeapons, value); }
-        }
-
-        private ICollection<WeaponViewModel> weapons;
-        public ICollection<WeaponViewModel> Weapons
-        {
-            get { return weapons; }
-            set
+            get
             {
-                if (SetValue(ref weapons, value))
-                    HasWeapons = Weapons != null;
+                return root.WeaponsContainer;
             }
         }
 

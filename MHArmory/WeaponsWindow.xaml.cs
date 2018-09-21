@@ -33,25 +33,22 @@ namespace MHArmory
 
             this.rootViewModel = rootViewModel;
 
-            DataContext = rootViewModel.InParameters.Weapons.Where(x => x.Type == "great-sword").ToList();
-
             this.Loaded += WeaponsWindow_Loaded;
         }
 
-        private void WeaponsWindow_Loaded(object sender, RoutedEventArgs e)
+        private async void WeaponsWindow_Loaded(object sender, RoutedEventArgs e)
         {
-            foreach (WeaponViewModel rootWeapon in rootViewModel.InParameters.Weapons)
-                Expand(rootWeapon);
-        }
+            await System.Windows.Threading.Dispatcher.Yield(System.Windows.Threading.DispatcherPriority.Render);
 
-        private void Expand(WeaponViewModel vm)
-        {
-            if (vm.Branches != null)
-            {
-                vm.IsExpanded = true;
-                foreach (WeaponViewModel child in vm.Branches)
-                    Expand(child);
-            }
+            WeaponsContainerViewModel container = rootViewModel.WeaponsContainer;
+
+            container.IsDataLoaded = false;
+            container.IsDataLoading = true;
+
+            DataContext = rootViewModel.WeaponsContainer;
+
+            container.IsDataLoaded = true;
+            container.IsDataLoading = false;
         }
 
         private void OnCancel()
@@ -64,8 +61,6 @@ namespace MHArmory
             base.OnClosing(e);
             e.Cancel = true;
             Hide();
-
-            rootViewModel.Events.UpdateAndSaveConfiguration();
         }
     }
 }
