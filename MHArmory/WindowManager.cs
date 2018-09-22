@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.InteropServices;
@@ -10,6 +10,11 @@ using MHArmory.Configurations;
 
 namespace MHArmory
 {
+    public interface IWindow
+    {
+        void OnOpen(bool isAlreadyOpened);
+    }
+
     public static class WindowManager
     {
         private class WindowContainer
@@ -207,6 +212,9 @@ namespace MHArmory
         {
             WindowContainer container = RestorePositionInternal<T>();
             Window window = container.Instance;
+
+            if (window is IWindow win)
+                win.OnOpen(window.IsVisible);
 
             if (isModal)
                 return window.ShowDialog();
