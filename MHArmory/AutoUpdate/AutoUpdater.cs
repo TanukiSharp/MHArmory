@@ -170,7 +170,7 @@ namespace MHArmory.AutoUpdate
             }
             else
             {
-                var versionStr = versionValue.Value as string;
+                string versionStr = versionValue.Value as string;
                 if (versionStr == null)
                 {
                     logger?.LogError($"Property '{LatestVersionPropertyName}' is of incorrect type '{(versionValue.Value?.GetType().Name ?? "(null)")}'.");
@@ -196,7 +196,7 @@ namespace MHArmory.AutoUpdate
             }
             else
             {
-                var archiveStr = archiveValue.Value as string;
+                string archiveStr = archiveValue.Value as string;
                 if (string.IsNullOrWhiteSpace(archiveStr))
                 {
                     logger?.LogError($"Property '{LatestArchivePropertyName}' is of incorrect type or value '{(archiveValue.Value?.GetType().Name ?? "(null)")}'.");

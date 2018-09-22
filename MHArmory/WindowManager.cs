@@ -265,10 +265,10 @@ namespace MHArmory
         private const int MONITOR_DEFAULTTONEAREST = 2;
 
         [DllImport("user32.dll")]
-        private static extern IntPtr MonitorFromWindow(IntPtr hwnd, uint dwFlags);
+        private extern static IntPtr MonitorFromWindow(IntPtr hwnd, uint dwFlags);
 
         [DllImport("user32.dll", CharSet = CharSet.Auto)]
-        private static extern bool GetMonitorInfo(IntPtr hMonitor, ref MonitorInfoEx lpmi);
+        private extern static bool GetMonitorInfo(IntPtr hMonitor, ref MonitorInfoEx lpmi);
 
         // size of a device name string
         private const int CCHDEVICENAME = 32;
