@@ -5,6 +5,12 @@ using Newtonsoft.Json;
 
 namespace MHArmory.ArmoryDataSource.DataStructures
 {
+    public class WeaponSlotRank
+    {
+        [JsonProperty("rank")]
+        public int Rank { get; set; }
+    }
+
     public class WeaponAttackPrimitve
     {
         [JsonProperty("display")]
@@ -65,8 +71,9 @@ namespace MHArmory.ArmoryDataSource.DataStructures
         public WeaponAttributesPrimitive Attributes { get; set; }
         [JsonProperty("durability")]
         public WeaponDurabilityPrimitive[] SharpnessLevels { get; set; }
+        [JsonProperty("slots")]
+        public IList<WeaponSlotRank> Slots { get; set; }
 
-        // slots
         // ...
 
         [JsonProperty("crafting")]

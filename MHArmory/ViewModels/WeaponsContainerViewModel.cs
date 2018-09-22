@@ -41,27 +41,45 @@ namespace MHArmory.ViewModels
             private set { SetValue(ref featureDisabledReason, value); }
         }
 
-        private bool hasWeapons;
-        public bool HasWeapons
+        internal void Activate(WeaponTypeViewModel weaponTypeToActivate)
         {
-            get { return hasWeapons; }
-            private set { SetValue(ref hasWeapons, value); }
+            foreach (WeaponTypeViewModel weaponType in WeaponTypes)
+                weaponType.IsVisible = weaponType == weaponTypeToActivate;
         }
 
-        private ICollection<WeaponViewModel> weapons;
-        public ICollection<WeaponViewModel> Weapons
+        private IDictionary<int, WeaponViewModel> allWeapons;
+
+        private IList<WeaponTypeViewModel> weaponTypes;
+        public IList<WeaponTypeViewModel> WeaponTypes
         {
-            get { return weapons; }
-            set
-            {
-                if (SetValue(ref weapons, value))
-                    HasWeapons = Weapons != null && Weapons.Count > 0;
-            }
+            get { return weaponTypes; }
+            set { SetValue(ref weaponTypes, value); }
         }
 
         public WeaponsContainerViewModel(RootViewModel rootViewModel)
         {
             this.rootViewModel = rootViewModel;
+        }
+
+        public void UpdateHighlights(IList<int> inputSlots)
+        {
+            foreach (WeaponViewModel weapon in allWeapons.Values)
+                weapon.IsHighlight = IsWeaponMatchingSlots(weapon, inputSlots);
+        }
+
+        private bool IsWeaponMatchingSlots(WeaponViewModel weapon, IList<int> inputSlots)
+        {
+            if (weapon.Slots.Count < inputSlots.Count)
+                return false;
+
+            int count = inputSlots.Count;
+            for (int i = 0; i < count; i++)
+            {
+                if (weapon.Slots[i] < inputSlots[i])
+                    return false;
+            }
+
+            return true;
         }
 
         public async Task LoadWeaponsAsync()
@@ -103,35 +121,40 @@ namespace MHArmory.ViewModels
                 return false;
             }
 
-            IList<WeaponPrimitive> weapons = await LoadPrimitives(filename);
+            IList<WeaponPrimitive> allWeaponPrimitives = await LoadPrimitives(filename);
 
-            IDictionary<int, WeaponViewModel> allWeaponViewModels = weapons
+            allWeapons = allWeaponPrimitives
                 .Select(x => new WeaponViewModel(x))
                 .ToDictionary(x => x.Id, x => x);
 
-            IList<WeaponViewModel> roots = weapons
-                .Where(x => x.Crafting.Previous == null)
-                .Select(x => allWeaponViewModels[x.Id])
-                .ToList();
+            bool hasRoots = false;
 
-            foreach (WeaponPrimitive primitive in weapons)
+            foreach (WeaponPrimitive primitive in allWeaponPrimitives)
             {
-                WeaponViewModel weapon = allWeaponViewModels[primitive.Id];
+                WeaponViewModel weapon = allWeapons[primitive.Id];
 
                 WeaponViewModel previous = null;
                 if (primitive.Crafting.Previous.HasValue)
-                    previous = allWeaponViewModels[primitive.Crafting.Previous.Value];
+                    previous = allWeapons[primitive.Crafting.Previous.Value];
 
-                weapon.Update(previous, primitive.Crafting.Branches.Select(id => allWeaponViewModels[id]).ToArray());
+                if (previous == null)
+                    hasRoots = true;
+
+                weapon.Update(previous, primitive.Crafting.Branches.Select(id => allWeapons[id]).ToList());
             }
 
-            Weapons = roots;
-
-            if (HasWeapons == false)
+            if (hasRoots == false)
             {
                 IsFeatureEnabled = false;
                 FeatureDisabledReason = "No weapons available";
             }
+
+            WeaponTypes = allWeaponPrimitives
+                .Where(x => x.Crafting.Previous == null)
+                .Select(x => allWeapons[x.Id])
+                .GroupBy(x => x.Type)
+                .Select(x => new WeaponTypeViewModel(x.Key, x.ToList(), this))
+                .ToList();
 
             return true;
         }

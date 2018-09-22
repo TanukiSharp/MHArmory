@@ -146,6 +146,7 @@
     <Compile Include="ViewModels\TextInputViewModel.cs" />
     <Compile Include="ViewModels\ViewModelBase.cs" />
     <Compile Include="ViewModels\WeaponsContainerViewModel.cs" />
+    <Compile Include="ViewModels\WeaponTypeViewModel.cs" />
     <Compile Include="ViewModels\WeaponViewModel.cs" />
     <Compile Include="WeaponsWindow.xaml.cs">
       <DependentUpon>WeaponsWindow.xaml</DependentUpon>

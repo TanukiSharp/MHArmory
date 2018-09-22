@@ -19,7 +19,7 @@ namespace MHArmory
     /// <summary>
     /// Interaction logic for WeaponsWindow.xaml
     /// </summary>
-    public partial class WeaponsWindow : Window
+    public partial class WeaponsWindow : Window, IWindow
     {
         private readonly RootViewModel rootViewModel;
 
@@ -49,6 +49,20 @@ namespace MHArmory
 
             container.IsDataLoaded = true;
             container.IsDataLoading = false;
+        }
+
+        public void OnOpen(bool isAlreadyOpened)
+        {
+            if (isAlreadyOpened)
+                return;
+
+            IList<int> inputSlots = rootViewModel.InParameters.Slots
+                .Select(x => x.Value)
+                .Where(x => x > 0)
+                .OrderByDescending(x => x)
+                .ToList();
+
+            rootViewModel.WeaponsContainer.UpdateHighlights(inputSlots);
         }
 
         private void OnCancel()
