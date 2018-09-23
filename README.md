@@ -39,18 +39,6 @@ Link to the French beta test documentation: https://tanukisharp.github.io/MHArmo
 
 Link to direct download: https://github.com/TanukiSharp/MHArmory/raw/master/Distributions/MHArmory_0.0.5.2.zip
 
-# Thanks
-
-- **Baker80500**, owner of "Les Chasseurs de Gemmes - Clan MHW PS4"
-    - Very nice and friendly small hunters/gamers community
-    - Discord invitation link here: https://discord.gg/MH67yQy
-- **Puck**, the very first tester
-- **Delca**, a friend with whom I exchange though about armor set search implementation
-    - GitHub account: https://github.com/Delca
-    - Have a look at this: https://github.com/Delca/MHOSEF
-- **Athena's ASS author(s)**, for making such a wonderful application and inspiring this project
-- **All people who worked on Monster Hunter series**, for making such an amazing game
-
 # Stay tuned
 
 Follow **Armory** on Twitter to get latest news and updates: https://twitter.com/MHArmory
@@ -69,6 +57,28 @@ Follow **Armory** on Twitter to get latest news and updates: https://twitter.com
 
 - Armor set builder (with partial equipment)
 - Asset explorer organized as tree
+
+# Thanks
+
+- **Baker80500**, owner of "Les Chasseurs de Gemmes - Clan MHW PS4"
+    - Very nice and friendly small hunters/gamers community
+    - Discord invitation link here: https://discord.gg/MH67yQy
+- **Puck**, the very first tester
+- **Delca**, a friend with whom I exchange though about armor set search implementation
+    - GitHub account: https://github.com/Delca
+    - Have a look at this: https://github.com/Delca/MHOSEF
+- **La Caverne du Dodogama**, French MH World PC Guild
+    - Discord invitation link here: https://discord.gg/YzhmaCv
+- **Saint-Funky, Masta, Professeur Felyne**, administrators of the MHFR community
+    - Discord invitation link here: http://discord.gg/mhfr
+- **Professeur Felyne**, administrator of the MHFR community forum
+    - French forum linkhere: http://www.monsterhunter-france.com
+- **Tyler Lartonoix**, wner of the mhw-db.com project
+    - GitHub project site: https://github.com/LartTyler/MHWDB-API
+    - API website: https://docs.mhw-db.com
+- **Athena's ASS author(s)**, for making such a wonderful application and inspiring this project
+- **https://www.vectorizer.io**, wonderful website used to vectorize all rasterized icons
+- **All people who worked on Monster Hunter series**, for making such an amazing game
 
 # Terms of use
 
