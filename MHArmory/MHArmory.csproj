@@ -122,7 +122,7 @@
     <Compile Include="ValueConverters\SortCriteriaNameValueConverter.cs" />
     <Compile Include="ValueConverters\VisibilityValueConverter.cs" />
     <Compile Include="GlobalData.cs" />
-    <Compile Include="ValueConverters\EquipmentEnumToImageSourceValueConverter.cs" />
+    <Compile Include="ValueConverters\EnumToImageSourceValueConverter.cs" />
     <Compile Include="ValueConverters\InverseBooleanValueConverter.cs" />
     <Compile Include="RoutedCommands.cs" />
     <Compile Include="SkillSelectorWindow.xaml.cs">
@@ -335,6 +335,21 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Icons\Weapons\GreatSword.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icons\Weapons\Bow.svg" />
+    <Resource Include="Icons\Weapons\ChargeBlade.svg" />
+    <Resource Include="Icons\Weapons\DualBlades.svg" />
+    <Resource Include="Icons\Weapons\Gunlance.svg" />
+    <Resource Include="Icons\Weapons\Hammer.svg" />
+    <Resource Include="Icons\Weapons\HeavyBowgun.svg" />
+    <Resource Include="Icons\Weapons\HuntingHorn.svg" />
+    <Resource Include="Icons\Weapons\InsectGlaive.svg" />
+    <Resource Include="Icons\Weapons\Lance.svg" />
+    <Resource Include="Icons\Weapons\LightBowgun.svg" />
+    <Resource Include="Icons\Weapons\LongSword.svg" />
+    <Resource Include="Icons\Weapons\SwitchAxe.svg" />
+    <Resource Include="Icons\Weapons\SwordAndShield.svg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>

@@ -10,6 +10,7 @@
     <cvt:CollapsedVisibilityValueConverter x:Key="CollapsedVisibilityValueConverter"/>
     <cvt:InverseBooleanValueConverter x:Key="InverseBooleanValueConverter"/>
     <cvt:EquipmentEnumToImageSourceValueConverter x:Key="EquipmentEnumToImageSourceValueConverter"/>
+    <cvt:WeaponEnumToImageSourceValueConverter x:Key="WeaponEnumToImageSourceValueConverter"/>
     <cvt:SlotToImageSourceValueConverter x:Key="SlotToImageSourceValueConverter"/>
     <cvt:SlotSizeToolTipValueConverter x:Key="SlotSizeToolTipValueConverter"/>
     <cvt:HasDefenseVisibilityValueConverter x:Key="HasDefenseVisibilityValueConverter"/>
@@ -958,7 +959,11 @@
                 <ItemsControl DockPanel.Dock="Top" ItemsSource="{Binding WeaponTypes}">
                     <ItemsControl.ItemTemplate>
                         <DataTemplate>
-                            <ToggleButton Content="{Binding Type}" IsChecked="{Binding IsVisible}" Command="{Binding ActivateCommand, Mode=OneTime}" Margin="2"/>
+                            <ToggleButton IsChecked="{Binding IsVisible}" MinWidth="60" Command="{Binding ActivateCommand, Mode=OneTime}" Margin="2" Padding="2">
+                                <ToggleButton.Content>
+                                    <Image Source="{Binding Type, Mode=OneTime, Converter={StaticResource WeaponEnumToImageSourceValueConverter}, ConverterParameter=32}" Width="32" Height="32"/>
+                                </ToggleButton.Content>
+                            </ToggleButton>
                         </DataTemplate>
                     </ItemsControl.ItemTemplate>
                     <ItemsControl.ItemsPanel>
