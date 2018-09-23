@@ -3,7 +3,7 @@
                     xmlns:local="clr-namespace:MHArmory"
                     xmlns:cvt="clr-namespace:MHArmory.ValueConverters"
                     xmlns:bhv="clr-namespace:MHArmory.Behaviors"
-                    xmlns:pnl="clr-namespace:MHArmory.Panels"
+                    xmlns:ctrl="clr-namespace:MHArmory.Controls"
                     xmlns:mxt="clr-namespace:MHArmory.MarkupExtensions">
 
     <cvt:HiddenVisibilityValueConverter x:Key="HiddenVisibilityValueConverter"/>
@@ -11,11 +11,14 @@
     <cvt:InverseBooleanValueConverter x:Key="InverseBooleanValueConverter"/>
     <cvt:EquipmentEnumToImageSourceValueConverter x:Key="EquipmentEnumToImageSourceValueConverter"/>
     <cvt:WeaponEnumToImageSourceValueConverter x:Key="WeaponEnumToImageSourceValueConverter"/>
+    <cvt:ElementEnumToImageSourceValueConverter x:Key="ElementEnumToImageSourceValueConverter"/>
     <cvt:SlotToImageSourceValueConverter x:Key="SlotToImageSourceValueConverter"/>
     <cvt:SlotSizeToolTipValueConverter x:Key="SlotSizeToolTipValueConverter"/>
     <cvt:HasDefenseVisibilityValueConverter x:Key="HasDefenseVisibilityValueConverter"/>
     <cvt:SortCriteriaNameValueConverter x:Key="SortCriteriaNameValueConverter"/>
     <cvt:WeaponNameValueConverter x:Key="WeaponNameValueConverter"/>
+    <cvt:SharpnessNameValueConverter x:Key="SharpnessNameValueConverter"/>
+    <cvt:ElementNameValueConverter x:Key="ElementNameValueConverter"/>
     <cvt:MillisecondsToTimeValueConverter x:Key="MillisecondsToTimeValueConverter"/>
     <cvt:NumToSeparatedStringValueConverter x:Key="NumToSeparatedStringValueConverter"/>
 
@@ -27,6 +30,13 @@
     <Style x:Key="ElementImageStyle" TargetType="Image">
         <Setter Property="Width" Value="16"/>
         <Setter Property="Height" Value="16"/>
+    </Style>
+
+    <Style x:Key="sep" TargetType="Rectangle">
+        <Setter Property="Width" Value="1"/>
+        <Setter Property="Fill" Value="LightGray"/>
+        <Setter Property="Margin" Value="16 4 16 4"/>
+        <Setter Property="SnapsToDevicePixels" Value="True"/>
     </Style>
 
     <Style x:Key="NoSelectionItemContainerStyle" TargetType="{x:Type ListBoxItem}">
@@ -64,14 +74,6 @@
     </DataTemplate>
 
     <DataTemplate x:Key="InParametersView">
-        <DataTemplate.Resources>
-            <Style x:Key="sep" TargetType="Rectangle">
-                <Setter Property="Width" Value="1"/>
-                <Setter Property="Fill" Value="LightGray"/>
-                <Setter Property="Margin" Value="16 4 16 4"/>
-                <Setter Property="SnapsToDevicePixels" Value="True"/>
-            </Style>
-        </DataTemplate.Resources>
 
         <StackPanel Orientation="Horizontal" VerticalAlignment="Stretch">
 
@@ -905,42 +907,89 @@
         </DataTemplate.Triggers>
     </DataTemplate>
 
-    <SolidColorBrush x:Key="ActiveWeaponBackgroundBrush" Color="#FF80D0FF"/>
+    <SolidColorBrush x:Key="ActiveWeaponBackgroundBrush" Color="#FFB7FFA7"/>
+    <SolidColorBrush x:Key="ActiveWeaponBorderBrush" Color="#FF55D15A"/>
+
+    <DataTemplate x:Key="SharpnessView">
+        <StackPanel Orientation="Horizontal">
+            <Rectangle Fill="#FF67FF6E" Height="Auto" Width="{Binding Red, Mode=OneTime}"/>
+        </StackPanel>
+    </DataTemplate>
+    
+    <DataTemplate x:Key="WeaponElementView">
+        <StackPanel x:Name="root" Orientation="Horizontal">
+            <Image Source="{Binding Type, Mode=OneTime, Converter={StaticResource ElementEnumToImageSourceValueConverter}, ConverterParameter=16}" Width="16" Height="16" VerticalAlignment="Center" ToolTip="{Binding Type, Mode=OneTime, Converter={StaticResource ElementNameValueConverter}}"/>
+            <TextBlock Text="(" Visibility="{Binding IsHidden, Mode=OneTime, Converter={StaticResource CollapsedVisibilityValueConverter}}" VerticalAlignment="Center"/>
+            <TextBlock Text="{Binding Value, Mode=OneTime}" VerticalAlignment="Center"/>
+            <TextBlock Text=")" Visibility="{Binding IsHidden, Mode=OneTime, Converter={StaticResource CollapsedVisibilityValueConverter}}" VerticalAlignment="Center"/>
+        </StackPanel>
+        <DataTemplate.Triggers>
+            <DataTrigger Binding="{Binding IsHidden, Mode=OneTime}" Value="True">
+                <Setter TargetName="root" Property="Opacity" Value="0.3"/>
+            </DataTrigger>
+        </DataTemplate.Triggers>
+    </DataTemplate>
 
     <HierarchicalDataTemplate x:Key="WeaponView" ItemsSource="{Binding Branches}">
-        <Grid Width="120" Height="60" Margin="12">
-            <Border x:Name="bg" Background="{StaticResource ActiveWeaponBackgroundBrush}" CornerRadius="3"/>
+        <Grid Width="160" Height="96" Margin="12" TextBlock.FontWeight="Bold">
             <Border x:Name="root" BorderBrush="Gray" Background="LightGray" BorderThickness="1" CornerRadius="3">
-                <DockPanel VerticalAlignment="Stretch">
-                    <Viewbox DockPanel.Dock="Top" VerticalAlignment="Top" HorizontalAlignment="Left" StretchDirection="DownOnly">
-                        <TextBlock Text="{Binding Name}" Margin="6" VerticalAlignment="Center"/>
+                <StackPanel HorizontalAlignment="Stretch" VerticalAlignment="Stretch"> <!-- Splits name at top and the rest at bottom -->
+                    <Viewbox VerticalAlignment="Top" HorizontalAlignment="Left" StretchDirection="DownOnly">
+                        <TextBlock Text="{Binding Name, Mode=OneTime}" FontWeight="Bold" Margin="5" VerticalAlignment="Center"/>
                     </Viewbox>
-                    <ItemsControl ItemsSource="{Binding Slots, Mode=OneTime}" Margin="2" Height="24" Focusable="False">
-                        <ItemsControl.ItemTemplate>
-                            <DataTemplate>
-                                <Image Source="{Binding Converter={StaticResource SlotToImageSourceValueConverter}, ConverterParameter=24, Mode=OneTime}" ToolTip="{Binding Converter={StaticResource SlotSizeToolTipValueConverter}, Mode=OneTime}" Width="24" Height="24" SnapsToDevicePixels="True"/>
-                            </DataTemplate>
-                        </ItemsControl.ItemTemplate>
-                        <ItemsControl.ItemsPanel>
-                            <ItemsPanelTemplate>
-                                <StackPanel Orientation="Horizontal"/>
-                            </ItemsPanelTemplate>
-                        </ItemsControl.ItemsPanel>
-                    </ItemsControl>
-                </DockPanel>
+                    <StackPanel Orientation="Horizontal" VerticalAlignment="Stretch"> <!-- Splits attributes on the right and the rest on the left -->
+                        <DockPanel VerticalAlignment="Stretch"> <!-- Splits slots at bottom and the rest at top -->
+                            <StackPanel DockPanel.Dock="Top" Orientation="Horizontal" Margin="3 1 3 1">
+                                <Border VerticalAlignment="Top" BorderBrush="#FFA0A0A0" BorderThickness="2" CornerRadius="2" Background="#FFC0C0C0">
+                                    <Image Source="{Binding Type, Mode=OneTime, Converter={StaticResource WeaponEnumToImageSourceValueConverter}, ConverterParameter=24}" Width="24" Height="24" Margin="2"/>
+                                </Border>
+                                <StackPanel VerticalAlignment="Top">
+                                    <StackPanel Orientation="Horizontal" VerticalAlignment="Top">
+                                        <Image Source="{mxt:RasterizedImage Location=Icons/Attributes/Attack.svg, Size=16}" Width="16" Height="16" VerticalAlignment="Center" Margin="2" SnapsToDevicePixels="True"/>
+                                        <TextBlock Text="{Binding Attack, Mode=OneTime}" Margin="2"/>
+                                    </StackPanel>
+                                    <Border BorderThickness="1" BorderBrush="Black" CornerRadius="0" Margin="3" Visibility="{Binding HasSharpness, Mode=OneTime, Converter={StaticResource CollapsedVisibilityValueConverter}}">
+                                        <ctrl:SharpnessRenderer Width="60" Height="6" Background="#FF1E1E1E" SharpnessLevels="{Binding SharpnessLevels, Mode=OneTime}" SharpnessRank="{Binding Parent.Parent.SharpnessRank}"/>
+                                    </Border>
+                                    <StackPanel Orientation="Horizontal" Visibility="{Binding HasDeviation, Mode=OneTime, Converter={StaticResource CollapsedVisibilityValueConverter}}">
+                                        <Image Source="{mxt:RasterizedImage Location=Icons/Attributes/Deviation.svg, Size=16}" Width="16" Height="16" VerticalAlignment="Center" Margin="2" SnapsToDevicePixels="True" ToolTip="Deviation"/>
+                                        <TextBlock Text="{Binding Attributes.Deviation, Mode=OneTime}" Margin="2"/>
+                                    </StackPanel>
+                                </StackPanel>
+                            </StackPanel>
+                            <ItemsControl DockPanel.Dock="Bottom" ItemsSource="{Binding Slots, Mode=OneTime}" Margin="2" Height="24" Focusable="False">
+                                <ItemsControl.ItemTemplate>
+                                    <DataTemplate>
+                                        <Image Source="{Binding Converter={StaticResource SlotToImageSourceValueConverter}, ConverterParameter=24, Mode=OneTime}" ToolTip="{Binding Converter={StaticResource SlotSizeToolTipValueConverter}, Mode=OneTime}" Width="24" Height="24" SnapsToDevicePixels="True" />
+                                    </DataTemplate>
+                                </ItemsControl.ItemTemplate>
+                                <ItemsControl.ItemsPanel>
+                                    <ItemsPanelTemplate>
+                                        <StackPanel Orientation="Horizontal"/>
+                                    </ItemsPanelTemplate>
+                                </ItemsControl.ItemsPanel>
+                            </ItemsControl>
+                        </DockPanel>
+                        <StackPanel> <!-- Splits element, affinity and defense -->
+                            <ItemsControl ItemsSource="{Binding Elements, Mode=OneTime}" ItemTemplate="{StaticResource WeaponElementView}" Margin="2"/>
+                            <StackPanel Orientation="Horizontal" Visibility="{Binding HasAffinity, Mode=OneTime, Converter={StaticResource CollapsedVisibilityValueConverter}}">
+                                <Image Source="{mxt:RasterizedImage Location=Icons/Attributes/Affinity.svg, Size=16}" Width="16" Height="16" VerticalAlignment="Center" Margin="2" SnapsToDevicePixels="True" ToolTip="Affinity"/>
+                                <TextBlock Text="{Binding Attributes.Affinity, Mode=OneTime, StringFormat=\{0\}%}" Margin="2"/>
+                            </StackPanel>
+                            <StackPanel Orientation="Horizontal" Visibility="{Binding HasDefense, Mode=OneTime, Converter={StaticResource CollapsedVisibilityValueConverter}}">
+                                <Image Source="{mxt:RasterizedImage Location=Icons/Attributes/Defense.svg, Size=16}" Width="16" Height="16" VerticalAlignment="Center" Margin="2" SnapsToDevicePixels="True" ToolTip="Affinity"/>
+                                <TextBlock Text="{Binding Attributes.Defense, Mode=OneTime}" Margin="2"/>
+                            </StackPanel>
+                        </StackPanel>
+                    </StackPanel>
+                </StackPanel>
             </Border>
-            <Border x:Name="fg" Background="#80FFFFFF" CornerRadius="3" Visibility="Hidden"/>
+            <Border x:Name="fg" Background="#80FFFFFF" CornerRadius="3" IsHitTestVisible="False" Visibility="Hidden"/>
         </Grid>
         <HierarchicalDataTemplate.Triggers>
             <DataTrigger Binding="{Binding IsHighlight}" Value="True">
                 <Setter TargetName="root" Property="Background" Value="{StaticResource ActiveWeaponBackgroundBrush}"/>
-                <Setter TargetName="root" Property="BorderBrush" Value="#4090E0"/>
-                <Setter TargetName="bg" Property="CornerRadius" Value="0"/>
-                <Setter TargetName="bg" Property="Effect">
-                    <Setter.Value>
-                        <BlurEffect KernelType="Gaussian" Radius="20" RenderingBias="Performance"/>
-                    </Setter.Value>
-                </Setter>
+                <Setter TargetName="root" Property="BorderBrush" Value="{StaticResource ActiveWeaponBorderBrush}"/>
             </DataTrigger>
             <DataTrigger Binding="{Binding IsHighlight}" Value="False">
                 <Setter TargetName="fg" Property="Visibility" Value="Visible"/>
@@ -949,18 +998,23 @@
     </HierarchicalDataTemplate>
 
     <DataTemplate x:Key="WeaponTypeView">
-        <ScrollViewer HorizontalScrollBarVisibility="Visible" VerticalScrollBarVisibility="Visible" Visibility="{Binding IsActive, Converter={StaticResource HiddenVisibilityValueConverter}}" bhv:HorizontalScrollBehavior.IsAttached="True">
-            <local:CustomTreeView Background="Transparent" LineBrush="#FFC0C0C0" LineThickness="3" Margin="16"
-                                  ItemsSource="{Binding RootWeapons}" ItemTemplate="{StaticResource WeaponView}"
-                                  ScrollViewer.HorizontalScrollBarVisibility="Disabled" ScrollViewer.VerticalScrollBarVisibility="Disabled" ScrollViewer.CanContentScroll="False"/>
-        </ScrollViewer>
+        <Grid>
+            <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Visibility="{Binding IsDataLoading, Converter={StaticResource CollapsedVisibilityValueConverter}, Mode=OneWay}">
+                <TextBlock Text="Constructing user interface..." FontSize="20" HorizontalAlignment="Center" Margin="2"/>
+                <TextBlock Text="(only the first time per weapon)" FontSize="14" HorizontalAlignment="Center" Margin="2"/>
+            </StackPanel>
+            <ScrollViewer HorizontalScrollBarVisibility="Visible" VerticalScrollBarVisibility="Visible" Visibility="{Binding IsActive, Converter={StaticResource HiddenVisibilityValueConverter}}" bhv:HorizontalScrollBehavior.IsAttached="True">
+                <local:CustomTreeView Background="Transparent" LineBrush="#FFC0C0C0" LineThickness="3" Margin="16"
+                                      ItemsSource="{Binding RootWeapons}" ItemTemplate="{StaticResource WeaponView}"
+                                      ScrollViewer.HorizontalScrollBarVisibility="Disabled" ScrollViewer.VerticalScrollBarVisibility="Disabled" ScrollViewer.CanContentScroll="False"/>
+            </ScrollViewer>
+        </Grid>
     </DataTemplate>
 
     <DataTemplate x:Key="WeaponsContainerView">
-        <Grid>
-            <TextBlock Text="Constructing user interface..." HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="20" Visibility="{Binding IsDataLoading, Converter={StaticResource CollapsedVisibilityValueConverter}, Mode=OneWay}"/>
-            <DockPanel LastChildFill="True" Visibility="{Binding IsDataLoaded, Converter={StaticResource HiddenVisibilityValueConverter}}">
-                <ScrollViewer DockPanel.Dock="Top" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Disabled">
+        <DockPanel LastChildFill="True" Visibility="{Binding IsDataLoaded, Converter={StaticResource HiddenVisibilityValueConverter}}">
+            <ScrollViewer DockPanel.Dock="Top" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Disabled">
+                <StackPanel Orientation="Horizontal">
                     <ItemsControl ItemsSource="{Binding WeaponTypes}">
                         <ItemsControl.ItemTemplate>
                             <DataTemplate>
@@ -982,16 +1036,24 @@
                             </ItemsPanelTemplate>
                         </ItemsControl.ItemsPanel>
                     </ItemsControl>
-                </ScrollViewer>
-                <ItemsControl ItemsSource="{Binding WeaponTypes}" ItemTemplate="{StaticResource WeaponTypeView}" Background="#06000000">
-                    <ItemsControl.ItemsPanel>
-                        <ItemsPanelTemplate>
-                            <Grid/>
-                        </ItemsPanelTemplate>
-                    </ItemsControl.ItemsPanel>
-                </ItemsControl>
-            </DockPanel>
-        </Grid>
+                    <Rectangle Style="{StaticResource sep}"/>
+                    <StackPanel VerticalAlignment="Center">
+                        <TextBlock Text="Sharpness rank: " Margin="2"/>
+                        <StackPanel Orientation="Horizontal">
+                            <Slider Minimum="0" Maximum="5" Value="{Binding SharpnessRank}" Width="120" TickPlacement="BottomRight" VerticalAlignment="Center" Margin="2"/>
+                            <TextBlock Text="{Binding SharpnessRank, Converter={StaticResource SharpnessNameValueConverter}}" VerticalAlignment="Top" Margin="2"/>
+                        </StackPanel>
+                    </StackPanel>
+                </StackPanel>
+            </ScrollViewer>
+            <ItemsControl ItemsSource="{Binding WeaponTypes}" ItemTemplate="{StaticResource WeaponTypeView}" Background="#06000000">
+                <ItemsControl.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <Grid/>
+                    </ItemsPanelTemplate>
+                </ItemsControl.ItemsPanel>
+            </ItemsControl>
+        </DockPanel>
     </DataTemplate>
 
 </ResourceDictionary>

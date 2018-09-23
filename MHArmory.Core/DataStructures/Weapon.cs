@@ -20,6 +20,19 @@ namespace MHArmory.Core.DataStructures
         Bow
     }
 
+    public enum ElementType
+    {
+        Fire,
+        Water,
+        Thunder,
+        Ice,
+        Dragon,
+        Poison,
+        Sleep,
+        Paralysis,
+        Blast
+    }
+
     public class Weapon : IEquipment
     {
         public int Id { get; }

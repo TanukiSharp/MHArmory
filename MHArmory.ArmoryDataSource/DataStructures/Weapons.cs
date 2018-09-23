@@ -27,6 +27,30 @@ namespace MHArmory.ArmoryDataSource.DataStructures
         public int Affinity { get; set; }
         [JsonProperty("defense")]
         public int Defense { get; set; }
+        [JsonProperty("coatings")]
+        public IList<string> Coatings { get; set; }
+        [JsonProperty("phialType")]
+        public string PhialType { get; set; }
+        [JsonProperty("shellingType")]
+        public string ShellingType { get; set; }
+        [JsonProperty("boostType")]
+        public string BoostType { get; set; }
+        [JsonProperty("deviation")]
+        public string Deviation { get; set; }
+        [JsonProperty("specialAmmo")]
+        public string SpecialAmmo { get; set; }
+
+        // ammoCapacities
+    }
+
+    public class WeaponElementPrimitive
+    {
+        [JsonProperty("type")]
+        public string Type { get; set; }
+        [JsonProperty("damage")]
+        public int Value { get; set; }
+        [JsonProperty("hidden")]
+        public bool IsHidden { get; set; }
     }
 
     public class WeaponDurabilityPrimitive
@@ -73,6 +97,8 @@ namespace MHArmory.ArmoryDataSource.DataStructures
         public WeaponDurabilityPrimitive[] SharpnessLevels { get; set; }
         [JsonProperty("slots")]
         public IList<WeaponSlotRank> Slots { get; set; }
+        [JsonProperty("elements")]
+        public IList<WeaponElementPrimitive> Elements { get; set; }
 
         // ...
 

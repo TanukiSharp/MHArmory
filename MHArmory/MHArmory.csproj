@@ -65,6 +65,7 @@
     <Compile Include="AutoUpdate\AutoUpdater.cs" />
     <Compile Include="Behaviors\HorizontalScrollBehavior.cs" />
     <Compile Include="Configurations\ConfigurationV2.cs" />
+    <Compile Include="Controls\SharpnessRenderer.cs" />
     <Compile Include="EnumerableExtensions.cs" />
     <Compile Include="EventsWindow.xaml.cs">
       <DependentUpon>EventsWindow.xaml</DependentUpon>
@@ -114,9 +115,11 @@
       <DependentUpon>TextInputWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="CustomTreeView.cs" />
+    <Compile Include="ValueConverters\ElementNameValueConverter.cs" />
     <Compile Include="ValueConverters\HasDefenseVisibilityValueConverter.cs" />
     <Compile Include="ValueConverters\MillisecondsToTimeValueConverter.cs" />
     <Compile Include="ValueConverters\NumToSeparatedStringValueConverter.cs" />
+    <Compile Include="ValueConverters\SharpnessNameValueConverter.cs" />
     <Compile Include="ValueConverters\SlotSizeToolTipValueConverter.cs" />
     <Compile Include="ValueConverters\SlotToImageSourceValueConverter.cs" />
     <Compile Include="ValueConverters\SortCriteriaNameValueConverter.cs" />
@@ -351,6 +354,20 @@
     <Resource Include="Icons\Weapons\LongSword.svg" />
     <Resource Include="Icons\Weapons\SwitchAxe.svg" />
     <Resource Include="Icons\Weapons\SwordAndShield.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icons\Elements\Blast.svg" />
+    <Resource Include="Icons\Elements\Paralysis.svg" />
+    <Resource Include="Icons\Elements\Poison.svg" />
+    <Resource Include="Icons\Elements\Sleep.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icons\Attributes\Affinity.svg" />
+    <Resource Include="Icons\Attributes\Attack.svg" />
+    <Resource Include="Icons\Attributes\Defense.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icons\Attributes\Deviation.svg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>

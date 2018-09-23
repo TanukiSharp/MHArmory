@@ -62,7 +62,7 @@ namespace MHArmory
 
         private async void MainWindow_Loaded(object sender, RoutedEventArgs e)
         {
-            await Dispatcher.Yield(DispatcherPriority.Render);
+            await Dispatcher.Yield(DispatcherPriority.SystemIdle);
 
             skillSelectorWindow = new SkillSelectorWindow { Owner = this };
             WindowManager.InitializeWindow(skillSelectorWindow);

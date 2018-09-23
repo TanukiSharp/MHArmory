@@ -28,6 +28,14 @@ namespace MHArmory.ValueConverters
         }
     }
 
+    public class ElementEnumToImageSourceValueConverter : EnumToImageSourceValueConverter
+    {
+        public ElementEnumToImageSourceValueConverter()
+            : base("Icons/Elements")
+        {
+        }
+    }
+
     public abstract class EnumToImageSourceValueConverter : IValueConverter
     {
         private readonly string relativeDirectory;

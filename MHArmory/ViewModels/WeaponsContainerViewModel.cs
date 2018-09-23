@@ -13,20 +13,6 @@ namespace MHArmory.ViewModels
     {
         private readonly RootViewModel rootViewModel;
 
-        private bool isDataLoading;
-        public bool IsDataLoading
-        {
-            get { return isDataLoading; }
-            set { SetValue(ref isDataLoading, value); }
-        }
-
-        private bool isDataLoaded;
-        public bool IsDataLoaded
-        {
-            get { return isDataLoaded; }
-            set { SetValue(ref isDataLoaded, value); }
-        }
-
         private bool isFeatureEnabled;
         public bool IsFeatureEnabled
         {
@@ -45,6 +31,13 @@ namespace MHArmory.ViewModels
         {
             foreach (WeaponTypeViewModel weaponType in WeaponTypes)
                 weaponType.IsActive = weaponType == weaponTypeToActivate;
+        }
+
+        private int sharpnessRank;
+        public int SharpnessRank
+        {
+            get { return sharpnessRank; }
+            set { SetValue(ref sharpnessRank, value); }
         }
 
         private IDictionary<int, WeaponViewModel> allWeapons;
@@ -86,6 +79,15 @@ namespace MHArmory.ViewModels
             }
 
             return true;
+        }
+
+        public void ActivateDefaultIfNeeded()
+        {
+            if (WeaponTypes == null || WeaponTypes.Count == 0)
+                return;
+
+            if (WeaponTypes.All(x => x.IsActive == false))
+                WeaponTypes[0].IsActive = true;
         }
 
         public async Task LoadWeaponsAsync()
@@ -161,8 +163,6 @@ namespace MHArmory.ViewModels
                 .GroupBy(x => x.Type)
                 .Select(x => new WeaponTypeViewModel(x.Key, x.ToList(), this))
                 .ToList();
-
-            WeaponTypes[0].IsActive = true;
 
             return true;
         }

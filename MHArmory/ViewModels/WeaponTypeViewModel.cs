@@ -10,10 +10,32 @@ namespace MHArmory.ViewModels
 {
     public class WeaponTypeViewModel : ViewModelBase
     {
-        private readonly WeaponsContainerViewModel parent;
+        public WeaponsContainerViewModel Parent { get; }
+
+        private readonly IList<WeaponViewModel> awaitingRootWeapons;
 
         public WeaponType Type { get; }
-        public IList<WeaponViewModel> RootWeapons { get; }
+
+        private bool isDataLoading;
+        public bool IsDataLoading
+        {
+            get { return isDataLoading; }
+            set { SetValue(ref isDataLoading, value); }
+        }
+
+        private bool isDataLoaded;
+        public bool IsDataLoaded
+        {
+            get { return isDataLoaded; }
+            set { SetValue(ref isDataLoaded, value); }
+        }
+
+        private IList<WeaponViewModel> rootWeapons;
+        public IList<WeaponViewModel> RootWeapons
+        {
+            get { return rootWeapons; }
+            private set { SetValue(ref rootWeapons, value); }
+        }
 
         public ICommand ActivateCommand { get; }
 
@@ -21,22 +43,45 @@ namespace MHArmory.ViewModels
         public bool IsActive
         {
             get { return isActive; }
-            set { SetValue(ref isActive, value); }
+            set
+            {
+                if (SetValue(ref isActive, value) && IsActive && RootWeapons == null)
+                    SetRootWeapons();
+            }
+        }
+
+        private async void SetRootWeapons()
+        {
+            if (IsDataLoading)
+                return;
+
+            IsDataLoaded = false;
+            IsDataLoading = true;
+
+            await System.Windows.Threading.Dispatcher.Yield(System.Windows.Threading.DispatcherPriority.SystemIdle);
+
+            RootWeapons = awaitingRootWeapons;
+
+            IsDataLoaded = true;
+            IsDataLoading = false;
         }
 
         public WeaponTypeViewModel(WeaponType type, IList<WeaponViewModel> rootWeapons, WeaponsContainerViewModel parent)
         {
-            this.parent = parent;
+            Parent = parent;
 
             Type = type;
-            RootWeapons = rootWeapons;
+            awaitingRootWeapons = rootWeapons;
 
             ActivateCommand = new AnonymousCommand(OnActivate);
+
+            foreach (WeaponViewModel weapon in rootWeapons)
+                weapon.SetParent(this);
         }
 
         private void OnActivate(object parameters)
         {
-            parent.Activate(this);
+            Parent.Activate(this);
         }
     }
 }

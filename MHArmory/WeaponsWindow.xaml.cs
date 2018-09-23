@@ -38,17 +38,11 @@ namespace MHArmory
 
         private async void WeaponsWindow_Loaded(object sender, RoutedEventArgs e)
         {
-            await System.Windows.Threading.Dispatcher.Yield(System.Windows.Threading.DispatcherPriority.Render);
-
-            WeaponsContainerViewModel container = rootViewModel.WeaponsContainer;
-
-            container.IsDataLoaded = false;
-            container.IsDataLoading = true;
-
             DataContext = rootViewModel.WeaponsContainer;
 
-            container.IsDataLoaded = true;
-            container.IsDataLoading = false;
+            await System.Windows.Threading.Dispatcher.Yield(System.Windows.Threading.DispatcherPriority.SystemIdle);
+
+            rootViewModel.WeaponsContainer.ActivateDefaultIfNeeded();
         }
 
         public void OnOpen(bool isAlreadyOpened)
