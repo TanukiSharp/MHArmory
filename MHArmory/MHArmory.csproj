@@ -122,7 +122,7 @@
     <Compile Include="ValueConverters\SortCriteriaNameValueConverter.cs" />
     <Compile Include="ValueConverters\VisibilityValueConverter.cs" />
     <Compile Include="GlobalData.cs" />
-    <Compile Include="ValueConverters\EnumToImageSourceValueConverter.cs" />
+    <Compile Include="ValueConverters\EquipmentEnumToImageSourceValueConverter.cs" />
     <Compile Include="ValueConverters\InverseBooleanValueConverter.cs" />
     <Compile Include="RoutedCommands.cs" />
     <Compile Include="SkillSelectorWindow.xaml.cs">
@@ -300,23 +300,23 @@
     </PackageReference>
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Icons\Chest.svg" />
-    <Resource Include="Icons\Gloves.svg" />
-    <Resource Include="Icons\Head.svg" />
-    <Resource Include="Icons\Legs.svg" />
-    <Resource Include="Icons\Waist.svg" />
+    <Resource Include="Icons\Equipments\Chest.svg" />
+    <Resource Include="Icons\Equipments\Gloves.svg" />
+    <Resource Include="Icons\Equipments\Head.svg" />
+    <Resource Include="Icons\Equipments\Legs.svg" />
+    <Resource Include="Icons\Equipments\Waist.svg" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Icons\Dragon.svg" />
-    <Resource Include="Icons\Fire.svg" />
-    <Resource Include="Icons\Ice.svg" />
-    <Resource Include="Icons\Thunder.svg" />
-    <Resource Include="Icons\Water.svg" />
+    <Resource Include="Icons\Elements\Dragon.svg" />
+    <Resource Include="Icons\Elements\Fire.svg" />
+    <Resource Include="Icons\Elements\Ice.svg" />
+    <Resource Include="Icons\Elements\Thunder.svg" />
+    <Resource Include="Icons\Elements\Water.svg" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Icons\Jewel1.svg" />
-    <Resource Include="Icons\Jewel2.svg" />
-    <Resource Include="Icons\Jewel3.svg" />
+    <Resource Include="Icons\Jewels\Jewel1.svg" />
+    <Resource Include="Icons\Jewels\Jewel2.svg" />
+    <Resource Include="Icons\Jewels\Jewel3.svg" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="blue_shield.ico" />
@@ -325,7 +325,7 @@
     <Resource Include="Icons\blue_shield.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Icons\Charm.svg" />
+    <Resource Include="Icons\Equipments\Charm.svg" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Icons\twitter_64x64.png" />
@@ -334,7 +334,7 @@
     <Resource Include="Icons\github_64x64.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Icons\GreatSword.svg" />
+    <Resource Include="Icons\Weapons\GreatSword.svg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>

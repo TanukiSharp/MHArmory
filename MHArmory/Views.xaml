@@ -9,7 +9,7 @@
     <cvt:HiddenVisibilityValueConverter x:Key="HiddenVisibilityValueConverter"/>
     <cvt:CollapsedVisibilityValueConverter x:Key="CollapsedVisibilityValueConverter"/>
     <cvt:InverseBooleanValueConverter x:Key="InverseBooleanValueConverter"/>
-    <cvt:EnumToImageSourceValueConverter x:Key="EnumToImageSourceValueConverter"/>
+    <cvt:EquipmentEnumToImageSourceValueConverter x:Key="EquipmentEnumToImageSourceValueConverter"/>
     <cvt:SlotToImageSourceValueConverter x:Key="SlotToImageSourceValueConverter"/>
     <cvt:SlotSizeToolTipValueConverter x:Key="SlotSizeToolTipValueConverter"/>
     <cvt:HasDefenseVisibilityValueConverter x:Key="HasDefenseVisibilityValueConverter"/>
@@ -55,9 +55,9 @@
     <DataTemplate x:Key="WeaponSlotView">
         <ComboBox SelectedIndex="{Binding Value}" Margin="0" Padding="5" VerticalContentAlignment="Center">
             <TextBlock Text="-" Style="{StaticResource ComboBoxItemSlotStyle}"/>
-            <Image Source="{mxt:RasterizedImage Location=Icons/Jewel1.svg, Size=16}" Style="{StaticResource ComboBoxItemSlotStyle}"/>
-            <Image Source="{mxt:RasterizedImage Location=Icons/Jewel2.svg, Size=16}" Style="{StaticResource ComboBoxItemSlotStyle}"/>
-            <Image Source="{mxt:RasterizedImage Location=Icons/Jewel3.svg, Size=16}" Style="{StaticResource ComboBoxItemSlotStyle}"/>
+            <Image Source="{mxt:RasterizedImage Location=Icons/Jewels/Jewel1.svg, Size=16}" Style="{StaticResource ComboBoxItemSlotStyle}"/>
+            <Image Source="{mxt:RasterizedImage Location=Icons/Jewels/Jewel2.svg, Size=16}" Style="{StaticResource ComboBoxItemSlotStyle}"/>
+            <Image Source="{mxt:RasterizedImage Location=Icons/Jewels/Jewel3.svg, Size=16}" Style="{StaticResource ComboBoxItemSlotStyle}"/>
         </ComboBox>
     </DataTemplate>
 
@@ -80,7 +80,7 @@
                     <ContentControl Content="{Binding Slots[1], Mode=OneTime}" ContentTemplate="{StaticResource WeaponSlotView}" Margin="1 2 1 2" Focusable="False"/>
                     <ContentControl Content="{Binding Slots[2], Mode=OneTime}" ContentTemplate="{StaticResource WeaponSlotView}" Margin="1 2 1 2" Focusable="False"/>
                     <Button x:Name="weaponsButton" MinWidth="40" MaxWidth="40" Margin="1 2 1 2" Command="{x:Static local:RoutedCommands.OpenWeapons}" ToolTip="See weapons matching the currently selected slots" ToolTipService.ShowOnDisabled="True">
-                        <Image Source="{mxt:RasterizedImage Location=Icons/GreatSword.svg, Size=20}" Height="20" Width="20"/>
+                        <Image Source="{mxt:RasterizedImage Location=Icons/Weapons/GreatSword.svg, Size=20}" Height="20" Width="20"/>
                     </Button>
                 </StackPanel>
             </StackPanel>
@@ -197,7 +197,7 @@
                 </Grid.ColumnDefinitions>
                 <StackPanel Grid.Column="0" Orientation="Vertical" Margin="0 0 8 0">
                     <StackPanel Orientation="Horizontal" Grid.IsSharedSizeScope="True">
-                        <Image Source="{Binding Type, Mode=OneTime, Converter={StaticResource EnumToImageSourceValueConverter}, ConverterParameter=20}" Width="20" Height="20" Margin="0 0 4 0" VerticalAlignment="Center" Focusable="False"/>
+                        <Image Source="{Binding Type, Mode=OneTime, Converter={StaticResource EquipmentEnumToImageSourceValueConverter}, ConverterParameter=20}" Width="20" Height="20" Margin="0 0 4 0" VerticalAlignment="Center" Focusable="False"/>
                         <TextBlock Text="{Binding Name, Mode=OneTime}" FontSize="12" FontWeight="Bold" VerticalAlignment="Center" Focusable="False"/>
                     </StackPanel>
                     <TextBlock Margin="2" Foreground="Gray" Visibility="{Binding Mode=OneTime, Converter={StaticResource HasDefenseVisibilityValueConverter}}" Focusable="False">
@@ -273,11 +273,11 @@
                         </StackPanel>
                         <TextBlock Text="Spare slots:" FontWeight="Bold"/>
                         <StackPanel Orientation="Horizontal" Margin="16 1 0 12">
-                            <Image Source="{mxt:RasterizedImage Location=Icons/Jewel3.svg, Size=16}" Style="{StaticResource ComboBoxItemSlotStyle}"/>
+                            <Image Source="{mxt:RasterizedImage Location=Icons/Jewels/Jewel3.svg, Size=16}" Style="{StaticResource ComboBoxItemSlotStyle}"/>
                             <TextBlock Text="{Binding SpareSlots[2], Mode=OneTime, StringFormat=x{0}}" Margin="2 0 8 0" Foreground="Blue"/>
-                            <Image Source="{mxt:RasterizedImage Location=Icons/Jewel2.svg, Size=16}" Style="{StaticResource ComboBoxItemSlotStyle}"/>
+                            <Image Source="{mxt:RasterizedImage Location=Icons/Jewels/Jewel2.svg, Size=16}" Style="{StaticResource ComboBoxItemSlotStyle}"/>
                             <TextBlock Text="{Binding SpareSlots[1], Mode=OneTime, StringFormat=x{0}}" Margin="2 0 8 0" Foreground="Blue"/>
-                            <Image Source="{mxt:RasterizedImage Location=Icons/Jewel1.svg, Size=16}" Style="{StaticResource ComboBoxItemSlotStyle}"/>
+                            <Image Source="{mxt:RasterizedImage Location=Icons/Jewels/Jewel1.svg, Size=16}" Style="{StaticResource ComboBoxItemSlotStyle}"/>
                             <TextBlock Text="{Binding SpareSlots[0], Mode=OneTime, StringFormat=x{0}}" Margin="2 0 8 0" Foreground="Blue"/>
                         </StackPanel>
                         <TextBlock Text="Additional skills:" FontWeight="Bold"/>
@@ -301,15 +301,15 @@
                         </ItemsControl>
                         <TextBlock Text="Resistances:" FontWeight="Bold"/>
                         <StackPanel Margin="16 1 0 0" Orientation="Horizontal">
-                            <Image Source="{mxt:RasterizedImage Location=Icons/Fire.svg, Size=16}" Style="{StaticResource ElementImageStyle}" VerticalAlignment="Center" SnapsToDevicePixels="True"/>
+                            <Image Source="{mxt:RasterizedImage Location=Icons/Elements/Fire.svg, Size=16}" Style="{StaticResource ElementImageStyle}" VerticalAlignment="Center" SnapsToDevicePixels="True"/>
                             <TextBlock Text="{Binding TotalFireResistance, Mode=OneTime, StringFormat=: {0}}" Margin="0 0 12 0" VerticalAlignment="Center" Foreground="Blue"/>
-                            <Image Source="{mxt:RasterizedImage Location=Icons/Water.svg, Size=16}" Style="{StaticResource ElementImageStyle}" VerticalAlignment="Center" SnapsToDevicePixels="True"/>
+                            <Image Source="{mxt:RasterizedImage Location=Icons/Elements/Water.svg, Size=16}" Style="{StaticResource ElementImageStyle}" VerticalAlignment="Center" SnapsToDevicePixels="True"/>
                             <TextBlock Text="{Binding TotalWaterResistance, Mode=OneTime, StringFormat=: {0}}" Margin="0 0 12 0" VerticalAlignment="Center" Foreground="Blue"/>
-                            <Image Source="{mxt:RasterizedImage Location=Icons/Thunder.svg, Size=16}" Style="{StaticResource ElementImageStyle}" VerticalAlignment="Center" SnapsToDevicePixels="True"/>
+                            <Image Source="{mxt:RasterizedImage Location=Icons/Elements/Thunder.svg, Size=16}" Style="{StaticResource ElementImageStyle}" VerticalAlignment="Center" SnapsToDevicePixels="True"/>
                             <TextBlock Text="{Binding TotalThunderResistance, Mode=OneTime, StringFormat=: {0}}" Margin="0 0 12 0" VerticalAlignment="Center" Foreground="Blue"/>
-                            <Image Source="{mxt:RasterizedImage Location=Icons/Ice.svg, Size=16}" Style="{StaticResource ElementImageStyle}" VerticalAlignment="Center" SnapsToDevicePixels="True"/>
+                            <Image Source="{mxt:RasterizedImage Location=Icons/Elements/Ice.svg, Size=16}" Style="{StaticResource ElementImageStyle}" VerticalAlignment="Center" SnapsToDevicePixels="True"/>
                             <TextBlock Text="{Binding TotalIceResistance, Mode=OneTime, StringFormat=: {0}}" Margin="0 0 12 0" VerticalAlignment="Center" Foreground="Blue"/>
-                            <Image Source="{mxt:RasterizedImage Location=Icons/Dragon.svg, Size=16}" Style="{StaticResource ElementImageStyle}" VerticalAlignment="Center" SnapsToDevicePixels="True"/>
+                            <Image Source="{mxt:RasterizedImage Location=Icons/Elements/Dragon.svg, Size=16}" Style="{StaticResource ElementImageStyle}" VerticalAlignment="Center" SnapsToDevicePixels="True"/>
                             <TextBlock Text="{Binding TotalDragonResistance, Mode=OneTime, StringFormat=: {0}}" VerticalAlignment="Center" Foreground="Blue"/>
                         </StackPanel>
                     </StackPanel>

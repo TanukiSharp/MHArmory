@@ -12,7 +12,7 @@ using MHArmory.ScalableVectorGraphics;
 
 namespace MHArmory.ValueConverters
 {
-    public class EnumToImageSourceValueConverter : IValueConverter
+    public class EquipmentEnumToImageSourceValueConverter : IValueConverter
     {
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
@@ -22,7 +22,7 @@ namespace MHArmory.ValueConverters
             string strType = value.ToString();
 
             if (parameter is string strParam && int.TryParse(strParam, out int rasterSize))
-                return RasterizedImageContainer.GetRasterizedImage(rasterSize, $"Icons/{strType}.svg");
+                return RasterizedImageContainer.GetRasterizedImage(rasterSize, $"Icons/Equipments/{strType}.svg");
 
             return null;
         }
