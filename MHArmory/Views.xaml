@@ -15,6 +15,7 @@
     <cvt:SlotSizeToolTipValueConverter x:Key="SlotSizeToolTipValueConverter"/>
     <cvt:HasDefenseVisibilityValueConverter x:Key="HasDefenseVisibilityValueConverter"/>
     <cvt:SortCriteriaNameValueConverter x:Key="SortCriteriaNameValueConverter"/>
+    <cvt:WeaponNameValueConverter x:Key="WeaponNameValueConverter"/>
     <cvt:MillisecondsToTimeValueConverter x:Key="MillisecondsToTimeValueConverter"/>
     <cvt:NumToSeparatedStringValueConverter x:Key="NumToSeparatedStringValueConverter"/>
 
@@ -387,6 +388,7 @@
         <Setter Property="Padding" Value="4"/>
         <Setter Property="MinWidth" Value="50"/>
         <Setter Property="VerticalAlignment" Value="Center"/>
+        <Setter Property="HorizontalAlignment" Value="Center"/>
         <Style.Triggers>
             <Trigger Property="IsChecked" Value="True">
                 <Setter Property="FontWeight" Value="Bold"/>
@@ -903,9 +905,11 @@
         </DataTemplate.Triggers>
     </DataTemplate>
 
+    <SolidColorBrush x:Key="ActiveWeaponBackgroundBrush" Color="#FF80D0FF"/>
+
     <HierarchicalDataTemplate x:Key="WeaponView" ItemsSource="{Binding Branches}">
         <Grid Width="120" Height="60" Margin="12">
-            <Border x:Name="bg" Background="#FF80D0FF" CornerRadius="3"/>
+            <Border x:Name="bg" Background="{StaticResource ActiveWeaponBackgroundBrush}" CornerRadius="3"/>
             <Border x:Name="root" BorderBrush="Gray" Background="LightGray" BorderThickness="1" CornerRadius="3">
                 <DockPanel VerticalAlignment="Stretch">
                     <Viewbox DockPanel.Dock="Top" VerticalAlignment="Top" HorizontalAlignment="Left" StretchDirection="DownOnly">
@@ -929,7 +933,7 @@
         </Grid>
         <HierarchicalDataTemplate.Triggers>
             <DataTrigger Binding="{Binding IsHighlight}" Value="True">
-                <Setter TargetName="root" Property="Background" Value="#FF80D0FF"/>
+                <Setter TargetName="root" Property="Background" Value="{StaticResource ActiveWeaponBackgroundBrush}"/>
                 <Setter TargetName="root" Property="BorderBrush" Value="#4090E0"/>
                 <Setter TargetName="bg" Property="CornerRadius" Value="0"/>
                 <Setter TargetName="bg" Property="Effect">
@@ -945,8 +949,8 @@
     </HierarchicalDataTemplate>
 
     <DataTemplate x:Key="WeaponTypeView">
-        <ScrollViewer HorizontalScrollBarVisibility="Visible" VerticalScrollBarVisibility="Visible" Visibility="{Binding IsVisible, Converter={StaticResource HiddenVisibilityValueConverter}}" bhv:HorizontalScrollBehavior.IsAttached="True">
-            <local:CustomTreeView Background="Transparent" LineBrush="#FFC0C0C0" LineThickness="3"
+        <ScrollViewer HorizontalScrollBarVisibility="Visible" VerticalScrollBarVisibility="Visible" Visibility="{Binding IsActive, Converter={StaticResource HiddenVisibilityValueConverter}}" bhv:HorizontalScrollBehavior.IsAttached="True">
+            <local:CustomTreeView Background="Transparent" LineBrush="#FFC0C0C0" LineThickness="3" Margin="16"
                                   ItemsSource="{Binding RootWeapons}" ItemTemplate="{StaticResource WeaponView}"
                                   ScrollViewer.HorizontalScrollBarVisibility="Disabled" ScrollViewer.VerticalScrollBarVisibility="Disabled" ScrollViewer.CanContentScroll="False"/>
         </ScrollViewer>
@@ -956,23 +960,30 @@
         <Grid>
             <TextBlock Text="Constructing user interface..." HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="20" Visibility="{Binding IsDataLoading, Converter={StaticResource CollapsedVisibilityValueConverter}, Mode=OneWay}"/>
             <DockPanel LastChildFill="True" Visibility="{Binding IsDataLoaded, Converter={StaticResource HiddenVisibilityValueConverter}}">
-                <ItemsControl DockPanel.Dock="Top" ItemsSource="{Binding WeaponTypes}">
-                    <ItemsControl.ItemTemplate>
-                        <DataTemplate>
-                            <ToggleButton IsChecked="{Binding IsVisible}" MinWidth="60" Command="{Binding ActivateCommand, Mode=OneTime}" Margin="2" Padding="2">
-                                <ToggleButton.Content>
-                                    <Image Source="{Binding Type, Mode=OneTime, Converter={StaticResource WeaponEnumToImageSourceValueConverter}, ConverterParameter=32}" Width="32" Height="32"/>
-                                </ToggleButton.Content>
-                            </ToggleButton>
-                        </DataTemplate>
-                    </ItemsControl.ItemTemplate>
-                    <ItemsControl.ItemsPanel>
-                        <ItemsPanelTemplate>
-                            <StackPanel Orientation="Horizontal"/>
-                        </ItemsPanelTemplate>
-                    </ItemsControl.ItemsPanel>
-                </ItemsControl>
-                <ItemsControl ItemsSource="{Binding WeaponTypes}" ItemTemplate="{StaticResource WeaponTypeView}">
+                <ScrollViewer DockPanel.Dock="Top" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Disabled">
+                    <ItemsControl ItemsSource="{Binding WeaponTypes}">
+                        <ItemsControl.ItemTemplate>
+                            <DataTemplate>
+                                <Button x:Name="toggle" MinWidth="60" Command="{Binding ActivateCommand, Mode=OneTime}" Margin="2" Padding="4" VerticalContentAlignment="Center" HorizontalAlignment="Center" ToolTip="{Binding Type, Mode=OneTime, Converter={StaticResource WeaponNameValueConverter}}">
+                                    <Button.Content>
+                                        <Image Source="{Binding Type, Mode=OneTime, Converter={StaticResource WeaponEnumToImageSourceValueConverter}, ConverterParameter=32}" Width="32" Height="32"/>
+                                    </Button.Content>
+                                </Button>
+                                <DataTemplate.Triggers>
+                                    <DataTrigger Binding="{Binding IsActive}" Value="True">
+                                        <Setter TargetName="toggle" Property="Background" Value="{StaticResource ActiveWeaponBackgroundBrush}"/>
+                                    </DataTrigger>
+                                </DataTemplate.Triggers>
+                            </DataTemplate>
+                        </ItemsControl.ItemTemplate>
+                        <ItemsControl.ItemsPanel>
+                            <ItemsPanelTemplate>
+                                <StackPanel Orientation="Horizontal"/>
+                            </ItemsPanelTemplate>
+                        </ItemsControl.ItemsPanel>
+                    </ItemsControl>
+                </ScrollViewer>
+                <ItemsControl ItemsSource="{Binding WeaponTypes}" ItemTemplate="{StaticResource WeaponTypeView}" Background="#06000000">
                     <ItemsControl.ItemsPanel>
                         <ItemsPanelTemplate>
                             <Grid/>

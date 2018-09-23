@@ -173,6 +173,8 @@ namespace MHArmory.ViewModels
             if (isLoadingConfiguration)
                 return;
 
+            root.WeaponsContainer.UpdateHighlights();
+
             InParametersConfigurationV2 config = GlobalData.Instance.Configuration.InParameters;
 
             config.WeaponSlots = Slots.Select(x => x.Value).ToArray();

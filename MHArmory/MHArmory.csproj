@@ -128,6 +128,7 @@
     <Compile Include="SkillSelectorWindow.xaml.cs">
       <DependentUpon>SkillSelectorWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ValueConverters\WeaponNameValueConverter.cs" />
     <Compile Include="ViewModels\AdvancedSearchViewModel.cs" />
     <Compile Include="ViewModels\ArmorPieceTypesViewModel.cs" />
     <Compile Include="ViewModels\ArmorSetViewModel.cs" />

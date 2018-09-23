@@ -17,11 +17,11 @@ namespace MHArmory.ViewModels
 
         public ICommand ActivateCommand { get; }
 
-        private bool isVisible;
-        public bool IsVisible
+        private bool isActive;
+        public bool IsActive
         {
-            get { return isVisible; }
-            set { SetValue(ref isVisible, value); }
+            get { return isActive; }
+            set { SetValue(ref isActive, value); }
         }
 
         public WeaponTypeViewModel(WeaponType type, IList<WeaponViewModel> rootWeapons, WeaponsContainerViewModel parent)

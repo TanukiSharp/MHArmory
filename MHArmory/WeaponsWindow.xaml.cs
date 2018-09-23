@@ -56,13 +56,7 @@ namespace MHArmory
             if (isAlreadyOpened)
                 return;
 
-            IList<int> inputSlots = rootViewModel.InParameters.Slots
-                .Select(x => x.Value)
-                .Where(x => x > 0)
-                .OrderByDescending(x => x)
-                .ToList();
-
-            rootViewModel.WeaponsContainer.UpdateHighlights(inputSlots);
+            rootViewModel.WeaponsContainer.UpdateHighlights();
         }
 
         private void OnCancel()

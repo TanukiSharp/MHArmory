@@ -44,7 +44,7 @@ namespace MHArmory.ViewModels
         internal void Activate(WeaponTypeViewModel weaponTypeToActivate)
         {
             foreach (WeaponTypeViewModel weaponType in WeaponTypes)
-                weaponType.IsVisible = weaponType == weaponTypeToActivate;
+                weaponType.IsActive = weaponType == weaponTypeToActivate;
         }
 
         private IDictionary<int, WeaponViewModel> allWeapons;
@@ -61,8 +61,14 @@ namespace MHArmory.ViewModels
             this.rootViewModel = rootViewModel;
         }
 
-        public void UpdateHighlights(IList<int> inputSlots)
+        public void UpdateHighlights()
         {
+            IList<int> inputSlots = rootViewModel.InParameters.Slots
+                .Select(x => x.Value)
+                .Where(x => x > 0)
+                .OrderByDescending(x => x)
+                .ToList();
+
             foreach (WeaponViewModel weapon in allWeapons.Values)
                 weapon.IsHighlight = IsWeaponMatchingSlots(weapon, inputSlots);
         }
@@ -155,6 +161,8 @@ namespace MHArmory.ViewModels
                 .GroupBy(x => x.Type)
                 .Select(x => new WeaponTypeViewModel(x.Key, x.ToList(), this))
                 .ToList();
+
+            WeaponTypes[0].IsActive = true;
 
             return true;
         }
