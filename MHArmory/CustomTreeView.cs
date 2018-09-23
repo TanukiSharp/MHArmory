@@ -109,6 +109,7 @@ namespace MHArmory
             double verticalMidPointX = 0.0;
 
             bool isFirst = true;
+            bool hasChildren = false;
 
             foreach (object child in parent.ItemContainerGenerator.Items)
             {
@@ -126,6 +127,8 @@ namespace MHArmory
                 }
                 else
                 {
+                    hasChildren = true;
+
                     if (needVerticalLine == false)
                     {
                         needVerticalLine = true;
@@ -141,6 +144,9 @@ namespace MHArmory
 
                 Draw(tvi, drawingContext);
             }
+
+            if (hasChildren == false)
+                return;
 
             drawingContext.DrawLine(
                 linePen,
