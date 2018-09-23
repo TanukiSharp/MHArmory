@@ -4,7 +4,7 @@
 <img src="docs/images/blue_shield.png" width="64" height="64"/>
 </td>
 <td border-collapse="collapse" border="none">
-<i>Current version: <b><a href="https://github.com/TanukiSharp/MHArmory/raw/master/Distributions/MHArmory_0.0.5.2.zip">0.0.5</a></b></i><br/><i>Last modification: <b>2018/09/19</b></i>
+<i>Current version: <b><a href="https://github.com/TanukiSharp/MHArmory/raw/master/Distributions/MHArmory_0.0.5.2.zip">0.0.5.2</a></b></i><br/><i>Last modification: <b>2018/09/19</b></i>
 </td>
 </tr>
 </table>
@@ -63,15 +63,12 @@ Follow **Armory** on Twitter to get latest news and updates: https://twitter.com
 
 - Auto-update
 - Select all / Unselect all / Inverse selection in advanced search window
-- Show weapons matching selected slots (+ search / filter)
-- Move input parameters to the left pane (above skills)
+- Show weapons matching selected slots
 
 ## May happen in a near future
 
-- ~~Armor set search result filtering~~
-- Armor set builder
+- Armor set builder (with partial equipment)
 - Asset explorer organized as tree
-- Support slot augmentations
 
 # Terms of use
 

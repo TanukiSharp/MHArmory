@@ -4,4 +4,5 @@
 
 # Features to add
 
-- ~~Store/restore windows position and size~~
+- Dark theme
+- Localization
