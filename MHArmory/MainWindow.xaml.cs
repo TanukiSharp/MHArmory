@@ -43,6 +43,7 @@ namespace MHArmory
             CommandBindings.Add(RoutedCommands.CreateCommandBinding(RoutedCommands.OpenEquipmentExplorer, OpenEquipmentExplorer));
             CommandBindings.Add(RoutedCommands.CreateCommandBinding(RoutedCommands.OpenSearchResultProcessing, OpenSearchResultProcessing));
             CommandBindings.Add(RoutedCommands.CreateCommandBinding(RoutedCommands.OpenEvents, OpenEvents));
+            CommandBindings.Add(RoutedCommands.CreateCommandBinding(RoutedCommands.OpenWeapons, OpenWeapons));
 
             CommandBindings.Add(RoutedCommands.CreateCommandBinding(RoutedCommands.NewLoadout, OnNewLoadout));
             CommandBindings.Add(RoutedCommands.CreateCommandBinding(RoutedCommands.OpenLoadout, OnOpenLoadout));
@@ -61,7 +62,7 @@ namespace MHArmory
 
         private async void MainWindow_Loaded(object sender, RoutedEventArgs e)
         {
-            await Dispatcher.Yield(DispatcherPriority.Render);
+            await Dispatcher.Yield(DispatcherPriority.SystemIdle);
 
             skillSelectorWindow = new SkillSelectorWindow { Owner = this };
             WindowManager.InitializeWindow(skillSelectorWindow);
@@ -188,6 +189,14 @@ namespace MHArmory
                 WindowManager.InitializeWindow(new EventsWindow(rootViewModel) { Owner = this });
 
             WindowManager.ShowDialog<EventsWindow>();
+        }
+
+        private void OpenWeapons(object obj)
+        {
+            if (WindowManager.IsInitialized<WeaponsWindow>() == false)
+                WindowManager.InitializeWindow(new WeaponsWindow(rootViewModel) { Owner = this });
+
+            WindowManager.Show<WeaponsWindow>();
         }
 
         private LoadoutManager loadoutManager;

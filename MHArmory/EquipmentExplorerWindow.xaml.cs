@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
@@ -42,7 +42,7 @@ namespace MHArmory
 
         private async void EquipmentExplorerWindow_Loaded(object sender, RoutedEventArgs e)
         {
-            await System.Windows.Threading.Dispatcher.Yield(System.Windows.Threading.DispatcherPriority.Render);
+            await System.Windows.Threading.Dispatcher.Yield(System.Windows.Threading.DispatcherPriority.SystemIdle);
 
             equipmentExplorerViewModel.CreateItems();
 

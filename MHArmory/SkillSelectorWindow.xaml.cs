@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
@@ -52,7 +52,7 @@ namespace MHArmory
 
         private async void SkillSelectorWindow_Loaded(object sender, RoutedEventArgs e)
         {
-            await Dispatcher.Yield(DispatcherPriority.Render);
+            await Dispatcher.Yield(DispatcherPriority.SystemIdle);
 
             //IList<SkillViewModel> skills = await GlobalData.Instance.GetSkills();
             //SkillSelector.Skills = skills;

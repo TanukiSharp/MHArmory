@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.InteropServices;
@@ -10,6 +10,11 @@ using MHArmory.Configurations;
 
 namespace MHArmory
 {
+    public interface IWindow
+    {
+        void OnOpen(bool isAlreadyOpened);
+    }
+
     public static class WindowManager
     {
         private class WindowContainer
@@ -208,6 +213,9 @@ namespace MHArmory
             WindowContainer container = RestorePositionInternal<T>();
             Window window = container.Instance;
 
+            if (window is IWindow win)
+                win.OnOpen(window.IsVisible);
+
             if (isModal)
                 return window.ShowDialog();
             else
@@ -265,10 +273,10 @@ namespace MHArmory
         private const int MONITOR_DEFAULTTONEAREST = 2;
 
         [DllImport("user32.dll")]
-        private static extern IntPtr MonitorFromWindow(IntPtr hwnd, uint dwFlags);
+        private extern static IntPtr MonitorFromWindow(IntPtr hwnd, uint dwFlags);
 
         [DllImport("user32.dll", CharSet = CharSet.Auto)]
-        private static extern bool GetMonitorInfo(IntPtr hMonitor, ref MonitorInfoEx lpmi);
+        private extern static bool GetMonitorInfo(IntPtr hMonitor, ref MonitorInfoEx lpmi);
 
         // size of a device name string
         private const int CCHDEVICENAME = 32;

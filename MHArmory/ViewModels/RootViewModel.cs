@@ -65,6 +65,8 @@ namespace MHArmory.ViewModels
 
         internal void NotifyDataLoaded()
         {
+            WeaponsContainer.LoadWeaponsAsync().ContinueWith(t => t.Wait());
+
             Events.NotifyDataLoaded();
         }
 
@@ -94,6 +96,7 @@ namespace MHArmory.ViewModels
         }
 
         public EventsViewModel Events { get; }
+        public WeaponsContainerViewModel WeaponsContainer { get; }
 
         public RootViewModel()
         {
@@ -109,6 +112,7 @@ namespace MHArmory.ViewModels
             SearchResultProcessing = new SearchResultProcessingViewModel(this);
             InParameters = new InParametersViewModel(this);
             Events = new EventsViewModel(this);
+            WeaponsContainer = new WeaponsContainerViewModel(this);
         }
 
         public void Dispose()

@@ -112,6 +112,14 @@ namespace MHArmory.ViewModels
             }
         }
 
+        public WeaponsContainerViewModel WeaponsContainer
+        {
+            get
+            {
+                return root.WeaponsContainer;
+            }
+        }
+
         public ICommand OpenDecorationsOverrideCommand { get { return root.OpenDecorationsOverrideCommand; } }
 
         public InParametersViewModel(RootViewModel root)
@@ -164,6 +172,8 @@ namespace MHArmory.ViewModels
         {
             if (isLoadingConfiguration)
                 return;
+
+            root.WeaponsContainer.UpdateHighlights();
 
             InParametersConfigurationV2 config = GlobalData.Instance.Configuration.InParameters;
 
