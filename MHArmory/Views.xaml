@@ -951,7 +951,7 @@
                                         <TextBlock Text="{Binding Attack, Mode=OneTime}" Margin="2"/>
                                     </StackPanel>
                                     <Border BorderThickness="1" BorderBrush="Black" CornerRadius="0" Margin="3" Visibility="{Binding HasSharpness, Mode=OneTime, Converter={StaticResource CollapsedVisibilityValueConverter}}">
-                                        <ctrl:SharpnessRenderer Width="60" Height="6" Background="#FF1E1E1E" SharpnessLevels="{Binding SharpnessLevels, Mode=OneTime}" SharpnessRank="{Binding Parent.SharpnessRank}"/>
+                                        <ctrl:SharpnessRenderer Width="55" Height="6" Background="#FF1E1E1E" SharpnessLevels="{Binding SharpnessLevels, Mode=OneTime}" SharpnessRank="{Binding Parent.SharpnessRank}"/>
                                     </Border>
                                     <StackPanel Orientation="Horizontal" Visibility="{Binding HasDeviation, Mode=OneTime, Converter={StaticResource CollapsedVisibilityValueConverter}}">
                                         <Image Source="{mxt:RasterizedImage Location=Icons/Attributes/Deviation.svg, Size=16}" Width="16" Height="16" VerticalAlignment="Center" Margin="2" SnapsToDevicePixels="True" ToolTip="Deviation"/>
@@ -979,7 +979,7 @@
                                 <TextBlock Text="{Binding Attributes.Affinity, Mode=OneTime, StringFormat=\{0\}%}" Margin="2"/>
                             </StackPanel>
                             <StackPanel Orientation="Horizontal" Visibility="{Binding HasDefense, Mode=OneTime, Converter={StaticResource CollapsedVisibilityValueConverter}}">
-                                <Image Source="{mxt:RasterizedImage Location=Icons/Attributes/Defense.svg, Size=16}" Width="16" Height="16" VerticalAlignment="Center" Margin="2" SnapsToDevicePixels="True" ToolTip="Affinity"/>
+                                <Image Source="{mxt:RasterizedImage Location=Icons/Attributes/Defense.svg, Size=16}" Width="16" Height="16" VerticalAlignment="Center" Margin="2" SnapsToDevicePixels="True" ToolTip="Defense"/>
                                 <TextBlock Text="{Binding Attributes.Defense, Mode=OneTime}" Margin="2"/>
                             </StackPanel>
                         </StackPanel>
