@@ -932,6 +932,7 @@
 
     <HierarchicalDataTemplate x:Key="WeaponView" ItemsSource="{Binding Branches}">
         <Grid Width="160" Height="96" Margin="12" TextBlock.FontWeight="Bold">
+            <Border x:Name="filtered" BorderBrush="#FF0080FF" BorderThickness="6" Margin="-5" CornerRadius="4" Visibility="Hidden" IsHitTestVisible="False"/>
             <Border x:Name="root" BorderBrush="Gray" Background="LightGray" BorderThickness="1" CornerRadius="3">
                 <StackPanel HorizontalAlignment="Stretch" VerticalAlignment="Stretch"> <!-- Splits name at top and the rest at bottom -->
                     <Viewbox VerticalAlignment="Top" HorizontalAlignment="Left" StretchDirection="DownOnly">
@@ -994,20 +995,30 @@
             <DataTrigger Binding="{Binding IsHighlight}" Value="False">
                 <Setter TargetName="fg" Property="Visibility" Value="Visible"/>
             </DataTrigger>
+            <DataTrigger Binding="{Binding IsFiltered}" Value="True">
+                <Setter TargetName="filtered" Property="Visibility" Value="Visible"/>
+            </DataTrigger>
         </HierarchicalDataTemplate.Triggers>
     </HierarchicalDataTemplate>
 
     <DataTemplate x:Key="WeaponTypeView">
         <DockPanel LastChildFill="True" Visibility="{Binding IsActive, Converter={StaticResource CollapsedVisibilityValueConverter}}">
-            <StackPanel DockPanel.Dock="Top" Orientation="Horizontal" VerticalAlignment="Center" Margin="0 0 32 0" Visibility="{Binding IsSharpnessWeapon, Mode=OneTime, Converter={StaticResource CollapsedVisibilityValueConverter}}">
-                <StackPanel VerticalAlignment="Center">
-                    <TextBlock Text="Sharpness rank: " Margin="2"/>
-                    <StackPanel Orientation="Horizontal">
-                        <Slider Minimum="0" Maximum="5" Value="{Binding SharpnessRank}" Width="120" TickPlacement="BottomRight" VerticalAlignment="Center" Margin="2"/>
-                        <TextBlock Text="{Binding SharpnessRank, Converter={StaticResource SharpnessNameValueConverter}}" VerticalAlignment="Top" Margin="2"/>
+            <ScrollViewer DockPanel.Dock="Top" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Disabled">
+                <StackPanel Orientation="Horizontal" VerticalAlignment="Center" Margin="0 0 32 0">
+                    <StackPanel VerticalAlignment="Center" Margin="0 0 32 0">
+                        <TextBlock Text="Filter: " Margin="2" VerticalAlignment="Center"/>
+                        <TextBox Text="{Binding SearchText, UpdateSourceTrigger=PropertyChanged}" Width="200" Margin="2" Padding="3" VerticalAlignment="Center"/>
                     </StackPanel>
+                    <StackPanel VerticalAlignment="Center" Margin="0 0 32 0" Visibility="{Binding IsSharpnessWeapon, Mode=OneTime, Converter={StaticResource CollapsedVisibilityValueConverter}}">
+                        <TextBlock Text="Sharpness rank: " Margin="2"/>
+                        <StackPanel Orientation="Horizontal">
+                            <Slider Minimum="0" Maximum="5" Value="{Binding SharpnessRank}" Width="120" TickPlacement="BottomRight" VerticalAlignment="Center" Margin="2"/>
+                            <TextBlock Text="{Binding SharpnessRank, Converter={StaticResource SharpnessNameValueConverter}}" VerticalAlignment="Top" Margin="2"/>
+                        </StackPanel>
+                    </StackPanel>
+                    <!-- Free Element / Ammo Up here -->
                 </StackPanel>
-            </StackPanel>
+            </ScrollViewer>
             <Grid>
                 <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Visibility="{Binding IsDataLoading, Converter={StaticResource CollapsedVisibilityValueConverter}, Mode=OneWay}">
                     <TextBlock Text="Constructing user interface..." FontSize="20" HorizontalAlignment="Center" Margin="2"/>
@@ -1024,37 +1035,29 @@
 
     <DataTemplate x:Key="WeaponsContainerView">
         <DockPanel LastChildFill="True" Visibility="{Binding IsDataLoaded, Converter={StaticResource HiddenVisibilityValueConverter}}">
-            <WrapPanel DockPanel.Dock="Top" Orientation="Horizontal">
-                <ScrollViewer VerticalAlignment="Center" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Disabled" Margin="0 0 32 0">
-                    <ItemsControl ItemsSource="{Binding WeaponTypes}">
-                        <ItemsControl.ItemTemplate>
-                            <DataTemplate>
-                                <Button x:Name="toggle" Command="{Binding ActivateCommand, Mode=OneTime}" Margin="2" Padding="4" VerticalContentAlignment="Center" HorizontalAlignment="Center" ToolTip="{Binding Type, Mode=OneTime, Converter={StaticResource WeaponNameValueConverter}}">
-                                    <Button.Content>
-                                        <Image Source="{Binding Type, Mode=OneTime, Converter={StaticResource WeaponEnumToImageSourceValueConverter}, ConverterParameter=32}" Width="32" Height="32"/>
-                                    </Button.Content>
-                                </Button>
-                                <DataTemplate.Triggers>
-                                    <DataTrigger Binding="{Binding IsActive}" Value="True">
-                                        <Setter TargetName="toggle" Property="Background" Value="{StaticResource ActiveWeaponBackgroundBrush}"/>
-                                    </DataTrigger>
-                                </DataTemplate.Triggers>
-                            </DataTemplate>
-                        </ItemsControl.ItemTemplate>
-                        <ItemsControl.ItemsPanel>
-                            <ItemsPanelTemplate>
-                                <StackPanel Orientation="Horizontal"/>
-                            </ItemsPanelTemplate>
-                        </ItemsControl.ItemsPanel>
-                    </ItemsControl>
-                </ScrollViewer>
-                <StackPanel Orientation="Horizontal" VerticalAlignment="Center" Margin="0 0 32 0">
-                    <StackPanel VerticalAlignment="Center">
-                        <TextBlock Text="Filter: " Margin="2" VerticalAlignment="Center"/>
-                        <TextBox Text="" MinWidth="150" MaxWidth="200" Margin="2" Padding="4" VerticalAlignment="Center"/>
-                    </StackPanel>
-                </StackPanel>
-            </WrapPanel>
+            <ScrollViewer DockPanel.Dock="Top" VerticalAlignment="Center" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Disabled">
+                <ItemsControl ItemsSource="{Binding WeaponTypes}">
+                    <ItemsControl.ItemTemplate>
+                        <DataTemplate>
+                            <Button x:Name="toggle" Command="{Binding ActivateCommand, Mode=OneTime}" Margin="2" Padding="4" VerticalContentAlignment="Center" HorizontalAlignment="Center" ToolTip="{Binding Type, Mode=OneTime, Converter={StaticResource WeaponNameValueConverter}}">
+                                <Button.Content>
+                                    <Image Source="{Binding Type, Mode=OneTime, Converter={StaticResource WeaponEnumToImageSourceValueConverter}, ConverterParameter=32}" Width="32" Height="32"/>
+                                </Button.Content>
+                            </Button>
+                            <DataTemplate.Triggers>
+                                <DataTrigger Binding="{Binding IsActive}" Value="True">
+                                    <Setter TargetName="toggle" Property="Background" Value="{StaticResource ActiveWeaponBackgroundBrush}"/>
+                                </DataTrigger>
+                            </DataTemplate.Triggers>
+                        </DataTemplate>
+                    </ItemsControl.ItemTemplate>
+                    <ItemsControl.ItemsPanel>
+                        <ItemsPanelTemplate>
+                            <StackPanel Orientation="Horizontal"/>
+                        </ItemsPanelTemplate>
+                    </ItemsControl.ItemsPanel>
+                </ItemsControl>
+            </ScrollViewer>
             <ItemsControl ItemsSource="{Binding WeaponTypes}" ItemTemplate="{StaticResource WeaponTypeView}" Background="#06000000">
                 <ItemsControl.ItemsPanel>
                     <ItemsPanelTemplate>

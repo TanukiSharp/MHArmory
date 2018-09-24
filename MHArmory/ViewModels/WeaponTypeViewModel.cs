@@ -52,11 +52,37 @@ namespace MHArmory.ViewModels
 
         public bool IsSharpnessWeapon { get; private set; }
 
+        private string searchText;
+        public string SearchText
+        {
+            get { return searchText; }
+            set
+            {
+                if (SetValue(ref searchText, value))
+                    OnSearchTextChanged();
+            }
+        }
+
         private int sharpnessRank;
         public int SharpnessRank
         {
             get { return sharpnessRank; }
             set { SetValue(ref sharpnessRank, value); }
+        }
+
+        public WeaponTypeViewModel(WeaponType type, IList<WeaponViewModel> rootWeapons, WeaponsContainerViewModel parent)
+        {
+            Parent = parent;
+
+            Type = type;
+            awaitingRootWeapons = rootWeapons;
+
+            SetIsSharpness();
+
+            ActivateCommand = new AnonymousCommand(OnActivate);
+
+            foreach (WeaponViewModel weapon in rootWeapons)
+                weapon.SetParent(this);
         }
 
         private async void SetRootWeapons()
@@ -73,21 +99,6 @@ namespace MHArmory.ViewModels
 
             IsDataLoaded = true;
             IsDataLoading = false;
-        }
-
-        public WeaponTypeViewModel(WeaponType type, IList<WeaponViewModel> rootWeapons, WeaponsContainerViewModel parent)
-        {
-            Parent = parent;
-
-            Type = type;
-            awaitingRootWeapons = rootWeapons;
-
-            SetIsSharpness();
-
-            ActivateCommand = new AnonymousCommand(OnActivate);
-
-            foreach (WeaponViewModel weapon in rootWeapons)
-                weapon.SetParent(this);
         }
 
         private void SetIsSharpness()
@@ -110,6 +121,22 @@ namespace MHArmory.ViewModels
             }
 
             IsSharpnessWeapon = false;
+        }
+
+        private void OnSearchTextChanged()
+        {
+            if (string.IsNullOrWhiteSpace(searchText))
+            {
+                foreach (WeaponViewModel x in RootWeapons)
+                    x.ClearFiltered();
+            }
+            else
+            {
+                var searchStatement = SearchStatement.Create(searchText);
+
+                foreach (WeaponViewModel x in RootWeapons)
+                    x.UpdateFiltered(searchStatement);
+            }
         }
 
         private void OnActivate(object parameters)

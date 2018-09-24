@@ -173,6 +173,13 @@ public class WeaponViewModel : ViewModelBase
             set { SetValue(ref isHihglight, value); }
         }
 
+        private bool isFiltered;
+        public bool IsFiltered
+        {
+            get { return isFiltered; }
+            private set { SetValue(ref isFiltered, value); }
+        }
+
         public WeaponTypeViewModel Parent { get; private set; }
 
         public WeaponViewModel(WeaponPrimitive primitive)
@@ -249,6 +256,28 @@ public class WeaponViewModel : ViewModelBase
         public override string ToString()
         {
             return $"{Name} [{Type}] ({Branches?.Count ?? 0})";
+        }
+
+        public void ClearFiltered()
+        {
+            IsFiltered = false;
+
+            if (Branches != null)
+            {
+                foreach (WeaponViewModel x in Branches)
+                    x.ClearFiltered();
+            }
+        }
+
+        public void UpdateFiltered(SearchStatement st)
+        {
+            IsFiltered = st.IsMatching(Name);
+
+            if (Branches != null)
+            {
+                foreach (WeaponViewModel x in Branches)
+                    x.UpdateFiltered(st);
+            }
         }
     }
 }
