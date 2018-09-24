@@ -33,13 +33,6 @@ namespace MHArmory.ViewModels
                 weaponType.IsActive = weaponType == weaponTypeToActivate;
         }
 
-        private int sharpnessRank;
-        public int SharpnessRank
-        {
-            get { return sharpnessRank; }
-            set { SetValue(ref sharpnessRank, value); }
-        }
-
         private IDictionary<int, WeaponViewModel> allWeapons;
 
         private IList<WeaponTypeViewModel> weaponTypes;
