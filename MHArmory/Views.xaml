@@ -919,7 +919,7 @@
     
     <DataTemplate x:Key="WeaponElementView">
         <StackPanel x:Name="root" Orientation="Horizontal">
-            <Image Source="{Binding Type, Mode=OneTime, Converter={StaticResource ElementEnumToImageSourceValueConverter}, ConverterParameter=16}" Width="16" Height="16" VerticalAlignment="Center" ToolTip="{Binding Type, Mode=OneTime, Converter={StaticResource ElementNameValueConverter}}"/>
+            <Image Source="{Binding Type, Mode=OneTime, Converter={StaticResource ElementEnumToImageSourceValueConverter}, ConverterParameter=16}" Width="16" Height="16" Margin="2" VerticalAlignment="Center" ToolTip="{Binding Type, Mode=OneTime, Converter={StaticResource ElementNameValueConverter}}"/>
             <TextBlock Text="(" Visibility="{Binding IsHidden, Converter={StaticResource CollapsedVisibilityValueConverter}}" VerticalAlignment="Center"/>
             <TextBlock Text="{Binding Value}" VerticalAlignment="Center"/>
             <TextBlock Text=")" Visibility="{Binding IsHidden, Converter={StaticResource CollapsedVisibilityValueConverter}}" VerticalAlignment="Center"/>
