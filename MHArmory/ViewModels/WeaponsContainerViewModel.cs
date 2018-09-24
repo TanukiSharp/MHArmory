@@ -100,29 +100,61 @@ namespace MHArmory.ViewModels
             }
         }
 
-        private Task<IList<WeaponPrimitive>> LoadPrimitives(string filename)
+        private Task<IList<WeaponPrimitive>> LoadPrimitives(IList<string> filenames)
         {
             IList<WeaponPrimitive> LoadPrimitivesInternal()
             {
-                string weaponsContent = File.ReadAllText(filename);
-                return JsonConvert.DeserializeObject<IList<WeaponPrimitive>>(weaponsContent);
+                var weaponPrimitives = new List<WeaponPrimitive>();
+
+                foreach (string filename in filenames)
+                {
+                    string weaponsContent = File.ReadAllText(filename);
+                    weaponPrimitives.AddRange(JsonConvert.DeserializeObject<IEnumerable<WeaponPrimitive>>(weaponsContent));
+                }
+
+                return weaponPrimitives;
             }
 
             return Task.Factory.StartNew(LoadPrimitivesInternal, TaskCreationOptions.LongRunning);
         }
 
+        private static readonly string[] weaponFilenames = new string[]
+        {
+            "great-sword",
+            "long-sword",
+            "sword-and-shield",
+            "dual-blades",
+            "hammer",
+            "hunting-horn",
+            "lance",
+            "gunlance",
+            "switch-axe",
+            "charge-blade",
+            "insect-glaive",
+            "light-bowgun",
+            "heavy-bowgun",
+            "bow"
+        };
+
         private async Task<bool> LoadWeaponsInternal()
         {
-            string filename = Path.Combine(AppContext.BaseDirectory, "data", "weapons.json");
+            var fullFilenames = new List<string>();
 
-            if (File.Exists(filename) == false)
+            foreach (string filename in weaponFilenames)
             {
-                IsFeatureEnabled = false;
-                FeatureDisabledReason = $"Weapons data unavailable";
-                return false;
+                string fullFilename = Path.Combine(AppContext.BaseDirectory, "data", $"{filename}.json");
+
+                if (File.Exists(fullFilename) == false)
+                {
+                    IsFeatureEnabled = false;
+                    FeatureDisabledReason = $"Weapons data unavailable ('{filename}' missing)";
+                    return false;
+                }
+
+                fullFilenames.Add(fullFilename);
             }
 
-            IList<WeaponPrimitive> allWeaponPrimitives = await LoadPrimitives(filename);
+            IList<WeaponPrimitive> allWeaponPrimitives = await LoadPrimitives(fullFilenames);
 
             allWeapons = allWeaponPrimitives
                 .Select(x => new WeaponViewModel(x))
