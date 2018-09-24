@@ -158,6 +158,8 @@ namespace MHArmory.ViewModels
 
                 input = input
                     .OrderByDescending(x => x.TotalAugmentedDefense)
+                    .ThenByDescending(x => x.AdditionalSkills.Length)
+                    .ThenByDescending(x => x.SpareSlotCount)
                     .Take(limit)
                     .ToList();
 
