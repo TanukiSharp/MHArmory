@@ -95,17 +95,36 @@ namespace MHArmory.ViewModels
         }
     }
 
-    public class WeaponElementViewModel
+    public class WeaponElementViewModel : ViewModelBase
     {
+        private readonly int originalValue;
+        private readonly bool originalIsHidden;
+
         public ElementType Type { get; }
-        public int Value { get; }
-        public bool IsHidden { get; }
+
+        private int value;
+        public int Value
+        {
+            get { return value; }
+            private set { SetValue(ref this.value, value); }
+        }
+
+        private bool isHidden;
+        public bool IsHidden
+        {
+            get { return isHidden; }
+            private set { SetValue(ref isHidden, value); }
+        }
 
         public WeaponElementViewModel(WeaponElementPrimitive primitive)
         {
+            originalValue = primitive.Value;
+            originalIsHidden = primitive.IsHidden;
+
             Type = ConvertElementType(primitive.Type);
-            Value = primitive.Value;
-            IsHidden = primitive.IsHidden;
+
+            Value = originalValue;
+            IsHidden = originalIsHidden;
         }
 
         private ElementType ConvertElementType(string elementType)
@@ -125,9 +144,26 @@ namespace MHArmory.ViewModels
 
             throw new FormatException($"Unknown '{elementType}' element type.");
         }
+
+        public void FreeElementSkillChanged(int level)
+        {
+            if (originalIsHidden == false)
+                return;
+
+            if (level <= 0)
+            {
+                IsHidden = originalIsHidden;
+                Value = originalValue;
+            }
+            else
+            {
+                IsHidden = false;
+                Value = originalValue * level / 3;
+            }
+        }
     }
 
-public class WeaponViewModel : ViewModelBase
+    public class WeaponViewModel : ViewModelBase
     {
         public int Id { get; }
         public string Name { get; }
@@ -277,6 +313,21 @@ public class WeaponViewModel : ViewModelBase
             {
                 foreach (WeaponViewModel x in Branches)
                     x.UpdateFiltered(st);
+            }
+        }
+
+        public void FreeElementSkillChanged(int level)
+        {
+            if (Elements != null)
+            {
+                foreach (WeaponElementViewModel x in Elements)
+                    x.FreeElementSkillChanged(level);
+            }
+
+            if (Branches != null)
+            {
+                foreach (WeaponViewModel x in Branches)
+                    x.FreeElementSkillChanged(level);
             }
         }
     }

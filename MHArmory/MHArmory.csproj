@@ -116,6 +116,7 @@
     </Compile>
     <Compile Include="CustomTreeView.cs" />
     <Compile Include="ValueConverters\ElementNameValueConverter.cs" />
+    <Compile Include="ValueConverters\FreeElementNameValueConverter.cs" />
     <Compile Include="ValueConverters\HasDefenseVisibilityValueConverter.cs" />
     <Compile Include="ValueConverters\MillisecondsToTimeValueConverter.cs" />
     <Compile Include="ValueConverters\NumToSeparatedStringValueConverter.cs" />

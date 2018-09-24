@@ -21,6 +21,7 @@
     <cvt:ElementNameValueConverter x:Key="ElementNameValueConverter"/>
     <cvt:MillisecondsToTimeValueConverter x:Key="MillisecondsToTimeValueConverter"/>
     <cvt:NumToSeparatedStringValueConverter x:Key="NumToSeparatedStringValueConverter"/>
+    <cvt:FreeElementNameValueConverter x:Key="FreeElementNameValueConverter"/>
 
     <Style x:Key="ComboBoxItemSlotStyle" TargetType="FrameworkElement">
         <Setter Property="Width" Value="16"/>
@@ -919,12 +920,12 @@
     <DataTemplate x:Key="WeaponElementView">
         <StackPanel x:Name="root" Orientation="Horizontal">
             <Image Source="{Binding Type, Mode=OneTime, Converter={StaticResource ElementEnumToImageSourceValueConverter}, ConverterParameter=16}" Width="16" Height="16" VerticalAlignment="Center" ToolTip="{Binding Type, Mode=OneTime, Converter={StaticResource ElementNameValueConverter}}"/>
-            <TextBlock Text="(" Visibility="{Binding IsHidden, Mode=OneTime, Converter={StaticResource CollapsedVisibilityValueConverter}}" VerticalAlignment="Center"/>
-            <TextBlock Text="{Binding Value, Mode=OneTime}" VerticalAlignment="Center"/>
-            <TextBlock Text=")" Visibility="{Binding IsHidden, Mode=OneTime, Converter={StaticResource CollapsedVisibilityValueConverter}}" VerticalAlignment="Center"/>
+            <TextBlock Text="(" Visibility="{Binding IsHidden, Converter={StaticResource CollapsedVisibilityValueConverter}}" VerticalAlignment="Center"/>
+            <TextBlock Text="{Binding Value}" VerticalAlignment="Center"/>
+            <TextBlock Text=")" Visibility="{Binding IsHidden, Converter={StaticResource CollapsedVisibilityValueConverter}}" VerticalAlignment="Center"/>
         </StackPanel>
         <DataTemplate.Triggers>
-            <DataTrigger Binding="{Binding IsHidden, Mode=OneTime}" Value="True">
+            <DataTrigger Binding="{Binding IsHidden}" Value="True">
                 <Setter TargetName="root" Property="Opacity" Value="0.4"/>
             </DataTrigger>
         </DataTemplate.Triggers>
@@ -1006,7 +1007,7 @@
             <ScrollViewer DockPanel.Dock="Top" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Disabled">
                 <StackPanel Orientation="Horizontal" VerticalAlignment="Center" Margin="0 0 32 0">
                     <StackPanel VerticalAlignment="Center" Margin="0 0 32 0">
-                        <TextBlock Text="Filter: " Margin="2" VerticalAlignment="Center"/>
+                        <TextBlock Text="Search: " Margin="2" VerticalAlignment="Center"/>
                         <TextBox Text="{Binding SearchText, UpdateSourceTrigger=PropertyChanged}" Width="200" Margin="2" Padding="3" VerticalAlignment="Center"/>
                     </StackPanel>
                     <StackPanel VerticalAlignment="Center" Margin="0 0 32 0" Visibility="{Binding IsSharpnessWeapon, Mode=OneTime, Converter={StaticResource CollapsedVisibilityValueConverter}}">
@@ -1016,7 +1017,13 @@
                             <TextBlock Text="{Binding SharpnessRank, Converter={StaticResource SharpnessNameValueConverter}}" VerticalAlignment="Top" Margin="2"/>
                         </StackPanel>
                     </StackPanel>
-                    <!-- Free Element / Ammo Up here -->
+                    <StackPanel VerticalAlignment="Center" Margin="0 0 32 0" Visibility="{Binding IsSharpnessWeapon, Mode=OneTime, Converter={StaticResource CollapsedVisibilityValueConverter}}">
+                        <TextBlock Text="Free element: " Margin="2"/>
+                        <StackPanel Orientation="Horizontal">
+                            <Slider Minimum="0" Maximum="3" Value="{Binding FreeElementLevel}" Width="120" TickPlacement="BottomRight" VerticalAlignment="Center" Margin="2"/>
+                            <TextBlock Text="{Binding FreeElementLevel, Converter={StaticResource FreeElementNameValueConverter}}" VerticalAlignment="Top" Margin="2"/>
+                        </StackPanel>
+                    </StackPanel>
                 </StackPanel>
             </ScrollViewer>
             <Grid>

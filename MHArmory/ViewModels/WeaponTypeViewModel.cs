@@ -63,6 +63,20 @@ namespace MHArmory.ViewModels
             }
         }
 
+        private int freeElementLevel;
+        public int FreeElementLevel
+        {
+            get { return freeElementLevel; }
+            set
+            {
+                if (SetValue(ref freeElementLevel, value))
+                {
+                    foreach (WeaponViewModel x in RootWeapons)
+                        x.FreeElementSkillChanged(FreeElementLevel);
+                }
+            }
+        }
+
         private int sharpnessRank;
         public int SharpnessRank
         {
