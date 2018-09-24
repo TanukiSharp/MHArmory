@@ -42,7 +42,8 @@ namespace MHArmory.ViewModels
         public ICommand DeactivateCommand { get; }
         public ICommand AddSortItemCommand { get; }
 
-        public ObservableCollection<SearchResultSortItemViewModel> SortItems { get; } = new ObservableCollection<SearchResultSortItemViewModel>();
+        private readonly ObservableCollection<SearchResultSortItemViewModel> sortItems = new ObservableCollection<SearchResultSortItemViewModel>();
+        public ReadOnlyObservableCollection<SearchResultSortItemViewModel> SortItems { get; }
 
         public ICommand MoveSelfUpCommand { get; }
         public ICommand MoveSelfDownCommand { get; }
@@ -51,6 +52,8 @@ namespace MHArmory.ViewModels
         public SearchResultProcessingContainerViewModel(SearchResultProcessingViewModel parent)
         {
             this.parent = parent;
+
+            SortItems = new ReadOnlyObservableCollection<SearchResultSortItemViewModel>(sortItems);
 
             IsEditMode = parent.IsEditMode;
 
@@ -66,6 +69,13 @@ namespace MHArmory.ViewModels
             parent.EditModeChanged += Parent_EditModeChanged;
         }
 
+        public void AddSortItem(SearchResultSortItemViewModel sortItem)
+        {
+            bool isFirst = SortItems.Count == 0;
+            sortItem.SetFirst(isFirst);
+            sortItems.Add(sortItem);
+        }
+
         private void OnApply(object parameter)
         {
             parent.ApplyContainerRules(this);
@@ -78,12 +88,7 @@ namespace MHArmory.ViewModels
 
         private void OnAddSortItem(object parameter)
         {
-            bool isFirst = SortItems.Count == 0;
-
-            var x = new SearchResultSortItemViewModel(this);
-            x.SetFirst(isFirst);
-
-            SortItems.Add(x);
+            AddSortItem(new SearchResultSortItemViewModel(this));
         }
 
         private void UpdateSortItems()
@@ -100,7 +105,7 @@ namespace MHArmory.ViewModels
         public bool MoveSortItemUp(SearchResultSortItemViewModel item)
         {
             bool result = ReorganizableCollectionUtilities<SearchResultSortItemViewModel>.MoveUp(
-                SortItems,
+                sortItems,
                 item
             );
 
@@ -113,7 +118,7 @@ namespace MHArmory.ViewModels
         public bool MoveSortItemDown(SearchResultSortItemViewModel item)
         {
             bool result = ReorganizableCollectionUtilities<SearchResultSortItemViewModel>.MoveDown(
-                SortItems,
+                sortItems,
                 item
             );
 
@@ -126,7 +131,7 @@ namespace MHArmory.ViewModels
         public bool RemoveSortItem(SearchResultSortItemViewModel item)
         {
             bool result = ReorganizableCollectionUtilities<SearchResultSortItemViewModel>.Remove(
-                SortItems,
+                sortItems,
                 item
             );
 

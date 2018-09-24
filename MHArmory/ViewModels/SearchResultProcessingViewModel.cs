@@ -102,7 +102,7 @@ namespace MHArmory.ViewModels
                     };
 
                     foreach (SearchResultSortCriteria criteria in x.Criterias)
-                        container.SortItems.Add(new SearchResultSortItemViewModel(container) { SortCriteria = criteria });
+                        container.AddSortItem(new SearchResultSortItemViewModel(container) { SortCriteria = criteria });
 
                     Containers.Add(container);
                 }
