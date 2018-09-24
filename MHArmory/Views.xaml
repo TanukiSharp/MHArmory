@@ -925,7 +925,7 @@
         </StackPanel>
         <DataTemplate.Triggers>
             <DataTrigger Binding="{Binding IsHidden, Mode=OneTime}" Value="True">
-                <Setter TargetName="root" Property="Opacity" Value="0.3"/>
+                <Setter TargetName="root" Property="Opacity" Value="0.4"/>
             </DataTrigger>
         </DataTemplate.Triggers>
     </DataTemplate>
