@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 
 namespace MHArmory
 {
@@ -15,6 +15,7 @@ namespace MHArmory
         SpareSlotSizeCube,
         AdditionalSkillsCount,
         AdditionalSkillsTotalLevel,
+        JewelCount,
         FireResistance,
         WaterResistance,
         ThunderResistance,

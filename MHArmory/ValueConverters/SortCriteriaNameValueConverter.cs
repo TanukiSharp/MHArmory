@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
@@ -25,6 +25,7 @@ namespace MHArmory.ValueConverters
                     case SearchResultSortCriteria.SpareSlotCount: return "Spare slot count (no distinction between level 1, 2 and 3)";
                     case SearchResultSortCriteria.SpareSlotSizeSquare: return "Spare slot size (square value)";
                     case SearchResultSortCriteria.SpareSlotSizeCube: return "Spare slot size (cube value)";
+                    case SearchResultSortCriteria.JewelCount: return "Total jewels count needed";
                     case SearchResultSortCriteria.FireResistance: return "Fire resistance";
                     case SearchResultSortCriteria.WaterResistance: return "Water resistance";
                     case SearchResultSortCriteria.ThunderResistance: return "Thunder resistance";

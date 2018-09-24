@@ -201,6 +201,9 @@ namespace MHArmory.ViewModels
                     case SearchResultSortCriteria.SpareSlotSizeCube:
                         result = result.ThenByDescending(x => x.SpareSlotSizeCube);
                         break;
+                    case SearchResultSortCriteria.JewelCount:
+                        result = result.ThenBy(x => x.Jewels.Count);
+                        break;
                     case SearchResultSortCriteria.FireResistance:
                         result = result.ThenByDescending(x => x.TotalFireResistance);
                         break;
