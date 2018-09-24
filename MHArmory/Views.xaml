@@ -954,7 +954,7 @@
                                         <ctrl:SharpnessRenderer Width="55" Height="6" Background="#FF1E1E1E" SharpnessLevels="{Binding SharpnessLevels, Mode=OneTime}" SharpnessRank="{Binding Parent.SharpnessRank}"/>
                                     </Border>
                                     <StackPanel Orientation="Horizontal" Visibility="{Binding HasDeviation, Mode=OneTime, Converter={StaticResource CollapsedVisibilityValueConverter}}">
-                                        <Image Source="{mxt:RasterizedImage Location=Icons/Attributes/Deviation.svg, Size=16}" Width="16" Height="16" VerticalAlignment="Center" Margin="2" SnapsToDevicePixels="True" ToolTip="Deviation"/>
+                                        <Image Source="{mxt:RasterizedImage Location=Icons/Attributes/Deviation.svg, Size=14}" Width="14" Height="14" VerticalAlignment="Center" Margin="2" SnapsToDevicePixels="True" ToolTip="Deviation"/>
                                         <TextBlock Text="{Binding Attributes.Deviation, Mode=OneTime}" Margin="2"/>
                                     </StackPanel>
                                 </StackPanel>
