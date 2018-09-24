@@ -4705,7 +4705,7 @@
         },
         "attributes": {
             "damageType": "sever",
-            "defense": 0,
+            "defense": 10,
             "phialType": "impact"
         },
         "sharpness": {
@@ -4841,7 +4841,7 @@
         },
         "attributes": {
             "damageType": "sever",
-            "defense": 0,
+            "defense": 10,
             "phialType": "impact"
         },
         "sharpness": {
@@ -4987,8 +4987,9 @@
         },
         "attributes": {
             "damageType": "sever",
-            "defense": 0,
-            "phialType": "impact"
+            "defense": 10,
+            "phialType": "impact",
+            "affinity": -30
         },
         "sharpness": {
             "red": 25,
@@ -5267,8 +5268,9 @@
         },
         "attributes": {
             "damageType": "sever",
-            "defense": 0,
-            "phialType": "impact"
+            "defense": 15,
+            "phialType": "impact",
+            "affinity": -30
         },
         "sharpness": {
             "red": 27,
@@ -5411,8 +5413,9 @@
         },
         "attributes": {
             "damageType": "sever",
-            "defense": 0,
-            "phialType": "impact"
+            "defense": 15,
+            "phialType": "impact",
+            "affinity": -30
         },
         "sharpness": {
             "red": 22,
@@ -5476,7 +5479,7 @@
         "elements": [
             {
                 "type": "ice",
-                "damage": 150,
+                "damage": 180,
                 "hidden": true
             }
         ],
@@ -6044,6 +6047,7 @@
             "craftable": false,
             "previous": 798,
             "branches": [
+                800,
                 802
             ],
             "craftingMaterials": [],
@@ -9591,8 +9595,9 @@
         },
         "attributes": {
             "damageType": "sever",
-            "defense": 0,
-            "phialType": "impact"
+            "defense": 20,
+            "phialType": "impact",
+            "affinity": -10
         },
         "sharpness": {
             "red": 27,
@@ -9735,8 +9740,9 @@
         },
         "attributes": {
             "damageType": "sever",
-            "defense": 0,
-            "phialType": "impact"
+            "defense": 20,
+            "phialType": "impact",
+            "affinity": -10
         },
         "sharpness": {
             "red": 52,
@@ -10614,7 +10620,8 @@
         "attributes": {
             "damageType": "sever",
             "elderseal": "high",
-            "phialType": "power element"
+            "phialType": "power element",
+            "affinity": -25
         },
         "sharpness": {
             "red": 15,
@@ -10758,7 +10765,8 @@
         "attributes": {
             "damageType": "sever",
             "elderseal": "high",
-            "phialType": "power element"
+            "phialType": "power element",
+            "affinity": -25
         },
         "sharpness": {
             "red": 12,

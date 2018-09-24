@@ -4670,6 +4670,7 @@
         "attributes": {
             "damageType": "projectile",
             "deviation": "high",
+            "affinity": -20,
             "ammoCapacities": {
                 "normal": [
                     10,
@@ -4814,6 +4815,7 @@
         "attributes": {
             "damageType": "projectile",
             "deviation": "high",
+            "affinity": -20,
             "ammoCapacities": {
                 "normal": [
                     10,
@@ -4970,6 +4972,7 @@
         "attributes": {
             "damageType": "projectile",
             "deviation": "high",
+            "affinity": -20,
             "ammoCapacities": {
                 "normal": [
                     10,
@@ -5130,6 +5133,7 @@
         "attributes": {
             "damageType": "projectile",
             "deviation": "high",
+            "affinity": -20,
             "ammoCapacities": {
                 "normal": [
                     10,
@@ -6098,7 +6102,7 @@
         },
         "attributes": {
             "damageType": "projectile",
-            "defense": 0,
+            "defense": 10,
             "deviation": "average",
             "ammoCapacities": {
                 "normal": [
@@ -6247,7 +6251,7 @@
         },
         "attributes": {
             "damageType": "projectile",
-            "defense": 0,
+            "defense": 10,
             "deviation": "average",
             "ammoCapacities": {
                 "normal": [
@@ -6406,7 +6410,8 @@
         },
         "attributes": {
             "damageType": "projectile",
-            "defense": 0,
+            "defense": 10,
+            "affinity": -20,
             "deviation": "high",
             "ammoCapacities": {
                 "normal": [
@@ -6563,7 +6568,8 @@
         },
         "attributes": {
             "damageType": "projectile",
-            "defense": 0,
+            "defense": 10,
+            "affinity": -20,
             "deviation": "high",
             "ammoCapacities": {
                 "normal": [
@@ -6724,7 +6730,8 @@
         },
         "attributes": {
             "damageType": "projectile",
-            "defense": 0,
+            "defense": 15,
+            "affinity": -20,
             "deviation": "high",
             "ammoCapacities": {
                 "normal": [
@@ -6885,7 +6892,8 @@
         },
         "attributes": {
             "damageType": "projectile",
-            "defense": 0,
+            "defense": 15,
+            "affinity": -20,
             "deviation": "high",
             "ammoCapacities": {
                 "normal": [
@@ -7046,7 +7054,8 @@
         },
         "attributes": {
             "damageType": "projectile",
-            "defense": 0,
+            "defense": 15,
+            "affinity": -20,
             "deviation": "high",
             "ammoCapacities": {
                 "normal": [
@@ -8149,7 +8158,7 @@
         },
         "attributes": {
             "damageType": "projectile",
-            "defense": 0,
+            "defense": 15,
             "deviation": "average",
             "ammoCapacities": {
                 "normal": [
@@ -8294,7 +8303,7 @@
         },
         "attributes": {
             "damageType": "projectile",
-            "defense": 0,
+            "defense": 15,
             "deviation": "average",
             "ammoCapacities": {
                 "normal": [
@@ -8451,7 +8460,7 @@
         },
         "attributes": {
             "damageType": "projectile",
-            "defense": 0,
+            "defense": 20,
             "deviation": "average",
             "ammoCapacities": {
                 "normal": [
@@ -8658,7 +8667,7 @@
         },
         "attributes": {
             "damageType": "projectile",
-            "defense": 0,
+            "defense": 20,
             "deviation": "average",
             "ammoCapacities": {
                 "normal": [
@@ -8815,7 +8824,7 @@
         },
         "attributes": {
             "damageType": "projectile",
-            "defense": 0,
+            "defense": 20,
             "deviation": "average",
             "ammoCapacities": {
                 "normal": [
@@ -11150,7 +11159,8 @@
         },
         "attributes": {
             "damageType": "projectile",
-            "defense": 0,
+            "defense": 20,
+            "affinity": -20,
             "deviation": "high",
             "ammoCapacities": {
                 "normal": [
@@ -11311,7 +11321,8 @@
         },
         "attributes": {
             "damageType": "projectile",
-            "defense": 0,
+            "defense": 20,
+            "affinity": -20,
             "deviation": "high",
             "ammoCapacities": {
                 "normal": [
@@ -12255,6 +12266,7 @@
         "attributes": {
             "damageType": "projectile",
             "deviation": "high",
+            "affinity": -25,
             "ammoCapacities": {
                 "normal": [
                     7,
@@ -12411,6 +12423,7 @@
         "attributes": {
             "damageType": "projectile",
             "deviation": "high",
+            "affinity": -25,
             "ammoCapacities": {
                 "normal": [
                     7,

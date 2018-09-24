@@ -1597,8 +1597,8 @@
         "type": "switch-axe",
         "rarity": 7,
         "attack": {
-            "display": 560,
-            "raw": 160
+            "display": 525,
+            "raw": 150
         },
         "attributes": {
             "damageType": "sever",
@@ -1666,7 +1666,7 @@
         "elements": [
             {
                 "type": "ice",
-                "damage": 300,
+                "damage": 270,
                 "hidden": false
             }
         ],
@@ -2660,7 +2660,7 @@
         },
         "attributes": {
             "damageType": "sever",
-            "defense": 0,
+            "defense": 30,
             "phialType": "power"
         },
         "sharpness": {
@@ -2808,7 +2808,7 @@
         },
         "attributes": {
             "damageType": "sever",
-            "defense": 0,
+            "defense": 30,
             "phialType": "power"
         },
         "sharpness": {
@@ -3812,7 +3812,8 @@
         },
         "attributes": {
             "damageType": "sever",
-            "phialType": "power"
+            "phialType": "power",
+            "affinity": -15
         },
         "sharpness": {
             "red": 25,
@@ -3959,7 +3960,8 @@
         },
         "attributes": {
             "damageType": "sever",
-            "phialType": "power"
+            "phialType": "power",
+            "affinity": -15
         },
         "sharpness": {
             "red": 17,
@@ -5386,7 +5388,7 @@
         },
         "attributes": {
             "damageType": "sever",
-            "defense": 0,
+            "defense": 10,
             "elderseal": "average",
             "phialType": "dragon 300"
         },
@@ -5519,7 +5521,7 @@
         "attributes": {
             "damageType": "sever",
             "affinity": 10,
-            "defense": 0,
+            "defense": 10,
             "elderseal": "average",
             "phialType": "dragon 420"
         },
@@ -7575,8 +7577,9 @@
         },
         "attributes": {
             "damageType": "sever",
-            "defense": 0,
-            "phialType": "paralysis 180"
+            "defense": 10,
+            "phialType": "paralysis 180",
+            "affinity": -20
         },
         "sharpness": {
             "red": 22,
@@ -7702,8 +7705,9 @@
         },
         "attributes": {
             "damageType": "sever",
-            "defense": 0,
-            "phialType": "paralysis 180"
+            "defense": 10,
+            "phialType": "paralysis 180",
+            "affinity": -20
         },
         "sharpness": {
             "red": 27,
@@ -7841,8 +7845,9 @@
         },
         "attributes": {
             "damageType": "sever",
-            "defense": 0,
-            "phialType": "paralysis 180"
+            "defense": 10,
+            "phialType": "paralysis 180",
+            "affinity": -20
         },
         "sharpness": {
             "red": 22,
@@ -7979,8 +7984,9 @@
         },
         "attributes": {
             "damageType": "sever",
-            "defense": 0,
-            "phialType": "paralysis 210"
+            "defense": 15,
+            "phialType": "paralysis 210",
+            "affinity": -20
         },
         "sharpness": {
             "red": 32,
@@ -8127,8 +8133,9 @@
         },
         "attributes": {
             "damageType": "sever",
-            "defense": 0,
-            "phialType": "paralysis 240"
+            "defense": 15,
+            "phialType": "paralysis 240",
+            "affinity": -20
         },
         "sharpness": {
             "red": 30,
@@ -8278,8 +8285,9 @@
         },
         "attributes": {
             "damageType": "sever",
-            "defense": 0,
-            "phialType": "paralysis 270"
+            "defense": 15,
+            "phialType": "paralysis 270",
+            "affinity": -20
         },
         "sharpness": {
             "red": 30,
@@ -8427,8 +8435,9 @@
         },
         "attributes": {
             "damageType": "sever",
-            "defense": 0,
-            "phialType": "power"
+            "defense": 10,
+            "phialType": "power",
+            "affinity": -30
         },
         "sharpness": {
             "red": 25,
@@ -8565,8 +8574,9 @@
         },
         "attributes": {
             "damageType": "sever",
-            "defense": 0,
-            "phialType": "power"
+            "defense": 10,
+            "phialType": "power",
+            "affinity": -30
         },
         "sharpness": {
             "red": 35,
@@ -8713,8 +8723,9 @@
         },
         "attributes": {
             "damageType": "sever",
-            "defense": 0,
-            "phialType": "power"
+            "defense": 15,
+            "phialType": "power",
+            "affinity": -30
         },
         "sharpness": {
             "red": 27,
@@ -8861,8 +8872,9 @@
         },
         "attributes": {
             "damageType": "sever",
-            "defense": 0,
-            "phialType": "power"
+            "defense": 15,
+            "phialType": "power",
+            "affinity": -30
         },
         "sharpness": {
             "red": 35,
@@ -9009,8 +9021,9 @@
         },
         "attributes": {
             "damageType": "sever",
-            "defense": 0,
-            "phialType": "power"
+            "defense": 15,
+            "phialType": "power",
+            "affinity": -30
         },
         "sharpness": {
             "red": 22,
@@ -9155,7 +9168,8 @@
         },
         "attributes": {
             "damageType": "sever",
-            "phialType": "power element"
+            "phialType": "power element",
+            "affinity": -20
         },
         "sharpness": {
             "red": 30,
@@ -9298,7 +9312,8 @@
         },
         "attributes": {
             "damageType": "sever",
-            "phialType": "power element"
+            "phialType": "power element",
+            "affinity": -20
         },
         "sharpness": {
             "red": 27,
@@ -9441,7 +9456,8 @@
         },
         "attributes": {
             "damageType": "sever",
-            "phialType": "power element"
+            "phialType": "power element",
+            "affinity": -20
         },
         "sharpness": {
             "red": 27,
@@ -11161,7 +11177,8 @@
         "attributes": {
             "damageType": "sever",
             "elderseal": "high",
-            "phialType": "power"
+            "phialType": "power",
+            "affinity": -25
         },
         "sharpness": {
             "red": 15,
@@ -11305,7 +11322,8 @@
         "attributes": {
             "damageType": "sever",
             "elderseal": "high",
-            "phialType": "power"
+            "phialType": "power",
+            "affinity": -25
         },
         "sharpness": {
             "red": 12,

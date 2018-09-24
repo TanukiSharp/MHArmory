@@ -22,8 +22,7 @@
             "craftable": true,
             "previous": null,
             "branches": [
-                1076,
-                1099
+                1076
             ],
             "craftingMaterials": [
                 {
@@ -70,7 +69,8 @@
             "previous": 1075,
             "branches": [
                 1077,
-                1085
+                1085,
+                1099
             ],
             "craftingMaterials": [],
             "upgradeMaterials": [
@@ -791,7 +791,8 @@
             "craftable": false,
             "previous": 1076,
             "branches": [
-                1086
+                1086,
+                1093
             ],
             "craftingMaterials": [],
             "upgradeMaterials": [
@@ -1041,8 +1042,7 @@
             "previous": 1087,
             "branches": [
                 1089,
-                1091,
-                1093
+                1091
             ],
             "craftingMaterials": [
                 {
@@ -1145,8 +1145,8 @@
         "type": "bow",
         "rarity": 6,
         "attack": {
-            "display": 204,
-            "raw": 170
+            "display": 192,
+            "raw": 160
         },
         "attributes": {
             "damageType": "projectile",
@@ -1162,7 +1162,7 @@
         "elements": [
             {
                 "type": "blast",
-                "damage": 270,
+                "damage": 240,
                 "hidden": true
             }
         ],
@@ -1329,7 +1329,7 @@
         },
         "attributes": {
             "damageType": "projectile",
-            "defense": 0,
+            "defense": 30,
             "coatings": [
                 "close range",
                 "sleep",
@@ -1423,7 +1423,7 @@
         },
         "attributes": {
             "damageType": "projectile",
-            "defense": 0,
+            "defense": 30,
             "coatings": [
                 "close range",
                 "sleep",
@@ -3322,7 +3322,7 @@
         },
         "attributes": {
             "damageType": "projectile",
-            "defense": 0,
+            "defense": 10,
             "coatings": [
                 "close range",
                 "paralysis",
@@ -3405,7 +3405,7 @@
         },
         "attributes": {
             "damageType": "projectile",
-            "defense": 0,
+            "defense": 10,
             "coatings": [
                 "close range",
                 "paralysis",
@@ -3683,7 +3683,8 @@
         },
         "attributes": {
             "damageType": "projectile",
-            "defense": 0,
+            "defense": 10,
+            "affinity": -30,
             "coatings": [
                 "close range",
                 "power",
@@ -3767,7 +3768,8 @@
         },
         "attributes": {
             "damageType": "projectile",
-            "defense": 0,
+            "defense": 10,
+            "affinity": -30,
             "coatings": [
                 "close range",
                 "power",
@@ -3864,7 +3866,8 @@
         },
         "attributes": {
             "damageType": "projectile",
-            "defense": 0,
+            "defense": 15,
+            "affinity": -30,
             "coatings": [
                 "close range",
                 "power",
@@ -4010,7 +4013,8 @@
         },
         "attributes": {
             "damageType": "projectile",
-            "defense": 0,
+            "defense": 15,
+            "affinity": -30,
             "coatings": [
                 "close range",
                 "power",
@@ -4107,7 +4111,8 @@
         },
         "attributes": {
             "damageType": "projectile",
-            "defense": 0,
+            "defense": 15,
+            "affinity": -30,
             "coatings": [
                 "close range",
                 "power",
@@ -4726,6 +4731,7 @@
         },
         "attributes": {
             "damageType": "projectile",
+            "affinity": -20,
             "coatings": [
                 "close range",
                 "power",
@@ -4803,6 +4809,7 @@
         },
         "attributes": {
             "damageType": "projectile",
+            "affinity": -20,
             "coatings": [
                 "close range",
                 "power",
@@ -4892,6 +4899,7 @@
         },
         "attributes": {
             "damageType": "projectile",
+            "affinity": -20,
             "coatings": [
                 "close range",
                 "power",
@@ -4981,6 +4989,7 @@
         },
         "attributes": {
             "damageType": "projectile",
+            "affinity": -20,
             "coatings": [
                 "close range",
                 "power",
@@ -5070,6 +5079,7 @@
         },
         "attributes": {
             "damageType": "projectile",
+            "affinity": -20,
             "coatings": [
                 "close range",
                 "power",
@@ -6255,7 +6265,7 @@
         "elements": [
             {
                 "type": "dragon",
-                "damage": 150,
+                "damage": 180,
                 "hidden": false
             }
         ],
@@ -6332,7 +6342,7 @@
         },
         "attributes": {
             "damageType": "projectile",
-            "defense": 0,
+            "defense": 20,
             "coatings": [
                 "close range",
                 "paralysis",
@@ -6428,7 +6438,7 @@
         },
         "attributes": {
             "damageType": "projectile",
-            "defense": 0,
+            "defense": 20,
             "coatings": [
                 "close range",
                 "paralysis",
@@ -6522,6 +6532,7 @@
         },
         "attributes": {
             "damageType": "projectile",
+            "affinity": -25,
             "elderseal": "high",
             "coatings": [
                 "close range",
@@ -6612,6 +6623,7 @@
         },
         "attributes": {
             "damageType": "projectile",
+            "affinity": -25,
             "elderseal": "high",
             "coatings": [
                 "close range",

@@ -5678,7 +5678,7 @@
         },
         "attributes": {
             "damageType": "sever",
-            "defense": 0,
+            "defense": 10,
             "shellingType": "Long Lv2"
         },
         "sharpness": {
@@ -5814,7 +5814,7 @@
         },
         "attributes": {
             "damageType": "sever",
-            "defense": 0,
+            "defense": 10,
             "shellingType": "Long Lv2"
         },
         "sharpness": {
@@ -5960,7 +5960,8 @@
         },
         "attributes": {
             "damageType": "sever",
-            "shellingType": "Wide Lv3"
+            "shellingType": "Wide Lv3",
+            "affinity": -10
         },
         "sharpness": {
             "red": 25,
@@ -6107,7 +6108,8 @@
         },
         "attributes": {
             "damageType": "sever",
-            "shellingType": "Wide Lv3"
+            "shellingType": "Wide Lv3",
+            "affinity": -10
         },
         "sharpness": {
             "red": 15,
@@ -8160,8 +8162,9 @@
         },
         "attributes": {
             "damageType": "sever",
-            "defense": 0,
-            "shellingType": "Wide Lv1"
+            "defense": 10,
+            "shellingType": "Wide Lv1",
+            "affinity": -10
         },
         "sharpness": {
             "red": 20,
@@ -8287,8 +8290,9 @@
         },
         "attributes": {
             "damageType": "sever",
-            "defense": 0,
-            "shellingType": "Wide Lv1"
+            "defense": 10,
+            "shellingType": "Wide Lv1",
+            "affinity": -10
         },
         "sharpness": {
             "red": 27,
@@ -8425,8 +8429,9 @@
         },
         "attributes": {
             "damageType": "sever",
-            "defense": 0,
-            "shellingType": "Wide Lv1"
+            "defense": 10,
+            "shellingType": "Wide Lv1",
+            "affinity": -10
         },
         "sharpness": {
             "red": 22,
@@ -8563,8 +8568,9 @@
         },
         "attributes": {
             "damageType": "sever",
-            "defense": 0,
-            "shellingType": "Wide Lv2"
+            "defense": 15,
+            "shellingType": "Wide Lv2",
+            "affinity": -10
         },
         "sharpness": {
             "red": 30,
@@ -8707,8 +8713,9 @@
         },
         "attributes": {
             "damageType": "sever",
-            "defense": 0,
-            "shellingType": "Wide Lv2"
+            "defense": 15,
+            "shellingType": "Wide Lv2",
+            "affinity": -10
         },
         "sharpness": {
             "red": 25,
@@ -8851,8 +8858,9 @@
         },
         "attributes": {
             "damageType": "sever",
-            "defense": 0,
-            "shellingType": "Wide Lv3"
+            "defense": 15,
+            "shellingType": "Wide Lv3",
+            "affinity": -10
         },
         "sharpness": {
             "red": 30,
@@ -8993,7 +9001,8 @@
         },
         "attributes": {
             "damageType": "sever",
-            "shellingType": "Long Lv1"
+            "shellingType": "Long Lv1",
+            "affinity": -20
         },
         "sharpness": {
             "red": 30,
@@ -9124,7 +9133,8 @@
         },
         "attributes": {
             "damageType": "sever",
-            "shellingType": "Long Lv1"
+            "shellingType": "Long Lv1",
+            "affinity": -20
         },
         "sharpness": {
             "red": 27,
@@ -9267,7 +9277,8 @@
         },
         "attributes": {
             "damageType": "sever",
-            "shellingType": "Long Lv2"
+            "shellingType": "Long Lv2",
+            "affinity": -20
         },
         "sharpness": {
             "red": 35,
@@ -9410,7 +9421,8 @@
         },
         "attributes": {
             "damageType": "sever",
-            "shellingType": "Long Lv2"
+            "shellingType": "Long Lv2",
+            "affinity": -20
         },
         "sharpness": {
             "red": 32,
@@ -9553,7 +9565,8 @@
         },
         "attributes": {
             "damageType": "sever",
-            "shellingType": "Long Lv3"
+            "shellingType": "Long Lv3",
+            "affinity": -20
         },
         "sharpness": {
             "red": 32,
@@ -10120,8 +10133,9 @@
         },
         "attributes": {
             "damageType": "sever",
-            "defense": 0,
-            "shellingType": "Long Lv3"
+            "defense": 20,
+            "shellingType": "Long Lv3",
+            "affinity": -10
         },
         "sharpness": {
             "red": 27,
@@ -10264,8 +10278,9 @@
         },
         "attributes": {
             "damageType": "sever",
-            "defense": 0,
-            "shellingType": "Long Lv4"
+            "defense": 20,
+            "shellingType": "Long Lv4",
+            "affinity": -10
         },
         "sharpness": {
             "red": 52,
@@ -10987,7 +11002,8 @@
         "attributes": {
             "damageType": "sever",
             "elderseal": "low",
-            "shellingType": "Long Lv3"
+            "shellingType": "Long Lv3",
+            "affinity": 15
         },
         "sharpness": {
             "red": 32,
@@ -11136,7 +11152,8 @@
         "attributes": {
             "damageType": "sever",
             "elderseal": "high",
-            "shellingType": "Long Lv3"
+            "shellingType": "Long Lv3",
+            "affinity": -30
         },
         "sharpness": {
             "red": 12,
@@ -11280,7 +11297,8 @@
         "attributes": {
             "damageType": "sever",
             "elderseal": "high",
-            "shellingType": "Long Lv3"
+            "shellingType": "Long Lv3",
+            "affinity": -30
         },
         "sharpness": {
             "red": 10,

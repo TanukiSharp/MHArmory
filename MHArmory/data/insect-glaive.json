@@ -5929,7 +5929,7 @@
         },
         "attributes": {
             "damageType": "sever",
-            "defense": 0,
+            "defense": 10,
             "boostType": "blunt"
         },
         "sharpness": {
@@ -6066,7 +6066,7 @@
         },
         "attributes": {
             "damageType": "sever",
-            "defense": 0,
+            "defense": 10,
             "boostType": "blunt"
         },
         "sharpness": {
@@ -6506,7 +6506,8 @@
         },
         "attributes": {
             "damageType": "sever",
-            "boostType": "blunt"
+            "boostType": "blunt",
+            "affinity": -20
         },
         "sharpness": {
             "red": 30,
@@ -6698,7 +6699,8 @@
         },
         "attributes": {
             "damageType": "sever",
-            "boostType": "blunt"
+            "boostType": "blunt",
+            "affinity": -20
         },
         "sharpness": {
             "red": 25,
@@ -6841,7 +6843,8 @@
         },
         "attributes": {
             "damageType": "sever",
-            "boostType": "blunt"
+            "boostType": "blunt",
+            "affinity": -20
         },
         "sharpness": {
             "red": 25,
@@ -7851,8 +7854,9 @@
         },
         "attributes": {
             "damageType": "sever",
-            "defense": 0,
-            "boostType": "stamina"
+            "defense": 10,
+            "boostType": "stamina",
+            "affinity": -30
         },
         "sharpness": {
             "red": 27,
@@ -7989,8 +7993,9 @@
         },
         "attributes": {
             "damageType": "sever",
-            "defense": 0,
-            "boostType": "stamina"
+            "defense": 10,
+            "boostType": "stamina",
+            "affinity": -30
         },
         "sharpness": {
             "red": 27,
@@ -8137,8 +8142,9 @@
         },
         "attributes": {
             "damageType": "sever",
-            "defense": 0,
-            "boostType": "stamina"
+            "defense": 15,
+            "boostType": "stamina",
+            "affinity": -30
         },
         "sharpness": {
             "red": 27,
@@ -8285,8 +8291,9 @@
         },
         "attributes": {
             "damageType": "sever",
-            "defense": 0,
-            "boostType": "stamina"
+            "defense": 15,
+            "boostType": "stamina",
+            "affinity": -30
         },
         "sharpness": {
             "red": 22,
@@ -9481,7 +9488,11 @@
                 "white": 0
             }
         ],
-        "slots": [],
+        "slots": [
+            {
+                "rank": 1
+            }
+        ],
         "elements": [
             {
                 "type": "fire",
@@ -10634,7 +10645,7 @@
         "elements": [
             {
                 "type": "thunder",
-                "damage": 390,
+                "damage": 360,
                 "hidden": false
             }
         ],
@@ -11447,7 +11458,8 @@
         "attributes": {
             "damageType": "sever",
             "elderseal": "high",
-            "boostType": "health"
+            "boostType": "health",
+            "affinity": -25
         },
         "sharpness": {
             "red": 15,
@@ -11591,7 +11603,8 @@
         "attributes": {
             "damageType": "sever",
             "elderseal": "high",
-            "boostType": "health"
+            "boostType": "health",
+            "affinity": -25
         },
         "sharpness": {
             "red": 12,
