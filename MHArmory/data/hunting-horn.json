@@ -2438,7 +2438,7 @@
         },
         "attributes": {
             "damageType": "blunt",
-            "affinity": 20
+            "affinity": 25
         },
         "sharpness": {
             "red": 27,
@@ -2569,7 +2569,7 @@
         },
         "attributes": {
             "damageType": "blunt",
-            "affinity": 20
+            "affinity": 25
         },
         "sharpness": {
             "red": 25,
@@ -5321,10 +5321,10 @@
         "slug": "hard-bone-horn-2",
         "name": "Hard Bone Horn 2",
         "type": "hunting-horn",
-        "rarity": 5,
+        "rarity": 4,
         "attack": {
-            "display": 672,
-            "raw": 160
+            "display": 630,
+            "raw": 150
         },
         "attributes": {
             "damageType": "blunt"
@@ -5387,18 +5387,8 @@
                 "white": 0
             }
         ],
-        "slots": [
-            {
-                "rank": 2
-            }
-        ],
-        "elements": [
-            {
-                "type": "ice",
-                "damage": 180,
-                "hidden": true
-            }
-        ],
+        "slots": [],
+        "elements": [],
         "crafting": {
             "craftable": false,
             "previous": 467,
@@ -5595,7 +5585,7 @@
         },
         "attributes": {
             "damageType": "blunt",
-            "defense": 0
+            "defense": 10
         },
         "sharpness": {
             "red": 27,
@@ -5730,7 +5720,7 @@
         },
         "attributes": {
             "damageType": "blunt",
-            "defense": 0
+            "defense": 10
         },
         "sharpness": {
             "red": 27,
@@ -6158,7 +6148,8 @@
             "raw": 130
         },
         "attributes": {
-            "damageType": "blunt"
+            "damageType": "blunt",
+            "affinity": -20
         },
         "sharpness": {
             "red": 32,
@@ -6288,7 +6279,8 @@
             "raw": 150
         },
         "attributes": {
-            "damageType": "blunt"
+            "damageType": "blunt",
+            "affinity": -20
         },
         "sharpness": {
             "red": 30,
@@ -6430,7 +6422,8 @@
             "raw": 160
         },
         "attributes": {
-            "damageType": "blunt"
+            "damageType": "blunt",
+            "affinity": -20
         },
         "sharpness": {
             "red": 35,
@@ -6572,7 +6565,8 @@
             "raw": 190
         },
         "attributes": {
-            "damageType": "blunt"
+            "damageType": "blunt",
+            "affinity": -20
         },
         "sharpness": {
             "red": 32,
@@ -6714,7 +6708,8 @@
             "raw": 210
         },
         "attributes": {
-            "damageType": "blunt"
+            "damageType": "blunt",
+            "affinity": -20
         },
         "sharpness": {
             "red": 30,
@@ -8474,7 +8469,8 @@
             "raw": 180
         },
         "attributes": {
-            "damageType": "blunt"
+            "damageType": "blunt",
+            "affinity": -10
         },
         "sharpness": {
             "red": 27,
@@ -8611,7 +8607,8 @@
             "raw": 200
         },
         "attributes": {
-            "damageType": "blunt"
+            "damageType": "blunt",
+            "affinity": -10
         },
         "sharpness": {
             "red": 17,
@@ -9619,7 +9616,7 @@
         },
         "attributes": {
             "damageType": "blunt",
-            "defense": 0
+            "defense": 15
         },
         "sharpness": {
             "red": 27,
@@ -9750,7 +9747,7 @@
         },
         "attributes": {
             "damageType": "blunt",
-            "defense": 0
+            "defense": 15
         },
         "sharpness": {
             "red": 22,
@@ -9893,7 +9890,7 @@
         },
         "attributes": {
             "damageType": "blunt",
-            "defense": 0
+            "defense": 20
         },
         "sharpness": {
             "red": 27,
@@ -10036,7 +10033,7 @@
         },
         "attributes": {
             "damageType": "blunt",
-            "defense": 0
+            "defense": 20
         },
         "sharpness": {
             "red": 25,
@@ -10179,7 +10176,7 @@
         },
         "attributes": {
             "damageType": "blunt",
-            "defense": 0
+            "defense": 20
         },
         "sharpness": {
             "red": 27,
@@ -11885,7 +11882,8 @@
         },
         "attributes": {
             "damageType": "blunt",
-            "elderseal": "high"
+            "elderseal": "high",
+            "affinity": -30
         },
         "sharpness": {
             "red": 15,
@@ -12028,7 +12026,8 @@
         },
         "attributes": {
             "damageType": "blunt",
-            "elderseal": "high"
+            "elderseal": "high",
+            "affinity": -30
         },
         "sharpness": {
             "red": 12,

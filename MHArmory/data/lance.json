@@ -2336,7 +2336,7 @@
         "elements": [
             {
                 "type": "sleep",
-                "damage": 330,
+                "damage": 300,
                 "hidden": true
             }
         ],
@@ -5425,8 +5425,8 @@
         "type": "lance",
         "rarity": 2,
         "attack": {
-            "display": 253,
-            "raw": 110
+            "display": 230,
+            "raw": 100
         },
         "attributes": {
             "damageType": "sever"
@@ -6037,7 +6037,7 @@
         },
         "attributes": {
             "damageType": "sever",
-            "defense": 0
+            "defense": 10
         },
         "sharpness": {
             "red": 25,
@@ -6173,7 +6173,7 @@
         },
         "attributes": {
             "damageType": "sever",
-            "defense": 0
+            "defense": 10
         },
         "sharpness": {
             "red": 25,
@@ -7355,7 +7355,8 @@
         },
         "attributes": {
             "damageType": "sever",
-            "defense": 0
+            "defense": 10,
+            "affinity": -20
         },
         "sharpness": {
             "red": 17,
@@ -7480,7 +7481,8 @@
         },
         "attributes": {
             "damageType": "sever",
-            "defense": 0
+            "defense": 10,
+            "affinity": -20
         },
         "sharpness": {
             "red": 27,
@@ -7618,7 +7620,8 @@
         },
         "attributes": {
             "damageType": "sever",
-            "defense": 0
+            "defense": 10,
+            "affinity": -20
         },
         "sharpness": {
             "red": 25,
@@ -7755,7 +7758,8 @@
         },
         "attributes": {
             "damageType": "sever",
-            "defense": 0
+            "defense": 15,
+            "affinity": -20
         },
         "sharpness": {
             "red": 32,
@@ -7902,7 +7906,8 @@
         },
         "attributes": {
             "damageType": "sever",
-            "defense": 0
+            "defense": 15,
+            "affinity": -20
         },
         "sharpness": {
             "red": 27,
@@ -8052,7 +8057,8 @@
         },
         "attributes": {
             "damageType": "sever",
-            "defense": 0
+            "defense": 15,
+            "affinity": -20
         },
         "sharpness": {
             "red": 25,
@@ -8123,7 +8129,7 @@
         "elements": [
             {
                 "type": "paralysis",
-                "damage": 360,
+                "damage": 390,
                 "hidden": true
             }
         ],
@@ -10037,7 +10043,8 @@
             "raw": 180
         },
         "attributes": {
-            "damageType": "sever"
+            "damageType": "sever",
+            "affinity": -10
         },
         "sharpness": {
             "red": 27,
@@ -10457,8 +10464,8 @@
         "type": "lance",
         "rarity": 8,
         "attack": {
-            "display": 368,
-            "raw": 160
+            "display": 345,
+            "raw": 150
         },
         "attributes": {
             "damageType": "sever",
@@ -10526,7 +10533,7 @@
         "elements": [
             {
                 "type": "thunder",
-                "damage": 540,
+                "damage": 480,
                 "hidden": false
             }
         ],
@@ -11473,7 +11480,7 @@
         },
         "attributes": {
             "damageType": "sever",
-            "defense": 0
+            "defense": 20
         },
         "sharpness": {
             "red": 30,
@@ -11620,7 +11627,7 @@
         },
         "attributes": {
             "damageType": "sever",
-            "defense": 0
+            "defense": 20
         },
         "sharpness": {
             "red": 27,
@@ -11765,7 +11772,8 @@
         },
         "attributes": {
             "damageType": "sever",
-            "elderseal": "high"
+            "elderseal": "high",
+            "affinity": -25
         },
         "sharpness": {
             "red": 15,
@@ -11908,7 +11916,8 @@
         },
         "attributes": {
             "damageType": "sever",
-            "elderseal": "high"
+            "elderseal": "high",
+            "affinity": -25
         },
         "sharpness": {
             "red": 12,
@@ -12654,51 +12663,51 @@
         },
         "durability": [
             {
-                "red": 90,
+                "red": 60,
                 "orange": 50,
-                "yellow": 50,
-                "green": 80,
-                "blue": 80,
+                "yellow": 80,
+                "green": 60,
+                "blue": 0,
                 "white": 0
             },
             {
-                "red": 90,
+                "red": 60,
                 "orange": 50,
-                "yellow": 50,
-                "green": 80,
-                "blue": 90,
+                "yellow": 80,
+                "green": 70,
+                "blue": 0,
                 "white": 0
             },
             {
-                "red": 90,
+                "red": 60,
                 "orange": 50,
-                "yellow": 50,
+                "yellow": 80,
                 "green": 80,
-                "blue": 100,
+                "blue": 0,
                 "white": 0
             },
             {
-                "red": 90,
+                "red": 60,
                 "orange": 50,
-                "yellow": 50,
-                "green": 80,
-                "blue": 110,
+                "yellow": 80,
+                "green": 90,
+                "blue": 0,
                 "white": 0
             },
             {
-                "red": 90,
+                "red": 60,
                 "orange": 50,
-                "yellow": 50,
-                "green": 80,
-                "blue": 120,
+                "yellow": 80,
+                "green": 100,
+                "blue": 0,
                 "white": 0
             },
             {
-                "red": 90,
+                "red": 60,
                 "orange": 50,
-                "yellow": 50,
-                "green": 80,
-                "blue": 130,
+                "yellow": 80,
+                "green": 110,
+                "blue": 0,
                 "white": 0
             }
         ],
@@ -12791,7 +12800,56 @@
             "blue": 0,
             "white": 0
         },
-        "durability": [],
+        "durability": [
+            {
+                "red": 90,
+                "orange": 50,
+                "yellow": 50,
+                "green": 80,
+                "blue": 80,
+                "white": 0
+            },
+            {
+                "red": 90,
+                "orange": 50,
+                "yellow": 50,
+                "green": 80,
+                "blue": 90,
+                "white": 0
+            },
+            {
+                "red": 90,
+                "orange": 50,
+                "yellow": 50,
+                "green": 80,
+                "blue": 100,
+                "white": 0
+            },
+            {
+                "red": 90,
+                "orange": 50,
+                "yellow": 50,
+                "green": 80,
+                "blue": 110,
+                "white": 0
+            },
+            {
+                "red": 90,
+                "orange": 50,
+                "yellow": 50,
+                "green": 80,
+                "blue": 120,
+                "white": 0
+            },
+            {
+                "red": 90,
+                "orange": 50,
+                "yellow": 50,
+                "green": 80,
+                "blue": 130,
+                "white": 0
+            }
+        ],
         "slots": [],
         "elements": [
             {
