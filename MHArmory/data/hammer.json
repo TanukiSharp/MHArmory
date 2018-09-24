@@ -5489,7 +5489,7 @@
         },
         "attributes": {
             "damageType": "blunt",
-            "defense": 0
+            "defense": 10
         },
         "sharpness": {
             "red": 27,
@@ -5625,7 +5625,7 @@
         },
         "attributes": {
             "damageType": "blunt",
-            "defense": 0
+            "defense": 10
         },
         "sharpness": {
             "red": 27,
@@ -6062,7 +6062,7 @@
         },
         "attributes": {
             "damageType": "blunt",
-            "defense": 0
+            "defense": 15
         },
         "sharpness": {
             "red": 30,
@@ -6193,7 +6193,7 @@
         },
         "attributes": {
             "damageType": "blunt",
-            "defense": 0
+            "defense": 15
         },
         "sharpness": {
             "red": 27,
@@ -6336,7 +6336,7 @@
         },
         "attributes": {
             "damageType": "blunt",
-            "defense": 0
+            "defense": 20
         },
         "sharpness": {
             "red": 27,
@@ -6529,7 +6529,7 @@
         },
         "attributes": {
             "damageType": "blunt",
-            "defense": 0
+            "defense": 20
         },
         "sharpness": {
             "red": 25,
@@ -6672,7 +6672,7 @@
         },
         "attributes": {
             "damageType": "blunt",
-            "defense": 0
+            "defense": 20
         },
         "sharpness": {
             "red": 27,
@@ -6813,7 +6813,7 @@
         },
         "attributes": {
             "damageType": "blunt",
-            "defense": 0
+            "defense": 30
         },
         "sharpness": {
             "red": 27,
@@ -6960,7 +6960,7 @@
         },
         "attributes": {
             "damageType": "blunt",
-            "defense": 0
+            "defense": 30
         },
         "sharpness": {
             "red": 30,
@@ -7920,7 +7920,8 @@
         },
         "attributes": {
             "damageType": "blunt",
-            "defense": 0
+            "defense": 10,
+            "affinity": -25
         },
         "sharpness": {
             "red": 22,
@@ -8057,7 +8058,8 @@
         },
         "attributes": {
             "damageType": "blunt",
-            "defense": 0
+            "defense": 10,
+            "affinity": -25
         },
         "sharpness": {
             "red": 32,
@@ -8204,7 +8206,8 @@
         },
         "attributes": {
             "damageType": "blunt",
-            "defense": 0
+            "defense": 15,
+            "affinity": -25
         },
         "sharpness": {
             "red": 30,
@@ -8351,7 +8354,8 @@
         },
         "attributes": {
             "damageType": "blunt",
-            "defense": 0
+            "defense": 15,
+            "affinity": -25
         },
         "sharpness": {
             "red": 25,
@@ -8496,7 +8500,8 @@
         },
         "attributes": {
             "damageType": "blunt",
-            "defense": 0
+            "defense": 10,
+            "affinity": -10
         },
         "sharpness": {
             "red": 17,
@@ -8622,7 +8627,8 @@
         },
         "attributes": {
             "damageType": "blunt",
-            "defense": 0
+            "defense": 10,
+            "affinity": -10
         },
         "sharpness": {
             "red": 27,
@@ -8759,7 +8765,8 @@
         },
         "attributes": {
             "damageType": "blunt",
-            "defense": 0
+            "defense": 10,
+            "affinity": -10
         },
         "sharpness": {
             "red": 25,
@@ -8896,7 +8903,8 @@
         },
         "attributes": {
             "damageType": "blunt",
-            "defense": 0
+            "defense": 15,
+            "affinity": -10
         },
         "sharpness": {
             "red": 32,
@@ -9043,7 +9051,8 @@
         },
         "attributes": {
             "damageType": "blunt",
-            "defense": 0
+            "defense": 15,
+            "affinity": -10
         },
         "sharpness": {
             "red": 27,
@@ -9193,7 +9202,8 @@
         },
         "attributes": {
             "damageType": "blunt",
-            "defense": 0
+            "defense": 15,
+            "affinity": -10
         },
         "sharpness": {
             "red": 27,
@@ -9340,7 +9350,8 @@
             "raw": 150
         },
         "attributes": {
-            "damageType": "blunt"
+            "damageType": "blunt",
+            "affinity": -20
         },
         "sharpness": {
             "red": 30,
@@ -9470,7 +9481,8 @@
             "raw": 160
         },
         "attributes": {
-            "damageType": "blunt"
+            "damageType": "blunt",
+            "affinity": -20
         },
         "sharpness": {
             "red": 27,
@@ -9612,7 +9624,8 @@
             "raw": 170
         },
         "attributes": {
-            "damageType": "blunt"
+            "damageType": "blunt",
+            "affinity": -20
         },
         "sharpness": {
             "red": 27,
@@ -9754,7 +9767,8 @@
             "raw": 190
         },
         "attributes": {
-            "damageType": "blunt"
+            "damageType": "blunt",
+            "affinity": -20
         },
         "sharpness": {
             "red": 27,
@@ -9896,7 +9910,8 @@
             "raw": 210
         },
         "attributes": {
-            "damageType": "blunt"
+            "damageType": "blunt",
+            "affinity": -20
         },
         "sharpness": {
             "red": 30,
@@ -10457,7 +10472,8 @@
         },
         "attributes": {
             "damageType": "blunt",
-            "defense": 0
+            "defense": 20,
+            "affinity": -20
         },
         "sharpness": {
             "red": 27,
@@ -10604,7 +10620,8 @@
         },
         "attributes": {
             "damageType": "blunt",
-            "defense": 0
+            "defense": 20,
+            "affinity": -20
         },
         "sharpness": {
             "red": 47,
@@ -11477,7 +11494,7 @@
         },
         "attributes": {
             "damageType": "blunt",
-            "defense": 0
+            "defense": 20
         },
         "sharpness": {
             "red": 30,
@@ -11624,7 +11641,7 @@
         },
         "attributes": {
             "damageType": "blunt",
-            "defense": 0
+            "defense": 20
         },
         "sharpness": {
             "red": 40,
@@ -11769,7 +11786,8 @@
         },
         "attributes": {
             "damageType": "blunt",
-            "elderseal": "high"
+            "elderseal": "high",
+            "affinity": -30
         },
         "sharpness": {
             "red": 15,
@@ -11912,7 +11930,8 @@
         },
         "attributes": {
             "damageType": "blunt",
-            "elderseal": "high"
+            "elderseal": "high",
+            "affinity": -30
         },
         "sharpness": {
             "red": 12,

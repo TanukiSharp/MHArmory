@@ -5131,7 +5131,8 @@
             "raw": 140
         },
         "attributes": {
-            "damageType": "sever"
+            "damageType": "sever",
+            "affinity": -20
         },
         "sharpness": {
             "red": 30,
@@ -5262,7 +5263,8 @@
             "raw": 150
         },
         "attributes": {
-            "damageType": "sever"
+            "damageType": "sever",
+            "affinity": -20
         },
         "sharpness": {
             "red": 25,
@@ -5404,7 +5406,8 @@
             "raw": 170
         },
         "attributes": {
-            "damageType": "sever"
+            "damageType": "sever",
+            "affinity": -20
         },
         "sharpness": {
             "red": 35,
@@ -5546,7 +5549,8 @@
             "raw": 190
         },
         "attributes": {
-            "damageType": "sever"
+            "damageType": "sever",
+            "affinity": -20
         },
         "sharpness": {
             "red": 32,
@@ -5688,7 +5692,8 @@
             "raw": 210
         },
         "attributes": {
-            "damageType": "sever"
+            "damageType": "sever",
+            "affinity": -20
         },
         "sharpness": {
             "red": 25,
@@ -5829,7 +5834,8 @@
         },
         "attributes": {
             "damageType": "sever",
-            "defense": 0
+            "defense": 10,
+            "affinity": -10
         },
         "sharpness": {
             "red": 27,
@@ -5966,7 +5972,8 @@
         },
         "attributes": {
             "damageType": "sever",
-            "defense": 0
+            "defense": 10,
+            "affinity": -10
         },
         "sharpness": {
             "red": 35,
@@ -6113,7 +6120,8 @@
         },
         "attributes": {
             "damageType": "sever",
-            "defense": 0
+            "defense": 15,
+            "affinity": -10
         },
         "sharpness": {
             "red": 25,
@@ -6260,7 +6268,8 @@
         },
         "attributes": {
             "damageType": "sever",
-            "defense": 0
+            "defense": 15,
+            "affinity": -10
         },
         "sharpness": {
             "red": 22,
@@ -10550,7 +10559,8 @@
         },
         "attributes": {
             "damageType": "sever",
-            "defense": 0
+            "defense": 20,
+            "affinity": -20
         },
         "sharpness": {
             "red": 27,
@@ -10697,7 +10707,8 @@
         },
         "attributes": {
             "damageType": "sever",
-            "defense": 0
+            "defense": 20,
+            "affinity": -20
         },
         "sharpness": {
             "red": 45,
@@ -11199,6 +11210,11 @@
                 "type": "ice",
                 "damage": 210,
                 "hidden": false
+            },
+            {
+                "type": "blast",
+                "damage": 210,
+                "hidden": false
             }
         ],
         "crafting": {
@@ -11344,6 +11360,11 @@
         "elements": [
             {
                 "type": "ice",
+                "damage": 240,
+                "hidden": false
+            },
+            {
+                "type": "blast",
                 "damage": 240,
                 "hidden": false
             }
@@ -11570,7 +11591,8 @@
         },
         "attributes": {
             "damageType": "sever",
-            "elderseal": "high"
+            "elderseal": "high",
+            "affinity": -20
         },
         "sharpness": {
             "red": 12,
@@ -11713,7 +11735,8 @@
         },
         "attributes": {
             "damageType": "sever",
-            "elderseal": "high"
+            "elderseal": "high",
+            "affinity": -20
         },
         "sharpness": {
             "red": 10,
