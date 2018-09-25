@@ -51,7 +51,6 @@ Follow **Armory** on Twitter to get latest news and updates: https://twitter.com
 
 - Auto-update
 - Select all / Unselect all / Inverse selection in advanced search window
-- Show weapons matching selected slots
 
 ## May happen in a near future
 
