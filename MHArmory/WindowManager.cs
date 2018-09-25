@@ -12,7 +12,7 @@ namespace MHArmory
 {
     public interface IWindow
     {
-        void OnOpen(bool isAlreadyOpened);
+        void OnOpen(bool isAlreadyOpened, object argument);
     }
 
     public static class WindowManager
@@ -198,23 +198,23 @@ namespace MHArmory
                 item.Value?.Instance?.Close();
         }
 
-        public static bool? ShowDialog<T>() where T : Window
+        public static bool? ShowDialog<T>(object argument = null) where T : Window
         {
-            return ShowInternal<T>(true);
+            return ShowInternal<T>(true, argument);
         }
 
-        public static void Show<T>() where T : Window
+        public static void Show<T>(object argument = null) where T : Window
         {
-            ShowInternal<T>(false);
+            ShowInternal<T>(false, argument);
         }
 
-        private static bool? ShowInternal<T>(bool isModal = false) where T : Window
+        private static bool? ShowInternal<T>(bool isModal, object argument) where T : Window
         {
             WindowContainer container = RestorePositionInternal<T>();
             Window window = container.Instance;
 
             if (window is IWindow win)
-                win.OnOpen(window.IsVisible);
+                win.OnOpen(window.IsVisible, argument);
 
             if (isModal)
                 return window.ShowDialog();

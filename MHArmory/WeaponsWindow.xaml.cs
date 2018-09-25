@@ -45,7 +45,7 @@ namespace MHArmory
             rootViewModel.WeaponsContainer.ActivateDefaultIfNeeded();
         }
 
-        public void OnOpen(bool isAlreadyOpened)
+        public void OnOpen(bool isAlreadyOpened, object argument)
         {
             if (isAlreadyOpened)
                 return;
