@@ -50,7 +50,6 @@ Follow **Armory** on Twitter to get latest news and updates: https://twitter.com
 ## Will happen soon
 
 - Auto-update
-- Select all / Unselect all / Inverse selection in advanced search window
 
 ## May happen in a near future
 

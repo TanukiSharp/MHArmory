@@ -709,7 +709,32 @@
         <DockPanel LastChildFill="True" Background="#0F000000" Margin="4">
             <TextBlock DockPanel.Dock="Bottom" Margin="2" Text="{Binding Equipments.Count, Mode=OneTime, StringFormat=Total: {0}}"/>
             <TextBlock DockPanel.Dock="Bottom" Margin="2" Text="{Binding SelectedCount, StringFormat=Selected: {0}}"/>
-            <ListBox ItemsSource="{Binding Equipments, Mode=OneTime}" Margin="2" VirtualizingPanel.IsVirtualizing="True" VirtualizingPanel.IsContainerVirtualizable="True" VirtualizingPanel.ScrollUnit="Pixel">
+            <Grid DockPanel.Dock="Bottom">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <Button Grid.Column="0" Grid.Row="0" Command="{Binding SelectAllCommand, Mode=OneTime}" Margin="1">
+                    <Viewbox StretchDirection="DownOnly">
+                        <TextBlock Text="Select all" Margin="2"/>
+                    </Viewbox>
+                </Button>
+                <Button Grid.Column="1" Grid.Row="0" Command="{Binding UnselectAllCommand, Mode=OneTime}" Margin="1">
+                    <Viewbox StretchDirection="DownOnly">
+                        <TextBlock Text="Unselect all" Margin="2"/>
+                    </Viewbox>
+                </Button>
+                <Button Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="2" Command="{Binding InverseSelectionCommand, Mode=OneTime}" Margin="1">
+                    <Viewbox StretchDirection="DownOnly">
+                        <TextBlock Text="Inverse selection" Margin="2"/>
+                    </Viewbox>
+                </Button>
+            </Grid>
+            <ListBox ItemsSource="{Binding Equipments}" Margin="2" VirtualizingPanel.IsVirtualizing="True" VirtualizingPanel.IsContainerVirtualizable="True" VirtualizingPanel.ScrollUnit="Pixel">
                 <ListBox.ItemTemplate>
                     <DataTemplate>
                         <CheckBox IsThreeState="False" IsChecked="{Binding IsSelected}" Content="{Binding Equipment.Name, Mode=OneTime}" ToolTipService.ShowDuration="99999999">
