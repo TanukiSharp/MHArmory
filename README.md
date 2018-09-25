@@ -58,6 +58,10 @@ Follow **Armory** on Twitter to get latest news and updates: https://twitter.com
 - Armor set builder (with partial equipment)
 - Asset explorer organized as tree
 
+# Change log
+
+You can find a change log file [here](ChangeLog.md)
+
 # Thanks
 
 - **Baker80500**, owner of "Les Chasseurs de Gemmes - Clan MHW PS4"
@@ -76,6 +80,7 @@ Follow **Armory** on Twitter to get latest news and updates: https://twitter.com
 - **Tyler Lartonoix**, wner of the mhw-db.com project
     - GitHub project site: https://github.com/LartTyler/MHWDB-API
     - API website: https://docs.mhw-db.com
+- **Testers:** Deiv
 - **Athena's ASS author(s)**, for making such a wonderful application and inspiring this project
 - **https://www.vectorizer.io**, wonderful website used to vectorize all rasterized icons
 - **All people who worked on Monster Hunter series**, for making such an amazing game
