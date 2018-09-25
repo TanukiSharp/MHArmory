@@ -21,6 +21,8 @@ namespace MHArmory
         ThunderResistance,
         IceResistance,
         DragonResistance,
+        Optimal,
+        SubOptimal
     }
 
     public abstract class SearchResultSortCriteriaDataSource : EnumDataSource<SearchResultSortCriteria>

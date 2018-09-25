@@ -300,6 +300,9 @@
                                         <DataTrigger Binding="{Binding IsExtra, Mode=OneTime}" Value="False">
                                             <Setter TargetName="skillName" Property="TextBlock.Foreground" Value="#FFAE00FF"/>
                                         </DataTrigger>
+                                        <DataTrigger Binding="{Binding IsOver, Mode=OneTime}" Value="True">
+                                            <Setter TargetName="skillName" Property="TextBlock.Foreground" Value="Red"/>
+                                        </DataTrigger>
                                     </DataTemplate.Triggers>
                                 </DataTemplate>
                             </ItemsControl.ItemTemplate>

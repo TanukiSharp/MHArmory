@@ -13,6 +13,7 @@ namespace MHArmory.ViewModels
         public ISkill Skill { get; }
         public int TotalLevel { get; }
         public bool IsExtra { get; }
+        public bool IsOver { get; }
         public string Description { get; }
 
         public SearchResultSkillViewModel(ISkill skill, int totalLevel, bool isExtra)
@@ -20,6 +21,7 @@ namespace MHArmory.ViewModels
             Skill = skill;
             TotalLevel = totalLevel;
             IsExtra = isExtra;
+            IsOver = totalLevel > skill.MaxLevel;
             Description = Skill.Abilities.FirstOrDefault(x => x.Level == TotalLevel)?.Description;
         }
     }
@@ -92,6 +94,8 @@ namespace MHArmory.ViewModels
         public int TotalIceResistance { get; }
         public int TotalDragonResistance { get; }
 
+        public bool IsOptimal { get; }
+
         public ArmorSetViewModel(ISolverData solverData, IList<IArmorPiece> armorPieces, ICharmLevel charm, IList<ArmorSetJewelViewModel> jewels, int[] spareSlots)
         {
             this.armorPieces = armorPieces;
@@ -119,6 +123,8 @@ namespace MHArmory.ViewModels
             TotalThunderResistance = armorPieces.Sum(a => a.Resistances.Thunder);
             TotalIceResistance = armorPieces.Sum(a => a.Resistances.Ice);
             TotalDragonResistance = armorPieces.Sum(a => a.Resistances.Dragon);
+
+            IsOptimal = AdditionalSkills.All(x => x.IsOver == false);
         }
 
         private void SetSkills(ISolverData solverData)

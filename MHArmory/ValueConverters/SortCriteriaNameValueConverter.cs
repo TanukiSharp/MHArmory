@@ -33,6 +33,8 @@ namespace MHArmory.ValueConverters
                     case SearchResultSortCriteria.DragonResistance: return "Dragon resistance";
                     case SearchResultSortCriteria.AdditionalSkillsCount: return "Additional skills count";
                     case SearchResultSortCriteria.AdditionalSkillsTotalLevel: return "Additional skills total level";
+                    case SearchResultSortCriteria.Optimal: return "Optimal set (does not waste skills)";
+                    case SearchResultSortCriteria.SubOptimal: return "Sub-optimal set (does waste skills)";
                 }
             }
 

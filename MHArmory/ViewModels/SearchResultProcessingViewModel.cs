@@ -225,6 +225,12 @@ namespace MHArmory.ViewModels
                     case SearchResultSortCriteria.AdditionalSkillsTotalLevel:
                         result = result.ThenByDescending(x => x.AdditionalSkillsTotalLevel);
                         break;
+                    case SearchResultSortCriteria.Optimal:
+                        result = result.ThenByDescending(x => x.IsOptimal);
+                        break;
+                    case SearchResultSortCriteria.SubOptimal:
+                        result = result.ThenBy(x => x.IsOptimal);
+                        break;
                 }
             }
 
