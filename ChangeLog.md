@@ -1,5 +1,10 @@
 # Change log
 
+## 0.0.6.1 (2018/09/25)
+
+- Added help window with decorations override explanation
+- Added select all, unselect all and inverse selection buttons in advanced search window
+
 ## 0.0.6 (2018/09/25)
 
 - Added the weapons window
