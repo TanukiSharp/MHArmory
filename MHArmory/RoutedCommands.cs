@@ -23,6 +23,8 @@ namespace MHArmory
         public static readonly ICommand SaveLoadoutAs = new RoutedCommand("SaveLoadoutAs", typeof(RoutedCommands));
         public static readonly ICommand ManageLoadouts = new RoutedCommand("ManageLoadouts", typeof(RoutedCommands));
 
+        public static readonly ICommand OpenIntegratedHelp = new RoutedCommand("OpenIntegratedHelp", typeof(RoutedCommands));
+
         public static CommandBinding CreateCommandBinding(ICommand source, Action<object> target)
         {
             return new CommandBinding(source, (s, e) => target(e.Parameter));

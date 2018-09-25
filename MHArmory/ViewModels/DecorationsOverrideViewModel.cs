@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -89,6 +89,7 @@ namespace MHArmory.ViewModels
         }
 
         public ICommand CancelCommand { get; }
+        public ICommand OpenIntegratedHelpCommand { get; }
 
         private readonly bool isLoadingConfiguration;
 
@@ -101,6 +102,7 @@ namespace MHArmory.ViewModels
             Dictionary<string, DecorationOverrideConfigurationItem> decorationOverrides = GlobalData.Instance.Configuration.InParameters?.DecorationOverride?.Items;
 
             CancelCommand = new AnonymousCommand(OnCancel);
+            OpenIntegratedHelpCommand = new AnonymousCommand(OnOpenIntegratedHelp);
 
             if (decorationOverrides != null)
             {
@@ -135,6 +137,11 @@ namespace MHArmory.ViewModels
                     cancellable.IsCancelled = true;
                 }
             }
+        }
+
+        private void OnOpenIntegratedHelp(object parameter)
+        {
+            WindowManager.Show<HelpWindow>(parameter);
         }
 
         internal void StateChanged()

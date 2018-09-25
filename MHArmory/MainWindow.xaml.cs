@@ -51,6 +51,8 @@ namespace MHArmory
             CommandBindings.Add(RoutedCommands.CreateCommandBinding(RoutedCommands.SaveLoadoutAs, OnSaveLoadoutAs));
             CommandBindings.Add(RoutedCommands.CreateCommandBinding(RoutedCommands.ManageLoadouts, OnManageLoadouts));
 
+            CommandBindings.Add(RoutedCommands.CreateCommandBinding(RoutedCommands.OpenIntegratedHelp, OpenIntegratedHelp));
+
             Title = $"{App.ApplicationName} {App.DisplayVersion}";
 
             DataContext = rootViewModel;
@@ -146,6 +148,14 @@ namespace MHArmory
             GlobalData.Instance.Jewels = jewels;
 
             return true;
+        }
+
+        private void OpenIntegratedHelp(object parameter)
+        {
+            if (WindowManager.IsInitialized<HelpWindow>() == false)
+                WindowManager.InitializeWindow(new HelpWindow() { Owner = this });
+
+            WindowManager.Show<HelpWindow>(parameter);
         }
 
         private void OpenSkillSelector(object parameter)

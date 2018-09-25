@@ -97,6 +97,7 @@
                 <StackPanel Orientation="Horizontal">
                     <CheckBox Content="Activate" IsChecked="{Binding UseOverride}" Margin="2" VerticalAlignment="Center" VerticalContentAlignment="Center"/>
                     <Button Content="Setup..." Command="{Binding OpenDecorationsOverrideCommand, Mode=OneTime}" Margin="2" Padding="4" MinWidth="70" VerticalAlignment="Center"/>
+                    <Button Content="?" MinWidth="20" Margin="2" Padding="4" VerticalAlignment="Center" Command="{x:Static local:RoutedCommands.OpenIntegratedHelp}" CommandParameter="DecorationOverride" ToolTip="Show help about decorations override"/>
                 </StackPanel>
             </StackPanel>
 
@@ -394,7 +395,6 @@
         <Setter Property="Padding" Value="4"/>
         <Setter Property="MinWidth" Value="50"/>
         <Setter Property="VerticalAlignment" Value="Center"/>
-        <Setter Property="HorizontalAlignment" Value="Center"/>
         <Style.Triggers>
             <Trigger Property="IsChecked" Value="True">
                 <Setter Property="FontWeight" Value="Bold"/>
@@ -485,6 +485,7 @@
                     <RadioButton Content="All" IsChecked="{Binding VisibilityModeAll, Mode=OneWayToSource, FallbackValue=true}" ToolTip="See all available jewels" Style="{StaticResource SelectorRadioButton}"/>
                     <RadioButton Content="Modified" IsChecked="{Binding VisibilityModeModified, Mode=OneWayToSource}" ToolTip="See only jewels with override checkbox checked or a count greater than zero" Style="{StaticResource SelectorRadioButton}"/>
                     <RadioButton Content="Unmodified" IsChecked="{Binding VisibilityModeUnmodified, Mode=OneWayToSource}" ToolTip="See only jewels with override checkbox unchecked and a count of zero" Style="{StaticResource SelectorRadioButton}"/>
+                    <Button Content="?" MinWidth="20" Margin="2" Padding="4" VerticalAlignment="Center" Command="{Binding OpenIntegratedHelpCommand, Mode=OneTime}" CommandParameter="DecorationOverride" IsEnabled="True" ToolTip="Show help about decorations override"/>
                 </StackPanel>
                 <TextBox Margin="2" Padding="3" FocusManager.FocusedElement="{Binding RelativeSource={RelativeSource Self}}" Text="{Binding SearchText, UpdateSourceTrigger=PropertyChanged}"/>
             </DockPanel>
@@ -629,7 +630,11 @@
                 </MenuItem>
                 <MenuItem Header="Equipments" Command="{x:Static local:RoutedCommands.OpenEquipmentExplorer}"/>
                 <MenuItem Header="Events" Command="{x:Static local:RoutedCommands.OpenEvents}"/>
-                <MenuItem Header="?" Command="{Binding AboutCommand, Mode=OneTime}"/>
+                <MenuItem Header="?">
+                    <MenuItem Header="Integrated help" Command="{x:Static local:RoutedCommands.OpenIntegratedHelp}"/>
+                    <Separator/>
+                    <MenuItem Header="About..." Command="{Binding AboutCommand, Mode=OneTime}"/>
+                </MenuItem>
             </Menu>
             <Grid>
                 <Grid.ColumnDefinitions>

@@ -91,6 +91,9 @@
     <Compile Include="EquipmentExplorerWindow.xaml.cs">
       <DependentUpon>EquipmentExplorerWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="HelpWindow.xaml.cs">
+      <DependentUpon>HelpWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="LoadoutManager.cs" />
     <Compile Include="LoadoutWindow.xaml.cs">
       <DependentUpon>LoadoutWindow.xaml</DependentUpon>
@@ -139,6 +142,7 @@
     <Compile Include="ViewModels\DecorationsOverrideViewModel.cs" />
     <Compile Include="ViewModels\EquipmentExplorerViewModel.cs" />
     <Compile Include="ViewModels\EventsViewModel.cs" />
+    <Compile Include="ViewModels\HelpViewModel.cs" />
     <Compile Include="ViewModels\InParametersViewModel.cs" />
     <Compile Include="ViewModels\JewelOverrideViewModel.cs" />
     <Compile Include="ViewModels\LoadoutViewModel.cs" />
@@ -178,6 +182,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="EventsWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="HelpWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -408,6 +416,9 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Icons\Attributes\Deviation.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="HelpText\DecorationOverride.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
