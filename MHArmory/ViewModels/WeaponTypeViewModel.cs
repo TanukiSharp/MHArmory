@@ -84,6 +84,21 @@ namespace MHArmory.ViewModels
             set { SetValue(ref sharpnessRank, value); }
         }
 
+        private int slotAugmentationCount;
+        public int SlotAugmentationCount
+        {
+            get { return slotAugmentationCount; }
+            set
+            {
+                if (SetValue(ref slotAugmentationCount, value))
+                {
+                    foreach (WeaponViewModel x in RootWeapons)
+                        x.SlotAugmentationCountChanged(slotAugmentationCount);
+                    Parent.UpdateHighlights();
+                }
+            }
+        }
+
         public WeaponTypeViewModel(WeaponType type, IList<WeaponViewModel> rootWeapons, WeaponsContainerViewModel parent)
         {
             Parent = parent;

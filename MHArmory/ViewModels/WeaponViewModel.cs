@@ -172,9 +172,17 @@ namespace MHArmory.ViewModels
         public int Attack { get; }
         public WeaponAttributesViewModel Attributes { get; }
         public IList<int[]> SharpnessLevels { get; }
-        public IList<int> Slots { get; }
         public IList<WeaponElementViewModel> Elements { get; }
         public bool IsCraftable { get; }
+
+        private IList<int> originalSlots;
+
+        private IList<int> slots;
+        public IList<int> Slots
+        {
+            get { return slots; }
+            private set { SetValue(ref slots, value); }
+        }
 
         public bool HasAffinity
         {
@@ -229,9 +237,11 @@ namespace MHArmory.ViewModels
             SharpnessLevels = primitive.SharpnessLevels?
                 .Select(p => new int[] { p.Red, p.Orange, p.Yellow, p.Green, p.Blue, p.White })
                 .ToList();
-            Slots = primitive.Slots.Select(x => x.Rank).OrderByDescending(x => x).ToList();
             Elements = primitive.Elements.Select(x => new WeaponElementViewModel(x)).ToList();
             IsCraftable = primitive.Crafting.IsCraftable;
+
+            originalSlots = primitive.Slots.Select(x => x.Rank).OrderByDescending(x => x).ToList();
+            Slots = originalSlots;
         }
 
         public void SetParent(WeaponTypeViewModel parent)
@@ -328,6 +338,29 @@ namespace MHArmory.ViewModels
             {
                 foreach (WeaponViewModel x in Branches)
                     x.FreeElementSkillChanged(level);
+            }
+        }
+
+        public void SlotAugmentationCountChanged(int count)
+        {
+            if (Branches != null && Branches.Count > 0)
+            {
+                foreach (WeaponViewModel child in Branches)
+                    child.SlotAugmentationCountChanged(count);
+                return;
+            }
+
+            if (count <= 0)
+                Slots = originalSlots;
+            else if (originalSlots == null || originalSlots.Count == 0)
+                Slots = new int[] { count };
+            else
+            {
+                int[] newSlots = new int[originalSlots.Count + 1];
+                for (int i = 0; i < originalSlots.Count; i++)
+                    newSlots[i] = Slots[i];
+                newSlots[newSlots.Length - 1] = count;
+                Slots = newSlots;
             }
         }
     }

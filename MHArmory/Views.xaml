@@ -959,7 +959,7 @@
                                     </StackPanel>
                                 </StackPanel>
                             </StackPanel>
-                            <ItemsControl DockPanel.Dock="Bottom" ItemsSource="{Binding Slots, Mode=OneTime}" Margin="2" Height="24" Focusable="False">
+                            <ItemsControl DockPanel.Dock="Bottom" ItemsSource="{Binding Slots}" Margin="2" Height="24" Focusable="False">
                                 <ItemsControl.ItemTemplate>
                                     <DataTemplate>
                                         <Image Source="{Binding Converter={StaticResource SlotToImageSourceValueConverter}, ConverterParameter=24, Mode=OneTime}" ToolTip="{Binding Converter={StaticResource SlotSizeToolTipValueConverter}, Mode=OneTime}" Width="24" Height="24" SnapsToDevicePixels="True" />
@@ -1022,6 +1022,13 @@
                         <StackPanel Orientation="Horizontal">
                             <Slider Minimum="0" Maximum="3" Value="{Binding FreeElementLevel}" Width="120" TickPlacement="BottomRight" VerticalAlignment="Center" Margin="2"/>
                             <TextBlock Text="{Binding FreeElementLevel, Converter={StaticResource FreeElementNameValueConverter}}" VerticalAlignment="Top" Margin="2"/>
+                        </StackPanel>
+                    </StackPanel>
+                    <StackPanel VerticalAlignment="Center" Margin="0 0 32 0">
+                        <TextBlock Text="Slot augmentation: " Margin="2"/>
+                        <StackPanel Orientation="Horizontal">
+                            <Slider Minimum="0" Maximum="3" Value="{Binding SlotAugmentationCount}" Width="120" TickPlacement="BottomRight" VerticalAlignment="Center" Margin="2"/>
+                            <TextBlock Text="{Binding SlotAugmentationCount, StringFormat=+\{0\}}" VerticalAlignment="Top" Margin="2"/>
                         </StackPanel>
                     </StackPanel>
                 </StackPanel>

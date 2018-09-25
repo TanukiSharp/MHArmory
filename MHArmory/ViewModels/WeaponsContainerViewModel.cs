@@ -64,10 +64,12 @@ namespace MHArmory.ViewModels
             if (weapon.Slots.Count < inputSlots.Count)
                 return false;
 
+            IList<int> sortedSlots = weapon.Slots.OrderByDescending(x => x).ToList();
+
             int count = inputSlots.Count;
             for (int i = 0; i < count; i++)
             {
-                if (weapon.Slots[i] < inputSlots[i])
+                if (sortedSlots[i] < inputSlots[i])
                     return false;
             }
 
