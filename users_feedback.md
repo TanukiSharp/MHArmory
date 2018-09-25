@@ -1,6 +1,6 @@
 # Feedback
 
-- Add a button to open an explanation dialog for decorations override
+- *enter feedback here*
 
 # Features to add
 

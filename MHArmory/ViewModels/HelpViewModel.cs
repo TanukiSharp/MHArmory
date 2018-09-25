@@ -24,7 +24,7 @@ namespace MHArmory.ViewModels
         {
             HelpCategory = helpCategory;
 
-            StreamResourceInfo streamResourceInfo = App.GetResourceStream(new Uri($"pack://application:,,,/HelpText/{helpCategory}.txt"));
+            StreamResourceInfo streamResourceInfo = App.GetResourceStream(new Uri($"pack://application:,,,/HelpText/{helpCategory}.html"));
             if (streamResourceInfo != null)
             {
                 using (var sr = new StreamReader(streamResourceInfo.Stream))
