@@ -809,7 +809,10 @@
             <ItemsControl Grid.Column="2" ItemsSource="{Binding SelectedLoadout.Abilities}" Focusable="False">
                 <ItemsControl.ItemTemplate>
                     <DataTemplate>
-                        <TextBlock bhv:ToolTipEx.Content="{Binding Description, Mode=OneTime}" Margin="0 1 0 1" Focusable="False">
+                        <TextBlock Margin="0 1 0 1" Focusable="False">
+                            <bhv:ToolTipEx.Content>
+                                <ContentControl Content="{Binding Description, Mode=OneTime}" ContentTemplate="{StaticResource FullSkillDescriptionView}"/>
+                            </bhv:ToolTipEx.Content>
                             <Run Text="{Binding SkillName, Mode=OneTime}" FontWeight="Bold"/>
                             <Run Text=" level"/>
                             <Run Text="{Binding Level, Mode=OneTime}"/>

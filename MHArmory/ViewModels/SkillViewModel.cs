@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,15 +23,17 @@ namespace MHArmory.ViewModels
             }
         }
 
-        public int SkillId => Ability.Skill.Id;
-        public string SkillName => Ability.Skill.Name;
-        public int Level => Ability.Level;
-        public string Description => Ability.Description;
+        public int SkillId { get { return Ability.Skill.Id; } }
+        public string SkillName { get { return Ability.Skill.Name; } }
+        public int Level { get { return Ability.Level; } }
+        public FullSkillDescriptionViewModel Description { get; }
 
         public AbilityViewModel(IAbility ability, SkillViewModel parent)
         {
             this.Ability = ability;
             this.parent = parent;
+
+            Description = new FullSkillDescriptionViewModel(ability.Skill, ability.Level);
         }
 
         private bool isVisible = true;
