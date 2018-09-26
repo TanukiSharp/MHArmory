@@ -82,7 +82,8 @@ namespace MHArmory.ViewModels
 
         private EventViewModel CreateEventViewModel(string name, IDictionary<string, bool> events)
         {
-            events.TryGetValue(name, out bool isEnabled);
+            if (events.TryGetValue(name, out bool isEnabled) == false)
+                isEnabled = true;
 
             return new EventViewModel(this, name, isEnabled);
         }
