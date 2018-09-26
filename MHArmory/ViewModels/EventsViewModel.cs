@@ -10,7 +10,7 @@ namespace MHArmory.ViewModels
 {
     public class EventViewModel : ViewModelBase
     {
-        private readonly EventsViewModel parent;
+        private readonly EventContainerViewModel parent;
 
         public string Name { get; }
 
@@ -27,7 +27,7 @@ namespace MHArmory.ViewModels
             }
         }
 
-        public EventViewModel(EventsViewModel parent, string name, bool initialValue)
+        public EventViewModel(EventContainerViewModel parent, string name, bool initialValue)
         {
             this.parent = parent;
             Name = name;
@@ -35,7 +35,7 @@ namespace MHArmory.ViewModels
         }
     }
 
-    public class EventsViewModel : ViewModelBase
+    public class EventContainerViewModel : ViewModelBase
     {
         private readonly RootViewModel parent;
 
@@ -48,7 +48,7 @@ namespace MHArmory.ViewModels
 
         public bool HasChanged { get; set; }
 
-        public EventsViewModel(RootViewModel parent)
+        public EventContainerViewModel(RootViewModel parent)
         {
             this.parent = parent;
         }

@@ -6,5 +6,5 @@
         xmlns:local="clr-namespace:MHArmory"
         mc:Ignorable="d"
         Title="Events" Width="400" Height="500" WindowStartupLocation="CenterOwner" Background="WhiteSmoke" WindowStyle="ToolWindow">
-    <ContentControl Content="{Binding}" ContentTemplate="{StaticResource EventsView}" Focusable="False"/>
+    <ContentControl Content="{Binding}" ContentTemplate="{StaticResource EventContainerView}" Focusable="False"/>
 </Window>

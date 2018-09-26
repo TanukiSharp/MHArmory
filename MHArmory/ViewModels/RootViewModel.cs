@@ -67,7 +67,7 @@ namespace MHArmory.ViewModels
         {
             WeaponsContainer.LoadWeaponsAsync().ContinueWith(t => t.Wait());
 
-            Events.NotifyDataLoaded();
+            EventContainer.NotifyDataLoaded();
         }
 
         private IEnumerable<ArmorSetViewModel> rawFoundArmorSets;
@@ -95,7 +95,7 @@ namespace MHArmory.ViewModels
             set { SetValue(ref isAutoSearch, value); }
         }
 
-        public EventsViewModel Events { get; }
+        public EventContainerViewModel EventContainer { get; }
         public WeaponsContainerViewModel WeaponsContainer { get; }
 
         public RootViewModel()
@@ -111,7 +111,7 @@ namespace MHArmory.ViewModels
 
             SearchResultProcessing = new SearchResultProcessingViewModel(this);
             InParameters = new InParametersViewModel(this);
-            Events = new EventsViewModel(this);
+            EventContainer = new EventContainerViewModel(this);
             WeaponsContainer = new WeaponsContainerViewModel(this);
         }
 
@@ -347,9 +347,9 @@ namespace MHArmory.ViewModels
 
         private bool CheckEvent(IEquipment equipment)
         {
-            if (equipment.Event != null && Events.Events != null)
+            if (equipment.Event != null && EventContainer.Events != null)
             {
-                EventViewModel vm = Events.Events.FirstOrDefault(x => x.Name == equipment.Event.Name);
+                EventViewModel vm = EventContainer.Events.FirstOrDefault(x => x.Name == equipment.Event.Name);
                 if (vm != null && vm.IsEnabled == false)
                     return false;
             }

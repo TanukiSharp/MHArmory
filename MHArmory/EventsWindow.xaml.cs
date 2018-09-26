@@ -27,7 +27,7 @@ namespace MHArmory
 
             this.rootViewModel = rootViewModel;
 
-            DataContext = rootViewModel.Events;
+            DataContext = rootViewModel.EventContainer;
         }
 
         private void OnCancel()
@@ -41,7 +41,7 @@ namespace MHArmory
             e.Cancel = true;
             Hide();
 
-            rootViewModel.Events.UpdateAndSaveConfiguration();
+            rootViewModel.EventContainer.UpdateAndSaveConfiguration();
         }
     }
 }

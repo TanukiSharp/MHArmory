@@ -58,7 +58,7 @@
         <Setter Property="Focusable" Value="False"/>
     </Style>
 
-    <DataTemplate x:Key="EventsView">
+    <DataTemplate x:Key="EventContainerView">
         <ScrollViewer HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Visible" Margin="16 4 4 4">
             <ItemsControl ItemsSource="{Binding Events}">
                 <ItemsControl.ItemTemplate>
