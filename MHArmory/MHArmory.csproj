@@ -63,6 +63,7 @@
       <DependentUpon>AboutWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="AutoUpdate\AutoUpdater.cs" />
+    <Compile Include="Behaviors\GreekLetterInputBehavior.cs" />
     <Compile Include="Behaviors\HorizontalScrollBehavior.cs" />
     <Compile Include="Behaviors\SetHtmlBehavior.cs" />
     <Compile Include="Behaviors\ToolTipExBehavior.cs" />
