@@ -1,5 +1,20 @@
 # Change log
 
+## 0.0.6.2 (2018/09/27)
+
+- Better skill tooltips
+
+    - Before:
+
+    ![skill tooltip before](docs/misc/changelog_0.0.6.2_skill_tooltip_before.png)
+
+    - After:
+
+    ![skill tooltip after](docs/misc/changelog_0.0.6.2_skill_tooltip_after.png)
+
+- Keyboard shortcut to add alpha, beta and gamma symbols (+ integrated help)
+- Now events are activated by default
+
 ## 0.0.6.1 (2018/09/25)
 
 - Added help window with decorations override explanation
