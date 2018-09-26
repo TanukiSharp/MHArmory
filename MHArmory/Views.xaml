@@ -65,6 +65,22 @@
         </ScrollViewer>
     </DataTemplate>
 
+    <DataTemplate x:Key="FullSkillDescriptionView">
+        <ItemsControl ItemsSource="{Binding Abilities, Mode=OneTime}">
+            <ItemsControl.ItemTemplate>
+                <DataTemplate>
+                    <TextBlock x:Name="item" Text="{Binding Description, Mode=OneTime}" Margin="2"/>
+                    <DataTemplate.Triggers>
+                        <DataTrigger Binding="{Binding IsActive, Mode=OneTime}" Value="True">
+                            <Setter TargetName="item" Property="FontWeight" Value="Bold"/>
+                            <Setter TargetName="item" Property="Foreground" Value="Blue"/>
+                        </DataTrigger>
+                    </DataTemplate.Triggers>
+                </DataTemplate>
+            </ItemsControl.ItemTemplate>
+        </ItemsControl>
+    </DataTemplate>
+    
     <DataTemplate x:Key="WeaponSlotView">
         <ComboBox SelectedIndex="{Binding Value}" Margin="0" Padding="5" VerticalContentAlignment="Center">
             <TextBlock Text="-" Style="{StaticResource ComboBoxItemSlotStyle}"/>
@@ -290,7 +306,10 @@
                         <ItemsControl ItemsSource="{Binding AdditionalSkills}" Margin="16 1 0 12" Focusable="False">
                             <ItemsControl.ItemTemplate>
                                 <DataTemplate>
-                                    <TextBlock ToolTip="{Binding Description, Mode=OneTime}">
+                                    <TextBlock HorizontalAlignment="Left">
+                                        <bhv:ToolTipEx.Content>
+                                            <ContentControl Content="{Binding Description, Mode=OneTime}" ContentTemplate="{StaticResource FullSkillDescriptionView}"/>
+                                        </bhv:ToolTipEx.Content>
                                         <Run Text="{Binding Skill.Name, Mode=OneTime}" x:Name="skillName"/>
                                         <Run Text=": "/>
                                         <Run Text="{Binding TotalLevel, Mode=OneTime}" Foreground="Blue"/>

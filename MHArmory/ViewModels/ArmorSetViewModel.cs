@@ -8,13 +8,37 @@ using MHArmory.Search;
 
 namespace MHArmory.ViewModels
 {
+    public class FullAbilityDescriptionViewModel
+    {
+        public string Description { get; }
+        public bool IsActive { get; }
+
+        public FullAbilityDescriptionViewModel(string description, bool isActive)
+        {
+            Description = description;
+            IsActive = isActive;
+        }
+    }
+
+    public class FullSkillDescriptionViewModel : ViewModelBase
+    {
+        public FullAbilityDescriptionViewModel[] Abilities { get; }
+
+        public FullSkillDescriptionViewModel(ISkill skill, int clampedLevel)
+        {
+            Abilities = new FullAbilityDescriptionViewModel[skill.Abilities.Length];
+            for (int i = 0; i < skill.Abilities.Length; i++)
+                Abilities[i] = new FullAbilityDescriptionViewModel(skill.Abilities[i].Description, skill.Abilities[i].Level == clampedLevel);
+        }
+    }
+
     public class SearchResultSkillViewModel : ViewModelBase
     {
         public ISkill Skill { get; }
         public int TotalLevel { get; }
         public bool IsExtra { get; }
         public bool IsOver { get; }
-        public string Description { get; }
+        public FullSkillDescriptionViewModel Description { get; }
 
         public SearchResultSkillViewModel(ISkill skill, int totalLevel, bool isExtra)
         {
@@ -22,7 +46,7 @@ namespace MHArmory.ViewModels
             TotalLevel = totalLevel;
             IsExtra = isExtra;
             IsOver = totalLevel > skill.MaxLevel;
-            Description = Skill.Abilities.FirstOrDefault(x => x.Level == TotalLevel)?.Description;
+            Description = new FullSkillDescriptionViewModel(skill, Math.Min(totalLevel, skill.MaxLevel));
         }
     }
 
