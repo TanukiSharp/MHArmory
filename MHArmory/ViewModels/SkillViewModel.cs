@@ -56,8 +56,8 @@ namespace MHArmory.ViewModels
         private readonly RootViewModel root;
         private readonly SkillSelectorViewModel skillSelector;
 
-        public string Name => skill.Name;
-        public string Description => skill.Description;
+        public string Name { get { return skill.Name; } }
+        public string Description { get { return skill.Description; } }
 
         public string JewelsText { get; private set; }
 
