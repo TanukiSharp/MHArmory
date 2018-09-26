@@ -26,6 +26,7 @@ namespace MHArmory.ViewModels
         public int SkillId { get { return Ability.Skill.Id; } }
         public string SkillName { get { return Ability.Skill.Name; } }
         public int Level { get { return Ability.Level; } }
+        public string AbilityDescription { get { return Ability.Description; } }
         public FullSkillDescriptionViewModel Description { get; }
 
         public AbilityViewModel(IAbility ability, SkillViewModel parent)

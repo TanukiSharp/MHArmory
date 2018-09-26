@@ -22,6 +22,7 @@
     <cvt:MillisecondsToTimeValueConverter x:Key="MillisecondsToTimeValueConverter"/>
     <cvt:NumToSeparatedStringValueConverter x:Key="NumToSeparatedStringValueConverter"/>
     <cvt:FreeElementNameValueConverter x:Key="FreeElementNameValueConverter"/>
+    <cvt:AbilityToViewModelValueConverter x:Key="AbilityToViewModelValueConverter"/>
 
     <Style x:Key="ComboBoxItemSlotStyle" TargetType="FrameworkElement">
         <Setter Property="Width" Value="16"/>
@@ -166,15 +167,21 @@
     </DataTemplate>
 
     <DataTemplate x:Key="StandaloneAbilityView">
-        <TextBlock bhv:ToolTipEx.Content="{Binding Description, Mode=OneTime}" Focusable="False">
-            <Run Text="{Binding Skill.Name, Mode=OneTime}" FontWeight="Bold"/>
+        <TextBlock Focusable="False">
+            <bhv:ToolTipEx.Content>
+                <ContentControl Content="{Binding Description, Mode=OneTime}" ContentTemplate="{StaticResource FullSkillDescriptionView}"/>
+            </bhv:ToolTipEx.Content>
+            <Run Text="{Binding SkillName, Mode=OneTime}" FontWeight="Bold"/>
             <Run Text="level"/>
             <Run Text="{Binding Level, Mode=OneTime}"/>
         </TextBlock>
     </DataTemplate>
 
     <DataTemplate x:Key="SelectedAbilityView">
-        <TextBlock Name="root" bhv:ToolTipEx.Content="{Binding Description, Mode=OneTime}" Margin="0 1 0 1" Focusable="False">
+        <TextBlock Name="root" Margin="0 1 0 1" Focusable="False">
+            <bhv:ToolTipEx.Content>
+                <ContentControl Content="{Binding Description, Mode=OneTime}" ContentTemplate="{StaticResource FullSkillDescriptionView}"/>
+            </bhv:ToolTipEx.Content>
             <Run Text="{Binding SkillName, Mode=OneTime}" FontWeight="Bold"/>
             <Run Text=" level"/>
             <Run Text="{Binding Level, Mode=OneTime}"/>
@@ -249,7 +256,7 @@
                         </ItemsControl.ItemsPanel>
                     </ItemsControl>
                 </StackPanel>
-                <ItemsControl Grid.Column="2" ItemsSource="{Binding Abilities, Mode=OneTime}" ItemTemplate="{StaticResource StandaloneAbilityView}" Margin="0 0 8 0" Focusable="False"/>
+                <ItemsControl Grid.Column="2" ItemsSource="{Binding Abilities, Mode=OneTime, Converter={StaticResource AbilityToViewModelValueConverter}}" ItemTemplate="{StaticResource StandaloneAbilityView}" Margin="0 0 8 0" Focusable="False"/>
                 <ItemsControl Grid.Column="3" ItemsSource="{Binding ArmorSetSkills, Mode=OneTime}" ItemTemplate="{StaticResource ArmorSetSkillView}" Margin="0 0 8 0" Focusable="False"/>
             </Grid>
         </Border>
@@ -347,12 +354,12 @@
     </DataTemplate>
 
     <DataTemplate x:Key="AbilityView">
-        <TextBlock bhv:ToolTipEx.Content="{Binding Skill.Description, Mode=OneTime}" Focusable="False">
+        <TextBlock Focusable="False">
             <!--<Run Text="{Binding SkillName, Mode=OneTime}" FontWeight="Bold"/>-->
             <Run Text="Level"/>
             <Run Text="{Binding Level, Mode=OneTime}"/>
             <Run Text="  "/>
-            <Run Text="{Binding Description, Mode=OneTime}" Foreground="DarkGray"/>
+            <Run Text="{Binding AbilityDescription, Mode=OneTime}" Foreground="DarkGray"/>
         </TextBlock>
     </DataTemplate>
 
@@ -368,34 +375,11 @@
                     <TextBlock Text="{Binding JewelsText, Mode=OneTime}" Margin="4 0 0 0" FontSize="11" Foreground="DarkGray" FontStyle="Italic" VerticalAlignment="Center"/>
                 </StackPanel>
                 <TextBlock Text="{Binding Description, Mode=OneTime}" Foreground="DarkGray" Padding="32 0 5 5"/>
-
-                <!--<ListBox ItemsSource="{Binding Abilities, Mode=OneTime}" ItemTemplate="{StaticResource AbilityView}" BorderThickness="0" ScrollViewer.CanContentScroll="False" ScrollViewer.IsDeferredScrollingEnabled="False" ScrollViewer.VerticalScrollBarVisibility="Disabled">
-                    <ListBox.ItemContainerStyle>
-                        <Style TargetType="{x:Type ListBoxItem}">
-                            <Setter Property="Template">
-                                <Setter.Value>
-                                    <ControlTemplate TargetType="{x:Type ListBoxItem}">
-                                        <CheckBox IsThreeState="False" IsChecked="{TemplateBinding IsSelected}" Padding="2" SnapsToDevicePixels="True">
-                                            <ContentPresenter />
-                                        </CheckBox>
-                                    </ControlTemplate>
-                                </Setter.Value>
-                            </Setter>
-                        </Style>
-                    </ListBox.ItemContainerStyle>
-                </ListBox>-->
-
                 <ItemsControl ItemsSource="{Binding Abilities, Mode=OneTime}" Focusable="False" Margin="32 0 0 0">
                     <ItemsControl.ItemTemplate>
                         <DataTemplate>
                             <StackPanel Orientation="Horizontal" Focusable="False">
-                                <CheckBox Focusable="False" HorizontalContentAlignment="Left" Content="{Binding}" ContentTemplate="{StaticResource AbilityView}" Margin="0" Padding="5 3 5 3" IsChecked="{Binding IsChecked, Mode=TwoWay}" VerticalContentAlignment="Center">
-                                    <!--<TextBlock>
-                                        <Run Text="Level"/>
-                                        <Run Text="{Binding Level, Mode=OneTime}"/>
-                                    </TextBlock>-->
-                                </CheckBox>
-                                <!--<TextBlock Text="{Binding Description, Mode=OneTime}" Foreground="DarkGray" VerticalAlignment="Center"/>-->
+                                <CheckBox Focusable="False" HorizontalContentAlignment="Left" Content="{Binding}" ContentTemplate="{StaticResource AbilityView}" Margin="0" Padding="5 3 5 3" IsChecked="{Binding IsChecked, Mode=TwoWay}" VerticalContentAlignment="Center"/>
                             </StackPanel>
                         </DataTemplate>
                     </ItemsControl.ItemTemplate>
@@ -433,23 +417,6 @@
                 </StackPanel>
                 <TextBox Margin="2" Padding="3" FocusManager.FocusedElement="{Binding RelativeSource={RelativeSource Self}}" Text="{Binding SearchText, UpdateSourceTrigger=PropertyChanged}"/>
             </DockPanel>
-
-            <!--<ListBox Grid.Row="1" ItemsSource="{Binding Abilities, Mode=OneWay}" ItemTemplate="{StaticResource AbilityView}" VirtualizingPanel.IsVirtualizing="True" VirtualizingPanel.ScrollUnit="Pixel">
-                <ListBox.ItemContainerStyle>
-                    <Style TargetType="{x:Type ListBoxItem}">
-                        <Setter Property="Template">
-                            <Setter.Value>
-                                <ControlTemplate TargetType="{x:Type ListBoxItem}">
-                                    <CheckBox Padding="2" SnapsToDevicePixels="True" IsChecked="{Binding IsChecked, Mode=TwoWay}">
-                                        <ContentPresenter />
-                                    </CheckBox>
-                                </ControlTemplate>
-                            </Setter.Value>
-                        </Setter>
-                    </Style>
-                </ListBox.ItemContainerStyle>
-            </ListBox>-->
-
             <ListBox Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" ItemsSource="{Binding Skills, Mode=OneWay}" ItemTemplate="{StaticResource SkillView}" VirtualizingPanel.IsVirtualizing="False" VirtualizingPanel.ScrollUnit="Pixel" Focusable="False">
                 <ListBox.ItemContainerStyle>
                     <Style TargetType="{x:Type ListBoxItem}">
