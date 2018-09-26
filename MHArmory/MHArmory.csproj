@@ -94,6 +94,7 @@
     <Compile Include="EquipmentExplorerWindow.xaml.cs">
       <DependentUpon>EquipmentExplorerWindow.xaml</DependentUpon>
     </Compile>
+    <Resource Include="HelpText\KeyboardShortcuts.html" />
     <Compile Include="HelpWindow.xaml.cs">
       <DependentUpon>HelpWindow.xaml</DependentUpon>
     </Compile>

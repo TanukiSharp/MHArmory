@@ -10,7 +10,8 @@ namespace MHArmory.ViewModels
 {
     public enum HelpCategory
     {
-        DecorationOverride
+        DecorationOverride,
+        KeyboardShortcuts
     }
 
     public class HelpViewModel : ViewModelBase
@@ -27,7 +28,7 @@ namespace MHArmory.ViewModels
             StreamResourceInfo streamResourceInfo = App.GetResourceStream(new Uri($"pack://application:,,,/HelpText/{helpCategory}.html"));
             if (streamResourceInfo != null)
             {
-                using (var sr = new StreamReader(streamResourceInfo.Stream))
+                using (var sr = new StreamReader(streamResourceInfo.Stream, Encoding.UTF8))
                 {
                     Title = sr.ReadLine();
                     Content = sr.ReadToEnd().TrimStart();
