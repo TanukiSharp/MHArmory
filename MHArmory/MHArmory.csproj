@@ -65,6 +65,7 @@
     <Compile Include="AutoUpdate\AutoUpdater.cs" />
     <Compile Include="Behaviors\HorizontalScrollBehavior.cs" />
     <Compile Include="Behaviors\SetHtmlBehavior.cs" />
+    <Compile Include="Behaviors\ToolTipExBehavior.cs" />
     <Compile Include="Configurations\ConfigurationV2.cs" />
     <Compile Include="Controls\SharpnessRenderer.cs" />
     <Compile Include="EnumerableExtensions.cs" />

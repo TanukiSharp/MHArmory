@@ -84,7 +84,7 @@
                     <ContentControl Content="{Binding Slots[0], Mode=OneTime}" ContentTemplate="{StaticResource WeaponSlotView}" Margin="1 2 1 2" Focusable="False"/>
                     <ContentControl Content="{Binding Slots[1], Mode=OneTime}" ContentTemplate="{StaticResource WeaponSlotView}" Margin="1 2 1 2" Focusable="False"/>
                     <ContentControl Content="{Binding Slots[2], Mode=OneTime}" ContentTemplate="{StaticResource WeaponSlotView}" Margin="1 2 1 2" Focusable="False"/>
-                    <Button x:Name="weaponsButton" MinWidth="40" MaxWidth="40" Margin="1 2 1 2" Command="{x:Static local:RoutedCommands.OpenWeapons}" ToolTip="See weapons matching the currently selected slots" ToolTipService.ShowOnDisabled="True">
+                    <Button x:Name="weaponsButton" MinWidth="40" MaxWidth="40" Margin="1 2 1 2" Command="{x:Static local:RoutedCommands.OpenWeapons}" bhv:ToolTipEx.Content="See weapons matching the currently selected slots" ToolTipService.ShowOnDisabled="True">
                         <Image Source="{mxt:RasterizedImage Location=Icons/Weapons/GreatSword.svg, Size=20}" Height="20" Width="20"/>
                     </Button>
                 </StackPanel>
@@ -97,7 +97,7 @@
                 <StackPanel Orientation="Horizontal">
                     <CheckBox Content="Activate" IsChecked="{Binding UseOverride}" Margin="2" VerticalAlignment="Center" VerticalContentAlignment="Center"/>
                     <Button Content="Setup..." Command="{Binding OpenDecorationsOverrideCommand, Mode=OneTime}" Margin="2" Padding="4" MinWidth="70" VerticalAlignment="Center"/>
-                    <Button Content="?" MinWidth="20" Margin="2" Padding="4" VerticalAlignment="Center" Command="{x:Static local:RoutedCommands.OpenIntegratedHelp}" CommandParameter="DecorationOverride" ToolTip="Show help about decorations override"/>
+                    <Button Content="?" MinWidth="20" Margin="2" Padding="4" VerticalAlignment="Center" Command="{x:Static local:RoutedCommands.OpenIntegratedHelp}" CommandParameter="DecorationOverride" bhv:ToolTipEx.Content="Show help about decorations override"/>
                 </StackPanel>
             </StackPanel>
 
@@ -144,13 +144,13 @@
         <DataTemplate.Triggers>
             <DataTrigger Binding="{Binding WeaponsContainer.IsFeatureEnabled}" Value="False">
                 <Setter TargetName="weaponsButton" Property="IsEnabled" Value="False"/>
-                <Setter TargetName="weaponsButton" Property="ToolTip" Value="{Binding WeaponsContainer.FeatureDisabledReason}"/>
+                <Setter TargetName="weaponsButton" Property="bhv:ToolTipEx.Content" Value="{Binding WeaponsContainer.FeatureDisabledReason}"/>
             </DataTrigger>
         </DataTemplate.Triggers>
     </DataTemplate>
 
     <DataTemplate x:Key="StandaloneAbilityView">
-        <TextBlock ToolTipService.ToolTip="{Binding Description, Mode=OneTime}" ToolTipService.ShowDuration="9999" Focusable="False">
+        <TextBlock bhv:ToolTipEx.Content="{Binding Description, Mode=OneTime}" Focusable="False">
             <Run Text="{Binding Skill.Name, Mode=OneTime}" FontWeight="Bold"/>
             <Run Text="level"/>
             <Run Text="{Binding Level, Mode=OneTime}"/>
@@ -158,7 +158,7 @@
     </DataTemplate>
 
     <DataTemplate x:Key="SelectedAbilityView">
-        <TextBlock Name="root" ToolTipService.ToolTip="{Binding Description, Mode=OneTime}" Margin="0 1 0 1" ToolTipService.ShowDuration="9999" Focusable="False">
+        <TextBlock Name="root" bhv:ToolTipEx.Content="{Binding Description, Mode=OneTime}" Margin="0 1 0 1" Focusable="False">
             <Run Text="{Binding SkillName, Mode=OneTime}" FontWeight="Bold"/>
             <Run Text=" level"/>
             <Run Text="{Binding Level, Mode=OneTime}"/>
@@ -223,7 +223,7 @@
                     <ItemsControl ItemsSource="{Binding Slots, Mode=OneTime}" Margin="2" Height="24" Focusable="False">
                         <ItemsControl.ItemTemplate>
                             <DataTemplate>
-                                <Image Source="{Binding Converter={StaticResource SlotToImageSourceValueConverter}, ConverterParameter=24, Mode=OneTime}" ToolTip="{Binding Converter={StaticResource SlotSizeToolTipValueConverter}, Mode=OneTime}" Width="24" Height="24" SnapsToDevicePixels="True"/>
+                                <Image Source="{Binding Converter={StaticResource SlotToImageSourceValueConverter}, ConverterParameter=24, Mode=OneTime}" bhv:ToolTipEx.Content="{Binding Converter={StaticResource SlotSizeToolTipValueConverter}, Mode=OneTime}" Width="24" Height="24" SnapsToDevicePixels="True"/>
                             </DataTemplate>
                         </ItemsControl.ItemTemplate>
                         <ItemsControl.ItemsPanel>
@@ -328,7 +328,7 @@
     </DataTemplate>
 
     <DataTemplate x:Key="AbilityView">
-        <TextBlock ToolTipService.ToolTip="{Binding Skill.Description, Mode=OneTime}" Focusable="False">
+        <TextBlock bhv:ToolTipEx.Content="{Binding Skill.Description, Mode=OneTime}" Focusable="False">
             <!--<Run Text="{Binding SkillName, Mode=OneTime}" FontWeight="Bold"/>-->
             <Run Text="Level"/>
             <Run Text="{Binding Level, Mode=OneTime}"/>
@@ -408,9 +408,9 @@
             <DockPanel DockPanel.Dock="Top" LastChildFill="True">
                 <TextBlock DockPanel.Dock="Left" Text="Filter: " Margin="4" VerticalAlignment="Center"/>
                 <StackPanel DockPanel.Dock="Right" Orientation="Horizontal">
-                    <RadioButton Content="All" IsChecked="{Binding VisibilityModeAll, Mode=OneWayToSource, FallbackValue=true}" ToolTip="See all available skills" Style="{StaticResource SelectorRadioButton}"/>
-                    <RadioButton Content="Selected" IsChecked="{Binding VisibilityModeSelected, Mode=OneWayToSource}" ToolTip="See only selected skills" Style="{StaticResource SelectorRadioButton}"/>
-                    <RadioButton Content="Unselected" IsChecked="{Binding VisibilityModeUnselected, Mode=OneWayToSource}" ToolTip="See only unselected skills" Style="{StaticResource SelectorRadioButton}"/>
+                    <RadioButton Content="All" IsChecked="{Binding VisibilityModeAll, Mode=OneWayToSource, FallbackValue=true}" bhv:ToolTipEx.Content="See all available skills" Style="{StaticResource SelectorRadioButton}"/>
+                    <RadioButton Content="Selected" IsChecked="{Binding VisibilityModeSelected, Mode=OneWayToSource}" bhv:ToolTipEx.Content="See only selected skills" Style="{StaticResource SelectorRadioButton}"/>
+                    <RadioButton Content="Unselected" IsChecked="{Binding VisibilityModeUnselected, Mode=OneWayToSource}" bhv:ToolTipEx.Content="See only unselected skills" Style="{StaticResource SelectorRadioButton}"/>
                 </StackPanel>
                 <TextBox Margin="2" Padding="3" FocusManager.FocusedElement="{Binding RelativeSource={RelativeSource Self}}" Text="{Binding SearchText, UpdateSourceTrigger=PropertyChanged}"/>
             </DockPanel>
@@ -462,7 +462,7 @@
                 <ColumnDefinition Width="Auto" SharedSizeGroup="B"/>
                 <ColumnDefinition Width="Auto" SharedSizeGroup="C"/>
             </Grid.ColumnDefinitions>
-            <CheckBox Grid.Column="0" Content="{Binding Name, Mode=OneTime}" IsChecked="{Binding IsOverriding}" Padding="4" VerticalAlignment="Stretch" VerticalContentAlignment="Center" ToolTipService.ToolTip="Check to override default jewel availability"/>
+            <CheckBox Grid.Column="0" Content="{Binding Name, Mode=OneTime}" IsChecked="{Binding IsOverriding}" Padding="4" VerticalAlignment="Stretch" VerticalContentAlignment="Center" bhv:ToolTipEx.Content="Check to override default jewel availability"/>
             <StackPanel Grid.Column="1" Orientation="Horizontal" VerticalAlignment="Top" Margin="4">
                 <TextBlock Text="Count: " VerticalAlignment="Center" Margin="2 0 2 0"/>
                 <TextBox Text="{Binding Count, Mode=TwoWay}" Margin="2 0 2 0" Padding="2" Width="60" VerticalAlignment="Center"/>
@@ -482,10 +482,10 @@
                             <Setter Property="Margin" Value="2 2 8 2"/>
                         </Style>
                     </StackPanel.Resources>
-                    <RadioButton Content="All" IsChecked="{Binding VisibilityModeAll, Mode=OneWayToSource, FallbackValue=true}" ToolTip="See all available jewels" Style="{StaticResource SelectorRadioButton}"/>
-                    <RadioButton Content="Modified" IsChecked="{Binding VisibilityModeModified, Mode=OneWayToSource}" ToolTip="See only jewels with override checkbox checked or a count greater than zero" Style="{StaticResource SelectorRadioButton}"/>
-                    <RadioButton Content="Unmodified" IsChecked="{Binding VisibilityModeUnmodified, Mode=OneWayToSource}" ToolTip="See only jewels with override checkbox unchecked and a count of zero" Style="{StaticResource SelectorRadioButton}"/>
-                    <Button Content="?" MinWidth="20" Margin="2" Padding="4" VerticalAlignment="Center" Command="{Binding OpenIntegratedHelpCommand, Mode=OneTime}" CommandParameter="DecorationOverride" IsEnabled="True" ToolTip="Show help about decorations override"/>
+                    <RadioButton Content="All" IsChecked="{Binding VisibilityModeAll, Mode=OneWayToSource, FallbackValue=true}" bhv:ToolTipEx.Content="See all available jewels" Style="{StaticResource SelectorRadioButton}"/>
+                    <RadioButton Content="Modified" IsChecked="{Binding VisibilityModeModified, Mode=OneWayToSource}" bhv:ToolTipEx.Content="See only jewels with override checkbox checked or a count greater than zero" Style="{StaticResource SelectorRadioButton}"/>
+                    <RadioButton Content="Unmodified" IsChecked="{Binding VisibilityModeUnmodified, Mode=OneWayToSource}" bhv:ToolTipEx.Content="See only jewels with override checkbox unchecked and a count of zero" Style="{StaticResource SelectorRadioButton}"/>
+                    <Button Content="?" MinWidth="20" Margin="2" Padding="4" VerticalAlignment="Center" Command="{Binding OpenIntegratedHelpCommand, Mode=OneTime}" CommandParameter="DecorationOverride" IsEnabled="True" bhv:ToolTipEx.Content="Show help about decorations override"/>
                 </StackPanel>
                 <TextBox Margin="2" Padding="3" FocusManager.FocusedElement="{Binding RelativeSource={RelativeSource Self}}" Text="{Binding SearchText, UpdateSourceTrigger=PropertyChanged}"/>
             </DockPanel>
@@ -532,7 +532,7 @@
                     <TextBlock Text="Matching results: "/>
                     <TextBlock Text="{Binding MatchingResults, Converter={StaticResource NumToSeparatedStringValueConverter}, Mode=OneTime}" Margin="0 0 16 0" Style="{StaticResource highlight}"/>
                     <TextBlock Text="Time: "/>
-                    <TextBlock Text="{Binding TimeElapsed, Converter={StaticResource MillisecondsToTimeValueConverter}}" ToolTip="{Binding TimeElapsed}" Margin="0 0 16 0" Style="{StaticResource highlight}"/>
+                    <TextBlock Text="{Binding TimeElapsed, Converter={StaticResource MillisecondsToTimeValueConverter}}" bhv:ToolTipEx.Content="{Binding TimeElapsed}" Margin="0 0 16 0" Style="{StaticResource highlight}"/>
                 </StackPanel>
             </Expander.Header>
             <Expander.Content>
@@ -603,7 +603,7 @@
                             </StackPanel>
                             <StackPanel Orientation="Horizontal">
                                 <TextBlock Text="Time:"/>
-                                <TextBlock Text="{Binding TimeElapsed, Converter={StaticResource MillisecondsToTimeValueConverter}}" ToolTip="{Binding TimeElapsed}" Style="{StaticResource highlight}"/>
+                                <TextBlock Text="{Binding TimeElapsed, Converter={StaticResource MillisecondsToTimeValueConverter}}" bhv:ToolTipEx.Content="{Binding TimeElapsed}" Style="{StaticResource highlight}"/>
                             </StackPanel>
                         </StackPanel>
                     </Border>
@@ -737,10 +737,10 @@
             <ListBox ItemsSource="{Binding Equipments}" Margin="2" VirtualizingPanel.IsVirtualizing="True" VirtualizingPanel.IsContainerVirtualizable="True" VirtualizingPanel.ScrollUnit="Pixel">
                 <ListBox.ItemTemplate>
                     <DataTemplate>
-                        <CheckBox IsThreeState="False" IsChecked="{Binding IsSelected}" Content="{Binding Equipment.Name, Mode=OneTime}" ToolTipService.ShowDuration="99999999">
-                            <ToolTipService.ToolTip>
+                        <CheckBox IsThreeState="False" IsChecked="{Binding IsSelected}" Content="{Binding Equipment.Name, Mode=OneTime}">
+                            <bhv:ToolTipEx.Content>
                                 <ContentControl Content="{Binding Equipment, Mode=OneTime}" ContentTemplate="{StaticResource ArmorPieceView}" Focusable="False"/>
-                            </ToolTipService.ToolTip>
+                            </bhv:ToolTipEx.Content>
                         </CheckBox>
                     </DataTemplate>
                 </ListBox.ItemTemplate>
@@ -767,9 +767,9 @@
             <TextBlock Grid.Column="0" Text="{Binding Name, Mode=OneWay}" Focusable="False"/>
             <StackPanel x:Name="tools" Grid.Column="1" HorizontalAlignment="Right" Orientation="Horizontal" VerticalAlignment="Center" Visibility="{Binding IsManageMode, Converter={StaticResource CollapsedVisibilityValueConverter}}">
                 <Button Content="Rename" Command="{Binding RenameCommand, Mode=OneTime}" Margin="1 0 1 0"/>
-                <Button Width="{Binding ActualHeight, RelativeSource={RelativeSource Mode=Self}}" Content="Up" Command="{Binding MoveUpCommand, Mode=OneTime}" ToolTip="Move up" Margin="1 0 1 0"/>
-                <Button Width="{Binding ActualHeight, RelativeSource={RelativeSource Mode=Self}}" Content="Dn" Command="{Binding MoveDownCommand, Mode=OneTime}" ToolTip="Move down" Margin="1 0 1 0"/>
-                <Button Width="{Binding ActualHeight, RelativeSource={RelativeSource Mode=Self}}" Content="X" Command="{Binding DeleteCommand, Mode=OneTime}" ToolTip="Delete" Margin="1 0 1 0"/>
+                <Button Width="{Binding ActualHeight, RelativeSource={RelativeSource Mode=Self}}" Content="Up" Command="{Binding MoveUpCommand, Mode=OneTime}" bhv:ToolTipEx.Content="Move up" Margin="1 0 1 0"/>
+                <Button Width="{Binding ActualHeight, RelativeSource={RelativeSource Mode=Self}}" Content="Dn" Command="{Binding MoveDownCommand, Mode=OneTime}" bhv:ToolTipEx.Content="Move down" Margin="1 0 1 0"/>
+                <Button Width="{Binding ActualHeight, RelativeSource={RelativeSource Mode=Self}}" Content="X" Command="{Binding DeleteCommand, Mode=OneTime}" bhv:ToolTipEx.Content="Delete" Margin="1 0 1 0"/>
             </StackPanel>
         </Grid>
     </DataTemplate>
@@ -790,7 +790,7 @@
             <ItemsControl Grid.Column="2" ItemsSource="{Binding SelectedLoadout.Abilities}" Focusable="False">
                 <ItemsControl.ItemTemplate>
                     <DataTemplate>
-                        <TextBlock ToolTipService.ToolTip="{Binding Description, Mode=OneTime}" Margin="0 1 0 1" ToolTipService.ShowDuration="9999" Focusable="False">
+                        <TextBlock bhv:ToolTipEx.Content="{Binding Description, Mode=OneTime}" Margin="0 1 0 1" Focusable="False">
                             <Run Text="{Binding SkillName, Mode=OneTime}" FontWeight="Bold"/>
                             <Run Text=" level"/>
                             <Run Text="{Binding Level, Mode=OneTime}"/>
@@ -854,15 +854,15 @@
                 </Grid.ColumnDefinitions>
                 <TextBlock x:Name="readonlyName" Grid.Column="0" Text="{Binding Name}" VerticalAlignment="Center"/>
                 <TextBlock x:Name="readonlyCount" Grid.Column="1" Text="{Binding SortItems.Count, StringFormat=({0})}" Margin="4" VerticalAlignment="Center"/>
-                <Button Grid.Column="2" Content="Apply" Command="{Binding ApplyCommand, Mode=OneTime}" Margin="1" Padding="8 4 8 4" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" ToolTip="Applies the sorting preference right now" ToolTipService.ShowDuration="9999"/>
-                <Button x:Name="deactiveBtn" Grid.Column="3" Content="Deactivate" Command="{Binding DeactivateCommand, Mode=OneTime}" Margin="1" Padding="8 4 8 4" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Visibility="Hidden"/>
-                <Button x:Name="activeBtn" Grid.Column="3" Content="Make active" Command="{Binding MakeActiveCommand, Mode=OneTime}" Margin="1" Padding="8 4 8 4" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" ToolTip="Applies the sorting preference right now and make it the default for subsequent searches" ToolTipService.ShowDuration="9999"/>
+                <Button Grid.Column="2" Content="Apply" Command="{Binding ApplyCommand, Mode=OneTime}" Margin="1" Padding="8 4 8 4" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" bhv:ToolTipEx.Content="Applies the sorting preference right now"/>
+                <Button x:Name="deactiveBtn" Grid.Column="3" Content="Deactivate" Command="{Binding DeactivateCommand, Mode=OneTime}" Margin="1" Padding="8 4 8 4" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" bhv:ToolTipEx.Content="Deactivates the sorting preference (default sorting will apply)" Visibility="Hidden"/>
+                <Button x:Name="activeBtn" Grid.Column="3" Content="Make active" Command="{Binding MakeActiveCommand, Mode=OneTime}" Margin="1" Padding="8 4 8 4" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" bhv:ToolTipEx.Content="Applies the sorting preference right now and make it the default for subsequent searches"/>
             </Grid>
             <DockPanel x:Name="edit" LastChildFill="True" Visibility="Hidden" VerticalAlignment="Center" Margin="24 0 0 0">
-                <Button DockPanel.Dock="Right" Content="X" ToolTip="Remove" Width="{Binding ActualHeight, RelativeSource={RelativeSource Mode=Self}}" Command="{Binding RemoveSelfCommand, Mode=OneTime}" Margin="1"/>
+                <Button DockPanel.Dock="Right" Content="X" bhv:ToolTipEx.Content="Remove" Width="{Binding ActualHeight, RelativeSource={RelativeSource Mode=Self}}" Command="{Binding RemoveSelfCommand, Mode=OneTime}" Margin="1"/>
                 <UniformGrid Rows="2" DockPanel.Dock="Right" Width="{Binding ActualHeight, RelativeSource={RelativeSource Mode=Self}}">
-                    <Button Command="{Binding MoveSelfUpCommand, Mode=OneTime}" ToolTip="Move up" Margin="1"/>
-                    <Button Command="{Binding MoveSelfDownCommand, Mode=OneTime}" ToolTip="Move down" Margin="1"/>
+                    <Button Command="{Binding MoveSelfUpCommand, Mode=OneTime}" bhv:ToolTipEx.Content="Move up" Margin="1"/>
+                    <Button Command="{Binding MoveSelfDownCommand, Mode=OneTime}" bhv:ToolTipEx.Content="Move down" Margin="1"/>
                 </UniformGrid>
                 <TextBox Text="{Binding Name}" HorizontalAlignment="Stretch" Margin="1" Padding="2"/>
             </DockPanel>
@@ -900,10 +900,10 @@
             </ComboBox>
             <StackPanel Grid.Column="2" Orientation="Horizontal" VerticalAlignment="Stretch" Margin="0">
                 <UniformGrid Rows="2" Width="{Binding ActualHeight, RelativeSource={RelativeSource Mode=Self}}" Margin="0">
-                    <Button Command="{Binding MoveSelfUpCommand, Mode=OneTime}" ToolTip="Move up" Margin="1"/>
-                    <Button Command="{Binding MoveSelfDownCommand, Mode=OneTime}" ToolTip="Move down" Margin="1"/>
+                    <Button Command="{Binding MoveSelfUpCommand, Mode=OneTime}" bhv:ToolTipEx.Content="Move up" Margin="1"/>
+                    <Button Command="{Binding MoveSelfDownCommand, Mode=OneTime}" bhv:ToolTipEx.Content="Move down" Margin="1"/>
                 </UniformGrid>
-                <Button Content="X" ToolTip="Remove" Width="{Binding ActualHeight, RelativeSource={RelativeSource Mode=Self}}" Command="{Binding RemoveSelfCommand, Mode=OneTime}" Margin="1"/>
+                <Button Content="X" bhv:ToolTipEx.Content="Remove" Width="{Binding ActualHeight, RelativeSource={RelativeSource Mode=Self}}" Command="{Binding RemoveSelfCommand, Mode=OneTime}" Margin="1"/>
             </StackPanel>
         </Grid>
     </DataTemplate>
@@ -952,7 +952,7 @@
     
     <DataTemplate x:Key="WeaponElementView">
         <StackPanel x:Name="root" Orientation="Horizontal">
-            <Image Source="{Binding Type, Mode=OneTime, Converter={StaticResource ElementEnumToImageSourceValueConverter}, ConverterParameter=16}" Width="16" Height="16" Margin="2" VerticalAlignment="Center" ToolTip="{Binding Type, Mode=OneTime, Converter={StaticResource ElementNameValueConverter}}"/>
+            <Image Source="{Binding Type, Mode=OneTime, Converter={StaticResource ElementEnumToImageSourceValueConverter}, ConverterParameter=16}" Width="16" Height="16" Margin="2" VerticalAlignment="Center" bhv:ToolTipEx.Content="{Binding Type, Mode=OneTime, Converter={StaticResource ElementNameValueConverter}}"/>
             <TextBlock Text="(" Visibility="{Binding IsHidden, Converter={StaticResource CollapsedVisibilityValueConverter}}" VerticalAlignment="Center"/>
             <TextBlock Text="{Binding Value}" VerticalAlignment="Center"/>
             <TextBlock Text=")" Visibility="{Binding IsHidden, Converter={StaticResource CollapsedVisibilityValueConverter}}" VerticalAlignment="Center"/>
@@ -987,7 +987,7 @@
                                         <ctrl:SharpnessRenderer Width="55" Height="6" Background="#FF1E1E1E" SharpnessLevels="{Binding SharpnessLevels, Mode=OneTime}" SharpnessRank="{Binding Parent.SharpnessRank}"/>
                                     </Border>
                                     <StackPanel Orientation="Horizontal" Visibility="{Binding HasDeviation, Mode=OneTime, Converter={StaticResource CollapsedVisibilityValueConverter}}">
-                                        <Image Source="{mxt:RasterizedImage Location=Icons/Attributes/Deviation.svg, Size=14}" Width="14" Height="14" VerticalAlignment="Center" Margin="2" SnapsToDevicePixels="True" ToolTip="Deviation"/>
+                                        <Image Source="{mxt:RasterizedImage Location=Icons/Attributes/Deviation.svg, Size=14}" Width="14" Height="14" VerticalAlignment="Center" Margin="2" SnapsToDevicePixels="True" bhv:ToolTipEx.Content="Deviation"/>
                                         <TextBlock Text="{Binding Attributes.Deviation, Mode=OneTime}" Margin="2"/>
                                     </StackPanel>
                                 </StackPanel>
@@ -995,7 +995,7 @@
                             <ItemsControl DockPanel.Dock="Bottom" ItemsSource="{Binding Slots}" Margin="2" Height="24" Focusable="False">
                                 <ItemsControl.ItemTemplate>
                                     <DataTemplate>
-                                        <Image Source="{Binding Converter={StaticResource SlotToImageSourceValueConverter}, ConverterParameter=24, Mode=OneTime}" ToolTip="{Binding Converter={StaticResource SlotSizeToolTipValueConverter}, Mode=OneTime}" Width="24" Height="24" SnapsToDevicePixels="True" />
+                                        <Image Source="{Binding Converter={StaticResource SlotToImageSourceValueConverter}, ConverterParameter=24, Mode=OneTime}" bhv:ToolTipEx.Content="{Binding Converter={StaticResource SlotSizeToolTipValueConverter}, Mode=OneTime}" Width="24" Height="24" SnapsToDevicePixels="True" />
                                     </DataTemplate>
                                 </ItemsControl.ItemTemplate>
                                 <ItemsControl.ItemsPanel>
@@ -1008,11 +1008,11 @@
                         <StackPanel> <!-- Splits element, affinity and defense -->
                             <ItemsControl ItemsSource="{Binding Elements, Mode=OneTime}" ItemTemplate="{StaticResource WeaponElementView}" Margin="2"/>
                             <StackPanel Orientation="Horizontal" Visibility="{Binding HasAffinity, Mode=OneTime, Converter={StaticResource CollapsedVisibilityValueConverter}}">
-                                <Image Source="{mxt:RasterizedImage Location=Icons/Attributes/Affinity.svg, Size=16}" Width="16" Height="16" VerticalAlignment="Center" Margin="2" SnapsToDevicePixels="True" ToolTip="Affinity"/>
+                                <Image Source="{mxt:RasterizedImage Location=Icons/Attributes/Affinity.svg, Size=16}" Width="16" Height="16" VerticalAlignment="Center" Margin="2" SnapsToDevicePixels="True" bhv:ToolTipEx.Content="Affinity"/>
                                 <TextBlock Text="{Binding Attributes.Affinity, Mode=OneTime, StringFormat=\{0\}%}" Margin="2"/>
                             </StackPanel>
                             <StackPanel Orientation="Horizontal" Visibility="{Binding HasDefense, Mode=OneTime, Converter={StaticResource CollapsedVisibilityValueConverter}}">
-                                <Image Source="{mxt:RasterizedImage Location=Icons/Attributes/Defense.svg, Size=16}" Width="16" Height="16" VerticalAlignment="Center" Margin="2" SnapsToDevicePixels="True" ToolTip="Defense"/>
+                                <Image Source="{mxt:RasterizedImage Location=Icons/Attributes/Defense.svg, Size=16}" Width="16" Height="16" VerticalAlignment="Center" Margin="2" SnapsToDevicePixels="True" bhv:ToolTipEx.Content="Defense"/>
                                 <TextBlock Text="{Binding Attributes.Defense, Mode=OneTime}" Margin="2"/>
                             </StackPanel>
                         </StackPanel>
