@@ -65,7 +65,7 @@ namespace MHArmory.ViewModels
 
         internal void NotifyDataLoaded()
         {
-            WeaponsContainer.LoadWeaponsAsync().ContinueWith(t => t.Wait());
+            WeaponsContainer.LoadWeaponsAsync().Forget(ex => throw new Exception("rethrow", ex));
 
             EventContainer.NotifyDataLoaded();
         }

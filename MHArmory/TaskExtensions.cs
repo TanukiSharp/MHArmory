@@ -27,8 +27,9 @@ namespace MHArmory
                     if (ExecutionContext.IsFlowSuppressed() == false)
                         ExecutionContext.SuppressFlow();
 
-                    // No need to resume on original SynchronizationContext
-                    await task.ConfigureAwait(false);
+                    // Resume on original SynchronizationContext, it's up to the caller to provide
+                    // a task already configured to continue on the captured context or not
+                    await task;
                 }
                 catch (Exception ex)
                 {
