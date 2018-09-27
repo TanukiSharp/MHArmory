@@ -1,0 +1,45 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading;
+using System.Threading.Tasks;
+using Microsoft.Extensions.Logging;
+
+namespace MHArmory
+{
+    public static class TaskExtensions
+    {
+        // Based on Ben Adams suggestion
+        public static void Forget(this Task task, Action<Exception> onError)
+        {
+            if (task == null)
+                throw new ArgumentNullException(nameof(task));
+            if (onError == null)
+                throw new ArgumentNullException(nameof(onError));
+
+            // Pass paramters explicitly to async local function or it will allocate to pass them
+            async Task ForgetAwaited(Task t, Action<Exception> onErr)
+            {
+                try
+                {
+                    // No need to capture AsyncLocals and restore them across the await (extending their lifetime)
+                    if (ExecutionContext.IsFlowSuppressed() == false)
+                        ExecutionContext.SuppressFlow();
+
+                    // No need to resume on original SynchronizationContext
+                    await task.ConfigureAwait(false);
+                }
+                catch (Exception ex)
+                {
+                    onErr(ex);
+                }
+            }
+
+            // Only care about tasks that may fault or are faulted,
+            // so fast-path for SuccessfullyCompleted and Cancelled tasks
+            if (task.IsCompleted == false || task.IsFaulted)
+                _ = ForgetAwaited(task, onError);
+        }
+    }
+}
