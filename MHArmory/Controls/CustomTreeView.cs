@@ -9,7 +9,7 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
 
-namespace MHArmory
+namespace MHArmory.Controls
 {
     public class CustomTreeView : TreeView
     {

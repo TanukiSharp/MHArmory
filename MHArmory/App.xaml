@@ -6,7 +6,7 @@
     <Application.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
-                <ResourceDictionary Source="CustomTreeViewStyles.xaml"/>
+                <ResourceDictionary Source="Styles.xaml"/>
                 <ResourceDictionary Source="Views.xaml"/>
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
