@@ -260,6 +260,7 @@ namespace MHArmory.ViewModels
             searchCancellationTokenSource = new CancellationTokenSource();
             previousSearchTask = Task.Run(() => SearchArmorSetsInternal(searchCancellationTokenSource.Token));
 
+            SearchProgression = 0.0;
             IsSearching = true;
 
             try
@@ -271,6 +272,8 @@ namespace MHArmory.ViewModels
                 IsSearching = false;
 
                 previousSearchTask = null;
+
+                searchCancellationTokenSource.Cancel();
                 searchCancellationTokenSource = null;
             }
         }
@@ -382,33 +385,47 @@ namespace MHArmory.ViewModels
             AdvancedSearchViewModel.Update(armorPieceTypesViewModels);
         }
 
+        private double searchProgression;
+        public double SearchProgression
+        {
+            get { return searchProgression; }
+            private set { SetValue(ref searchProgression, value); }
+        }
+
         private async Task SearchArmorSetsInternal(CancellationToken cancellationToken)
         {
             solver = new Solver(SolverData);
 
             solver.SearchMetricsChanged += SolverSearchMetricsChanged;
+            solver.SearchProgress += SolverSearchProgress;
 
-            IList<ArmorSetSearchResult> result = await solver.SearchArmorSets(cancellationToken);
-
-            if (result == null)
+            try
             {
-                //rawFoundArmorSets = null;
-                //FoundArmorSets = null;
+                IList<ArmorSetSearchResult> result = await solver.SearchArmorSets(cancellationToken);
+
+                if (result != null)
+                {
+                    rawFoundArmorSets = result.Where(x => x.IsMatch).Select(x => new ArmorSetViewModel(
+                        SolverData,
+                        x.ArmorPieces,
+                        x.Charm,
+                        x.Jewels.Select(j => new ArmorSetJewelViewModel(j.Jewel, j.Count)).ToList(),
+                        x.SpareSlots
+                    ));
+
+                    ApplySorting(true);
+                }
             }
-            else
+            finally
             {
-                rawFoundArmorSets = result.Where(x => x.IsMatch).Select(x => new ArmorSetViewModel(
-                    SolverData,
-                    x.ArmorPieces,
-                    x.Charm,
-                    x.Jewels.Select(j => new ArmorSetJewelViewModel(j.Jewel, j.Count)).ToList(),
-                    x.SpareSlots
-                ));
-
-                ApplySorting(true);
+                solver.SearchMetricsChanged -= SolverSearchMetricsChanged;
+                solver.SearchProgress -= SolverSearchProgress;
             }
+        }
 
-            solver.SearchMetricsChanged -= SolverSearchMetricsChanged;
+        private void SolverSearchProgress(double progressRatio)
+        {
+            SearchProgression = progressRatio;
         }
 
         private SolverDataJewelModel CreateSolverDataJewelModel(IJewel jewel)

@@ -13,6 +13,9 @@ namespace MHArmory.Search
 {
     public class Solver
     {
+        private int currentCombinations;
+        private double totalCombinations;
+
         private readonly ISolverData data;
 
         public Solver(ISolverData data)
@@ -21,6 +24,7 @@ namespace MHArmory.Search
         }
 
         public event Action<SearchMetrics> SearchMetricsChanged;
+        public event Action<double> SearchProgress;
 
         public Task<IList<ArmorSetSearchResult>> SearchArmorSets()
         {
@@ -29,6 +33,8 @@ namespace MHArmory.Search
 
         public Task<IList<ArmorSetSearchResult>> SearchArmorSets(CancellationToken cancellationToken)
         {
+            UpdateSearchProgression(cancellationToken);
+
             return Task.Run(() =>
             {
                 return SearchArmorSetsInternal(
@@ -36,6 +42,17 @@ namespace MHArmory.Search
                     cancellationToken
                 );
             });
+        }
+
+        private async void UpdateSearchProgression(CancellationToken cancellationToken)
+        {
+            while (cancellationToken.IsCancellationRequested == false)
+            {
+                if (totalCombinations > 0)
+                    SearchProgress?.Invoke(currentCombinations / totalCombinations);
+
+                await Task.Delay(250);
+            }
         }
 
         private readonly ObjectPool<List<ArmorSetJewelResult>> jewelResultObjectPool = new ObjectPool<List<ArmorSetJewelResult>>(() => new List<ArmorSetJewelResult>());
@@ -110,6 +127,9 @@ namespace MHArmory.Search
                 MaxDegreeOfParallelism = Environment.ProcessorCount
             };
 
+            currentCombinations = 0;
+            totalCombinations = metrics.CombinationCount;
+
             try
             {
                 OrderablePartitioner<IEquipment[]> partitioner = Partitioner.Create(generator.All(cancellationToken), EnumerablePartitionerOptions.NoBuffering);
@@ -123,6 +143,8 @@ namespace MHArmory.Search
                     }
 
                     ArmorSetSearchResult searchResult = IsArmorSetMatching(data.WeaponSlots, equips, data.AllJewels, desiredAbilities);
+
+                    Interlocked.Increment(ref currentCombinations);
 
                     if (searchResult.IsMatch)
                     {

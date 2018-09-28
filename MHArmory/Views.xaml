@@ -610,7 +610,7 @@
                         <Button x:Name="btnSearch" Content="Search" Margin="2" Padding="4" Command="{Binding SearchArmorSetsCommand, Mode=OneTime}"/>
                         <Button x:Name="btnCancelSearch" Content="Cancel" Margin="2" Padding="4" Command="{Binding CancelArmorSetsSearchCommand, Mode=OneTime}" Visibility="Hidden"/>
                     </Grid>
-                    <ProgressBar DockPanel.Dock="Bottom" HorizontalAlignment="Stretch" Margin="2" Padding="2" IsIndeterminate="{Binding IsSearching}" Visibility="{Binding IsSearching, Converter={StaticResource HiddenVisibilityValueConverter}}"  Value="0" Height="16"/>
+                    <ProgressBar DockPanel.Dock="Bottom" HorizontalAlignment="Stretch" Margin="2" Padding="2" Minimum="0" Maximum="1" Value="{Binding SearchProgression, Mode=OneWay}" Visibility="{Binding IsSearching, Converter={StaticResource HiddenVisibilityValueConverter}}" Height="16"/>
                     <DockPanel LastChildFill="True">
                         <TextBlock Text="{Binding LoadoutText, Mode=OneWay}" FontSize="12" FontWeight="Bold" Foreground="Blue" Padding="3" DockPanel.Dock="Left" VerticalAlignment="Top" Background="#08000000">
                             <TextBlock.LayoutTransform>
