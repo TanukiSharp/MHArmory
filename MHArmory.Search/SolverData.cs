@@ -5,38 +5,6 @@ using MHArmory.Core.DataStructures;
 
 namespace MHArmory.Search
 {
-    public class SolverDataEquipmentModel : ISolverDataEquipmentModel
-    {
-        public IEquipment Equipment { get; }
-        public bool ToBeRemoved { get; set; }
-
-        public event EventHandler SelectionChanged;
-
-        private bool isSelected = true;
-        public bool IsSelected
-        {
-            get { return isSelected; }
-            set
-            {
-                if (isSelected != value)
-                {
-                    isSelected = value;
-                    SelectionChanged?.Invoke(this, EventArgs.Empty);
-                }
-            }
-        }
-
-        public SolverDataEquipmentModel(IEquipment equipment)
-        {
-            Equipment = equipment;
-        }
-
-        public override string ToString()
-        {
-            return $"[{(IsSelected ? "O" : "X")}] {Equipment.Name}";
-        }
-    }
-
     public class SolverDataJewelModel : IHasAbilities
     {
         public IJewel Jewel { get; }
@@ -51,7 +19,7 @@ namespace MHArmory.Search
         }
     }
 
-    public class SolverDataEquipmentModel2 : ISolverDataEquipmentModel
+    public class SolverDataEquipmentModel : ISolverDataEquipmentModel
     {
         public IEquipment Equipment { get; }
 
@@ -76,7 +44,7 @@ namespace MHArmory.Search
             }
         }
 
-        public SolverDataEquipmentModel2(IEquipment equipment)
+        public SolverDataEquipmentModel(IEquipment equipment)
         {
             Equipment = equipment;
         }
@@ -87,7 +55,7 @@ namespace MHArmory.Search
         }
     }
 
-    public class SolverData2 : ISolverData
+    public class SolverData : ISolverData
     {
         public int[] WeaponSlots { get; private set; }
         public ISolverDataEquipmentModel[] AllHeads { get; private set; }
@@ -99,12 +67,12 @@ namespace MHArmory.Search
         public SolverDataJewelModel[] AllJewels { get; private set; }
         public IAbility[] DesiredAbilities { get; }
 
-        private readonly List<SolverDataEquipmentModel2> inputHeads;
-        private readonly List<SolverDataEquipmentModel2> inputChests;
-        private readonly List<SolverDataEquipmentModel2> inputGloves;
-        private readonly List<SolverDataEquipmentModel2> inputWaists;
-        private readonly List<SolverDataEquipmentModel2> inputLegs;
-        private readonly List<SolverDataEquipmentModel2> inputCharms;
+        private readonly List<SolverDataEquipmentModel> inputHeads;
+        private readonly List<SolverDataEquipmentModel> inputChests;
+        private readonly List<SolverDataEquipmentModel> inputGloves;
+        private readonly List<SolverDataEquipmentModel> inputWaists;
+        private readonly List<SolverDataEquipmentModel> inputLegs;
+        private readonly List<SolverDataEquipmentModel> inputCharms;
         private readonly List<SolverDataJewelModel> inputJewels;
 
         public int MaxSkillCountPerArmorPiece { get; private set; }
@@ -112,7 +80,7 @@ namespace MHArmory.Search
         public int MinJewelSize { get; private set; }
         public int MaxJewelSize { get; private set; }
 
-        public SolverData2(
+        public SolverData(
             IList<int> weaponSlots,
             IEnumerable<IArmorPiece> heads,
             IEnumerable<IArmorPiece> chests,
@@ -124,12 +92,12 @@ namespace MHArmory.Search
             IEnumerable<IAbility> desiredAbilities
         )
         {
-            inputHeads = heads.Select(x => new SolverDataEquipmentModel2(x)).ToList();
-            inputChests = chests.Select(x => new SolverDataEquipmentModel2(x)).ToList();
-            inputGloves = gloves.Select(x => new SolverDataEquipmentModel2(x)).ToList();
-            inputWaists = waists.Select(x => new SolverDataEquipmentModel2(x)).ToList();
-            inputLegs = legs.Select(x => new SolverDataEquipmentModel2(x)).ToList();
-            inputCharms = charms.Select(x => new SolverDataEquipmentModel2(x)).ToList();
+            inputHeads = heads.Select(x => new SolverDataEquipmentModel(x)).ToList();
+            inputChests = chests.Select(x => new SolverDataEquipmentModel(x)).ToList();
+            inputGloves = gloves.Select(x => new SolverDataEquipmentModel(x)).ToList();
+            inputWaists = waists.Select(x => new SolverDataEquipmentModel(x)).ToList();
+            inputLegs = legs.Select(x => new SolverDataEquipmentModel(x)).ToList();
+            inputCharms = charms.Select(x => new SolverDataEquipmentModel(x)).ToList();
             inputJewels = jewels.ToList();
 
             int maxSkills = inputHeads.MaxOrZero(x => x.Equipment.Abilities.Length);
@@ -218,7 +186,7 @@ namespace MHArmory.Search
             DeleteMarkedEquipments(inputCharms);
         }
 
-        private void DeleteMarkedEquipments(List<SolverDataEquipmentModel2> equipments)
+        private void DeleteMarkedEquipments(List<SolverDataEquipmentModel> equipments)
         {
             equipments.RemoveAll(x => x.ToBeRemoved);
         }
@@ -249,9 +217,9 @@ namespace MHArmory.Search
             ComputeMatchingSkillCount(inputCharms);
         }
 
-        private void ComputeMatchingSkillCount(IEnumerable<SolverDataEquipmentModel2> equipments)
+        private void ComputeMatchingSkillCount(IEnumerable<SolverDataEquipmentModel> equipments)
         {
-            foreach (SolverDataEquipmentModel2 e in equipments)
+            foreach (SolverDataEquipmentModel e in equipments)
             {
                 int skillCount = EquipmentMatchingArmorSetAbility(e.Equipment);
 
@@ -283,15 +251,15 @@ namespace MHArmory.Search
             SetBestSlotScore(inputCharms);
         }
 
-        private void SetBestSlotScore(IEnumerable<SolverDataEquipmentModel2> equipments)
+        private void SetBestSlotScore(IEnumerable<SolverDataEquipmentModel> equipments)
         {
             SetBestSlotScore(equipments, 3);
             SetBestSlotScore(equipments, 2);
         }
 
-        private void SetBestSlotScore(IEnumerable<SolverDataEquipmentModel2> equipments, int slotCount)
+        private void SetBestSlotScore(IEnumerable<SolverDataEquipmentModel> equipments, int slotCount)
         {
-            IEnumerable<SolverDataEquipmentModel2> bestSlots = equipments
+            IEnumerable<SolverDataEquipmentModel> bestSlots = equipments
                 .Where(x => x.Equipment.Slots.Length == slotCount)
                 .OrderByDescending(x => x.Equipment.Slots.Sum())
                 .ThenByDescending(x => x.Equipment is IArmorPiece armorPiece ? armorPiece.Defense.Augmented : 0)
@@ -299,7 +267,7 @@ namespace MHArmory.Search
 
             bool isFirst = true;
 
-            foreach (SolverDataEquipmentModel2 x in bestSlots)
+            foreach (SolverDataEquipmentModel x in bestSlots)
             {
                 if (isFirst)
                 {
@@ -321,9 +289,9 @@ namespace MHArmory.Search
             UpdateSelection(inputCharms);
         }
 
-        private void UpdateSelection(List<SolverDataEquipmentModel2> equipments)
+        private void UpdateSelection(List<SolverDataEquipmentModel> equipments)
         {
-            foreach (SolverDataEquipmentModel2 e in equipments.Where(x => x.IsSelected == false))
+            foreach (SolverDataEquipmentModel e in equipments.Where(x => x.IsSelected == false))
             {
                 e.IsSelected =
                     e.IsMatchingArmorSetSkill ||
@@ -334,11 +302,11 @@ namespace MHArmory.Search
 
         private void UnselectLessPoweredCharms()
         {
-            foreach (IGrouping<int, SolverDataEquipmentModel2> group in inputCharms.Where(x => x.Equipment is ICharmLevel).GroupBy(x => ((ICharmLevel)x.Equipment).Charm.Id))
+            foreach (IGrouping<int, SolverDataEquipmentModel> group in inputCharms.Where(x => x.Equipment is ICharmLevel).GroupBy(x => ((ICharmLevel)x.Equipment).Charm.Id))
             {
                 int max = group.Max(x => ((ICharmLevel)x.Equipment).Level);
 
-                foreach (SolverDataEquipmentModel2 charmLevel in group)
+                foreach (SolverDataEquipmentModel charmLevel in group)
                 {
                     charmLevel.IsSelected = ((ICharmLevel)charmLevel.Equipment).Level == max;
                 }
@@ -355,12 +323,12 @@ namespace MHArmory.Search
         }
 
         private void CheckFullArmorSets(
-            List<SolverDataEquipmentModel2> source,
-            List<SolverDataEquipmentModel2> heads,
-            List<SolverDataEquipmentModel2> chests,
-            List<SolverDataEquipmentModel2> gloves,
-            List<SolverDataEquipmentModel2> waists,
-            List<SolverDataEquipmentModel2> legs
+            List<SolverDataEquipmentModel> source,
+            List<SolverDataEquipmentModel> heads,
+            List<SolverDataEquipmentModel> chests,
+            List<SolverDataEquipmentModel> gloves,
+            List<SolverDataEquipmentModel> waists,
+            List<SolverDataEquipmentModel> legs
         )
         {
             for (int i = 0; i < source.Count; i++)
@@ -432,17 +400,17 @@ namespace MHArmory.Search
             return source.Average(func);
         }
 
-        public static IEnumerable<SolverDataEquipmentModel2> MarkAsToBeRemoved(this IEnumerable<SolverDataEquipmentModel2> source)
+        public static IEnumerable<SolverDataEquipmentModel> MarkAsToBeRemoved(this IEnumerable<SolverDataEquipmentModel> source)
         {
-            foreach (SolverDataEquipmentModel2 e in source.Where(x => x.ToBeRemoved == false))
+            foreach (SolverDataEquipmentModel e in source.Where(x => x.ToBeRemoved == false))
                 e.ToBeRemoved = true;
 
             return source;
         }
 
-        public static IEnumerable<SolverDataEquipmentModel2> MarkAsSelected(this IEnumerable<SolverDataEquipmentModel2> source)
+        public static IEnumerable<SolverDataEquipmentModel> MarkAsSelected(this IEnumerable<SolverDataEquipmentModel> source)
         {
-            foreach (SolverDataEquipmentModel2 e in source)
+            foreach (SolverDataEquipmentModel e in source)
             {
                 e.ToBeRemoved = false;
                 e.IsSelected = true;
