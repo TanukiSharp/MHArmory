@@ -1,5 +1,10 @@
 # Change log
 
+## vNext (not yet released)
+
+- Now armor set search has a progression bar
+- Weapons tree can now be panned with mouse left button drag
+
 ## 0.0.6.2 (2018/09/27)
 
 - Better skill tooltips
