@@ -99,7 +99,6 @@ namespace MHArmory.Search
         public SolverDataJewelModel[] AllJewels { get; private set; }
         public IAbility[] DesiredAbilities { get; }
 
-        //private readonly IList<MaximizedSearchCriteria> inputSearchCriterias;
         private readonly List<SolverDataEquipmentModel2> inputHeads;
         private readonly List<SolverDataEquipmentModel2> inputChests;
         private readonly List<SolverDataEquipmentModel2> inputGloves;
@@ -115,7 +114,6 @@ namespace MHArmory.Search
 
         public SolverData2(
             IList<int> weaponSlots,
-            //IList<MaximizedSearchCriteria> searchCriterias,
             IEnumerable<IArmorPiece> heads,
             IEnumerable<IArmorPiece> chests,
             IEnumerable<IArmorPiece> gloves,
@@ -141,11 +139,6 @@ namespace MHArmory.Search
             maxSkills = Math.Max(maxSkills, inputLegs.MaxOrZero(x => x.Equipment.Abilities.Length));
 
             MaxSkillCountPerArmorPiece = maxSkills;
-
-            //if (searchCriterias == null || searchCriterias.Count == 0)
-            //    searchCriterias = new[] { MaximizedSearchCriteria.SlotSizeCube };
-
-            //inputSearchCriterias = searchCriterias;
 
             WeaponSlots = weaponSlots.ToArray();
             DesiredAbilities = desiredAbilities.ToArray();
@@ -184,30 +177,6 @@ namespace MHArmory.Search
         public ISolverData Done()
         {
             UpdateReferences();
-
-            if (AllHeads.Where(x => x != null).Any(x => x.Equipment.Name == "Strategist Spectacles α"))
-            {
-            }
-
-            if (AllChests.Where(x => x != null).Any(x => x.Equipment.Name == "Kulve Taroth's Ire α"))
-            {
-            }
-
-            if (AllGloves.Where(x => x != null).Any(x => x.Equipment.Name == "Vaal Hazak Braces β"))
-            {
-            }
-
-            if (AllWaists.Where(x => x != null).Any(x => x.Equipment.Name == "Odogaron Coil β"))
-            {
-            }
-
-            if (AllLegs.Where(x => x != null).Any(x => x.Equipment.Name == "Dante's Leather Boots α"))
-            {
-            }
-
-            if (AllCharms.Where(x => x != null).Any(x => x.Equipment.Name == "Master's Charm III"))
-            {
-            }
 
             return this;
         }

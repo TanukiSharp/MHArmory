@@ -186,39 +186,6 @@ namespace MHArmory.Search
                 }
             }
 
-            //if (
-            //    equipments.Where(x => x != null).Any(x => x.Name == "Bazel Helm β") &&
-            //    equipments.Where(x => x != null).Any(x => x.Name == "Kulve Taroth's Ire β") &&
-            //    equipments.Where(x => x != null).Any(x => x.Name == "Empress Vambraces β") &&
-            //    equipments.Where(x => x != null).Any(x => x.Name == "Vaal Hazak Coil γ") &&
-            //    equipments.Where(x => x != null).Any(x => x.Name == "Empress Greaves α") &&
-            //    equipments.Where(x => x != null).Any(x => x.Name == "Recovery Charm III")
-            //)
-            //{
-            //}
-
-            //if (
-            //    equipments.Where(x => x != null).Any(x => x.Name == "Bazel Helm Beta") &&
-            //    equipments.Where(x => x != null).Any(x => x.Name == "Kushala Cista Beta") &&
-            //    equipments.Where(x => x != null).Any(x => x.Name == "High Metal Braces Beta") &&
-            //    equipments.Where(x => x != null).Any(x => x.Name == "Bazel Coil Beta") &&
-            //    equipments.Where(x => x != null).Any(x => x.Name == "Death Stench Heel Beta") &&
-            //    equipments.Where(x => x != null).Any(x => x.Name == "Attack Charm 3")
-            //)
-            //{
-            //}
-
-            //if (
-            //    equipments.Where(x => x != null).Any(x => x.Name == "Strategist Spectacles α") &&
-            //    equipments.Where(x => x != null).Any(x => x.Name == "Kulve Taroth's Ire α") &&
-            //    equipments.Where(x => x != null).Any(x => x.Name == "Vaal Hazak Braces β") &&
-            //    equipments.Where(x => x != null).Any(x => x.Name == "Odogaron Coil β") &&
-            //    equipments.Where(x => x != null).Any(x => x.Name == "Dante's Leather Boots α") &&
-            //    equipments.Where(x => x != null).Any(x => x.Name == "Master's Charm III")
-            //)
-            //{
-            //}
-
             if (weaponSlots != null)
             {
                 foreach (int slotSize in weaponSlots)
