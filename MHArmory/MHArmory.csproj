@@ -68,6 +68,7 @@
     <Compile Include="Behaviors\SetHtmlBehavior.cs" />
     <Compile Include="Behaviors\ToolTipExBehavior.cs" />
     <Compile Include="Configurations\ConfigurationV2.cs" />
+    <Compile Include="Controls\DraggableScrollViewer.cs" />
     <Compile Include="Controls\SharpnessRenderer.cs" />
     <Compile Include="EnumerableExtensions.cs" />
     <Compile Include="EventsWindow.xaml.cs">

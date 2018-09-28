@@ -1064,11 +1064,11 @@
                     <TextBlock Text="Constructing user interface..." FontSize="20" HorizontalAlignment="Center" Margin="2"/>
                     <TextBlock Text="(only the first time per weapon)" FontSize="14" HorizontalAlignment="Center" Margin="2"/>
                 </StackPanel>
-                <ScrollViewer HorizontalScrollBarVisibility="Visible" VerticalScrollBarVisibility="Visible" bhv:HorizontalScrollBehavior.IsAttached="True">
-                    <local:CustomTreeView Background="Transparent" LineBrush="#FFC0C0C0" LineThickness="3" Margin="16"
+                <ctrl:DraggableScrollViewer HorizontalScrollBarVisibility="Visible" VerticalScrollBarVisibility="Visible" bhv:HorizontalScrollBehavior.IsAttached="True">
+                    <local:CustomTreeView LineBrush="#FFC0C0C0" LineThickness="3" Margin="16"
                                           ItemsSource="{Binding RootWeapons}" ItemTemplate="{StaticResource WeaponView}"
                                           ScrollViewer.HorizontalScrollBarVisibility="Disabled" ScrollViewer.VerticalScrollBarVisibility="Disabled" ScrollViewer.CanContentScroll="False"/>
-                </ScrollViewer>
+                </ctrl:DraggableScrollViewer>
             </Grid>
         </DockPanel>
     </DataTemplate>
