@@ -32,7 +32,7 @@ namespace MHArmory
         {
             AssemblyName assemblyName = Assembly.GetEntryAssembly().GetName();
 
-            ApplicationName = assemblyName.Name;
+            ApplicationName = "Armory [MHW]";
             Version = assemblyName.Version;
             DisplayVersion = CreateDisplayVersion(Version);
 

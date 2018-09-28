@@ -53,7 +53,7 @@ namespace MHArmory
 
             CommandBindings.Add(RoutedCommands.CreateCommandBinding(RoutedCommands.OpenIntegratedHelp, OpenIntegratedHelp));
 
-            Title = $"{App.ApplicationName} {App.DisplayVersion}";
+            Title = $"{App.ApplicationName} - {App.DisplayVersion}";
 
             DataContext = rootViewModel;
 
