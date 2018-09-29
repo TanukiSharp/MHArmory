@@ -22,10 +22,12 @@ namespace MHArmory.ViewModels
 
     public class FullSkillDescriptionViewModel : ViewModelBase
     {
+        public string GeneralDescription { get; }
         public FullAbilityDescriptionViewModel[] Abilities { get; }
 
         public FullSkillDescriptionViewModel(ISkill skill, int clampedLevel)
         {
+            GeneralDescription = skill.Description;
             Abilities = new FullAbilityDescriptionViewModel[skill.Abilities.Length];
             for (int i = 0; i < skill.Abilities.Length; i++)
                 Abilities[i] = new FullAbilityDescriptionViewModel(skill.Abilities[i].Description, skill.Abilities[i].Level == clampedLevel);

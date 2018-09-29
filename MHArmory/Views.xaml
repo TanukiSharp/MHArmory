@@ -37,19 +37,22 @@
     </DataTemplate>
 
     <DataTemplate x:Key="FullSkillDescriptionView">
-        <ItemsControl ItemsSource="{Binding Abilities, Mode=OneTime}">
-            <ItemsControl.ItemTemplate>
-                <DataTemplate>
-                    <TextBlock x:Name="item" Text="{Binding Description, Mode=OneTime}" Margin="2"/>
-                    <DataTemplate.Triggers>
-                        <DataTrigger Binding="{Binding IsActive, Mode=OneTime}" Value="True">
-                            <Setter TargetName="item" Property="FontWeight" Value="Bold"/>
-                            <Setter TargetName="item" Property="Foreground" Value="Blue"/>
-                        </DataTrigger>
-                    </DataTemplate.Triggers>
-                </DataTemplate>
-            </ItemsControl.ItemTemplate>
-        </ItemsControl>
+        <StackPanel>
+            <TextBlock Text="{Binding GeneralDescription, Mode=OneTime}" MaxWidth="350" TextWrapping="Wrap" HorizontalAlignment="Left" FontWeight="Black"/>
+            <ItemsControl ItemsSource="{Binding Abilities, Mode=OneTime}">
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate>
+                        <TextBlock x:Name="item" Text="{Binding Description, Mode=OneTime}" Margin="2"/>
+                        <DataTemplate.Triggers>
+                            <DataTrigger Binding="{Binding IsActive, Mode=OneTime}" Value="True">
+                                <Setter TargetName="item" Property="FontWeight" Value="Bold"/>
+                                <Setter TargetName="item" Property="Foreground" Value="Blue"/>
+                            </DataTrigger>
+                        </DataTemplate.Triggers>
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
+            </ItemsControl>
+        </StackPanel>
     </DataTemplate>
     
     <DataTemplate x:Key="WeaponSlotView">
