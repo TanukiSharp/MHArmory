@@ -42,7 +42,7 @@ namespace DataSourceTool
 
             //--------------------------------------------------------------------------
 
-            Serialize(Path.Combine(outputPath, $"{nameof(abilities)}.json"), Export(abilities));
+            Common.SerializeJson(Path.Combine(outputPath, $"{nameof(abilities)}.json"), Export(abilities));
 
             //--------------------------------------------------------------------------
 
@@ -52,11 +52,11 @@ namespace DataSourceTool
             IEnumerable<IArmorPiece> waists = armorPieces.Where(x => x.Type == EquipmentType.Waist);
             IEnumerable<IArmorPiece> legs = armorPieces.Where(x => x.Type == EquipmentType.Legs);
 
-            Serialize(Path.Combine(outputPath, $"{nameof(heads)}.json"), Export(heads));
-            Serialize(Path.Combine(outputPath, $"{nameof(chests)}.json"), Export(chests));
-            Serialize(Path.Combine(outputPath, $"{nameof(arms)}.json"), Export(arms));
-            Serialize(Path.Combine(outputPath, $"{nameof(waists)}.json"), Export(waists));
-            Serialize(Path.Combine(outputPath, $"{nameof(legs)}.json"), Export(legs));
+            Common.SerializeJson(Path.Combine(outputPath, $"{nameof(heads)}.json"), Export(heads));
+            Common.SerializeJson(Path.Combine(outputPath, $"{nameof(chests)}.json"), Export(chests));
+            Common.SerializeJson(Path.Combine(outputPath, $"{nameof(arms)}.json"), Export(arms));
+            Common.SerializeJson(Path.Combine(outputPath, $"{nameof(waists)}.json"), Export(waists));
+            Common.SerializeJson(Path.Combine(outputPath, $"{nameof(legs)}.json"), Export(legs));
 
             //--------------------------------------------------------------------------
 
@@ -66,7 +66,7 @@ namespace DataSourceTool
                 .Distinct(new LambdaEqualityComparer<IArmorSetSkill>((x, y) => x.Id == y.Id, x => x.Id))
                 .OrderBy(x => x.Id)
                 .ToList();
-            Serialize(Path.Combine(outputPath, $"{nameof(armorSetSkills)}.json"), Export(armorSetSkills));
+            Common.SerializeJson(Path.Combine(outputPath, $"{nameof(armorSetSkills)}.json"), Export(armorSetSkills));
 
             //--------------------------------------------------------------------------
 
@@ -76,7 +76,7 @@ namespace DataSourceTool
                 .Distinct(new LambdaEqualityComparer<IFullArmorSet>((x, y) => x.Id == y.Id, x => x.Id))
                 .OrderBy(x => x.Id)
                 .ToList();
-            Serialize(Path.Combine(outputPath, $"{nameof(fullArmorSets)}.json"), Export(fullArmorSets));
+            Common.SerializeJson(Path.Combine(outputPath, $"{nameof(fullArmorSets)}.json"), Export(fullArmorSets));
 
             //--------------------------------------------------------------------------
 
@@ -85,11 +85,11 @@ namespace DataSourceTool
                 .Distinct(new LambdaEqualityComparer<ICharmLevel>((x, y) => x.Id == y.Id, x => x.Id))
                 .OrderBy(x => x.Id)
                 .ToList();
-            Serialize(Path.Combine(outputPath, $"{nameof(charmLevels)}.json"), Export(charmLevels));
+            Common.SerializeJson(Path.Combine(outputPath, $"{nameof(charmLevels)}.json"), Export(charmLevels));
 
             //--------------------------------------------------------------------------
 
-            Serialize(Path.Combine(outputPath, $"{nameof(charms)}.json"), Export(charms));
+            Common.SerializeJson(Path.Combine(outputPath, $"{nameof(charms)}.json"), Export(charms));
 
             //--------------------------------------------------------------------------
 
@@ -99,40 +99,19 @@ namespace DataSourceTool
                 .Distinct(new LambdaEqualityComparer<IEvent>((x, y) => x.Id == y.Id, x => x.Id))
                 .OrderBy(x => x.Id)
                 .ToList();
-            Serialize(Path.Combine(outputPath, $"{nameof(events)}.json"), Export(events));
+            Common.SerializeJson(Path.Combine(outputPath, $"{nameof(events)}.json"), Export(events));
 
             //--------------------------------------------------------------------------
 
-            Serialize(Path.Combine(outputPath, $"{nameof(skills)}.json"), Export(skills));
+            Common.SerializeJson(Path.Combine(outputPath, $"{nameof(skills)}.json"), Export(skills));
 
             //--------------------------------------------------------------------------
 
-            Serialize(Path.Combine(outputPath, $"{nameof(jewels)}.json"), Export(jewels));
+            Common.SerializeJson(Path.Combine(outputPath, $"{nameof(jewels)}.json"), Export(jewels));
 
             //--------------------------------------------------------------------------
 
             //string weapons = await fetchWeaponsTask;
-        }
-
-        private void Serialize(string filename, object instance)
-        {
-            using (var sw = new StringWriter())
-            {
-                using (var jw = new JsonTextWriter(sw))
-                {
-                    jw.Formatting = Formatting.Indented;
-                    jw.IndentChar = ' ';
-                    jw.Indentation = 4;
-
-                    var serializer = new JsonSerializer
-                    {
-                        NullValueHandling = NullValueHandling.Ignore
-                    };
-                    serializer.Serialize(jw, instance);
-
-                    File.WriteAllText(filename, sw.ToString());
-                }
-            }
         }
 
         private object Export(IEnumerable<IAbility> abilities)
