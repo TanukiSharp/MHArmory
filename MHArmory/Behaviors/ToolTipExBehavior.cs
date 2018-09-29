@@ -32,7 +32,7 @@ namespace MHArmory.Behaviors
             sender.SetValue(ToolTipService.ToolTipProperty, e.NewValue);
 
             if (e.NewValue != null)
-                sender.SetValue(ToolTipService.ShowDurationProperty, 9999);
+                sender.SetValue(ToolTipService.ShowDurationProperty, int.MaxValue);
             else
                 sender.ClearValue(ToolTipService.ShowDurationProperty);
         }
