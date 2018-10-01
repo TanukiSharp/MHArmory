@@ -590,7 +590,7 @@
                 <MenuItem Header="Equipments" Command="{x:Static local:RoutedCommands.OpenEquipmentExplorer}"/>
                 <MenuItem Header="Events" Command="{x:Static local:RoutedCommands.OpenEvents}"/>
                 <MenuItem Header="?">
-                    <MenuItem Header="Integrated help" Command="{x:Static local:RoutedCommands.OpenIntegratedHelp}"/>
+                    <MenuItem Header="Integrated help" Command="{x:Static local:RoutedCommands.OpenIntegratedHelp}" CommandParameter="GettingStarted"/>
                     <Separator/>
                     <MenuItem Header="About..." Command="{Binding AboutCommand, Mode=OneTime}"/>
                 </MenuItem>

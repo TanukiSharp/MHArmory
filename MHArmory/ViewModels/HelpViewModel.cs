@@ -10,6 +10,7 @@ namespace MHArmory.ViewModels
 {
     public enum HelpCategory
     {
+        GettingStarted,
         DecorationOverride,
         KeyboardShortcuts
     }

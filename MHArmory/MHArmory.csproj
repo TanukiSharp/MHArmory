@@ -428,6 +428,9 @@
   <ItemGroup>
     <Resource Include="HelpText\DecorationOverride.html" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="HelpText\GettingStarted.html" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <PreBuildEvent>call "$(ProjectDir)PreBuildEventGitInfo.bat" "$(ProjectDir)"</PreBuildEvent>
