@@ -38,8 +38,8 @@
 
     <DataTemplate x:Key="FullSkillDescriptionView">
         <StackPanel>
-            <TextBlock Text="{Binding GeneralDescription, Mode=OneTime}" MaxWidth="350" TextWrapping="Wrap" HorizontalAlignment="Left" FontWeight="Black"/>
-            <ItemsControl ItemsSource="{Binding Abilities, Mode=OneTime}">
+            <TextBlock Text="{Binding GeneralDescription, Mode=OneTime}" Margin="2" MaxWidth="370" TextWrapping="Wrap" HorizontalAlignment="Left" FontWeight="Black"/>
+            <ItemsControl ItemsSource="{Binding Abilities, Mode=OneTime}" Margin="12 2 2 2">
                 <ItemsControl.ItemTemplate>
                     <DataTemplate>
                         <TextBlock x:Name="item" Text="{Binding Description, Mode=OneTime}" Margin="2"/>
