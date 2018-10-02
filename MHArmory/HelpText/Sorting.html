@@ -1,0 +1,69 @@
+Sorting
+
+<body style='font-family:"Segoe UI"'>
+To sort armor set search results, first click the <b>Sort results...</b> button at top right of the main window.<br/>
+This opens the sort window. This window is made of two part, the <b><span style="color:orange">left pane</span></b> and the <b><span style="color:orange">right pane</span></b>.<br/>
+<h2>The left pane</h2>
+There, you can add sorting logic simply by clicking the <b>Add sorting logic</b> button.<br/>
+<i>Details comming in the next section.</i><br/>
+You can also:
+<ul>
+    <li>Make a sorting logic the default one when searching, by clicking the <b>Make active</b> button.<br/>
+    This will also sort the current search result with this sorting logic immediately.</li>
+    <li>Sort the current search result with a given logic without making it active, by clicking the <b>Apply</b> button.</li>
+</ul>
+The number between parenthesis beside the sorting logic name is the number of sort criteria it contains.<br/>
+The active sort logic is indicated with <b><span style="color:blue">blue and bold</span></b> text on its name.<br/>
+<br/>
+You can also edit existing sorting logics by clicking the <b>Edit mode</b> button and do:
+<ul>
+<ul>
+    <li>Delete existing sorting logics by clicking the <b>X</b> button</li>
+    <li>Renamed existing sorting logics by simply typing a new name in the text area</li>
+    <li>Move them up or down to reorganize them, by click the the small vertically aligned buttons beside the delete button</li>
+</ul>
+<h2>The right pane</h2>
+To use the right pane, you must first select a sorting logic by clicking it.<br/>
+Then, at top of the right pane, a button named <b>Add sort criteria</b> should appear.<br/>
+Here you can add as many sort criteria as you want, they are all chained to produce a single sort when searching armor sets.<br/>
+As for the sorting logics, you can delete some by clicking the <b>X</b> button, and reorganize them by clicking the small vertically aligned buttons.<br/>
+<br/>
+Selecting multiple search criteria means, for result that are considered equal on the first sort criteria, then the next will sort them on a different criteria, and so on.<br/>
+For example, let's assume you searched and that produced 4 results:
+<ul>
+    <li>Defense: 20, Spare slots: 5</li>
+    <li>Defense: 30, Spare slots: 3</li>
+    <li>Defense: 30, Spare slots: 4</li>
+    <li>Defense: 40, Spare slots: 3</li>
+</ul>
+<br/>
+If you add only a <b>Defense</b> sort criteria, this will produce the following:
+<ol>
+    <li>Defense: 40, Spare slots: 3</li>
+    <li>Defense: 30, Spare slots: 3</li>
+    <li>Defense: 30, Spare slots: 4</li>
+    <li>Defense: 20, Spare slots: 5</li>
+</ol>
+<br/>Note that the second and third results have their spare slots not taken into account, and order hasn't changed compared to the original order.<br/>
+<br/>
+Now let's try to sort by <b>Defense</b>, then by <b>Spare slots</b>, we should get the following result:
+<ol>
+    <li>Defense: 40, Spare slots: 3</li>
+    <li>Defense: 30, Spare slots: 4</li>
+    <li>Defense: 30, Spare slots: 3</li>
+    <li>Defense: 20, Spare slots: 5</li>
+</ol>
+<br/>
+Now second and third results are in a better order.<br/>
+That means, for results that were considered equal on <b>Defense</b>, the <b>Spare slots</b> sorting criteria added a level of granularity to produced an even better sorting.<br/>
+<br/>
+One last example to help you understand the order of sorting: now sorting by <b>Spare slots</b>, then by <b>Defense</b>
+<ol>
+    <li>Defense: 20, Spare slots: 5</li>
+    <li>Defense: 30, Spare slots: 4</li>
+    <li>Defense: 40, Spare slots: 3</li>
+    <li>Defense: 30, Spare slots: 3</li>
+</ol>
+<br/>
+Note that now the <b>Spare slots</b> is the main criteria, and <b>Defense</b> is a refinement among equal <b>Spare slots</b> results.
+</body>

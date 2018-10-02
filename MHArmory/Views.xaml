@@ -633,6 +633,7 @@
                             <DockPanel DockPanel.Dock="Top" HorizontalAlignment="Stretch">
                                 <ContentControl DockPanel.Dock="Left" Content="{Binding InParameters, Mode=OneTime}" ContentTemplate="{StaticResource InParametersView}" Focusable="False"/>
                                 <Button DockPanel.Dock="Right" HorizontalAlignment="Right" Content="Sort results..." Command="{Binding OpenSearchResultProcessingCommand, Mode=OneTime}" Margin="2" Padding="8" VerticalAlignment="Center"/>
+                                <Button DockPanel.Dock="Right" HorizontalAlignment="Right" Content="?" MinWidth="20" Margin="2" Padding="4" VerticalAlignment="Center" Command="{x:Static local:RoutedCommands.OpenIntegratedHelp}" CommandParameter="Sorting" bhv:ToolTipEx.Content="Show help about sorting"/>
                             </DockPanel>
                             <ListBox ItemsSource="{Binding FoundArmorSets, Mode=OneWay}" ItemTemplate="{StaticResource SearchResultArmorSetView}" ScrollViewer.VerticalScrollBarVisibility="Visible" Visibility="{Binding IsDataLoaded, Converter={StaticResource CollapsedVisibilityValueConverter}, Mode=OneWay}" Focusable="False" VirtualizingPanel.IsVirtualizing="True" VirtualizingPanel.ScrollUnit="Pixel" VirtualizingPanel.VirtualizationMode="Standard">
                                 <ListBox.ItemContainerStyle>
@@ -888,6 +889,7 @@
             </Grid.ColumnDefinitions>
             <DockPanel Grid.Column="0" LastChildFill="True">
                 <DockPanel DockPanel.Dock="Top">
+                    <Button Content="?" DockPanel.Dock="Left" MinWidth="20" Margin="2" Padding="4" VerticalAlignment="Center" Command="{Binding OpenIntegratedHelpCommand, Mode=OneTime}" CommandParameter="Sorting" IsEnabled="True" bhv:ToolTipEx.Content="Show help about sorting"/>
                     <Button Content="Add sorting logic" DockPanel.Dock="Left" HorizontalAlignment="Left" Command="{Binding CreateNewCommand, Mode=OneTime}" Margin="2" Padding="8 4 8 4"/>
                     <ToggleButton x:Name="edit" Content="Edit mode" DockPanel.Dock="Right" HorizontalAlignment="Right" IsChecked="{Binding IsEditMode, Mode=TwoWay}" Visibility="{Binding HasContainers, Converter={StaticResource CollapsedVisibilityValueConverter}}" Margin="2" Padding="4"/>
                 </DockPanel>

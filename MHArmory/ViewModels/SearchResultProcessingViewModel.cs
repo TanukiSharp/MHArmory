@@ -25,6 +25,8 @@ namespace MHArmory.ViewModels
             }
         }
 
+        public ICommand OpenIntegratedHelpCommand { get; }
+
         public event EventHandler EditModeChanged;
 
         private bool hasSelection;
@@ -60,9 +62,16 @@ namespace MHArmory.ViewModels
         {
             this.rootViewModel = rootViewModel;
 
+            OpenIntegratedHelpCommand = new AnonymousCommand(OnOpenIntegratedHelp);
+
             Containers.CollectionChanged += Containers_CollectionChanged;
 
             CreateNewCommand = new AnonymousCommand(OnCreateNew);
+        }
+
+        private void OnOpenIntegratedHelp()
+        {
+            WindowManager.Show<HelpWindow>(HelpCategory.Sorting);
         }
 
         internal void NotifyConfigurationLoaded()

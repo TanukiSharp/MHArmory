@@ -12,7 +12,8 @@ namespace MHArmory.ViewModels
     {
         GettingStarted,
         DecorationOverride,
-        KeyboardShortcuts
+        KeyboardShortcuts,
+        Sorting
     }
 
     public class HelpViewModel : ViewModelBase

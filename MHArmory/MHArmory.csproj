@@ -431,6 +431,9 @@
   <ItemGroup>
     <Resource Include="HelpText\GettingStarted.html" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="HelpText\Sorting.html" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <PreBuildEvent>call "$(ProjectDir)PreBuildEventGitInfo.bat" "$(ProjectDir)"</PreBuildEvent>
