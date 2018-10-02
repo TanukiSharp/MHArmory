@@ -18,6 +18,8 @@ namespace MHArmory.Configurations
             ConfigurationManager.logger = logger;
         }
 
+        public static bool IsBrandNewConfiguration { get; private set; }
+
         public static void Save(IConfiguration configurationObject)
         {
             if (App.HasWriteAccess == false)
@@ -118,6 +120,8 @@ namespace MHArmory.Configurations
                         failFast = new NotImplementedException($"Have to implement configuration format converters ('{config.Version}' -> '{version}').");
                     }
                 }
+                else
+                    IsBrandNewConfiguration = true;
             }
             catch (Exception ex)
             {

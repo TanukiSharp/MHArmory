@@ -64,6 +64,9 @@ namespace MHArmory
 
         private async void MainWindow_Loaded(object sender, RoutedEventArgs e)
         {
+            if (ConfigurationManager.IsBrandNewConfiguration)
+                OpenIntegratedHelp(HelpCategory.GettingStarted);
+
             await Dispatcher.Yield(DispatcherPriority.SystemIdle);
 
             skillSelectorWindow = new SkillSelectorWindow { Owner = this };
