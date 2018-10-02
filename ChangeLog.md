@@ -1,13 +1,21 @@
 # Change log
 
-## vNext (not yet released)
+## 0.0.6.3 (2018/10/02)
 
-- Now armor set search has a progression bar
+This release contains mostly internal re-organization changes, not directly visible.<br/>
+From the end-user's perspective, here are the minor changes:
+
+- Now armor set search has a progress bar
 - Weapons tree can now be panned with mouse left button drag
 - Updated general description of all skills
 - Added skill general description to skill tooltips for even more context:
 
-    *image coming soon*
+    ![skill tooltop after again](docs/misc/changelog_0.0.6.3_skill_tooltip_after_again.png)
+
+- Improved integrated help, now showing on first run of **Armory**.
+- Moved skill loadouts menus
+
+    ![skill loadouts menus](docs/misc/changelog_0.0.6.3_skill_loadouts_menus.png)
 
 ## 0.0.6.2 (2018/09/27)
 

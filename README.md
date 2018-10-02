@@ -4,7 +4,7 @@
 <img src="docs/images/blue_shield.png" width="64" height="64"/>
 </td>
 <td border-collapse="collapse" border="none">
-<i>Current version: <b><a href="https://github.com/TanukiSharp/MHArmory/raw/master/Distributions/MHArmory_0.0.6.2.zip">0.0.6.2</a></b></i><br/><i>Last modification: <b>2018/09/27</b></i>
+<i>Current version: <b><a href="https://github.com/TanukiSharp/MHArmory/raw/master/Distributions/MHArmory_0.0.6.3.zip">0.0.6.3</a></b></i><br/><i>Last modification: <b>2018/10/02</b></i>
 </td>
 </tr>
 </table>
@@ -37,7 +37,7 @@ A temporary documentation for the beta test phase is available here: https://tan
 Link to the English beta test documentation: https://tanukisharp.github.io/MHArmory/beta_test_en.html<br/>
 Link to the French beta test documentation: https://tanukisharp.github.io/MHArmory/beta_test_fr.html
 
-Link to direct download: https://github.com/TanukiSharp/MHArmory/raw/master/Distributions/MHArmory_0.0.6.2.zip
+Link to direct download: https://github.com/TanukiSharp/MHArmory/raw/master/Distributions/MHArmory_0.0.6.3.zip
 
 # Stay tuned
 

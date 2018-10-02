@@ -11,9 +11,14 @@ Jetez un oeil au projet sur GitHub ici: [https://github.com/TanukiSharp/MHArmory
 
 ## Lancer Armory
 
-Pour commencer, téléchargez le fichier zip de **Armory** à l'adresse suivante: [https://github.com/TanukiSharp/MHArmory/raw/master/Distributions/MHArmory_0.0.6.2.zip](https://github.com/TanukiSharp/MHArmory/raw/master/Distributions/MHArmory_0.0.6.2.zip)
+Pour commencer, téléchargez le fichier zip de **Armory** à l'adresse suivante: [https://github.com/TanukiSharp/MHArmory/raw/master/Distributions/MHArmory_0.0.6.3.zip](https://github.com/TanukiSharp/MHArmory/raw/master/Distributions/MHArmory_0.0.6.3.zip)
 
 Extrayez le zip à un endroit où l'application aura droit en écriture, pour que le programme puisse sauvegarder vos préférences. Ceci n'est pas obligatoire, mais recommandé.<br/>
 Evitez `Program Files` ou autres.
 
 Désormais, vous pouvez exécuter `MHArmory.exe`.<br/>
+
+## Quand vous mettez-à-jour
+
+Quand vous mettez à jour **Armory**, vous pouvez copier le fichier `config.json` de l'ancienne version vers la nouvelle.<br/>
+Ce fichier contient toutes vos préferences que vous voulez très probablement conserver d'une version à l'autre.
