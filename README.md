@@ -69,8 +69,6 @@ You can find a change log file [here](ChangeLog.md)
 - **Delca**, a friend with whom I exchange though about armor set search implementation
     - GitHub account: https://github.com/Delca
     - Have a look at this: https://github.com/Delca/MHOSEF
-- **La Caverne du Dodogama**, French MH World PC Guild
-    - Discord invitation link here: https://discord.gg/YzhmaCv
 - **Saint-Funky, Masta, Professeur Felyne**, administrators of the MHFR community
     - Discord invitation link here: http://discord.gg/mhfr
 - **Professeur Felyne**, administrator of the MHFR community forum
