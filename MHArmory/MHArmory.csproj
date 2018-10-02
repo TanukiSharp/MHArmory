@@ -426,7 +426,7 @@
     <Resource Include="Icons\Attributes\Deviation.svg" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="HelpText\DecorationOverride.html" />
+    <Resource Include="HelpText\DecorationsOverride.html" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="HelpText\GettingStarted.html" />
