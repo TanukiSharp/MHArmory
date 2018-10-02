@@ -608,7 +608,7 @@
                             <TextBlock Text="Auto-search" VerticalAlignment="Center"/>
                         </CheckBox.Content>
                     </CheckBox>
-                    <Button DockPanel.Dock="Bottom" Content="Advanced Search" Margin="2" Padding="4" Command="{Binding AdvancedSearchCommand, Mode=OneTime}"/>
+                    <Button DockPanel.Dock="Bottom" Content="Advanced search..." Margin="2" Padding="4" Command="{Binding AdvancedSearchCommand, Mode=OneTime}"/>
                     <Grid DockPanel.Dock="Bottom">
                         <Button x:Name="btnSearch" Content="Search" Margin="2" Padding="4" Command="{Binding SearchArmorSetsCommand, Mode=OneTime}"/>
                         <Button x:Name="btnCancelSearch" Content="Cancel" Margin="2" Padding="4" Command="{Binding CancelArmorSetsSearchCommand, Mode=OneTime}" Visibility="Hidden"/>
@@ -816,9 +816,9 @@
                 </Grid.ColumnDefinitions>
                 <TextBlock x:Name="readonlyName" Grid.Column="0" Text="{Binding Name}" VerticalAlignment="Center"/>
                 <TextBlock x:Name="readonlyCount" Grid.Column="1" Text="{Binding SortItems.Count, StringFormat=({0})}" Margin="4" VerticalAlignment="Center"/>
-                <Button Grid.Column="2" Content="Apply" Command="{Binding ApplyCommand, Mode=OneTime}" Margin="1" Padding="8 4 8 4" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" bhv:ToolTipEx.Content="Applies the sorting preference right now"/>
-                <Button x:Name="deactiveBtn" Grid.Column="3" Content="Deactivate" Command="{Binding DeactivateCommand, Mode=OneTime}" Margin="1" Padding="8 4 8 4" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" bhv:ToolTipEx.Content="Deactivates the sorting preference (default sorting will apply)" Visibility="Hidden"/>
-                <Button x:Name="activeBtn" Grid.Column="3" Content="Make active" Command="{Binding MakeActiveCommand, Mode=OneTime}" Margin="1" Padding="8 4 8 4" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" bhv:ToolTipEx.Content="Applies the sorting preference right now and make it the default for subsequent searches"/>
+                <Button Grid.Column="2" Content="Apply" Command="{Binding ApplyCommand, Mode=OneTime}" Margin="1" Padding="8 4 8 4" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" bhv:ToolTipEx.Content="Applies the sorting logic right now"/>
+                <Button x:Name="deactiveBtn" Grid.Column="3" Content="Deactivate" Command="{Binding DeactivateCommand, Mode=OneTime}" Margin="1" Padding="8 4 8 4" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" bhv:ToolTipEx.Content="Deactivates the sorting logic (default sorting will apply)" Visibility="Hidden"/>
+                <Button x:Name="activeBtn" Grid.Column="3" Content="Make active" Command="{Binding MakeActiveCommand, Mode=OneTime}" Margin="1" Padding="8 4 8 4" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" bhv:ToolTipEx.Content="Applies the sorting logic right now and make it the default for subsequent searches"/>
             </Grid>
             <DockPanel x:Name="edit" LastChildFill="True" Visibility="Hidden" VerticalAlignment="Center" Margin="24 0 0 0">
                 <Button DockPanel.Dock="Right" Content="X" bhv:ToolTipEx.Content="Remove" Width="{Binding ActualHeight, RelativeSource={RelativeSource Mode=Self}}" Command="{Binding RemoveSelfCommand, Mode=OneTime}" Margin="1"/>
@@ -888,8 +888,8 @@
             </Grid.ColumnDefinitions>
             <DockPanel Grid.Column="0" LastChildFill="True">
                 <DockPanel DockPanel.Dock="Top">
-                    <Button Content="New sorting preference" DockPanel.Dock="Left" HorizontalAlignment="Left" Command="{Binding CreateNewCommand, Mode=OneTime}" Margin="2" Padding="8 4 8 4"/>
-                    <ToggleButton x:Name="edit" Content="Edit Mode" DockPanel.Dock="Right" HorizontalAlignment="Right" IsChecked="{Binding IsEditMode, Mode=TwoWay}" Visibility="{Binding HasContainers, Converter={StaticResource CollapsedVisibilityValueConverter}}" Margin="2" Padding="4"/>
+                    <Button Content="Add sorting logic" DockPanel.Dock="Left" HorizontalAlignment="Left" Command="{Binding CreateNewCommand, Mode=OneTime}" Margin="2" Padding="8 4 8 4"/>
+                    <ToggleButton x:Name="edit" Content="Edit mode" DockPanel.Dock="Right" HorizontalAlignment="Right" IsChecked="{Binding IsEditMode, Mode=TwoWay}" Visibility="{Binding HasContainers, Converter={StaticResource CollapsedVisibilityValueConverter}}" Margin="2" Padding="4"/>
                 </DockPanel>
                 <ListBox ItemsSource="{Binding Containers, Mode=OneWay}" ItemTemplate="{StaticResource SearchResultProcessingContainerMasterView}" HorizontalContentAlignment="Stretch" SelectedItem="{Binding SelectedContainer}" Margin="2"/>
             </DockPanel>
