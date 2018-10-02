@@ -17,6 +17,8 @@ namespace MHArmory.ViewModels
 {
     public class RootViewModel : ViewModelBase, IDisposable
     {
+        public ICommand CloseApplicationCommand { get; }
+
         public ICommand OpenSkillSelectorCommand { get; }
         public ICommand SearchArmorSetsCommand { get; }
         public ICommand CancelArmorSetsSearchCommand { get; }
@@ -100,6 +102,8 @@ namespace MHArmory.ViewModels
 
         public RootViewModel()
         {
+            CloseApplicationCommand = new AnonymousCommand(OnCloseApplication);
+
             OpenSkillSelectorCommand = new AnonymousCommand(OpenSkillSelector);
             SearchArmorSetsCommand = new AnonymousCommand(SearchArmorSets);
             CancelArmorSetsSearchCommand = new AnonymousCommand(CancelArmorSetsSearchForCommand);
@@ -127,6 +131,11 @@ namespace MHArmory.ViewModels
         private void OnAbout()
         {
             new AboutWindow() { Owner = App.Current.MainWindow }.ShowDialog();
+        }
+
+        private void OnCloseApplication(object parameters)
+        {
+            App.Current.MainWindow.Close();
         }
 
         public void ApplySorting(bool force, int limit = 200)

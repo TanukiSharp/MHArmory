@@ -578,14 +578,17 @@
 
     <DataTemplate x:Key="RootView">
         <DockPanel LastChildFill="True">
-            <Menu DockPanel.Dock="Top">
+            <Menu DockPanel.Dock="Top" FontSize="14">
                 <MenuItem Header="File">
-                    <MenuItem Header="New loadout" Command="{x:Static local:RoutedCommands.NewLoadout}"/>
-                    <MenuItem Header="Open loadout..." Command="{x:Static local:RoutedCommands.OpenLoadout}"/>
-                    <MenuItem Header="Save loadout" Command="{x:Static local:RoutedCommands.SaveLoadout}"/>
-                    <MenuItem Header="Save loadout as..." Command="{x:Static local:RoutedCommands.SaveLoadoutAs}"/>
+                    <MenuItem Header="Close" Command="{Binding CloseApplicationCommand, Mode=OneTime}"/>
+                </MenuItem>
+                <MenuItem Header="Skill loadouts">
+                    <MenuItem Header="New" Command="{x:Static local:RoutedCommands.NewLoadout}"/>
+                    <MenuItem Header="Open..." Command="{x:Static local:RoutedCommands.OpenLoadout}"/>
+                    <MenuItem Header="Save" Command="{x:Static local:RoutedCommands.SaveLoadout}"/>
+                    <MenuItem Header="Save as..." Command="{x:Static local:RoutedCommands.SaveLoadoutAs}"/>
                     <Separator/>
-                    <MenuItem Header="Manage loadouts..." Command="{x:Static local:RoutedCommands.ManageLoadouts}"/>
+                    <MenuItem Header="Manage..." Command="{x:Static local:RoutedCommands.ManageLoadouts}"/>
                 </MenuItem>
                 <MenuItem Header="Equipments" Command="{x:Static local:RoutedCommands.OpenEquipmentExplorer}"/>
                 <MenuItem Header="Events" Command="{x:Static local:RoutedCommands.OpenEvents}"/>
