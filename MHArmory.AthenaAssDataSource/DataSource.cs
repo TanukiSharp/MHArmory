@@ -37,9 +37,17 @@ namespace MHArmory.AthenaAssDataSource
 
             if (File.Exists(filename))
             {
-                dataFolderPath = File.ReadAllText(filename).Trim();
-                if (string.IsNullOrWhiteSpace(dataFolderPath) || Directory.Exists(dataFolderPath) == false)
-                    dataFolderPath = null;
+                string[] allLines = File.ReadAllLines(filename)
+                    ?.Select(x => x.Trim())
+                    ?.Where(x => x.Length > 0)
+                    ?.ToArray();
+
+                if (allLines != null && allLines.Length > 0)
+                {
+                    dataFolderPath = allLines[0];
+                    if (string.IsNullOrWhiteSpace(dataFolderPath) || Directory.Exists(dataFolderPath) == false)
+                        dataFolderPath = null;
+                }
             }
 
             if (dataFolderPath == null && directoryBrowserService != null && messageBoxService != null)

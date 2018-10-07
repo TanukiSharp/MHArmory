@@ -108,10 +108,6 @@ namespace DataSourceTool
             //--------------------------------------------------------------------------
 
             Common.SerializeJson(Path.Combine(outputPath, $"{nameof(jewels)}.json"), Export(jewels));
-
-            //--------------------------------------------------------------------------
-
-            //string weapons = await fetchWeaponsTask;
         }
 
         private object Export(IEnumerable<IAbility> abilities)
