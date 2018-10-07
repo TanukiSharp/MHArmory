@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Input;
+using System.Windows.Threading;
 using MHArmory.Configurations;
 using MHArmory.Core;
 using MHArmory.Core.DataStructures;
@@ -267,7 +268,7 @@ namespace MHArmory.ViewModels
             await CancelArmorSetsSearch();
 
             searchCancellationTokenSource = new CancellationTokenSource();
-            previousSearchTask = Task.Run(() => SearchArmorSetsInternal(searchCancellationTokenSource.Token));
+            previousSearchTask = SearchArmorSetsInternal(searchCancellationTokenSource.Token);
 
             SearchProgression = 0.0;
             IsSearching = true;
@@ -282,8 +283,11 @@ namespace MHArmory.ViewModels
 
                 previousSearchTask = null;
 
-                searchCancellationTokenSource.Cancel();
-                searchCancellationTokenSource = null;
+                if (searchCancellationTokenSource != null)
+                {
+                    searchCancellationTokenSource.Cancel();
+                    searchCancellationTokenSource = null;
+                }
             }
         }
 
@@ -403,6 +407,9 @@ namespace MHArmory.ViewModels
 
         private async Task SearchArmorSetsInternal(CancellationToken cancellationToken)
         {
+            if (SolverData == null)
+                return;
+
             solver = new Solver(SolverData);
 
             solver.SearchMetricsChanged += SolverSearchMetricsChanged;
@@ -411,6 +418,12 @@ namespace MHArmory.ViewModels
             try
             {
                 IList<ArmorSetSearchResult> result = await solver.SearchArmorSets(cancellationToken);
+
+                if (SolverData == null)
+                {
+                    rawFoundArmorSets = null;
+                    return;
+                }
 
                 if (result != null)
                 {
@@ -455,9 +468,33 @@ namespace MHArmory.ViewModels
             return new SolverDataJewelModel(jewel, int.MaxValue);
         }
 
+        private DispatcherOperation abilityChangingDispatcherOperation;
+
         internal void SelectedAbilitiesChanged()
         {
-            AbilitiesChanged?.Invoke(this, EventArgs.Empty);
+            if (abilityChangingDispatcherOperation == null)
+            {
+                void SelectedAbilitiesChangedDone(object arg)
+                {
+                    var self = (RootViewModel)arg;
+
+                    try
+                    {
+                        self.CreateSolverData();
+
+                        if (self.IsAutoSearch)
+                            self.SearchArmorSets();
+
+                        self.AbilitiesChanged?.Invoke(self, EventArgs.Empty);
+                    }
+                    finally
+                    {
+                        self.abilityChangingDispatcherOperation = null;
+                    }
+                }
+
+                abilityChangingDispatcherOperation = Dispatcher.BeginInvoke((Action<object>)SelectedAbilitiesChangedDone, this);
+            }
         }
 
         private void SolverSearchMetricsChanged(SearchMetrics metricsData)

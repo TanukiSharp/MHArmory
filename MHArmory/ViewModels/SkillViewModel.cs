@@ -135,8 +135,15 @@ namespace MHArmory.ViewModels
                 searchStatement.IsMatching(JewelsText);
         }
 
+        private bool isCheckChanging = false;
+
         internal void CheckChanged(int level, bool resetChecked)
         {
+            if (isCheckChanging)
+                return;
+
+            isCheckChanging = true;
+
             if (resetChecked)
             {
                 foreach (AbilityViewModel vm in Abilities)
@@ -146,10 +153,7 @@ namespace MHArmory.ViewModels
                 }
             }
 
-            root.CreateSolverData();
-
-            if (root.IsAutoSearch)
-                root.SearchArmorSets();
+            isCheckChanging = false;
 
             skillSelector?.ComputeVisibility(this);
 

@@ -20,6 +20,9 @@ namespace MHArmory.Search
 
         public Solver(ISolverData data)
         {
+            if (data == null)
+                throw new ArgumentNullException(nameof(data));
+
             this.data = data;
         }
 
@@ -41,7 +44,7 @@ namespace MHArmory.Search
                     data.DesiredAbilities,
                     cancellationToken
                 );
-            });
+            }, cancellationToken);
         }
 
         private async void UpdateSearchProgression(CancellationToken cancellationToken)
@@ -162,7 +165,7 @@ namespace MHArmory.Search
             }
             catch (OperationCanceledException)
             {
-                return null;
+                test = null;
             }
             finally
             {
@@ -171,8 +174,8 @@ namespace MHArmory.Search
 
             sw.Stop();
 
-            metrics.MatchingResults = test.Count;
             metrics.TimeElapsed = (int)sw.ElapsedMilliseconds;
+            metrics.MatchingResults = test?.Count ?? 0;
 
             SearchMetricsChanged?.Invoke(metrics);
 
