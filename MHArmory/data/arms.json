@@ -3632,6 +3632,58 @@
     },
     {
         "id": 155,
+        "name": "Harvest Trama",
+        "rarity": 3,
+        "abilityIds": [
+            179
+        ],
+        "defense": {
+            "base": 26,
+            "max": 54,
+            "augmented": 78
+        },
+        "resistances": {
+            "fire": 4,
+            "water": 1,
+            "thunder": 1,
+            "ice": 1,
+            "dragon": 1
+        },
+        "attributes": {
+            "gender": 3
+        },
+        "eventId": 22
+    },
+    {
+        "id": 156,
+        "name": "Harvest Trama α",
+        "rarity": 6,
+        "slots": [
+            1,
+            2
+        ],
+        "abilityIds": [
+            179
+        ],
+        "defense": {
+            "base": 52,
+            "max": 72,
+            "augmented": 84
+        },
+        "resistances": {
+            "fire": 4,
+            "water": 1,
+            "thunder": 1,
+            "ice": 1,
+            "dragon": 1
+        },
+        "attributes": {
+            "gender": 3
+        },
+        "eventId": 22
+    },
+    {
+        "id": 157,
         "name": "Kulve Taroth's Rage α",
         "rarity": 8,
         "slots": [
@@ -3659,7 +3711,7 @@
         "eventId": 7
     },
     {
-        "id": 156,
+        "id": 158,
         "name": "Kulve Taroth's Rage β",
         "rarity": 8,
         "slots": [
@@ -3688,7 +3740,7 @@
         "eventId": 7
     },
     {
-        "id": 157,
+        "id": 159,
         "name": "Dante's Gloves α",
         "rarity": 8,
         "slots": [
@@ -3716,7 +3768,7 @@
         "eventId": 8
     },
     {
-        "id": 158,
+        "id": 160,
         "name": "Azure Starlord Gauntlets α",
         "rarity": 7,
         "slots": [
@@ -3746,7 +3798,7 @@
         "eventId": 9
     },
     {
-        "id": 159,
+        "id": 161,
         "name": "Kirin Longarms γ",
         "rarity": 8,
         "slots": [
@@ -3778,7 +3830,7 @@
         "eventId": 15
     },
     {
-        "id": 160,
+        "id": 162,
         "name": "Vaal Hazak Braces γ",
         "rarity": 8,
         "slots": [
@@ -3809,7 +3861,7 @@
         "eventId": 16
     },
     {
-        "id": 161,
+        "id": 163,
         "name": "Kaiser Vambraces γ",
         "rarity": 8,
         "slots": [
@@ -3839,7 +3891,7 @@
         "eventId": 20
     },
     {
-        "id": 162,
+        "id": 164,
         "name": "Kushala Grip γ",
         "rarity": 8,
         "slots": [
@@ -3871,7 +3923,7 @@
         "eventId": 21
     },
     {
-        "id": 163,
+        "id": 165,
         "name": "Diver's Braces",
         "rarity": 3,
         "abilityIds": [
@@ -3895,7 +3947,7 @@
         "eventId": 17
     },
     {
-        "id": 164,
+        "id": 166,
         "name": "Diver's Braces α",
         "rarity": 5,
         "slots": [
@@ -3922,7 +3974,7 @@
         "eventId": 17
     },
     {
-        "id": 165,
+        "id": 167,
         "name": "Butterfly Brachia α",
         "rarity": 5,
         "abilityIds": [
@@ -3947,7 +3999,7 @@
         "eventId": 18
     },
     {
-        "id": 166,
+        "id": 168,
         "name": "Butterfly Brachia β",
         "rarity": 5,
         "slots": [
@@ -3974,7 +4026,7 @@
         "eventId": 18
     },
     {
-        "id": 167,
+        "id": 169,
         "name": "Queen Beetle Brachia α",
         "rarity": 5,
         "abilityIds": [
@@ -3999,7 +4051,7 @@
         "eventId": 18
     },
     {
-        "id": 168,
+        "id": 170,
         "name": "Queen Beetle Brachia β",
         "rarity": 5,
         "slots": [
