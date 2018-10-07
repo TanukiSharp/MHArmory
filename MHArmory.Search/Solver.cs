@@ -44,7 +44,7 @@ namespace MHArmory.Search
                     data.DesiredAbilities,
                     cancellationToken
                 );
-            }, cancellationToken);
+            });
         }
 
         private async void UpdateSearchProgression(CancellationToken cancellationToken)
@@ -125,7 +125,6 @@ namespace MHArmory.Search
 
             var parallelOptions = new ParallelOptions
             {
-                CancellationToken = cancellationToken,
                 //MaxDegreeOfParallelism = 1, // to ease debugging
                 MaxDegreeOfParallelism = Environment.ProcessorCount
             };
@@ -133,11 +132,13 @@ namespace MHArmory.Search
             currentCombinations = 0;
             totalCombinations = metrics.CombinationCount;
 
+            ParallelLoopResult parallelResult;
+
             try
             {
                 OrderablePartitioner<IEquipment[]> partitioner = Partitioner.Create(generator.All(cancellationToken), EnumerablePartitionerOptions.NoBuffering);
 
-                ParallelLoopResult parallelResult = Parallel.ForEach(partitioner, parallelOptions, equips =>
+                parallelResult = Parallel.ForEach(partitioner, parallelOptions, equips =>
                 {
                     if (cancellationToken.IsCancellationRequested)
                     {
@@ -162,10 +163,6 @@ namespace MHArmory.Search
 
                     searchEquipmentsObjectPool.PutObject(equips);
                 });
-            }
-            catch (OperationCanceledException)
-            {
-                test = null;
             }
             finally
             {
