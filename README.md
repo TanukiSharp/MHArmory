@@ -15,7 +15,7 @@ This project is something I've always wanted to develop.
 
 The main motivation to do it has been led by the marvelous [Athena's ASS][10] application. If you do not know it, it's a shame, but it's never too late to give it a try.
 
-There are some parts in [Athena's ASS][10] that I don't like, and I wanted to contribute to help improve things that should be improved. Therefore, I tried to contact the author(s), but unsuccessfully. So, I decided to make my own, and make it the way I want.
+There are some parts in [Athena's ASS][10] I think could be improved, and for programming language preference reasons, I decided to make my own application, in order to make it the way I want. Note that the data used by **Armory** is the one provided by [Athena's ASS][10].
 
 Also, I want to make **Armory** a community driven project, for people to be able to give their opinion and request features, thus open sourcing it on GitHub.
 
