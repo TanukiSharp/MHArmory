@@ -38,13 +38,13 @@ namespace MHArmory.Search
         {
             UpdateSearchProgression(cancellationToken);
 
-            return Task.Run(() =>
+            return Task.Factory.StartNew(() =>
             {
                 return SearchArmorSetsInternal(
                     data.DesiredAbilities,
                     cancellationToken
                 );
-            });
+            }, TaskCreationOptions.LongRunning).Unwrap();
         }
 
         private async void UpdateSearchProgression(CancellationToken cancellationToken)
