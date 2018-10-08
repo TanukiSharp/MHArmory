@@ -296,7 +296,8 @@ namespace MHArmory.Search
                 e.IsSelected =
                     e.IsMatchingArmorSetSkill ||
                     e.AverageSkillCompletionRatio >= Heuristics.MinimumAverageSkillCompletionRatio ||
-                    e.MatchingSkillTotalLevel >= MaxSkillCountPerArmorPiece;
+                    e.MatchingSkillTotalLevel >= MaxSkillCountPerArmorPiece ||
+                    (e.MatchingSkillTotalLevel == e.Equipment.Abilities.Length && e.Equipment.Slots.Length > 0);
             }
         }
 
