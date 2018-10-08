@@ -6,6 +6,7 @@ This release contains optimizations that may not be perceivable for users with p
 Hereafter are perceivable changes:
 
 - Added Harvest armors and event
+- Added another equipment selection condition that should result in more armor sets finding (but may also increase search time)
 - Bug fixes (especially crashes when using the auto-search feature)
 
 ## 0.0.6.3 (2018/10/02)
