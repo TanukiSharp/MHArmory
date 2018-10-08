@@ -184,7 +184,7 @@
     <DataTemplate x:Key="ArmorSetSkillView">
         <StackPanel Orientation="Horizontal">
             <TextBlock Text="{Binding Name, Mode=OneTime}" VerticalAlignment="Top" Margin="6 0 6 0"/>
-            <ItemsControl ItemsSource="{Binding Parts, Mode=OneTime}" ItemTemplate="{StaticResource ArmorSetSkillPartView}"/>
+            <ItemsControl ItemsSource="{Binding Parts, Mode=OneTime}" ItemTemplate="{StaticResource ArmorSetSkillPartView}" Focusable="False"/>
         </StackPanel>
     </DataTemplate>
 
@@ -629,7 +629,7 @@
                 <GridSplitter Grid.Column="1" HorizontalAlignment="Stretch"/>
 
                 <DockPanel Grid.Column="2" LastChildFill="True">
-                    <ContentControl DockPanel.Dock="Bottom" Content="{Binding SearchMetrics, Mode=OneWay}" ContentTemplate="{StaticResource SearchMetricsView}"/>
+                    <ContentControl DockPanel.Dock="Bottom" Content="{Binding SearchMetrics, Mode=OneWay}" ContentTemplate="{StaticResource SearchMetricsView}" Focusable="False"/>
                     <Grid>
                         <TextBlock x:Name="loading" Text="Loading..." HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="20" Visibility="{Binding IsDataLoading, Converter={StaticResource CollapsedVisibilityValueConverter}, Mode=OneWay}"/>
                         <DockPanel LastChildFill="True">
@@ -657,7 +657,6 @@
                         </DockPanel>
                     </Grid>
                 </DockPanel>
-
             </Grid>
         </DockPanel>
         <DataTemplate.Triggers>
