@@ -103,7 +103,9 @@ namespace MHArmory
                 foreach (AbilityViewModel ability in rootViewModel.SelectedAbilities.Where(x => x.IsChecked))
                     ability.IsChecked = false;
 
-                IsModified = false;
+                // Postponing rest of the IsModified flag to false to the next scheduler frame is
+                // because of a change in the way ability/skill checkboxes are processed, for performance reasons.
+                rootViewModel.Dispatcher.BeginInvoke((Action)delegate { IsModified = false; });
 
                 CurrentLoadoutName = null;
 
@@ -165,7 +167,9 @@ namespace MHArmory
                 CurrentLoadoutName = loadoutName;
             }
 
-            IsModified = false;
+            // Postponing rest of the IsModified flag to false to the next scheduler frame is
+            // because of a change in the way ability/skill checkboxes are processed, for performance reasons.
+            rootViewModel.Dispatcher.BeginInvoke((Action)delegate { IsModified = false; });
 
             return true;
         }
