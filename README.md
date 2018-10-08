@@ -53,6 +53,7 @@ Follow **Armory** on Twitter to get latest news and updates: https://twitter.com
 
 ## May happen in a near future
 
+- Unit tests
 - Armor set builder (with partial equipment)
 - Asset explorer organized as tree
 
@@ -76,7 +77,7 @@ You can find a change log file [here](ChangeLog.md)
 - **Tyler Lartonoix**, owner of the mhw-db.com project
     - GitHub project site: https://github.com/LartTyler/MHWDB-API
     - API website: https://docs.mhw-db.com
-- **Testers:** Deiv
+- **Testers:** Deiv, Bjorn Lim
 - **Athena's ASS author(s)**, for making such a wonderful application and inspiring this project
 - **https://www.vectorizer.io**, wonderful website used to vectorize all rasterized icons
 - **All people who worked on Monster Hunter series**, for making such an amazing game
