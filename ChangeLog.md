@@ -1,5 +1,13 @@
 # Change log
 
+## vNext (?)
+
+This release contains optimizations that may not be perceivable for users with powerful computers.<br/>
+Hereafter are perceivable changes:
+
+- Added Harvest armors and event
+- Bug fixes (especially crashes when using the auto-search feature)
+
 ## 0.0.6.3 (2018/10/02)
 
 This release contains mostly internal re-organization changes, not directly visible.<br/>
