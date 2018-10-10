@@ -679,6 +679,7 @@
                 <Grid.RowDefinitions>
                     <RowDefinition Height="Auto"/>
                     <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
                 </Grid.RowDefinitions>
                 <Button Grid.Column="0" Grid.Row="0" Command="{Binding SelectAllCommand, Mode=OneTime}" Margin="1">
                     <Viewbox StretchDirection="DownOnly">
@@ -693,6 +694,11 @@
                 <Button Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="2" Command="{Binding InverseSelectionCommand, Mode=OneTime}" Margin="1">
                     <Viewbox StretchDirection="DownOnly">
                         <TextBlock Text="Inverse selection" Margin="2"/>
+                    </Viewbox>
+                </Button>
+                <Button Grid.Column="0" Grid.Row="2" Grid.ColumnSpan="2" Command="{Binding ResetSelectionCommand, Mode=OneTime}" Margin="1" bhv:ToolTipEx.Content="Resest to default selection">
+                    <Viewbox StretchDirection="DownOnly">
+                        <TextBlock Text="Reset selection" Margin="2"/>
                     </Viewbox>
                 </Button>
             </Grid>

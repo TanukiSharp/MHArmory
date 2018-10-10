@@ -7,6 +7,10 @@ Hereafter are perceivable changes:
 
 - Added Harvest armors and event
 - Added another equipment selection condition that should result in more armor sets finding (but may also increase search time)
+- Added a button to reset to the default selection in the advanced search window
+
+    ![reset to default selection](docs/misc/changelog_0.0.6.4_reset_advanced_search.png)
+
 - Bug fixes (especially crashes when using the auto-search feature)
 
 ## 0.0.6.3 (2018/10/02)

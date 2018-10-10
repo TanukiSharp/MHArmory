@@ -10,6 +10,8 @@ namespace MHArmory.Search
         IEquipment Equipment { get; }
         event EventHandler SelectionChanged;
         bool IsSelected { get; set; }
+        void FreezeSelection();
+        void RestoreOriginalSelection();
     }
 
     public interface ISolverData

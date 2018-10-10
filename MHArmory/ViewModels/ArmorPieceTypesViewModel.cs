@@ -22,6 +22,7 @@ namespace MHArmory.ViewModels
         public ICommand SelectAllCommand { get; }
         public ICommand UnselectAllCommand { get; }
         public ICommand InverseSelectionCommand { get; }
+        public ICommand ResetSelectionCommand { get; }
 
         public ArmorPieceTypesViewModel(IEnumerable<ISolverDataEquipmentModel> equipments)
         {
@@ -30,6 +31,7 @@ namespace MHArmory.ViewModels
             SelectAllCommand = new AnonymousCommand(OnSelectAll);
             UnselectAllCommand = new AnonymousCommand(OnUnselectAll);
             InverseSelectionCommand = new AnonymousCommand(OnInverseSelection);
+            ResetSelectionCommand = new AnonymousCommand(OnResetSelection);
 
             foreach (ISolverDataEquipmentModel x in Equipments)
                 x.SelectionChanged += ItemSelectionChanged;
@@ -65,6 +67,13 @@ namespace MHArmory.ViewModels
         {
             foreach (ISolverDataEquipmentModel x in Equipments)
                 x.IsSelected = !x.IsSelected;
+            ForceRefreshEquipments();
+        }
+
+        private void OnResetSelection(object parameter)
+        {
+            foreach (ISolverDataEquipmentModel x in Equipments)
+                x.RestoreOriginalSelection();
             ForceRefreshEquipments();
         }
 

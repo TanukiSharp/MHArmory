@@ -30,6 +30,8 @@ namespace MHArmory.Search
 
         public event EventHandler SelectionChanged;
 
+        private bool originalValue;
+
         private bool isSelected;
         public bool IsSelected
         {
@@ -42,6 +44,16 @@ namespace MHArmory.Search
                     SelectionChanged?.Invoke(this, EventArgs.Empty);
                 }
             }
+        }
+
+        public void FreezeSelection()
+        {
+            originalValue = isSelected;
+        }
+
+        public void RestoreOriginalSelection()
+        {
+            IsSelected = originalValue;
         }
 
         public SolverDataEquipmentModel(IEquipment equipment)
@@ -146,6 +158,8 @@ namespace MHArmory.Search
         {
             UpdateReferences();
 
+            FreezeEquipmentSelection();
+
             return this;
         }
 
@@ -158,6 +172,27 @@ namespace MHArmory.Search
             AllLegs = inputLegs.ToArray<ISolverDataEquipmentModel>();
             AllCharms = inputCharms.ToArray<ISolverDataEquipmentModel>();
             AllJewels = inputJewels.ToArray<SolverDataJewelModel>();
+        }
+
+        private void FreezeEquipmentSelection()
+        {
+            foreach (ISolverDataEquipmentModel x in AllHeads)
+                x.FreezeSelection();
+
+            foreach (ISolverDataEquipmentModel x in AllChests)
+                x.FreezeSelection();
+
+            foreach (ISolverDataEquipmentModel x in AllGloves)
+                x.FreezeSelection();
+
+            foreach (ISolverDataEquipmentModel x in AllWaists)
+                x.FreezeSelection();
+
+            foreach (ISolverDataEquipmentModel x in AllLegs)
+                x.FreezeSelection();
+
+            foreach (ISolverDataEquipmentModel x in AllCharms)
+                x.FreezeSelection();
         }
 
         private void RemoveJewelsNotMatchingAnySkill()
