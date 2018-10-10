@@ -10,13 +10,16 @@ namespace MHArmory
 {
     public static class TaskExtensions
     {
+        public static void Forget(this Task task)
+        {
+            task.Forget(null);
+        }
+
         // Based on Ben Adams suggestion
         public static void Forget(this Task task, Action<Exception> onError)
         {
             if (task == null)
                 throw new ArgumentNullException(nameof(task));
-            if (onError == null)
-                throw new ArgumentNullException(nameof(onError));
 
             // Pass paramters explicitly to async local function or it will allocate to pass them
             async Task ForgetAwaited(Task t, Action<Exception> onErr)
@@ -33,7 +36,7 @@ namespace MHArmory
                 }
                 catch (Exception ex)
                 {
-                    onErr(ex);
+                    onErr?.Invoke(ex);
                 }
             }
 
