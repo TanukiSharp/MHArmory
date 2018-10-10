@@ -41,8 +41,6 @@ namespace MHArmory
             GitRepository = GitInfo.Repository.Trim();
 
             HasWriteAccess = WriteTest();
-
-            //AutoUpdater.Run(null);
         }
 
         private static string CreateDisplayVersion(Version version)

@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Net.Http;
@@ -16,27 +17,53 @@ namespace MHArmory.AutoUpdate
 {
     public class AutoUpdater
     {
-        private static readonly AutoUpdater instance = new AutoUpdater();
-        private static Dispatcher dispatcher;
+        public static readonly AutoUpdater Instance = new AutoUpdater();
 
         private ILogger logger;
+
+        private readonly Dispatcher dispatcher;
         private readonly HttpClient httpClient = new HttpClient();
 
         private const string DownloadBaseUrl = "https://github.com/TanukiSharp/MHArmory/raw/master/Distributions/";
         private const string InfoFilename = "manifest.json";
 
-        public static void Run(ILogger logger)
+        public event EventHandler<NewVersionEventArgs> NewVersion;
+
+        public AutoUpdater()
         {
             dispatcher = Dispatcher.CurrentDispatcher;
-
-            logger = new DispatcherLogger(dispatcher, logger);
-            Task.Run(() => instance.RunInternal(logger));
         }
 
-        private async void RunInternal(ILogger logger)
+        public void SetLogger(ILogger logger)
         {
-            this.logger = logger;
+            if (logger == null)
+                throw new ArgumentNullException(nameof(logger));
 
+            this.logger = new DispatcherLogger(dispatcher, logger);
+        }
+
+        public void ClearLogger()
+        {
+            logger = null;
+        }
+
+        public void Run()
+        {
+            Task.Run(() =>
+            {
+                try
+                {
+                    RunInternal();
+                }
+                catch (Exception ex)
+                {
+                    logger?.LogError(ex, ex.Message);
+                }
+            });
+        }
+
+        private async void RunInternal()
+        {
             string manifestContent = await DownloadManifestContent();
 
             if (manifestContent == null)
@@ -52,19 +79,10 @@ namespace MHArmory.AutoUpdate
 
             if (version > App.Version)
             {
-                // TODO: download in the background, extract and do something
-
                 await dispatcher.BeginInvoke((Action)delegate
                 {
-                    MessageBox.Show(
-                        $"You are currently using the version {App.Version}\n" +
-                        $"A newer version is availabe: {version}\n" +
-                        "\n" +
-                        "Note: The auto-updater is not finished yet so for now you are just informed.",
-                        "A newer version is available",
-                        MessageBoxButton.OK,
-                        MessageBoxImage.Information
-                    );
+                    var downloadUrl = new Uri(DownloadBaseUrl + archiveName, UriKind.Absolute);
+                    NewVersion?.Invoke(this, new NewVersionEventArgs(version, downloadUrl));
                 });
             }
         }
@@ -102,7 +120,24 @@ namespace MHArmory.AutoUpdate
             }
         }
 
-        private async Task<bool> DownloadFile(string url, string targetFilename)
+        public async Task DownloadAndOpen(Uri url)
+        {
+            try
+            {
+                string temporaryFile = $"{Path.GetTempFileName()}.zip";
+
+                if (await DownloadFile(url, temporaryFile) == false)
+                    return;
+
+                Process.Start(temporaryFile);
+            }
+            catch (Exception ex)
+            {
+                logger?.LogError(ex, ex.Message);
+            }
+        }
+
+        private async Task<bool> DownloadFile(Uri url, string targetFilename)
         {
             HttpResponseMessage response;
 
@@ -207,35 +242,6 @@ namespace MHArmory.AutoUpdate
             }
 
             return true;
-        }
-
-        private void AnalyzeDirectoryStructure()
-        {
-            if (IsDefaultDirectoryStructure())
-            {
-            }
-        }
-
-        private bool IsDefaultDirectoryStructure()
-        {
-            string path = AppContext.BaseDirectory.TrimEnd(Path.DirectorySeparatorChar, Path.AltDirectorySeparatorChar);
-
-            if (Path.GetFileName(path) != App.Version.ToString())
-                return false;
-
-            path = Path.GetDirectoryName(path);
-
-            if (Path.GetFileName(path) != App.ApplicationName)
-                return false;
-
-            return true;
-        }
-
-        private bool IsAlternativeDirectoryStructure()
-        {
-            string path = AppContext.BaseDirectory.TrimEnd(Path.DirectorySeparatorChar, Path.AltDirectorySeparatorChar);
-
-            return Path.GetFileName(path) == $"{App.ApplicationName}_{App.Version}";
         }
     }
 }

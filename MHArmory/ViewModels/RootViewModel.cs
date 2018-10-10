@@ -35,6 +35,8 @@ namespace MHArmory.ViewModels
 
         private Solver solver;
 
+        public AutoUpdateViewModel AutoUpdateViewModel { get; } = new AutoUpdateViewModel();
+
         private bool isDataLoading = true;
         public bool IsDataLoading
         {

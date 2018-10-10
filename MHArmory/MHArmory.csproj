@@ -63,6 +63,7 @@
       <DependentUpon>AboutWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="AutoUpdate\AutoUpdater.cs" />
+    <Compile Include="AutoUpdate\EventArguments.cs" />
     <Compile Include="Behaviors\ClickToCommandBehavior.cs" />
     <Compile Include="Behaviors\GreekLetterInputBehavior.cs" />
     <Compile Include="Behaviors\HorizontalScrollBehavior.cs" />
@@ -148,6 +149,7 @@
     <Compile Include="ViewModels\AdvancedSearchViewModel.cs" />
     <Compile Include="ViewModels\ArmorPieceTypesViewModel.cs" />
     <Compile Include="ViewModels\ArmorSetViewModel.cs" />
+    <Compile Include="ViewModels\AutoUpdateViewModel.cs" />
     <Compile Include="ViewModels\DecorationsOverrideViewModel.cs" />
     <Compile Include="ViewModels\EquipmentExplorerViewModel.cs" />
     <Compile Include="ViewModels\EventsViewModel.cs" />

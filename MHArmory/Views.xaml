@@ -576,28 +576,44 @@
         </DataTemplate.Triggers>
     </DataTemplate>
 
+    <DataTemplate x:Key="AutoUpdateView">
+        <TextBlock VerticalAlignment="Center" Text="{Binding ShortText, Mode=OneWay}" Visibility="{Binding IsVisible, Mode=OneWay, Converter={StaticResource CollapsedVisibilityValueConverter}}" Foreground="Red" FontWeight="Bold" Margin="0 0 6 0" bhv:ToolTipEx.Content="{Binding DetailedText, Mode=OneWay}">
+            <TextBlock.ContextMenu>
+                <ContextMenu>
+                    <MenuItem Header="Acknowledge" Command="{Binding AcknowledgeCommand, Mode=OneTime}"/>
+                    <MenuItem Header="Download" Command="{Binding DownloadCommand, Mode=OneTime}"/>
+                </ContextMenu>
+            </TextBlock.ContextMenu>
+        </TextBlock>
+    </DataTemplate>
+    
     <DataTemplate x:Key="RootView">
         <DockPanel LastChildFill="True">
-            <Menu DockPanel.Dock="Top" FontSize="14">
-                <MenuItem Header="File">
-                    <MenuItem Header="Close" Command="{Binding CloseApplicationCommand, Mode=OneTime}"/>
-                </MenuItem>
-                <MenuItem Header="Skill loadouts">
-                    <MenuItem Header="New" Command="{x:Static local:RoutedCommands.NewLoadout}"/>
-                    <MenuItem Header="Open..." Command="{x:Static local:RoutedCommands.OpenLoadout}"/>
-                    <MenuItem Header="Save" Command="{x:Static local:RoutedCommands.SaveLoadout}"/>
-                    <MenuItem Header="Save as..." Command="{x:Static local:RoutedCommands.SaveLoadoutAs}"/>
-                    <Separator/>
-                    <MenuItem Header="Manage..." Command="{x:Static local:RoutedCommands.ManageLoadouts}"/>
-                </MenuItem>
-                <MenuItem Header="Equipments" Command="{x:Static local:RoutedCommands.OpenEquipmentExplorer}"/>
-                <MenuItem Header="Events" Command="{x:Static local:RoutedCommands.OpenEvents}"/>
-                <MenuItem Header="?">
-                    <MenuItem Header="Integrated help" Command="{x:Static local:RoutedCommands.OpenIntegratedHelp}" CommandParameter="GettingStarted"/>
-                    <Separator/>
-                    <MenuItem Header="About..." Command="{Binding AboutCommand, Mode=OneTime}"/>
-                </MenuItem>
-            </Menu>
+            <DockPanel DockPanel.Dock="Top" LastChildFill="True">
+                <Border DockPanel.Dock="Right" VerticalAlignment="Stretch" Background="{x:Static SystemColors.MenuBarBrush}">
+                    <ContentControl Content="{Binding AutoUpdateViewModel, Mode=OneTime}" ContentTemplate="{StaticResource AutoUpdateView}" Focusable="False"/>
+                </Border>
+                <Menu FontSize="14">
+                    <MenuItem Header="File">
+                        <MenuItem Header="Close" Command="{Binding CloseApplicationCommand, Mode=OneTime}"/>
+                    </MenuItem>
+                    <MenuItem Header="Skill loadouts">
+                        <MenuItem Header="New" Command="{x:Static local:RoutedCommands.NewLoadout}"/>
+                        <MenuItem Header="Open..." Command="{x:Static local:RoutedCommands.OpenLoadout}"/>
+                        <MenuItem Header="Save" Command="{x:Static local:RoutedCommands.SaveLoadout}"/>
+                        <MenuItem Header="Save as..." Command="{x:Static local:RoutedCommands.SaveLoadoutAs}"/>
+                        <Separator/>
+                        <MenuItem Header="Manage..." Command="{x:Static local:RoutedCommands.ManageLoadouts}"/>
+                    </MenuItem>
+                    <MenuItem Header="Equipments" Command="{x:Static local:RoutedCommands.OpenEquipmentExplorer}"/>
+                    <MenuItem Header="Events" Command="{x:Static local:RoutedCommands.OpenEvents}"/>
+                    <MenuItem Header="?">
+                        <MenuItem Header="Integrated help" Command="{x:Static local:RoutedCommands.OpenIntegratedHelp}" CommandParameter="GettingStarted"/>
+                        <Separator/>
+                        <MenuItem Header="About..." Command="{Binding AboutCommand, Mode=OneTime}"/>
+                    </MenuItem>
+                </Menu>
+            </DockPanel>
             <Grid>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*"/>
