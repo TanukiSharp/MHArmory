@@ -6,3 +6,4 @@
 **/bin/ReleaseDistribution/
 
 *.csproj.user
+.vscode/
