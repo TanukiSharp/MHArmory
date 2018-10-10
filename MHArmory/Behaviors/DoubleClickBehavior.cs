@@ -9,7 +9,7 @@ using System.Windows.Input;
 
 namespace MHArmory.Behaviors
 {
-    public class DoubleClickBehavior
+    public static class DoubleClickBehavior
     {
         public static object GetCommandParameter(DependencyObject target)
         {
@@ -47,9 +47,7 @@ namespace MHArmory.Behaviors
 
         private static void OnDoubleClickCommandChanged(DependencyObject sender, DependencyPropertyChangedEventArgs e)
         {
-            var control = sender as Control;
-
-            if (control != null)
+            if (sender is Control control)
             {
                 if (e.NewValue == null)
                     control.MouseDoubleClick -= ControlMouseDoubleClick;
