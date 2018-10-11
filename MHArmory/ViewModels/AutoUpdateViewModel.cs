@@ -19,14 +19,14 @@ namespace MHArmory.ViewModels
             private set { SetValue(ref isVisible, value); }
         }
 
-        private string shortText = "New version available: 0.0.6.8";
+        private string shortText;
         public string ShortText
         {
             get { return shortText; }
             private set { SetValue(ref shortText, value); }
         }
 
-        private string detailedText = "New version available: 0.0.6.8\nTest bla bla\nAnother line";
+        private string detailedText;
         public string DetailedText
         {
             get { return detailedText; }
