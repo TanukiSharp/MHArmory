@@ -25,15 +25,27 @@
     <cvt:AbilityToViewModelValueConverter x:Key="AbilityToViewModelValueConverter"/>
 
     <DataTemplate x:Key="EventContainerView">
-        <ScrollViewer HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Visible" Margin="16 4 4 4">
-            <ItemsControl ItemsSource="{Binding Events}">
-                <ItemsControl.ItemTemplate>
-                    <DataTemplate>
-                        <CheckBox IsChecked="{Binding IsEnabled}" Content="{Binding Name, Mode=OneTime}" Padding="8" Margin="0" VerticalContentAlignment="Center"/>
-                    </DataTemplate>
-                </ItemsControl.ItemTemplate>
-            </ItemsControl>
-        </ScrollViewer>
+        <DockPanel LastChildFill="True">
+            <Grid DockPanel.Dock="Bottom">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="1.2*"/>
+                    <ColumnDefinition Width="1.7*"/>
+                </Grid.ColumnDefinitions>
+                <Button Grid.Column="0" Margin="2" Padding="4" Content="Select all" Command="{Binding SelectAllCommand, Mode=OneTime}"/>
+                <Button Grid.Column="1" Margin="2" Padding="4" Content="Unselect all" Command="{Binding UnselectAllCommand, Mode=OneTime}"/>
+                <Button Grid.Column="2" Margin="2" Padding="4" Content="Inverse selection" Command="{Binding InverseSelectionCommand, Mode=OneTime}"/>
+            </Grid>
+            <ScrollViewer HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Visible" Margin="16 4 4 8">
+                <ItemsControl ItemsSource="{Binding Events}">
+                    <ItemsControl.ItemTemplate>
+                        <DataTemplate>
+                            <CheckBox IsChecked="{Binding IsEnabled}" Content="{Binding Name, Mode=OneTime}" Padding="8" Margin="0" VerticalContentAlignment="Center"/>
+                        </DataTemplate>
+                    </ItemsControl.ItemTemplate>
+                </ItemsControl>
+            </ScrollViewer>
+        </DockPanel>
     </DataTemplate>
 
     <DataTemplate x:Key="FullSkillDescriptionView">

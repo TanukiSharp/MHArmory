@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Input;
 using MHArmory.Configurations;
 using MHArmory.Core.DataStructures;
 
@@ -48,9 +49,17 @@ namespace MHArmory.ViewModels
 
         public bool HasChanged { get; set; }
 
+        public ICommand SelectAllCommand { get; }
+        public ICommand UnselectAllCommand { get; }
+        public ICommand InverseSelectionCommand { get; }
+
         public EventContainerViewModel(RootViewModel parent)
         {
             this.parent = parent;
+
+            SelectAllCommand = new AnonymousCommand(OnSelectAll);
+            UnselectAllCommand = new AnonymousCommand(OnUnselectAll);
+            InverseSelectionCommand = new AnonymousCommand(OnInverseSelection);
         }
 
         public void NotifyDataLoaded()
@@ -103,6 +112,24 @@ namespace MHArmory.ViewModels
             ConfigurationManager.Save(GlobalData.Instance.Configuration);
 
             parent.CreateSolverData();
+        }
+
+        private void OnSelectAll()
+        {
+            foreach (EventViewModel evt in Events)
+                evt.IsEnabled = true;
+        }
+
+        private void OnUnselectAll()
+        {
+            foreach (EventViewModel evt in Events)
+                evt.IsEnabled = false;
+        }
+
+        private void OnInverseSelection()
+        {
+            foreach (EventViewModel evt in Events)
+                evt.IsEnabled = !evt.IsEnabled;
         }
     }
 }
