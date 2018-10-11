@@ -1,12 +1,20 @@
 # Change log
 
-## vNext (?)
+## 0.0.6.4 (2018/10/11)
 
 This release contains optimizations that may not be perceivable for users with powerful computers.<br/>
 Hereafter are perceivable changes:
 
+- Auto-update is now available. Right-click on the red text when it appears for options
+
+    ![auto-update](docs/misc/changelog_0.0.6.4_auto_update.png)
+
+    - `Acknowledge` will simply hide the message until another version gets available
+    - `Download` will download the new version in the background and open the archive for you when done
+
 - Added Harvest armors and event
 - Added another equipment selection condition that should result in more armor sets finding (but may also increase search time)
+- Events window now have select all, unselect all and inverse selection buttons too
 - Added a button to reset to the default selection in the advanced search window
 
     ![reset to default selection](docs/misc/changelog_0.0.6.4_reset_advanced_search.png)
