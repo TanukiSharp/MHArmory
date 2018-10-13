@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Input;
 using MHArmory.Core.DataStructures;
 using MHArmory.Search;
 
@@ -122,6 +123,9 @@ namespace MHArmory.ViewModels
 
         public bool IsOptimal { get; }
 
+        public ICommand SaveScreenshotToClipboardCommand { get; }
+        public ICommand SaveScreenshotToFileCommand { get; }
+
         public ArmorSetViewModel(ISolverData solverData, IList<IArmorPiece> armorPieces, ICharmLevel charm, IList<ArmorSetJewelViewModel> jewels, int[] spareSlots)
         {
             this.armorPieces = armorPieces;
@@ -151,6 +155,19 @@ namespace MHArmory.ViewModels
             TotalDragonResistance = armorPieces.Sum(a => a.Resistances.Dragon);
 
             IsOptimal = AdditionalSkills.All(x => x.IsOver == false);
+
+            SaveScreenshotToClipboardCommand = new AnonymousCommand(OnSaveScreenshotToClipboard);
+            SaveScreenshotToFileCommand = new AnonymousCommand(OnSaveScreenshotToFile);
+        }
+
+        private void OnSaveScreenshotToClipboard()
+        {
+            RenderUtils.RenderToClipboard(this, "SearchResultArmorSetView");
+        }
+
+        private void OnSaveScreenshotToFile()
+        {
+            RenderUtils.RenderToFile(this, "SearchResultArmorSetView");
         }
 
         private void SetSkills(ISolverData solverData)

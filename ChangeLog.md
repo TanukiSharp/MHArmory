@@ -1,5 +1,14 @@
 # Change log
 
+## vNext (?)
+
+- Take a screenshot of a specific armor set search result
+
+    ![search result screenshot](docs/misc/changelog_0.0.6.5_search_result_screenshot.png)
+
+    - You can take directly to clipboard, very useful to quickly paste to a chat, email or image editor
+    - You can also save it disk as PNG for later use
+
 ## 0.0.6.4 (2018/10/11)
 
 This release contains optimizations that may not be perceivable for users with powerful computers.<br/>

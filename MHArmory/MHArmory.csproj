@@ -110,6 +110,7 @@
     <Compile Include="MarkupExtensions\RasterizedImageExtension.cs" />
     <Compile Include="Panels\KeyValueGrid.cs" />
     <Compile Include="Panels\TooledContentPanel.cs" />
+    <Compile Include="RenderUtils.cs" />
     <Compile Include="ReorganizableCollectionUtilities.cs" />
     <Compile Include="ScalableVectorGraphics\RasterizedImageContainer.cs" />
     <Compile Include="ScalableVectorGraphics\Loader.cs" />
