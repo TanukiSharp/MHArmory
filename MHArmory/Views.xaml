@@ -253,6 +253,9 @@
                 <ContextMenu>
                     <MenuItem Header="Take screenshot (save to clipboard)" Command="{Binding SaveScreenshotToClipboardCommand, Mode=OneTime}"/>
                     <MenuItem Header="Take screenshot (save to file)" Command="{Binding SaveScreenshotToFileCommand, Mode=OneTime}"/>
+                    <Separator/>
+                    <MenuItem Header="Copy to text (save to clipboard)" Command="{Binding SaveTextToClipboardCommand, Mode=OneTime}"/>
+                    <MenuItem Header="Copy to text (save to file)" Command="{Binding SaveTextToFileCommand, Mode=OneTime}"/>
                 </ContextMenu>
             </Border.ContextMenu>
             <DockPanel LastChildFill="True">

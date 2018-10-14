@@ -1,11 +1,14 @@
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using System.Windows.Input;
 using MHArmory.Core.DataStructures;
 using MHArmory.Search;
+using Microsoft.Win32;
 
 namespace MHArmory.ViewModels
 {
@@ -126,6 +129,9 @@ namespace MHArmory.ViewModels
         public ICommand SaveScreenshotToClipboardCommand { get; }
         public ICommand SaveScreenshotToFileCommand { get; }
 
+        public ICommand SaveTextToClipboardCommand { get; }
+        public ICommand SaveTextToFileCommand { get; }
+
         public ArmorSetViewModel(ISolverData solverData, IList<IArmorPiece> armorPieces, ICharmLevel charm, IList<ArmorSetJewelViewModel> jewels, int[] spareSlots)
         {
             this.armorPieces = armorPieces;
@@ -158,6 +164,8 @@ namespace MHArmory.ViewModels
 
             SaveScreenshotToClipboardCommand = new AnonymousCommand(OnSaveScreenshotToClipboard);
             SaveScreenshotToFileCommand = new AnonymousCommand(OnSaveScreenshotToFile);
+            SaveTextToClipboardCommand = new AnonymousCommand(OnSaveTextToClipboard);
+            SaveTextToFileCommand = new AnonymousCommand(OnSaveTextToFile);
         }
 
         private void OnSaveScreenshotToClipboard()
@@ -168,6 +176,49 @@ namespace MHArmory.ViewModels
         private void OnSaveScreenshotToFile()
         {
             RenderUtils.RenderToFile(this, "SearchResultArmorSetView");
+        }
+
+        private void OnSaveTextToClipboard()
+        {
+            Clipboard.SetText(MakeString());
+        }
+
+        private void OnSaveTextToFile()
+        {
+            var saveFileDialog = new SaveFileDialog
+            {
+                AddExtension = true,
+                CheckFileExists = false,
+                CheckPathExists = true,
+                Filter = "Markdown files (*.md)|*.md|Text files (*.txt)|*.txt|All Files (*.*)|*.*",
+                InitialDirectory = AppContext.BaseDirectory,
+                OverwritePrompt = true,
+                Title = "Save search result to text file"
+            };
+
+            if (saveFileDialog.ShowDialog() != true)
+                return;
+
+            File.WriteAllText(saveFileDialog.FileName, MakeString());
+        }
+
+        private string MakeString()
+        {
+            // ArmorPieces
+            // Charm
+            // -----------
+            // Required decorations:
+            //   Jewels (Jewel.SlotSize Jewel.Name Count)
+            // Defenses:
+            //   TotalBaseDefense TotalMaxDefense TotalAugmentedDefense
+            // Spare slots:
+            //   SpareSlots[2] SpareSlots[1] SpareSlots[0]
+            // Additional skills:
+            //   AdditionalSkills (Skill.Name TotalLevel Skill.MaxLevel) (IsExtra)
+            // Resistances:
+            //   TotalFireResistance TotalWaterResistance TotalThunderResistance TotalIceResistance TotalDragonResistance
+
+            return null;
         }
 
         private void SetSkills(ISolverData solverData)
