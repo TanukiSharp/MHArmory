@@ -251,7 +251,7 @@
         <Border CornerRadius="2" BorderThickness="2" BorderBrush="#300077aa" Background="#100077aa" Margin="2 2 2 24" Padding="2">
             <Border.ContextMenu>
                 <ContextMenu>
-                    <MenuItem Header="Task screenshot (save to clipboard)" Command="{Binding SaveScreenshotToClipboardCommand, Mode=OneTime}"/>
+                    <MenuItem Header="Take screenshot (save to clipboard)" Command="{Binding SaveScreenshotToClipboardCommand, Mode=OneTime}"/>
                     <MenuItem Header="Take screenshot (save to file)" Command="{Binding SaveScreenshotToFileCommand, Mode=OneTime}"/>
                 </ContextMenu>
             </Border.ContextMenu>
