@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -16,9 +16,14 @@ namespace MHArmory.Services
         public Func<string, bool> IsValid;
     }
 
-    public static class RenameService
+    public interface IRenameService
     {
-        public static bool Rename(RenameOptions renameOptions, out string newName)
+        bool Rename(RenameOptions renameOptions, out string newName);
+    }
+
+    public class RenameService : IRenameService
+    {
+        public bool Rename(RenameOptions renameOptions, out string newName)
         {
             if (renameOptions == null)
                 throw new ArgumentNullException(nameof(renameOptions));

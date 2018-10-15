@@ -14,10 +14,13 @@ using Microsoft.Win32;
 
 namespace MHArmory.Services
 {
-    public class SearchResultScreenshotService
+    public interface ISearchResultScreenshotService
     {
-        public static readonly SearchResultScreenshotService Instance = new SearchResultScreenshotService();
+        BitmapSource RenderToImage(ArmorSetViewModel searchResult);
+    }
 
+    public class SearchResultScreenshotService : ISearchResultScreenshotService
+    {
         public BitmapSource RenderToImage(ArmorSetViewModel searchResult)
         {
             var root = new StackPanel
@@ -53,29 +56,7 @@ namespace MHArmory.Services
                 ContentTemplate = (DataTemplate)App.Current.FindResource("SearchResultArmorSetView")
             });
 
-            return RenderUtils.RenderToImage(root);
-        }
-
-        public void SaveToFile(Func<BitmapSource> bitmapSource)
-        {
-            var saveFileDialog = new SaveFileDialog
-            {
-                CheckFileExists = false,
-                CheckPathExists = true,
-                Filter = "PNG Files (*.png)|*.png|All Files (*.*)|*.*",
-                InitialDirectory = AppContext.BaseDirectory,
-                OverwritePrompt = true,
-                Title = "Save screenshot or armor set search result"
-            };
-
-            if (saveFileDialog.ShowDialog() != true)
-                return;
-
-            var encoder = new PngBitmapEncoder();
-            encoder.Frames.Add(BitmapFrame.Create(bitmapSource()));
-
-            using (FileStream fs = File.OpenWrite(saveFileDialog.FileName))
-                encoder.Save(fs);
+            return ServicesContainer.GetService<IRenderService>().RenderToImage(root);
         }
     }
 }

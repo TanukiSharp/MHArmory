@@ -1,6 +1,5 @@
 using System;
 using System.Collections.Generic;
-using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -8,13 +7,18 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using Microsoft.Win32;
 
-namespace MHArmory
+namespace MHArmory.Services
 {
-    public static class RenderUtils
+    public interface IRenderService
     {
-        public static BitmapSource RenderToImage(object item, string dataTemplateName)
+        BitmapSource RenderToImage(object item, string dataTemplateName);
+        BitmapSource RenderToImage(UIElement element);
+    }
+
+    public class RenderService : IRenderService
+    {
+        public BitmapSource RenderToImage(object item, string dataTemplateName)
         {
             var contentControl = new ContentControl
             {
@@ -27,7 +31,7 @@ namespace MHArmory
             return RenderToImage(contentControl);
         }
 
-        public static BitmapSource RenderToImage(UIElement element)
+        public BitmapSource RenderToImage(UIElement element)
         {
             element.Measure(new Size(double.PositiveInfinity, double.PositiveInfinity));
             element.Arrange(new Rect(new Point(), element.DesiredSize));

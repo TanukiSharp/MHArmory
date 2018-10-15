@@ -110,7 +110,6 @@
     <Compile Include="MarkupExtensions\RasterizedImageExtension.cs" />
     <Compile Include="Panels\KeyValueGrid.cs" />
     <Compile Include="Panels\TooledContentPanel.cs" />
-    <Compile Include="RenderUtils.cs" />
     <Compile Include="ReorganizableCollectionUtilities.cs" />
     <Compile Include="ScalableVectorGraphics\RasterizedImageContainer.cs" />
     <Compile Include="ScalableVectorGraphics\Loader.cs" />
@@ -123,7 +122,9 @@
     <Compile Include="Services\DirectoryBrowserService.cs" />
     <Compile Include="Services\MessageBoxService.cs" />
     <Compile Include="Services\RenameService.cs" />
+    <Compile Include="Services\RenderService.cs" />
     <Compile Include="Services\SearchResultScreenshotService.cs" />
+    <Compile Include="Services\ServicesContainer.cs" />
     <Compile Include="TaskExtensions.cs" />
     <Compile Include="TextInputWindow.xaml.cs">
       <DependentUpon>TextInputWindow.xaml</DependentUpon>

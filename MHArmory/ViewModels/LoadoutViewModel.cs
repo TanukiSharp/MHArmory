@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
@@ -133,7 +133,7 @@ namespace MHArmory.ViewModels
                 IsValid = x => Loadouts.Where(l => l != loadoutViewModel).All(l => l.Name != x)
             };
 
-            if (RenameService.Rename(renameOptions, out string newName))
+            if (ServicesContainer.GetService<IRenameService>().Rename(renameOptions, out string newName))
             {
                 loadoutViewModel.Name = newName;
                 return true;

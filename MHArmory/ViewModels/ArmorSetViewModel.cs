@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Input;
+using System.Windows.Media.Imaging;
 using MHArmory.Core.DataStructures;
 using MHArmory.Search;
 using MHArmory.Services;
@@ -175,13 +176,31 @@ namespace MHArmory.ViewModels
 
         private void OnSaveScreenshotToClipboard()
         {
-            Clipboard.SetImage(SearchResultScreenshotService.Instance.RenderToImage(this));
+            Clipboard.SetImage(ServicesContainer.GetService<ISearchResultScreenshotService>().RenderToImage(this));
         }
 
         private void OnSaveScreenshotToFile()
         {
-            SearchResultScreenshotService service = SearchResultScreenshotService.Instance;
-            service.SaveToFile(() => service.RenderToImage(this));
+            ISearchResultScreenshotService service = ServicesContainer.GetService<ISearchResultScreenshotService>();
+
+            var saveFileDialog = new SaveFileDialog
+            {
+                CheckFileExists = false,
+                CheckPathExists = true,
+                Filter = "PNG Files (*.png)|*.png|All Files (*.*)|*.*",
+                InitialDirectory = AppContext.BaseDirectory,
+                OverwritePrompt = true,
+                Title = "Save screenshot or armor set search result"
+            };
+
+            if (saveFileDialog.ShowDialog() != true)
+                return;
+
+            var encoder = new PngBitmapEncoder();
+            encoder.Frames.Add(BitmapFrame.Create(service.RenderToImage(this)));
+
+            using (FileStream fs = File.OpenWrite(saveFileDialog.FileName))
+                encoder.Save(fs);
         }
 
         private void OnSaveTextToClipboard()
