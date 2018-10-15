@@ -132,11 +132,15 @@ namespace MHArmory.ViewModels
         public ICommand SaveTextToClipboardCommand { get; }
         public ICommand SaveTextToFileCommand { get; }
 
+        private readonly IAbility[] desiredAbilities;
+
         public ArmorSetViewModel(ISolverData solverData, IList<IArmorPiece> armorPieces, ICharmLevel charm, IList<ArmorSetJewelViewModel> jewels, int[] spareSlots)
         {
             this.armorPieces = armorPieces;
             this.charm = charm;
             this.jewels = jewels;
+
+            desiredAbilities = solverData.DesiredAbilities;
 
             SetSkills(solverData);
 
@@ -204,21 +208,84 @@ namespace MHArmory.ViewModels
 
         private string MakeString()
         {
-            // ArmorPieces
-            // Charm
-            // -----------
-            // Required decorations:
-            //   Jewels (Jewel.SlotSize Jewel.Name Count)
-            // Defenses:
-            //   TotalBaseDefense TotalMaxDefense TotalAugmentedDefense
-            // Spare slots:
-            //   SpareSlots[2] SpareSlots[1] SpareSlots[0]
-            // Additional skills:
-            //   AdditionalSkills (Skill.Name TotalLevel Skill.MaxLevel) (IsExtra)
-            // Resistances:
-            //   TotalFireResistance TotalWaterResistance TotalThunderResistance TotalIceResistance TotalDragonResistance
+            var sb = new StringBuilder();
 
-            return null;
+            const string newLine = "\r\n";
+
+            sb.Append($"**Skills**{newLine}");
+            if (desiredAbilities.Length == 0)
+                sb.Append($"- *none*{newLine}");
+            else
+            {
+                foreach (IAbility x in desiredAbilities)
+                    sb.Append($"- {x.Skill.Name}: {x.Level} / {x.Skill.MaxLevel}{newLine}");
+            }
+
+            sb.Append(newLine);
+
+            sb.Append($"**Equipments**{newLine}");
+            foreach (IArmorPiece x in ArmorPieces)
+                sb.Append($"- {x.Name}{newLine}");
+            sb.Append($"- {Charm.Name}{newLine}");
+
+            sb.Append(newLine);
+
+            sb.Append($"**Required decorations**{newLine}");
+            if (Jewels.Count == 0)
+                sb.Append($"- *none*{newLine}");
+            else
+            {
+                foreach (ArmorSetJewelViewModel x in Jewels)
+                    sb.Append($"- {x.Jewel.Name} [{x.Jewel.SlotSize}] x{x.Count}{newLine}");
+            }
+
+            sb.Append(newLine);
+
+            sb.Append($"**Defenses**{newLine}");
+            sb.Append($"- Base: {TotalBaseDefense}{newLine}");
+            sb.Append($"- Maximum: {TotalMaxDefense}{newLine}");
+            sb.Append($"- Augmented: {TotalAugmentedDefense}{newLine}");
+
+            sb.Append(newLine);
+
+            sb.Append($"**Spare slots**{newLine}");
+            if (SpareSlots.All(x => x == 0))
+                sb.Append($"- *none*{newLine}");
+            else
+            {
+                for (int i = 2; i >= 0; i--)
+                {
+                    if (SpareSlots[i] > 0)
+                        sb.Append($"- [{i + 1}] x{SpareSlots[i]}{newLine}");
+                }
+            }
+
+            sb.Append(newLine);
+
+            sb.Append($"**Additional skills**{newLine}");
+            if (AdditionalSkills.Length == 0)
+                sb.Append($"- *none*{newLine}");
+            else
+            {
+                foreach (SearchResultSkillViewModel x in AdditionalSkills)
+                {
+                    // skills that are not extra ones but still in the additional skills
+                    // provide more than the desired one, thus displaying in italic
+                    string sides = x.IsExtra == false ? "*" : string.Empty;
+                    sb.Append($"- {sides}{x.Skill.Name}: {x.TotalLevel} / {x.Skill.MaxLevel}{sides}{newLine}");
+                }
+            }
+
+            sb.Append(newLine);
+
+            sb.Append($"**Resistances**{newLine}");
+            sb.Append($"- Fire: {TotalFireResistance}{newLine}");
+            sb.Append($"- Water: {TotalWaterResistance}{newLine}");
+            sb.Append($"- Thunder: {TotalThunderResistance}{newLine}");
+            sb.Append($"- Ice: {TotalIceResistance}{newLine}");
+            sb.Append($"- Dragon: {TotalDragonResistance}{newLine}");
+
+            return sb.ToString();
         }
 
         private void SetSkills(ISolverData solverData)
