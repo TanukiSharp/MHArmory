@@ -32,6 +32,7 @@ namespace MHArmory
             element.Measure(new Size(double.PositiveInfinity, double.PositiveInfinity));
             element.Arrange(new Rect(new Point(), element.DesiredSize));
 
+            // call to UpdateLayout is required to force children to be rendered too
             element.UpdateLayout();
 
             var renderTarget = new RenderTargetBitmap((int)element.DesiredSize.Width, (int)element.DesiredSize.Height, 96.0, 96.0, PixelFormats.Pbgra32);
