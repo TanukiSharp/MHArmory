@@ -8,6 +8,7 @@ using System.Windows;
 using System.Windows.Input;
 using MHArmory.Core.DataStructures;
 using MHArmory.Search;
+using MHArmory.Services;
 using Microsoft.Win32;
 
 namespace MHArmory.ViewModels
@@ -132,7 +133,7 @@ namespace MHArmory.ViewModels
         public ICommand SaveTextToClipboardCommand { get; }
         public ICommand SaveTextToFileCommand { get; }
 
-        private readonly IAbility[] desiredAbilities;
+        public IAbility[] DesiredAbilities { get; }
 
         public ArmorSetViewModel(ISolverData solverData, IList<IArmorPiece> armorPieces, ICharmLevel charm, IList<ArmorSetJewelViewModel> jewels, int[] spareSlots)
         {
@@ -140,7 +141,7 @@ namespace MHArmory.ViewModels
             this.charm = charm;
             this.jewels = jewels;
 
-            desiredAbilities = solverData.DesiredAbilities;
+            DesiredAbilities = solverData.DesiredAbilities;
 
             SetSkills(solverData);
 
@@ -174,12 +175,13 @@ namespace MHArmory.ViewModels
 
         private void OnSaveScreenshotToClipboard()
         {
-            RenderUtils.RenderToClipboard(this, "SearchResultArmorSetView");
+            Clipboard.SetImage(SearchResultScreenshotService.Instance.RenderToImage(this));
         }
 
         private void OnSaveScreenshotToFile()
         {
-            RenderUtils.RenderToFile(this, "SearchResultArmorSetView");
+            SearchResultScreenshotService service = SearchResultScreenshotService.Instance;
+            service.SaveToFile(() => service.RenderToImage(this));
         }
 
         private void OnSaveTextToClipboard()
@@ -213,11 +215,11 @@ namespace MHArmory.ViewModels
             const string newLine = "\r\n";
 
             sb.Append($"**Skills**{newLine}");
-            if (desiredAbilities.Length == 0)
+            if (DesiredAbilities.Length == 0)
                 sb.Append($"- *none*{newLine}");
             else
             {
-                foreach (IAbility x in desiredAbilities)
+                foreach (IAbility x in DesiredAbilities)
                     sb.Append($"- {x.Skill.Name}: {x.Level} / {x.Skill.MaxLevel}{newLine}");
             }
 

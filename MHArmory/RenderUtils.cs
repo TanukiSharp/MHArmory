@@ -51,47 +51,5 @@ namespace MHArmory
 
             return renderTarget;
         }
-
-        public static void RenderToClipboard(object item, string dataTemplateName)
-        {
-            Clipboard.SetImage(RenderToImage(item, dataTemplateName));
-        }
-
-        public static void RenderToClipboard(UIElement element)
-        {
-            Clipboard.SetImage(RenderToImage(element));
-        }
-
-        public static void RenderToFile(object item, string dataTemplateName)
-        {
-            RenderToFile(() => RenderToImage(item, dataTemplateName));
-        }
-
-        public static void RenderToFile(UIElement element)
-        {
-            RenderToFile(() => RenderToImage(element));
-        }
-
-        public static void RenderToFile(Func<BitmapSource> bitmapSource)
-        {
-            var saveFileDialog = new SaveFileDialog
-            {
-                CheckFileExists = false,
-                CheckPathExists = true,
-                Filter = "PNG Files (*.png)|*.png|All Files (*.*)|*.*",
-                InitialDirectory = AppContext.BaseDirectory,
-                OverwritePrompt = true,
-                Title = "Save screenshot or armor set search result"
-            };
-
-            if (saveFileDialog.ShowDialog() != true)
-                return;
-
-            var encoder = new PngBitmapEncoder();
-            encoder.Frames.Add(BitmapFrame.Create(bitmapSource()));
-
-            using (FileStream fs = File.OpenWrite(saveFileDialog.FileName))
-                encoder.Save(fs);
-        }
     }
 }

@@ -123,6 +123,7 @@
     <Compile Include="Services\DirectoryBrowserService.cs" />
     <Compile Include="Services\MessageBoxService.cs" />
     <Compile Include="Services\RenameService.cs" />
+    <Compile Include="Services\SearchResultScreenshotService.cs" />
     <Compile Include="TaskExtensions.cs" />
     <Compile Include="TextInputWindow.xaml.cs">
       <DependentUpon>TextInputWindow.xaml</DependentUpon>
