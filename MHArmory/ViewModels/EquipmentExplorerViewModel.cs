@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
@@ -41,11 +41,20 @@ namespace MHArmory.ViewModels
 
                 foreach (IEquipment x in allEquipments)
                 {
-                    bool isVisible = searchStatement.IsMatching(x.Name);
+                    bool isVisible = searchStatement.IsMatching(x.Name) ||
+                        x.Abilities.Any(a => IsMatching(a, searchStatement));
+
                     if (isVisible)
                         Equipments.Add(x);
                 }
             }
+        }
+
+        private static bool IsMatching(IAbility ability, SearchStatement searchStatement)
+        {
+            return searchStatement.IsMatching(ability.Skill.Name) ||
+                searchStatement.IsMatching(ability.Description) ||
+                searchStatement.IsMatching(ability.Skill.Description);
         }
 
         public ICommand CancelCommand { get; }
