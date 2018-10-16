@@ -9,6 +9,10 @@
     - You can take directly to clipboard, very useful to quickly paste to a chat, email or image editor
     - You can also save it disk as PNG for later use
 
+- Now it is possible to filter equipments in the equipment window by also typing skill name or description
+
+    ![search equipment by skill](docs/misc/changelog_0.0.6.5_equipment_search_skills.png)
+
 ## 0.0.6.4 (2018/10/11)
 
 This release contains optimizations that may not be perceivable for users with powerful computers.<br/>
