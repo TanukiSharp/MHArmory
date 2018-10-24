@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -28,5 +28,10 @@ namespace MHArmory.Core.DataStructures
         public int Rarity { get; }
         public int SlotSize { get; }
         public IAbility[] Abilities { get; }
+
+        public override string ToString()
+        {
+            return $"{Name} [{SlotSize}]";
+        }
     }
 }
