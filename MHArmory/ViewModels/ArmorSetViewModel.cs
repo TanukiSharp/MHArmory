@@ -14,29 +14,48 @@ using Microsoft.Win32;
 
 namespace MHArmory.ViewModels
 {
-    public class FullAbilityDescriptionViewModel
+    public class FullAbilityDescriptionViewModel : ViewModelBase
     {
         public string Description { get; }
-        public bool IsActive { get; }
 
-        public FullAbilityDescriptionViewModel(string description, bool isActive)
+        private bool isActive;
+        public bool IsActive
         {
-            Description = description;
+            get { return isActive; }
+            set { SetValue(ref isActive, value); }
+        }
+
+        public FullAbilityDescriptionViewModel(int level, string description, bool isActive)
+        {
+            Description = $"{level}.  {description}";
             IsActive = isActive;
         }
     }
 
     public class FullSkillDescriptionViewModel : ViewModelBase
     {
-        public string GeneralDescription { get; }
+        private ISkill skill;
+
+        public string GeneralDescription { get { return skill.Description; } }
         public FullAbilityDescriptionViewModel[] Abilities { get; }
 
-        public FullSkillDescriptionViewModel(ISkill skill, int clampedLevel)
+        public FullSkillDescriptionViewModel(ISkill skill, int level)
         {
-            GeneralDescription = skill.Description;
+            this.skill = skill;
+
+            int clampedLevel = Math.Max(0, Math.Min(level, skill.MaxLevel));
+
             Abilities = new FullAbilityDescriptionViewModel[skill.Abilities.Length];
             for (int i = 0; i < skill.Abilities.Length; i++)
-                Abilities[i] = new FullAbilityDescriptionViewModel(skill.Abilities[i].Description, skill.Abilities[i].Level == clampedLevel);
+                Abilities[i] = new FullAbilityDescriptionViewModel(skill.Abilities[i].Level, skill.Abilities[i].Description, skill.Abilities[i].Level == clampedLevel);
+        }
+
+        public void UpdateLevel(int level)
+        {
+            int clampedLevel = Math.Max(0, Math.Min(level, skill.MaxLevel));
+
+            for (int i = 0; i < Abilities.Length; i++)
+                Abilities[i].IsActive = skill.Abilities[i].Level == clampedLevel;
         }
     }
 
@@ -54,7 +73,7 @@ namespace MHArmory.ViewModels
             TotalLevel = totalLevel;
             IsExtra = isExtra;
             IsOver = totalLevel > skill.MaxLevel;
-            Description = new FullSkillDescriptionViewModel(skill, Math.Min(totalLevel, skill.MaxLevel));
+            Description = new FullSkillDescriptionViewModel(skill, totalLevel);
         }
     }
 

@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -7,6 +7,25 @@ using MHArmory.Core.DataStructures;
 
 namespace MHArmory.ViewModels
 {
+    public class JewelAbilityViewModel : ViewModelBase
+    {
+        public string SkillName { get; }
+        public FullSkillDescriptionViewModel Description { get; }
+
+        public JewelAbilityViewModel(IAbility ability, int level)
+        {
+            SkillName = ability.Skill.Name;
+            Description = new FullSkillDescriptionViewModel(ability.Skill, level);
+        }
+
+        private bool isVisible = true;
+        public bool IsVisible
+        {
+            get { return isVisible; }
+            set { SetValue(ref isVisible, value); }
+        }
+    }
+
     public class JewelOverrideViewModel : ViewModelBase
     {
         private readonly DecorationsOverrideViewModel parent;
@@ -14,7 +33,9 @@ namespace MHArmory.ViewModels
 
         public string Name { get; }
         public int SlotSize { get; }
-        public IAbility[] Abilities { get; }
+        public IList<JewelAbilityViewModel> Abilities { get; }
+
+        public bool CanReportStateChange { get; set; } = true;
 
         private int count;
         public int Count
@@ -28,7 +49,10 @@ namespace MHArmory.ViewModels
                 {
                     SetValue(ref count, Math.Max(0, value));
 
-                    if (originalValue != count)
+                    foreach (JewelAbilityViewModel ability in Abilities)
+                        ability.Description.UpdateLevel(count);
+
+                    if (originalValue != count && CanReportStateChange)
                     {
                         parent.ComputeVisibility(this);
                         parent.StateChanged();
@@ -43,7 +67,7 @@ namespace MHArmory.ViewModels
             get { return isOverriding; }
             set
             {
-                if (SetValue(ref isOverriding, value))
+                if (SetValue(ref isOverriding, value) && CanReportStateChange)
                 {
                     parent.ComputeVisibility(this);
                     parent.StateChanged();
@@ -65,7 +89,7 @@ namespace MHArmory.ViewModels
 
             Name = jewel.Name;
             SlotSize = jewel.SlotSize;
-            Abilities = jewel.Abilities;
+            Abilities = jewel.Abilities.Select(x => new JewelAbilityViewModel(x, count)).ToList();
         }
 
         public void ApplySearchText(SearchStatement searchStatement)
