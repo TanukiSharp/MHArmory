@@ -160,6 +160,7 @@
     <Compile Include="ViewModels\JewelOverrideViewModel.cs" />
     <Compile Include="ViewModels\LoadoutViewModel.cs" />
     <Compile Include="ViewModels\RootViewModel.cs" />
+    <Compile Include="ViewModels\SaveDataSlotSelectorViewModel.cs" />
     <Compile Include="ViewModels\SearchResultProcessingViewModel.cs" />
     <Compile Include="ViewModels\SkillSelectorViewModel.cs" />
     <Compile Include="ViewModels\SkillViewModel.cs" />
@@ -357,6 +358,10 @@
     <ProjectReference Include="..\MHArmory.Search\MHArmory.Search.csproj">
       <Project>{375922DD-84D4-46FA-9F2C-0FC45EFC0BDD}</Project>
       <Name>MHArmory.Search</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MHWSaveUtils\MHWSaveUtils\MHWSaveUtils.csproj">
+      <Project>{e0f3fd6a-4633-40f5-9a5d-6652a175727a}</Project>
+      <Name>MHWSaveUtils</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
