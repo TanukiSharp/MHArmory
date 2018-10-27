@@ -221,7 +221,7 @@ namespace MHArmory.ViewModels
                     return;
                 }
 
-                saveDataInfoItems.Add(new SaveDataInfo(string.Empty, dialog.FileName));
+                saveDataInfoItems.Add(new SaveDataInfo("<unknown>", dialog.FileName));
             }
 
             IList<IList<DecorationsSaveSlotInfo>> decorationsPerSave = null;
