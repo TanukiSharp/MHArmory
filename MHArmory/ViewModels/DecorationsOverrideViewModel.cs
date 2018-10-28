@@ -198,7 +198,7 @@ namespace MHArmory.ViewModels
 
         private async void OnImport(object paramter)
         {
-            IList<SaveDataInfo> saveDataInfoItems = FileSystemUtils.EnumerateSaveDataInfo().Take(0).ToList();
+            IList<SaveDataInfo> saveDataInfoItems = FileSystemUtils.EnumerateSaveDataInfo().ToList();
 
             if (saveDataInfoItems.Count == 0)
             {
@@ -243,12 +243,17 @@ namespace MHArmory.ViewModels
 
         private void ApplySaveDataDecorations(DecorationsSaveSlotInfo saveSlotDecorations)
         {
-            IList<GameJewel> gameJewels = LoadGameJewels();
-            if (gameJewels == null)
-                return;
+            //var list = saveSlotDecorations.Decorations.Select(kv => (id: kv.Key, count: kv.Value)).OrderBy(x => x.id).ToList();
 
             foreach (JewelOverrideViewModel child in Jewels)
                 child.CanReportStateChange = false;
+
+            //foreach (string gameJewelName in gameJewels.Select(x => x.Name))
+            //{
+            //    if (Jewels.Any(x => $"{x.Name} {x.SlotSize}" == gameJewelName) == false)
+            //    {
+            //    }
+            //}
 
             try
             {
@@ -257,11 +262,14 @@ namespace MHArmory.ViewModels
                     child.IsOverriding = true;
 
                     string gameName = $"{child.Name} {child.SlotSize}";
-                    GameJewel foundGameJewel = gameJewels.FirstOrDefault(x => x.Name == gameName);
+                    JewelInfo foundGameJewel = MasterData.FindJewelInfoByName(gameName);
 
                     uint quantity = 0;
-                    if (foundGameJewel != null)
-                        saveSlotDecorations.Decorations.TryGetValue(foundGameJewel.Id, out quantity);
+                    if (foundGameJewel.Name != null)
+                    {
+                        if (saveSlotDecorations.Decorations.TryGetValue(foundGameJewel.ItemId, out quantity))
+                            child.IsOverriding = true;
+                    }
 
                     child.Count = (int)quantity;
                 }

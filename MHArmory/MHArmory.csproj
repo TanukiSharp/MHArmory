@@ -292,9 +292,6 @@
     <None Include="data\fullArmorSets.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="data\gameJewels.json">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
     <None Include="data\great-sword.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
