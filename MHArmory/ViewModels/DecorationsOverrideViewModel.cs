@@ -243,17 +243,8 @@ namespace MHArmory.ViewModels
 
         private void ApplySaveDataDecorations(DecorationsSaveSlotInfo saveSlotDecorations)
         {
-            //var list = saveSlotDecorations.Decorations.Select(kv => (id: kv.Key, count: kv.Value)).OrderBy(x => x.id).ToList();
-
             foreach (JewelOverrideViewModel child in Jewels)
                 child.CanReportStateChange = false;
-
-            //foreach (string gameJewelName in gameJewels.Select(x => x.Name))
-            //{
-            //    if (Jewels.Any(x => $"{x.Name} {x.SlotSize}" == gameJewelName) == false)
-            //    {
-            //    }
-            //}
 
             try
             {
