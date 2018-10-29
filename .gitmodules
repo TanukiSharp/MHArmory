@@ -1,0 +1,4 @@
+[submodule "MHWSaveUtils"]
+	path = MHWSaveUtils
+	url = git@github.com:TanukiSharp/MHWSaveUtils.git
+	branch = master

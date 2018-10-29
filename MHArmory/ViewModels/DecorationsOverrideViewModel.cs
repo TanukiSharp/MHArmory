@@ -1,11 +1,17 @@
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
+using System.Windows;
 using System.Windows.Input;
 using MHArmory.Configurations;
 using MHArmory.Core.DataStructures;
+using MHWSaveUtils;
+using Microsoft.Win32;
+using Newtonsoft.Json;
 
 namespace MHArmory.ViewModels
 {
@@ -90,11 +96,15 @@ namespace MHArmory.ViewModels
 
         public ICommand CancelCommand { get; }
         public ICommand OpenIntegratedHelpCommand { get; }
+        public ICommand ImportCommand { get; }
 
         private readonly bool isLoadingConfiguration;
+        private readonly Func<IList<DecorationsSaveSlotInfo>, DecorationsSaveSlotInfo> saveSlotInfoSelector;
 
-        public DecorationsOverrideViewModel(IList<IJewel> jewels)
+        public DecorationsOverrideViewModel(IList<IJewel> jewels, Func<IList<DecorationsSaveSlotInfo>, DecorationsSaveSlotInfo> saveSlotInfoSelector)
         {
+            this.saveSlotInfoSelector = saveSlotInfoSelector;
+
             Jewels = jewels
                 .Select(x => new JewelOverrideViewModel(this, x, 0))
                 .ToList();
@@ -103,6 +113,7 @@ namespace MHArmory.ViewModels
 
             CancelCommand = new AnonymousCommand(OnCancel);
             OpenIntegratedHelpCommand = new AnonymousCommand(OnOpenIntegratedHelp);
+            ImportCommand = new AnonymousCommand(OnImport);
 
             if (decorationOverrides != null)
             {
@@ -157,11 +168,13 @@ namespace MHArmory.ViewModels
             if (isLoadingConfiguration)
                 return;
 
+            var searchStatement = SearchStatement.Create(SearchText);
+
             foreach (JewelOverrideViewModel vm in Jewels)
-                ComputeVisibility(vm);
+                ComputeVisibility(vm, searchStatement);
         }
 
-        internal void ComputeVisibility(JewelOverrideViewModel jewelOverrideViewModel)
+        internal void ComputeVisibility(JewelOverrideViewModel jewelOverrideViewModel, SearchStatement searchStatement = null)
         {
             if (visibilityMode == DecorationOverrideVisibilityMode.Modified)
             {
@@ -180,7 +193,159 @@ namespace MHArmory.ViewModels
                 }
             }
 
-            jewelOverrideViewModel.ApplySearchText(SearchStatement.Create(searchText));
+            if (searchStatement == null)
+                searchStatement = SearchStatement.Create(searchText);
+
+            jewelOverrideViewModel.ApplySearchText(searchStatement);
+        }
+
+        private async void OnImport(object paramter)
+        {
+            ((AnonymousCommand)ImportCommand).IsEnabled = false;
+
+            try
+            {
+                await ImportInternal();
+            }
+            finally
+            {
+                ((AnonymousCommand)ImportCommand).IsEnabled = true;
+            }
+        }
+
+        private async Task ImportInternal()
+        {
+            IList<SaveDataInfo> saveDataInfoItems = FileSystemUtils.EnumerateSaveDataInfo().ToList();
+
+            if (saveDataInfoItems.Count == 0)
+            {
+                MessageBox.Show("Could not automatically find location of save data.\nPlease select it manually.", "Save data not found", MessageBoxButton.OK, MessageBoxImage.Warning);
+
+                var dialog = new OpenFileDialog
+                {
+                    AddExtension = false,
+                    CheckFileExists = true,
+                    CheckPathExists = true,
+                    FileName = FileSystemUtils.GameSaveDataFilename,
+                    Filter = $"Save data|{FileSystemUtils.GameSaveDataFilename}|All files (*.*)|*.*",
+                    Multiselect = false,
+                    ShowReadOnly = true,
+                    Title = "Select Monster Hunter: World save data file"
+                };
+                if (dialog.ShowDialog() != true)
+                {
+                    MessageBox.Show("Operation cancelled.", "Operation cancelled", MessageBoxButton.OK, MessageBoxImage.Warning);
+                    return;
+                }
+
+                saveDataInfoItems.Add(new SaveDataInfo("<unknown>", dialog.FileName));
+            }
+
+            IList<Task<IList<DecorationsSaveSlotInfo>>> allTasks = saveDataInfoItems
+                .Select(ReadSaveData)
+                .ToList();
+
+            await Task.WhenAll(allTasks);
+
+            IList<DecorationsSaveSlotInfo> allSlots = allTasks
+                .SelectMany(x => x.Result)
+                .ToList();
+
+            DecorationsSaveSlotInfo selected;
+
+            if (allSlots.Count > 1)
+            {
+                selected = saveSlotInfoSelector(allSlots);
+                if (selected == null)
+                    return;
+            }
+            else
+                selected = allSlots[0];
+
+            MessageBox.Show("Save data import done.", "Import", MessageBoxButton.OK);
+
+            ApplySaveDataDecorations(selected);
+        }
+
+        private void ApplySaveDataDecorations(DecorationsSaveSlotInfo saveSlotDecorations)
+        {
+            foreach (JewelOverrideViewModel child in Jewels)
+                child.CanReportStateChange = false;
+
+            try
+            {
+                foreach (JewelOverrideViewModel child in Jewels)
+                {
+                    child.IsOverriding = true;
+
+                    string gameName = $"{child.Name} {child.SlotSize}";
+                    JewelInfo foundGameJewel = MasterData.FindJewelInfoByName(gameName);
+
+                    uint quantity = 0;
+                    if (foundGameJewel.Name != null)
+                    {
+                        if (saveSlotDecorations.Decorations.TryGetValue(foundGameJewel.ItemId, out quantity))
+                            child.IsOverriding = true;
+                    }
+
+                    child.Count = (int)quantity;
+                }
+            }
+            finally
+            {
+                foreach (JewelOverrideViewModel child in Jewels)
+                    child.CanReportStateChange = true;
+            }
+
+            ComputeVisibility();
+
+            HasChanged = true;
+        }
+
+        private async Task<IList<DecorationsSaveSlotInfo>> ReadSaveData(SaveDataInfo saveDataInfo)
+        {
+            var ms = new MemoryStream();
+
+            using (Stream inputStream = File.OpenRead(saveDataInfo.SaveDataFullFilename))
+            {
+                await Crypto.DecryptAsync(inputStream, ms, CancellationToken.None);
+            }
+
+            using (var reader = new DecorationsReader(ms))
+            {
+                var list = new List<DecorationsSaveSlotInfo>();
+
+                foreach (DecorationsSaveSlotInfo info in reader.Read())
+                {
+                    info.SetSaveDataInfo(saveDataInfo);
+                    list.Add(info);
+                }
+
+                return list;
+            }
+        }
+
+        private static IList<GameJewel> LoadGameJewels()
+        {
+            try
+            {
+                string dataPath = Path.Combine(AppContext.BaseDirectory, "data");
+                string gameJewelsContent = File.ReadAllText(Path.Combine(dataPath, "gameJewels.json"));
+                return JsonConvert.DeserializeObject<IList<GameJewel>>(gameJewelsContent);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"An error occured when trying to load game jewels information.\n\n{ex.Message}", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                return null;
+            }
+        }
+
+        public class GameJewel
+        {
+            [JsonProperty("id")]
+            public uint Id { get; set; }
+            [JsonProperty("name")]
+            public string Name { get; set; }
         }
     }
 }

@@ -24,6 +24,67 @@
     <cvt:FreeElementNameValueConverter x:Key="FreeElementNameValueConverter"/>
     <cvt:AbilityToViewModelValueConverter x:Key="AbilityToViewModelValueConverter"/>
 
+    <DataTemplate x:Key="SaveDataSlotView">
+        <StackPanel Orientation="Horizontal">
+            <TextBlock Margin="1 1 6 1" Text="{Binding SlotNumber, Mode=OneTime, StringFormat=\{0\}.}" VerticalAlignment="Center"/>
+            <Button x:Name="root" Command="{Binding SelectionCommand, Mode=OneTime}" Background="WhiteSmoke" BorderBrush="LightGray" BorderThickness="1">
+                <Button.Template>
+                    <ControlTemplate>
+                        <Border BorderBrush="{TemplateBinding BorderBrush}" Background="{TemplateBinding Background}" CornerRadius="3" Margin="4" BorderThickness="{TemplateBinding BorderThickness}" Padding="8" VerticalAlignment="Center" TextBlock.FontSize="14" Focusable="False">
+                            <Grid Focusable="False">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto" SharedSizeGroup="A"/>
+                                    <ColumnDefinition Width="Auto" SharedSizeGroup="B"/>
+                                    <ColumnDefinition Width="Auto" SharedSizeGroup="C"/>
+                                    <ColumnDefinition Width="Auto" SharedSizeGroup="D"/>
+                                </Grid.ColumnDefinitions>
+                                <TextBlock Margin="1 1 8 1" Grid.Column="0">
+                                    <Run Text="Name: "/>
+                                    <Run Text="{Binding Name, Mode=OneTime}" FontWeight="Bold" Foreground="Blue"/>
+                                </TextBlock>
+                                <TextBlock Margin="1 1 8 1" Grid.Column="1">
+                                    <Run Text="Rank: "/>
+                                    <Run Text="{Binding Rank, Mode=OneTime}" FontWeight="Bold" Foreground="Blue"/>
+                                </TextBlock>
+                                <TextBlock Margin="1 1 8 1" Grid.Column="2">
+                                    <Run Text="Playtime: "/>
+                                    <Run Text="{Binding Playtime, Mode=OneTime}" FontWeight="Bold" Foreground="Blue"/>
+                                </TextBlock>
+                                <TextBlock Margin="1 1 8 1" Grid.Column="3">
+                                    <Run Text="Zeni: "/>
+                                    <Run Text="{Binding Zeni, Mode=OneTime}" FontWeight="Bold" Foreground="Blue"/>
+                                </TextBlock>
+                            </Grid>
+                        </Border>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+        </StackPanel>
+        <DataTemplate.Triggers>
+            <Trigger SourceName="root" Property="IsMouseOver" Value="True">
+                <Setter TargetName="root" Property="Background" Value="#E0F4FF"/>
+            </Trigger>
+        </DataTemplate.Triggers>
+    </DataTemplate>
+
+    <DataTemplate x:Key="SaveDataAccountView">
+        <Border BorderBrush="LightGray" Background="White" CornerRadius="3" Margin="2 2 2 8" BorderThickness="2" Padding="2" Focusable="False">
+            <StackPanel Orientation="Vertical" Focusable="False">
+                <TextBlock Foreground="Gray" Margin="1">
+                    <Run Text="User: "/>
+                    <Run Text="{Binding UserId, Mode=OneTime}"/>
+                </TextBlock>
+                <ItemsControl ItemsSource="{Binding SaveDataSlots, Mode=OneTime}" ItemTemplate="{StaticResource SaveDataSlotView}" Grid.IsSharedSizeScope="True" Margin="16 0 0 0" Focusable="False"/>
+            </StackPanel>
+        </Border>
+    </DataTemplate>
+
+    <DataTemplate x:Key="SaveDataSlotSelectorView">
+        <ScrollViewer HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Visible" Padding="6">
+            <ItemsControl ItemsSource="{Binding Accounts}" ItemTemplate="{StaticResource SaveDataAccountView}" Focusable="False"/>
+        </ScrollViewer>
+    </DataTemplate>
+
     <DataTemplate x:Key="EventContainerView">
         <DockPanel LastChildFill="True">
             <Grid DockPanel.Dock="Bottom">
@@ -66,7 +127,7 @@
             </ItemsControl>
         </StackPanel>
     </DataTemplate>
-    
+
     <DataTemplate x:Key="WeaponSlotView">
         <ComboBox SelectedIndex="{Binding Value}" Margin="0" Padding="5" VerticalContentAlignment="Center">
             <TextBlock Text="-" Style="{StaticResource ComboBoxItemSlotStyle}"/>
@@ -413,7 +474,7 @@
                     <RadioButton Content="Selected" IsChecked="{Binding VisibilityModeSelected, Mode=OneWayToSource}" bhv:ToolTipEx.Content="See only selected skills" Style="{StaticResource SelectorRadioButton}"/>
                     <RadioButton Content="Unselected" IsChecked="{Binding VisibilityModeUnselected, Mode=OneWayToSource}" bhv:ToolTipEx.Content="See only unselected skills" Style="{StaticResource SelectorRadioButton}"/>
                 </StackPanel>
-                <TextBox Margin="2" Padding="3" FocusManager.FocusedElement="{Binding RelativeSource={RelativeSource Self}}" Text="{Binding SearchText, UpdateSourceTrigger=PropertyChanged}"/>
+                <TextBox Margin="2" Padding="3" FocusManager.FocusedElement="{Binding RelativeSource={RelativeSource Self}}" Text="{Binding SearchText, UpdateSourceTrigger=PropertyChanged}" bhv:TextBoxFocusOnEmptyBehavior.IsAttached="True"/>
             </DockPanel>
             <ListBox Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" ItemsSource="{Binding Skills, Mode=OneWay}" ItemTemplate="{StaticResource SkillView}" VirtualizingPanel.IsVirtualizing="False" VirtualizingPanel.ScrollUnit="Pixel" Focusable="False">
                 <ListBox.ItemContainerStyle>
@@ -471,8 +532,11 @@
                     <RadioButton Content="Unmodified" IsChecked="{Binding VisibilityModeUnmodified, Mode=OneWayToSource}" bhv:ToolTipEx.Content="See only jewels with override checkbox unchecked and a count of zero" Style="{StaticResource SelectorRadioButton}"/>
                     <Button Content="?" MinWidth="20" Margin="2" Padding="4" VerticalAlignment="Center" Command="{Binding OpenIntegratedHelpCommand, Mode=OneTime}" CommandParameter="DecorationOverride" IsEnabled="True" bhv:ToolTipEx.Content="Show help about decorations override"/>
                 </StackPanel>
-                <TextBox Margin="2" Padding="3" FocusManager.FocusedElement="{Binding RelativeSource={RelativeSource Self}}" Text="{Binding SearchText, UpdateSourceTrigger=PropertyChanged}"/>
+                <TextBox Margin="2" Padding="3" FocusManager.FocusedElement="{Binding RelativeSource={RelativeSource Self}}" Text="{Binding SearchText, UpdateSourceTrigger=PropertyChanged}" bhv:TextBoxFocusOnEmptyBehavior.IsAttached="True"/>
             </DockPanel>
+            <StackPanel DockPanel.Dock="Bottom" Orientation="Horizontal">
+                <Button Margin="1" Padding="8" Content="Import from save..." Command="{Binding ImportCommand, Mode=OneTime}"/>
+            </StackPanel>
             <ListBox Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" ItemsSource="{Binding Jewels, Mode=OneWay}" ItemTemplate="{StaticResource JewelOverrideView}" VirtualizingPanel.IsVirtualizing="False" VirtualizingPanel.ScrollUnit="Pixel" Grid.IsSharedSizeScope="True" Focusable="False">
                 <ListBox.ItemContainerStyle>
                     <Style TargetType="{x:Type ListBoxItem}">
@@ -611,7 +675,7 @@
             </TextBlock.ContextMenu>
         </TextBlock>
     </DataTemplate>
-    
+
     <DataTemplate x:Key="RootView">
         <DockPanel LastChildFill="True">
             <DockPanel DockPanel.Dock="Top" LastChildFill="True">
@@ -962,7 +1026,7 @@
             <Rectangle Fill="#FF67FF6E" Height="Auto" Width="{Binding Red, Mode=OneTime}"/>
         </StackPanel>
     </DataTemplate>
-    
+
     <DataTemplate x:Key="WeaponElementView">
         <StackPanel x:Name="root" Orientation="Horizontal">
             <Image Source="{Binding Type, Mode=OneTime, Converter={StaticResource ElementEnumToImageSourceValueConverter}, ConverterParameter=16}" Width="16" Height="16" Margin="2" VerticalAlignment="Center" bhv:ToolTipEx.Content="{Binding Type, Mode=OneTime, Converter={StaticResource ElementNameValueConverter}}"/>

@@ -14,6 +14,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using MHArmory.Configurations;
 using MHArmory.ViewModels;
+using MHWSaveUtils;
 
 namespace MHArmory
 {
@@ -35,11 +36,24 @@ namespace MHArmory
 
             this.rootViewModel = rootViewModel;
 
-            decorationsOverrideViewModel = new DecorationsOverrideViewModel(GlobalData.Instance.Jewels);
+            decorationsOverrideViewModel = new DecorationsOverrideViewModel(GlobalData.Instance.Jewels, ProvideSaveSlotInfo);
 
             InputBindings.Add(new InputBinding(new AnonymousCommand(OnCancel), new KeyGesture(Key.Escape, ModifierKeys.None)));
 
             DataContext = decorationsOverrideViewModel;
+        }
+
+        private DecorationsSaveSlotInfo ProvideSaveSlotInfo(IList<DecorationsSaveSlotInfo> allSlots)
+        {
+            var dialog = new SaveDataSlotSelectorWindow(allSlots)
+            {
+                Owner = this
+            };
+
+            if (dialog.ShowDialog() != true)
+                return null;
+
+            return dialog.SelectedSaveSlot;
         }
 
         private void OnCancel(object parameter)

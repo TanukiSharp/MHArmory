@@ -67,6 +67,7 @@
     <Compile Include="Behaviors\GreekLetterInputBehavior.cs" />
     <Compile Include="Behaviors\HorizontalScrollBehavior.cs" />
     <Compile Include="Behaviors\SetHtmlBehavior.cs" />
+    <Compile Include="Behaviors\TextBoxFocusOnEmptyBehavior.cs" />
     <Compile Include="Behaviors\ToolTipExBehavior.cs" />
     <Compile Include="Configurations\ConfigurationV2.cs" />
     <Compile Include="Controls\DraggableScrollViewer.cs" />
@@ -110,6 +111,9 @@
     <Compile Include="Panels\KeyValueGrid.cs" />
     <Compile Include="Panels\TooledContentPanel.cs" />
     <Compile Include="ReorganizableCollectionUtilities.cs" />
+    <Compile Include="SaveDataSlotSelectorWindow.xaml.cs">
+      <DependentUpon>SaveDataSlotSelectorWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="ScalableVectorGraphics\RasterizedImageContainer.cs" />
     <Compile Include="ScalableVectorGraphics\Loader.cs" />
     <Compile Include="ScalableVectorGraphics\Rasterizer.cs" />
@@ -160,6 +164,7 @@
     <Compile Include="ViewModels\JewelOverrideViewModel.cs" />
     <Compile Include="ViewModels\LoadoutViewModel.cs" />
     <Compile Include="ViewModels\RootViewModel.cs" />
+    <Compile Include="ViewModels\SaveDataSlotSelectorViewModel.cs" />
     <Compile Include="ViewModels\SearchResultProcessingViewModel.cs" />
     <Compile Include="ViewModels\SkillSelectorViewModel.cs" />
     <Compile Include="ViewModels\SkillViewModel.cs" />
@@ -179,6 +184,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="AdvancedSearchWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SaveDataSlotSelectorWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -290,9 +299,6 @@
     <None Include="data\fullArmorSets.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="data\gameJewels.json">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
     <None Include="data\great-sword.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
@@ -357,6 +363,10 @@
     <ProjectReference Include="..\MHArmory.Search\MHArmory.Search.csproj">
       <Project>{375922DD-84D4-46FA-9F2C-0FC45EFC0BDD}</Project>
       <Name>MHArmory.Search</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MHWSaveUtils\MHWSaveUtils\MHWSaveUtils.csproj">
+      <Project>{e0f3fd6a-4633-40f5-9a5d-6652a175727a}</Project>
+      <Name>MHWSaveUtils</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
