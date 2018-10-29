@@ -99,9 +99,12 @@ namespace MHArmory.ViewModels
         public ICommand ImportCommand { get; }
 
         private readonly bool isLoadingConfiguration;
+        private readonly Func<IList<DecorationsSaveSlotInfo>, DecorationsSaveSlotInfo> saveSlotInfoSelector;
 
-        public DecorationsOverrideViewModel(IList<IJewel> jewels)
+        public DecorationsOverrideViewModel(IList<IJewel> jewels, Func<IList<DecorationsSaveSlotInfo>, DecorationsSaveSlotInfo> saveSlotInfoSelector)
         {
+            this.saveSlotInfoSelector = saveSlotInfoSelector;
+
             Jewels = jewels
                 .Select(x => new JewelOverrideViewModel(this, x, 0))
                 .ToList();
@@ -198,6 +201,20 @@ namespace MHArmory.ViewModels
 
         private async void OnImport(object paramter)
         {
+            ((AnonymousCommand)ImportCommand).IsEnabled = false;
+
+            try
+            {
+                await ImportInternal();
+            }
+            finally
+            {
+                ((AnonymousCommand)ImportCommand).IsEnabled = true;
+            }
+        }
+
+        private async Task ImportInternal()
+        {
             IList<SaveDataInfo> saveDataInfoItems = FileSystemUtils.EnumerateSaveDataInfo().ToList();
 
             if (saveDataInfoItems.Count == 0)
@@ -224,21 +241,30 @@ namespace MHArmory.ViewModels
                 saveDataInfoItems.Add(new SaveDataInfo("<unknown>", dialog.FileName));
             }
 
-            IList<IList<DecorationsSaveSlotInfo>> decorationsPerSave = null;
+            IList<Task<IList<DecorationsSaveSlotInfo>>> allTasks = saveDataInfoItems
+                .Select(ReadSaveData)
+                .ToList();
 
-            IList<Task<IList<DecorationsSaveSlotInfo>>> allTasks = saveDataInfoItems.Select(ReadSaveData).ToList();
             await Task.WhenAll(allTasks);
-            decorationsPerSave = allTasks.Select(x => x.Result).ToList();
 
-            int saveDataIndex = 0;
-            int saveSlotIndex = 0;
+            IList<DecorationsSaveSlotInfo> allSlots = allTasks
+                .SelectMany(x => x.Result)
+                .ToList();
 
-            if (saveDataInfoItems.Count > 1)
+            DecorationsSaveSlotInfo selected;
+
+            if (allSlots.Count > 1)
             {
-                // Show the save data slot selector window
+                selected = saveSlotInfoSelector(allSlots);
+                if (selected == null)
+                    return;
             }
+            else
+                selected = allSlots[0];
 
-            ApplySaveDataDecorations(decorationsPerSave[saveDataIndex][saveSlotIndex]);
+            MessageBox.Show("Save data import done.", "Import", MessageBoxButton.OK);
+
+            ApplySaveDataDecorations(selected);
         }
 
         private void ApplySaveDataDecorations(DecorationsSaveSlotInfo saveSlotDecorations)
@@ -286,7 +312,17 @@ namespace MHArmory.ViewModels
             }
 
             using (var reader = new DecorationsReader(ms))
-                return reader.Read().ToList();
+            {
+                var list = new List<DecorationsSaveSlotInfo>();
+
+                foreach (DecorationsSaveSlotInfo info in reader.Read())
+                {
+                    info.SetSaveDataInfo(saveDataInfo);
+                    list.Add(info);
+                }
+
+                return list;
+            }
         }
 
         private static IList<GameJewel> LoadGameJewels()

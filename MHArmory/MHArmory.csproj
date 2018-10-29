@@ -111,6 +111,9 @@
     <Compile Include="Panels\KeyValueGrid.cs" />
     <Compile Include="Panels\TooledContentPanel.cs" />
     <Compile Include="ReorganizableCollectionUtilities.cs" />
+    <Compile Include="SaveDataSlotSelectorWindow.xaml.cs">
+      <DependentUpon>SaveDataSlotSelectorWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="ScalableVectorGraphics\RasterizedImageContainer.cs" />
     <Compile Include="ScalableVectorGraphics\Loader.cs" />
     <Compile Include="ScalableVectorGraphics\Rasterizer.cs" />
@@ -181,6 +184,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="AdvancedSearchWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SaveDataSlotSelectorWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
