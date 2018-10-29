@@ -11,7 +11,7 @@ Have a look at the GitHub project here: [https://github.com/TanukiSharp/MHArmory
 
 ## Run Armory
 
-First, download the zip file of **Armory** at this address: [https://github.com/TanukiSharp/MHArmory/raw/master/Distributions/MHArmory_0.0.6.4.zip](https://github.com/TanukiSharp/MHArmory/raw/master/Distributions/MHArmory_0.0.6.4.zip)
+First, download the zip file of **Armory** at this address: [https://github.com/TanukiSharp/MHArmory/raw/master/Distributions/MHArmory_0.0.7.0.zip](https://github.com/TanukiSharp/MHArmory/raw/master/Distributions/MHArmory_0.0.7.0.zip)
 
 Extract the zip at a location where the application will have write access rights, for it to store your preferences. This is optional, but recommended.<br/>
 Avoid `Program Files` or such.

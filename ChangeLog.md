@@ -1,6 +1,14 @@
 # Change log
 
-## vNext (?)
+## 0.0.7 (2018/10/30)
+
+- For PC players, you can now import jewels from your save data!
+
+    ![Import button](docs/misc/changelog_0.0.7.0_import_jewels_01.png)
+
+    If you have more than one save data slot (either on the same account or across accounts) then a selector shows up for you to choose where to import from.
+
+    ![Save slot selector](docs/misc/changelog_0.0.7.0_import_jewels_02.png)
 
 - Take a screenshot of a specific armor set search result
 
