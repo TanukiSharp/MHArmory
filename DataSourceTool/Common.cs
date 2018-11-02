@@ -8,6 +8,23 @@ namespace DataSourceTool
 {
     public static class Common
     {
+        public const string SolutionFilename = "MHArmory.sln";
+
+        public static string FindSolutionPath()
+        {
+            string currentPath = AppContext.BaseDirectory.TrimEnd('/', '\\');
+
+            while (string.IsNullOrEmpty(currentPath) == false)
+            {
+                if (File.Exists(Path.Combine(currentPath, SolutionFilename)))
+                    return currentPath;
+
+                currentPath = Path.GetDirectoryName(currentPath);
+            }
+
+            return null;
+        }
+
         public static void SerializeJson(string filename, object instance)
         {
             using (var sw = new StringWriter())
