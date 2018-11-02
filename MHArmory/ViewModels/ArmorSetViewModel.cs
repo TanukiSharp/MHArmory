@@ -65,7 +65,17 @@ namespace MHArmory.ViewModels
         public int TotalLevel { get; }
         public bool IsExtra { get; }
         public bool IsOver { get; }
-        public FullSkillDescriptionViewModel Description { get; }
+
+        private FullSkillDescriptionViewModel description;
+        public FullSkillDescriptionViewModel Description
+        {
+            get
+            {
+                if (description == null)
+                    description = new FullSkillDescriptionViewModel(Skill, TotalLevel);
+                return description;
+            }
+        }
 
         public SearchResultSkillViewModel(ISkill skill, int totalLevel, bool isExtra)
         {
@@ -73,7 +83,6 @@ namespace MHArmory.ViewModels
             TotalLevel = totalLevel;
             IsExtra = isExtra;
             IsOver = totalLevel > skill.MaxLevel;
-            Description = new FullSkillDescriptionViewModel(skill, totalLevel);
         }
     }
 
@@ -123,15 +132,51 @@ namespace MHArmory.ViewModels
             private set { SetValue(ref jewels, value); }
         }
 
-        public SearchResultSkillViewModel[] AdditionalSkills { get; private set; }
+        private SearchResultSkillViewModel[] additionalSkills;
+        public SearchResultSkillViewModel[] AdditionalSkills
+        {
+            get
+            {
+                SetSkills();
+                return additionalSkills;
+            }
+        }
 
-        public int AdditionalSkillsTotalLevel { get; }
+        private int additionalSkillsTotalLevel;
+        public int AdditionalSkillsTotalLevel
+        {
+            get
+            {
+                SetSkills();
+                return additionalSkillsTotalLevel;
+            }
+        }
 
         public int[] SpareSlots { get; }
 
         public int SpareSlotCount { get; }
-        public int SpareSlotSizeSquare { get; }
-        public int SpareSlotSizeCube { get; }
+
+        private int spareSlotSizeSquare = -1;
+        public int SpareSlotSizeSquare
+        {
+            get
+            {
+                if (spareSlotSizeSquare < 0)
+                    spareSlotSizeSquare = DataUtility.SlotSizeScoreSquare(SpareSlots);
+                return spareSlotSizeSquare;
+            }
+        }
+
+        private int spareSlotSizeCube = -1;
+        public int SpareSlotSizeCube
+        {
+            get
+            {
+                if (spareSlotSizeCube < 0)
+                    spareSlotSizeCube = DataUtility.SlotSizeScoreCube(SpareSlots);
+                return spareSlotSizeCube;
+            }
+        }
 
         public int TotalRarity { get; }
 
@@ -145,13 +190,59 @@ namespace MHArmory.ViewModels
         public int TotalIceResistance { get; }
         public int TotalDragonResistance { get; }
 
-        public bool IsOptimal { get; }
+        private bool isOptimal;
+        public bool IsOptimal
+        {
+            get
+            {
+                SetSkills();
+                return isOptimal;
+            }
+        }
 
-        public ICommand SaveScreenshotToClipboardCommand { get; }
-        public ICommand SaveScreenshotToFileCommand { get; }
+        private ICommand saveScreenshotToClipboardCommand;
+        public ICommand SaveScreenshotToClipboardCommand
+        {
+            get
+            {
+                if (saveScreenshotToClipboardCommand == null)
+                    saveScreenshotToClipboardCommand = new AnonymousCommand(OnSaveScreenshotToClipboard);
+                return saveScreenshotToClipboardCommand;
+            }
+        }
 
-        public ICommand SaveTextToClipboardCommand { get; }
-        public ICommand SaveTextToFileCommand { get; }
+        private ICommand saveScreenshotToFileCommand;
+        public ICommand SaveScreenshotToFileCommand
+        {
+            get
+            {
+                if (saveScreenshotToFileCommand == null)
+                    saveScreenshotToFileCommand = new AnonymousCommand(OnSaveScreenshotToFile);
+                return saveScreenshotToFileCommand;
+            }
+        }
+
+        private ICommand saveTextToClipboardCommand;
+        public ICommand SaveTextToClipboardCommand
+        {
+            get
+            {
+                if (saveTextToClipboardCommand == null)
+                    saveTextToClipboardCommand = new AnonymousCommand(OnSaveTextToClipboard);
+                return saveTextToClipboardCommand;
+            }
+        }
+
+        private ICommand saveTextToFileCommand;
+        public ICommand SaveTextToFileCommand
+        {
+            get
+            {
+                if (saveTextToFileCommand == null)
+                    saveTextToFileCommand = new AnonymousCommand(OnSaveTextToFile);
+                return saveTextToFileCommand;
+            }
+        }
 
         public IAbility[] DesiredAbilities { get; }
 
@@ -163,17 +254,11 @@ namespace MHArmory.ViewModels
 
             DesiredAbilities = solverData.DesiredAbilities;
 
-            SetSkills(solverData);
-
-            AdditionalSkillsTotalLevel = AdditionalSkills.Sum(x => x.TotalLevel);
-
             SpareSlots = spareSlots;
 
             TotalRarity = armorPieces.Sum(x => x.Rarity);
 
             SpareSlotCount = SpareSlots.Count(x => x > 0);
-            SpareSlotSizeSquare = DataUtility.SlotSizeScoreSquare(SpareSlots);
-            SpareSlotSizeCube = DataUtility.SlotSizeScoreCube(SpareSlots);
 
             TotalBaseDefense = armorPieces.Sum(x => x?.Defense.Base ?? 0);
             TotalMaxDefense = armorPieces.Sum(x => x?.Defense.Max ?? 0);
@@ -184,14 +269,9 @@ namespace MHArmory.ViewModels
             TotalThunderResistance = armorPieces.Sum(a => a.Resistances.Thunder);
             TotalIceResistance = armorPieces.Sum(a => a.Resistances.Ice);
             TotalDragonResistance = armorPieces.Sum(a => a.Resistances.Dragon);
-
-            IsOptimal = AdditionalSkills.All(x => x.IsOver == false);
-
-            SaveScreenshotToClipboardCommand = new AnonymousCommand(OnSaveScreenshotToClipboard);
-            SaveScreenshotToFileCommand = new AnonymousCommand(OnSaveScreenshotToFile);
-            SaveTextToClipboardCommand = new AnonymousCommand(OnSaveTextToClipboard);
-            SaveTextToFileCommand = new AnonymousCommand(OnSaveTextToFile);
         }
+
+        private bool areSkillsSet = false;
 
         private void OnSaveScreenshotToClipboard()
         {
@@ -328,7 +408,20 @@ namespace MHArmory.ViewModels
             return sb.ToString();
         }
 
-        private void SetSkills(ISolverData solverData)
+        private void SetSkills()
+        {
+            if (areSkillsSet)
+                return;
+
+            SetSkillsInternal();
+
+            additionalSkillsTotalLevel = additionalSkills.Sum(x => x.TotalLevel);
+            isOptimal = additionalSkills.All(x => x.IsOver == false);
+
+            areSkillsSet = true;
+        }
+
+        private void SetSkillsInternal()
         {
             var skills = new Dictionary<int, int>();
 
@@ -357,21 +450,21 @@ namespace MHArmory.ViewModels
 
             // ------------------------------------
 
-            var additionalSkills = new List<SearchResultSkillViewModel>();
+            var localAdditionalSkills = new List<SearchResultSkillViewModel>();
 
             foreach (KeyValuePair<int, int> skillKeyValue in skills)
             {
                 ISkill skill = GlobalData.Instance.Skills.First(s => s.Id == skillKeyValue.Key);
                 int totalLevel = skillKeyValue.Value;
 
-                IAbility foundAbility = solverData.DesiredAbilities.FirstOrDefault(a => a.Skill.Id == skill.Id);
+                IAbility foundAbility = DesiredAbilities.FirstOrDefault(a => a.Skill.Id == skill.Id);
                 if (foundAbility == null)
-                    additionalSkills.Add(new SearchResultSkillViewModel(skill, totalLevel, true));
+                    localAdditionalSkills.Add(new SearchResultSkillViewModel(skill, totalLevel, true));
                 else if (totalLevel > foundAbility.Level)
-                    additionalSkills.Add(new SearchResultSkillViewModel(skill, totalLevel, false));
+                    localAdditionalSkills.Add(new SearchResultSkillViewModel(skill, totalLevel, false));
             }
 
-            AdditionalSkills = additionalSkills.ToArray();
+            additionalSkills = localAdditionalSkills.ToArray();
         }
 
         private void CheckAbilitiesOnArmorSet(Dictionary<int, int> skills)

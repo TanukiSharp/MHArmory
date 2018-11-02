@@ -27,14 +27,22 @@ namespace MHArmory.ViewModels
         public string SkillName { get { return Ability.Skill.Name; } }
         public int Level { get { return Ability.Level; } }
         public string AbilityDescription { get { return Ability.Description; } }
-        public FullSkillDescriptionViewModel Description { get; }
+
+        private FullSkillDescriptionViewModel description;
+        public FullSkillDescriptionViewModel Description
+        {
+            get
+            {
+                if (description == null)
+                    description = new FullSkillDescriptionViewModel(Ability.Skill, Ability.Level);
+                return description;
+            }
+        }
 
         public AbilityViewModel(IAbility ability, SkillViewModel parent)
         {
             this.Ability = ability;
             this.parent = parent;
-
-            Description = new FullSkillDescriptionViewModel(ability.Skill, ability.Level);
         }
 
         private bool isVisible = true;

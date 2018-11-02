@@ -10,12 +10,23 @@ namespace MHArmory.ViewModels
     public class JewelAbilityViewModel : ViewModelBase
     {
         public string SkillName { get; }
-        public FullSkillDescriptionViewModel Description { get; }
+
+        private Func<FullSkillDescriptionViewModel> descriptionFunc;
+        private FullSkillDescriptionViewModel description;
+        public FullSkillDescriptionViewModel Description
+        {
+            get
+            {
+                if (description == null)
+                    description = descriptionFunc();
+                return description;
+            }
+        }
 
         public JewelAbilityViewModel(IAbility ability, int level)
         {
             SkillName = ability.Skill.Name;
-            Description = new FullSkillDescriptionViewModel(ability.Skill, level);
+            descriptionFunc = () => new FullSkillDescriptionViewModel(ability.Skill, level);
         }
 
         private bool isVisible = true;
