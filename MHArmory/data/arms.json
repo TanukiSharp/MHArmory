@@ -3924,6 +3924,101 @@
     },
     {
         "id": 165,
+        "name": "Empress Vambraces γ",
+        "rarity": 8,
+        "slots": [
+            3,
+            1
+        ],
+        "abilityIds": [
+            166,
+            214
+        ],
+        "defense": {
+            "base": 70,
+            "max": 76,
+            "augmented": 90
+        },
+        "resistances": {
+            "fire": 3,
+            "water": 1,
+            "thunder": 1,
+            "ice": -3,
+            "dragon": -2
+        },
+        "attributes": {
+            "gender": 3
+        },
+        "armorSetSkillIds": [
+            23
+        ],
+        "eventId": 14
+    },
+    {
+        "id": 166,
+        "name": "Zorah Claws γ",
+        "rarity": 8,
+        "slots": [
+            3,
+            1
+        ],
+        "abilityIds": [
+            23
+        ],
+        "defense": {
+            "base": 72,
+            "max": 78,
+            "augmented": 92
+        },
+        "resistances": {
+            "fire": 4,
+            "water": -3,
+            "thunder": -1,
+            "ice": -2,
+            "dragon": -3
+        },
+        "attributes": {
+            "gender": 3
+        },
+        "armorSetSkillIds": [
+            8
+        ],
+        "eventId": 24
+    },
+    {
+        "id": 167,
+        "name": "Xeno'jiiva Claws γ",
+        "rarity": 8,
+        "slots": [
+            2,
+            2,
+            1
+        ],
+        "abilityIds": [
+            138,
+            187
+        ],
+        "defense": {
+            "base": 72,
+            "max": 78,
+            "augmented": 92
+        },
+        "resistances": {
+            "fire": -3,
+            "water": 2,
+            "thunder": 2,
+            "ice": 2,
+            "dragon": -4
+        },
+        "attributes": {
+            "gender": 3
+        },
+        "armorSetSkillIds": [
+            20
+        ]
+    },
+    {
+        "id": 168,
         "name": "Diver's Braces",
         "rarity": 3,
         "abilityIds": [
@@ -3947,7 +4042,7 @@
         "eventId": 17
     },
     {
-        "id": 166,
+        "id": 169,
         "name": "Diver's Braces α",
         "rarity": 5,
         "slots": [
@@ -3974,7 +4069,7 @@
         "eventId": 17
     },
     {
-        "id": 167,
+        "id": 170,
         "name": "Butterfly Brachia α",
         "rarity": 5,
         "abilityIds": [
@@ -3999,7 +4094,7 @@
         "eventId": 18
     },
     {
-        "id": 168,
+        "id": 171,
         "name": "Butterfly Brachia β",
         "rarity": 5,
         "slots": [
@@ -4026,7 +4121,7 @@
         "eventId": 18
     },
     {
-        "id": 169,
+        "id": 172,
         "name": "Queen Beetle Brachia α",
         "rarity": 5,
         "abilityIds": [
@@ -4051,7 +4146,7 @@
         "eventId": 18
     },
     {
-        "id": 170,
+        "id": 173,
         "name": "Queen Beetle Brachia β",
         "rarity": 5,
         "slots": [

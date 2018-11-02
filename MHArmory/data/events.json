@@ -57,7 +57,7 @@
     },
     {
         "id": 14,
-        "name": "Lunastra Armor"
+        "name": "Lunastra α+β Armor"
     },
     {
         "id": 15,
@@ -90,5 +90,9 @@
     {
         "id": 22,
         "name": "Harvest/Harvest α Armor"
+    },
+    {
+        "id": 24,
+        "name": "Zorah Magdaros γ Armor"
     }
 ]
