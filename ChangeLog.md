@@ -1,5 +1,10 @@
 # Change log
 
+## 0.0.7.1 (2018/11/03)
+
+- Added armor pieces data
+- Improved memory consumption in some heavy cases
+
 ## 0.0.7 (2018/10/30)
 
 - For PC players, you can now import jewels from your save data!
