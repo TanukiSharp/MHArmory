@@ -166,7 +166,7 @@ namespace MHArmory.ViewModels
     public class WeaponViewModel : ViewModelBase
     {
         public int Id { get; }
-        public string Name { get; }
+        public string Name { get; } // TODO: localization here
         public WeaponType Type { get; }
         public int Rarity { get; }
         public int Attack { get; }

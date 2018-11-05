@@ -24,9 +24,9 @@ namespace MHArmory.ViewModels
         }
 
         public int SkillId { get { return Ability.Skill.Id; } }
-        public string SkillName { get { return Ability.Skill.Name; } }
+        public string SkillName { get { return Ability.Skill.Name; } } // TODO: localization here
         public int Level { get { return Ability.Level; } }
-        public string AbilityDescription { get { return Ability.Description; } }
+        public string AbilityDescription { get { return Ability.Description; } } // TODO: localization here
 
         private FullSkillDescriptionViewModel description;
         public FullSkillDescriptionViewModel Description
@@ -65,10 +65,10 @@ namespace MHArmory.ViewModels
         private readonly RootViewModel root;
         private readonly SkillSelectorViewModel skillSelector;
 
-        public string Name { get { return skill.Name; } }
-        public string Description { get { return skill.Description; } }
+        public string Name { get { return skill.Name; } } // TODO: localization here
+        public string Description { get { return skill.Description; } } // TODO: localization here
 
-        public string JewelsText { get; private set; }
+        public string JewelsText { get; private set; } // TODO: localization here
 
         public IList<AbilityViewModel> Abilities { get; }
 

@@ -16,7 +16,7 @@ namespace MHArmory.ViewModels
 {
     public class FullAbilityDescriptionViewModel : ViewModelBase
     {
-        public string Description { get; }
+        public string Description { get; } // TODO: localization here
 
         private bool isActive;
         public bool IsActive
@@ -36,7 +36,7 @@ namespace MHArmory.ViewModels
     {
         private ISkill skill;
 
-        public string GeneralDescription { get { return skill.Description; } }
+        public string GeneralDescription { get { return skill.Description; } } // TODO: localization here
         public FullAbilityDescriptionViewModel[] Abilities { get; }
 
         public FullSkillDescriptionViewModel(ISkill skill, int level)

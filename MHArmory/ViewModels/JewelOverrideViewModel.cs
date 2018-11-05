@@ -9,7 +9,7 @@ namespace MHArmory.ViewModels
 {
     public class JewelAbilityViewModel : ViewModelBase
     {
-        public string SkillName { get; }
+        public string SkillName { get; } // TODO: localization here
 
         private Func<FullSkillDescriptionViewModel> descriptionFunc;
         private FullSkillDescriptionViewModel description;
@@ -42,7 +42,7 @@ namespace MHArmory.ViewModels
         private readonly DecorationsOverrideViewModel parent;
         private readonly IJewel jewel;
 
-        public string Name { get; }
+        public string Name { get; } // TODO: localization here
         public int SlotSize { get; }
         public IList<JewelAbilityViewModel> Abilities { get; }
 

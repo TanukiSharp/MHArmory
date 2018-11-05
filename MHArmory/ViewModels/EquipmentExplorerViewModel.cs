@@ -11,7 +11,7 @@ namespace MHArmory.ViewModels
 {
     public class EquipmentExplorerViewModel : ViewModelBase
     {
-        private IList<IEquipment> allEquipments;
+        private IList<IEquipment> allEquipments; // TODO: localization here (Create EquipmentViewModel to handle localization)
 
         public ObservableCollection<IEquipment> Equipments { get; } = new ObservableCollection<IEquipment>();
 

@@ -13,7 +13,7 @@ namespace MHArmory.ViewModels
     {
         private readonly EventContainerViewModel parent;
 
-        public string Name { get; }
+        public string Name { get; } // TODO: localization here
 
         public bool HasChanged { get; private set; }
 
