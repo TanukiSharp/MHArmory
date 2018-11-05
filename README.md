@@ -25,19 +25,14 @@ For any bug report or feature request, please fill an issue [here][9].
 
 If you are a developer and want to contribute to code, I recommend to first open an [issue][9] to describe the problem to solve or feature to be implemented, before implementing it, in order to discuss about it.
 
-# How to use
-
-The documentation of **Armory** is currently being written.<br/>
-This document will be updated soon to link to documentation.
-
-A temporary documentation for the beta test phase is available here: https://tanukisharp.github.io/MHArmory/beta_test_en.html
-
-# Beta testing [Download]
-
-Link to the English beta test documentation: https://tanukisharp.github.io/MHArmory/beta_test_en.html<br/>
-Link to the French beta test documentation: https://tanukisharp.github.io/MHArmory/beta_test_fr.html
+# Download
 
 Link to direct download: https://github.com/TanukiSharp/MHArmory/raw/master/Distributions/MHArmory_0.0.7.1.zip
+
+Older version can be downloaded as well, here: https://github.com/TanukiSharp/MHArmory/tree/master/Distributions
+
+When you update to a newer version of Armory, you can copy the `config.json` file from the old version to the new.
+This file contains all your settings that you probably want to keep when you update.
 
 # Stay tuned
 
@@ -49,10 +44,12 @@ Follow **Armory** on Twitter to get latest news and updates: https://twitter.com
 
 ## Will happen soon
 
-- Auto-update
+- Translation of equipments and decorations
+- Equipments override
 
 ## May happen in a near future
 
+- Import equipment from save data
 - Unit tests
 - Armor set builder (with partial equipment)
 - Asset explorer organized as tree
