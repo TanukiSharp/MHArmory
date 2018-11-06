@@ -85,6 +85,7 @@ namespace MHArmory.ViewModels
             IDictionary<string, bool> events = GlobalData.Instance.Configuration.Events;
 
             Events = allEvents
+                .OrderBy(x => x.Id)
                 .Select(x => CreateEventViewModel(x.Name, events))
                 .ToList();
         }
