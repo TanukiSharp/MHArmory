@@ -1,5 +1,9 @@
 # Change log
 
+## 0.0.7.2 (2018/11/06)
+
+- Added a certain event to the event list (fixes a issue introduced in version 0.0.7.1, sorry)
+
 ## 0.0.7.1 (2018/11/03)
 
 - Added armor pieces data

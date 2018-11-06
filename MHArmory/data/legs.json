@@ -4020,7 +4020,8 @@
         },
         "armorSetSkillIds": [
             20
-        ]
+        ],
+        "eventId": 25
     },
     {
         "id": 168,
