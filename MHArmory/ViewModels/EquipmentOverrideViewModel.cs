@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Input;
 using MHArmory.Core.DataStructures;
 
 namespace MHArmory.ViewModels
@@ -15,6 +16,10 @@ namespace MHArmory.ViewModels
         public EquipmentViewModel Gloves { get; }
         public EquipmentViewModel Waist { get; }
         public EquipmentViewModel Legs { get; }
+
+        public ICommand ToggleAllCommand { get; }
+
+        private readonly IList<EquipmentViewModel> allPieces;
 
         public EquipmentGroup(IEnumerable<EquipmentViewModel> equipments)
             : this(
@@ -41,7 +46,30 @@ namespace MHArmory.ViewModels
             Waist = waist;
             Legs = legs;
 
+            allPieces = new List<EquipmentViewModel>();
+
+            if (head != null)
+                allPieces.Add(head);
+            if (chest != null)
+                allPieces.Add(chest);
+            if (gloves != null)
+                allPieces.Add(gloves);
+            if (waist != null)
+                allPieces.Add(waist);
+            if (legs != null)
+                allPieces.Add(legs);
+
             Name = FindGroupName(head, chest, gloves, waist, legs);
+
+            ToggleAllCommand = new AnonymousCommand(OnToggleAll);
+        }
+
+        private void OnToggleAll()
+        {
+            bool allChecked = allPieces.All(x => x.IsPossessed);
+
+            foreach (EquipmentViewModel equipment in allPieces)
+                equipment.IsPossessed = allChecked == false;
         }
 
         public static string FindGroupName(params IEquipment[] equipments)
