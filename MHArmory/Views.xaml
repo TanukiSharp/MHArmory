@@ -599,12 +599,24 @@
     <DataTemplate x:Key="ArmorPieceOverrideView">
         <Button x:Name="toggle" Command="{Binding TogglePossessionCommand, Mode=OneTime}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center">
             <Button.Content>
-                <Image Source="{Binding Type, Mode=OneTime, Converter={StaticResource EquipmentEnumToImageSourceValueConverter}, ConverterParameter=32}" Width="32" Height="32" Margin="1" Focusable="False"/>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <Image Grid.ColumnSpan="2" Grid.RowSpan="2" Source="{Binding Type, Mode=OneTime, Converter={StaticResource EquipmentEnumToImageSourceValueConverter}, ConverterParameter=32}" Width="32" Height="32" Margin="1" Focusable="False"/>
+                    <Image x:Name="icon" Grid.Row="2" Grid.Column="2" Source="{mxt:RasterizedImage Location=Icons/Others/cube_chest.svg, Size=16}" Width="16" Height="16" VerticalAlignment="Bottom" HorizontalAlignment="Right" Margin="-5" IsHitTestVisible="False" Visibility="Hidden" SnapsToDevicePixels="True"/>
+                </Grid>
             </Button.Content>
         </Button>
         <DataTemplate.Triggers>
             <DataTrigger Binding="{Binding IsPossessed}" Value="True">
                 <Setter TargetName="toggle" Property="Background" Value="{StaticResource ActiveWeaponBackgroundBrush}"/>
+                <Setter TargetName="icon" Property="Visibility" Value="Visible"/>
             </DataTrigger>
         </DataTemplate.Triggers>
     </DataTemplate>
@@ -624,6 +636,7 @@
                         <Setter Property="ContentTemplate" Value="{StaticResource ArmorPieceOverrideView}"/>
                     </Style>
                 </StackPanel.Resources>
+                <Button Width="16" Margin="4" bhv:ToolTipEx.Content="Toggle all" Command="{Binding ToggleAllCommand, Mode=OneTime}"/>
                 <ContentControl Content="{Binding Head, Mode=OneTime}"/>
                 <ContentControl Content="{Binding Chest, Mode=OneTime}"/>
                 <ContentControl Content="{Binding Gloves, Mode=OneTime}"/>
