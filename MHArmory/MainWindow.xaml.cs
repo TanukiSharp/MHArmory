@@ -40,6 +40,7 @@ namespace MHArmory
             CommandBindings.Add(RoutedCommands.CreateCommandBinding(RoutedCommands.OpenSkillsSelector, OpenSkillSelector));
             CommandBindings.Add(RoutedCommands.CreateCommandBinding(RoutedCommands.OpenAdvancedSearch, OpenAdvancedSearch));
             CommandBindings.Add(RoutedCommands.CreateCommandBinding(RoutedCommands.OpenDecorationsOverride, OpenDecorationsOverride));
+            CommandBindings.Add(RoutedCommands.CreateCommandBinding(RoutedCommands.OpenEquipmentOverride, OpenEquipmentOverride));
             CommandBindings.Add(RoutedCommands.CreateCommandBinding(RoutedCommands.OpenEquipmentExplorer, OpenEquipmentExplorer));
             CommandBindings.Add(RoutedCommands.CreateCommandBinding(RoutedCommands.OpenSearchResultProcessing, OpenSearchResultProcessing));
             CommandBindings.Add(RoutedCommands.CreateCommandBinding(RoutedCommands.OpenEvents, OpenEvents));
@@ -177,6 +178,14 @@ namespace MHArmory
                 WindowManager.InitializeWindow(new DecorationsOverrideWindow(rootViewModel) { Owner = this });
 
             WindowManager.ShowDialog<DecorationsOverrideWindow>();
+        }
+
+        private void OpenEquipmentOverride(object obj)
+        {
+            if (WindowManager.IsInitialized<EquipmentOverrideWindow>() == false)
+                WindowManager.InitializeWindow(new EquipmentOverrideWindow(rootViewModel) { Owner = this });
+
+            WindowManager.Show<EquipmentOverrideWindow>();
         }
 
         private void OpenEquipmentExplorer(object obj)

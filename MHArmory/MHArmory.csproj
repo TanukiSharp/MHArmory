@@ -74,6 +74,9 @@
     <Compile Include="Controls\SharpnessRenderer.cs" />
     <Compile Include="DependencyObjectExtensions.cs" />
     <Compile Include="EnumerableExtensions.cs" />
+    <Compile Include="EquipmentOverrideWindow.xaml.cs">
+      <DependentUpon>EquipmentOverrideWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="EventsWindow.xaml.cs">
       <DependentUpon>EventsWindow.xaml</DependentUpon>
     </Compile>
@@ -158,6 +161,8 @@
     <Compile Include="ViewModels\AutoUpdateViewModel.cs" />
     <Compile Include="ViewModels\DecorationsOverrideViewModel.cs" />
     <Compile Include="ViewModels\EquipmentExplorerViewModel.cs" />
+    <Compile Include="ViewModels\EquipmentOverrideViewModel.cs" />
+    <Compile Include="ViewModels\EquipmentViewModel.cs" />
     <Compile Include="ViewModels\EventsViewModel.cs" />
     <Compile Include="ViewModels\HelpViewModel.cs" />
     <Compile Include="ViewModels\InParametersViewModel.cs" />
@@ -184,6 +189,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="AdvancedSearchWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="EquipmentOverrideWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

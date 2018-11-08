@@ -19,6 +19,14 @@ namespace MHArmory.Configurations
         public int? Height { get; set; }
     }
 
+    public class EquipmentOverrideConfigurationItemV2
+    {
+        [JsonProperty("isOverriding")]
+        public bool IsOverriding { get; set; }
+        [JsonProperty("have")]
+        public bool Have { get; set; }
+    }
+
     public class DecorationOverrideConfigurationV2
     {
         [JsonProperty("useOverride")]
@@ -27,12 +35,22 @@ namespace MHArmory.Configurations
         public Dictionary<string, DecorationOverrideConfigurationItem> Items { get; } = new Dictionary<string, DecorationOverrideConfigurationItem>();
     }
 
+    public class EquipmentOverrideConfigurationV2
+    {
+        [JsonProperty("useOverride")]
+        public bool UseOverride { get; set; }
+        [JsonProperty("equipmentOverrides")]
+        public Dictionary<string, EquipmentOverrideConfigurationItemV2> Items { get; } = new Dictionary<string, EquipmentOverrideConfigurationItemV2>();
+    }
+
     public class InParametersConfigurationV2
     {
         [JsonProperty("weaponSlots")]
         public int[] WeaponSlots { get; set; }
         [JsonProperty("decorationOverride")]
         public DecorationOverrideConfigurationV2 DecorationOverride { get; } = new DecorationOverrideConfigurationV2();
+        [JsonProperty("equipmentOverride")]
+        public EquipmentOverrideConfigurationV2 EquipmentOverride { get; } = new EquipmentOverrideConfigurationV2();
         [JsonProperty("rarity")]
         public int Rarity { get; set; }
         [JsonProperty("gender")]
