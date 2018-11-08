@@ -24,6 +24,9 @@
     <cvt:FreeElementNameValueConverter x:Key="FreeElementNameValueConverter"/>
     <cvt:AbilityToViewModelValueConverter x:Key="AbilityToViewModelValueConverter"/>
 
+    <SolidColorBrush x:Key="ActiveWeaponBackgroundBrush" Color="#FFB7FFA7"/>
+    <SolidColorBrush x:Key="ActiveWeaponBorderBrush" Color="#FF55D15A"/>
+
     <DataTemplate x:Key="SaveDataSlotView">
         <StackPanel Orientation="Horizontal">
             <TextBlock Margin="1 1 6 1" Text="{Binding SlotNumber, Mode=OneTime, StringFormat=\{0\}.}" VerticalAlignment="Center"/>
@@ -158,9 +161,20 @@
             <StackPanel VerticalAlignment="Stretch">
                 <TextBlock Text="Decorations override:" Margin="2"/>
                 <StackPanel Orientation="Horizontal">
-                    <CheckBox Content="Activate" IsChecked="{Binding UseOverride}" Margin="2" VerticalAlignment="Center" VerticalContentAlignment="Center"/>
+                    <CheckBox Content="Activate" IsChecked="{Binding UseDecorationsOverride}" Margin="2" VerticalAlignment="Center" VerticalContentAlignment="Center"/>
                     <Button Content="Setup..." Command="{Binding OpenDecorationsOverrideCommand, Mode=OneTime}" Margin="2" Padding="4" MinWidth="70" VerticalAlignment="Center"/>
                     <Button Content="?" MinWidth="20" Margin="2" Padding="4" VerticalAlignment="Center" Command="{x:Static local:RoutedCommands.OpenIntegratedHelp}" CommandParameter="DecorationOverride" bhv:ToolTipEx.Content="Show help about decorations override"/>
+                </StackPanel>
+            </StackPanel>
+
+            <Rectangle Style="{StaticResource sep}"/>
+
+            <StackPanel VerticalAlignment="Stretch">
+                <TextBlock Text="Equipment override:" Margin="2"/>
+                <StackPanel Orientation="Horizontal">
+                    <CheckBox Content="Activate" IsChecked="{Binding UseEquipmentOverride}" Margin="2" VerticalAlignment="Center" VerticalContentAlignment="Center"/>
+                    <Button Content="Setup..." Command="{Binding OpenEquipmentOverrideCommand, Mode=OneTime}" Margin="2" Padding="4" MinWidth="70" VerticalAlignment="Center"/>
+                    <!--<Button Content="?" MinWidth="20" Margin="2" Padding="4" VerticalAlignment="Center" Command="{x:Static local:RoutedCommands.OpenIntegratedHelp}" CommandParameter="EquipmentOverride" bhv:ToolTipEx.Content="Show help about equipment override"/>-->
                 </StackPanel>
             </StackPanel>
 
@@ -538,6 +552,89 @@
                 <Button Margin="1" Padding="8" Content="Import from save..." Command="{Binding ImportCommand, Mode=OneTime}"/>
             </StackPanel>
             <ListBox Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" ItemsSource="{Binding Jewels, Mode=OneWay}" ItemTemplate="{StaticResource JewelOverrideView}" VirtualizingPanel.IsVirtualizing="False" VirtualizingPanel.ScrollUnit="Pixel" Grid.IsSharedSizeScope="True" Focusable="False">
+                <ListBox.ItemContainerStyle>
+                    <Style TargetType="{x:Type ListBoxItem}">
+                        <Setter Property="Template">
+                            <Setter.Value>
+                                <ControlTemplate TargetType="{x:Type ListBoxItem}">
+                                    <Border Name="root" Padding="0" SnapsToDevicePixels="True" Focusable="False">
+                                        <ContentPresenter Focusable="False"/>
+                                    </Border>
+                                    <ControlTemplate.Triggers>
+                                        <DataTrigger Binding="{Binding IsVisible}" Value="False">
+                                            <Setter TargetName="root" Property="Visibility" Value="Collapsed"/>
+                                        </DataTrigger>
+                                    </ControlTemplate.Triggers>
+                                </ControlTemplate>
+                            </Setter.Value>
+                        </Setter>
+                        <Setter Property="Focusable" Value="False"/>
+                    </Style>
+                </ListBox.ItemContainerStyle>
+            </ListBox>
+        </DockPanel>
+    </DataTemplate>
+
+    <DataTemplate x:Key="ArmorPieceOverrideView">
+        <Button x:Name="toggle" Command="{Binding TogglePossessionCommand, Mode=OneTime}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center">
+            <Button.Content>
+                <Image Source="{Binding Type, Mode=OneTime, Converter={StaticResource EquipmentEnumToImageSourceValueConverter}, ConverterParameter=32}" Width="32" Height="32" Margin="1" Focusable="False"/>
+            </Button.Content>
+        </Button>
+        <DataTemplate.Triggers>
+            <DataTrigger Binding="{Binding IsPossessed}" Value="True">
+                <Setter TargetName="toggle" Property="Background" Value="{StaticResource ActiveWeaponBackgroundBrush}"/>
+            </DataTrigger>
+        </DataTemplate.Triggers>
+    </DataTemplate>
+
+    <DataTemplate x:Key="ArmorSetsOverrideView">
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" SharedSizeGroup="A"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+            <TextBlock Grid.Column="0" Text="{Binding Name, Mode=OneTime}" Padding="4" VerticalAlignment="Center" FontWeight="Bold" FontSize="14"/>
+            <StackPanel Grid.Column="1" Orientation="Horizontal">
+                <StackPanel.Resources>
+                    <Style TargetType="ContentControl">
+                        <Setter Property="Focusable" Value="False"/>
+                        <Setter Property="Margin" Value="4"/>
+                        <Setter Property="ContentTemplate" Value="{StaticResource ArmorPieceOverrideView}"/>
+                    </Style>
+                </StackPanel.Resources>
+                <ContentControl Content="{Binding Head, Mode=OneTime}"/>
+                <ContentControl Content="{Binding Chest, Mode=OneTime}"/>
+                <ContentControl Content="{Binding Gloves, Mode=OneTime}"/>
+                <ContentControl Content="{Binding Waist, Mode=OneTime}"/>
+                <ContentControl Content="{Binding Legs, Mode=OneTime}"/>
+            </StackPanel>
+            <ItemsControl Grid.Column="2" ItemsSource="{Binding Abilities, Mode=OneTime}" ItemTemplate="{StaticResource SkillNameAbilityView}" VerticalAlignment="Top" Padding="4" Focusable="False"/>
+        </Grid>
+    </DataTemplate>
+
+    <DataTemplate x:Key="EquipmentOverrideView">
+        <DockPanel LastChildFill="True">
+            <DockPanel DockPanel.Dock="Top" LastChildFill="True">
+                <TextBlock DockPanel.Dock="Left" Text="Filter: " Margin="4" VerticalAlignment="Center"/>
+                <StackPanel DockPanel.Dock="Right" Orientation="Horizontal">
+                    <StackPanel.Resources>
+                        <Style TargetType="RadioButton">
+                            <Setter Property="MinWidth" Value="0"/>
+                            <Setter Property="Margin" Value="2 2 8 2"/>
+                        </Style>
+                    </StackPanel.Resources>
+                    <RadioButton Content="All" IsChecked="{Binding VisibilityModeAll, Mode=OneWayToSource, FallbackValue=true}" bhv:ToolTipEx.Content="See all available equipment" Style="{StaticResource SelectorRadioButton}"/>
+                    <RadioButton Content="Modified" IsChecked="{Binding VisibilityModeModified, Mode=OneWayToSource}" bhv:ToolTipEx.Content="See only equipments with override or have checkboxes checked" Style="{StaticResource SelectorRadioButton}"/>
+                    <RadioButton Content="Unmodified" IsChecked="{Binding VisibilityModeUnmodified, Mode=OneWayToSource}" bhv:ToolTipEx.Content="See only equipments with override and have checkboxes unchecked" Style="{StaticResource SelectorRadioButton}"/>
+                    <!--<Button Content="?" MinWidth="20" Margin="2" Padding="4" VerticalAlignment="Center" Command="{Binding OpenIntegratedHelpCommand, Mode=OneTime}" CommandParameter="EquipmentOverride" IsEnabled="True" bhv:ToolTipEx.Content="Show help about equipment override"/>-->
+                </StackPanel>
+                <TextBox Margin="2" Padding="3" FocusManager.FocusedElement="{Binding RelativeSource={RelativeSource Self}}" Text="{Binding SearchText, UpdateSourceTrigger=PropertyChanged}" bhv:TextBoxFocusOnEmptyBehavior.IsAttached="True"/>
+            </DockPanel>
+            <!--<StackPanel DockPanel.Dock="Bottom" Orientation="Horizontal">
+                <Button Margin="1" Padding="8" Content="Import from save..." Command="{Binding ImportCommand, Mode=OneTime}"/>
+            </StackPanel>-->
+            <ListBox Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" ItemsSource="{Binding ArmorSets, Mode=OneWay}" ItemTemplate="{StaticResource ArmorSetsOverrideView}" VirtualizingPanel.IsVirtualizing="False" VirtualizingPanel.ScrollUnit="Pixel" Grid.IsSharedSizeScope="True" Focusable="False">
                 <ListBox.ItemContainerStyle>
                     <Style TargetType="{x:Type ListBoxItem}">
                         <Setter Property="Template">
@@ -1017,9 +1114,6 @@
             </DataTrigger>
         </DataTemplate.Triggers>
     </DataTemplate>
-
-    <SolidColorBrush x:Key="ActiveWeaponBackgroundBrush" Color="#FFB7FFA7"/>
-    <SolidColorBrush x:Key="ActiveWeaponBorderBrush" Color="#FF55D15A"/>
 
     <DataTemplate x:Key="SharpnessView">
         <StackPanel Orientation="Horizontal">

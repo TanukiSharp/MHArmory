@@ -25,6 +25,7 @@ namespace MHArmory.ViewModels
         public ICommand CancelArmorSetsSearchCommand { get; }
         public ICommand AdvancedSearchCommand { get; }
         public ICommand OpenDecorationsOverrideCommand { get; }
+        public ICommand OpenEquipmentOverrideCommand { get; }
         public ICommand OpenSearchResultProcessingCommand { get; }
 
         public ICommand AboutCommand { get; }
@@ -73,6 +74,8 @@ namespace MHArmory.ViewModels
             WeaponsContainer.LoadWeaponsAsync().Forget(ex => throw new Exception("rethrow", ex));
 
             EventContainer.NotifyDataLoaded();
+
+            EquipmentOverride.NotifyDataLoaded();
         }
 
         private IEnumerable<ArmorSetViewModel> rawFoundArmorSets;
@@ -103,6 +106,8 @@ namespace MHArmory.ViewModels
         public EventContainerViewModel EventContainer { get; }
         public WeaponsContainerViewModel WeaponsContainer { get; }
 
+        public EquipmentOverrideViewModel EquipmentOverride { get; }
+
         public RootViewModel()
         {
             CloseApplicationCommand = new AnonymousCommand(OnCloseApplication);
@@ -112,6 +117,7 @@ namespace MHArmory.ViewModels
             CancelArmorSetsSearchCommand = new AnonymousCommand(CancelArmorSetsSearchForCommand);
             AdvancedSearchCommand = new AnonymousCommand(AdvancedSearch);
             OpenDecorationsOverrideCommand = new AnonymousCommand(OpenDecorationsOverride);
+            OpenEquipmentOverrideCommand = new AnonymousCommand(OpenEquipmentOverride);
             OpenSearchResultProcessingCommand = new AnonymousCommand(OpenSearchResultProcessing);
 
             AboutCommand = new AnonymousCommand(OnAbout);
@@ -120,6 +126,7 @@ namespace MHArmory.ViewModels
             InParameters = new InParametersViewModel(this);
             EventContainer = new EventContainerViewModel(this);
             WeaponsContainer = new WeaponsContainerViewModel(this);
+            EquipmentOverride = new EquipmentOverrideViewModel(this);
         }
 
         public void Dispose()
@@ -217,6 +224,11 @@ namespace MHArmory.ViewModels
         private void OpenDecorationsOverride()
         {
             RoutedCommands.OpenDecorationsOverride.ExecuteIfPossible(null);
+        }
+
+        private void OpenEquipmentOverride()
+        {
+            RoutedCommands.OpenEquipmentOverride.ExecuteIfPossible(null);
         }
 
         private void OpenSearchResultProcessing()
