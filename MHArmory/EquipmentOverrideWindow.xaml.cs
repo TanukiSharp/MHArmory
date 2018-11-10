@@ -38,7 +38,12 @@ namespace MHArmory
 
         private void OnCancel(object parameter)
         {
-            Close();
+            var cancellable = new CancellationCommandArgument();
+
+            rootViewModel.EquipmentOverride.CancelCommand.ExecuteIfPossible(cancellable);
+
+            if (cancellable.IsCancelled == false)
+                Close();
         }
 
         protected override void OnClosing(CancelEventArgs e)
