@@ -151,8 +151,8 @@ namespace MHArmory
             GlobalData.Instance.Jewels = jewels;
 
             rootViewModel.SetAllEquipments(
-                armors.Select(x => new ArmorPieceViewModel(x))
-                .Concat(GlobalData.Instance.Charms.Select(x => new EquipmentViewModel(x)))
+                armors.Select(x => new ArmorPieceViewModel(rootViewModel, x))
+                .Concat(GlobalData.Instance.Charms.Select(x => new EquipmentViewModel(rootViewModel, x)))
                 .ToList()
             );
 

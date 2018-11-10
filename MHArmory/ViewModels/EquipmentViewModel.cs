@@ -10,8 +10,8 @@ namespace MHArmory.ViewModels
 {
     public class ArmorPieceViewModel : EquipmentViewModel
     {
-        public ArmorPieceViewModel(IArmorPiece armorPiece)
-            : base(armorPiece)
+        public ArmorPieceViewModel(RootViewModel rootViewModel, IArmorPiece armorPiece)
+            : base(rootViewModel, armorPiece)
         {
         }
     }
@@ -30,15 +30,22 @@ namespace MHArmory.ViewModels
         public bool IsPossessed
         {
             get { return isPossessed; }
-            set { SetValue(ref isPossessed, value); }
+            set
+            {
+                if (SetValue(ref isPossessed, value))
+                    rootViewModel.EquipmentOverride.ComputeVisibility();
+            }
         }
 
         public ICommand TogglePossessionCommand { get; }
 
         private readonly IEquipment equipment;
 
-        public EquipmentViewModel(IEquipment equipment)
+        private readonly RootViewModel rootViewModel;
+
+        public EquipmentViewModel(RootViewModel rootViewModel, IEquipment equipment)
         {
+            this.rootViewModel = rootViewModel;
             this.equipment = equipment;
 
             TogglePossessionCommand = new AnonymousCommand(_ => IsPossessed = !IsPossessed);
