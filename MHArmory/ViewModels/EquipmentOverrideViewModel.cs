@@ -8,7 +8,7 @@ using MHArmory.Core.DataStructures;
 
 namespace MHArmory.ViewModels
 {
-    public class EquipmentGroup
+    public class EquipmentGroupViewModel : ViewModelBase
     {
         public string Name { get; }
         public EquipmentViewModel Head { get; }
@@ -17,11 +17,18 @@ namespace MHArmory.ViewModels
         public EquipmentViewModel Waist { get; }
         public EquipmentViewModel Legs { get; }
 
+        private bool isVisible = true;
+        public bool IsVisible
+        {
+            get { return isVisible; }
+            private set { SetValue(ref isVisible, value); }
+        }
+
         public ICommand ToggleAllCommand { get; }
 
         private readonly IList<EquipmentViewModel> allPieces;
 
-        public EquipmentGroup(IEnumerable<EquipmentViewModel> equipments)
+        public EquipmentGroupViewModel(IEnumerable<EquipmentViewModel> equipments)
             : this(
                   equipments.FirstOrDefault(x => x.Type == EquipmentType.Head),
                   equipments.FirstOrDefault(x => x.Type == EquipmentType.Chest),
@@ -32,7 +39,7 @@ namespace MHArmory.ViewModels
         {
         }
 
-        public EquipmentGroup(
+        public EquipmentGroupViewModel(
             EquipmentViewModel head,
             EquipmentViewModel chest,
             EquipmentViewModel gloves,
@@ -62,6 +69,14 @@ namespace MHArmory.ViewModels
             Name = FindGroupName(head, chest, gloves, waist, legs);
 
             ToggleAllCommand = new AnonymousCommand(OnToggleAll);
+        }
+
+        public void ComputeVisibility(SearchStatement searchStatement)
+        {
+            if (searchStatement.IsEmpty)
+                IsVisible = true;
+            else
+                IsVisible = searchStatement.IsMatching(Name) || allPieces.Any(x => searchStatement.IsMatching(x.Name));
         }
 
         private void OnToggleAll()
@@ -138,16 +153,49 @@ namespace MHArmory.ViewModels
     {
         private readonly RootViewModel rootViewModel;
 
-        private IList<EquipmentGroup> armorSets;
-        public IList<EquipmentGroup> ArmorSets
+        private IList<EquipmentGroupViewModel> armorSets;
+        public IList<EquipmentGroupViewModel> ArmorSets
         {
             get { return armorSets; }
             private set { SetValue(ref armorSets, value); }
         }
 
+        private string searchText;
+        public string SearchText
+        {
+            get { return searchText; }
+            set
+            {
+                if (SetValue(ref searchText, value))
+                    ComputeVisibility(new SearchStatement(searchText));
+            }
+        }
+
+        public ICommand CancelCommand { get; }
+
         public EquipmentOverrideViewModel(RootViewModel rootViewModel)
         {
             this.rootViewModel = rootViewModel;
+
+            CancelCommand = new AnonymousCommand(OnCancel);
+        }
+
+        private void OnCancel(object parameter)
+        {
+            if (parameter is CancellationCommandArgument cancellable)
+            {
+                if (string.IsNullOrWhiteSpace(SearchText) == false)
+                {
+                    SearchText = string.Empty;
+                    cancellable.IsCancelled = true;
+                }
+            }
+        }
+
+        private void ComputeVisibility(SearchStatement searchStatement)
+        {
+            foreach (EquipmentGroupViewModel group in ArmorSets)
+                group.ComputeVisibility(searchStatement);
         }
 
         internal void NotifyDataLoaded()
@@ -161,7 +209,7 @@ namespace MHArmory.ViewModels
 
             ArmorSets = allArmoprPieces
                 .GroupBy(x => x.Id, x => new EquipmentViewModel(x))
-                .Select(x => new EquipmentGroup(x))
+                .Select(x => new EquipmentGroupViewModel(x))
                 .OrderBy(x => x.Name)
                 .ToList();
         }
