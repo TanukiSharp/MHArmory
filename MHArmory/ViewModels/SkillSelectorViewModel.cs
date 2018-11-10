@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -62,13 +62,6 @@ namespace MHArmory.ViewModels
                 }
             }
         }
-
-        //private IEnumerable<AbilityViewModel> abilities;
-        //public IEnumerable<AbilityViewModel> Abilities
-        //{
-        //    get { return abilities; }
-        //    set { SetValue(ref abilities, value); }
-        //}
 
         private string searchText;
         public string SearchText

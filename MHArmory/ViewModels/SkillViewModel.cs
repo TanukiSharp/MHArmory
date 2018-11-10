@@ -41,7 +41,7 @@ namespace MHArmory.ViewModels
 
         public AbilityViewModel(IAbility ability, SkillViewModel parent)
         {
-            this.Ability = ability;
+            Ability = ability;
             this.parent = parent;
         }
 
@@ -87,9 +87,13 @@ namespace MHArmory.ViewModels
             root.InParameters.PropertyChanged += InParameters_PropertyChanged;
 
             Abilities = skill.Abilities
+                .Where(x => x.Level > 0)
                 .OrderBy(x => x.Level)
                 .Select(x => new AbilityViewModel(x, this))
                 .ToList();
+
+            // Insert the "skill exlusion" item at position 0.
+            Abilities.Insert(0, new AbilityViewModel(new Ability(skill, 0, "Exclude"), this));
 
             UpdateAvailability();
         }

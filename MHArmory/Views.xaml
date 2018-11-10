@@ -226,6 +226,24 @@
         </DataTemplate.Triggers>
     </DataTemplate>
 
+    <!-- In skill selector window -->
+    <DataTemplate x:Key="AbilityView">
+        <StackPanel Orientation="Horizontal">
+            <TextBlock x:Name="lvl" Focusable="False">
+                <Run Text="Level"/>
+                <Run Text="{Binding Level, Mode=OneTime}"/>
+                <Run Text="  "/>
+            </TextBlock>
+            <TextBlock Text="{Binding AbilityDescription, Mode=OneTime}" Foreground="DarkGray"/>
+        </StackPanel>
+        <DataTemplate.Triggers>
+            <DataTrigger Binding="{Binding Level, Mode=OneWay}" Value="0">
+                <Setter TargetName="lvl" Property="Visibility" Value="Hidden"/>
+            </DataTrigger>
+        </DataTemplate.Triggers>
+    </DataTemplate>
+
+    <!-- On armor pieces in search result view on the main window -->
     <DataTemplate x:Key="StandaloneAbilityView">
         <TextBlock Focusable="False">
             <bhv:ToolTipEx.Content>
@@ -237,18 +255,26 @@
         </TextBlock>
     </DataTemplate>
 
+    <!-- Selected skills in the main window -->
     <DataTemplate x:Key="SelectedAbilityView">
-        <TextBlock Name="root" Margin="0 1 0 1" Focusable="False">
+        <StackPanel x:Name="root" Orientation="Horizontal" Margin="0 1 0 1" TextBlock.FontSize="14" Focusable="False">
             <bhv:ToolTipEx.Content>
                 <ContentControl Content="{Binding Description, Mode=OneTime}" ContentTemplate="{StaticResource FullSkillDescriptionView}"/>
             </bhv:ToolTipEx.Content>
-            <Run Text="{Binding SkillName, Mode=OneTime}" FontWeight="Bold"/>
-            <Run Text=" level"/>
-            <Run Text="{Binding Level, Mode=OneTime}"/>
-        </TextBlock>
+            <TextBlock Text="{Binding SkillName, Mode=OneTime}" FontWeight="Bold"/>
+            <TextBlock x:Name="lvl1" Text=" level "/>
+            <TextBlock x:Name="lvl2" Text="{Binding Level, Mode=OneTime}"/>
+            <TextBlock x:Name="lvl3" Text=" excluded" Visibility="Collapsed"/>
+        </StackPanel>
         <DataTemplate.Triggers>
             <DataTrigger Binding="{Binding IsChecked, Mode=OneWay}" Value="False">
                 <Setter TargetName="root" Property="Visibility" Value="Collapsed"/>
+            </DataTrigger>
+            <DataTrigger Binding="{Binding Level, Mode=OneWay}" Value="0">
+                <Setter TargetName="root" Property="TextBlock.Foreground" Value="LightSteelBlue"/>
+                <Setter TargetName="lvl1" Property="Visibility" Value="Collapsed"/>
+                <Setter TargetName="lvl2" Property="Visibility" Value="Collapsed"/>
+                <Setter TargetName="lvl3" Property="Visibility" Value="Visible"/>
             </DataTrigger>
         </DataTemplate.Triggers>
     </DataTemplate>
@@ -422,16 +448,6 @@
         </Border>
     </DataTemplate>
 
-    <DataTemplate x:Key="AbilityView">
-        <TextBlock Focusable="False">
-            <!--<Run Text="{Binding SkillName, Mode=OneTime}" FontWeight="Bold"/>-->
-            <Run Text="Level"/>
-            <Run Text="{Binding Level, Mode=OneTime}"/>
-            <Run Text="  "/>
-            <Run Text="{Binding AbilityDescription, Mode=OneTime}" Foreground="DarkGray"/>
-        </TextBlock>
-    </DataTemplate>
-
     <DataTemplate x:Key="SkillNameAbilityView">
         <TextBlock Text="{Binding SkillName, Mode=OneTime}" Focusable="False">
             <bhv:ToolTipEx.Content>
@@ -521,7 +537,12 @@
                 <ColumnDefinition Width="Auto" SharedSizeGroup="B"/>
                 <ColumnDefinition Width="Auto" SharedSizeGroup="C"/>
             </Grid.ColumnDefinitions>
-            <CheckBox Grid.Column="0" Content="{Binding Name, Mode=OneTime}" IsChecked="{Binding IsOverriding}" Padding="4" VerticalAlignment="Stretch" VerticalContentAlignment="Center" bhv:ToolTipEx.Content="Check to override default jewel availability"/>
+            <CheckBox Grid.Column="0" IsChecked="{Binding IsOverriding}" Padding="4" VerticalAlignment="Stretch" VerticalContentAlignment="Center" bhv:ToolTipEx.Content="Check to override default jewel availability">
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="{Binding Name, Mode=OneTime}" VerticalAlignment="Center" Margin="0 0 4 0"/>
+                    <Image Source="{Binding SlotSize, Converter={StaticResource SlotToImageSourceValueConverter}, ConverterParameter=24, Mode=OneTime}" VerticalAlignment="Center" bhv:ToolTipEx.Content="{Binding Converter={StaticResource SlotSizeToolTipValueConverter}, Mode=OneTime}" Width="24" Height="24" SnapsToDevicePixels="True"/>
+                </StackPanel>
+            </CheckBox>
             <StackPanel Grid.Column="1" Orientation="Horizontal" VerticalAlignment="Top" Margin="4">
                 <TextBlock Text="Count: " VerticalAlignment="Center" Margin="2 0 2 0"/>
                 <TextBox Text="{Binding Count, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Margin="2 0 2 0" Padding="2" Width="60" VerticalAlignment="Center"/>
@@ -970,20 +991,7 @@
 
             <GridSplitter Grid.Column="1" HorizontalAlignment="Stretch" Focusable="False"/>
 
-            <ItemsControl Grid.Column="2" ItemsSource="{Binding SelectedLoadout.Abilities}" Focusable="False">
-                <ItemsControl.ItemTemplate>
-                    <DataTemplate>
-                        <TextBlock Margin="0 1 0 1" Focusable="False">
-                            <bhv:ToolTipEx.Content>
-                                <ContentControl Content="{Binding Description, Mode=OneTime}" ContentTemplate="{StaticResource FullSkillDescriptionView}"/>
-                            </bhv:ToolTipEx.Content>
-                            <Run Text="{Binding SkillName, Mode=OneTime}" FontWeight="Bold"/>
-                            <Run Text=" level"/>
-                            <Run Text="{Binding Level, Mode=OneTime}"/>
-                        </TextBlock>
-                    </DataTemplate>
-                </ItemsControl.ItemTemplate>
-            </ItemsControl>
+            <ItemsControl Grid.Column="2" ItemsSource="{Binding SelectedLoadout.Abilities}" ItemTemplate="{StaticResource StandaloneAbilityView}" Focusable="False"/>
         </Grid>
 
         <DataTemplate.Triggers>
