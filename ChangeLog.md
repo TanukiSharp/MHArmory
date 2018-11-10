@@ -1,5 +1,12 @@
 # Change log
 
+## vNext (?)
+
+- Added skill exclusion feature, based on [user suggestion](https://github.com/TanukiSharp/MHArmory/issues/2)<br/>
+This comes in very handy in specific cases where you want to exclude a skill because is mutually exclusive with another.
+
+    ![Skill exclusion](docs/misc/changelog_0.0.7.3_skill_exclusion.png)
+
 ## 0.0.7.2 (2018/11/06)
 
 - Added a certain event to the event list (fixes a issue introduced in version 0.0.7.1, sorry)
