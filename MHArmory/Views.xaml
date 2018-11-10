@@ -658,9 +658,10 @@
                             <Setter Property="Margin" Value="2 2 8 2"/>
                         </Style>
                     </StackPanel.Resources>
-                    <RadioButton Content="All" IsChecked="{Binding VisibilityModeAll, Mode=OneWayToSource, FallbackValue=true}" bhv:ToolTipEx.Content="See all available equipment" Style="{StaticResource SelectorRadioButton}"/>
-                    <RadioButton Content="Modified" IsChecked="{Binding VisibilityModeModified, Mode=OneWayToSource}" bhv:ToolTipEx.Content="See only equipments with override or have checkboxes checked" Style="{StaticResource SelectorRadioButton}"/>
-                    <RadioButton Content="Unmodified" IsChecked="{Binding VisibilityModeUnmodified, Mode=OneWayToSource}" bhv:ToolTipEx.Content="See only equipments with override and have checkboxes unchecked" Style="{StaticResource SelectorRadioButton}"/>
+                    <RadioButton Content="All" IsChecked="{Binding VisibilityModeAll, Mode=OneWayToSource, FallbackValue=true}" bhv:ToolTipEx.Content="See all available sets" Style="{StaticResource SelectorRadioButton}"/>
+                    <RadioButton Content="Possess all" IsChecked="{Binding VisibilityModePossessAll, Mode=OneWayToSource}" bhv:ToolTipEx.Content="See all sets where all pieces are possessed" Style="{StaticResource SelectorRadioButton}"/>
+                    <RadioButton Content="Possess some" IsChecked="{Binding VisibilityModePossessSome, Mode=OneWayToSource}" bhv:ToolTipEx.Content="See only sets where at least one piece is possessed" Style="{StaticResource SelectorRadioButton}"/>
+                    <RadioButton Content="Possess none" IsChecked="{Binding VisibilityModePossessNone, Mode=OneWayToSource}" bhv:ToolTipEx.Content="See only sets where no piece is possessed" Style="{StaticResource SelectorRadioButton}"/>
                     <!--<Button Content="?" MinWidth="20" Margin="2" Padding="4" VerticalAlignment="Center" Command="{Binding OpenIntegratedHelpCommand, Mode=OneTime}" CommandParameter="EquipmentOverride" IsEnabled="True" bhv:ToolTipEx.Content="Show help about equipment override"/>-->
                 </StackPanel>
                 <TextBox Margin="2" Padding="3" FocusManager.FocusedElement="{Binding RelativeSource={RelativeSource Self}}" Text="{Binding SearchText, UpdateSourceTrigger=PropertyChanged}" bhv:TextBoxFocusOnEmptyBehavior.IsAttached="True"/>
@@ -668,6 +669,7 @@
             <!--<StackPanel DockPanel.Dock="Bottom" Orientation="Horizontal">
                 <Button Margin="1" Padding="8" Content="Import from save..." Command="{Binding ImportCommand, Mode=OneTime}"/>
             </StackPanel>-->
+            <TextBlock DockPanel.Dock="Bottom" Text="{Binding Status}" HorizontalAlignment="Stretch" Margin="3"/>
             <ListBox Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" ItemsSource="{Binding ArmorSets, Mode=OneWay}" ItemTemplate="{StaticResource ArmorSetsOverrideView}" VirtualizingPanel.IsVirtualizing="False" VirtualizingPanel.ScrollUnit="Pixel" Grid.IsSharedSizeScope="True" Focusable="False">
                 <ListBox.ItemContainerStyle>
                     <Style TargetType="{x:Type ListBoxItem}">

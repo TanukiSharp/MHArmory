@@ -8,6 +8,26 @@ using MHArmory.Core.DataStructures;
 
 namespace MHArmory.ViewModels
 {
+    public enum EquipmentOverrideVisibilityMode
+    {
+        /// <summary>
+        /// Shows all sets.
+        /// </summary>
+        All,
+        /// <summary>
+        /// Show all sets where all armor pieces are owned.
+        /// </summary>
+        PossessAll,
+        /// <summary>
+        /// Show only sets where at least one piece is owned.
+        /// </summary>
+        PossessSome,
+        /// <summary>
+        /// Show only sets where no armor piece is owned.
+        /// </summary>
+        PossessNone
+    }
+
     public class EquipmentGroupViewModel : ViewModelBase
     {
         public string Name { get; }
@@ -21,15 +41,42 @@ namespace MHArmory.ViewModels
         public bool IsVisible
         {
             get { return isVisible; }
-            private set { SetValue(ref isVisible, value); }
+            set { SetValue(ref isVisible, value); }
+        }
+
+        public bool PossessNone
+        {
+            get
+            {
+                return allPieces.All(x => x.IsPossessed == false);
+            }
+        }
+
+        public bool PossessAll
+        {
+            get
+            {
+                return allPieces.All(x => x.IsPossessed);
+            }
+        }
+
+        public bool PossessAny
+        {
+            get
+            {
+                return allPieces.Any(x => x.IsPossessed);
+            }
         }
 
         public ICommand ToggleAllCommand { get; }
 
         private readonly IList<EquipmentViewModel> allPieces;
 
-        public EquipmentGroupViewModel(IEnumerable<EquipmentViewModel> equipments)
+        private readonly EquipmentOverrideViewModel parent;
+
+        public EquipmentGroupViewModel(EquipmentOverrideViewModel parent, IEnumerable<EquipmentViewModel> equipments)
             : this(
+                  parent,
                   equipments.FirstOrDefault(x => x.Type == EquipmentType.Head),
                   equipments.FirstOrDefault(x => x.Type == EquipmentType.Chest),
                   equipments.FirstOrDefault(x => x.Type == EquipmentType.Gloves),
@@ -40,6 +87,7 @@ namespace MHArmory.ViewModels
         }
 
         public EquipmentGroupViewModel(
+            EquipmentOverrideViewModel parent,
             EquipmentViewModel head,
             EquipmentViewModel chest,
             EquipmentViewModel gloves,
@@ -47,6 +95,8 @@ namespace MHArmory.ViewModels
             EquipmentViewModel legs
         )
         {
+            this.parent = parent;
+
             Head = head;
             Chest = chest;
             Gloves = gloves;
@@ -71,12 +121,17 @@ namespace MHArmory.ViewModels
             ToggleAllCommand = new AnonymousCommand(OnToggleAll);
         }
 
-        public void ComputeVisibility(SearchStatement searchStatement)
+        public void ApplySearchText(SearchStatement searchStatement)
         {
-            if (searchStatement.IsEmpty)
+            if (searchStatement == null || searchStatement.IsEmpty)
+            {
                 IsVisible = true;
-            else
-                IsVisible = searchStatement.IsMatching(Name) || allPieces.Any(x => searchStatement.IsMatching(x.Name));
+                return;
+            }
+            
+            IsVisible =
+                searchStatement.IsMatching(Name) ||
+                allPieces.Any(x => searchStatement.IsMatching(x.Name));
         }
 
         private void OnToggleAll()
@@ -167,7 +222,64 @@ namespace MHArmory.ViewModels
             set
             {
                 if (SetValue(ref searchText, value))
-                    ComputeVisibility(new SearchStatement(searchText));
+                    ComputeVisibility();
+            }
+        }
+
+        private string status;
+        public string Status
+        {
+            get { return status; }
+            private set { SetValue(ref status, value); }
+        }
+
+        private EquipmentOverrideVisibilityMode visibilityMode = EquipmentOverrideVisibilityMode.All;
+
+        public bool VisibilityModeAll
+        {
+            set
+            {
+                if (value && visibilityMode != EquipmentOverrideVisibilityMode.All)
+                {
+                    visibilityMode = EquipmentOverrideVisibilityMode.All;
+                    ComputeVisibility();
+                }
+            }
+        }
+
+        public bool VisibilityModePossessAll
+        {
+            set
+            {
+                if (value && visibilityMode != EquipmentOverrideVisibilityMode.PossessAll)
+                {
+                    visibilityMode = EquipmentOverrideVisibilityMode.PossessAll;
+                    ComputeVisibility();
+                }
+            }
+        }
+
+        public bool VisibilityModePossessSome
+        {
+            set
+            {
+                if (value && visibilityMode != EquipmentOverrideVisibilityMode.PossessSome)
+                {
+                    visibilityMode = EquipmentOverrideVisibilityMode.PossessSome;
+                    ComputeVisibility();
+                }
+            }
+        }
+
+        public bool VisibilityModePossessNone
+        {
+            set
+            {
+                if (value && visibilityMode != EquipmentOverrideVisibilityMode.PossessNone)
+                {
+                    visibilityMode = EquipmentOverrideVisibilityMode.PossessNone;
+                    ComputeVisibility();
+                }
             }
         }
 
@@ -192,10 +304,52 @@ namespace MHArmory.ViewModels
             }
         }
 
-        private void ComputeVisibility(SearchStatement searchStatement)
+        public void ComputeVisibility()
         {
-            foreach (EquipmentGroupViewModel group in ArmorSets)
-                group.ComputeVisibility(searchStatement);
+            var searchStatement = SearchStatement.Create(SearchText);
+
+            foreach (EquipmentGroupViewModel vm in ArmorSets)
+                ComputeVisibility(vm, searchStatement);
+
+            UpdateStatus();
+        }
+
+        private void UpdateStatus()
+        {
+            Status = $"{ArmorSets.Count(x => x.IsVisible)} sets";
+        }
+
+        private void ComputeVisibility(EquipmentGroupViewModel group, SearchStatement searchStatement)
+        {
+            if (visibilityMode == EquipmentOverrideVisibilityMode.PossessAll)
+            {
+                if (group.PossessAll == false)
+                {
+                    group.IsVisible = false;
+                    return;
+                }
+            }
+            else if (visibilityMode == EquipmentOverrideVisibilityMode.PossessSome)
+            {
+                if (group.PossessAny == false)
+                {
+                    group.IsVisible = false;
+                    return;
+                }
+            }
+            else if (visibilityMode == EquipmentOverrideVisibilityMode.PossessNone)
+            {
+                if (group.PossessNone == false)
+                {
+                    group.IsVisible = false;
+                    return;
+                }
+            }
+
+            if (searchStatement == null)
+                searchStatement = SearchStatement.Create(searchText);
+
+            group.ApplySearchText(searchStatement);
         }
 
         internal void NotifyDataLoaded()
@@ -208,10 +362,12 @@ namespace MHArmory.ViewModels
                 .Concat(GlobalData.Instance.Legs);
 
             ArmorSets = allArmoprPieces
-                .GroupBy(x => x.Id, x => new EquipmentViewModel(x))
-                .Select(x => new EquipmentGroupViewModel(x))
+                .GroupBy(x => x.Id, x => new EquipmentViewModel(rootViewModel, x))
+                .Select(x => new EquipmentGroupViewModel(this, x))
                 .OrderBy(x => x.Name)
                 .ToList();
+
+            UpdateStatus();
         }
     }
 }
