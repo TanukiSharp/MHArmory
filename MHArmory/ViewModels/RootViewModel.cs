@@ -108,6 +108,8 @@ namespace MHArmory.ViewModels
 
         public EquipmentOverrideViewModel EquipmentOverride { get; }
 
+        public IReadOnlyList<EquipmentViewModel> AllEquipments { get; internal set; }
+
         public RootViewModel()
         {
             CloseApplicationCommand = new AnonymousCommand(OnCloseApplication);
@@ -187,6 +189,14 @@ namespace MHArmory.ViewModels
                 this.loadoutManager.LoadoutChanged += LoadoutManager_LoadoutChanged;
                 this.loadoutManager.ModifiedChanged += LoadoutManager_ModifiedChanged;
             }
+        }
+
+        public void SetAllEquipments(IList<EquipmentViewModel> allEquipments)
+        {
+            if (AllEquipments != null)
+                throw new InvalidOperationException("Operation sealed");
+
+            AllEquipments = new ReadOnlyCollection<EquipmentViewModel>(allEquipments);
         }
 
         private string loadoutText;

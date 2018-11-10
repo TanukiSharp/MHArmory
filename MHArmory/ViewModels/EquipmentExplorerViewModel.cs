@@ -11,9 +11,7 @@ namespace MHArmory.ViewModels
 {
     public class EquipmentExplorerViewModel : ViewModelBase
     {
-        private IList<IEquipment> allEquipments; // TODO: localization here (Create EquipmentViewModel to handle localization)
-
-        public ObservableCollection<IEquipment> Equipments { get; } = new ObservableCollection<IEquipment>();
+        public ObservableCollection<EquipmentViewModel> Equipments { get; } = new ObservableCollection<EquipmentViewModel>();
 
         private string searchText;
         public string SearchText
@@ -32,14 +30,14 @@ namespace MHArmory.ViewModels
 
             if (string.IsNullOrWhiteSpace(searchText))
             {
-                foreach (IEquipment x in allEquipments)
+                foreach (EquipmentViewModel x in rootViewModel.AllEquipments)
                     Equipments.Add(x);
             }
             else
             {
                 var searchStatement = SearchStatement.Create(searchText);
 
-                foreach (IEquipment x in allEquipments)
+                foreach (EquipmentViewModel x in rootViewModel.AllEquipments)
                 {
                     bool isVisible = searchStatement.IsMatching(x.Name) ||
                         x.Abilities.Any(a => IsMatching(a, searchStatement));
@@ -59,8 +57,15 @@ namespace MHArmory.ViewModels
 
         public ICommand CancelCommand { get; }
 
-        public EquipmentExplorerViewModel()
+        private readonly RootViewModel rootViewModel;
+
+        public EquipmentExplorerViewModel(RootViewModel rootViewModel)
         {
+            this.rootViewModel = rootViewModel;
+
+            foreach (EquipmentViewModel equipment in rootViewModel.AllEquipments)
+                Equipments.Add(equipment);
+
             CancelCommand = new AnonymousCommand(OnCancel);
         }
 
@@ -74,30 +79,6 @@ namespace MHArmory.ViewModels
                     cancellable.IsCancelled = true;
                 }
             }
-        }
-
-        public void CreateItems()
-        {
-            if (allEquipments != null)
-                return;
-
-            IList<IArmorPiece> heads = GlobalData.Instance.Heads;
-            IList<IArmorPiece> chests = GlobalData.Instance.Chests;
-            IList<IArmorPiece> gloves = GlobalData.Instance.Gloves;
-            IList<IArmorPiece> waists = GlobalData.Instance.Waists;
-            IList<IArmorPiece> legs = GlobalData.Instance.Legs;
-            IList<ICharmLevel> charms = GlobalData.Instance.Charms;
-
-            allEquipments = heads
-                .Concat<IEquipment>(chests)
-                .Concat<IEquipment>(gloves)
-                .Concat<IEquipment>(waists)
-                .Concat<IEquipment>(legs)
-                .Concat<IEquipment>(charms)
-                .ToList();
-
-            foreach (IEquipment x in allEquipments)
-                Equipments.Add(x);
         }
     }
 }

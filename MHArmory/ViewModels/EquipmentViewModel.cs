@@ -8,11 +8,19 @@ using MHArmory.Core.DataStructures;
 
 namespace MHArmory.ViewModels
 {
+    public class ArmorPieceViewModel : EquipmentViewModel
+    {
+        public ArmorPieceViewModel(IArmorPiece armorPiece)
+            : base(armorPiece)
+        {
+        }
+    }
+
     public class EquipmentViewModel : ViewModelBase, IEquipment
     {
         public int Id { get { return equipment.Id; } }
         public EquipmentType Type { get { return equipment.Type; } }
-        public string Name { get { return equipment.Name; } }
+        public string Name { get { return equipment.Name; } } // TODO: localization here
         public int Rarity { get { return equipment.Rarity; } }
         public int[] Slots { get { return equipment.Slots; } }
         public IEvent Event { get { return equipment.Event; } }

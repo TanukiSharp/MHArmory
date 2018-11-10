@@ -150,6 +150,12 @@ namespace MHArmory
             GlobalData.Instance.Charms = charms.SelectMany(x => x.Levels).ToList();
             GlobalData.Instance.Jewels = jewels;
 
+            rootViewModel.SetAllEquipments(
+                armors.Select(x => new ArmorPieceViewModel(x))
+                .Concat(GlobalData.Instance.Charms.Select(x => new EquipmentViewModel(x)))
+                .ToList()
+            );
+
             return true;
         }
 
@@ -191,7 +197,7 @@ namespace MHArmory
         private void OpenEquipmentExplorer(object obj)
         {
             if (WindowManager.IsInitialized<EquipmentExplorerWindow>() == false)
-                WindowManager.InitializeWindow(new EquipmentExplorerWindow { Owner = this });
+                WindowManager.InitializeWindow(new EquipmentExplorerWindow(rootViewModel) { Owner = this });
 
             WindowManager.Show<EquipmentExplorerWindow>();
         }
