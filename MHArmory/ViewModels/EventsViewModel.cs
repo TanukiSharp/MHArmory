@@ -64,19 +64,7 @@ namespace MHArmory.ViewModels
 
         public void NotifyDataLoaded()
         {
-            IEnumerable<IEquipment> heads = GlobalData.Instance.Heads.Cast<IEquipment>();
-            IEnumerable<IEquipment> chests = GlobalData.Instance.Chests.Cast<IEquipment>();
-            IEnumerable<IEquipment> armss = GlobalData.Instance.Gloves.Cast<IEquipment>();
-            IEnumerable<IEquipment> waists = GlobalData.Instance.Waists.Cast<IEquipment>();
-            IEnumerable<IEquipment> legs = GlobalData.Instance.Legs.Cast<IEquipment>();
-            IEnumerable<IEquipment> charms = GlobalData.Instance.Charms.Cast<IEquipment>();
-
-            IList<IEvent> allEvents = heads
-                .Concat(chests)
-                .Concat(armss)
-                .Concat(waists)
-                .Concat(legs)
-                .Concat(charms)
+            IList<IEvent> allEvents = parent.AllEquipments
                 .Select(x => x.Event)
                 .Where(x => x != null)
                 .Distinct((a, b) => a.Id == b.Id, x => x.Id)

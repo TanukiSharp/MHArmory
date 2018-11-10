@@ -17,13 +17,13 @@ namespace MHArmory
     {
         private readonly EquipmentExplorerViewModel equipmentExplorerViewModel;
 
-        public EquipmentExplorerWindow()
+        public EquipmentExplorerWindow(RootViewModel rootViewModel)
         {
             InitializeComponent();
 
             WindowManager.FitInScreen(this);
 
-            equipmentExplorerViewModel = new EquipmentExplorerViewModel();
+            equipmentExplorerViewModel = new EquipmentExplorerViewModel(rootViewModel);
 
             InputBindings.Add(new InputBinding(new AnonymousCommand(OnCancel), new KeyGesture(Key.Escape, ModifierKeys.None)));
 
@@ -43,8 +43,6 @@ namespace MHArmory
         private async void EquipmentExplorerWindow_Loaded(object sender, RoutedEventArgs e)
         {
             await System.Windows.Threading.Dispatcher.Yield(System.Windows.Threading.DispatcherPriority.SystemIdle);
-
-            equipmentExplorerViewModel.CreateItems();
 
             DataContext = equipmentExplorerViewModel;
         }
