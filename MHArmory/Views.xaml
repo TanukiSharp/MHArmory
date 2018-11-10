@@ -507,7 +507,12 @@
                 <ColumnDefinition Width="Auto" SharedSizeGroup="B"/>
                 <ColumnDefinition Width="Auto" SharedSizeGroup="C"/>
             </Grid.ColumnDefinitions>
-            <CheckBox Grid.Column="0" Content="{Binding Name, Mode=OneTime}" IsChecked="{Binding IsOverriding}" Padding="4" VerticalAlignment="Stretch" VerticalContentAlignment="Center" bhv:ToolTipEx.Content="Check to override default jewel availability"/>
+            <CheckBox Grid.Column="0" IsChecked="{Binding IsOverriding}" Padding="4" VerticalAlignment="Stretch" VerticalContentAlignment="Center" bhv:ToolTipEx.Content="Check to override default jewel availability">
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="{Binding Name, Mode=OneTime}" VerticalAlignment="Center" Margin="0 0 4 0"/>
+                    <Image Source="{Binding SlotSize, Converter={StaticResource SlotToImageSourceValueConverter}, ConverterParameter=24, Mode=OneTime}" VerticalAlignment="Center" bhv:ToolTipEx.Content="{Binding Converter={StaticResource SlotSizeToolTipValueConverter}, Mode=OneTime}" Width="24" Height="24" SnapsToDevicePixels="True"/>
+                </StackPanel>
+            </CheckBox>
             <StackPanel Grid.Column="1" Orientation="Horizontal" VerticalAlignment="Top" Margin="4">
                 <TextBlock Text="Count: " VerticalAlignment="Center" Margin="2 0 2 0"/>
                 <TextBox Text="{Binding Count, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Margin="2 0 2 0" Padding="2" Width="60" VerticalAlignment="Center"/>
