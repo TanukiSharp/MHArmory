@@ -17,15 +17,19 @@ namespace MHArmory.ViewModels
         /// <summary>
         /// Show all sets where all armor pieces are owned.
         /// </summary>
-        PossessAll,
+        AllPossessed,
         /// <summary>
         /// Show only sets where at least one piece is owned.
         /// </summary>
-        PossessSome,
+        SomePossessed,
+        /// <summary>
+        /// Show only sets where at least one piece is not owned.
+        /// </summary>
+        SomeUnpossessed,
         /// <summary>
         /// Show only sets where no armor piece is owned.
         /// </summary>
-        PossessNone
+        AllUnpossessed
     }
 
     public class EquipmentGroupViewModel : ViewModelBase
@@ -128,7 +132,7 @@ namespace MHArmory.ViewModels
                 IsVisible = true;
                 return;
             }
-            
+
             IsVisible =
                 searchStatement.IsMatching(Name) ||
                 allPieces.Any(x => searchStatement.IsMatching(x.Name));
@@ -234,52 +238,13 @@ namespace MHArmory.ViewModels
         }
 
         private EquipmentOverrideVisibilityMode visibilityMode = EquipmentOverrideVisibilityMode.All;
-
-        public bool VisibilityModeAll
+        public EquipmentOverrideVisibilityMode VisibilityMode
         {
+            get { return visibilityMode; }
             set
             {
-                if (value && visibilityMode != EquipmentOverrideVisibilityMode.All)
-                {
-                    visibilityMode = EquipmentOverrideVisibilityMode.All;
+                if (SetValue(ref visibilityMode, value))
                     ComputeVisibility();
-                }
-            }
-        }
-
-        public bool VisibilityModePossessAll
-        {
-            set
-            {
-                if (value && visibilityMode != EquipmentOverrideVisibilityMode.PossessAll)
-                {
-                    visibilityMode = EquipmentOverrideVisibilityMode.PossessAll;
-                    ComputeVisibility();
-                }
-            }
-        }
-
-        public bool VisibilityModePossessSome
-        {
-            set
-            {
-                if (value && visibilityMode != EquipmentOverrideVisibilityMode.PossessSome)
-                {
-                    visibilityMode = EquipmentOverrideVisibilityMode.PossessSome;
-                    ComputeVisibility();
-                }
-            }
-        }
-
-        public bool VisibilityModePossessNone
-        {
-            set
-            {
-                if (value && visibilityMode != EquipmentOverrideVisibilityMode.PossessNone)
-                {
-                    visibilityMode = EquipmentOverrideVisibilityMode.PossessNone;
-                    ComputeVisibility();
-                }
             }
         }
 
@@ -321,7 +286,7 @@ namespace MHArmory.ViewModels
 
         private void ComputeVisibility(EquipmentGroupViewModel group, SearchStatement searchStatement)
         {
-            if (visibilityMode == EquipmentOverrideVisibilityMode.PossessAll)
+            if (visibilityMode == EquipmentOverrideVisibilityMode.AllPossessed)
             {
                 if (group.PossessAll == false)
                 {
@@ -329,7 +294,7 @@ namespace MHArmory.ViewModels
                     return;
                 }
             }
-            else if (visibilityMode == EquipmentOverrideVisibilityMode.PossessSome)
+            else if (visibilityMode == EquipmentOverrideVisibilityMode.SomePossessed)
             {
                 if (group.PossessAny == false)
                 {
@@ -337,9 +302,17 @@ namespace MHArmory.ViewModels
                     return;
                 }
             }
-            else if (visibilityMode == EquipmentOverrideVisibilityMode.PossessNone)
+            else if (visibilityMode == EquipmentOverrideVisibilityMode.SomeUnpossessed)
             {
-                if (group.PossessNone == false)
+                if (group.PossessAll || group.PossessNone)
+                {
+                    group.IsVisible = false;
+                    return;
+                }
+            }
+            else if (visibilityMode == EquipmentOverrideVisibilityMode.AllUnpossessed)
+            {
+                if (group.PossessAny)
                 {
                     group.IsVisible = false;
                     return;
