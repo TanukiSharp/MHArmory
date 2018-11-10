@@ -129,6 +129,9 @@ namespace MHArmory.Search
         private void ProcessInputData()
         {
             RemoveJewelsNotMatchingAnySkill();
+            RemoveJewelsMatchingExcludedSkills();
+
+            RemoveEquipmentsBySkillExclusion();
 
             if (inputJewels.Count > 0)
             {
@@ -200,6 +203,11 @@ namespace MHArmory.Search
             inputJewels.RemoveAll(j => j.Jewel.Abilities.Any(a => IsMatchingDesiredAbilities(a)) == false);
         }
 
+        private void RemoveJewelsMatchingExcludedSkills()
+        {
+            inputJewels.RemoveAll(j => j.Jewel.Abilities.Any(a => IsMatchingExcludedSkill(a)));
+        }
+
         private bool IsMatchingDesiredAbilities(IAbility ability)
         {
             foreach (IAbility desiredAbility in DesiredAbilities)
@@ -209,6 +217,34 @@ namespace MHArmory.Search
             }
 
             return false;
+        }
+
+        private bool IsMatchingExcludedSkill(IAbility ability)
+        {
+            foreach (IAbility desiredAbility in DesiredAbilities.Where(x => x.Level == 0))
+            {
+                if (DataUtility.AreAbilitiesOnSameSkill(ability, desiredAbility))
+                    return true;
+            }
+
+            return false;
+        }
+
+        private void RemoveEquipmentsBySkillExclusion()
+        {
+            IList<IAbility> excludedAbilities = DesiredAbilities.Where(x => x.Level == 0).ToList();
+
+            RemoveEquipmentsBySkillExclusion(excludedAbilities, inputHeads);
+            RemoveEquipmentsBySkillExclusion(excludedAbilities, inputChests);
+            RemoveEquipmentsBySkillExclusion(excludedAbilities, inputGloves);
+            RemoveEquipmentsBySkillExclusion(excludedAbilities, inputWaists);
+            RemoveEquipmentsBySkillExclusion(excludedAbilities, inputLegs);
+            RemoveEquipmentsBySkillExclusion(excludedAbilities, inputCharms);
+        }
+
+        private void RemoveEquipmentsBySkillExclusion(IList<IAbility> excludedAbilities, List<SolverDataEquipmentModel> equipments)
+        {
+            equipments.RemoveAll(e => e.Equipment.Abilities.Any(a => excludedAbilities.Any(x => DataUtility.AreAbilitiesOnSameSkill(a, x))));
         }
 
         private void DeleteMarkedEquipments()
