@@ -6,5 +6,8 @@
         xmlns:local="clr-namespace:MHArmory"
         mc:Ignorable="d"
         Title="Equipment override" Width="460" Height="700" Background="WhiteSmoke" WindowStartupLocation="CenterOwner">
-    <ContentControl Content="{Binding}" ContentTemplate="{StaticResource EquipmentOverrideView}" Focusable="False"/>
+    <Grid Margin="2">
+        <TextBlock x:Name="lblLoading" Text="Constructing user interface..." HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="20" Visibility="{Binding IsDataLoading, Converter={StaticResource CollapsedVisibilityValueConverter}, Mode=OneWay}"/>
+        <ContentControl x:Name="cntRoot" Content="{Binding}" ContentTemplate="{StaticResource EquipmentOverrideView}" Visibility="Collapsed" Focusable="False"/>
+    </Grid>
 </Window>

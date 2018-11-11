@@ -33,7 +33,17 @@ namespace MHArmory
 
             InputBindings.Add(new InputBinding(new AnonymousCommand(OnCancel), new KeyGesture(Key.Escape, ModifierKeys.None)));
 
+            this.Loaded += EquipmentOverrideWindow_Loaded;
+        }
+
+        private async void EquipmentOverrideWindow_Loaded(object sender, RoutedEventArgs e)
+        {
+            await System.Windows.Threading.Dispatcher.Yield(System.Windows.Threading.DispatcherPriority.SystemIdle);
+
             DataContext = rootViewModel.EquipmentOverride;
+
+            lblLoading.Visibility = Visibility.Collapsed;
+            cntRoot.Visibility = Visibility.Visible;
         }
 
         private void OnCancel(object parameter)
