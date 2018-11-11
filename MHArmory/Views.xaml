@@ -629,19 +629,19 @@
             </Grid.ColumnDefinitions>
             <TextBlock Grid.Column="0" Text="{Binding Name, Mode=OneTime}" Padding="4" VerticalAlignment="Center" FontWeight="Bold" FontSize="14"/>
             <StackPanel Grid.Column="1" Orientation="Horizontal">
-                <StackPanel.Resources>
-                    <Style TargetType="ContentControl">
-                        <Setter Property="Focusable" Value="False"/>
-                        <Setter Property="Margin" Value="4"/>
-                        <Setter Property="ContentTemplate" Value="{StaticResource ArmorPieceOverrideView}"/>
-                    </Style>
-                </StackPanel.Resources>
                 <Button Width="16" Margin="4" bhv:ToolTipEx.Content="Toggle all" Command="{Binding ToggleAllCommand, Mode=OneTime}"/>
-                <ContentControl Content="{Binding Head, Mode=OneTime}"/>
-                <ContentControl Content="{Binding Chest, Mode=OneTime}"/>
-                <ContentControl Content="{Binding Gloves, Mode=OneTime}"/>
-                <ContentControl Content="{Binding Waist, Mode=OneTime}"/>
-                <ContentControl Content="{Binding Legs, Mode=OneTime}"/>
+                <ItemsControl ItemsSource="{Binding OrderedEquipments, Mode=OneTime}">
+                    <ItemsControl.ItemsPanel>
+                        <ItemsPanelTemplate>
+                            <StackPanel Orientation="Horizontal"/>
+                        </ItemsPanelTemplate>
+                    </ItemsControl.ItemsPanel>
+                    <ItemsControl.ItemTemplate>
+                        <DataTemplate>
+                            <ContentControl Content="{Binding Mode=OneTime}" Margin="4" ContentTemplate="{StaticResource ArmorPieceOverrideView}" Focusable="False"/>
+                        </DataTemplate>
+                    </ItemsControl.ItemTemplate>
+                </ItemsControl>
             </StackPanel>
             <ItemsControl Grid.Column="2" ItemsSource="{Binding Abilities, Mode=OneTime}" ItemTemplate="{StaticResource SkillNameAbilityView}" VerticalAlignment="Top" Padding="4" Focusable="False"/>
         </Grid>

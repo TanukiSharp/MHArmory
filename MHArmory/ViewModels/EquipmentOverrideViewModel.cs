@@ -35,11 +35,9 @@ namespace MHArmory.ViewModels
     public class EquipmentGroupViewModel : ViewModelBase
     {
         public string Name { get; }
-        public EquipmentViewModel Head { get; }
-        public EquipmentViewModel Chest { get; }
-        public EquipmentViewModel Gloves { get; }
-        public EquipmentViewModel Waist { get; }
-        public EquipmentViewModel Legs { get; }
+
+        public IList<EquipmentViewModel> OrderedEquipments { get; }
+        public IList<EquipmentViewModel> Equipments { get; }
 
         private bool isVisible = true;
         public bool IsVisible
@@ -52,7 +50,7 @@ namespace MHArmory.ViewModels
         {
             get
             {
-                return allPieces.All(x => x.IsPossessed == false);
+                return Equipments.All(x => x.IsPossessed == false);
             }
         }
 
@@ -60,7 +58,7 @@ namespace MHArmory.ViewModels
         {
             get
             {
-                return allPieces.All(x => x.IsPossessed);
+                return Equipments.All(x => x.IsPossessed);
             }
         }
 
@@ -68,61 +66,33 @@ namespace MHArmory.ViewModels
         {
             get
             {
-                return allPieces.Any(x => x.IsPossessed);
+                return Equipments.Any(x => x.IsPossessed);
             }
         }
 
         public ICommand ToggleAllCommand { get; }
 
-        private readonly IList<EquipmentViewModel> allPieces;
-
         private readonly EquipmentOverrideViewModel parent;
 
         public EquipmentGroupViewModel(EquipmentOverrideViewModel parent, IEnumerable<EquipmentViewModel> equipments)
-            : this(
-                  parent,
-                  equipments.FirstOrDefault(x => x.Type == EquipmentType.Head),
-                  equipments.FirstOrDefault(x => x.Type == EquipmentType.Chest),
-                  equipments.FirstOrDefault(x => x.Type == EquipmentType.Gloves),
-                  equipments.FirstOrDefault(x => x.Type == EquipmentType.Waist),
-                  equipments.FirstOrDefault(x => x.Type == EquipmentType.Legs)
-                  )
-        {
-        }
-
-        public EquipmentGroupViewModel(
-            EquipmentOverrideViewModel parent,
-            EquipmentViewModel head,
-            EquipmentViewModel chest,
-            EquipmentViewModel gloves,
-            EquipmentViewModel waist,
-            EquipmentViewModel legs
-        )
         {
             this.parent = parent;
 
-            Head = head;
-            Chest = chest;
-            Gloves = gloves;
-            Waist = waist;
-            Legs = legs;
+            Equipments = equipments.Where(x => x != null).ToList();
+            OrderedEquipments = MakeArmorPieces(Equipments).ToList();
 
-            allPieces = new List<EquipmentViewModel>();
-
-            if (head != null)
-                allPieces.Add(head);
-            if (chest != null)
-                allPieces.Add(chest);
-            if (gloves != null)
-                allPieces.Add(gloves);
-            if (waist != null)
-                allPieces.Add(waist);
-            if (legs != null)
-                allPieces.Add(legs);
-
-            Name = FindGroupName(head, chest, gloves, waist, legs);
+            Name = FindGroupName(Equipments);
 
             ToggleAllCommand = new AnonymousCommand(OnToggleAll);
+        }
+
+        private IEnumerable<EquipmentViewModel> MakeArmorPieces(IEnumerable<EquipmentViewModel> equipments)
+        {
+            yield return equipments.FirstOrDefault(x => x.Type == EquipmentType.Head);
+            yield return equipments.FirstOrDefault(x => x.Type == EquipmentType.Chest);
+            yield return equipments.FirstOrDefault(x => x.Type == EquipmentType.Gloves);
+            yield return equipments.FirstOrDefault(x => x.Type == EquipmentType.Waist);
+            yield return equipments.FirstOrDefault(x => x.Type == EquipmentType.Legs);
         }
 
         public void ApplySearchText(SearchStatement searchStatement)
@@ -135,41 +105,41 @@ namespace MHArmory.ViewModels
 
             IsVisible =
                 searchStatement.IsMatching(Name) ||
-                allPieces.Any(x => searchStatement.IsMatching(x.Name));
+                Equipments.Any(x => searchStatement.IsMatching(x.Name));
         }
 
         private void OnToggleAll()
         {
-            bool allChecked = allPieces.All(x => x.IsPossessed);
+            bool allChecked = Equipments.All(x => x.IsPossessed);
 
-            foreach (EquipmentViewModel equipment in allPieces)
+            foreach (EquipmentViewModel equipment in Equipments)
                 equipment.IsPossessed = allChecked == false;
         }
 
-        public static string FindGroupName(params IEquipment[] equipments)
+        public static string FindGroupName(IEnumerable<IEquipment> equipments)
         {
-            if (equipments == null || equipments.Length == 0)
+            if (equipments == null)
                 return null;
 
             string baseName = null;
             int firstPartMinLength = 0;
             int lastPartMinLength = 0;
 
-            for (int i = 0; i < equipments.Length; i++)
+            foreach (IEquipment eqp in equipments)
             {
-                if (equipments[i] == null)
+                if (eqp == null)
                     continue;
 
                 if (baseName == null)
                 {
-                    baseName = equipments[i].Name;
+                    baseName = eqp.Name;
                     firstPartMinLength = baseName.Length;
                     lastPartMinLength = baseName.Length;
                     continue;
                 }
 
                 int c;
-                string name = equipments[i].Name;
+                string name = baseName;
 
                 for (c = 0; c < name.Length && c < baseName.Length; c++)
                 {
