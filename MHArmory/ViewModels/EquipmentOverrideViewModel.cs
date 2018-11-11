@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
+using MHArmory.Configurations;
 using MHArmory.Core.DataStructures;
 
 namespace MHArmory.ViewModels
@@ -86,7 +87,7 @@ namespace MHArmory.ViewModels
             ToggleAllCommand = new AnonymousCommand(OnToggleAll);
         }
 
-        private IEnumerable<EquipmentViewModel> MakeArmorPieces(IEnumerable<EquipmentViewModel> equipments)
+        private static IEnumerable<EquipmentViewModel> MakeArmorPieces(IEnumerable<EquipmentViewModel> equipments)
         {
             yield return equipments.FirstOrDefault(x => x.Type == EquipmentType.Head);
             yield return equipments.FirstOrDefault(x => x.Type == EquipmentType.Chest);
@@ -310,7 +311,91 @@ namespace MHArmory.ViewModels
                 .OrderBy(x => x.Name)
                 .ToList();
 
+            LoadConfiguration();
+
             UpdateStatus();
+        }
+
+        private EquipmentViewModel FindEquipmentByName(string name)
+        {
+            foreach (EquipmentGroupViewModel group in ArmorSets)
+            {
+                foreach (EquipmentViewModel equipment in group.Equipments)
+                {
+                    if (equipment.Name == name)
+                        return equipment;
+                }
+            }
+
+            return null;
+        }
+
+        private void LoadConfiguration()
+        {
+            EquipmentOverrideConfigurationV2 configuration = GlobalData.Instance.Configuration.InParameters.EquipmentOverride;
+
+            if (configuration.IsStoringPossessed)
+            {
+                foreach (EquipmentGroupViewModel group in ArmorSets)
+                {
+                    foreach (EquipmentViewModel equipment in group.Equipments)
+                        equipment.IsPossessed = configuration.Items.Contains(equipment.Name);
+                }
+            }
+            else
+            {
+                foreach (EquipmentGroupViewModel group in ArmorSets)
+                {
+                    foreach (EquipmentViewModel equipment in group.Equipments)
+                        equipment.IsPossessed = configuration.Items.Contains(equipment.Name) == false;
+                }
+            }
+        }
+
+        public void SaveConfiguration()
+        {
+            int total = 0;
+            int totalPossessed = 0;
+
+            foreach (EquipmentGroupViewModel group in ArmorSets)
+            {
+                foreach (EquipmentViewModel equipment in group.Equipments)
+                {
+                    total++;
+                    if (equipment.IsPossessed)
+                        totalPossessed++;
+                }
+            }
+
+            EquipmentOverrideConfigurationV2 configuration = GlobalData.Instance.Configuration.InParameters.EquipmentOverride;
+
+            configuration.UseOverride = rootViewModel.InParameters.UseEquipmentOverride;
+            configuration.Items.Clear();
+
+            if (totalPossessed < (total - totalPossessed))
+            {
+                // save possessed ones
+                configuration.IsStoringPossessed = true;
+
+                foreach (EquipmentGroupViewModel group in ArmorSets)
+                {
+                    foreach (EquipmentViewModel equipment in group.Equipments.Where(x => x.IsPossessed))
+                        configuration.Items.Add(equipment.Name);
+                }
+            }
+            else
+            {
+                // save not possessed ones
+                configuration.IsStoringPossessed = false;
+
+                foreach (EquipmentGroupViewModel group in ArmorSets)
+                {
+                    foreach (EquipmentViewModel equipment in group.Equipments.Where(x => x.IsPossessed == false))
+                        configuration.Items.Add(equipment.Name);
+                }
+            }
+
+            ConfigurationManager.Save(GlobalData.Instance.Configuration);
         }
     }
 }

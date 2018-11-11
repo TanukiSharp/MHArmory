@@ -19,14 +19,6 @@ namespace MHArmory.Configurations
         public int? Height { get; set; }
     }
 
-    public class EquipmentOverrideConfigurationItemV2
-    {
-        [JsonProperty("isOverriding")]
-        public bool IsOverriding { get; set; }
-        [JsonProperty("have")]
-        public bool Have { get; set; }
-    }
-
     public class DecorationOverrideConfigurationV2
     {
         [JsonProperty("useOverride")]
@@ -39,8 +31,10 @@ namespace MHArmory.Configurations
     {
         [JsonProperty("useOverride")]
         public bool UseOverride { get; set; }
+        [JsonProperty("isStoringPossessed")]
+        public bool IsStoringPossessed { get; set; }
         [JsonProperty("equipmentOverrides")]
-        public Dictionary<string, EquipmentOverrideConfigurationItemV2> Items { get; } = new Dictionary<string, EquipmentOverrideConfigurationItemV2>();
+        public IList<string> Items { get; } = new List<string>();
     }
 
     public class InParametersConfigurationV2

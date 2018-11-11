@@ -58,7 +58,7 @@ namespace MHArmory.ViewModels
             set
             {
                 if (SetValue(ref useDecorationsOverride, value))
-                    UseOverrideChanged();
+                    UseDecorationsOverrideChanged();
             }
         }
 
@@ -69,7 +69,7 @@ namespace MHArmory.ViewModels
             set
             {
                 if (SetValue(ref useEquipmentOverride, value))
-                    UseEquipmentChanged();
+                    UseEquipmentOverrideChanged();
             }
         }
 
@@ -160,6 +160,7 @@ namespace MHArmory.ViewModels
                 }
 
                 UseDecorationsOverride = config.DecorationOverride.UseOverride;
+                UseEquipmentOverride = config.EquipmentOverride.UseOverride;
 
                 if (config.Rarity <= 0)
                     Rarity = 9; // initial rarity, maximum one
@@ -195,7 +196,7 @@ namespace MHArmory.ViewModels
             root.CreateSolverData();
         }
 
-        private void UseOverrideChanged()
+        private void UseDecorationsOverrideChanged()
         {
             if (isLoadingConfiguration)
                 return;
@@ -208,7 +209,7 @@ namespace MHArmory.ViewModels
             root.CreateSolverData();
         }
 
-        private void UseEquipmentChanged()
+        private void UseEquipmentOverrideChanged()
         {
             if (isLoadingConfiguration)
                 return;

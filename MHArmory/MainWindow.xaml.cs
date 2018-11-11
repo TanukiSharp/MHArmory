@@ -191,7 +191,7 @@ namespace MHArmory
             if (WindowManager.IsInitialized<EquipmentOverrideWindow>() == false)
                 WindowManager.InitializeWindow(new EquipmentOverrideWindow(rootViewModel) { Owner = this });
 
-            WindowManager.Show<EquipmentOverrideWindow>();
+            WindowManager.ShowDialog<EquipmentOverrideWindow>();
         }
 
         private void OpenEquipmentExplorer(object obj)

@@ -50,6 +50,8 @@ namespace MHArmory
         {
             base.OnClosing(e);
 
+            rootViewModel.EquipmentOverride.SaveConfiguration();
+
             e.Cancel = true;
             Hide();
         }
