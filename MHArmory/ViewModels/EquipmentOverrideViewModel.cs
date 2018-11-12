@@ -140,7 +140,7 @@ namespace MHArmory.ViewModels
                 }
 
                 int c;
-                string name = baseName;
+                string name = eqp.Name;
 
                 for (c = 0; c < name.Length && c < baseName.Length; c++)
                 {
