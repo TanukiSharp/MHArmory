@@ -374,7 +374,17 @@ namespace MHArmory.ViewModels
             if (CheckEvent(equipement) == false)
                 return false;
 
-            return equipement.Rarity <= InParameters.Rarity;
+            if (equipement.Rarity > InParameters.Rarity)
+                return false;
+
+            if (InParameters.UseEquipmentOverride)
+            {
+                EquipmentViewModel found = AllEquipments.FirstOrDefault(x => x.Name == equipement.Name);
+                if (found != null && found.IsPossessed == false)
+                    return false;
+            }
+
+            return true;
         }
 
         private bool ArmorPieceMatchInParameters(IArmorPiece armorPiece)
