@@ -369,17 +369,17 @@ namespace MHArmory.ViewModels
             return jewel.Rarity <= InParameters.Rarity;
         }
 
-        private bool EquipmentMatchInParameters(IEquipment equipement)
+        private bool EquipmentMatchInParameters(IEquipment equipment)
         {
-            if (CheckEvent(equipement) == false)
+            if (CheckEvent(equipment) == false)
                 return false;
 
-            if (equipement.Rarity > InParameters.Rarity)
+            if (equipment.Rarity > InParameters.Rarity)
                 return false;
 
             if (InParameters.UseEquipmentOverride)
             {
-                EquipmentViewModel found = AllEquipments.FirstOrDefault(x => x.Name == equipement.Name);
+                EquipmentViewModel found = AllEquipments.FirstOrDefault(x => x.Name == equipment.Name);
                 if (found != null && found.IsPossessed == false)
                     return false;
             }
