@@ -62,6 +62,8 @@ namespace MHArmory
 
             rootViewModel.EquipmentOverride.SaveConfiguration();
 
+            rootViewModel.CreateSolverData();
+
             e.Cancel = true;
             Hide();
         }

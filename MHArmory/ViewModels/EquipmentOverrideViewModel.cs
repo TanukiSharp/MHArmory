@@ -298,15 +298,9 @@ namespace MHArmory.ViewModels
 
         internal void NotifyDataLoaded()
         {
-            IEnumerable<IArmorPiece> allArmoprPieces =
-                GlobalData.Instance.Heads
-                .Concat(GlobalData.Instance.Chests)
-                .Concat(GlobalData.Instance.Gloves)
-                .Concat(GlobalData.Instance.Waists)
-                .Concat(GlobalData.Instance.Legs);
-
-            ArmorSets = allArmoprPieces
-                .GroupBy(x => x.Id, x => new EquipmentViewModel(rootViewModel, x))
+            ArmorSets = rootViewModel.AllEquipments
+                .Where(x => x.Type != EquipmentType.Weapon && x.Type != EquipmentType.Charm)
+                .GroupBy(x => x.Id)
                 .Select(x => new EquipmentGroupViewModel(this, x))
                 .OrderBy(x => x.Name)
                 .ToList();
