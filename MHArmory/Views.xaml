@@ -648,7 +648,6 @@
                     </ItemsControl.ItemTemplate>
                 </ItemsControl>
             </StackPanel>
-            <ItemsControl Grid.Column="2" ItemsSource="{Binding Abilities, Mode=OneTime}" ItemTemplate="{StaticResource SkillNameAbilityView}" VerticalAlignment="Top" Padding="4" Focusable="False"/>
         </Grid>
     </DataTemplate>
 

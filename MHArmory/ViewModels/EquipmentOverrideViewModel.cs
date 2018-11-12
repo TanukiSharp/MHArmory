@@ -80,9 +80,20 @@ namespace MHArmory.ViewModels
             this.parent = parent;
 
             Equipments = equipments.Where(x => x != null).ToList();
-            OrderedEquipments = MakeArmorPieces(Equipments).ToList();
 
-            Name = FindGroupName(Equipments);
+            if (Equipments.Count > 0)
+            {
+                if (Equipments[0].Equipment.Type != EquipmentType.Charm)
+                {
+                    OrderedEquipments = MakeArmorPieces(Equipments).ToList();
+                    Name = FindGroupName(Equipments);
+                }
+                else
+                {
+                    OrderedEquipments = Equipments;
+                    Name = ((ICharmLevel)Equipments[0].Equipment).Charm.Name;
+                }
+            }
 
             ToggleAllCommand = new AnonymousCommand(OnToggleAll);
         }
@@ -299,8 +310,8 @@ namespace MHArmory.ViewModels
         internal void NotifyDataLoaded()
         {
             ArmorSets = rootViewModel.AllEquipments
-                .Where(x => x.Type != EquipmentType.Weapon && x.Type != EquipmentType.Charm)
-                .GroupBy(x => x.Id)
+                .Where(x => x.Type != EquipmentType.Weapon)
+                .GroupBy(GroupOperator)
                 .Select(x => new EquipmentGroupViewModel(this, x))
                 .OrderBy(x => x.Name)
                 .ToList();
@@ -308,6 +319,14 @@ namespace MHArmory.ViewModels
             LoadConfiguration();
 
             UpdateStatus();
+        }
+
+        private static int GroupOperator(EquipmentViewModel eqp)
+        {
+            if (eqp.Type != EquipmentType.Charm)
+                return eqp.Id;
+
+            return ((ICharmLevel)eqp.Equipment).Charm.Id + 10000;
         }
 
         private EquipmentViewModel FindEquipmentByName(string name)
