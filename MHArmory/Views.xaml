@@ -597,7 +597,7 @@
         </DockPanel>
     </DataTemplate>
 
-    <DataTemplate x:Key="ArmorPieceOverrideView">
+    <DataTemplate x:Key="EquipmentItemOverrideView">
         <Button x:Name="toggle" Command="{Binding TogglePossessionCommand, Mode=OneTime}" Background="{StaticResource ActiveWeaponBackgroundBrush}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center">
             <bhv:ToolTipEx.Content>
                 <ContentControl Content="{Binding Mode=OneTime}" ContentTemplate="{StaticResource ArmorPieceView}" Focusable="False"/>
@@ -606,14 +606,12 @@
                 <Grid>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="*"/>
-                        <ColumnDefinition Width="*"/>
                     </Grid.ColumnDefinitions>
                     <Grid.RowDefinitions>
                         <RowDefinition Height="*"/>
-                        <RowDefinition Height="*"/>
                     </Grid.RowDefinitions>
-                    <Image Grid.ColumnSpan="2" Grid.RowSpan="2" Source="{Binding Type, Mode=OneTime, Converter={StaticResource EquipmentEnumToImageSourceValueConverter}, ConverterParameter=32}" Width="32" Height="32" Margin="1" Focusable="False"/>
-                    <Image x:Name="icon" Grid.Row="2" Grid.Column="2" Source="{mxt:RasterizedImage Location=Icons/Others/cube_chest.svg, Size=16}" Width="16" Height="16" VerticalAlignment="Bottom" HorizontalAlignment="Right" Margin="-5" IsHitTestVisible="False" SnapsToDevicePixels="True"/>
+                    <Image Source="{Binding Type, Mode=OneTime, Converter={StaticResource EquipmentEnumToImageSourceValueConverter}, ConverterParameter=32}" Width="32" Height="32" Margin="1" Focusable="False"/>
+                    <Image x:Name="icon" Source="{mxt:RasterizedImage Location=Icons/Others/cube_chest.svg, Size=16}" Width="16" Height="16" VerticalAlignment="Bottom" HorizontalAlignment="Right" Margin="-5" IsHitTestVisible="False" SnapsToDevicePixels="True"/>
                 </Grid>
             </Button.Content>
         </Button>
@@ -645,7 +643,7 @@
                     </ItemsControl.ItemsPanel>
                     <ItemsControl.ItemTemplate>
                         <DataTemplate>
-                            <ContentControl Content="{Binding Mode=OneTime}" Margin="4" ContentTemplate="{StaticResource ArmorPieceOverrideView}" Focusable="False"/>
+                            <ContentControl Content="{Binding Mode=OneTime}" Margin="4" ContentTemplate="{StaticResource EquipmentItemOverrideView}" Focusable="False"/>
                         </DataTemplate>
                     </ItemsControl.ItemTemplate>
                 </ItemsControl>
