@@ -8,8 +8,15 @@ using MHArmory.Core.DataStructures;
 
 namespace MHArmory.ViewModels
 {
-    public class ArmorPieceViewModel : EquipmentViewModel
+    public class ArmorPieceViewModel : EquipmentViewModel, IArmorPiece
     {
+        public IArmorPieceDefense Defense { get { return ((IArmorPiece)Equipment).Defense; } }
+        public IArmorPieceResistances Resistances { get { return ((IArmorPiece)Equipment).Resistances; } }
+        public IArmorPieceAttributes Attributes { get { return ((IArmorPiece)Equipment).Attributes; } }
+        public IArmorPieceAssets Assets { get { return ((IArmorPiece)Equipment).Assets; } }
+        public IArmorSetSkill[] ArmorSetSkills { get { return ((IArmorPiece)Equipment).ArmorSetSkills; } }
+        public IFullArmorSet FullArmorSet { get { return ((IArmorPiece)Equipment).FullArmorSet; } }
+
         public ArmorPieceViewModel(RootViewModel rootViewModel, IArmorPiece armorPiece)
             : base(rootViewModel, armorPiece)
         {

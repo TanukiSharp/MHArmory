@@ -311,19 +311,22 @@
                     <ColumnDefinition Width="Auto" SharedSizeGroup="C"/>
                     <ColumnDefinition Width="Auto"/>
                 </Grid.ColumnDefinitions>
-                <StackPanel Grid.Column="0" Orientation="Vertical" Margin="0 0 8 0">
-                    <StackPanel Orientation="Horizontal" Grid.IsSharedSizeScope="True">
-                        <Image Source="{Binding Type, Mode=OneTime, Converter={StaticResource EquipmentEnumToImageSourceValueConverter}, ConverterParameter=20}" Width="20" Height="20" Margin="0 0 4 0" VerticalAlignment="Center" Focusable="False"/>
-                        <TextBlock Text="{Binding Name, Mode=OneTime}" FontSize="12" FontWeight="Bold" VerticalAlignment="Center" Focusable="False"/>
+                <StackPanel Orientation="Vertical">
+                    <StackPanel Grid.Column="0" Orientation="Vertical" Margin="0 0 8 0">
+                        <StackPanel Orientation="Horizontal" Grid.IsSharedSizeScope="True">
+                            <Image Source="{Binding Type, Mode=OneTime, Converter={StaticResource EquipmentEnumToImageSourceValueConverter}, ConverterParameter=20}" Width="20" Height="20" Margin="0 0 4 0" VerticalAlignment="Center" Focusable="False"/>
+                            <TextBlock Text="{Binding Name, Mode=OneTime}" FontSize="12" FontWeight="Bold" VerticalAlignment="Center" Focusable="False"/>
+                        </StackPanel>
+                        <TextBlock Margin="2" Foreground="Gray" Visibility="{Binding Mode=OneTime, Converter={StaticResource HasDefenseVisibilityValueConverter}}" Focusable="False">
+                            <Run Text="Def: "/>
+                            <Run Text="{Binding Defense.Base, Mode=OneTime}"/>
+                            <Run Text=" / "/>
+                            <Run Text="{Binding Defense.Max, Mode=OneTime}"/>
+                            <Run Text=" / "/>
+                            <Run Text="{Binding Defense.Augmented, Mode=OneTime}"/>
+                        </TextBlock>
                     </StackPanel>
-                    <TextBlock Margin="2" Foreground="Gray" Visibility="{Binding Mode=OneTime, Converter={StaticResource HasDefenseVisibilityValueConverter}}" Focusable="False">
-                        <Run Text="Def: "/>
-                        <Run Text="{Binding Defense.Base, Mode=OneTime}"/>
-                        <Run Text=" / "/>
-                        <Run Text="{Binding Defense.Max, Mode=OneTime}"/>
-                        <Run Text=" / "/>
-                        <Run Text="{Binding Defense.Augmented, Mode=OneTime}"/>
-                    </TextBlock>
+                    <Image x:Name="possessedIcon" Source="{mxt:RasterizedImage Location=Icons/Others/cube_chest.svg, Size=16}" Width="16" Height="16" Margin="1" HorizontalAlignment="Left" IsHitTestVisible="False" SnapsToDevicePixels="True"/>
                 </StackPanel>
                 <StackPanel Grid.Column="1" Margin="0 0 8 0" Orientation="Vertical">
                     <TextBlock VerticalAlignment="Top" HorizontalAlignment="Left" Focusable="False">
@@ -347,6 +350,11 @@
                 <ItemsControl Grid.Column="3" ItemsSource="{Binding ArmorSetSkills, Mode=OneTime}" ItemTemplate="{StaticResource ArmorSetSkillView}" Margin="0 0 8 0" Focusable="False"/>
             </Grid>
         </Border>
+        <DataTemplate.Triggers>
+            <DataTrigger Binding="{Binding IsPossessed}" Value="False">
+                <Setter TargetName="possessedIcon" Property="Opacity" Value="0.1"/>
+            </DataTrigger>
+        </DataTemplate.Triggers>
     </DataTemplate>
 
     <DataTemplate x:Key="SearchResultArmorSetView">
@@ -629,7 +637,7 @@
     <DataTemplate x:Key="ArmorSetsOverrideView">
         <Grid>
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="Auto" SharedSizeGroup="A"/>
+                <ColumnDefinition Width="*" SharedSizeGroup="A"/>
                 <ColumnDefinition Width="Auto"/>
             </Grid.ColumnDefinitions>
             <TextBlock Grid.Column="0" Text="{Binding Name, Mode=OneTime}" Padding="4" VerticalAlignment="Center" FontWeight="Bold" FontSize="14"/>
@@ -678,7 +686,7 @@
                 <Button Margin="1" Padding="8" Content="Import from save..." Command="{Binding ImportCommand, Mode=OneTime}"/>
             </StackPanel>-->
             <TextBlock DockPanel.Dock="Bottom" Text="{Binding Status}" HorizontalAlignment="Stretch" Margin="3"/>
-            <ListBox Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" ItemsSource="{Binding ArmorSets, Mode=OneWay}" ItemTemplate="{StaticResource ArmorSetsOverrideView}" VirtualizingPanel.IsVirtualizing="False" VirtualizingPanel.ScrollUnit="Pixel" Grid.IsSharedSizeScope="True" Focusable="False">
+            <ListBox Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" ItemsSource="{Binding AllEquipments, Mode=OneWay}" ItemTemplate="{StaticResource ArmorSetsOverrideView}" VirtualizingPanel.IsVirtualizing="False" VirtualizingPanel.ScrollUnit="Pixel" Grid.IsSharedSizeScope="True" Focusable="False">
                 <ListBox.ItemContainerStyle>
                     <Style TargetType="{x:Type ListBoxItem}">
                         <Setter Property="Template">

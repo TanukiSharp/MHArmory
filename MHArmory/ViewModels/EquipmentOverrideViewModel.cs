@@ -33,69 +33,37 @@ namespace MHArmory.ViewModels
         AllUnpossessed
     }
 
-    public class EquipmentGroupViewModel : ViewModelBase
+    public class CharmGroupViewModel : EquipmentGroupViewModel
     {
-        public string Name { get; }
-
-        public IList<EquipmentViewModel> OrderedEquipments { get; }
-        public IList<EquipmentViewModel> Equipments { get; }
-
-        private bool isVisible = true;
-        public bool IsVisible
+        public CharmGroupViewModel(EquipmentOverrideViewModel parent, IEnumerable<EquipmentViewModel> equipments)
+            : base(parent, equipments)
         {
-            get { return isVisible; }
-            set { SetValue(ref isVisible, value); }
+            OrderedEquipments = MakeCharms(Equipments).ToList();
+            Name = ((ICharmLevel)Equipments[0].Equipment).Charm.Name;
         }
 
-        public bool PossessNone
+        private static IEnumerable<EquipmentViewModel> MakeCharms(IEnumerable<EquipmentViewModel> charms)
         {
-            get
+            int total = 5;
+
+            foreach (EquipmentViewModel charm in charms)
             {
-                return Equipments.All(x => x.IsPossessed == false);
+                yield return charm;
+                total--;
             }
+
+            while (total-- > 0)
+                yield return null;
         }
+    }
 
-        public bool PossessAll
+    public class ArmorGroupViewModel : EquipmentGroupViewModel
+    {
+        public ArmorGroupViewModel(EquipmentOverrideViewModel parent, IEnumerable<ArmorPieceViewModel> equipments)
+            : base(parent, equipments)
         {
-            get
-            {
-                return Equipments.All(x => x.IsPossessed);
-            }
-        }
-
-        public bool PossessAny
-        {
-            get
-            {
-                return Equipments.Any(x => x.IsPossessed);
-            }
-        }
-
-        public ICommand ToggleAllCommand { get; }
-
-        private readonly EquipmentOverrideViewModel parent;
-
-        public EquipmentGroupViewModel(EquipmentOverrideViewModel parent, IEnumerable<EquipmentViewModel> equipments)
-        {
-            this.parent = parent;
-
-            Equipments = equipments.Where(x => x != null).ToList();
-
-            if (Equipments.Count > 0)
-            {
-                if (Equipments[0].Equipment.Type != EquipmentType.Charm)
-                {
-                    OrderedEquipments = MakeArmorPieces(Equipments).ToList();
-                    Name = FindGroupName(Equipments);
-                }
-                else
-                {
-                    OrderedEquipments = Equipments;
-                    Name = ((ICharmLevel)Equipments[0].Equipment).Charm.Name;
-                }
-            }
-
-            ToggleAllCommand = new AnonymousCommand(OnToggleAll);
+            OrderedEquipments = MakeArmorPieces(Equipments).ToList();
+            Name = FindGroupName(Equipments);
         }
 
         private static IEnumerable<EquipmentViewModel> MakeArmorPieces(IEnumerable<EquipmentViewModel> equipments)
@@ -105,27 +73,6 @@ namespace MHArmory.ViewModels
             yield return equipments.FirstOrDefault(x => x.Type == EquipmentType.Gloves);
             yield return equipments.FirstOrDefault(x => x.Type == EquipmentType.Waist);
             yield return equipments.FirstOrDefault(x => x.Type == EquipmentType.Legs);
-        }
-
-        public void ApplySearchText(SearchStatement searchStatement)
-        {
-            if (searchStatement == null || searchStatement.IsEmpty)
-            {
-                IsVisible = true;
-                return;
-            }
-
-            IsVisible =
-                searchStatement.IsMatching(Name) ||
-                Equipments.Any(x => searchStatement.IsMatching(x.Name));
-        }
-
-        private void OnToggleAll()
-        {
-            bool allChecked = Equipments.All(x => x.IsPossessed);
-
-            foreach (EquipmentViewModel equipment in Equipments)
-                equipment.IsPossessed = allChecked == false;
         }
 
         public static string FindGroupName(IEnumerable<IEquipment> equipments)
@@ -190,15 +137,116 @@ namespace MHArmory.ViewModels
         }
     }
 
+    public abstract class EquipmentGroupViewModel : ViewModelBase
+    {
+        public string Name { get; protected set; }
+
+        public IList<EquipmentViewModel> OrderedEquipments { get; protected set; }
+        public IList<EquipmentViewModel> Equipments { get; }
+
+        private bool isVisible = true;
+        public bool IsVisible
+        {
+            get { return isVisible; }
+            set { SetValue(ref isVisible, value); }
+        }
+
+        public bool PossessNone
+        {
+            get
+            {
+                return Equipments.All(x => x.IsPossessed == false);
+            }
+        }
+
+        public bool PossessAll
+        {
+            get
+            {
+                return Equipments.All(x => x.IsPossessed);
+            }
+        }
+
+        public bool PossessAny
+        {
+            get
+            {
+                return Equipments.Any(x => x.IsPossessed);
+            }
+        }
+
+        public ICommand ToggleAllCommand { get; }
+
+        private readonly EquipmentOverrideViewModel parent;
+
+        protected EquipmentGroupViewModel(EquipmentOverrideViewModel parent, IEnumerable<EquipmentViewModel> equipments)
+        {
+            this.parent = parent;
+
+            Equipments = equipments.Where(x => x != null).ToList();
+
+            ToggleAllCommand = new AnonymousCommand(OnToggleAll);
+        }
+
+        public void ApplySearchText(SearchStatement searchStatement)
+        {
+            if (searchStatement == null || searchStatement.IsEmpty)
+            {
+                IsVisible = true;
+                return;
+            }
+
+            IsVisible =
+                searchStatement.IsMatching(Name) ||
+                Equipments.Any(x => searchStatement.IsMatching(x.Name));
+        }
+
+        private void OnToggleAll()
+        {
+            bool allChecked = Equipments.All(x => x.IsPossessed);
+
+            foreach (EquipmentViewModel equipment in Equipments)
+                equipment.IsPossessed = allChecked == false;
+        }
+    }
+
+    public enum EquipmentViewCategory
+    {
+        LowRankArmors,
+        HighRankArmors,
+        Charms
+    }
+
     public class EquipmentOverrideViewModel : ViewModelBase
     {
         private readonly RootViewModel rootViewModel;
 
-        private IList<EquipmentGroupViewModel> armorSets;
-        public IList<EquipmentGroupViewModel> ArmorSets
+        private IList<ArmorGroupViewModel> lowRankArmors;
+        public IList<ArmorGroupViewModel> LowRankArmors
         {
-            get { return armorSets; }
-            private set { SetValue(ref armorSets, value); }
+            get { return lowRankArmors; }
+            private set { SetValue(ref lowRankArmors, value); }
+        }
+
+        private IList<ArmorGroupViewModel> highRankArmors;
+        public IList<ArmorGroupViewModel> HighRankArmors
+        {
+            get { return highRankArmors; }
+            private set { SetValue(ref highRankArmors, value); }
+        }
+
+        private IList<CharmGroupViewModel> charms;
+        public IList<CharmGroupViewModel> Charms
+        {
+            get { return charms; }
+            private set { SetValue(ref charms, value); }
+        }
+
+        private IList<EquipmentGroupViewModel> allEquipments;
+        public IList<EquipmentGroupViewModel> AllEquipments
+        {
+            get { return allEquipments; }
+            private set { SetValue(ref allEquipments, value); }
         }
 
         private string searchText;
@@ -255,7 +303,7 @@ namespace MHArmory.ViewModels
         {
             var searchStatement = SearchStatement.Create(SearchText);
 
-            foreach (EquipmentGroupViewModel vm in ArmorSets)
+            foreach (EquipmentGroupViewModel vm in AllEquipments)
                 ComputeVisibility(vm, searchStatement);
 
             UpdateStatus();
@@ -263,7 +311,7 @@ namespace MHArmory.ViewModels
 
         private void UpdateStatus()
         {
-            Status = $"{ArmorSets.Count(x => x.IsVisible)} sets";
+            Status = $"{AllEquipments.Count(x => x.IsVisible)} sets";
         }
 
         private void ComputeVisibility(EquipmentGroupViewModel group, SearchStatement searchStatement)
@@ -309,11 +357,35 @@ namespace MHArmory.ViewModels
 
         internal void NotifyDataLoaded()
         {
-            ArmorSets = rootViewModel.AllEquipments
-                .Where(x => x.Type != EquipmentType.Weapon)
-                .GroupBy(GroupOperator)
-                .Select(x => new EquipmentGroupViewModel(this, x))
+            LowRankArmors = rootViewModel.AllEquipments
+                .Where(x => x.Rarity <= 4)
+                .Where(x => x.Type != EquipmentType.Weapon && x.Type != EquipmentType.Charm)
+                .Cast<ArmorPieceViewModel>()
+                .GroupBy(x => x.Id)
+                .Select(x => new ArmorGroupViewModel(this, x))
                 .OrderBy(x => x.Name)
+                .ToList();
+
+            HighRankArmors = rootViewModel.AllEquipments
+                .Where(x => x.Rarity > 4)
+                .Where(x => x.Type != EquipmentType.Weapon && x.Type != EquipmentType.Charm)
+                .Cast<ArmorPieceViewModel>()
+                .GroupBy(x => x.Id)
+                .Select(x => new ArmorGroupViewModel(this, x))
+                .OrderBy(x => x.Name)
+                .ToList();
+
+            Charms = rootViewModel.AllEquipments
+                .Where(x => x.Type == EquipmentType.Charm)
+                .GroupBy(x => ((ICharmLevel)x.Equipment).Charm.Id)
+                .Select(x => new CharmGroupViewModel(this, x))
+                .OrderBy(x => x.Name)
+                .ToList();
+
+            AllEquipments = LowRankArmors
+                .Cast<EquipmentGroupViewModel>()
+                .Concat(HighRankArmors)
+                .Concat(Charms)
                 .ToList();
 
             LoadConfiguration();
@@ -329,27 +401,13 @@ namespace MHArmory.ViewModels
             return ((ICharmLevel)eqp.Equipment).Charm.Id + 10000;
         }
 
-        private EquipmentViewModel FindEquipmentByName(string name)
-        {
-            foreach (EquipmentGroupViewModel group in ArmorSets)
-            {
-                foreach (EquipmentViewModel equipment in group.Equipments)
-                {
-                    if (equipment.Name == name)
-                        return equipment;
-                }
-            }
-
-            return null;
-        }
-
         private void LoadConfiguration()
         {
             EquipmentOverrideConfigurationV2 configuration = GlobalData.Instance.Configuration.InParameters.EquipmentOverride;
 
             if (configuration.IsStoringPossessed)
             {
-                foreach (EquipmentGroupViewModel group in ArmorSets)
+                foreach (EquipmentGroupViewModel group in AllEquipments)
                 {
                     foreach (EquipmentViewModel equipment in group.Equipments)
                         equipment.IsPossessed = configuration.Items.Contains(equipment.Name);
@@ -357,7 +415,7 @@ namespace MHArmory.ViewModels
             }
             else
             {
-                foreach (EquipmentGroupViewModel group in ArmorSets)
+                foreach (EquipmentGroupViewModel group in AllEquipments)
                 {
                     foreach (EquipmentViewModel equipment in group.Equipments)
                         equipment.IsPossessed = configuration.Items.Contains(equipment.Name) == false;
@@ -370,7 +428,7 @@ namespace MHArmory.ViewModels
             int total = 0;
             int totalPossessed = 0;
 
-            foreach (EquipmentGroupViewModel group in ArmorSets)
+            foreach (EquipmentGroupViewModel group in AllEquipments)
             {
                 foreach (EquipmentViewModel equipment in group.Equipments)
                 {
@@ -390,7 +448,7 @@ namespace MHArmory.ViewModels
                 // save possessed ones
                 configuration.IsStoringPossessed = true;
 
-                foreach (EquipmentGroupViewModel group in ArmorSets)
+                foreach (EquipmentGroupViewModel group in AllEquipments)
                 {
                     foreach (EquipmentViewModel equipment in group.Equipments.Where(x => x.IsPossessed))
                         configuration.Items.Add(equipment.Name);
@@ -401,7 +459,7 @@ namespace MHArmory.ViewModels
                 // save not possessed ones
                 configuration.IsStoringPossessed = false;
 
-                foreach (EquipmentGroupViewModel group in ArmorSets)
+                foreach (EquipmentGroupViewModel group in AllEquipments)
                 {
                     foreach (EquipmentViewModel equipment in group.Equipments.Where(x => x.IsPossessed == false))
                         configuration.Items.Add(equipment.Name);
