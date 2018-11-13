@@ -40,6 +40,7 @@ namespace MHArmory
             CommandBindings.Add(RoutedCommands.CreateCommandBinding(RoutedCommands.OpenSkillsSelector, OpenSkillSelector));
             CommandBindings.Add(RoutedCommands.CreateCommandBinding(RoutedCommands.OpenAdvancedSearch, OpenAdvancedSearch));
             CommandBindings.Add(RoutedCommands.CreateCommandBinding(RoutedCommands.OpenDecorationsOverride, OpenDecorationsOverride));
+            CommandBindings.Add(RoutedCommands.CreateCommandBinding(RoutedCommands.OpenEquipmentOverride, OpenEquipmentOverride));
             CommandBindings.Add(RoutedCommands.CreateCommandBinding(RoutedCommands.OpenEquipmentExplorer, OpenEquipmentExplorer));
             CommandBindings.Add(RoutedCommands.CreateCommandBinding(RoutedCommands.OpenSearchResultProcessing, OpenSearchResultProcessing));
             CommandBindings.Add(RoutedCommands.CreateCommandBinding(RoutedCommands.OpenEvents, OpenEvents));
@@ -149,6 +150,12 @@ namespace MHArmory
             GlobalData.Instance.Charms = charms.SelectMany(x => x.Levels).ToList();
             GlobalData.Instance.Jewels = jewels;
 
+            rootViewModel.SetAllEquipments(
+                armors.Select(x => new ArmorPieceViewModel(rootViewModel, x))
+                .Concat(GlobalData.Instance.Charms.Select(x => new EquipmentViewModel(rootViewModel, x)))
+                .ToList()
+            );
+
             return true;
         }
 
@@ -179,10 +186,18 @@ namespace MHArmory
             WindowManager.ShowDialog<DecorationsOverrideWindow>();
         }
 
+        private void OpenEquipmentOverride(object obj)
+        {
+            if (WindowManager.IsInitialized<EquipmentOverrideWindow>() == false)
+                WindowManager.InitializeWindow(new EquipmentOverrideWindow(rootViewModel) { Owner = this });
+
+            WindowManager.ShowDialog<EquipmentOverrideWindow>();
+        }
+
         private void OpenEquipmentExplorer(object obj)
         {
             if (WindowManager.IsInitialized<EquipmentExplorerWindow>() == false)
-                WindowManager.InitializeWindow(new EquipmentExplorerWindow { Owner = this });
+                WindowManager.InitializeWindow(new EquipmentExplorerWindow(rootViewModel) { Owner = this });
 
             WindowManager.Show<EquipmentExplorerWindow>();
         }

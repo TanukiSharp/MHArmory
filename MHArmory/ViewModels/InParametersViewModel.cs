@@ -51,14 +51,25 @@ namespace MHArmory.ViewModels
 
         public ValueViewModel<int>[] Slots { get; }
 
-        private bool useOverride;
-        public bool UseOverride
+        private bool useDecorationsOverride;
+        public bool UseDecorationsOverride
         {
-            get { return useOverride; }
+            get { return useDecorationsOverride; }
             set
             {
-                if (SetValue(ref useOverride, value))
-                    UseOverrideChanged();
+                if (SetValue(ref useDecorationsOverride, value))
+                    UseDecorationsOverrideChanged();
+            }
+        }
+
+        private bool useEquipmentOverride;
+        public bool UseEquipmentOverride
+        {
+            get { return useEquipmentOverride; }
+            set
+            {
+                if (SetValue(ref useEquipmentOverride, value))
+                    UseEquipmentOverrideChanged();
             }
         }
 
@@ -121,6 +132,7 @@ namespace MHArmory.ViewModels
         }
 
         public ICommand OpenDecorationsOverrideCommand { get { return root.OpenDecorationsOverrideCommand; } }
+        public ICommand OpenEquipmentOverrideCommand { get { return root.OpenEquipmentOverrideCommand; } }
 
         public InParametersViewModel(RootViewModel root)
         {
@@ -147,7 +159,8 @@ namespace MHArmory.ViewModels
                         Slots[i].Value = config.WeaponSlots[i];
                 }
 
-                UseOverride = config.DecorationOverride.UseOverride;
+                UseDecorationsOverride = config.DecorationOverride.UseOverride;
+                UseEquipmentOverride = config.EquipmentOverride.UseOverride;
 
                 if (config.Rarity <= 0)
                     Rarity = 9; // initial rarity, maximum one
@@ -183,14 +196,27 @@ namespace MHArmory.ViewModels
             root.CreateSolverData();
         }
 
-        private void UseOverrideChanged()
+        private void UseDecorationsOverrideChanged()
         {
             if (isLoadingConfiguration)
                 return;
 
             InParametersConfigurationV2 config = GlobalData.Instance.Configuration.InParameters;
 
-            config.DecorationOverride.UseOverride = UseOverride;
+            config.DecorationOverride.UseOverride = UseDecorationsOverride;
+            ConfigurationManager.Save(GlobalData.Instance.Configuration);
+
+            root.CreateSolverData();
+        }
+
+        private void UseEquipmentOverrideChanged()
+        {
+            if (isLoadingConfiguration)
+                return;
+
+            InParametersConfigurationV2 config = GlobalData.Instance.Configuration.InParameters;
+
+            config.EquipmentOverride.UseOverride = UseEquipmentOverride;
             ConfigurationManager.Save(GlobalData.Instance.Configuration);
 
             root.CreateSolverData();

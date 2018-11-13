@@ -27,12 +27,24 @@ namespace MHArmory.Configurations
         public Dictionary<string, DecorationOverrideConfigurationItem> Items { get; } = new Dictionary<string, DecorationOverrideConfigurationItem>();
     }
 
+    public class EquipmentOverrideConfigurationV2
+    {
+        [JsonProperty("useOverride")]
+        public bool UseOverride { get; set; }
+        [JsonProperty("isStoringPossessed")]
+        public bool IsStoringPossessed { get; set; }
+        [JsonProperty("equipmentOverrides")]
+        public IList<string> Items { get; } = new List<string>();
+    }
+
     public class InParametersConfigurationV2
     {
         [JsonProperty("weaponSlots")]
         public int[] WeaponSlots { get; set; }
         [JsonProperty("decorationOverride")]
         public DecorationOverrideConfigurationV2 DecorationOverride { get; } = new DecorationOverrideConfigurationV2();
+        [JsonProperty("equipmentOverride")]
+        public EquipmentOverrideConfigurationV2 EquipmentOverride { get; } = new EquipmentOverrideConfigurationV2();
         [JsonProperty("rarity")]
         public int Rarity { get; set; }
         [JsonProperty("gender")]
