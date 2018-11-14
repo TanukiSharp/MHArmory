@@ -376,7 +376,7 @@ namespace MHArmory.Search
         {
             private readonly object syncRoot = new object();
             private readonly ObjectPool<IEquipment[]> searchEquipmentsObjectPool;
-            private readonly IList<IEquipment>[] allEquipements;
+            private readonly IList<IEquipment>[] allEquipments;
             private readonly int[] indexes;
             private bool isEnd;
 
@@ -394,7 +394,7 @@ namespace MHArmory.Search
             {
                 this.searchEquipmentsObjectPool = searchEquipmentsObjectPool;
 
-                allEquipements = new IList<IEquipment>[]
+                allEquipments = new IList<IEquipment>[]
                 {
                     heads.ToList(),
                     chests.ToList(),
@@ -404,15 +404,15 @@ namespace MHArmory.Search
                     charms.ToList()
                 };
 
-                indexes = new int[allEquipements.Length];
+                indexes = new int[allEquipments.Length];
 
-                if (allEquipements.All(x => x.Count == 0))
+                if (allEquipments.All(x => x.Count == 0))
                     CombinationCount = 0;
                 else
                 {
                     int combinationCount = 1;
-                    for (int i = 0; i < allEquipements.Length; i++)
-                        combinationCount *= Math.Max(allEquipements[i].Count, 1);
+                    for (int i = 0; i < allEquipments.Length; i++)
+                        combinationCount *= Math.Max(allEquipments[i].Count, 1);
                     CombinationCount = combinationCount;
                 }
             }
@@ -423,7 +423,7 @@ namespace MHArmory.Search
                 {
                     indexes[i]++;
 
-                    if (indexes[i] < allEquipements[i].Count)
+                    if (indexes[i] < allEquipments[i].Count)
                         return true;
 
                     indexes[i] = 0;
@@ -446,7 +446,7 @@ namespace MHArmory.Search
 
                     for (int i = 0; i < equipments.Length; i++)
                     {
-                        IList<IEquipment> allCategoryEquipments = allEquipements[i];
+                        IList<IEquipment> allCategoryEquipments = allEquipments[i];
 
                         if (allCategoryEquipments.Count > indexes[i])
                             equipments[i] = allCategoryEquipments[indexes[i]];
