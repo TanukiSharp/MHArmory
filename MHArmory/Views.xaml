@@ -175,7 +175,7 @@
                 <StackPanel Orientation="Horizontal">
                     <CheckBox Content="Activate" IsChecked="{Binding UseEquipmentOverride}" Margin="2" VerticalAlignment="Center" VerticalContentAlignment="Center"/>
                     <Button Content="Setup..." Command="{Binding OpenEquipmentOverrideCommand, Mode=OneTime}" Margin="2" Padding="4" MinWidth="70" VerticalAlignment="Center"/>
-                    <!--<Button Content="?" MinWidth="20" Margin="2" Padding="4" VerticalAlignment="Center" Command="{x:Static local:RoutedCommands.OpenIntegratedHelp}" CommandParameter="EquipmentOverride" bhv:ToolTipEx.Content="Show help about equipment override"/>-->
+                    <Button Content="?" MinWidth="20" Margin="2" Padding="4" VerticalAlignment="Center" Command="{x:Static local:RoutedCommands.OpenIntegratedHelp}" CommandParameter="EquipmentOverride" bhv:ToolTipEx.Content="Show help about equipment override"/>
                 </StackPanel>
             </StackPanel>
 
@@ -678,7 +678,7 @@
                         <TextBlock Text="Some unpossessed" bhv:ToolTipEx.Content="See only sets where no piece is possessed"/>
                         <TextBlock Text="All unpossessed" bhv:ToolTipEx.Content="See only sets where no piece is possessed"/>
                     </ComboBox>
-                    <!--<Button Content="?" MinWidth="20" Margin="2" Padding="4" VerticalAlignment="Center" Command="{Binding OpenIntegratedHelpCommand, Mode=OneTime}" CommandParameter="EquipmentOverride" IsEnabled="True" bhv:ToolTipEx.Content="Show help about equipment override"/>-->
+                    <Button Content="?" MinWidth="20" Margin="2" Padding="4" VerticalAlignment="Center" Command="{Binding OpenIntegratedHelpCommand, Mode=OneTime}" CommandParameter="EquipmentOverride" IsEnabled="True" bhv:ToolTipEx.Content="Show help about equipment override"/>
                 </StackPanel>
                 <TextBox Margin="2" Padding="3" FocusManager.FocusedElement="{Binding RelativeSource={RelativeSource Self}}" Text="{Binding SearchText, UpdateSourceTrigger=PropertyChanged}" bhv:TextBoxFocusOnEmptyBehavior.IsAttached="True"/>
             </DockPanel>

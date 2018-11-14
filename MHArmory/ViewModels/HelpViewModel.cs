@@ -12,6 +12,7 @@ namespace MHArmory.ViewModels
     {
         GettingStarted,
         DecorationsOverride,
+        EquipmentOverride,
         KeyboardShortcuts,
         Sorting
     }

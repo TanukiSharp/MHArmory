@@ -467,6 +467,9 @@
   <ItemGroup>
     <Resource Include="Icons\Others\cube_chest.svg" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="HelpText\EquipmentOverride.html" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <PreBuildEvent>call "$(ProjectDir)PreBuildEventGitInfo.bat" "$(ProjectDir)"</PreBuildEvent>

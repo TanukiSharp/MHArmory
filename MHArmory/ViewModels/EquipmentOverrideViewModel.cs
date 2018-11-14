@@ -249,6 +249,8 @@ namespace MHArmory.ViewModels
             private set { SetValue(ref allEquipments, value); }
         }
 
+        public ICommand OpenIntegratedHelpCommand { get; }
+
         private string searchText;
         public string SearchText
         {
@@ -284,7 +286,14 @@ namespace MHArmory.ViewModels
         {
             this.rootViewModel = rootViewModel;
 
+            OpenIntegratedHelpCommand = new AnonymousCommand(OnOpenIntegratedHelp);
+
             CancelCommand = new AnonymousCommand(OnCancel);
+        }
+
+        private void OnOpenIntegratedHelp(object parameter)
+        {
+            WindowManager.Show<HelpWindow>(parameter);
         }
 
         private void OnCancel(object parameter)
