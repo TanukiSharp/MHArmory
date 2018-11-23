@@ -10,19 +10,24 @@ namespace DataSourceTool
     {
         public const string SolutionFilename = "MHArmory.sln";
 
-        public static string FindSolutionPath()
+        public static string FindPathContainingFile(string basePath, string fileToSearch)
         {
-            string currentPath = AppContext.BaseDirectory.TrimEnd('/', '\\');
+            string currentPath = basePath.TrimEnd('/', '\\');
 
             while (string.IsNullOrEmpty(currentPath) == false)
             {
-                if (File.Exists(Path.Combine(currentPath, SolutionFilename)))
+                if (File.Exists(Path.Combine(currentPath, fileToSearch)))
                     return currentPath;
 
                 currentPath = Path.GetDirectoryName(currentPath);
             }
 
             return null;
+        }
+
+        public static string FindSolutionPath()
+        {
+            return FindPathContainingFile(AppContext.BaseDirectory, SolutionFilename);
         }
 
         public static void SerializeJson(string filename, object instance)
