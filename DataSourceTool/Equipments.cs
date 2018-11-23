@@ -13,104 +13,130 @@ namespace DataSourceTool
     {
         private ILogger logger;
 
+        private string packageFullPath;
+
         public async Task Run(string[] args)
         {
             logger = new ConsoleLogger();
 
-            string gameFullPath = await GetGameFullPath();
+            packageFullPath = await GetPackageFullPath();
 
-            if (gameFullPath == null)
+            if (packageFullPath == null)
             {
-                logger?.LogError("Could not determine game path, exiting");
+                logger?.LogError("Could not determine package path, exiting");
                 return;
             }
 
-            OodleLZ_Decompress decompressFunc = GetDecompressionFunction(gameFullPath);
-            if (decompressFunc == null)
-                return;
+            Meh();
         }
 
-        [DllImport("kernel32", SetLastError = true, CharSet = CharSet.Ansi)]
-        private extern static IntPtr LoadLibrary([MarshalAs(UnmanagedType.LPStr)]string lpFileName);
-
-        [DllImport("kernel32", CharSet = CharSet.Ansi, ExactSpelling = true, SetLastError = true)]
-        private extern static IntPtr GetProcAddress(IntPtr hModule, string procName);
-
-        [DllImport("kernel32.dll", SetLastError = true)]
-        [return: MarshalAs(UnmanagedType.Bool)]
-        private extern static bool FreeLibrary(IntPtr hModule);
-
-        private delegate int OodleLZ_Decompress(byte[] buffer, long bufferSize, byte[] outputBuffer, long outputBufferSize, uint a, uint b, ulong c, uint d, uint e, uint f, uint g, uint h, uint i, uint threadModule);
-
-        private OodleLZ_Decompress GetDecompressionFunction(string libraryPath)
+        private void Meh()
         {
-            IntPtr library = LoadLibrary(Path.Combine(libraryPath, "oo2core_5_win64.dll"));
+            const string fileToSearch = "\\common\\text\\steam\\armor_eng.gmd";
 
-            if (library == IntPtr.Zero)
+            bool foundFile = false;
+
+            using (var reader = new BinaryReader(File.OpenRead(packageFullPath), Encoding.UTF8, false))
             {
-                logger?.LogError($"Failed to load library 'oo2core_5_win64.dll'");
-                return null;
+                reader.BaseStream.Seek(0x0C, SeekOrigin.Begin);
+                int totalParentCount = reader.ReadInt32();
+                int totalChildrenCount = reader.ReadInt32();
+                reader.BaseStream.Seek(0x100, SeekOrigin.Begin);
+
+                byte[] nameBuffer = new byte[160];
+
+                for (int i = 0; i < totalParentCount; i++)
+                {
+                    reader.BaseStream.Seek(0x3C, SeekOrigin.Current);
+
+                    long fileSize = reader.ReadInt64();
+                    long fileOffset = reader.ReadInt64();
+                    int entryType = reader.ReadInt32();
+                    int childrenCount = reader.ReadInt32();
+
+                    for (int j = 0; j < childrenCount; j++)
+                    {
+                        reader.Read(nameBuffer, 0, nameBuffer.Length);
+                        fileSize = reader.ReadInt64();
+                        fileOffset = reader.ReadInt64();
+                        entryType = reader.ReadInt32();
+                        reader.BaseStream.Seek(4, SeekOrigin.Current);
+
+                        int trailingZeroIndex = Array.IndexOf<byte>(nameBuffer, 0);
+                        string name = Encoding.UTF8.GetString(nameBuffer, 0, trailingZeroIndex);
+
+                        if (name != fileToSearch)
+                            continue;
+
+                        foundFile = true;
+
+                        if (entryType != 0)
+                        {
+                            logger?.LogError($"Found file in chunk but unexpected entry type (expected 0, actual is {entryType})");
+                            return;
+                        }
+
+                        reader.BaseStream.Seek(fileOffset, SeekOrigin.Begin);
+                        using (var subReader = new BinaryReader(new SubStream(reader.BaseStream, fileOffset, fileSize), Encoding.UTF8, true))
+                            ProcessFile(subReader);
+
+                        break;
+                    }
+
+                    if (foundFile)
+                        break;
+                }
             }
 
-            IntPtr procAddress = GetProcAddress(library, "OodleLZ_Decompress");
-
-            if (procAddress == IntPtr.Zero)
-            {
-                logger?.LogError($"Failed to load function 'OodleLZ_Decompress'");
-                return null;
-            }
-
-            return Marshal.GetDelegateForFunctionPointer<OodleLZ_Decompress>(procAddress);
+            if (foundFile == false)
+                logger?.LogError($"Could not find file '{fileToSearch}'");
         }
 
-        private async Task<string> GetGameFullPath()
+        private void ProcessFile(BinaryReader reader)
         {
-            string gameFullPathStoreFile = Path.Combine(AppContext.BaseDirectory, "gamepath.txt");
 
-            if (File.Exists(gameFullPathStoreFile))
+        }
+
+        private async Task<string> GetPackageFullPath()
+        {
+            string packageFullPathStoreFile = Path.Combine(AppContext.BaseDirectory, "package_path.txt");
+
+            if (File.Exists(packageFullPathStoreFile))
             {
-                string[] lines = await File.ReadAllLinesAsync(gameFullPathStoreFile);
+                string[] lines = await File.ReadAllLinesAsync(packageFullPathStoreFile);
                 if (lines != null)
                 {
                     string result = lines.FirstOrDefault(x => string.IsNullOrWhiteSpace(x) == false)?.Trim();
                     if (result != null)
                     {
-                        if (Directory.Exists(gameFullPathStoreFile) || File.Exists(gameFullPathStoreFile))
+                        if (Directory.Exists(packageFullPathStoreFile) || File.Exists(packageFullPathStoreFile))
                             return result;
                         else
-                            logger?.LogWarning($"'{gameFullPathStoreFile}' seems to not exists");
+                            logger?.LogWarning($"'{packageFullPathStoreFile}' seems to not exists");
                     }
                     else
-                        logger?.LogWarning($"File '{gameFullPathStoreFile}' contains invalid data");
+                        logger?.LogWarning($"File '{packageFullPathStoreFile}' contains invalid data");
                 }
                 else
-                    logger?.LogWarning($"ReadAllLines of file '{gameFullPathStoreFile}' returned null");
+                    logger?.LogWarning($"ReadAllLines of file '{packageFullPathStoreFile}' returned null");
             }
 
             while (true)
             {
                 Console.WriteLine();
-                Console.WriteLine("Please enter path to MonsterHunterWorld.exe file: (Ctrl+C to quit)");
+                Console.WriteLine("Please enter path to chunk0.pkg file: (Ctrl+C to quit)");
                 string path = Console.ReadLine();
 
                 if (string.IsNullOrWhiteSpace(path))
                     continue;
 
-                if (Directory.Exists(path) == false && File.Exists(path) == false)
+                if (File.Exists(path) == false)
                 {
                     Console.WriteLine("Not found, please retry");
                     continue;
                 }
 
-                path = Common.FindPathContainingFile(path, "MonsterHunterWorld.exe");
-
-                if (path == null)
-                {
-                    Console.WriteLine("Invalid path, please retry");
-                    continue;
-                }
-
-                File.WriteAllText(gameFullPathStoreFile, path);
+                File.WriteAllText(packageFullPathStoreFile, path);
 
                 return path;
             }
