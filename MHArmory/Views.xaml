@@ -89,30 +89,6 @@
         </ScrollViewer>
     </DataTemplate>
 
-    <DataTemplate x:Key="EventContainerView">
-        <DockPanel LastChildFill="True">
-            <Grid DockPanel.Dock="Bottom">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="1.2*"/>
-                    <ColumnDefinition Width="1.7*"/>
-                </Grid.ColumnDefinitions>
-                <Button Grid.Column="0" Margin="2" Padding="4" Content="Select all" Command="{Binding SelectAllCommand, Mode=OneTime}"/>
-                <Button Grid.Column="1" Margin="2" Padding="4" Content="Unselect all" Command="{Binding UnselectAllCommand, Mode=OneTime}"/>
-                <Button Grid.Column="2" Margin="2" Padding="4" Content="Inverse selection" Command="{Binding InverseSelectionCommand, Mode=OneTime}"/>
-            </Grid>
-            <ScrollViewer HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Visible" Margin="16 4 4 8">
-                <ItemsControl ItemsSource="{Binding Events}">
-                    <ItemsControl.ItemTemplate>
-                        <DataTemplate>
-                            <CheckBox IsChecked="{Binding IsEnabled}" Content="{Binding Name, Mode=OneTime}" Padding="8" Margin="0" VerticalContentAlignment="Center"/>
-                        </DataTemplate>
-                    </ItemsControl.ItemTemplate>
-                </ItemsControl>
-            </ScrollViewer>
-        </DockPanel>
-    </DataTemplate>
-
     <DataTemplate x:Key="FullSkillDescriptionView">
         <StackPanel>
             <TextBlock Text="{Binding GeneralDescription, Mode=OneTime}" Margin="2" MaxWidth="370" TextWrapping="Wrap" HorizontalAlignment="Left" FontWeight="Black"/>
@@ -844,7 +820,6 @@
                         <MenuItem Header="Manage..." Command="{x:Static local:RoutedCommands.ManageLoadouts}"/>
                     </MenuItem>
                     <MenuItem Header="Equipments" Command="{x:Static local:RoutedCommands.OpenEquipmentExplorer}"/>
-                    <MenuItem Header="Events" Command="{x:Static local:RoutedCommands.OpenEvents}"/>
                     <MenuItem Header="?">
                         <MenuItem Header="Integrated help" Command="{x:Static local:RoutedCommands.OpenIntegratedHelp}" CommandParameter="GettingStarted"/>
                         <Separator/>

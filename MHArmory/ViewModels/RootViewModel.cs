@@ -73,8 +73,6 @@ namespace MHArmory.ViewModels
         {
             WeaponsContainer.LoadWeaponsAsync().Forget(ex => throw new Exception("rethrow", ex));
 
-            EventContainer.NotifyDataLoaded();
-
             EquipmentOverride.NotifyDataLoaded();
         }
 
@@ -103,7 +101,6 @@ namespace MHArmory.ViewModels
             set { SetValue(ref isAutoSearch, value); }
         }
 
-        public EventContainerViewModel EventContainer { get; }
         public WeaponsContainerViewModel WeaponsContainer { get; }
 
         public EquipmentOverrideViewModel EquipmentOverride { get; }
@@ -126,7 +123,6 @@ namespace MHArmory.ViewModels
 
             SearchResultProcessing = new SearchResultProcessingViewModel(this);
             InParameters = new InParametersViewModel(this);
-            EventContainer = new EventContainerViewModel(this);
             WeaponsContainer = new WeaponsContainerViewModel(this);
             EquipmentOverride = new EquipmentOverrideViewModel(this);
         }
@@ -371,9 +367,6 @@ namespace MHArmory.ViewModels
 
         private bool EquipmentMatchInParameters(IEquipment equipment)
         {
-            if (CheckEvent(equipment) == false)
-                return false;
-
             if (equipment.Rarity > InParameters.Rarity)
                 return false;
 
@@ -389,22 +382,7 @@ namespace MHArmory.ViewModels
 
         private bool ArmorPieceMatchInParameters(IArmorPiece armorPiece)
         {
-            if (CheckEvent(armorPiece) == false)
-                return false;
-
             return EquipmentMatchInParameters(armorPiece) && IsGenderMatching(armorPiece, InParameters.Gender);
-        }
-
-        private bool CheckEvent(IEquipment equipment)
-        {
-            if (equipment.Event != null && EventContainer.Events != null)
-            {
-                EventViewModel vm = EventContainer.Events.FirstOrDefault(x => x.Name == equipment.Event.Name);
-                if (vm != null && vm.IsEnabled == false)
-                    return false;
-            }
-
-            return true;
         }
 
         private bool IsGenderMatching(IArmorPiece armorPiece, Gender gender)
