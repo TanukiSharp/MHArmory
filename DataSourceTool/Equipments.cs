@@ -6,6 +6,7 @@ using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using Microsoft.Extensions.Logging;
+using Newtonsoft.Json;
 using static DataSourceTool.TextMasterDataReader;
 
 namespace DataSourceTool
@@ -15,26 +16,47 @@ namespace DataSourceTool
         private ILogger logger;
 
         private string packageFullPath;
+        private IList<EquipmentInfo> gameEquipments;
 
         public async Task Run(string[] args)
         {
             logger = new ConsoleLogger();
 
-            //packageFullPath = await GetPackageFullPath();
+            packageFullPath = await GetPackageFullPath();
 
-            //if (packageFullPath == null)
-            //{
-            //    logger?.LogError("Could not determine package path, exiting");
-            //    return;
-            //}
+            if (packageFullPath == null)
+            {
+                logger?.LogError("Could not determine package path, exiting");
+                return;
+            }
 
-            //ProcessFile(new BinaryReader(File.OpenRead(@"\\192.168.5.2\Sebastien\MHWMasterData\armor_eng.gmd")));
-            ProcessFile(new BinaryReader(File.OpenRead(@"C:\Data\seb\mhw\MHWMasterData\armor_eng.gmd")));
+            string solutionPath = Common.FindSolutionPath();
+            if (solutionPath == null)
+                throw new InvalidOperationException($"Could not find solution path for '{Common.SolutionFilename}'");
 
-            //Meh();
+            string outputPath = Path.Combine(solutionPath, "MHArmory", "data");
+
+            if (Directory.Exists(outputPath) == false)
+                Directory.CreateDirectory(outputPath);
+
+            ProcessPackage();
+
+            if (gameEquipments == null)
+            {
+                logger?.LogError("Failed to retrieve game equipments");
+                return;
+            }
+
+            var items = gameEquipments
+                .OrderBy(x => x.EquipmentType == MHArmory.Core.DataStructures.EquipmentType.Charm)
+                .ThenBy(x => x.Id)
+                .ThenBy(x => x.EquipmentType)
+                .Select(x => new { id = x.Id, type = (int)x.EquipmentType, name = x.Name });
+
+            Common.SerializeJson(Path.Combine(outputPath, $"{nameof(gameEquipments)}.json"), items);
         }
 
-        private void Meh()
+        private void ProcessPackage()
         {
             const string fileToSearch = "\\common\\text\\steam\\armor_eng.gmd";
 
@@ -82,7 +104,11 @@ namespace DataSourceTool
 
                         reader.BaseStream.Seek(fileOffset, SeekOrigin.Begin);
                         using (var subReader = new BinaryReader(new SubStream(reader.BaseStream, fileOffset, fileSize), Encoding.UTF8, true))
-                            ProcessFile(subReader);
+                        {
+                            var masterDataReader = new TextMasterDataReader(subReader);
+                            masterDataReader.Read();
+                            gameEquipments = masterDataReader.Equipments;
+                        }
 
                         break;
                     }
@@ -94,22 +120,6 @@ namespace DataSourceTool
 
             if (foundFile == false)
                 logger?.LogError($"Could not find file '{fileToSearch}'");
-        }
-
-        private void ProcessFile(BinaryReader reader)
-        {
-            var masterDataReader = new TextMasterDataReader(reader);
-            masterDataReader.Read();
-
-            IOrderedEnumerable<EquipmentInfo> items = masterDataReader.Equipments
-                .OrderBy(x => x.EquipmentType == MHArmory.Core.DataStructures.EquipmentType.Charm)
-                .ThenBy(x => x.Id)
-                .ThenBy(x => x.EquipmentType);
-
-            foreach (EquipmentInfo info in items)
-                Console.WriteLine($"id: {info.Id}, type: {info.EquipmentType}, name: {info.Name}");
-
-            Console.WriteLine("meh");
         }
 
         private async Task<string> GetPackageFullPath()

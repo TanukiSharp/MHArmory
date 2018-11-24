@@ -10,6 +10,7 @@ namespace DataSourceTool
 
     public class SubStream : Stream
     {
+        private readonly long baseOffset;
         private readonly long length;
 
         private Stream baseStream;
@@ -27,6 +28,7 @@ namespace DataSourceTool
             if (offset < 0)
                 throw new ArgumentOutOfRangeException(nameof(offset));
 
+            baseOffset = offset;
             position = 0;
 
             this.baseStream = baseStream;
@@ -91,7 +93,7 @@ namespace DataSourceTool
             get
             {
                 CheckDisposed();
-                return false;
+                return baseStream.CanSeek;
             }
         }
 
@@ -110,7 +112,23 @@ namespace DataSourceTool
 
         public override long Seek(long offset, SeekOrigin origin)
         {
-            throw new NotSupportedException();
+            if (origin == SeekOrigin.Begin)
+            {
+                baseStream.Seek(baseOffset + offset, SeekOrigin.Begin);
+                position = offset;
+            }
+            else if (origin == SeekOrigin.Current)
+            {
+                baseStream.Seek(offset, SeekOrigin.Current);
+                position += offset;
+            }
+            else
+            {
+                baseStream.Seek(baseOffset + length - offset, SeekOrigin.Begin);
+                position = length - offset;
+            }
+
+            return position;
         }
 
         public override void SetLength(long value)
