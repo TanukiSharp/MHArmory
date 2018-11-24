@@ -6,6 +6,7 @@ using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using Microsoft.Extensions.Logging;
+using static DataSourceTool.TextMasterDataReader;
 
 namespace DataSourceTool
 {
@@ -19,15 +20,18 @@ namespace DataSourceTool
         {
             logger = new ConsoleLogger();
 
-            packageFullPath = await GetPackageFullPath();
+            //packageFullPath = await GetPackageFullPath();
 
-            if (packageFullPath == null)
-            {
-                logger?.LogError("Could not determine package path, exiting");
-                return;
-            }
+            //if (packageFullPath == null)
+            //{
+            //    logger?.LogError("Could not determine package path, exiting");
+            //    return;
+            //}
 
-            Meh();
+            //ProcessFile(new BinaryReader(File.OpenRead(@"\\192.168.5.2\Sebastien\MHWMasterData\armor_eng.gmd")));
+            ProcessFile(new BinaryReader(File.OpenRead(@"C:\Data\seb\mhw\MHWMasterData\armor_eng.gmd")));
+
+            //Meh();
         }
 
         private void Meh()
@@ -94,7 +98,18 @@ namespace DataSourceTool
 
         private void ProcessFile(BinaryReader reader)
         {
+            var masterDataReader = new TextMasterDataReader(reader);
+            masterDataReader.Read();
 
+            IOrderedEnumerable<EquipmentInfo> items = masterDataReader.Equipments
+                .OrderBy(x => x.EquipmentType == MHArmory.Core.DataStructures.EquipmentType.Charm)
+                .ThenBy(x => x.Id)
+                .ThenBy(x => x.EquipmentType);
+
+            foreach (EquipmentInfo info in items)
+                Console.WriteLine($"id: {info.Id}, type: {info.EquipmentType}, name: {info.Name}");
+
+            Console.WriteLine("meh");
         }
 
         private async Task<string> GetPackageFullPath()
