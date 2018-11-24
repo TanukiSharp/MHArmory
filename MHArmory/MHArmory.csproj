@@ -294,9 +294,6 @@
     <None Include="data\dual-blades.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="data\events.json">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
     <None Include="data\fullArmorSets.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>

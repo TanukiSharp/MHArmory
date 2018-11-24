@@ -326,9 +326,6 @@ namespace DataSourceTool
             if (SlotsEquals(x.Slots, y.Slots) == false)
                 return false;
 
-            if (Equals(x.Event, y.Event) == false)
-                return false;
-
             if (x.Abilities != null && y.Abilities != null)
             {
                 if (x.Abilities.Length != y.Abilities.Length)

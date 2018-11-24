@@ -102,7 +102,6 @@ namespace MHArmory.ArmoryDataSource
 
             FetchSkills();
             FetchArmorSetSkills();
-            FetchEvents();
 
             string headsContent = File.ReadAllText(Path.Combine(dataPath, "heads.json"));
             string chestsContent = File.ReadAllText(Path.Combine(dataPath, "chests.json"));
@@ -167,36 +166,10 @@ namespace MHArmory.ArmoryDataSource
                     new ArmorPieceAttributes(x.Attributes.Gender),
                     null,
                     null,
-                    x.EventId.HasValue ? FindEventById(x.EventId.Value) : null
+                    null
                 );
                 output.Add((armorPiece, x.FullArmorSetId));
             }
-        }
-
-        private IList<IEvent> events;
-
-        private void FetchEvents()
-        {
-            if (events != null)
-                return;
-
-            string eventsContent = File.ReadAllText(Path.Combine(dataPath, "events.json"));
-            IList<EventPrimitive> eventPrimitives = JsonConvert.DeserializeObject<IList<EventPrimitive>>(eventsContent);
-
-            events = eventPrimitives.Select(x => new Event(x.Id, x.Name)).ToList<IEvent>();
-        }
-
-        private IEvent FindEventById(int id)
-        {
-            foreach (IEvent evt in events)
-            {
-                if (evt.Id == id)
-                    return evt;
-            }
-
-            logger?.LogError($"Impossible to find event with id {id}.");
-
-            return null;
         }
 
         private ICharm[] charms;
@@ -206,8 +179,6 @@ namespace MHArmory.ArmoryDataSource
         {
             if (charmsTask != null)
                 return charmsTask;
-
-            FetchEvents();
 
             string charmsContent = File.ReadAllText(Path.Combine(dataPath, "charms.json"));
             string charmLevelsContent = File.ReadAllText(Path.Combine(dataPath, "charmLevels.json"));
@@ -222,7 +193,7 @@ namespace MHArmory.ArmoryDataSource
                 x.Rarity,
                 x.Slots?.ToArray() ?? Array.Empty<int>(),
                 x.AbilityIds?.JoinEx(abilities, inner => inner.Id).ToArray() ?? Array.Empty<IAbility>(),
-                x.EventId.HasValue ? FindEventById(x.EventId.Value) : null
+                null
             ))
             .ToList<ICharmLevel>();
 

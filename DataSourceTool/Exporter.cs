@@ -97,16 +97,6 @@ namespace DataSourceTool
 
             //--------------------------------------------------------------------------
 
-            IList<IEvent> events = armorPieces
-                .Select(x => x.Event)
-                .Where(x => x != null)
-                .Distinct(new LambdaEqualityComparer<IEvent>((x, y) => x.Id == y.Id, x => x.Id))
-                .OrderBy(x => x.Id)
-                .ToList();
-            Common.SerializeJson(Path.Combine(outputPath, $"{nameof(events)}.json"), Export(events));
-
-            //--------------------------------------------------------------------------
-
             Common.SerializeJson(Path.Combine(outputPath, $"{nameof(skills)}.json"), Export(skills));
 
             //--------------------------------------------------------------------------
