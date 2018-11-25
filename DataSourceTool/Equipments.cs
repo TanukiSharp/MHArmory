@@ -5,6 +5,7 @@ using System.Linq;
 using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
+using MHArmory.Core.DataStructures;
 using Microsoft.Extensions.Logging;
 using Newtonsoft.Json;
 using static DataSourceTool.TextMasterDataReader;
@@ -15,8 +16,8 @@ namespace DataSourceTool
     {
         private ILogger logger;
 
-        private string packageFullPath;
-        private IList<EquipmentInfo> gameEquipments;
+        private string packagesFullPath;
+        private readonly Dictionary<(int, EquipmentType), EquipmentInfo> gameEquipments = new Dictionary<(int, EquipmentType), EquipmentInfo>();
 
         //public void Test()
         //{
@@ -41,11 +42,11 @@ namespace DataSourceTool
 
             logger = new ConsoleLogger();
 
-            packageFullPath = await GetPackageFullPath();
+            packagesFullPath = await GetPackagesFullPath();
 
-            if (packageFullPath == null)
+            if (packagesFullPath == null)
             {
-                logger?.LogError("Could not determine package path, exiting");
+                logger?.LogError("Could not determine packages path, exiting");
                 return;
             }
 
@@ -58,7 +59,13 @@ namespace DataSourceTool
             if (Directory.Exists(outputPath) == false)
                 Directory.CreateDirectory(outputPath);
 
-            ProcessPackage();
+            IEnumerable<string> packageFilenames = Directory.GetFiles(packagesFullPath, "chunk*.pkg", SearchOption.TopDirectoryOnly)
+                .Select(x => new { OriginalFilename = x, Index = GetChunkFileIndex(x) })
+                .OrderBy(x => x.Index)
+                .Select(x => x.OriginalFilename);
+
+            foreach (string packageFilename in packageFilenames)
+                ProcessPackage(packageFilename);
 
             if (gameEquipments == null)
             {
@@ -66,8 +73,8 @@ namespace DataSourceTool
                 return;
             }
 
-            var items = gameEquipments
-                .OrderBy(x => x.EquipmentType == MHArmory.Core.DataStructures.EquipmentType.Charm)
+            var items = gameEquipments.Values
+                .OrderBy(x => x.EquipmentType == EquipmentType.Charm)
                 .ThenBy(x => x.Id)
                 .ThenBy(x => x.EquipmentType)
                 .Select(x => new { id = x.Id, type = (int)x.EquipmentType, name = x.Name });
@@ -75,13 +82,19 @@ namespace DataSourceTool
             Common.SerializeJson(Path.Combine(outputPath, $"{nameof(gameEquipments)}.json"), items);
         }
 
-        private void ProcessPackage()
+        private static int GetChunkFileIndex(string filename)
+        {
+            filename = Path.GetFileNameWithoutExtension(filename);
+            return int.Parse(filename.AsSpan(5)); // 5 == 'chunk'.Length
+        }
+
+        private void ProcessPackage(string filename)
         {
             const string fileToSearch = "\\common\\text\\steam\\armor_eng.gmd";
 
             bool foundFile = false;
 
-            using (var reader = new BinaryReader(File.OpenRead(packageFullPath), Encoding.UTF8, false))
+            using (var reader = new BinaryReader(File.OpenRead(filename), Encoding.UTF8, false))
             {
                 reader.BaseStream.Seek(0x0C, SeekOrigin.Begin);
                 int totalParentCount = reader.ReadInt32();
@@ -126,7 +139,8 @@ namespace DataSourceTool
                         {
                             var masterDataReader = new TextMasterDataReader(subReader);
                             masterDataReader.Read();
-                            gameEquipments = masterDataReader.Equipments;
+                            foreach (EquipmentInfo x in masterDataReader.Equipments)
+                                gameEquipments[(x.Id, x.EquipmentType)] = x;
                         }
 
                         break;
@@ -138,12 +152,12 @@ namespace DataSourceTool
             }
 
             if (foundFile == false)
-                logger?.LogError($"Could not find file '{fileToSearch}'");
+                logger?.LogWarning($"Could not find file '{fileToSearch}' in file '{filename}'");
         }
 
-        private async Task<string> GetPackageFullPath()
+        private async Task<string> GetPackagesFullPath()
         {
-            string packageFullPathStoreFile = Path.Combine(AppContext.BaseDirectory, "package_path.txt");
+            string packageFullPathStoreFile = Path.Combine(AppContext.BaseDirectory, "packages_path.txt");
 
             if (File.Exists(packageFullPathStoreFile))
             {
@@ -153,7 +167,7 @@ namespace DataSourceTool
                     string result = lines.FirstOrDefault(x => string.IsNullOrWhiteSpace(x) == false)?.Trim();
                     if (result != null)
                     {
-                        if (Directory.Exists(packageFullPathStoreFile) || File.Exists(packageFullPathStoreFile))
+                        if (Directory.Exists(result))
                             return result;
                         else
                             logger?.LogWarning($"'{packageFullPathStoreFile}' seems to not exists");
@@ -168,13 +182,13 @@ namespace DataSourceTool
             while (true)
             {
                 Console.WriteLine();
-                Console.WriteLine("Please enter path to chunk0.pkg file: (Ctrl+C to quit)");
+                Console.WriteLine("Please enter path to chunk*.pkg files: (Ctrl+C to quit)");
                 string path = Console.ReadLine();
 
                 if (string.IsNullOrWhiteSpace(path))
                     continue;
 
-                if (File.Exists(path) == false)
+                if (Directory.Exists(path) == false)
                 {
                     Console.WriteLine("Not found, please retry");
                     continue;

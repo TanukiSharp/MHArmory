@@ -202,17 +202,14 @@ namespace DataSourceTool
                             equipments.Add(new EquipmentInfo(id, (EquipmentType)(index + 1), value));
                         }
                         else
-                            logger?.LogError($"Could not determine identifier from key '{key}'");
+                            logger?.LogError($"Could not determine identifier from key '{key}' (value: '{value}')");
                     }
                     else
-                        logger?.LogError($"Could not determine equipment type from key '{key}'");
+                        logger?.LogError($"Could not determine equipment type from key '{key}' (value: '{value}')");
                 }
                 else
-                    logger?.LogError($"Could not determine any information from key '{key}'");
-
+                    logger?.LogError($"Could not determine any information from key '{key}' (value: '{value}')");
             }
-
-            Console.WriteLine();
         }
 
         private string GetNext(byte[] data, ref int offset)
