@@ -18,8 +18,27 @@ namespace DataSourceTool
         private string packageFullPath;
         private IList<EquipmentInfo> gameEquipments;
 
+        //public void Test()
+        //{
+        //    using (var reader = new BinaryReader(File.OpenRead(@"<path>")))
+        //    {
+        //        var masterDataReader = new TextMasterDataReader(reader);
+        //        masterDataReader.Read();
+        //        int i = 0;
+        //        IOrderedEnumerable<EquipmentInfo> items = masterDataReader.Equipments
+        //            .OrderBy(x => x.EquipmentType == MHArmory.Core.DataStructures.EquipmentType.Charm)
+        //            .ThenBy(x => x.Id)
+        //            .ThenBy(x => x.EquipmentType);
+        //        foreach (EquipmentInfo x in items)
+        //            Console.WriteLine($"[{i++}] {x.Id} {x.Name} ({x.EquipmentType})");
+        //    }
+        //}
+
         public async Task Run(string[] args)
         {
+            //Test();
+            //return;
+
             logger = new ConsoleLogger();
 
             packageFullPath = await GetPackageFullPath();
