@@ -126,6 +126,7 @@
     <Compile Include="Services\MessageBoxService.cs" />
     <Compile Include="Services\RenameService.cs" />
     <Compile Include="Services\RenderService.cs" />
+    <Compile Include="Services\SaveDataService.cs" />
     <Compile Include="Services\SearchResultScreenshotService.cs" />
     <Compile Include="Services\ServicesContainer.cs" />
     <Compile Include="TaskExtensions.cs" />
@@ -295,6 +296,9 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="data\fullArmorSets.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="data\gameEquipments.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="data\great-sword.json">

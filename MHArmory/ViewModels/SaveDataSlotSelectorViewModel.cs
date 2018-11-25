@@ -9,7 +9,7 @@ using MHWSaveUtils;
 
 namespace MHArmory.ViewModels
 {
-    public class SaveDataSlotViewModel : ViewModelBase
+    public class SaveDataSlotViewModel<T> : ViewModelBase where T : BaseSaveSlotInfo
     {
         private bool isSelected;
         public bool IsSelected
@@ -28,19 +28,19 @@ namespace MHArmory.ViewModels
 
         private readonly Action onSelection;
 
-        public DecorationsSaveSlotInfo DecorationsSaveSlotInfo { get; }
+        public T SaveSlotInfo { get; }
 
-        public SaveDataSlotViewModel(Action onSelection, DecorationsSaveSlotInfo decorationsSaveSlotInfo)
+        public SaveDataSlotViewModel(Action onSelection, T saveSlotInfo)
         {
             this.onSelection = onSelection;
 
-            DecorationsSaveSlotInfo = decorationsSaveSlotInfo;
+            SaveSlotInfo = saveSlotInfo;
 
-            SlotNumber = decorationsSaveSlotInfo.SlotNumber;
-            Name = decorationsSaveSlotInfo.Name;
-            Rank = decorationsSaveSlotInfo.Rank;
-            Playtime = MiscUtils.PlaytimeToGameString(decorationsSaveSlotInfo.Playtime);
-            Zeni = decorationsSaveSlotInfo.Zeni;
+            SlotNumber = saveSlotInfo.SlotNumber;
+            Name = saveSlotInfo.Name;
+            Rank = saveSlotInfo.Rank;
+            Playtime = MiscUtils.PlaytimeToGameString(saveSlotInfo.Playtime);
+            Zeni = saveSlotInfo.Zeni;
 
             SelectionCommand = new AnonymousCommand(OnSelection);
         }
@@ -52,39 +52,39 @@ namespace MHArmory.ViewModels
         }
     }
 
-    public class SaveDataAccountViewModel : ViewModelBase
+    public class SaveDataAccountViewModel<T> : ViewModelBase where T : BaseSaveSlotInfo
     {
         public string UserId { get; }
-        public IReadOnlyCollection<SaveDataSlotViewModel> SaveDataSlots { get; }
+        public IReadOnlyCollection<SaveDataSlotViewModel<T>> SaveDataSlots { get; }
 
-        public SaveDataAccountViewModel(Action onSelection, string userId, IEnumerable<DecorationsSaveSlotInfo> saveDataSlots)
+        public SaveDataAccountViewModel(Action onSelection, string userId, IEnumerable<T> saveDataSlots)
         {
             UserId = userId;
 
             var list = saveDataSlots
-                .Select(x => new SaveDataSlotViewModel(onSelection, x))
+                .Select(x => new SaveDataSlotViewModel<T>(onSelection, x))
                 .ToList();
 
-            SaveDataSlots = new ReadOnlyCollection<SaveDataSlotViewModel>(list);
+            SaveDataSlots = new ReadOnlyCollection<SaveDataSlotViewModel<T>>(list);
         }
     }
 
-    public class SaveDataSlotSelectorViewModel : ViewModelBase
+    public class SaveDataSlotSelectorViewModel<T> : ViewModelBase where T : BaseSaveSlotInfo
     {
-        private readonly ObservableCollection<SaveDataAccountViewModel> accounts = new ObservableCollection<SaveDataAccountViewModel>();
-        public ReadOnlyObservableCollection<SaveDataAccountViewModel> Accounts { get; }
+        private readonly ObservableCollection<SaveDataAccountViewModel<T>> accounts = new ObservableCollection<SaveDataAccountViewModel<T>>();
+        public ReadOnlyObservableCollection<SaveDataAccountViewModel<T>> Accounts { get; }
 
         public event EventHandler SelectionDone;
 
-        public DecorationsSaveSlotInfo SelectedSaveSlot
+        public T SelectedSaveSlot
         {
             get
             {
-                SaveDataSlotViewModel selectedSaveDataSlot = null;
+                SaveDataSlotViewModel<T> selectedSaveDataSlot = null;
 
-                foreach (SaveDataAccountViewModel account in Accounts)
+                foreach (SaveDataAccountViewModel<T> account in Accounts)
                 {
-                    foreach (SaveDataSlotViewModel saveDataSlot in account.SaveDataSlots)
+                    foreach (SaveDataSlotViewModel<T> saveDataSlot in account.SaveDataSlots)
                     {
                         if (saveDataSlot.IsSelected)
                         {
@@ -97,18 +97,18 @@ namespace MHArmory.ViewModels
                         break;
                 }
 
-                return selectedSaveDataSlot?.DecorationsSaveSlotInfo;
+                return selectedSaveDataSlot.SaveSlotInfo;
             }
         }
 
         public SaveDataSlotSelectorViewModel()
         {
-            Accounts = new ReadOnlyObservableCollection<SaveDataAccountViewModel>(accounts);
+            Accounts = new ReadOnlyObservableCollection<SaveDataAccountViewModel<T>>(accounts);
         }
 
-        public void AddAccount(string userId, IEnumerable<DecorationsSaveSlotInfo> saveDataSlotItems)
+        public void AddAccount(string userId, IEnumerable<T> saveDataSlotItems)
         {
-            accounts.Add(new SaveDataAccountViewModel(OnSelection, userId, saveDataSlotItems));
+            accounts.Add(new SaveDataAccountViewModel<T>(OnSelection, userId, saveDataSlotItems));
         }
 
         private void OnSelection()

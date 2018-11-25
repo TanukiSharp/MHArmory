@@ -45,15 +45,17 @@ namespace MHArmory
 
         private DecorationsSaveSlotInfo ProvideSaveSlotInfo(IList<DecorationsSaveSlotInfo> allSlots)
         {
-            var dialog = new SaveDataSlotSelectorWindow(allSlots)
+            var dialog = new SaveDataSlotSelectorWindow()
             {
                 Owner = this
             };
 
+            dialog.Initialize(allSlots);
+
             if (dialog.ShowDialog() != true)
                 return null;
 
-            return dialog.SelectedSaveSlot;
+            return (DecorationsSaveSlotInfo)dialog.SelectedSaveSlot;
         }
 
         private void OnCancel(object parameter)

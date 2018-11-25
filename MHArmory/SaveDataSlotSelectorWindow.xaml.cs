@@ -15,19 +15,22 @@ namespace MHArmory
     /// </summary>
     public partial class SaveDataSlotSelectorWindow : Window
     {
-        private readonly SaveDataSlotSelectorViewModel dataSlotSelectorViewModel;
+        private SaveDataSlotSelectorViewModel<BaseSaveSlotInfo> dataSlotSelectorViewModel;
 
-        public DecorationsSaveSlotInfo SelectedSaveSlot { get; private set; }
+        public BaseSaveSlotInfo SelectedSaveSlot { get; private set; }
 
-        public SaveDataSlotSelectorWindow(IList<DecorationsSaveSlotInfo> saveSlots)
+        public SaveDataSlotSelectorWindow()
         {
             InitializeComponent();
 
             WindowManager.FitInScreen(this);
+        }
 
-            dataSlotSelectorViewModel = new SaveDataSlotSelectorViewModel();
+        public void Initialize<T>(IList<T> saveSlots) where T : BaseSaveSlotInfo
+        {
+            dataSlotSelectorViewModel = new SaveDataSlotSelectorViewModel<BaseSaveSlotInfo>();
 
-            foreach (IGrouping<string, DecorationsSaveSlotInfo> group in saveSlots.GroupBy(x => x.SaveDataInfo.UserId))
+            foreach (IGrouping<string, T> group in saveSlots.GroupBy(x => x.SaveDataInfo.UserId))
                 dataSlotSelectorViewModel.AddAccount(group.Key, group);
 
             dataSlotSelectorViewModel.SelectionDone += DataSlotSelectorViewModel_SelectionDone;
