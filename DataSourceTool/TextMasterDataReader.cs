@@ -9,6 +9,42 @@ using Microsoft.Extensions.Logging;
 
 namespace DataSourceTool
 {
+    public struct EquipmentInfo
+    {
+        public int Id { get; }
+        public EquipmentType EquipmentType { get; }
+        public string Name { get; }
+
+        public EquipmentInfo(int id, EquipmentType equipmentType, string name)
+        {
+            Id = id;
+            EquipmentType = equipmentType;
+            Name = name;
+        }
+
+        public override bool Equals(object obj)
+        {
+            if (obj is EquipmentInfo other)
+                return Id == other.Id && EquipmentType == other.EquipmentType && Name == other.Name;
+            return false;
+        }
+
+        public override int GetHashCode()
+        {
+            return $"{Id}-{(int)EquipmentType}-{Name}".GetHashCode();
+        }
+
+        public static bool operator ==(EquipmentInfo left, EquipmentInfo right)
+        {
+            return left.Equals(right);
+        }
+
+        public static bool operator !=(EquipmentInfo left, EquipmentInfo right)
+        {
+            return !(left == right);
+        }
+    }
+
     public struct TextMasterDataHeader
     {
         public uint Magic { get; }
@@ -140,25 +176,6 @@ namespace DataSourceTool
             ["<ICON GAMMA>"] = " γ",
         };
 
-        public struct EquipmentInfo
-        {
-            public int Id { get; }
-            public EquipmentType EquipmentType { get; }
-            public string Name { get; }
-
-            public EquipmentInfo(int id, EquipmentType equipmentType, string name)
-            {
-                Id = id;
-                EquipmentType = equipmentType;
-                Name = name;
-            }
-
-            public override int GetHashCode()
-            {
-                return $"{Id}-{(int)EquipmentType}-{Name}".GetHashCode();
-            }
-        }
-
         public void Read()
         {
             equipments.Clear();
@@ -217,7 +234,7 @@ namespace DataSourceTool
             }
         }
 
-        private string GetNext(byte[] data, ref int offset)
+        private static string GetNext(byte[] data, ref int offset)
         {
             if (offset >= data.Length)
                 return null;
