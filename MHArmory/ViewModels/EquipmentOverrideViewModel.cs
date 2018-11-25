@@ -386,25 +386,41 @@ namespace MHArmory.ViewModels
             }
         }
 
+        private static bool IsMatch(Equipment saveDataEquipment, GameEquipment masterDataEquipment)
+        {
+            if (saveDataEquipment.ClassId != masterDataEquipment.Id)
+                return false;
+
+            if (saveDataEquipment.Type == MHWSaveUtils.EquipmentType.Armor &&
+                saveDataEquipment.ArmorPieceType == (ArmorPieceType)(masterDataEquipment.Type - 1))
+                return true;
+
+            if (saveDataEquipment.Type == MHWSaveUtils.EquipmentType.Charm &&
+                (Core.DataStructures.EquipmentType)masterDataEquipment.Type == Core.DataStructures.EquipmentType.Charm)
+                return true;
+
+            return false;
+        }
+
         private void ApplySaveDataEquipments(EquipmentsSaveSlotInfo saveSlotEquipments)
         {
             foreach (EquipmentGroupViewModel group in AllEquipments)
             {
                 foreach (EquipmentViewModel equipment in group.Equipments)
                 {
+                    equipment.IsPossessed = false;
+
                     GameEquipment foundGameEquipmentFromMasterData = gameEquipments.FirstOrDefault(x => x.Name == equipment.Name);
 
                     if (foundGameEquipmentFromMasterData == null)
-                    {
-                        Console.WriteLine("meh");
-                    }
+                        Console.WriteLine($"Missing equipment from master data: {equipment.Name}");
                     else
                     {
-                        Equipment[] n = saveSlotEquipments.Equipments
-                            .Where(x => x.ClassId == foundGameEquipmentFromMasterData.Id)
-                            .ToArray();
+                        Equipment n = saveSlotEquipments.Equipments
+                            .FirstOrDefault(x => IsMatch(x, foundGameEquipmentFromMasterData));
 
-                        Console.WriteLine(n);
+                        if (n != null)
+                            equipment.IsPossessed = true;
                     }
                 }
             }

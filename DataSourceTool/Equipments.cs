@@ -17,7 +17,7 @@ namespace DataSourceTool
         private ILogger logger;
 
         private string packagesFullPath;
-        private readonly Dictionary<(int, EquipmentType), EquipmentInfo> gameEquipments = new Dictionary<(int, EquipmentType), EquipmentInfo>();
+        private readonly HashSet<EquipmentInfo> gameEquipments = new HashSet<EquipmentInfo>();
 
         //public void Test()
         //{
@@ -61,7 +61,7 @@ namespace DataSourceTool
 
             IEnumerable<string> packageFilenames = Directory.GetFiles(packagesFullPath, "chunk*.pkg", SearchOption.TopDirectoryOnly)
                 .Select(x => new { OriginalFilename = x, Index = GetChunkFileIndex(x) })
-                .OrderBy(x => x.Index)
+                .OrderByDescending(x => x.Index)
                 .Select(x => x.OriginalFilename);
 
             foreach (string packageFilename in packageFilenames)
@@ -73,7 +73,7 @@ namespace DataSourceTool
                 return;
             }
 
-            var items = gameEquipments.Values
+            var items = gameEquipments
                 .OrderBy(x => x.EquipmentType == EquipmentType.Charm)
                 .ThenBy(x => x.Id)
                 .ThenBy(x => x.EquipmentType)
@@ -140,7 +140,7 @@ namespace DataSourceTool
                             var masterDataReader = new TextMasterDataReader(subReader);
                             masterDataReader.Read();
                             foreach (EquipmentInfo x in masterDataReader.Equipments)
-                                gameEquipments[(x.Id, x.EquipmentType)] = x;
+                                gameEquipments.Add(x);
                         }
 
                         break;

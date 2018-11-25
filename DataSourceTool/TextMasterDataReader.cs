@@ -152,6 +152,11 @@ namespace DataSourceTool
                 EquipmentType = equipmentType;
                 Name = name;
             }
+
+            public override int GetHashCode()
+            {
+                return $"{Id}-{(int)EquipmentType}-{Name}".GetHashCode();
+            }
         }
 
         public void Read()
