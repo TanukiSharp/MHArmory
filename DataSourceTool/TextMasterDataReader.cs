@@ -9,37 +9,37 @@ using Microsoft.Extensions.Logging;
 
 namespace DataSourceTool
 {
-    public struct EquipmentInfo
+    public struct KeyValueInfo
     {
-        public int Id { get; }
-        public EquipmentType EquipmentType { get; }
-        public string Name { get; }
+        public uint Index { get; }
+        public string Key { get; }
+        public string Value { get; }
 
-        public EquipmentInfo(int id, EquipmentType equipmentType, string name)
+        public KeyValueInfo(uint index, string key, string value)
         {
-            Id = id;
-            EquipmentType = equipmentType;
-            Name = name;
+            Index = index;
+            Key = key;
+            Value = value;
         }
 
         public override bool Equals(object obj)
         {
-            if (obj is EquipmentInfo other)
-                return Id == other.Id && EquipmentType == other.EquipmentType && Name == other.Name;
+            if (obj is KeyValueInfo other)
+                return Index == other.Index;
             return false;
         }
 
         public override int GetHashCode()
         {
-            return $"{Id}-{(int)EquipmentType}-{Name}".GetHashCode();
+            return (int)Index;
         }
 
-        public static bool operator ==(EquipmentInfo left, EquipmentInfo right)
+        public static bool operator ==(KeyValueInfo left, KeyValueInfo right)
         {
             return left.Equals(right);
         }
 
-        public static bool operator !=(EquipmentInfo left, EquipmentInfo right)
+        public static bool operator !=(KeyValueInfo left, KeyValueInfo right)
         {
             return !(left == right);
         }
@@ -132,9 +132,6 @@ namespace DataSourceTool
 
     public class TextMasterDataReader
     {
-        public IList<EquipmentInfo> Equipments { get; }
-
-        private readonly List<EquipmentInfo> equipments = new List<EquipmentInfo>();
         private readonly BinaryReader reader;
 
         private readonly ILogger logger = new ConsoleLogger();
@@ -145,22 +142,7 @@ namespace DataSourceTool
                 throw new ArgumentNullException(nameof(reader));
 
             this.reader = reader;
-
-            Equipments = new ReadOnlyCollection<EquipmentInfo>(equipments);
         }
-
-        private const string EquipmentStartPattern = "AM_";
-        private const string EquipmentEndPattern = "_NAME";
-
-        private static readonly string[] ArmorPieceType = new[]
-        {
-            "HEAD",
-            "BODY",
-            "ARM",
-            "WAIST",
-            "LEG",
-            "ACCE"
-        };
 
         private static readonly string[] SkipValues = new[]
         {
@@ -176,9 +158,9 @@ namespace DataSourceTool
             ["<ICON GAMMA>"] = " γ",
         };
 
-        public void Read()
+        public IList<KeyValueInfo> Read()
         {
-            equipments.Clear();
+            var result = new List<KeyValueInfo>();
 
             var header = TextMasterDataHeader.Read(reader);
 
@@ -200,38 +182,19 @@ namespace DataSourceTool
                 string key = GetNext(keyBlock, ref keyOffset);
                 string value = GetNext(valueBlock, ref valueOffset);
 
-                if (key.EndsWith("_EXP"))
-                    continue;
-
                 if (Array.IndexOf(SkipValues, value) > -1)
                     continue;
 
-                if (key.StartsWith(EquipmentStartPattern) && key.EndsWith(EquipmentEndPattern))
+                foreach (KeyValuePair<string, string> kv in ReplacementValues)
                 {
-                    int index = Array.FindIndex(ArmorPieceType, s => string.Compare(key, EquipmentStartPattern.Length, s, 0, s.Length) == 0);
-                    if (index > -1)
-                    {
-                        int start = EquipmentStartPattern.Length + ArmorPieceType[index].Length;
-                        int length = key.Length - start - EquipmentEndPattern.Length;
-                        if (int.TryParse(key.AsSpan(start, length), out int id))
-                        {
-                            foreach (KeyValuePair<string, string> kv in ReplacementValues)
-                            {
-                                if (value.Contains(kv.Key))
-                                    value = value.Replace(kv.Key, kv.Value);
-                            }
-
-                            equipments.Add(new EquipmentInfo(id, (EquipmentType)(index + 1), value));
-                        }
-                        else
-                            logger?.LogError($"Could not determine identifier from key '{key}' (value: '{value}')");
-                    }
-                    else
-                        logger?.LogError($"Could not determine equipment type from key '{key}' (value: '{value}')");
+                    if (value.Contains(kv.Key))
+                        value = value.Replace(kv.Key, kv.Value);
                 }
-                else
-                    logger?.LogError($"Could not determine any information from key '{key}' (value: '{value}')");
+
+                result.Add(new KeyValueInfo(infoEntries[i].Index, key, value));
             }
+
+            return result;
         }
 
         private static string GetNext(byte[] data, ref int offset)

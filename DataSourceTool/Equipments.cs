@@ -17,7 +17,8 @@ namespace DataSourceTool
         private ILogger logger;
 
         private string packagesFullPath;
-        private readonly HashSet<EquipmentInfo> gameEquipments = new HashSet<EquipmentInfo>();
+        private readonly HashSet<KeyValueInfo> equipmentNameEntries = new HashSet<KeyValueInfo>();
+        private readonly HashSet<ArmorMasterDataEntry> equipmentEntries = new HashSet<ArmorMasterDataEntry>();
 
         //public void Test()
         //{
@@ -65,21 +66,25 @@ namespace DataSourceTool
                 .Select(x => x.OriginalFilename);
 
             foreach (string packageFilename in packageFilenames)
-                ProcessPackage(packageFilename);
+                ProcessPackage(packageFilename, "\\common\\text\\steam\\armor_eng.gmd", OnTextSubFile);
 
-            if (gameEquipments == null)
+            if (equipmentNameEntries == null)
             {
-                logger?.LogError("Failed to retrieve game equipments");
+                logger?.LogError("Failed to retrieve equipments name entries");
                 return;
             }
 
-            var items = gameEquipments
-                .OrderBy(x => x.EquipmentType == EquipmentType.Charm)
-                .ThenBy(x => x.Id)
-                .ThenBy(x => x.EquipmentType)
-                .Select(x => new { id = x.Id, type = (int)x.EquipmentType, name = x.Name });
+            foreach (string packageFilename in packageFilenames)
+                ProcessPackage(packageFilename, "\\common\\equip\\armor.am_dat", OnEquipmentSubFile);
 
-            Common.SerializeJson(Path.Combine(outputPath, $"{nameof(gameEquipments)}.json"), items);
+            var items = equipmentEntries
+                .Where(x => x.ArmorType != ArmorType.Layered)
+                .OrderBy(x => x.EquipmentType == EquipmentType.Charm)
+                .ThenBy(x => x.Index)
+                .ThenBy(x => x.EquipmentType)
+                .Select(x => new { id = x.Index, type = (int)x.EquipmentType, name = x.Name });
+
+            Common.SerializeJson(Path.Combine(outputPath, "gameEquipments.json"), items);
         }
 
         private static int GetChunkFileIndex(string filename)
@@ -88,10 +93,27 @@ namespace DataSourceTool
             return int.Parse(filename.AsSpan(5)); // 5 == 'chunk'.Length
         }
 
-        private void ProcessPackage(string filename)
+        private void OnTextSubFile(BinaryReader reader)
         {
-            const string fileToSearch = "\\common\\text\\steam\\armor_eng.gmd";
+            var masterDataReader = new TextMasterDataReader(reader);
 
+            foreach (KeyValueInfo x in masterDataReader.Read())
+                equipmentNameEntries.Add(x);
+        }
+
+        private void OnEquipmentSubFile(BinaryReader reader)
+        {
+            var masterDataReader = new ArmorMasterDataReader(reader);
+
+            foreach (ArmorMasterDataEntry x in masterDataReader.Read(equipmentNameEntries))
+            {
+                if (x.Name != null)
+                    equipmentEntries.Add(x);
+            }
+        }
+
+        private void ProcessPackage(string filename, string subFileToSearch, Action<BinaryReader> onFile)
+        {
             bool foundFile = false;
 
             using (var reader = new BinaryReader(File.OpenRead(filename), Encoding.UTF8, false))
@@ -123,7 +145,7 @@ namespace DataSourceTool
                         int trailingZeroIndex = Array.IndexOf<byte>(nameBuffer, 0);
                         string name = Encoding.UTF8.GetString(nameBuffer, 0, trailingZeroIndex);
 
-                        if (name != fileToSearch)
+                        if (name != subFileToSearch)
                             continue;
 
                         foundFile = true;
@@ -136,12 +158,7 @@ namespace DataSourceTool
 
                         reader.BaseStream.Seek(fileOffset, SeekOrigin.Begin);
                         using (var subReader = new BinaryReader(new SubStream(reader.BaseStream, fileOffset, fileSize), Encoding.UTF8, true))
-                        {
-                            var masterDataReader = new TextMasterDataReader(subReader);
-                            masterDataReader.Read();
-                            foreach (EquipmentInfo x in masterDataReader.Equipments)
-                                gameEquipments.Add(x);
-                        }
+                            onFile(subReader);
 
                         break;
                     }
@@ -152,7 +169,7 @@ namespace DataSourceTool
             }
 
             if (foundFile == false)
-                logger?.LogWarning($"Could not find file '{fileToSearch}' in file '{filename}'");
+                logger?.LogWarning($"Could not find file '{subFileToSearch}' in file '{filename}'");
         }
 
         private async Task<string> GetPackagesFullPath()
