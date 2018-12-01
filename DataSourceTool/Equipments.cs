@@ -66,6 +66,9 @@ namespace DataSourceTool
                 .Select(x => x.OriginalFilename);
 
             foreach (string packageFilename in packageFilenames)
+                ProcessPackage(packageFilename, "\\common\\equip\\amr_series.amrs", OnArmorSeriesSubFile);
+
+            foreach (string packageFilename in packageFilenames)
                 ProcessPackage(packageFilename, "\\common\\text\\steam\\armor_eng.gmd", OnTextSubFile);
 
             if (equipmentNameEntries == null)
@@ -80,9 +83,9 @@ namespace DataSourceTool
             var items = equipmentEntries
                 .Where(x => x.ArmorType != ArmorType.Layered)
                 .OrderBy(x => x.EquipmentType == EquipmentType.Charm)
-                .ThenBy(x => x.Index)
+                .ThenBy(x => x.Id)
                 .ThenBy(x => x.EquipmentType)
-                .Select(x => new { id = x.Index, type = (int)x.EquipmentType, name = x.Name });
+                .Select(x => new { id = x.Id, type = (int)x.EquipmentType, name = x.Name });
 
             Common.SerializeJson(Path.Combine(outputPath, "gameEquipments.json"), items);
         }
@@ -91,6 +94,32 @@ namespace DataSourceTool
         {
             filename = Path.GetFileNameWithoutExtension(filename);
             return int.Parse(filename.AsSpan(5)); // 5 == 'chunk'.Length
+        }
+
+        // Bellow is just test code
+        private HashSet<uint> amrsGlobalEntries = new HashSet<uint>();
+        private void OnArmorSeriesSubFile(BinaryReader reader)
+        {
+            ushort unknown1 = reader.ReadUInt16();
+
+            uint entryCount = reader.ReadUInt32();
+
+            var localEntries = new HashSet<uint>((int)entryCount);
+
+            for (uint i = 0; i < entryCount; i++)
+            {
+                uint value = reader.ReadUInt32();
+
+                if (value == 0)
+                    continue;
+
+                bool isLocalDuplicate = localEntries.Add(value) == false;
+                bool isGlobalDuplicate = amrsGlobalEntries.Add(value) == false;
+
+                Console.WriteLine($"{value}{(isLocalDuplicate ? " [LOCAL DUPLICATE]" : string.Empty)}{(isGlobalDuplicate ? " [GLOBAL DUPLICATE]" : string.Empty)}");
+            }
+
+            Console.WriteLine("---------");
         }
 
         private void OnTextSubFile(BinaryReader reader)

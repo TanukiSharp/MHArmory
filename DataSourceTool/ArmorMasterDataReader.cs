@@ -21,15 +21,16 @@ namespace DataSourceTool
 
     public enum ArmorType
     {
-        Regular,
-        FullArmorSet,
-        Layered
+        Regular = 0,
+        Unknown = 1,
+        Layered = 2,
+        FullArmorSet = 3,
     }
 
     public struct ArmorMasterDataEntry
     {
-        //public ushort Id { get; }
-        public int Index { get; }
+        public ushort Id { get; }
+        //public int Index { get; }
         public ArmorType ArmorType { get; }
         public EquipmentType EquipmentType { get; }
         public string Name { get; }
@@ -42,44 +43,25 @@ namespace DataSourceTool
 
             ArmorType = (ArmorType)reader.ReadByte();
 
-            if (ArmorType == ArmorType.FullArmorSet)
-            {
-            }
-
             EquipmentType = (EquipmentType)(reader.ReadByte() + 1);
 
-            reader.BaseStream.Seek(44, SeekOrigin.Current);
+            reader.BaseStream.Seek(42, SeekOrigin.Current);
 
-            ushort index = reader.ReadUInt16();
+            Id = reader.ReadUInt16();
 
-            KeyValueInfo kvi = equipmentNames.FirstOrDefault(x => x.Index == index);
+            ushort gmdNameIndex = reader.ReadUInt16();
+
+            KeyValueInfo kvi = equipmentNames.FirstOrDefault(x => x.Index == gmdNameIndex);
 
             Name = kvi.Value;
-            Index = (int)kvi.Index;
+            //Index = (int)kvi.Index;
 
             reader.BaseStream.Seek(3, SeekOrigin.Current);
         }
 
-        public override bool Equals(object obj)
+        public override string ToString()
         {
-            if (obj is ArmorMasterDataEntry other)
-                return Index == other.Index;
-            return false;
-        }
-
-        public override int GetHashCode()
-        {
-            return Index;
-        }
-
-        public static bool operator ==(ArmorMasterDataEntry left, ArmorMasterDataEntry right)
-        {
-            return left.Equals(right);
-        }
-
-        public static bool operator !=(ArmorMasterDataEntry left, ArmorMasterDataEntry right)
-        {
-            return !(left == right);
+            return $"{Name} [{Id} {EquipmentType}] ({ArmorType})";
         }
     }
 
@@ -99,7 +81,11 @@ namespace DataSourceTool
             var entries = new List<ArmorMasterDataEntry>();
 
             for (int i = 0; i < header.EntryCount; i++)
-                entries.Add(new ArmorMasterDataEntry(reader, equipmentNames));
+            {
+                var entry = new ArmorMasterDataEntry(reader, equipmentNames);
+                if (entry.ArmorType != ArmorType.Unknown && entry.Name != null)
+                    entries.Add(entry);
+            }
 
             return entries;
         }
