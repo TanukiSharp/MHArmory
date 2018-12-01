@@ -13,6 +13,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using MHArmory.ViewModels;
+using MHWSaveUtils;
 
 namespace MHArmory
 {
@@ -31,6 +32,8 @@ namespace MHArmory
 
             this.rootViewModel = rootViewModel;
 
+            rootViewModel.EquipmentOverride.SetSaveSelector(ProvideSaveSlotInfo);
+
             InputBindings.Add(new InputBinding(new AnonymousCommand(OnCancel), new KeyGesture(Key.Escape, ModifierKeys.None)));
 
             this.Loaded += EquipmentOverrideWindow_Loaded;
@@ -44,6 +47,21 @@ namespace MHArmory
 
             lblLoading.Visibility = Visibility.Collapsed;
             cntRoot.Visibility = Visibility.Visible;
+        }
+
+        private EquipmentsSaveSlotInfo ProvideSaveSlotInfo(IList<EquipmentsSaveSlotInfo> allSlots)
+        {
+            var dialog = new SaveDataSlotSelectorWindow()
+            {
+                Owner = this
+            };
+
+            dialog.Initialize(allSlots);
+
+            if (dialog.ShowDialog() != true)
+                return null;
+
+            return (EquipmentsSaveSlotInfo)dialog.SelectedSaveSlot;
         }
 
         private void OnCancel(object parameter)

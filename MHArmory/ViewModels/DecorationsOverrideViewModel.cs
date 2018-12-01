@@ -9,6 +9,7 @@ using System.Windows;
 using System.Windows.Input;
 using MHArmory.Configurations;
 using MHArmory.Core.DataStructures;
+using MHArmory.Services;
 using MHWSaveUtils;
 using Microsoft.Win32;
 using Newtonsoft.Json;
@@ -215,31 +216,9 @@ namespace MHArmory.ViewModels
 
         private async Task ImportInternal()
         {
-            IList<SaveDataInfo> saveDataInfoItems = FileSystemUtils.EnumerateSaveDataInfo().ToList();
+            ISaveDataService saveDataService = ServicesContainer.GetService<ISaveDataService>();
 
-            if (saveDataInfoItems.Count == 0)
-            {
-                MessageBox.Show("Could not automatically find location of save data.\nPlease select it manually.", "Save data not found", MessageBoxButton.OK, MessageBoxImage.Warning);
-
-                var dialog = new OpenFileDialog
-                {
-                    AddExtension = false,
-                    CheckFileExists = true,
-                    CheckPathExists = true,
-                    FileName = FileSystemUtils.GameSaveDataFilename,
-                    Filter = $"Save data|{FileSystemUtils.GameSaveDataFilename}|All files (*.*)|*.*",
-                    Multiselect = false,
-                    ShowReadOnly = true,
-                    Title = "Select Monster Hunter: World save data file"
-                };
-                if (dialog.ShowDialog() != true)
-                {
-                    MessageBox.Show("Operation cancelled.", "Operation cancelled", MessageBoxButton.OK, MessageBoxImage.Warning);
-                    return;
-                }
-
-                saveDataInfoItems.Add(new SaveDataInfo("<unknown>", dialog.FileName));
-            }
+            IList<SaveDataInfo> saveDataInfoItems = saveDataService.GetSaveInfo();
 
             IList<Task<IList<DecorationsSaveSlotInfo>>> allTasks = saveDataInfoItems
                 .Select(ReadSaveData)
@@ -322,21 +301,6 @@ namespace MHArmory.ViewModels
                 }
 
                 return list;
-            }
-        }
-
-        private static IList<GameJewel> LoadGameJewels()
-        {
-            try
-            {
-                string dataPath = Path.Combine(AppContext.BaseDirectory, "data");
-                string gameJewelsContent = File.ReadAllText(Path.Combine(dataPath, "gameJewels.json"));
-                return JsonConvert.DeserializeObject<IList<GameJewel>>(gameJewelsContent);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"An error occured when trying to load game jewels information.\n\n{ex.Message}", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
-                return null;
             }
         }
 

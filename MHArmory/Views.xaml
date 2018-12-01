@@ -658,9 +658,9 @@
                 </StackPanel>
                 <TextBox Margin="2" Padding="3" FocusManager.FocusedElement="{Binding RelativeSource={RelativeSource Self}}" Text="{Binding SearchText, UpdateSourceTrigger=PropertyChanged}" bhv:TextBoxFocusOnEmptyBehavior.IsAttached="True"/>
             </DockPanel>
-            <!--<StackPanel DockPanel.Dock="Bottom" Orientation="Horizontal">
+            <StackPanel DockPanel.Dock="Bottom" Orientation="Horizontal">
                 <Button Margin="1" Padding="8" Content="Import from save..." Command="{Binding ImportCommand, Mode=OneTime}"/>
-            </StackPanel>-->
+            </StackPanel>
             <TextBlock DockPanel.Dock="Bottom" Text="{Binding Status}" HorizontalAlignment="Stretch" Margin="3"/>
             <ListBox Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" ItemsSource="{Binding AllEquipments, Mode=OneWay}" ItemTemplate="{StaticResource ArmorSetsOverrideView}" VirtualizingPanel.IsVirtualizing="False" VirtualizingPanel.ScrollUnit="Pixel" Grid.IsSharedSizeScope="True" Focusable="False">
                 <ListBox.ItemContainerStyle>

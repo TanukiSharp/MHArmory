@@ -1,11 +1,17 @@
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
+using System.Windows;
 using System.Windows.Input;
 using MHArmory.Configurations;
 using MHArmory.Core.DataStructures;
+using MHArmory.Services;
+using MHWSaveUtils;
+using Newtonsoft.Json;
 
 namespace MHArmory.ViewModels
 {
@@ -68,11 +74,11 @@ namespace MHArmory.ViewModels
 
         private static IEnumerable<EquipmentViewModel> MakeArmorPieces(IEnumerable<EquipmentViewModel> equipments)
         {
-            yield return equipments.FirstOrDefault(x => x.Type == EquipmentType.Head);
-            yield return equipments.FirstOrDefault(x => x.Type == EquipmentType.Chest);
-            yield return equipments.FirstOrDefault(x => x.Type == EquipmentType.Gloves);
-            yield return equipments.FirstOrDefault(x => x.Type == EquipmentType.Waist);
-            yield return equipments.FirstOrDefault(x => x.Type == EquipmentType.Legs);
+            yield return equipments.FirstOrDefault(x => x.Type == Core.DataStructures.EquipmentType.Head);
+            yield return equipments.FirstOrDefault(x => x.Type == Core.DataStructures.EquipmentType.Chest);
+            yield return equipments.FirstOrDefault(x => x.Type == Core.DataStructures.EquipmentType.Gloves);
+            yield return equipments.FirstOrDefault(x => x.Type == Core.DataStructures.EquipmentType.Waist);
+            yield return equipments.FirstOrDefault(x => x.Type == Core.DataStructures.EquipmentType.Legs);
         }
 
         public static string FindGroupName(IEnumerable<IEquipment> equipments)
@@ -249,8 +255,6 @@ namespace MHArmory.ViewModels
             private set { SetValue(ref allEquipments, value); }
         }
 
-        public ICommand OpenIntegratedHelpCommand { get; }
-
         private string searchText;
         public string SearchText
         {
@@ -280,15 +284,173 @@ namespace MHArmory.ViewModels
             }
         }
 
+        public ICommand ImportCommand { get; }
+        public ICommand OpenIntegratedHelpCommand { get; }
         public ICommand CancelCommand { get; }
+
+        private Func<IList<EquipmentsSaveSlotInfo>, EquipmentsSaveSlotInfo> saveSlotInfoSelector;
 
         public EquipmentOverrideViewModel(RootViewModel rootViewModel)
         {
             this.rootViewModel = rootViewModel;
 
+            ImportCommand = new AnonymousCommand(OnImport);
             OpenIntegratedHelpCommand = new AnonymousCommand(OnOpenIntegratedHelp);
 
             CancelCommand = new AnonymousCommand(OnCancel);
+        }
+
+        public void SetSaveSelector(Func<IList<EquipmentsSaveSlotInfo>, EquipmentsSaveSlotInfo> saveSlotInfoSelector)
+        {
+            this.saveSlotInfoSelector = saveSlotInfoSelector;
+        }
+
+        private async void OnImport(object parameter)
+        {
+            ((AnonymousCommand)ImportCommand).IsEnabled = false;
+
+            try
+            {
+                await ImportInternal();
+            }
+            finally
+            {
+                ((AnonymousCommand)ImportCommand).IsEnabled = true;
+            }
+        }
+
+        private IList<GameEquipment> gameEquipments;
+
+        private async Task ImportInternal()
+        {
+            if (gameEquipments == null)
+            {
+                gameEquipments = LoadGameEquipments();
+                if (gameEquipments == null)
+                    return;
+            }
+
+            ISaveDataService saveDataService = ServicesContainer.GetService<ISaveDataService>();
+
+            IList<SaveDataInfo> saveDataInfoItems = saveDataService.GetSaveInfo();
+
+            if (saveDataInfoItems == null)
+                return;
+
+            IList<Task<IList<EquipmentsSaveSlotInfo>>> allTasks = saveDataInfoItems
+                .Select(ReadSaveData)
+                .ToList();
+
+            await Task.WhenAll(allTasks);
+
+            IList<EquipmentsSaveSlotInfo> allSlots = allTasks
+                .SelectMany(x => x.Result)
+                .ToList();
+
+            EquipmentsSaveSlotInfo selected;
+
+            if (allSlots.Count > 1)
+            {
+                selected = saveSlotInfoSelector(allSlots);
+                if (selected == null)
+                    return;
+            }
+            else
+                selected = allSlots[0];
+
+            MessageBox.Show("Save data import done.", "Import", MessageBoxButton.OK);
+
+            ApplySaveDataEquipments(selected);
+        }
+
+        private async Task<IList<EquipmentsSaveSlotInfo>> ReadSaveData(SaveDataInfo saveDataInfo)
+        {
+            var ms = new MemoryStream();
+
+            using (Stream inputStream = File.OpenRead(saveDataInfo.SaveDataFullFilename))
+            {
+                await Crypto.DecryptAsync(inputStream, ms, CancellationToken.None);
+            }
+
+            using (var reader = new EquipmentsReader(ms))
+            {
+                var list = new List<EquipmentsSaveSlotInfo>();
+
+                foreach (EquipmentsSaveSlotInfo info in reader.Read())
+                {
+                    info.SetSaveDataInfo(saveDataInfo);
+                    list.Add(info);
+                }
+
+                return list;
+            }
+        }
+
+        private static bool IsMatch(Equipment saveDataEquipment, GameEquipment masterDataEquipment)
+        {
+            if (saveDataEquipment.ClassId != masterDataEquipment.Id)
+                return false;
+
+            if (saveDataEquipment.Type == MHWSaveUtils.EquipmentType.Armor &&
+                saveDataEquipment.ArmorPieceType == (ArmorPieceType)(masterDataEquipment.Type - 1))
+                return true;
+
+            if (saveDataEquipment.Type == MHWSaveUtils.EquipmentType.Charm &&
+                (Core.DataStructures.EquipmentType)masterDataEquipment.Type == Core.DataStructures.EquipmentType.Charm)
+                return true;
+
+            return false;
+        }
+
+        private void ApplySaveDataEquipments(EquipmentsSaveSlotInfo saveSlotEquipments)
+        {
+            foreach (EquipmentGroupViewModel group in AllEquipments)
+            {
+                foreach (EquipmentViewModel equipment in group.Equipments)
+                {
+                    equipment.IsPossessed = false;
+
+                    GameEquipment foundGameEquipmentFromMasterData = gameEquipments.FirstOrDefault(x => x.Name == equipment.Name);
+
+                    if (foundGameEquipmentFromMasterData == null)
+                        Console.WriteLine($"Missing equipment from master data: {equipment.Name}");
+                    else
+                    {
+                        Equipment n = saveSlotEquipments.Equipments
+                            .FirstOrDefault(x => IsMatch(x, foundGameEquipmentFromMasterData));
+
+                        if (n != null)
+                            equipment.IsPossessed = true;
+                    }
+                }
+            }
+
+            ComputeVisibility();
+        }
+
+        private static IList<GameEquipment> LoadGameEquipments()
+        {
+            try
+            {
+                string dataPath = Path.Combine(AppContext.BaseDirectory, "data");
+                string gameEquipmentsContent = File.ReadAllText(Path.Combine(dataPath, "gameEquipments.json"));
+                return JsonConvert.DeserializeObject<IList<GameEquipment>>(gameEquipmentsContent);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"An error occured when trying to load game equipments information.\n\n{ex.Message}", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                return null;
+            }
+        }
+
+        public class GameEquipment
+        {
+            [JsonProperty("id")]
+            public uint Id { get; set; }
+            [JsonProperty("type")]
+            public uint Type { get; set; }
+            [JsonProperty("name")]
+            public string Name { get; set; }
         }
 
         private void OnOpenIntegratedHelp(object parameter)
@@ -368,7 +530,7 @@ namespace MHArmory.ViewModels
         {
             LowRankArmors = rootViewModel.AllEquipments
                 .Where(x => x.Rarity <= 4)
-                .Where(x => x.Type != EquipmentType.Weapon && x.Type != EquipmentType.Charm)
+                .Where(x => x.Type != Core.DataStructures.EquipmentType.Weapon && x.Type != Core.DataStructures.EquipmentType.Charm)
                 .Cast<ArmorPieceViewModel>()
                 .GroupBy(x => x.Id)
                 .Select(x => new ArmorGroupViewModel(this, x))
@@ -377,7 +539,7 @@ namespace MHArmory.ViewModels
 
             HighRankArmors = rootViewModel.AllEquipments
                 .Where(x => x.Rarity > 4)
-                .Where(x => x.Type != EquipmentType.Weapon && x.Type != EquipmentType.Charm)
+                .Where(x => x.Type != Core.DataStructures.EquipmentType.Weapon && x.Type != Core.DataStructures.EquipmentType.Charm)
                 .Cast<ArmorPieceViewModel>()
                 .GroupBy(x => x.Id)
                 .Select(x => new ArmorGroupViewModel(this, x))
@@ -385,7 +547,7 @@ namespace MHArmory.ViewModels
                 .ToList();
 
             Charms = rootViewModel.AllEquipments
-                .Where(x => x.Type == EquipmentType.Charm)
+                .Where(x => x.Type == Core.DataStructures.EquipmentType.Charm)
                 .GroupBy(x => ((ICharmLevel)x.Equipment).Charm.Id)
                 .Select(x => new CharmGroupViewModel(this, x))
                 .OrderBy(x => x.Name)
@@ -404,7 +566,7 @@ namespace MHArmory.ViewModels
 
         private static int GroupOperator(EquipmentViewModel eqp)
         {
-            if (eqp.Type != EquipmentType.Charm)
+            if (eqp.Type != Core.DataStructures.EquipmentType.Charm)
                 return eqp.Id;
 
             return ((ICharmLevel)eqp.Equipment).Charm.Id + 10000;

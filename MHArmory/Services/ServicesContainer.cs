@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using MHArmory.Core.ServiceContracts;
 
 namespace MHArmory.Services
 {
@@ -12,9 +13,11 @@ namespace MHArmory.Services
 
         static ServicesContainer()
         {
+            RegisterService<IMessageBoxService>(new MessageBoxService());
             RegisterService<IRenameService>(new RenameService());
             RegisterService<IRenderService>(new RenderService());
             RegisterService<ISearchResultScreenshotService>(new SearchResultScreenshotService());
+            RegisterService<ISaveDataService>(new SaveDataService());
         }
 
         public static void RegisterService<T>(T instance)
