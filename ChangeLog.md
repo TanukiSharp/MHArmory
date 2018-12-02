@@ -1,5 +1,18 @@
 # Change log
 
+## 0.0.8 (2018/12/02)
+
+- Added another condition to select candidate equipment for the search algorithm
+    - Note that this may slow down searches that were previously faster
+
+- For PC players, you can now import equipments from your save data!
+
+    ![Import button](docs/misc/changelog_0.0.8.0_import_equipment.png)
+
+    It works like the jewels import feature, if you have more than one save data slot, a selector shows up for you to choose where to import from.
+
+- Removed the event menu and window, since now it is much easier and more efficient to choose equipments to include or exclude via the equipment override window.
+
 ## 0.0.7.3 (2018/11/14)
 
 - Added skill exclusion feature, based on [user suggestion](https://github.com/TanukiSharp/MHArmory/issues/2)<br/>

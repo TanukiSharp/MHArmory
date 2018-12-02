@@ -4,7 +4,7 @@
 <img src="docs/images/blue_shield.png" width="64" height="64"/>
 </td>
 <td border-collapse="collapse" border="none">
-<i>Current version: <b><a href="https://github.com/TanukiSharp/MHArmory/raw/master/Distributions/MHArmory_0.0.7.3.zip">0.0.7.3</a></b></i><br/><i>Last modification: <b>2018/11/14</b></i>
+<i>Current version: <b><a href="https://github.com/TanukiSharp/MHArmory/raw/master/Distributions/MHArmory_0.0.8.0.zip">0.0.8.0</a></b></i><br/><i>Last modification: <b>2018/12/02</b></i>
 </td>
 </tr>
 </table>
@@ -27,7 +27,7 @@ If you are a developer and want to contribute to code, I recommend to first open
 
 # Download
 
-Link to direct download: https://github.com/TanukiSharp/MHArmory/raw/master/Distributions/MHArmory_0.0.7.3.zip
+Link to direct download: https://github.com/TanukiSharp/MHArmory/raw/master/Distributions/MHArmory_0.0.8.0.zip
 
 Older version can be downloaded as well, here: https://github.com/TanukiSharp/MHArmory/tree/master/Distributions
 
@@ -74,6 +74,8 @@ You can find a change log file [here](ChangeLog.md)
 - **Tyler Lartonoix**, owner of the mhw-db.com project
     - GitHub project site: https://github.com/LartTyler/MHWDB-API
     - API website: https://docs.mhw-db.com
+- **AsteriskAmpersand**, helped a lot about save data
+    - GitHub project site: https://github.com/AsteriskAmpersand/MHW-Save-Editor
 - **Testers:** Deiv, Bjorn Lim
 - **Athena's ASS author(s)**, for making such a wonderful application and inspiring this project
 - **https://www.vectorizer.io**, wonderful website used to vectorize all rasterized icons
