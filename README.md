@@ -45,11 +45,9 @@ Follow **Armory** on Twitter to get latest news and updates: https://twitter.com
 ## Will happen soon
 
 - Translation of equipments and decorations
-- Equipments override
 
 ## May happen in a near future
 
-- Import equipment from save data
 - Unit tests
 - Armor set builder (with partial equipment)
 - Asset explorer organized as tree
