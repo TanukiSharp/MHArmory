@@ -11,9 +11,16 @@ namespace DataSourceTool
     {
         static void Main(string[] args)
         {
-            //new Exporter().Run(args).Wait();
-            new Equipments().Run(args).Wait();
+            //// Loads data from Athena ASS and export to Armory format
+            new Exporter().Run(args).Wait();
+
+            //// Export the gameEquipments.json file
+            //new Equipments().Run(args).Wait();
+
+            //// Export the skills.json file
             //new ExporterSkills().Run(args).Wait();
+
+            //// Compare Athena ASS et Armory data sources
             //new Comparer().Run(args).Wait();
         }
     }
