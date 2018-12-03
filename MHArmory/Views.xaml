@@ -26,7 +26,7 @@
 
     <SolidColorBrush x:Key="ActiveWeaponBackgroundBrush" Color="#FFB7FFA7"/>
     <SolidColorBrush x:Key="ActiveWeaponBorderBrush" Color="#FF55D15A"/>
-    <SolidColorBrush x:Key="InactiveToggleBackgroundBrush" Color="#FFFFB7A7"/>
+    <SolidColorBrush x:Key="InactiveToggleBackgroundBrush" Color="#FFFFB7B7"/>
 
     <DataTemplate x:Key="SaveDataSlotView">
         <StackPanel Orientation="Horizontal">
