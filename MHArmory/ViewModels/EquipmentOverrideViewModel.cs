@@ -255,6 +255,9 @@ namespace MHArmory.ViewModels
             private set { SetValue(ref allEquipments, value); }
         }
 
+        public ICommand SelectAllCommand { get; }
+        public ICommand UnselectAllCommand { get; }
+
         private string searchText;
         public string SearchText
         {
@@ -294,10 +297,31 @@ namespace MHArmory.ViewModels
         {
             this.rootViewModel = rootViewModel;
 
+            SelectAllCommand = new AnonymousCommand(OnSelectAll);
+            UnselectAllCommand = new AnonymousCommand(OnUnselectAll);
+
             ImportCommand = new AnonymousCommand(OnImport);
             OpenIntegratedHelpCommand = new AnonymousCommand(OnOpenIntegratedHelp);
 
             CancelCommand = new AnonymousCommand(OnCancel);
+        }
+
+        private void OnSelectAll()
+        {
+            foreach (EquipmentGroupViewModel group in AllEquipments)
+            {
+                foreach (EquipmentViewModel eqp in group.Equipments)
+                    eqp.IsPossessed = true;
+            }
+        }
+
+        private void OnUnselectAll()
+        {
+            foreach (EquipmentGroupViewModel group in AllEquipments)
+            {
+                foreach (EquipmentViewModel eqp in group.Equipments)
+                    eqp.IsPossessed = false;
+            }
         }
 
         public void SetSaveSelector(Func<IList<EquipmentsSaveSlotInfo>, EquipmentsSaveSlotInfo> saveSlotInfoSelector)

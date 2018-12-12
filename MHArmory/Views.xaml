@@ -637,27 +637,33 @@
 
     <DataTemplate x:Key="EquipmentOverrideView">
         <DockPanel LastChildFill="True">
-            <DockPanel DockPanel.Dock="Top" LastChildFill="True">
-                <TextBlock DockPanel.Dock="Left" Text="Filter: " Margin="4" VerticalAlignment="Center"/>
-                <StackPanel DockPanel.Dock="Right" Orientation="Horizontal">
-                    <StackPanel.Resources>
-                        <Style TargetType="RadioButton">
-                            <Setter Property="MinWidth" Value="0"/>
-                            <Setter Property="Margin" Value="2 2 8 2"/>
-                        </Style>
-                    </StackPanel.Resources>
-                    <TextBlock Text="Show: " VerticalAlignment="Center" Margin="2"/>
-                    <ComboBox VerticalAlignment="Center" Margin="2" SelectedIndex="{Binding VisibilityMode, FallbackValue=0}" MinWidth="120">
-                        <TextBlock Text="All" bhv:ToolTipEx.Content="See all available sets"/>
-                        <TextBlock Text="All possessed" bhv:ToolTipEx.Content="See all sets where all pieces are possessed"/>
-                        <TextBlock Text="Some possessed" bhv:ToolTipEx.Content="See only sets where at least one piece is possessed"/>
-                        <TextBlock Text="Some unpossessed" bhv:ToolTipEx.Content="See only sets where no piece is possessed"/>
-                        <TextBlock Text="All unpossessed" bhv:ToolTipEx.Content="See only sets where no piece is possessed"/>
-                    </ComboBox>
-                    <Button Content="?" MinWidth="20" Margin="2" Padding="4" VerticalAlignment="Center" Command="{Binding OpenIntegratedHelpCommand, Mode=OneTime}" CommandParameter="EquipmentOverride" IsEnabled="True" bhv:ToolTipEx.Content="Show help about equipment override"/>
-                </StackPanel>
-                <TextBox Margin="2" Padding="3" FocusManager.FocusedElement="{Binding RelativeSource={RelativeSource Self}}" Text="{Binding SearchText, UpdateSourceTrigger=PropertyChanged}" bhv:TextBoxFocusOnEmptyBehavior.IsAttached="True"/>
-            </DockPanel>
+            <StackPanel DockPanel.Dock="Top">
+                <DockPanel LastChildFill="True">
+                    <TextBlock DockPanel.Dock="Left" Text="Filter: " Margin="4" VerticalAlignment="Center"/>
+                    <StackPanel DockPanel.Dock="Right" Orientation="Horizontal">
+                        <StackPanel.Resources>
+                            <Style TargetType="RadioButton">
+                                <Setter Property="MinWidth" Value="0"/>
+                                <Setter Property="Margin" Value="2 2 8 2"/>
+                            </Style>
+                        </StackPanel.Resources>
+                        <TextBlock Text="Show: " VerticalAlignment="Center" Margin="2"/>
+                        <ComboBox VerticalAlignment="Center" Margin="2" SelectedIndex="{Binding VisibilityMode, FallbackValue=0}" MinWidth="120">
+                            <TextBlock Text="All" bhv:ToolTipEx.Content="See all available sets"/>
+                            <TextBlock Text="All possessed" bhv:ToolTipEx.Content="See all sets where all pieces are possessed"/>
+                            <TextBlock Text="Some possessed" bhv:ToolTipEx.Content="See only sets where at least one piece is possessed"/>
+                            <TextBlock Text="Some unpossessed" bhv:ToolTipEx.Content="See only sets where no piece is possessed"/>
+                            <TextBlock Text="All unpossessed" bhv:ToolTipEx.Content="See only sets where no piece is possessed"/>
+                        </ComboBox>
+                        <Button Content="?" MinWidth="20" Margin="2" Padding="4" VerticalAlignment="Center" Command="{Binding OpenIntegratedHelpCommand, Mode=OneTime}" CommandParameter="EquipmentOverride" IsEnabled="True" bhv:ToolTipEx.Content="Show help about equipment override"/>
+                    </StackPanel>
+                    <TextBox Margin="2" Padding="3" FocusManager.FocusedElement="{Binding RelativeSource={RelativeSource Self}}" Text="{Binding SearchText, UpdateSourceTrigger=PropertyChanged}" bhv:TextBoxFocusOnEmptyBehavior.IsAttached="True"/>
+                </DockPanel>
+                <UniformGrid Columns="2">
+                    <Button Content="Select all" Command="{Binding SelectAllCommand, Mode=OneTime}" Padding="4" Margin="2"/>
+                    <Button Content="Unselect all" Command="{Binding UnselectAllCommand, Mode=OneTime}" Padding="4" Margin="2"/>
+                </UniformGrid>
+            </StackPanel>
             <StackPanel DockPanel.Dock="Bottom" Orientation="Horizontal">
                 <Button Margin="1" Padding="8" Content="Import from save..." Command="{Binding ImportCommand, Mode=OneTime}"/>
             </StackPanel>
