@@ -152,7 +152,14 @@ namespace MHArmory.Search
 
                     if (searchResult.IsMatch)
                     {
-                        searchResult.ArmorPieces = equips.Take(5).Cast<IArmorPiece>().ToList();
+                        searchResult.ArmorPieces = new IArmorPiece[]
+                        {
+                            (IArmorPiece)equips[0],
+                            (IArmorPiece)equips[1],
+                            (IArmorPiece)equips[2],
+                            (IArmorPiece)equips[3],
+                            (IArmorPiece)equips[4],
+                        };
                         searchResult.Charm = (ICharmLevel)equips[5];
 
                         lock (test)
@@ -179,6 +186,17 @@ namespace MHArmory.Search
             return test;
         }
 
+        private static bool IsAnyFullArmorSet(IEquipment[] equipments)
+        {
+            foreach (IEquipment equipment in equipments)
+            {
+                if (equipment is IArmorPiece armorPiece && armorPiece.FullArmorSet != null)
+                    return true;
+            }
+
+            return false;
+        }
+
         private ArmorSetSearchResult IsArmorSetMatching(
             int[] weaponSlots, IEquipment[] equipments,
             IList<SolverDataJewelModel> matchingJewels,
@@ -199,9 +217,9 @@ namespace MHArmory.Search
                 availableSlotsObjectPool.PutObject(availableSlots);
             }
 
-            if (equipments.OfType<IArmorPiece>().Any(x => x.FullArmorSet != null))
+            if (IsAnyFullArmorSet(equipments))
             {
-                if (DataUtility.AreOnSameFullArmorSet(equipments.OfType<IArmorPiece>()) == false)
+                if (DataUtility.AreOnSameFullArmorSet(equipments) == false)
                 {
                     OnArmorSetMismatch();
                     return new ArmorSetSearchResult { IsMatch = false };
@@ -230,7 +248,7 @@ namespace MHArmory.Search
             {
                 int armorAbilityTotal = 0;
 
-                if (IsAbilityMatchingArmorSet(ability, equipments.OfType<IArmorPiece>()))
+                if (IsAbilityMatchingArmorSet(ability, equipments))
                     continue;
 
                 foreach (IEquipment equipment in equipments)
@@ -249,7 +267,18 @@ namespace MHArmory.Search
 
                 if (remaingAbilityLevels > 0)
                 {
-                    if (availableSlots.All(x => x <= 0))
+                    bool isAll = true;
+
+                    foreach (int x in availableSlots)
+                    {
+                        if (x > 0)
+                        {
+                            isAll = false;
+                            break;
+                        }
+                    }
+
+                    if (isAll)
                     {
                         OnArmorSetMismatch();
                         return new ArmorSetSearchResult { IsMatch = false };
@@ -304,7 +333,7 @@ namespace MHArmory.Search
             };
         }
 
-        private bool IsAbilityMatchingArmorSet(IAbility ability, IEnumerable<IArmorPiece> armorPieces)
+        private bool IsAbilityMatchingArmorSet(IAbility ability, IEnumerable<IEquipment> armorPieces)
         {
             Dictionary<IArmorSetSkillPart, int> armorSetSkillParts = armorSetSkillPartsObjectPool.GetObject();
 
@@ -314,19 +343,30 @@ namespace MHArmory.Search
                 armorSetSkillPartsObjectPool.PutObject(armorSetSkillParts);
             }
 
-            foreach (IArmorPiece armorPiece in armorPieces)
+            foreach (IEquipment equipment in armorPieces)
             {
+                var armorPiece = equipment as IArmorPiece;
+
+                if (armorPiece == null)
+                    continue;
+
                 if (armorPiece.ArmorSetSkills == null)
                     continue;
 
-                foreach (IArmorSetSkillPart armorSetSkillPart in armorPiece.ArmorSetSkills.SelectMany(x => x.Parts))
+                foreach (IArmorSetSkill armorSetSkill in armorPiece.ArmorSetSkills)
                 {
-                    if (armorSetSkillPart.GrantedSkills.Any(a => a.Skill.Id == ability.Skill.Id))
+                    foreach (IArmorSetSkillPart armorSetSkillPart in armorSetSkill.Parts)
                     {
-                        if (armorSetSkillParts.TryGetValue(armorSetSkillPart, out int value) == false)
-                            value = 0;
+                        foreach (IAbility a in armorSetSkillPart.GrantedSkills)
+                        {
+                            if (a.Skill.Id == ability.Skill.Id)
+                            {
+                                if (armorSetSkillParts.TryGetValue(armorSetSkillPart, out int value) == false)
+                                    value = 0;
 
-                        armorSetSkillParts[armorSetSkillPart] = value + 1;
+                                armorSetSkillParts[armorSetSkillPart] = value + 1;
+                            }
+                        }
                     }
                 }
             }
@@ -337,10 +377,13 @@ namespace MHArmory.Search
                 {
                     if (armorSetSkillPartKeyValue.Value >= armorSetSkillPartKeyValue.Key.RequiredArmorPieces)
                     {
-                        if (armorSetSkillPartKeyValue.Key.GrantedSkills.Any(x => x.Skill.Id == ability.Skill.Id))
+                        foreach (IAbility x in armorSetSkillPartKeyValue.Key.GrantedSkills)
                         {
-                            Done();
-                            return true;
+                            if (x.Skill.Id == ability.Skill.Id)
+                            {
+                                Done();
+                                return true;
+                            }
                         }
                     }
                 }
@@ -350,7 +393,7 @@ namespace MHArmory.Search
             return false;
         }
 
-        private bool ConsumeSlots(int[] availableSlots, int jewelSize, int jewelCount)
+        private static bool ConsumeSlots(int[] availableSlots, int jewelSize, int jewelCount)
         {
             for (int i = jewelSize - 1; i < availableSlots.Length; i++)
             {

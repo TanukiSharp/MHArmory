@@ -1,7 +1,6 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
 using System.Text;
 using MHArmory.Core.DataStructures;
 
@@ -9,12 +8,17 @@ namespace MHArmory.Search
 {
     public static class DataUtility
     {
-        public static bool AreOnSameFullArmorSet(IEnumerable<IArmorPiece> armorPieces)
+        public static bool AreOnSameFullArmorSet(IEnumerable<IEquipment> armorPieces)
         {
             int armorSetId = -1;
 
-            foreach (IArmorPiece armorPiece in armorPieces)
+            foreach (IEquipment equipment in armorPieces)
             {
+                var armorPiece = equipment as IArmorPiece;
+
+                if (armorPiece == null)
+                    continue;
+
                 if (armorPiece.FullArmorSet == null)
                     return false;
 
