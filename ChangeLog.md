@@ -1,5 +1,10 @@
 # Change log
 
+## 0.0.8.1 (2018/12/13)
+
+- Added select all and unselect all buttons to the equipment override window
+- Improved performance of the search algorithm (pure computational part) by 45%, almost twice faster than before
+
 ## 0.0.8 (2018/12/02)
 
 - Added another condition to select candidate equipment for the search algorithm
