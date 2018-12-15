@@ -51,6 +51,18 @@ namespace MHArmory.ViewModels
             autoUpdater.Run();
         }
 
+        private void EnableCommands()
+        {
+            ((AnonymousCommand)AcknowledgeCommand).IsEnabled = true;
+            ((AnonymousCommand)DownloadCommand).IsEnabled = true;
+        }
+
+        private void DisableCommands()
+        {
+            ((AnonymousCommand)AcknowledgeCommand).IsEnabled = false;
+            ((AnonymousCommand)DownloadCommand).IsEnabled = false;
+        }
+
         private void AutoUpdater_NewVersion(object sender, NewVersionEventArgs e)
         {
             Version.TryParse(GlobalData.Instance.Configuration?.AcknowledgedVersion, out Version acknowledgedVersion);
@@ -76,12 +88,24 @@ namespace MHArmory.ViewModels
             }
         }
 
-        private void OnDownload()
+        private async void OnDownload()
         {
-            IsVisible = false;
-
             if (newVersion != null)
-                AutoUpdater.Instance.DownloadAndOpen(newVersion.DownloadUrl).Forget();
+            {
+                ShortText = $"Downloading version {newVersion.NewVersion}...";
+
+                DisableCommands();
+
+                try
+                {
+                    await AutoUpdater.Instance.DownloadAndOpen(newVersion.DownloadUrl);
+                    IsVisible = false;
+                }
+                finally
+                {
+                    EnableCommands();
+                }
+            }
         }
 
         private class AutoUpdateLogger : ILogger
