@@ -53,7 +53,7 @@ namespace MHArmory.ViewModels
 
         private void AutoUpdater_NewVersion(object sender, NewVersionEventArgs e)
         {
-            Version.TryParse(GlobalData.Instance.Configuration.AcknowledgedVersion, out Version acknowledgedVersion);
+            Version.TryParse(GlobalData.Instance.Configuration?.AcknowledgedVersion, out Version acknowledgedVersion);
 
             if (acknowledgedVersion == null || acknowledgedVersion < e.NewVersion)
             {
