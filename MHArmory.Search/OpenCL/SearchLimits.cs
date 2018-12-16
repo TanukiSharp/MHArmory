@@ -11,6 +11,8 @@ namespace MHArmory.Search.OpenCL
         // because some assumptions in the implementation were made.
         // For example: 0xFF means "no thingie" in some cases
 
+        public const int ResultCount = 128;         // Should be safe to change
+
         public const int TotalEquipments = 0x100;   // Byte for mapped ID
         public const int TotalJewels = 0x100;       // Byte for mapped ID
 
@@ -20,10 +22,7 @@ namespace MHArmory.Search.OpenCL
         public const int SetSkillsPerEquipment = 3; // Should be safe to change
         public const int EquipmentTypes = 6;        // Excluding weapon, including charm
 
-        public const int ResultCount = 128;         // Should be safe to change
-
-        public const int TotalSetParts = 0xFF;      // DO NOT CHANGE - Must be exactly 0xFF, because 0xFF is mapped to "no set part" in the implementation
-        public const int TotalSkillCount = 0xFF;    // DO NOT CHANGE - Must be exactly 0xFF, because 0xFF is mapped to "no skill" in the implementation
-        public const int DecorationCount = 0xFF;    // DO NOT CHANGE - Must be exactly 0xFF, because 0xFF is mapped to "no decoration" in the implementation
+        public const int MaxDesiredSkills = 0x80;    // DO NOT CHANGE - Must be exactly 0xFF, because 0xFF is mapped to "no skill" in the implementation
+        public const int MaxSetSkills = 0x40;      // DO NOT CHANGE - Must be exactly 0xFF, because 0xFF is mapped to "no set part" in the implementation
     }
 }

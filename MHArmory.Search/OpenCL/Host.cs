@@ -24,6 +24,8 @@ namespace MHArmory.Search.OpenCL
 
             var optionsBuilder = new HostOptionsBuilder();
             optionsBuilder.AddDefine("MAX_RESULTS", SearchLimits.ResultCount);
+            optionsBuilder.AddDefine("MAX_DESIRED_SKILLS", SearchLimits.MaxDesiredSkills);
+            optionsBuilder.AddDefine("MAX_SET_SKILLS", SearchLimits.MaxSetSkills);
             optionsBuilder.AddDefine("MAX_JEWEL_SIZE", SearchLimits.MaxJewelSize);
             optionsBuilder.AddDefine("SLOTS_PER_EQUIPMENT", SearchLimits.SlotsPerEquipment);
             optionsBuilder.AddDefine("SKILLS_PER_EQUIPMENT", SearchLimits.SkillsPerEquipment);

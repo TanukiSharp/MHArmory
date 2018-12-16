@@ -32,17 +32,26 @@ namespace MHArmory.Search.OpenCL
             maps.EquipmentIdMap = CreateIDMap(allEquipment.Select(x => new Tuple<int, EquipmentType>(x.Id, x.Type)));
             if (maps.EquipmentIdMap.Count > SearchLimits.TotalEquipments)
             {
-                throw new CLSerializationException($"Tried to serialize {maps.EquipmentIdMap.Count} equipment pieces, maximum allowed is {SearchLimits.TotalEquipments}");
+                throw new OpenCLSerializationException($"Tried to serialize {maps.EquipmentIdMap.Count} equipment pieces, maximum allowed is {SearchLimits.TotalEquipments}");
             }
 
             maps.JewelIdMap = CreateIDMap(data.AllJewels.Select(x => x.Jewel.Id));
             if (maps.EquipmentIdMap.Count > SearchLimits.TotalJewels)
             {
-                throw new CLSerializationException($"Tried to serialize {maps.JewelIdMap.Count} distinct jewels, maximum allowed is {SearchLimits.TotalJewels}");
+                throw new OpenCLSerializationException($"Tried to serialize {maps.JewelIdMap.Count} distinct jewels, maximum allowed is {SearchLimits.TotalJewels}");
             }
 
             maps.SetIdMap = CreateIDMap(desiredArmorSetParts.Select(x => x.Id));
+            if (maps.SetIdMap.Count > SearchLimits.MaxSetSkills)
+            {
+                throw new OpenCLSerializationException($"Tried to serialize {maps.SetIdMap.Count} distinct set parts, maximum allowed is {SearchLimits.MaxSetSkills}");
+            }
+
             maps.SkillIdMap = CreateIDMap(desiredSkillIDs);
+            if (maps.SkillIdMap.Count > SearchLimits.MaxDesiredSkills)
+            {
+                throw new OpenCLSerializationException($"Tried to serialize {maps.SkillIdMap.Count} distinct skills, maximum allowed is {SearchLimits.MaxDesiredSkills}");
+            }
 
             byte[] header = new byte[13];
             SerializeWeaponSlots(data.WeaponSlots, header);
@@ -126,7 +135,7 @@ namespace MHArmory.Search.OpenCL
             IAbility[] abilities = equipment.Abilities ?? new IAbility[0];
             if (abilities.Length > SearchLimits.SkillsPerEquipment)
             {
-                throw new CLSerializationException($"Equipment {equipment.Name} has {abilities.Length} abilities");
+                throw new OpenCLSerializationException($"Equipment {equipment.Name} has {abilities.Length} abilities");
             }
             foreach (IAbility ability in abilities)
             {
@@ -144,7 +153,7 @@ namespace MHArmory.Search.OpenCL
             int skillCount = parts.SelectMany(x => x.GrantedSkills).Count(x => maps.SkillIdMap.ContainsKey(x.Skill.Id));
             if (skillCount > SearchLimits.SetSkillsPerEquipment)
             {
-                throw new CLSerializationException($"Equipment {armorPiece.Name} has {skillCount} set abilities");
+                throw new OpenCLSerializationException($"Equipment {armorPiece.Name} has {skillCount} set abilities");
             }
             foreach (IArmorSetSkillPart part in parts)
             {
