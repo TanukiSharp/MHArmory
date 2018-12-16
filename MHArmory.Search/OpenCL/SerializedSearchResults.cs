@@ -1,4 +1,4 @@
-﻿namespace MHArmory.Search.OpenCL
+namespace MHArmory.Search.OpenCL
 {
     class SerializedSearchResults
     {

@@ -31,14 +31,14 @@ namespace MHArmory.Search.OpenCL
 
         private void WriteByteArr(StreamWriter writer, string title, byte[] data)
         {
-            var str = data.Select(x => $"0x{x:X2}").Aggregate((c, n) => c + ", " + n);
+            string str = data.Select(x => $"0x{x:X2}").Aggregate((c, n) => c + ", " + n);
             writer.WriteLine($"auto {title} = std::vector<uint8_t> {{{str}}};");
             writer.WriteLine();
         }
 
         private void DumpSerializedData(SerializedSearchParameters searchParameters)
         {
-            using (var file = File.OpenWrite("dump.txt"))
+            using (FileStream file = File.OpenWrite("dump.txt"))
             {
                 var writer = new StreamWriter(file);
                 WriteByteArr(writer, "header", searchParameters.Header);
@@ -51,10 +51,10 @@ namespace MHArmory.Search.OpenCL
 
         public List<ArmorSetSearchResult> Run(ISolverData data)
         {
-            var serializedData = Serializer.Serialize(data);
+            SerializedSearchParameters serializedData = Serializer.Serialize(data);
             //DumpSerializedData(serializedData); // for testing purposes
-            var serializedResults = Host.Run(serializedData);
-            var results = Deserializer.Deserialize(data, serializedData.SearchIDMaps, serializedResults);
+            SerializedSearchResults serializedResults = Host.Run(serializedData);
+            List<ArmorSetSearchResult> results = Deserializer.Deserialize(data, serializedData.SearchIDMaps, serializedResults);
             return results;
         }
     }

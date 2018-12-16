@@ -8,8 +8,8 @@ namespace MHArmory.Search.OpenCL
     {
         public const int ArmorSkillCount = 3;
         public const int SetSkillCount = 3;
-        public const int DesiredSkillCount = 254; // not 255 because 0xFF is mapped to "no skill"
-        public const int DecorationCount = 255;   // not 255 because 0xFF is mapped to "no decoration"
+        public const int DesiredSkillCount = 0xFF; // Must be exactly 0xFF, because 0xFF is mapped to "no skill"
+        public const int DecorationCount = 0xFF;   // Must be exactly 0xFF, because 0xFF is mapped to "no decoration"
 
         public const int ResultCount = 128;
     }

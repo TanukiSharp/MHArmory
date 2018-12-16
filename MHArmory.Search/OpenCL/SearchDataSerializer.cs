@@ -27,14 +27,10 @@ namespace MHArmory.Search.OpenCL
                 throw new Exception();
             }
 
-            var equipmentSkillIDs = allEquipment.SelectMany(x => x.Abilities.Select(y => y.Skill.Id));
             var armorSetParts = allArmorPieces.Where(x => x.ArmorSetSkills != null).SelectMany(x => x.ArmorSetSkills.SelectMany(y => y.Parts)).ToList();
             var desiredAbilitiesSkillSet = new HashSet<int>(data.DesiredAbilities.Select(x => x.Skill.Id));
-            var desiredArmorSetParts = armorSetParts.Where(x => x.GrantedSkills.Any(y => desiredAbilitiesSkillSet.Contains(y.Skill.Id)));
-
-            //var setSkillIDs = armorSkillParts.SelectMany(x => x.GrantedSkills.Select(y => y.Skill.Id));
-            //var allSkillIDs = equipmentSkillIDs.Concat(setSkillIDs);
-            var desiredSkillIDs = data.DesiredAbilities.Select(x => x.Skill.Id);
+            IEnumerable<IArmorSetSkillPart> desiredArmorSetParts = armorSetParts.Where(x => x.GrantedSkills.Any(y => desiredAbilitiesSkillSet.Contains(y.Skill.Id)));
+            IEnumerable<int> desiredSkillIDs = data.DesiredAbilities.Select(x => x.Skill.Id);
 
             var maps = new SearchIDMaps();
             maps.EquipmentIdMap = CreateIDMap(allEquipment.Select(x => new Tuple<int, EquipmentType>(x.Id, x.Type)));
@@ -42,7 +38,7 @@ namespace MHArmory.Search.OpenCL
             maps.SetIdMap = CreateIDMap(desiredArmorSetParts.Select(x => x.Id));
             maps.SkillIdMap = CreateIDMap(desiredSkillIDs);
 
-            var header = new byte[13];
+            byte[] header = new byte[13];
             SerializeWeaponSlots(data.WeaponSlots, header);
             header[4] = (byte)heads.Count;
             header[5] = (byte)chests.Count;
@@ -67,19 +63,19 @@ namespace MHArmory.Search.OpenCL
         {
             var ms = new MemoryStream();
             var writer = new BinaryWriter(ms);
-            var orderedJewels = jewels.OrderByDescending(x => x.Jewel.SlotSize);
-            foreach (var jewel in orderedJewels)
+            IOrderedEnumerable<SolverDataJewelModel> orderedJewels = jewels.OrderByDescending(x => x.Jewel.SlotSize);
+            foreach (SolverDataJewelModel jewel in orderedJewels)
             {
-                var available = (sbyte)Math.Min(jewel.Available, sbyte.MaxValue);
-                var mappedId = maps.JewelIdMap[jewel.Jewel.Id];
-                var ability = jewel.Jewel.Abilities[0]; // Fuck it lol
+                sbyte available = (sbyte)Math.Min(jewel.Available, sbyte.MaxValue);
+                byte mappedId = maps.JewelIdMap[jewel.Jewel.Id];
+                IAbility ability = jewel.Jewel.Abilities[0]; // Fuck it lol
                 writer.Write((byte)mappedId);
                 writer.Write((ushort)jewel.Jewel.Id);
                 writer.Write((byte)jewel.Jewel.SlotSize);
                 writer.Write(available);
                 SerializeAbility(maps, ability, writer);
             }
-            var result = ms.ToArray();
+            byte[] result = ms.ToArray();
             return result;
         }
 
@@ -87,11 +83,11 @@ namespace MHArmory.Search.OpenCL
         {
             var ms = new MemoryStream();
             var writer = new BinaryWriter(ms);
-            foreach (var desiredAbility in desiredAbilities)
+            foreach (IAbility desiredAbility in desiredAbilities)
             {
                 SerializeAbility(maps, desiredAbility, writer);
             }
-            var result = ms.ToArray();
+            byte[] result = ms.ToArray();
             return result;
         }
 
@@ -122,10 +118,10 @@ namespace MHArmory.Search.OpenCL
         {
             var ms = new MemoryStream();
             var writer = new BinaryWriter(ms);
-            foreach (var equipment in equipments)
+            foreach (IEquipment equipment in equipments)
             {
                 var tuple = new Tuple<int, EquipmentType>(equipment.Id, equipment.Type);
-                var mappedID = maps.EquipmentIdMap[tuple];
+                byte mappedID = maps.EquipmentIdMap[tuple];
                 writer.Write((ushort)mappedID);
                 writer.Write((ushort)equipment.Id);
 
@@ -136,13 +132,13 @@ namespace MHArmory.Search.OpenCL
                 }
                 else
                 {
-                    for (var i = 0; i < SearchLimits.SetSkillCount; i++)
+                    for (int i = 0; i < SearchLimits.SetSkillCount; i++)
                     {
                         SerializeNullSetSkill(writer);
                     }
                 }
-                var slots = new byte[4];
-                foreach (var slot in equipment.Slots)
+                byte[] slots = new byte[4];
+                foreach (int slot in equipment.Slots)
                 {
                     ++slots[slot];
                 }
@@ -153,17 +149,17 @@ namespace MHArmory.Search.OpenCL
 
         private void SerializeArmorSetSkills(SearchIDMaps maps, IArmorPiece armorPiece, BinaryWriter writer)
         {
-            var parts = armorPiece.ArmorSetSkills?.SelectMany(x => x.Parts).ToArray() ?? new IArmorSetSkillPart[0];
-            var skillCount = parts.SelectMany(x => x.GrantedSkills).Count(x => maps.SkillIdMap.ContainsKey(x.Skill.Id));
+            IArmorSetSkillPart[] parts = armorPiece.ArmorSetSkills?.SelectMany(x => x.Parts).ToArray() ?? new IArmorSetSkillPart[0];
+            int skillCount = parts.SelectMany(x => x.GrantedSkills).Count(x => maps.SkillIdMap.ContainsKey(x.Skill.Id));
             if (skillCount > SearchLimits.SetSkillCount)
             {
                 throw new Exception($"Armor {armorPiece.Name} has {skillCount} set skills");
             }
-            foreach (var part in parts)
+            foreach (IArmorSetSkillPart part in parts)
             {
                 SerializeSetSkill(maps, part, writer);
             }
-            for (var i = skillCount; i < SearchLimits.SetSkillCount; ++i)
+            for (int i = skillCount; i < SearchLimits.SetSkillCount; ++i)
             {
                 SerializeNullSetSkill(writer);
             }
@@ -178,15 +174,15 @@ namespace MHArmory.Search.OpenCL
 
         private void SerializeSetSkill(SearchIDMaps maps, IArmorSetSkillPart part, BinaryWriter writer)
         {
-            var mapped = maps.SetIdMap.TryGetValue(part.Id, out var mappedID);
+            bool mapped = maps.SetIdMap.TryGetValue(part.Id, out byte mappedId);
             if (!mapped)
             {
                 return;
             }
-            var desiredSkills = part.GrantedSkills.Where(x => maps.SkillIdMap.ContainsKey(x.Skill.Id));
-            foreach (var ability in desiredSkills)
+            IEnumerable<IAbility> desiredSkills = part.GrantedSkills.Where(x => maps.SkillIdMap.ContainsKey(x.Skill.Id));
+            foreach (IAbility ability in desiredSkills)
             {
-                writer.Write((byte) mappedID);
+                writer.Write((byte) mappedId);
                 writer.Write((byte) part.RequiredArmorPieces);
                 SerializeAbility(maps, ability, writer);
             }
@@ -194,16 +190,16 @@ namespace MHArmory.Search.OpenCL
 
         private void SerializeEquipmentAbilities(SearchIDMaps maps, IEquipment equipment, BinaryWriter writer)
         {
-            var abilities = equipment.Abilities ?? new IAbility[0];
+            IAbility[] abilities = equipment.Abilities ?? new IAbility[0];
             if (abilities.Length > SearchLimits.ArmorSkillCount)
             {
                 throw new Exception($"Armor {equipment.Name} has {abilities.Length} abilities");
             }
-            foreach (var ability in abilities)
+            foreach (IAbility ability in abilities)
             {
                 SerializeAbility(maps, ability, writer);
             }
-            for (var i = abilities.Length; i < SearchLimits.ArmorSkillCount; ++i)
+            for (int i = abilities.Length; i < SearchLimits.ArmorSkillCount; ++i)
             {
                 SerializeNullAbility(writer);
             }
@@ -217,10 +213,10 @@ namespace MHArmory.Search.OpenCL
 
         private void SerializeAbility(SearchIDMaps maps, IAbility ability, BinaryWriter writer)
         {
-            var mapped = maps.SkillIdMap.TryGetValue(ability.Skill.Id, out var mappedID);
+            bool mapped = maps.SkillIdMap.TryGetValue(ability.Skill.Id, out byte mappedId);
             if (mapped)
             {
-                writer.Write((byte) mappedID);
+                writer.Write((byte) mappedId);
                 writer.Write((byte) ability.Level);
             }
             else
