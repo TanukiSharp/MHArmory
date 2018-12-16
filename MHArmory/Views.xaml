@@ -140,7 +140,7 @@
                 <StackPanel Orientation="Horizontal">
                     <CheckBox Content="Activate" IsChecked="{Binding UseDecorationsOverride}" Margin="2" VerticalAlignment="Center" VerticalContentAlignment="Center"/>
                     <Button Content="Setup..." Command="{Binding OpenDecorationsOverrideCommand, Mode=OneTime}" Margin="2" Padding="4" MinWidth="70" VerticalAlignment="Center"/>
-                    <Button Content="?" MinWidth="20" Margin="2" Padding="4" VerticalAlignment="Center" Command="{x:Static local:RoutedCommands.OpenIntegratedHelp}" CommandParameter="DecorationOverride" bhv:ToolTipEx.Content="Show help about decorations override"/>
+                    <Button Content="?" MinWidth="20" Margin="2" Padding="4" VerticalAlignment="Center" Command="{x:Static local:RoutedCommands.OpenIntegratedHelp}" CommandParameter="DecorationsOverride" bhv:ToolTipEx.Content="Show help about decorations override"/>
                 </StackPanel>
             </StackPanel>
 
