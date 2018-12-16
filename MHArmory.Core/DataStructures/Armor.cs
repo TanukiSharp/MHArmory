@@ -4,15 +4,16 @@ using System.Text;
 
 namespace MHArmory.Core.DataStructures
 {
+    // Explicit enumeration because of OpenCL serialization, these values shouldn't change.
     public enum EquipmentType
     {
-        Weapon,
-        Head,
-        Chest,
-        Gloves,
-        Waist,
-        Legs,
-        Charm
+        Weapon = 0,
+        Head = 1,
+        Chest = 2,
+        Gloves = 3,
+        Waist = 4,
+        Legs = 5,
+        Charm = 6
     }
 
     public interface IArmorPieceDefense

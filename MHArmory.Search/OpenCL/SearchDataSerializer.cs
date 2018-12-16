@@ -22,19 +22,25 @@ namespace MHArmory.Search.OpenCL
             var allArmorPieces = heads.Concat(chests).Concat(gloves).Concat(waists).Concat(legs).Cast<IArmorPiece>().ToList();
             var allEquipment = allArmorPieces.Concat(charms).ToList();
 
-            if (allEquipment.Count > SearchLimits.EquipmentPieces)
-            {
-                throw new CLSerializationException($"Tried to serialize {allEquipment.Count} pieces, maximum allowed is {SearchLimits.EquipmentPieces}");
-            }
-
             var armorSetParts = allArmorPieces.Where(x => x.ArmorSetSkills != null).SelectMany(x => x.ArmorSetSkills.SelectMany(y => y.Parts)).ToList();
             var desiredAbilitiesSkillSet = new HashSet<int>(data.DesiredAbilities.Select(x => x.Skill.Id));
             IEnumerable<IArmorSetSkillPart> desiredArmorSetParts = armorSetParts.Where(x => x.GrantedSkills.Any(y => desiredAbilitiesSkillSet.Contains(y.Skill.Id)));
             IEnumerable<int> desiredSkillIDs = data.DesiredAbilities.Select(x => x.Skill.Id);
 
             var maps = new SearchIDMaps();
+
             maps.EquipmentIdMap = CreateIDMap(allEquipment.Select(x => new Tuple<int, EquipmentType>(x.Id, x.Type)));
+            if (maps.EquipmentIdMap.Count > SearchLimits.TotalEquipments)
+            {
+                throw new CLSerializationException($"Tried to serialize {maps.EquipmentIdMap.Count} equipment pieces, maximum allowed is {SearchLimits.TotalEquipments}");
+            }
+
             maps.JewelIdMap = CreateIDMap(data.AllJewels.Select(x => x.Jewel.Id));
+            if (maps.EquipmentIdMap.Count > SearchLimits.TotalJewels)
+            {
+                throw new CLSerializationException($"Tried to serialize {maps.JewelIdMap.Count} distinct jewels, maximum allowed is {SearchLimits.TotalJewels}");
+            }
+
             maps.SetIdMap = CreateIDMap(desiredArmorSetParts.Select(x => x.Id));
             maps.SkillIdMap = CreateIDMap(desiredSkillIDs);
 
@@ -100,7 +106,7 @@ namespace MHArmory.Search.OpenCL
                 }
                 else
                 {
-                    for (int i = 0; i < SearchLimits.SetSkillCount; i++)
+                    for (int i = 0; i < SearchLimits.SetSkillsPerEquipment; i++)
                     {
                         SerializeNullSetSkill(writer);
                     }
@@ -118,7 +124,7 @@ namespace MHArmory.Search.OpenCL
         private void SerializeEquipmentAbilities(SearchIDMaps maps, IEquipment equipment, BinaryWriter writer)
         {
             IAbility[] abilities = equipment.Abilities ?? new IAbility[0];
-            if (abilities.Length > SearchLimits.ArmorSkillCount)
+            if (abilities.Length > SearchLimits.SkillsPerEquipment)
             {
                 throw new CLSerializationException($"Equipment {equipment.Name} has {abilities.Length} abilities");
             }
@@ -126,7 +132,7 @@ namespace MHArmory.Search.OpenCL
             {
                 SerializeAbility(maps, ability, writer);
             }
-            for (int i = abilities.Length; i < SearchLimits.ArmorSkillCount; ++i)
+            for (int i = abilities.Length; i < SearchLimits.SkillsPerEquipment; ++i)
             {
                 SerializeNullAbility(writer);
             }
@@ -136,15 +142,15 @@ namespace MHArmory.Search.OpenCL
         {
             IArmorSetSkillPart[] parts = armorPiece.ArmorSetSkills?.SelectMany(x => x.Parts).ToArray() ?? new IArmorSetSkillPart[0];
             int skillCount = parts.SelectMany(x => x.GrantedSkills).Count(x => maps.SkillIdMap.ContainsKey(x.Skill.Id));
-            if (skillCount > SearchLimits.SetSkillCount)
+            if (skillCount > SearchLimits.SetSkillsPerEquipment)
             {
-                throw new CLSerializationException($"Equipment {armorPiece.Name} has {skillCount} set skills");
+                throw new CLSerializationException($"Equipment {armorPiece.Name} has {skillCount} set abilities");
             }
             foreach (IArmorSetSkillPart part in parts)
             {
                 SerializeSetSkill(maps, part, writer);
             }
-            for (int i = skillCount; i < SearchLimits.SetSkillCount; ++i)
+            for (int i = skillCount; i < SearchLimits.SetSkillsPerEquipment; ++i)
             {
                 SerializeNullSetSkill(writer);
             }
@@ -202,7 +208,7 @@ namespace MHArmory.Search.OpenCL
             {
                 sbyte available = (sbyte)Math.Min(jewel.Available, sbyte.MaxValue);
                 byte mappedId = maps.JewelIdMap[jewel.Jewel.Id];
-                IAbility ability = jewel.Jewel.Abilities[0]; // Fuck it lol
+                IAbility ability = jewel.Jewel.Abilities[0]; // Fuck it lol, too complex otherwise.
                 writer.Write((byte)mappedId);
                 writer.Write((ushort)jewel.Jewel.Id);
                 writer.Write((byte)jewel.Jewel.SlotSize);

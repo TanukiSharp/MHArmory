@@ -21,9 +21,16 @@ namespace MHArmory.Search.OpenCL
             var properties = new ComputeContextPropertyList(platform);
             Context = new ComputeContext(ComputeDeviceTypes.All, properties, null, IntPtr.Zero);
             Program = new ComputeProgram(Context, sourceStr);
+
             var optionsBuilder = new HostOptionsBuilder();
             optionsBuilder.AddDefine("MAX_RESULTS", SearchLimits.ResultCount);
+            optionsBuilder.AddDefine("MAX_JEWEL_SIZE", SearchLimits.MaxJewelSize);
+            optionsBuilder.AddDefine("SLOTS_PER_EQUIPMENT", SearchLimits.SlotsPerEquipment);
+            optionsBuilder.AddDefine("SKILLS_PER_EQUIPMENT", SearchLimits.SkillsPerEquipment);
+            optionsBuilder.AddDefine("SET_SKILLS_PER_EQUIPMENT", SearchLimits.SetSkillsPerEquipment);
+            optionsBuilder.AddDefine("EQUIPMENT_TYPES", SearchLimits.EquipmentTypes);
             string options = optionsBuilder.ToString();
+
             Program.Build(null, options, null, IntPtr.Zero);
         }
 
@@ -53,7 +60,8 @@ namespace MHArmory.Search.OpenCL
         public SerializedSearchResults Run(SerializedSearchParameters searchParameters)
         {
             ushort[] resultCount = new ushort[1];
-            byte[] resultData = new byte[SearchLimits.ResultCount * (sizeof(ushort) * 6 + 1 + 3 * 7 * 3)];
+            const int resultLen = SearchLimits.ResultCount * (sizeof(ushort) * SearchLimits.TotalEquipments + 1 + 3 * (SearchLimits.TotalEquipments + 1) * SearchLimits.SlotsPerEquipment);
+            byte[] resultData = new byte[resultLen];
 
             // Not that much data, better copy to device (CopyHostPointer) and back rather than query the host (UseHostPointer)
             var headerBuffer = new ComputeBuffer<byte>(Context, ComputeMemoryFlags.ReadOnly | ComputeMemoryFlags.CopyHostPointer, searchParameters.Header);
