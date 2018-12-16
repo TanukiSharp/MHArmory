@@ -22,9 +22,9 @@ namespace MHArmory.Search.OpenCL
             var allArmorPieces = heads.Concat(chests).Concat(gloves).Concat(waists).Concat(legs).Cast<IArmorPiece>().ToList();
             var allEquipment = allArmorPieces.Concat(charms).ToList();
 
-            if (allEquipment.Count > 255)
+            if (allEquipment.Count > SearchLimits.EquipmentPieces)
             {
-                throw new Exception();
+                throw new CLSerializationException($"Tried to serialize {allEquipment.Count} pieces, maximum allowed is {SearchLimits.EquipmentPieces}");
             }
 
             var armorSetParts = allArmorPieces.Where(x => x.ArmorSetSkills != null).SelectMany(x => x.ArmorSetSkills.SelectMany(y => y.Parts)).ToList();
@@ -59,46 +59,6 @@ namespace MHArmory.Search.OpenCL
             return parameters;
         }
 
-        private byte[] SerializeDecorations(SearchIDMaps maps, SolverDataJewelModel[] jewels)
-        {
-            var ms = new MemoryStream();
-            var writer = new BinaryWriter(ms);
-            IOrderedEnumerable<SolverDataJewelModel> orderedJewels = jewels.OrderByDescending(x => x.Jewel.SlotSize);
-            foreach (SolverDataJewelModel jewel in orderedJewels)
-            {
-                sbyte available = (sbyte)Math.Min(jewel.Available, sbyte.MaxValue);
-                byte mappedId = maps.JewelIdMap[jewel.Jewel.Id];
-                IAbility ability = jewel.Jewel.Abilities[0]; // Fuck it lol
-                writer.Write((byte)mappedId);
-                writer.Write((ushort)jewel.Jewel.Id);
-                writer.Write((byte)jewel.Jewel.SlotSize);
-                writer.Write(available);
-                SerializeAbility(maps, ability, writer);
-            }
-            byte[] result = ms.ToArray();
-            return result;
-        }
-
-        private byte[] SerializeDesiredSkills(SearchIDMaps maps, IAbility[] desiredAbilities)
-        {
-            var ms = new MemoryStream();
-            var writer = new BinaryWriter(ms);
-            foreach (IAbility desiredAbility in desiredAbilities)
-            {
-                SerializeAbility(maps, desiredAbility, writer);
-            }
-            byte[] result = ms.ToArray();
-            return result;
-        }
-
-        private void SerializeWeaponSlots(int[] weaponSlots, byte[] header)
-        {
-            foreach (int weaponSlot in weaponSlots)
-            {
-                header[weaponSlot]++;
-            }
-        }
-
         private IDictionary<T, byte> CreateIDMap<T>(IEnumerable<T> keys)
         {
             byte currentIndex = 0;
@@ -112,6 +72,14 @@ namespace MHArmory.Search.OpenCL
                 }
             }
             return map;
+        }
+
+        private void SerializeWeaponSlots(int[] weaponSlots, byte[] header)
+        {
+            foreach (int weaponSlot in weaponSlots)
+            {
+                header[weaponSlot]++;
+            }
         }
 
         private byte[] SerializeEquipment(SearchIDMaps maps, IEnumerable<IEquipment> equipments)
@@ -147,13 +115,30 @@ namespace MHArmory.Search.OpenCL
             return ms.ToArray();
         }
 
+        private void SerializeEquipmentAbilities(SearchIDMaps maps, IEquipment equipment, BinaryWriter writer)
+        {
+            IAbility[] abilities = equipment.Abilities ?? new IAbility[0];
+            if (abilities.Length > SearchLimits.ArmorSkillCount)
+            {
+                throw new CLSerializationException($"Equipment {equipment.Name} has {abilities.Length} abilities");
+            }
+            foreach (IAbility ability in abilities)
+            {
+                SerializeAbility(maps, ability, writer);
+            }
+            for (int i = abilities.Length; i < SearchLimits.ArmorSkillCount; ++i)
+            {
+                SerializeNullAbility(writer);
+            }
+        }
+
         private void SerializeArmorSetSkills(SearchIDMaps maps, IArmorPiece armorPiece, BinaryWriter writer)
         {
             IArmorSetSkillPart[] parts = armorPiece.ArmorSetSkills?.SelectMany(x => x.Parts).ToArray() ?? new IArmorSetSkillPart[0];
             int skillCount = parts.SelectMany(x => x.GrantedSkills).Count(x => maps.SkillIdMap.ContainsKey(x.Skill.Id));
             if (skillCount > SearchLimits.SetSkillCount)
             {
-                throw new Exception($"Armor {armorPiece.Name} has {skillCount} set skills");
+                throw new CLSerializationException($"Equipment {armorPiece.Name} has {skillCount} set skills");
             }
             foreach (IArmorSetSkillPart part in parts)
             {
@@ -163,13 +148,6 @@ namespace MHArmory.Search.OpenCL
             {
                 SerializeNullSetSkill(writer);
             }
-        }
-
-        private void SerializeNullSetSkill(BinaryWriter writer)
-        {
-            writer.Write((byte)0xFF);
-            writer.Write((byte)0);
-            SerializeNullAbility(writer);
         }
 
         private void SerializeSetSkill(SearchIDMaps maps, IArmorSetSkillPart part, BinaryWriter writer)
@@ -182,24 +160,28 @@ namespace MHArmory.Search.OpenCL
             IEnumerable<IAbility> desiredSkills = part.GrantedSkills.Where(x => maps.SkillIdMap.ContainsKey(x.Skill.Id));
             foreach (IAbility ability in desiredSkills)
             {
-                writer.Write((byte) mappedId);
-                writer.Write((byte) part.RequiredArmorPieces);
+                writer.Write((byte)mappedId);
+                writer.Write((byte)part.RequiredArmorPieces);
                 SerializeAbility(maps, ability, writer);
             }
         }
 
-        private void SerializeEquipmentAbilities(SearchIDMaps maps, IEquipment equipment, BinaryWriter writer)
+        private void SerializeNullSetSkill(BinaryWriter writer)
         {
-            IAbility[] abilities = equipment.Abilities ?? new IAbility[0];
-            if (abilities.Length > SearchLimits.ArmorSkillCount)
+            writer.Write((byte)0xFF);
+            writer.Write((byte)0);
+            SerializeNullAbility(writer);
+        }
+
+        private void SerializeAbility(SearchIDMaps maps, IAbility ability, BinaryWriter writer)
+        {
+            bool mapped = maps.SkillIdMap.TryGetValue(ability.Skill.Id, out byte mappedId);
+            if (mapped)
             {
-                throw new Exception($"Armor {equipment.Name} has {abilities.Length} abilities");
+                writer.Write((byte)mappedId);
+                writer.Write((byte)ability.Level);
             }
-            foreach (IAbility ability in abilities)
-            {
-                SerializeAbility(maps, ability, writer);
-            }
-            for (int i = abilities.Length; i < SearchLimits.ArmorSkillCount; ++i)
+            else
             {
                 SerializeNullAbility(writer);
             }
@@ -211,18 +193,36 @@ namespace MHArmory.Search.OpenCL
             writer.Write((byte)0);
         }
 
-        private void SerializeAbility(SearchIDMaps maps, IAbility ability, BinaryWriter writer)
+        private byte[] SerializeDecorations(SearchIDMaps maps, SolverDataJewelModel[] jewels)
         {
-            bool mapped = maps.SkillIdMap.TryGetValue(ability.Skill.Id, out byte mappedId);
-            if (mapped)
+            var ms = new MemoryStream();
+            var writer = new BinaryWriter(ms);
+            IOrderedEnumerable<SolverDataJewelModel> orderedJewels = jewels.OrderByDescending(x => x.Jewel.SlotSize);
+            foreach (SolverDataJewelModel jewel in orderedJewels)
             {
-                writer.Write((byte) mappedId);
-                writer.Write((byte) ability.Level);
+                sbyte available = (sbyte)Math.Min(jewel.Available, sbyte.MaxValue);
+                byte mappedId = maps.JewelIdMap[jewel.Jewel.Id];
+                IAbility ability = jewel.Jewel.Abilities[0]; // Fuck it lol
+                writer.Write((byte)mappedId);
+                writer.Write((ushort)jewel.Jewel.Id);
+                writer.Write((byte)jewel.Jewel.SlotSize);
+                writer.Write(available);
+                SerializeAbility(maps, ability, writer);
             }
-            else
+            byte[] result = ms.ToArray();
+            return result;
+        }
+
+        private byte[] SerializeDesiredSkills(SearchIDMaps maps, IAbility[] desiredAbilities)
+        {
+            var ms = new MemoryStream();
+            var writer = new BinaryWriter(ms);
+            foreach (IAbility desiredAbility in desiredAbilities)
             {
-                SerializeNullAbility(writer);
+                SerializeAbility(maps, desiredAbility, writer);
             }
+            byte[] result = ms.ToArray();
+            return result;
         }
     }
 }

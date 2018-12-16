@@ -7,35 +7,28 @@ namespace MHArmory.Search.OpenCL
 {
     class Host : IDisposable
     {
-        private class DefineBuilder
-        {
-            private StringBuilder InnerBuilder { get; }
-
-            public DefineBuilder()
-            {
-                InnerBuilder = new StringBuilder();
-            }
-
-            public void AddDefine(string name)
-            {
-                InnerBuilder.Append($"-D {name} ");
-            }
-
-            public void AddDefine(string name, object value)
-            {
-                InnerBuilder.Append($"-D {name}={value} ");
-            }
-
-            public override string ToString()
-            {
-                return InnerBuilder.ToString(0, InnerBuilder.Length - 1);
-            }
-        }
-
         private ComputeContext Context { get; }
         private ComputeProgram Program { get; }
         private const string KernelName = "search";
 
+        public Host()
+        {
+            byte[] source = TrimUTFBOM(Properties.Resources.search);
+            string sourceStr = Encoding.ASCII.GetString(source);
+
+            // TODO: We need a proper platform / device selection mechanism.
+            ComputePlatform platform = ComputePlatform.Platforms[2];
+            var properties = new ComputeContextPropertyList(platform);
+            Context = new ComputeContext(ComputeDeviceTypes.All, properties, null, IntPtr.Zero);
+            Program = new ComputeProgram(Context, sourceStr);
+            var optionsBuilder = new HostOptionsBuilder();
+            optionsBuilder.AddDefine("MAX_RESULTS", SearchLimits.ResultCount);
+            string options = optionsBuilder.ToString();
+            Program.Build(null, options, null, IntPtr.Zero);
+        }
+
+        // For some reason when you embed a string to an assembly's resources, it adds a UTF BOM,
+        // and the OpenCL compiler doesn't like that. So this is to remove it manually.
         private byte[] TrimUTFBOM(byte[] data)
         {
             byte[] bom = Encoding.UTF8.GetPreamble();
@@ -57,26 +50,12 @@ namespace MHArmory.Search.OpenCL
             return copy;
         }
 
-        public Host()
-        {
-            byte[] source = TrimUTFBOM(Properties.Resources.search);
-            string sourceStr = Encoding.ASCII.GetString(source);
-
-            ComputePlatform platform = ComputePlatform.Platforms[2];
-            var properties = new ComputeContextPropertyList(platform);
-            Context = new ComputeContext(ComputeDeviceTypes.All, properties, null, IntPtr.Zero);
-            Program = new ComputeProgram(Context, sourceStr);
-            var defineBuilder = new DefineBuilder();
-            defineBuilder.AddDefine("MAX_RESULTS", SearchLimits.ResultCount);
-            string defines = defineBuilder.ToString();
-            Program.Build(null, defines, null, IntPtr.Zero);
-        }
-        
         public SerializedSearchResults Run(SerializedSearchParameters searchParameters)
         {
             ushort[] resultCount = new ushort[1];
             byte[] resultData = new byte[SearchLimits.ResultCount * (sizeof(ushort) * 6 + 1 + 3 * 7 * 3)];
 
+            // Not that much data, better copy to device (CopyHostPointer) and back rather than query the host (UseHostPointer)
             var headerBuffer = new ComputeBuffer<byte>(Context, ComputeMemoryFlags.ReadOnly | ComputeMemoryFlags.CopyHostPointer, searchParameters.Header);
             var equipmentBuffer = new ComputeBuffer<byte>(Context, ComputeMemoryFlags.ReadOnly | ComputeMemoryFlags.CopyHostPointer, searchParameters.Equipment);
             var decoBuffer = new ComputeBuffer<byte>(Context, ComputeMemoryFlags.ReadOnly | ComputeMemoryFlags.CopyHostPointer, searchParameters.Decorations);
@@ -84,7 +63,8 @@ namespace MHArmory.Search.OpenCL
             var resultCountBuffer = new ComputeBuffer<ushort>(Context, ComputeMemoryFlags.ReadWrite | ComputeMemoryFlags.CopyHostPointer, resultCount);
             var resultBuffer = new ComputeBuffer<byte>(Context, ComputeMemoryFlags.WriteOnly | ComputeMemoryFlags.CopyHostPointer, resultData);
 
-            using (ComputeCommandQueue queue = new ComputeCommandQueue(Context, Context.Devices[0], ComputeCommandQueueFlags.None))
+            ComputeDevice device = Context.Devices[0]; // We need to run this on a single device, otherwise atomics don't work properly
+            using (ComputeCommandQueue queue = new ComputeCommandQueue(Context, device, ComputeCommandQueueFlags.None))
             {
                 using (ComputeKernel kernel = Program.CreateKernel(KernelName))
                 {
@@ -94,9 +74,10 @@ namespace MHArmory.Search.OpenCL
                     kernel.SetMemoryArgument(3, desiredSkillBuffer);
                     kernel.SetMemoryArgument(4, resultCountBuffer);
                     kernel.SetMemoryArgument(5, resultBuffer);
-                    queue.Execute(kernel, null, new long[] { searchParameters.Combinations }, null, null);
+
+                    long[] globalWorkSize = new long[] { searchParameters.Combinations };
+                    queue.Execute(kernel, null, globalWorkSize, null, null);
                 }
-                //queue.Finish();
                 queue.ReadFromBuffer(resultCountBuffer, ref resultCount, true, null);
                 queue.ReadFromBuffer(resultBuffer, ref resultData, true, null);
                 queue.Finish();

@@ -29,6 +29,7 @@ namespace MHArmory.Search.OpenCL
             Host = new Host();
         }
 
+        // For debugging purposes
         private void WriteByteArr(StreamWriter writer, string title, byte[] data)
         {
             string str = data.Select(x => $"0x{x:X2}").Aggregate((c, n) => c + ", " + n);
@@ -36,6 +37,7 @@ namespace MHArmory.Search.OpenCL
             writer.WriteLine();
         }
 
+        // For debugging purposes
         private void DumpSerializedData(SerializedSearchParameters searchParameters)
         {
             using (FileStream file = File.OpenWrite("dump.txt"))
@@ -52,7 +54,7 @@ namespace MHArmory.Search.OpenCL
         public List<ArmorSetSearchResult> Run(ISolverData data)
         {
             SerializedSearchParameters serializedData = Serializer.Serialize(data);
-            //DumpSerializedData(serializedData); // for testing purposes
+            //DumpSerializedData(serializedData); 
             SerializedSearchResults serializedResults = Host.Run(serializedData);
             List<ArmorSetSearchResult> results = Deserializer.Deserialize(data, serializedData.SearchIDMaps, serializedResults);
             return results;
