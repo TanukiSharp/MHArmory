@@ -1,6 +1,8 @@
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Media;
@@ -20,16 +22,15 @@ namespace MHArmory.ScalableVectorGraphics
 
             if (renders.TryGetValue(key, out ImageSource result) == false)
             {
-                StreamResourceInfo streamResourceInfo;
-
                 try
                 {
-                    streamResourceInfo = App.GetResourceStream(new Uri($"pack://application:,,,/{imageResourceLocation}"));
+                    Assembly asm = typeof(App).GetTypeInfo().Assembly;
 
-                    if (streamResourceInfo != null)
+                    Stream stream = asm.GetManifestResourceStream($"MHArmory.{imageResourceLocation}");
+                    if (stream != null)
                     {
                         var svgLoader = new Loader();
-                        VectorGraphicsInfo vectorGraphicsInfo = svgLoader.LoadFromStream(streamResourceInfo.Stream);
+                        VectorGraphicsInfo vectorGraphicsInfo = svgLoader.LoadFromStream(stream);
 
                         result = Rasterizer.Render(size, size, vectorGraphicsInfo);
                     }

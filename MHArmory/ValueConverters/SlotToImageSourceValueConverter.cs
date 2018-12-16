@@ -14,7 +14,7 @@ namespace MHArmory.ValueConverters
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
             if (value is int slotSize && slotSize >= 1 && slotSize <= 3 && parameter is string rasterSizeStr && int.TryParse(rasterSizeStr, out int rasterSize))
-                return RasterizedImageContainer.GetRasterizedImage(rasterSize, $"Icons/Jewels/Jewel{slotSize}.svg");
+                return RasterizedImageContainer.GetRasterizedImage(rasterSize, $"Icons.Jewels.Jewel{slotSize}.svg");
 
             return null;
         }

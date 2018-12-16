@@ -15,7 +15,7 @@ namespace MHArmory.ValueConverters
     public class EquipmentEnumToImageSourceValueConverter : EnumToImageSourceValueConverter
     {
         public EquipmentEnumToImageSourceValueConverter()
-            : base("Icons/Equipments")
+            : base("Icons.Equipments")
         {
         }
     }
@@ -23,7 +23,7 @@ namespace MHArmory.ValueConverters
     public class WeaponEnumToImageSourceValueConverter : EnumToImageSourceValueConverter
     {
         public WeaponEnumToImageSourceValueConverter()
-            : base("Icons/Weapons")
+            : base("Icons.Weapons")
         {
         }
     }
@@ -31,7 +31,7 @@ namespace MHArmory.ValueConverters
     public class ElementEnumToImageSourceValueConverter : EnumToImageSourceValueConverter
     {
         public ElementEnumToImageSourceValueConverter()
-            : base("Icons/Elements")
+            : base("Icons.Elements")
         {
         }
     }
@@ -53,7 +53,7 @@ namespace MHArmory.ValueConverters
             string strType = value.ToString();
 
             if (parameter is string strParam && int.TryParse(strParam, out int rasterSize))
-                return RasterizedImageContainer.GetRasterizedImage(rasterSize, $"{relativeDirectory}/{strType}.svg");
+                return RasterizedImageContainer.GetRasterizedImage(rasterSize, $"{relativeDirectory}.{strType}.svg");
 
             return null;
         }

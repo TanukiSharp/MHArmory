@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Resources;
@@ -28,14 +29,13 @@ namespace MHArmory.ViewModels
         {
             HelpCategory = helpCategory;
 
-            StreamResourceInfo streamResourceInfo = App.GetResourceStream(new Uri($"pack://application:,,,/HelpText/{helpCategory}.html"));
-            if (streamResourceInfo != null)
+            Assembly asm = typeof(App).GetTypeInfo().Assembly;
+
+            Stream stream = asm.GetManifestResourceStream($"MHArmory.HelpText.{helpCategory}.html");
+            using (var sr = new StreamReader(stream, Encoding.UTF8))
             {
-                using (var sr = new StreamReader(streamResourceInfo.Stream, Encoding.UTF8))
-                {
-                    Title = sr.ReadLine();
-                    Content = sr.ReadToEnd().TrimStart();
-                }
+                Title = sr.ReadLine();
+                Content = sr.ReadToEnd().TrimStart();
             }
         }
     }

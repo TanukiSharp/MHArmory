@@ -1,474 +1,223 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
-  <PropertyGroup>
-    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{B0A72C5D-4CE0-4417-BD68-B902B8C00EC6}</ProjectGuid>
-    <OutputType>WinExe</OutputType>
-    <RootNamespace>MHArmory</RootNamespace>
-    <AssemblyName>MHArmory</AssemblyName>
-    <TargetFrameworkVersion>v4.7</TargetFrameworkVersion>
-    <FileAlignment>512</FileAlignment>
-    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
-    <WarningLevel>4</WarningLevel>
-    <TargetFrameworkProfile />
-    <RestoreProjectStyle>PackageReference</RestoreProjectStyle>
-    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
-    <DebugSymbols>true</DebugSymbols>
-    <DebugType>full</DebugType>
-    <Optimize>false</Optimize>
-    <OutputPath>bin\Debug\</OutputPath>
-    <DefineConstants>DEBUG;TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
-    <DebugType>pdbonly</DebugType>
-    <Optimize>true</Optimize>
-    <OutputPath>bin\Release\</OutputPath>
-    <DefineConstants>TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-  </PropertyGroup>
-  <PropertyGroup>
-    <RunPostBuildEvent>Always</RunPostBuildEvent>
-  </PropertyGroup>
-  <PropertyGroup>
-    <ApplicationIcon>blue_shield.ico</ApplicationIcon>
-  </PropertyGroup>
-  <PropertyGroup>
-    <NoWin32Manifest>true</NoWin32Manifest>
-  </PropertyGroup>
-  <ItemGroup>
-    <Reference Include="System" />
-    <Reference Include="System.Data" />
-    <Reference Include="System.Xml" />
-    <Reference Include="Microsoft.CSharp" />
-    <Reference Include="System.Core" />
-    <Reference Include="System.Xml.Linq" />
-    <Reference Include="System.Xaml">
-      <RequiredTargetFramework>4.0</RequiredTargetFramework>
-    </Reference>
-    <Reference Include="WindowsBase" />
-    <Reference Include="PresentationCore" />
-    <Reference Include="PresentationFramework" />
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Include="AboutWindow.xaml.cs">
-      <DependentUpon>AboutWindow.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="AutoUpdate\AutoUpdater.cs" />
-    <Compile Include="AutoUpdate\EventArguments.cs" />
-    <Compile Include="Behaviors\ClickToCommandBehavior.cs" />
-    <Compile Include="Behaviors\GreekLetterInputBehavior.cs" />
-    <Compile Include="Behaviors\HorizontalScrollBehavior.cs" />
-    <Compile Include="Behaviors\SetHtmlBehavior.cs" />
-    <Compile Include="Behaviors\TextBoxFocusOnEmptyBehavior.cs" />
-    <Compile Include="Behaviors\ToolTipExBehavior.cs" />
-    <Compile Include="Configurations\ConfigurationV2.cs" />
-    <Compile Include="Controls\DraggableScrollViewer.cs" />
-    <Compile Include="Controls\SharpnessRenderer.cs" />
-    <Compile Include="DependencyObjectExtensions.cs" />
-    <Compile Include="EnumerableExtensions.cs" />
-    <Compile Include="EquipmentOverrideWindow.xaml.cs">
-      <DependentUpon>EquipmentOverrideWindow.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="GitInfo.cs" />
-    <ApplicationDefinition Include="App.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </ApplicationDefinition>
-    <Compile Include="AdvancedSearchWindow.xaml.cs">
-      <DependentUpon>AdvancedSearchWindow.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="AnonymousCommand.cs" />
-    <Compile Include="Behaviors\DoubleClickBehavior.cs" />
-    <Compile Include="Behaviors\FocusOnLoadBehavior.cs" />
-    <Compile Include="Configurations\ConfigurationV1.cs" />
-    <Compile Include="Configurations\ConfigurationManager.cs" />
-    <Compile Include="Configurations\IConfiguration.cs" />
-    <Compile Include="DecorationsOverrideWindow.xaml.cs">
-      <DependentUpon>DecorationsOverrideWindow.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="EnumDataSource.cs" />
-    <Compile Include="EquipmentExplorerWindow.xaml.cs">
-      <DependentUpon>EquipmentExplorerWindow.xaml</DependentUpon>
-    </Compile>
-    <Resource Include="HelpText\KeyboardShortcuts.html" />
-    <Compile Include="HelpWindow.xaml.cs">
-      <DependentUpon>HelpWindow.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="LoadoutManager.cs" />
-    <Compile Include="LoadoutWindow.xaml.cs">
-      <DependentUpon>LoadoutWindow.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Logging\DispatcherLogger.cs" />
-    <Compile Include="MarkupExtensions\RasterizedImageExtension.cs" />
-    <Compile Include="Panels\KeyValueGrid.cs" />
-    <Compile Include="Panels\TooledContentPanel.cs" />
-    <Compile Include="ReorganizableCollectionUtilities.cs" />
-    <Compile Include="SaveDataSlotSelectorWindow.xaml.cs">
-      <DependentUpon>SaveDataSlotSelectorWindow.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="ScalableVectorGraphics\RasterizedImageContainer.cs" />
-    <Compile Include="ScalableVectorGraphics\Loader.cs" />
-    <Compile Include="ScalableVectorGraphics\Rasterizer.cs" />
-    <Compile Include="SearchResultProcessingWindow.xaml.cs">
-      <DependentUpon>SearchResultProcessingWindow.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="SearchResultSortCriteria.cs" />
-    <Compile Include="SearchUtilities.cs" />
-    <Compile Include="Services\DirectoryBrowserService.cs" />
-    <Compile Include="Services\MessageBoxService.cs" />
-    <Compile Include="Services\RenameService.cs" />
-    <Compile Include="Services\RenderService.cs" />
-    <Compile Include="Services\SaveDataService.cs" />
-    <Compile Include="Services\SearchResultScreenshotService.cs" />
-    <Compile Include="Services\ServicesContainer.cs" />
-    <Compile Include="TaskExtensions.cs" />
-    <Compile Include="TextInputWindow.xaml.cs">
-      <DependentUpon>TextInputWindow.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Controls\CustomTreeView.cs" />
-    <Compile Include="ValueConverters\AbilityToViewModelValueConverter.cs" />
-    <Compile Include="ValueConverters\ElementNameValueConverter.cs" />
-    <Compile Include="ValueConverters\FreeElementNameValueConverter.cs" />
-    <Compile Include="ValueConverters\HasDefenseVisibilityValueConverter.cs" />
-    <Compile Include="ValueConverters\MillisecondsToTimeValueConverter.cs" />
-    <Compile Include="ValueConverters\NumToSeparatedStringValueConverter.cs" />
-    <Compile Include="ValueConverters\SharpnessNameValueConverter.cs" />
-    <Compile Include="ValueConverters\SlotSizeToolTipValueConverter.cs" />
-    <Compile Include="ValueConverters\SlotToImageSourceValueConverter.cs" />
-    <Compile Include="ValueConverters\SortCriteriaNameValueConverter.cs" />
-    <Compile Include="ValueConverters\VisibilityValueConverter.cs" />
-    <Compile Include="GlobalData.cs" />
-    <Compile Include="ValueConverters\EnumToImageSourceValueConverter.cs" />
-    <Compile Include="ValueConverters\InverseBooleanValueConverter.cs" />
-    <Compile Include="RoutedCommands.cs" />
-    <Compile Include="SkillSelectorWindow.xaml.cs">
-      <DependentUpon>SkillSelectorWindow.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="ValueConverters\WeaponNameValueConverter.cs" />
-    <Compile Include="ViewModels\AdvancedSearchViewModel.cs" />
-    <Compile Include="ViewModels\ArmorPieceTypesViewModel.cs" />
-    <Compile Include="ViewModels\ArmorSetViewModel.cs" />
-    <Compile Include="ViewModels\AutoUpdateViewModel.cs" />
-    <Compile Include="ViewModels\DecorationsOverrideViewModel.cs" />
-    <Compile Include="ViewModels\EquipmentExplorerViewModel.cs" />
-    <Compile Include="ViewModels\EquipmentOverrideViewModel.cs" />
-    <Compile Include="ViewModels\EquipmentViewModel.cs" />
-    <Compile Include="ViewModels\HelpViewModel.cs" />
-    <Compile Include="ViewModels\InParametersViewModel.cs" />
-    <Compile Include="ViewModels\JewelOverrideViewModel.cs" />
-    <Compile Include="ViewModels\LoadoutViewModel.cs" />
-    <Compile Include="ViewModels\RootViewModel.cs" />
-    <Compile Include="ViewModels\SaveDataSlotSelectorViewModel.cs" />
-    <Compile Include="ViewModels\SearchResultProcessingViewModel.cs" />
-    <Compile Include="ViewModels\SkillSelectorViewModel.cs" />
-    <Compile Include="ViewModels\SkillViewModel.cs" />
-    <Compile Include="ViewModels\SearchResultProcessingContainerViewModel.cs" />
-    <Compile Include="ViewModels\SearchResultSortItemViewModel.cs" />
-    <Compile Include="ViewModels\TextInputViewModel.cs" />
-    <Compile Include="ViewModels\ViewModelBase.cs" />
-    <Compile Include="ViewModels\WeaponsContainerViewModel.cs" />
-    <Compile Include="ViewModels\WeaponTypeViewModel.cs" />
-    <Compile Include="ViewModels\WeaponViewModel.cs" />
-    <Compile Include="WeaponsWindow.xaml.cs">
-      <DependentUpon>WeaponsWindow.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="WindowManager.cs" />
-    <Page Include="AboutWindow.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="AdvancedSearchWindow.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="EquipmentOverrideWindow.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="SaveDataSlotSelectorWindow.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Styles.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="DecorationsOverrideWindow.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="EquipmentExplorerWindow.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="HelpWindow.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="LoadoutWindow.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="MainWindow.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Compile Include="App.xaml.cs">
-      <DependentUpon>App.xaml</DependentUpon>
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="MainWindow.xaml.cs">
-      <DependentUpon>MainWindow.xaml</DependentUpon>
-      <SubType>Code</SubType>
-    </Compile>
-    <Page Include="SearchResultProcessingWindow.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="SkillSelectorWindow.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="TextInputWindow.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Views.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="WeaponsWindow.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Include="Properties\AssemblyInfo.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Resources.resx</DependentUpon>
-    </Compile>
-    <Compile Include="Properties\Settings.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Settings.settings</DependentUpon>
-      <DesignTimeSharedInput>True</DesignTimeSharedInput>
-    </Compile>
-    <EmbeddedResource Include="Properties\Resources.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
-    <None Include="data\abilities.json">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="data\armorSetSkills.json">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="data\arms.json">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="data\bow.json">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="data\charge-blade.json">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="data\charmLevels.json">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="data\charms.json">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="data\chests.json">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="data\dual-blades.json">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="data\fullArmorSets.json">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="data\gameEquipments.json">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="data\great-sword.json">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="data\gunlance.json">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="data\hammer.json">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="data\heads.json">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="data\heavy-bowgun.json">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="data\hunting-horn.json">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="data\insect-glaive.json">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="data\jewels.json">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="data\lance.json">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="data\legs.json">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="data\light-bowgun.json">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="data\long-sword.json">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="data\skills.json">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="data\switch-axe.json">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="data\sword-and-shield.json">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="data\waists.json">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="Properties\Settings.settings">
-      <Generator>SettingsSingleFileGenerator</Generator>
-    </None>
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\MHArmory.ArmoryDataSource\MHArmory.ArmoryDataSource.csproj">
-      <Project>{9b314a16-0501-47aa-9459-966f8e540b7e}</Project>
-      <Name>MHArmory.ArmoryDataSource</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\MHArmory.Core\MHArmory.Core.csproj">
-      <Project>{bd19a211-15ea-4896-8257-83a14f3c634f}</Project>
-      <Name>MHArmory.Core</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\MHArmory.Search\MHArmory.Search.csproj">
-      <Project>{375922DD-84D4-46FA-9F2C-0FC45EFC0BDD}</Project>
-      <Name>MHArmory.Search</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\MHWSaveUtils\MHWSaveUtils\MHWSaveUtils.csproj">
-      <Project>{e0f3fd6a-4633-40f5-9a5d-6652a175727a}</Project>
-      <Name>MHWSaveUtils</Name>
-    </ProjectReference>
-  </ItemGroup>
+﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+
+    <PropertyGroup>
+        <OutputType>WinExe</OutputType>
+        <TargetFramework>netcoreapp3.0</TargetFramework>
+        <UseWPF>true</UseWPF>
+        <AssemblyName>MHArmory</AssemblyName>
+        <Version>0.0.8.2</Version>
+        <Authors>Sebastien ROBERT</Authors>
+        <Description>Tool that helps finding the best armor set possible for a given set of skill - Monster Hunter World</Description>
+        <Copyright>Copyright © Sebastien ROBERT - 2018</Copyright>
+        <Product>Armory</Product>
+        <PackageLicenseUrl>https://github.com/TanukiSharp/MHArmory/blob/master/LICENSE</PackageLicenseUrl>
+        <PackageProjectUrl>https://github.com/TanukiSharp/MHArmory</PackageProjectUrl>
+        <PackageIconUrl>https://raw.githubusercontent.com/TanukiSharp/MHArmory/master/docs/images/blue_shield.png</PackageIconUrl>
+        <RepositoryUrl>https://github.com/TanukiSharp/MHArmory</RepositoryUrl>
+        <PackageTags>armor set search ass monster hunter mh mhw armory world monster-hunter</PackageTags>
+        <ApplicationIcon>blue_shield.ico</ApplicationIcon>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <None Remove="Icons\Attributes\Affinity.svg" />
+      <None Remove="Icons\Attributes\Attack.svg" />
+      <None Remove="Icons\Attributes\Defense.svg" />
+      <None Remove="Icons\Attributes\Deviation.svg" />
+      <None Remove="Icons\blue_shield.png" />
+      <None Remove="Icons\Elements\Blast.svg" />
+      <None Remove="Icons\Elements\Dragon.svg" />
+      <None Remove="Icons\Elements\Fire.svg" />
+      <None Remove="Icons\Elements\Ice.svg" />
+      <None Remove="Icons\Elements\Paralysis.svg" />
+      <None Remove="Icons\Elements\Poison.svg" />
+      <None Remove="Icons\Elements\Sleep.svg" />
+      <None Remove="Icons\Elements\Thunder.svg" />
+      <None Remove="Icons\Elements\Water.svg" />
+      <None Remove="Icons\Equipments\Charm.svg" />
+      <None Remove="Icons\Equipments\Chest.svg" />
+      <None Remove="Icons\Equipments\Gloves.svg" />
+      <None Remove="Icons\Equipments\Head.svg" />
+      <None Remove="Icons\Equipments\Legs.svg" />
+      <None Remove="Icons\Equipments\Waist.svg" />
+      <None Remove="Icons\github_64x64.png" />
+      <None Remove="Icons\Jewels\Jewel1.svg" />
+      <None Remove="Icons\Jewels\Jewel2.svg" />
+      <None Remove="Icons\Jewels\Jewel3.svg" />
+      <None Remove="Icons\Others\cube_chest.svg" />
+      <None Remove="Icons\twitter_64x64.png" />
+      <None Remove="Icons\Weapons\Bow.svg" />
+      <None Remove="Icons\Weapons\ChargeBlade.svg" />
+      <None Remove="Icons\Weapons\DualBlades.svg" />
+      <None Remove="Icons\Weapons\GreatSword.svg" />
+      <None Remove="Icons\Weapons\Gunlance.svg" />
+      <None Remove="Icons\Weapons\Hammer.svg" />
+      <None Remove="Icons\Weapons\HeavyBowgun.svg" />
+      <None Remove="Icons\Weapons\HuntingHorn.svg" />
+      <None Remove="Icons\Weapons\InsectGlaive.svg" />
+      <None Remove="Icons\Weapons\Lance.svg" />
+      <None Remove="Icons\Weapons\LightBowgun.svg" />
+      <None Remove="Icons\Weapons\LongSword.svg" />
+      <None Remove="Icons\Weapons\SwitchAxe.svg" />
+      <None Remove="Icons\Weapons\SwordAndShield.svg" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <EmbeddedResource Include="HelpText\DecorationsOverride.html" />
+      <EmbeddedResource Include="HelpText\EquipmentOverride.html" />
+      <EmbeddedResource Include="HelpText\GettingStarted.html" />
+      <EmbeddedResource Include="HelpText\KeyboardShortcuts.html" />
+      <EmbeddedResource Include="HelpText\Sorting.html" />
+      <EmbeddedResource Include="Icons\Attributes\Affinity.svg" />
+      <EmbeddedResource Include="Icons\Attributes\Attack.svg" />
+      <EmbeddedResource Include="Icons\Attributes\Defense.svg" />
+      <EmbeddedResource Include="Icons\Attributes\Deviation.svg" />
+      <EmbeddedResource Include="Icons\blue_shield.png" />
+      <EmbeddedResource Include="Icons\Elements\Blast.svg" />
+      <EmbeddedResource Include="Icons\Elements\Dragon.svg" />
+      <EmbeddedResource Include="Icons\Elements\Fire.svg" />
+      <EmbeddedResource Include="Icons\Elements\Ice.svg" />
+      <EmbeddedResource Include="Icons\Elements\Paralysis.svg" />
+      <EmbeddedResource Include="Icons\Elements\Poison.svg" />
+      <EmbeddedResource Include="Icons\Elements\Sleep.svg" />
+      <EmbeddedResource Include="Icons\Elements\Thunder.svg" />
+      <EmbeddedResource Include="Icons\Elements\Water.svg" />
+      <EmbeddedResource Include="Icons\Equipments\Charm.svg" />
+      <EmbeddedResource Include="Icons\Equipments\Chest.svg" />
+      <EmbeddedResource Include="Icons\Equipments\Gloves.svg" />
+      <EmbeddedResource Include="Icons\Equipments\Head.svg" />
+      <EmbeddedResource Include="Icons\Equipments\Legs.svg" />
+      <EmbeddedResource Include="Icons\Equipments\Waist.svg" />
+      <EmbeddedResource Include="Icons\github_64x64.png" />
+      <EmbeddedResource Include="Icons\Jewels\Jewel1.svg" />
+      <EmbeddedResource Include="Icons\Jewels\Jewel2.svg" />
+      <EmbeddedResource Include="Icons\Jewels\Jewel3.svg" />
+      <EmbeddedResource Include="Icons\Others\cube_chest.svg" />
+      <EmbeddedResource Include="Icons\twitter_64x64.png" />
+      <EmbeddedResource Include="Icons\Weapons\Bow.svg" />
+      <EmbeddedResource Include="Icons\Weapons\ChargeBlade.svg" />
+      <EmbeddedResource Include="Icons\Weapons\DualBlades.svg" />
+      <EmbeddedResource Include="Icons\Weapons\GreatSword.svg" />
+      <EmbeddedResource Include="Icons\Weapons\Gunlance.svg" />
+      <EmbeddedResource Include="Icons\Weapons\Hammer.svg" />
+      <EmbeddedResource Include="Icons\Weapons\HeavyBowgun.svg" />
+      <EmbeddedResource Include="Icons\Weapons\HuntingHorn.svg" />
+      <EmbeddedResource Include="Icons\Weapons\InsectGlaive.svg" />
+      <EmbeddedResource Include="Icons\Weapons\Lance.svg" />
+      <EmbeddedResource Include="Icons\Weapons\LightBowgun.svg" />
+      <EmbeddedResource Include="Icons\Weapons\LongSword.svg" />
+      <EmbeddedResource Include="Icons\Weapons\SwitchAxe.svg" />
+      <EmbeddedResource Include="Icons\Weapons\SwordAndShield.svg" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\MHArmory.ArmoryDataSource\MHArmory.ArmoryDataSource.csproj" />
+      <ProjectReference Include="..\MHArmory.Core\MHArmory.Core.csproj" />
+      <ProjectReference Include="..\MHArmory.Search\MHArmory.Search.csproj" />
+      <ProjectReference Include="..\MHWSaveUtils\MHWSaveUtils\MHWSaveUtils.csproj" />
+    </ItemGroup>
+
   <ItemGroup>
     <PackageReference Include="Ben.Demystifier">
-      <Version>0.1.1</Version>
+      <Version>0.1.3</Version>
     </PackageReference>
     <PackageReference Include="Newtonsoft.Json">
-      <Version>11.0.2</Version>
+      <Version>12.0.1</Version>
     </PackageReference>
     <PackageReference Include="System.Net.Http">
       <Version>4.3.4</Version>
     </PackageReference>
   </ItemGroup>
+
   <ItemGroup>
-    <Resource Include="Icons\Equipments\Chest.svg" />
-    <Resource Include="Icons\Equipments\Gloves.svg" />
-    <Resource Include="Icons\Equipments\Head.svg" />
-    <Resource Include="Icons\Equipments\Legs.svg" />
-    <Resource Include="Icons\Equipments\Waist.svg" />
+    <None Update="data\abilities.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="data\armorSetSkills.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="data\arms.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="data\bow.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="data\charge-blade.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="data\charmLevels.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="data\charms.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="data\chests.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="data\dual-blades.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="data\fullArmorSets.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="data\gameEquipments.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="data\great-sword.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="data\gunlance.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="data\hammer.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="data\heads.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="data\heavy-bowgun.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="data\hunting-horn.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="data\insect-glaive.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="data\jewels.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="data\lance.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="data\legs.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="data\light-bowgun.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="data\long-sword.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="data\skills.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="data\switch-axe.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="data\sword-and-shield.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="data\waists.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Icons\Elements\Dragon.svg" />
-    <Resource Include="Icons\Elements\Fire.svg" />
-    <Resource Include="Icons\Elements\Ice.svg" />
-    <Resource Include="Icons\Elements\Thunder.svg" />
-    <Resource Include="Icons\Elements\Water.svg" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Icons\Jewels\Jewel1.svg" />
-    <Resource Include="Icons\Jewels\Jewel2.svg" />
-    <Resource Include="Icons\Jewels\Jewel3.svg" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="blue_shield.ico" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Icons\blue_shield.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Icons\Equipments\Charm.svg" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Icons\twitter_64x64.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Icons\github_64x64.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Icons\Weapons\GreatSword.svg" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Icons\Weapons\Bow.svg" />
-    <Resource Include="Icons\Weapons\ChargeBlade.svg" />
-    <Resource Include="Icons\Weapons\DualBlades.svg" />
-    <Resource Include="Icons\Weapons\Gunlance.svg" />
-    <Resource Include="Icons\Weapons\Hammer.svg" />
-    <Resource Include="Icons\Weapons\HeavyBowgun.svg" />
-    <Resource Include="Icons\Weapons\HuntingHorn.svg" />
-    <Resource Include="Icons\Weapons\InsectGlaive.svg" />
-    <Resource Include="Icons\Weapons\Lance.svg" />
-    <Resource Include="Icons\Weapons\LightBowgun.svg" />
-    <Resource Include="Icons\Weapons\LongSword.svg" />
-    <Resource Include="Icons\Weapons\SwitchAxe.svg" />
-    <Resource Include="Icons\Weapons\SwordAndShield.svg" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Icons\Elements\Blast.svg" />
-    <Resource Include="Icons\Elements\Paralysis.svg" />
-    <Resource Include="Icons\Elements\Poison.svg" />
-    <Resource Include="Icons\Elements\Sleep.svg" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Icons\Attributes\Affinity.svg" />
-    <Resource Include="Icons\Attributes\Attack.svg" />
-    <Resource Include="Icons\Attributes\Defense.svg" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Icons\Attributes\Deviation.svg" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="HelpText\DecorationsOverride.html" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="HelpText\GettingStarted.html" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="HelpText\Sorting.html" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Icons\Others\cube_chest.svg" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="HelpText\EquipmentOverride.html" />
-  </ItemGroup>
-  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-  <PropertyGroup>
-    <PreBuildEvent>call "$(ProjectDir)PreBuildEventGitInfo.bat" "$(ProjectDir)"</PreBuildEvent>
-  </PropertyGroup>
-  <PropertyGroup>
-    <PostBuildEvent>call "$(ProjectDir)PostBuildEventGitInfo.bat" "$(ProjectDir)"</PostBuildEvent>
-  </PropertyGroup>
+
+  <Target Name="PreBuild" BeforeTargets="PreBuildEvent">
+    <Exec Command="call &quot;$(ProjectDir)PreBuildEventGitInfo.bat&quot; &quot;$(ProjectDir)&quot;" />
+  </Target>
+
+  <Target Name="PostBuild" AfterTargets="PostBuildEvent">
+    <Exec Command="call &quot;$(ProjectDir)PostBuildEventGitInfo.bat&quot; &quot;$(ProjectDir)&quot;" />
+  </Target>
+
 </Project>
