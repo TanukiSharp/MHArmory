@@ -132,49 +132,59 @@ namespace MHArmory.Search
             currentCombinations = 0;
             totalCombinations = metrics.CombinationCount;
 
-            ParallelLoopResult parallelResult;
+            const bool cl = true;
 
-            try
+            if (cl)
             {
-                OrderablePartitioner<IEquipment[]> partitioner = Partitioner.Create(generator.All(cancellationToken), EnumerablePartitionerOptions.NoBuffering);
+                test = OpenCL.OpenCLSearch.Instance.Run(data);
+            }
+            else
+            {
+                ParallelLoopResult parallelResult;
 
-                parallelResult = Parallel.ForEach(partitioner, parallelOptions, equips =>
+                try
                 {
-                    if (cancellationToken.IsCancellationRequested)
+                    OrderablePartitioner<IEquipment[]> partitioner = Partitioner.Create(generator.All(cancellationToken), EnumerablePartitionerOptions.NoBuffering);
+
+                    parallelResult = Parallel.ForEach(partitioner, parallelOptions, equips =>
                     {
-                        searchEquipmentsObjectPool.PutObject(equips);
-                        return;
-                    }
-
-                    ArmorSetSearchResult searchResult = IsArmorSetMatching(data.WeaponSlots, equips, data.AllJewels, desiredAbilities);
-
-                    Interlocked.Increment(ref currentCombinations);
-
-                    if (searchResult.IsMatch)
-                    {
-                        searchResult.ArmorPieces = new IArmorPiece[]
+                        if (cancellationToken.IsCancellationRequested)
                         {
-                            (IArmorPiece)equips[0],
-                            (IArmorPiece)equips[1],
-                            (IArmorPiece)equips[2],
-                            (IArmorPiece)equips[3],
-                            (IArmorPiece)equips[4],
-                        };
-                        searchResult.Charm = (ICharmLevel)equips[5];
-
-                        lock (test)
-                        {
-                            test.Add(searchResult);
+                            searchEquipmentsObjectPool.PutObject(equips);
+                            return;
                         }
-                    }
 
-                    searchEquipmentsObjectPool.PutObject(equips);
-                });
+                        ArmorSetSearchResult searchResult = IsArmorSetMatching(data.WeaponSlots, equips, data.AllJewels, desiredAbilities);
+
+                        Interlocked.Increment(ref currentCombinations);
+
+                        if (searchResult.IsMatch)
+                        {
+                            searchResult.ArmorPieces = new IArmorPiece[]
+                            {
+                                (IArmorPiece)equips[0],
+                                (IArmorPiece)equips[1],
+                                (IArmorPiece)equips[2],
+                                (IArmorPiece)equips[3],
+                                (IArmorPiece)equips[4],
+                            };
+                            searchResult.Charm = (ICharmLevel)equips[5];
+
+                            lock (test)
+                            {
+                                test.Add(searchResult);
+                            }
+                        }
+
+                        searchEquipmentsObjectPool.PutObject(equips);
+                    });
+                }
+                finally
+                {
+                    generator.Reset();
+                }
             }
-            finally
-            {
-                generator.Reset();
-            }
+            
 
             sw.Stop();
 
