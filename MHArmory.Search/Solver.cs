@@ -64,7 +64,7 @@ namespace MHArmory.Search
         private readonly ObjectPool<IEquipment[]> searchEquipmentsObjectPool = new ObjectPool<IEquipment[]>(() => new IEquipment[6]);
 
         private async Task<IList<ArmorSetSearchResult>> SearchArmorSetsInternal(
-            IEnumerable<IAbility> desiredAbilities,
+            IAbility[] desiredAbilities,
             CancellationToken cancellationToken
         )
         {
@@ -199,8 +199,8 @@ namespace MHArmory.Search
 
         private ArmorSetSearchResult IsArmorSetMatching(
             int[] weaponSlots, IEquipment[] equipments,
-            IList<SolverDataJewelModel> matchingJewels,
-            IEnumerable<IAbility> desiredAbilities
+            SolverDataJewelModel[] matchingJewels,
+            IAbility[] desiredAbilities
         )
         {
             bool isOptimal = true;
@@ -333,7 +333,7 @@ namespace MHArmory.Search
             };
         }
 
-        private bool IsAbilityMatchingArmorSet(IAbility ability, IEnumerable<IEquipment> armorPieces)
+        private bool IsAbilityMatchingArmorSet(IAbility ability, IEquipment[] armorPieces)
         {
             Dictionary<IArmorSetSkillPart, int> armorSetSkillParts = armorSetSkillPartsObjectPool.GetObject();
 
