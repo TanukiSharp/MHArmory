@@ -415,7 +415,7 @@ namespace MHArmory.Search
             return jewelCount <= 0;
         }
 
-        public class EquipmentCombinationGenerator
+        private class EquipmentCombinationGenerator
         {
             private readonly object syncRoot = new object();
             private readonly ObjectPool<IEquipment[]> searchEquipmentsObjectPool;
