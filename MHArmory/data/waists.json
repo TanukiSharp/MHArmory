@@ -3628,9 +3628,9 @@
             142
         ],
         "defense": {
-            "base": 64,
-            "max": 70,
-            "augmented": 84
+            "base": 72,
+            "max": 78,
+            "augmented": 92
         },
         "resistances": {
             "fire": 4,
@@ -3657,9 +3657,9 @@
             141
         ],
         "defense": {
-            "base": 64,
-            "max": 70,
-            "augmented": 84
+            "base": 72,
+            "max": 78,
+            "augmented": 92
         },
         "resistances": {
             "fire": 4,
