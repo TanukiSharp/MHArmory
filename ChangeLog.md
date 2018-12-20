@@ -1,5 +1,13 @@
 # Change log
 
+## vNext (0.0.8.3) (?)
+
+Note that 0.0.8.2 has been skipped, it was an experimental build distributed to testers for debug purpose only.
+
+- Added Orion and Orion alpha armor pieces
+- Fixed Kulve Taroth armor pieces defense based on user report
+- Fixed issue related to crashes when loading of System.Net.Http version 4.2.0.0
+
 ## 0.0.8.1 (2018/12/13)
 
 - Added select all and unselect all buttons to the equipment override window
