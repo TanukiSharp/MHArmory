@@ -3618,6 +3618,58 @@
     },
     {
         "id": 157,
+        "name": "Orion Coat",
+        "rarity": 4,
+        "abilityIds": [
+            52
+        ],
+        "defense": {
+            "base": 30,
+            "max": 54,
+            "augmented": 74
+        },
+        "resistances": {
+            "fire": 1,
+            "water": 1,
+            "thunder": 1,
+            "ice": 4,
+            "dragon": 1
+        },
+        "attributes": {
+            "gender": 3
+        },
+        "eventId": 26
+    },
+    {
+        "id": 158,
+        "name": "Orion Coat α",
+        "rarity": 6,
+        "slots": [
+            1,
+            3
+        ],
+        "abilityIds": [
+            52
+        ],
+        "defense": {
+            "base": 58,
+            "max": 78,
+            "augmented": 90
+        },
+        "resistances": {
+            "fire": 1,
+            "water": 1,
+            "thunder": 1,
+            "ice": 4,
+            "dragon": 1
+        },
+        "attributes": {
+            "gender": 3
+        },
+        "eventId": 26
+    },
+    {
+        "id": 159,
         "name": "Kulve Taroth's Malice α",
         "rarity": 8,
         "slots": [
@@ -3645,7 +3697,7 @@
         "eventId": 7
     },
     {
-        "id": 158,
+        "id": 160,
         "name": "Kulve Taroth's Malice β",
         "rarity": 8,
         "slots": [
@@ -3674,7 +3726,7 @@
         "eventId": 7
     },
     {
-        "id": 159,
+        "id": 161,
         "name": "Dante's Belt α",
         "rarity": 8,
         "slots": [
@@ -3702,7 +3754,7 @@
         "eventId": 8
     },
     {
-        "id": 160,
+        "id": 162,
         "name": "Azure Starlord Tassets α",
         "rarity": 7,
         "slots": [
@@ -3732,7 +3784,7 @@
         "eventId": 9
     },
     {
-        "id": 161,
+        "id": 163,
         "name": "Kirin Hoop γ",
         "rarity": 8,
         "slots": [
@@ -3763,7 +3815,7 @@
         "eventId": 15
     },
     {
-        "id": 162,
+        "id": 164,
         "name": "Vaal Hazak Coil γ",
         "rarity": 8,
         "slots": [
@@ -3796,7 +3848,7 @@
         "eventId": 16
     },
     {
-        "id": 163,
+        "id": 165,
         "name": "Kaiser Coil γ",
         "rarity": 8,
         "slots": [
@@ -3827,7 +3879,7 @@
         "eventId": 20
     },
     {
-        "id": 164,
+        "id": 166,
         "name": "Kushala Cocoon γ",
         "rarity": 8,
         "slots": [
@@ -3858,7 +3910,7 @@
         "eventId": 21
     },
     {
-        "id": 165,
+        "id": 167,
         "name": "Empress Coil γ",
         "rarity": 8,
         "slots": [
@@ -3889,7 +3941,7 @@
         "eventId": 14
     },
     {
-        "id": 166,
+        "id": 168,
         "name": "Zorah Spine γ",
         "rarity": 8,
         "slots": [
@@ -3921,7 +3973,7 @@
         "eventId": 24
     },
     {
-        "id": 167,
+        "id": 169,
         "name": "Xeno'jiiva Spine γ",
         "rarity": 8,
         "slots": [
@@ -3952,7 +4004,7 @@
         "eventId": 25
     },
     {
-        "id": 168,
+        "id": 170,
         "name": "Diver's Belt",
         "rarity": 3,
         "abilityIds": [
@@ -3976,7 +4028,7 @@
         "eventId": 17
     },
     {
-        "id": 169,
+        "id": 171,
         "name": "Diver's Belt α",
         "rarity": 5,
         "slots": [
@@ -4003,7 +4055,7 @@
         "eventId": 17
     },
     {
-        "id": 170,
+        "id": 172,
         "name": "Butterfly Elytra α",
         "rarity": 5,
         "slots": [
@@ -4031,7 +4083,7 @@
         "eventId": 18
     },
     {
-        "id": 171,
+        "id": 173,
         "name": "Butterfly Elytra β",
         "rarity": 5,
         "slots": [
@@ -4058,7 +4110,7 @@
         "eventId": 18
     },
     {
-        "id": 172,
+        "id": 174,
         "name": "Queen Beetle Elytra α",
         "rarity": 5,
         "slots": [
@@ -4086,7 +4138,7 @@
         "eventId": 18
     },
     {
-        "id": 173,
+        "id": 175,
         "name": "Queen Beetle Elytra β",
         "rarity": 5,
         "slots": [

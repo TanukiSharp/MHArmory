@@ -3872,6 +3872,58 @@
     },
     {
         "id": 157,
+        "name": "Orion Cap",
+        "rarity": 4,
+        "abilityIds": [
+            55
+        ],
+        "defense": {
+            "base": 30,
+            "max": 54,
+            "augmented": 74
+        },
+        "resistances": {
+            "fire": 1,
+            "water": 1,
+            "thunder": 1,
+            "ice": 4,
+            "dragon": 1
+        },
+        "attributes": {
+            "gender": 3
+        },
+        "eventId": 26
+    },
+    {
+        "id": 158,
+        "name": "Orion Cap α",
+        "rarity": 6,
+        "slots": [
+            1,
+            3
+        ],
+        "abilityIds": [
+            55
+        ],
+        "defense": {
+            "base": 58,
+            "max": 78,
+            "augmented": 90
+        },
+        "resistances": {
+            "fire": 1,
+            "water": 1,
+            "thunder": 1,
+            "ice": 4,
+            "dragon": 1
+        },
+        "attributes": {
+            "gender": 3
+        },
+        "eventId": 26
+    },
+    {
+        "id": 159,
         "name": "Kulve Taroth's Fury α",
         "rarity": 8,
         "slots": [
@@ -3899,7 +3951,7 @@
         "eventId": 7
     },
     {
-        "id": 158,
+        "id": 160,
         "name": "Kulve Taroth's Fury β",
         "rarity": 8,
         "slots": [
@@ -3928,7 +3980,7 @@
         "eventId": 7
     },
     {
-        "id": 159,
+        "id": 161,
         "name": "Dante's Hair α",
         "rarity": 8,
         "slots": [
@@ -3956,7 +4008,7 @@
         "eventId": 8
     },
     {
-        "id": 160,
+        "id": 162,
         "name": "Azure Starlord Crown α",
         "rarity": 7,
         "slots": [
@@ -3986,7 +4038,7 @@
         "eventId": 9
     },
     {
-        "id": 161,
+        "id": 163,
         "name": "Kirin Horn γ",
         "rarity": 8,
         "slots": [
@@ -4017,7 +4069,7 @@
         "eventId": 15
     },
     {
-        "id": 162,
+        "id": 164,
         "name": "Vaal Hazak Helm γ",
         "rarity": 8,
         "slots": [
@@ -4048,7 +4100,7 @@
         "eventId": 16
     },
     {
-        "id": 163,
+        "id": 165,
         "name": "Kaiser Crown γ",
         "rarity": 8,
         "slots": [
@@ -4079,7 +4131,7 @@
         "eventId": 20
     },
     {
-        "id": 164,
+        "id": 166,
         "name": "Kushala Glare γ",
         "rarity": 8,
         "slots": [
@@ -4109,7 +4161,7 @@
         "eventId": 21
     },
     {
-        "id": 165,
+        "id": 167,
         "name": "Empress Crown γ",
         "rarity": 8,
         "slots": [
@@ -4142,7 +4194,7 @@
         "eventId": 14
     },
     {
-        "id": 166,
+        "id": 168,
         "name": "Zorah Headgear γ",
         "rarity": 8,
         "slots": [
@@ -4173,7 +4225,7 @@
         "eventId": 24
     },
     {
-        "id": 167,
+        "id": 169,
         "name": "Xeno'jiiva Headgear γ",
         "rarity": 8,
         "slots": [
@@ -4206,7 +4258,7 @@
         "eventId": 25
     },
     {
-        "id": 168,
+        "id": 170,
         "name": "Diver's Mask",
         "rarity": 3,
         "abilityIds": [
@@ -4230,7 +4282,7 @@
         "eventId": 17
     },
     {
-        "id": 169,
+        "id": 171,
         "name": "Diver's Mask α",
         "rarity": 5,
         "slots": [
@@ -4257,7 +4309,7 @@
         "eventId": 17
     },
     {
-        "id": 170,
+        "id": 172,
         "name": "Butterfly Vertex α",
         "rarity": 5,
         "slots": [
@@ -4285,7 +4337,7 @@
         "eventId": 18
     },
     {
-        "id": 171,
+        "id": 173,
         "name": "Butterfly Vertex β",
         "rarity": 5,
         "slots": [
@@ -4312,7 +4364,7 @@
         "eventId": 18
     },
     {
-        "id": 172,
+        "id": 174,
         "name": "Queen Beetle Vertex α",
         "rarity": 5,
         "slots": [
@@ -4340,7 +4392,7 @@
         "eventId": 18
     },
     {
-        "id": 173,
+        "id": 175,
         "name": "Queen Beetle Vertex β",
         "rarity": 5,
         "slots": [
@@ -4367,7 +4419,7 @@
         "eventId": 18
     },
     {
-        "id": 174,
+        "id": 176,
         "name": "Sealed Eyepatch α",
         "rarity": 5,
         "slots": [
@@ -4395,7 +4447,7 @@
         "eventId": 10
     },
     {
-        "id": 175,
+        "id": 177,
         "name": "Shadow Shades α",
         "rarity": 5,
         "slots": [
@@ -4424,7 +4476,7 @@
         "eventId": 11
     },
     {
-        "id": 176,
+        "id": 178,
         "name": "Kulu-Ya-Ku Head α",
         "rarity": 5,
         "slots": [
@@ -4452,7 +4504,7 @@
         "eventId": 12
     },
     {
-        "id": 177,
+        "id": 179,
         "name": "Wiggler Head α",
         "rarity": 5,
         "slots": [
@@ -4480,7 +4532,7 @@
         "eventId": 13
     },
     {
-        "id": 178,
+        "id": 180,
         "name": "Dragonseal Earrings α",
         "rarity": 7,
         "abilityIds": [
@@ -4503,7 +4555,7 @@
         }
     },
     {
-        "id": 179,
+        "id": 181,
         "name": "Pulverizing Feather",
         "rarity": 4,
         "abilityIds": [
