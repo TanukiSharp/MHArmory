@@ -138,7 +138,7 @@ namespace MHArmory.ViewModels
 
         private void OnAbout()
         {
-            new AboutWindow() { Owner = App.Current.MainWindow }.ShowDialog();
+            new AboutWindow() { Owner = App.Current.MainWindow }.Show();
         }
 
         private void OnCloseApplication(object parameters)

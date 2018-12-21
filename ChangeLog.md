@@ -8,6 +8,7 @@ Note that 0.0.8.2 has been skipped, it was an experimental build distributed to 
 - Fixed Kulve Taroth armor pieces defense based on user report
 - Fixed issue related to crashes when loading of System.Net.Http version 4.2.0.0
 - Fixed wrong gender processing for armor pieces selection
+- Decorations override and equipment override windows are not modal anymore
 
 ## 0.0.8.1 (2018/12/13)
 

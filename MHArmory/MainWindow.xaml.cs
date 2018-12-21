@@ -182,7 +182,7 @@ namespace MHArmory
             if (WindowManager.IsInitialized<DecorationsOverrideWindow>() == false)
                 WindowManager.InitializeWindow(new DecorationsOverrideWindow(rootViewModel) { Owner = this });
 
-            WindowManager.ShowDialog<DecorationsOverrideWindow>();
+            WindowManager.Show<DecorationsOverrideWindow>();
         }
 
         private void OpenEquipmentOverride(object obj)
@@ -190,7 +190,7 @@ namespace MHArmory
             if (WindowManager.IsInitialized<EquipmentOverrideWindow>() == false)
                 WindowManager.InitializeWindow(new EquipmentOverrideWindow(rootViewModel) { Owner = this });
 
-            WindowManager.ShowDialog<EquipmentOverrideWindow>();
+            WindowManager.Show<EquipmentOverrideWindow>();
         }
 
         private void OpenEquipmentExplorer(object obj)
