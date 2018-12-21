@@ -385,12 +385,18 @@ namespace MHArmory.ViewModels
             return EquipmentMatchInParameters(armorPiece) && IsGenderMatching(armorPiece, InParameters.Gender);
         }
 
-        private bool IsGenderMatching(IArmorPiece armorPiece, Gender gender)
+        private bool IsGenderMatching(IArmorPiece armorPiece, Gender selectedGender)
         {
+            // If UI says both, then all armor pieces are a match, no matter the gender of the armor piece.
+            if (selectedGender == Gender.Both)
+                return true;
+
+            // If amor piece gender is both, it is a match no matter the UI selection.
             if (armorPiece.Attributes.RequiredGender == Gender.Both)
                 return true;
 
-            return armorPiece.Attributes.RequiredGender == gender;
+            // Returns only armor piece with gender matching UI selected gender.
+            return armorPiece.Attributes.RequiredGender == selectedGender;
         }
 
         public void UpdateAdvancedSearch()
