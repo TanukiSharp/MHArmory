@@ -9,6 +9,7 @@ Note that 0.0.8.2 has been skipped, it was an experimental build distributed to 
 - Fixed issue related to crashes when loading of System.Net.Http version 4.2.0.0
 - Fixed wrong gender processing for armor pieces selection
 - Decorations override and equipment override windows are not modal anymore
+- Added Drachen armor pieces to game equipment data (for save data import matching)
 
 ## 0.0.8.1 (2018/12/13)
 
