@@ -74,7 +74,9 @@ You can find a change log file [here](ChangeLog.md)
     - API website: https://docs.mhw-db.com
 - **AsteriskAmpersand**, helped a lot about save data
     - GitHub project site: https://github.com/AsteriskAmpersand/MHW-Save-Editor
-- **Testers:** Deiv, Bjorn Lim
+- **Gediminas Masaitis**, for his awesome work on OpenCL to speed up the search algorithm
+    - GitHub fork of Armory: https://github.com/GediminasMasaitis/MHArmory
+- **Testers/Contributors:** Deiv, Bjorn Lim, xaviex, Fatmice
 - **Athena's ASS author(s)**, for making such a wonderful application and inspiring this project
 - **https://www.vectorizer.io**, wonderful website used to vectorize all rasterized icons
 - **All people who worked on Monster Hunter series**, for making such an amazing game
