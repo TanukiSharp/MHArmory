@@ -1,6 +1,6 @@
 # Change log
 
-## vNext (0.0.8.3) (?)
+## 0.0.8.3 (2018/12/22)
 
 Note that 0.0.8.2 has been skipped, it was an experimental build distributed to testers for debug purpose only.
 
