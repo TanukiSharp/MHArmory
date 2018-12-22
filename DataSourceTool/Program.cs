@@ -14,7 +14,7 @@ namespace DataSourceTool
             //// Loads data from Athena ASS and export to Armory format
             new Exporter().Run(args).Wait();
 
-            //// Export the gameEquipments.json file
+            //// Export the gameEquipments.json file from chunk*.pkg files
             //new Equipments().Run(args).Wait();
 
             //// Export the skills.json file
