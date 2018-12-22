@@ -1,9 +1,8 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
-using System.Text;
 using MHArmory.Core.DataStructures;
 
-namespace MHArmory.Search
+namespace MHArmory.Search.Contracts
 {
     public struct ArmorSetJewelResult
     {

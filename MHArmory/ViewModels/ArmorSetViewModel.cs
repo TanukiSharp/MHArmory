@@ -9,6 +9,7 @@ using System.Windows.Input;
 using System.Windows.Media.Imaging;
 using MHArmory.Core.DataStructures;
 using MHArmory.Search;
+using MHArmory.Search.Contracts;
 using MHArmory.Services;
 using Microsoft.Win32;
 

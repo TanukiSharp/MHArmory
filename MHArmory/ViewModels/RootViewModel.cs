@@ -13,6 +13,7 @@ using MHArmory.Configurations;
 using MHArmory.Core;
 using MHArmory.Core.DataStructures;
 using MHArmory.Search;
+using MHArmory.Search.Contracts;
 
 namespace MHArmory.ViewModels
 {
@@ -34,7 +35,7 @@ namespace MHArmory.ViewModels
 
         public ISolverData SolverData { get; private set; }
 
-        private Solver solver;
+        private ISolver solver;
 
         public AutoUpdateViewModel AutoUpdateViewModel { get; } = new AutoUpdateViewModel();
 

@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
 using MHArmory.Search;
+using MHArmory.Search.Contracts;
 
 namespace MHArmory.ViewModels
 {

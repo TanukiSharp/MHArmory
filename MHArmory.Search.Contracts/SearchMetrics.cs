@@ -1,8 +1,8 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace MHArmory.Search
+namespace MHArmory.Search.Contracts
 {
     public class SearchMetrics
     {

@@ -8,10 +8,11 @@ using System.Threading;
 using System.Threading.Tasks;
 using MHArmory.Core;
 using MHArmory.Core.DataStructures;
+using MHArmory.Search.Contracts;
 
 namespace MHArmory.Search
 {
-    public class Solver
+    public class Solver : ISolver
     {
         private int currentCombinations;
         private double totalCombinations;

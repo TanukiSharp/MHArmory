@@ -131,6 +131,7 @@
     <Compile Include="Services\SearchResultScreenshotService.cs" />
     <Compile Include="Services\ServicesContainer.cs" />
     <Compile Include="TaskExtensions.cs" />
+    <Compile Include="TaskRunner.cs" />
     <Compile Include="TextInputWindow.xaml.cs">
       <DependentUpon>TextInputWindow.xaml</DependentUpon>
     </Compile>
@@ -362,6 +363,10 @@
     <ProjectReference Include="..\MHArmory.Core\MHArmory.Core.csproj">
       <Project>{bd19a211-15ea-4896-8257-83a14f3c634f}</Project>
       <Name>MHArmory.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MHArmory.Search.Contracts\MHArmory.Search.Contracts.csproj">
+      <Project>{46E1D053-5670-4B4E-B5DD-B09358B5D36A}</Project>
+      <Name>MHArmory.Search.Contracts</Name>
     </ProjectReference>
     <ProjectReference Include="..\MHArmory.Search\MHArmory.Search.csproj">
       <Project>{375922DD-84D4-46FA-9F2C-0FC45EFC0BDD}</Project>
