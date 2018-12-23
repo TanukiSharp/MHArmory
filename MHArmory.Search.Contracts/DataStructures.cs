@@ -15,7 +15,6 @@ namespace MHArmory.Search.Contracts
         public static readonly ArmorSetSearchResult NoMatch = new ArmorSetSearchResult { IsMatch = false };
 
         public bool IsMatch;
-        public bool IsOptimal;
         public IList<IArmorPiece> ArmorPieces;
         public ICharmLevel Charm;
         public IList<ArmorSetJewelResult> Jewels;

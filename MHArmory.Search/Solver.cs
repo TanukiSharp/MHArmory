@@ -204,7 +204,6 @@ namespace MHArmory.Search
             IAbility[] desiredAbilities
         )
         {
-            bool isOptimal = true;
             List<ArmorSetJewelResult> requiredJewels = jewelResultObjectPool.GetObject();
             int[] availableSlots = availableSlotsObjectPool.GetObject();
 
@@ -320,15 +319,11 @@ namespace MHArmory.Search
                         return new ArmorSetSearchResult { IsMatch = false };
                     }
                 }
-
-                if (remaingAbilityLevels < 0)
-                    isOptimal = false;
             }
 
             return new ArmorSetSearchResult
             {
                 IsMatch = true,
-                IsOptimal = isOptimal,
                 Jewels = requiredJewels,
                 SpareSlots = availableSlots
             };
