@@ -1,13 +1,16 @@
+using MHArmory.Core;
 using MHArmory.Core.DataStructures;
 using MHArmory.Search.Contracts;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace MHArmory.Search
+namespace MHArmory.Search.Contracts
 {
     public class SolverData : ISolverData
     {
+        public const double MinimumAverageSkillCompletionRatio = 0.75;
+
         public int[] WeaponSlots { get; private set; }
         public ISolverDataEquipmentModel[] AllHeads { get; private set; }
         public ISolverDataEquipmentModel[] AllChests { get; private set; }
@@ -305,7 +308,7 @@ namespace MHArmory.Search
             {
                 e.IsSelected =
                     e.IsMatchingArmorSetSkill ||
-                    e.AverageSkillCompletionRatio >= Heuristics.MinimumAverageSkillCompletionRatio ||
+                    e.AverageSkillCompletionRatio >= MinimumAverageSkillCompletionRatio ||
                     e.MatchingSkillTotalLevel >= MaxSkillCountPerArmorPiece ||
                     (e.MatchingSkillTotalLevel == e.Equipment.Abilities.Length && e.Equipment.Slots.Length > 0) ||
                     (e.Equipment.Slots.Length >= 2 && e.Equipment.Slots.Count(x => x >= 2) >= 1);

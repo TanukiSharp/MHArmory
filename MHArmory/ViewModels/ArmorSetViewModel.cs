@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Input;
 using System.Windows.Media.Imaging;
+using MHArmory.Core;
 using MHArmory.Core.DataStructures;
 using MHArmory.Search;
 using MHArmory.Search.Contracts;
