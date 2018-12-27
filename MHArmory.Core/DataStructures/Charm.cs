@@ -14,7 +14,7 @@ namespace MHArmory.Core.DataStructures
 
     public class CharmLevel : ICharmLevel
     {
-        public CharmLevel(int id, int level, string name, int rarity, int[] slots, IAbility[] abilities, IEvent evt)
+        public CharmLevel(int id, int level, Dictionary<string, string> name, int rarity, int[] slots, IAbility[] abilities, IEvent evt)
         {
             Id = id;
             Level = level;
@@ -30,7 +30,7 @@ namespace MHArmory.Core.DataStructures
         public int Id { get; }
         public int Level { get; }
         public EquipmentType Type { get; }
-        public string Name { get; }
+        public Dictionary<string, string> Name { get; }
         public int Rarity { get; }
         public int[] Slots { get; }
         public IAbility[] Abilities { get; }
@@ -43,20 +43,20 @@ namespace MHArmory.Core.DataStructures
 
         public override string ToString()
         {
-            return Name;
+            return Name["EN"];
         }
     }
 
     public interface ICharm
     {
         int Id { get; }
-        string Name { get; }
+        Dictionary<string, string> Name { get; }
         ICharmLevel[] Levels { get; }
     }
 
     public class Charm : ICharm
     {
-        public Charm(int id, string name, ICharmLevel[] levels)
+        public Charm(int id, Dictionary<string, string> name, ICharmLevel[] levels)
         {
             Id = id;
             Name = name;
@@ -67,12 +67,15 @@ namespace MHArmory.Core.DataStructures
         }
 
         public int Id { get; }
-        public string Name { get; }
+        public Dictionary<string, string> Name { get; }
         public ICharmLevel[] Levels { get; }
 
         public override string ToString()
         {
-            return $"{Name} ({Levels.Length})";
+            if (Name != null)
+                return $"{Name["EN"]} ({Levels.Length})";
+
+            return base.ToString();
         }
     }
 }

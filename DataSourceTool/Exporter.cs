@@ -200,7 +200,7 @@ namespace DataSourceTool
             return events.Select(x => new EventPrimitive
             {
                 Id = x.Id,
-                Name = x.Name
+                Name = null
             });
         }
 

@@ -1,7 +1,15 @@
 [
     {
         "id": 0,
-        "name": "Antidote Jewel",
+        "name": {
+            "EN": "Antidote Jewel",
+            "FR": "Joyau antidote",
+            "JP": "耐毒珠【1】",
+            "IT": "Gioiello resistenza veleno 1",
+            "DE": "Gegengift-Juwel",
+            "KR": "내독주 [1]",
+            "CN": "耐毒珠【1】"
+        },
         "rarity": 5,
         "slotSize": 1,
         "abilityIds": [
@@ -10,7 +18,15 @@
     },
     {
         "id": 1,
-        "name": "Geology Jewel",
+        "name": {
+            "EN": "Geology Jewel",
+            "FR": "Joyau géologie",
+            "JP": "地学珠【1】",
+            "IT": "Gioiello geologo 1",
+            "DE": "Geologie-Juwel",
+            "KR": "지학주 [1]",
+            "CN": "地学珠【1】"
+        },
         "rarity": 5,
         "slotSize": 1,
         "abilityIds": [
@@ -19,7 +35,15 @@
     },
     {
         "id": 2,
-        "name": "Heavy Artillery Jewel",
+        "name": {
+            "EN": "Heavy Artillery Jewel",
+            "FR": "Joyau artillerie",
+            "JP": "砲手珠【1】",
+            "IT": "Gioiello artiglieria pesante 1",
+            "DE": "Schwere-Artillerie-Juwel",
+            "KR": "포수주 [1]",
+            "CN": "砲手珠【1】"
+        },
         "rarity": 5,
         "slotSize": 1,
         "abilityIds": [
@@ -28,7 +52,15 @@
     },
     {
         "id": 3,
-        "name": "Hungerless Jewel",
+        "name": {
+            "EN": "Hungerless Jewel",
+            "FR": "Joyau du spartiate",
+            "JP": "無食珠【1】",
+            "IT": "Gioiello resistenza fame 1",
+            "DE": "Hungerfrei-Juwel",
+            "KR": "공복주 [1]",
+            "CN": "無食珠【1】"
+        },
         "rarity": 5,
         "slotSize": 1,
         "abilityIds": [
@@ -37,7 +69,15 @@
     },
     {
         "id": 4,
-        "name": "Satiated Jewel",
+        "name": {
+            "EN": "Satiated Jewel",
+            "FR": "Joyau du parasite",
+            "JP": "節食珠【1】",
+            "IT": "Gioiello pasto gratuito 1",
+            "DE": "Sattes Juwel",
+            "KR": "절식주 [1]",
+            "CN": "節食珠【1】"
+        },
         "rarity": 5,
         "slotSize": 1,
         "abilityIds": [
@@ -46,7 +86,15 @@
     },
     {
         "id": 5,
-        "name": "Protection Jewel",
+        "name": {
+            "EN": "Protection Jewel",
+            "FR": "Joyau de bénédiction",
+            "JP": "加護珠【1】",
+            "IT": "Gioiello angelo custode 1",
+            "DE": "Schutz-Juwel",
+            "KR": "가호주 [1]",
+            "CN": "加護珠【1】"
+        },
         "rarity": 5,
         "slotSize": 1,
         "abilityIds": [
@@ -55,7 +103,15 @@
     },
     {
         "id": 6,
-        "name": "Meowster Jewel",
+        "name": {
+            "EN": "Meowster Jewel",
+            "FR": "Joyau Palico",
+            "JP": "采配珠【1】",
+            "IT": "Gioiello gregario 1",
+            "DE": "Miauster-Juwel",
+            "KR": "지시주 [1]",
+            "CN": "指示珠【1】"
+        },
         "rarity": 5,
         "slotSize": 1,
         "abilityIds": [
@@ -64,7 +120,15 @@
     },
     {
         "id": 7,
-        "name": "Botany Jewel",
+        "name": {
+            "EN": "Botany Jewel",
+            "FR": "Joyau du botaniste",
+            "JP": "植学珠【1】",
+            "IT": "Gioiello botanico 1",
+            "DE": "Botanik-Juwel",
+            "KR": "식학주 [1]",
+            "CN": "植学珠【1】"
+        },
         "rarity": 5,
         "slotSize": 1,
         "abilityIds": [
@@ -73,7 +137,15 @@
     },
     {
         "id": 8,
-        "name": "Tip Toe Jewel",
+        "name": {
+            "EN": "Tip Toe Jewel",
+            "FR": "Joyau de furtivité",
+            "JP": "潜伏珠【1】",
+            "IT": "Gioiello furtivo 1",
+            "DE": "Schleich-Juwel",
+            "KR": "잠복주 [1]",
+            "CN": "潜伏珠【1】"
+        },
         "rarity": 5,
         "slotSize": 1,
         "abilityIds": [
@@ -82,7 +154,15 @@
     },
     {
         "id": 9,
-        "name": "Flight Jewel",
+        "name": {
+            "EN": "Flight Jewel",
+            "FR": "Joyau acrobatie",
+            "JP": "飛燕珠【2】",
+            "IT": "Gioiello minaccia aerea 2",
+            "DE": "Flug-Juwel",
+            "KR": "비연주 [2]",
+            "CN": "飛燕珠【2】"
+        },
         "rarity": 5,
         "slotSize": 2,
         "abilityIds": [
@@ -91,7 +171,15 @@
     },
     {
         "id": 10,
-        "name": "Smoke Jewel",
+        "name": {
+            "EN": "Smoke Jewel",
+            "FR": "Joyau fumigène",
+            "JP": "煙復珠【1】",
+            "IT": "Gioiello esperto di spore 1",
+            "DE": "Rauch-Juwel",
+            "KR": "연복주 [1]",
+            "CN": "煙復珠【1】"
+        },
         "rarity": 5,
         "slotSize": 1,
         "abilityIds": [
@@ -100,7 +188,15 @@
     },
     {
         "id": 11,
-        "name": "Mirewalker Jewel",
+        "name": {
+            "EN": "Mirewalker Jewel",
+            "FR": "Joyau d'Atlantis",
+            "JP": "沼渡珠【1】",
+            "IT": "Gioiello esperto acquatico 1",
+            "DE": "Sumpfläufer-Juwel",
+            "KR": "소도주 [1]",
+            "CN": "沼渡珠【1】"
+        },
         "rarity": 5,
         "slotSize": 1,
         "abilityIds": [
@@ -109,7 +205,15 @@
     },
     {
         "id": 12,
-        "name": "Specimen Jewel",
+        "name": {
+            "EN": "Specimen Jewel",
+            "FR": "Joyau insectoïde",
+            "JP": "標本珠【1】",
+            "IT": "Gioiello entomologo 1",
+            "DE": "Insektenforscher-Juwel",
+            "KR": "표본주 [1]",
+            "CN": "標本珠【1】"
+        },
         "rarity": 5,
         "slotSize": 1,
         "abilityIds": [
@@ -118,7 +222,15 @@
     },
     {
         "id": 13,
-        "name": "Miasma Jewel",
+        "name": {
+            "EN": "Miasma Jewel",
+            "FR": "Joyau de pureté",
+            "JP": "耐瘴珠【1】",
+            "IT": "Gioiello resistenza effluvio 1",
+            "DE": "Miasma-Juwel",
+            "KR": "내장주 [1]",
+            "CN": "耐瘴珠【1】"
+        },
         "rarity": 5,
         "slotSize": 1,
         "abilityIds": [
@@ -127,7 +239,15 @@
     },
     {
         "id": 14,
-        "name": "Scent Jewel",
+        "name": {
+            "EN": "Scent Jewel",
+            "FR": "Joyau de prémonition",
+            "JP": "嗅覚珠【1】",
+            "IT": "Gioiello segugio 1",
+            "DE": "Geruchs-Juwel",
+            "KR": "후각주 [1]",
+            "CN": "嗅覚珠【1】"
+        },
         "rarity": 5,
         "slotSize": 1,
         "abilityIds": [
@@ -136,7 +256,15 @@
     },
     {
         "id": 15,
-        "name": "Intimidator Jewel",
+        "name": {
+            "EN": "Intimidator Jewel",
+            "FR": "Joyau intimidation",
+            "JP": "威嚇珠【1】",
+            "IT": "Gioiello intimidazione 1",
+            "DE": "Einschüchtern-Juwel",
+            "KR": "위하주 [1]",
+            "CN": "威嚇珠【1】"
+        },
         "rarity": 5,
         "slotSize": 1,
         "abilityIds": [
@@ -145,7 +273,15 @@
     },
     {
         "id": 16,
-        "name": "Maintenance Jewel",
+        "name": {
+            "EN": "Maintenance Jewel",
+            "FR": "Joyau de survie",
+            "JP": "整備珠【1】",
+            "IT": "Gioiello manutenzione 1",
+            "DE": "Wartungs-Juwel",
+            "KR": "정비주 [1]",
+            "CN": "整備珠【1】"
+        },
         "rarity": 5,
         "slotSize": 1,
         "abilityIds": [
@@ -154,7 +290,15 @@
     },
     {
         "id": 17,
-        "name": "Crisis Jewel",
+        "name": {
+            "EN": "Crisis Jewel",
+            "FR": "Joyau sauvage",
+            "JP": "窮地珠【1】",
+            "IT": "Gioiello rianimazione 1",
+            "DE": "Krisen-Juwel",
+            "KR": "궁지주 [1]",
+            "CN": "絕路珠【1】"
+        },
         "rarity": 5,
         "slotSize": 1,
         "abilityIds": [
@@ -163,7 +307,15 @@
     },
     {
         "id": 18,
-        "name": "Antipara Jewel",
+        "name": {
+            "EN": "Antipara Jewel",
+            "FR": "Joyau antiparalysie",
+            "JP": "耐麻珠【1】",
+            "IT": "Gioiello resistenza paralisi 1",
+            "DE": "Anti-Lähm-Juwel",
+            "KR": "내비주 [1]",
+            "CN": "耐麻珠【1】"
+        },
         "rarity": 5,
         "slotSize": 1,
         "abilityIds": [
@@ -172,7 +324,15 @@
     },
     {
         "id": 19,
-        "name": "Fortitude Jewel",
+        "name": {
+            "EN": "Fortitude Jewel",
+            "FR": "Joyau de courage",
+            "JP": "逆境珠【1】",
+            "IT": "Gioiello rafforzamento 1",
+            "DE": "Kraft-Juwel",
+            "KR": "역경주 [1]",
+            "CN": "逆境珠【1】"
+        },
         "rarity": 5,
         "slotSize": 1,
         "abilityIds": [
@@ -181,7 +341,15 @@
     },
     {
         "id": 20,
-        "name": "Water Res Jewel",
+        "name": {
+            "EN": "Water Res Jewel",
+            "FR": "Joyau étanche",
+            "JP": "耐水珠【1】",
+            "IT": "Gioiello resistenza acqua 1",
+            "DE": "Wasserabwehr-Juwel",
+            "KR": "내수주 [1]",
+            "CN": "耐水珠【1】"
+        },
         "rarity": 5,
         "slotSize": 1,
         "abilityIds": [
@@ -190,7 +358,15 @@
     },
     {
         "id": 21,
-        "name": "Suture Jewel",
+        "name": {
+            "EN": "Suture Jewel",
+            "FR": "Joyau hémostatique",
+            "JP": "耐裂珠【1】",
+            "IT": "Gioiello resistenza sanguinamento 1",
+            "DE": "Naht-Juwel",
+            "KR": "내열주 [1]",
+            "CN": "耐裂珠【1】"
+        },
         "rarity": 5,
         "slotSize": 1,
         "abilityIds": [
@@ -199,7 +375,15 @@
     },
     {
         "id": 22,
-        "name": "Dragon Res Jewel",
+        "name": {
+            "EN": "Dragon Res Jewel",
+            "FR": "Joyau draconien",
+            "JP": "耐龍珠【1】",
+            "IT": "Gioiello resistenza drago 1",
+            "DE": "Drachenabwehr-Juwel",
+            "KR": "내룡주 [1]",
+            "CN": "耐龍珠【1】"
+        },
         "rarity": 5,
         "slotSize": 1,
         "abilityIds": [
@@ -208,7 +392,15 @@
     },
     {
         "id": 23,
-        "name": "Fire Res Jewel",
+        "name": {
+            "EN": "Fire Res Jewel",
+            "FR": "Joyau ignifuge",
+            "JP": "耐火珠【1】",
+            "IT": "Gioiello resistenza fuoco 1",
+            "DE": "Feuerabwehr-Juwel",
+            "KR": "내화주 [1]",
+            "CN": "耐火珠【1】"
+        },
         "rarity": 5,
         "slotSize": 1,
         "abilityIds": [
@@ -217,7 +409,15 @@
     },
     {
         "id": 24,
-        "name": "Ice Res Jewel",
+        "name": {
+            "EN": "Ice Res Jewel",
+            "FR": "Joyau antigel",
+            "JP": "耐氷珠【1】",
+            "IT": "Gioiello resistenza ghiaccio 1",
+            "DE": "Eisabwehr-Juwel",
+            "KR": "내빙주 [1]",
+            "CN": "耐冰珠【1】"
+        },
         "rarity": 5,
         "slotSize": 1,
         "abilityIds": [
@@ -226,7 +426,15 @@
     },
     {
         "id": 25,
-        "name": "Def Lock Jewel",
+        "name": {
+            "EN": "Def Lock Jewel",
+            "FR": "Joyau de fer",
+            "JP": "耐防珠【1】",
+            "IT": "Gioiello pelle di ferro 1",
+            "DE": "Abwehrsperre-Juwel",
+            "KR": "내방주 [1]",
+            "CN": "耐防珠【1】"
+        },
         "rarity": 5,
         "slotSize": 1,
         "abilityIds": [
@@ -235,7 +443,15 @@
     },
     {
         "id": 26,
-        "name": "Thunder Res Jewel",
+        "name": {
+            "EN": "Thunder Res Jewel",
+            "FR": "Joyau isolant",
+            "JP": "耐雷珠【1】",
+            "IT": "Gioiello resistenza tuono 1",
+            "DE": "Donnerabwehr-Juwel",
+            "KR": "내뢰주 [1]",
+            "CN": "耐雷珠【1】"
+        },
         "rarity": 5,
         "slotSize": 1,
         "abilityIds": [
@@ -244,7 +460,15 @@
     },
     {
         "id": 27,
-        "name": "Pep Jewel",
+        "name": {
+            "EN": "Pep Jewel",
+            "FR": "Joyau insomnie",
+            "JP": "耐眠珠【1】",
+            "IT": "Gioiello resistenza sonno 1",
+            "DE": "Pepp-Juwel",
+            "KR": "내면주 [1]",
+            "CN": "耐眠珠【1】"
+        },
         "rarity": 5,
         "slotSize": 1,
         "abilityIds": [
@@ -253,7 +477,15 @@
     },
     {
         "id": 28,
-        "name": "Antiblast Jewel",
+        "name": {
+            "EN": "Antiblast Jewel",
+            "FR": "Joyau blindage",
+            "JP": "耐爆珠【1】",
+            "IT": "Gioiello resisitenza scoppio 1",
+            "DE": "Anti-Explosion-Juwel",
+            "KR": "내폭주 [1]",
+            "CN": "耐爆珠【1】"
+        },
         "rarity": 5,
         "slotSize": 1,
         "abilityIds": [
@@ -262,7 +494,15 @@
     },
     {
         "id": 29,
-        "name": "Gobbler Jewel",
+        "name": {
+            "EN": "Gobbler Jewel",
+            "FR": "Joyau Carnassier",
+            "JP": "早食珠【1】",
+            "IT": "Gioiello pasto veloce 1",
+            "DE": "Verschling-Juwel",
+            "KR": "속식주 [1]",
+            "CN": "快吃珠【1】"
+        },
         "rarity": 6,
         "slotSize": 1,
         "abilityIds": [
@@ -271,7 +511,15 @@
     },
     {
         "id": 30,
-        "name": "Physique Jewel",
+        "name": {
+            "EN": "Physique Jewel",
+            "FR": "Joyau athlète",
+            "JP": "体術珠【2】",
+            "IT": "Gioiello atleta 2",
+            "DE": "Figur-Juwel",
+            "KR": "체술주 [2]",
+            "CN": "体術珠【2】"
+        },
         "rarity": 6,
         "slotSize": 2,
         "abilityIds": [
@@ -280,7 +528,15 @@
     },
     {
         "id": 31,
-        "name": "Blaze Jewel",
+        "name": {
+            "EN": "Blaze Jewel",
+            "FR": "Joyau de feu",
+            "JP": "火炎珠【1】",
+            "IT": "Gioiello attacco fuoco 1",
+            "DE": "Lohe-Juwel",
+            "KR": "화염주 [1]",
+            "CN": "火炎珠【1】"
+        },
         "rarity": 6,
         "slotSize": 1,
         "abilityIds": [
@@ -289,7 +545,15 @@
     },
     {
         "id": 32,
-        "name": "Evasion Jewel",
+        "name": {
+            "EN": "Evasion Jewel",
+            "FR": "Joyau d'invulnérabilité",
+            "JP": "回避珠【2】",
+            "IT": "Gioiello schivata 2",
+            "DE": "Ausweich-Juwel",
+            "KR": "회피주 [2]",
+            "CN": "回避珠【2】"
+        },
         "rarity": 6,
         "slotSize": 2,
         "abilityIds": [
@@ -298,7 +562,15 @@
     },
     {
         "id": 33,
-        "name": "Jumping Jewel",
+        "name": {
+            "EN": "Jumping Jewel",
+            "FR": "Joyau de l'esquive",
+            "JP": "跳躍珠【2】",
+            "IT": "Gioiello schivata estesa 2",
+            "DE": "Sprung-Juwel",
+            "KR": "도약주 [2]",
+            "CN": "跳躍珠【2】"
+        },
         "rarity": 6,
         "slotSize": 2,
         "abilityIds": [
@@ -307,7 +579,15 @@
     },
     {
         "id": 34,
-        "name": "Sheath Jewel",
+        "name": {
+            "EN": "Sheath Jewel",
+            "FR": "Joyau rengainage",
+            "JP": "速納珠【1】",
+            "IT": "Gioiello rinfodero veloce 1",
+            "DE": "Wegsteck-Juwel",
+            "KR": "속납주 [1]",
+            "CN": "速納珠【1】"
+        },
         "rarity": 6,
         "slotSize": 1,
         "abilityIds": [
@@ -316,7 +596,15 @@
     },
     {
         "id": 35,
-        "name": "Friendship Jewel",
+        "name": {
+            "EN": "Friendship Jewel",
+            "FR": "Joyau du mousquetaire",
+            "JP": "友愛珠【1】",
+            "IT": "Gioiello ampia area 1",
+            "DE": "Freundschaft-Juwel",
+            "KR": "우애주 [1]",
+            "CN": "友愛珠【1】"
+        },
         "rarity": 6,
         "slotSize": 1,
         "abilityIds": [
@@ -325,7 +613,15 @@
     },
     {
         "id": 36,
-        "name": "Enduring Jewel",
+        "name": {
+            "EN": "Enduring Jewel",
+            "FR": "Joyau du chimiste",
+            "JP": "持続珠【1】",
+            "IT": "Gioiello estensione oggetti 1",
+            "DE": "Dauer-Juwel",
+            "KR": "지속주 [1]",
+            "CN": "持續珠【1】"
+        },
         "rarity": 6,
         "slotSize": 1,
         "abilityIds": [
@@ -334,7 +630,15 @@
     },
     {
         "id": 37,
-        "name": "Medicine Jewel",
+        "name": {
+            "EN": "Medicine Jewel",
+            "FR": "Joyau de médecin",
+            "JP": "治癒珠【1】",
+            "IT": "Gioiello bonus cura 1",
+            "DE": "Medizin-Juwel",
+            "KR": "치유주 [1]",
+            "CN": "治癒珠【1】"
+        },
         "rarity": 6,
         "slotSize": 1,
         "abilityIds": [
@@ -343,7 +647,15 @@
     },
     {
         "id": 38,
-        "name": "Grinder Jewel",
+        "name": {
+            "EN": "Grinder Jewel",
+            "FR": "Joyau de l'aiguiseur",
+            "JP": "研磨珠【1】",
+            "IT": "Gioiello affilatura veloce 1",
+            "DE": "Schleif-Juwel",
+            "KR": "연마주 [1]",
+            "CN": "研磨珠【1】"
+        },
         "rarity": 6,
         "slotSize": 1,
         "abilityIds": [
@@ -352,7 +664,15 @@
     },
     {
         "id": 39,
-        "name": "Steadfast Jewel",
+        "name": {
+            "EN": "Steadfast Jewel",
+            "FR": "Joyau volonté",
+            "JP": "耐絶珠【1】",
+            "IT": "Gioiello resistenza stordimento 1",
+            "DE": "Felsenfest-Juwel",
+            "KR": "내절주 [1]",
+            "CN": "耐絶珠【1】"
+        },
         "rarity": 6,
         "slotSize": 1,
         "abilityIds": [
@@ -361,7 +681,15 @@
     },
     {
         "id": 40,
-        "name": "Bomber Jewel",
+        "name": {
+            "EN": "Bomber Jewel",
+            "FR": "Joyau du bombardier",
+            "JP": "爆師珠【1】",
+            "IT": "Gioiello bombardiere 1",
+            "DE": "Bomber-Juwel",
+            "KR": "폭사주 [1]",
+            "CN": "爆師珠【1】"
+        },
         "rarity": 6,
         "slotSize": 1,
         "abilityIds": [
@@ -370,7 +698,15 @@
     },
     {
         "id": 41,
-        "name": "Recovery Jewel",
+        "name": {
+            "EN": "Recovery Jewel",
+            "FR": "Joyau facteur X",
+            "JP": "早復珠【1】",
+            "IT": "Gioiello guarigione 1",
+            "DE": "Erholung-Juwel",
+            "KR": "조복주 [1]",
+            "CN": "早復珠【1】"
+        },
         "rarity": 6,
         "slotSize": 1,
         "abilityIds": [
@@ -379,7 +715,15 @@
     },
     {
         "id": 42,
-        "name": "Slider Jewel",
+        "name": {
+            "EN": "Slider Jewel",
+            "FR": "Joyau du glisseur",
+            "JP": "滑走珠【2】",
+            "IT": "Gioiello affinità scivolata 2",
+            "DE": "Gleiter-Juwel",
+            "KR": "활주주 [2]",
+            "CN": "滑走珠【2】"
+        },
         "rarity": 6,
         "slotSize": 2,
         "abilityIds": [
@@ -388,7 +732,15 @@
     },
     {
         "id": 43,
-        "name": "Defense Jewel",
+        "name": {
+            "EN": "Defense Jewel",
+            "FR": "Joyau défense",
+            "JP": "防御珠【1】",
+            "IT": "Gioiello difesa 1",
+            "DE": "Verteidigung-Juwel",
+            "KR": "방어주 [1]",
+            "CN": "防御珠【1】"
+        },
         "rarity": 6,
         "slotSize": 1,
         "abilityIds": [
@@ -397,7 +749,15 @@
     },
     {
         "id": 44,
-        "name": "Stonethrower Jewel",
+        "name": {
+            "EN": "Stonethrower Jewel",
+            "FR": "Joyau de pierre",
+            "JP": "投石珠【1】",
+            "IT": "Gioiello capienza fionda 1",
+            "DE": "Steinwerfer-Juwel",
+            "KR": "투석주 [1]",
+            "CN": "投石珠【1】"
+        },
         "rarity": 6,
         "slotSize": 1,
         "abilityIds": [
@@ -406,7 +766,15 @@
     },
     {
         "id": 45,
-        "name": "Footing Jewel",
+        "name": {
+            "EN": "Footing Jewel",
+            "FR": "Joyau anti-séisme",
+            "JP": "耐震珠【2】",
+            "IT": "Gioiello antisismico 2",
+            "DE": "Halt-Juwel",
+            "KR": "내진주 [2]",
+            "CN": "耐震珠【2】"
+        },
         "rarity": 6,
         "slotSize": 2,
         "abilityIds": [
@@ -415,7 +783,15 @@
     },
     {
         "id": 46,
-        "name": "Brace Jewel",
+        "name": {
+            "EN": "Brace Jewel",
+            "FR": "Joyau inflexible",
+            "JP": "耐衝珠【3】",
+            "IT": "Gioiello antisussulto 3",
+            "DE": "Wappnungs-Juwel",
+            "KR": "내충주 [3]",
+            "CN": "耐衝珠【3】"
+        },
         "rarity": 6,
         "slotSize": 3,
         "abilityIds": [
@@ -424,7 +800,15 @@
     },
     {
         "id": 47,
-        "name": "Wind Resist Jewel",
+        "name": {
+            "EN": "Wind Resist Jewel",
+            "FR": "Joyau anti-vent",
+            "JP": "防風珠【2】",
+            "IT": "Gioiello paravento 2",
+            "DE": "Windresistenz-Juwel",
+            "KR": "방풍주 [2]",
+            "CN": "防風珠【2】"
+        },
         "rarity": 6,
         "slotSize": 2,
         "abilityIds": [
@@ -433,7 +817,15 @@
     },
     {
         "id": 48,
-        "name": "Earplug Jewel",
+        "name": {
+            "EN": "Earplug Jewel",
+            "FR": "Joyau insonorisation",
+            "JP": "防音珠【3】",
+            "IT": "Gioiello udito 3",
+            "DE": "Ohrstöpsel-Juwel",
+            "KR": "방음주 [3]",
+            "CN": "防音珠【3】"
+        },
         "rarity": 6,
         "slotSize": 3,
         "abilityIds": [
@@ -442,7 +834,15 @@
     },
     {
         "id": 49,
-        "name": "Vitality Jewel",
+        "name": {
+            "EN": "Vitality Jewel",
+            "FR": "Joyau vitalité",
+            "JP": "体力珠【1】",
+            "IT": "Gioiello salute 1",
+            "DE": "Lebenskraft-Juwel",
+            "KR": "체력주 [1]",
+            "CN": "体力珠【1】"
+        },
         "rarity": 6,
         "slotSize": 1,
         "abilityIds": [
@@ -451,7 +851,15 @@
     },
     {
         "id": 50,
-        "name": "Resistor Jewel",
+        "name": {
+            "EN": "Resistor Jewel",
+            "FR": "Joyau fléau",
+            "JP": "耐属珠【1】",
+            "IT": "Gioiello resistenza malus 1",
+            "DE": "Resistor-Juwel",
+            "KR": "내속주 [1]",
+            "CN": "耐属珠【1】"
+        },
         "rarity": 6,
         "slotSize": 1,
         "abilityIds": [
@@ -460,7 +868,15 @@
     },
     {
         "id": 51,
-        "name": "Sonorous Jewel",
+        "name": {
+            "EN": "Sonorous Jewel",
+            "FR": "Joyau de musique",
+            "JP": "鼓笛珠【1】",
+            "IT": "Gioiello maestro del corno 1",
+            "DE": "Klang-Juwel",
+            "KR": "고적주 [1]",
+            "CN": "鼓笛珠【1】"
+        },
         "rarity": 6,
         "slotSize": 1,
         "abilityIds": [
@@ -469,7 +885,15 @@
     },
     {
         "id": 52,
-        "name": "KO Jewel",
+        "name": {
+            "EN": "KO Jewel",
+            "FR": "Joyau cogneur",
+            "JP": "KO珠【2】",
+            "IT": "Gioiello battitore 2",
+            "DE": "Knock-out-Juwel",
+            "KR": "KO주 [2]",
+            "CN": "KO珠【2】"
+        },
         "rarity": 6,
         "slotSize": 2,
         "abilityIds": [
@@ -478,7 +902,15 @@
     },
     {
         "id": 53,
-        "name": "Stream Jewel",
+        "name": {
+            "EN": "Stream Jewel",
+            "FR": "Joyau d'eau",
+            "JP": "流水珠【1】",
+            "IT": "Gioiello attacco acqua 1",
+            "DE": "Fluss-Juwel",
+            "KR": "유수주 [1]",
+            "CN": "流水珠【1】"
+        },
         "rarity": 6,
         "slotSize": 1,
         "abilityIds": [
@@ -487,7 +919,15 @@
     },
     {
         "id": 54,
-        "name": "Frost Jewel",
+        "name": {
+            "EN": "Frost Jewel",
+            "FR": "Joyau de glace",
+            "JP": "氷結珠【1】",
+            "IT": "Gioiello attacco ghiaccio 1",
+            "DE": "Frost-Juwel",
+            "KR": "빙결주 [1]",
+            "CN": "冰結珠【1】"
+        },
         "rarity": 6,
         "slotSize": 1,
         "abilityIds": [
@@ -496,7 +936,15 @@
     },
     {
         "id": 55,
-        "name": "Bolt Jewel",
+        "name": {
+            "EN": "Bolt Jewel",
+            "FR": "Joyau de foudre",
+            "JP": "雷光珠【1】",
+            "IT": "Gioiello attacco tuono 1",
+            "DE": "Blitz-Juwel",
+            "KR": "뇌광주 [1]",
+            "CN": "雷光珠【1】"
+        },
         "rarity": 6,
         "slotSize": 1,
         "abilityIds": [
@@ -505,7 +953,15 @@
     },
     {
         "id": 56,
-        "name": "Dragon Jewel",
+        "name": {
+            "EN": "Dragon Jewel",
+            "FR": "Joyau tueur de dragon",
+            "JP": "破龍珠【1】",
+            "IT": "Gioiello attacco drago 1",
+            "DE": "Drachen-Juwel",
+            "KR": "파룡주 [1]",
+            "CN": "破龍珠【1】"
+        },
         "rarity": 6,
         "slotSize": 1,
         "abilityIds": [
@@ -514,7 +970,15 @@
     },
     {
         "id": 57,
-        "name": "Venom Jewel",
+        "name": {
+            "EN": "Venom Jewel",
+            "FR": "Joyau venin",
+            "JP": "毒珠【1】",
+            "IT": "Gioiello attacco veleno 1",
+            "DE": "Gift-Juwel",
+            "KR": "독주 [1]",
+            "CN": "毒珠【1】"
+        },
         "rarity": 6,
         "slotSize": 1,
         "abilityIds": [
@@ -523,7 +987,15 @@
     },
     {
         "id": 58,
-        "name": "Poisoncoat Jewel",
+        "name": {
+            "EN": "Poisoncoat Jewel",
+            "FR": "Joyau poison",
+            "JP": "毒瓶珠【3】",
+            "IT": "Gioiello applica veleno 3",
+            "DE": "Giftbeschichtung-Juwel",
+            "KR": "독병주 [3]",
+            "CN": "毒瓶珠【3】"
+        },
         "rarity": 6,
         "slotSize": 3,
         "abilityIds": [
@@ -532,7 +1004,15 @@
     },
     {
         "id": 59,
-        "name": "Expert Jewel",
+        "name": {
+            "EN": "Expert Jewel",
+            "FR": "Joyau du maitre",
+            "JP": "達人珠【1】",
+            "IT": "Gioiello occhio critico 1",
+            "DE": "Experten-Juwel",
+            "KR": "달인주 [1]",
+            "CN": "達人珠【1】"
+        },
         "rarity": 6,
         "slotSize": 1,
         "abilityIds": [
@@ -541,7 +1021,15 @@
     },
     {
         "id": 60,
-        "name": "Tenderizer Jewel",
+        "name": {
+            "EN": "Tenderizer Jewel",
+            "FR": "Joyau faiblesse",
+            "JP": "痛撃珠【2】",
+            "IT": "Gioiello punto debole 2",
+            "DE": "Aufweich-Juwel",
+            "KR": "통격주 [2]",
+            "CN": "痛撃珠【2】"
+        },
         "rarity": 6,
         "slotSize": 2,
         "abilityIds": [
@@ -550,7 +1038,15 @@
     },
     {
         "id": 61,
-        "name": "Destroyer Jewel",
+        "name": {
+            "EN": "Destroyer Jewel",
+            "FR": "Joyau destruction",
+            "JP": "重撃珠【2】",
+            "IT": "Gioiello spaccamostri 2",
+            "DE": "Zerstörer-Juwel",
+            "KR": "중격주 [2]",
+            "CN": "重撃珠【2】"
+        },
         "rarity": 6,
         "slotSize": 2,
         "abilityIds": [
@@ -559,7 +1055,15 @@
     },
     {
         "id": 62,
-        "name": "Elementless Jewel",
+        "name": {
+            "EN": "Elementless Jewel",
+            "FR": "Joyau d'acier",
+            "JP": "無撃珠【2】",
+            "IT": "Gioiello non elementale 2",
+            "DE": "Elementloses Juwel",
+            "KR": "무격주 [2]",
+            "CN": "無撃珠【2】"
+        },
         "rarity": 6,
         "slotSize": 2,
         "abilityIds": [
@@ -568,7 +1072,15 @@
     },
     {
         "id": 63,
-        "name": "Drain Jewel",
+        "name": {
+            "EN": "Drain Jewel",
+            "FR": "Joyau fatigue",
+            "JP": "奪気珠【1】",
+            "IT": "Gioiello ruba resistenza 1",
+            "DE": "Entzug-Juwel",
+            "KR": "탈기주 [1]",
+            "CN": "奪氣珠【1】"
+        },
         "rarity": 6,
         "slotSize": 1,
         "abilityIds": [
@@ -577,7 +1089,15 @@
     },
     {
         "id": 64,
-        "name": "Paracoat Jewel",
+        "name": {
+            "EN": "Paracoat Jewel",
+            "FR": "Joyau léthargie",
+            "JP": "痺瓶珠【3】",
+            "IT": "Gioiello applica paralisi 3",
+            "DE": "Lähmbeschichtung-Juwel",
+            "KR": "마비병주 [3]",
+            "CN": "痺瓶珠【3】"
+        },
         "rarity": 7,
         "slotSize": 3,
         "abilityIds": [
@@ -586,7 +1106,15 @@
     },
     {
         "id": 65,
-        "name": "Sharp Jewel",
+        "name": {
+            "EN": "Sharp Jewel",
+            "FR": "Joyau de trempe",
+            "JP": "剛刃珠【2】",
+            "IT": "Gioiello strato protettivo 2",
+            "DE": "Scharfes Juwel",
+            "KR": "강인주 [2]",
+            "CN": "剛刃珠【2】"
+        },
         "rarity": 7,
         "slotSize": 2,
         "abilityIds": [
@@ -595,7 +1123,15 @@
     },
     {
         "id": 66,
-        "name": "Shield Jewel",
+        "name": {
+            "EN": "Shield Jewel",
+            "FR": "Joyau bouclier",
+            "JP": "強壁珠【2】",
+            "IT": "Gioiello guardia perfetta 2",
+            "DE": "Schild-Juwel",
+            "KR": "강벽주 [2]",
+            "CN": "強壁珠【2】"
+        },
         "rarity": 7,
         "slotSize": 2,
         "abilityIds": [
@@ -604,7 +1140,15 @@
     },
     {
         "id": 67,
-        "name": "Dragonseal Jewel",
+        "name": {
+            "EN": "Dragonseal Jewel",
+            "FR": "Joyau sceau de dragon",
+            "JP": "龍封珠【3】",
+            "IT": "Gioiello sigillo anziano 3",
+            "DE": "Drachensiegel-Juwel",
+            "KR": "용봉주 [3]",
+            "CN": "龍封珠【3】"
+        },
         "rarity": 7,
         "slotSize": 3,
         "abilityIds": [
@@ -613,7 +1157,15 @@
     },
     {
         "id": 68,
-        "name": "Trueshot Jewel",
+        "name": {
+            "EN": "Trueshot Jewel",
+            "FR": "Joyau du sniper",
+            "JP": "特射珠【1】",
+            "IT": "Gioiello munizioni speciali 1",
+            "DE": "Volltreffer-Juwel",
+            "KR": "특사주 [1]",
+            "CN": "特射珠【1】"
+        },
         "rarity": 7,
         "slotSize": 1,
         "abilityIds": [
@@ -622,7 +1174,15 @@
     },
     {
         "id": 69,
-        "name": "Enhancer Jewel",
+        "name": {
+            "EN": "Enhancer Jewel",
+            "FR": "Joyau de puissance",
+            "JP": "昂揚珠【2】",
+            "IT": "Gioiello estensione di potenza 2",
+            "DE": "Verstärker-Juwel",
+            "KR": "지속주 [2]",
+            "CN": "昂揚珠【2】"
+        },
         "rarity": 7,
         "slotSize": 2,
         "abilityIds": [
@@ -631,7 +1191,15 @@
     },
     {
         "id": 70,
-        "name": "Forceshot Jewel",
+        "name": {
+            "EN": "Forceshot Jewel",
+            "FR": "Joyau de l'artilleur",
+            "JP": "強弾珠【3】",
+            "IT": "Gioiello bonus normali 3",
+            "DE": "Starkschuss-Juwel",
+            "KR": "강탄주 [3]",
+            "CN": "強彈珠【3】"
+        },
         "rarity": 7,
         "slotSize": 3,
         "abilityIds": [
@@ -640,7 +1208,15 @@
     },
     {
         "id": 71,
-        "name": "Furor Jewel",
+        "name": {
+            "EN": "Furor Jewel",
+            "FR": "Joyau de vengeance",
+            "JP": "逆上珠【2】",
+            "IT": "Gioiello risentimento 2",
+            "DE": "Furor-Juwel",
+            "KR": "역상주 [2]",
+            "CN": "逆上珠【2】"
+        },
         "rarity": 7,
         "slotSize": 2,
         "abilityIds": [
@@ -649,7 +1225,15 @@
     },
     {
         "id": 72,
-        "name": "Potential Jewel",
+        "name": {
+            "EN": "Potential Jewel",
+            "FR": "Joyau du héro",
+            "JP": "底力珠【2】",
+            "IT": "Gioiello eroismo 2",
+            "DE": "Potenzial-Juwel",
+            "KR": "저력주 [2]",
+            "CN": "底力珠【2】"
+        },
         "rarity": 7,
         "slotSize": 2,
         "abilityIds": [
@@ -658,7 +1242,15 @@
     },
     {
         "id": 73,
-        "name": "Paralyzer Jewel",
+        "name": {
+            "EN": "Paralyzer Jewel",
+            "FR": "Joyau paralysant",
+            "JP": "麻痺珠【1】",
+            "IT": "Gioiello attacco paralisi 1",
+            "DE": "Lähmangriff-Juwel",
+            "KR": "마비주 [1]",
+            "CN": "麻痺珠【1】"
+        },
         "rarity": 7,
         "slotSize": 1,
         "abilityIds": [
@@ -667,7 +1259,15 @@
     },
     {
         "id": 74,
-        "name": "Sleep Jewel",
+        "name": {
+            "EN": "Sleep Jewel",
+            "FR": "Joyau du sommeil",
+            "JP": "睡眠珠【1】",
+            "IT": "Gioiello attacco sonno 1",
+            "DE": "Schlaf-Juwel",
+            "KR": "수면주 [1]",
+            "CN": "睡眠珠【1】"
+        },
         "rarity": 7,
         "slotSize": 1,
         "abilityIds": [
@@ -676,7 +1276,15 @@
     },
     {
         "id": 75,
-        "name": "Ironwall Jewel",
+        "name": {
+            "EN": "Ironwall Jewel",
+            "FR": "Joyau de paladin",
+            "JP": "鉄壁珠【1】",
+            "IT": "Gioiello blocco 1",
+            "DE": "Eisenmauer-Juwel",
+            "KR": "철벽주 [1]",
+            "CN": "鉄壁珠【1】"
+        },
         "rarity": 7,
         "slotSize": 1,
         "abilityIds": [
@@ -685,7 +1293,15 @@
     },
     {
         "id": 76,
-        "name": "Refresh Jewel",
+        "name": {
+            "EN": "Refresh Jewel",
+            "FR": "Joyau métabolisme",
+            "JP": "早気珠【2】",
+            "IT": "Gioiello super resistenza 2",
+            "DE": "Erfrischungs-Juwel",
+            "KR": "조기주 [2]",
+            "CN": "早氣珠【2】"
+        },
         "rarity": 7,
         "slotSize": 2,
         "abilityIds": [
@@ -694,7 +1310,15 @@
     },
     {
         "id": 77,
-        "name": "Blast Jewel",
+        "name": {
+            "EN": "Blast Jewel",
+            "FR": "Joyau explosion",
+            "JP": "爆破珠【1】",
+            "IT": "Gioiello attacco scoppio 1",
+            "DE": "Explosion-Juwel",
+            "KR": "폭파주 [1]",
+            "CN": "爆破珠【1】"
+        },
         "rarity": 7,
         "slotSize": 1,
         "abilityIds": [
@@ -703,7 +1327,15 @@
     },
     {
         "id": 78,
-        "name": "Sleepcoat Jewel",
+        "name": {
+            "EN": "Sleepcoat Jewel",
+            "FR": "Joyau sporifère",
+            "JP": "眠瓶珠【3】",
+            "IT": "Gioiello applica sonno 3",
+            "DE": "Schlafbeschichtung-Juwel",
+            "KR": "수면병주 [3]",
+            "CN": "眠瓶珠【3】"
+        },
         "rarity": 7,
         "slotSize": 3,
         "abilityIds": [
@@ -712,7 +1344,15 @@
     },
     {
         "id": 79,
-        "name": "Blastcoat Jewel",
+        "name": {
+            "EN": "Blastcoat Jewel",
+            "FR": "Joyau explosif",
+            "JP": "爆瓶珠【3】",
+            "IT": "Gioiello applica scoppio 3",
+            "DE": "Sprengbeschichtung-Juwel",
+            "KR": "폭파병주 [3]",
+            "CN": "爆瓶珠【3】"
+        },
         "rarity": 7,
         "slotSize": 3,
         "abilityIds": [
@@ -721,7 +1361,15 @@
     },
     {
         "id": 80,
-        "name": "Throttle Jewel",
+        "name": {
+            "EN": "Throttle Jewel",
+            "FR": "Joyau occulte",
+            "JP": "全開珠【2】",
+            "IT": "Gioiello forza latente 2",
+            "DE": "Vollgas-Juwel",
+            "KR": "전개주 [2]",
+            "CN": "全開珠【2】"
+        },
         "rarity": 7,
         "slotSize": 2,
         "abilityIds": [
@@ -730,7 +1378,15 @@
     },
     {
         "id": 81,
-        "name": "Challenger Jewel",
+        "name": {
+            "EN": "Challenger Jewel",
+            "FR": "Joyau de témérité",
+            "JP": "挑戦珠【2】",
+            "IT": "Gioiello istigatore 2",
+            "DE": "Herausforderer-Juwel",
+            "KR": "도전주 [2]",
+            "CN": "挑戰珠【2】"
+        },
         "rarity": 7,
         "slotSize": 2,
         "abilityIds": [
@@ -739,7 +1395,15 @@
     },
     {
         "id": 82,
-        "name": "Attack Jewel",
+        "name": {
+            "EN": "Attack Jewel",
+            "FR": "Joyau attaque",
+            "JP": "攻撃珠【1】",
+            "IT": "Gioiello attacco 1",
+            "DE": "Angriff-Juwel",
+            "KR": "공격주 [1]",
+            "CN": "攻撃珠【1】"
+        },
         "rarity": 7,
         "slotSize": 1,
         "abilityIds": [
@@ -748,7 +1412,15 @@
     },
     {
         "id": 83,
-        "name": "Flawless Jewel",
+        "name": {
+            "EN": "Flawless Jewel",
+            "FR": "Joyau parfait",
+            "JP": "無傷珠【2】",
+            "IT": "Gioiello forma perfetta 2",
+            "DE": "Makellos-Juwel",
+            "KR": "무결주 [2]",
+            "CN": "無傷珠【2】"
+        },
         "rarity": 7,
         "slotSize": 2,
         "abilityIds": [
@@ -757,7 +1429,15 @@
     },
     {
         "id": 84,
-        "name": "Magazine Jewel",
+        "name": {
+            "EN": "Magazine Jewel",
+            "FR": "Joyau du franc-tireur",
+            "JP": "増弾珠【2】",
+            "IT": "Gioiello bonus capacità 2",
+            "DE": "Magazin-Juwel",
+            "KR": "증탄주 [2]",
+            "CN": "増彈珠【2】"
+        },
         "rarity": 7,
         "slotSize": 2,
         "abilityIds": [
@@ -766,7 +1446,15 @@
     },
     {
         "id": 85,
-        "name": "Mighty Jewel",
+        "name": {
+            "EN": "Mighty Jewel",
+            "FR": "Joyau omnipotence",
+            "JP": "渾身珠【2】",
+            "IT": "Gioiello massima potenza 2",
+            "DE": "Mächtiges-Juwel",
+            "KR": "혼신주 [2]",
+            "CN": "渾身珠【2】"
+        },
         "rarity": 7,
         "slotSize": 2,
         "abilityIds": [
@@ -775,7 +1463,15 @@
     },
     {
         "id": 86,
-        "name": "Sprinter Jewel",
+        "name": {
+            "EN": "Sprinter Jewel",
+            "FR": "Joyau du marathonien",
+            "JP": "強走珠【2】",
+            "IT": "Gioiello maratoneta 2",
+            "DE": "Sprinter-Juwel",
+            "KR": "강주주 [2]",
+            "CN": "強走珠【2】"
+        },
         "rarity": 8,
         "slotSize": 2,
         "abilityIds": [
@@ -784,7 +1480,15 @@
     },
     {
         "id": 87,
-        "name": "Critical Jewel",
+        "name": {
+            "EN": "Critical Jewel",
+            "FR": "Joyau du berserk",
+            "JP": "超心珠【2】",
+            "IT": "Gioiello bonus critico 2",
+            "DE": "Kritisches Juwel",
+            "KR": "초심주 [2]",
+            "CN": "超心珠【2】"
+        },
         "rarity": 8,
         "slotSize": 2,
         "abilityIds": [
@@ -793,7 +1497,15 @@
     },
     {
         "id": 88,
-        "name": "Artillery Jewel",
+        "name": {
+            "EN": "Artillery Jewel",
+            "FR": "Joyau dynamite",
+            "JP": "砲術珠【1】",
+            "IT": "Gioiello artigliere 1",
+            "DE": "Artillerie-Juwel",
+            "KR": "포술주 [1]",
+            "CN": "砲術珠【1】"
+        },
         "rarity": 8,
         "slotSize": 1,
         "abilityIds": [
@@ -802,7 +1514,15 @@
     },
     {
         "id": 89,
-        "name": "Fungiform Jewel",
+        "name": {
+            "EN": "Fungiform Jewel",
+            "FR": "Joyau du mycologue",
+            "JP": "茸好珠【1】",
+            "IT": "Gioiello fungomante 1",
+            "DE": "Pilzform-Juwel",
+            "KR": "이호주 [1]",
+            "CN": "茸好珠【1】"
+        },
         "rarity": 8,
         "slotSize": 1,
         "abilityIds": [
@@ -811,7 +1531,15 @@
     },
     {
         "id": 90,
-        "name": "Release Jewel",
+        "name": {
+            "EN": "Release Jewel",
+            "FR": "Joyau du tireur",
+            "JP": "解放珠【3】",
+            "IT": "Gioiello rilascio 3",
+            "DE": "Freisetzung-Juwel",
+            "KR": "해방주 [3]",
+            "CN": "解放珠【3】"
+        },
         "rarity": 8,
         "slotSize": 3,
         "abilityIds": [
@@ -820,7 +1548,15 @@
     },
     {
         "id": 91,
-        "name": "Spread Jewel",
+        "name": {
+            "EN": "Spread Jewel",
+            "FR": "Joyau de plomb",
+            "JP": "散弾珠【3】",
+            "IT": "Gioiello bonus ventaglio 3",
+            "DE": "Schrot-Juwel",
+            "KR": "산탄주 [3]",
+            "CN": "散弾珠【3】"
+        },
         "rarity": 8,
         "slotSize": 3,
         "abilityIds": [
@@ -829,7 +1565,15 @@
     },
     {
         "id": 92,
-        "name": "Charger Jewel",
+        "name": {
+            "EN": "Charger Jewel",
+            "FR": "Joyau concentration",
+            "JP": "短縮珠【2】",
+            "IT": "Gioiello concentrazione 2",
+            "DE": "Ladungs-Juwel",
+            "KR": "단축주 [2]",
+            "CN": "縮短珠【2】"
+        },
         "rarity": 8,
         "slotSize": 2,
         "abilityIds": [
@@ -838,7 +1582,15 @@
     },
     {
         "id": 93,
-        "name": "Handicraft Jewel",
+        "name": {
+            "EN": "Handicraft Jewel",
+            "FR": "Joyau artisanat",
+            "JP": "匠珠【3】",
+            "IT": "Gioiello artigiano 3",
+            "DE": "Handwerk-Juwel",
+            "KR": "장인주 [3]",
+            "CN": "匠珠【3】"
+        },
         "rarity": 8,
         "slotSize": 3,
         "abilityIds": [
@@ -847,7 +1599,15 @@
     },
     {
         "id": 94,
-        "name": "Mighty Bow Jewel",
+        "name": {
+            "EN": "Mighty Bow Jewel",
+            "FR": "Joyau de l'archer",
+            "JP": "強弓珠【2】",
+            "IT": "Gioiello carica potenziata 2",
+            "DE": "Mächtiger-Bogen-Juwel",
+            "KR": "강궁주 [2]",
+            "CN": "強弓珠【2】"
+        },
         "rarity": 8,
         "slotSize": 2,
         "abilityIds": [
@@ -856,7 +1616,15 @@
     },
     {
         "id": 95,
-        "name": "Mind's Eye Jewel",
+        "name": {
+            "EN": "Mind's Eye Jewel",
+            "FR": "Joyau spirituel",
+            "JP": "心眼珠【2】",
+            "IT": "Gioiello preveggenza 2",
+            "DE": "Geistiges-Auge-Juwel",
+            "KR": "심안주 [2]",
+            "CN": "心眼珠【2】"
+        },
         "rarity": 8,
         "slotSize": 2,
         "abilityIds": [
@@ -865,7 +1633,15 @@
     },
     {
         "id": 96,
-        "name": "Draw Jewel",
+        "name": {
+            "EN": "Draw Jewel",
+            "FR": "Joyau dégainage",
+            "JP": "抜刀珠【2】",
+            "IT": "Gioiello critico rapido 2",
+            "DE": "Ziehen-Juwel",
+            "KR": "발도주 [2]",
+            "CN": "拔刀珠【2】"
+        },
         "rarity": 8,
         "slotSize": 2,
         "abilityIds": [
@@ -874,7 +1650,15 @@
     },
     {
         "id": 97,
-        "name": "Pierce Jewel",
+        "name": {
+            "EN": "Pierce Jewel",
+            "FR": "Joyau de titane",
+            "JP": "貫通珠【3】",
+            "IT": "Gioiello bonus perforanti 3",
+            "DE": "Perforations-Juwel",
+            "KR": "관통주 [3]",
+            "CN": "貫通珠【3】"
+        },
         "rarity": 8,
         "slotSize": 3,
         "abilityIds": [

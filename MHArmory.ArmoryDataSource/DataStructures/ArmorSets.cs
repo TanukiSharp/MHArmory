@@ -28,7 +28,7 @@ namespace MHArmory.ArmoryDataSource.DataStructures
         [JsonProperty("id")]
         public int Id { get; set; }
         [JsonProperty("name")]
-        public string Name { get; set; }
+        public Dictionary<string, string> Name { get; set; }
         [JsonProperty("parts")]
         public IList<ArmorSetSkillPartPrimitive> Parts { get; set; }
     }

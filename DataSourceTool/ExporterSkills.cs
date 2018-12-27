@@ -39,19 +39,19 @@ namespace DataSourceTool
 
             foreach (MhwdbSkillPrimitive x in mhwdbSkillPrimitives)
             {
-                SkillPrimitive defaultSkillPrimitive = defaultSkillPrimitives.FirstOrDefault(y => y.Name == x.Name);
+                SkillPrimitive defaultSkillPrimitive = defaultSkillPrimitives.FirstOrDefault(y => y.Name["EN"] == x.Name);
                 if (defaultSkillPrimitive == null)
                 {
                     Console.WriteLine($"Skill '{x.Name}' found in mhw-db.com is missing from Armory data source.");
                     continue;
                 }
 
-                defaultSkillPrimitive.Description = x.Description;
+                defaultSkillPrimitive.Description["EN"] = x.Description;
             }
 
             foreach (SkillPrimitive x in defaultSkillPrimitives)
             {
-                MhwdbSkillPrimitive mhwdbSkillPrimitive = mhwdbSkillPrimitives.FirstOrDefault(y => y.Name == x.Name);
+                MhwdbSkillPrimitive mhwdbSkillPrimitive = mhwdbSkillPrimitives.FirstOrDefault(y => y.Name == x.Name["EN"]);
                 if (mhwdbSkillPrimitive == null)
                     Console.WriteLine($"Skill '{x.Name}' found in Armory data source is missing from mhw-db.com.");
             }

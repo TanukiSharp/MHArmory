@@ -41,7 +41,7 @@ namespace MHArmory.ArmoryDataSource.DataStructures
         [JsonProperty("id")]
         public int Id { get; set; }
         [JsonProperty("name")]
-        public string Name { get; set; }
+        public Dictionary<string, string> Name { get; set; }
         [JsonProperty("rarity")]
         public int Rarity { get; set; }
         [JsonProperty("slots")]

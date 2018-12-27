@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,27 +6,33 @@ using MHArmory.Core.DataStructures;
 
 namespace MHArmory.AthenaAssDataSource.DataStructures
 {
-    internal class SkillPrimitive
+    internal class SkillPrimitiveLowLevel
     {
         internal string Name = null;
         [Name("Max Level")]
         internal int MaxLevel = 0;
     }
 
+    internal class SkillPrimitiveHighLevel
+    {
+        internal Dictionary<string, string> Name;
+        internal int MaxLevel = 0;
+    }
+
     internal class Skill : ISkill
     {
-        public Skill(int id, string description, SkillPrimitive skillPrimitive)
+        public Skill(int id, Dictionary<string, string> description, SkillPrimitiveHighLevel skillPrimitive)
         {
             Id = id;
             Name = skillPrimitive.Name;
             Description = description;
             MaxLevel = skillPrimitive.MaxLevel;
             Abilities = Enumerable.Range(1, skillPrimitive.MaxLevel)
-                .Select(i => new Ability(this, i, $"{Name} level {i}"))
+                .Select(i => new Ability(this, i, CreateAbilityDescriptions(Name, i)))
                 .ToArray();
         }
 
-        public Skill(int id, string name, string description, IAbility ability)
+        public Skill(int id, Dictionary<string, string> name, Dictionary<string, string> description, IAbility ability)
         {
             Id = id;
             Name = name;
@@ -36,19 +42,24 @@ namespace MHArmory.AthenaAssDataSource.DataStructures
         }
 
         public int Id { get; }
-        public string Name { get; }
-        public string Description { get; private set; }
+        public Dictionary<string, string> Name { get; }
+        public Dictionary<string, string> Description { get; private set; }
         public int MaxLevel { get; }
         public IAbility[] Abilities { get; }
 
-        public void UpdateDescription(string description)
+        public void UpdateDescription(Dictionary<string, string> description)
         {
             Description = description;
         }
 
         public override string ToString()
         {
-            return $"{Name} ({Abilities.Length} abilities)";
+            return $"{Name["EN"]} ({Abilities.Length} abilities)";
+        }
+
+        private static Dictionary<string, string> CreateAbilityDescriptions(Dictionary<string, string> names, int level)
+        {
+            return names.ToDictionary(kv1 => kv1.Key, kv2 => $"{kv2.Value} level {level}");
         }
     }
 }

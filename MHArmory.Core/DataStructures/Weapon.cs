@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 
 namespace MHArmory.Core.DataStructures
 {
@@ -38,7 +39,7 @@ namespace MHArmory.Core.DataStructures
         public int Id { get; }
         public EquipmentType Type { get; } = EquipmentType.Weapon;
         public WeaponType WeaponType { get; }
-        public string Name { get; }
+        public Dictionary<string, string> Name { get; }
         public int Rarity { get; }
         public int[] Slots { get; }
         public IAbility[] Abilities { get; }
@@ -53,7 +54,7 @@ namespace MHArmory.Core.DataStructures
             Event = evt;
         }
 
-        public Weapon(int id, string name, WeaponType weaponType, int rarity, int[] slots, IAbility[] abilities, IEvent evt)
+        public Weapon(int id, Dictionary<string, string> name, WeaponType weaponType, int rarity, int[] slots, IAbility[] abilities, IEvent evt)
         {
             Id = id;
             Name = name;

@@ -1,7 +1,15 @@
 [
     {
         "id": 0,
-        "name": "Leather Headgear",
+        "name": {
+            "EN": "Leather Headgear",
+            "FR": "Lunettes en cuir",
+            "JP": "レザーヘッド",
+            "IT": "Copricapo di cuoio",
+            "DE": "Leder-Kopfschutz",
+            "KR": "레더헤드",
+            "CN": "皮製頭飾"
+        },
         "rarity": 1,
         "abilityIds": [
             206
@@ -24,7 +32,15 @@
     },
     {
         "id": 1,
-        "name": "Chainmail Headgear",
+        "name": {
+            "EN": "Chainmail Headgear",
+            "FR": "Heaume de mailles",
+            "JP": "チェーンヘッド",
+            "IT": "Copricapo di maglia",
+            "DE": "Ketten-Kopfschutz",
+            "KR": "체인헤드",
+            "CN": "鎖甲頭飾"
+        },
         "rarity": 1,
         "abilityIds": [
             248
@@ -47,7 +63,15 @@
     },
     {
         "id": 2,
-        "name": "Hunter's Headgear",
+        "name": {
+            "EN": "Hunter's Headgear",
+            "FR": "Coiffe de chasseur",
+            "JP": "ハンターヘルム",
+            "IT": "Elmo del cacciatore",
+            "DE": "Jäger-Kopfschutz",
+            "KR": "헌터헬름",
+            "CN": "獵人頭盔"
+        },
         "rarity": 1,
         "abilityIds": [
             278
@@ -70,7 +94,15 @@
     },
     {
         "id": 3,
-        "name": "Bone Helm",
+        "name": {
+            "EN": "Bone Helm",
+            "FR": "Casque d'os",
+            "JP": "ボーンヘルム",
+            "IT": "Elmo d'osso",
+            "DE": "Knochen-Helm",
+            "KR": "본헬름",
+            "CN": "骨製頭盔"
+        },
         "rarity": 1,
         "abilityIds": [
             52
@@ -93,7 +125,15 @@
     },
     {
         "id": 4,
-        "name": "Vespoid Helm",
+        "name": {
+            "EN": "Vespoid Helm",
+            "FR": "Calot Vespoid",
+            "JP": "ランゴヘルム",
+            "IT": "Elmo di Vespoid ",
+            "DE": "Vespoid-Helm",
+            "KR": "랑고헬름",
+            "CN": "巨蜂頭盔"
+        },
         "rarity": 1,
         "abilityIds": [
             222
@@ -116,7 +156,15 @@
     },
     {
         "id": 7,
-        "name": "Jagras Helm",
+        "name": {
+            "EN": "Jagras Helm",
+            "FR": "Casque Jagras",
+            "JP": "ジャグラスヘルム",
+            "IT": "Elmo di Jagras",
+            "DE": "Jagras-Helm",
+            "KR": "쟈그라스헬름",
+            "CN": "凶豺龍頭盔"
+        },
         "rarity": 1,
         "abilityIds": [
             234
@@ -139,7 +187,15 @@
     },
     {
         "id": 8,
-        "name": "Kulu Headpiece",
+        "name": {
+            "EN": "Kulu Headpiece",
+            "FR": "Voile Kulu",
+            "JP": "クルルヘルム",
+            "IT": "Elmo di Kulu",
+            "DE": "Kulu-Kopfschutz",
+            "KR": "쿠루루헬름",
+            "CN": "搔鳥頭盔"
+        },
         "rarity": 1,
         "abilityIds": [
             61
@@ -162,7 +218,15 @@
     },
     {
         "id": 9,
-        "name": "Alloy Helm",
+        "name": {
+            "EN": "Alloy Helm",
+            "FR": "Heaume en alliage",
+            "JP": "アロイヘルム",
+            "IT": "Elmo in lega",
+            "DE": "Legierungs-Helm",
+            "KR": "얼로이헬름",
+            "CN": "合金頭盔"
+        },
         "rarity": 2,
         "abilityIds": [
             27
@@ -185,7 +249,15 @@
     },
     {
         "id": 10,
-        "name": "Pukei Hood",
+        "name": {
+            "EN": "Pukei Hood",
+            "FR": "Capuche Pukei",
+            "JP": "プケプケヘルム",
+            "IT": "Cappuccio di Pukei",
+            "DE": "Pukei-Kopfschutz",
+            "KR": "푸케푸케헬름",
+            "CN": "毒妖鳥頭盔"
+        },
         "rarity": 2,
         "abilityIds": [
             281
@@ -208,7 +280,15 @@
     },
     {
         "id": 11,
-        "name": "Barroth Helm",
+        "name": {
+            "EN": "Barroth Helm",
+            "FR": "Heaume Barroth",
+            "JP": "ボロスヘルム",
+            "IT": "Elmo di Barroth",
+            "DE": "Barroth-Helm",
+            "KR": "보로스헬름",
+            "CN": "土砂龍頭盔"
+        },
         "rarity": 2,
         "abilityIds": [
             217
@@ -231,7 +311,15 @@
     },
     {
         "id": 12,
-        "name": "Jyura Helm",
+        "name": {
+            "EN": "Jyura Helm",
+            "FR": "Heaume Jyura",
+            "JP": "ジュラヘルム",
+            "IT": "Elmo di Jyura",
+            "DE": "Jyura-Helm",
+            "KR": "쥬라헬름",
+            "CN": "泥魚龍頭盔"
+        },
         "rarity": 2,
         "abilityIds": [
             284
@@ -254,7 +342,15 @@
     },
     {
         "id": 13,
-        "name": "Kadachi Helm",
+        "name": {
+            "EN": "Kadachi Helm",
+            "FR": "Toque Kadachi",
+            "JP": "カガチヘルム",
+            "IT": "Elmo di Kadachi",
+            "DE": "Kadachi-Helm",
+            "KR": "카가치헬름",
+            "CN": "飛雷龍頭盔"
+        },
         "rarity": 2,
         "abilityIds": [
             197
@@ -277,7 +373,15 @@
     },
     {
         "id": 14,
-        "name": "High Metal Helm",
+        "name": {
+            "EN": "High Metal Helm",
+            "FR": "Heaume haut-métal",
+            "JP": "ハイメタヘルム",
+            "IT": "Elmo in ipermetallo",
+            "DE": "Hochmetall-Helm",
+            "KR": "하이메탈헬름",
+            "CN": "礦石頭盔"
+        },
         "rarity": 3,
         "abilityIds": [
             67
@@ -300,7 +404,15 @@
     },
     {
         "id": 15,
-        "name": "King Beetle Vertex",
+        "name": {
+            "EN": "King Beetle Vertex",
+            "FR": "Vertex Scarabée",
+            "JP": "オウビートテスタ",
+            "IT": "Vertex dello scarabeo",
+            "DE": "Königskäfer-Vertex",
+            "KR": "킹비트테스타",
+            "CN": "獨角仙護頭"
+        },
         "rarity": 3,
         "abilityIds": [
             209
@@ -323,7 +435,15 @@
     },
     {
         "id": 16,
-        "name": "Butterfly Vertex",
+        "name": {
+            "EN": "Butterfly Vertex",
+            "FR": "Vertex Papillon",
+            "JP": "パピメルテスタ",
+            "IT": "Vertex di farfalla",
+            "DE": "Schmetterling-Vertex",
+            "KR": "파피메르테스타",
+            "CN": "燕尾蝶護頭"
+        },
         "rarity": 3,
         "abilityIds": [
             209
@@ -346,7 +466,15 @@
     },
     {
         "id": 17,
-        "name": "Shamos Goggles",
+        "name": {
+            "EN": "Shamos Goggles",
+            "FR": "Jumelles Shamos",
+            "JP": "シャムゴーグル",
+            "IT": "Occhiali di Shamos",
+            "DE": "Shamos-Brille",
+            "KR": "샤무고글",
+            "CN": "貓蜥龍護目鏡"
+        },
         "rarity": 3,
         "abilityIds": [
             298
@@ -369,7 +497,15 @@
     },
     {
         "id": 18,
-        "name": "Hornetaur Helm",
+        "name": {
+            "EN": "Hornetaur Helm",
+            "FR": "Heaume Hornetaur",
+            "JP": "タロスヘルム",
+            "IT": "Elmo di Hornetaur",
+            "DE": "Hornetaur-Helm",
+            "KR": "타로스헬름",
+            "CN": "巨甲蟲頭盔"
+        },
         "rarity": 3,
         "abilityIds": [
             35
@@ -392,7 +528,15 @@
     },
     {
         "id": 19,
-        "name": "Anja Helm",
+        "name": {
+            "EN": "Anja Helm",
+            "FR": "Casque Anjanath",
+            "JP": "ジャナフヘルム",
+            "IT": "Elmo di Anja",
+            "DE": "Anjanath-Helm",
+            "KR": "쟈나프헬름",
+            "CN": "蠻顎龍頭盔"
+        },
         "rarity": 3,
         "abilityIds": [
             79
@@ -418,7 +562,15 @@
     },
     {
         "id": 20,
-        "name": "Rathian Helm",
+        "name": {
+            "EN": "Rathian Helm",
+            "FR": "Heaume Rathian",
+            "JP": "レイアヘルム",
+            "IT": "Elmo di Rathian",
+            "DE": "Rathian-Helm",
+            "KR": "레이아헬름",
+            "CN": "雌火龍頭盔"
+        },
         "rarity": 3,
         "abilityIds": [
             52
@@ -441,7 +593,15 @@
     },
     {
         "id": 21,
-        "name": "Tzitzi Headgear",
+        "name": {
+            "EN": "Tzitzi Headgear",
+            "FR": "Lunettes Tzitzi",
+            "JP": "ツィツィヘルム",
+            "IT": "Elmo di Tzitzi",
+            "DE": "Tzitzi-Kopfschutz",
+            "KR": "치치헬름",
+            "CN": "眩鳥頭盔"
+        },
         "rarity": 3,
         "abilityIds": [
             288
@@ -464,7 +624,15 @@
     },
     {
         "id": 22,
-        "name": "Lumu Hat",
+        "name": {
+            "EN": "Lumu Hat",
+            "FR": "Ouchanka Lumu",
+            "JP": "ウルムーヘルム",
+            "IT": "Copricapo di Lumu",
+            "DE": "Paolumu-Hut",
+            "KR": "우르무헬름",
+            "CN": "浮空龍頭盔"
+        },
         "rarity": 3,
         "abilityIds": [
             203
@@ -487,7 +655,15 @@
     },
     {
         "id": 23,
-        "name": "Girros Mask",
+        "name": {
+            "EN": "Girros Mask",
+            "FR": "Masque Girros",
+            "JP": "ギルオスヘルム",
+            "IT": "Maschera di Girros",
+            "DE": "Girros-Maske",
+            "KR": "기르오스헬름",
+            "CN": "凶顎龍頭盔"
+        },
         "rarity": 3,
         "abilityIds": [
             185
@@ -510,7 +686,15 @@
     },
     {
         "id": 24,
-        "name": "Baan Helm",
+        "name": {
+            "EN": "Baan Helm",
+            "FR": "Casque Radobaan",
+            "JP": "バルキンヘルム",
+            "IT": "Elmo di Baan",
+            "DE": "Baan-Helm",
+            "KR": "발킨헬름",
+            "CN": "骨錘龍頭盔"
+        },
         "rarity": 3,
         "abilityIds": [
             152
@@ -533,7 +717,15 @@
     },
     {
         "id": 25,
-        "name": "Ingot Helm",
+        "name": {
+            "EN": "Ingot Helm",
+            "FR": "Couronne en lingot",
+            "JP": "インゴットヘルム",
+            "IT": "Elmo del lingotto",
+            "DE": "Guss-Helm",
+            "KR": "잉곳헬름",
+            "CN": "鑄鐵頭盔"
+        },
         "rarity": 4,
         "abilityIds": [
             94
@@ -556,7 +748,15 @@
     },
     {
         "id": 26,
-        "name": "Death Stench Brain",
+        "name": {
+            "EN": "Death Stench Brain",
+            "FR": "Cerveau putride",
+            "JP": "デスギアゲヒル",
+            "IT": "Cervello putrefatto",
+            "DE": "Todesgestank-Hirn",
+            "KR": "데스기어게힐",
+            "CN": "死神首腦"
+        },
         "rarity": 4,
         "abilityIds": [
             184
@@ -579,7 +779,15 @@
     },
     {
         "id": 27,
-        "name": "Brigade Lobos",
+        "name": {
+            "EN": "Brigade Lobos",
+            "FR": "Chapeau de brigade",
+            "JP": "ブリゲイドロポス",
+            "IT": "Feluca di brigata",
+            "DE": "Brigade-Lobos",
+            "KR": "브리게이드로포스",
+            "CN": "旅團帽"
+        },
         "rarity": 4,
         "abilityIds": [
             58
@@ -602,7 +810,15 @@
     },
     {
         "id": 28,
-        "name": "Legiana Helm",
+        "name": {
+            "EN": "Legiana Helm",
+            "FR": "Valkyrie Legiana",
+            "JP": "ギエナヘルム",
+            "IT": "Elmo di Legiana",
+            "DE": "Legiana-Helm",
+            "KR": "기에나헬름",
+            "CN": "風漂龍頭盔"
+        },
         "rarity": 4,
         "abilityIds": [
             251
@@ -628,7 +844,15 @@
     },
     {
         "id": 29,
-        "name": "Odogaron Helm",
+        "name": {
+            "EN": "Odogaron Helm",
+            "FR": "Masque Odogaron",
+            "JP": "ガロンヘルム",
+            "IT": "Elmo di Odogaron",
+            "DE": "Odogaron-Helm",
+            "KR": "가론헬름",
+            "CN": "慘爪龍頭盔"
+        },
         "rarity": 4,
         "abilityIds": [
             16
@@ -654,7 +878,15 @@
     },
     {
         "id": 30,
-        "name": "Rathalos Helm",
+        "name": {
+            "EN": "Rathalos Helm",
+            "FR": "Casque Rathalos",
+            "JP": "レウスヘルム",
+            "IT": "Elmo di Rathalos",
+            "DE": "Rathalos-Helm",
+            "KR": "레우스헬름",
+            "CN": "火龍頭盔"
+        },
         "rarity": 4,
         "abilityIds": [
             38
@@ -680,7 +912,15 @@
     },
     {
         "id": 31,
-        "name": "Diablos Helm",
+        "name": {
+            "EN": "Diablos Helm",
+            "FR": "Heaume Diablos",
+            "JP": "ディアブロヘルム",
+            "IT": "Elmo di Diablos",
+            "DE": "Diablos-Helm",
+            "KR": "디아블로헬름",
+            "CN": "角龍頭盔"
+        },
         "rarity": 4,
         "abilityIds": [
             146
@@ -706,7 +946,15 @@
     },
     {
         "id": 32,
-        "name": "Kirin Horn",
+        "name": {
+            "EN": "Kirin Horn",
+            "FR": "Corne Kirin",
+            "JP": "キリンホーン",
+            "IT": "Corno di Kirin",
+            "DE": "Kirin-Horn",
+            "KR": "키린혼",
+            "CN": "麒麟角"
+        },
         "rarity": 4,
         "abilityIds": [
             194
@@ -732,7 +980,15 @@
     },
     {
         "id": 33,
-        "name": "Leather Headgear α",
+        "name": {
+            "EN": "Leather Headgear α",
+            "FR": "Lunettes en cuir α",
+            "JP": "レザーヘッド α",
+            "IT": "Copricapo di cuoio α",
+            "DE": "Leder-Kopfschutz α",
+            "KR": "레더헤드 α",
+            "CN": "皮製頭飾 α"
+        },
         "rarity": 5,
         "abilityIds": [
             207
@@ -755,7 +1011,15 @@
     },
     {
         "id": 34,
-        "name": "Leather Headgear β",
+        "name": {
+            "EN": "Leather Headgear β",
+            "FR": "Lunettes en cuir β",
+            "JP": "レザーヘッド β",
+            "IT": "Copricapo di cuoio β",
+            "DE": "Leder-Kopfschutz β",
+            "KR": "레더헤드 β",
+            "CN": "皮製頭飾 β"
+        },
         "rarity": 5,
         "slots": [
             1
@@ -781,7 +1045,15 @@
     },
     {
         "id": 35,
-        "name": "Chainmail Headgear α",
+        "name": {
+            "EN": "Chainmail Headgear α",
+            "FR": "Heaume de mailles α",
+            "JP": "チェーンヘッド α",
+            "IT": "Copricapo di maglia α",
+            "DE": "Ketten-Kopfschutz α",
+            "KR": "체인헤드 α",
+            "CN": "鎖甲頭飾 α"
+        },
         "rarity": 5,
         "abilityIds": [
             248,
@@ -805,7 +1077,15 @@
     },
     {
         "id": 36,
-        "name": "Chainmail Headgear β",
+        "name": {
+            "EN": "Chainmail Headgear β",
+            "FR": "Heaume de mailles β",
+            "JP": "チェーンヘッド β",
+            "IT": "Copricapo di maglia β",
+            "DE": "Ketten-Kopfschutz β",
+            "KR": "체인헤드 β",
+            "CN": "鎖甲頭飾 β"
+        },
         "rarity": 5,
         "slots": [
             1
@@ -831,7 +1111,15 @@
     },
     {
         "id": 37,
-        "name": "Hunter's Headgear α",
+        "name": {
+            "EN": "Hunter's Headgear α",
+            "FR": "Coiffe de chasseur α",
+            "JP": "ハンターヘルム α",
+            "IT": "Elmo del cacciatore α",
+            "DE": "Jäger-Kopfschutz α",
+            "KR": "헌터헬름 α",
+            "CN": "獵人頭盔 α"
+        },
         "rarity": 5,
         "abilityIds": [
             278,
@@ -855,7 +1143,15 @@
     },
     {
         "id": 38,
-        "name": "Hunter's Headgear β",
+        "name": {
+            "EN": "Hunter's Headgear β",
+            "FR": "Coiffe de chasseur β",
+            "JP": "ハンターヘルム β",
+            "IT": "Elmo del cacciatore β",
+            "DE": "Jäger-Kopfschutz β",
+            "KR": "헌터헬름 β",
+            "CN": "獵人頭盔 β"
+        },
         "rarity": 5,
         "slots": [
             1
@@ -881,7 +1177,15 @@
     },
     {
         "id": 39,
-        "name": "Bone Helm α",
+        "name": {
+            "EN": "Bone Helm α",
+            "FR": "Casque d'os α",
+            "JP": "ボーンヘルム α",
+            "IT": "Elmo d'osso α",
+            "DE": "Knochen-Helm α",
+            "KR": "본헬름 α",
+            "CN": "骨製頭盔 α"
+        },
         "rarity": 5,
         "abilityIds": [
             52,
@@ -905,7 +1209,15 @@
     },
     {
         "id": 40,
-        "name": "Bone Helm β",
+        "name": {
+            "EN": "Bone Helm β",
+            "FR": "Casque d'os β",
+            "JP": "ボーンヘルム β",
+            "IT": "Elmo d'osso β",
+            "DE": "Knochen-Helm β",
+            "KR": "본헬름 β",
+            "CN": "骨製頭盔 β"
+        },
         "rarity": 5,
         "slots": [
             1
@@ -931,7 +1243,15 @@
     },
     {
         "id": 41,
-        "name": "Alloy Helm α",
+        "name": {
+            "EN": "Alloy Helm α",
+            "FR": "Heaume en alliage α",
+            "JP": "アロイヘルム α",
+            "IT": "Elmo in lega α",
+            "DE": "Legierungs-Helm α",
+            "KR": "얼로이헬름 α",
+            "CN": "合金頭盔 α"
+        },
         "rarity": 5,
         "abilityIds": [
             27,
@@ -955,7 +1275,15 @@
     },
     {
         "id": 42,
-        "name": "Alloy Helm β",
+        "name": {
+            "EN": "Alloy Helm β",
+            "FR": "Heaume en alliage β",
+            "JP": "アロイヘルム β",
+            "IT": "Elmo in lega β",
+            "DE": "Legierungs-Helm β",
+            "KR": "얼로이헬름 β",
+            "CN": "合金頭盔 β"
+        },
         "rarity": 5,
         "slots": [
             1
@@ -981,7 +1309,15 @@
     },
     {
         "id": 43,
-        "name": "King Beetle Vertex α",
+        "name": {
+            "EN": "King Beetle Vertex α",
+            "FR": "Vertex Scarabée α",
+            "JP": "オウビートテスタ α",
+            "IT": "Vertex dello scarabeo α",
+            "DE": "Königskäfer-Vertex α",
+            "KR": "킹비트테스타 α",
+            "CN": "獨角仙護頭 α"
+        },
         "rarity": 5,
         "abilityIds": [
             210,
@@ -1005,7 +1341,15 @@
     },
     {
         "id": 44,
-        "name": "King Beetle Vertex β",
+        "name": {
+            "EN": "King Beetle Vertex β",
+            "FR": "Vertex Scarabée β",
+            "JP": "オウビートテスタ β",
+            "IT": "Vertex dello scarabeo β",
+            "DE": "Königskäfer-Vertex β",
+            "KR": "킹비트테스타 β",
+            "CN": "獨角仙護頭 β"
+        },
         "rarity": 5,
         "slots": [
             1
@@ -1031,7 +1375,15 @@
     },
     {
         "id": 45,
-        "name": "Butterfly Vertex α",
+        "name": {
+            "EN": "Butterfly Vertex α",
+            "FR": "Vertex Papillon α",
+            "JP": "パピメルテスタ α",
+            "IT": "Vertex di farfalla α",
+            "DE": "Schmetterling-Vertex α",
+            "KR": "파피메르테스타 α",
+            "CN": "燕尾蝶護頭 α"
+        },
         "rarity": 5,
         "abilityIds": [
             210,
@@ -1055,7 +1407,15 @@
     },
     {
         "id": 46,
-        "name": "Butterfly Vertex β",
+        "name": {
+            "EN": "Butterfly Vertex β",
+            "FR": "Vertex Papillon β",
+            "JP": "パピメルテスタ β",
+            "IT": "Vertex di farfalla β",
+            "DE": "Schmetterling-Vertex β",
+            "KR": "파피메르테스타 β",
+            "CN": "燕尾蝶護頭 β"
+        },
         "rarity": 5,
         "slots": [
             1
@@ -1081,7 +1441,15 @@
     },
     {
         "id": 47,
-        "name": "Vespoid Helm α",
+        "name": {
+            "EN": "Vespoid Helm α",
+            "FR": "Calot Vespoid α",
+            "JP": "ランゴヘルム α",
+            "IT": "Elmo di Vespoid α",
+            "DE": "Vespoid-Helm α",
+            "KR": "랑고헬름 α",
+            "CN": "巨蜂頭盔 α"
+        },
         "rarity": 5,
         "abilityIds": [
             222,
@@ -1105,7 +1473,15 @@
     },
     {
         "id": 48,
-        "name": "Vespoid Helm β",
+        "name": {
+            "EN": "Vespoid Helm β",
+            "FR": "Calot Vespoid β",
+            "JP": "ランゴヘルム β",
+            "IT": "Elmo di Vespoid β",
+            "DE": "Vespoid-Helm β",
+            "KR": "랑고헬름 β",
+            "CN": "巨蜂頭盔 β"
+        },
         "rarity": 5,
         "slots": [
             1
@@ -1131,7 +1507,15 @@
     },
     {
         "id": 49,
-        "name": "Hornetaur Helm α",
+        "name": {
+            "EN": "Hornetaur Helm α",
+            "FR": "Heaume Hornetaur α",
+            "JP": "タロスヘルム α",
+            "IT": "Elmo di Hornetaur α",
+            "DE": "Hornetaur-Helm α",
+            "KR": "타로스헬름 α",
+            "CN": "巨甲蟲頭盔 α"
+        },
         "rarity": 5,
         "abilityIds": [
             35,
@@ -1155,7 +1539,15 @@
     },
     {
         "id": 50,
-        "name": "Hornetaur Helm β",
+        "name": {
+            "EN": "Hornetaur Helm β",
+            "FR": "Heaume Hornetaur β",
+            "JP": "タロスヘルム β",
+            "IT": "Elmo di Hornetaur β",
+            "DE": "Hornetaur-Helm β",
+            "KR": "타로스헬름 β",
+            "CN": "巨甲蟲頭盔 β"
+        },
         "rarity": 5,
         "slots": [
             1
@@ -1181,7 +1573,15 @@
     },
     {
         "id": 51,
-        "name": "Mosswine Mask α",
+        "name": {
+            "EN": "Mosswine Mask α",
+            "FR": "Masque Mosswine α",
+            "JP": "モスフェイク α",
+            "IT": "Maschera di Mosswine α",
+            "DE": "Mosswine-Maske α",
+            "KR": "모스페이크 α",
+            "CN": "菌豬頭套 α"
+        },
         "rarity": 5,
         "abilityIds": [
             244
@@ -1204,7 +1604,15 @@
     },
     {
         "id": 56,
-        "name": "Shamos Goggles α",
+        "name": {
+            "EN": "Shamos Goggles α",
+            "FR": "Lunettes Shamos α",
+            "JP": "シャムゴーグル α",
+            "IT": "Occhiali di Shamos α",
+            "DE": "Shamos-Brille α",
+            "KR": "샤무고글 α",
+            "CN": "貓蜥龍護目鏡 α"
+        },
         "rarity": 5,
         "abilityIds": [
             298,
@@ -1228,7 +1636,15 @@
     },
     {
         "id": 57,
-        "name": "Shamos Goggles β",
+        "name": {
+            "EN": "Shamos Goggles β",
+            "FR": "Lunettes Shamos β",
+            "JP": "シャムゴーグル β",
+            "IT": "Occhiali di Shamos β",
+            "DE": "Shamos-Brille β",
+            "KR": "샤무고글 β",
+            "CN": "貓蜥龍護目鏡 β"
+        },
         "rarity": 5,
         "slots": [
             1
@@ -1254,7 +1670,15 @@
     },
     {
         "id": 58,
-        "name": "Jagras Helm α",
+        "name": {
+            "EN": "Jagras Helm α",
+            "FR": "Casque Jagras α",
+            "JP": "ジャグラスヘルム α",
+            "IT": "Elmo di Jagras α",
+            "DE": "Jagras-Helm α",
+            "KR": "쟈그라스헬름 α",
+            "CN": "凶豺龍頭盔 α"
+        },
         "rarity": 5,
         "abilityIds": [
             235
@@ -1277,7 +1701,15 @@
     },
     {
         "id": 59,
-        "name": "Jagras Helm β",
+        "name": {
+            "EN": "Jagras Helm β",
+            "FR": "Casque Jagras β",
+            "JP": "ジャグラスヘルム β",
+            "IT": "Elmo di Jagras β",
+            "DE": "Jagras-Helm β",
+            "KR": "쟈그라스헬름 β",
+            "CN": "凶豺龍頭盔 β"
+        },
         "rarity": 5,
         "slots": [
             1
@@ -1303,7 +1735,15 @@
     },
     {
         "id": 60,
-        "name": "Kulu Headpiece α",
+        "name": {
+            "EN": "Kulu Headpiece α",
+            "FR": "Voile Kulu α",
+            "JP": "クルルヘルム α",
+            "IT": "Elmo di Kulu α",
+            "DE": "Kulu-Kopfschutz α",
+            "KR": "쿠루루헬름 α",
+            "CN": "搔鳥頭盔 α"
+        },
         "rarity": 5,
         "abilityIds": [
             61,
@@ -1327,7 +1767,15 @@
     },
     {
         "id": 61,
-        "name": "Kulu Headpiece β",
+        "name": {
+            "EN": "Kulu Headpiece β",
+            "FR": "Voile Kulu β",
+            "JP": "クルルヘルム β",
+            "IT": "Elmo di Kulu β",
+            "DE": "Kulu-Kopfschutz β",
+            "KR": "쿠루루헬름 β",
+            "CN": "搔鳥頭盔 β"
+        },
         "rarity": 5,
         "slots": [
             1,
@@ -1354,7 +1802,15 @@
     },
     {
         "id": 62,
-        "name": "Tzitzi Headgear α",
+        "name": {
+            "EN": "Tzitzi Headgear α",
+            "FR": "Lunettes Tzitzi α",
+            "JP": "ツィツィヘルム α",
+            "IT": "Elmo di Tzitzi α",
+            "DE": "Tzitzi-Kopfschutz α",
+            "KR": "치치헬름 α",
+            "CN": "眩鳥頭飾 α"
+        },
         "rarity": 5,
         "abilityIds": [
             288,
@@ -1378,7 +1834,15 @@
     },
     {
         "id": 63,
-        "name": "Tzitzi Headgear β",
+        "name": {
+            "EN": "Tzitzi Headgear β",
+            "FR": "Lunettes Tzitzi β",
+            "JP": "ツィツィヘルム β",
+            "IT": "Elmo di Tzitzi β",
+            "DE": "Tzitzi-Kopfschutz β",
+            "KR": "치치헬름 β",
+            "CN": "眩鳥頭飾 β"
+        },
         "rarity": 5,
         "slots": [
             1
@@ -1404,7 +1868,15 @@
     },
     {
         "id": 64,
-        "name": "Girros Mask α",
+        "name": {
+            "EN": "Girros Mask α",
+            "FR": "Masque Girros α",
+            "JP": "ギルオスヘルム α",
+            "IT": "Maschera di Girros α",
+            "DE": "Girros-Maske α",
+            "KR": "기르오스헬름 α",
+            "CN": "凶顎龍頭盔 α"
+        },
         "rarity": 5,
         "abilityIds": [
             185,
@@ -1428,7 +1900,15 @@
     },
     {
         "id": 65,
-        "name": "Girros Mask β",
+        "name": {
+            "EN": "Girros Mask β",
+            "FR": "Masque Girros β",
+            "JP": "ギルオスヘルム β",
+            "IT": "Maschera di Girros β",
+            "DE": "Girros-Maske β",
+            "KR": "기르오스헬름 β",
+            "CN": "凶顎龍頭盔 β"
+        },
         "rarity": 5,
         "slots": [
             1
@@ -1454,7 +1934,15 @@
     },
     {
         "id": 66,
-        "name": "Pukei Hood α",
+        "name": {
+            "EN": "Pukei Hood α",
+            "FR": "Capuche Pukei α",
+            "JP": "プケプケヘルム α",
+            "IT": "Cappuccio di Pukei α",
+            "DE": "Pukei-Kopfschutz α",
+            "KR": "푸케푸케헬름 α",
+            "CN": "毒妖鳥頭盔 α"
+        },
         "rarity": 5,
         "abilityIds": [
             282
@@ -1477,7 +1965,15 @@
     },
     {
         "id": 67,
-        "name": "Pukei Hood β",
+        "name": {
+            "EN": "Pukei Hood β",
+            "FR": "Capuche Pukei β",
+            "JP": "プケプケヘルム β",
+            "IT": "Cappuccio di Pukei β",
+            "DE": "Pukei-Kopfschutz β",
+            "KR": "푸케푸케헬름 β",
+            "CN": "毒妖鳥頭盔 β"
+        },
         "rarity": 5,
         "slots": [
             1,
@@ -1504,7 +2000,15 @@
     },
     {
         "id": 68,
-        "name": "Barroth Helm α",
+        "name": {
+            "EN": "Barroth Helm α",
+            "FR": "Heaume Barroth α",
+            "JP": "ボロスヘルム α",
+            "IT": "Elmo di Barroth α",
+            "DE": "Barroth-Helm α",
+            "KR": "보로스헬름 α",
+            "CN": "土砂龍頭盔 α"
+        },
         "rarity": 5,
         "abilityIds": [
             218
@@ -1527,7 +2031,15 @@
     },
     {
         "id": 69,
-        "name": "Barroth Helm β",
+        "name": {
+            "EN": "Barroth Helm β",
+            "FR": "Heaume Barroth β",
+            "JP": "ボロスヘルム β",
+            "IT": "Elmo di Barroth β",
+            "DE": "Barroth-Helm β",
+            "KR": "보로스헬름 β",
+            "CN": "土砂龍頭盔 β"
+        },
         "rarity": 5,
         "slots": [
             1
@@ -1553,7 +2065,15 @@
     },
     {
         "id": 70,
-        "name": "Anja Helm α",
+        "name": {
+            "EN": "Anja Helm α",
+            "FR": "Casque Anjanath α",
+            "JP": "ジャナフヘルム α",
+            "IT": "Elmo di Anja α",
+            "DE": "Anjanath-Helm α",
+            "KR": "쟈나프헬름 α",
+            "CN": "蠻顎龍頭盔 α"
+        },
         "rarity": 5,
         "abilityIds": [
             80,
@@ -1580,7 +2100,15 @@
     },
     {
         "id": 71,
-        "name": "Anja Helm β",
+        "name": {
+            "EN": "Anja Helm β",
+            "FR": "Casque Anjanath β",
+            "JP": "ジャナフヘルム β",
+            "IT": "Elmo di Anja β",
+            "DE": "Anjanath-Helm β",
+            "KR": "쟈나프헬름 β",
+            "CN": "蠻顎龍頭盔 β"
+        },
         "rarity": 5,
         "slots": [
             2
@@ -1609,7 +2137,15 @@
     },
     {
         "id": 72,
-        "name": "Jyura Helm α",
+        "name": {
+            "EN": "Jyura Helm α",
+            "FR": "Heaume Jyura α",
+            "JP": "ジュラヘルム α",
+            "IT": "Elmo di Jyura α",
+            "DE": "Jyura-Helm α",
+            "KR": "쥬라헬름 α",
+            "CN": "泥魚龍頭盔 α"
+        },
         "rarity": 5,
         "abilityIds": [
             285
@@ -1632,7 +2168,15 @@
     },
     {
         "id": 73,
-        "name": "Jyura Helm β",
+        "name": {
+            "EN": "Jyura Helm β",
+            "FR": "Heaume Jyura β",
+            "JP": "ジュラヘルム β",
+            "IT": "Elmo di Jyura β",
+            "DE": "Jyura-Helm β",
+            "KR": "쥬라헬름 β",
+            "CN": "泥魚龍頭盔 β"
+        },
         "rarity": 5,
         "slots": [
             1
@@ -1658,7 +2202,15 @@
     },
     {
         "id": 74,
-        "name": "Kadachi Helm α",
+        "name": {
+            "EN": "Kadachi Helm α",
+            "FR": "Toque Kadachi α",
+            "JP": "カガチヘルム α",
+            "IT": "Elmo di Kadachi α",
+            "DE": "Kadachi-Helm α",
+            "KR": "카가치헬름 α",
+            "CN": "飛雷龍頭盔 α"
+        },
         "rarity": 5,
         "abilityIds": [
             198
@@ -1681,7 +2233,15 @@
     },
     {
         "id": 75,
-        "name": "Kadachi Helm β",
+        "name": {
+            "EN": "Kadachi Helm β",
+            "FR": "Toque Kadachi β",
+            "JP": "カガチヘルム β",
+            "IT": "Elmo di Kadachi β",
+            "DE": "Kadachi-Helm β",
+            "KR": "카가치헬름 β",
+            "CN": "飛雷龍頭盔 β"
+        },
         "rarity": 5,
         "slots": [
             2
@@ -1707,7 +2267,15 @@
     },
     {
         "id": 76,
-        "name": "Lumu Hat α",
+        "name": {
+            "EN": "Lumu Hat α",
+            "FR": "Ouchanka Lumu α",
+            "JP": "ウルムーヘルム α",
+            "IT": "Copricapo di Lumu α",
+            "DE": "Paolumu-Hut α",
+            "KR": "우르무헬름 α",
+            "CN": "浮空龍頭盔 α"
+        },
         "rarity": 5,
         "abilityIds": [
             204
@@ -1730,7 +2298,15 @@
     },
     {
         "id": 77,
-        "name": "Lumu Hat β",
+        "name": {
+            "EN": "Lumu Hat β",
+            "FR": "Ouchanka Lumu β",
+            "JP": "ウルムーヘルム β",
+            "IT": "Copricapo di Lumu β",
+            "DE": "Paolumu-Hut β",
+            "KR": "우르무헬름 β",
+            "CN": "浮空龍頭盔 β"
+        },
         "rarity": 5,
         "slots": [
             2
@@ -1756,7 +2332,15 @@
     },
     {
         "id": 78,
-        "name": "Rathian Helm α",
+        "name": {
+            "EN": "Rathian Helm α",
+            "FR": "Heaume Rathian α",
+            "JP": "レイアヘルム α",
+            "IT": "Elmo di Rathian α",
+            "DE": "Rathian-Helm α",
+            "KR": "레이아헬름 α",
+            "CN": "雌火龍頭盔 α"
+        },
         "rarity": 5,
         "abilityIds": [
             53,
@@ -1780,7 +2364,15 @@
     },
     {
         "id": 79,
-        "name": "Rathian Helm β",
+        "name": {
+            "EN": "Rathian Helm β",
+            "FR": "Heaume Rathian β",
+            "JP": "レイアヘルム β",
+            "IT": "Elmo di Rathian β",
+            "DE": "Rathian-Helm β",
+            "KR": "레이아헬름 β",
+            "CN": "雌火龍頭盔 β"
+        },
         "rarity": 5,
         "slots": [
             1
@@ -1807,7 +2399,15 @@
     },
     {
         "id": 80,
-        "name": "Rath Heart Helm α",
+        "name": {
+            "EN": "Rath Heart Helm α",
+            "FR": "Bonnet Cœur Rathian α",
+            "JP": "リオハートヘルム α",
+            "IT": "Elmo cuore di Rath α",
+            "DE": "Rathianherz-Helm α",
+            "KR": "리오하트헬름 α",
+            "CN": "火龍心頭盔 α"
+        },
         "rarity": 6,
         "abilityIds": [
             214,
@@ -1834,7 +2434,15 @@
     },
     {
         "id": 81,
-        "name": "Rath Heart Helm β",
+        "name": {
+            "EN": "Rath Heart Helm β",
+            "FR": "Bonnet Cœeur Rathian β",
+            "JP": "リオハートヘルム β",
+            "IT": "Elmo cuore di Rath β",
+            "DE": "Rathianherz-Helm β",
+            "KR": "리오하트헬름 β",
+            "CN": "火龍心頭盔 β"
+        },
         "rarity": 6,
         "slots": [
             2
@@ -1863,7 +2471,15 @@
     },
     {
         "id": 82,
-        "name": "Baan Helm α",
+        "name": {
+            "EN": "Baan Helm α",
+            "FR": "Casque Radobaan α",
+            "JP": "バルキンヘルム α",
+            "IT": "Elmo di Baan α",
+            "DE": "Baan-Helm α",
+            "KR": "발킨헬름 α",
+            "CN": "骨鎚龍頭盔 α"
+        },
         "rarity": 6,
         "abilityIds": [
             33
@@ -1886,7 +2502,15 @@
     },
     {
         "id": 83,
-        "name": "Baan Helm β",
+        "name": {
+            "EN": "Baan Helm β",
+            "FR": "Casque Radobaan β",
+            "JP": "バルキンヘルム β",
+            "IT": "Elmo di Baan β",
+            "DE": "Baan-Helm β",
+            "KR": "발킨헬름 β",
+            "CN": "骨鎚龍頭盔 β"
+        },
         "rarity": 6,
         "slots": [
             2
@@ -1912,7 +2536,15 @@
     },
     {
         "id": 84,
-        "name": "Gastodon Horn α",
+        "name": {
+            "EN": "Gastodon Horn α",
+            "FR": "Crinière Gastodon α",
+            "JP": "ガストホーン α",
+            "IT": "Corno di Gastodon α",
+            "DE": "Gastodon-Horn α",
+            "KR": "가스토혼 α",
+            "CN": "突擊龍角 α"
+        },
         "rarity": 5,
         "abilityIds": [
             275,
@@ -1936,7 +2568,15 @@
     },
     {
         "id": 85,
-        "name": "Gastodon Horn β",
+        "name": {
+            "EN": "Gastodon Horn β",
+            "FR": "Crinière Gastodon β",
+            "JP": "ガストホーン β",
+            "IT": "Corno di Gastodon β",
+            "DE": "Gastodon-Horn β",
+            "KR": "가스토혼 β",
+            "CN": "突擊龍角 β"
+        },
         "rarity": 5,
         "slots": [
             1
@@ -1962,7 +2602,15 @@
     },
     {
         "id": 88,
-        "name": "Dodogama Helm α",
+        "name": {
+            "EN": "Dodogama Helm α",
+            "FR": "Bassinet Dodogama α",
+            "JP": "ガマルヘルム α",
+            "IT": "Elmo di Dodogama α",
+            "DE": "Dodogama-Helm α",
+            "KR": "가마루헬름 α",
+            "CN": "岩賊龍頭盔 α"
+        },
         "rarity": 5,
         "abilityIds": [
             14
@@ -1985,7 +2633,15 @@
     },
     {
         "id": 89,
-        "name": "Dodogama Helm β",
+        "name": {
+            "EN": "Dodogama Helm β",
+            "FR": "Bassinet Dodogama β",
+            "JP": "ガマルヘルム β",
+            "IT": "Elmo di Dodogama β",
+            "DE": "Dodogama-Helm β",
+            "KR": "가마루헬름 β",
+            "CN": "岩賊龍頭盔 β"
+        },
         "rarity": 5,
         "slots": [
             1
@@ -2011,7 +2667,15 @@
     },
     {
         "id": 90,
-        "name": "Zorah Headgear α",
+        "name": {
+            "EN": "Zorah Headgear α",
+            "FR": "Couronne Zorah α",
+            "JP": "ゾラマグナヘッド α",
+            "IT": "Testa di Zorah α",
+            "DE": "Zorah-Kopfschutz α",
+            "KR": "조라마그나헤드 α",
+            "CN": "鑄島熔岩頭飾 α"
+        },
         "rarity": 6,
         "abilityIds": [
             141,
@@ -2038,7 +2702,15 @@
     },
     {
         "id": 91,
-        "name": "Zorah Headgear β",
+        "name": {
+            "EN": "Zorah Headgear β",
+            "FR": "Couronne Zorah β",
+            "JP": "ゾラマグナヘッド β",
+            "IT": "Testa di Zorah β",
+            "DE": "Zorah-Kopfschutz β",
+            "KR": "조라마그나헤드 β",
+            "CN": "鑄島熔岩頭飾 β"
+        },
         "rarity": 6,
         "slots": [
             1
@@ -2067,7 +2739,15 @@
     },
     {
         "id": 92,
-        "name": "High Metal Helm α",
+        "name": {
+            "EN": "High Metal Helm α",
+            "FR": "Heaume haut-métal α",
+            "JP": "ハイメタヘルム α",
+            "IT": "Elmo in ipermetallo α",
+            "DE": "Hochmetall-Helm α",
+            "KR": "하이메탈헬름 α",
+            "CN": "礦石頭盔 α"
+        },
         "rarity": 6,
         "abilityIds": [
             68,
@@ -2091,7 +2771,15 @@
     },
     {
         "id": 93,
-        "name": "High Metal Helm β",
+        "name": {
+            "EN": "High Metal Helm β",
+            "FR": "Heaume haut-métal β",
+            "JP": "ハイメタヘルム β",
+            "IT": "Elmo in ipermetallo β",
+            "DE": "Hochmetall-Helm β",
+            "KR": "하이메탈헬름 β",
+            "CN": "礦石頭盔 β"
+        },
         "rarity": 6,
         "slots": [
             2
@@ -2117,7 +2805,15 @@
     },
     {
         "id": 94,
-        "name": "Ingot Helm α",
+        "name": {
+            "EN": "Ingot Helm α",
+            "FR": "Couronne en lingot α",
+            "JP": "インゴットヘルム α",
+            "IT": "Elmo del lingotto α",
+            "DE": "Guss-Helm α",
+            "KR": "잉곳헬름 α",
+            "CN": "鑄鐵頭盔 α"
+        },
         "rarity": 6,
         "abilityIds": [
             95
@@ -2140,7 +2836,15 @@
     },
     {
         "id": 95,
-        "name": "Ingot Helm β",
+        "name": {
+            "EN": "Ingot Helm β",
+            "FR": "Couronne en lingot β",
+            "JP": "インゴットヘルム β",
+            "IT": "Elmo del lingotto β",
+            "DE": "Guss-Helm β",
+            "KR": "잉곳헬름 β",
+            "CN": "鑄鐵頭盔 β"
+        },
         "rarity": 6,
         "slots": [
             1
@@ -2166,7 +2870,15 @@
     },
     {
         "id": 96,
-        "name": "Brigade Lobos α",
+        "name": {
+            "EN": "Brigade Lobos α",
+            "FR": "Chapeau de brigade α",
+            "JP": "ブリゲイドロポス α",
+            "IT": "Feluca di brigata α",
+            "DE": "Brigade-Lobos α",
+            "KR": "브리게이드로포스 α",
+            "CN": "旅團帽 α"
+        },
         "rarity": 6,
         "abilityIds": [
             59,
@@ -2190,7 +2902,15 @@
     },
     {
         "id": 97,
-        "name": "Brigade Lobos β",
+        "name": {
+            "EN": "Brigade Lobos β",
+            "FR": "Chapeau de brigade β",
+            "JP": "ブリゲイドロポス β",
+            "IT": "Felucia di brigata β",
+            "DE": "Brigade-Lobos β",
+            "KR": "브리게이드로포스 β",
+            "CN": "旅團帽 β"
+        },
         "rarity": 6,
         "slots": [
             1
@@ -2216,7 +2936,15 @@
     },
     {
         "id": 98,
-        "name": "Faux Felyne α",
+        "name": {
+            "EN": "Faux Felyne α",
+            "FR": "Faux Felyne α",
+            "JP": "アイルーフェイク α",
+            "IT": "Felyne fasullo α",
+            "DE": "Falscher Felyne α",
+            "KR": "아이루페이크 α",
+            "CN": "艾路頭套 α"
+        },
         "rarity": 6,
         "abilityIds": [
             256
@@ -2239,7 +2967,15 @@
     },
     {
         "id": 99,
-        "name": "Strategist Spectacles α",
+        "name": {
+            "EN": "Strategist Spectacles α",
+            "FR": "Lunettes de stratège α",
+            "JP": "知略の眼鏡 α",
+            "IT": "Occhiali da stratega α",
+            "DE": "Strategiker-Brille α",
+            "KR": "지략의안경 α",
+            "CN": "知性眼鏡 α"
+        },
         "rarity": 6,
         "slots": [
             1
@@ -2265,7 +3001,15 @@
     },
     {
         "id": 100,
-        "name": "Lavasioth Helm α",
+        "name": {
+            "EN": "Lavasioth Helm α",
+            "FR": "Heaume Lavasioth α",
+            "JP": "ラヴァヘルム α",
+            "IT": "Elmo di Lavasioth α",
+            "DE": "Lavasioth-Helm α",
+            "KR": "라바헬름 α",
+            "CN": "熔岩龍頭盔 α"
+        },
         "rarity": 6,
         "abilityIds": [
             80,
@@ -2289,7 +3033,15 @@
     },
     {
         "id": 101,
-        "name": "Lavasioth Helm β",
+        "name": {
+            "EN": "Lavasioth Helm β",
+            "FR": "Heaume Lavasioth β",
+            "JP": "ラヴァヘルム β",
+            "IT": "Elmo di Lavasioth β",
+            "DE": "Lavasioth-Helm β",
+            "KR": "라바헬름 β",
+            "CN": "熔岩龍頭盔 β"
+        },
         "rarity": 6,
         "slots": [
             1,
@@ -2317,7 +3069,15 @@
     },
     {
         "id": 102,
-        "name": "Legiana Helm α",
+        "name": {
+            "EN": "Legiana Helm α",
+            "FR": "Valkyrie Legiana α",
+            "JP": "ギエナヘルム α",
+            "IT": "Elmo di Legiana α",
+            "DE": "Legiana-Helm α",
+            "KR": "기에나헬름 α",
+            "CN": "風漂龍頭盔 α"
+        },
         "rarity": 6,
         "abilityIds": [
             252,
@@ -2344,7 +3104,15 @@
     },
     {
         "id": 103,
-        "name": "Legiana Helm β",
+        "name": {
+            "EN": "Legiana Helm β",
+            "FR": "Valkyrie Legiana β",
+            "JP": "ギエナヘルム β",
+            "IT": "Elmo di Legiana β",
+            "DE": "Legiana-Helm β",
+            "KR": "기에나헬름 β",
+            "CN": "風漂龍頭盔 β"
+        },
         "rarity": 6,
         "slots": [
             1
@@ -2373,7 +3141,15 @@
     },
     {
         "id": 104,
-        "name": "Odogaron Helm α",
+        "name": {
+            "EN": "Odogaron Helm α",
+            "FR": "Masque Odogaron α",
+            "JP": "ガロンヘルム α",
+            "IT": "Elmo di Odogaron α",
+            "DE": "Odogaron-Helm α",
+            "KR": "가론헬름 α",
+            "CN": "慘爪龍頭盔 α"
+        },
         "rarity": 6,
         "abilityIds": [
             17,
@@ -2400,7 +3176,15 @@
     },
     {
         "id": 105,
-        "name": "Odogaron Helm β",
+        "name": {
+            "EN": "Odogaron Helm β",
+            "FR": "Masque Odogaron β",
+            "JP": "ガロンヘルム β",
+            "IT": "Elmo di Odogaron β",
+            "DE": "Odogaron-Helm β",
+            "KR": "가론헬름 β",
+            "CN": "慘爪龍頭盔 β"
+        },
         "rarity": 6,
         "slots": [
             2
@@ -2429,7 +3213,15 @@
     },
     {
         "id": 106,
-        "name": "Rathalos Helm α",
+        "name": {
+            "EN": "Rathalos Helm α",
+            "FR": "Casque Rathalos α",
+            "JP": "レウスヘルム α",
+            "IT": "Elmo di Rathalos α",
+            "DE": "Rathalos-Helm α",
+            "KR": "레우스헬름 α",
+            "CN": "火龍頭盔 α"
+        },
         "rarity": 6,
         "abilityIds": [
             39,
@@ -2456,7 +3248,15 @@
     },
     {
         "id": 107,
-        "name": "Rathalos Helm β",
+        "name": {
+            "EN": "Rathalos Helm β",
+            "FR": "Casque Rathalos β",
+            "JP": "レウスヘルム β",
+            "IT": "Elmo di Rathalos β",
+            "DE": "Rathalos-Helm β",
+            "KR": "레우스헬름 β",
+            "CN": "火龍頭盔 β"
+        },
         "rarity": 6,
         "slots": [
             1
@@ -2485,7 +3285,15 @@
     },
     {
         "id": 108,
-        "name": "Rath Soul Helm α",
+        "name": {
+            "EN": "Rath Soul Helm α",
+            "FR": "Heaume me Rathalos α",
+            "JP": "リオソウルヘルム α",
+            "IT": "Elmo anima di Rath α",
+            "DE": "Rathalosseelen-Helm α",
+            "KR": "리오소울헬름 α",
+            "CN": "火龍魂頭盔 α"
+        },
         "rarity": 7,
         "abilityIds": [
             129,
@@ -2512,7 +3320,15 @@
     },
     {
         "id": 109,
-        "name": "Rath Soul Helm β",
+        "name": {
+            "EN": "Rath Soul Helm β",
+            "FR": "Heaume me Rathalos β",
+            "JP": "リオソウルヘルム β",
+            "IT": "Elmo anima di Rath β",
+            "DE": "Rathalosseelen-Helm β",
+            "KR": "리오소울헬름 β",
+            "CN": "火龍魂頭盔 β"
+        },
         "rarity": 7,
         "slots": [
             1,
@@ -2542,7 +3358,15 @@
     },
     {
         "id": 110,
-        "name": "Diablos Helm α",
+        "name": {
+            "EN": "Diablos Helm α",
+            "FR": "Heaume Diablos α",
+            "JP": "ディアブロヘルム α",
+            "IT": "Elmo di Diablos α",
+            "DE": "Diablos-Helm α",
+            "KR": "디아블로헬름 α",
+            "CN": "角龍頭盔 α"
+        },
         "rarity": 6,
         "abilityIds": [
             147,
@@ -2569,7 +3393,15 @@
     },
     {
         "id": 111,
-        "name": "Diablos Helm β",
+        "name": {
+            "EN": "Diablos Helm β",
+            "FR": "Heaume Diablos β",
+            "JP": "ディアブロヘルム β",
+            "IT": "Elmo di Diablos β",
+            "DE": "Diablos-Helm β",
+            "KR": "디아블로헬름 β",
+            "CN": "角龍頭盔 β"
+        },
         "rarity": 6,
         "slots": [
             2
@@ -2598,7 +3430,15 @@
     },
     {
         "id": 112,
-        "name": "Diablos Nero Helm α",
+        "name": {
+            "EN": "Diablos Nero Helm α",
+            "FR": "Coiffe Diablos noire α",
+            "JP": "ディアネロヘルム α",
+            "IT": "Elmo di Diablos nera α",
+            "DE": "Diablos-Nero-Helm α",
+            "KR": "디아네로헬름 α",
+            "CN": "暴君角龍頭盔 α"
+        },
         "rarity": 7,
         "slots": [
             1
@@ -2627,7 +3467,15 @@
     },
     {
         "id": 113,
-        "name": "Diablos Nero Helm β",
+        "name": {
+            "EN": "Diablos Nero Helm β",
+            "FR": "Coiffe Diablos noire β",
+            "JP": "ディアネロヘルム β",
+            "IT": "Elmo di Diablos nera β",
+            "DE": "Diablos-Nero-Helm β",
+            "KR": "디아네로헬름 β",
+            "CN": "暴君角龍頭盔 β"
+        },
         "rarity": 7,
         "slots": [
             3
@@ -2656,7 +3504,15 @@
     },
     {
         "id": 114,
-        "name": "Uragaan Helm α",
+        "name": {
+            "EN": "Uragaan Helm α",
+            "FR": "Kabuto Uragaan α",
+            "JP": "ガンキンヘルム α",
+            "IT": "Elmo di Uragaan α",
+            "DE": "Uragaan-Helm α",
+            "KR": "간킨헬름 α",
+            "CN": "爆鎚龍頭盔 α"
+        },
         "rarity": 7,
         "slots": [
             3
@@ -2685,7 +3541,15 @@
     },
     {
         "id": 115,
-        "name": "Uragaan Helm β",
+        "name": {
+            "EN": "Uragaan Helm β",
+            "FR": "Kabuto Uragaan β",
+            "JP": "ガンキンヘルム β",
+            "IT": "Elmo di Uragaan β",
+            "DE": "Uragaan-Helm β",
+            "KR": "간킨헬름 β",
+            "CN": "爆鎚龍頭盔 β"
+        },
         "rarity": 7,
         "slots": [
             3,
@@ -2715,7 +3579,15 @@
     },
     {
         "id": 116,
-        "name": "Bazel Helm α",
+        "name": {
+            "EN": "Bazel Helm α",
+            "FR": "Coiffe Bazelgeuse α",
+            "JP": "バゼルヘルム α",
+            "IT": "Elmo di Bazel α",
+            "DE": "Bazel-Helm α",
+            "KR": "바젤헬름 α",
+            "CN": "爆鱗龍頭盔 α"
+        },
         "rarity": 7,
         "slots": [
             2
@@ -2745,7 +3617,15 @@
     },
     {
         "id": 117,
-        "name": "Bazel Helm β",
+        "name": {
+            "EN": "Bazel Helm β",
+            "FR": "Coiffe Bazelgeuse β",
+            "JP": "バゼルヘルム β",
+            "IT": "Elmo di Bazel β",
+            "DE": "Bazel-Helm β",
+            "KR": "바젤헬름 β",
+            "CN": "爆鱗龍頭盔 β"
+        },
         "rarity": 7,
         "slots": [
             3,
@@ -2775,7 +3655,15 @@
     },
     {
         "id": 118,
-        "name": "Damascus Helm α",
+        "name": {
+            "EN": "Damascus Helm α",
+            "FR": "Heaume Damascus α",
+            "JP": "ダマスクヘルム α",
+            "IT": "Elmo di Damasco α",
+            "DE": "Damaskus-Helm α",
+            "KR": "다마스크헬름 α",
+            "CN": "大馬士革頭盔 α"
+        },
         "rarity": 7,
         "slots": [
             1
@@ -2802,7 +3690,15 @@
     },
     {
         "id": 119,
-        "name": "Damascus Helm β",
+        "name": {
+            "EN": "Damascus Helm β",
+            "FR": "Heaume Damascus β",
+            "JP": "ダマスクヘルム β",
+            "IT": "Elmo di Damasco β",
+            "DE": "Damaskus-Helm β",
+            "KR": "다마스크헬름 β",
+            "CN": "大馬士革頭盔 β"
+        },
         "rarity": 7,
         "slots": [
             3
@@ -2828,7 +3724,15 @@
     },
     {
         "id": 120,
-        "name": "Dober Helm α",
+        "name": {
+            "EN": "Dober Helm α",
+            "FR": "Cornes Doberα",
+            "JP": "ドーベルヘルム α",
+            "IT": "Elmo di Dober α",
+            "DE": "Dober-Helm α",
+            "KR": "도베르헬름 α",
+            "CN": "杜賓頭盔 α"
+        },
         "rarity": 7,
         "abilityIds": [
             119,
@@ -2852,7 +3756,15 @@
     },
     {
         "id": 121,
-        "name": "Dober Helm β",
+        "name": {
+            "EN": "Dober Helm β",
+            "FR": "Cornes Dober β",
+            "JP": "ドーベルヘルム β",
+            "IT": "Elmo di Dober β",
+            "DE": "Dober-Helm β",
+            "KR": "도베르헬름 β",
+            "CN": "杜賓頭盔 β"
+        },
         "rarity": 7,
         "slots": [
             1
@@ -2878,7 +3790,15 @@
     },
     {
         "id": 122,
-        "name": "Death Stench Brain α",
+        "name": {
+            "EN": "Death Stench Brain α",
+            "FR": "Cerveau putride α",
+            "JP": "デスギアゲヒル α",
+            "IT": "Cervello putrefatto α",
+            "DE": "Todesgestank-Hirn α",
+            "KR": "데스기어게힐 α",
+            "CN": "死神首腦 α"
+        },
         "rarity": 7,
         "slots": [
             2
@@ -2905,7 +3825,15 @@
     },
     {
         "id": 123,
-        "name": "Death Stench Brain β",
+        "name": {
+            "EN": "Death Stench Brain β",
+            "FR": "Cerveau putride β",
+            "JP": "デスギアゲヒル β",
+            "IT": "Cervello putrefatto β",
+            "DE": "Todesgestank-Hirn β",
+            "KR": "데스기어게힐 β",
+            "CN": "死神首腦 β"
+        },
         "rarity": 7,
         "slots": [
             3
@@ -2931,7 +3859,15 @@
     },
     {
         "id": 124,
-        "name": "Skull Mask α",
+        "name": {
+            "EN": "Skull Mask α",
+            "FR": "Visage de mort α",
+            "JP": "スカルフェイス α",
+            "IT": "Maschera scheletrica α",
+            "DE": "Totenschädel α",
+            "KR": "스컬헬름 α",
+            "CN": "骷髏面罩 α"
+        },
         "rarity": 7,
         "slots": [
             2
@@ -2957,7 +3893,15 @@
     },
     {
         "id": 125,
-        "name": "Nergigante Helm α",
+        "name": {
+            "EN": "Nergigante Helm α",
+            "FR": "Coiffe Nergigante α",
+            "JP": "オーグヘルム α",
+            "IT": "Elmo di Nergigante α",
+            "DE": "Nergigante-Helm α",
+            "KR": "오그헬름 α",
+            "CN": "戰紋頭盔 α"
+        },
         "rarity": 8,
         "slots": [
             1
@@ -2987,7 +3931,15 @@
     },
     {
         "id": 126,
-        "name": "Nergigante Helm β",
+        "name": {
+            "EN": "Nergigante Helm β",
+            "FR": "Coiffe Nergigante β",
+            "JP": "オーグヘルム β",
+            "IT": "Elmo di Nergigante β",
+            "DE": "Nergigante-Helm β",
+            "KR": "오그헬름 β",
+            "CN": "戰紋頭盔 β"
+        },
         "rarity": 8,
         "slots": [
             1,
@@ -3017,7 +3969,15 @@
     },
     {
         "id": 127,
-        "name": "Kaiser Crown α",
+        "name": {
+            "EN": "Kaiser Crown α",
+            "FR": "Couronne Kaiser α",
+            "JP": "カイザークラウン α",
+            "IT": "Corona del Kaiser α",
+            "DE": "Kaiserkrone α",
+            "KR": "카이저크라운 α",
+            "CN": "帝王皇冠 α"
+        },
         "rarity": 8,
         "abilityIds": [
             161
@@ -3043,7 +4003,15 @@
     },
     {
         "id": 128,
-        "name": "Kaiser Crown β",
+        "name": {
+            "EN": "Kaiser Crown β",
+            "FR": "Couronne Kaiser β",
+            "JP": "カイザークラウン β",
+            "IT": "Corona del Kaiser β",
+            "DE": "Kaiserkrone β",
+            "KR": "카이저크라운 β",
+            "CN": "帝王皇冠 β"
+        },
         "rarity": 8,
         "slots": [
             2
@@ -3072,7 +4040,15 @@
     },
     {
         "id": 129,
-        "name": "Kushala Glare α",
+        "name": {
+            "EN": "Kushala Glare α",
+            "FR": "Regard Kushala α",
+            "JP": "クシャナアンク α",
+            "IT": "Riverbero di Kushala α",
+            "DE": "Kushala-Glanz α",
+            "KR": "크샤나앵크 α",
+            "CN": "鋼龍强力 α"
+        },
         "rarity": 8,
         "abilityIds": [
             90,
@@ -3099,7 +4075,15 @@
     },
     {
         "id": 130,
-        "name": "Kushala Glare β",
+        "name": {
+            "EN": "Kushala Glare β",
+            "FR": "Regard Kushala β",
+            "JP": "クシャナアンク β",
+            "IT": "Riverbero di Kushala β",
+            "DE": "Kushala-Glanz β",
+            "KR": "크샤나앵크 β",
+            "CN": "鋼龍强力 β"
+        },
         "rarity": 8,
         "slots": [
             1,
@@ -3130,7 +4114,15 @@
     },
     {
         "id": 131,
-        "name": "Vaal Hazak Helm α",
+        "name": {
+            "EN": "Vaal Hazak Helm α",
+            "FR": "Heaume Vaal Hazak α",
+            "JP": "ウルズヘルム α",
+            "IT": "Elmo di Vaal Hazak α",
+            "DE": "Vaal-Hazak-Helm α",
+            "KR": "우르즈헬름 α",
+            "CN": "烏爾德頭盔 α"
+        },
         "rarity": 8,
         "abilityIds": [
             170,
@@ -3157,7 +4149,15 @@
     },
     {
         "id": 132,
-        "name": "Vaal Hazak Helm β",
+        "name": {
+            "EN": "Vaal Hazak Helm β",
+            "FR": "Heaume Vaal Hazak β",
+            "JP": "ウルズヘルム β",
+            "IT": "Elmo di Vaal Hazak β",
+            "DE": "Vaal-Hazak-Helm β",
+            "KR": "우르즈헬름 β",
+            "CN": "烏爾德頭盔 β"
+        },
         "rarity": 8,
         "slots": [
             1
@@ -3186,7 +4186,15 @@
     },
     {
         "id": 133,
-        "name": "Kirin Horn α",
+        "name": {
+            "EN": "Kirin Horn α",
+            "FR": "Corne Kirin α",
+            "JP": "キリンホーン α",
+            "IT": "Corno di Kirin α",
+            "DE": "Kirin-Horn α",
+            "KR": "키린혼 α",
+            "CN": "麒麟角 α"
+        },
         "rarity": 8,
         "abilityIds": [
             195,
@@ -3213,7 +4221,15 @@
     },
     {
         "id": 134,
-        "name": "Kirin Horn β",
+        "name": {
+            "EN": "Kirin Horn β",
+            "FR": "Corne Kirin β",
+            "JP": "キリンホーン β",
+            "IT": "Corno di Kirin β",
+            "DE": "Kirin-Horn β",
+            "KR": "키린혼 β",
+            "CN": "麒麟角 β"
+        },
         "rarity": 8,
         "slots": [
             1
@@ -3242,7 +4258,15 @@
     },
     {
         "id": 135,
-        "name": "Xeno'jiiva Headgear α",
+        "name": {
+            "EN": "Xeno'jiiva Headgear α",
+            "FR": "Voile Xeno'jiiva α",
+            "JP": "ゼノラージヘッド α",
+            "IT": "Testa di Xeno'jiiva α",
+            "DE": "Xeno'jiiva-Kopfschutz α",
+            "KR": "제노라지헤드 α",
+            "CN": "異種大型頭飾 α"
+        },
         "rarity": 8,
         "slots": [
             1
@@ -3272,7 +4296,15 @@
     },
     {
         "id": 136,
-        "name": "Xeno'jiiva Headgear β",
+        "name": {
+            "EN": "Xeno'jiiva Headgear β",
+            "FR": "Voile Xeno'jiiva β",
+            "JP": "ゼノラージヘッド β",
+            "IT": "Testa di Xeno'jiiva β",
+            "DE": "Xeno'jiiva-Kopfschutz β",
+            "KR": "제노라지헤드 β",
+            "CN": "異種大型頭飾 β"
+        },
         "rarity": 8,
         "slots": [
             2
@@ -3301,7 +4333,15 @@
     },
     {
         "id": 137,
-        "name": "Guild Cross Circlet α",
+        "name": {
+            "EN": "Guild Cross Circlet α",
+            "FR": "Diadème Croix de Guilde α",
+            "JP": "ギルドクロスアクセ α",
+            "IT": "Cerchietto della Gilda α",
+            "DE": "Gildenkreuz-Reif α",
+            "KR": "길드크로스악세 α",
+            "CN": "公會十字頭飾 α"
+        },
         "rarity": 8,
         "slots": [
             1
@@ -3331,7 +4371,15 @@
     },
     {
         "id": 138,
-        "name": "Guild Cross Circlet β",
+        "name": {
+            "EN": "Guild Cross Circlet β",
+            "FR": "Diadème Croix de Guilde β",
+            "JP": "ギルドクロスアクセ β",
+            "IT": "Cerchietto della Gilda β",
+            "DE": "Gildenkreuz-Reif β",
+            "KR": "길드크로스악세 β",
+            "CN": "公會十字頭飾 β"
+        },
         "rarity": 8,
         "slots": [
             1,
@@ -3362,7 +4410,15 @@
     },
     {
         "id": 139,
-        "name": "Dragonking Eyepatch α",
+        "name": {
+            "EN": "Dragonking Eyepatch α",
+            "FR": "Cache-eil Roi-dragon α",
+            "JP": "竜王の隻眼 α",
+            "IT": "Benda del re drago α",
+            "DE": "DrKönigAugenklappe α",
+            "KR": "용왕의척안 α",
+            "CN": "龍王的獨眼 α"
+        },
         "rarity": 8,
         "slots": [
             3
@@ -3388,7 +4444,15 @@
     },
     {
         "id": 140,
-        "name": "Commission Gorget α",
+        "name": {
+            "EN": "Commission Gorget α",
+            "FR": "Coiffe de la Commission α",
+            "JP": "シーカーヘッド α",
+            "IT": "Elmo della commissione α",
+            "DE": "Kommissionsringkragen α",
+            "KR": "시커헤드 α",
+            "CN": "追蹤者頭飾 α"
+        },
         "rarity": 8,
         "slots": [
             1
@@ -3418,7 +4482,15 @@
     },
     {
         "id": 141,
-        "name": "Commission Gorget β",
+        "name": {
+            "EN": "Commission Gorget β",
+            "FR": "Coiffe de la Commission β",
+            "JP": "シーカーヘッド β",
+            "IT": "Elmo della commissione β",
+            "DE": "Kommissionsringkragen β",
+            "KR": "시커헤드 β",
+            "CN": "追蹤者頭飾 β"
+        },
         "rarity": 8,
         "slots": [
             2
@@ -3447,7 +4519,15 @@
     },
     {
         "id": 142,
-        "name": "Vangis Helm α",
+        "name": {
+            "EN": "Vangis Helm α",
+            "FR": "Heaume Vangis α",
+            "JP": "バンギスヘルム α",
+            "IT": "Elmo Vangis α",
+            "DE": "Vangis-Helm α",
+            "KR": "반기스헬름 α",
+            "CN": "殘虐頭盔 α"
+        },
         "rarity": 7,
         "slots": [
             1
@@ -3475,7 +4555,15 @@
     },
     {
         "id": 143,
-        "name": "Vangis Helm β",
+        "name": {
+            "EN": "Vangis Helm β",
+            "FR": "Heaume Vangis β",
+            "JP": "バンギスヘルム β",
+            "IT": "Elmo Vangis β",
+            "DE": "Vangis-Helm β",
+            "KR": "반기스헬름 β",
+            "CN": "殘虐頭盔 β"
+        },
         "rarity": 7,
         "slots": [
             3,
@@ -3503,7 +4591,15 @@
     },
     {
         "id": 144,
-        "name": "Empress Crown α",
+        "name": {
+            "EN": "Empress Crown α",
+            "FR": "Couronne Impératrix α",
+            "JP": "エンプレスセクター α",
+            "IT": "Corona dell'imperatrice α",
+            "DE": "Kaiserin-Krone α",
+            "KR": "엠프리스섹터 α",
+            "CN": "皇后琴弦 α"
+        },
         "rarity": 8,
         "slots": [
             3,
@@ -3535,7 +4631,15 @@
     },
     {
         "id": 145,
-        "name": "Empress Crown β",
+        "name": {
+            "EN": "Empress Crown β",
+            "FR": "Couronne Impératrix β",
+            "JP": "エンプレスセクター β",
+            "IT": "Corona dell'imperatrice β",
+            "DE": "Kaiserin-Krone β",
+            "KR": "엠프리스섹터 β",
+            "CN": "皇后琴弦 β"
+        },
         "rarity": 8,
         "slots": [
             3,
@@ -3566,7 +4670,15 @@
     },
     {
         "id": 146,
-        "name": "Drachen Armet α",
+        "name": {
+            "EN": "Drachen Armet α",
+            "FR": "Armet Drachen α",
+            "JP": "ドラケンアーメット α",
+            "IT": "Celata drachen α",
+            "DE": "Drachenreiter-Armet α",
+            "KR": "용기사 아메트 α",
+            "CN": "騰龍戰盔 α"
+        },
         "rarity": 8,
         "slots": [
             3,
@@ -3598,7 +4710,15 @@
     },
     {
         "id": 147,
-        "name": "Aloy's Head α",
+        "name": {
+            "EN": "Aloy's Head α",
+            "FR": "Aloy - Tête α",
+            "JP": "アーロイフェイス α",
+            "IT": "Testa di Aloy α",
+            "DE": "Aloy-Kopf α",
+            "KR": "에일로이페이스 α",
+            "CN": "Aloy's Head α"
+        },
         "rarity": 5,
         "slots": [
             3
@@ -3629,7 +4749,15 @@
     },
     {
         "id": 148,
-        "name": "Ryu's Head",
+        "name": {
+            "EN": "Ryu's Head",
+            "FR": "Ryu - Bandeau",
+            "JP": "リュウフェイス",
+            "IT": "Testa di Ryu",
+            "DE": "Ryu-Kopf",
+            "KR": "류 페이스",
+            "CN": "Ryu's Head"
+        },
         "rarity": 2,
         "abilityIds": [
             38
@@ -3654,7 +4782,15 @@
     },
     {
         "id": 149,
-        "name": "Ryu's Head α",
+        "name": {
+            "EN": "Ryu's Head α",
+            "FR": "Ryu - Bandeau α",
+            "JP": "リュウフェイス α",
+            "IT": "Testa di Ryu α",
+            "DE": "Ryu-Kopf α",
+            "KR": "류 페이스 α",
+            "CN": "Ryu's Head α"
+        },
         "rarity": 7,
         "slots": [
             1,
@@ -3687,7 +4823,15 @@
     },
     {
         "id": 150,
-        "name": "Sakura's Head α",
+        "name": {
+            "EN": "Sakura's Head α",
+            "FR": "Sakura - Bandeau α",
+            "JP": "さくらフェイス α",
+            "IT": "Testa di Sakura α",
+            "DE": "Sakura-Kopf α",
+            "KR": "사쿠라 페이스 α",
+            "CN": "Sakura's Head α"
+        },
         "rarity": 6,
         "slots": [
             1,
@@ -3720,7 +4864,15 @@
     },
     {
         "id": 151,
-        "name": "Butterfly Vertex",
+        "name": {
+            "EN": "Butterfly Vertex",
+            "FR": "Vertex Papillon",
+            "JP": "パピメルテスタ",
+            "IT": "Vertex di farfalla",
+            "DE": "Schmetterling-Vertex",
+            "KR": "파피메르테스타",
+            "CN": "燕尾蝶男護頭"
+        },
         "rarity": 3,
         "abilityIds": [
             9
@@ -3744,7 +4896,15 @@
     },
     {
         "id": 152,
-        "name": "Queen Beetle Vertex",
+        "name": {
+            "EN": "Queen Beetle Vertex",
+            "FR": "Vertex Scarabée",
+            "JP": "クインビートテスタ",
+            "IT": "Vertex dello scarabeo",
+            "DE": "Königinnenkäfer-Vertex",
+            "KR": "퀸비트테스타",
+            "CN": "獨角仙后護頭"
+        },
         "rarity": 3,
         "abilityIds": [
             9
@@ -3768,7 +4928,15 @@
     },
     {
         "id": 153,
-        "name": "Blossom Headgear",
+        "name": {
+            "EN": "Blossom Headgear",
+            "FR": "Coiffe Printemps",
+            "JP": "ブロッサムヘッド",
+            "IT": "Elmo floreale",
+            "DE": "Blüten-Kopfschutz",
+            "KR": "블로섬헤드",
+            "CN": "巴魯特頭飾"
+        },
         "rarity": 3,
         "abilityIds": [
             249
@@ -3792,7 +4960,15 @@
     },
     {
         "id": 154,
-        "name": "Blossom Headgear α",
+        "name": {
+            "EN": "Blossom Headgear α",
+            "FR": "Coiffe Printemps α",
+            "JP": "ブロッサムヘッド α",
+            "IT": "Elmo floreale α",
+            "DE": "Blüten-Kopfschutz α",
+            "KR": "블로섬헤드 α",
+            "CN": "巴魯特頭飾 α"
+        },
         "rarity": 5,
         "slots": [
             1,
@@ -3820,7 +4996,15 @@
     },
     {
         "id": 155,
-        "name": "Harvest Flor",
+        "name": {
+            "EN": "Harvest Flor",
+            "FR": "Harvest Flor",
+            "JP": "ハーベストフロール",
+            "IT": "Fior del raccolto",
+            "DE": "Ernte-Flor",
+            "KR": "하베스트플로르",
+            "CN": "收穫頭飾"
+        },
         "rarity": 3,
         "abilityIds": [
             135
@@ -3844,7 +5028,15 @@
     },
     {
         "id": 156,
-        "name": "Harvest Flor α",
+        "name": {
+            "EN": "Harvest Flor α",
+            "FR": "Harvest Flor α",
+            "JP": "ハーベストフロールα",
+            "IT": "Fior del raccolto α",
+            "DE": "Ernte-Flor α",
+            "KR": "하베스트플로르 α",
+            "CN": "收穫頭飾 α"
+        },
         "rarity": 6,
         "slots": [
             1,
@@ -3872,7 +5064,15 @@
     },
     {
         "id": 157,
-        "name": "Orion Cap",
+        "name": {
+            "EN": "Orion Cap",
+            "FR": "Ushanka Orion",
+            "JP": "オリオンヘッド",
+            "IT": "Copricapo di Orione",
+            "DE": "Orion-Mütze",
+            "KR": "오리온헤드",
+            "CN": "獵戶星頭飾"
+        },
         "rarity": 4,
         "abilityIds": [
             55
@@ -3896,11 +5096,19 @@
     },
     {
         "id": 158,
-        "name": "Orion Cap α",
+        "name": {
+            "EN": "Orion Cap α",
+            "FR": "Ushanka Orion α",
+            "JP": "オリオンヘッドα",
+            "IT": "Copricapo di Orione α",
+            "DE": "Orion-Mütze α",
+            "KR": "오리온헤드 α",
+            "CN": "獵戶星頭飾 α"
+        },
         "rarity": 6,
         "slots": [
-            3,
-            1
+            1,
+            3
         ],
         "abilityIds": [
             55
@@ -3924,7 +5132,15 @@
     },
     {
         "id": 159,
-        "name": "Kulve Taroth's Fury α",
+        "name": {
+            "EN": "Kulve Taroth's Fury α",
+            "FR": "Furie Kulve Taroth α",
+            "JP": "マムガイラヘルム α",
+            "IT": "Furia di Kulve Taroth α",
+            "DE": "Kulve Taroths Wut α",
+            "KR": "맘가이라헬름 α",
+            "CN": "絢輝龍鎧羅頭盔 α"
+        },
         "rarity": 8,
         "slots": [
             1
@@ -3952,7 +5168,15 @@
     },
     {
         "id": 160,
-        "name": "Kulve Taroth's Fury β",
+        "name": {
+            "EN": "Kulve Taroth's Fury β",
+            "FR": "Furie Kulve Taroth β",
+            "JP": "マムガイラヘルム β",
+            "IT": "Furia di Kulve Taroth β",
+            "DE": "Kulve Taroths Wut β",
+            "KR": "맘가이라헬름 β",
+            "CN": "絢輝龍鎧羅頭盔 β"
+        },
         "rarity": 8,
         "slots": [
             2,
@@ -3981,7 +5205,15 @@
     },
     {
         "id": 161,
-        "name": "Dante's Hair α",
+        "name": {
+            "EN": "Dante's Hair α",
+            "FR": "Coiffure de Dante α",
+            "JP": "ダンテウィッグ α",
+            "IT": "Capelli di Dante α",
+            "DE": "Dantes Haar α",
+            "KR": "단테 위그 α",
+            "CN": "但丁假髮 α"
+        },
         "rarity": 8,
         "slots": [
             1
@@ -4009,7 +5241,15 @@
     },
     {
         "id": 162,
-        "name": "Azure Starlord Crown α",
+        "name": {
+            "EN": "Azure Starlord Crown α",
+            "FR": "Couronne Paladin des étoiles α",
+            "JP": "蒼星ノ将【兜】 α",
+            "IT": "Corona sommo celeste α",
+            "DE": "Azurstern-Gebieter-Krone α",
+            "KR": "파란별 장군[투구] α",
+            "CN": "蒼星之將【頭盔】 α"
+        },
         "rarity": 7,
         "slots": [
             3
@@ -4039,7 +5279,15 @@
     },
     {
         "id": 163,
-        "name": "Kirin Horn γ",
+        "name": {
+            "EN": "Kirin Horn γ",
+            "FR": "Corne Kirin γ",
+            "JP": "キリンホーン γ",
+            "IT": "Corno di Kirin γ",
+            "DE": "Kirin-Horn γ",
+            "KR": "키린혼 γ",
+            "CN": "麒麟角 γ"
+        },
         "rarity": 8,
         "slots": [
             2
@@ -4070,7 +5318,15 @@
     },
     {
         "id": 164,
-        "name": "Vaal Hazak Helm γ",
+        "name": {
+            "EN": "Vaal Hazak Helm γ",
+            "FR": "Heaume Vaal Hazak γ",
+            "JP": "ウルズヘルム γ",
+            "IT": "Elmo di Vaal Hazak γ",
+            "DE": "Vaal-Hazak-Helm γ",
+            "KR": "우르즈헬름 γ",
+            "CN": "烏爾德頭盔 γ"
+        },
         "rarity": 8,
         "slots": [
             3
@@ -4101,7 +5357,15 @@
     },
     {
         "id": 165,
-        "name": "Kaiser Crown γ",
+        "name": {
+            "EN": "Kaiser Crown γ",
+            "FR": "Couronne Kaiser γ",
+            "JP": "カイザークラウン γ",
+            "IT": "Corona del Kaiser γ",
+            "DE": "Kaiserkrone γ",
+            "KR": "카이저크라운 γ",
+            "CN": "帝王皇冠 γ"
+        },
         "rarity": 8,
         "slots": [
             2,
@@ -4132,7 +5396,15 @@
     },
     {
         "id": 166,
-        "name": "Kushala Glare γ",
+        "name": {
+            "EN": "Kushala Glare γ",
+            "FR": "Regard Kushala γ",
+            "JP": "クシャナアンク γ",
+            "IT": "Riverbero di Kushala γ",
+            "DE": "Kushala-Glanz γ",
+            "KR": "크샤나앵크 γ",
+            "CN": "鋼龍强力 γ"
+        },
         "rarity": 8,
         "slots": [
             2
@@ -4162,7 +5434,15 @@
     },
     {
         "id": 167,
-        "name": "Empress Crown γ",
+        "name": {
+            "EN": "Empress Crown γ",
+            "FR": "Couronne Impératrix γ",
+            "JP": "エンプレスセクター γ",
+            "IT": "Corona dell'imperatrice γ",
+            "DE": "Kaiserin-Krone γ",
+            "KR": "엠프리스섹터 γ",
+            "CN": "皇后琴弦 γ"
+        },
         "rarity": 8,
         "slots": [
             1,
@@ -4195,7 +5475,15 @@
     },
     {
         "id": 168,
-        "name": "Zorah Headgear γ",
+        "name": {
+            "EN": "Zorah Headgear γ",
+            "FR": "Couronne Zorah γ",
+            "JP": "ゾラマグナヘッド γ",
+            "IT": "Testa di Zorah γ",
+            "DE": "Zorah-Kopfschutz γ",
+            "KR": "조라마그나헤드 γ",
+            "CN": "鑄島熔岩頭飾 γ"
+        },
         "rarity": 8,
         "slots": [
             2
@@ -4226,7 +5514,15 @@
     },
     {
         "id": 169,
-        "name": "Xeno'jiiva Headgear γ",
+        "name": {
+            "EN": "Xeno'jiiva Headgear γ",
+            "FR": "Voile Xeno'jiiva γ",
+            "JP": "ゼノラージヘッド γ",
+            "IT": "Testa di Xeno'jiiva γ",
+            "DE": "Xeno'jiiva-Kopfschutz γ",
+            "KR": "제노라지헤드 γ",
+            "CN": "異種大型頭飾 γ"
+        },
         "rarity": 8,
         "slots": [
             2,
@@ -4259,7 +5555,53 @@
     },
     {
         "id": 170,
-        "name": "Diver's Mask",
+        "name": {
+            "EN": "Kulve Taroth's Fury γ",
+            "FR": "\\Furie Kulve Taroth γ",
+            "JP": "マムガイラヘルム γ",
+            "IT": "Furia di Kulve Taroth γ",
+            "DE": "Kulve Taroths Wut γ",
+            "KR": "맘가이라헬름 γ",
+            "CN": "絢輝龍鎧羅頭盔 γ"
+        },
+        "rarity": 8,
+        "slots": [
+            3,
+            1,
+            1
+        ],
+        "abilityIds": [
+            138,
+            9
+        ],
+        "defense": {
+            "base": 72,
+            "max": 78,
+            "augmented": 92
+        },
+        "resistances": {
+            "fire": 4,
+            "water": -2,
+            "thunder": 3,
+            "ice": -4,
+            "dragon": -2
+        },
+        "attributes": {
+            "gender": 3
+        },
+        "eventId": 7
+    },
+    {
+        "id": 171,
+        "name": {
+            "EN": "Diver's Mask",
+            "FR": "Masque de plongée",
+            "JP": "ダイバーシュノ",
+            "IT": "Maschera da sommozzatore",
+            "DE": "Tauchermaske",
+            "KR": "다이버스노",
+            "CN": "潛水夫修羅"
+        },
         "rarity": 3,
         "abilityIds": [
             194
@@ -4282,8 +5624,16 @@
         "eventId": 17
     },
     {
-        "id": 171,
-        "name": "Diver's Mask α",
+        "id": 172,
+        "name": {
+            "EN": "Diver's Mask α",
+            "FR": "Masque de plongée α",
+            "JP": "ダイバーシュノ α",
+            "IT": "Maschera da sommozzatore α",
+            "DE": "Tauchermaske α",
+            "KR": "다이버스노 α",
+            "CN": "潛水夫修羅 α"
+        },
         "rarity": 5,
         "slots": [
             2
@@ -4309,8 +5659,16 @@
         "eventId": 17
     },
     {
-        "id": 172,
-        "name": "Butterfly Vertex α",
+        "id": 173,
+        "name": {
+            "EN": "Butterfly Vertex α",
+            "FR": "Vertex Papillon α",
+            "JP": "パピメルテスタ α",
+            "IT": "Vertex di farfalla α",
+            "DE": "Schmetterling-Vertex α",
+            "KR": "파피메르테스타 α",
+            "CN": "燕尾蝶男護頭 α"
+        },
         "rarity": 5,
         "slots": [
             1
@@ -4318,33 +5676,6 @@
         "abilityIds": [
             10,
             45
-        ],
-        "defense": {
-            "base": 42,
-            "max": 64,
-            "augmented": 80
-        },
-        "resistances": {
-            "fire": -1,
-            "water": -1,
-            "thunder": 2,
-            "ice": 0,
-            "dragon": 2
-        },
-        "attributes": {
-            "gender": 1
-        },
-        "eventId": 18
-    },
-    {
-        "id": 173,
-        "name": "Butterfly Vertex β",
-        "rarity": 5,
-        "slots": [
-            2
-        ],
-        "abilityIds": [
-            10
         ],
         "defense": {
             "base": 42,
@@ -4365,7 +5696,50 @@
     },
     {
         "id": 174,
-        "name": "Queen Beetle Vertex α",
+        "name": {
+            "EN": "Butterfly Vertex β",
+            "FR": "Vertex Papillon β",
+            "JP": "パピメルテスタ β",
+            "IT": "Vertex di farfalla β",
+            "DE": "Schmetterling-Vertex β",
+            "KR": "파피메르테스타 β",
+            "CN": "燕尾蝶男護頭 β"
+        },
+        "rarity": 5,
+        "slots": [
+            2
+        ],
+        "abilityIds": [
+            10
+        ],
+        "defense": {
+            "base": 42,
+            "max": 64,
+            "augmented": 80
+        },
+        "resistances": {
+            "fire": -1,
+            "water": -1,
+            "thunder": 2,
+            "ice": 0,
+            "dragon": 2
+        },
+        "attributes": {
+            "gender": 1
+        },
+        "eventId": 18
+    },
+    {
+        "id": 175,
+        "name": {
+            "EN": "Queen Beetle Vertex α",
+            "FR": "Vertex Scarabée α",
+            "JP": "クインビートテスタ α",
+            "IT": "Vertex dello scarabeo α",
+            "DE": "Königinnenkäfer-Vertex α",
+            "KR": "퀸비트테스타 α",
+            "CN": "獨角仙后護頭 α"
+        },
         "rarity": 5,
         "slots": [
             1
@@ -4392,8 +5766,16 @@
         "eventId": 18
     },
     {
-        "id": 175,
-        "name": "Queen Beetle Vertex β",
+        "id": 176,
+        "name": {
+            "EN": "Queen Beetle Vertex β",
+            "FR": "Vertex Scarabée β",
+            "JP": "クインビートテスタ β",
+            "IT": "Vertex dello scarabeo β",
+            "DE": "Königinnenkäfer-Vertex β",
+            "KR": "퀸비트테스타 β",
+            "CN": "獨角仙后護頭 β"
+        },
         "rarity": 5,
         "slots": [
             2
@@ -4419,8 +5801,16 @@
         "eventId": 18
     },
     {
-        "id": 176,
-        "name": "Sealed Eyepatch α",
+        "id": 177,
+        "name": {
+            "EN": "Sealed Eyepatch α",
+            "FR": "Cache-oeil interdit α",
+            "JP": "封印の眼帯 α",
+            "IT": "Benda nera α",
+            "DE": "Dichte Augenklappe α",
+            "KR": "봉인의 안대 α",
+            "CN": "封印的眼罩 α"
+        },
         "rarity": 5,
         "slots": [
             2,
@@ -4447,8 +5837,16 @@
         "eventId": 10
     },
     {
-        "id": 177,
-        "name": "Shadow Shades α",
+        "id": 178,
+        "name": {
+            "EN": "Shadow Shades α",
+            "FR": "Lunettes teintées α",
+            "JP": "シャドウアイ α",
+            "IT": "Occhiali del buoio α",
+            "DE": "Schatten-Sonnenbrille α",
+            "KR": "섀도우아이 α",
+            "CN": "墨鏡 α"
+        },
         "rarity": 5,
         "slots": [
             1,
@@ -4476,8 +5874,16 @@
         "eventId": 11
     },
     {
-        "id": 178,
-        "name": "Kulu-Ya-Ku Head α",
+        "id": 179,
+        "name": {
+            "EN": "Kulu-Ya-Ku Head α",
+            "FR": "Tête Kulu-Ya-Ku α",
+            "JP": "クルルフェイク α",
+            "IT": "Testa di Kulu-Ya-Ku α",
+            "DE": "Kulu-Ya-Ku-Kopf α",
+            "KR": "쿠루루페이크 α",
+            "CN": "扒手龍頭套 α"
+        },
         "rarity": 5,
         "slots": [
             3,
@@ -4504,8 +5910,16 @@
         "eventId": 12
     },
     {
-        "id": 179,
-        "name": "Wiggler Head α",
+        "id": 180,
+        "name": {
+            "EN": "Wiggler Head α",
+            "FR": "Tête de tortilleur α",
+            "JP": "ユラユラフェイク α",
+            "IT": "Testa di tremoglia α",
+            "DE": "Wackelwurm-Kopf α",
+            "KR": "흔들흔들 페이크 α",
+            "CN": "搖曳鰻頭套 α"
+        },
         "rarity": 5,
         "slots": [
             1,
@@ -4532,8 +5946,16 @@
         "eventId": 13
     },
     {
-        "id": 180,
-        "name": "Dragonseal Earrings α",
+        "id": 181,
+        "name": {
+            "EN": "Dragonseal Earrings α",
+            "FR": "Cache-eil Roi-dragon α",
+            "JP": "龍封じのピアス α",
+            "IT": "Orecchini sigillo anziano α",
+            "DE": "Drachensiegel-Ohrringe α",
+            "KR": "용봉인피어스 α",
+            "CN": "封龍耳飾 α"
+        },
         "rarity": 7,
         "abilityIds": [
             331
@@ -4555,8 +5977,16 @@
         }
     },
     {
-        "id": 181,
-        "name": "Pulverizing Feather",
+        "id": 182,
+        "name": {
+            "EN": "Pulverizing Feather",
+            "FR": "Plume destructrice",
+            "JP": "爆砕の羽根飾り",
+            "IT": "Piuma polverizzante",
+            "DE": "Pulverisierungs-Feder",
+            "KR": "폭쇄의깃털장식",
+            "CN": "爆碎耳飾"
+        },
         "rarity": 4,
         "abilityIds": [
             242

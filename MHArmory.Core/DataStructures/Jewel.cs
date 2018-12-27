@@ -7,14 +7,14 @@ namespace MHArmory.Core.DataStructures
     public interface IJewel : IHasAbilities
     {
         int Id { get; }
-        string Name { get; }
+        Dictionary<string, string> Name { get; }
         int Rarity { get; }
         int SlotSize { get; }
     }
 
     public class Jewel : IJewel
     {
-        public Jewel(int id, string name, int rarity, int slotSize, IAbility[] abilities)
+        public Jewel(int id, Dictionary<string, string> name, int rarity, int slotSize, IAbility[] abilities)
         {
             Id = id;
             Name = name;
@@ -24,14 +24,14 @@ namespace MHArmory.Core.DataStructures
         }
 
         public int Id { get; }
-        public string Name { get; }
+        public Dictionary<string, string> Name { get; }
         public int Rarity { get; }
         public int SlotSize { get; }
         public IAbility[] Abilities { get; }
 
         public override string ToString()
         {
-            return $"{Name} [{SlotSize}]";
+            return $"{Name["EN"]} [{SlotSize}]";
         }
     }
 }
