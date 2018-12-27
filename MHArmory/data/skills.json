@@ -1,8 +1,12 @@
 [
     {
         "id": 0,
-        "name": "Poison Resistance",
-        "description": "Grants protection against the effects of poison.",
+        "name": {
+            "EN": "Poison Resistance"
+        },
+        "description": {
+            "EN": "Grants protection against the effects of poison."
+        },
         "abilityIds": [
             0,
             1,
@@ -11,8 +15,12 @@
     },
     {
         "id": 1,
-        "name": "Paralysis Resistance",
-        "description": "Reduces the duration of paralysis.",
+        "name": {
+            "EN": "Paralysis Resistance"
+        },
+        "description": {
+            "EN": "Reduces the duration of paralysis."
+        },
         "abilityIds": [
             3,
             4,
@@ -21,8 +29,12 @@
     },
     {
         "id": 2,
-        "name": "Sleep Resistance",
-        "description": "Reduces the duration of sleep.",
+        "name": {
+            "EN": "Sleep Resistance"
+        },
+        "description": {
+            "EN": "Reduces the duration of sleep."
+        },
         "abilityIds": [
             6,
             7,
@@ -31,8 +43,12 @@
     },
     {
         "id": 3,
-        "name": "Stun Resistance",
-        "description": "Reduces stun duration.",
+        "name": {
+            "EN": "Stun Resistance"
+        },
+        "description": {
+            "EN": "Reduces stun duration."
+        },
         "abilityIds": [
             9,
             10,
@@ -41,16 +57,24 @@
     },
     {
         "id": 4,
-        "name": "Muck Resistance",
-        "description": "Reduces impairments to mobility while stuck in monster muck.",
+        "name": {
+            "EN": "Muck Resistance"
+        },
+        "description": {
+            "EN": "Reduces impairments to mobility while stuck in monster muck."
+        },
         "abilityIds": [
             12
         ]
     },
     {
         "id": 5,
-        "name": "Blast Resistance",
-        "description": "Grants protection against blastblight.",
+        "name": {
+            "EN": "Blast Resistance"
+        },
+        "description": {
+            "EN": "Grants protection against blastblight."
+        },
         "abilityIds": [
             13,
             14,
@@ -59,8 +83,12 @@
     },
     {
         "id": 6,
-        "name": "Bleeding Resistance",
-        "description": "Grants protection against bleeding.",
+        "name": {
+            "EN": "Bleeding Resistance"
+        },
+        "description": {
+            "EN": "Grants protection against bleeding."
+        },
         "abilityIds": [
             16,
             17,
@@ -69,8 +97,12 @@
     },
     {
         "id": 7,
-        "name": "Iron Skin",
-        "description": "Grants protection against Defense Down.",
+        "name": {
+            "EN": "Iron Skin"
+        },
+        "description": {
+            "EN": "Grants protection against Defense Down."
+        },
         "abilityIds": [
             19,
             20,
@@ -79,8 +111,12 @@
     },
     {
         "id": 8,
-        "name": "Earplugs",
-        "description": "Grants protection from large monsters' roars.",
+        "name": {
+            "EN": "Earplugs"
+        },
+        "description": {
+            "EN": "Grants protection from large monsters' roars."
+        },
         "abilityIds": [
             22,
             23,
@@ -91,8 +127,12 @@
     },
     {
         "id": 9,
-        "name": "Windproof",
-        "description": "Grants protection against wind pressure.",
+        "name": {
+            "EN": "Windproof"
+        },
+        "description": {
+            "EN": "Grants protection against wind pressure."
+        },
         "abilityIds": [
             27,
             28,
@@ -103,8 +143,12 @@
     },
     {
         "id": 10,
-        "name": "Tremor Resistance",
-        "description": "Grants protection against ground tremors.",
+        "name": {
+            "EN": "Tremor Resistance"
+        },
+        "description": {
+            "EN": "Grants protection against ground tremors."
+        },
         "abilityIds": [
             32,
             33,
@@ -113,32 +157,48 @@
     },
     {
         "id": 11,
-        "name": "Dungmaster",
-        "description": "Makes monsters hit with slinger dung pods more likely to run.",
+        "name": {
+            "EN": "Dungmaster"
+        },
+        "description": {
+            "EN": "Makes monsters hit with slinger dung pods more likely to run."
+        },
         "abilityIds": [
             35
         ]
     },
     {
         "id": 12,
-        "name": "Effluvial Expert",
-        "description": "Nullifies or reduces environmental damage in the Rotten Vale.",
+        "name": {
+            "EN": "Effluvial Expert"
+        },
+        "description": {
+            "EN": "Nullifies or reduces environmental damage in the Rotten Vale."
+        },
         "abilityIds": [
             36
         ]
     },
     {
         "id": 13,
-        "name": "Heat Guard",
-        "description": "Nullifies damage from heat.",
+        "name": {
+            "EN": "Heat Guard"
+        },
+        "description": {
+            "EN": "Nullifies damage from heat."
+        },
         "abilityIds": [
             37
         ]
     },
     {
         "id": 14,
-        "name": "Attack Boost",
-        "description": "Increases attack power. Also improves affinity at higher levels.",
+        "name": {
+            "EN": "Attack Boost"
+        },
+        "description": {
+            "EN": "Increases attack power. Also improves affinity at higher levels."
+        },
         "abilityIds": [
             38,
             39,
@@ -151,8 +211,12 @@
     },
     {
         "id": 15,
-        "name": "Defense Boost",
-        "description": "Increases defense. Level up to improve resistances as well.",
+        "name": {
+            "EN": "Defense Boost"
+        },
+        "description": {
+            "EN": "Increases defense. Level up to improve resistances as well."
+        },
         "abilityIds": [
             45,
             46,
@@ -165,8 +229,12 @@
     },
     {
         "id": 16,
-        "name": "Health Boost",
-        "description": "Increases health.",
+        "name": {
+            "EN": "Health Boost"
+        },
+        "description": {
+            "EN": "Increases health."
+        },
         "abilityIds": [
             52,
             53,
@@ -175,8 +243,12 @@
     },
     {
         "id": 17,
-        "name": "Recovery Up",
-        "description": "Increases the amount recovered when restoring health.",
+        "name": {
+            "EN": "Recovery Up"
+        },
+        "description": {
+            "EN": "Increases the amount recovered when restoring health."
+        },
         "abilityIds": [
             55,
             56,
@@ -185,8 +257,12 @@
     },
     {
         "id": 18,
-        "name": "Recovery Speed",
-        "description": "Speeds healing of recoverable damage (the red portion of the health gauge).",
+        "name": {
+            "EN": "Recovery Speed"
+        },
+        "description": {
+            "EN": "Speeds healing of recoverable damage (the red portion of the health gauge)."
+        },
         "abilityIds": [
             58,
             59,
@@ -195,8 +271,12 @@
     },
     {
         "id": 19,
-        "name": "Fire Resistance",
-        "description": "Increases fire resistance. Also improves defense at higher levels.",
+        "name": {
+            "EN": "Fire Resistance"
+        },
+        "description": {
+            "EN": "Increases fire resistance. Also improves defense at higher levels."
+        },
         "abilityIds": [
             61,
             62,
@@ -205,8 +285,12 @@
     },
     {
         "id": 20,
-        "name": "Water Resistance",
-        "description": "Increases water resistance. Also improves defense at higher levels.",
+        "name": {
+            "EN": "Water Resistance"
+        },
+        "description": {
+            "EN": "Increases water resistance. Also improves defense at higher levels."
+        },
         "abilityIds": [
             64,
             65,
@@ -215,8 +299,12 @@
     },
     {
         "id": 21,
-        "name": "Ice Resistance",
-        "description": "Increases ice resistance. Also improves defense at higher levels.",
+        "name": {
+            "EN": "Ice Resistance"
+        },
+        "description": {
+            "EN": "Increases ice resistance. Also improves defense at higher levels."
+        },
         "abilityIds": [
             67,
             68,
@@ -225,8 +313,12 @@
     },
     {
         "id": 22,
-        "name": "Thunder Resistance",
-        "description": "Increases thunder resistance. Also improves defense at higher levels.",
+        "name": {
+            "EN": "Thunder Resistance"
+        },
+        "description": {
+            "EN": "Increases thunder resistance. Also improves defense at higher levels."
+        },
         "abilityIds": [
             70,
             71,
@@ -235,8 +327,12 @@
     },
     {
         "id": 23,
-        "name": "Dragon Resistance",
-        "description": "Increases dragon resistance. Also improves defense at higher levels.",
+        "name": {
+            "EN": "Dragon Resistance"
+        },
+        "description": {
+            "EN": "Increases dragon resistance. Also improves defense at higher levels."
+        },
         "abilityIds": [
             73,
             74,
@@ -245,8 +341,12 @@
     },
     {
         "id": 24,
-        "name": "Blight Resistance",
-        "description": "Grants protection against all elemental blights.",
+        "name": {
+            "EN": "Blight Resistance"
+        },
+        "description": {
+            "EN": "Grants protection against all elemental blights."
+        },
         "abilityIds": [
             76,
             77,
@@ -255,8 +355,12 @@
     },
     {
         "id": 25,
-        "name": "Fire Attack",
-        "description": "Increases fire element attack power. (Elemental attack power has a maximum limit.)",
+        "name": {
+            "EN": "Fire Attack"
+        },
+        "description": {
+            "EN": "Increases fire element attack power. (Elemental attack power has a maximum limit.)"
+        },
         "abilityIds": [
             79,
             80,
@@ -267,8 +371,12 @@
     },
     {
         "id": 26,
-        "name": "Water Attack",
-        "description": "Increases water element attack power. (Elemental attack power has a maximum limit.)",
+        "name": {
+            "EN": "Water Attack"
+        },
+        "description": {
+            "EN": "Increases water element attack power. (Elemental attack power has a maximum limit.)"
+        },
         "abilityIds": [
             84,
             85,
@@ -279,8 +387,12 @@
     },
     {
         "id": 27,
-        "name": "Ice Attack",
-        "description": "Increases ice element attack power. (Elemental attack power has as maximum limit.)",
+        "name": {
+            "EN": "Ice Attack"
+        },
+        "description": {
+            "EN": "Increases ice element attack power. (Elemental attack power has as maximum limit.)"
+        },
         "abilityIds": [
             89,
             90,
@@ -291,8 +403,12 @@
     },
     {
         "id": 28,
-        "name": "Thunder Attack",
-        "description": "Increases thunder element attack power. (Elemental attack power has a maximum limit.)",
+        "name": {
+            "EN": "Thunder Attack"
+        },
+        "description": {
+            "EN": "Increases thunder element attack power. (Elemental attack power has a maximum limit.)"
+        },
         "abilityIds": [
             94,
             95,
@@ -303,8 +419,12 @@
     },
     {
         "id": 29,
-        "name": "Dragon Attack",
-        "description": "Increases dragon element attack power. (Elemental attack power has a maximum limit.)",
+        "name": {
+            "EN": "Dragon Attack"
+        },
+        "description": {
+            "EN": "Increases dragon element attack power. (Elemental attack power has a maximum limit.)"
+        },
         "abilityIds": [
             99,
             100,
@@ -315,8 +435,12 @@
     },
     {
         "id": 30,
-        "name": "Poison Attack",
-        "description": "Increases the rate of poison buildup. (Elemental buildup has a maximum limit.)",
+        "name": {
+            "EN": "Poison Attack"
+        },
+        "description": {
+            "EN": "Increases the rate of poison buildup. (Elemental buildup has a maximum limit.)"
+        },
         "abilityIds": [
             104,
             105,
@@ -325,8 +449,12 @@
     },
     {
         "id": 31,
-        "name": "Paralysis Attack",
-        "description": "Increases the rate of paralysis buildup. (Elemental buildup has a maximum limit.)",
+        "name": {
+            "EN": "Paralysis Attack"
+        },
+        "description": {
+            "EN": "Increases the rate of paralysis buildup. (Elemental buildup has a maximum limit.)"
+        },
         "abilityIds": [
             107,
             108,
@@ -335,8 +463,12 @@
     },
     {
         "id": 32,
-        "name": "Sleep Attack",
-        "description": "Increases the rate of sleep buildup. (Elemental buildup has maximum limit.)",
+        "name": {
+            "EN": "Sleep Attack"
+        },
+        "description": {
+            "EN": "Increases the rate of sleep buildup. (Elemental buildup has maximum limit.)"
+        },
         "abilityIds": [
             110,
             111,
@@ -345,8 +477,12 @@
     },
     {
         "id": 33,
-        "name": "Blast Attack",
-        "description": "Increases the rate of the blast buildup. (Elemental buildup has a maximum limit.)",
+        "name": {
+            "EN": "Blast Attack"
+        },
+        "description": {
+            "EN": "Increases the rate of the blast buildup. (Elemental buildup has a maximum limit.)"
+        },
         "abilityIds": [
             113,
             114,
@@ -355,32 +491,48 @@
     },
     {
         "id": 34,
-        "name": "Normal Shots",
-        "description": "Increases the attack power of normal ammo and normal arrows.",
+        "name": {
+            "EN": "Normal Shots"
+        },
+        "description": {
+            "EN": "Increases the attack power of normal ammo and normal arrows."
+        },
         "abilityIds": [
             116
         ]
     },
     {
         "id": 35,
-        "name": "Piercing Shots",
-        "description": "Increases the attack power of piercing ammo and Dragon Piercer.",
+        "name": {
+            "EN": "Piercing Shots"
+        },
+        "description": {
+            "EN": "Increases the attack power of piercing ammo and Dragon Piercer."
+        },
         "abilityIds": [
             117
         ]
     },
     {
         "id": 36,
-        "name": "Spread/Power Shots",
-        "description": "Increases the attack power of spread ammo and power shot arrows.",
+        "name": {
+            "EN": "Spread/Power Shots"
+        },
+        "description": {
+            "EN": "Increases the attack power of spread ammo and power shot arrows."
+        },
         "abilityIds": [
             118
         ]
     },
     {
         "id": 37,
-        "name": "Free Elem/Ammo Up",
-        "description": "Unlocks your weapon's hidden element. Also increases bowgun loading capacity. (There is a cap to loading capacity.)",
+        "name": {
+            "EN": "Free Elem/Ammo Up"
+        },
+        "description": {
+            "EN": "Unlocks your weapon's hidden element. Also increases bowgun loading capacity. (There is a cap to loading capacity.)"
+        },
         "abilityIds": [
             119,
             120,
@@ -389,8 +541,12 @@
     },
     {
         "id": 38,
-        "name": "Critical Eye",
-        "description": "Increases affinity.",
+        "name": {
+            "EN": "Critical Eye"
+        },
+        "description": {
+            "EN": "Increases affinity."
+        },
         "abilityIds": [
             122,
             123,
@@ -403,8 +559,12 @@
     },
     {
         "id": 39,
-        "name": "Critical Boost",
-        "description": "Increases the damage of critical hits.",
+        "name": {
+            "EN": "Critical Boost"
+        },
+        "description": {
+            "EN": "Increases the damage of critical hits."
+        },
         "abilityIds": [
             129,
             130,
@@ -413,8 +573,12 @@
     },
     {
         "id": 40,
-        "name": "Weakness Exploit",
-        "description": "Increases the affinity of attacks that exploit a monster weak spot.",
+        "name": {
+            "EN": "Weakness Exploit"
+        },
+        "description": {
+            "EN": "Increases the affinity of attacks that exploit a monster weak spot."
+        },
         "abilityIds": [
             132,
             133,
@@ -423,8 +587,12 @@
     },
     {
         "id": 41,
-        "name": "Focus",
-        "description": "Increases the fill rate for weapons with gauges and the charge rate for weapons with charge attacks.",
+        "name": {
+            "EN": "Focus"
+        },
+        "description": {
+            "EN": "Increases the fill rate for weapons with gauges and the charge rate for weapons with charge attacks."
+        },
         "abilityIds": [
             135,
             136,
@@ -433,8 +601,12 @@
     },
     {
         "id": 42,
-        "name": "Power Prolonger",
-        "description": "Allows long swords, dual blades, insect glaives, switch axes, and charge blades to stay powered up longer.",
+        "name": {
+            "EN": "Power Prolonger"
+        },
+        "description": {
+            "EN": "Allows long swords, dual blades, insect glaives, switch axes, and charge blades to stay powered up longer."
+        },
         "abilityIds": [
             138,
             139,
@@ -443,8 +615,12 @@
     },
     {
         "id": 43,
-        "name": "Handicraft",
-        "description": "Extends the weapon sharpness gauage. However, it will not increase the gauge past its maximum.",
+        "name": {
+            "EN": "Handicraft"
+        },
+        "description": {
+            "EN": "Extends the weapon sharpness gauage. However, it will not increase the gauge past its maximum."
+        },
         "abilityIds": [
             141,
             142,
@@ -455,8 +631,12 @@
     },
     {
         "id": 44,
-        "name": "Critical Draw",
-        "description": "Increases affinity when performing draw attacks.",
+        "name": {
+            "EN": "Critical Draw"
+        },
+        "description": {
+            "EN": "Increases affinity when performing draw attacks."
+        },
         "abilityIds": [
             146,
             147,
@@ -465,8 +645,12 @@
     },
     {
         "id": 45,
-        "name": "Partbreaker",
-        "description": "Makes it easier to break or sever parts of large monsters.",
+        "name": {
+            "EN": "Partbreaker"
+        },
+        "description": {
+            "EN": "Makes it easier to break or sever parts of large monsters."
+        },
         "abilityIds": [
             149,
             150,
@@ -475,8 +659,12 @@
     },
     {
         "id": 46,
-        "name": "Slugger",
-        "description": "Makes it easier to stun monsters.",
+        "name": {
+            "EN": "Slugger"
+        },
+        "description": {
+            "EN": "Makes it easier to stun monsters."
+        },
         "abilityIds": [
             152,
             153,
@@ -485,8 +673,12 @@
     },
     {
         "id": 47,
-        "name": "Stamina Thief",
-        "description": "Increases certain attacks' ability to exhaust monsters.",
+        "name": {
+            "EN": "Stamina Thief"
+        },
+        "description": {
+            "EN": "Increases certain attacks' ability to exhaust monsters."
+        },
         "abilityIds": [
             155,
             156,
@@ -495,24 +687,36 @@
     },
     {
         "id": 48,
-        "name": "Master Mounter",
-        "description": "Makes it easier to mount monsters.",
+        "name": {
+            "EN": "Master Mounter"
+        },
+        "description": {
+            "EN": "Makes it easier to mount monsters."
+        },
         "abilityIds": [
             158
         ]
     },
     {
         "id": 49,
-        "name": "Airborne",
-        "description": "Increases the damage caused by jumping attacks.",
+        "name": {
+            "EN": "Airborne"
+        },
+        "description": {
+            "EN": "Increases the damage caused by jumping attacks."
+        },
         "abilityIds": [
             159
         ]
     },
     {
         "id": 50,
-        "name": "Latent Power",
-        "description": "Temporarily increases affinity and reduces stamina depletion when certain conditions are met.",
+        "name": {
+            "EN": "Latent Power"
+        },
+        "description": {
+            "EN": "Temporarily increases affinity and reduces stamina depletion when certain conditions are met."
+        },
         "abilityIds": [
             160,
             161,
@@ -523,8 +727,12 @@
     },
     {
         "id": 51,
-        "name": "Agitator",
-        "description": "Increases attack power and affinity when large monsters become enraged.",
+        "name": {
+            "EN": "Agitator"
+        },
+        "description": {
+            "EN": "Increases attack power and affinity when large monsters become enraged."
+        },
         "abilityIds": [
             165,
             166,
@@ -535,8 +743,12 @@
     },
     {
         "id": 52,
-        "name": "Peak Performance",
-        "description": "Increases attack when your health is full.",
+        "name": {
+            "EN": "Peak Performance"
+        },
+        "description": {
+            "EN": "Increases attack when your health is full."
+        },
         "abilityIds": [
             170,
             171,
@@ -545,8 +757,12 @@
     },
     {
         "id": 53,
-        "name": "Heroics",
-        "description": "Increases attack power and defense when health drops to 35% or lower.",
+        "name": {
+            "EN": "Heroics"
+        },
+        "description": {
+            "EN": "Increases attack power and defense when health drops to 35% or lower."
+        },
         "abilityIds": [
             173,
             174,
@@ -557,16 +773,24 @@
     },
     {
         "id": 54,
-        "name": "Fortify",
-        "description": "Increases your attack and defense every time you fall in battle. (This effect can stack twice.)",
+        "name": {
+            "EN": "Fortify"
+        },
+        "description": {
+            "EN": "Increases your attack and defense every time you fall in battle. (This effect can stack twice.)"
+        },
         "abilityIds": [
             178
         ]
     },
     {
         "id": 55,
-        "name": "Resentment",
-        "description": "Increases attack when you have recoverable damage (the red portion of your health gauge).",
+        "name": {
+            "EN": "Resentment"
+        },
+        "description": {
+            "EN": "Increases attack when you have recoverable damage (the red portion of your health gauge)."
+        },
         "abilityIds": [
             179,
             180,
@@ -577,32 +801,48 @@
     },
     {
         "id": 56,
-        "name": "Resuscitate",
-        "description": "Improves evasion and reduces stamina depletion when afflicted with abnormal status effects.",
+        "name": {
+            "EN": "Resuscitate"
+        },
+        "description": {
+            "EN": "Improves evasion and reduces stamina depletion when afflicted with abnormal status effects."
+        },
         "abilityIds": [
             184
         ]
     },
     {
         "id": 57,
-        "name": "Horn Maestro",
-        "description": "Increases the effect duration of hunting horn melodies.",
+        "name": {
+            "EN": "Horn Maestro"
+        },
+        "description": {
+            "EN": "Increases the effect duration of hunting horn melodies."
+        },
         "abilityIds": [
             185
         ]
     },
     {
         "id": 58,
-        "name": "Capacity Boost",
-        "description": "Increases the gunlance's shell capacity and charge blade's phial capacity.",
+        "name": {
+            "EN": "Capacity Boost"
+        },
+        "description": {
+            "EN": "Increases the gunlance's shell capacity and charge blade's phial capacity."
+        },
         "abilityIds": [
             186
         ]
     },
     {
         "id": 59,
-        "name": "Special Ammo Boost",
-        "description": "Increases the power of bowgun special ammo and Dragon Piercer.",
+        "name": {
+            "EN": "Special Ammo Boost"
+        },
+        "description": {
+            "EN": "Increases the power of bowgun special ammo and Dragon Piercer."
+        },
         "abilityIds": [
             187,
             188
@@ -610,8 +850,12 @@
     },
     {
         "id": 60,
-        "name": "Artillery",
-        "description": "Strengthens explosive attacks like gunlance shells, Wyvern's Fire, charge blade phial attacks, and sticky ammo.",
+        "name": {
+            "EN": "Artillery"
+        },
+        "description": {
+            "EN": "Strengthens explosive attacks like gunlance shells, Wyvern's Fire, charge blade phial attacks, and sticky ammo."
+        },
         "abilityIds": [
             189,
             190,
@@ -620,8 +864,12 @@
     },
     {
         "id": 61,
-        "name": "Heavy Artillery",
-        "description": "Increases the firepower of ballistae and cannons.",
+        "name": {
+            "EN": "Heavy Artillery"
+        },
+        "description": {
+            "EN": "Increases the firepower of ballistae and cannons."
+        },
         "abilityIds": [
             192,
             193
@@ -629,8 +877,12 @@
     },
     {
         "id": 62,
-        "name": "Marathon Runner",
-        "description": "Slows down stamina depletion for actions which continuously drain stamina (such as dashing).",
+        "name": {
+            "EN": "Marathon Runner"
+        },
+        "description": {
+            "EN": "Slows down stamina depletion for actions which continuously drain stamina (such as dashing)."
+        },
         "abilityIds": [
             194,
             195,
@@ -639,8 +891,12 @@
     },
     {
         "id": 63,
-        "name": "Constitution",
-        "description": "Reduces stamina depletion when performing stamina-draining moves such as evading, etc.",
+        "name": {
+            "EN": "Constitution"
+        },
+        "description": {
+            "EN": "Reduces stamina depletion when performing stamina-draining moves such as evading, etc."
+        },
         "abilityIds": [
             197,
             198,
@@ -651,16 +907,24 @@
     },
     {
         "id": 64,
-        "name": "Leap of Faith",
-        "description": "Allows you to do a dive-evade when facing towards large monsters, and extends the dive-evade distance.",
+        "name": {
+            "EN": "Leap of Faith"
+        },
+        "description": {
+            "EN": "Allows you to do a dive-evade when facing towards large monsters, and extends the dive-evade distance."
+        },
         "abilityIds": [
             202
         ]
     },
     {
         "id": 65,
-        "name": "Stamina Surge",
-        "description": "Speeds up stamina recovery.",
+        "name": {
+            "EN": "Stamina Surge"
+        },
+        "description": {
+            "EN": "Speeds up stamina recovery."
+        },
         "abilityIds": [
             203,
             204,
@@ -669,8 +933,12 @@
     },
     {
         "id": 66,
-        "name": "Hunger Resistance",
-        "description": "Reduces maximum stamina depletion over time.",
+        "name": {
+            "EN": "Hunger Resistance"
+        },
+        "description": {
+            "EN": "Reduces maximum stamina depletion over time."
+        },
         "abilityIds": [
             206,
             207,
@@ -679,8 +947,12 @@
     },
     {
         "id": 67,
-        "name": "Evade Window",
-        "description": "Extends the invulnerability period when evading.",
+        "name": {
+            "EN": "Evade Window"
+        },
+        "description": {
+            "EN": "Extends the invulnerability period when evading."
+        },
         "abilityIds": [
             209,
             210,
@@ -691,8 +963,12 @@
     },
     {
         "id": 68,
-        "name": "Evade Extender",
-        "description": "Increases evade distance.",
+        "name": {
+            "EN": "Evade Extender"
+        },
+        "description": {
+            "EN": "Increases evade distance."
+        },
         "abilityIds": [
             214,
             215,
@@ -701,8 +977,12 @@
     },
     {
         "id": 69,
-        "name": "Guard",
-        "description": "Reduces knockbacks and stamina depletion when guarding.",
+        "name": {
+            "EN": "Guard"
+        },
+        "description": {
+            "EN": "Reduces knockbacks and stamina depletion when guarding."
+        },
         "abilityIds": [
             217,
             218,
@@ -713,8 +993,12 @@
     },
     {
         "id": 70,
-        "name": "Quick Sheath",
-        "description": "Speeds up weapon sheathing.",
+        "name": {
+            "EN": "Quick Sheath"
+        },
+        "description": {
+            "EN": "Speeds up weapon sheathing."
+        },
         "abilityIds": [
             222,
             223,
@@ -723,8 +1007,12 @@
     },
     {
         "id": 71,
-        "name": "Wide-Range",
-        "description": "Allows the effects of certain items to also affect nearby allies.",
+        "name": {
+            "EN": "Wide-Range"
+        },
+        "description": {
+            "EN": "Allows the effects of certain items to also affect nearby allies."
+        },
         "abilityIds": [
             225,
             226,
@@ -735,8 +1023,12 @@
     },
     {
         "id": 72,
-        "name": "Item Prolonger",
-        "description": "Extends the duration of some item effects.",
+        "name": {
+            "EN": "Item Prolonger"
+        },
+        "description": {
+            "EN": "Extends the duration of some item effects."
+        },
         "abilityIds": [
             230,
             231,
@@ -745,16 +1037,24 @@
     },
     {
         "id": 73,
-        "name": "Free Meal",
-        "description": "Gives you a predetermined chance of consuming a food or drink item for free.",
+        "name": {
+            "EN": "Free Meal"
+        },
+        "description": {
+            "EN": "Gives you a predetermined chance of consuming a food or drink item for free."
+        },
         "abilityIds": [
             233
         ]
     },
     {
         "id": 74,
-        "name": "Speed Eating",
-        "description": "Increases meat-eating and item-consumption speed.",
+        "name": {
+            "EN": "Speed Eating"
+        },
+        "description": {
+            "EN": "Increases meat-eating and item-consumption speed."
+        },
         "abilityIds": [
             234,
             235,
@@ -763,8 +1063,12 @@
     },
     {
         "id": 75,
-        "name": "Speed Sharpening",
-        "description": "Speeds up weapon sharpening when using a whetstone.",
+        "name": {
+            "EN": "Speed Sharpening"
+        },
+        "description": {
+            "EN": "Speeds up weapon sharpening when using a whetstone."
+        },
         "abilityIds": [
             237,
             238,
@@ -773,8 +1077,12 @@
     },
     {
         "id": 76,
-        "name": "Bombardier",
-        "description": "Increases the damage of explosive items.",
+        "name": {
+            "EN": "Bombardier"
+        },
+        "description": {
+            "EN": "Increases the damage of explosive items."
+        },
         "abilityIds": [
             240,
             241,
@@ -783,8 +1091,12 @@
     },
     {
         "id": 77,
-        "name": "Mushroomancer",
-        "description": "Lets you digest mushrooms that would otherwise be inedible and gain their advantageous effects.",
+        "name": {
+            "EN": "Mushroomancer"
+        },
+        "description": {
+            "EN": "Lets you digest mushrooms that would otherwise be inedible and gain their advantageous effects."
+        },
         "abilityIds": [
             243,
             244,
@@ -793,48 +1105,72 @@
     },
     {
         "id": 78,
-        "name": "Master Fisher",
-        "description": "Improves your skill at fishing.",
+        "name": {
+            "EN": "Master Fisher"
+        },
+        "description": {
+            "EN": "Improves your skill at fishing."
+        },
         "abilityIds": [
             246
         ]
     },
     {
         "id": 79,
-        "name": "Pro Transporter",
-        "description": "Increases your speed while transporting items and decreases the likelihood of dropping them.",
+        "name": {
+            "EN": "Pro Transporter"
+        },
+        "description": {
+            "EN": "Increases your speed while transporting items and decreases the likelihood of dropping them."
+        },
         "abilityIds": [
             247
         ]
     },
     {
         "id": 80,
-        "name": "Master Gatherer",
-        "description": "Allows you to gather more quickly, and also prevents attacks from knocking you back while gathering.",
+        "name": {
+            "EN": "Master Gatherer"
+        },
+        "description": {
+            "EN": "Allows you to gather more quickly, and also prevents attacks from knocking you back while gathering."
+        },
         "abilityIds": [
             248
         ]
     },
     {
         "id": 81,
-        "name": "Honey Hunter",
-        "description": "Increases the quantity of honey you receive when gathering in the field.",
+        "name": {
+            "EN": "Honey Hunter"
+        },
+        "description": {
+            "EN": "Increases the quantity of honey you receive when gathering in the field."
+        },
         "abilityIds": [
             249
         ]
     },
     {
         "id": 82,
-        "name": "Carving Pro",
-        "description": "Prevents knockback from attacks while carving.",
+        "name": {
+            "EN": "Carving Pro"
+        },
+        "description": {
+            "EN": "Prevents knockback from attacks while carving."
+        },
         "abilityIds": [
             250
         ]
     },
     {
         "id": 83,
-        "name": "Divine Blessing",
-        "description": "Has a predetermined chance of reducing the damage you take.",
+        "name": {
+            "EN": "Divine Blessing"
+        },
+        "description": {
+            "EN": "Has a predetermined chance of reducing the damage you take."
+        },
         "abilityIds": [
             251,
             252,
@@ -843,8 +1179,12 @@
     },
     {
         "id": 84,
-        "name": "Palico Rally",
-        "description": "Powers up Palicoes.",
+        "name": {
+            "EN": "Palico Rally"
+        },
+        "description": {
+            "EN": "Powers up Palicoes."
+        },
         "abilityIds": [
             254,
             255,
@@ -855,8 +1195,12 @@
     },
     {
         "id": 85,
-        "name": "Botanist",
-        "description": "Increases the quantity of herbs and other consumable items you gather.",
+        "name": {
+            "EN": "Botanist"
+        },
+        "description": {
+            "EN": "Increases the quantity of herbs and other consumable items you gather."
+        },
         "abilityIds": [
             259,
             260,
@@ -866,8 +1210,12 @@
     },
     {
         "id": 86,
-        "name": "Geologist",
-        "description": "Increases the number of times you can use a gathering point.",
+        "name": {
+            "EN": "Geologist"
+        },
+        "description": {
+            "EN": "Increases the number of times you can use a gathering point."
+        },
         "abilityIds": [
             263,
             264,
@@ -876,8 +1224,12 @@
     },
     {
         "id": 87,
-        "name": "Maximum Might",
-        "description": "Increases affinity when stamina is full.",
+        "name": {
+            "EN": "Maximum Might"
+        },
+        "description": {
+            "EN": "Increases affinity when stamina is full."
+        },
         "abilityIds": [
             266,
             267,
@@ -886,8 +1238,12 @@
     },
     {
         "id": 88,
-        "name": "Slinger Capacity",
-        "description": "Increases the loading capacity for slinger ammo obtained in the field.",
+        "name": {
+            "EN": "Slinger Capacity"
+        },
+        "description": {
+            "EN": "Increases the loading capacity for slinger ammo obtained in the field."
+        },
         "abilityIds": [
             269,
             270,
@@ -896,8 +1252,12 @@
     },
     {
         "id": 89,
-        "name": "Stealth",
-        "description": "Makes it easier for monsters to lose sight of you.",
+        "name": {
+            "EN": "Stealth"
+        },
+        "description": {
+            "EN": "Makes it easier for monsters to lose sight of you."
+        },
         "abilityIds": [
             272,
             273,
@@ -906,8 +1266,12 @@
     },
     {
         "id": 90,
-        "name": "Flinch Free",
-        "description": "Prevents knockbacks and other reactions to small damage.",
+        "name": {
+            "EN": "Flinch Free"
+        },
+        "description": {
+            "EN": "Prevents knockbacks and other reactions to small damage."
+        },
         "abilityIds": [
             275,
             276,
@@ -916,32 +1280,48 @@
     },
     {
         "id": 91,
-        "name": "Scoutfly Range Up",
-        "description": "Expands your scoutflies' detection range.",
+        "name": {
+            "EN": "Scoutfly Range Up"
+        },
+        "description": {
+            "EN": "Expands your scoutflies' detection range."
+        },
         "abilityIds": [
             278
         ]
     },
     {
         "id": 92,
-        "name": "Speed Crawler",
-        "description": "Increases movement speed while crouching.",
+        "name": {
+            "EN": "Speed Crawler"
+        },
+        "description": {
+            "EN": "Increases movement speed while crouching."
+        },
         "abilityIds": [
             279
         ]
     },
     {
         "id": 93,
-        "name": "Jump Master",
-        "description": "Prevents attacks from knocking you back during a jump.",
+        "name": {
+            "EN": "Jump Master"
+        },
+        "description": {
+            "EN": "Prevents attacks from knocking you back during a jump."
+        },
         "abilityIds": [
             280
         ]
     },
     {
         "id": 94,
-        "name": "Sporepuff Expert",
-        "description": "Recover health when using sporepuffs.",
+        "name": {
+            "EN": "Sporepuff Expert"
+        },
+        "description": {
+            "EN": "Recover health when using sporepuffs."
+        },
         "abilityIds": [
             281,
             282,
@@ -950,8 +1330,12 @@
     },
     {
         "id": 95,
-        "name": "Aquatic Expert",
-        "description": "Improves mobility in water.",
+        "name": {
+            "EN": "Aquatic Expert"
+        },
+        "description": {
+            "EN": "Improves mobility in water."
+        },
         "abilityIds": [
             284,
             285,
@@ -960,32 +1344,48 @@
     },
     {
         "id": 96,
-        "name": "Cliffhanger",
-        "description": "Decreases stamina depletion when evading while clinging to walls or ivy.",
+        "name": {
+            "EN": "Cliffhanger"
+        },
+        "description": {
+            "EN": "Decreases stamina depletion when evading while clinging to walls or ivy."
+        },
         "abilityIds": [
             287
         ]
     },
     {
         "id": 97,
-        "name": "Blindsider",
-        "description": "Improves the effectiveness of flash attacks and items.",
+        "name": {
+            "EN": "Blindsider"
+        },
+        "description": {
+            "EN": "Improves the effectiveness of flash attacks and items."
+        },
         "abilityIds": [
             288
         ]
     },
     {
         "id": 98,
-        "name": "Scholar",
-        "description": "Speeds up progress on research levels and special investigations. (Effect is applied at the quest results screen.)",
+        "name": {
+            "EN": "Scholar"
+        },
+        "description": {
+            "EN": "Speeds up progress on research levels and special investigations. (Effect is applied at the quest results screen.)"
+        },
         "abilityIds": [
             289
         ]
     },
     {
         "id": 99,
-        "name": "Entomologist",
-        "description": "Decreases the chances of destroying the bodies of small insect monsters, allowing them to be carved.",
+        "name": {
+            "EN": "Entomologist"
+        },
+        "description": {
+            "EN": "Decreases the chances of destroying the bodies of small insect monsters, allowing them to be carved."
+        },
         "abilityIds": [
             290,
             291,
@@ -994,8 +1394,12 @@
     },
     {
         "id": 100,
-        "name": "Effluvia Resistance",
-        "description": "Gain a resistance to effluvial buildup.",
+        "name": {
+            "EN": "Effluvia Resistance"
+        },
+        "description": {
+            "EN": "Gain a resistance to effluvial buildup."
+        },
         "abilityIds": [
             293,
             294,
@@ -1004,40 +1408,60 @@
     },
     {
         "id": 101,
-        "name": "Scenthound",
-        "description": "Increases your scoutflies' gauge fill rate when you find tracks and other traces left by monsters.",
+        "name": {
+            "EN": "Scenthound"
+        },
+        "description": {
+            "EN": "Increases your scoutflies' gauge fill rate when you find tracks and other traces left by monsters."
+        },
         "abilityIds": [
             296
         ]
     },
     {
         "id": 102,
-        "name": "Forager's Luck",
-        "description": "Increases the chance of finding rare gathering points.",
+        "name": {
+            "EN": "Forager's Luck"
+        },
+        "description": {
+            "EN": "Increases the chance of finding rare gathering points."
+        },
         "abilityIds": [
             297
         ]
     },
     {
         "id": 103,
-        "name": "Detector",
-        "description": "Shows rare gathering points on the Wildlife Map.",
+        "name": {
+            "EN": "Detector"
+        },
+        "description": {
+            "EN": "Shows rare gathering points on the Wildlife Map."
+        },
         "abilityIds": [
             298
         ]
     },
     {
         "id": 104,
-        "name": "BBQ Master",
-        "description": "Improves your skill at cooking meat.",
+        "name": {
+            "EN": "BBQ Master"
+        },
+        "description": {
+            "EN": "Improves your skill at cooking meat."
+        },
         "abilityIds": [
             299
         ]
     },
     {
         "id": 105,
-        "name": "Tool Specialist",
-        "description": "Reduces the recharge time for specialized tools.",
+        "name": {
+            "EN": "Tool Specialist"
+        },
+        "description": {
+            "EN": "Reduces the recharge time for specialized tools."
+        },
         "abilityIds": [
             300,
             301,
@@ -1046,16 +1470,24 @@
     },
     {
         "id": 106,
-        "name": "Affinity Sliding",
-        "description": "Sliding increases your affinity for a short time.",
+        "name": {
+            "EN": "Affinity Sliding"
+        },
+        "description": {
+            "EN": "Sliding increases your affinity for a short time."
+        },
         "abilityIds": [
             303
         ]
     },
     {
         "id": 107,
-        "name": "Intimidator",
-        "description": "Reduces the chances small monsters will attack after spotting you. (No effect on certain monsters.)",
+        "name": {
+            "EN": "Intimidator"
+        },
+        "description": {
+            "EN": "Reduces the chances small monsters will attack after spotting you. (No effect on certain monsters.)"
+        },
         "abilityIds": [
             304,
             305,
@@ -1064,224 +1496,336 @@
     },
     {
         "id": 108,
-        "name": "Hasten Recovery",
-        "description": "Regenerates your health as you continually attack a monster. Recovery varies by weapon.",
+        "name": {
+            "EN": "Hasten Recovery"
+        },
+        "description": {
+            "EN": "Regenerates your health as you continually attack a monster. Recovery varies by weapon."
+        },
         "abilityIds": [
             307
         ]
     },
     {
         "id": 109,
-        "name": "Super Recovery",
-        "description": "Allows recovery to exceed the red portion of the health gauge.",
+        "name": {
+            "EN": "Super Recovery"
+        },
+        "description": {
+            "EN": "Allows recovery to exceed the red portion of the health gauge."
+        },
         "abilityIds": [
             308
         ]
     },
     {
         "id": 110,
-        "name": "Poison Duration Up",
-        "description": "Extends the duration of your poison's effect on monsters.",
+        "name": {
+            "EN": "Poison Duration Up"
+        },
+        "description": {
+            "EN": "Extends the duration of your poison's effect on monsters."
+        },
         "abilityIds": [
             309
         ]
     },
     {
         "id": 111,
-        "name": "Adrenaline",
-        "description": "Temporarily reduces stamina depletion when health is at 40% or lower.",
+        "name": {
+            "EN": "Adrenaline"
+        },
+        "description": {
+            "EN": "Temporarily reduces stamina depletion when health is at 40% or lower."
+        },
         "abilityIds": [
             310
         ]
     },
     {
         "id": 112,
-        "name": "Stamina Cap Up",
-        "description": "Increases stamina cap.",
+        "name": {
+            "EN": "Stamina Cap Up"
+        },
+        "description": {
+            "EN": "Increases stamina cap."
+        },
         "abilityIds": [
             311
         ]
     },
     {
         "id": 113,
-        "name": "Critical Element",
-        "description": "Increases elemental damage (fire, water, thunder, ice, dragon) when landing critical hits.",
+        "name": {
+            "EN": "Critical Element"
+        },
+        "description": {
+            "EN": "Increases elemental damage (fire, water, thunder, ice, dragon) when landing critical hits."
+        },
         "abilityIds": [
             312
         ]
     },
     {
         "id": 114,
-        "name": "Mind's Eye/Ballistics",
-        "description": "Prevents attacks from being deflected. Also shortens the distance before ammo and arrows reach maximum power.",
+        "name": {
+            "EN": "Mind's Eye/Ballistics"
+        },
+        "description": {
+            "EN": "Prevents attacks from being deflected. Also shortens the distance before ammo and arrows reach maximum power."
+        },
         "abilityIds": [
             313
         ]
     },
     {
         "id": 115,
-        "name": "Bludgeoner",
-        "description": "Raises attack as your weapon loses sharpness. Also boosts ranged weapon melee attacks and odds of stunning.",
+        "name": {
+            "EN": "Bludgeoner"
+        },
+        "description": {
+            "EN": "Raises attack as your weapon loses sharpness. Also boosts ranged weapon melee attacks and odds of stunning."
+        },
         "abilityIds": [
             314
         ]
     },
     {
         "id": 116,
-        "name": "Non-elemental Boost",
-        "description": "Powers up non-elemental weapons you have equipped.",
+        "name": {
+            "EN": "Non-elemental Boost"
+        },
+        "description": {
+            "EN": "Powers up non-elemental weapons you have equipped."
+        },
         "abilityIds": [
             315
         ]
     },
     {
         "id": 117,
-        "name": "Capture Master",
-        "description": "High chance of increased capture rewards. (No effect when joining mid-quest.)",
+        "name": {
+            "EN": "Capture Master"
+        },
+        "description": {
+            "EN": "High chance of increased capture rewards. (No effect when joining mid-quest.)"
+        },
         "abilityIds": [
             316
         ]
     },
     {
         "id": 118,
-        "name": "Guard Up",
-        "description": "Allows you to guard against ordinarily unblockable attacks.",
+        "name": {
+            "EN": "Guard Up"
+        },
+        "description": {
+            "EN": "Allows you to guard against ordinarily unblockable attacks."
+        },
         "abilityIds": [
             317
         ]
     },
     {
         "id": 119,
-        "name": "Guts",
-        "description": "Above a certain health threshold, you withstand an attack that would normally cart you (once only).",
+        "name": {
+            "EN": "Guts"
+        },
+        "description": {
+            "EN": "Above a certain health threshold, you withstand an attack that would normally cart you (once only)."
+        },
         "abilityIds": [
             318
         ]
     },
     {
         "id": 120,
-        "name": "Master's Touch",
-        "description": "Prevents your weapon from losing sharpness during critical hits.",
+        "name": {
+            "EN": "Master's Touch"
+        },
+        "description": {
+            "EN": "Prevents your weapon from losing sharpness during critical hits."
+        },
         "abilityIds": [
             319
         ]
     },
     {
         "id": 121,
-        "name": "Nullify Wind Pressure",
-        "description": "Negates all wind pressure.",
+        "name": {
+            "EN": "Nullify Wind Pressure"
+        },
+        "description": {
+            "EN": "Negates all wind pressure."
+        },
         "abilityIds": [
             320
         ]
     },
     {
         "id": 122,
-        "name": "Razor Sharp/Spare Shot",
-        "description": "Halves sharpness loss. For bows and bowguns, shots have a chance not to expend coatings or ammo.",
+        "name": {
+            "EN": "Razor Sharp/Spare Shot"
+        },
+        "description": {
+            "EN": "Halves sharpness loss. For bows and bowguns, shots have a chance not to expend coatings or ammo."
+        },
         "abilityIds": [
             321
         ]
     },
     {
         "id": 123,
-        "name": "Critical Status",
-        "description": "Increases abnormal status effect damage (paralysis, poison, sleep, blast) when landing critical hits.",
+        "name": {
+            "EN": "Critical Status"
+        },
+        "description": {
+            "EN": "Increases abnormal status effect damage (paralysis, poison, sleep, blast) when landing critical hits."
+        },
         "abilityIds": [
             322
         ]
     },
     {
         "id": 124,
-        "name": "Good Luck",
-        "description": "Good chance of increased quest rewards. (No effect when joining mid-quest.)",
+        "name": {
+            "EN": "Good Luck"
+        },
+        "description": {
+            "EN": "Good chance of increased quest rewards. (No effect when joining mid-quest.)"
+        },
         "abilityIds": [
             323
         ]
     },
     {
         "id": 125,
-        "name": "Bow Charge Plus",
-        "description": "Increases max bow charge level by one.",
+        "name": {
+            "EN": "Bow Charge Plus"
+        },
+        "description": {
+            "EN": "Increases max bow charge level by one."
+        },
         "abilityIds": [
             324
         ]
     },
     {
         "id": 126,
-        "name": "Punishing Draw",
-        "description": "Adds a stun effect to draw attacks and slightly increases attack power.",
+        "name": {
+            "EN": "Punishing Draw"
+        },
+        "description": {
+            "EN": "Adds a stun effect to draw attacks and slightly increases attack power."
+        },
         "abilityIds": [
             325
         ]
     },
     {
         "id": 127,
-        "name": "Protective Polish",
-        "description": "Weapon sharpness does not decrease for a set time after sharpening.",
+        "name": {
+            "EN": "Protective Polish"
+        },
+        "description": {
+            "EN": "Weapon sharpness does not decrease for a set time after sharpening."
+        },
         "abilityIds": [
             326
         ]
     },
     {
         "id": 128,
-        "name": "Poison Functionality",
-        "description": "Allows you to apply poison coatings.",
+        "name": {
+            "EN": "Poison Functionality"
+        },
+        "description": {
+            "EN": "Allows you to apply poison coatings."
+        },
         "abilityIds": [
             327
         ]
     },
     {
         "id": 129,
-        "name": "Para Functionality",
-        "description": "Allows you to apply paralysis coatings.",
+        "name": {
+            "EN": "Para Functionality"
+        },
+        "description": {
+            "EN": "Allows you to apply paralysis coatings."
+        },
         "abilityIds": [
             328
         ]
     },
     {
         "id": 130,
-        "name": "Sleep Functionality",
-        "description": "Allows you to apply sleep coatings.",
+        "name": {
+            "EN": "Sleep Functionality"
+        },
+        "description": {
+            "EN": "Allows you to apply sleep coatings."
+        },
         "abilityIds": [
             329
         ]
     },
     {
         "id": 131,
-        "name": "Blast Functionality",
-        "description": "Allows you to apply blast coatings.",
+        "name": {
+            "EN": "Blast Functionality"
+        },
+        "description": {
+            "EN": "Allows you to apply blast coatings."
+        },
         "abilityIds": [
             330
         ]
     },
     {
         "id": 132,
-        "name": "Elderseal Boost",
-        "description": "Increases the Elderseal of weapons and dragon ammo.",
+        "name": {
+            "EN": "Elderseal Boost"
+        },
+        "description": {
+            "EN": "Increases the Elderseal of weapons and dragon ammo."
+        },
         "abilityIds": [
             331
         ]
     },
     {
         "id": 133,
-        "name": "Great Luck",
-        "description": "High chance of increased quest rewards. (No effect when joining mid-quest.)",
+        "name": {
+            "EN": "Great Luck"
+        },
+        "description": {
+            "EN": "High chance of increased quest rewards. (No effect when joining mid-quest.)"
+        },
         "abilityIds": [
             332
         ]
     },
     {
         "id": 134,
-        "name": "Carving Master",
-        "description": "Lets you carve one additional time. (No effect when joining mid-quest.)",
+        "name": {
+            "EN": "Carving Master"
+        },
+        "description": {
+            "EN": "Lets you carve one additional time. (No effect when joining mid-quest.)"
+        },
         "abilityIds": [
             333
         ]
     },
     {
         "id": 135,
-        "name": "Elemental Airborne",
-        "description": "Elemental damage increased for jumping attacks.",
+        "name": {
+            "EN": "Elemental Airborne"
+        },
+        "description": {
+            "EN": "Elemental damage increased for jumping attacks."
+        },
         "abilityIds": [
             334
         ]
