@@ -2,7 +2,13 @@
     {
         "id": 0,
         "name": {
-            "EN": "Poison Resistance"
+            "EN": "Poison Resistance",
+            "FR": "Toxicologie",
+            "JP": "毒耐性",
+            "IT": "Resistenza veleno",
+            "DE": "Giftwiderstand",
+            "KR": "독 내성",
+            "CN": "毒耐性"
         },
         "description": {
             "EN": "Grants protection against the effects of poison."
@@ -16,7 +22,13 @@
     {
         "id": 1,
         "name": {
-            "EN": "Paralysis Resistance"
+            "EN": "Paralysis Resistance",
+            "FR": "Antiparalysie",
+            "JP": "麻痺耐性",
+            "IT": "Resistenza paralisi",
+            "DE": "Lähmungswiderstand",
+            "KR": "마비 내성",
+            "CN": "麻痹耐性"
         },
         "description": {
             "EN": "Reduces the duration of paralysis."
@@ -30,7 +42,13 @@
     {
         "id": 2,
         "name": {
-            "EN": "Sleep Resistance"
+            "EN": "Sleep Resistance",
+            "FR": "Insomnie",
+            "JP": "睡眠耐性",
+            "IT": "Resistenza sonno",
+            "DE": "Schlafwiderstand",
+            "KR": "수면 내성",
+            "CN": "睡眠耐性"
         },
         "description": {
             "EN": "Reduces the duration of sleep."
@@ -44,7 +62,13 @@
     {
         "id": 3,
         "name": {
-            "EN": "Stun Resistance"
+            "EN": "Stun Resistance",
+            "FR": "Crâne d'acier",
+            "JP": "気絶耐性",
+            "IT": "Resistenza stordimento",
+            "DE": "Betäubungswiderst.",
+            "KR": "기절 내성",
+            "CN": "昏厥耐性"
         },
         "description": {
             "EN": "Reduces stun duration."
@@ -58,7 +82,13 @@
     {
         "id": 4,
         "name": {
-            "EN": "Muck Resistance"
+            "EN": "Muck Resistance",
+            "FR": "Anti-fange",
+            "JP": "泥耐性",
+            "IT": "Resistenza melma",
+            "DE": "Mist-Widerstand",
+            "KR": "진흙 내성",
+            "CN": "泥耐性"
         },
         "description": {
             "EN": "Reduces impairments to mobility while stuck in monster muck."
@@ -70,7 +100,13 @@
     {
         "id": 5,
         "name": {
-            "EN": "Blast Resistance"
+            "EN": "Blast Resistance",
+            "FR": "Anti-explosion",
+            "JP": "爆破やられ耐性",
+            "IT": "Resistenza scoppio",
+            "DE": "Explosionswiderstand",
+            "KR": "폭파 피해 내성",
+            "CN": "爆破異常狀態耐性"
         },
         "description": {
             "EN": "Grants protection against blastblight."
@@ -84,7 +120,13 @@
     {
         "id": 6,
         "name": {
-            "EN": "Bleeding Resistance"
+            "EN": "Bleeding Resistance",
+            "FR": "Anti-hémorragie",
+            "JP": "裂傷耐性",
+            "IT": "Resistenza sanguinamento",
+            "DE": "Blutungswiderstand",
+            "KR": "열상 내성",
+            "CN": "裂傷耐性"
         },
         "description": {
             "EN": "Grants protection against bleeding."
@@ -98,7 +140,13 @@
     {
         "id": 7,
         "name": {
-            "EN": "Iron Skin"
+            "EN": "Iron Skin",
+            "FR": "Peau de fer",
+            "JP": "防御力DOWN耐性",
+            "IT": "Pelle di ferro",
+            "DE": "Eisenhaut",
+            "KR": "방어력 DOWN 내성",
+            "CN": "防禦力DOWN耐性"
         },
         "description": {
             "EN": "Grants protection against Defense Down."
@@ -112,7 +160,13 @@
     {
         "id": 8,
         "name": {
-            "EN": "Earplugs"
+            "EN": "Earplugs",
+            "FR": "Bouchon d'oreille",
+            "JP": "耳栓",
+            "IT": "Protezione udito",
+            "DE": "Ohrstöpsel",
+            "KR": "귀마개",
+            "CN": "耳塞"
         },
         "description": {
             "EN": "Grants protection from large monsters' roars."
@@ -128,7 +182,13 @@
     {
         "id": 9,
         "name": {
-            "EN": "Windproof"
+            "EN": "Windproof",
+            "FR": "Pare-vent",
+            "JP": "風圧耐性",
+            "IT": "Paravento",
+            "DE": "Windsicher",
+            "KR": "풍압 내성",
+            "CN": "風壓耐性"
         },
         "description": {
             "EN": "Grants protection against wind pressure."
@@ -144,7 +204,13 @@
     {
         "id": 10,
         "name": {
-            "EN": "Tremor Resistance"
+            "EN": "Tremor Resistance",
+            "FR": "Sismologie",
+            "JP": "耐震",
+            "IT": "Antisismico",
+            "DE": "Erschütterungswidst.",
+            "KR": "내진",
+            "CN": "耐震性"
         },
         "description": {
             "EN": "Grants protection against ground tremors."
@@ -158,7 +224,13 @@
     {
         "id": 11,
         "name": {
-            "EN": "Dungmaster"
+            "EN": "Dungmaster",
+            "FR": "Grand Bousier",
+            "JP": "こやし名人",
+            "IT": "Letamastro",
+            "DE": "Dungmeister",
+            "KR": "거름 명인",
+            "CN": "異臭名人"
         },
         "description": {
             "EN": "Makes monsters hit with slinger dung pods more likely to run."
@@ -170,7 +242,13 @@
     {
         "id": 12,
         "name": {
-            "EN": "Effluvial Expert"
+            "EN": "Effluvial Expert",
+            "FR": "Aura de purge",
+            "JP": "瘴気環境適応",
+            "IT": "Esperto di effluvi",
+            "DE": "Miasmaexperte",
+            "KR": "독기 환경 적응",
+            "CN": "適應瘴氣環境"
         },
         "description": {
             "EN": "Nullifies or reduces environmental damage in the Rotten Vale."
@@ -182,7 +260,13 @@
     {
         "id": 13,
         "name": {
-            "EN": "Heat Guard"
+            "EN": "Heat Guard",
+            "FR": "Thermorésistance",
+            "JP": "熱ダメージ無効",
+            "IT": "Anticalore",
+            "DE": "Hitzeschutz",
+            "KR": "열 데미지 무효",
+            "CN": "熱傷害無效"
         },
         "description": {
             "EN": "Nullifies damage from heat."
@@ -194,7 +278,13 @@
     {
         "id": 14,
         "name": {
-            "EN": "Attack Boost"
+            "EN": "Attack Boost",
+            "FR": "Machine de guerre",
+            "JP": "攻撃",
+            "IT": "Bonus attacco",
+            "DE": "Angriffsboost",
+            "KR": "공격",
+            "CN": "攻擊"
         },
         "description": {
             "EN": "Increases attack power. Also improves affinity at higher levels."
@@ -212,7 +302,13 @@
     {
         "id": 15,
         "name": {
-            "EN": "Defense Boost"
+            "EN": "Defense Boost",
+            "FR": "Bastion",
+            "JP": "防御",
+            "IT": "Bonus difesa",
+            "DE": "Verteidigungsboost",
+            "KR": "방어",
+            "CN": "防禦"
         },
         "description": {
             "EN": "Increases defense. Level up to improve resistances as well."
@@ -230,7 +326,13 @@
     {
         "id": 16,
         "name": {
-            "EN": "Health Boost"
+            "EN": "Health Boost",
+            "FR": "Afflux de vie",
+            "JP": "体力増強",
+            "IT": "Bonus salute",
+            "DE": "Gesundheitsboost",
+            "KR": "체력 증강",
+            "CN": "體力增強"
         },
         "description": {
             "EN": "Increases health."
@@ -244,7 +346,13 @@
     {
         "id": 17,
         "name": {
-            "EN": "Recovery Up"
+            "EN": "Recovery Up",
+            "FR": "Cercle de vie",
+            "JP": "体力回復量UP",
+            "IT": "Bonus cura",
+            "DE": "Erholung hoch",
+            "KR": "체력 회복량 UP",
+            "CN": "體力回復量UP"
         },
         "description": {
             "EN": "Increases the amount recovered when restoring health."
@@ -258,7 +366,13 @@
     {
         "id": 18,
         "name": {
-            "EN": "Recovery Speed"
+            "EN": "Recovery Speed",
+            "FR": "Halo de guérison",
+            "JP": "回復速度",
+            "IT": "Guarigione",
+            "DE": "Erholungsgeschwindigk.",
+            "KR": "회복 속도",
+            "CN": "回復速度"
         },
         "description": {
             "EN": "Speeds healing of recoverable damage (the red portion of the health gauge)."
@@ -272,7 +386,13 @@
     {
         "id": 19,
         "name": {
-            "EN": "Fire Resistance"
+            "EN": "Fire Resistance",
+            "FR": "Ignifuge",
+            "JP": "火耐性",
+            "IT": "Resistenza fuoco",
+            "DE": "Feuerwiderstand",
+            "KR": "불 내성",
+            "CN": "火耐性"
         },
         "description": {
             "EN": "Increases fire resistance. Also improves defense at higher levels."
@@ -286,7 +406,13 @@
     {
         "id": 20,
         "name": {
-            "EN": "Water Resistance"
+            "EN": "Water Resistance",
+            "FR": "Étanchéité",
+            "JP": "水耐性",
+            "IT": "Resistenza acqua",
+            "DE": "Wasserwiderstand",
+            "KR": "물 내성",
+            "CN": "水耐性"
         },
         "description": {
             "EN": "Increases water resistance. Also improves defense at higher levels."
@@ -300,7 +426,13 @@
     {
         "id": 21,
         "name": {
-            "EN": "Ice Resistance"
+            "EN": "Ice Resistance",
+            "FR": "Antigel",
+            "JP": "氷耐性",
+            "IT": "Resistenza ghiaccio",
+            "DE": "Eiswiderstand",
+            "KR": "얼음 내성",
+            "CN": "冰耐性"
         },
         "description": {
             "EN": "Increases ice resistance. Also improves defense at higher levels."
@@ -314,7 +446,13 @@
     {
         "id": 22,
         "name": {
-            "EN": "Thunder Resistance"
+            "EN": "Thunder Resistance",
+            "FR": "Paratonerre",
+            "JP": "雷耐性",
+            "IT": "Resistenza tuono",
+            "DE": "Donnerwiderstand",
+            "KR": "번개 내성",
+            "CN": "雷耐性"
         },
         "description": {
             "EN": "Increases thunder resistance. Also improves defense at higher levels."
@@ -328,7 +466,13 @@
     {
         "id": 23,
         "name": {
-            "EN": "Dragon Resistance"
+            "EN": "Dragon Resistance",
+            "FR": "Aura draconien",
+            "JP": "龍耐性",
+            "IT": "Resistenza drago",
+            "DE": "Drachenwiderstand",
+            "KR": "용 내성",
+            "CN": "龍耐性"
         },
         "description": {
             "EN": "Increases dragon resistance. Also improves defense at higher levels."
@@ -342,7 +486,13 @@
     {
         "id": 24,
         "name": {
-            "EN": "Blight Resistance"
+            "EN": "Blight Resistance",
+            "FR": "Totem élémentaire",
+            "JP": "属性やられ耐性",
+            "IT": "Resistenza malus",
+            "DE": "Pestwiderstand",
+            "KR": "속성 피해 내성",
+            "CN": "屬性異常狀態耐性"
         },
         "description": {
             "EN": "Grants protection against all elemental blights."
@@ -356,7 +506,13 @@
     {
         "id": 25,
         "name": {
-            "EN": "Fire Attack"
+            "EN": "Fire Attack",
+            "FR": "Pyromane",
+            "JP": "火属性攻撃強化",
+            "IT": "Attacco fuoco",
+            "DE": "Feuerangriff",
+            "KR": "불속성 공격 강화",
+            "CN": "火屬性攻擊強化"
         },
         "description": {
             "EN": "Increases fire element attack power. (Elemental attack power has a maximum limit.)"
@@ -372,7 +528,13 @@
     {
         "id": 26,
         "name": {
-            "EN": "Water Attack"
+            "EN": "Water Attack",
+            "FR": "Maelstrom",
+            "JP": "水属性攻撃強化",
+            "IT": "Attacco acqua",
+            "DE": "Wasserangriff",
+            "KR": "물속성 공격 강화",
+            "CN": "水屬性攻擊強化"
         },
         "description": {
             "EN": "Increases water element attack power. (Elemental attack power has a maximum limit.)"
@@ -388,7 +550,13 @@
     {
         "id": 27,
         "name": {
-            "EN": "Ice Attack"
+            "EN": "Ice Attack",
+            "FR": "Blizzard",
+            "JP": "氷属性攻撃強化",
+            "IT": "Attacco ghiaccio",
+            "DE": "Eisangriff",
+            "KR": "얼음속성 공격 강화",
+            "CN": "冰屬性攻擊強化"
         },
         "description": {
             "EN": "Increases ice element attack power. (Elemental attack power has as maximum limit.)"
@@ -404,7 +572,13 @@
     {
         "id": 28,
         "name": {
-            "EN": "Thunder Attack"
+            "EN": "Thunder Attack",
+            "FR": "Feu du ciel",
+            "JP": "雷属性攻撃強化",
+            "IT": "Attacco tuono",
+            "DE": "Donnerangriff",
+            "KR": "번개속성 공격 강화",
+            "CN": "雷屬性攻擊強化"
         },
         "description": {
             "EN": "Increases thunder element attack power. (Elemental attack power has a maximum limit.)"
@@ -420,7 +594,13 @@
     {
         "id": 29,
         "name": {
-            "EN": "Dragon Attack"
+            "EN": "Dragon Attack",
+            "FR": "Pourfendeur de dragon",
+            "JP": "龍属性攻撃強化",
+            "IT": "Attacco drago",
+            "DE": "Drachenangriff",
+            "KR": "용속성 공격 강화",
+            "CN": "龍屬性攻擊強化"
         },
         "description": {
             "EN": "Increases dragon element attack power. (Elemental attack power has a maximum limit.)"
@@ -436,7 +616,13 @@
     {
         "id": 30,
         "name": {
-            "EN": "Poison Attack"
+            "EN": "Poison Attack",
+            "FR": "Mort aux rats",
+            "JP": "毒属性強化",
+            "IT": "Attacco veleno",
+            "DE": "Giftangriff",
+            "KR": "독속성 강화",
+            "CN": "毒屬性攻擊強化"
         },
         "description": {
             "EN": "Increases the rate of poison buildup. (Elemental buildup has a maximum limit.)"
@@ -450,7 +636,13 @@
     {
         "id": 31,
         "name": {
-            "EN": "Paralysis Attack"
+            "EN": "Paralysis Attack",
+            "FR": "Neutralisation",
+            "JP": "麻痺属性強化",
+            "IT": "Attacco paralisi",
+            "DE": "Lähmungsangriff",
+            "KR": "마비속성 강화",
+            "CN": "麻痹屬性強化"
         },
         "description": {
             "EN": "Increases the rate of paralysis buildup. (Elemental buildup has a maximum limit.)"
@@ -464,7 +656,13 @@
     {
         "id": 32,
         "name": {
-            "EN": "Sleep Attack"
+            "EN": "Sleep Attack",
+            "FR": "La nuit porte conseil",
+            "JP": "睡眠属性強化",
+            "IT": "Attacco sonno",
+            "DE": "Schlafangriff",
+            "KR": "수면속성 강화",
+            "CN": "睡眠屬性強化"
         },
         "description": {
             "EN": "Increases the rate of sleep buildup. (Elemental buildup has maximum limit.)"
@@ -478,7 +676,13 @@
     {
         "id": 33,
         "name": {
-            "EN": "Blast Attack"
+            "EN": "Blast Attack",
+            "FR": "Destruction massive",
+            "JP": "爆破属性強化",
+            "IT": "Attacco scoppio",
+            "DE": "Explosionsangriff",
+            "KR": "폭파속성 강화",
+            "CN": "爆破屬性強化"
         },
         "description": {
             "EN": "Increases the rate of the blast buildup. (Elemental buildup has a maximum limit.)"
@@ -492,7 +696,13 @@
     {
         "id": 34,
         "name": {
-            "EN": "Normal Shots"
+            "EN": "Normal Shots",
+            "FR": "Tir maximum",
+            "JP": "通常弾・通常矢強化",
+            "IT": "Bonus normali",
+            "DE": "Standardboost",
+            "KR": "통상탄/통상화살 강화",
+            "CN": "通常彈・通常箭強化"
         },
         "description": {
             "EN": "Increases the attack power of normal ammo and normal arrows."
@@ -504,7 +714,13 @@
     {
         "id": 35,
         "name": {
-            "EN": "Piercing Shots"
+            "EN": "Piercing Shots",
+            "FR": "Traque sans merci",
+            "JP": "貫通弾・竜の一矢強化",
+            "IT": "Bonus perforanti",
+            "DE": "Perforierboost",
+            "KR": "관통탄/용화살 강화",
+            "CN": "貫通彈・龍之一矢強化"
         },
         "description": {
             "EN": "Increases the attack power of piercing ammo and Dragon Piercer."
@@ -516,7 +732,13 @@
     {
         "id": 36,
         "name": {
-            "EN": "Spread/Power Shots"
+            "EN": "Spread/Power Shots",
+            "FR": "Désigné pour mourir",
+            "JP": "散弾・剛射強化",
+            "IT": "Bonus ventaglio/tiro potente",
+            "DE": "Schrot/Kraftschuss",
+            "KR": "산탄/강사 강화",
+            "CN": "散彈・剛射強化"
         },
         "description": {
             "EN": "Increases the attack power of spread ammo and power shot arrows."
@@ -528,7 +750,13 @@
     {
         "id": 37,
         "name": {
-            "EN": "Free Elem/Ammo Up"
+            "EN": "Free Elem/Ammo Up",
+            "FR": "Tireur d'élite",
+            "JP": "属性解放/装填拡張",
+            "IT": "Rivela/Munizioni+",
+            "DE": "Superwaffe",
+            "KR": "속성해방/장전확장",
+            "CN": "屬性解放/裝填擴充"
         },
         "description": {
             "EN": "Unlocks your weapon's hidden element. Also increases bowgun loading capacity. (There is a cap to loading capacity.)"
@@ -542,7 +770,13 @@
     {
         "id": 38,
         "name": {
-            "EN": "Critical Eye"
+            "EN": "Critical Eye",
+            "FR": "Maitre d'arme",
+            "JP": "見切り",
+            "IT": "Occhio critico",
+            "DE": "Kritischer Blick",
+            "KR": "간파",
+            "CN": "看破"
         },
         "description": {
             "EN": "Increases affinity."
@@ -560,7 +794,13 @@
     {
         "id": 39,
         "name": {
-            "EN": "Critical Boost"
+            "EN": "Critical Boost",
+            "FR": "Berserker",
+            "JP": "超会心",
+            "IT": "Bonus critico",
+            "DE": "Kritischer Boost",
+            "KR": "슈퍼회심",
+            "CN": "超會心"
         },
         "description": {
             "EN": "Increases the damage of critical hits."
@@ -574,7 +814,13 @@
     {
         "id": 40,
         "name": {
-            "EN": "Weakness Exploit"
+            "EN": "Weakness Exploit",
+            "FR": "Mise à mort",
+            "JP": "弱点特効",
+            "IT": "Punto debole",
+            "DE": "Schwächevorteil",
+            "KR": "약점특효",
+            "CN": "弱點特效"
         },
         "description": {
             "EN": "Increases the affinity of attacks that exploit a monster weak spot."
@@ -588,7 +834,13 @@
     {
         "id": 41,
         "name": {
-            "EN": "Focus"
+            "EN": "Focus",
+            "FR": "Concentration",
+            "JP": "集中",
+            "IT": "Concentrazione",
+            "DE": "Fokus",
+            "KR": "집중",
+            "CN": "集中"
         },
         "description": {
             "EN": "Increases the fill rate for weapons with gauges and the charge rate for weapons with charge attacks."
@@ -602,7 +854,13 @@
     {
         "id": 42,
         "name": {
-            "EN": "Power Prolonger"
+            "EN": "Power Prolonger",
+            "FR": "Puissance absolue",
+            "JP": "強化持続",
+            "IT": "Estensione di potenza",
+            "DE": "Kraftverlängerung",
+            "KR": "강화 지속",
+            "CN": "強化持續"
         },
         "description": {
             "EN": "Allows long swords, dual blades, insect glaives, switch axes, and charge blades to stay powered up longer."
@@ -616,7 +874,13 @@
     {
         "id": 43,
         "name": {
-            "EN": "Handicraft"
+            "EN": "Handicraft",
+            "FR": "Savoir-faire",
+            "JP": "匠",
+            "IT": "Artigiano",
+            "DE": "Handwerk",
+            "KR": "장인",
+            "CN": "匠"
         },
         "description": {
             "EN": "Extends the weapon sharpness gauage. However, it will not increase the gauge past its maximum."
@@ -632,7 +896,13 @@
     {
         "id": 44,
         "name": {
-            "EN": "Critical Draw"
+            "EN": "Critical Draw",
+            "FR": "Dégainage éclair",
+            "JP": "抜刀術【技】",
+            "IT": "Critico rapido",
+            "DE": "Kritisches Ziehen",
+            "KR": "발도술 [기]",
+            "CN": "拔刀術【技】"
         },
         "description": {
             "EN": "Increases affinity when performing draw attacks."
@@ -646,7 +916,13 @@
     {
         "id": 45,
         "name": {
-            "EN": "Partbreaker"
+            "EN": "Partbreaker",
+            "FR": "Destructeur",
+            "JP": "破壊王",
+            "IT": "Spaccamostri",
+            "DE": "Teilezerstörer",
+            "KR": "파괴왕",
+            "CN": "破壞王"
         },
         "description": {
             "EN": "Makes it easier to break or sever parts of large monsters."
@@ -660,7 +936,13 @@
     {
         "id": 46,
         "name": {
-            "EN": "Slugger"
+            "EN": "Slugger",
+            "FR": "Cogneur",
+            "JP": "KO術",
+            "IT": "Battitore",
+            "DE": "Lähmer",
+            "KR": "KO술",
+            "CN": "KO術"
         },
         "description": {
             "EN": "Makes it easier to stun monsters."
@@ -674,7 +956,13 @@
     {
         "id": 47,
         "name": {
-            "EN": "Stamina Thief"
+            "EN": "Stamina Thief",
+            "FR": "Vol d'endurance",
+            "JP": "スタミナ奪取",
+            "IT": "Ruba resistenza",
+            "DE": "Ausdauerdieb",
+            "KR": "스태미나 탈취",
+            "CN": "奪取耐力"
         },
         "description": {
             "EN": "Increases certain attacks' ability to exhaust monsters."
@@ -688,7 +976,13 @@
     {
         "id": 48,
         "name": {
-            "EN": "Master Mounter"
+            "EN": "Master Mounter",
+            "FR": "Maitre cavalier",
+            "JP": "乗り名人",
+            "IT": "Cavaliere provetto",
+            "DE": "Rittmeister",
+            "KR": "탑승 명인",
+            "CN": "騎乘名人"
         },
         "description": {
             "EN": "Makes it easier to mount monsters."
@@ -700,7 +994,13 @@
     {
         "id": 49,
         "name": {
-            "EN": "Airborne"
+            "EN": "Airborne",
+            "FR": "Mort venu d'en haut",
+            "JP": "飛燕",
+            "IT": "Minaccia aerea",
+            "DE": "Luftherrschaft",
+            "KR": "비연",
+            "CN": "飛燕"
         },
         "description": {
             "EN": "Increases the damage caused by jumping attacks."
@@ -712,7 +1012,13 @@
     {
         "id": 50,
         "name": {
-            "EN": "Latent Power"
+            "EN": "Latent Power",
+            "FR": "Force latente",
+            "JP": "力の解放",
+            "IT": "Forza latente",
+            "DE": "Latente Kraft",
+            "KR": "힘의 해방",
+            "CN": "力量解放"
         },
         "description": {
             "EN": "Temporarily increases affinity and reduces stamina depletion when certain conditions are met."
@@ -728,7 +1034,13 @@
     {
         "id": 51,
         "name": {
-            "EN": "Agitator"
+            "EN": "Agitator",
+            "FR": "Témérité",
+            "JP": "挑戦者",
+            "IT": "Istigatore",
+            "DE": "Aufhetzer",
+            "KR": "도전자",
+            "CN": "挑戰者"
         },
         "description": {
             "EN": "Increases attack power and affinity when large monsters become enraged."
@@ -744,7 +1056,13 @@
     {
         "id": 52,
         "name": {
-            "EN": "Peak Performance"
+            "EN": "Peak Performance",
+            "FR": "Performance optimale",
+            "JP": "フルチャージ",
+            "IT": "Forma perfetta",
+            "DE": "Höchstleistung",
+            "KR": "완전 충전",
+            "CN": "無傷"
         },
         "description": {
             "EN": "Increases attack when your health is full."
@@ -758,7 +1076,13 @@
     {
         "id": 53,
         "name": {
-            "EN": "Heroics"
+            "EN": "Heroics",
+            "FR": "Heroisme",
+            "JP": "火事場力",
+            "IT": "Eroismo",
+            "DE": "Heldentat",
+            "KR": "재난대처능력",
+            "CN": "火場怪力"
         },
         "description": {
             "EN": "Increases attack power and defense when health drops to 35% or lower."
@@ -774,7 +1098,13 @@
     {
         "id": 54,
         "name": {
-            "EN": "Fortify"
+            "EN": "Fortify",
+            "FR": "Jamais vaincu",
+            "JP": "不屈",
+            "IT": "Rafforzamento",
+            "DE": "Kräftigen",
+            "KR": "불굴",
+            "CN": "不屈"
         },
         "description": {
             "EN": "Increases your attack and defense every time you fall in battle. (This effect can stack twice.)"
@@ -786,7 +1116,13 @@
     {
         "id": 55,
         "name": {
-            "EN": "Resentment"
+            "EN": "Resentment",
+            "FR": "Vengeance",
+            "JP": "逆恨み",
+            "IT": "Risentimento",
+            "DE": "Groll",
+            "KR": "앙심",
+            "CN": "怨恨"
         },
         "description": {
             "EN": "Increases attack when you have recoverable damage (the red portion of your health gauge)."
@@ -802,7 +1138,13 @@
     {
         "id": 56,
         "name": {
-            "EN": "Resuscitate"
+            "EN": "Resuscitate",
+            "FR": "Esprit indomptable",
+            "JP": "死中に活",
+            "IT": "Rianimazione",
+            "DE": "Wiederbelebung",
+            "KR": "돌파구",
+            "CN": "死裏逃生"
         },
         "description": {
             "EN": "Improves evasion and reduces stamina depletion when afflicted with abnormal status effects."
@@ -814,7 +1156,13 @@
     {
         "id": 57,
         "name": {
-            "EN": "Horn Maestro"
+            "EN": "Horn Maestro",
+            "FR": "Maestro",
+            "JP": "笛吹き名人",
+            "IT": "Maestro del corno",
+            "DE": "Horn-Maestro",
+            "KR": "피리 명인",
+            "CN": "吹笛名人"
         },
         "description": {
             "EN": "Increases the effect duration of hunting horn melodies."
@@ -826,7 +1174,13 @@
     {
         "id": 58,
         "name": {
-            "EN": "Capacity Boost"
+            "EN": "Capacity Boost",
+            "FR": "Prêt à tirer",
+            "JP": "砲弾装填数UP",
+            "IT": "Bonus capacità",
+            "DE": "Kapazitätsboost",
+            "KR": "포탄 장전 수 UP",
+            "CN": "砲彈裝填數UP"
         },
         "description": {
             "EN": "Increases the gunlance's shell capacity and charge blade's phial capacity."
@@ -838,7 +1192,13 @@
     {
         "id": 59,
         "name": {
-            "EN": "Special Ammo Boost"
+            "EN": "Special Ammo Boost",
+            "FR": "Salve mortelle",
+            "JP": "特殊射撃強化",
+            "IT": "Bonus munizioni speciali",
+            "DE": "Spezialmunitionboost",
+            "KR": "특수 사격 강화",
+            "CN": "特殊射擊強化"
         },
         "description": {
             "EN": "Increases the power of bowgun special ammo and Dragon Piercer."
@@ -851,7 +1211,13 @@
     {
         "id": 60,
         "name": {
-            "EN": "Artillery"
+            "EN": "Artillery",
+            "FR": "BOUM!",
+            "JP": "砲術",
+            "IT": "Artiglieria",
+            "DE": "Artillerie",
+            "KR": "포술",
+            "CN": "砲術"
         },
         "description": {
             "EN": "Strengthens explosive attacks like gunlance shells, Wyvern's Fire, charge blade phial attacks, and sticky ammo."
@@ -865,7 +1231,13 @@
     {
         "id": 61,
         "name": {
-            "EN": "Heavy Artillery"
+            "EN": "Heavy Artillery",
+            "FR": "Artillerie lourde",
+            "JP": "砲撃手",
+            "IT": "Artiglieria pesante",
+            "DE": "Schwere Artillerie",
+            "KR": "포격수",
+            "CN": "砲擊手"
         },
         "description": {
             "EN": "Increases the firepower of ballistae and cannons."
@@ -878,7 +1250,13 @@
     {
         "id": 62,
         "name": {
-            "EN": "Marathon Runner"
+            "EN": "Marathon Runner",
+            "FR": "Marathonien",
+            "JP": "ランナー",
+            "IT": "Maratoneta",
+            "DE": "Marathon-Läufer",
+            "KR": "런너",
+            "CN": "跑者"
         },
         "description": {
             "EN": "Slows down stamina depletion for actions which continuously drain stamina (such as dashing)."
@@ -892,7 +1270,13 @@
     {
         "id": 63,
         "name": {
-            "EN": "Constitution"
+            "EN": "Constitution",
+            "FR": "Athlète",
+            "JP": "体術",
+            "IT": "Atleta",
+            "DE": "Konstitution",
+            "KR": "체술",
+            "CN": "體術"
         },
         "description": {
             "EN": "Reduces stamina depletion when performing stamina-draining moves such as evading, etc."
@@ -908,7 +1292,13 @@
     {
         "id": 64,
         "name": {
-            "EN": "Leap of Faith"
+            "EN": "Leap of Faith",
+            "FR": "Saut de la foi",
+            "JP": "飛び込み",
+            "IT": "Salto nel buio",
+            "DE": "Schicksalssprung",
+            "KR": "뛰어들기",
+            "CN": "飛身躍入"
         },
         "description": {
             "EN": "Allows you to do a dive-evade when facing towards large monsters, and extends the dive-evade distance."
@@ -920,7 +1310,13 @@
     {
         "id": 65,
         "name": {
-            "EN": "Stamina Surge"
+            "EN": "Stamina Surge",
+            "FR": "Métabolisme",
+            "JP": "スタミナ急速回復",
+            "IT": "Super resistenza",
+            "DE": "Ausdauererholung",
+            "KR": "스태미나 급속 회복",
+            "CN": "耐力急速回復"
         },
         "description": {
             "EN": "Speeds up stamina recovery."
@@ -934,7 +1330,13 @@
     {
         "id": 66,
         "name": {
-            "EN": "Hunger Resistance"
+            "EN": "Hunger Resistance",
+            "FR": "Spartiate",
+            "JP": "腹減り耐性",
+            "IT": "Resistenza fame",
+            "DE": "Hungerwiderstand",
+            "KR": "배고픔 내성",
+            "CN": "飢餓耐性"
         },
         "description": {
             "EN": "Reduces maximum stamina depletion over time."
@@ -948,7 +1350,13 @@
     {
         "id": 67,
         "name": {
-            "EN": "Evade Window"
+            "EN": "Evade Window",
+            "FR": "Invulnérabilité",
+            "JP": "回避性能",
+            "IT": "Schivata",
+            "DE": "Unverwundbarkeit",
+            "KR": "회피 성능",
+            "CN": "回避性能"
         },
         "description": {
             "EN": "Extends the invulnerability period when evading."
@@ -964,7 +1372,13 @@
     {
         "id": 68,
         "name": {
-            "EN": "Evade Extender"
+            "EN": "Evade Extender",
+            "FR": "Trompe-la-mort",
+            "JP": "回避距離UP",
+            "IT": "Schivata estesa",
+            "DE": "Ausweichdistanz",
+            "KR": "회피 거리",
+            "CN": "回避距離UP"
         },
         "description": {
             "EN": "Increases evade distance."
@@ -978,7 +1392,13 @@
     {
         "id": 69,
         "name": {
-            "EN": "Guard"
+            "EN": "Guard",
+            "FR": "Paladin",
+            "JP": "ガード性能",
+            "IT": "Blocco",
+            "DE": "Blocken",
+            "KR": "가드 성능",
+            "CN": "防禦性能"
         },
         "description": {
             "EN": "Reduces knockbacks and stamina depletion when guarding."
@@ -994,7 +1414,13 @@
     {
         "id": 70,
         "name": {
-            "EN": "Quick Sheath"
+            "EN": "Quick Sheath",
+            "FR": "Rengainage éclair",
+            "JP": "納刀術",
+            "IT": "Rinfodero veloce",
+            "DE": "SchnellesWegstecken",
+            "KR": "납도술",
+            "CN": "收刀術"
         },
         "description": {
             "EN": "Speeds up weapon sheathing."
@@ -1008,7 +1434,13 @@
     {
         "id": 71,
         "name": {
-            "EN": "Wide-Range"
+            "EN": "Wide-Range",
+            "FR": "Un pour tous",
+            "JP": "広域化",
+            "IT": "Ampia area",
+            "DE": "Wirkbereich",
+            "KR": "광역화",
+            "CN": "廣域化"
         },
         "description": {
             "EN": "Allows the effects of certain items to also affect nearby allies."
@@ -1024,7 +1456,13 @@
     {
         "id": 72,
         "name": {
-            "EN": "Item Prolonger"
+            "EN": "Item Prolonger",
+            "FR": "Chimiste",
+            "JP": "アイテム使用強化",
+            "IT": "Estensione oggetti",
+            "DE": "Objektverlängerung",
+            "KR": "아이템 사용 강화",
+            "CN": "道具使用強化"
         },
         "description": {
             "EN": "Extends the duration of some item effects."
@@ -1038,7 +1476,13 @@
     {
         "id": 73,
         "name": {
-            "EN": "Free Meal"
+            "EN": "Free Meal",
+            "FR": "Pique-assiette",
+            "JP": "満足感",
+            "IT": "Pasto gratuito",
+            "DE": "Freie Mahlzeit",
+            "KR": "만족감",
+            "CN": "滿足感"
         },
         "description": {
             "EN": "Gives you a predetermined chance of consuming a food or drink item for free."
@@ -1050,7 +1494,13 @@
     {
         "id": 74,
         "name": {
-            "EN": "Speed Eating"
+            "EN": "Speed Eating",
+            "FR": "Carnassier",
+            "JP": "早食い",
+            "IT": "Pasto veloce",
+            "DE": "Schnellessen",
+            "KR": "빨리먹기",
+            "CN": "快吃"
         },
         "description": {
             "EN": "Increases meat-eating and item-consumption speed."
@@ -1064,7 +1514,13 @@
     {
         "id": 75,
         "name": {
-            "EN": "Speed Sharpening"
+            "EN": "Speed Sharpening",
+            "FR": "Affûtage rapide",
+            "JP": "砥石使用高速化",
+            "IT": "Affilatura veloce",
+            "DE": "Schnelles Schärfen",
+            "KR": "숫돌 사용 고속화",
+            "CN": "砥石使用高速化"
         },
         "description": {
             "EN": "Speeds up weapon sharpening when using a whetstone."
@@ -1078,7 +1534,13 @@
     {
         "id": 76,
         "name": {
-            "EN": "Bombardier"
+            "EN": "Bombardier",
+            "FR": "Bombardier",
+            "JP": "ボマー",
+            "IT": "Bombardiere",
+            "DE": "Bombardier",
+            "KR": "보머",
+            "CN": "炸彈客"
         },
         "description": {
             "EN": "Increases the damage of explosive items."
@@ -1092,7 +1554,13 @@
     {
         "id": 77,
         "name": {
-            "EN": "Mushroomancer"
+            "EN": "Mushroomancer",
+            "FR": "Mycologue extrème",
+            "JP": "キノコ大好き",
+            "IT": "Fungomante",
+            "DE": "Mykologie",
+            "KR": "버섯 애호가",
+            "CN": "最愛菇類"
         },
         "description": {
             "EN": "Lets you digest mushrooms that would otherwise be inedible and gain their advantageous effects."
@@ -1106,7 +1574,13 @@
     {
         "id": 78,
         "name": {
-            "EN": "Master Fisher"
+            "EN": "Master Fisher",
+            "FR": "Maitre de la pêche",
+            "JP": "釣り名人",
+            "IT": "Mastro pescatore",
+            "DE": "Meisterfischer",
+            "KR": "낚시 명인",
+            "CN": "釣魚名人"
         },
         "description": {
             "EN": "Improves your skill at fishing."
@@ -1118,7 +1592,13 @@
     {
         "id": 79,
         "name": {
-            "EN": "Pro Transporter"
+            "EN": "Pro Transporter",
+            "FR": "Pro du transport",
+            "JP": "運搬の達人",
+            "IT": "Super portatore",
+            "DE": "Profikurier",
+            "KR": "운반의 달인",
+            "CN": "搬運達人"
         },
         "description": {
             "EN": "Increases your speed while transporting items and decreases the likelihood of dropping them."
@@ -1130,7 +1610,13 @@
     {
         "id": 80,
         "name": {
-            "EN": "Master Gatherer"
+            "EN": "Master Gatherer",
+            "FR": "Prince de la ceuillette",
+            "JP": "採集の達人",
+            "IT": "Mastro raccoglitore",
+            "DE": "Meistersammler",
+            "KR": "채집의 달인",
+            "CN": "采集達人"
         },
         "description": {
             "EN": "Allows you to gather more quickly, and also prevents attacks from knocking you back while gathering."
@@ -1142,7 +1628,13 @@
     {
         "id": 81,
         "name": {
-            "EN": "Honey Hunter"
+            "EN": "Honey Hunter",
+            "FR": "Amoureux du miel",
+            "JP": "ハニーハンター",
+            "IT": "Goloso di miele",
+            "DE": "Honigjäger",
+            "KR": "허니 헌터",
+            "CN": "蜂蜜獵人"
         },
         "description": {
             "EN": "Increases the quantity of honey you receive when gathering in the field."
@@ -1154,7 +1646,13 @@
     {
         "id": 82,
         "name": {
-            "EN": "Carving Pro"
+            "EN": "Carving Pro",
+            "FR": "Expert en dépecage",
+            "JP": "剥ぎ取り鉄人",
+            "IT": "Esperto di ricavo",
+            "DE": "Zerleger-Profi",
+            "KR": "갈무리 철인",
+            "CN": "剝取鐵人"
         },
         "description": {
             "EN": "Prevents knockback from attacks while carving."
@@ -1166,7 +1664,13 @@
     {
         "id": 83,
         "name": {
-            "EN": "Divine Blessing"
+            "EN": "Divine Blessing",
+            "FR": "Bénédiction",
+            "JP": "精霊の加護",
+            "IT": "Angelo custode",
+            "DE": "Göttlicher Segen",
+            "KR": "정령의 가호",
+            "CN": "精靈加護"
         },
         "description": {
             "EN": "Has a predetermined chance of reducing the damage you take."
@@ -1180,7 +1684,13 @@
     {
         "id": 84,
         "name": {
-            "EN": "Palico Rally"
+            "EN": "Palico Rally",
+            "FR": "Esprit Palico",
+            "JP": "オトモへの采配",
+            "IT": "Gregario",
+            "DE": "Palico-Versammlung",
+            "KR": "동반자 지휘",
+            "CN": "指示隨從"
         },
         "description": {
             "EN": "Powers up Palicoes."
@@ -1196,7 +1706,13 @@
     {
         "id": 85,
         "name": {
-            "EN": "Botanist"
+            "EN": "Botanist",
+            "FR": "Botaniste",
+            "JP": "植生学",
+            "IT": "Botanico",
+            "DE": "Botaniker",
+            "KR": "식생학",
+            "CN": "植生學"
         },
         "description": {
             "EN": "Increases the quantity of herbs and other consumable items you gather."
@@ -1211,7 +1727,13 @@
     {
         "id": 86,
         "name": {
-            "EN": "Geologist"
+            "EN": "Geologist",
+            "FR": "Géologiste",
+            "JP": "地質学",
+            "IT": "Geologo",
+            "DE": "Geologe",
+            "KR": "지질학",
+            "CN": "地質學"
         },
         "description": {
             "EN": "Increases the number of times you can use a gathering point."
@@ -1225,7 +1747,13 @@
     {
         "id": 87,
         "name": {
-            "EN": "Maximum Might"
+            "EN": "Maximum Might",
+            "FR": "Corps et âme",
+            "JP": "渾身",
+            "IT": "Massima potenza",
+            "DE": "Höchstmacht",
+            "KR": "혼신",
+            "CN": "精神抖擻"
         },
         "description": {
             "EN": "Increases affinity when stamina is full."
@@ -1239,7 +1767,13 @@
     {
         "id": 88,
         "name": {
-            "EN": "Slinger Capacity"
+            "EN": "Slinger Capacity",
+            "FR": "Fronde+",
+            "JP": "スリンガー装填数UP",
+            "IT": "Capacità fionda",
+            "DE": "Schleuderkapazität",
+            "KR": "슬링어 장전 수 UP",
+            "CN": "投射器裝填數UP"
         },
         "description": {
             "EN": "Increases the loading capacity for slinger ammo obtained in the field."
@@ -1253,7 +1787,13 @@
     {
         "id": 89,
         "name": {
-            "EN": "Stealth"
+            "EN": "Stealth",
+            "FR": "Furtivité",
+            "JP": "潜伏",
+            "IT": "Furtivo",
+            "DE": "Tarnung",
+            "KR": "잠복",
+            "CN": "潛伏"
         },
         "description": {
             "EN": "Makes it easier for monsters to lose sight of you."
@@ -1267,7 +1807,13 @@
     {
         "id": 90,
         "name": {
-            "EN": "Flinch Free"
+            "EN": "Flinch Free",
+            "FR": "Nerf d'acier",
+            "JP": "ひるみ軽減",
+            "IT": "Antisussulto",
+            "DE": "Unbeeindruckt",
+            "KR": "움찔 감소",
+            "CN": "減輕膽怯"
         },
         "description": {
             "EN": "Prevents knockbacks and other reactions to small damage."
@@ -1281,7 +1827,13 @@
     {
         "id": 91,
         "name": {
-            "EN": "Scoutfly Range Up"
+            "EN": "Scoutfly Range Up",
+            "FR": "Pistage",
+            "JP": "導蟲反応距離UP",
+            "IT": "Amplia insetti",
+            "DE": "Spähkäfer-Reichweite",
+            "KR": "안내벌레의 반응 거리 UP",
+            "CN": "導蟲反應距離UP"
         },
         "description": {
             "EN": "Expands your scoutflies' detection range."
@@ -1293,7 +1845,13 @@
     {
         "id": 92,
         "name": {
-            "EN": "Speed Crawler"
+            "EN": "Speed Crawler",
+            "FR": "Rampeur rapide",
+            "JP": "しゃがみ移動速度UP",
+            "IT": "Velocità strisciante",
+            "DE": "Schnellrobben",
+            "KR": "앉아 이동 속도 UP",
+            "CN": "蹲下移動速度UP"
         },
         "description": {
             "EN": "Increases movement speed while crouching."
@@ -1305,7 +1863,13 @@
     {
         "id": 93,
         "name": {
-            "EN": "Jump Master"
+            "EN": "Jump Master",
+            "FR": "Acrobate",
+            "JP": "ジャンプ鉄人",
+            "IT": "Maestro saltatore",
+            "DE": "Sprungmeister",
+            "KR": "점프 철인",
+            "CN": "跳躍鐵人"
         },
         "description": {
             "EN": "Prevents attacks from knocking you back during a jump."
@@ -1317,7 +1881,13 @@
     {
         "id": 94,
         "name": {
-            "EN": "Sporepuff Expert"
+            "EN": "Sporepuff Expert",
+            "FR": "Expert sporelit",
+            "JP": "綿胞子草の知識",
+            "IT": "Esperto di spore",
+            "DE": "SporenbauschExperte",
+            "KR": "면 포자풀의 지식",
+            "CN": "綿花孢子草的知識"
         },
         "description": {
             "EN": "Recover health when using sporepuffs."
@@ -1331,7 +1901,13 @@
     {
         "id": 95,
         "name": {
-            "EN": "Aquatic Expert"
+            "EN": "Aquatic Expert",
+            "FR": "Homme-poisson",
+            "JP": "水場適応",
+            "IT": "Esperto acquatico",
+            "DE": "Gewässerexperte",
+            "KR": "물가 적응",
+            "CN": "適應水場"
         },
         "description": {
             "EN": "Improves mobility in water."
@@ -1345,7 +1921,13 @@
     {
         "id": 96,
         "name": {
-            "EN": "Cliffhanger"
+            "EN": "Cliffhanger",
+            "FR": "Monte-en-l'air",
+            "JP": "クライマー",
+            "IT": "Scalatore",
+            "DE": "Kletterer",
+            "KR": "클라이머",
+            "CN": "攀岩者"
         },
         "description": {
             "EN": "Decreases stamina depletion when evading while clinging to walls or ivy."
@@ -1357,7 +1939,13 @@
     {
         "id": 97,
         "name": {
-            "EN": "Blindsider"
+            "EN": "Blindsider",
+            "FR": "Aveuglement",
+            "JP": "閃光強化",
+            "IT": "Attacco a sorpresa",
+            "DE": "Überraschungsangriff",
+            "KR": "섬광 강화",
+            "CN": "閃光強化"
         },
         "description": {
             "EN": "Improves the effectiveness of flash attacks and items."
@@ -1369,7 +1957,13 @@
     {
         "id": 98,
         "name": {
-            "EN": "Scholar"
+            "EN": "Scholar",
+            "FR": "Puit de science",
+            "JP": "研究者",
+            "IT": "Erudito",
+            "DE": "Gelehrter",
+            "KR": "연구자",
+            "CN": "研究者"
         },
         "description": {
             "EN": "Speeds up progress on research levels and special investigations. (Effect is applied at the quest results screen.)"
@@ -1381,7 +1975,13 @@
     {
         "id": 99,
         "name": {
-            "EN": "Entomologist"
+            "EN": "Entomologist",
+            "FR": "Entomologiste",
+            "JP": "昆虫標本の達人",
+            "IT": "Entomologo",
+            "DE": "Entomologe",
+            "KR": "곤충 표본의 달인",
+            "CN": "昆蟲標本達人"
         },
         "description": {
             "EN": "Decreases the chances of destroying the bodies of small insect monsters, allowing them to be carved."
@@ -1395,7 +1995,13 @@
     {
         "id": 100,
         "name": {
-            "EN": "Effluvia Resistance"
+            "EN": "Effluvia Resistance",
+            "FR": "Purification",
+            "JP": "瘴気耐性",
+            "IT": "Resistenza effluvio",
+            "DE": "Miasma-Widerstand",
+            "KR": "독기 내성",
+            "CN": "瘴氣耐性"
         },
         "description": {
             "EN": "Gain a resistance to effluvial buildup."
@@ -1409,7 +2015,13 @@
     {
         "id": 101,
         "name": {
-            "EN": "Scenthound"
+            "EN": "Scenthound",
+            "FR": "Instinct animal",
+            "JP": "追跡の達人",
+            "IT": "Segugio",
+            "DE": "Spürhund",
+            "KR": "추적의 달인",
+            "CN": "追蹤達人"
         },
         "description": {
             "EN": "Increases your scoutflies' gauge fill rate when you find tracks and other traces left by monsters."
@@ -1421,7 +2033,13 @@
     {
         "id": 102,
         "name": {
-            "EN": "Forager's Luck"
+            "EN": "Forager's Luck",
+            "FR": "Chance du foreur",
+            "JP": "探索者の幸運",
+            "IT": "Fortuna del foraggiere",
+            "DE": "Wildbeuterglück",
+            "KR": "탐색자의 행운",
+            "CN": "探索者的幸運"
         },
         "description": {
             "EN": "Increases the chance of finding rare gathering points."
@@ -1433,7 +2051,13 @@
     {
         "id": 103,
         "name": {
-            "EN": "Detector"
+            "EN": "Detector",
+            "FR": "Détecteur",
+            "JP": "感知",
+            "IT": "Rilevatore",
+            "DE": "Detektor",
+            "KR": "감지",
+            "CN": "察覺"
         },
         "description": {
             "EN": "Shows rare gathering points on the Wildlife Map."
@@ -1445,7 +2069,13 @@
     {
         "id": 104,
         "name": {
-            "EN": "BBQ Master"
+            "EN": "BBQ Master",
+            "FR": "Roi du BBQ",
+            "JP": "肉焼き名人",
+            "IT": "Mastro grigliatore",
+            "DE": "Grillspießmeister",
+            "KR": "고기굽기 명인",
+            "CN": "烤肉名人"
         },
         "description": {
             "EN": "Improves your skill at cooking meat."
@@ -1457,7 +2087,13 @@
     {
         "id": 105,
         "name": {
-            "EN": "Tool Specialist"
+            "EN": "Tool Specialist",
+            "FR": "Expert en survie",
+            "JP": "整備",
+            "IT": "Manutenzione",
+            "DE": "Werkzeugspezialist",
+            "KR": "정비",
+            "CN": "整備"
         },
         "description": {
             "EN": "Reduces the recharge time for specialized tools."
@@ -1471,7 +2107,13 @@
     {
         "id": 106,
         "name": {
-            "EN": "Affinity Sliding"
+            "EN": "Affinity Sliding",
+            "FR": "Roi de la glisse",
+            "JP": "滑走強化",
+            "IT": "Affinità scivolata",
+            "DE": "Affinitätsschlittern",
+            "KR": "활주 강화",
+            "CN": "滑走強化"
         },
         "description": {
             "EN": "Sliding increases your affinity for a short time."
@@ -1483,7 +2125,13 @@
     {
         "id": 107,
         "name": {
-            "EN": "Intimidator"
+            "EN": "Intimidator",
+            "FR": "Intimidation",
+            "JP": "威嚇",
+            "IT": "Intimidatore",
+            "DE": "Einschüchtern",
+            "KR": "위협",
+            "CN": "威嚇"
         },
         "description": {
             "EN": "Reduces the chances small monsters will attack after spotting you. (No effect on certain monsters.)"
@@ -1497,7 +2145,13 @@
     {
         "id": 108,
         "name": {
-            "EN": "Hasten Recovery"
+            "EN": "Hasten Recovery",
+            "FR": "Récupération rapide",
+            "JP": "加速再生",
+            "IT": "Furia guaritrice",
+            "DE": "Schnelle Erholung",
+            "KR": "가속 재생",
+            "CN": "加速再生"
         },
         "description": {
             "EN": "Regenerates your health as you continually attack a monster. Recovery varies by weapon."
@@ -1509,7 +2163,13 @@
     {
         "id": 109,
         "name": {
-            "EN": "Super Recovery"
+            "EN": "Super Recovery",
+            "FR": "Super récupération",
+            "JP": "超回復力",
+            "IT": "Super guarigione",
+            "DE": "Super-Erholung",
+            "KR": "슈퍼회복력",
+            "CN": "超回復力"
         },
         "description": {
             "EN": "Allows recovery to exceed the red portion of the health gauge."
@@ -1521,7 +2181,13 @@
     {
         "id": 110,
         "name": {
-            "EN": "Poison Duration Up"
+            "EN": "Poison Duration Up",
+            "FR": "Poison+",
+            "JP": "毒ダメージ強化",
+            "IT": "Aumenta veleno",
+            "DE": "Giftdauer hoch",
+            "KR": "독 데미지 강화",
+            "CN": "毒傷害強化"
         },
         "description": {
             "EN": "Extends the duration of your poison's effect on monsters."
@@ -1533,7 +2199,13 @@
     {
         "id": 111,
         "name": {
-            "EN": "Adrenaline"
+            "EN": "Adrenaline",
+            "FR": "Adrénaline",
+            "JP": "奮起",
+            "IT": "Adrenalina",
+            "DE": "Adrenalin",
+            "KR": "분발",
+            "CN": "振奮"
         },
         "description": {
             "EN": "Temporarily reduces stamina depletion when health is at 40% or lower."
@@ -1545,7 +2217,13 @@
     {
         "id": 112,
         "name": {
-            "EN": "Stamina Cap Up"
+            "EN": "Stamina Cap Up",
+            "FR": "Stamina+",
+            "JP": "スタミナ上限突破",
+            "IT": "Aumenta resistenza",
+            "DE": "Ausdauerlimit hoch",
+            "KR": "스태미나 한계 돌파",
+            "CN": "突破耐力上限"
         },
         "description": {
             "EN": "Increases stamina cap."
@@ -1557,7 +2235,13 @@
     {
         "id": 113,
         "name": {
-            "EN": "Critical Element"
+            "EN": "Critical Element",
+            "FR": "Rage élémentaire",
+            "JP": "会心撃【属性】",
+            "IT": "Critico elementale",
+            "DE": "Kritisches Element",
+            "KR": "회심격 [속성]",
+            "CN": "會心攻擊【屬性】"
         },
         "description": {
             "EN": "Increases elemental damage (fire, water, thunder, ice, dragon) when landing critical hits."
@@ -1569,7 +2253,13 @@
     {
         "id": 114,
         "name": {
-            "EN": "Mind's Eye/Ballistics"
+            "EN": "Mind's Eye/Ballistics",
+            "FR": "Oeil de l'esprit",
+            "JP": "心眼/弾導強化",
+            "IT": "Preveggenza/Balistica",
+            "DE": "Inneres Auge/Ballistik",
+            "KR": "심안/탄도 강화 ",
+            "CN": "心眼/彈道強化"
         },
         "description": {
             "EN": "Prevents attacks from being deflected. Also shortens the distance before ammo and arrows reach maximum power."
@@ -1581,7 +2271,13 @@
     {
         "id": 115,
         "name": {
-            "EN": "Bludgeoner"
+            "EN": "Bludgeoner",
+            "FR": "Matraquage",
+            "JP": "鈍器使い",
+            "IT": "Devastatore",
+            "DE": "Prügler",
+            "KR": "둔기 사용",
+            "CN": "鈍器能手"
         },
         "description": {
             "EN": "Raises attack as your weapon loses sharpness. Also boosts ranged weapon melee attacks and odds of stunning."
@@ -1593,7 +2289,13 @@
     {
         "id": 116,
         "name": {
-            "EN": "Non-elemental Boost"
+            "EN": "Non-elemental Boost",
+            "FR": "Secret de l'acier",
+            "JP": "無属性強化",
+            "IT": "Bonus non elementale",
+            "DE": "Nicht-Element-Boost",
+            "KR": "무속성 강화",
+            "CN": "無屬性強化"
         },
         "description": {
             "EN": "Powers up non-elemental weapons you have equipped."
@@ -1605,7 +2307,13 @@
     {
         "id": 117,
         "name": {
-            "EN": "Capture Master"
+            "EN": "Capture Master",
+            "FR": "Maître capture",
+            "JP": "捕獲名人",
+            "IT": "Maestro di cattura",
+            "DE": "Fangmeister",
+            "KR": "포획 명인",
+            "CN": "捕獲名人"
         },
         "description": {
             "EN": "High chance of increased capture rewards. (No effect when joining mid-quest.)"
@@ -1617,7 +2325,13 @@
     {
         "id": 118,
         "name": {
-            "EN": "Guard Up"
+            "EN": "Guard Up",
+            "FR": "Ultra garde",
+            "JP": "ガード強化",
+            "IT": "Guardia perfetta",
+            "DE": "Blocken hoch",
+            "KR": "가드 강화",
+            "CN": "防禦強化"
         },
         "description": {
             "EN": "Allows you to guard against ordinarily unblockable attacks."
@@ -1629,7 +2343,13 @@
     {
         "id": 119,
         "name": {
-            "EN": "Guts"
+            "EN": "Guts",
+            "FR": "Bravoure",
+            "JP": "根性",
+            "IT": "Tenacia",
+            "DE": "Stehvermögen",
+            "KR": "근성",
+            "CN": "毅力"
         },
         "description": {
             "EN": "Above a certain health threshold, you withstand an attack that would normally cart you (once only)."
@@ -1641,7 +2361,13 @@
     {
         "id": 120,
         "name": {
-            "EN": "Master's Touch"
+            "EN": "Master's Touch",
+            "FR": "Main de maître",
+            "JP": "達人芸",
+            "IT": "Tocco del maestro",
+            "DE": "Meisterschliff",
+            "KR": "달인의 재주",
+            "CN": "達人藝"
         },
         "description": {
             "EN": "Prevents your weapon from losing sharpness during critical hits."
@@ -1653,7 +2379,13 @@
     {
         "id": 121,
         "name": {
-            "EN": "Nullify Wind Pressure"
+            "EN": "Nullify Wind Pressure",
+            "FR": "Anti-vent",
+            "JP": "風圧完全無効",
+            "IT": "Annulla pressione vento",
+            "DE": "Negiert Winddruck",
+            "KR": "풍압 완전 무효",
+            "CN": "風壓完全無效"
         },
         "description": {
             "EN": "Negates all wind pressure."
@@ -1665,7 +2397,13 @@
     {
         "id": 122,
         "name": {
-            "EN": "Razor Sharp/Spare Shot"
+            "EN": "Razor Sharp/Spare Shot",
+            "FR": "Samouraï/Franc-tireur",
+            "JP": "業物/弾丸節約",
+            "IT": "Acutezza/Risparmia munizioni",
+            "DE": "Scharfschwert/Extraschuss",
+            "KR": "명검/탄환 절약",
+            "CN": "利刃/彈藥節約"
         },
         "description": {
             "EN": "Halves sharpness loss. For bows and bowguns, shots have a chance not to expend coatings or ammo."
@@ -1677,7 +2415,13 @@
     {
         "id": 123,
         "name": {
-            "EN": "Critical Status"
+            "EN": "Critical Status",
+            "FR": "Attaque perfide",
+            "JP": "会心撃【特殊】",
+            "IT": "Stato critico",
+            "DE": "Kritischer Status",
+            "KR": "회심격 [특수]",
+            "CN": "會心攻擊【特殊】"
         },
         "description": {
             "EN": "Increases abnormal status effect damage (paralysis, poison, sleep, blast) when landing critical hits."
@@ -1689,7 +2433,13 @@
     {
         "id": 124,
         "name": {
-            "EN": "Good Luck"
+            "EN": "Good Luck",
+            "FR": "Chance",
+            "JP": "幸運",
+            "IT": "Buona fortuna",
+            "DE": "Glück",
+            "KR": "행운",
+            "CN": "幸運"
         },
         "description": {
             "EN": "Good chance of increased quest rewards. (No effect when joining mid-quest.)"
@@ -1701,7 +2451,13 @@
     {
         "id": 125,
         "name": {
-            "EN": "Bow Charge Plus"
+            "EN": "Bow Charge Plus",
+            "FR": "Maître archer",
+            "JP": "弓溜め段階解放",
+            "IT": "Carica d'arco potenziata",
+            "DE": "Sehnenkraft",
+            "KR": "활 모으기 단계 해제",
+            "CN": "解放弓的蓄力階段"
         },
         "description": {
             "EN": "Increases max bow charge level by one."
@@ -1713,7 +2469,13 @@
     {
         "id": 126,
         "name": {
-            "EN": "Punishing Draw"
+            "EN": "Punishing Draw",
+            "FR": "Batto-jutsu",
+            "JP": "抜刀術【力】",
+            "IT": "Sfoderata punitrice",
+            "DE": "Bestrafender Zug",
+            "KR": "발도술 [힘]",
+            "CN": "拔刀術【力】"
         },
         "description": {
             "EN": "Adds a stun effect to draw attacks and slightly increases attack power."
@@ -1725,7 +2487,13 @@
     {
         "id": 127,
         "name": {
-            "EN": "Protective Polish"
+            "EN": "Protective Polish",
+            "FR": "Acier trempé",
+            "JP": "剛刃研磨",
+            "IT": "Strato protettivo",
+            "DE": "Schutzpolitur",
+            "KR": "칼날 연마",
+            "CN": "剛刃研磨"
         },
         "description": {
             "EN": "Weapon sharpness does not decrease for a set time after sharpening."
@@ -1737,7 +2505,13 @@
     {
         "id": 128,
         "name": {
-            "EN": "Poison Functionality"
+            "EN": "Poison Functionality",
+            "FR": "Apothicaire",
+            "JP": "毒ビン追加",
+            "IT": "Applica veleno",
+            "DE": "Giftbeschichtung",
+            "KR": "독병 추가",
+            "CN": "毒瓶追加"
         },
         "description": {
             "EN": "Allows you to apply poison coatings."
@@ -1749,7 +2523,13 @@
     {
         "id": 129,
         "name": {
-            "EN": "Para Functionality"
+            "EN": "Para Functionality",
+            "FR": "Gibier de potence",
+            "JP": "麻痺ビン追加",
+            "IT": "Applica paralisi",
+            "DE": "Lähmungsbeschicht.",
+            "KR": "마비병 추가",
+            "CN": "麻痹瓶追加"
         },
         "description": {
             "EN": "Allows you to apply paralysis coatings."
@@ -1761,7 +2541,13 @@
     {
         "id": 130,
         "name": {
-            "EN": "Sleep Functionality"
+            "EN": "Sleep Functionality",
+            "FR": "Marchand de sable",
+            "JP": "睡眠ビン追加",
+            "IT": "Applica sonno",
+            "DE": "Schlafbeschichtung",
+            "KR": "수면병 추가",
+            "CN": "睡眠瓶追加"
         },
         "description": {
             "EN": "Allows you to apply sleep coatings."
@@ -1773,7 +2559,13 @@
     {
         "id": 131,
         "name": {
-            "EN": "Blast Functionality"
+            "EN": "Blast Functionality",
+            "FR": "Maître bombardier",
+            "JP": "爆破ビン追加",
+            "IT": "Applica scoppio",
+            "DE": "Explosionsbeschicht.",
+            "KR": "폭파병 추가",
+            "CN": "爆破瓶追加"
         },
         "description": {
             "EN": "Allows you to apply blast coatings."
@@ -1785,7 +2577,13 @@
     {
         "id": 132,
         "name": {
-            "EN": "Elderseal Boost"
+            "EN": "Elderseal Boost",
+            "FR": "Sceau des anciens +",
+            "JP": "龍封力強化",
+            "IT": "Bonus sigillo anziano",
+            "DE": "Ältestensiegel-Boost",
+            "KR": "용봉력 강화",
+            "CN": "龍封力強化"
         },
         "description": {
             "EN": "Increases the Elderseal of weapons and dragon ammo."
@@ -1797,7 +2595,13 @@
     {
         "id": 133,
         "name": {
-            "EN": "Great Luck"
+            "EN": "Great Luck",
+            "FR": "Bonne fortune",
+            "JP": "強運",
+            "IT": "Gran fortuna",
+            "DE": "Glückserhöher",
+            "KR": "강운",
+            "CN": "強運"
         },
         "description": {
             "EN": "High chance of increased quest rewards. (No effect when joining mid-quest.)"
@@ -1809,7 +2613,13 @@
     {
         "id": 134,
         "name": {
-            "EN": "Carving Master"
+            "EN": "Carving Master",
+            "FR": "Maître dépeceur",
+            "JP": "剥ぎ取り名人",
+            "IT": "Maestro del ricavo",
+            "DE": "Zerlegemeister",
+            "KR": "갈무리 명인",
+            "CN": "剝取名人"
         },
         "description": {
             "EN": "Lets you carve one additional time. (No effect when joining mid-quest.)"
@@ -1821,7 +2631,13 @@
     {
         "id": 135,
         "name": {
-            "EN": "Elemental Airborne"
+            "EN": "Elemental Airborne",
+            "FR": "Châtiment des cieux",
+            "JP": "飛燕【属性】",
+            "IT": "Minaccia aerea elementale",
+            "DE": "Element-Luftherrschaft",
+            "KR": "비연 [속성]",
+            "CN": "飛燕【屬性】"
         },
         "description": {
             "EN": "Elemental damage increased for jumping attacks."
