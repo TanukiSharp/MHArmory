@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Text;
 using Cloo;
@@ -15,8 +16,8 @@ namespace MHArmory.Search.OpenCL
 
         public Host(IDeviceResolver deviceResolver)
         {
-            byte[] source = TrimUTFBOM(Properties.Resources.search);
-            string sourceStr = Encoding.ASCII.GetString(source);
+            ArraySegment<byte> source = TrimUTFBOM(Properties.Resources.search);
+            string sourceStr = Encoding.ASCII.GetString(source.Array, source.Offset, source.Count);
 
             device = deviceResolver.ResolveDevice();
             var properties = new ComputeContextPropertyList(device.Platform);
@@ -39,25 +40,23 @@ namespace MHArmory.Search.OpenCL
 
         // For some reason when you embed a string to an assembly's resources, it adds a UTF BOM,
         // and the OpenCL compiler doesn't like that. So this is to remove it manually.
-        private byte[] TrimUTFBOM(byte[] data)
+        private ArraySegment<byte> TrimUTFBOM(byte[] data)
         {
             byte[] bom = Encoding.UTF8.GetPreamble();
             if (data.Length < bom.Length)
             {
-                return data;
+                return new ArraySegment<byte>(data);
             }
 
             for (int i = 0; i < bom.Length; i++)
             {
                 if (bom[i] != data[i])
                 {
-                    return data;
+                    return new ArraySegment<byte>(data);
                 }
             }
-
-            byte[] copy = new byte[data.Length - bom.Length];
-            Buffer.BlockCopy(data, bom.Length, copy, 0, copy.Length);
-            return copy;
+            var segment = new ArraySegment<byte>(data, bom.Length, data.Length - bom.Length);
+            return segment;
         }
 
         public SerializedSearchResults Run(SerializedSearchParameters searchParameters)
