@@ -40,7 +40,7 @@ namespace MHArmory.Search.OpenCL
 
             var maps = new SearchIDMaps();
 
-            maps.EquipmentIdMap = CreateIDMap(allEquipment.Select(x => new Tuple<int, EquipmentType>(x.Id, x.Type)));
+            maps.EquipmentIdMap = CreateIDMap(allEquipment.Select(x => (x.Id, x.Type)));
             if (maps.EquipmentIdMap.Count > SearchLimits.TotalEquipments)
             {
                 throw new OpenCLSerializationException($"Tried to serialize {maps.EquipmentIdMap.Count} equipment pieces, maximum allowed is {SearchLimits.TotalEquipments}");
@@ -117,8 +117,7 @@ namespace MHArmory.Search.OpenCL
             var writer = new BinaryWriter(ms);
             foreach (IEquipment equipment in equipments)
             {
-                var tuple = new Tuple<int, EquipmentType>(equipment.Id, equipment.Type);
-                byte mappedID = maps.EquipmentIdMap[tuple];
+                byte mappedID = maps.EquipmentIdMap[(equipment.Id, equipment.Type)];
                 writer.Write((ushort)mappedID);
                 writer.Write((ushort)equipment.Id);
 
