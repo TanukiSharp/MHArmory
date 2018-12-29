@@ -16,7 +16,7 @@ namespace MHArmory.Search.OpenCL
         {
             serializer = new SearchDataSerializer();
             deserializer = new SearchResultDeserializer();
-            host = new Host(new DeviceResolver());
+            host = new Host(new AutomaticDeviceResolver());
         }
 
         // For debugging purposes

@@ -5,11 +5,11 @@ using Cloo;
 
 namespace MHArmory.Search.OpenCL
 {
-    internal class DeviceResolver : IDeviceResolver
+    internal class AutomaticDeviceResolver : IDeviceResolver
     {
         private readonly PreferredDeviceComparer comparer;
 
-        public DeviceResolver()
+        public AutomaticDeviceResolver()
         {
             comparer = new PreferredDeviceComparer();
         }
