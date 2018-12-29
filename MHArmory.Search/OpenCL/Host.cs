@@ -9,17 +9,17 @@ namespace MHArmory.Search.OpenCL
     {
         private readonly ComputeContext context;
         private readonly ComputeProgram program;
+        private readonly ComputeDevice device;
 
         private const string KernelName = "search";
 
-        public Host()
+        public Host(IDeviceResolver deviceResolver)
         {
             byte[] source = TrimUTFBOM(Properties.Resources.search);
             string sourceStr = Encoding.ASCII.GetString(source);
 
-            // TODO: We need a proper platform / device selection mechanism.
-            ComputePlatform platform = ComputePlatform.Platforms[2];
-            var properties = new ComputeContextPropertyList(platform);
+            device = deviceResolver.ResolveDevice();
+            var properties = new ComputeContextPropertyList(device.Platform);
             context = new ComputeContext(ComputeDeviceTypes.All, properties, null, IntPtr.Zero);
             program = new ComputeProgram(context, sourceStr);
 
@@ -74,7 +74,6 @@ namespace MHArmory.Search.OpenCL
             var resultCountBuffer = new ComputeBuffer<ushort>(context, ComputeMemoryFlags.ReadWrite | ComputeMemoryFlags.CopyHostPointer, resultCount);
             var resultBuffer = new ComputeBuffer<byte>(context, ComputeMemoryFlags.WriteOnly | ComputeMemoryFlags.CopyHostPointer, resultData);
 
-            ComputeDevice device = context.Devices[0]; // We need to run this on a single device, otherwise atomics don't work properly
             using (ComputeCommandQueue queue = new ComputeCommandQueue(context, device, ComputeCommandQueueFlags.None))
             {
                 using (ComputeKernel kernel = program.CreateKernel(KernelName))
