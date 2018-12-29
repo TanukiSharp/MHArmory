@@ -4,7 +4,7 @@ using System.Text;
 
 namespace MHArmory.Search.OpenCL
 {
-    class OpenCLSerializationException : Exception
+    public class OpenCLSerializationException : Exception
     {
         public OpenCLSerializationException() : base()
         {

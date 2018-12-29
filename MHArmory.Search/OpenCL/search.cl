@@ -108,38 +108,38 @@ bool is_match(const constant header_t* header, const equipment_t* equipments, co
 
 	// Init skills
 	int8_t skills_remaining[MAX_DESIRED_SKILLS];
-	for(size_t i = 0; i < header->desired_skill_count; ++i)
+	for(size_t i = 0; i < header->desired_skill_count; i++)
 	{
 		skills_remaining[i] = desired_skills[i].level;
 	}
 	
 	// Init set part progress
 	set_skill_progress_t set_skills[MAX_SET_SKILLS];
-	for(size_t i = 0; i < header->set_skill_count; ++i)
+	for(size_t i = 0; i < header->set_skill_count; i++)
 	{
 		set_skills[i].progress = 0;
 	}
 
 	// Init slots
 	int8_t total_slots[SLOT_ARR_LEN];
-	for(size_t i = 0; i < SLOT_ARR_LEN; ++i)
+	for(size_t i = 0; i < SLOT_ARR_LEN; i++)
 	{
 		total_slots[i] = header->weapon_slots[i];
 	}
 
-	for(size_t i = 0; i < EQUIPMENT_TYPES; ++i)
+	for(size_t i = 0; i < EQUIPMENT_TYPES; i++)
 	{
 		const equipment_t* equipment = &equipments[i];
 
 		// Basic skills
-		for(size_t j = 0; j < SKILLS_PER_EQUIPMENT; ++j)
+		for(size_t j = 0; j < SKILLS_PER_EQUIPMENT; j++)
 		{
 			const skill_t equipment_skill = equipment->skills[j];
 			skills_remaining[equipment_skill.id] -= equipment_skill.level;
 		}
 
 		// Accumulating set skills
-		for(size_t j = 0; j < SET_SKILLS_PER_EQUIPMENT; ++j)
+		for(size_t j = 0; j < SET_SKILLS_PER_EQUIPMENT; j++)
 		{
 			const set_skill_t set_skill = equipment->set_skills[j];
 			if(set_skill.id >= MAX_SET_SKILLS)
@@ -153,7 +153,7 @@ bool is_match(const constant header_t* header, const equipment_t* equipments, co
 		}
 
 		// Counting slots
-		for(size_t j = 0; j < SLOT_ARR_LEN; ++j)
+		for(size_t j = 0; j < SLOT_ARR_LEN; j++)
 		{
 			total_slots[j] += equipment->slots[j];
 		}
@@ -162,7 +162,7 @@ bool is_match(const constant header_t* header, const equipment_t* equipments, co
 	}
 
 	// Finalizing set skills
-	for(size_t i = 0; i < header->set_skill_count; ++i)
+	for(size_t i = 0; i < header->set_skill_count; i++)
 	{
 		if(set_skills[i].progress >= set_skills[i].requirement)
 		{
@@ -171,7 +171,7 @@ bool is_match(const constant header_t* header, const equipment_t* equipments, co
 	}
 
 	// Slotting decorations
-	for (size_t i = 0; i < header->deco_count; ++i)
+	for (size_t i = 0; i < header->deco_count; i++)
 	{
 		const deco_t deco = decos[i];
 		const int8_t missing = skills_remaining[deco.skill.id];
@@ -179,7 +179,7 @@ bool is_match(const constant header_t* header, const equipment_t* equipments, co
 		{
 			int8_t need_decos = missing < deco.available ? missing : deco.available;
 			int8_t taken_decos = 0;
-			for (size_t j = deco.slots; j < SLOT_ARR_LEN; ++j)
+			for (size_t j = deco.slots; j < SLOT_ARR_LEN; j++)
 			{
 				int8_t slots = total_slots[j];
 				int8_t taken_from_slot = need_decos < slots ? need_decos : slots;
@@ -199,7 +199,7 @@ bool is_match(const constant header_t* header, const equipment_t* equipments, co
 	}
 
 	// Verifying match
-	for(size_t i = 0; i < header->desired_skill_count; ++i)
+	for(size_t i = 0; i < header->desired_skill_count; i++)
 	{
 		match &= skills_remaining[i] <= 0;
 	}
@@ -213,7 +213,7 @@ kernel void search(const constant header_t* header, const constant equipment_t* 
 
 	equipment_t equipments[EQUIPMENT_TYPES];
 	size_t offset = 0;
-	for(size_t i = 0; i < EQUIPMENT_TYPES; ++i)
+	for(size_t i = 0; i < EQUIPMENT_TYPES; i++)
 	{
 		uint8_t equipment_count = header->equipment_counts[i];
 		size_t index = combination % equipment_count + offset;

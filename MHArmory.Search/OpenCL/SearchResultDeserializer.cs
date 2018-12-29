@@ -7,7 +7,7 @@ using MHArmory.Core.DataStructures;
 
 namespace MHArmory.Search.OpenCL
 {
-    class SearchResultDeserializer
+    internal class SearchResultDeserializer
     {
         public List<ArmorSetSearchResult> Deserialize(ISolverData data, SearchIDMaps maps, SerializedSearchResults serializedResults)
         {
@@ -19,14 +19,14 @@ namespace MHArmory.Search.OpenCL
             var ms = new MemoryStream(serializedResults.Data);
             var reader = new BinaryReader(ms);
 
-            for (int i = 0; i < serializedResults.ResultCount; ++i)
+            for (int i = 0; i < serializedResults.ResultCount; i++)
             {
                 var result = new ArmorSetSearchResult();
                 result.ArmorPieces = new List<IArmorPiece>();
                 result.Jewels = new List<ArmorSetJewelResult>();
                 result.IsMatch = true;
 
-                for (int j = 0; j < 5; ++j)
+                for (int j = 0; j < 5; j++)
                 {
                     ushort id = reader.ReadUInt16();
                     var tuple = new Tuple<int, EquipmentType>(id, (EquipmentType) j + 1);
@@ -39,14 +39,16 @@ namespace MHArmory.Search.OpenCL
                 result.Charm = (ICharmLevel)equipmentDict[charmTuple];
 
                 byte decorationCount = reader.ReadByte();
-                for (int j = 0; j < decorationCount; ++j)
+                for (int j = 0; j < decorationCount; j++)
                 {
                     ushort id = reader.ReadUInt16();
                     byte count = reader.ReadByte();
                     IJewel jewel = decoDict[id].Jewel;
-                    var jewelResult = new ArmorSetJewelResult();
-                    jewelResult.Jewel = jewel;
-                    jewelResult.Count = count;
+                    var jewelResult = new ArmorSetJewelResult
+                    {
+                        Jewel = jewel,
+                        Count = count
+                    };
                     result.Jewels.Add(jewelResult);
                 }
 

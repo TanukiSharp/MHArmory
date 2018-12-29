@@ -5,10 +5,11 @@ using Cloo;
 
 namespace MHArmory.Search.OpenCL
 {
-    class Host : IDisposable
+    internal class Host : IDisposable
     {
-        private ComputeContext Context { get; }
-        private ComputeProgram Program { get; }
+        private readonly ComputeContext context;
+        private readonly ComputeProgram program;
+
         private const string KernelName = "search";
 
         public Host()
@@ -19,8 +20,8 @@ namespace MHArmory.Search.OpenCL
             // TODO: We need a proper platform / device selection mechanism.
             ComputePlatform platform = ComputePlatform.Platforms[2];
             var properties = new ComputeContextPropertyList(platform);
-            Context = new ComputeContext(ComputeDeviceTypes.All, properties, null, IntPtr.Zero);
-            Program = new ComputeProgram(Context, sourceStr);
+            context = new ComputeContext(ComputeDeviceTypes.All, properties, null, IntPtr.Zero);
+            program = new ComputeProgram(context, sourceStr);
 
             var optionsBuilder = new HostOptionsBuilder();
             optionsBuilder.AddDefine("MAX_RESULTS", SearchLimits.ResultCount);
@@ -33,7 +34,7 @@ namespace MHArmory.Search.OpenCL
             optionsBuilder.AddDefine("EQUIPMENT_TYPES", SearchLimits.EquipmentTypes);
             string options = optionsBuilder.ToString();
 
-            Program.Build(null, options, null, IntPtr.Zero);
+            program.Build(null, options, null, IntPtr.Zero);
         }
 
         // For some reason when you embed a string to an assembly's resources, it adds a UTF BOM,
@@ -66,17 +67,17 @@ namespace MHArmory.Search.OpenCL
             byte[] resultData = new byte[resultLen];
 
             // Not that much data, better copy to device (CopyHostPointer) and back rather than query the host (UseHostPointer)
-            var headerBuffer = new ComputeBuffer<byte>(Context, ComputeMemoryFlags.ReadOnly | ComputeMemoryFlags.CopyHostPointer, searchParameters.Header);
-            var equipmentBuffer = new ComputeBuffer<byte>(Context, ComputeMemoryFlags.ReadOnly | ComputeMemoryFlags.CopyHostPointer, searchParameters.Equipment);
-            var decoBuffer = new ComputeBuffer<byte>(Context, ComputeMemoryFlags.ReadOnly | ComputeMemoryFlags.CopyHostPointer, searchParameters.Decorations);
-            var desiredSkillBuffer = new ComputeBuffer<byte>(Context, ComputeMemoryFlags.ReadOnly | ComputeMemoryFlags.CopyHostPointer, searchParameters.DesiredSkills);
-            var resultCountBuffer = new ComputeBuffer<ushort>(Context, ComputeMemoryFlags.ReadWrite | ComputeMemoryFlags.CopyHostPointer, resultCount);
-            var resultBuffer = new ComputeBuffer<byte>(Context, ComputeMemoryFlags.WriteOnly | ComputeMemoryFlags.CopyHostPointer, resultData);
+            var headerBuffer = new ComputeBuffer<byte>(context, ComputeMemoryFlags.ReadOnly | ComputeMemoryFlags.CopyHostPointer, searchParameters.Header);
+            var equipmentBuffer = new ComputeBuffer<byte>(context, ComputeMemoryFlags.ReadOnly | ComputeMemoryFlags.CopyHostPointer, searchParameters.Equipment);
+            var decoBuffer = new ComputeBuffer<byte>(context, ComputeMemoryFlags.ReadOnly | ComputeMemoryFlags.CopyHostPointer, searchParameters.Decorations);
+            var desiredSkillBuffer = new ComputeBuffer<byte>(context, ComputeMemoryFlags.ReadOnly | ComputeMemoryFlags.CopyHostPointer, searchParameters.DesiredSkills);
+            var resultCountBuffer = new ComputeBuffer<ushort>(context, ComputeMemoryFlags.ReadWrite | ComputeMemoryFlags.CopyHostPointer, resultCount);
+            var resultBuffer = new ComputeBuffer<byte>(context, ComputeMemoryFlags.WriteOnly | ComputeMemoryFlags.CopyHostPointer, resultData);
 
-            ComputeDevice device = Context.Devices[0]; // We need to run this on a single device, otherwise atomics don't work properly
-            using (ComputeCommandQueue queue = new ComputeCommandQueue(Context, device, ComputeCommandQueueFlags.None))
+            ComputeDevice device = context.Devices[0]; // We need to run this on a single device, otherwise atomics don't work properly
+            using (ComputeCommandQueue queue = new ComputeCommandQueue(context, device, ComputeCommandQueueFlags.None))
             {
-                using (ComputeKernel kernel = Program.CreateKernel(KernelName))
+                using (ComputeKernel kernel = program.CreateKernel(KernelName))
                 {
                     kernel.SetMemoryArgument(0, headerBuffer);
                     kernel.SetMemoryArgument(1, equipmentBuffer);
@@ -102,8 +103,8 @@ namespace MHArmory.Search.OpenCL
 
         public void Dispose()
         {
-            Program.Dispose();
-            Context.Dispose();
+            program.Dispose();
+            context.Dispose();
         }
     }
 }

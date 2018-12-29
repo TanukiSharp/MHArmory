@@ -6,7 +6,7 @@ using MHArmory.Core.DataStructures;
 
 namespace MHArmory.Search.OpenCL
 {
-    public class SearchDataSerializer
+    internal class SearchDataSerializer
     {
         public SerializedSearchParameters Serialize(ISolverData data)
         {
@@ -19,10 +19,21 @@ namespace MHArmory.Search.OpenCL
             var legs = data.AllLegs.Where(x => x.IsSelected).Select(x => x.Equipment).ToList();
             var charms = data.AllCharms.Where(x => x.IsSelected).Select(x => x.Equipment).ToList();
 
-            var allArmorPieces = heads.Concat(chests).Concat(gloves).Concat(waists).Concat(legs).Cast<IArmorPiece>().ToList();
+            var allArmorPieces = heads
+                .Concat(chests)
+                .Concat(gloves)
+                .Concat(waists)
+                .Concat(legs)
+                .Cast<IArmorPiece>()
+                .ToList();
+
             var allEquipment = allArmorPieces.Concat(charms).ToList();
 
-            var armorSetParts = allArmorPieces.Where(x => x.ArmorSetSkills != null).SelectMany(x => x.ArmorSetSkills.SelectMany(y => y.Parts)).ToList();
+            var armorSetParts = allArmorPieces
+                .Where(x => x.ArmorSetSkills != null)
+                .SelectMany(x => x.ArmorSetSkills.SelectMany(y => y.Parts))
+                .ToList();
+
             var desiredAbilitiesSkillSet = new HashSet<int>(data.DesiredAbilities.Select(x => x.Skill.Id));
             IEnumerable<IArmorSetSkillPart> desiredArmorSetParts = armorSetParts.Where(x => x.GrantedSkills.Any(y => desiredAbilitiesSkillSet.Contains(y.Skill.Id)));
             IEnumerable<int> desiredSkillIDs = data.DesiredAbilities.Select(x => x.Skill.Id);
@@ -53,18 +64,19 @@ namespace MHArmory.Search.OpenCL
                 throw new OpenCLSerializationException($"Tried to serialize {maps.SkillIdMap.Count} distinct skills, maximum allowed is {SearchLimits.MaxDesiredSkills}");
             }
 
-            byte[] header = new byte[13];
-            SerializeWeaponSlots(data.WeaponSlots, header);
-            header[4] = (byte)heads.Count;
-            header[5] = (byte)chests.Count;
-            header[6] = (byte)gloves.Count;
-            header[7] = (byte)waists.Count;
-            header[8] = (byte)legs.Count;
-            header[9] = (byte)charms.Count;
-            header[10] = (byte)data.AllJewels.Length;
-            header[11] = (byte)data.DesiredAbilities.Length;
-            header[12] = (byte)maps.SetIdMap.Count;
-            parameters.Header = header;
+            var headerStream = new MemoryStream();
+            var headerWriter = new BinaryWriter(headerStream);
+            SerializeWeaponSlots(data.WeaponSlots, headerWriter);
+            headerWriter.Write((byte)heads.Count);
+            headerWriter.Write((byte)chests.Count);
+            headerWriter.Write((byte)gloves.Count);
+            headerWriter.Write((byte)waists.Count);
+            headerWriter.Write((byte)legs.Count);
+            headerWriter.Write((byte)charms.Count);
+            headerWriter.Write((byte)data.AllJewels.Length);
+            headerWriter.Write((byte)data.DesiredAbilities.Length);
+            headerWriter.Write((byte)maps.SetIdMap.Count);
+            parameters.Header = headerStream.ToArray();
 
             parameters.Equipment = SerializeEquipment(maps, allEquipment);
             parameters.DesiredSkills = SerializeDesiredSkills(maps, data.DesiredAbilities);
@@ -89,12 +101,14 @@ namespace MHArmory.Search.OpenCL
             return map;
         }
 
-        private void SerializeWeaponSlots(int[] weaponSlots, byte[] header)
+        private void SerializeWeaponSlots(int[] weaponSlots, BinaryWriter writer)
         {
+            byte[] slots = new byte[4];
             foreach (int weaponSlot in weaponSlots)
             {
-                header[weaponSlot]++;
+                slots[weaponSlot]++;
             }
+            writer.Write(slots);
         }
 
         private byte[] SerializeEquipment(SearchIDMaps maps, IEnumerable<IEquipment> equipments)
@@ -123,7 +137,7 @@ namespace MHArmory.Search.OpenCL
                 byte[] slots = new byte[4];
                 foreach (int slot in equipment.Slots)
                 {
-                    ++slots[slot];
+                    slots[slot]++;
                 }
                 writer.Write(slots);
             }
@@ -141,7 +155,7 @@ namespace MHArmory.Search.OpenCL
             {
                 SerializeAbility(maps, ability, writer);
             }
-            for (int i = abilities.Length; i < SearchLimits.SkillsPerEquipment; ++i)
+            for (int i = abilities.Length; i < SearchLimits.SkillsPerEquipment; i++)
             {
                 SerializeNullAbility(writer);
             }
@@ -159,7 +173,7 @@ namespace MHArmory.Search.OpenCL
             {
                 SerializeSetSkill(maps, part, writer);
             }
-            for (int i = skillCount; i < SearchLimits.SetSkillsPerEquipment; ++i)
+            for (int i = skillCount; i < SearchLimits.SetSkillsPerEquipment; i++)
             {
                 SerializeNullSetSkill(writer);
             }

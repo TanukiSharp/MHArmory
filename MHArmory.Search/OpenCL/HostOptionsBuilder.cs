@@ -2,28 +2,28 @@ using System.Text;
 
 namespace MHArmory.Search.OpenCL
 {
-    class HostOptionsBuilder
+    internal class HostOptionsBuilder
     {
-        private StringBuilder InnerBuilder { get; }
+        private readonly StringBuilder innerBuilder;
 
         public HostOptionsBuilder()
         {
-            InnerBuilder = new StringBuilder();
+            innerBuilder = new StringBuilder();
         }
 
         public void AddDefine(string name)
         {
-            InnerBuilder.Append($"-D {name} ");
+            innerBuilder.Append($"-D {name} ");
         }
 
         public void AddDefine(string name, object value)
         {
-            InnerBuilder.Append($"-D {name}={value} ");
+            innerBuilder.Append($"-D {name}={value} ");
         }
 
         public override string ToString()
         {
-            return InnerBuilder.ToString(0, InnerBuilder.Length - 1);
+            return innerBuilder.ToString(0, innerBuilder.Length - 1);
         }
     }
 }

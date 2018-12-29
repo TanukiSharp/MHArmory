@@ -4,7 +4,7 @@ using System.Text;
 
 namespace MHArmory.Search.OpenCL
 {
-    class SearchLimits
+    internal class SearchLimits
     {
         // WARNING:
         // Changing some these parameters may result in incorrect search behavior,
@@ -13,8 +13,8 @@ namespace MHArmory.Search.OpenCL
 
         public const int ResultCount = 128;         // Should be safe to change
 
-        public const int TotalEquipments = 0x100;   // Byte for mapped ID
-        public const int TotalJewels = 0x100;       // Byte for mapped ID
+        public const int TotalEquipments = 0x100;   // One byte for mapped ID
+        public const int TotalJewels = 0x100;       // One byte for mapped ID
 
         public const int MaxJewelSize = 3;
         public const int SlotsPerEquipment = 3;

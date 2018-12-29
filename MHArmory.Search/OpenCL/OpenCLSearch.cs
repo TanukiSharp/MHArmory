@@ -1,38 +1,28 @@
-using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace MHArmory.Search.OpenCL
 {
     public class OpenCLSearch
     {
-        private SearchDataSerializer Serializer { get; }
-        private SearchResultDeserializer Deserializer { get; }
-        private Host Host { get; }
+        private readonly SearchDataSerializer serializer;
+        private readonly SearchResultDeserializer deserializer;
+        private readonly Host host;
 
-        private static OpenCLSearch _instance;
-        public static OpenCLSearch Instance
-        {
-            get
-            {
-                return _instance ?? (_instance = new OpenCLSearch());
-            }
-        }
+        public static OpenCLSearch Instance { get; } = new OpenCLSearch();
 
         private OpenCLSearch()
         {
-            Serializer = new SearchDataSerializer();
-            Deserializer = new SearchResultDeserializer();
-            Host = new Host();
+            serializer = new SearchDataSerializer();
+            deserializer = new SearchResultDeserializer();
+            host = new Host();
         }
 
         // For debugging purposes
-        private void WriteByteArr(StreamWriter writer, string title, byte[] data)
+        private void WriteByteArray(StreamWriter writer, string title, byte[] data)
         {
-            string str = data.Select(x => $"0x{x:X2}").Aggregate((c, n) => c + ", " + n);
+            string str = string.Join(", ", data.Select(x => $"0x{x:X2}"));
             writer.WriteLine($"auto {title} = std::vector<uint8_t> {{{str}}};");
             writer.WriteLine();
         }
@@ -43,20 +33,20 @@ namespace MHArmory.Search.OpenCL
             using (FileStream file = File.OpenWrite("dump.txt"))
             {
                 var writer = new StreamWriter(file);
-                WriteByteArr(writer, "header", searchParameters.Header);
-                WriteByteArr(writer, "equipment", searchParameters.Equipment);
-                WriteByteArr(writer, "decorations", searchParameters.Decorations);
-                WriteByteArr(writer, "desired_skills", searchParameters.DesiredSkills);
+                WriteByteArray(writer, "header", searchParameters.Header);
+                WriteByteArray(writer, "equipment", searchParameters.Equipment);
+                WriteByteArray(writer, "decorations", searchParameters.Decorations);
+                WriteByteArray(writer, "desired_skills", searchParameters.DesiredSkills);
                 writer.Flush();
             }
         }
 
         public List<ArmorSetSearchResult> Run(ISolverData data)
         {
-            SerializedSearchParameters serializedData = Serializer.Serialize(data);
+            SerializedSearchParameters serializedData = serializer.Serialize(data);
             //DumpSerializedData(serializedData); 
-            SerializedSearchResults serializedResults = Host.Run(serializedData);
-            List<ArmorSetSearchResult> results = Deserializer.Deserialize(data, serializedData.SearchIDMaps, serializedResults);
+            SerializedSearchResults serializedResults = host.Run(serializedData);
+            List<ArmorSetSearchResult> results = deserializer.Deserialize(data, serializedData.SearchIDMaps, serializedResults);
             return results;
         }
     }

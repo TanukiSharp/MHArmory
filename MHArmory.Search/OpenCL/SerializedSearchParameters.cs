@@ -4,7 +4,7 @@ using System.Threading.Tasks;
 
 namespace MHArmory.Search.OpenCL
 {
-    public class SerializedSearchParameters
+    internal class SerializedSearchParameters
     {
         public uint Combinations { get; set; }
         public SearchIDMaps SearchIDMaps { get; set; }
