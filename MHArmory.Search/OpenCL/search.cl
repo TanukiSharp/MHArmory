@@ -98,6 +98,7 @@ typedef struct __attribute__((packed)) struct_result_t
     uint16_t equipment_ids[6];
     uint8_t deco_count;
     deco_usage_t decos[(EQUIPMENT_TYPES + 1) * 3];
+    int8_t spare_slots[SLOT_ARR_LEN];
 } result_t;
 
 bool is_match(const constant header_t* header, const equipment_t* equipments, const constant deco_t* decos, const constant skill_t* desired_skills, result_t* result)
@@ -196,6 +197,12 @@ bool is_match(const constant header_t* header, const equipment_t* equipments, co
                 ++result->deco_count;
             }
         }
+    }
+
+    // Setting spare slots
+    for (size_t i = 0; i < SLOT_ARR_LEN; i++)
+    {
+        result->spare_slots[i] = total_slots[i];
     }
 
     // Verifying match

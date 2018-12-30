@@ -32,8 +32,8 @@ namespace MHArmory.Search.OpenCL
                 result.ArmorPieces = new List<IArmorPiece>();
                 result.Jewels = new List<ArmorSetJewelResult>();
                 result.IsMatch = true;
-
-                for (int j = 0; j < 5; j++)
+                const int equipmentTypesWithoutCharm = SearchLimits.EquipmentTypes - 1;
+                for (int j = 0; j < equipmentTypesWithoutCharm; j++)
                 {
                     ushort id = reader.ReadUInt16();
                     var armor = (IArmorPiece)equipmentDict[(id, (EquipmentType)j + 1)];
@@ -59,7 +59,8 @@ namespace MHArmory.Search.OpenCL
 
                 int remainingDecos = LengthConstants.DecorationsPerResult - decorationCount;
                 reader.ReadBytes(remainingDecos * LengthConstants.DecorationLength);
-                result.SpareSlots = new int[3];
+                reader.ReadByte(); // Read dummy byte for 0-sized slots
+                result.SpareSlots = reader.ReadBytes(SearchLimits.MaxJewelSize).Select(b => (int)b).ToArray();
 
                 results.Add(result);
             }
