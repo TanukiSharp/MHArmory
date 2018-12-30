@@ -8,6 +8,8 @@ namespace MHArmory.Search.OpenCL
 {
     internal class SearchDataSerializer
     {
+        private const int SlotArraySize = SearchLimits.MaxJewelSize + 1; // +1 because it's also counting no-slot into index 0
+
         public SerializedSearchParameters Serialize(ISolverData data)
         {
             var parameters = new SerializedSearchParameters();
@@ -103,7 +105,7 @@ namespace MHArmory.Search.OpenCL
 
         private void SerializeWeaponSlots(int[] weaponSlots, BinaryWriter writer)
         {
-            byte[] slots = new byte[4];
+            byte[] slots = new byte[SlotArraySize];
             foreach (int weaponSlot in weaponSlots)
             {
                 slots[weaponSlot]++;
@@ -133,7 +135,7 @@ namespace MHArmory.Search.OpenCL
                         SerializeNullSetSkill(writer);
                     }
                 }
-                byte[] slots = new byte[4];
+                byte[] slots = new byte[SlotArraySize];
                 foreach (int slot in equipment.Slots)
                 {
                     slots[slot]++;

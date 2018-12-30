@@ -62,8 +62,8 @@ namespace MHArmory.Search.OpenCL
         public SerializedSearchResults Run(SerializedSearchParameters searchParameters)
         {
             ushort[] resultCount = new ushort[1];
-            const int resultLen = SearchLimits.ResultCount * (sizeof(ushort) * SearchLimits.TotalEquipments + 1 + 3 * (SearchLimits.TotalEquipments + 1) * SearchLimits.SlotsPerEquipment);
-            byte[] resultData = new byte[resultLen];
+
+            byte[] resultData = new byte[LengthConstants.ResultLength];
 
             // Not that much data, better copy to device (CopyHostPointer) and back rather than query the host (UseHostPointer)
             var headerBuffer = new ComputeBuffer<byte>(context, ComputeMemoryFlags.ReadOnly | ComputeMemoryFlags.CopyHostPointer, searchParameters.Header);
