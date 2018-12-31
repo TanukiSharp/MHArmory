@@ -5,7 +5,6 @@ using System.Text;
 using System.Threading.Tasks;
 using MHArmory.Core;
 using MHArmory.Core.DataStructures;
-using MHArmory.Core.Interfaces;
 
 namespace MHArmory.ViewModels
 {
