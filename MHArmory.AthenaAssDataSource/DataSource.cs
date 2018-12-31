@@ -32,17 +32,6 @@ namespace MHArmory.AthenaAssDataSource
 
         private Dictionary<string, string[]> skillsLocalizations;
 
-        private readonly Dictionary<string, string> availableLanguageCodes = new Dictionary<string, string>
-        {
-            ["EN"] = "English",
-            ["FR"] = "Français",
-            ["JP"] = "日本語",
-            ["IT"] = "Italiano",
-            ["DE"] = "Deutsch",
-            ["KR"] = "한국어",
-            ["CN"] = "中文繁體",
-        };
-
         public DataSource(ILogger logger, IDirectoryBrowserService directoryBrowserService, IMessageBoxService messageBoxService)
         {
             this.logger = logger;
@@ -325,7 +314,7 @@ namespace MHArmory.AthenaAssDataSource
 
                 armorSetSkills.Add(new ArmorSetSkill(
                     id,
-                    availableLanguageCodes.ToDictionary(kv1 => kv1.Key, kv2 => skillsLocalizations[kv2.Key][nonTaskSkills.Length + id]),
+                    Localization.AvailableLanguageCodes.ToDictionary(kv1 => kv1.Key, kv2 => skillsLocalizations[kv2.Key][nonTaskSkills.Length + id]),
                     armorSetSkillParts
                 ));
 
@@ -376,19 +365,19 @@ namespace MHArmory.AthenaAssDataSource
                 var skill = new SkillPrimitiveHighLevel
                 {
                     MaxLevel = skillPrimitive.MaxLevel,
-                    Name = availableLanguageCodes.ToDictionary(kv1 => kv1.Key, kv2 => skillsLocalizations[kv2.Key][index])
+                    Name = Localization.AvailableLanguageCodes.ToDictionary(kv1 => kv1.Key, kv2 => skillsLocalizations[kv2.Key][index])
                 };
 
                 localSkills.Add(new DataStructures.Skill(
                     index,
-                    availableLanguageCodes.ToDictionary(kv1 => kv1.Key, kv2 => skillsDescriptionsLocalizations[kv2.Key][index]),
+                    Localization.AvailableLanguageCodes.ToDictionary(kv1 => kv1.Key, kv2 => skillsDescriptionsLocalizations[kv2.Key][index]),
                     skill
                 ));
             }
 
             abilities = localSkills
                 .SelectMany(s => s.Abilities)
-                .ForEach((a, i) => ((Ability)a).Update(i, availableLanguageCodes.ToDictionary(kv1 => kv1.Key, kv2 => abilitiesDescriptionsLocalizations[kv2.Key][i])))
+                .ForEach((a, i) => ((Ability)a).Update(i, Localization.AvailableLanguageCodes.ToDictionary(kv1 => kv1.Key, kv2 => abilitiesDescriptionsLocalizations[kv2.Key][i])))
                 .Distinct(AbilityEqualityComparer.Default)
                 .ToArray();
 
@@ -733,7 +722,7 @@ namespace MHArmory.AthenaAssDataSource
         {
             var result = new Dictionary<string, string[]>();
 
-            foreach (KeyValuePair<string, string> language in availableLanguageCodes)
+            foreach (KeyValuePair<string, string> language in Localization.AvailableLanguageCodes)
             {
                 string fullFilePath = Path.Combine(dataFolderPath, "Languages", language.Value, file);
                 result[language.Key] = File.ReadAllLines(fullFilePath);

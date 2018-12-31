@@ -24,9 +24,9 @@ namespace MHArmory.ViewModels
         }
 
         public int SkillId { get { return Ability.Skill.Id; } }
-        public string SkillName { get { return Ability.Skill.Name; } } // TODO: localization here
+        public Dictionary<string, string> SkillName { get { return Ability.Skill.Name; } }
         public int Level { get { return Ability.Level; } }
-        public string AbilityDescription { get { return Ability.Description; } } // TODO: localization here
+        public Dictionary<string, string> AbilityDescription { get { return Ability.Description; } }
 
         private FullSkillDescriptionViewModel description;
         public FullSkillDescriptionViewModel Description
@@ -65,12 +65,19 @@ namespace MHArmory.ViewModels
         private readonly RootViewModel root;
         private readonly SkillSelectorViewModel skillSelector;
 
-        public string Name { get { return skill.Name; } } // TODO: localization here
-        public string Description { get { return skill.Description; } } // TODO: localization here
+        public Dictionary<string, string> Name { get { return skill.Name; } }
+        public Dictionary<string, string> Description { get { return skill.Description; } }
 
-        public string JewelsText { get; private set; } // TODO: localization here
+        private string jewelsText;
+        public string JewelsText
+        {
+            get { return jewelsText; }
+            private set { SetValue(ref jewelsText, value); }
+        }
 
         public IList<AbilityViewModel> Abilities { get; }
+
+        private static readonly Dictionary<string, string> ExcludeText = new Dictionary<string, string> { ["EN"] = "Exclude" };
 
         public SkillViewModel(ISkill skill, IList<IJewel> jewels, RootViewModel root, SkillSelectorViewModel skillSelector)
         {
@@ -79,10 +86,7 @@ namespace MHArmory.ViewModels
             this.root = root;
             this.skillSelector = skillSelector;
 
-            if (jewels == null || jewels.Count == 0)
-                JewelsText = "(no jewel)";
-            else
-                JewelsText = $"({string.Join(", ", jewels.Select(x => $"{x.Name} [{x.SlotSize}]"))})";
+            UpdateJewelsText();
 
             root.InParameters.PropertyChanged += InParameters_PropertyChanged;
 
@@ -93,9 +97,17 @@ namespace MHArmory.ViewModels
                 .ToList();
 
             // Insert the "skill exlusion" item at position 0.
-            Abilities.Insert(0, new AbilityViewModel(new Ability(skill, 0, "Exclude"), this));
+            Abilities.Insert(0, new AbilityViewModel(new Ability(skill, 0, ExcludeText), this));
 
             UpdateAvailability();
+        }
+
+        private void UpdateJewelsText()
+        {
+            if (jewels == null || jewels.Count == 0)
+                JewelsText = "(no jewel)";
+            else
+                JewelsText = $"({string.Join(", ", jewels.Select(x => $"{Localization.Get(x.Name)} [{x.SlotSize}]"))})";
         }
 
         private void InParameters_PropertyChanged(object sender, System.ComponentModel.PropertyChangedEventArgs e)
@@ -141,9 +153,9 @@ namespace MHArmory.ViewModels
             }
 
             IsVisible =
-                searchStatement.IsMatching(skill.Name) ||
-                searchStatement.IsMatching(skill.Description) ||
-                skill.Abilities.Any(x => searchStatement.IsMatching(x.Description)) ||
+                searchStatement.IsMatching(Localization.Get(skill.Name)) ||
+                searchStatement.IsMatching(Localization.Get(skill.Description)) ||
+                skill.Abilities.Any(x => searchStatement.IsMatching(Localization.Get(x.Description))) ||
                 searchStatement.IsMatching(JewelsText);
         }
 

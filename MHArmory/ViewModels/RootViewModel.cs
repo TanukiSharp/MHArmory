@@ -108,6 +108,8 @@ namespace MHArmory.ViewModels
 
         public IReadOnlyList<EquipmentViewModel> AllEquipments { get; internal set; }
 
+        public LanguageViewModel[] Languages { get; private set; }
+
         public RootViewModel()
         {
             CloseApplicationCommand = new AnonymousCommand(OnCloseApplication);
@@ -126,10 +128,31 @@ namespace MHArmory.ViewModels
             InParameters = new InParametersViewModel(this);
             WeaponsContainer = new WeaponsContainerViewModel(this);
             EquipmentOverride = new EquipmentOverrideViewModel(this);
+
+            SetupLocalization();
+        }
+
+        private void SetupLocalization()
+        {
+            Localization.Language = GlobalData.Instance.Configuration.Language ?? Localization.DefaultLanguage;
+
+            Languages = Localization.AvailableLanguageCodes
+                .Select(kv => new LanguageViewModel(kv.Key, kv.Value))
+                .ToArray();
+
+            Localization.LanguageChanged += Localization_LanguageChanged;
+        }
+
+        private void Localization_LanguageChanged(object sender, EventArgs e)
+        {
+            GlobalData.Instance.Configuration.Language = Localization.Language;
+            ConfigurationManager.Save(GlobalData.Instance.Configuration);
         }
 
         public void Dispose()
         {
+            Localization.LanguageChanged -= Localization_LanguageChanged;
+
             if (loadoutManager != null)
             {
                 loadoutManager.LoadoutChanged -= LoadoutManager_LoadoutChanged;
@@ -479,7 +502,7 @@ namespace MHArmory.ViewModels
 
                 if (decoOverrides != null)
                 {
-                    if (decoOverrides.TryGetValue(jewel.Name, out DecorationOverrideConfigurationItem found) && found.IsOverriding)
+                    if (decoOverrides.TryGetValue(Localization.GetDefault(jewel.Name), out DecorationOverrideConfigurationItem found) && found.IsOverriding)
                         return new SolverDataJewelModel(jewel, found.Count);
                 }
             }

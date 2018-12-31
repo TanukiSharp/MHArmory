@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
 using MHArmory.Configurations;
+using MHArmory.Core;
 using MHArmory.Services;
 
 namespace MHArmory.ViewModels
@@ -114,7 +115,7 @@ namespace MHArmory.ViewModels
 
             foreach (SkillLoadoutItemConfigurationV2 item in abilityInfo)
             {
-                AbilityViewModel found = abilities.FirstOrDefault(a => a.SkillName == item.SkillName && a.Level == item.Level);
+                AbilityViewModel found = abilities.FirstOrDefault(a => Localization.GetDefault(a.SkillName) == item.SkillName && a.Level == item.Level);
                 if (found != null)
                     result.Add(found);
             }

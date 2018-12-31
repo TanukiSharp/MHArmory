@@ -27,7 +27,7 @@ namespace MHArmory.ViewModels
 
         public ArmorPieceTypesViewModel(IEnumerable<ISolverDataEquipmentModel> equipments)
         {
-            Equipments = equipments.OrderBy(x => x.Equipment.Name).ToList();
+            Equipments = equipments.OrderBy(x => x.Equipment.Id).ToList();
 
             SelectAllCommand = new AnonymousCommand(OnSelectAll);
             UnselectAllCommand = new AnonymousCommand(OnUnselectAll);

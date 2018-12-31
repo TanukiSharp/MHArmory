@@ -18,7 +18,12 @@ namespace MHArmory.ViewModels
 {
     public class FullAbilityDescriptionViewModel : ViewModelBase
     {
-        public string Description { get; } // TODO: localization here
+        private string description;
+        public string Description
+        {
+            get { return description; }
+            private set { SetValue(ref description, value); }
+        }
 
         private bool isActive;
         public bool IsActive
@@ -27,18 +32,30 @@ namespace MHArmory.ViewModels
             set { SetValue(ref isActive, value); }
         }
 
-        public FullAbilityDescriptionViewModel(int level, string description, bool isActive)
+        private readonly int level;
+        private readonly Dictionary<string, string> descriptionLocalizations;
+
+        public FullAbilityDescriptionViewModel(int level, Dictionary<string, string> description, bool isActive)
         {
-            Description = $"{level}.  {description}";
+            this.level = level;
+            descriptionLocalizations = description;
+
+            UpdateDescription();
             IsActive = isActive;
         }
+
+        private void UpdateDescription()
+        {
+            Description = $"{level}.  {Localization.Get(descriptionLocalizations)}";
+        }
+
     }
 
     public class FullSkillDescriptionViewModel : ViewModelBase
     {
         private ISkill skill;
 
-        public string GeneralDescription { get { return skill.Description; } } // TODO: localization here
+        public Dictionary<string, string> GeneralDescription { get { return skill.Description; } }
         public FullAbilityDescriptionViewModel[] Abilities { get; }
 
         public FullSkillDescriptionViewModel(ISkill skill, int level)

@@ -162,7 +162,12 @@ namespace MHArmory
             else
             {
                 foreach (AbilityViewModel ability in rootViewModel.SelectedAbilities)
-                    ability.IsChecked = abilities.Any(x => x.SkillName == ability.SkillName && x.Level == ability.Level);
+                {
+                    ability.IsChecked = abilities.Any(x =>
+                        x.SkillName == Core.Localization.GetDefault(ability.Ability.Skill.Name) &&
+                        x.Level == ability.Level
+                    );
+                }
 
                 CurrentLoadoutName = loadoutName;
             }
@@ -185,10 +190,7 @@ namespace MHArmory
             {
                 Dictionary<string, SkillLoadoutItemConfigurationV2[]> loadoutConfig = GlobalData.Instance.Configuration.SkillLoadouts;
 
-                loadoutConfig[CurrentLoadoutName] = rootViewModel.SelectedAbilities
-                    .Where(x => x.IsChecked)
-                    .Select(x => new SkillLoadoutItemConfigurationV2 { SkillName = x.SkillName, Level = x.Level })
-                    .ToArray();
+                loadoutConfig[CurrentLoadoutName] = CreateSelectedSkillsArray();
 
                 IsModified = false;
 
@@ -196,6 +198,18 @@ namespace MHArmory
 
                 return true;
             }
+        }
+
+        private SkillLoadoutItemConfigurationV2[] CreateSelectedSkillsArray()
+        {
+            return rootViewModel.SelectedAbilities
+                .Where(x => x.IsChecked)
+                .Select(x => new SkillLoadoutItemConfigurationV2
+                {
+                    SkillName = Core.Localization.GetDefault(x.Ability.Skill.Name),
+                    Level = x.Level
+                })
+                .ToArray();
         }
 
         private bool InternalSaveAs()
@@ -214,10 +228,7 @@ namespace MHArmory
                     return false;
             }
 
-            loadoutConfig[inputWindow.Text] = rootViewModel.SelectedAbilities
-                .Where(x => x.IsChecked)
-                .Select(x => new SkillLoadoutItemConfigurationV2 { SkillName = x.SkillName, Level = x.Level })
-                .ToArray();
+            loadoutConfig[inputWindow.Text] = CreateSelectedSkillsArray();
 
             GlobalData.Instance.Configuration.LastOpenedLoadout = inputWindow.Text;
 

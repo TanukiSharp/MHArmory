@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -70,7 +70,11 @@ namespace MHArmory
                 foreach (LoadoutViewModel x in loadoutSelectorViewModel.Loadouts)
                 {
                     loadoutConfig[x.Name] = x.Abilities
-                        .Select(item => new SkillLoadoutItemConfigurationV2 { SkillName = item.SkillName, Level = item.Level })
+                        .Select(item => new SkillLoadoutItemConfigurationV2
+                        {
+                            SkillName = Core.Localization.GetDefault(item.SkillName),
+                            Level = item.Level
+                        })
                         .ToArray();
                 }
 

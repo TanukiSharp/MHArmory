@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
+using MHArmory.Core;
 using MHArmory.Core.DataStructures;
 
 namespace MHArmory.ViewModels
@@ -39,7 +40,7 @@ namespace MHArmory.ViewModels
 
                 foreach (EquipmentViewModel x in rootViewModel.AllEquipments)
                 {
-                    bool isVisible = searchStatement.IsMatching(x.Name) ||
+                    bool isVisible = searchStatement.IsMatching(Localization.Get(x.Name)) ||
                         x.Abilities.Any(a => IsMatching(a, searchStatement));
 
                     if (isVisible)
@@ -50,9 +51,9 @@ namespace MHArmory.ViewModels
 
         private static bool IsMatching(IAbility ability, SearchStatement searchStatement)
         {
-            return searchStatement.IsMatching(ability.Skill.Name) ||
-                searchStatement.IsMatching(ability.Description) ||
-                searchStatement.IsMatching(ability.Skill.Description);
+            return searchStatement.IsMatching(Localization.Get(ability.Skill.Name)) ||
+                searchStatement.IsMatching(Localization.Get(ability.Description)) ||
+                searchStatement.IsMatching(Localization.Get(ability.Skill.Description));
         }
 
         public ICommand CancelCommand { get; }

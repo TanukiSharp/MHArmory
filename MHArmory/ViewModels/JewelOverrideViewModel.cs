@@ -3,15 +3,16 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using MHArmory.Core;
 using MHArmory.Core.DataStructures;
 
 namespace MHArmory.ViewModels
 {
     public class JewelAbilityViewModel : ViewModelBase
     {
-        public string SkillName { get; } // TODO: localization here
+        public Dictionary<string, string> SkillName { get { return ability.Skill.Name; } }
 
-        private Func<FullSkillDescriptionViewModel> descriptionFunc;
+        private readonly Func<FullSkillDescriptionViewModel> descriptionFunc;
         private FullSkillDescriptionViewModel description;
         public FullSkillDescriptionViewModel Description
         {
@@ -23,9 +24,11 @@ namespace MHArmory.ViewModels
             }
         }
 
+        private readonly IAbility ability;
+
         public JewelAbilityViewModel(IAbility ability, int level)
         {
-            SkillName = ability.Skill.Name;
+            this.ability = ability;
             descriptionFunc = () => new FullSkillDescriptionViewModel(ability.Skill, level);
         }
 
@@ -42,7 +45,7 @@ namespace MHArmory.ViewModels
         private readonly DecorationsOverrideViewModel parent;
         private readonly IJewel jewel;
 
-        public string Name { get; } // TODO: localization here
+        public Dictionary<string, string> Name { get { return jewel.Name; } }
         public int SlotSize { get; }
         public IList<JewelAbilityViewModel> Abilities { get; }
 
@@ -98,7 +101,6 @@ namespace MHArmory.ViewModels
             this.parent = parent;
             this.jewel = jewel;
 
-            Name = jewel.Name;
             SlotSize = jewel.SlotSize;
             Abilities = jewel.Abilities.Select(x => new JewelAbilityViewModel(x, count)).ToList();
         }
@@ -112,8 +114,8 @@ namespace MHArmory.ViewModels
             }
 
             IsVisible =
-                searchStatement.IsMatching(jewel.Name) ||
-                jewel.Abilities.Any(x => searchStatement.IsMatching(x.Skill.Name));
+                searchStatement.IsMatching(Localization.Get(jewel.Name)) ||
+                jewel.Abilities.Any(x => searchStatement.IsMatching(Localization.Get(x.Skill.Name)));
         }
     }
 }

@@ -807,6 +807,10 @@
         </TextBlock>
     </DataTemplate>
 
+    <DataTemplate x:Key="LanguageView">
+        <TextBlock Text="{Binding Text, Mode=OneTime}"/>
+    </DataTemplate>
+
     <DataTemplate x:Key="RootView">
         <DockPanel LastChildFill="True">
             <DockPanel DockPanel.Dock="Top" LastChildFill="True">
@@ -826,6 +830,14 @@
                         <MenuItem Header="Manage..." Command="{x:Static local:RoutedCommands.ManageLoadouts}"/>
                     </MenuItem>
                     <MenuItem Header="Equipments" Command="{x:Static local:RoutedCommands.OpenEquipmentExplorer}"/>
+                    <MenuItem Header="Languages"  ItemsSource="{Binding Languages, Mode=OneTime}" ItemTemplate="{StaticResource LanguageView}">
+                        <MenuItem.ItemContainerStyle>
+                            <Style TargetType="{x:Type MenuItem}">
+                                <Setter Property="Command" Value="{Binding SelectionCommand, Mode=OneTime}"/>
+                                <Setter Property="IsChecked" Value="{Binding IsChecked, Mode=OneWay}"/>
+                            </Style>
+                        </MenuItem.ItemContainerStyle>
+                    </MenuItem>
                     <MenuItem Header="?">
                         <MenuItem Header="Integrated help" Command="{x:Static local:RoutedCommands.OpenIntegratedHelp}" CommandParameter="GettingStarted"/>
                         <Separator/>

@@ -21,7 +21,7 @@ namespace MHArmory
     /// </summary>
     public partial class MainWindow : Window
     {
-        public readonly RootViewModel rootViewModel = new RootViewModel();
+        public readonly RootViewModel rootViewModel;
 
         private SkillSelectorWindow skillSelectorWindow;
         private AdvancedSearchWindow advancedSearchWindow;
@@ -33,6 +33,8 @@ namespace MHArmory
             WindowManager.FitInScreen(this);
 
             LoadConfiguration();
+
+            rootViewModel = new RootViewModel();
 
             WindowManager.NotifyConfigurationLoaded();
             rootViewModel.NotifyConfigurationLoaded();
@@ -132,7 +134,7 @@ namespace MHArmory
             }
 
             IList<SkillViewModel> allSkills = skills
-                .OrderBy(x => x.Name)
+                .OrderBy(x => x.Id)
                 .Select(x => new SkillViewModel(x, jewels.Where(j => j.Abilities.Any(a => a.Skill.Id == x.Id)).ToList(), rootViewModel, skillSelectorWindow.SkillSelector))
                 .ToList();
 

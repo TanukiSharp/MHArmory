@@ -90,7 +90,7 @@ namespace MHArmory
 
                 foreach (JewelOverrideViewModel vm in decorationsOverrideViewModel.Jewels.Where(x => x.IsOverriding || x.Count > 0))
                 {
-                    items.Add(vm.Name, new DecorationOverrideConfigurationItem
+                    items.Add(Core.Localization.GetDefault(vm.Name), new DecorationOverrideConfigurationItem
                     {
                         IsOverriding = vm.IsOverriding,
                         Count = vm.Count
