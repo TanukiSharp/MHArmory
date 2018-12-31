@@ -1,94 +1,50 @@
-//using System;
-//using System.Collections.Generic;
-//using System.Linq;
-//using System.Text;
-//using System.Threading.Tasks;
-//using System.Windows;
-//using System.Windows.Controls;
-//using System.Windows.Data;
-//using System.Windows.Markup;
+using MHArmory.ValueConverters;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows;
+using System.Windows.Data;
+using System.Windows.Markup;
 
-//namespace MHArmory.MarkupExtensions
-//{
-//    public class LocalizationExtension : MarkupExtension
-//    {
-//        private readonly Binding binding;
-//        private BindingExpression expression;
+namespace MHArmory.MarkupExtensions
+{
+    public class LocalizationExtension : MarkupExtension
+    {
+        private static readonly IValueConverter localizationConverter = new LocalizationValueConverter();
 
-//        public LocalizationExtension(Binding binding)
-//        {
-//            this.binding = binding;
-//        }
+        private readonly string sourcePath;
 
-//        public override object ProvideValue(IServiceProvider serviceProvider)
-//        {
-//            if (expression != null)
-//                return expression;
-            
-            
-//            expression = binding.ProvideValue(serviceProvider) as BindingExpression;
+        public LocalizationExtension(string sourcePath)
+        {
+            this.sourcePath = sourcePath;
+        }
 
-//            if (expression == null)
-//                return this;
+        public override object ProvideValue(IServiceProvider serviceProvider)
+        {
+            var target = serviceProvider.GetService(typeof(IProvideValueTarget)) as IProvideValueTarget;
 
-//            var target = serviceProvider.GetService(typeof(IProvideValueTarget)) as IProvideValueTarget;
+            var dependencyObject = target.TargetObject as DependencyObject;
 
-//            if (target.TargetObject is FrameworkElement element)
-//            {
-//                element.Unloaded += Element_Unloaded;
-//                Core.Localization.LanguageChanged += Localization_LanguageChanged;
+            if (dependencyObject == null)
+                return this;
 
-//                return expression;
-//            }
+            var binding = new Binding(sourcePath)
+            {
+                Mode = BindingMode.OneWay,
+                UpdateSourceTrigger = UpdateSourceTrigger.Explicit,
+                Converter = localizationConverter
+            };
 
-//            return this;
-//        }
+            var bindingExpression = (BindingExpression)binding.ProvideValue(serviceProvider);
 
-//        //public override object ProvideValue(IServiceProvider serviceProvider)
-//        //{
-//        //    var expression = binding.ProvideValue(serviceProvider) as BindingExpression;
+            Core.Localization.RegisterLanguageChanged(bindingExpression, expr =>
+            {
+                ((BindingExpression)expr).UpdateTarget();
+            });
 
-//        //    if (expression == null)
-//        //        return this;
-
-//        //    if (binding != null)
-//        //        return binding;
-
-//        //    var target = serviceProvider.GetService(typeof(IProvideValueTarget)) as IProvideValueTarget;
-
-//        //    if (target.TargetObject is FrameworkElement element)
-//        //    {
-//        //        if (element.DataContext == null)
-//        //            return null;
-
-//        //        var nameDictionary = element.DataContext.GetType().GetProperty(name).GetValue(element.DataContext) as Dictionary<string, string>;
-
-//        //        //return Core.Localization.Get(nameDictionary);
-
-//        //        binding = new Binding
-//        //        {
-//        //            UpdateSourceTrigger = UpdateSourceTrigger.Explicit,
-//        //            Path = new PropertyPath(name)
-//        //        };
-
-//        //        element.Unloaded += Element_Unloaded;
-//        //        Core.Localization.LanguageChanged += Localization_LanguageChanged;
-
-//        //        return binding;
-//        //    }
-
-//        //    return this;
-//        //}
-
-//        private void Localization_LanguageChanged(object sender, EventArgs e)
-//        {
-//            expression.UpdateTarget();
-//        }
-
-//        private void Element_Unloaded(object sender, RoutedEventArgs e)
-//        {
-//            ((FrameworkElement)sender).Unloaded += Element_Unloaded;
-//            Core.Localization.LanguageChanged -= Localization_LanguageChanged;
-//        }
-//    }
-//}
+            return bindingExpression;
+        }
+    }
+}

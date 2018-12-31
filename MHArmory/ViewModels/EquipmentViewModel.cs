@@ -38,7 +38,7 @@ namespace MHArmory.ViewModels
         }
     }
 
-    public class ArmorSetSkillViewModel : ViewModelBase, IArmorSetSkill, IDisposable
+    public class ArmorSetSkillViewModel : ViewModelBase, IArmorSetSkill
     {
         public int Id { get { return armorSetSkill.Id; } }
         public Dictionary<string, string> Name { get { return armorSetSkill.Name; } }
@@ -58,23 +58,12 @@ namespace MHArmory.ViewModels
         public ArmorSetSkillViewModel(IArmorSetSkill armorSetSkill)
         {
             this.armorSetSkill = armorSetSkill;
-            Localization.LanguageChanged += Localization_LanguageChanged;
-        }
-
-        private void Localization_LanguageChanged(object sender, EventArgs e)
-        {
-            NotifyPropertyChanged(nameof(Name));
         }
 
         private void LazyCreateParts()
         {
             if (parts == null)
                 parts = armorSetSkill.Parts.Select(x => new ArmorSetSkillPartViewModel(x)).ToArray();
-        }
-
-        public void Dispose()
-        {
-            Localization.LanguageChanged -= Localization_LanguageChanged;
         }
     }
 
@@ -142,13 +131,6 @@ namespace MHArmory.ViewModels
             this.Equipment = equipment;
 
             TogglePossessionCommand = new AnonymousCommand(_ => IsPossessed = !IsPossessed);
-
-            Localization.LanguageChanged += Localization_LanguageChanged;
-        }
-
-        private void Localization_LanguageChanged(object sender, EventArgs e)
-        {
-            NotifyPropertyChanged(nameof(Name));
         }
     }
 }

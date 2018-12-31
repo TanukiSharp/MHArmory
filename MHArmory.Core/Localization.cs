@@ -21,6 +21,23 @@ namespace MHArmory.Core
 
         public static event EventHandler LanguageChanged;
 
+        private class EventTarget
+        {
+            public WeakReference Reference;
+            public Action<object> OnEvent;
+        }
+
+        private static readonly List<EventTarget> listeners = new List<EventTarget>();
+
+        public static void RegisterLanguageChanged(object reference, Action<object> onEvent)
+        {
+            listeners.Add(new EventTarget
+            {
+                Reference = new WeakReference(reference),
+                OnEvent = onEvent
+            });
+        }
+
         private static string language;
         public static string Language
         {
@@ -33,9 +50,26 @@ namespace MHArmory.Core
                 if (language != value)
                 {
                     language = value;
+
                     LanguageChanged?.Invoke(null, EventArgs.Empty);
+                    RaiseWeakEvent();
                 }
             }
+        }
+
+        private static void RaiseWeakEvent()
+        {
+            foreach (EventTarget eventTarget in listeners)
+            {
+                object reference = eventTarget.Reference.Target;
+
+                if (reference != null)
+                    eventTarget.OnEvent(reference);
+                else
+                    eventTarget.OnEvent = null;
+            }
+
+            listeners.RemoveAll(x => x.OnEvent == null);
         }
 
         public static string Get(Dictionary<string, string> localizations)

@@ -9,7 +9,7 @@ using MHArmory.Core.Interfaces;
 
 namespace MHArmory.ViewModels
 {
-    public class AbilityViewModel : ViewModelBase, IAbility, IDisposable
+    public class AbilityViewModel : ViewModelBase, IAbility
     {
         public readonly IAbility Ability;
         private readonly SkillViewModel parent;
@@ -48,14 +48,6 @@ namespace MHArmory.ViewModels
         {
             Ability = ability;
             this.parent = parent;
-
-            Localization.LanguageChanged += Localization_LanguageChanged;
-        }
-
-        private void Localization_LanguageChanged(object sender, EventArgs e)
-        {
-            NotifyPropertyChanged(nameof(SkillName));
-            NotifyPropertyChanged(nameof(AbilityDescription));
         }
 
         private bool isVisible = true;
@@ -69,14 +61,9 @@ namespace MHArmory.ViewModels
         {
             IsVisible = Ability.Level >= minVisibleLevel;
         }
-
-        public void Dispose()
-        {
-            Localization.LanguageChanged -= Localization_LanguageChanged;
-        }
     }
 
-    public class SkillViewModel : ViewModelBase, IDisposable
+    public class SkillViewModel : ViewModelBase
     {
         private readonly ISkill skill;
         private readonly IList<IJewel> jewels;
@@ -106,7 +93,10 @@ namespace MHArmory.ViewModels
 
             UpdateJewelsText();
 
-            Localization.LanguageChanged += Localization_LanguageChanged;
+            Localization.RegisterLanguageChanged(this, self =>
+            {
+                ((SkillViewModel)self).UpdateJewelsText();
+            });
 
             root.InParameters.PropertyChanged += InParameters_PropertyChanged;
 
@@ -120,14 +110,6 @@ namespace MHArmory.ViewModels
             Abilities.Insert(0, new AbilityViewModel(new Ability(skill, 0, ExcludeText), this));
 
             UpdateAvailability();
-        }
-
-        private void Localization_LanguageChanged(object sender, EventArgs e)
-        {
-            NotifyPropertyChanged(nameof(Name));
-            NotifyPropertyChanged(nameof(Description));
-
-            UpdateJewelsText();
         }
 
         private void UpdateJewelsText()
@@ -210,11 +192,6 @@ namespace MHArmory.ViewModels
             skillSelector?.ComputeVisibility(this);
 
             root.SelectedAbilitiesChanged();
-        }
-
-        public void Dispose()
-        {
-            Localization.LanguageChanged -= Localization_LanguageChanged;
         }
     }
 }

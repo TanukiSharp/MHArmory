@@ -16,7 +16,7 @@ using Microsoft.Win32;
 
 namespace MHArmory.ViewModels
 {
-    public class FullAbilityDescriptionViewModel : ViewModelBase, IDisposable
+    public class FullAbilityDescriptionViewModel : ViewModelBase
     {
         private string description;
         public string Description
@@ -40,7 +40,10 @@ namespace MHArmory.ViewModels
             this.level = level;
             descriptionLocalizations = description;
 
-            Localization.LanguageChanged += Localization_LanguageChanged;
+            Core.Localization.RegisterLanguageChanged(this, self =>
+            {
+                ((FullAbilityDescriptionViewModel)self).UpdateDescription();
+            });
 
             UpdateDescription();
             IsActive = isActive;
@@ -48,21 +51,16 @@ namespace MHArmory.ViewModels
 
         private void UpdateDescription()
         {
-            Description = $"{level}.  {Localization.Get(descriptionLocalizations)}";
+            Description = $"{level}.  {Core.Localization.Get(descriptionLocalizations)}";
         }
 
         private void Localization_LanguageChanged(object sender, EventArgs e)
         {
             UpdateDescription();
         }
-
-        public void Dispose()
-        {
-            Localization.LanguageChanged -= Localization_LanguageChanged;
-        }
     }
 
-    public class FullSkillDescriptionViewModel : ViewModelBase, IDisposable
+    public class FullSkillDescriptionViewModel : ViewModelBase
     {
         private ISkill skill;
 
@@ -78,13 +76,6 @@ namespace MHArmory.ViewModels
             Abilities = new FullAbilityDescriptionViewModel[skill.Abilities.Length];
             for (int i = 0; i < skill.Abilities.Length; i++)
                 Abilities[i] = new FullAbilityDescriptionViewModel(skill.Abilities[i].Level, skill.Abilities[i].Description, skill.Abilities[i].Level == clampedLevel);
-
-            Localization.LanguageChanged += Localization_LanguageChanged;
-        }
-
-        private void Localization_LanguageChanged(object sender, EventArgs e)
-        {
-            NotifyPropertyChanged(nameof(GeneralDescription));
         }
 
         public void UpdateLevel(int level)
@@ -94,17 +85,9 @@ namespace MHArmory.ViewModels
             for (int i = 0; i < Abilities.Length; i++)
                 Abilities[i].IsActive = skill.Abilities[i].Level == clampedLevel;
         }
-
-        public void Dispose()
-        {
-            foreach (FullAbilityDescriptionViewModel item in Abilities)
-                item.Dispose();
-
-            Localization.LanguageChanged -= Localization_LanguageChanged;
-        }
     }
 
-    public class SearchResultSkillViewModel : ViewModelBase, IDisposable
+    public class SearchResultSkillViewModel : ViewModelBase
     {
         public ISkill Skill { get; }
         public int TotalLevel { get; }
@@ -128,12 +111,6 @@ namespace MHArmory.ViewModels
             TotalLevel = totalLevel;
             IsExtra = isExtra;
             IsOver = totalLevel > skill.MaxLevel;
-        }
-
-        public void Dispose()
-        {
-            if (description != null)
-                description.Dispose();
         }
     }
 

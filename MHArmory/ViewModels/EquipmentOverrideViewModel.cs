@@ -146,7 +146,7 @@ namespace MHArmory.ViewModels
         }
     }
 
-    public abstract class EquipmentGroupViewModel : ViewModelBase, IDisposable
+    public abstract class EquipmentGroupViewModel : ViewModelBase
     {
         public Dictionary<string, string> Name { get; protected set; }
 
@@ -195,13 +195,6 @@ namespace MHArmory.ViewModels
             Equipments = equipments.Where(x => x != null).ToList();
 
             ToggleAllCommand = new AnonymousCommand(OnToggleAll);
-
-            Localization.LanguageChanged += Localization_LanguageChanged;
-        }
-
-        private void Localization_LanguageChanged(object sender, EventArgs e)
-        {
-            NotifyPropertyChanged(nameof(Name));
         }
 
         public void ApplySearchText(SearchStatement searchStatement)
@@ -223,11 +216,6 @@ namespace MHArmory.ViewModels
 
             foreach (EquipmentViewModel equipment in Equipments)
                 equipment.IsPossessed = allChecked == false;
-        }
-
-        public void Dispose()
-        {
-            Localization.LanguageChanged -= Localization_LanguageChanged;
         }
     }
 
