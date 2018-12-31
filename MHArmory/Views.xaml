@@ -23,6 +23,7 @@
     <cvt:NumToSeparatedStringValueConverter x:Key="NumToSeparatedStringValueConverter"/>
     <cvt:FreeElementNameValueConverter x:Key="FreeElementNameValueConverter"/>
     <cvt:AbilityToViewModelValueConverter x:Key="AbilityToViewModelValueConverter"/>
+    <cvt:LocalizationValueConverter x:Key="LocalizationValueConverter"/>
 
     <SolidColorBrush x:Key="ActiveWeaponBackgroundBrush" Color="#FFB7FFA7"/>
     <SolidColorBrush x:Key="ActiveWeaponBorderBrush" Color="#FF55D15A"/>
@@ -91,11 +92,11 @@
 
     <DataTemplate x:Key="FullSkillDescriptionView">
         <StackPanel>
-            <TextBlock Text="{Binding GeneralDescription, Mode=OneTime}" Margin="2" MaxWidth="370" TextWrapping="Wrap" HorizontalAlignment="Left" FontWeight="Black"/>
+            <TextBlock Text="{Binding GeneralDescription, Mode=OneWay, Converter={StaticResource LocalizationValueConverter}}" Margin="2" MaxWidth="370" TextWrapping="Wrap" HorizontalAlignment="Left" FontWeight="Black"/>
             <ItemsControl ItemsSource="{Binding Abilities, Mode=OneTime}" Margin="12 2 2 2">
                 <ItemsControl.ItemTemplate>
                     <DataTemplate>
-                        <TextBlock x:Name="item" Text="{Binding Description, Mode=OneTime}" Margin="2"/>
+                        <TextBlock x:Name="item" Text="{Binding Description, Mode=OneWay}" Margin="2"/>
                         <DataTemplate.Triggers>
                             <DataTrigger Binding="{Binding IsActive, Mode=OneTime}" Value="True">
                                 <Setter TargetName="item" Property="FontWeight" Value="Bold"/>
@@ -211,7 +212,7 @@
                 <Run Text="{Binding Level, Mode=OneTime}"/>
                 <Run Text="  "/>
             </TextBlock>
-            <TextBlock Text="{Binding AbilityDescription, Mode=OneTime}" Foreground="DarkGray"/>
+            <TextBlock Text="{Binding AbilityDescription, Mode=OneWay, Converter={StaticResource LocalizationValueConverter}}" Foreground="DarkGray"/>
         </StackPanel>
         <DataTemplate.Triggers>
             <DataTrigger Binding="{Binding Level, Mode=OneWay}" Value="0">
@@ -226,7 +227,7 @@
             <bhv:ToolTipEx.Content>
                 <ContentControl Content="{Binding Description, Mode=OneTime}" ContentTemplate="{StaticResource FullSkillDescriptionView}"/>
             </bhv:ToolTipEx.Content>
-            <Run Text="{Binding SkillName, Mode=OneTime}" FontWeight="Bold"/>
+            <Run Text="{Binding SkillName, Mode=OneWay, Converter={StaticResource LocalizationValueConverter}}" FontWeight="Bold"/>
             <Run Text="level"/>
             <Run Text="{Binding Level, Mode=OneTime}"/>
         </TextBlock>
@@ -238,7 +239,7 @@
             <bhv:ToolTipEx.Content>
                 <ContentControl Content="{Binding Description, Mode=OneTime}" ContentTemplate="{StaticResource FullSkillDescriptionView}"/>
             </bhv:ToolTipEx.Content>
-            <TextBlock Text="{Binding SkillName, Mode=OneTime}" FontWeight="Bold"/>
+            <TextBlock Text="{Binding SkillName, Mode=OneWay, Converter={StaticResource LocalizationValueConverter}}" FontWeight="Bold"/>
             <TextBlock x:Name="lvl1" Text=" level "/>
             <TextBlock x:Name="lvl2" Text="{Binding Level, Mode=OneTime}"/>
             <TextBlock x:Name="lvl3" Text=" excluded" Visibility="Collapsed"/>
@@ -264,7 +265,7 @@
             <ItemsControl ItemsSource="{Binding GrantedSkills, Mode=OneTime}" Margin="2" Focusable="False">
                 <ItemsControl.ItemTemplate>
                     <DataTemplate>
-                        <TextBlock Text="{Binding Skill.Name, Mode=OneTime}"/>
+                        <TextBlock Text="{Binding SkillName, Mode=OneWay, Converter={StaticResource LocalizationValueConverter}}"/>
                     </DataTemplate>
                 </ItemsControl.ItemTemplate>
             </ItemsControl>
@@ -273,7 +274,7 @@
 
     <DataTemplate x:Key="ArmorSetSkillView">
         <StackPanel Orientation="Horizontal">
-            <TextBlock Text="{Binding Name, Mode=OneTime}" VerticalAlignment="Top" Margin="6 0 6 0"/>
+            <TextBlock Text="{Binding Name, Mode=OneWay, Converter={StaticResource LocalizationValueConverter}}" VerticalAlignment="Top" Margin="6 0 6 0"/>
             <ItemsControl ItemsSource="{Binding Parts, Mode=OneTime}" ItemTemplate="{StaticResource ArmorSetSkillPartView}" Focusable="False"/>
         </StackPanel>
     </DataTemplate>
@@ -291,7 +292,7 @@
                     <StackPanel Grid.Column="0" Orientation="Vertical" Margin="0 0 8 0">
                         <StackPanel Orientation="Horizontal" Grid.IsSharedSizeScope="True">
                             <Image Source="{Binding Type, Mode=OneTime, Converter={StaticResource EquipmentEnumToImageSourceValueConverter}, ConverterParameter=20}" Width="20" Height="20" Margin="0 0 4 0" VerticalAlignment="Center" Focusable="False"/>
-                            <TextBlock Text="{Binding Name, Mode=OneTime}" FontSize="12" FontWeight="Bold" VerticalAlignment="Center" Focusable="False"/>
+                            <TextBlock Text="{Binding Name, Mode=OneWay, Converter={StaticResource LocalizationValueConverter}}" FontSize="12" FontWeight="Bold" VerticalAlignment="Center" Focusable="False"/>
                         </StackPanel>
                         <TextBlock Margin="2" Foreground="Gray" Visibility="{Binding Mode=OneTime, Converter={StaticResource HasDefenseVisibilityValueConverter}}" Focusable="False">
                             <Run Text="Def: "/>
@@ -358,7 +359,7 @@
                                     <StackPanel Orientation="Horizontal">
                                         <Image Source="{Binding Jewel.SlotSize, Converter={StaticResource SlotToImageSourceValueConverter}, ConverterParameter=16, Mode=OneTime}" Width="16" Height="16" SnapsToDevicePixels="True" VerticalAlignment="Center"/>
                                         <TextBlock VerticalAlignment="Center" Margin="1 0 0 3">
-                                            <Run Text="{Binding Jewel.Name, Mode=OneTime}"/>
+                                            <Run Text="{Binding Jewel.Name, Mode=OneWay, Converter={StaticResource LocalizationValueConverter}}"/>
                                             <Run Text="{Binding Count, Mode=OneTime, StringFormat=x{0}}" Foreground="Blue"/>
                                         </TextBlock>
                                     </StackPanel>
@@ -397,7 +398,7 @@
                                         <bhv:ToolTipEx.Content>
                                             <ContentControl Content="{Binding Description, Mode=OneTime}" ContentTemplate="{StaticResource FullSkillDescriptionView}"/>
                                         </bhv:ToolTipEx.Content>
-                                        <Run Text="{Binding Skill.Name, Mode=OneTime}" x:Name="skillName"/>
+                                        <Run Text="{Binding Skill.Name, Mode=OneWay, Converter={StaticResource LocalizationValueConverter}}" x:Name="skillName"/>
                                         <Run Text=": "/>
                                         <Run Text="{Binding TotalLevel, Mode=OneTime}" Foreground="Blue"/>
                                         <Run Text="/"/>
@@ -434,7 +435,7 @@
     </DataTemplate>
 
     <DataTemplate x:Key="SkillNameAbilityView">
-        <TextBlock Text="{Binding SkillName, Mode=OneTime}" Focusable="False">
+        <TextBlock Text="{Binding SkillName, Mode=OneWay, Converter={StaticResource LocalizationValueConverter}}" Focusable="False">
             <bhv:ToolTipEx.Content>
                 <ContentControl Content="{Binding Description, Mode=OneTime}" ContentTemplate="{StaticResource FullSkillDescriptionView}"/>
             </bhv:ToolTipEx.Content>
@@ -445,10 +446,10 @@
         <Border x:Name="root" BorderBrush="Gray" BorderThickness="0 0 0 0" IsEnabled="{Binding IsAvailable}">
             <StackPanel Orientation="Vertical" Focusable="False">
                 <StackPanel Orientation="Horizontal">
-                    <TextBlock Text="{Binding Name, Mode=OneTime}" FontSize="12" FontWeight="Bold" VerticalAlignment="Center"/>
-                    <TextBlock Text="{Binding JewelsText, Mode=OneTime}" Margin="4 0 0 0" FontSize="11" Foreground="DarkGray" FontStyle="Italic" VerticalAlignment="Center"/>
+                    <TextBlock Text="{Binding Name, Mode=OneWay, Converter={StaticResource LocalizationValueConverter}}" FontSize="12" FontWeight="Bold" VerticalAlignment="Center"/>
+                    <TextBlock Text="{Binding JewelsText, Mode=OneWay}" Margin="4 0 0 0" FontSize="11" Foreground="DarkGray" FontStyle="Italic" VerticalAlignment="Center"/>
                 </StackPanel>
-                <TextBlock Text="{Binding Description, Mode=OneTime}" Foreground="DarkGray" Padding="32 0 5 5"/>
+                <TextBlock Text="{Binding Description, Mode=OneWay, Converter={StaticResource LocalizationValueConverter}}" Foreground="DarkGray" Padding="32 0 5 5"/>
                 <ItemsControl ItemsSource="{Binding Abilities, Mode=OneTime}" Focusable="False" Margin="32 0 0 0">
                     <ItemsControl.ItemTemplate>
                         <DataTemplate>
@@ -524,7 +525,7 @@
             </Grid.ColumnDefinitions>
             <CheckBox Grid.Column="0" IsChecked="{Binding IsOverriding}" Padding="4" VerticalAlignment="Stretch" VerticalContentAlignment="Center" bhv:ToolTipEx.Content="Check to override default jewel availability">
                 <StackPanel Orientation="Horizontal">
-                    <TextBlock Text="{Binding Name, Mode=OneTime}" VerticalAlignment="Center" Margin="0 0 4 0"/>
+                    <TextBlock Text="{Binding Name, Mode=OneWay, Converter={StaticResource LocalizationValueConverter}}" VerticalAlignment="Center" Margin="0 0 4 0"/>
                     <Image Source="{Binding SlotSize, Converter={StaticResource SlotToImageSourceValueConverter}, ConverterParameter=24, Mode=OneTime}" VerticalAlignment="Center" bhv:ToolTipEx.Content="{Binding Converter={StaticResource SlotSizeToolTipValueConverter}, Mode=OneTime}" Width="24" Height="24" SnapsToDevicePixels="True"/>
                 </StackPanel>
             </CheckBox>
@@ -616,7 +617,7 @@
                 <ColumnDefinition Width="*" SharedSizeGroup="A"/>
                 <ColumnDefinition Width="Auto"/>
             </Grid.ColumnDefinitions>
-            <TextBlock Grid.Column="0" Text="{Binding Name, Mode=OneTime}" Padding="4" VerticalAlignment="Center" FontWeight="Bold" FontSize="14"/>
+            <TextBlock Grid.Column="0" Text="{Binding Name, Mode=OneWay, Converter={StaticResource LocalizationValueConverter}}" Padding="4" VerticalAlignment="Center" FontWeight="Bold" FontSize="14"/>
             <StackPanel Grid.Column="1" Orientation="Horizontal">
                 <Button Width="16" Margin="4" bhv:ToolTipEx.Content="Toggle all" Command="{Binding ToggleAllCommand, Mode=OneTime}"/>
                 <ItemsControl ItemsSource="{Binding OrderedEquipments, Mode=OneTime}">
@@ -952,7 +953,7 @@
             <ListBox ItemsSource="{Binding Equipments}" Margin="2" VirtualizingPanel.IsVirtualizing="True" VirtualizingPanel.IsContainerVirtualizable="True" VirtualizingPanel.ScrollUnit="Pixel">
                 <ListBox.ItemTemplate>
                     <DataTemplate>
-                        <CheckBox IsThreeState="False" IsChecked="{Binding IsSelected}" Content="{Binding Equipment.Name, Mode=OneTime}">
+                        <CheckBox IsThreeState="False" IsChecked="{Binding IsSelected}" Content="{Binding Equipment.Name, Mode=OneWay, Converter={StaticResource LocalizationValueConverter}}">
                             <bhv:ToolTipEx.Content>
                                 <ContentControl Content="{Binding Equipment, Mode=OneTime}" ContentTemplate="{StaticResource ArmorPieceView}" Focusable="False"/>
                             </bhv:ToolTipEx.Content>

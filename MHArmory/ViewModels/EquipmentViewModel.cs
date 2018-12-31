@@ -4,22 +4,108 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
+using MHArmory.Core;
 using MHArmory.Core.DataStructures;
 
 namespace MHArmory.ViewModels
 {
+    public class ArmorSetSkillPartViewModel : ViewModelBase, IArmorSetSkillPart
+    {
+        public int Id { get { return armorSetSkillPart.Id; } }
+        public int RequiredArmorPieces { get { return armorSetSkillPart.RequiredArmorPieces; } }
+
+        private IAbility[] grantedSkills;
+        public IAbility[] GrantedSkills
+        {
+            get
+            {
+                LazyCreateGrantedSkills();
+                return grantedSkills;
+            }
+        }
+
+        private readonly IArmorSetSkillPart armorSetSkillPart;
+
+        public ArmorSetSkillPartViewModel(IArmorSetSkillPart armorSetSkillPart)
+        {
+            this.armorSetSkillPart = armorSetSkillPart;
+        }
+
+        private void LazyCreateGrantedSkills()
+        {
+            if (grantedSkills == null)
+                grantedSkills = armorSetSkillPart.GrantedSkills.Select(x => new AbilityViewModel(x, null)).ToArray();
+        }
+    }
+
+    public class ArmorSetSkillViewModel : ViewModelBase, IArmorSetSkill, IDisposable
+    {
+        public int Id { get { return armorSetSkill.Id; } }
+        public Dictionary<string, string> Name { get { return armorSetSkill.Name; } }
+
+        private IArmorSetSkillPart[] parts;
+        public IArmorSetSkillPart[] Parts
+        {
+            get
+            {
+                LazyCreateParts();
+                return parts;
+            }
+        }
+
+        private readonly IArmorSetSkill armorSetSkill;
+
+        public ArmorSetSkillViewModel(IArmorSetSkill armorSetSkill)
+        {
+            this.armorSetSkill = armorSetSkill;
+            Localization.LanguageChanged += Localization_LanguageChanged;
+        }
+
+        private void Localization_LanguageChanged(object sender, EventArgs e)
+        {
+            NotifyPropertyChanged(nameof(Name));
+        }
+
+        private void LazyCreateParts()
+        {
+            if (parts == null)
+                parts = armorSetSkill.Parts.Select(x => new ArmorSetSkillPartViewModel(x)).ToArray();
+        }
+
+        public void Dispose()
+        {
+            Localization.LanguageChanged -= Localization_LanguageChanged;
+        }
+    }
+
     public class ArmorPieceViewModel : EquipmentViewModel, IArmorPiece
     {
         public IArmorPieceDefense Defense { get { return ((IArmorPiece)Equipment).Defense; } }
         public IArmorPieceResistances Resistances { get { return ((IArmorPiece)Equipment).Resistances; } }
         public IArmorPieceAttributes Attributes { get { return ((IArmorPiece)Equipment).Attributes; } }
         public IArmorPieceAssets Assets { get { return ((IArmorPiece)Equipment).Assets; } }
-        public IArmorSetSkill[] ArmorSetSkills { get { return ((IArmorPiece)Equipment).ArmorSetSkills; } }
+
+        private IArmorSetSkill[] armorSetSkills;
+        public IArmorSetSkill[] ArmorSetSkills
+        {
+            get
+            {
+                LazyCreateArmorSetSkills();
+                return armorSetSkills;
+            }
+        }
+
         public IFullArmorSet FullArmorSet { get { return ((IArmorPiece)Equipment).FullArmorSet; } }
 
         public ArmorPieceViewModel(RootViewModel rootViewModel, IArmorPiece armorPiece)
             : base(rootViewModel, armorPiece)
         {
+        }
+
+        private void LazyCreateArmorSetSkills()
+        {
+            if (armorSetSkills == null && ((IArmorPiece)Equipment).ArmorSetSkills != null)
+                armorSetSkills = ((IArmorPiece)Equipment).ArmorSetSkills.Select(x => new ArmorSetSkillViewModel(x)).ToArray();
         }
     }
 
@@ -56,6 +142,13 @@ namespace MHArmory.ViewModels
             this.Equipment = equipment;
 
             TogglePossessionCommand = new AnonymousCommand(_ => IsPossessed = !IsPossessed);
+
+            Localization.LanguageChanged += Localization_LanguageChanged;
+        }
+
+        private void Localization_LanguageChanged(object sender, EventArgs e)
+        {
+            NotifyPropertyChanged(nameof(Name));
         }
     }
 }

@@ -16,7 +16,7 @@ using Microsoft.Win32;
 
 namespace MHArmory.ViewModels
 {
-    public class FullAbilityDescriptionViewModel : ViewModelBase
+    public class FullAbilityDescriptionViewModel : ViewModelBase, IDisposable
     {
         private string description;
         public string Description
@@ -40,6 +40,8 @@ namespace MHArmory.ViewModels
             this.level = level;
             descriptionLocalizations = description;
 
+            Localization.LanguageChanged += Localization_LanguageChanged;
+
             UpdateDescription();
             IsActive = isActive;
         }
@@ -49,9 +51,18 @@ namespace MHArmory.ViewModels
             Description = $"{level}.  {Localization.Get(descriptionLocalizations)}";
         }
 
+        private void Localization_LanguageChanged(object sender, EventArgs e)
+        {
+            UpdateDescription();
+        }
+
+        public void Dispose()
+        {
+            Localization.LanguageChanged -= Localization_LanguageChanged;
+        }
     }
 
-    public class FullSkillDescriptionViewModel : ViewModelBase
+    public class FullSkillDescriptionViewModel : ViewModelBase, IDisposable
     {
         private ISkill skill;
 
@@ -67,6 +78,13 @@ namespace MHArmory.ViewModels
             Abilities = new FullAbilityDescriptionViewModel[skill.Abilities.Length];
             for (int i = 0; i < skill.Abilities.Length; i++)
                 Abilities[i] = new FullAbilityDescriptionViewModel(skill.Abilities[i].Level, skill.Abilities[i].Description, skill.Abilities[i].Level == clampedLevel);
+
+            Localization.LanguageChanged += Localization_LanguageChanged;
+        }
+
+        private void Localization_LanguageChanged(object sender, EventArgs e)
+        {
+            NotifyPropertyChanged(nameof(GeneralDescription));
         }
 
         public void UpdateLevel(int level)
@@ -76,9 +94,17 @@ namespace MHArmory.ViewModels
             for (int i = 0; i < Abilities.Length; i++)
                 Abilities[i].IsActive = skill.Abilities[i].Level == clampedLevel;
         }
+
+        public void Dispose()
+        {
+            foreach (FullAbilityDescriptionViewModel item in Abilities)
+                item.Dispose();
+
+            Localization.LanguageChanged -= Localization_LanguageChanged;
+        }
     }
 
-    public class SearchResultSkillViewModel : ViewModelBase
+    public class SearchResultSkillViewModel : ViewModelBase, IDisposable
     {
         public ISkill Skill { get; }
         public int TotalLevel { get; }
@@ -102,6 +128,12 @@ namespace MHArmory.ViewModels
             TotalLevel = totalLevel;
             IsExtra = isExtra;
             IsOver = totalLevel > skill.MaxLevel;
+        }
+
+        public void Dispose()
+        {
+            if (description != null)
+                description.Dispose();
         }
     }
 
@@ -265,9 +297,9 @@ namespace MHArmory.ViewModels
 
         public IAbility[] DesiredAbilities { get; }
 
-        public ArmorSetViewModel(ISolverData solverData, IList<IArmorPiece> armorPieces, ICharmLevel charm, IList<ArmorSetJewelViewModel> jewels, int[] spareSlots)
+        public ArmorSetViewModel(RootViewModel root, ISolverData solverData, IList<IArmorPiece> armorPieces, ICharmLevel charm, IList<ArmorSetJewelViewModel> jewels, int[] spareSlots)
         {
-            this.armorPieces = armorPieces;
+            this.armorPieces = armorPieces.Select(x => new ArmorPieceViewModel(root, x)).ToArray();
             this.charm = charm;
             this.jewels = jewels;
 

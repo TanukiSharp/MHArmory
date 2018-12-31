@@ -110,6 +110,7 @@
       <DependentUpon>LoadoutWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="Logging\DispatcherLogger.cs" />
+    <Compile Include="MarkupExtensions\LocalizationExtension.cs" />
     <Compile Include="MarkupExtensions\RasterizedImageExtension.cs" />
     <Compile Include="Panels\KeyValueGrid.cs" />
     <Compile Include="Panels\TooledContentPanel.cs" />

@@ -9,6 +9,7 @@ using System.Windows;
 using System.Windows.Input;
 using MHArmory.Configurations;
 using MHArmory.Core.DataStructures;
+using MHArmory.Core.Interfaces;
 using MHArmory.Services;
 using MHWSaveUtils;
 using Microsoft.Win32;
@@ -32,7 +33,7 @@ namespace MHArmory.ViewModels
         Unmodified
     }
 
-    public class DecorationsOverrideViewModel : ViewModelBase
+    public class DecorationsOverrideViewModel : ViewModelBase, ICleanable
     {
         public bool HasChanged { get; private set; }
 
@@ -302,6 +303,12 @@ namespace MHArmory.ViewModels
 
                 return list;
             }
+        }
+
+        public void Cleanup()
+        {
+            foreach (ICleanable x in Jewels)
+                x.Cleanup();
         }
 
         public class GameJewel

@@ -3,11 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using MHArmory.Core;
 using MHArmory.Core.DataStructures;
+using MHArmory.Core.Interfaces;
 
 namespace MHArmory.ViewModels
 {
-    public class AbilityViewModel : ViewModelBase
+    public class AbilityViewModel : ViewModelBase, IAbility, IDisposable
     {
         public readonly IAbility Ability;
         private readonly SkillViewModel parent;
@@ -23,9 +25,12 @@ namespace MHArmory.ViewModels
             }
         }
 
+        public int Id { get { return Ability.Id; } }
+        public ISkill Skill { get { return Ability.Skill; } }
         public int SkillId { get { return Ability.Skill.Id; } }
         public Dictionary<string, string> SkillName { get { return Ability.Skill.Name; } }
         public int Level { get { return Ability.Level; } }
+        Dictionary<string, string> IAbility.Description { get { return Ability.Description; } }
         public Dictionary<string, string> AbilityDescription { get { return Ability.Description; } }
 
         private FullSkillDescriptionViewModel description;
@@ -43,6 +48,14 @@ namespace MHArmory.ViewModels
         {
             Ability = ability;
             this.parent = parent;
+
+            Localization.LanguageChanged += Localization_LanguageChanged;
+        }
+
+        private void Localization_LanguageChanged(object sender, EventArgs e)
+        {
+            NotifyPropertyChanged(nameof(SkillName));
+            NotifyPropertyChanged(nameof(AbilityDescription));
         }
 
         private bool isVisible = true;
@@ -56,9 +69,14 @@ namespace MHArmory.ViewModels
         {
             IsVisible = Ability.Level >= minVisibleLevel;
         }
+
+        public void Dispose()
+        {
+            Localization.LanguageChanged -= Localization_LanguageChanged;
+        }
     }
 
-    public class SkillViewModel : ViewModelBase
+    public class SkillViewModel : ViewModelBase, IDisposable
     {
         private readonly ISkill skill;
         private readonly IList<IJewel> jewels;
@@ -88,6 +106,8 @@ namespace MHArmory.ViewModels
 
             UpdateJewelsText();
 
+            Localization.LanguageChanged += Localization_LanguageChanged;
+
             root.InParameters.PropertyChanged += InParameters_PropertyChanged;
 
             Abilities = skill.Abilities
@@ -100,6 +120,14 @@ namespace MHArmory.ViewModels
             Abilities.Insert(0, new AbilityViewModel(new Ability(skill, 0, ExcludeText), this));
 
             UpdateAvailability();
+        }
+
+        private void Localization_LanguageChanged(object sender, EventArgs e)
+        {
+            NotifyPropertyChanged(nameof(Name));
+            NotifyPropertyChanged(nameof(Description));
+
+            UpdateJewelsText();
         }
 
         private void UpdateJewelsText()
@@ -182,6 +210,11 @@ namespace MHArmory.ViewModels
             skillSelector?.ComputeVisibility(this);
 
             root.SelectedAbilitiesChanged();
+        }
+
+        public void Dispose()
+        {
+            Localization.LanguageChanged -= Localization_LanguageChanged;
         }
     }
 }

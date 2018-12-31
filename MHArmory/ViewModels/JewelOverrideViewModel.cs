@@ -5,10 +5,11 @@ using System.Text;
 using System.Threading.Tasks;
 using MHArmory.Core;
 using MHArmory.Core.DataStructures;
+using MHArmory.Core.Interfaces;
 
 namespace MHArmory.ViewModels
 {
-    public class JewelAbilityViewModel : ViewModelBase
+    public class JewelAbilityViewModel : ViewModelBase, IDisposable
     {
         public Dictionary<string, string> SkillName { get { return ability.Skill.Name; } }
 
@@ -30,6 +31,13 @@ namespace MHArmory.ViewModels
         {
             this.ability = ability;
             descriptionFunc = () => new FullSkillDescriptionViewModel(ability.Skill, level);
+
+            Localization.LanguageChanged += Localization_LanguageChanged;
+        }
+
+        private void Localization_LanguageChanged(object sender, EventArgs e)
+        {
+            NotifyPropertyChanged(nameof(SkillName));
         }
 
         private bool isVisible = true;
@@ -38,9 +46,17 @@ namespace MHArmory.ViewModels
             get { return isVisible; }
             set { SetValue(ref isVisible, value); }
         }
+
+        public void Dispose()
+        {
+            if (description != null)
+                description.Dispose();
+
+            Localization.LanguageChanged -= Localization_LanguageChanged;
+        }
     }
 
-    public class JewelOverrideViewModel : ViewModelBase
+    public class JewelOverrideViewModel : ViewModelBase, ICleanable
     {
         private readonly DecorationsOverrideViewModel parent;
         private readonly IJewel jewel;
@@ -103,6 +119,13 @@ namespace MHArmory.ViewModels
 
             SlotSize = jewel.SlotSize;
             Abilities = jewel.Abilities.Select(x => new JewelAbilityViewModel(x, count)).ToList();
+
+            Localization.LanguageChanged += Localization_LanguageChanged;
+        }
+
+        private void Localization_LanguageChanged(object sender, EventArgs e)
+        {
+            NotifyPropertyChanged(nameof(Name));
         }
 
         public void ApplySearchText(SearchStatement searchStatement)
@@ -116,6 +139,11 @@ namespace MHArmory.ViewModels
             IsVisible =
                 searchStatement.IsMatching(Localization.Get(jewel.Name)) ||
                 jewel.Abilities.Any(x => searchStatement.IsMatching(Localization.Get(x.Skill.Name)));
+        }
+
+        public void Cleanup()
+        {
+            Localization.LanguageChanged += Localization_LanguageChanged;
         }
     }
 }

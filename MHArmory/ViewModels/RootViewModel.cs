@@ -470,6 +470,7 @@ namespace MHArmory.ViewModels
                 if (result != null)
                 {
                     rawFoundArmorSets = result.Where(x => x.IsMatch).Select(x => new ArmorSetViewModel(
+                        this,
                         SolverData,
                         x.ArmorPieces,
                         x.Charm,
