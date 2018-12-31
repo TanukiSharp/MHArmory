@@ -8,7 +8,7 @@ using MHArmory.Core.DataStructures;
 
 namespace MHArmory.ViewModels
 {
-    public class AbilityViewModel : ViewModelBase, IAbility
+    public class AbilityViewModel : ViewModelBase
     {
         public readonly IAbility Ability;
         private readonly SkillViewModel parent;
@@ -24,12 +24,9 @@ namespace MHArmory.ViewModels
             }
         }
 
-        public int Id { get { return Ability.Id; } }
-        public ISkill Skill { get { return Ability.Skill; } }
         public int SkillId { get { return Ability.Skill.Id; } }
         public Dictionary<string, string> SkillName { get { return Ability.Skill.Name; } }
         public int Level { get { return Ability.Level; } }
-        Dictionary<string, string> IAbility.Description { get { return Ability.Description; } }
         public Dictionary<string, string> AbilityDescription { get { return Ability.Description; } }
 
         private FullSkillDescriptionViewModel description;

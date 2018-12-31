@@ -274,9 +274,9 @@ namespace MHArmory.ViewModels
 
         public IAbility[] DesiredAbilities { get; }
 
-        public ArmorSetViewModel(RootViewModel root, ISolverData solverData, IList<IArmorPiece> armorPieces, ICharmLevel charm, IList<ArmorSetJewelViewModel> jewels, int[] spareSlots)
+        public ArmorSetViewModel(ISolverData solverData, IList<IArmorPiece> armorPieces, ICharmLevel charm, IList<ArmorSetJewelViewModel> jewels, int[] spareSlots)
         {
-            this.armorPieces = armorPieces.Select(x => new ArmorPieceViewModel(root, x)).ToArray();
+            this.armorPieces = armorPieces;
             this.charm = charm;
             this.jewels = jewels;
 
