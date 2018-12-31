@@ -170,7 +170,7 @@ namespace MHArmory.Core.DataStructures
 
         public override string ToString()
         {
-            return Name["EN"];
+            return Localization.GetDefault(Name);
         }
     }
 

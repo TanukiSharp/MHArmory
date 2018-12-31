@@ -78,7 +78,7 @@ namespace MHArmory.ViewModels
 
         public IList<AbilityViewModel> Abilities { get; }
 
-        private static readonly Dictionary<string, string> ExcludeText = new Dictionary<string, string> { ["EN"] = "Exclude" };
+        private static readonly Dictionary<string, string> ExcludeText = new Dictionary<string, string> { [Localization.DefaultLanguage] = "Exclude" };
 
         public SkillViewModel(ISkill skill, IList<IJewel> jewels, RootViewModel root, SkillSelectorViewModel skillSelector)
         {

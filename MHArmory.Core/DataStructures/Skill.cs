@@ -42,7 +42,7 @@ namespace MHArmory.Core.DataStructures
             Level = level;
             Description = description;
 
-            hashCode = $"{Skill.Name["EN"]}|{Level}".GetHashCode();
+            hashCode = $"{Localization.GetDefault(Skill.Name)}|{Level}".GetHashCode();
         }
 
         private int hashCode;
@@ -65,7 +65,7 @@ namespace MHArmory.Core.DataStructures
 
         public override string ToString()
         {
-            return $"{Skill.Name["EN"]} level {Level} ({Description["EN"]})";
+            return $"{Localization.GetDefault(Skill.Name)} level {Level} ({Localization.GetDefault(Description)})";
         }
     }
 
@@ -102,7 +102,7 @@ namespace MHArmory.Core.DataStructures
 
         public override string ToString()
         {
-            return $"{Name["EN"]} ({Description["EN"]})";
+            return $"{Localization.GetDefault(Name)} ({Localization.GetDefault(Description)})";
         }
     }
 }

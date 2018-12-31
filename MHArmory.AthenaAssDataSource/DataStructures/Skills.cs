@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using MHArmory.Core;
 using MHArmory.Core.DataStructures;
 
 namespace MHArmory.AthenaAssDataSource.DataStructures
@@ -54,7 +55,7 @@ namespace MHArmory.AthenaAssDataSource.DataStructures
 
         public override string ToString()
         {
-            return $"{Name["EN"]} ({Abilities.Length} abilities)";
+            return $"{Localization.GetDefault(Name)} ({Abilities.Length} abilities)";
         }
 
         private static Dictionary<string, string> CreateAbilityDescriptions(Dictionary<string, string> names, int level)

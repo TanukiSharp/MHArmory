@@ -43,7 +43,7 @@ namespace MHArmory.Core.DataStructures
 
         public override string ToString()
         {
-            return Name["EN"];
+            return Localization.GetDefault(Name);
         }
     }
 
@@ -73,7 +73,7 @@ namespace MHArmory.Core.DataStructures
         public override string ToString()
         {
             if (Name != null)
-                return $"{Name["EN"]} ({Levels.Length})";
+                return $"{Localization.GetDefault(Name)} ({Levels.Length})";
 
             return base.ToString();
         }

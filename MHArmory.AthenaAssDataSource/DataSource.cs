@@ -180,7 +180,7 @@ namespace MHArmory.AthenaAssDataSource
                 if (string.IsNullOrWhiteSpace(jewelPrimitive.Name))
                     continue;
 
-                IAbility ability = abilities.FirstOrDefault(a => a.Skill.Name["EN"] == jewelPrimitive.Skill && a.Level == 1);
+                IAbility ability = abilities.FirstOrDefault(a => Localization.GetDefault(a.Skill.Name) == jewelPrimitive.Skill && a.Level == 1);
 
                 if (ability == null)
                     throw new FormatException($"Cannot find skill '{jewelPrimitive.Name}'");
@@ -303,7 +303,7 @@ namespace MHArmory.AthenaAssDataSource
 
             IAbility FindAbility(string skillName)
             {
-                return abilities.FirstOrDefault(a => a.Skill.Name["EN"] == skillName && a.Level == 1);
+                return abilities.FirstOrDefault(a => Localization.GetDefault(a.Skill.Name) == skillName && a.Level == 1);
             }
 
             foreach (IGrouping<string, ArmorSetSkillPrimitive> armorSetSkillGroup in armorSetSkillPrimitives.GroupBy(x => x.Name))
@@ -593,7 +593,7 @@ namespace MHArmory.AthenaAssDataSource
             if (string.IsNullOrEmpty(name) || level <= 0)
                 return null;
 
-            ISkill skill = nonTaskSkills.FirstOrDefault(s => s.Name["EN"] == name);
+            ISkill skill = nonTaskSkills.FirstOrDefault(s => Localization.GetDefault(s.Name) == name);
 
             if (skill == null)
                 return null;
@@ -605,9 +605,9 @@ namespace MHArmory.AthenaAssDataSource
         {
             var result = new List<IArmorSetSkill>
             {
-                armorSetSkills.FirstOrDefault(x => x.Name["EN"] == primitive.Skill1),
-                armorSetSkills.FirstOrDefault(x => x.Name["EN"] == primitive.Skill2),
-                armorSetSkills.FirstOrDefault(x => x.Name["EN"] == primitive.Skill3)
+                armorSetSkills.FirstOrDefault(x => Localization.GetDefault(x.Name) == primitive.Skill1),
+                armorSetSkills.FirstOrDefault(x => Localization.GetDefault(x.Name) == primitive.Skill2),
+                armorSetSkills.FirstOrDefault(x => Localization.GetDefault(x.Name) == primitive.Skill3)
             };
 
             if (result.Any(x => x != null))
