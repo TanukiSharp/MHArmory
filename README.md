@@ -42,10 +42,6 @@ Follow **Armory** on Twitter to get latest news and updates: https://twitter.com
 
 # Possible future work
 
-## Will happen soon
-
-- Translation of equipments and decorations
-
 ## May happen in a near future
 
 - Unit tests

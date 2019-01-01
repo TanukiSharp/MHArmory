@@ -1,5 +1,10 @@
 # Change log
 
+## vNext (?)
+
+- Now game data are localized in English, French, Japanese, Italian, German, Korean and Chinese
+    - Note that Armory remains in English, language of game data only can be changed
+
 ## 0.0.8.3 (2018/12/22)
 
 Note that 0.0.8.2 has been skipped, it was an experimental build distributed to testers for debug purpose only.
