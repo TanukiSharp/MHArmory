@@ -10,8 +10,7 @@ namespace MHArmory.ViewModels
 {
     public class JewelAbilityViewModel : ViewModelBase
     {
-        public Dictionary<string, string> SkillName { get { return ability.Skill.Name; } }
-
+        public Dictionary<string, string> SkillName { get; }
         private readonly Func<FullSkillDescriptionViewModel> descriptionFunc;
         private FullSkillDescriptionViewModel description;
         public FullSkillDescriptionViewModel Description
@@ -24,11 +23,9 @@ namespace MHArmory.ViewModels
             }
         }
 
-        private readonly IAbility ability;
-
         public JewelAbilityViewModel(IAbility ability, int level)
         {
-            this.ability = ability;
+            SkillName = ability.Skill.Name;
             descriptionFunc = () => new FullSkillDescriptionViewModel(ability.Skill, level);
         }
 
@@ -45,7 +42,7 @@ namespace MHArmory.ViewModels
         private readonly DecorationsOverrideViewModel parent;
         private readonly IJewel jewel;
 
-        public Dictionary<string, string> Name { get { return jewel.Name; } }
+        public Dictionary<string, string> Name { get; }
         public int SlotSize { get; }
         public IList<JewelAbilityViewModel> Abilities { get; }
 
@@ -101,6 +98,7 @@ namespace MHArmory.ViewModels
             this.parent = parent;
             this.jewel = jewel;
 
+            Name = jewel.Name;
             SlotSize = jewel.SlotSize;
             Abilities = jewel.Abilities.Select(x => new JewelAbilityViewModel(x, count)).ToList();
         }

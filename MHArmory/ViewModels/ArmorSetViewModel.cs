@@ -53,11 +53,6 @@ namespace MHArmory.ViewModels
         {
             Description = $"{level}.  {Core.Localization.Get(descriptionLocalizations)}";
         }
-
-        private void Localization_LanguageChanged(object sender, EventArgs e)
-        {
-            UpdateDescription();
-        }
     }
 
     public class FullSkillDescriptionViewModel : ViewModelBase
