@@ -10,6 +10,7 @@ namespace MHArmory.ViewModels
     public class JewelAbilityViewModel : ViewModelBase
     {
         public string SkillName { get; } // TODO: localization here
+        public int MaxLevel { get; }
 
         private Func<FullSkillDescriptionViewModel> descriptionFunc;
         private FullSkillDescriptionViewModel description;
@@ -26,6 +27,7 @@ namespace MHArmory.ViewModels
         public JewelAbilityViewModel(IAbility ability, int level)
         {
             SkillName = ability.Skill.Name;
+            MaxLevel = ability.Skill.MaxLevel;
             descriptionFunc = () => new FullSkillDescriptionViewModel(ability.Skill, level);
         }
 

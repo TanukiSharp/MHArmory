@@ -434,11 +434,13 @@
     </DataTemplate>
 
     <DataTemplate x:Key="SkillNameAbilityView">
-        <TextBlock Text="{Binding SkillName, Mode=OneTime}" Focusable="False">
+        <StackPanel Orientation="Horizontal">
+            <TextBlock Text="{Binding SkillName, Mode=OneTime}" Focusable="False"/>
+            <TextBlock Text="{Binding MaxLevel, Mode=OneTime, StringFormat=' (max: {0})'}" Focusable="False"/>
             <bhv:ToolTipEx.Content>
                 <ContentControl Content="{Binding Description, Mode=OneTime}" ContentTemplate="{StaticResource FullSkillDescriptionView}"/>
             </bhv:ToolTipEx.Content>
-        </TextBlock>
+        </StackPanel>
     </DataTemplate>
 
     <DataTemplate x:Key="SkillView">
