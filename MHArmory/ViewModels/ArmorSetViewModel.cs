@@ -32,10 +32,17 @@ namespace MHArmory.ViewModels
             set { SetValue(ref isActive, value); }
         }
 
+        private bool isOver;
+        public bool IsOver
+        {
+            get { return isOver; }
+            set { SetValue(ref isOver, value); }
+        }
+
         private readonly int level;
         private readonly Dictionary<string, string> descriptionLocalizations;
 
-        public FullAbilityDescriptionViewModel(int level, Dictionary<string, string> description, bool isActive)
+        public FullAbilityDescriptionViewModel(int level, Dictionary<string, string> description, bool isActive, bool isOver)
         {
             this.level = level;
             descriptionLocalizations = description;
@@ -47,6 +54,8 @@ namespace MHArmory.ViewModels
 
             UpdateDescription();
             IsActive = isActive;
+            if (isActive)
+                IsOver = isOver;
         }
 
         private void UpdateDescription()
@@ -70,7 +79,16 @@ namespace MHArmory.ViewModels
 
             Abilities = new FullAbilityDescriptionViewModel[skill.Abilities.Length];
             for (int i = 0; i < skill.Abilities.Length; i++)
-                Abilities[i] = new FullAbilityDescriptionViewModel(skill.Abilities[i].Level, skill.Abilities[i].Description, skill.Abilities[i].Level == clampedLevel);
+            {
+                IAbility ability = skill.Abilities[i];
+
+                Abilities[i] = new FullAbilityDescriptionViewModel(
+                    ability.Level,
+                    ability.Description,
+                    ability.Level == clampedLevel,
+                    level > ability.Skill.MaxLevel
+                );
+            }
         }
 
         public void UpdateLevel(int level)
@@ -78,7 +96,12 @@ namespace MHArmory.ViewModels
             int clampedLevel = Math.Max(0, Math.Min(level, skill.MaxLevel));
 
             for (int i = 0; i < Abilities.Length; i++)
-                Abilities[i].IsActive = skill.Abilities[i].Level == clampedLevel;
+            {
+                bool isActive = skill.Abilities[i].Level == clampedLevel;
+                Abilities[i].IsActive = isActive;
+                if (isActive)
+                    Abilities[i].IsOver = level > skill.MaxLevel;
+            }
         }
     }
 
