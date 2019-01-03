@@ -48,6 +48,13 @@ namespace MHArmory.ViewModels
         public int SlotSize { get; }
         public IList<JewelAbilityViewModel> Abilities { get; }
 
+        private bool hasTooManyJewels = false;
+        public bool HasTooManyJewels
+        {
+            get { return hasTooManyJewels; }
+            private set { SetValue(ref hasTooManyJewels, value); }
+        }
+
         public bool CanReportStateChange { get; set; } = true;
 
         private int count;
@@ -61,6 +68,8 @@ namespace MHArmory.ViewModels
                 if (SetValue(ref count, value))
                 {
                     SetValue(ref count, Math.Max(0, value));
+
+                    HasTooManyJewels = Abilities.All(x => count > x.MaxLevel);
 
                     foreach (JewelAbilityViewModel ability in Abilities)
                         ability.Description.UpdateLevel(count);

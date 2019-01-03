@@ -534,8 +534,13 @@
                 <TextBlock Text="Count: " VerticalAlignment="Center" Margin="2 0 2 0"/>
                 <TextBox Text="{Binding Count, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Margin="2 0 2 0" Padding="2" Width="60" VerticalAlignment="Center"/>
             </StackPanel>
-            <ItemsControl Grid.Column="2" ItemsSource="{Binding Abilities, Mode=OneTime}" ItemTemplate="{StaticResource SkillNameAbilityView}" VerticalAlignment="Top" Padding="4" Focusable="False"/>
+            <ItemsControl x:Name="lst" Grid.Column="2" ItemsSource="{Binding Abilities, Mode=OneTime}" ItemTemplate="{StaticResource SkillNameAbilityView}" VerticalAlignment="Top" Padding="4" Focusable="False"/>
         </Grid>
+        <DataTemplate.Triggers>
+            <DataTrigger Binding="{Binding HasTooManyJewels, Mode=OneWay}" Value="True">
+                <Setter TargetName="lst" Property="TextBlock.Foreground" Value="DarkOrange"/>
+            </DataTrigger>
+        </DataTemplate.Triggers>
     </DataTemplate>
 
     <DataTemplate x:Key="DecorationsOverrideView">
