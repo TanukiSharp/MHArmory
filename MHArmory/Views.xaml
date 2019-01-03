@@ -101,6 +101,9 @@
                                 <Setter TargetName="item" Property="FontWeight" Value="Bold"/>
                                 <Setter TargetName="item" Property="Foreground" Value="Blue"/>
                             </DataTrigger>
+                            <DataTrigger Binding="{Binding IsOver, Mode=OneTime}" Value="True">
+                                <Setter TargetName="item" Property="Foreground" Value="DarkOrange"/>
+                            </DataTrigger>
                         </DataTemplate.Triggers>
                     </DataTemplate>
                 </ItemsControl.ItemTemplate>
