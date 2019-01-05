@@ -10,9 +10,9 @@ namespace MHArmory.ArmoryDataSource.DataStructures
         [JsonProperty("id")]
         public int Id { get; set; }
         [JsonProperty("name")]
-        public string Name { get; set; }
+        public Dictionary<string, string> Name { get; set; }
         [JsonProperty("description")]
-        public string Description { get; set; }
+        public Dictionary<string, string> Description { get; set; }
         [JsonProperty("abilityIds")]
         public IList<int> AbilityIds { get; set; }
     }

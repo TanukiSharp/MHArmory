@@ -113,6 +113,7 @@
       <DependentUpon>LoadoutWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="Logging\DispatcherLogger.cs" />
+    <Compile Include="MarkupExtensions\LocalizationExtension.cs" />
     <Compile Include="MarkupExtensions\RasterizedImageExtension.cs" />
     <Compile Include="Panels\KeyValueGrid.cs" />
     <Compile Include="Panels\TooledContentPanel.cs" />
@@ -145,6 +146,7 @@
     <Compile Include="ValueConverters\ElementNameValueConverter.cs" />
     <Compile Include="ValueConverters\FreeElementNameValueConverter.cs" />
     <Compile Include="ValueConverters\HasDefenseVisibilityValueConverter.cs" />
+    <Compile Include="ValueConverters\LocalizationValueConverter.cs" />
     <Compile Include="ValueConverters\MillisecondsToTimeValueConverter.cs" />
     <Compile Include="ValueConverters\NumToSeparatedStringValueConverter.cs" />
     <Compile Include="ValueConverters\SharpnessNameValueConverter.cs" />
@@ -171,6 +173,7 @@
     <Compile Include="ViewModels\HelpViewModel.cs" />
     <Compile Include="ViewModels\InParametersViewModel.cs" />
     <Compile Include="ViewModels\JewelOverrideViewModel.cs" />
+    <Compile Include="ViewModels\LanguageViewModel.cs" />
     <Compile Include="ViewModels\LoadoutViewModel.cs" />
     <Compile Include="ViewModels\RootViewModel.cs" />
     <Compile Include="ViewModels\SaveDataSlotSelectorViewModel.cs" />

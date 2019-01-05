@@ -18,6 +18,9 @@ namespace MHArmory.Configurations
         [JsonProperty("version")]
         public uint Version { get; set; }
 
+        [JsonProperty("lang")]
+        public string Language { get; set; }
+
         [JsonProperty("acknowledgedVersion")]
         public string AcknowledgedVersion { get; set; }
 

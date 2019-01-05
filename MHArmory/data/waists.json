@@ -1,7 +1,15 @@
 [
     {
         "id": 0,
-        "name": "Leather Belt",
+        "name": {
+            "EN": "Leather Belt",
+            "FR": "Ceinture en cuir",
+            "JP": "レザーベルト",
+            "IT": "Cintura di cuoio",
+            "DE": "Leder-Gürtel",
+            "KR": "레더벨트",
+            "CN": "皮製皮帶"
+        },
         "rarity": 1,
         "defense": {
             "base": 2,
@@ -21,7 +29,15 @@
     },
     {
         "id": 1,
-        "name": "Chainmail Belt",
+        "name": {
+            "EN": "Chainmail Belt",
+            "FR": "Ceinture de mailles",
+            "JP": "チェーンベルト",
+            "IT": "Cintura di maglia",
+            "DE": "Ketten-Gürtel",
+            "KR": "체인벨트",
+            "CN": "鎖甲皮帶"
+        },
         "rarity": 1,
         "defense": {
             "base": 2,
@@ -41,7 +57,15 @@
     },
     {
         "id": 2,
-        "name": "Hunter's Coil",
+        "name": {
+            "EN": "Hunter's Coil",
+            "FR": "Boucle de chasseur",
+            "JP": "ハンターコイル",
+            "IT": "Spira del cacciatore",
+            "DE": "Jäger-Hüftring",
+            "KR": "헌터코일",
+            "CN": "獵人腰甲"
+        },
         "rarity": 1,
         "abilityIds": [
             296
@@ -64,7 +88,15 @@
     },
     {
         "id": 3,
-        "name": "Bone Coil",
+        "name": {
+            "EN": "Bone Coil",
+            "FR": "Tassette d'os",
+            "JP": "ボーンコイル",
+            "IT": "Spira d'osso",
+            "DE": "Knochen-Hüftring",
+            "KR": "본코일",
+            "CN": "骨製腰甲"
+        },
         "rarity": 1,
         "abilityIds": [
             185
@@ -87,7 +119,15 @@
     },
     {
         "id": 4,
-        "name": "Vespoid Coil",
+        "name": {
+            "EN": "Vespoid Coil",
+            "FR": "Tassette Vespoid",
+            "JP": "ランゴコイル",
+            "IT": "Spira di Vespoid",
+            "DE": "Vespoid-Hüftring",
+            "KR": "랑고코일",
+            "CN": "巨蜂腰甲"
+        },
         "rarity": 1,
         "abilityIds": [
             3
@@ -110,7 +150,15 @@
     },
     {
         "id": 7,
-        "name": "Jagras Coil",
+        "name": {
+            "EN": "Jagras Coil",
+            "FR": "Boucle Jagras",
+            "JP": "ジャグラスコイル",
+            "IT": "Spira di Jagras",
+            "DE": "Jagras-Hüftring",
+            "KR": "쟈그라스코일",
+            "CN": "凶豺龍腰甲"
+        },
         "rarity": 1,
         "abilityIds": [
             178
@@ -133,7 +181,15 @@
     },
     {
         "id": 8,
-        "name": "Kulu Coil",
+        "name": {
+            "EN": "Kulu Coil",
+            "FR": "Écharpe Kulu",
+            "JP": "クルルコイル",
+            "IT": "Spira di Kulu",
+            "DE": "Kulu-Hüftring",
+            "KR": "쿠루루코일",
+            "CN": "搔鳥腰甲"
+        },
         "rarity": 1,
         "abilityIds": [
             230
@@ -156,7 +212,15 @@
     },
     {
         "id": 9,
-        "name": "Alloy Coil",
+        "name": {
+            "EN": "Alloy Coil",
+            "FR": "Boucle en alliage",
+            "JP": "アロイコイル",
+            "IT": "Spira in lega",
+            "DE": "Legierungs-Hüftring",
+            "KR": "얼로이코일",
+            "CN": "合金腰甲"
+        },
         "rarity": 2,
         "abilityIds": [
             0
@@ -179,7 +243,15 @@
     },
     {
         "id": 10,
-        "name": "Pukei Coil",
+        "name": {
+            "EN": "Pukei Coil",
+            "FR": "Tassette Pukei",
+            "JP": "プケプケコイル",
+            "IT": "Spira di pukei",
+            "DE": "Pukei-Hüftring",
+            "KR": "푸케푸케코일",
+            "CN": "毒妖鳥腰甲"
+        },
         "rarity": 2,
         "abilityIds": [
             104
@@ -202,7 +274,15 @@
     },
     {
         "id": 11,
-        "name": "Barroth Coil",
+        "name": {
+            "EN": "Barroth Coil",
+            "FR": "Tassette Barroth",
+            "JP": "ボロスコイル",
+            "IT": "Spira di Barroth",
+            "DE": "Barroth-Hüftring",
+            "KR": "보로스코일",
+            "CN": "土砂龍腰甲"
+        },
         "rarity": 2,
         "abilityIds": [
             12
@@ -225,7 +305,15 @@
     },
     {
         "id": 12,
-        "name": "Jyura Coil",
+        "name": {
+            "EN": "Jyura Coil",
+            "FR": "Tassette Jyura",
+            "JP": "ジュラコイル",
+            "IT": "Spira di Jyura ",
+            "DE": "Jyura-Hüftring",
+            "KR": "쥬라코일",
+            "CN": "泥魚龍腰甲"
+        },
         "rarity": 2,
         "abilityIds": [
             67
@@ -248,7 +336,15 @@
     },
     {
         "id": 13,
-        "name": "Kadachi Coil",
+        "name": {
+            "EN": "Kadachi Coil",
+            "FR": "Jupette Kadachi",
+            "JP": "カガチコイル",
+            "IT": "Spira di Kadachi",
+            "DE": "Kadachi-Hüftring",
+            "KR": "카가치코일",
+            "CN": "飛雷龍腰甲"
+        },
         "rarity": 2,
         "abilityIds": [
             94
@@ -271,7 +367,15 @@
     },
     {
         "id": 14,
-        "name": "High Metal Coil",
+        "name": {
+            "EN": "High Metal Coil",
+            "FR": "Tassette haut-métal",
+            "JP": "ハイメタコイル",
+            "IT": "Spira in ipermetallo",
+            "DE": "Hochmetall-Hüftring",
+            "KR": "하이메탈코일",
+            "CN": "礦石腰甲"
+        },
         "rarity": 3,
         "abilityIds": [
             186
@@ -294,7 +398,15 @@
     },
     {
         "id": 15,
-        "name": "King Beetle Elytra",
+        "name": {
+            "EN": "King Beetle Elytra",
+            "FR": "Élytre Scarabée",
+            "JP": "オウビートアンカ",
+            "IT": "Elitre dello scarabeo",
+            "DE": "Königskäfer-Elytren",
+            "KR": "킹비트앙카",
+            "CN": "獨角仙護腰具"
+        },
         "rarity": 3,
         "abilityIds": [
             249
@@ -317,7 +429,15 @@
     },
     {
         "id": 16,
-        "name": "Butterfly Elytra",
+        "name": {
+            "EN": "Butterfly Elytra",
+            "FR": "Elytre Papillon",
+            "JP": "パピメルアンカ",
+            "IT": "Elitre di farfalla",
+            "DE": "Schmetterling-Elytra",
+            "KR": "파피메르앙카",
+            "CN": "燕尾蝶護腰具"
+        },
         "rarity": 3,
         "abilityIds": [
             249
@@ -340,7 +460,15 @@
     },
     {
         "id": 18,
-        "name": "Hornetaur Coil",
+        "name": {
+            "EN": "Hornetaur Coil",
+            "FR": "Tassette Hornetaur",
+            "JP": "タロスコイル",
+            "IT": "Spira di Hornetaur",
+            "DE": "Hornetaur-Hüftring",
+            "KR": "타로스코일",
+            "CN": "巨甲蟲腰甲"
+        },
         "rarity": 3,
         "abilityIds": [
             250
@@ -363,7 +491,15 @@
     },
     {
         "id": 19,
-        "name": "Anja Coil",
+        "name": {
+            "EN": "Anja Coil",
+            "FR": "Boucle Anjanath",
+            "JP": "ジャナフコイル",
+            "IT": "Spira di Anja",
+            "DE": "Anjanath-Hüftring",
+            "KR": "쟈나프코일",
+            "CN": "蠻顎龍腰甲"
+        },
         "rarity": 3,
         "abilityIds": [
             61
@@ -389,7 +525,15 @@
     },
     {
         "id": 20,
-        "name": "Rathian Coil",
+        "name": {
+            "EN": "Rathian Coil",
+            "FR": "Jupe Rathian",
+            "JP": "レイアコイル",
+            "IT": "Spira di Rathian",
+            "DE": "Rathian-Hüftring",
+            "KR": "레이아코일",
+            "CN": "雌火龍腰甲"
+        },
         "rarity": 3,
         "abilityIds": [
             0
@@ -412,7 +556,15 @@
     },
     {
         "id": 21,
-        "name": "Tzitzi Coil",
+        "name": {
+            "EN": "Tzitzi Coil",
+            "FR": "Jupe Tzitzi",
+            "JP": "ツィツィコイル",
+            "IT": "Spira di Tzitzi",
+            "DE": "Tzitzi-Hüftring",
+            "KR": "치치코일",
+            "CN": "眩鳥腰甲"
+        },
         "rarity": 3,
         "abilityIds": [
             225
@@ -435,7 +587,15 @@
     },
     {
         "id": 22,
-        "name": "Lumu Coil",
+        "name": {
+            "EN": "Lumu Coil",
+            "FR": "Short Lumu",
+            "JP": "ウルムーコイル",
+            "IT": "Spira di Lumu",
+            "DE": "Paolumu-Hüftring",
+            "KR": "우르무코일",
+            "CN": "浮空龍腰甲"
+        },
         "rarity": 3,
         "abilityIds": [
             251
@@ -458,7 +618,15 @@
     },
     {
         "id": 23,
-        "name": "Girros Coil",
+        "name": {
+            "EN": "Girros Coil",
+            "FR": "Tassette Girros",
+            "JP": "ギルオスコイル",
+            "IT": "Spira di Girros",
+            "DE": "Girros-Hüftring",
+            "KR": "기르오스코일",
+            "CN": "凶顎龍腰甲"
+        },
         "rarity": 3,
         "abilityIds": [
             36
@@ -481,7 +649,15 @@
     },
     {
         "id": 24,
-        "name": "Baan Coil",
+        "name": {
+            "EN": "Baan Coil",
+            "FR": "Tassette Radobaan",
+            "JP": "バルキンコイル",
+            "IT": "Spira di Baan",
+            "DE": "Baan-Hüftring",
+            "KR": "발킨코일",
+            "CN": "骨鎚龍腰甲"
+        },
         "rarity": 3,
         "abilityIds": [
             217
@@ -504,7 +680,15 @@
     },
     {
         "id": 25,
-        "name": "Ingot Coil",
+        "name": {
+            "EN": "Ingot Coil",
+            "FR": "Pagne en lingot",
+            "JP": "インゴットコイル",
+            "IT": "Spira del lingotto",
+            "DE": "Guss-Hüftring",
+            "KR": "잉곳코일",
+            "CN": "鑄鐵腰甲"
+        },
         "rarity": 4,
         "abilityIds": [
             27
@@ -527,7 +711,15 @@
     },
     {
         "id": 26,
-        "name": "Death Stench Bowels",
+        "name": {
+            "EN": "Death Stench Bowels",
+            "FR": "Boyaux putrides",
+            "JP": "デスギアナーベル",
+            "IT": "Budella putrefatte",
+            "DE": "Todesgestank-Gedärm",
+            "KR": "데스기어네이블",
+            "CN": "死神臍帶"
+        },
         "rarity": 4,
         "abilityIds": [
             99
@@ -550,7 +742,15 @@
     },
     {
         "id": 27,
-        "name": "Brigade Coil",
+        "name": {
+            "EN": "Brigade Coil",
+            "FR": "Boucle de brigade",
+            "JP": "ブリゲイドコイル",
+            "IT": "Spira di brigata",
+            "DE": "Brigade-Hüftring",
+            "KR": "브리게이드코일",
+            "CN": "旅團腰甲"
+        },
         "rarity": 4,
         "abilityIds": [
             263
@@ -573,7 +773,15 @@
     },
     {
         "id": 28,
-        "name": "Legiana Coil",
+        "name": {
+            "EN": "Legiana Coil",
+            "FR": "Ceinture Legiana",
+            "JP": "ギエナコイル",
+            "IT": "Spira di Legiana",
+            "DE": "Legiana-Hüftring",
+            "KR": "기에나코일",
+            "CN": "風漂龍腰甲"
+        },
         "rarity": 4,
         "abilityIds": [
             89
@@ -599,7 +807,15 @@
     },
     {
         "id": 29,
-        "name": "Odogaron Coil",
+        "name": {
+            "EN": "Odogaron Coil",
+            "FR": "Obi Odogaron",
+            "JP": "ガロンコイル",
+            "IT": "Spira di Odogaron",
+            "DE": "Odogaron-Hüftring",
+            "KR": "가론코일",
+            "CN": "慘爪龍腰甲"
+        },
         "rarity": 4,
         "abilityIds": [
             122
@@ -625,7 +841,15 @@
     },
     {
         "id": 30,
-        "name": "Rathalos Coil",
+        "name": {
+            "EN": "Rathalos Coil",
+            "FR": "Tassette Rathalos",
+            "JP": "レウスコイル",
+            "IT": "Spira di Rathalos",
+            "DE": "Rathalos-Hüftring",
+            "KR": "레우스코일",
+            "CN": "火龍腰甲"
+        },
         "rarity": 4,
         "abilityIds": [
             79
@@ -651,7 +875,15 @@
     },
     {
         "id": 31,
-        "name": "Diablos Coil",
+        "name": {
+            "EN": "Diablos Coil",
+            "FR": "Garde Diablos",
+            "JP": "ディアブロコイル",
+            "IT": "Spira di Diablos",
+            "DE": "Diablos-Hüftring",
+            "KR": "디아블로코일",
+            "CN": "角龍腰甲"
+        },
         "rarity": 4,
         "abilityIds": [
             194
@@ -677,7 +909,15 @@
     },
     {
         "id": 32,
-        "name": "Kirin Hoop",
+        "name": {
+            "EN": "Kirin Hoop",
+            "FR": "Ceinture Kirin",
+            "JP": "キリンフープ",
+            "IT": "Cerchio di Kirin",
+            "DE": "Kirin-Reifen",
+            "KR": "키린후프",
+            "CN": "麒麟腰環"
+        },
         "rarity": 4,
         "abilityIds": [
             94
@@ -703,7 +943,15 @@
     },
     {
         "id": 33,
-        "name": "Leather Belt α",
+        "name": {
+            "EN": "Leather Belt α",
+            "FR": "Ceinture en cuir α",
+            "JP": "レザーベルト α",
+            "IT": "Falda di cuoio α",
+            "DE": "Leder-Gürtel α",
+            "KR": "레더벨트 α",
+            "CN": "皮製皮帶 α"
+        },
         "rarity": 5,
         "abilityIds": [
             203
@@ -726,7 +974,15 @@
     },
     {
         "id": 34,
-        "name": "Leather Belt β",
+        "name": {
+            "EN": "Leather Belt β",
+            "FR": "Ceinture en cuir β",
+            "JP": "レザーベルト β",
+            "IT": "Falda di cuoio β",
+            "DE": "Leder-Gürtel β",
+            "KR": "레더벨트 β",
+            "CN": "皮製皮帶 β"
+        },
         "rarity": 5,
         "slots": [
             1
@@ -749,7 +1005,15 @@
     },
     {
         "id": 35,
-        "name": "Chainmail Belt α",
+        "name": {
+            "EN": "Chainmail Belt α",
+            "FR": "Ceinture de mailles α",
+            "JP": "チェーンベルト α",
+            "IT": "Falda di maglia α",
+            "DE": "Ketten-Gürtel α",
+            "KR": "체인벨트 α",
+            "CN": "鎖甲皮帶 α"
+        },
         "rarity": 5,
         "abilityIds": [
             222
@@ -772,7 +1036,15 @@
     },
     {
         "id": 36,
-        "name": "Chainmail Belt β",
+        "name": {
+            "EN": "Chainmail Belt β",
+            "FR": "Ceinture de mailles β",
+            "JP": "チェーンベルト β",
+            "IT": "Falda di maglia β",
+            "DE": "Ketten-Gürtel β",
+            "KR": "체인벨트 β",
+            "CN": "鎖甲皮帶 β"
+        },
         "rarity": 5,
         "slots": [
             1
@@ -795,7 +1067,15 @@
     },
     {
         "id": 37,
-        "name": "Hunter's Coil α",
+        "name": {
+            "EN": "Hunter's Coil α",
+            "FR": "Jupette de chasseur α",
+            "JP": "ハンターコイル α",
+            "IT": "Spira del cacciatore α",
+            "DE": "Jäger-Hüftring α",
+            "KR": "헌터코일 α",
+            "CN": "獵人腰甲 α"
+        },
         "rarity": 5,
         "abilityIds": [
             248,
@@ -819,7 +1099,15 @@
     },
     {
         "id": 38,
-        "name": "Hunter's Coil β",
+        "name": {
+            "EN": "Hunter's Coil β",
+            "FR": "Jupette de chasseur β",
+            "JP": "ハンターコイル β",
+            "IT": "Spira del cacciatore β",
+            "DE": "Jäger-Hüftring β",
+            "KR": "헌터코일 β",
+            "CN": "獵人腰甲 β"
+        },
         "rarity": 5,
         "slots": [
             1
@@ -845,7 +1133,15 @@
     },
     {
         "id": 39,
-        "name": "Bone Coil α",
+        "name": {
+            "EN": "Bone Coil α",
+            "FR": "Tassette d'os α",
+            "JP": "ボーンコイル α",
+            "IT": "Spira d'osso α",
+            "DE": "Knochen-Hüftring α",
+            "KR": "본코일 α",
+            "CN": "骨製腰甲 α"
+        },
         "rarity": 5,
         "abilityIds": [
             185,
@@ -869,7 +1165,15 @@
     },
     {
         "id": 40,
-        "name": "Bone Coil β",
+        "name": {
+            "EN": "Bone Coil β",
+            "FR": "Tassette d'os β",
+            "JP": "ボーンコイル β",
+            "IT": "Spira d'osso β",
+            "DE": "Knochen-Hüftring β",
+            "KR": "본코일 β",
+            "CN": "骨製腰甲 β"
+        },
         "rarity": 5,
         "slots": [
             1
@@ -895,7 +1199,15 @@
     },
     {
         "id": 41,
-        "name": "Alloy Coil α",
+        "name": {
+            "EN": "Alloy Coil α",
+            "FR": "Boucle en alliage α",
+            "JP": "アロイコイル α",
+            "IT": "Spira in lega α",
+            "DE": "Legierungs-Hüftring α",
+            "KR": "얼로이코일 α",
+            "CN": "合金腰甲 α"
+        },
         "rarity": 5,
         "abilityIds": [
             0,
@@ -919,7 +1231,15 @@
     },
     {
         "id": 42,
-        "name": "Alloy Coil β",
+        "name": {
+            "EN": "Alloy Coil β",
+            "FR": "Boucle en alliage β",
+            "JP": "アロイコイル β",
+            "IT": "Spira in lega β",
+            "DE": "Legierungs-Hüftring β",
+            "KR": "얼로이코일 β",
+            "CN": "合金腰甲 β"
+        },
         "rarity": 5,
         "slots": [
             1
@@ -945,7 +1265,15 @@
     },
     {
         "id": 43,
-        "name": "King Beetle Elytra α",
+        "name": {
+            "EN": "King Beetle Elytra α",
+            "FR": "Élytre Scarabée α",
+            "JP": "オウビートアンカ α",
+            "IT": "Elitre dello scarabeo α",
+            "DE": "Königskäfer-Elytren α",
+            "KR": "킹비트앙카 α",
+            "CN": "獨角仙護腰具 α"
+        },
         "rarity": 5,
         "slots": [
             1
@@ -972,7 +1300,15 @@
     },
     {
         "id": 44,
-        "name": "King Beetle Elytra β",
+        "name": {
+            "EN": "King Beetle Elytra β",
+            "FR": "Élytre Scarabée β",
+            "JP": "オウビートアンカ β",
+            "IT": "Elitre dello scarabeo β",
+            "DE": "Königskäfer-Elytren β",
+            "KR": "킹비트앙카 β",
+            "CN": "獨角仙護腰具 β"
+        },
         "rarity": 5,
         "slots": [
             2,
@@ -999,7 +1335,15 @@
     },
     {
         "id": 45,
-        "name": "Butterfly Elytra α",
+        "name": {
+            "EN": "Butterfly Elytra α",
+            "FR": "Elytre Papillon α",
+            "JP": "パピメルアンカ α",
+            "IT": "Cappotto floreale α",
+            "DE": "Schmetterling-Elytra α",
+            "KR": "파피메르앙카 α",
+            "CN": "燕尾蝶護腰具 α"
+        },
         "rarity": 5,
         "slots": [
             1
@@ -1026,7 +1370,15 @@
     },
     {
         "id": 46,
-        "name": "Butterfly Elytra β",
+        "name": {
+            "EN": "Butterfly Elytra β",
+            "FR": "Elytre Papillon β",
+            "JP": "パピメルアンカ β",
+            "IT": "Cappotto floreale β",
+            "DE": "Schmetterling-Elytra β",
+            "KR": "파피메르앙카 β",
+            "CN": "燕尾蝶護腰具 β"
+        },
         "rarity": 5,
         "slots": [
             2,
@@ -1053,7 +1405,15 @@
     },
     {
         "id": 47,
-        "name": "Vespoid Coil α",
+        "name": {
+            "EN": "Vespoid Coil α",
+            "FR": "Tassette Vespoid α",
+            "JP": "ランゴコイル α",
+            "IT": "Spira di Vespoid α",
+            "DE": "Vespoid-Hüftring α",
+            "KR": "랑고코일l α",
+            "CN": "巨蜂腰甲 α"
+        },
         "rarity": 5,
         "abilityIds": [
             4
@@ -1076,7 +1436,15 @@
     },
     {
         "id": 48,
-        "name": "Vespoid Coil β",
+        "name": {
+            "EN": "Vespoid Coil β",
+            "FR": "Tassette Vespoid β",
+            "JP": "ランゴコイル β",
+            "IT": "Spira di Vespoid β",
+            "DE": "Vespoid-Hüftring β",
+            "KR": "랑고코일 β",
+            "CN": "巨蜂腰甲 β"
+        },
         "rarity": 5,
         "slots": [
             1
@@ -1102,7 +1470,15 @@
     },
     {
         "id": 49,
-        "name": "Hornetaur Coil α",
+        "name": {
+            "EN": "Hornetaur Coil α",
+            "FR": "Tassette Hornetaur α",
+            "JP": "タロスコイル α",
+            "IT": "Spira di Hornetaur α",
+            "DE": "Hornetaur-Hüftring α",
+            "KR": "타로스코일 α",
+            "CN": "巨甲蟲腰甲 α"
+        },
         "rarity": 5,
         "abilityIds": [
             250,
@@ -1126,7 +1502,15 @@
     },
     {
         "id": 50,
-        "name": "Hornetaur Coil β",
+        "name": {
+            "EN": "Hornetaur Coil β",
+            "FR": "Tassette Hornetaur β",
+            "JP": "タロスコイル β",
+            "IT": "Spira di Hornetaur β",
+            "DE": "Hornetaur-Hüftring β",
+            "KR": "타로스코일 β",
+            "CN": "巨甲蟲腰甲 β"
+        },
         "rarity": 5,
         "slots": [
             1
@@ -1152,7 +1536,15 @@
     },
     {
         "id": 58,
-        "name": "Jagras Coil α",
+        "name": {
+            "EN": "Jagras Coil α",
+            "FR": "Boucle Jagras α",
+            "JP": "ジャグラスコイル α",
+            "IT": "Spira di Jagras α",
+            "DE": "Jagras-Hüftring α",
+            "KR": "쟈그라스코일 α",
+            "CN": "凶豺龍腰甲 α"
+        },
         "rarity": 5,
         "abilityIds": [
             178,
@@ -1176,7 +1568,15 @@
     },
     {
         "id": 59,
-        "name": "Jagras Coil β",
+        "name": {
+            "EN": "Jagras Coil β",
+            "FR": "Boucle Jagras β",
+            "JP": "ジャグラスコイル β",
+            "IT": "Spira di Jagras β",
+            "DE": "Jagras-Hüftring β",
+            "KR": "쟈그라스코일 β",
+            "CN": "凶豺龍腰甲 β"
+        },
         "rarity": 5,
         "slots": [
             1
@@ -1202,7 +1602,15 @@
     },
     {
         "id": 60,
-        "name": "Kulu Coil α",
+        "name": {
+            "EN": "Kulu Coil α",
+            "FR": "Pagne Kulu α",
+            "JP": "クルルコイル α",
+            "IT": "Spira di Kulu α",
+            "DE": "Kulu-Hüftring α",
+            "KR": "쿠루루코일 α",
+            "CN": "搔鳥腰甲 α"
+        },
         "rarity": 5,
         "abilityIds": [
             231
@@ -1225,7 +1633,15 @@
     },
     {
         "id": 61,
-        "name": "Kulu Coil β",
+        "name": {
+            "EN": "Kulu Coil β",
+            "FR": "Pagne Kulu β",
+            "JP": "クルルコイル β",
+            "IT": "Spira di Kulu β",
+            "DE": "Kulu-Hüftring β",
+            "KR": "쿠루루코일 β",
+            "CN": "搔鳥腰甲 β"
+        },
         "rarity": 5,
         "slots": [
             2
@@ -1251,7 +1667,15 @@
     },
     {
         "id": 62,
-        "name": "Tzitzi Coil α",
+        "name": {
+            "EN": "Tzitzi Coil α",
+            "FR": "Jupe Tzitzi α",
+            "JP": "ツィツィコイル α",
+            "IT": "Spira di Tzitzi α",
+            "DE": "Tzitzi-Hüftring α",
+            "KR": "치치코일 α",
+            "CN": "眩鳥腰甲 α"
+        },
         "rarity": 5,
         "abilityIds": [
             226,
@@ -1275,7 +1699,15 @@
     },
     {
         "id": 63,
-        "name": "Tzitzi Coil β",
+        "name": {
+            "EN": "Tzitzi Coil β",
+            "FR": "Jupe Tzitzi β",
+            "JP": "ツィツィコイル β",
+            "IT": "Spira di Tzitzi β",
+            "DE": "Tzitzi-Hüftring β",
+            "KR": "치치코일 β",
+            "CN": "眩鳥腰甲 β"
+        },
         "rarity": 5,
         "slots": [
             2
@@ -1301,7 +1733,15 @@
     },
     {
         "id": 64,
-        "name": "Girros Coil α",
+        "name": {
+            "EN": "Girros Coil α",
+            "FR": "Tassette Girros α",
+            "JP": "ギルオスコイル α",
+            "IT": "Spira di Girros α",
+            "DE": "Girros-Hüftring α",
+            "KR": "기르오스코일 α",
+            "CN": "凶顎龍腰甲 α"
+        },
         "rarity": 5,
         "abilityIds": [
             36,
@@ -1325,7 +1765,15 @@
     },
     {
         "id": 65,
-        "name": "Girros Coil β",
+        "name": {
+            "EN": "Girros Coil β",
+            "FR": "Tassette Girros β",
+            "JP": "ギルオスコイル β",
+            "IT": "Spira di Girros β",
+            "DE": "Girros-Hüftring β",
+            "KR": "기르오스코일 β",
+            "CN": "凶顎龍腰甲 β"
+        },
         "rarity": 5,
         "slots": [
             1
@@ -1351,7 +1799,15 @@
     },
     {
         "id": 66,
-        "name": "Pukei Coil α",
+        "name": {
+            "EN": "Pukei Coil α",
+            "FR": "Tassette Pukei α",
+            "JP": "プケプケコイル α",
+            "IT": "Spira di Pukei α",
+            "DE": "Pukei-Hüftring α",
+            "KR": "푸케푸케코일 α",
+            "CN": "毒妖鳥腰甲 α"
+        },
         "rarity": 5,
         "abilityIds": [
             105
@@ -1374,7 +1830,15 @@
     },
     {
         "id": 67,
-        "name": "Pukei Coil β",
+        "name": {
+            "EN": "Pukei Coil β",
+            "FR": "Tassette Pukei β",
+            "JP": "プケプケコイル β",
+            "IT": "Spira di Pukei β",
+            "DE": "Pukei-Hüftring β",
+            "KR": "푸케푸케코일 β",
+            "CN": "毒妖鳥腰甲 β"
+        },
         "rarity": 5,
         "slots": [
             1
@@ -1400,7 +1864,15 @@
     },
     {
         "id": 68,
-        "name": "Barroth Coil α",
+        "name": {
+            "EN": "Barroth Coil α",
+            "FR": "Tassette Barroth α",
+            "JP": "ボロスコイル α",
+            "IT": "Spira di Barroth α",
+            "DE": "Barroth-Hüftring α",
+            "KR": "보로스코일 α",
+            "CN": "土砂龍腰甲 α"
+        },
         "rarity": 5,
         "abilityIds": [
             12,
@@ -1424,7 +1896,15 @@
     },
     {
         "id": 69,
-        "name": "Barroth Coil β",
+        "name": {
+            "EN": "Barroth Coil β",
+            "FR": "Tassette Barroth β",
+            "JP": "ボロスコイル β",
+            "IT": "Spira di Barroth β",
+            "DE": "Barroth-Hüftring β",
+            "KR": "보로스코일 β",
+            "CN": "土砂龍腰甲 β"
+        },
         "rarity": 5,
         "slots": [
             2
@@ -1450,7 +1930,15 @@
     },
     {
         "id": 70,
-        "name": "Anja Coil α",
+        "name": {
+            "EN": "Anja Coil α",
+            "FR": "Boucle Anjanath α",
+            "JP": "ジャナフコイル α",
+            "IT": "Spira di Anja α",
+            "DE": "Anjanath-Hüftring α",
+            "KR": "쟈나프코일 α",
+            "CN": "蠻顎龍腰甲 α"
+        },
         "rarity": 5,
         "abilityIds": [
             62,
@@ -1477,7 +1965,15 @@
     },
     {
         "id": 71,
-        "name": "Anja Coil β",
+        "name": {
+            "EN": "Anja Coil β",
+            "FR": "Boucle Anjanath β",
+            "JP": "ジャナフコイル β",
+            "IT": "Spira di Anja β",
+            "DE": "Anjanath-Hüftring β",
+            "KR": "쟈나프코일β",
+            "CN": "蠻顎龍腰甲 β"
+        },
         "rarity": 5,
         "slots": [
             2
@@ -1506,7 +2002,15 @@
     },
     {
         "id": 72,
-        "name": "Jyura Coil α",
+        "name": {
+            "EN": "Jyura Coil α",
+            "FR": "Tassette Jyura α",
+            "JP": "ジュラコイル α",
+            "IT": "Spira di Jyura α",
+            "DE": "Jyura-Hüftring α",
+            "KR": "쥬라코일 α",
+            "CN": "泥魚龍腰甲 α"
+        },
         "rarity": 5,
         "abilityIds": [
             68
@@ -1529,7 +2033,15 @@
     },
     {
         "id": 73,
-        "name": "Jyura Coil β",
+        "name": {
+            "EN": "Jyura Coil β",
+            "FR": "Tassette Jyura β",
+            "JP": "ジュラコイル β",
+            "IT": "Spira di Jyura β",
+            "DE": "Jyura-Hüftring β",
+            "KR": "쥬라코일 β",
+            "CN": "泥魚龍腰甲 β"
+        },
         "rarity": 5,
         "slots": [
             1
@@ -1555,7 +2067,15 @@
     },
     {
         "id": 74,
-        "name": "Kadachi Coil α",
+        "name": {
+            "EN": "Kadachi Coil α",
+            "FR": "Jupette Kadachi α",
+            "JP": "カガチコイル α",
+            "IT": "Spira di Kadachi α",
+            "DE": "Kadachi-Hüftring α",
+            "KR": "카가치코일 α",
+            "CN": "飛雷龍腰甲 α"
+        },
         "rarity": 5,
         "abilityIds": [
             95,
@@ -1579,7 +2099,15 @@
     },
     {
         "id": 75,
-        "name": "Kadachi Coil β",
+        "name": {
+            "EN": "Kadachi Coil β",
+            "FR": "Jupette Kadachi β",
+            "JP": "カガチコイル β",
+            "IT": "Spira di Kadachi β",
+            "DE": "Kadachi-Hüftring β",
+            "KR": "카가치코일 β",
+            "CN": "飛雷龍腰甲 β"
+        },
         "rarity": 5,
         "slots": [
             1,
@@ -1606,7 +2134,15 @@
     },
     {
         "id": 76,
-        "name": "Lumu Coil α",
+        "name": {
+            "EN": "Lumu Coil α",
+            "FR": "Short Lumu α",
+            "JP": "ウルムーコイル α",
+            "IT": "Spira di Lumu α",
+            "DE": "Paolumu-Hüftring α",
+            "KR": "우르무코일 α",
+            "CN": "浮空龍腰甲 α"
+        },
         "rarity": 5,
         "abilityIds": [
             252
@@ -1629,7 +2165,15 @@
     },
     {
         "id": 77,
-        "name": "Lumu Coil β",
+        "name": {
+            "EN": "Lumu Coil β",
+            "FR": "Short Lumu β",
+            "JP": "ウルムーコイル β",
+            "IT": "Spira di Lumu β",
+            "DE": "Paolumu-Hüftring β",
+            "KR": "우르무코일 β",
+            "CN": "浮空龍腰甲 β"
+        },
         "rarity": 5,
         "slots": [
             1
@@ -1655,7 +2199,15 @@
     },
     {
         "id": 78,
-        "name": "Rathian Coil α",
+        "name": {
+            "EN": "Rathian Coil α",
+            "FR": "Jupe Rathian α",
+            "JP": "レイアコイル α",
+            "IT": "Spira di Rathian α",
+            "DE": "Rathian-Hüftring α",
+            "KR": "레이아코일 α",
+            "CN": "雌火龍腰甲 α"
+        },
         "rarity": 5,
         "abilityIds": [
             1,
@@ -1679,7 +2231,15 @@
     },
     {
         "id": 79,
-        "name": "Rathian Coil β",
+        "name": {
+            "EN": "Rathian Coil β",
+            "FR": "Jupe Rathian β",
+            "JP": "レイアコイル β",
+            "IT": "Spira di Rathian β",
+            "DE": "Rathian-Hüftring β",
+            "KR": "레이아코일 β",
+            "CN": "雌火龍腰甲 β"
+        },
         "rarity": 5,
         "slots": [
             1
@@ -1706,7 +2266,15 @@
     },
     {
         "id": 80,
-        "name": "Rath Heart Coil α",
+        "name": {
+            "EN": "Rath Heart Coil α",
+            "FR": "Boucle Cœur Rathian α",
+            "JP": "リオハートコイル α",
+            "IT": "Spira cuore di Rath α",
+            "DE": "Rathianherz-Hüftring α",
+            "KR": "리오하트코일 α",
+            "CN": "火龍心腰甲 α"
+        },
         "rarity": 6,
         "abilityIds": [
             141,
@@ -1733,7 +2301,15 @@
     },
     {
         "id": 81,
-        "name": "Rath Heart Coil β",
+        "name": {
+            "EN": "Rath Heart Coil β",
+            "FR": "Boucle Cœur Rathian β",
+            "JP": "リオハートコイル β",
+            "IT": "Spira cuore di Rath β",
+            "DE": "Rathianherz-Hüftring β",
+            "KR": "리오하트코일 β",
+            "CN": "火龍心腰甲 β"
+        },
         "rarity": 6,
         "slots": [
             1
@@ -1762,7 +2338,15 @@
     },
     {
         "id": 82,
-        "name": "Baan Coil α",
+        "name": {
+            "EN": "Baan Coil α",
+            "FR": "Tassette Radobaan α",
+            "JP": "バルキンコイル α",
+            "IT": "Spira di Baan α",
+            "DE": "Baan-Hüftring α",
+            "KR": "발킨코일 α",
+            "CN": "骨鎚龍腰甲 α"
+        },
         "rarity": 6,
         "abilityIds": [
             218
@@ -1785,7 +2369,15 @@
     },
     {
         "id": 83,
-        "name": "Baan Coil β",
+        "name": {
+            "EN": "Baan Coil β",
+            "FR": "Tassette Radobaan β",
+            "JP": "バルキンコイル β",
+            "IT": "Spira di Baan β",
+            "DE": "Baan-Hüftring β",
+            "KR": "발킨코일 β",
+            "CN": "骨鎚龍腰甲 β"
+        },
         "rarity": 6,
         "slots": [
             2
@@ -1811,7 +2403,15 @@
     },
     {
         "id": 88,
-        "name": "Dodogama Coil α",
+        "name": {
+            "EN": "Dodogama Coil α",
+            "FR": "Tassette Dodogama α",
+            "JP": "ガマルコイル α",
+            "IT": "Spira di Dodogama α",
+            "DE": "Dodogama-Hüftring α",
+            "KR": "가마루코일 α",
+            "CN": "岩賊龍腰甲 α"
+        },
         "rarity": 5,
         "abilityIds": [
             190,
@@ -1835,7 +2435,15 @@
     },
     {
         "id": 89,
-        "name": "Dodogama Coil β",
+        "name": {
+            "EN": "Dodogama Coil β",
+            "FR": "Tassette Dodogama β",
+            "JP": "ガマルコイル β",
+            "IT": "Spira di Dodogama β",
+            "DE": "Dodogama-Hüftring β",
+            "KR": "가마루코일 β",
+            "CN": "岩賊龍腰甲 β"
+        },
         "rarity": 5,
         "slots": [
             1
@@ -1861,7 +2469,15 @@
     },
     {
         "id": 90,
-        "name": "Zorah Spine α",
+        "name": {
+            "EN": "Zorah Spine α",
+            "FR": "Vertèbre Zorah α",
+            "JP": "ゾラマグナスパイン α",
+            "IT": "Colonna di Zorah α",
+            "DE": "Zorah-Stachel α",
+            "KR": "조라마그나파인 α",
+            "CN": "鑄島熔岩脊椎 α"
+        },
         "rarity": 6,
         "abilityIds": [
             178,
@@ -1888,7 +2504,15 @@
     },
     {
         "id": 91,
-        "name": "Zorah Spine β",
+        "name": {
+            "EN": "Zorah Spine β",
+            "FR": "Vertèbre Zorah β",
+            "JP": "ゾラマグナスパイン β",
+            "IT": "Colonna di Zorah β",
+            "DE": "Zorah-Stachel β",
+            "KR": "조라마그나파인 β",
+            "CN": "鑄島熔岩脊椎 β"
+        },
         "rarity": 6,
         "slots": [
             2
@@ -1917,7 +2541,15 @@
     },
     {
         "id": 92,
-        "name": "High Metal Coil α",
+        "name": {
+            "EN": "High Metal Coil α",
+            "FR": "Tassette haut-métal α",
+            "JP": "ハイメタコイル α",
+            "IT": "Spira in ipermetallo α",
+            "DE": "Hochmetall-Hüftring α",
+            "KR": "하이메탈코일 α",
+            "CN": "礦石腰甲 α"
+        },
         "rarity": 6,
         "abilityIds": [
             186,
@@ -1941,7 +2573,15 @@
     },
     {
         "id": 93,
-        "name": "High Metal Coil β",
+        "name": {
+            "EN": "High Metal Coil β",
+            "FR": "Tassette haut-métal β",
+            "JP": "ハイメタコイル β",
+            "IT": "Spira in ipermetallo β",
+            "DE": "Hochmetall-Hüftring β",
+            "KR": "하이메탈코일 β",
+            "CN": "礦石腰甲 β"
+        },
         "rarity": 6,
         "slots": [
             1
@@ -1967,7 +2607,15 @@
     },
     {
         "id": 94,
-        "name": "Ingot Coil α",
+        "name": {
+            "EN": "Ingot Coil α",
+            "FR": "Paréo en lingot α",
+            "JP": "インゴットコイル α",
+            "IT": "Spira del lingotto α",
+            "DE": "Guss-Hüftring α",
+            "KR": "잉곳코일 α",
+            "CN": "鑄鐵腰甲 α"
+        },
         "rarity": 6,
         "abilityIds": [
             28
@@ -1990,7 +2638,15 @@
     },
     {
         "id": 95,
-        "name": "Ingot Coil β",
+        "name": {
+            "EN": "Ingot Coil β",
+            "FR": "Paréo en lingot β",
+            "JP": "インゴットコイル β",
+            "IT": "Spira del lingotto β",
+            "DE": "Guss-Hüftring β",
+            "KR": "잉곳코일 β",
+            "CN": "鑄鐵腰甲 β"
+        },
         "rarity": 6,
         "slots": [
             3
@@ -2016,7 +2672,15 @@
     },
     {
         "id": 96,
-        "name": "Brigade Coil α",
+        "name": {
+            "EN": "Brigade Coil α",
+            "FR": "Boucle de brigade α",
+            "JP": "ブリゲイドコイル α",
+            "IT": "Spira di brigata α",
+            "DE": "Brigade-Hüftring α",
+            "KR": "브리게이드코일 α",
+            "CN": "旅團腰甲 α"
+        },
         "rarity": 6,
         "abilityIds": [
             264,
@@ -2040,7 +2704,15 @@
     },
     {
         "id": 97,
-        "name": "Brigade Coil β",
+        "name": {
+            "EN": "Brigade Coil β",
+            "FR": "Boucle de brigade β",
+            "JP": "ブリゲイドコイル β",
+            "IT": "Spira di brigata β",
+            "DE": "Brigade-Hüftring β",
+            "KR": "브리게이드코일 β",
+            "CN": "旅團腰甲 β"
+        },
         "rarity": 6,
         "slots": [
             1
@@ -2066,7 +2738,15 @@
     },
     {
         "id": 100,
-        "name": "Lavasioth Coil α",
+        "name": {
+            "EN": "Lavasioth Coil α",
+            "FR": "Tassette Lavasioth α",
+            "JP": "ラヴァコイル α",
+            "IT": "Spira di Lavasioth α",
+            "DE": "Lavasioth-Hüftring α",
+            "KR": "라바코일 α",
+            "CN": "熔岩龍腰甲 α"
+        },
         "rarity": 6,
         "abilityIds": [
             223,
@@ -2090,7 +2770,15 @@
     },
     {
         "id": 101,
-        "name": "Lavasioth Coil β",
+        "name": {
+            "EN": "Lavasioth Coil β",
+            "FR": "Tassette Lavasioth β",
+            "JP": "ラヴァコイル β",
+            "IT": "Spira di Lavasioth β",
+            "DE": "Lavasioth-Hüftring β",
+            "KR": "라바코일 β",
+            "CN": "熔岩龍腰甲 β"
+        },
         "rarity": 6,
         "slots": [
             1
@@ -2116,7 +2804,15 @@
     },
     {
         "id": 102,
-        "name": "Legiana Coil α",
+        "name": {
+            "EN": "Legiana Coil α",
+            "FR": "Ceinture Legiana α",
+            "JP": "ギエナコイル α",
+            "IT": "Spira di Legiana α",
+            "DE": "Legiana-Hüftring α",
+            "KR": "기에나코일 α",
+            "CN": "風漂龍腰甲 α"
+        },
         "rarity": 6,
         "abilityIds": [
             90,
@@ -2143,7 +2839,15 @@
     },
     {
         "id": 103,
-        "name": "Legiana Coil β",
+        "name": {
+            "EN": "Legiana Coil β",
+            "FR": "Ceinture Legiana β",
+            "JP": "ギエナコイル β",
+            "IT": "Spira di Legiana β",
+            "DE": "Legiana-Hüftring β",
+            "KR": "기에나코일 β",
+            "CN": "風漂龍腰甲 β"
+        },
         "rarity": 6,
         "slots": [
             2
@@ -2172,7 +2876,15 @@
     },
     {
         "id": 104,
-        "name": "Odogaron Coil α",
+        "name": {
+            "EN": "Odogaron Coil α",
+            "FR": "Obi Odogaron α",
+            "JP": "ガロンコイル α",
+            "IT": "Spira di Odogaron α",
+            "DE": "Odogaron-Hüftring α",
+            "KR": "가론코일 α",
+            "CN": "慘爪龍腰甲 α"
+        },
         "rarity": 6,
         "abilityIds": [
             123,
@@ -2199,7 +2911,15 @@
     },
     {
         "id": 105,
-        "name": "Odogaron Coil β",
+        "name": {
+            "EN": "Odogaron Coil β",
+            "FR": "Obi Odogaron β",
+            "JP": "ガロンコイル β",
+            "IT": "Spira di Odogaron β",
+            "DE": "Odogaron-Hüftring β",
+            "KR": "가론코일 β",
+            "CN": "慘爪龍腰甲 β"
+        },
         "rarity": 6,
         "slots": [
             2
@@ -2228,7 +2948,15 @@
     },
     {
         "id": 106,
-        "name": "Rathalos Coil α",
+        "name": {
+            "EN": "Rathalos Coil α",
+            "FR": "Tassette Rathalos α",
+            "JP": "レウスコイル α",
+            "IT": "Spira di Rathalos α",
+            "DE": "Rathalos-Hüftring α",
+            "KR": "레우스코일 α",
+            "CN": "火龍腰甲 α"
+        },
         "rarity": 6,
         "abilityIds": [
             80,
@@ -2255,7 +2983,15 @@
     },
     {
         "id": 107,
-        "name": "Rathalos Coil β",
+        "name": {
+            "EN": "Rathalos Coil β",
+            "FR": "Tassette Rathalos β",
+            "JP": "レウスコイル β",
+            "IT": "Spira di Rathalos β",
+            "DE": "Rathalos-Hüftring β",
+            "KR": "레우스코일 β",
+            "CN": "火龍腰甲 β"
+        },
         "rarity": 6,
         "slots": [
             2
@@ -2284,7 +3020,15 @@
     },
     {
         "id": 108,
-        "name": "Rath Soul Coil α",
+        "name": {
+            "EN": "Rath Soul Coil α",
+            "FR": "Boucle me Rathalos α",
+            "JP": "リオソウルコイル α",
+            "IT": "Spira anima di Rath α",
+            "DE": "RathalosseelenHüftring α",
+            "KR": "리오소울코일 α",
+            "CN": "火龍魂腰甲 α"
+        },
         "rarity": 7,
         "abilityIds": [
             28,
@@ -2311,7 +3055,15 @@
     },
     {
         "id": 109,
-        "name": "Rath Soul Coil β",
+        "name": {
+            "EN": "Rath Soul Coil β",
+            "FR": "Boucle me Rathalos β",
+            "JP": "リオソウルコイル β",
+            "IT": "Spira anima di Rath β",
+            "DE": "RathalosseelenHüftring β",
+            "KR": "리오소울코일 β",
+            "CN": "火龍魂腰甲 β"
+        },
         "rarity": 7,
         "slots": [
             3
@@ -2340,7 +3092,15 @@
     },
     {
         "id": 110,
-        "name": "Diablos Coil α",
+        "name": {
+            "EN": "Diablos Coil α",
+            "FR": "Garde Diablos α",
+            "JP": "ディアブロコイル α",
+            "IT": "Spira di Diablos α",
+            "DE": "Diablos-Hüftring α",
+            "KR": "디아블로코일 α",
+            "CN": "角龍腰甲 α"
+        },
         "rarity": 6,
         "abilityIds": [
             195,
@@ -2367,7 +3127,15 @@
     },
     {
         "id": 111,
-        "name": "Diablos Coil β",
+        "name": {
+            "EN": "Diablos Coil β",
+            "FR": "Garde Diablos β",
+            "JP": "ディアブロコイル β",
+            "IT": "Spira di Diablos β",
+            "DE": "Diablos-Hüftring β",
+            "KR": "디아블로코일 β",
+            "CN": "角龍腰甲 β"
+        },
         "rarity": 6,
         "slots": [
             2
@@ -2396,7 +3164,15 @@
     },
     {
         "id": 112,
-        "name": "Diablos Nero Coil α",
+        "name": {
+            "EN": "Diablos Nero Coil α",
+            "FR": "Garde Diablos noire α",
+            "JP": "ディアネロコイル α",
+            "IT": "Spira di Diablos nera α",
+            "DE": "Diablos-Nero-Hüftring α",
+            "KR": "디아네로코일 α",
+            "CN": "暴君角龍腰甲 α"
+        },
         "rarity": 7,
         "abilityIds": [
             179,
@@ -2423,7 +3199,15 @@
     },
     {
         "id": 113,
-        "name": "Diablos Nero Coil β",
+        "name": {
+            "EN": "Diablos Nero Coil β",
+            "FR": "Garde Diablos noire β",
+            "JP": "ディアネロコイル β",
+            "IT": "Spira di Diablos nera β",
+            "DE": "Diablos-Nero-Hüftring β",
+            "KR": "디아네로코일 β",
+            "CN": "暴君角龍腰甲 β"
+        },
         "rarity": 7,
         "slots": [
             2
@@ -2452,7 +3236,15 @@
     },
     {
         "id": 114,
-        "name": "Uragaan Coil α",
+        "name": {
+            "EN": "Uragaan Coil α",
+            "FR": "Tassette Uragaan α",
+            "JP": "ガンキンコイル α",
+            "IT": "Spira di Uragaan α",
+            "DE": "Uragaan-Hüftring α",
+            "KR": "간킨코일 α",
+            "CN": "爆鎚龍腰甲 α"
+        },
         "rarity": 7,
         "slots": [
             1,
@@ -2483,7 +3275,15 @@
     },
     {
         "id": 115,
-        "name": "Uragaan Coil β",
+        "name": {
+            "EN": "Uragaan Coil β",
+            "FR": "Tassette Uragaan β",
+            "JP": "ガンキンコイル β",
+            "IT": "Spira di Uragaan β",
+            "DE": "Uragaan-Hüftring β",
+            "KR": "간킨코일 β",
+            "CN": "爆鎚龍腰甲 β"
+        },
         "rarity": 7,
         "slots": [
             2,
@@ -2513,7 +3313,15 @@
     },
     {
         "id": 116,
-        "name": "Bazel Coil α",
+        "name": {
+            "EN": "Bazel Coil α",
+            "FR": "Tassette Bazelgeuse α",
+            "JP": "バゼルコイル α",
+            "IT": "Spira di Bazel α",
+            "DE": "Bazel-Hüftring α",
+            "KR": "바젤코일 α",
+            "CN": "爆鱗龍腰甲 α"
+        },
         "rarity": 7,
         "slots": [
             1
@@ -2543,7 +3351,15 @@
     },
     {
         "id": 117,
-        "name": "Bazel Coil β",
+        "name": {
+            "EN": "Bazel Coil β",
+            "FR": "Tassette Bazelgeuse β",
+            "JP": "バゼルコイル β",
+            "IT": "Spira di Bazel β",
+            "DE": "Bazel-Hüftring β",
+            "KR": "바젤코일 β",
+            "CN": "爆鱗龍腰甲 β"
+        },
         "rarity": 7,
         "slots": [
             3
@@ -2572,7 +3388,15 @@
     },
     {
         "id": 118,
-        "name": "Damascus Coil α",
+        "name": {
+            "EN": "Damascus Coil α",
+            "FR": "Jupe Damascus α",
+            "JP": "ダマスクコイル α",
+            "IT": "Spira di Damasco α",
+            "DE": "Damaskus-Hüftring α",
+            "KR": "다마스크코일 α",
+            "CN": "大馬士革腰甲 α"
+        },
         "rarity": 7,
         "slots": [
             1
@@ -2599,7 +3423,15 @@
     },
     {
         "id": 119,
-        "name": "Damascus Coil β",
+        "name": {
+            "EN": "Damascus Coil β",
+            "FR": "Jupe Damascus β",
+            "JP": "ダマスクコイル β",
+            "IT": "Spira di Damasco β",
+            "DE": "Damaskus-Hüftring β",
+            "KR": "다마스크코일 β",
+            "CN": "大馬士革腰甲 β"
+        },
         "rarity": 7,
         "slots": [
             1,
@@ -2627,7 +3459,15 @@
     },
     {
         "id": 120,
-        "name": "Dober Coil α",
+        "name": {
+            "EN": "Dober Coil α",
+            "FR": "Boucle Dober α",
+            "JP": "ドーベルコイル α",
+            "IT": "Spira di Dober α",
+            "DE": "Dober-Hüftring α",
+            "KR": "도베르코일 α",
+            "CN": "杜賓腰甲 α"
+        },
         "rarity": 7,
         "slots": [
             2
@@ -2654,7 +3494,15 @@
     },
     {
         "id": 121,
-        "name": "Dober Coil β",
+        "name": {
+            "EN": "Dober Coil β",
+            "FR": "Boucle Dober β",
+            "JP": "ドーベルコイル β",
+            "IT": "Spira di Dober β",
+            "DE": "Dober-Hüftring β",
+            "KR": "도베르코일 β",
+            "CN": "杜賓腰甲 β"
+        },
         "rarity": 7,
         "slots": [
             3
@@ -2680,7 +3528,15 @@
     },
     {
         "id": 122,
-        "name": "Death Stench Bowels α",
+        "name": {
+            "EN": "Death Stench Bowels α",
+            "FR": "Boyaux putrides α",
+            "JP": "デスギアナーベル α",
+            "IT": "Budella putrefatte α",
+            "DE": "Todesgestank-Gedärm α",
+            "KR": "데스기어네이블 α",
+            "CN": "死神臍帶 α"
+        },
         "rarity": 7,
         "abilityIds": [
             100,
@@ -2704,7 +3560,15 @@
     },
     {
         "id": 123,
-        "name": "Death Stench Bowels β",
+        "name": {
+            "EN": "Death Stench Bowels β",
+            "FR": "Boyaux putrides β",
+            "JP": "デスギアナーベル β",
+            "IT": "Budella putrefatte β",
+            "DE": "Todesgestank-Gedärm β",
+            "KR": "데스기어네이블  β",
+            "CN": "死神臍帶 β"
+        },
         "rarity": 7,
         "slots": [
             1,
@@ -2731,7 +3595,15 @@
     },
     {
         "id": 125,
-        "name": "Nergigante Coil α",
+        "name": {
+            "EN": "Nergigante Coil α",
+            "FR": "Tassette Nergigante α",
+            "JP": "オーグコイル α",
+            "IT": "Spira di Nergigante α",
+            "DE": "Nergigante-Hüftring α",
+            "KR": "오그코일 α",
+            "CN": "戰紋腰甲 α"
+        },
         "rarity": 8,
         "abilityIds": [
             39,
@@ -2758,7 +3630,15 @@
     },
     {
         "id": 126,
-        "name": "Nergigante Coil β",
+        "name": {
+            "EN": "Nergigante Coil β",
+            "FR": "Tassette Nergigante β",
+            "JP": "オーグコイル β",
+            "IT": "Spira di Nergigante β",
+            "DE": "Nergigante-Hüftring β",
+            "KR": "오그코일 β",
+            "CN": "戰紋腰甲 β"
+        },
         "rarity": 8,
         "slots": [
             2
@@ -2787,7 +3667,15 @@
     },
     {
         "id": 127,
-        "name": "Kaiser Coil α",
+        "name": {
+            "EN": "Kaiser Coil α",
+            "FR": "Tassette Kaiser α",
+            "JP": "カイザーコイル α",
+            "IT": "Spira del Kaiser α",
+            "DE": "Kaiser-Hüftring α",
+            "KR": "카이저코일 α",
+            "CN": "帝王腰甲 α"
+        },
         "rarity": 8,
         "abilityIds": [
             114,
@@ -2814,7 +3702,15 @@
     },
     {
         "id": 128,
-        "name": "Kaiser Coil β",
+        "name": {
+            "EN": "Kaiser Coil β",
+            "FR": "Tassette Kaiser β",
+            "JP": "カイザーコイル β",
+            "IT": "Spira del Kaiser β",
+            "DE": "Kaiser-Hüftring β",
+            "KR": "카이저코일 β",
+            "CN": "帝王腰甲 β"
+        },
         "rarity": 8,
         "slots": [
             2
@@ -2843,7 +3739,15 @@
     },
     {
         "id": 129,
-        "name": "Kushala Cocoon α",
+        "name": {
+            "EN": "Kushala Cocoon α",
+            "FR": "Cocon Kushala α",
+            "JP": "クシャナアンダ α",
+            "IT": "Bozzolo di Kushala α",
+            "DE": "Kushala-Kokon α",
+            "KR": "크샤나안다 α",
+            "CN": "鋼龍安穩 α"
+        },
         "rarity": 8,
         "abilityIds": [
             90,
@@ -2870,7 +3774,15 @@
     },
     {
         "id": 130,
-        "name": "Kushala Cocoon β",
+        "name": {
+            "EN": "Kushala Cocoon β",
+            "FR": "Cocon Kushala β",
+            "JP": "クシャナアンダ β",
+            "IT": "Bozzolo di Kushala β",
+            "DE": "Kushala-Kokon β",
+            "KR": "크샤나안다 β",
+            "CN": "鋼龍安穩 β"
+        },
         "rarity": 8,
         "slots": [
             1,
@@ -2900,7 +3812,15 @@
     },
     {
         "id": 131,
-        "name": "Vaal Hazak Coil α",
+        "name": {
+            "EN": "Vaal Hazak Coil α",
+            "FR": "Jupe Vaal Hazak α",
+            "JP": "ウルズコイル α",
+            "IT": "Spira di Vaal Hazak α",
+            "DE": "Vaal-Hazak-Hüftring α",
+            "KR": "우르즈코일 α",
+            "CN": "烏爾德腰甲 α"
+        },
         "rarity": 8,
         "slots": [
             1
@@ -2930,7 +3850,15 @@
     },
     {
         "id": 132,
-        "name": "Vaal Hazak Coil β",
+        "name": {
+            "EN": "Vaal Hazak Coil β",
+            "FR": "Jupe Vaal Hazak β",
+            "JP": "ウルズコイル β",
+            "IT": "Spira di Vaal Hazak β",
+            "DE": "Vaal-Hazak-Hüftring β",
+            "KR": "우르즈코일 β",
+            "CN": "烏爾德腰甲 β"
+        },
         "rarity": 8,
         "slots": [
             1,
@@ -2960,7 +3888,15 @@
     },
     {
         "id": 133,
-        "name": "Kirin Hoop α",
+        "name": {
+            "EN": "Kirin Hoop α",
+            "FR": "Ceinture Kirin α",
+            "JP": "キリンフープ α",
+            "IT": "Cerchio di Kirin α",
+            "DE": "Kirin-Reifen α",
+            "KR": "키린후프 α",
+            "CN": "麒麟腰環 α"
+        },
         "rarity": 6,
         "abilityIds": [
             76,
@@ -2987,7 +3923,15 @@
     },
     {
         "id": 134,
-        "name": "Kirin Hoop β",
+        "name": {
+            "EN": "Kirin Hoop β",
+            "FR": "Ceinture Kirin β",
+            "JP": "キリンフープ β",
+            "IT": "Cerchio di Kirin β",
+            "DE": "Kirin-Reifen β",
+            "KR": "키린후프 β",
+            "CN": "麒麟腰環 β"
+        },
         "rarity": 6,
         "slots": [
             1,
@@ -3018,7 +3962,15 @@
     },
     {
         "id": 135,
-        "name": "Xeno'jiiva Spine α",
+        "name": {
+            "EN": "Xeno'jiiva Spine α",
+            "FR": "Vertèbre Xeno'jiiva α",
+            "JP": "ゼノラージスパイン α",
+            "IT": "Colonna di Xeno'jiiva α",
+            "DE": "Xeno'jiiva-Stachel α",
+            "KR": "제노라지파인 α",
+            "CN": "異種大型脊椎 α"
+        },
         "rarity": 8,
         "slots": [
             2
@@ -3048,7 +4000,15 @@
     },
     {
         "id": 136,
-        "name": "Xeno'jiiva Spine β",
+        "name": {
+            "EN": "Xeno'jiiva Spine β",
+            "FR": "vertèbre Xeno'jiiva β",
+            "JP": "ゼノラージスパイン β",
+            "IT": "Colonna di Xeno'jiiva β",
+            "DE": "Xeno'jiiva-Stachel β",
+            "KR": "제노라지파인 β",
+            "CN": "異種大型脊椎 β"
+        },
         "rarity": 8,
         "slots": [
             2,
@@ -3078,7 +4038,15 @@
     },
     {
         "id": 137,
-        "name": "Guild Cross Coil α",
+        "name": {
+            "EN": "Guild Cross Coil α",
+            "FR": "Kilt Croix de Guilde α",
+            "JP": "ギルドクロスコイル α",
+            "IT": "Spira della Gilda α",
+            "DE": "Gildenkreuz-Hüftring α",
+            "KR": "길드크로스코일 α",
+            "CN": "公會十字腰甲 α"
+        },
         "rarity": 8,
         "slots": [
             1
@@ -3108,7 +4076,15 @@
     },
     {
         "id": 138,
-        "name": "Guild Cross Coil β",
+        "name": {
+            "EN": "Guild Cross Coil β",
+            "FR": "Kilt Croix de Guilde β",
+            "JP": "ギルドクロスコイル β",
+            "IT": "Spira della Gilda β",
+            "DE": "Gildenkreuz-Hüftring β",
+            "KR": "길드크로스코일 β",
+            "CN": "公會十字腰甲 β"
+        },
         "rarity": 8,
         "slots": [
             1,
@@ -3139,7 +4115,15 @@
     },
     {
         "id": 140,
-        "name": "Commission Belt α",
+        "name": {
+            "EN": "Commission Belt α",
+            "FR": "Kit de la Commission α",
+            "JP": "シーカーベルト α",
+            "IT": "Cintura della commissione α",
+            "DE": "Kommissionsgürtel α",
+            "KR": "시커벨트 α",
+            "CN": "追蹤者皮帶 α"
+        },
         "rarity": 8,
         "slots": [
             1
@@ -3169,7 +4153,15 @@
     },
     {
         "id": 141,
-        "name": "Commission Belt β",
+        "name": {
+            "EN": "Commission Belt β",
+            "FR": "Kit de la Commission β",
+            "JP": "シーカーベルト β",
+            "IT": "Cintura della commissione β",
+            "DE": "Kommissionsgürtel β",
+            "KR": "시커벨트 β",
+            "CN": "追蹤者皮帶 β"
+        },
         "rarity": 8,
         "slots": [
             2
@@ -3198,7 +4190,15 @@
     },
     {
         "id": 142,
-        "name": "Vangis Coil α",
+        "name": {
+            "EN": "Vangis Coil α",
+            "FR": "Boucle Vangis α",
+            "JP": "バンギスコイル α",
+            "IT": "Spira Vangis α",
+            "DE": "Vangis-Hüftring α",
+            "KR": "반기스코일α",
+            "CN": "殘虐腰甲 α"
+        },
         "rarity": 7,
         "slots": [
             1
@@ -3226,7 +4226,15 @@
     },
     {
         "id": 143,
-        "name": "Vangis Coil β",
+        "name": {
+            "EN": "Vangis Coil β",
+            "FR": "Boucle Vangis β",
+            "JP": "バンギスコイル β",
+            "IT": "Spira Vangis β",
+            "DE": "Vangis-Hüftring β",
+            "KR": "반기스코일 β",
+            "CN": "殘虐腰甲 β"
+        },
         "rarity": 7,
         "slots": [
             3,
@@ -3254,7 +4262,15 @@
     },
     {
         "id": 144,
-        "name": "Empress Coil α",
+        "name": {
+            "EN": "Empress Coil α",
+            "FR": "Ceinture Impératrix α",
+            "JP": "エンプレスコイル α",
+            "IT": "Falda dell'imperatrice α",
+            "DE": "Kaiserin-Hüftring α",
+            "KR": "엠프리스코일 α",
+            "CN": "皇后腰甲 α"
+        },
         "rarity": 8,
         "slots": [
             2,
@@ -3286,7 +4302,15 @@
     },
     {
         "id": 145,
-        "name": "Empress Coil β",
+        "name": {
+            "EN": "Empress Coil β",
+            "FR": "Ceinture Impératrix β",
+            "JP": "エンプレスコイル β",
+            "IT": "Falda dell'imperatrice β",
+            "DE": "Kaiserin-Hüftring β",
+            "KR": "엠프리스코일 β",
+            "CN": "皇后腰甲 β"
+        },
         "rarity": 8,
         "slots": [
             2,
@@ -3317,7 +4341,15 @@
     },
     {
         "id": 146,
-        "name": "Drachen Coil α",
+        "name": {
+            "EN": "Drachen Coil α",
+            "FR": "Brague Drachen α",
+            "JP": "ドラケンコイル α",
+            "IT": "Spira drachen α",
+            "DE": "Drachenreiter-Hüftring α",
+            "KR": "용기사 코일 α",
+            "CN": "騰龍腰甲 α"
+        },
         "rarity": 8,
         "slots": [
             3
@@ -3348,7 +4380,15 @@
     },
     {
         "id": 147,
-        "name": "Aloy's Torso α",
+        "name": {
+            "EN": "Aloy's Torso α",
+            "FR": "Aloy - Veste α",
+            "JP": "アーロイウエスト",
+            "IT": "Vita di Aloy α",
+            "DE": "Aloy-Hüfte α",
+            "KR": "에일로이웨스트 α",
+            "CN": "Aloy's Torso α"
+        },
         "rarity": 5,
         "slots": [
             3
@@ -3379,7 +4419,15 @@
     },
     {
         "id": 148,
-        "name": "Ryu's Torso",
+        "name": {
+            "EN": "Ryu's Torso",
+            "FR": "Ryu - Obi",
+            "JP": "リュウウエスト",
+            "IT": "Vita di Ryu",
+            "DE": "Ryu-Hüfte",
+            "KR": "류 웨스트",
+            "CN": "Ryu's Torso"
+        },
         "rarity": 2,
         "abilityIds": [
             160
@@ -3404,7 +4452,15 @@
     },
     {
         "id": 149,
-        "name": "Ryu's Torso α",
+        "name": {
+            "EN": "Ryu's Torso α",
+            "FR": "Ryu - Obi α",
+            "JP": "リュウウエスト α",
+            "IT": "Vita di Ryu α",
+            "DE": "Ryu-Hüfte α",
+            "KR": "류 웨스트 α",
+            "CN": "Ryu's Torso α"
+        },
         "rarity": 7,
         "slots": [
             3
@@ -3435,7 +4491,15 @@
     },
     {
         "id": 150,
-        "name": "Sakura's Skirt α",
+        "name": {
+            "EN": "Sakura's Skirt α",
+            "FR": "Sakura - Jupe α",
+            "JP": "さくらウエスト α",
+            "IT": "Gonna di Sakura α",
+            "DE": "Sakura-Hüfte α",
+            "KR": "사쿠라 웨스트 α",
+            "CN": "Sakura's Skirt α"
+        },
         "rarity": 6,
         "slots": [
             3
@@ -3466,7 +4530,15 @@
     },
     {
         "id": 151,
-        "name": "Butterfly Elytra",
+        "name": {
+            "EN": "Butterfly Elytra",
+            "FR": "Elytre Papillon",
+            "JP": "パピメルアンカ",
+            "IT": "Elitre di farfalla",
+            "DE": "Schmetterling-Elytra",
+            "KR": "파피메르앙카",
+            "CN": "燕尾蝶護腰具"
+        },
         "rarity": 3,
         "abilityIds": [
             45
@@ -3490,7 +4562,15 @@
     },
     {
         "id": 152,
-        "name": "Queen Beetle Elytra",
+        "name": {
+            "EN": "Queen Beetle Elytra",
+            "FR": "Élytre Scarabée",
+            "JP": "クインビートアンカ",
+            "IT": "Elitre dello scarabeo",
+            "DE": "Königinnenkäfer-Elytra",
+            "KR": "퀸비트앙카",
+            "CN": "獨角仙后護腰具"
+        },
         "rarity": 3,
         "abilityIds": [
             45
@@ -3514,7 +4594,15 @@
     },
     {
         "id": 153,
-        "name": "Blossom Coat",
+        "name": {
+            "EN": "Blossom Coat",
+            "FR": "Jupette Printemps",
+            "JP": "ブロッサムコート",
+            "IT": "Cappotto floreale",
+            "DE": "Blüten-Hüftschutz",
+            "KR": "블로섬코트",
+            "CN": "巴魯特風衣"
+        },
         "rarity": 3,
         "abilityIds": [
             278
@@ -3538,7 +4626,15 @@
     },
     {
         "id": 154,
-        "name": "Blossom Coat α",
+        "name": {
+            "EN": "Blossom Coat α",
+            "FR": "Jupette Printemps α",
+            "JP": "ブロッサムコート α",
+            "IT": "Cappotto floreale α",
+            "DE": "Blüten-Hüftschutz α",
+            "KR": "블로섬코트 α",
+            "CN": "巴魯特風衣 α"
+        },
         "rarity": 5,
         "slots": [
             1,
@@ -3566,7 +4662,15 @@
     },
     {
         "id": 155,
-        "name": "Harvest Hoja",
+        "name": {
+            "EN": "Harvest Hoja",
+            "FR": "Harvest Hoja",
+            "JP": "ハーベストオッハ",
+            "IT": "Hoja del raccolto",
+            "DE": "Ernte-Hoja",
+            "KR": "하베스트오하",
+            "CN": "收穫護裙"
+        },
         "rarity": 3,
         "abilityIds": [
             197
@@ -3590,7 +4694,15 @@
     },
     {
         "id": 156,
-        "name": "Harvest Hoja α",
+        "name": {
+            "EN": "Harvest Hoja α",
+            "FR": "Harvest Hoja α",
+            "JP": "ハーベストオッハα",
+            "IT": "Hoja del raccolto α",
+            "DE": "Ernte-Hoja α",
+            "KR": "하베스트오하 α",
+            "CN": "收穫護裙 α"
+        },
         "rarity": 6,
         "slots": [
             1,
@@ -3618,7 +4730,15 @@
     },
     {
         "id": 157,
-        "name": "Orion Coat",
+        "name": {
+            "EN": "Orion Coat",
+            "FR": "Jupette Orion",
+            "JP": "オリオンコート",
+            "IT": "Cappotto di Orione",
+            "DE": "Orion-Hüftschutz",
+            "KR": "오리온코트",
+            "CN": "獵戶星風衣"
+        },
         "rarity": 4,
         "abilityIds": [
             52
@@ -3642,11 +4762,19 @@
     },
     {
         "id": 158,
-        "name": "Orion Coat α",
+        "name": {
+            "EN": "Orion Coat α",
+            "FR": "Jupette Orion α",
+            "JP": "オリオンコートα",
+            "IT": "Cappotto di Orione α",
+            "DE": "Orion-Hüftschutz α",
+            "KR": "오리온코트 α",
+            "CN": "獵戶星風衣 α"
+        },
         "rarity": 6,
         "slots": [
-            3,
-            1
+            1,
+            3
         ],
         "abilityIds": [
             52
@@ -3670,7 +4798,15 @@
     },
     {
         "id": 159,
-        "name": "Kulve Taroth's Malice α",
+        "name": {
+            "EN": "Kulve Taroth's Malice α",
+            "FR": "Courroux Kulve Taroth α",
+            "JP": "マムガイラコイル α",
+            "IT": "Perfidità di Kulve Taroth α",
+            "DE": "Kulve Taroths Groll α",
+            "KR": "맘가이라코일 α",
+            "CN": "絢輝龍鎧羅腰甲 α"
+        },
         "rarity": 8,
         "slots": [
             1
@@ -3698,7 +4834,15 @@
     },
     {
         "id": 160,
-        "name": "Kulve Taroth's Malice β",
+        "name": {
+            "EN": "Kulve Taroth's Malice β",
+            "FR": "Courroux Kulve Taroth β",
+            "JP": "マムガイラコイル β",
+            "IT": "Perfidità di Kulve Taroth β",
+            "DE": "Kulve Taroths Groll β",
+            "KR": "맘가이라코일 β",
+            "CN": "絢輝龍鎧羅腰甲 β"
+        },
         "rarity": 8,
         "slots": [
             3,
@@ -3727,7 +4871,15 @@
     },
     {
         "id": 161,
-        "name": "Dante's Belt α",
+        "name": {
+            "EN": "Dante's Belt α",
+            "FR": "Ceinture Dante α",
+            "JP": "ダンテベルト α",
+            "IT": "Cintura di Dante α",
+            "DE": "Dantes Gürtel α",
+            "KR": "단테 벨트 α",
+            "CN": "但丁皮帶 α"
+        },
         "rarity": 8,
         "slots": [
             3
@@ -3755,7 +4907,15 @@
     },
     {
         "id": 162,
-        "name": "Azure Starlord Tassets α",
+        "name": {
+            "EN": "Azure Starlord Tassets α",
+            "FR": "Tassette Paladin des étoiles α",
+            "JP": "蒼星ノ将【腰当】 α",
+            "IT": "Falda sommo celeste α",
+            "DE": "Azurstern-Gebieter-Schutz α",
+            "KR": "파란별 장군[허리] α",
+            "CN": "蒼星之將【腰甲】 α"
+        },
         "rarity": 7,
         "slots": [
             2
@@ -3785,7 +4945,15 @@
     },
     {
         "id": 163,
-        "name": "Kirin Hoop γ",
+        "name": {
+            "EN": "Kirin Hoop γ",
+            "FR": "Ceinture Kirin γ",
+            "JP": "キリンフープ γ",
+            "IT": "Cerchio di Kirin γ",
+            "DE": "Kirin-Reifen γ",
+            "KR": "키린후프 γ",
+            "CN": "麒麟腰環 γ"
+        },
         "rarity": 8,
         "slots": [
             1,
@@ -3816,7 +4984,15 @@
     },
     {
         "id": 164,
-        "name": "Vaal Hazak Coil γ",
+        "name": {
+            "EN": "Vaal Hazak Coil γ",
+            "FR": "Jupe Vaal Hazak γ",
+            "JP": "ウルズコイル γ",
+            "IT": "Spira di Vaal Hazak γ",
+            "DE": "Vaal-Hazak-Hüftring γ",
+            "KR": "우르즈코일 γ",
+            "CN": "烏爾德腰甲 γ"
+        },
         "rarity": 8,
         "slots": [
             2,
@@ -3849,7 +5025,15 @@
     },
     {
         "id": 165,
-        "name": "Kaiser Coil γ",
+        "name": {
+            "EN": "Kaiser Coil γ",
+            "FR": "Tassette Kaiser γ",
+            "JP": "カイザーコイル γ",
+            "IT": "Spira del Kaiser γ",
+            "DE": "Kaiser-Hüftring γ",
+            "KR": "카이저코일 γ",
+            "CN": "帝王腰甲 γ"
+        },
         "rarity": 8,
         "slots": [
             1,
@@ -3880,7 +5064,15 @@
     },
     {
         "id": 166,
-        "name": "Kushala Cocoon γ",
+        "name": {
+            "EN": "Kushala Cocoon γ",
+            "FR": "Cocon Kushala γ",
+            "JP": "クシャナアンダ γ",
+            "IT": "Bozzolo di Kushala γ",
+            "DE": "Kushala-Kokon γ",
+            "KR": "크샤나안다 γ",
+            "CN": "鋼龍安穩 γ"
+        },
         "rarity": 8,
         "slots": [
             1,
@@ -3911,7 +5103,15 @@
     },
     {
         "id": 167,
-        "name": "Empress Coil γ",
+        "name": {
+            "EN": "Empress Coil γ",
+            "FR": "Ceinture Impératrix γ",
+            "JP": "エンプレスコイル γ",
+            "IT": "Falda dell'imperatrice γ",
+            "DE": "Kaiserin-Hüftring γ",
+            "KR": "엠프리스코일 γ",
+            "CN": "皇后腰甲 γ"
+        },
         "rarity": 8,
         "slots": [
             3
@@ -3942,7 +5142,15 @@
     },
     {
         "id": 168,
-        "name": "Zorah Spine γ",
+        "name": {
+            "EN": "Zorah Spine γ",
+            "FR": "Vertèbre Zorah γ",
+            "JP": "ゾラマグナスパイン γ",
+            "IT": "Colonna di Zorah γ",
+            "DE": "Zorah-Stachel γ",
+            "KR": "조라마그나파인 γ",
+            "CN": "鑄島熔岩脊椎 γ"
+        },
         "rarity": 8,
         "slots": [
             3,
@@ -3974,7 +5182,15 @@
     },
     {
         "id": 169,
-        "name": "Xeno'jiiva Spine γ",
+        "name": {
+            "EN": "Xeno'jiiva Spine γ",
+            "FR": "Vertèbre Xeno'jiiva γ",
+            "JP": "ゼノラージスパイン γ",
+            "IT": "Colonna di Xeno'jiiva γ",
+            "DE": "Xeno'jiiva-Stachel γ",
+            "KR": "제노라지파인 γ",
+            "CN": "異種大型脊椎 γ"
+        },
         "rarity": 8,
         "slots": [
             3,
@@ -4005,7 +5221,51 @@
     },
     {
         "id": 170,
-        "name": "Diver's Belt",
+        "name": {
+            "EN": "Kulve Taroth's Malice γ",
+            "FR": "Courroux Kulve Taroth γ",
+            "JP": "マムガイラコイル γ",
+            "IT": "Perfidità di Kulve Taroth γ",
+            "DE": "Kulve Taroths Groll γ",
+            "KR": "맘가이라코일 γ",
+            "CN": "絢輝龍鎧羅腰甲 γ"
+        },
+        "rarity": 8,
+        "slots": [
+            3
+        ],
+        "abilityIds": [
+            129,
+            132
+        ],
+        "defense": {
+            "base": 72,
+            "max": 78,
+            "augmented": 92
+        },
+        "resistances": {
+            "fire": -3,
+            "water": 2,
+            "thunder": 2,
+            "ice": 2,
+            "dragon": -4
+        },
+        "attributes": {
+            "gender": 3
+        },
+        "eventId": 7
+    },
+    {
+        "id": 171,
+        "name": {
+            "EN": "Diver's Belt",
+            "FR": "Ceinture de plongée",
+            "JP": "ダイバーベルト",
+            "IT": "Cintura da sommozzatore",
+            "DE": "Tauchergürtel",
+            "KR": "다이버벨트",
+            "CN": "潛水夫皮帶"
+        },
         "rarity": 3,
         "abilityIds": [
             284
@@ -4028,8 +5288,16 @@
         "eventId": 17
     },
     {
-        "id": 171,
-        "name": "Diver's Belt α",
+        "id": 172,
+        "name": {
+            "EN": "Diver's Belt α",
+            "FR": "Ceinture de plongée α",
+            "JP": "ダイバーベルト α",
+            "IT": "Cintura da sommozzatore α",
+            "DE": "Tauchergürtel α",
+            "KR": "다이버벨트 α",
+            "CN": "潛水夫皮帶 α"
+        },
         "rarity": 5,
         "slots": [
             2
@@ -4055,8 +5323,16 @@
         "eventId": 17
     },
     {
-        "id": 172,
-        "name": "Butterfly Elytra α",
+        "id": 173,
+        "name": {
+            "EN": "Butterfly Elytra α",
+            "FR": "Elytre Papillon α",
+            "JP": "パピメルアンカ α",
+            "IT": "Elitre di farfalla α",
+            "DE": "Schmetterling-Elytra α",
+            "KR": "파피메르앙카 α",
+            "CN": "燕尾蝶護腰具 α"
+        },
         "rarity": 5,
         "slots": [
             1
@@ -4083,8 +5359,16 @@
         "eventId": 18
     },
     {
-        "id": 173,
-        "name": "Butterfly Elytra β",
+        "id": 174,
+        "name": {
+            "EN": "Butterfly Elytra β",
+            "FR": "Elytre Papillon β",
+            "JP": "パピメルアンカ β",
+            "IT": "Elitre di farfalla β",
+            "DE": "Schmetterling-Elytra β",
+            "KR": "파피메르앙카 β",
+            "CN": "燕尾蝶護腰具 β"
+        },
         "rarity": 5,
         "slots": [
             3
@@ -4110,8 +5394,16 @@
         "eventId": 18
     },
     {
-        "id": 174,
-        "name": "Queen Beetle Elytra α",
+        "id": 175,
+        "name": {
+            "EN": "Queen Beetle Elytra α",
+            "FR": "Élytre Scarabée α",
+            "JP": "クインビートアンカ α",
+            "IT": "Elitre dello scarabeo α",
+            "DE": "Königinnenkäfer-Elytra α",
+            "KR": "퀸비트앙카 α",
+            "CN": "獨角仙后護腰具 α"
+        },
         "rarity": 5,
         "slots": [
             1
@@ -4138,8 +5430,16 @@
         "eventId": 18
     },
     {
-        "id": 175,
-        "name": "Queen Beetle Elytra β",
+        "id": 176,
+        "name": {
+            "EN": "Queen Beetle Elytra β",
+            "FR": "Élytre Scarabée β",
+            "JP": "クインビートアンカ β",
+            "IT": "Elitre dello scarabeo β",
+            "DE": "Königinnenkäfer-Elytra β",
+            "KR": "퀸비트앙카 β",
+            "CN": "獨角仙后護腰具 β"
+        },
         "rarity": 5,
         "slots": [
             3

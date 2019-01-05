@@ -5,9 +5,9 @@ using System.Linq;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
-using System.Windows;
 using System.Windows.Input;
 using MHArmory.Configurations;
+using MHArmory.Core;
 using MHArmory.Core.DataStructures;
 using MHArmory.Services;
 using MHWSaveUtils;
@@ -69,7 +69,10 @@ namespace MHArmory.ViewModels
             : base(parent, equipments)
         {
             OrderedEquipments = MakeArmorPieces(Equipments).ToList();
-            Name = FindGroupName(Equipments);
+            Name = Localization.AvailableLanguageCodes.ToDictionary(
+                kv1 => kv1.Key,
+                kv2 => FindGroupName(Equipments, kv2.Key)
+            );
         }
 
         private static IEnumerable<EquipmentViewModel> MakeArmorPieces(IEnumerable<EquipmentViewModel> equipments)
@@ -81,7 +84,7 @@ namespace MHArmory.ViewModels
             yield return equipments.FirstOrDefault(x => x.Type == Core.DataStructures.EquipmentType.Legs);
         }
 
-        public static string FindGroupName(IEnumerable<IEquipment> equipments)
+        public static string FindGroupName(IEnumerable<IEquipment> equipments, string language)
         {
             if (equipments == null)
                 return null;
@@ -97,14 +100,14 @@ namespace MHArmory.ViewModels
 
                 if (baseName == null)
                 {
-                    baseName = eqp.Name;
+                    baseName = eqp.Name[language];
                     firstPartMinLength = baseName.Length;
                     lastPartMinLength = baseName.Length;
                     continue;
                 }
 
                 int c;
-                string name = eqp.Name;
+                string name = eqp.Name[language];
 
                 for (c = 0; c < name.Length && c < baseName.Length; c++)
                 {
@@ -126,7 +129,7 @@ namespace MHArmory.ViewModels
             }
 
             if (firstPartMinLength == 0)
-                return null;
+                return equipments.First().Name[language]; // FIXME: Quick and dirty fallback, need to add sets game data for proper fix
 
             if (lastPartMinLength == 0 || firstPartMinLength == lastPartMinLength)
             {
@@ -145,7 +148,7 @@ namespace MHArmory.ViewModels
 
     public abstract class EquipmentGroupViewModel : ViewModelBase
     {
-        public string Name { get; protected set; }
+        public Dictionary<string, string> Name { get; protected set; }
 
         public IList<EquipmentViewModel> OrderedEquipments { get; protected set; }
         public IList<EquipmentViewModel> Equipments { get; }
@@ -203,8 +206,8 @@ namespace MHArmory.ViewModels
             }
 
             IsVisible =
-                searchStatement.IsMatching(Name) ||
-                Equipments.Any(x => searchStatement.IsMatching(x.Name));
+                searchStatement.IsMatching(Localization.Get(Name)) ||
+                Equipments.Any(x => searchStatement.IsMatching(Localization.Get(x.Name)));
         }
 
         private void OnToggleAll()
@@ -382,7 +385,7 @@ namespace MHArmory.ViewModels
             else
                 selected = allSlots[0];
 
-            MessageBox.Show("Save data import done.", "Import", MessageBoxButton.OK);
+            System.Windows.MessageBox.Show("Save data import done.", "Import", System.Windows.MessageBoxButton.OK);
 
             ApplySaveDataEquipments(selected);
         }
@@ -434,7 +437,7 @@ namespace MHArmory.ViewModels
                 {
                     equipment.IsPossessed = false;
 
-                    GameEquipment foundGameEquipmentFromMasterData = gameEquipments.FirstOrDefault(x => x.Name == equipment.Name);
+                    GameEquipment foundGameEquipmentFromMasterData = gameEquipments.FirstOrDefault(x => x.Name == Localization.Get(equipment.Name));
 
                     if (foundGameEquipmentFromMasterData == null)
                         Console.WriteLine($"Missing equipment from master data: {equipment.Name}");
@@ -462,7 +465,12 @@ namespace MHArmory.ViewModels
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"An error occured when trying to load game equipments information.\n\n{ex.Message}", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                System.Windows.MessageBox.Show(
+                    $"An error occured when trying to load game equipments information.\n\n{ex.Message}",
+                    "Error",
+                    System.Windows.MessageBoxButton.OK,
+                    System.Windows.MessageBoxImage.Error
+                );
                 return null;
             }
         }
@@ -557,8 +565,8 @@ namespace MHArmory.ViewModels
                 .Where(x => x.Type != Core.DataStructures.EquipmentType.Weapon && x.Type != Core.DataStructures.EquipmentType.Charm)
                 .Cast<ArmorPieceViewModel>()
                 .GroupBy(x => x.Id)
+                .OrderBy(x => x.Key)
                 .Select(x => new ArmorGroupViewModel(this, x))
-                .OrderBy(x => x.Name)
                 .ToList();
 
             HighRankArmors = rootViewModel.AllEquipments
@@ -566,15 +574,15 @@ namespace MHArmory.ViewModels
                 .Where(x => x.Type != Core.DataStructures.EquipmentType.Weapon && x.Type != Core.DataStructures.EquipmentType.Charm)
                 .Cast<ArmorPieceViewModel>()
                 .GroupBy(x => x.Id)
+                .OrderBy(x => x.Key)
                 .Select(x => new ArmorGroupViewModel(this, x))
-                .OrderBy(x => x.Name)
                 .ToList();
 
             Charms = rootViewModel.AllEquipments
                 .Where(x => x.Type == Core.DataStructures.EquipmentType.Charm)
                 .GroupBy(x => ((ICharmLevel)x.Equipment).Charm.Id)
+                .OrderBy(x => x.Key)
                 .Select(x => new CharmGroupViewModel(this, x))
-                .OrderBy(x => x.Name)
                 .ToList();
 
             AllEquipments = LowRankArmors
@@ -605,7 +613,7 @@ namespace MHArmory.ViewModels
                 foreach (EquipmentGroupViewModel group in AllEquipments)
                 {
                     foreach (EquipmentViewModel equipment in group.Equipments)
-                        equipment.IsPossessed = configuration.Items.Contains(equipment.Name);
+                        equipment.IsPossessed = configuration.Items.Contains(Localization.GetDefault(equipment.Name));
                 }
             }
             else
@@ -613,7 +621,7 @@ namespace MHArmory.ViewModels
                 foreach (EquipmentGroupViewModel group in AllEquipments)
                 {
                     foreach (EquipmentViewModel equipment in group.Equipments)
-                        equipment.IsPossessed = configuration.Items.Contains(equipment.Name) == false;
+                        equipment.IsPossessed = configuration.Items.Contains(Localization.GetDefault(equipment.Name)) == false;
                 }
             }
         }
@@ -646,7 +654,7 @@ namespace MHArmory.ViewModels
                 foreach (EquipmentGroupViewModel group in AllEquipments)
                 {
                     foreach (EquipmentViewModel equipment in group.Equipments.Where(x => x.IsPossessed))
-                        configuration.Items.Add(equipment.Name);
+                        configuration.Items.Add(Localization.GetDefault(equipment.Name));
                 }
             }
             else
@@ -657,7 +665,7 @@ namespace MHArmory.ViewModels
                 foreach (EquipmentGroupViewModel group in AllEquipments)
                 {
                     foreach (EquipmentViewModel equipment in group.Equipments.Where(x => x.IsPossessed == false))
-                        configuration.Items.Add(equipment.Name);
+                        configuration.Items.Add(Localization.GetDefault(equipment.Name));
                 }
             }
 

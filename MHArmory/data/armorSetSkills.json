@@ -1,7 +1,15 @@
 [
     {
         "id": 0,
-        "name": "Anjanath Power",
+        "name": {
+            "EN": "Anjanath Power",
+            "FR": "Pouvoir de l'Anjanath",
+            "JP": "蛮顎竜の力",
+            "IT": "Forza dell'Anjanath",
+            "DE": "Anjanath-Macht",
+            "KR": "만악룡의 힘",
+            "CN": "蠻顎龍之力"
+        },
         "parts": [
             {
                 "id": 0,
@@ -14,7 +22,15 @@
     },
     {
         "id": 1,
-        "name": "Legiana Blessing",
+        "name": {
+            "EN": "Legiana Blessing",
+            "FR": "Bénédiction du Legiana",
+            "JP": "風漂竜の恩恵",
+            "IT": "Benedizione del Legiana",
+            "DE": "Legiana-Segen",
+            "KR": "풍표룡의 은혜",
+            "CN": "風漂龍的恩惠"
+        },
         "parts": [
             {
                 "id": 1,
@@ -27,7 +43,15 @@
     },
     {
         "id": 2,
-        "name": "Odogaron Power",
+        "name": {
+            "EN": "Odogaron Power",
+            "FR": "Pouvoir de l'Odogaron",
+            "JP": "惨爪竜の力",
+            "IT": "Forza dell'Odogaron",
+            "DE": "Odogaron-Macht",
+            "KR": "참조룡의 힘",
+            "CN": "慘爪龍之力"
+        },
         "parts": [
             {
                 "id": 2,
@@ -40,7 +64,15 @@
     },
     {
         "id": 3,
-        "name": "Rathalos Power",
+        "name": {
+            "EN": "Rathalos Power",
+            "FR": "Pouvoir du Rathalos",
+            "JP": "火竜の力",
+            "IT": "Forza del Rathalos",
+            "DE": "Rathalos-Macht",
+            "KR": "화룡의 힘",
+            "CN": "火龍之力"
+        },
         "parts": [
             {
                 "id": 3,
@@ -53,7 +85,15 @@
     },
     {
         "id": 4,
-        "name": "Diablos Power",
+        "name": {
+            "EN": "Diablos Power",
+            "FR": "Pouvoir du Diablos",
+            "JP": "角竜の力",
+            "IT": "Forza del Diablos",
+            "DE": "Diablos-Kraft",
+            "KR": "각룡의 힘",
+            "CN": "角龍之力"
+        },
         "parts": [
             {
                 "id": 4,
@@ -66,7 +106,15 @@
     },
     {
         "id": 5,
-        "name": "Kirin Blessing",
+        "name": {
+            "EN": "Kirin Blessing",
+            "FR": "Bénédiction du Kirin",
+            "JP": "幻獣の恩恵",
+            "IT": "Benedizione del Kirin",
+            "DE": "Kirin-Segen",
+            "KR": "환수의 은혜",
+            "CN": "幻獸的恩惠"
+        },
         "parts": [
             {
                 "id": 5,
@@ -79,7 +127,15 @@
     },
     {
         "id": 6,
-        "name": "Anjanath Will",
+        "name": {
+            "EN": "Anjanath Will",
+            "FR": "Volonté de l'Anjanath",
+            "JP": "蛮顎竜の闘志",
+            "IT": "Volontà dell'Anjanath",
+            "DE": "Anjanath-Wille",
+            "KR": "만악룡의 투지",
+            "CN": "蠻顎龍之鬥志"
+        },
         "parts": [
             {
                 "id": 6,
@@ -99,7 +155,15 @@
     },
     {
         "id": 7,
-        "name": "Pink Rathian Mastery",
+        "name": {
+            "EN": "Pink Rathian Mastery",
+            "FR": "Secret du Rathian sakura",
+            "JP": "桜火竜の奥義",
+            "IT": "Esperto Rathian rosa",
+            "DE": "RosaRathianMeisterung",
+            "KR": "앵화룡의 비기",
+            "CN": "櫻火龍之奧秘"
+        },
         "parts": [
             {
                 "id": 8,
@@ -112,7 +176,15 @@
     },
     {
         "id": 8,
-        "name": "Zorah Magdaros Mastery",
+        "name": {
+            "EN": "Zorah Magdaros Mastery",
+            "FR": "Maitrise du Zorah Magdaros",
+            "JP": "熔山龍の奥義",
+            "IT": "Esperto Zorah Magdaros",
+            "DE": "ZorahMagdarosMeisterung",
+            "KR": "용산룡의 비기",
+            "CN": "熔山龍的奧秘"
+        },
         "parts": [
             {
                 "id": 9,
@@ -125,7 +197,15 @@
     },
     {
         "id": 9,
-        "name": "Legiana Favor",
+        "name": {
+            "EN": "Legiana Favor",
+            "FR": "Grâce du Legiana",
+            "JP": "風漂竜の恩寵",
+            "IT": "Benevolenza del Legiana",
+            "DE": "Legiana-Gefallen",
+            "KR": "풍표룡의 은총",
+            "CN": "風漂龍的恩寵"
+        },
         "parts": [
             {
                 "id": 10,
@@ -145,7 +225,15 @@
     },
     {
         "id": 10,
-        "name": "Odogaron Mastery",
+        "name": {
+            "EN": "Odogaron Mastery",
+            "FR": "Maitrise de l'Odogaron",
+            "JP": "惨爪竜の奥義",
+            "IT": "Esperto Odogaron",
+            "DE": "Odogaron-Meisterung",
+            "KR": "참조룡의 비기",
+            "CN": "慘爪龍的奧秘"
+        },
         "parts": [
             {
                 "id": 12,
@@ -165,7 +253,15 @@
     },
     {
         "id": 11,
-        "name": "Rathalos Mastery",
+        "name": {
+            "EN": "Rathalos Mastery",
+            "FR": "Secret du Rathalos",
+            "JP": "火竜の奥義",
+            "IT": "Esperto Rathalos",
+            "DE": "Rathalos-Meisterung",
+            "KR": "화룡의 비기",
+            "CN": "火龍的奧秘"
+        },
         "parts": [
             {
                 "id": 14,
@@ -185,7 +281,15 @@
     },
     {
         "id": 12,
-        "name": "Diablos Mastery",
+        "name": {
+            "EN": "Diablos Mastery",
+            "FR": "Secret du Diablos",
+            "JP": "角竜の奥義",
+            "IT": "Esperto Diablos",
+            "DE": "Diablos-Meisterung",
+            "KR": "각룡의 비기",
+            "CN": "角龍的奧秘"
+        },
         "parts": [
             {
                 "id": 16,
@@ -205,7 +309,15 @@
     },
     {
         "id": 13,
-        "name": "Uragaan Protection",
+        "name": {
+            "EN": "Uragaan Protection",
+            "FR": "Protection de l'Uragaan",
+            "JP": "爆鎚竜の守護",
+            "IT": "Protezione dell'Uragaan",
+            "DE": "Uragaan-Schutz",
+            "KR": "폭추룡의 수호",
+            "CN": "爆鎚龍的守護"
+        },
         "parts": [
             {
                 "id": 18,
@@ -218,7 +330,15 @@
     },
     {
         "id": 14,
-        "name": "Bazelgeuse Protection",
+        "name": {
+            "EN": "Bazelgeuse Protection",
+            "FR": "Protection de Bazelgeuse",
+            "JP": "爆鱗竜の守護",
+            "IT": "Protezione del Bazelgeuse",
+            "DE": "Bazelgeuse-Schutz",
+            "KR": "폭린룡의 수호",
+            "CN": "爆鱗龍的守護"
+        },
         "parts": [
             {
                 "id": 19,
@@ -231,7 +351,15 @@
     },
     {
         "id": 15,
-        "name": "Nergigante Hunger",
+        "name": {
+            "EN": "Nergigante Hunger",
+            "FR": "Faim du Nergigante",
+            "JP": "滅尽龍の飢餓",
+            "IT": "Fame del Nergigante",
+            "DE": "Nergigante-Hunger",
+            "KR": "멸진룡의 굶주림",
+            "CN": "滅盡龍的飢餓"
+        },
         "parts": [
             {
                 "id": 20,
@@ -244,7 +372,15 @@
     },
     {
         "id": 16,
-        "name": "Teostra Technique",
+        "name": {
+            "EN": "Teostra Technique",
+            "FR": "Technique du Teostra",
+            "JP": "炎王龍の武技",
+            "IT": "Tecnica del Teostra",
+            "DE": "Teostra-Technik",
+            "KR": "염왕룡의 무예",
+            "CN": "炎王龍的武技"
+        },
         "parts": [
             {
                 "id": 21,
@@ -257,7 +393,15 @@
     },
     {
         "id": 17,
-        "name": "Kushala Daora Flight",
+        "name": {
+            "EN": "Kushala Daora Flight",
+            "FR": "Envol du Kushala Daora",
+            "JP": "鋼龍の飛翔",
+            "IT": "Volo del Kushala Daora",
+            "DE": "Kushala-Daora-Flug",
+            "KR": "강룡의 비상",
+            "CN": "鋼龍的飛翔"
+        },
         "parts": [
             {
                 "id": 22,
@@ -270,7 +414,15 @@
     },
     {
         "id": 18,
-        "name": "Vaal Hazak Vitality",
+        "name": {
+            "EN": "Vaal Hazak Vitality",
+            "FR": "Vitalité du Vaal Hazak",
+            "JP": "屍套龍の命脈",
+            "IT": "Vitalità del Vaal Hazak",
+            "DE": "Vaal-Hazak-Lebenskraft",
+            "KR": "시투룡의 명맥",
+            "CN": "尸套龍的命脈"
+        },
         "parts": [
             {
                 "id": 23,
@@ -283,7 +435,15 @@
     },
     {
         "id": 19,
-        "name": "Kirin Favor",
+        "name": {
+            "EN": "Kirin Favor",
+            "FR": "Grâce du Kirin",
+            "JP": "幻獣の恩寵",
+            "IT": "Benevolenza del Kirin",
+            "DE": "Kirin-Gefallen",
+            "KR": "환수의 은총",
+            "CN": "幻獸的恩寵"
+        },
         "parts": [
             {
                 "id": 24,
@@ -296,7 +456,15 @@
     },
     {
         "id": 20,
-        "name": "Xeno'jiiva Divinity",
+        "name": {
+            "EN": "Xeno'jiiva Divinity",
+            "FR": "Divinité du Xeno'jiiva",
+            "JP": "冥灯龍の神秘",
+            "IT": "Spirito dello Xeno'jiiva",
+            "DE": "Xeno'jiiva-Göttlichkeit",
+            "KR": "명등룡의 신비",
+            "CN": "冥燈龍的神秘"
+        },
         "parts": [
             {
                 "id": 25,
@@ -309,7 +477,15 @@
     },
     {
         "id": 21,
-        "name": "Guild Guidance",
+        "name": {
+            "EN": "Guild Guidance",
+            "FR": "Guidance de la Guilde",
+            "JP": "ギルドの導き",
+            "IT": "Assistenza della Gilda",
+            "DE": "Gildenführung",
+            "KR": "길드의 안내",
+            "CN": "公會的引導"
+        },
         "parts": [
             {
                 "id": 26,
@@ -322,7 +498,15 @@
     },
     {
         "id": 22,
-        "name": "Commission Guidance",
+        "name": {
+            "EN": "Commission Guidance",
+            "FR": "Guidancede la Commission",
+            "JP": "調査団の導き",
+            "IT": "Assistenza della Commissione",
+            "DE": "Kommissionsführung",
+            "KR": "조사단의 안내",
+            "CN": "調查團的指引"
+        },
         "parts": [
             {
                 "id": 27,
@@ -335,7 +519,15 @@
     },
     {
         "id": 23,
-        "name": "Lunastra Favor",
+        "name": {
+            "EN": "Lunastra Favor",
+            "FR": "Grâce de la Lunastra",
+            "JP": "炎妃龍の恩寵",
+            "IT": "Auspicio della Lunastra",
+            "DE": "Lunastra-Vorteil",
+            "KR": "염비룡의 은총",
+            "CN": "炎妃龍的恩寵"
+        },
         "parts": [
             {
                 "id": 28,
@@ -355,7 +547,15 @@
     },
     {
         "id": 24,
-        "name": "Soul of the Dragoon",
+        "name": {
+            "EN": "Soul of the Dragoon",
+            "FR": "Âme du chevalier dragon",
+            "JP": "竜騎士の証",
+            "IT": "Anima di Dragoon",
+            "DE": "Dragoon-Kristall",
+            "KR": "용기사의 증표",
+            "CN": "龍騎士之証"
+        },
         "parts": [
             {
                 "id": 30,

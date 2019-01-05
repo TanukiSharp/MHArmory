@@ -73,7 +73,11 @@ namespace MHArmory
                     {
                         WeaponSlots = x.WeaponSlots,
                         Skills = x.Abilities
-                            .Select(item => new SkillLoadoutItemConfigurationV2 { SkillName = item.SkillName, Level = item.Level })
+                            .Select(item => new SkillLoadoutItemConfigurationV2
+                            {
+                                SkillName = Core.Localization.GetDefault(item.SkillName),
+                                Level = item.Level
+                            })
                             .ToArray()
                     };
                 }

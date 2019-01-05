@@ -6,6 +6,7 @@ using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 using MHArmory.ArmoryDataSource.DataStructures;
+using MHArmory.Core;
 using Newtonsoft.Json;
 
 namespace DataSourceTool
@@ -39,19 +40,19 @@ namespace DataSourceTool
 
             foreach (MhwdbSkillPrimitive x in mhwdbSkillPrimitives)
             {
-                SkillPrimitive defaultSkillPrimitive = defaultSkillPrimitives.FirstOrDefault(y => y.Name == x.Name);
+                SkillPrimitive defaultSkillPrimitive = defaultSkillPrimitives.FirstOrDefault(y => Localization.GetDefault(y.Name) == x.Name);
                 if (defaultSkillPrimitive == null)
                 {
                     Console.WriteLine($"Skill '{x.Name}' found in mhw-db.com is missing from Armory data source.");
                     continue;
                 }
 
-                defaultSkillPrimitive.Description = x.Description;
+                defaultSkillPrimitive.Description[Localization.DefaultLanguage] = x.Description;
             }
 
             foreach (SkillPrimitive x in defaultSkillPrimitives)
             {
-                MhwdbSkillPrimitive mhwdbSkillPrimitive = mhwdbSkillPrimitives.FirstOrDefault(y => y.Name == x.Name);
+                MhwdbSkillPrimitive mhwdbSkillPrimitive = mhwdbSkillPrimitives.FirstOrDefault(y => y.Name == Localization.GetDefault(x.Name));
                 if (mhwdbSkillPrimitive == null)
                     Console.WriteLine($"Skill '{x.Name}' found in Armory data source is missing from mhw-db.com.");
             }

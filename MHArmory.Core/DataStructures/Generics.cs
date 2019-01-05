@@ -13,7 +13,7 @@ namespace MHArmory.Core.DataStructures
     {
         int Id { get; }
         EquipmentType Type { get; }
-        string Name { get; }
+        Dictionary<string, string> Name { get; }
         int Rarity { get; }
         int[] Slots { get; }
         IEvent Event { get; }

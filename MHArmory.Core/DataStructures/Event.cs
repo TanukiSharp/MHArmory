@@ -7,15 +7,15 @@ namespace MHArmory.Core.DataStructures
     public interface IEvent
     {
         int Id { get; }
-        string Name { get; }
+        Dictionary<string, string> Name { get; }
     }
 
     public class Event : IEvent
     {
         public int Id { get; }
-        public string Name { get; }
+        public Dictionary<string, string> Name { get; }
 
-        public Event(int id, string name)
+        public Event(int id, Dictionary<string, string> name)
         {
             Id = id;
             Name = name;

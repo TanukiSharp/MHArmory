@@ -3,16 +3,17 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using MHArmory.Core;
 using MHArmory.Core.DataStructures;
 
 namespace MHArmory.ViewModels
 {
     public class JewelAbilityViewModel : ViewModelBase
     {
-        public string SkillName { get; } // TODO: localization here
+        public Dictionary<string, string> SkillName { get; }
         public int MaxLevel { get; }
 
-        private Func<FullSkillDescriptionViewModel> descriptionFunc;
+        private readonly Func<FullSkillDescriptionViewModel> descriptionFunc;
         private FullSkillDescriptionViewModel description;
         public FullSkillDescriptionViewModel Description
         {
@@ -44,7 +45,7 @@ namespace MHArmory.ViewModels
         private readonly DecorationsOverrideViewModel parent;
         private readonly IJewel jewel;
 
-        public string Name { get; } // TODO: localization here
+        public Dictionary<string, string> Name { get; }
         public int SlotSize { get; }
         public IList<JewelAbilityViewModel> Abilities { get; }
 
@@ -123,8 +124,8 @@ namespace MHArmory.ViewModels
             }
 
             IsVisible =
-                searchStatement.IsMatching(jewel.Name) ||
-                jewel.Abilities.Any(x => searchStatement.IsMatching(x.Skill.Name));
+                searchStatement.IsMatching(Localization.Get(jewel.Name)) ||
+                jewel.Abilities.Any(x => searchStatement.IsMatching(Localization.Get(x.Skill.Name)));
         }
     }
 }

@@ -197,7 +197,12 @@ namespace MHArmory
             }
 
             foreach (AbilityViewModel ability in rootViewModel.SelectedAbilities)
-                ability.IsChecked = loadoutConfig.Skills.Any(x => x.SkillName == ability.SkillName && x.Level == ability.Level);
+            {
+                ability.IsChecked = loadoutConfig.Skills.Any(x =>
+                    x.SkillName == Core.Localization.GetDefault(ability.SkillName) &&
+                    x.Level == ability.Level
+                );
+            }
         }
 
         private bool InternalSave()
@@ -211,15 +216,10 @@ namespace MHArmory
             {
                 Dictionary<string, SkillLoadoutItemConfigurationV3> loadoutConfig = GlobalData.Instance.Configuration.SkillLoadouts;
 
-                SkillLoadoutItemConfigurationV2[] selectedAbilities = rootViewModel.SelectedAbilities
-                    .Where(x => x.IsChecked)
-                    .Select(x => new SkillLoadoutItemConfigurationV2 { SkillName = x.SkillName, Level = x.Level })
-                    .ToArray();
-
                 loadoutConfig[CurrentLoadoutName] = new SkillLoadoutItemConfigurationV3
                 {
                     WeaponSlots = rootViewModel.InParameters.Slots.Select(x => x.Value).ToArray(),
-                    Skills = selectedAbilities
+                    Skills = CreateSelectedSkillsArray()
                 };
 
                 IsModified = false;
@@ -228,6 +228,18 @@ namespace MHArmory
 
                 return true;
             }
+        }
+
+        private SkillLoadoutItemConfigurationV2[] CreateSelectedSkillsArray()
+        {
+            return rootViewModel.SelectedAbilities
+                .Where(x => x.IsChecked)
+                .Select(x => new SkillLoadoutItemConfigurationV2
+                {
+                    SkillName = Core.Localization.GetDefault(x.Ability.Skill.Name),
+                    Level = x.Level
+                })
+                .ToArray();
         }
 
         private bool InternalSaveAs()
@@ -246,15 +258,10 @@ namespace MHArmory
                     return false;
             }
 
-            SkillLoadoutItemConfigurationV2[] selectedAbilities = rootViewModel.SelectedAbilities
-                .Where(x => x.IsChecked)
-                .Select(x => new SkillLoadoutItemConfigurationV2 { SkillName = x.SkillName, Level = x.Level })
-                .ToArray();
-
             loadoutConfig[inputWindow.Text] = new SkillLoadoutItemConfigurationV3
             {
                 WeaponSlots = rootViewModel.InParameters.Slots.Select(x => x.Value).ToArray(),
-                Skills = selectedAbilities
+                Skills = CreateSelectedSkillsArray()
             };
 
             GlobalData.Instance.Configuration.LastOpenedLoadout = inputWindow.Text;
