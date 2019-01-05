@@ -24,7 +24,13 @@ namespace MHArmory.Configurations.Conversion
                 Version = 3,
                 BackupLocations = inputConfig.BackupLocations,
                 LastOpenedLoadout = inputConfig.LastOpenedLoadout,
+                Language = inputConfig.Language,
             };
+
+            result.SearchResultProcessing.ActiveSortingIndex = inputConfig.SearchResultProcessing.ActiveSortingIndex;
+            result.SearchResultProcessing.Sorting = inputConfig.SearchResultProcessing.Sorting;
+
+            CopyInParameters(inputConfig.InParameters, result.InParameters);
 
             foreach (KeyValuePair<string, WindowConfiguration> x in inputConfig.Windows)
                 result.Windows[x.Key] = x.Value;
@@ -39,6 +45,26 @@ namespace MHArmory.Configurations.Conversion
             }
 
             return result;
+        }
+
+        private void CopyInParameters(InParametersConfigurationV2 source, InParametersConfigurationV2 target)
+        {
+            target.DecorationOverride.Items.Clear();
+            foreach (KeyValuePair<string, DecorationOverrideConfigurationItem> x in source.DecorationOverride.Items)
+                target.DecorationOverride.Items[x.Key] = x.Value;
+            target.DecorationOverride.UseOverride = source.DecorationOverride.UseOverride;
+
+            target.EquipmentOverride.Items.Clear();
+            foreach (string x in source.EquipmentOverride.Items)
+                target.EquipmentOverride.Items.Add(x);
+            target.EquipmentOverride.IsStoringPossessed = source.EquipmentOverride.IsStoringPossessed;
+            target.EquipmentOverride.UseOverride = source.EquipmentOverride.UseOverride;
+
+            target.Gender = source.Gender;
+
+            target.Rarity = source.Rarity;
+
+            target.WeaponSlots = source.WeaponSlots;
         }
     }
 }
