@@ -22,6 +22,13 @@ namespace MHArmory.Search
 
         public void Dispose()
         {
+            jewelResultObjectPool.Dispose();
+            availableSlotsObjectPool.Dispose();
+            armorSetSkillPartsObjectPool.Dispose();
+            searchEquipmentsObjectPool.Dispose();
+
+            SearchMetricsChanged = null;
+            SearchProgress = null;
         }
 
         public Task<IList<ArmorSetSearchResult>> SearchArmorSets(ISolverData solverData)
