@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using MHArmory.Core;
 using MHArmory.Core.DataStructures;
 using MHArmory.Search.Contracts;
+using MHArmory.Search.Cutoff;
 
 namespace MHArmory.Search
 {
@@ -125,61 +126,70 @@ namespace MHArmory.Search
 
             await Task.Yield();
 
-            var parallelOptions = new ParallelOptions
+            bool cutoffSearch = false;
+            if (cutoffSearch)
             {
-                //MaxDegreeOfParallelism = 1, // to ease debugging
-                MaxDegreeOfParallelism = Environment.ProcessorCount
-            };
-
-            currentCombinations = 0;
-            totalCombinations = metrics.CombinationCount;
-
-            ParallelLoopResult parallelResult;
-
-            try
+                test = CutoffSearch.Instance.Run(data);
+            }
+            else
             {
-                OrderablePartitioner<IEquipment[]> partitioner = Partitioner.Create(generator.All(cancellationToken), EnumerablePartitionerOptions.NoBuffering);
-
-                parallelResult = Parallel.ForEach(partitioner, parallelOptions, equips =>
+                var parallelOptions = new ParallelOptions
                 {
-                    if (cancellationToken.IsCancellationRequested)
+                    //MaxDegreeOfParallelism = 1, // to ease debugging
+                    MaxDegreeOfParallelism = Environment.ProcessorCount
+                };
+
+                currentCombinations = 0;
+                totalCombinations = metrics.CombinationCount;
+
+                ParallelLoopResult parallelResult;
+
+                try
+                {
+                    OrderablePartitioner<IEquipment[]> partitioner = Partitioner.Create(generator.All(cancellationToken), EnumerablePartitionerOptions.NoBuffering);
+
+                    parallelResult = Parallel.ForEach(partitioner, parallelOptions, equips =>
                     {
-                        searchEquipmentsObjectPool.PutObject(equips);
-                        return;
-                    }
-
-                    ArmorSetSearchResult searchResult = IsArmorSetMatching(data.WeaponSlots, equips, data.AllJewels, data.DesiredAbilities);
-
-                    Interlocked.Increment(ref currentCombinations);
-
-                    if (searchResult.IsMatch)
-                    {
-                        searchResult.ArmorPieces = new IArmorPiece[]
+                        if (cancellationToken.IsCancellationRequested)
                         {
+                            searchEquipmentsObjectPool.PutObject(equips);
+                            return;
+                        }
+
+                        ArmorSetSearchResult searchResult = IsArmorSetMatching(data.WeaponSlots, equips, data.AllJewels, data.DesiredAbilities);
+
+                        Interlocked.Increment(ref currentCombinations);
+
+                        if (searchResult.IsMatch)
+                        {
+                            searchResult.ArmorPieces = new IArmorPiece[]
+                            {
                             (IArmorPiece)equips[0],
                             (IArmorPiece)equips[1],
                             (IArmorPiece)equips[2],
                             (IArmorPiece)equips[3],
                             (IArmorPiece)equips[4],
-                        };
-                        searchResult.Charm = (ICharmLevel)equips[5];
+                            };
+                            searchResult.Charm = (ICharmLevel)equips[5];
 
-                        lock (test)
-                        {
-                            test.Add(searchResult);
+                            lock (test)
+                            {
+                                test.Add(searchResult);
+                            }
                         }
-                    }
 
-                    searchEquipmentsObjectPool.PutObject(equips);
-                });
+                        searchEquipmentsObjectPool.PutObject(equips);
+                    });
 
-                if (cancellationToken.IsCancellationRequested == false)
-                    SearchProgress?.Invoke(1.0);
+                    if (cancellationToken.IsCancellationRequested == false)
+                        SearchProgress?.Invoke(1.0);
+                }
+                finally
+                {
+                    generator.Reset();
+                }
             }
-            finally
-            {
-                generator.Reset();
-            }
+            
 
             sw.Stop();
 
