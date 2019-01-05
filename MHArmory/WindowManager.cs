@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Interop;
+using System.Windows.Media;
 using MHArmory.Configurations;
 
 namespace MHArmory
@@ -240,6 +241,12 @@ namespace MHArmory
             var monitorInfo = MonitorInfoEx.Create();
             if (GetMonitorInfo(hMonitor, ref monitorInfo) == false)
                 return false;
+
+            DpiScale dpiInfo = VisualTreeHelper.GetDpi(App.Current.MainWindow);
+            monitorInfo.Monitor.bottom = (int)Math.Floor(monitorInfo.Monitor.right / dpiInfo.DpiScaleX);
+            monitorInfo.Monitor.bottom = (int)Math.Floor(monitorInfo.Monitor.bottom / dpiInfo.DpiScaleY);
+            monitorInfo.WorkArea.right = (int)Math.Floor(monitorInfo.WorkArea.right / dpiInfo.DpiScaleX);
+            monitorInfo.WorkArea.bottom = (int)Math.Floor(monitorInfo.WorkArea.bottom / dpiInfo.DpiScaleY);
 
             int top = (int)window.Top;
             if (top < monitorInfo.WorkArea.top)
