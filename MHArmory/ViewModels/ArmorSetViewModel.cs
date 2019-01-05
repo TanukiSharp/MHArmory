@@ -389,15 +389,26 @@ namespace MHArmory.ViewModels
             else
             {
                 foreach (IAbility x in DesiredAbilities)
-                    sb.Append($"- {x.Skill.Name}: {x.Level} / {x.Skill.MaxLevel}{newLine}");
+                    sb.Append($"- {Core.Localization.Get(x.Skill.Name)}: {x.Level} / {x.Skill.MaxLevel}{newLine}");
+            }
+
+            sb.Append(newLine);
+
+            sb.Append($"**Weapon slots**{newLine}");
+            if (root.InParameters.Slots.All(x => x.Value <= 0))
+                sb.Append($"- *none*{newLine}");
+            else
+            {
+                IEnumerable<string> en = root.InParameters.Slots.Where(x => x.Value > 0).Select(x => $"[{x.Value}]");
+                sb.Append($"- {string.Join(" ", en)}{newLine}");
             }
 
             sb.Append(newLine);
 
             sb.Append($"**Equipments**{newLine}");
             foreach (IArmorPiece x in ArmorPieces)
-                sb.Append($"- {x.Name}{newLine}");
-            sb.Append($"- {Charm.Name}{newLine}");
+                sb.Append($"- {Core.Localization.Get(x.Name)}{newLine}");
+            sb.Append($"- {Core.Localization.Get(Charm.Name)}{newLine}");
 
             sb.Append(newLine);
 
@@ -407,7 +418,7 @@ namespace MHArmory.ViewModels
             else
             {
                 foreach (ArmorSetJewelViewModel x in Jewels)
-                    sb.Append($"- {x.Jewel.Name} [{x.Jewel.SlotSize}] x{x.Count}{newLine}");
+                    sb.Append($"- {Core.Localization.Get(x.Jewel.Name)} [{x.Jewel.SlotSize}] x{x.Count}{newLine}");
             }
 
             sb.Append(newLine);
@@ -443,7 +454,7 @@ namespace MHArmory.ViewModels
                     // skills that are not extra ones but still in the additional skills
                     // provide more than the desired one, thus displaying in italic
                     string sides = x.IsExtra == false ? "*" : string.Empty;
-                    sb.Append($"- {sides}{x.Skill.Name}: {x.TotalLevel} / {x.Skill.MaxLevel}{sides}{newLine}");
+                    sb.Append($"- {sides}{Core.Localization.Get(x.Skill.Name)}: {x.TotalLevel} / {x.Skill.MaxLevel}{sides}{newLine}");
                 }
             }
 
