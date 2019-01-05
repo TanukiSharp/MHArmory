@@ -35,7 +35,7 @@ namespace MHArmory.ViewModels
 
         public ISolverData SolverData { get; private set; }
 
-        private ISolver solver;
+        private ISolver solver = new Solver();
 
         public AutoUpdateViewModel AutoUpdateViewModel { get; } = new AutoUpdateViewModel();
 
@@ -130,6 +130,7 @@ namespace MHArmory.ViewModels
             EquipmentOverride = new EquipmentOverrideViewModel(this);
 
             SetupLocalization();
+            InitializeSolver();
         }
 
         private void SetupLocalization()
@@ -149,6 +150,12 @@ namespace MHArmory.ViewModels
             ConfigurationManager.Save(GlobalData.Instance.Configuration);
         }
 
+        private void InitializeSolver()
+        {
+            solver.SearchMetricsChanged += SolverSearchMetricsChanged;
+            solver.SearchProgress += SolverSearchProgress;
+        }
+
         public void Dispose()
         {
             Localization.LanguageChanged -= Localization_LanguageChanged;
@@ -158,6 +165,9 @@ namespace MHArmory.ViewModels
                 loadoutManager.LoadoutChanged -= LoadoutManager_LoadoutChanged;
                 loadoutManager.ModifiedChanged -= LoadoutManager_ModifiedChanged;
             }
+
+            solver.SearchMetricsChanged -= SolverSearchMetricsChanged;
+            solver.SearchProgress -= SolverSearchProgress;
         }
 
         private void OnAbout()
@@ -452,38 +462,26 @@ namespace MHArmory.ViewModels
             if (SolverData == null)
                 return;
 
-            solver = new Solver(SolverData);
+            IList<ArmorSetSearchResult> result = await solver.SearchArmorSets(SolverData, cancellationToken);
 
-            solver.SearchMetricsChanged += SolverSearchMetricsChanged;
-            solver.SearchProgress += SolverSearchProgress;
-
-            try
+            if (SolverData == null)
             {
-                IList<ArmorSetSearchResult> result = await solver.SearchArmorSets(cancellationToken);
-
-                if (SolverData == null)
-                {
-                    rawFoundArmorSets = null;
-                    return;
-                }
-
-                if (result != null)
-                {
-                    rawFoundArmorSets = result.Where(x => x.IsMatch).Select(x => new ArmorSetViewModel(
-                        SolverData,
-                        x.ArmorPieces,
-                        x.Charm,
-                        x.Jewels.Select(j => new ArmorSetJewelViewModel(j.Jewel, j.Count)).ToList(),
-                        x.SpareSlots
-                    ));
-
-                    ApplySorting(true);
-                }
+                rawFoundArmorSets = null;
+                return;
             }
-            finally
+
+            if (result != null)
             {
-                solver.SearchMetricsChanged -= SolverSearchMetricsChanged;
-                solver.SearchProgress -= SolverSearchProgress;
+                rawFoundArmorSets = result.Where(x => x.IsMatch).Select(x => new ArmorSetViewModel(
+                    this,
+                    SolverData,
+                    x.ArmorPieces,
+                    x.Charm,
+                    x.Jewels.Select(j => new ArmorSetJewelViewModel(j.Jewel, j.Count)).ToList(),
+                    x.SpareSlots
+                ));
+
+                ApplySorting(true);
             }
         }
 
@@ -508,6 +506,17 @@ namespace MHArmory.ViewModels
             }
 
             return new SolverDataJewelModel(jewel, int.MaxValue);
+        }
+
+        internal void WeaponSlotsChanged()
+        {
+            CreateSolverData();
+
+            if (IsAutoSearch)
+                SearchArmorSets();
+
+            if (loadoutManager != null)
+                loadoutManager.IsModified = true;
         }
 
         private DispatcherOperation abilityChangingDispatcherOperation;

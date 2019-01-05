@@ -4,6 +4,7 @@
 
 - Now game data are localized in English, French, Japanese, Italian, German, Korean and Chinese
     - Note that Armory remains in English, language of game data only can be changed
+- Now weapon slots are saved in the skill loadouts, and included in screenshots
 
 ## 0.0.8.3 (2018/12/22)
 

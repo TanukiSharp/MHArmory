@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Microsoft.Extensions.Logging;
 using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 
 namespace MHArmory.Configurations
 {
@@ -91,7 +92,7 @@ namespace MHArmory.Configurations
 
             string versionStr = typeName.Substring(ConfigurationTypePrefix.Length);
 
-            if (uint.TryParse(versionStr, out uint version) == false)
+            if (uint.TryParse(versionStr, out uint applicationVersion) == false)
                 throw new InvalidOperationException($"Invalid configuration type provided '{typeof(T).FullName}', invalid version number '{versionStr}'.");
 
             string filename = null;
@@ -104,20 +105,31 @@ namespace MHArmory.Configurations
                 {
                     string content = File.ReadAllText(filename);
 
-                    IConfiguration config = JsonConvert.DeserializeObject<T>(content);
+                    int configVersion = ReadFileVersion(content);
 
-                    if (config.Version == 0)
-                        config.Version = version;
+                    if (configVersion < 0)
+                        configVersion = (int)applicationVersion;
 
-                    if (config.Version == version)
-                        return (T)config;
+                    if (configVersion == applicationVersion)
+                        return JsonConvert.DeserializeObject<T>(content);
 
-                    if (config.Version > version)
-                        failFast = new InvalidDataException($"Invalid configuration file version '{config.Version}', latest supported version is '{version}'.");
+                    if (configVersion > applicationVersion)
+                        failFast = new InvalidDataException($"Invalid configuration file version '{configVersion}', latest supported version is '{applicationVersion}'.");
                     else
                     {
+                        // FIXME: Temporary solution
+                        if (configVersion == 2 && applicationVersion == 3)
+                        {
+                            ConfigurationV2 configV2 = JsonConvert.DeserializeObject<ConfigurationV2>(content);
+
+                            Conversion.IConverter converter = new Conversion.ConverterV2ToV3();
+                            var config = converter.Convert(configV2) as IConfiguration;
+                            if (config != null)
+                                return (T)config;
+                        }
+
                         // TODO Here version is between 1 and 'version - 1', implement auto conversion of configuration formats
-                        failFast = new NotImplementedException($"Have to implement configuration format converters ('{config.Version}' -> '{version}').");
+                        failFast = new NotImplementedException($"Have to implement configuration format converters ('{configVersion}' -> '{applicationVersion}').");
                     }
                 }
                 else
@@ -133,10 +145,25 @@ namespace MHArmory.Configurations
 
             IConfiguration defaultInstance = new T
             {
-                Version = version
+                Version = applicationVersion
             };
 
             return (T)defaultInstance;
+        }
+
+        private static int ReadFileVersion(string content)
+        {
+            var root = JsonConvert.DeserializeObject(content) as JObject;
+            if (root == null)
+                return -1;
+
+            if (root.TryGetValue("version", out JToken versionToken) == false)
+                return -1;
+
+            if (versionToken is JValue versionValue && versionToken.Type == JTokenType.Integer)
+                return versionToken.Value<int>();
+
+            return -1;
         }
     }
 }

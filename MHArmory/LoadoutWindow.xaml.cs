@@ -64,18 +64,22 @@ namespace MHArmory
 
             if (loadoutSelectorViewModel.IsManageMode)
             {
-                Dictionary<string, SkillLoadoutItemConfigurationV2[]> loadoutConfig = GlobalData.Instance.Configuration.SkillLoadouts;
+                Dictionary<string, SkillLoadoutItemConfigurationV3> loadoutConfig = GlobalData.Instance.Configuration.SkillLoadouts;
 
                 loadoutConfig.Clear();
                 foreach (LoadoutViewModel x in loadoutSelectorViewModel.Loadouts)
                 {
-                    loadoutConfig[x.Name] = x.Abilities
-                        .Select(item => new SkillLoadoutItemConfigurationV2
-                        {
-                            SkillName = Core.Localization.GetDefault(item.SkillName),
-                            Level = item.Level
-                        })
-                        .ToArray();
+                    loadoutConfig[x.Name] = new SkillLoadoutItemConfigurationV3
+                    {
+                        WeaponSlots = x.WeaponSlots,
+                        Skills = x.Abilities
+                            .Select(item => new SkillLoadoutItemConfigurationV2
+                            {
+                                SkillName = Core.Localization.GetDefault(item.SkillName),
+                                Level = item.Level
+                            })
+                            .ToArray()
+                    };
                 }
 
                 if (currentLoadout != null)

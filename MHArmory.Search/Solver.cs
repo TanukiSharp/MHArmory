@@ -17,32 +17,26 @@ namespace MHArmory.Search
         private int currentCombinations;
         private double totalCombinations;
 
-        private readonly ISolverData data;
-
-        public Solver(ISolverData data)
-        {
-            if (data == null)
-                throw new ArgumentNullException(nameof(data));
-
-            this.data = data;
-        }
-
         public event Action<SearchMetrics> SearchMetricsChanged;
         public event Action<double> SearchProgress;
 
-        public Task<IList<ArmorSetSearchResult>> SearchArmorSets()
+        public void Dispose()
         {
-            return SearchArmorSets(CancellationToken.None);
         }
 
-        public Task<IList<ArmorSetSearchResult>> SearchArmorSets(CancellationToken cancellationToken)
+        public Task<IList<ArmorSetSearchResult>> SearchArmorSets(ISolverData solverData)
+        {
+            return SearchArmorSets(solverData, CancellationToken.None);
+        }
+
+        public Task<IList<ArmorSetSearchResult>> SearchArmorSets(ISolverData solverData, CancellationToken cancellationToken)
         {
             UpdateSearchProgression(cancellationToken);
 
             return Task.Factory.StartNew(() =>
             {
                 return SearchArmorSetsInternal(
-                    data.DesiredAbilities,
+                    solverData,
                     cancellationToken
                 );
             }, TaskCreationOptions.LongRunning).Unwrap();
@@ -65,7 +59,7 @@ namespace MHArmory.Search
         private readonly ObjectPool<IEquipment[]> searchEquipmentsObjectPool = new ObjectPool<IEquipment[]>(() => new IEquipment[6]);
 
         private async Task<IList<ArmorSetSearchResult>> SearchArmorSetsInternal(
-            IAbility[] desiredAbilities,
+            ISolverData data,
             CancellationToken cancellationToken
         )
         {
@@ -147,7 +141,7 @@ namespace MHArmory.Search
                         return;
                     }
 
-                    ArmorSetSearchResult searchResult = IsArmorSetMatching(data.WeaponSlots, equips, data.AllJewels, desiredAbilities);
+                    ArmorSetSearchResult searchResult = IsArmorSetMatching(data.WeaponSlots, equips, data.AllJewels, data.DesiredAbilities);
 
                     Interlocked.Increment(ref currentCombinations);
 
@@ -171,6 +165,9 @@ namespace MHArmory.Search
 
                     searchEquipmentsObjectPool.PutObject(equips);
                 });
+
+                if (cancellationToken.IsCancellationRequested == false)
+                    SearchProgress?.Invoke(1.0);
             }
             finally
             {

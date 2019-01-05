@@ -193,7 +193,7 @@ namespace MHArmory.ViewModels
             config.WeaponSlots = Slots.Select(x => x.Value).ToArray();
             ConfigurationManager.Save(GlobalData.Instance.Configuration);
 
-            root.CreateSolverData();
+            root.WeaponSlotsChanged();
         }
 
         private void UseDecorationsOverrideChanged()
