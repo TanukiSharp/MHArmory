@@ -32,8 +32,6 @@ namespace MHArmory
         {
             InitializeComponent();
 
-            WindowManager.FitInScreen(this);
-
             this.rootViewModel = rootViewModel;
 
             decorationsOverrideViewModel = new DecorationsOverrideViewModel(GlobalData.Instance.Jewels, ProvideSaveSlotInfo);

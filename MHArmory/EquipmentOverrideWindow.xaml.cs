@@ -28,8 +28,6 @@ namespace MHArmory
         {
             InitializeComponent();
 
-            WindowManager.FitInScreen(this);
-
             this.rootViewModel = rootViewModel;
 
             rootViewModel.EquipmentOverride.SetSaveSelector(ProvideSaveSlotInfo);

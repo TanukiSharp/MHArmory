@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
@@ -24,8 +24,6 @@ namespace MHArmory
         public AdvancedSearchWindow(RootViewModel root)
         {
             InitializeComponent();
-
-            WindowManager.FitInScreen(this);
 
             this.root = root;
 

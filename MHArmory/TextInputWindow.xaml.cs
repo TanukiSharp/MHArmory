@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,8 +20,6 @@ namespace MHArmory
         public TextInputWindow(string title, string prompt, string defaultText, bool isMandatory)
         {
             InitializeComponent();
-
-            WindowManager.FitInScreen(this);
 
             Title = title;
             textInputViewModel = new TextInputViewModel(prompt, defaultText, isMandatory, OnEnd);

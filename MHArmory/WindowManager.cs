@@ -216,6 +216,8 @@ namespace MHArmory
             if (window is IWindow win)
                 win.OnOpen(window.IsVisible, argument);
 
+            FitInScreen(window);
+
             if (isModal)
                 return window.ShowDialog();
             else
@@ -248,7 +250,13 @@ namespace MHArmory
             int bottom = (int)(window.Top + window.Height);
             if (bottom > monitorInfo.WorkArea.bottom)
             {
-                window.Height -= (bottom - monitorInfo.WorkArea.bottom);
+                if (window.Height < monitorInfo.WorkArea.bottom)
+                    window.Top = monitorInfo.WorkArea.bottom - window.Height;
+                else
+                {
+                    window.Top = monitorInfo.WorkArea.top;
+                    window.Height = monitorInfo.WorkArea.bottom - monitorInfo.WorkArea.top;
+                }
             }
 
             int left = (int)window.Left;
@@ -260,7 +268,13 @@ namespace MHArmory
             int right = (int)(window.Left + window.Width);
             if (right > monitorInfo.WorkArea.right)
             {
-                window.Width -= (right - monitorInfo.WorkArea.right);
+                if (window.Width < monitorInfo.WorkArea.right)
+                    window.Left = monitorInfo.WorkArea.right - window.Width;
+                else
+                {
+                    window.Left = monitorInfo.WorkArea.left;
+                    window.Width = monitorInfo.WorkArea.right - monitorInfo.WorkArea.left;
+                }
             }
 
             return true;

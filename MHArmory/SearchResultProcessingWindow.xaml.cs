@@ -21,8 +21,6 @@ namespace MHArmory
         {
             InitializeComponent();
 
-            WindowManager.FitInScreen(this);
-
             this.rootViewModel = rootViewModel;
 
             DataContext = rootViewModel.SearchResultProcessing;

@@ -34,8 +34,6 @@ namespace MHArmory
         {
             InitializeComponent();
 
-            WindowManager.FitInScreen(this);
-
             loadoutSelectorViewModel = new LoadoutSelectorViewModel(isManageMode, OnEnd, abilities);
 
             if (selectedLoadoutName == null)
