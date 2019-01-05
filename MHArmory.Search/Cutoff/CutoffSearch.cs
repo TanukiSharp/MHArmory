@@ -47,8 +47,8 @@ namespace MHArmory.Search.Cutoff
             var results = new List<ArmorSetSearchResult>();
 
             var combination = new Combination(supersetMaps, data.WeaponSlots, maps);
-            ParallelizedDepthFirstSearch(combination, 0, maps.Equipment, supersetMaps, results);
-            //DepthFirstSearch(combination, 0, maps.Equipment, supersetMaps, results, new object());
+            //ParallelizedDepthFirstSearch(combination, 0, maps.Equipment, supersetMaps, results);
+            DepthFirstSearch(combination, 0, maps.Equipment, supersetMaps, results, new object());
             return results;
         }
 

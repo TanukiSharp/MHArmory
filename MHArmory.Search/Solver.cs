@@ -126,7 +126,7 @@ namespace MHArmory.Search
 
             await Task.Yield();
 
-            bool cutoffSearch = false;
+            bool cutoffSearch = true;
             if (cutoffSearch)
             {
                 test = CutoffSearch.Instance.Run(data);
