@@ -6,7 +6,7 @@ using Cloo;
 
 namespace MHArmory.Search.OpenCL
 {
-    internal class Host : IDisposable
+    internal class Host : ISerializedSearch, IDisposable
     {
         private readonly ComputeContext context;
         private readonly ComputeProgram program;

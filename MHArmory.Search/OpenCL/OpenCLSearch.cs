@@ -4,11 +4,11 @@ using System.Linq;
 
 namespace MHArmory.Search.OpenCL
 {
-    public class OpenCLSearch
+    public class OpenCLSearch : ISearch
     {
         private readonly SearchDataSerializer serializer;
         private readonly SearchResultDeserializer deserializer;
-        private readonly Host host;
+        private readonly ISerializedSearch serializedSearch;
 
         public static OpenCLSearch Instance { get; } = new OpenCLSearch();
 
@@ -16,7 +16,7 @@ namespace MHArmory.Search.OpenCL
         {
             serializer = new SearchDataSerializer();
             deserializer = new SearchResultDeserializer();
-            host = new Host(new AutomaticDeviceResolver());
+            serializedSearch = new Host(new AutomaticDeviceResolver());
         }
 
         // For debugging purposes
@@ -45,7 +45,7 @@ namespace MHArmory.Search.OpenCL
         {
             SerializedSearchParameters serializedData = serializer.Serialize(data);
             //DumpSerializedData(serializedData); 
-            SerializedSearchResults serializedResults = host.Run(serializedData);
+            SerializedSearchResults serializedResults = serializedSearch.Run(serializedData);
             List<ArmorSetSearchResult> results = deserializer.Deserialize(data, serializedData.SearchIDMaps, serializedResults);
             return results;
         }
