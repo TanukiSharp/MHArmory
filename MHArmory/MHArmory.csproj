@@ -72,7 +72,10 @@
     <Compile Include="Behaviors\SetHtmlBehavior.cs" />
     <Compile Include="Behaviors\TextBoxFocusOnEmptyBehavior.cs" />
     <Compile Include="Behaviors\ToolTipExBehavior.cs" />
+    <Compile Include="Configurations\ConfigurationV3.cs" />
     <Compile Include="Configurations\ConfigurationV2.cs" />
+    <Compile Include="Configurations\Conversion\ConverterV2ToV3.cs" />
+    <Compile Include="Configurations\Conversion\IConverter.cs" />
     <Compile Include="Controls\DraggableScrollViewer.cs" />
     <Compile Include="Controls\SharpnessRenderer.cs" />
     <Compile Include="DependencyObjectExtensions.cs" />

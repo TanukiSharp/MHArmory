@@ -28,15 +28,17 @@ namespace MHArmory.ViewModels
             set { SetValue(ref name, value); }
         }
 
+        public int[] WeaponSlots { get; }
         public AbilityViewModel[] Abilities { get; }
 
-        public LoadoutViewModel(bool isManageMode, string name, AbilityViewModel[] abilities, LoadoutSelectorViewModel parent)
+        public LoadoutViewModel(bool isManageMode, string name, AbilityViewModel[] abilities, int[] weaponSlots, LoadoutSelectorViewModel parent)
         {
             this.parent = parent;
 
             IsManageMode = isManageMode;
 
             Name = name;
+            WeaponSlots = weaponSlots;
             Abilities = abilities;
 
             RenameCommand = new AnonymousCommand(OnRename);
@@ -95,13 +97,13 @@ namespace MHArmory.ViewModels
             AcceptCommand = new AnonymousCommand(OnAccept);
             CancelCommand = new AnonymousCommand(OnCancel);
 
-            Dictionary<string, SkillLoadoutItemConfigurationV2[]> loadoutConfig = GlobalData.Instance?.Configuration?.SkillLoadouts;
+            Dictionary<string, SkillLoadoutItemConfigurationV3> loadoutConfig = GlobalData.Instance?.Configuration?.SkillLoadouts;
 
             if (loadoutConfig == null)
                 return;
 
             Loadouts = new ObservableCollection<LoadoutViewModel>(
-                loadoutConfig.Select(x => new LoadoutViewModel(isManageMode, x.Key, CreateAbilities(x.Value), this))
+                loadoutConfig.Select(x => new LoadoutViewModel(isManageMode, x.Key, CreateAbilities(x.Value.Skills), x.Value.WeaponSlots, this))
             );
 
             if (Loadouts.Count > 1)

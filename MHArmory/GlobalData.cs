@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -14,7 +14,7 @@ namespace MHArmory
     {
         public static readonly GlobalData Instance = new GlobalData();
 
-        public ConfigurationV2 Configuration;
+        public ConfigurationV3 Configuration;
 
         public IList<IAbility> Abilities { get; private set; }
         public IList<ISkill> Skills { get; private set; }

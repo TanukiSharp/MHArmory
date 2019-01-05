@@ -271,8 +271,12 @@ namespace MHArmory.ViewModels
 
         public IAbility[] DesiredAbilities { get; }
 
-        public ArmorSetViewModel(ISolverData solverData, IList<IArmorPiece> armorPieces, ICharmLevel charm, IList<ArmorSetJewelViewModel> jewels, int[] spareSlots)
+        private readonly RootViewModel root;
+
+        public ArmorSetViewModel(RootViewModel root, ISolverData solverData, IList<IArmorPiece> armorPieces, ICharmLevel charm, IList<ArmorSetJewelViewModel> jewels, int[] spareSlots)
         {
+            this.root = root;
+
             this.armorPieces = armorPieces;
             this.charm = charm;
             this.jewels = jewels;
@@ -300,7 +304,8 @@ namespace MHArmory.ViewModels
 
         private void OnSaveScreenshotToClipboard()
         {
-            Clipboard.SetImage(ServicesContainer.GetService<ISearchResultScreenshotService>().RenderToImage(this));
+            ISearchResultScreenshotService service = ServicesContainer.GetService<ISearchResultScreenshotService>();
+            Clipboard.SetImage(service.RenderToImage(this, root.InParameters.Slots.Select(x => x.Value)));
         }
 
         private void OnSaveScreenshotToFile()
@@ -321,7 +326,7 @@ namespace MHArmory.ViewModels
                 return;
 
             var encoder = new PngBitmapEncoder();
-            encoder.Frames.Add(BitmapFrame.Create(service.RenderToImage(this)));
+            encoder.Frames.Add(BitmapFrame.Create(service.RenderToImage(this, root.InParameters.Slots.Select(x => x.Value))));
 
             using (FileStream fs = File.OpenWrite(saveFileDialog.FileName))
                 encoder.Save(fs);

@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -64,14 +64,18 @@ namespace MHArmory
 
             if (loadoutSelectorViewModel.IsManageMode)
             {
-                Dictionary<string, SkillLoadoutItemConfigurationV2[]> loadoutConfig = GlobalData.Instance.Configuration.SkillLoadouts;
+                Dictionary<string, SkillLoadoutItemConfigurationV3> loadoutConfig = GlobalData.Instance.Configuration.SkillLoadouts;
 
                 loadoutConfig.Clear();
                 foreach (LoadoutViewModel x in loadoutSelectorViewModel.Loadouts)
                 {
-                    loadoutConfig[x.Name] = x.Abilities
-                        .Select(item => new SkillLoadoutItemConfigurationV2 { SkillName = item.SkillName, Level = item.Level })
-                        .ToArray();
+                    loadoutConfig[x.Name] = new SkillLoadoutItemConfigurationV3
+                    {
+                        WeaponSlots = x.WeaponSlots,
+                        Skills = x.Abilities
+                            .Select(item => new SkillLoadoutItemConfigurationV2 { SkillName = item.SkillName, Level = item.Level })
+                            .ToArray()
+                    };
                 }
 
                 if (currentLoadout != null)

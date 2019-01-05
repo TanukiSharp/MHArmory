@@ -451,6 +451,7 @@ namespace MHArmory.ViewModels
             if (result != null)
             {
                 rawFoundArmorSets = result.Where(x => x.IsMatch).Select(x => new ArmorSetViewModel(
+                    this,
                     SolverData,
                     x.ArmorPieces,
                     x.Charm,
@@ -483,6 +484,17 @@ namespace MHArmory.ViewModels
             }
 
             return new SolverDataJewelModel(jewel, int.MaxValue);
+        }
+
+        internal void WeaponSlotsChanged()
+        {
+            CreateSolverData();
+
+            if (IsAutoSearch)
+                SearchArmorSets();
+
+            if (loadoutManager != null)
+                loadoutManager.IsModified = true;
         }
 
         private DispatcherOperation abilityChangingDispatcherOperation;

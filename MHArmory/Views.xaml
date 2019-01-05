@@ -987,6 +987,10 @@
         </Grid>
     </DataTemplate>
 
+    <DataTemplate x:Key="SlotImageView">
+        <Image Source="{Binding Converter={StaticResource SlotToImageSourceValueConverter}, ConverterParameter=24, Mode=OneTime}" bhv:ToolTipEx.Content="{Binding Converter={StaticResource SlotSizeToolTipValueConverter}, Mode=OneTime}" Width="24" Height="24" SnapsToDevicePixels="True" />
+    </DataTemplate>
+    
     <DataTemplate x:Key="LoadoutSelectorView">
 
         <Grid>
@@ -1000,7 +1004,19 @@
 
             <GridSplitter Grid.Column="1" HorizontalAlignment="Stretch" Focusable="False"/>
 
-            <ItemsControl Grid.Column="2" ItemsSource="{Binding SelectedLoadout.Abilities}" ItemTemplate="{StaticResource StandaloneAbilityView}" Focusable="False"/>
+            <DockPanel Grid.Column="2" LastChildFill="True">
+                <StackPanel DockPanel.Dock="Top" Orientation="Horizontal">
+                    <TextBlock Text="Weapon slots: " VerticalAlignment="Center"/>
+                    <ItemsControl ItemsSource="{Binding SelectedLoadout.WeaponSlots}" ItemTemplate="{StaticResource SlotImageView}" VerticalAlignment="Center" Focusable="False">
+                        <ItemsControl.ItemsPanel>
+                            <ItemsPanelTemplate>
+                                <StackPanel Orientation="Horizontal"/>
+                            </ItemsPanelTemplate>
+                        </ItemsControl.ItemsPanel>
+                    </ItemsControl>
+                </StackPanel>
+                <ItemsControl ItemsSource="{Binding SelectedLoadout.Abilities}" ItemTemplate="{StaticResource StandaloneAbilityView}" Focusable="False"/>
+            </DockPanel>
         </Grid>
 
         <DataTemplate.Triggers>
@@ -1193,12 +1209,7 @@
                                     </StackPanel>
                                 </StackPanel>
                             </StackPanel>
-                            <ItemsControl DockPanel.Dock="Bottom" ItemsSource="{Binding Slots}" Margin="2" Height="24" Focusable="False">
-                                <ItemsControl.ItemTemplate>
-                                    <DataTemplate>
-                                        <Image Source="{Binding Converter={StaticResource SlotToImageSourceValueConverter}, ConverterParameter=24, Mode=OneTime}" bhv:ToolTipEx.Content="{Binding Converter={StaticResource SlotSizeToolTipValueConverter}, Mode=OneTime}" Width="24" Height="24" SnapsToDevicePixels="True" />
-                                    </DataTemplate>
-                                </ItemsControl.ItemTemplate>
+                            <ItemsControl DockPanel.Dock="Bottom" ItemsSource="{Binding Slots}" ItemTemplate="{StaticResource SlotImageView}" Margin="2" Focusable="False">
                                 <ItemsControl.ItemsPanel>
                                     <ItemsPanelTemplate>
                                         <StackPanel Orientation="Horizontal"/>
