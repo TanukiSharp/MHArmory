@@ -5,7 +5,7 @@ using System.Text;
 
 namespace MHArmory.Core
 {
-    public class ObjectPool<T>
+    public class ObjectPool<T> : IDisposable
     {
         private readonly ConcurrentBag<T> storage;
         private readonly Func<T> objectFactory;
@@ -20,7 +20,13 @@ namespace MHArmory.Core
             objectFactory = objectGenerator;
         }
 
-        public int Size => storage.Count;
+        public int Size
+        {
+            get
+            {
+                return storage.Count;
+            }
+        }
 
         public T GetObject()
         {
@@ -33,6 +39,10 @@ namespace MHArmory.Core
         public void PutObject(T item)
         {
             storage.Add(item);
+        }
+
+        public void Dispose()
+        {
         }
     }
 }
