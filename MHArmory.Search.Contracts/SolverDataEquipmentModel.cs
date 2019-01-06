@@ -1,3 +1,4 @@
+using MHArmory.Core;
 using MHArmory.Core.DataStructures;
 using System;
 using System.Collections.Generic;
@@ -49,7 +50,7 @@ namespace MHArmory.Search.Contracts
 
         public override string ToString()
         {
-            return $"[{(IsSelected ? "O" : "X")}] {Equipment.Name}";
+            return $"[{(IsSelected ? "O" : "X")}] {Localization.GetDefault(Equipment.Name)}";
         }
     }
 }
