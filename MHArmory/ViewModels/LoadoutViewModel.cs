@@ -39,7 +39,7 @@ namespace MHArmory.ViewModels
             IsManageMode = isManageMode;
 
             Name = name;
-            WeaponSlots = weaponSlots;
+            WeaponSlots = weaponSlots.Where(x => x > 0).ToArray();
             Abilities = abilities;
 
             RenameCommand = new AnonymousCommand(OnRename);

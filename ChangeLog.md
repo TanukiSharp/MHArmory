@@ -1,5 +1,12 @@
 # Change log
 
+## 0.0.8.5 (2019/01/07)
+
+- Fixed localization issues (armor skill set names in search results)
+- Now weapon slots in screenshots display *none* when there is no slot selected
+- Fixed `System.ValueTuple` loading issue
+- Improved equipment selection for search results
+
 ## 0.0.8.4 (2019/01/06)
 
 - Now game data are localized in English, French, Japanese, Italian, German, Korean and Chinese

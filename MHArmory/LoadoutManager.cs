@@ -218,7 +218,7 @@ namespace MHArmory
 
                 loadoutConfig[CurrentLoadoutName] = new SkillLoadoutItemConfigurationV3
                 {
-                    WeaponSlots = rootViewModel.InParameters.Slots.Select(x => x.Value).ToArray(),
+                    WeaponSlots = rootViewModel.InParameters.Slots.Where(x => x.Value > 0).Select(x => x.Value).ToArray(),
                     Skills = CreateSelectedSkillsArray()
                 };
 
@@ -260,7 +260,7 @@ namespace MHArmory
 
             loadoutConfig[inputWindow.Text] = new SkillLoadoutItemConfigurationV3
             {
-                WeaponSlots = rootViewModel.InParameters.Slots.Select(x => x.Value).ToArray(),
+                WeaponSlots = rootViewModel.InParameters.Slots.Where(x => x.Value > 0).Select(x => x.Value).ToArray(),
                 Skills = CreateSelectedSkillsArray()
             };
 
