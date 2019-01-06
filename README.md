@@ -29,7 +29,8 @@ If you are a developer and want to contribute to code, I recommend to first open
 
 Link to direct download: https://github.com/TanukiSharp/MHArmory/raw/master/Distributions/MHArmory_0.0.8.5.zip
 
-Older version can be downloaded as well, here: https://github.com/TanukiSharp/MHArmory/tree/master/Distributions
+Or here: https://tanukisharp.github.io/MHArmory/download.html<br/>
+Older versions can be downloaded as well, here: https://github.com/TanukiSharp/MHArmory/tree/master/Distributions
 
 When you update to a newer version of Armory, you can copy the `config.json` file from the old version to the new.
 This file contains all your settings that you probably want to keep when you update.
