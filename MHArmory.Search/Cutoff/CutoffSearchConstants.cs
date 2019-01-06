@@ -6,6 +6,6 @@ namespace MHArmory.Search.Cutoff
 {
     static class CutoffSearchConstants
     {
-
+        public static int Slots = 3;
     }
 }

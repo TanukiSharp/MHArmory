@@ -11,7 +11,7 @@ namespace MHArmory.Search.Cutoff
             var desiredSkillIDs = new HashSet<int>(desiredAbilities.Select(x => x.Skill.Id));
             IEquipment firstEquipment = equipments.First();
             EquipmentType type = firstEquipment.Type;
-            int[] slots = new int[3];
+            int[] slots = new int[CutoffSearchConstants.Slots];
             int maxSkills = 0;
             foreach (IEquipment eq in equipments)
             {

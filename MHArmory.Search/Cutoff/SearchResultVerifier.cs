@@ -67,7 +67,7 @@ namespace MHArmory.Search.Cutoff
             int skillOverload = -combination.RemainingSkills.Where(remainingSkill => remainingSkill < 0).Sum();
             int debt = combination.Equipments.Sum(x => x.SkillDebt);
             int remainingSlots = 0;
-            for (int i = 1; i <= 3; ++i)
+            for (int i = 1; i <= CutoffSearchConstants.Slots; ++i)
             {
                 remainingSlots += totalSlots[i];
             }
@@ -97,7 +97,7 @@ namespace MHArmory.Search.Cutoff
             }
 
             int jewelsTaken = 0;
-            for (int slot = jewel.SlotSize; slot <= 3 && jewelsTaken < needJewels; ++slot)
+            for (int slot = jewel.SlotSize; slot <= CutoffSearchConstants.Slots && jewelsTaken < needJewels; ++slot)
             {
                 int sizeSlotsAvailable = totalSlots[slot];
                 int canFitToSlot = Math.Min(sizeSlotsAvailable, canTakeJewels);
@@ -130,7 +130,7 @@ namespace MHArmory.Search.Cutoff
             }
 
             int slotSum = 0;
-            for (int i = 1; i <= 3; i++)
+            for (int i = 1; i <= CutoffSearchConstants.Slots; i++)
             {
                 slotSum += combination.Slots[i];
             }
