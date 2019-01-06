@@ -129,7 +129,7 @@ namespace MHArmory.Search
             bool cutoffSearch = true;
             if (cutoffSearch)
             {
-                test = CutoffSearch.Instance.Run(data);
+                test = CutoffSearch.Instance.Run(data, cancellationToken);
             }
             else
             {

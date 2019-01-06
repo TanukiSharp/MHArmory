@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading;
 using System.Threading.Tasks;
 using MHArmory.Core.DataStructures;
 using MHArmory.Search.Contracts;
@@ -14,6 +15,8 @@ namespace MHArmory.Search.Cutoff
         private readonly SupersetMaker supersetMaker;
         private readonly SearchResultVerifier verifier;
 
+        private CutoffStatistics statistics;
+
         private CutoffSearch(Mapper mapper, SupersetMaker supersetMaker, SearchResultVerifier verifier)
         {
             this.mapper = mapper;
@@ -21,7 +24,7 @@ namespace MHArmory.Search.Cutoff
             this.verifier = verifier;
         }
 
-        public List<ArmorSetSearchResult> Run(ISolverData data)
+        public List<ArmorSetSearchResult> Run(ISolverData data, CancellationToken ct)
         {
             var heads = data.AllHeads.Where(x => x.IsSelected).Select(x => x.Equipment).ToList();
             var chests = data.AllChests.Where(x => x.IsSelected).Select(x => x.Equipment).ToList();
@@ -40,6 +43,8 @@ namespace MHArmory.Search.Cutoff
                 charms
             };
 
+            statistics = new CutoffStatistics(allArmorPieces);
+            
             MappingResults maps = mapper.MapEverything(allArmorPieces, data.DesiredAbilities, data.AllJewels);
             SupersetInfo[] supersets = allArmorPieces.Select(list => supersetMaker.CreateSupersetModel(list, data.DesiredAbilities)).ToArray();
             MappedEquipment[] supersetMaps = mapper.MapSupersets(supersets, maps);
@@ -47,27 +52,33 @@ namespace MHArmory.Search.Cutoff
             var results = new List<ArmorSetSearchResult>();
 
             var combination = new Combination(supersetMaps, data.WeaponSlots, maps);
-            //ParallelizedDepthFirstSearch(combination, 0, maps.Equipment, supersetMaps, results);
-            DepthFirstSearch(combination, 0, maps.Equipment, supersetMaps, results, new object());
+            //ParallelizedDepthFirstSearch(combination, 0, maps.Equipment, supersetMaps, results, ct);
+            DepthFirstSearch(combination, 0, maps.Equipment, supersetMaps, results, new object(), ct);
+            statistics.Dump();
             return results;
         }
 
-        private void ParallelizedDepthFirstSearch(Combination combination, int depth, MappedEquipment[][] allEquipment, MappedEquipment[] supersets, IList<ArmorSetSearchResult> results)
+        private void ParallelizedDepthFirstSearch(Combination combination, int depth, MappedEquipment[][] allEquipment, MappedEquipment[] supersets, IList<ArmorSetSearchResult> results, CancellationToken ct)
         {
             object sync = new object();
             Parallel.ForEach(allEquipment[depth], equipment =>
             {
                 var combinationCopy = new Combination(combination);
                 combinationCopy.Replace(depth, equipment);
-                DepthFirstSearch(combinationCopy, depth + 1, allEquipment, supersets, results, sync);
+                DepthFirstSearch(combinationCopy, depth + 1, allEquipment, supersets, results, sync, ct);
             });
         }
 
-        private void DepthFirstSearch(Combination combination, int depth, MappedEquipment[][] allEquipment, MappedEquipment[] supersets, IList<ArmorSetSearchResult> results, object sync)
+        private void DepthFirstSearch(Combination combination, int depth, MappedEquipment[][] allEquipment, MappedEquipment[] supersets, IList<ArmorSetSearchResult> results, object sync, CancellationToken ct)
         {
+            if (ct.IsCancellationRequested || results.Count >= 100000)
+            {
+                return;
+            }
             if (depth == allEquipment.Length)
             {
                 bool match = verifier.TryGetSearchResult(combination, false, out ArmorSetSearchResult result);
+                statistics.RealSearch(match);
                 if (match)
                 {
                     lock (sync)
@@ -79,6 +90,7 @@ namespace MHArmory.Search.Cutoff
             }
 
             bool supersetMatch = verifier.TryGetSearchResult(combination, true,  out _);
+            statistics.SupersetSearch(depth, supersetMatch);
             if (!supersetMatch)
             {
                 return;
@@ -88,11 +100,9 @@ namespace MHArmory.Search.Cutoff
             for (int i = 0; i < depthLength; i++)
             {
                 combination.Replace(depth, allEquipment[depth][i]);
-                DepthFirstSearch(combination, depth + 1, allEquipment, supersets, results, sync);
+                DepthFirstSearch(combination, depth + 1, allEquipment, supersets, results, sync, ct);
             }
             combination.Replace(depth, supersets[depth]);
         }
-
-
     }
 }
