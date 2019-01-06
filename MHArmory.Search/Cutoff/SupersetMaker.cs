@@ -8,9 +8,8 @@ namespace MHArmory.Search.Cutoff
     {
         public SupersetInfo CreateSupersetModel(IList<IEquipment> equipments, IAbility[] desiredAbilities)
         {
+            EquipmentType type = equipments.FirstOrDefault()?.Type ?? EquipmentType.Charm; // No equipment probably means charm
             var desiredSkillIDs = new HashSet<int>(desiredAbilities.Select(x => x.Skill.Id));
-            IEquipment firstEquipment = equipments.First();
-            EquipmentType type = firstEquipment.Type;
             int[] slots = new int[CutoffSearchConstants.Slots];
             int maxSkills = 0;
             foreach (IEquipment eq in equipments)
@@ -45,8 +44,11 @@ namespace MHArmory.Search.Cutoff
                 .ToArray();
 
             string name = $"{type} superset";
-            var nameDict = firstEquipment.Name.ToDictionary(x => x.Key, x => name);
-            IEvent ev = firstEquipment.Event;
+            var nameDict = new Dictionary<string, string>()
+            {
+                { "EN", name }
+            };
+            IEvent ev = null;
             IEquipment equipment;
             if (type == EquipmentType.Charm)
             {
@@ -61,7 +63,7 @@ namespace MHArmory.Search.Cutoff
                     .Distinct()
                     .ToArray();
                 IArmorPiece firstArmor = armorPieces.First();
-                equipment = new ArmorPiece(-1, nameDict, type, 0, slots, abilities, setSkills, firstArmor.Defense, firstArmor.Resistances, firstArmor.Attributes, firstArmor.Assets, firstArmor.FullArmorSet, ev);
+                equipment = new ArmorPiece(-1, nameDict, firstArmor.Type, 0, slots, abilities, setSkills, firstArmor.Defense, firstArmor.Resistances, firstArmor.Attributes, firstArmor.Assets, firstArmor.FullArmorSet, ev);
             }
             var info = new SupersetInfo(equipment, maxSkills);
             return info;
