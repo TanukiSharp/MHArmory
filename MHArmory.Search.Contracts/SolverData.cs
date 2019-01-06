@@ -273,6 +273,7 @@ namespace MHArmory.Search.Contracts
         private void SetBestSlotScore(IEnumerable<SolverDataEquipmentModel> equipments, int slotCount)
         {
             IEnumerable<SolverDataEquipmentModel> bestSlots = equipments
+                .Where(x => x.ToBeRemoved)
                 .Where(x => x.Equipment.Slots.Length == slotCount)
                 .OrderByDescending(x => x.Equipment.Slots.Sum())
                 .ThenByDescending(x => x.Equipment is IArmorPiece armorPiece ? armorPiece.Defense.Augmented : 0)
