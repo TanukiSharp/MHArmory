@@ -9,17 +9,17 @@ namespace MHArmory.Search.Cutoff
 {
     internal class CutoffStatistics
     {
-        public int CombinationsPossible { get; private set; }
-        public int RealSearches { get; private set; }
-        public int[] SupersetSearches { get; private set; }
-        public int[] Cutoffs { get; private set; }
-        public int[] Savings { get; private set; }
-        public int Results { get; private set; }
+        public long CombinationsPossible { get; private set; }
+        public long RealSearches { get; private set; }
+        public long[] SupersetSearches { get; private set; }
+        public long[] Cutoffs { get; private set; }
+        public long[] Savings { get; private set; }
+        public long Results { get; private set; }
 
         private Stopwatch Stopwatch { get; }
 
-        private object realsync;
-        private object supersync;
+        private object realSync;
+        private object superSync;
 
         public CutoffStatistics()
         {
@@ -30,9 +30,9 @@ namespace MHArmory.Search.Cutoff
         [Conditional("DEBUG")]
         public void Init(IList<IList<IEquipment>> allArmorPieces)
         {
-            SupersetSearches = new int[allArmorPieces.Count];
-            Cutoffs = new int[allArmorPieces.Count];
-            Savings = new int[allArmorPieces.Count];
+            SupersetSearches = new long[allArmorPieces.Count];
+            Cutoffs = new long[allArmorPieces.Count];
+            Savings = new long[allArmorPieces.Count];
             CombinationsPossible = 1;
             for (int i = allArmorPieces.Count - 1; i >= 0; i--)
             {
@@ -40,14 +40,14 @@ namespace MHArmory.Search.Cutoff
                 CombinationsPossible *= equipments.Count;
                 Savings[i] = CombinationsPossible;
             }
-            realsync = new object();
-            supersync = new object();
+            realSync = new object();
+            superSync = new object();
         }
 
         [Conditional("DEBUG")]
         public void RealSearch(bool match)
         {
-            lock (realsync)
+            lock (realSync)
             {
                 RealSearches++;
                 if (match)
@@ -60,7 +60,7 @@ namespace MHArmory.Search.Cutoff
         [Conditional("DEBUG")]
         public void SupersetSearch(int depth, bool match)
         {
-            lock (supersync)
+            lock (superSync)
             {
                 SupersetSearches[depth]++;
                 if (!match)
@@ -84,27 +84,27 @@ namespace MHArmory.Search.Cutoff
             sb.AppendLine();
             sb.AppendLine($"Combinations possible: {CombinationsPossible:N0}");
             sb.AppendLine($"Real combinations searched: {RealSearches:N0}");
-            int totalSupersetSearches = SupersetSearches.Sum();
+            long totalSupersetSearches = SupersetSearches.Sum();
             sb.AppendLine($"Superset combinations searched: {totalSupersetSearches:N0}");
-            int totalSearches = RealSearches + totalSupersetSearches;
+            long totalSearches = RealSearches + totalSupersetSearches;
             sb.AppendLine($"Total combinations searched: {totalSearches:N0}");
             sb.AppendLine($"Results: {Results:N0}");
             sb.AppendLine();
 
             double treeCoverage = (double)RealSearches / CombinationsPossible;
-            sb.AppendLine($"Search tree coverage: {treeCoverage:P2} (less is better)");
+            sb.AppendLine($"Search tree coverage: {treeCoverage:P5} (less is better)");
             double searchPercentage = (double)totalSearches / CombinationsPossible;
-            sb.AppendLine($"Search efficiency: {searchPercentage:P2} (less is better)");
+            sb.AppendLine($"Search efficiency: {searchPercentage:P5} (less is better)");
             sb.AppendLine();
 
             sb.AppendLine($"Cutoffs: (count * saved per cutoff) - supersearches = saved by supersets - supersearches = saved total");
             for (int i = 0; i < Cutoffs.Length; i++)
             {
-                int cutoffs = Cutoffs[i];
-                int savings = Savings[i];
-                int supersetSearches = SupersetSearches[i];
-                int savedBySuperset = cutoffs * savings;
-                int savedTotal = savedBySuperset - supersetSearches;
+                long cutoffs = Cutoffs[i];
+                long savings = Savings[i];
+                long supersetSearches = SupersetSearches[i];
+                long savedBySuperset = cutoffs * savings;
+                long savedTotal = savedBySuperset - supersetSearches;
                 sb.AppendLine($"Depth {i}: ({cutoffs:N0} * {savings:N0}) - {supersetSearches:N0} = {savedBySuperset:N0} - {supersetSearches:N0} = {savedTotal:N0}");
             }
             return sb.ToString();

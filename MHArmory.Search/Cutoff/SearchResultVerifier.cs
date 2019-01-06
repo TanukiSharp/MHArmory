@@ -11,7 +11,6 @@ namespace MHArmory.Search.Cutoff
         public bool TryGetSearchResult(Combination combination, bool hasSuperset, out ArmorSetSearchResult result)
         {
             result = new ArmorSetSearchResult();
-            //result.SpareSlots = new int[3];
 
             bool skillSummingSuccess = SkillSummingCutoff(combination);
             if (!skillSummingSuccess)
@@ -90,7 +89,7 @@ namespace MHArmory.Search.Cutoff
             MappedSkill ability = mappedJewel.Skill;
             int mappedId = ability.MappedId;
             int needLevels = remainingLevels[mappedId];
-            int needJewels = needLevels; //(needLevels + ability.Item - 1) / ability.Item;
+            int needJewels = needLevels;
             int canTakeJewels = Math.Min(mappedJewel.Jewel.Available, needJewels);
             if (canTakeJewels < needJewels)
             {

@@ -36,18 +36,21 @@ namespace MHArmory.Search.Cutoff
         private MappedJewel[] MapJewels(IEnumerable<SolverDataJewelModel> jewels, IDictionary<int, int> desiredDict, MappedSkill[] skills)
         {
             var orderedJewels = jewels.OrderByDescending(x => x.Jewel.SlotSize).ToList();
-            var mappedJewels = new MappedJewel[orderedJewels.Count];
-            for (int i = 0; i < orderedJewels.Count; i++)
+            IList<MappedJewel> mappedJewels = new List<MappedJewel>();
+            foreach (SolverDataJewelModel jewel in orderedJewels)
             {
-                SolverDataJewelModel jewel = orderedJewels[i];
                 IAbility ability = jewel.Jewel.Abilities[0];
+                if (!desiredDict.ContainsKey(ability.Skill.Id))
+                {
+                    continue;
+                }
                 MappedSkill skill = skills[desiredDict[ability.Skill.Id]].CopyWithLevel(ability.Level);
                 var map = new MappedJewel();
                 map.Jewel = jewel;
                 map.Skill = skill;
-                mappedJewels[i] = map;
+                mappedJewels.Add(map);
             }
-            return mappedJewels;
+            return mappedJewels.ToArray();
         }
 
         private MappedSkill[] MapDesiredAbilities(IAbility[] desiredAbilities)
