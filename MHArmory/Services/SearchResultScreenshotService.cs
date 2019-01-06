@@ -60,14 +60,26 @@ namespace MHArmory.Services
             var factoryPanel = new FrameworkElementFactory(typeof(StackPanel));
             factoryPanel.SetValue(StackPanel.OrientationProperty, Orientation.Horizontal);
 
-            weaponSlotsPanel.Children.Add(new ItemsControl
+            if (weaponSlots.Any(x => x > 0))
             {
-                ItemsSource = weaponSlots,
-                Height = 24.0,
-                VerticalAlignment = VerticalAlignment.Center,
-                ItemTemplate = (DataTemplate)App.Current.FindResource("SlotImageView"),
-                ItemsPanel = new ItemsPanelTemplate(factoryPanel)
-            });
+                weaponSlotsPanel.Children.Add(new ItemsControl
+                {
+                    ItemsSource = weaponSlots,
+                    Height = 24.0,
+                    VerticalAlignment = VerticalAlignment.Center,
+                    ItemTemplate = (DataTemplate)App.Current.FindResource("SlotImageView"),
+                    ItemsPanel = new ItemsPanelTemplate(factoryPanel)
+                });
+            }
+            else
+            {
+                weaponSlotsPanel.Children.Add(new TextBlock
+                {
+                    Text = "none",
+                    VerticalAlignment = VerticalAlignment.Center,
+                    FontStyle = FontStyles.Italic
+                });
+            }
 
             weaponSlotsAndAbilities.Children.Add(weaponSlotsPanel);
 
