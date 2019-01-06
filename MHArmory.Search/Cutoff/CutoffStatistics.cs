@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
@@ -7,7 +8,7 @@ using MHArmory.Core.DataStructures;
 
 namespace MHArmory.Search.Cutoff
 {
-    internal class CutoffStatistics
+    public class CutoffStatistics
     {
         public long CombinationsPossible { get; private set; }
         public long RealSearches { get; private set; }
@@ -27,7 +28,6 @@ namespace MHArmory.Search.Cutoff
             Stopwatch.Start();
         }
 
-        [Conditional("DEBUG")]
         public void Init(IList<IList<IEquipment>> allArmorPieces)
         {
             SupersetSearches = new long[allArmorPieces.Count];
@@ -44,8 +44,7 @@ namespace MHArmory.Search.Cutoff
             superSync = new object();
         }
 
-        [Conditional("DEBUG")]
-        public void RealSearch(bool match)
+        public void RealSearch(bool match, Action afterUpdate)
         {
             lock (realSync)
             {
@@ -54,11 +53,11 @@ namespace MHArmory.Search.Cutoff
                 {
                     Results++;
                 }
+                afterUpdate?.Invoke();
             }
         }
 
-        [Conditional("DEBUG")]
-        public void SupersetSearch(int depth, bool match)
+        public void SupersetSearch(int depth, bool match, Action afterUpdate)
         {
             lock (superSync)
             {
@@ -67,10 +66,10 @@ namespace MHArmory.Search.Cutoff
                 {
                     Cutoffs[depth]++;
                 }
+                afterUpdate?.Invoke();
             }
         }
 
-        [Conditional("DEBUG")]
         public void Dump()
         {
             Stopwatch.Stop();

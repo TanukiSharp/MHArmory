@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
@@ -11,6 +12,9 @@ namespace MHArmory.Search.Cutoff
     {
         public static CutoffSearch Instance { get; } = new CutoffSearch(new Mapper(), new SupersetMaker(), new SearchResultVerifier());
 
+        // I'm not sure how to consume this data. I think some GUI changes will have to be made
+        public event EventHandler<CutoffStatistics> ProgressChanged;
+
         private readonly Mapper mapper;
         private readonly SupersetMaker supersetMaker;
         private readonly SearchResultVerifier verifier;
@@ -22,6 +26,11 @@ namespace MHArmory.Search.Cutoff
             this.mapper = mapper;
             this.supersetMaker = supersetMaker;
             this.verifier = verifier;
+        }
+
+        private void InvokeProgressChanged()
+        {
+            ProgressChanged?.Invoke(this, statistics);
         }
 
         public List<ArmorSetSearchResult> Run(ISolverData data, CancellationToken ct)
@@ -55,7 +64,7 @@ namespace MHArmory.Search.Cutoff
             var combination = new Combination(supersetMaps, data.WeaponSlots, maps);
             ParallelizedDepthFirstSearch(combination, 0, maps.Equipment, supersetMaps, results, ct);
             //DepthFirstSearch(combination, 0, maps.Equipment, supersetMaps, results, new object(), ct);
-            statistics.Dump();
+            //statistics.Dump();
             return results;
         }
 
@@ -79,7 +88,7 @@ namespace MHArmory.Search.Cutoff
             if (depth == allEquipment.Length)
             {
                 bool match = verifier.TryGetSearchResult(combination, false, out ArmorSetSearchResult result);
-                statistics.RealSearch(match);
+                statistics.RealSearch(match, InvokeProgressChanged);
                 if (match)
                 {
                     lock (sync)
@@ -91,7 +100,7 @@ namespace MHArmory.Search.Cutoff
             }
 
             bool supersetMatch = verifier.TryGetSearchResult(combination, true,  out _);
-            statistics.SupersetSearch(depth, supersetMatch);
+            statistics.SupersetSearch(depth, supersetMatch, InvokeProgressChanged);
             if (!supersetMatch)
             {
                 return;
