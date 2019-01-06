@@ -7,7 +7,7 @@ namespace MHArmory.Core
 {
     public class ObjectPool<T> : IDisposable
     {
-        private readonly ConcurrentStack<T> storage;
+        private readonly ConcurrentQueue<T> storage;
         private readonly Func<T> objectFactory;
 
         public ObjectPool(Func<T> objectGenerator)
@@ -15,7 +15,7 @@ namespace MHArmory.Core
             if (objectGenerator == null)
                 throw new ArgumentNullException(nameof(objectGenerator));
 
-            storage = new ConcurrentStack<T>();
+            storage = new ConcurrentQueue<T>();
 
             objectFactory = objectGenerator;
         }
@@ -30,7 +30,7 @@ namespace MHArmory.Core
 
         public T GetObject()
         {
-            if (storage.TryPop(out T item))
+            if (storage.TryDequeue(out T item))
                 return item;
 
             return objectFactory();
@@ -38,12 +38,11 @@ namespace MHArmory.Core
 
         public void PutObject(T item)
         {
-            storage.Push(item);
+            storage.Enqueue(item);
         }
 
         public void Dispose()
         {
-            storage.Clear();
         }
     }
 }
