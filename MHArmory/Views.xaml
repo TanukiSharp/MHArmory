@@ -23,6 +23,7 @@
     <cvt:NumToSeparatedStringValueConverter x:Key="NumToSeparatedStringValueConverter"/>
     <cvt:FreeElementNameValueConverter x:Key="FreeElementNameValueConverter"/>
     <cvt:AbilityToViewModelValueConverter x:Key="AbilityToViewModelValueConverter"/>
+    <cvt:CombinationPerSecondValueConverter x:Key="CombinationPerSecondValueConverter"/>
 
     <SolidColorBrush x:Key="ActiveWeaponBackgroundBrush" Color="#FFB7FFA7"/>
     <SolidColorBrush x:Key="ActiveWeaponBorderBrush" Color="#FF55D15A"/>
@@ -721,7 +722,9 @@
                     <TextBlock Text="Matching results: "/>
                     <TextBlock Text="{Binding MatchingResults, Converter={StaticResource NumToSeparatedStringValueConverter}, Mode=OneTime}" Margin="0 0 16 0" Style="{StaticResource highlight}"/>
                     <TextBlock Text="Time: "/>
-                    <TextBlock Text="{Binding TimeElapsed, Converter={StaticResource MillisecondsToTimeValueConverter}}" bhv:ToolTipEx.Content="{Binding TimeElapsed}" Margin="0 0 16 0" Style="{StaticResource highlight}"/>
+                    <TextBlock Text="{Binding TimeElapsed, Converter={StaticResource MillisecondsToTimeValueConverter}, Mode=OneTime}" bhv:ToolTipEx.Content="{Binding TimeElapsed}" Margin="0 0 16 0" Style="{StaticResource highlight}"/>
+                    <TextBlock Text="Combination/sec: "/>
+                    <TextBlock Text="{Binding Converter={StaticResource CombinationPerSecondValueConverter}, Mode=OneTime}" Margin="0 0 16 0" Style="{StaticResource highlight}"/>
                 </StackPanel>
             </Expander.Header>
             <Expander.Content>
@@ -792,7 +795,15 @@
                             </StackPanel>
                             <StackPanel Orientation="Horizontal">
                                 <TextBlock Text="Time:"/>
-                                <TextBlock Text="{Binding TimeElapsed, Converter={StaticResource MillisecondsToTimeValueConverter}}" bhv:ToolTipEx.Content="{Binding TimeElapsed}" Style="{StaticResource highlight}"/>
+                                <TextBlock Text="{Binding TimeElapsed, Converter={StaticResource MillisecondsToTimeValueConverter}, Mode=OneTime}" bhv:ToolTipEx.Content="{Binding TimeElapsed}" Style="{StaticResource highlight}"/>
+                            </StackPanel>
+                        </StackPanel>
+                    </Border>
+                    <Border>
+                        <StackPanel>
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Text="Combination/sec:"/>
+                                <TextBlock Text="{Binding Converter={StaticResource CombinationPerSecondValueConverter}, Mode=OneTime}" Style="{StaticResource highlight}"/>
                             </StackPanel>
                         </StackPanel>
                     </Border>

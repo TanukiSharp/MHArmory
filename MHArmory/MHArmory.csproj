@@ -143,6 +143,7 @@
     </Compile>
     <Compile Include="Controls\CustomTreeView.cs" />
     <Compile Include="ValueConverters\AbilityToViewModelValueConverter.cs" />
+    <Compile Include="ValueConverters\CombinationPerSecondValueConverter.cs" />
     <Compile Include="ValueConverters\ElementNameValueConverter.cs" />
     <Compile Include="ValueConverters\FreeElementNameValueConverter.cs" />
     <Compile Include="ValueConverters\HasDefenseVisibilityValueConverter.cs" />
