@@ -7,7 +7,7 @@ using MHArmory.Core.DataStructures;
 
 namespace MHArmory.Search.Contracts
 {
-    public class SolverData2 : ISolverData
+    public class IncrementalSolverData : ISolverData
     {
         public int[] WeaponSlots { get; }
         public int MinJewelSize { get; }
@@ -21,7 +21,7 @@ namespace MHArmory.Search.Contracts
         public SolverDataJewelModel[] AllJewels { get; private set; }
         public IAbility[] DesiredAbilities { get; private set; }
 
-        public SolverData2(
+        public IncrementalSolverData(
             IList<int> weaponSlots,
             IEnumerable<IArmorPiece> heads,
             IEnumerable<IArmorPiece> chests,
