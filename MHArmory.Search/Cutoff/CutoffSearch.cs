@@ -26,6 +26,7 @@ namespace MHArmory.Search.Cutoff
 
         public List<ArmorSetSearchResult> Run(ISolverData data, CancellationToken ct)
         {
+            statistics = new CutoffStatistics();
             var heads = data.AllHeads.Where(x => x.IsSelected).Select(x => x.Equipment).ToList();
             var chests = data.AllChests.Where(x => x.IsSelected).Select(x => x.Equipment).ToList();
             var gloves = data.AllGloves.Where(x => x.IsSelected).Select(x => x.Equipment).ToList();
@@ -43,7 +44,7 @@ namespace MHArmory.Search.Cutoff
                 charms
             };
 
-            statistics = new CutoffStatistics(allArmorPieces);
+            statistics.Init(allArmorPieces);
             
             MappingResults maps = mapper.MapEverything(allArmorPieces, data.DesiredAbilities, data.AllJewels);
             SupersetInfo[] supersets = allArmorPieces.Select(list => supersetMaker.CreateSupersetModel(list, data.DesiredAbilities)).ToArray();

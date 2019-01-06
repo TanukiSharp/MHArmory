@@ -16,10 +16,19 @@ namespace MHArmory.Search.Cutoff
         public int[] Savings { get; private set; }
         public int Results { get; private set; }
 
+        private Stopwatch Stopwatch { get; }
+
         private object realsync;
         private object supersync;
 
-        public CutoffStatistics(IList<IList<IEquipment>> allArmorPieces)
+        public CutoffStatistics()
+        {
+            Stopwatch = new Stopwatch();
+            Stopwatch.Start();
+        }
+
+        [Conditional("DEBUG")]
+        public void Init(IList<IList<IEquipment>> allArmorPieces)
         {
             SupersetSearches = new int[allArmorPieces.Count];
             Cutoffs = new int[allArmorPieces.Count];
@@ -64,12 +73,15 @@ namespace MHArmory.Search.Cutoff
         [Conditional("DEBUG")]
         public void Dump()
         {
-            File.WriteAllText("C:/temp/stats.txt", ToString());
+            Stopwatch.Stop();
+            File.WriteAllText("stats.txt", ToString());
         }
 
         public override string ToString()
         {
             var sb = new StringBuilder();
+            sb.AppendLine($"Total search time: {Stopwatch.Elapsed:c}");
+            sb.AppendLine();
             sb.AppendLine($"Combinations possible: {CombinationsPossible:N0}");
             sb.AppendLine($"Real combinations searched: {RealSearches:N0}");
             int totalSupersetSearches = SupersetSearches.Sum();
@@ -80,7 +92,7 @@ namespace MHArmory.Search.Cutoff
             sb.AppendLine();
 
             double treeCoverage = (double)RealSearches / CombinationsPossible;
-            sb.AppendLine($"Search tree coverage: {treeCoverage:P2}");
+            sb.AppendLine($"Search tree coverage: {treeCoverage:P2} (less is better)");
             double searchPercentage = (double)totalSearches / CombinationsPossible;
             sb.AppendLine($"Search efficiency: {searchPercentage:P2} (less is better)");
             sb.AppendLine();
