@@ -268,7 +268,7 @@
             <ItemsControl ItemsSource="{Binding GrantedSkills, Mode=OneTime}" Margin="2" Focusable="False">
                 <ItemsControl.ItemTemplate>
                     <DataTemplate>
-                        <TextBlock Text="{mxt:Localization SkillName}"/>
+                        <TextBlock Text="{mxt:Localization Skill.Name}"/>
                     </DataTemplate>
                 </ItemsControl.ItemTemplate>
             </ItemsControl>
