@@ -257,7 +257,7 @@ namespace MHArmory.ViewModels
                 {
                     child.IsOverriding = true;
 
-                    string gameName = $"{child.Name} {child.SlotSize}";
+                    string gameName = $"{Core.Localization.GetDefault(child.Name)} {child.SlotSize}";
                     JewelInfo foundGameJewel = MasterData.FindJewelInfoByName(gameName);
 
                     uint quantity = 0;
