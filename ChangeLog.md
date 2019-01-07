@@ -1,5 +1,9 @@
 # Change log
 
+## 0.0.8.6 (2019/01/07)
+
+- Fixed decorations import issue (introduced with localization in version 0.0.8.4)
+
 ## 0.0.8.5 (2019/01/07)
 
 - Fixed localization issues (armor skill set names in search results)
