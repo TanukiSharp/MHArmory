@@ -277,7 +277,7 @@ namespace MHArmory.Search.Contracts
                 .Where(x => x.Equipment.Slots.Length == slotCount)
                 .OrderByDescending(x => x.Equipment.Slots.Sum())
                 .ThenByDescending(x => x.Equipment is IArmorPiece armorPiece ? armorPiece.Defense.Augmented : 0)
-                .Take(3);
+                .Take(5);
 
             bool isFirst = true;
 
