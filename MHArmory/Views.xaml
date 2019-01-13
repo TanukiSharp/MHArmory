@@ -937,6 +937,7 @@
 
     <DataTemplate x:Key="ArmorPieceTypesView">
         <DockPanel LastChildFill="True" Background="#0F000000" Margin="4">
+            <TextBlock DockPanel.Dock="Top" Text="{Binding Type, Mode=OneTime}" Margin="4"/>
             <TextBlock DockPanel.Dock="Bottom" Margin="2" Text="{Binding Equipments.Count, Mode=OneTime, StringFormat=Total: {0}}"/>
             <TextBlock DockPanel.Dock="Bottom" Margin="2" Text="{Binding SelectedCount, StringFormat=Selected: {0}}"/>
             <Grid DockPanel.Dock="Bottom">
@@ -985,13 +986,19 @@
     </DataTemplate>
 
     <DataTemplate x:Key="AdvancedSearchView">
-        <ItemsControl ItemsSource="{Binding ArmorPieceTypes}" ItemTemplate="{StaticResource ArmorPieceTypesView}">
-            <ItemsControl.ItemsPanel>
-                <ItemsPanelTemplate>
-                    <UniformGrid Columns="6"/>
-                </ItemsPanelTemplate>
-            </ItemsControl.ItemsPanel>
-        </ItemsControl>
+        <DockPanel LastChildFill="True">
+            <UniformGrid DockPanel.Dock="Bottom" Columns="2" Rows="1" HorizontalAlignment="Right">
+                <Button Margin="4" Padding="4" Content="Export to clipboard" Command="{Binding ExportToClipboardCommand, Mode=OneTime}"/>
+                <Button Margin="4" Padding="4" Content="Import from clipboard" Command="{Binding ImportFromClipboardCommand, Mode=OneTime}"/>
+            </UniformGrid>
+            <ItemsControl ItemsSource="{Binding ArmorPieceTypes}" ItemTemplate="{StaticResource ArmorPieceTypesView}">
+                <ItemsControl.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <UniformGrid Columns="6"/>
+                    </ItemsPanelTemplate>
+                </ItemsControl.ItemsPanel>
+            </ItemsControl>
+        </DockPanel>
     </DataTemplate>
 
     <DataTemplate x:Key="LoadoutView">
@@ -1013,7 +1020,7 @@
     <DataTemplate x:Key="SlotImageView">
         <Image Source="{Binding Converter={StaticResource SlotToImageSourceValueConverter}, ConverterParameter=24, Mode=OneTime}" bhv:ToolTipEx.Content="{Binding Converter={StaticResource SlotSizeToolTipValueConverter}, Mode=OneTime}" Width="24" Height="24" SnapsToDevicePixels="True" />
     </DataTemplate>
-    
+
     <DataTemplate x:Key="LoadoutSelectorView">
 
         <Grid>

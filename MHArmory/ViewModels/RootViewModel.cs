@@ -439,12 +439,12 @@ namespace MHArmory.ViewModels
 
             var armorPieceTypesViewModels = new ArmorPieceTypesViewModel[]
             {
-                new ArmorPieceTypesViewModel(solverData.AllHeads),
-                new ArmorPieceTypesViewModel(solverData.AllChests),
-                new ArmorPieceTypesViewModel(solverData.AllGloves),
-                new ArmorPieceTypesViewModel(solverData.AllWaists),
-                new ArmorPieceTypesViewModel(solverData.AllLegs),
-                new ArmorPieceTypesViewModel(solverData.AllCharms)
+                new ArmorPieceTypesViewModel(EquipmentType.Head, solverData.AllHeads),
+                new ArmorPieceTypesViewModel(EquipmentType.Chest, solverData.AllChests),
+                new ArmorPieceTypesViewModel(EquipmentType.Gloves, solverData.AllGloves),
+                new ArmorPieceTypesViewModel(EquipmentType.Waist, solverData.AllWaists),
+                new ArmorPieceTypesViewModel(EquipmentType.Legs, solverData.AllLegs),
+                new ArmorPieceTypesViewModel(EquipmentType.Charm, solverData.AllCharms)
             };
 
             AdvancedSearchViewModel.Update(armorPieceTypesViewModels);
