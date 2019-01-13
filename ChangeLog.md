@@ -1,5 +1,12 @@
 # Change log
 
+## vNext (?)
+
+- Improved armor pieces selection based on slots
+- Fixed armor pieces data
+    - Kulve Taroth armor pieces had wrong elemental resistance values
+    - Previously failed to import Drachen Vambraces α
+
 ## 0.0.8.6 (2019/01/07)
 
 - Fixed decorations import issue (introduced with localization in version 0.0.8.4)
