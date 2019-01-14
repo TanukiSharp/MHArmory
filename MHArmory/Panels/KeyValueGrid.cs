@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,10 +12,28 @@ namespace MHArmory.Panels
     {
         private bool gridParametersInvalidated;
 
+        public string KeyColumnSharedSizeGroup
+        {
+            get { return (string)GetValue(KeyColumnSharedSizeGroupProperty); }
+            set { SetValue(KeyColumnSharedSizeGroupProperty, value); }
+        }
+
+        public static readonly DependencyProperty KeyColumnSharedSizeGroupProperty = DependencyProperty.Register(
+            nameof(KeyColumnSharedSizeGroup),
+            typeof(string),
+            typeof(KeyValueGrid),
+            new PropertyMetadata(null, OnKeyColumnSharedSizeGroupPropertyChanged)
+        );
+
         public KeyValueGrid()
         {
             ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(0.0, GridUnitType.Auto) });
             ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(1.0, GridUnitType.Star) });
+        }
+
+        private static void OnKeyColumnSharedSizeGroupPropertyChanged(DependencyObject sender, DependencyPropertyChangedEventArgs e)
+        {
+            ((KeyValueGrid)sender).ColumnDefinitions[0].SharedSizeGroup = (string)e.NewValue;
         }
 
         private void InvalidateGridParameters()

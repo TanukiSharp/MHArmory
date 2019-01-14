@@ -8,8 +8,15 @@ using MHArmory.Search.Contracts;
 
 namespace MHArmory.Search.Cutoff
 {
-    internal class CutoffSearch
+    public class CutoffSearch : ISolver
     {
+        public string Name { get; } = "Cutoff solver";
+        public string Author { get; } = "Gediminas Masaitis";
+        public string Description { get; } = "Optimized search with cutoff capabilities";
+        public int Version { get; } = 1;
+
+        public event Action<double> SearchProgress;
+
         public static CutoffSearch Instance { get; } = new CutoffSearch(new Mapper(), new SupersetMaker(), new SearchResultVerifier());
 
         // I'm not sure how to consume this data. I think some GUI changes will have to be made
@@ -31,17 +38,19 @@ namespace MHArmory.Search.Cutoff
         private void InvokeProgressChanged()
         {
             ProgressChanged?.Invoke(this, statistics);
+            SearchProgress?.Invoke(0d);
         }
 
-        public List<ArmorSetSearchResult> Run(ISolverData data, CancellationToken ct)
+        
+        public Task<IList<ArmorSetSearchResult>> SearchArmorSets(ISolverData solverData, CancellationToken cancellationToken)
         {
             statistics = new CutoffStatistics();
-            var heads = data.AllHeads.Where(x => x.IsSelected).Select(x => x.Equipment).ToList();
-            var chests = data.AllChests.Where(x => x.IsSelected).Select(x => x.Equipment).ToList();
-            var gloves = data.AllGloves.Where(x => x.IsSelected).Select(x => x.Equipment).ToList();
-            var waists = data.AllWaists.Where(x => x.IsSelected).Select(x => x.Equipment).ToList();
-            var legs = data.AllLegs.Where(x => x.IsSelected).Select(x => x.Equipment).ToList();
-            var charms = data.AllCharms.Where(x => x.IsSelected).Select(x => x.Equipment).ToList();
+            var heads = solverData.AllHeads.Where(x => x.IsSelected).Select(x => x.Equipment).ToList();
+            var chests = solverData.AllChests.Where(x => x.IsSelected).Select(x => x.Equipment).ToList();
+            var gloves = solverData.AllGloves.Where(x => x.IsSelected).Select(x => x.Equipment).ToList();
+            var waists = solverData.AllWaists.Where(x => x.IsSelected).Select(x => x.Equipment).ToList();
+            var legs = solverData.AllLegs.Where(x => x.IsSelected).Select(x => x.Equipment).ToList();
+            var charms = solverData.AllCharms.Where(x => x.IsSelected).Select(x => x.Equipment).ToList();
 
             IList<IList<IEquipment>> allArmorPieces = new List<IList<IEquipment>>
             {
@@ -55,17 +64,18 @@ namespace MHArmory.Search.Cutoff
 
             statistics.Init(allArmorPieces);
             
-            MappingResults maps = mapper.MapEverything(allArmorPieces, data.DesiredAbilities, data.AllJewels);
-            SupersetInfo[] supersets = allArmorPieces.Select(list => supersetMaker.CreateSupersetModel(list, data.DesiredAbilities)).ToArray();
+            MappingResults maps = mapper.MapEverything(allArmorPieces, solverData.DesiredAbilities, solverData.AllJewels);
+            SupersetInfo[] supersets = allArmorPieces.Select(list => supersetMaker.CreateSupersetModel(list, solverData.DesiredAbilities)).ToArray();
             MappedEquipment[] supersetMaps = mapper.MapSupersets(supersets, maps);
 
-            var results = new List<ArmorSetSearchResult>();
+            IList<ArmorSetSearchResult> results = new List<ArmorSetSearchResult>();
 
-            var combination = new Combination(supersetMaps, data.WeaponSlots, maps);
-            ParallelizedDepthFirstSearch(combination, 0, maps.Equipment, supersetMaps, results, ct);
+            var combination = new Combination(supersetMaps, solverData.WeaponSlots, maps);
+            ParallelizedDepthFirstSearch(combination, 0, maps.Equipment, supersetMaps, results, cancellationToken);
             //DepthFirstSearch(combination, 0, maps.Equipment, supersetMaps, results, new object(), ct);
             //statistics.Dump();
-            return results;
+            var resultTask = Task.FromResult(results);
+            return resultTask;
         }
 
         private void ParallelizedDepthFirstSearch(Combination combination, int depth, MappedEquipment[][] allEquipment, MappedEquipment[] supersets, IList<ArmorSetSearchResult> results, CancellationToken ct)

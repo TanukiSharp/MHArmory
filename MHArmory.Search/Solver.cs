@@ -9,17 +9,20 @@ using System.Threading.Tasks;
 using MHArmory.Core;
 using MHArmory.Core.DataStructures;
 using MHArmory.Search.Contracts;
-using MHArmory.Search.Cutoff;
 
 namespace MHArmory.Search
 {
-    public class Solver : ISolver
+    public class Solver : ISolver, IDisposable
     {
         private int currentCombinations;
         private double totalCombinations;
 
-        public event Action<SearchMetrics> SearchMetricsChanged;
         public event Action<double> SearchProgress;
+
+        public string Name { get; } = "Armory - Default";
+        public string Author { get; } = "TaukiSharp";
+        public string Description { get; } = "Default search algorithm";
+        public int Version { get; } = 1;
 
         public void Dispose()
         {
@@ -28,13 +31,7 @@ namespace MHArmory.Search
             armorSetSkillPartsObjectPool.Dispose();
             searchEquipmentsObjectPool.Dispose();
 
-            SearchMetricsChanged = null;
             SearchProgress = null;
-        }
-
-        public Task<IList<ArmorSetSearchResult>> SearchArmorSets(ISolverData solverData)
-        {
-            return SearchArmorSets(solverData, CancellationToken.None);
         }
 
         public Task<IList<ArmorSetSearchResult>> SearchArmorSets(ISolverData solverData, CancellationToken cancellationToken)
@@ -71,8 +68,6 @@ namespace MHArmory.Search
             CancellationToken cancellationToken
         )
         {
-            var sw = Stopwatch.StartNew();
-
             if (cancellationToken.IsCancellationRequested)
                 return null;
 
@@ -108,95 +103,71 @@ namespace MHArmory.Search
             long ll = data.AllLegs.Count(x => x.IsSelected);
             long ch = data.AllCharms.Count(x => x.IsSelected);
 
-            var metrics = new SearchMetrics
-            {
-                Heads = (int)hh,
-                Chests = (int)cc,
-                Gloves = (int)gg,
-                Waists = (int)ww,
-                Legs = (int)ll,
-                Charms = (int)ch,
-                MinSlotSize = data.MinJewelSize,
-                MaxSlotSize = data.MaxJewelSize
-            };
-
-            metrics.UpdateCombinationCount();
-
-            SearchMetricsChanged?.Invoke(metrics);
+            long combinationCount =
+                Math.Max(hh, 1) *
+                Math.Max(cc, 1) *
+                Math.Max(gg, 1) *
+                Math.Max(ww, 1) *
+                Math.Max(ll, 1) *
+                Math.Max(ch, 1);
 
             await Task.Yield();
 
-            bool cutoffSearch = true;
-            if (cutoffSearch)
+            var parallelOptions = new ParallelOptions
             {
-                test = CutoffSearch.Instance.Run(data, cancellationToken);
-            }
-            else
+                //MaxDegreeOfParallelism = 1, // to ease debugging
+                MaxDegreeOfParallelism = Environment.ProcessorCount
+            };
+
+            currentCombinations = 0;
+            totalCombinations = combinationCount;
+
+            ParallelLoopResult parallelResult;
+
+            try
             {
-                var parallelOptions = new ParallelOptions
+                OrderablePartitioner<IEquipment[]> partitioner = Partitioner.Create(generator.All(cancellationToken), EnumerablePartitionerOptions.NoBuffering);
+
+                parallelResult = Parallel.ForEach(partitioner, parallelOptions, equips =>
                 {
-                    //MaxDegreeOfParallelism = 1, // to ease debugging
-                    MaxDegreeOfParallelism = Environment.ProcessorCount
-                };
-
-                currentCombinations = 0;
-                totalCombinations = metrics.CombinationCount;
-
-                ParallelLoopResult parallelResult;
-
-                try
-                {
-                    OrderablePartitioner<IEquipment[]> partitioner = Partitioner.Create(generator.All(cancellationToken), EnumerablePartitionerOptions.NoBuffering);
-
-                    parallelResult = Parallel.ForEach(partitioner, parallelOptions, equips =>
+                    if (cancellationToken.IsCancellationRequested)
                     {
-                        if (cancellationToken.IsCancellationRequested)
+                        searchEquipmentsObjectPool.PutObject(equips);
+                        return;
+                    }
+
+                    ArmorSetSearchResult searchResult = IsArmorSetMatching(data.WeaponSlots, equips, data.AllJewels, data.DesiredAbilities);
+
+                    Interlocked.Increment(ref currentCombinations);
+
+                    if (searchResult.IsMatch)
+                    {
+                        searchResult.ArmorPieces = new IArmorPiece[]
                         {
-                            searchEquipmentsObjectPool.PutObject(equips);
-                            return;
-                        }
-
-                        ArmorSetSearchResult searchResult = IsArmorSetMatching(data.WeaponSlots, equips, data.AllJewels, data.DesiredAbilities);
-
-                        Interlocked.Increment(ref currentCombinations);
-
-                        if (searchResult.IsMatch)
-                        {
-                            searchResult.ArmorPieces = new IArmorPiece[]
-                            {
                             (IArmorPiece)equips[0],
                             (IArmorPiece)equips[1],
                             (IArmorPiece)equips[2],
                             (IArmorPiece)equips[3],
                             (IArmorPiece)equips[4],
-                            };
-                            searchResult.Charm = (ICharmLevel)equips[5];
+                        };
+                        searchResult.Charm = (ICharmLevel)equips[5];
 
-                            lock (test)
-                            {
-                                test.Add(searchResult);
-                            }
+                        lock (test)
+                        {
+                            test.Add(searchResult);
                         }
+                    }
 
-                        searchEquipmentsObjectPool.PutObject(equips);
-                    });
+                    searchEquipmentsObjectPool.PutObject(equips);
+                });
 
-                    if (cancellationToken.IsCancellationRequested == false)
-                        SearchProgress?.Invoke(1.0);
-                }
-                finally
-                {
-                    generator.Reset();
-                }
+                if (cancellationToken.IsCancellationRequested == false)
+                    SearchProgress?.Invoke(1.0);
             }
-            
-
-            sw.Stop();
-
-            metrics.TimeElapsed = (int)sw.ElapsedMilliseconds;
-            metrics.MatchingResults = test?.Count ?? 0;
-
-            SearchMetricsChanged?.Invoke(metrics);
+            finally
+            {
+                generator.Reset();
+            }
 
             return test;
         }

@@ -6,9 +6,8 @@ using System.Threading.Tasks;
 
 namespace MHArmory.Search.Contracts
 {
-    public interface ISolver : IDisposable
+    public interface ISolver : IExtension
     {
-        event Action<SearchMetrics> SearchMetricsChanged;
         event Action<double> SearchProgress;
 
         Task<IList<ArmorSetSearchResult>> SearchArmorSets(ISolverData solverData, CancellationToken cancellationToken);
