@@ -232,7 +232,7 @@ namespace DataSourceTool
         private int[] MakeSlots(int[] slots)
         {
             if (slots != null && slots.Length > 0 && slots.Any(x => x > 0))
-                return slots;
+                return slots.OrderByDescending(x => x).ToArray();
 
             return null;
         }

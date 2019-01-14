@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
+using MHArmory.Core.DataStructures;
 using MHArmory.Search;
 using MHArmory.Search.Contracts;
 
@@ -12,6 +13,8 @@ namespace MHArmory.ViewModels
     public class ArmorPieceTypesViewModel : ViewModelBase, IDisposable
     {
         public IList<ISolverDataEquipmentModel> Equipments { get; private set; }
+
+        public EquipmentType Type { get; }
 
         private int selectedCount;
         public int SelectedCount
@@ -25,8 +28,9 @@ namespace MHArmory.ViewModels
         public ICommand InverseSelectionCommand { get; }
         public ICommand ResetSelectionCommand { get; }
 
-        public ArmorPieceTypesViewModel(IEnumerable<ISolverDataEquipmentModel> equipments)
+        public ArmorPieceTypesViewModel(EquipmentType type, IEnumerable<ISolverDataEquipmentModel> equipments)
         {
+            Type = type;
             Equipments = equipments.OrderBy(x => x.Equipment.Id).ToList();
 
             SelectAllCommand = new AnonymousCommand(OnSelectAll);
@@ -78,7 +82,7 @@ namespace MHArmory.ViewModels
             ForceRefreshEquipments();
         }
 
-        private void ForceRefreshEquipments()
+        internal void ForceRefreshEquipments()
         {
             IList<ISolverDataEquipmentModel> equipmentsReference = Equipments;
             Equipments = null;

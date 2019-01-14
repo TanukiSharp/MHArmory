@@ -97,9 +97,9 @@ namespace MHArmory.AutoUpdate
             {
                 response = await httpClient.GetAsync(url, HttpCompletionOption.ResponseContentRead);
             }
-            catch (HttpRequestException hrex)
+            catch (Exception ex)
             {
-                logger?.LogError(hrex, $"A network error occurred while downloading the manifest at '{url}'.");
+                logger?.LogError(ex, $"A network error occurred while downloading the manifest at '{url}'.");
                 return null;
             }
 

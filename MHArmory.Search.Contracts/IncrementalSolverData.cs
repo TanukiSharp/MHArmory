@@ -9,9 +9,12 @@ namespace MHArmory.Search.Contracts
 {
     public class IncrementalSolverData : ISolverData
     {
-        public int[] WeaponSlots { get; }
-        public int MinJewelSize { get; }
-        public int MaxJewelSize { get; }
+        public string Name { get; } = "Incremental solver data";
+        public string Author { get; } = "Gediminas Masaitis";
+        public string Description { get; } = "Incremental solver data";
+        public int Version { get; } = 1;
+
+        public int[] WeaponSlots { get; private set; }
         public ISolverDataEquipmentModel[] AllHeads { get; private set; }
         public ISolverDataEquipmentModel[] AllChests { get; private set; }
         public ISolverDataEquipmentModel[] AllGloves { get; private set; }
@@ -21,21 +24,10 @@ namespace MHArmory.Search.Contracts
         public SolverDataJewelModel[] AllJewels { get; private set; }
         public IAbility[] DesiredAbilities { get; private set; }
 
-        public IncrementalSolverData(
-            IList<int> weaponSlots,
-            IEnumerable<IArmorPiece> heads,
-            IEnumerable<IArmorPiece> chests,
-            IEnumerable<IArmorPiece> gloves,
-            IEnumerable<IArmorPiece> waists,
-            IEnumerable<IArmorPiece> legs,
-            IEnumerable<ICharmLevel> charms,
-            IEnumerable<SolverDataJewelModel> jewels,
-            IEnumerable<IAbility> desiredAbilities
-        )
+        public void Setup(IList<int> weaponSlots, IEnumerable<IArmorPiece> heads, IEnumerable<IArmorPiece> chests, IEnumerable<IArmorPiece> gloves, IEnumerable<IArmorPiece> waists,
+            IEnumerable<IArmorPiece> legs, IEnumerable<ICharmLevel> charms, IEnumerable<SolverDataJewelModel> jewels, IEnumerable<IAbility> desiredAbilities)
         {
             AllJewels = jewels.ToArray();
-            MinJewelSize = AllJewels.Min(x => x.Jewel.SlotSize);
-            MaxJewelSize = AllJewels.Max(x => x.Jewel.SlotSize);
 
             WeaponSlots = weaponSlots.ToArray();
             DesiredAbilities = desiredAbilities.ToArray();

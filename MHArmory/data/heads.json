@@ -5039,8 +5039,8 @@
         },
         "rarity": 6,
         "slots": [
-            1,
-            2
+            2,
+            1
         ],
         "abilityIds": [
             135
@@ -5107,8 +5107,8 @@
         },
         "rarity": 6,
         "slots": [
-            1,
-            3
+            3,
+            1
         ],
         "abilityIds": [
             55
@@ -5557,7 +5557,7 @@
         "id": 170,
         "name": {
             "EN": "Kulve Taroth's Fury γ",
-            "FR": "\\Furie Kulve Taroth γ",
+            "FR": "Furie Kulve Taroth γ",
             "JP": "マムガイラヘルム γ",
             "IT": "Furia di Kulve Taroth γ",
             "DE": "Kulve Taroths Wut γ",
