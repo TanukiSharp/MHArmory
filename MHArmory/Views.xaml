@@ -46,7 +46,7 @@
     <DataTemplate x:Key="ExtensionMenuHeaderTemplate">
         <ComboBox VerticalAlignment="Center" ItemsSource="{Binding AvailableValues, Mode=OneTime}" SelectedItem="{Binding SelectedValue}" ItemTemplate="{StaticResource ExtensionView}"/>
     </DataTemplate>
-    
+
     <DataTemplate x:Key="SaveDataSlotView">
         <StackPanel Orientation="Horizontal">
             <TextBlock Margin="1 1 6 1" Text="{Binding SlotNumber, Mode=OneTime, StringFormat=\{0\}.}" VerticalAlignment="Center"/>
