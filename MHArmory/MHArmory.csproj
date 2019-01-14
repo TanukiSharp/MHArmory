@@ -79,6 +79,7 @@
     <Compile Include="Configurations\Conversion\IConverter.cs" />
     <Compile Include="Controls\DraggableScrollViewer.cs" />
     <Compile Include="Controls\SharpnessRenderer.cs" />
+    <Compile Include="Controls\UnclickableMenuItem.cs" />
     <Compile Include="DependencyObjectExtensions.cs" />
     <Compile Include="EnumerableExtensions.cs" />
     <Compile Include="EquipmentOverrideWindow.xaml.cs">
