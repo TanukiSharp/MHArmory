@@ -5,6 +5,14 @@ using Newtonsoft.Json;
 
 namespace MHArmory.Configurations
 {
+    public class Extensions
+    {
+        [JsonProperty("solver")]
+        public string Solver { get; set; }
+        [JsonProperty("solverData")]
+        public string SolverData { get; set; }
+    }
+
     public class SkillLoadoutItemConfigurationV3
     {
         [JsonProperty("weaponSlots")]
@@ -23,6 +31,9 @@ namespace MHArmory.Configurations
 
         [JsonProperty("acknowledgedVersion")]
         public string AcknowledgedVersion { get; set; }
+
+        [JsonProperty("extensions")]
+        public Extensions Extensions { get; } = new Extensions();
 
         [JsonProperty("backupLocations")]
         public string[] BackupLocations { get; set; }

@@ -4,7 +4,8 @@
                     xmlns:cvt="clr-namespace:MHArmory.ValueConverters"
                     xmlns:bhv="clr-namespace:MHArmory.Behaviors"
                     xmlns:ctrl="clr-namespace:MHArmory.Controls"
-                    xmlns:mxt="clr-namespace:MHArmory.MarkupExtensions">
+                    xmlns:mxt="clr-namespace:MHArmory.MarkupExtensions"
+                    xmlns:pnl="clr-namespace:MHArmory.Panels">
 
     <cvt:HiddenVisibilityValueConverter x:Key="HiddenVisibilityValueConverter"/>
     <cvt:CollapsedVisibilityValueConverter x:Key="CollapsedVisibilityValueConverter"/>
@@ -29,6 +30,23 @@
     <SolidColorBrush x:Key="ActiveWeaponBorderBrush" Color="#FF55D15A"/>
     <SolidColorBrush x:Key="InactiveToggleBackgroundBrush" Color="#FFFFB7B7"/>
 
+    <DataTemplate x:Key="ExtensionView">
+        <StackPanel Orientation="Horizontal">
+            <StackPanel Margin="1 1 6 1">
+                <TextBlock Text="{Binding Name, Mode=OneTime}" FontWeight="Bold" Margin="2"/>
+                <TextBlock Text="{Binding Description, Mode=OneTime}" Margin="2" MaxWidth="250" TextTrimming="CharacterEllipsis" ToolTip="{Binding Description, Mode=OneTime}"/>
+            </StackPanel>
+            <StackPanel Margin="1">
+                <TextBlock Text="{Binding Version, StringFormat='Version {0}', Mode=OneTime}" Margin="2" Foreground="Gray" FontSize="10"/>
+                <TextBlock Text="{Binding Author, Mode=OneTime}" Margin="2" Foreground="Gray" FontSize="10" MaxWidth="120" TextTrimming="CharacterEllipsis" ToolTip="{Binding Author, Mode=OneTime}"/>
+            </StackPanel>
+        </StackPanel>
+    </DataTemplate>
+
+    <DataTemplate x:Key="ExtensionMenuHeaderTemplate">
+        <ComboBox VerticalAlignment="Center" ItemsSource="{Binding AvailableValues, Mode=OneTime}" SelectedItem="{Binding SelectedValue}" ItemTemplate="{StaticResource ExtensionView}"/>
+    </DataTemplate>
+    
     <DataTemplate x:Key="SaveDataSlotView">
         <StackPanel Orientation="Horizontal">
             <TextBlock Margin="1 1 6 1" Text="{Binding SlotNumber, Mode=OneTime, StringFormat=\{0\}.}" VerticalAlignment="Center"/>
@@ -851,13 +869,31 @@
                         <MenuItem Header="Manage..." Command="{x:Static local:RoutedCommands.ManageLoadouts}"/>
                     </MenuItem>
                     <MenuItem Header="Equipments" Command="{x:Static local:RoutedCommands.OpenEquipmentExplorer}"/>
-                    <MenuItem Header="Languages"  ItemsSource="{Binding Languages, Mode=OneTime}" ItemTemplate="{StaticResource LanguageView}">
+                    <MenuItem Header="Languages" ItemsSource="{Binding Languages, Mode=OneTime}" ItemTemplate="{StaticResource LanguageView}">
                         <MenuItem.ItemContainerStyle>
                             <Style TargetType="{x:Type MenuItem}">
                                 <Setter Property="Command" Value="{Binding SelectionCommand, Mode=OneTime}"/>
                                 <Setter Property="IsChecked" Value="{Binding IsChecked, Mode=OneWay}"/>
                             </Style>
                         </MenuItem.ItemContainerStyle>
+                    </MenuItem>
+                    <MenuItem Header="Extensions" DataContext="{Binding Extensions, Mode=OneTime}" pnl:KeyValueGrid.IsSharedSizeScope="True">
+                        <ctrl:UnclickableMenuItem DataContext="{Binding SolverData, Mode=OneTime}">
+                            <ctrl:UnclickableMenuItem.Header>
+                                <pnl:KeyValueGrid Margin="4" KeyColumnSharedSizeGroup="A">
+                                    <TextBlock Text="SolverData: " VerticalAlignment="Center"/>
+                                    <ContentControl Content="{Binding}" ContentTemplate="{StaticResource ExtensionMenuHeaderTemplate}" Focusable="False"/>
+                                </pnl:KeyValueGrid>
+                            </ctrl:UnclickableMenuItem.Header>
+                        </ctrl:UnclickableMenuItem>
+                        <ctrl:UnclickableMenuItem DataContext="{Binding Solver, Mode=OneTime}">
+                            <ctrl:UnclickableMenuItem.Header>
+                                <pnl:KeyValueGrid Margin="4" KeyColumnSharedSizeGroup="A">
+                                    <TextBlock Text="Solver: " VerticalAlignment="Center"/>
+                                    <ContentControl Content="{Binding}" ContentTemplate="{StaticResource ExtensionMenuHeaderTemplate}" Focusable="False"/>
+                                </pnl:KeyValueGrid>
+                            </ctrl:UnclickableMenuItem.Header>
+                        </ctrl:UnclickableMenuItem>
                     </MenuItem>
                     <MenuItem Header="?">
                         <MenuItem Header="Integrated help" Command="{x:Static local:RoutedCommands.OpenIntegratedHelp}" CommandParameter="GettingStarted"/>

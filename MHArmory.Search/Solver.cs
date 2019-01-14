@@ -12,13 +12,17 @@ using MHArmory.Search.Contracts;
 
 namespace MHArmory.Search
 {
-    public class Solver : ISolver
+    public class Solver : ISolver, IDisposable
     {
         private int currentCombinations;
         private double totalCombinations;
 
-        public event Action<SearchMetrics> SearchMetricsChanged;
         public event Action<double> SearchProgress;
+
+        public string Name { get; } = "Armory - Default";
+        public string Author { get; } = "TaukiSharp";
+        public string Description { get; } = "Default search algorithm";
+        public int Version { get; } = 1;
 
         public void Dispose()
         {
@@ -27,13 +31,7 @@ namespace MHArmory.Search
             armorSetSkillPartsObjectPool.Dispose();
             searchEquipmentsObjectPool.Dispose();
 
-            SearchMetricsChanged = null;
             SearchProgress = null;
-        }
-
-        public Task<IList<ArmorSetSearchResult>> SearchArmorSets(ISolverData solverData)
-        {
-            return SearchArmorSets(solverData, CancellationToken.None);
         }
 
         public Task<IList<ArmorSetSearchResult>> SearchArmorSets(ISolverData solverData, CancellationToken cancellationToken)
@@ -70,8 +68,6 @@ namespace MHArmory.Search
             CancellationToken cancellationToken
         )
         {
-            var sw = Stopwatch.StartNew();
-
             if (cancellationToken.IsCancellationRequested)
                 return null;
 
@@ -107,21 +103,13 @@ namespace MHArmory.Search
             long ll = data.AllLegs.Count(x => x.IsSelected);
             long ch = data.AllCharms.Count(x => x.IsSelected);
 
-            var metrics = new SearchMetrics
-            {
-                Heads = (int)hh,
-                Chests = (int)cc,
-                Gloves = (int)gg,
-                Waists = (int)ww,
-                Legs = (int)ll,
-                Charms = (int)ch,
-                MinSlotSize = data.MinJewelSize,
-                MaxSlotSize = data.MaxJewelSize
-            };
-
-            metrics.UpdateCombinationCount();
-
-            SearchMetricsChanged?.Invoke(metrics);
+            long combinationCount =
+                Math.Max(hh, 1) *
+                Math.Max(cc, 1) *
+                Math.Max(gg, 1) *
+                Math.Max(ww, 1) *
+                Math.Max(ll, 1) *
+                Math.Max(ch, 1);
 
             await Task.Yield();
 
@@ -132,7 +120,7 @@ namespace MHArmory.Search
             };
 
             currentCombinations = 0;
-            totalCombinations = metrics.CombinationCount;
+            totalCombinations = combinationCount;
 
             ParallelLoopResult parallelResult;
 
@@ -180,13 +168,6 @@ namespace MHArmory.Search
             {
                 generator.Reset();
             }
-
-            sw.Stop();
-
-            metrics.TimeElapsed = (int)sw.ElapsedMilliseconds;
-            metrics.MatchingResults = test?.Count ?? 0;
-
-            SearchMetricsChanged?.Invoke(metrics);
 
             return test;
         }

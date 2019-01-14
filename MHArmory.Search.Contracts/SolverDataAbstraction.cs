@@ -14,11 +14,9 @@ namespace MHArmory.Search.Contracts
         void RestoreOriginalSelection();
     }
 
-    public interface ISolverData
+    public interface ISolverData : IExtension
     {
         int[] WeaponSlots { get; }
-        int MinJewelSize { get; }
-        int MaxJewelSize { get; }
 
         ISolverDataEquipmentModel[] AllHeads { get; }
         ISolverDataEquipmentModel[] AllChests { get; }
@@ -29,6 +27,16 @@ namespace MHArmory.Search.Contracts
         SolverDataJewelModel[] AllJewels { get; }
         IAbility[] DesiredAbilities { get; }
 
-        ISolverData Done();
+        void Setup(
+            IList<int> weaponSlots,
+            IEnumerable<IArmorPiece> heads,
+            IEnumerable<IArmorPiece> chests,
+            IEnumerable<IArmorPiece> gloves,
+            IEnumerable<IArmorPiece> waists,
+            IEnumerable<IArmorPiece> legs,
+            IEnumerable<ICharmLevel> charms,
+            IEnumerable<SolverDataJewelModel> jewels,
+            IEnumerable<IAbility> desiredAbilities
+        );
     }
 }

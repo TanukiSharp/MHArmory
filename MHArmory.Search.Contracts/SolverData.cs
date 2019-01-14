@@ -19,22 +19,24 @@ namespace MHArmory.Search.Contracts
         public ISolverDataEquipmentModel[] AllLegs { get; private set; }
         public ISolverDataEquipmentModel[] AllCharms { get; private set; }
         public SolverDataJewelModel[] AllJewels { get; private set; }
-        public IAbility[] DesiredAbilities { get; }
+        public IAbility[] DesiredAbilities { get; private set; }
 
-        private readonly List<SolverDataEquipmentModel> inputHeads;
-        private readonly List<SolverDataEquipmentModel> inputChests;
-        private readonly List<SolverDataEquipmentModel> inputGloves;
-        private readonly List<SolverDataEquipmentModel> inputWaists;
-        private readonly List<SolverDataEquipmentModel> inputLegs;
-        private readonly List<SolverDataEquipmentModel> inputCharms;
-        private readonly List<SolverDataJewelModel> inputJewels;
+        private List<SolverDataEquipmentModel> inputHeads;
+        private List<SolverDataEquipmentModel> inputChests;
+        private List<SolverDataEquipmentModel> inputGloves;
+        private List<SolverDataEquipmentModel> inputWaists;
+        private List<SolverDataEquipmentModel> inputLegs;
+        private List<SolverDataEquipmentModel> inputCharms;
+        private List<SolverDataJewelModel> inputJewels;
 
         public int MaxSkillCountPerArmorPiece { get; private set; }
 
-        public int MinJewelSize { get; private set; }
-        public int MaxJewelSize { get; private set; }
+        public string Name { get; } = "Armory - Default";
+        public string Author { get; } = "TanukiSharp";
+        public string Description { get; } = "Default solver data processor";
+        public int Version { get; } = 1;
 
-        public SolverData(
+        public void Setup(
             IList<int> weaponSlots,
             IEnumerable<IArmorPiece> heads,
             IEnumerable<IArmorPiece> chests,
@@ -66,6 +68,10 @@ namespace MHArmory.Search.Contracts
             DesiredAbilities = desiredAbilities.ToArray();
 
             ProcessInputData();
+
+            UpdateReferences();
+
+            FreezeEquipmentSelection();
         }
 
         private void ProcessInputData()
@@ -74,17 +80,6 @@ namespace MHArmory.Search.Contracts
             RemoveJewelsMatchingExcludedSkills();
 
             RemoveEquipmentsBySkillExclusion();
-
-            if (inputJewels.Count > 0)
-            {
-                MinJewelSize = inputJewels.Min(x => x.Jewel.SlotSize);
-                MaxJewelSize = inputJewels.Max(x => x.Jewel.SlotSize);
-            }
-            else
-            {
-                MinJewelSize = 0;
-                MaxJewelSize = 0;
-            }
 
             ComputeMatchingSkillCount();
 
@@ -97,15 +92,6 @@ namespace MHArmory.Search.Contracts
             UpdateSelection();
 
             UnselectLessPoweredCharms();
-        }
-
-        public ISolverData Done()
-        {
-            UpdateReferences();
-
-            FreezeEquipmentSelection();
-
-            return this;
         }
 
         private void UpdateReferences()
