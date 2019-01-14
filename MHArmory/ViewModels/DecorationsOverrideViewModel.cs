@@ -124,7 +124,7 @@ namespace MHArmory.ViewModels
                 {
                     foreach (KeyValuePair<string, DecorationOverrideConfigurationItem> decoOverride in decorationOverrides)
                     {
-                        JewelOverrideViewModel vm = Jewels.FirstOrDefault(x => x.Name == decoOverride.Key);
+                        JewelOverrideViewModel vm = Jewels.FirstOrDefault(x => Core.Localization.GetDefault(x.Name) == decoOverride.Key);
                         if (vm != null)
                         {
                             vm.IsOverriding = decoOverride.Value.IsOverriding;
@@ -257,7 +257,7 @@ namespace MHArmory.ViewModels
                 {
                     child.IsOverriding = true;
 
-                    string gameName = $"{child.Name} {child.SlotSize}";
+                    string gameName = $"{Core.Localization.GetDefault(child.Name)} {child.SlotSize}";
                     JewelInfo foundGameJewel = MasterData.FindJewelInfoByName(gameName);
 
                     uint quantity = 0;

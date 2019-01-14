@@ -27,7 +27,7 @@ namespace MHArmory.ViewModels
     {
         public int Id { get { return Equipment.Id; } }
         public EquipmentType Type { get { return Equipment.Type; } }
-        public string Name { get { return Equipment.Name; } } // TODO: localization here
+        public Dictionary<string, string> Name { get { return Equipment.Name; } }
         public int Rarity { get { return Equipment.Rarity; } }
         public int[] Slots { get { return Equipment.Slots; } }
         public IEvent Event { get { return Equipment.Event; } }

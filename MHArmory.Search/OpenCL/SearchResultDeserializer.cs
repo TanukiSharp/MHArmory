@@ -4,6 +4,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using MHArmory.Core.DataStructures;
+using MHArmory.Search.Contracts;
 
 namespace MHArmory.Search.OpenCL
 {

@@ -4,7 +4,8 @@
                     xmlns:cvt="clr-namespace:MHArmory.ValueConverters"
                     xmlns:bhv="clr-namespace:MHArmory.Behaviors"
                     xmlns:ctrl="clr-namespace:MHArmory.Controls"
-                    xmlns:mxt="clr-namespace:MHArmory.MarkupExtensions">
+                    xmlns:mxt="clr-namespace:MHArmory.MarkupExtensions"
+                    xmlns:pnl="clr-namespace:MHArmory.Panels">
 
     <cvt:HiddenVisibilityValueConverter x:Key="HiddenVisibilityValueConverter"/>
     <cvt:CollapsedVisibilityValueConverter x:Key="CollapsedVisibilityValueConverter"/>
@@ -23,10 +24,28 @@
     <cvt:NumToSeparatedStringValueConverter x:Key="NumToSeparatedStringValueConverter"/>
     <cvt:FreeElementNameValueConverter x:Key="FreeElementNameValueConverter"/>
     <cvt:AbilityToViewModelValueConverter x:Key="AbilityToViewModelValueConverter"/>
+    <cvt:CombinationPerSecondValueConverter x:Key="CombinationPerSecondValueConverter"/>
 
     <SolidColorBrush x:Key="ActiveWeaponBackgroundBrush" Color="#FFB7FFA7"/>
     <SolidColorBrush x:Key="ActiveWeaponBorderBrush" Color="#FF55D15A"/>
     <SolidColorBrush x:Key="InactiveToggleBackgroundBrush" Color="#FFFFB7B7"/>
+
+    <DataTemplate x:Key="ExtensionView">
+        <StackPanel Orientation="Horizontal">
+            <StackPanel Margin="1 1 6 1">
+                <TextBlock Text="{Binding Name, Mode=OneTime}" FontWeight="Bold" Margin="2"/>
+                <TextBlock Text="{Binding Description, Mode=OneTime}" Margin="2" MaxWidth="250" TextTrimming="CharacterEllipsis" ToolTip="{Binding Description, Mode=OneTime}"/>
+            </StackPanel>
+            <StackPanel Margin="1">
+                <TextBlock Text="{Binding Version, StringFormat='Version {0}', Mode=OneTime}" Margin="2" Foreground="Gray" FontSize="10"/>
+                <TextBlock Text="{Binding Author, Mode=OneTime}" Margin="2" Foreground="Gray" FontSize="10" MaxWidth="120" TextTrimming="CharacterEllipsis" ToolTip="{Binding Author, Mode=OneTime}"/>
+            </StackPanel>
+        </StackPanel>
+    </DataTemplate>
+
+    <DataTemplate x:Key="ExtensionMenuHeaderTemplate">
+        <ComboBox VerticalAlignment="Center" ItemsSource="{Binding AvailableValues, Mode=OneTime}" SelectedItem="{Binding SelectedValue}" ItemTemplate="{StaticResource ExtensionView}"/>
+    </DataTemplate>
 
     <DataTemplate x:Key="SaveDataSlotView">
         <StackPanel Orientation="Horizontal">
@@ -91,15 +110,18 @@
 
     <DataTemplate x:Key="FullSkillDescriptionView">
         <StackPanel>
-            <TextBlock Text="{Binding GeneralDescription, Mode=OneTime}" Margin="2" MaxWidth="370" TextWrapping="Wrap" HorizontalAlignment="Left" FontWeight="Black"/>
+            <TextBlock Text="{mxt:Localization GeneralDescription}" Margin="2" MaxWidth="370" TextWrapping="Wrap" HorizontalAlignment="Left" FontWeight="Black"/>
             <ItemsControl ItemsSource="{Binding Abilities, Mode=OneTime}" Margin="12 2 2 2">
                 <ItemsControl.ItemTemplate>
                     <DataTemplate>
-                        <TextBlock x:Name="item" Text="{Binding Description, Mode=OneTime}" Margin="2"/>
+                        <TextBlock x:Name="item" Text="{Binding Description, Mode=OneWay}" Margin="2"/>
                         <DataTemplate.Triggers>
                             <DataTrigger Binding="{Binding IsActive, Mode=OneTime}" Value="True">
                                 <Setter TargetName="item" Property="FontWeight" Value="Bold"/>
                                 <Setter TargetName="item" Property="Foreground" Value="Blue"/>
+                            </DataTrigger>
+                            <DataTrigger Binding="{Binding IsOver, Mode=OneTime}" Value="True">
+                                <Setter TargetName="item" Property="Foreground" Value="DarkOrange"/>
                             </DataTrigger>
                         </DataTemplate.Triggers>
                     </DataTemplate>
@@ -211,7 +233,7 @@
                 <Run Text="{Binding Level, Mode=OneTime}"/>
                 <Run Text="  "/>
             </TextBlock>
-            <TextBlock Text="{Binding AbilityDescription, Mode=OneTime}" Foreground="DarkGray"/>
+            <TextBlock Text="{mxt:Localization AbilityDescription}" Foreground="DarkGray"/>
         </StackPanel>
         <DataTemplate.Triggers>
             <DataTrigger Binding="{Binding Level, Mode=OneWay}" Value="0">
@@ -226,7 +248,7 @@
             <bhv:ToolTipEx.Content>
                 <ContentControl Content="{Binding Description, Mode=OneTime}" ContentTemplate="{StaticResource FullSkillDescriptionView}"/>
             </bhv:ToolTipEx.Content>
-            <Run Text="{Binding SkillName, Mode=OneTime}" FontWeight="Bold"/>
+            <Run Text="{mxt:Localization SkillName}" FontWeight="Bold"/>
             <Run Text="level"/>
             <Run Text="{Binding Level, Mode=OneTime}"/>
         </TextBlock>
@@ -238,7 +260,7 @@
             <bhv:ToolTipEx.Content>
                 <ContentControl Content="{Binding Description, Mode=OneTime}" ContentTemplate="{StaticResource FullSkillDescriptionView}"/>
             </bhv:ToolTipEx.Content>
-            <TextBlock Text="{Binding SkillName, Mode=OneTime}" FontWeight="Bold"/>
+            <TextBlock Text="{mxt:Localization SkillName}" FontWeight="Bold"/>
             <TextBlock x:Name="lvl1" Text=" level "/>
             <TextBlock x:Name="lvl2" Text="{Binding Level, Mode=OneTime}"/>
             <TextBlock x:Name="lvl3" Text=" excluded" Visibility="Collapsed"/>
@@ -264,7 +286,7 @@
             <ItemsControl ItemsSource="{Binding GrantedSkills, Mode=OneTime}" Margin="2" Focusable="False">
                 <ItemsControl.ItemTemplate>
                     <DataTemplate>
-                        <TextBlock Text="{Binding Skill.Name, Mode=OneTime}"/>
+                        <TextBlock Text="{mxt:Localization Skill.Name}"/>
                     </DataTemplate>
                 </ItemsControl.ItemTemplate>
             </ItemsControl>
@@ -273,7 +295,7 @@
 
     <DataTemplate x:Key="ArmorSetSkillView">
         <StackPanel Orientation="Horizontal">
-            <TextBlock Text="{Binding Name, Mode=OneTime}" VerticalAlignment="Top" Margin="6 0 6 0"/>
+            <TextBlock Text="{mxt:Localization Name}" VerticalAlignment="Top" Margin="6 0 6 0"/>
             <ItemsControl ItemsSource="{Binding Parts, Mode=OneTime}" ItemTemplate="{StaticResource ArmorSetSkillPartView}" Focusable="False"/>
         </StackPanel>
     </DataTemplate>
@@ -291,7 +313,7 @@
                     <StackPanel Grid.Column="0" Orientation="Vertical" Margin="0 0 8 0">
                         <StackPanel Orientation="Horizontal" Grid.IsSharedSizeScope="True">
                             <Image Source="{Binding Type, Mode=OneTime, Converter={StaticResource EquipmentEnumToImageSourceValueConverter}, ConverterParameter=20}" Width="20" Height="20" Margin="0 0 4 0" VerticalAlignment="Center" Focusable="False"/>
-                            <TextBlock Text="{Binding Name, Mode=OneTime}" FontSize="12" FontWeight="Bold" VerticalAlignment="Center" Focusable="False"/>
+                            <TextBlock Text="{mxt:Localization Name}" FontSize="12" FontWeight="Bold" VerticalAlignment="Center" Focusable="False"/>
                         </StackPanel>
                         <TextBlock Margin="2" Foreground="Gray" Visibility="{Binding Mode=OneTime, Converter={StaticResource HasDefenseVisibilityValueConverter}}" Focusable="False">
                             <Run Text="Def: "/>
@@ -358,7 +380,7 @@
                                     <StackPanel Orientation="Horizontal">
                                         <Image Source="{Binding Jewel.SlotSize, Converter={StaticResource SlotToImageSourceValueConverter}, ConverterParameter=16, Mode=OneTime}" Width="16" Height="16" SnapsToDevicePixels="True" VerticalAlignment="Center"/>
                                         <TextBlock VerticalAlignment="Center" Margin="1 0 0 3">
-                                            <Run Text="{Binding Jewel.Name, Mode=OneTime}"/>
+                                            <Run Text="{mxt:Localization Jewel.Name}"/>
                                             <Run Text="{Binding Count, Mode=OneTime, StringFormat=x{0}}" Foreground="Blue"/>
                                         </TextBlock>
                                     </StackPanel>
@@ -397,7 +419,7 @@
                                         <bhv:ToolTipEx.Content>
                                             <ContentControl Content="{Binding Description, Mode=OneTime}" ContentTemplate="{StaticResource FullSkillDescriptionView}"/>
                                         </bhv:ToolTipEx.Content>
-                                        <Run Text="{Binding Skill.Name, Mode=OneTime}" x:Name="skillName"/>
+                                        <Run Text="{mxt:Localization Skill.Name}" x:Name="skillName"/>
                                         <Run Text=": "/>
                                         <Run Text="{Binding TotalLevel, Mode=OneTime}" Foreground="Blue"/>
                                         <Run Text="/"/>
@@ -434,21 +456,23 @@
     </DataTemplate>
 
     <DataTemplate x:Key="SkillNameAbilityView">
-        <TextBlock Text="{Binding SkillName, Mode=OneTime}" Focusable="False">
+        <StackPanel Orientation="Horizontal">
+            <TextBlock Text="{mxt:Localization SkillName}" Focusable="False"/>
+            <TextBlock Text="{Binding MaxLevel, Mode=OneTime, StringFormat=' (max: {0})'}" Focusable="False"/>
             <bhv:ToolTipEx.Content>
                 <ContentControl Content="{Binding Description, Mode=OneTime}" ContentTemplate="{StaticResource FullSkillDescriptionView}"/>
             </bhv:ToolTipEx.Content>
-        </TextBlock>
+        </StackPanel>
     </DataTemplate>
 
     <DataTemplate x:Key="SkillView">
         <Border x:Name="root" BorderBrush="Gray" BorderThickness="0 0 0 0" IsEnabled="{Binding IsAvailable}">
             <StackPanel Orientation="Vertical" Focusable="False">
                 <StackPanel Orientation="Horizontal">
-                    <TextBlock Text="{Binding Name, Mode=OneTime}" FontSize="12" FontWeight="Bold" VerticalAlignment="Center"/>
-                    <TextBlock Text="{Binding JewelsText, Mode=OneTime}" Margin="4 0 0 0" FontSize="11" Foreground="DarkGray" FontStyle="Italic" VerticalAlignment="Center"/>
+                    <TextBlock Text="{mxt:Localization Name}" FontSize="12" FontWeight="Bold" VerticalAlignment="Center"/>
+                    <TextBlock Text="{Binding JewelsText, Mode=OneWay}" Margin="4 0 0 0" FontSize="11" Foreground="DarkGray" FontStyle="Italic" VerticalAlignment="Center"/>
                 </StackPanel>
-                <TextBlock Text="{Binding Description, Mode=OneTime}" Foreground="DarkGray" Padding="32 0 5 5"/>
+                <TextBlock Text="{mxt:Localization Description}" Foreground="DarkGray" Padding="32 0 5 5"/>
                 <ItemsControl ItemsSource="{Binding Abilities, Mode=OneTime}" Focusable="False" Margin="32 0 0 0">
                     <ItemsControl.ItemTemplate>
                         <DataTemplate>
@@ -524,7 +548,7 @@
             </Grid.ColumnDefinitions>
             <CheckBox Grid.Column="0" IsChecked="{Binding IsOverriding}" Padding="4" VerticalAlignment="Stretch" VerticalContentAlignment="Center" bhv:ToolTipEx.Content="Check to override default jewel availability">
                 <StackPanel Orientation="Horizontal">
-                    <TextBlock Text="{Binding Name, Mode=OneTime}" VerticalAlignment="Center" Margin="0 0 4 0"/>
+                    <TextBlock Text="{mxt:Localization Name}" VerticalAlignment="Center" Margin="0 0 4 0"/>
                     <Image Source="{Binding SlotSize, Converter={StaticResource SlotToImageSourceValueConverter}, ConverterParameter=24, Mode=OneTime}" VerticalAlignment="Center" bhv:ToolTipEx.Content="{Binding Converter={StaticResource SlotSizeToolTipValueConverter}, Mode=OneTime}" Width="24" Height="24" SnapsToDevicePixels="True"/>
                 </StackPanel>
             </CheckBox>
@@ -532,8 +556,13 @@
                 <TextBlock Text="Count: " VerticalAlignment="Center" Margin="2 0 2 0"/>
                 <TextBox Text="{Binding Count, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Margin="2 0 2 0" Padding="2" Width="60" VerticalAlignment="Center"/>
             </StackPanel>
-            <ItemsControl Grid.Column="2" ItemsSource="{Binding Abilities, Mode=OneTime}" ItemTemplate="{StaticResource SkillNameAbilityView}" VerticalAlignment="Top" Padding="4" Focusable="False"/>
+            <ItemsControl x:Name="lst" Grid.Column="2" ItemsSource="{Binding Abilities, Mode=OneTime}" ItemTemplate="{StaticResource SkillNameAbilityView}" VerticalAlignment="Top" Padding="4" Focusable="False"/>
         </Grid>
+        <DataTemplate.Triggers>
+            <DataTrigger Binding="{Binding HasTooManyJewels, Mode=OneWay}" Value="True">
+                <Setter TargetName="lst" Property="TextBlock.Foreground" Value="DarkOrange"/>
+            </DataTrigger>
+        </DataTemplate.Triggers>
     </DataTemplate>
 
     <DataTemplate x:Key="DecorationsOverrideView">
@@ -616,7 +645,7 @@
                 <ColumnDefinition Width="*" SharedSizeGroup="A"/>
                 <ColumnDefinition Width="Auto"/>
             </Grid.ColumnDefinitions>
-            <TextBlock Grid.Column="0" Text="{Binding Name, Mode=OneTime}" Padding="4" VerticalAlignment="Center" FontWeight="Bold" FontSize="14"/>
+            <TextBlock Grid.Column="0" Text="{mxt:Localization Name}" Padding="4" VerticalAlignment="Center" FontWeight="Bold" FontSize="14"/>
             <StackPanel Grid.Column="1" Orientation="Horizontal">
                 <Button Width="16" Margin="4" bhv:ToolTipEx.Content="Toggle all" Command="{Binding ToggleAllCommand, Mode=OneTime}"/>
                 <ItemsControl ItemsSource="{Binding OrderedEquipments, Mode=OneTime}">
@@ -711,7 +740,9 @@
                     <TextBlock Text="Matching results: "/>
                     <TextBlock Text="{Binding MatchingResults, Converter={StaticResource NumToSeparatedStringValueConverter}, Mode=OneTime}" Margin="0 0 16 0" Style="{StaticResource highlight}"/>
                     <TextBlock Text="Time: "/>
-                    <TextBlock Text="{Binding TimeElapsed, Converter={StaticResource MillisecondsToTimeValueConverter}}" bhv:ToolTipEx.Content="{Binding TimeElapsed}" Margin="0 0 16 0" Style="{StaticResource highlight}"/>
+                    <TextBlock Text="{Binding TimeElapsed, Converter={StaticResource MillisecondsToTimeValueConverter}, Mode=OneTime}" bhv:ToolTipEx.Content="{Binding TimeElapsed}" Margin="0 0 16 0" Style="{StaticResource highlight}"/>
+                    <TextBlock Text="Combination/sec: "/>
+                    <TextBlock Text="{Binding Converter={StaticResource CombinationPerSecondValueConverter}, Mode=OneTime}" Margin="0 0 16 0" Style="{StaticResource highlight}"/>
                 </StackPanel>
             </Expander.Header>
             <Expander.Content>
@@ -782,7 +813,15 @@
                             </StackPanel>
                             <StackPanel Orientation="Horizontal">
                                 <TextBlock Text="Time:"/>
-                                <TextBlock Text="{Binding TimeElapsed, Converter={StaticResource MillisecondsToTimeValueConverter}}" bhv:ToolTipEx.Content="{Binding TimeElapsed}" Style="{StaticResource highlight}"/>
+                                <TextBlock Text="{Binding TimeElapsed, Converter={StaticResource MillisecondsToTimeValueConverter}, Mode=OneTime}" bhv:ToolTipEx.Content="{Binding TimeElapsed}" Style="{StaticResource highlight}"/>
+                            </StackPanel>
+                        </StackPanel>
+                    </Border>
+                    <Border>
+                        <StackPanel>
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Text="Combination/sec:"/>
+                                <TextBlock Text="{Binding Converter={StaticResource CombinationPerSecondValueConverter}, Mode=OneTime}" Style="{StaticResource highlight}"/>
                             </StackPanel>
                         </StackPanel>
                     </Border>
@@ -807,6 +846,10 @@
         </TextBlock>
     </DataTemplate>
 
+    <DataTemplate x:Key="LanguageView">
+        <TextBlock Text="{Binding Text, Mode=OneTime}"/>
+    </DataTemplate>
+
     <DataTemplate x:Key="RootView">
         <DockPanel LastChildFill="True">
             <DockPanel DockPanel.Dock="Top" LastChildFill="True">
@@ -826,6 +869,32 @@
                         <MenuItem Header="Manage..." Command="{x:Static local:RoutedCommands.ManageLoadouts}"/>
                     </MenuItem>
                     <MenuItem Header="Equipments" Command="{x:Static local:RoutedCommands.OpenEquipmentExplorer}"/>
+                    <MenuItem Header="Languages" ItemsSource="{Binding Languages, Mode=OneTime}" ItemTemplate="{StaticResource LanguageView}">
+                        <MenuItem.ItemContainerStyle>
+                            <Style TargetType="{x:Type MenuItem}">
+                                <Setter Property="Command" Value="{Binding SelectionCommand, Mode=OneTime}"/>
+                                <Setter Property="IsChecked" Value="{Binding IsChecked, Mode=OneWay}"/>
+                            </Style>
+                        </MenuItem.ItemContainerStyle>
+                    </MenuItem>
+                    <MenuItem Header="Extensions" DataContext="{Binding Extensions, Mode=OneTime}" pnl:KeyValueGrid.IsSharedSizeScope="True">
+                        <ctrl:UnclickableMenuItem DataContext="{Binding SolverData, Mode=OneTime}">
+                            <ctrl:UnclickableMenuItem.Header>
+                                <pnl:KeyValueGrid Margin="4" KeyColumnSharedSizeGroup="A">
+                                    <TextBlock Text="SolverData: " VerticalAlignment="Center"/>
+                                    <ContentControl Content="{Binding}" ContentTemplate="{StaticResource ExtensionMenuHeaderTemplate}" Focusable="False"/>
+                                </pnl:KeyValueGrid>
+                            </ctrl:UnclickableMenuItem.Header>
+                        </ctrl:UnclickableMenuItem>
+                        <ctrl:UnclickableMenuItem DataContext="{Binding Solver, Mode=OneTime}">
+                            <ctrl:UnclickableMenuItem.Header>
+                                <pnl:KeyValueGrid Margin="4" KeyColumnSharedSizeGroup="A">
+                                    <TextBlock Text="Solver: " VerticalAlignment="Center"/>
+                                    <ContentControl Content="{Binding}" ContentTemplate="{StaticResource ExtensionMenuHeaderTemplate}" Focusable="False"/>
+                                </pnl:KeyValueGrid>
+                            </ctrl:UnclickableMenuItem.Header>
+                        </ctrl:UnclickableMenuItem>
+                    </MenuItem>
                     <MenuItem Header="?">
                         <MenuItem Header="Integrated help" Command="{x:Static local:RoutedCommands.OpenIntegratedHelp}" CommandParameter="GettingStarted"/>
                         <Separator/>
@@ -904,6 +973,7 @@
 
     <DataTemplate x:Key="ArmorPieceTypesView">
         <DockPanel LastChildFill="True" Background="#0F000000" Margin="4">
+            <TextBlock DockPanel.Dock="Top" Text="{Binding Type, Mode=OneTime}" Margin="4"/>
             <TextBlock DockPanel.Dock="Bottom" Margin="2" Text="{Binding Equipments.Count, Mode=OneTime, StringFormat=Total: {0}}"/>
             <TextBlock DockPanel.Dock="Bottom" Margin="2" Text="{Binding SelectedCount, StringFormat=Selected: {0}}"/>
             <Grid DockPanel.Dock="Bottom">
@@ -940,7 +1010,7 @@
             <ListBox ItemsSource="{Binding Equipments}" Margin="2" VirtualizingPanel.IsVirtualizing="True" VirtualizingPanel.IsContainerVirtualizable="True" VirtualizingPanel.ScrollUnit="Pixel">
                 <ListBox.ItemTemplate>
                     <DataTemplate>
-                        <CheckBox IsThreeState="False" IsChecked="{Binding IsSelected}" Content="{Binding Equipment.Name, Mode=OneTime}">
+                        <CheckBox IsThreeState="False" IsChecked="{Binding IsSelected}" Content="{mxt:Localization Equipment.Name}">
                             <bhv:ToolTipEx.Content>
                                 <ContentControl Content="{Binding Equipment, Mode=OneTime}" ContentTemplate="{StaticResource ArmorPieceView}" Focusable="False"/>
                             </bhv:ToolTipEx.Content>
@@ -952,13 +1022,19 @@
     </DataTemplate>
 
     <DataTemplate x:Key="AdvancedSearchView">
-        <ItemsControl ItemsSource="{Binding ArmorPieceTypes}" ItemTemplate="{StaticResource ArmorPieceTypesView}">
-            <ItemsControl.ItemsPanel>
-                <ItemsPanelTemplate>
-                    <UniformGrid Columns="6"/>
-                </ItemsPanelTemplate>
-            </ItemsControl.ItemsPanel>
-        </ItemsControl>
+        <DockPanel LastChildFill="True">
+            <UniformGrid DockPanel.Dock="Bottom" Columns="2" Rows="1" HorizontalAlignment="Right">
+                <Button Margin="4" Padding="4" Content="Export to clipboard" Command="{Binding ExportToClipboardCommand, Mode=OneTime}"/>
+                <Button Margin="4" Padding="4" Content="Import from clipboard" Command="{Binding ImportFromClipboardCommand, Mode=OneTime}"/>
+            </UniformGrid>
+            <ItemsControl ItemsSource="{Binding ArmorPieceTypes}" ItemTemplate="{StaticResource ArmorPieceTypesView}">
+                <ItemsControl.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <UniformGrid Columns="6"/>
+                    </ItemsPanelTemplate>
+                </ItemsControl.ItemsPanel>
+            </ItemsControl>
+        </DockPanel>
     </DataTemplate>
 
     <DataTemplate x:Key="LoadoutView">
@@ -977,6 +1053,10 @@
         </Grid>
     </DataTemplate>
 
+    <DataTemplate x:Key="SlotImageView">
+        <Image Source="{Binding Converter={StaticResource SlotToImageSourceValueConverter}, ConverterParameter=24, Mode=OneTime}" bhv:ToolTipEx.Content="{Binding Converter={StaticResource SlotSizeToolTipValueConverter}, Mode=OneTime}" Width="24" Height="24" SnapsToDevicePixels="True" />
+    </DataTemplate>
+
     <DataTemplate x:Key="LoadoutSelectorView">
 
         <Grid>
@@ -990,7 +1070,19 @@
 
             <GridSplitter Grid.Column="1" HorizontalAlignment="Stretch" Focusable="False"/>
 
-            <ItemsControl Grid.Column="2" ItemsSource="{Binding SelectedLoadout.Abilities}" ItemTemplate="{StaticResource StandaloneAbilityView}" Focusable="False"/>
+            <DockPanel Grid.Column="2" LastChildFill="True">
+                <StackPanel DockPanel.Dock="Top" Orientation="Horizontal">
+                    <TextBlock Text="Weapon slots: " VerticalAlignment="Center"/>
+                    <ItemsControl ItemsSource="{Binding SelectedLoadout.WeaponSlots}" ItemTemplate="{StaticResource SlotImageView}" VerticalAlignment="Center" Focusable="False">
+                        <ItemsControl.ItemsPanel>
+                            <ItemsPanelTemplate>
+                                <StackPanel Orientation="Horizontal"/>
+                            </ItemsPanelTemplate>
+                        </ItemsControl.ItemsPanel>
+                    </ItemsControl>
+                </StackPanel>
+                <ItemsControl ItemsSource="{Binding SelectedLoadout.Abilities}" ItemTemplate="{StaticResource StandaloneAbilityView}" Focusable="False"/>
+            </DockPanel>
         </Grid>
 
         <DataTemplate.Triggers>
@@ -1183,12 +1275,7 @@
                                     </StackPanel>
                                 </StackPanel>
                             </StackPanel>
-                            <ItemsControl DockPanel.Dock="Bottom" ItemsSource="{Binding Slots}" Margin="2" Height="24" Focusable="False">
-                                <ItemsControl.ItemTemplate>
-                                    <DataTemplate>
-                                        <Image Source="{Binding Converter={StaticResource SlotToImageSourceValueConverter}, ConverterParameter=24, Mode=OneTime}" bhv:ToolTipEx.Content="{Binding Converter={StaticResource SlotSizeToolTipValueConverter}, Mode=OneTime}" Width="24" Height="24" SnapsToDevicePixels="True" />
-                                    </DataTemplate>
-                                </ItemsControl.ItemTemplate>
+                            <ItemsControl DockPanel.Dock="Bottom" ItemsSource="{Binding Slots}" ItemTemplate="{StaticResource SlotImageView}" Margin="2" Focusable="False">
                                 <ItemsControl.ItemsPanel>
                                     <ItemsPanelTemplate>
                                         <StackPanel Orientation="Horizontal"/>

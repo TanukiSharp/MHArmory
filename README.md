@@ -4,7 +4,7 @@
 <img src="docs/images/blue_shield.png" width="64" height="64"/>
 </td>
 <td border-collapse="collapse" border="none">
-<i>Current version: <b><a href="https://github.com/TanukiSharp/MHArmory/raw/master/Distributions/MHArmory_0.0.8.1.zip">0.0.8.1</a></b></i><br/><i>Last modification: <b>2018/12/13</b></i>
+<i>Current version: <b><a href="https://github.com/TanukiSharp/MHArmory/raw/master/Distributions/MHArmory_0.0.8.6.zip">0.0.8.6</a></b></i><br/><i>Last modification: <b>2019/01/07</b></i>
 </td>
 </tr>
 </table>
@@ -27,9 +27,10 @@ If you are a developer and want to contribute to code, I recommend to first open
 
 # Download
 
-Link to direct download: https://github.com/TanukiSharp/MHArmory/raw/master/Distributions/MHArmory_0.0.8.1.zip
+Link to direct download: https://github.com/TanukiSharp/MHArmory/raw/master/Distributions/MHArmory_0.0.8.6.zip
 
-Older version can be downloaded as well, here: https://github.com/TanukiSharp/MHArmory/tree/master/Distributions
+Or here: https://tanukisharp.github.io/MHArmory/download.html<br/>
+Older versions can be downloaded as well, here: https://github.com/TanukiSharp/MHArmory/tree/master/Distributions
 
 When you update to a newer version of Armory, you can copy the `config.json` file from the old version to the new.
 This file contains all your settings that you probably want to keep when you update.
@@ -41,10 +42,6 @@ Follow **Armory** on Twitter to get latest news and updates: https://twitter.com
 <a href="https://twitter.com/MHArmory" target="_blank"><img src="docs/images/twitter.svg" width="32" height="32"/></a>
 
 # Possible future work
-
-## Will happen soon
-
-- Translation of equipments and decorations
 
 ## May happen in a near future
 
@@ -74,7 +71,9 @@ You can find a change log file [here](ChangeLog.md)
     - API website: https://docs.mhw-db.com
 - **AsteriskAmpersand**, helped a lot about save data
     - GitHub project site: https://github.com/AsteriskAmpersand/MHW-Save-Editor
-- **Testers:** Deiv, Bjorn Lim
+- **Gediminas Masaitis**, for his awesome work on OpenCL to speed up the search algorithm
+    - GitHub fork of Armory: https://github.com/GediminasMasaitis/MHArmory
+- **Testers/Contributors:** Deiv, Bjorn Lim, xaviex, Fatmice
 - **Athena's ASS author(s)**, for making such a wonderful application and inspiring this project
 - **https://www.vectorizer.io**, wonderful website used to vectorize all rasterized icons
 - **All people who worked on Monster Hunter series**, for making such an amazing game

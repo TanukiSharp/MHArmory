@@ -121,7 +121,7 @@ namespace MHArmory.Core.DataStructures
     {
         public ArmorPiece(
             int id,
-            string name,
+            Dictionary<string, string> name,
             EquipmentType equipmentType,
             int rarity,
             int[] slots,
@@ -152,7 +152,7 @@ namespace MHArmory.Core.DataStructures
 
         public int Id { get; }
         public EquipmentType Type { get; }
-        public string Name { get; }
+        public Dictionary<string, string> Name { get; }
         public int Rarity { get; }
         public int[] Slots { get; }
         public IAbility[] Abilities { get; }
@@ -171,7 +171,7 @@ namespace MHArmory.Core.DataStructures
 
         public override string ToString()
         {
-            return Name;
+            return Localization.GetDefault(Name);
         }
     }
 
@@ -185,7 +185,7 @@ namespace MHArmory.Core.DataStructures
     public interface IArmorSetSkill
     {
         int Id { get; }
-        string Name { get; }
+        Dictionary<string, string> Name { get; }
         IArmorSetSkillPart[] Parts { get; }
     }
 
@@ -205,7 +205,7 @@ namespace MHArmory.Core.DataStructures
 
     public class ArmorSetSkill : IArmorSetSkill
     {
-        public ArmorSetSkill(int id, string name, IArmorSetSkillPart[] parts)
+        public ArmorSetSkill(int id, Dictionary<string, string> name, IArmorSetSkillPart[] parts)
         {
             Id = id;
             Name = name;
@@ -213,7 +213,7 @@ namespace MHArmory.Core.DataStructures
         }
 
         public int Id { get; }
-        public string Name { get; }
+        public Dictionary<string, string> Name { get; }
         public IArmorSetSkillPart[] Parts { get; }
     }
 

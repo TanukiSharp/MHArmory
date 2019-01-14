@@ -8,6 +8,7 @@ namespace MHArmory.AthenaAssDataSource.DataStructures
     internal class ArmorPieceContainer
     {
         internal ArmorPiecePrimitive Primitive;
+        internal Dictionary<string, string> Names;
         internal EquipmentType Type;
         internal ArmorPiece ArmorPiece;
     }

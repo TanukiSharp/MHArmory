@@ -16,12 +16,12 @@ namespace MHArmory.Services
 {
     public interface ISearchResultScreenshotService
     {
-        BitmapSource RenderToImage(ArmorSetViewModel searchResult);
+        BitmapSource RenderToImage(ArmorSetViewModel searchResult, IEnumerable<int> weaponSlots);
     }
 
     public class SearchResultScreenshotService : ISearchResultScreenshotService
     {
-        public BitmapSource RenderToImage(ArmorSetViewModel searchResult)
+        public BitmapSource RenderToImage(ArmorSetViewModel searchResult, IEnumerable<int> weaponSlots)
         {
             var root = new StackPanel
             {
@@ -37,7 +37,53 @@ namespace MHArmory.Services
                 Height = 1.0
             });
 
-            root.Children.Add(new ItemsControl
+            var weaponSlotsAndAbilities = new StackPanel
+            {
+                UseLayoutRounding = true,
+                SnapsToDevicePixels = true,
+            };
+
+            var weaponSlotsPanel = new StackPanel
+            {
+                UseLayoutRounding = true,
+                SnapsToDevicePixels = true,
+                Orientation = Orientation.Horizontal,
+                Margin = new Thickness(4.0),
+            };
+
+            weaponSlotsPanel.Children.Add(new TextBlock
+            {
+                Text = "Weapon slots: ",
+                VerticalAlignment = VerticalAlignment.Center
+            });
+
+            var factoryPanel = new FrameworkElementFactory(typeof(StackPanel));
+            factoryPanel.SetValue(StackPanel.OrientationProperty, Orientation.Horizontal);
+
+            if (weaponSlots.Any(x => x > 0))
+            {
+                weaponSlotsPanel.Children.Add(new ItemsControl
+                {
+                    ItemsSource = weaponSlots,
+                    Height = 24.0,
+                    VerticalAlignment = VerticalAlignment.Center,
+                    ItemTemplate = (DataTemplate)App.Current.FindResource("SlotImageView"),
+                    ItemsPanel = new ItemsPanelTemplate(factoryPanel)
+                });
+            }
+            else
+            {
+                weaponSlotsPanel.Children.Add(new TextBlock
+                {
+                    Text = "none",
+                    VerticalAlignment = VerticalAlignment.Center,
+                    FontStyle = FontStyles.Italic
+                });
+            }
+
+            weaponSlotsAndAbilities.Children.Add(weaponSlotsPanel);
+
+            weaponSlotsAndAbilities.Children.Add(new ItemsControl
             {
                 UseLayoutRounding = true,
                 SnapsToDevicePixels = true,
@@ -47,6 +93,8 @@ namespace MHArmory.Services
                 Margin = new Thickness(4.0),
                 Focusable = false
             });
+
+            root.Children.Add(weaponSlotsAndAbilities);
 
             root.Children.Add(new ContentControl
             {

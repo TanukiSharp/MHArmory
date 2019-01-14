@@ -1,5 +1,41 @@
 # Change log
 
+## vNext (?)
+
+- Improved armor pieces selection based on slots
+- Fixed armor pieces data
+    - Kulve Taroth armor pieces had wrong elemental resistance values
+    - Previously failed to import Drachen Vambraces α
+
+## 0.0.8.6 (2019/01/07)
+
+- Fixed decorations import issue (introduced with localization in version 0.0.8.4)
+
+## 0.0.8.5 (2019/01/07)
+
+- Fixed localization issues (armor skill set names in search results)
+- Now weapon slots in screenshots display *none* when there is no slot selected
+- Fixed `System.ValueTuple` loading issue
+- Improved equipment selection for search results
+
+## 0.0.8.4 (2019/01/06)
+
+- Now game data are localized in English, French, Japanese, Italian, German, Korean and Chinese
+    - Note that Armory remains in English, language of game data only can be changed
+    - Skills description data is missing, currently available only in English
+- Now weapon slots are saved in the skill loadouts, and included in screenshots
+
+## 0.0.8.3 (2018/12/22)
+
+Note that 0.0.8.2 has been skipped, it was an experimental build distributed to testers for debug purpose only.
+
+- Added Orion and Orion alpha armor pieces
+- Fixed Kulve Taroth armor pieces defense based on user report
+- Fixed issue related to crashes when loading of System.Net.Http version 4.2.0.0
+- Fixed wrong gender processing for armor pieces selection
+- Decorations override and equipment override windows are not modal anymore
+- Added Drachen armor pieces to game equipment data (for save data import matching)
+
 ## 0.0.8.1 (2018/12/13)
 
 - Added select all and unselect all buttons to the equipment override window

@@ -22,8 +22,6 @@ namespace MHArmory
         public SaveDataSlotSelectorWindow()
         {
             InitializeComponent();
-
-            WindowManager.FitInScreen(this);
         }
 
         public void Initialize<T>(IList<T> saveSlots) where T : BaseSaveSlotInfo

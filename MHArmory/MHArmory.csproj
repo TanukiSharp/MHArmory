@@ -15,6 +15,7 @@
     <TargetFrameworkProfile />
     <RestoreProjectStyle>PackageReference</RestoreProjectStyle>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <GenerateBindingRedirectsOutputType>true</GenerateBindingRedirectsOutputType>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -25,6 +26,9 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <NoWarn>
+    </NoWarn>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -34,6 +38,7 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
   </PropertyGroup>
   <PropertyGroup>
     <RunPostBuildEvent>Always</RunPostBuildEvent>
@@ -70,9 +75,13 @@
     <Compile Include="Behaviors\SetHtmlBehavior.cs" />
     <Compile Include="Behaviors\TextBoxFocusOnEmptyBehavior.cs" />
     <Compile Include="Behaviors\ToolTipExBehavior.cs" />
+    <Compile Include="Configurations\ConfigurationV3.cs" />
     <Compile Include="Configurations\ConfigurationV2.cs" />
+    <Compile Include="Configurations\Conversion\ConverterV2ToV3.cs" />
+    <Compile Include="Configurations\Conversion\IConverter.cs" />
     <Compile Include="Controls\DraggableScrollViewer.cs" />
     <Compile Include="Controls\SharpnessRenderer.cs" />
+    <Compile Include="Controls\UnclickableMenuItem.cs" />
     <Compile Include="DependencyObjectExtensions.cs" />
     <Compile Include="EnumerableExtensions.cs" />
     <Compile Include="EquipmentOverrideWindow.xaml.cs">
@@ -108,6 +117,7 @@
       <DependentUpon>LoadoutWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="Logging\DispatcherLogger.cs" />
+    <Compile Include="MarkupExtensions\LocalizationExtension.cs" />
     <Compile Include="MarkupExtensions\RasterizedImageExtension.cs" />
     <Compile Include="Panels\KeyValueGrid.cs" />
     <Compile Include="Panels\TooledContentPanel.cs" />
@@ -131,14 +141,17 @@
     <Compile Include="Services\SearchResultScreenshotService.cs" />
     <Compile Include="Services\ServicesContainer.cs" />
     <Compile Include="TaskExtensions.cs" />
+    <Compile Include="TaskRunner.cs" />
     <Compile Include="TextInputWindow.xaml.cs">
       <DependentUpon>TextInputWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="Controls\CustomTreeView.cs" />
     <Compile Include="ValueConverters\AbilityToViewModelValueConverter.cs" />
+    <Compile Include="ValueConverters\CombinationPerSecondValueConverter.cs" />
     <Compile Include="ValueConverters\ElementNameValueConverter.cs" />
     <Compile Include="ValueConverters\FreeElementNameValueConverter.cs" />
     <Compile Include="ValueConverters\HasDefenseVisibilityValueConverter.cs" />
+    <Compile Include="ValueConverters\LocalizationValueConverter.cs" />
     <Compile Include="ValueConverters\MillisecondsToTimeValueConverter.cs" />
     <Compile Include="ValueConverters\NumToSeparatedStringValueConverter.cs" />
     <Compile Include="ValueConverters\SharpnessNameValueConverter.cs" />
@@ -162,9 +175,11 @@
     <Compile Include="ViewModels\EquipmentExplorerViewModel.cs" />
     <Compile Include="ViewModels\EquipmentOverrideViewModel.cs" />
     <Compile Include="ViewModels\EquipmentViewModel.cs" />
+    <Compile Include="ViewModels\ExtensionSelectorViewModel.cs" />
     <Compile Include="ViewModels\HelpViewModel.cs" />
     <Compile Include="ViewModels\InParametersViewModel.cs" />
     <Compile Include="ViewModels\JewelOverrideViewModel.cs" />
+    <Compile Include="ViewModels\LanguageViewModel.cs" />
     <Compile Include="ViewModels\LoadoutViewModel.cs" />
     <Compile Include="ViewModels\RootViewModel.cs" />
     <Compile Include="ViewModels\SaveDataSlotSelectorViewModel.cs" />
@@ -362,6 +377,10 @@
     <ProjectReference Include="..\MHArmory.Core\MHArmory.Core.csproj">
       <Project>{bd19a211-15ea-4896-8257-83a14f3c634f}</Project>
       <Name>MHArmory.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MHArmory.Search.Contracts\MHArmory.Search.Contracts.csproj">
+      <Project>{46E1D053-5670-4B4E-B5DD-B09358B5D36A}</Project>
+      <Name>MHArmory.Search.Contracts</Name>
     </ProjectReference>
     <ProjectReference Include="..\MHArmory.Search\MHArmory.Search.csproj">
       <Project>{375922DD-84D4-46FA-9F2C-0FC45EFC0BDD}</Project>

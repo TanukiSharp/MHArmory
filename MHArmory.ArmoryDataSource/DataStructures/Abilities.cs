@@ -13,14 +13,14 @@ namespace MHArmory.ArmoryDataSource.DataStructures
         [JsonProperty("level")]
         public int Level { get; set; }
         [JsonProperty("description")]
-        public string Description { get; set; }
+        public Dictionary<string, string> Description { get; set; }
     }
 
     public class Ability : IAbility
     {
         public int Id { get; }
         public int Level { get; }
-        public string Description { get; }
+        public Dictionary<string, string> Description { get; }
         public ISkill Skill { get; private set; }
 
         public Ability(AbilityPrimitive primitive)

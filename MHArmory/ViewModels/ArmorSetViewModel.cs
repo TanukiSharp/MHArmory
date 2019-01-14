@@ -7,8 +7,10 @@ using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Input;
 using System.Windows.Media.Imaging;
+using MHArmory.Core;
 using MHArmory.Core.DataStructures;
 using MHArmory.Search;
+using MHArmory.Search.Contracts;
 using MHArmory.Services;
 using Microsoft.Win32;
 
@@ -16,7 +18,12 @@ namespace MHArmory.ViewModels
 {
     public class FullAbilityDescriptionViewModel : ViewModelBase
     {
-        public string Description { get; } // TODO: localization here
+        private string description;
+        public string Description
+        {
+            get { return description; }
+            private set { SetValue(ref description, value); }
+        }
 
         private bool isActive;
         public bool IsActive
@@ -25,10 +32,35 @@ namespace MHArmory.ViewModels
             set { SetValue(ref isActive, value); }
         }
 
-        public FullAbilityDescriptionViewModel(int level, string description, bool isActive)
+        private bool isOver;
+        public bool IsOver
         {
-            Description = $"{level}.  {description}";
+            get { return isOver; }
+            set { SetValue(ref isOver, value); }
+        }
+
+        private readonly int level;
+        private readonly Dictionary<string, string> descriptionLocalizations;
+
+        public FullAbilityDescriptionViewModel(int level, Dictionary<string, string> description, bool isActive, bool isOver)
+        {
+            this.level = level;
+            descriptionLocalizations = description;
+
+            Core.Localization.RegisterLanguageChanged(this, self =>
+            {
+                ((FullAbilityDescriptionViewModel)self).UpdateDescription();
+            });
+
+            UpdateDescription();
             IsActive = isActive;
+            if (isActive)
+                IsOver = isOver;
+        }
+
+        private void UpdateDescription()
+        {
+            Description = $"{level}.  {Core.Localization.Get(descriptionLocalizations)}";
         }
     }
 
@@ -36,7 +68,7 @@ namespace MHArmory.ViewModels
     {
         private ISkill skill;
 
-        public string GeneralDescription { get { return skill.Description; } } // TODO: localization here
+        public Dictionary<string, string> GeneralDescription { get { return skill.Description; } }
         public FullAbilityDescriptionViewModel[] Abilities { get; }
 
         public FullSkillDescriptionViewModel(ISkill skill, int level)
@@ -47,7 +79,16 @@ namespace MHArmory.ViewModels
 
             Abilities = new FullAbilityDescriptionViewModel[skill.Abilities.Length];
             for (int i = 0; i < skill.Abilities.Length; i++)
-                Abilities[i] = new FullAbilityDescriptionViewModel(skill.Abilities[i].Level, skill.Abilities[i].Description, skill.Abilities[i].Level == clampedLevel);
+            {
+                IAbility ability = skill.Abilities[i];
+
+                Abilities[i] = new FullAbilityDescriptionViewModel(
+                    ability.Level,
+                    ability.Description,
+                    ability.Level == clampedLevel,
+                    level > ability.Skill.MaxLevel
+                );
+            }
         }
 
         public void UpdateLevel(int level)
@@ -55,7 +96,12 @@ namespace MHArmory.ViewModels
             int clampedLevel = Math.Max(0, Math.Min(level, skill.MaxLevel));
 
             for (int i = 0; i < Abilities.Length; i++)
-                Abilities[i].IsActive = skill.Abilities[i].Level == clampedLevel;
+            {
+                bool isActive = skill.Abilities[i].Level == clampedLevel;
+                Abilities[i].IsActive = isActive;
+                if (isActive)
+                    Abilities[i].IsOver = level > skill.MaxLevel;
+            }
         }
     }
 
@@ -246,8 +292,12 @@ namespace MHArmory.ViewModels
 
         public IAbility[] DesiredAbilities { get; }
 
-        public ArmorSetViewModel(ISolverData solverData, IList<IArmorPiece> armorPieces, ICharmLevel charm, IList<ArmorSetJewelViewModel> jewels, int[] spareSlots)
+        private readonly RootViewModel root;
+
+        public ArmorSetViewModel(RootViewModel root, ISolverData solverData, IList<IArmorPiece> armorPieces, ICharmLevel charm, IList<ArmorSetJewelViewModel> jewels, int[] spareSlots)
         {
+            this.root = root;
+
             this.armorPieces = armorPieces;
             this.charm = charm;
             this.jewels = jewels;
@@ -275,7 +325,8 @@ namespace MHArmory.ViewModels
 
         private void OnSaveScreenshotToClipboard()
         {
-            Clipboard.SetImage(ServicesContainer.GetService<ISearchResultScreenshotService>().RenderToImage(this));
+            ISearchResultScreenshotService service = ServicesContainer.GetService<ISearchResultScreenshotService>();
+            Clipboard.SetImage(service.RenderToImage(this, root.InParameters.Slots.Select(x => x.Value)));
         }
 
         private void OnSaveScreenshotToFile()
@@ -296,7 +347,7 @@ namespace MHArmory.ViewModels
                 return;
 
             var encoder = new PngBitmapEncoder();
-            encoder.Frames.Add(BitmapFrame.Create(service.RenderToImage(this)));
+            encoder.Frames.Add(BitmapFrame.Create(service.RenderToImage(this, root.InParameters.Slots.Select(x => x.Value))));
 
             using (FileStream fs = File.OpenWrite(saveFileDialog.FileName))
                 encoder.Save(fs);
@@ -338,15 +389,26 @@ namespace MHArmory.ViewModels
             else
             {
                 foreach (IAbility x in DesiredAbilities)
-                    sb.Append($"- {x.Skill.Name}: {x.Level} / {x.Skill.MaxLevel}{newLine}");
+                    sb.Append($"- {Core.Localization.Get(x.Skill.Name)}: {x.Level} / {x.Skill.MaxLevel}{newLine}");
+            }
+
+            sb.Append(newLine);
+
+            sb.Append($"**Weapon slots**{newLine}");
+            if (root.InParameters.Slots.All(x => x.Value <= 0))
+                sb.Append($"- *none*{newLine}");
+            else
+            {
+                IEnumerable<string> en = root.InParameters.Slots.Where(x => x.Value > 0).Select(x => $"[{x.Value}]");
+                sb.Append($"- {string.Join(" ", en)}{newLine}");
             }
 
             sb.Append(newLine);
 
             sb.Append($"**Equipments**{newLine}");
             foreach (IArmorPiece x in ArmorPieces)
-                sb.Append($"- {x.Name}{newLine}");
-            sb.Append($"- {Charm.Name}{newLine}");
+                sb.Append($"- {Core.Localization.Get(x.Name)}{newLine}");
+            sb.Append($"- {Core.Localization.Get(Charm.Name)}{newLine}");
 
             sb.Append(newLine);
 
@@ -356,7 +418,7 @@ namespace MHArmory.ViewModels
             else
             {
                 foreach (ArmorSetJewelViewModel x in Jewels)
-                    sb.Append($"- {x.Jewel.Name} [{x.Jewel.SlotSize}] x{x.Count}{newLine}");
+                    sb.Append($"- {Core.Localization.Get(x.Jewel.Name)} [{x.Jewel.SlotSize}] x{x.Count}{newLine}");
             }
 
             sb.Append(newLine);
@@ -392,7 +454,7 @@ namespace MHArmory.ViewModels
                     // skills that are not extra ones but still in the additional skills
                     // provide more than the desired one, thus displaying in italic
                     string sides = x.IsExtra == false ? "*" : string.Empty;
-                    sb.Append($"- {sides}{x.Skill.Name}: {x.TotalLevel} / {x.Skill.MaxLevel}{sides}{newLine}");
+                    sb.Append($"- {sides}{Core.Localization.Get(x.Skill.Name)}: {x.TotalLevel} / {x.Skill.MaxLevel}{sides}{newLine}");
                 }
             }
 

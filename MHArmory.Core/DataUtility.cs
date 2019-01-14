@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Text;
 using MHArmory.Core.DataStructures;
 
-namespace MHArmory.Search
+namespace MHArmory.Core
 {
     public static class DataUtility
     {

@@ -13,6 +13,7 @@ using MHArmory.Configurations;
 using MHArmory.Core;
 using MHArmory.Core.DataStructures;
 using MHArmory.Search;
+using MHArmory.Search.Contracts;
 
 namespace MHArmory.ViewModels
 {
@@ -32,9 +33,7 @@ namespace MHArmory.ViewModels
 
         public event EventHandler AbilitiesChanged;
 
-        public ISolverData SolverData { get; private set; }
-
-        private Solver solver;
+        public ExtensionSelectorViewModel Extensions { get; }
 
         public AutoUpdateViewModel AutoUpdateViewModel { get; } = new AutoUpdateViewModel();
 
@@ -107,6 +106,8 @@ namespace MHArmory.ViewModels
 
         public IReadOnlyList<EquipmentViewModel> AllEquipments { get; internal set; }
 
+        public LanguageViewModel[] Languages { get; private set; }
+
         public RootViewModel()
         {
             CloseApplicationCommand = new AnonymousCommand(OnCloseApplication);
@@ -125,10 +126,33 @@ namespace MHArmory.ViewModels
             InParameters = new InParametersViewModel(this);
             WeaponsContainer = new WeaponsContainerViewModel(this);
             EquipmentOverride = new EquipmentOverrideViewModel(this);
+
+            SetupLocalization();
+
+            Extensions = new ExtensionSelectorViewModel(this);
+        }
+
+        private void SetupLocalization()
+        {
+            Localization.Language = GlobalData.Instance.Configuration.Language ?? Localization.DefaultLanguage;
+
+            Languages = Localization.AvailableLanguageCodes
+                .Select(kv => new LanguageViewModel(kv.Key, kv.Value))
+                .ToArray();
+
+            Localization.LanguageChanged += Localization_LanguageChanged;
+        }
+
+        private void Localization_LanguageChanged(object sender, EventArgs e)
+        {
+            GlobalData.Instance.Configuration.Language = Localization.Language;
+            ConfigurationManager.Save(GlobalData.Instance.Configuration);
         }
 
         public void Dispose()
         {
+            Localization.LanguageChanged -= Localization_LanguageChanged;
+
             if (loadoutManager != null)
             {
                 loadoutManager.LoadoutChanged -= LoadoutManager_LoadoutChanged;
@@ -138,7 +162,7 @@ namespace MHArmory.ViewModels
 
         private void OnAbout()
         {
-            new AboutWindow() { Owner = App.Current.MainWindow }.ShowDialog();
+            new AboutWindow() { Owner = App.Current.MainWindow }.Show();
         }
 
         private void OnCloseApplication(object parameters)
@@ -313,17 +337,17 @@ namespace MHArmory.ViewModels
 
         public void CreateSolverData()
         {
-            SolverData = null;
-
             if (IsDataLoaded == false || SelectedAbilities == null)
                 return;
+
+            ISolverData solverData = Extensions.SolverData.SelectedValue;
 
             var desiredAbilities = SelectedAbilities
                 .Where(x => x.IsChecked)
                 .Select(x => x.Ability)
                 .ToList();
 
-            SolverData = new SolverData(
+            solverData.Setup(
                 InParameters.Slots.Select(x => x.Value).ToList(),
                 GlobalData.Instance.Heads.Where(x => ArmorPieceMatchInParameters(x)),
                 GlobalData.Instance.Chests.Where(x => ArmorPieceMatchInParameters(x)),
@@ -335,20 +359,27 @@ namespace MHArmory.ViewModels
                 desiredAbilities
             );
 
-            SolverData.Done();
-
             /*************************************************************/
             var metrics = new SearchMetrics
             {
-                Heads = SolverData.AllHeads.Count(x => x.IsSelected),
-                Chests = SolverData.AllChests.Count(x => x.IsSelected),
-                Gloves = SolverData.AllGloves.Count(x => x.IsSelected),
-                Waists = SolverData.AllWaists.Count(x => x.IsSelected),
-                Legs = SolverData.AllLegs.Count(x => x.IsSelected),
-                Charms = SolverData.AllCharms.Count(x => x.IsSelected),
-                MinSlotSize = SolverData.MinJewelSize,
-                MaxSlotSize = SolverData.MaxJewelSize,
+                Heads = solverData.AllHeads.Count(x => x.IsSelected),
+                Chests = solverData.AllChests.Count(x => x.IsSelected),
+                Gloves = solverData.AllGloves.Count(x => x.IsSelected),
+                Waists = solverData.AllWaists.Count(x => x.IsSelected),
+                Legs = solverData.AllLegs.Count(x => x.IsSelected),
+                Charms = solverData.AllCharms.Count(x => x.IsSelected),
             };
+
+            if (solverData.AllJewels.Length > 0)
+            {
+                metrics.MinSlotSize = solverData.AllJewels.Min(x => x.Jewel.SlotSize);
+                metrics.MaxSlotSize = solverData.AllJewels.Max(x => x.Jewel.SlotSize);
+            }
+            else
+            {
+                metrics.MinSlotSize = 0;
+                metrics.MaxSlotSize = 0;
+            }
 
             metrics.UpdateCombinationCount();
 
@@ -385,26 +416,32 @@ namespace MHArmory.ViewModels
             return EquipmentMatchInParameters(armorPiece) && IsGenderMatching(armorPiece, InParameters.Gender);
         }
 
-        private bool IsGenderMatching(IArmorPiece armorPiece, Gender gender)
+        private bool IsGenderMatching(IArmorPiece armorPiece, Gender selectedGender)
         {
+            // If UI says both, then all armor pieces are a match, no matter the gender of the armor piece.
+            if (selectedGender == Gender.Both)
+                return true;
+
+            // If amor piece gender is both, it is a match no matter the UI selection.
             if (armorPiece.Attributes.RequiredGender == Gender.Both)
                 return true;
 
-            return armorPiece.Attributes.RequiredGender == gender;
+            // Returns only armor piece with gender matching UI selected gender.
+            return armorPiece.Attributes.RequiredGender == selectedGender;
         }
 
         public void UpdateAdvancedSearch()
         {
-            ISolverData solverData = SolverData;
+            ISolverData solverData = Extensions.SolverData.SelectedValue;
 
             var armorPieceTypesViewModels = new ArmorPieceTypesViewModel[]
             {
-                new ArmorPieceTypesViewModel(solverData.AllHeads),
-                new ArmorPieceTypesViewModel(solverData.AllChests),
-                new ArmorPieceTypesViewModel(solverData.AllGloves),
-                new ArmorPieceTypesViewModel(solverData.AllWaists),
-                new ArmorPieceTypesViewModel(solverData.AllLegs),
-                new ArmorPieceTypesViewModel(solverData.AllCharms)
+                new ArmorPieceTypesViewModel(EquipmentType.Head, solverData.AllHeads),
+                new ArmorPieceTypesViewModel(EquipmentType.Chest, solverData.AllChests),
+                new ArmorPieceTypesViewModel(EquipmentType.Gloves, solverData.AllGloves),
+                new ArmorPieceTypesViewModel(EquipmentType.Waist, solverData.AllWaists),
+                new ArmorPieceTypesViewModel(EquipmentType.Legs, solverData.AllLegs),
+                new ArmorPieceTypesViewModel(EquipmentType.Charm, solverData.AllCharms)
             };
 
             AdvancedSearchViewModel.Update(armorPieceTypesViewModels);
@@ -414,52 +451,49 @@ namespace MHArmory.ViewModels
         public double SearchProgression
         {
             get { return searchProgression; }
-            private set { SetValue(ref searchProgression, value); }
+            internal set { SetValue(ref searchProgression, value); }
         }
 
         private async Task SearchArmorSetsInternal(CancellationToken cancellationToken)
         {
-            if (SolverData == null)
+            ISolverData solverData = Extensions.SolverData.SelectedValue;
+
+            if (solverData == null)
                 return;
 
-            solver = new Solver(SolverData);
+            var sw = Stopwatch.StartNew();
 
-            solver.SearchMetricsChanged += SolverSearchMetricsChanged;
-            solver.SearchProgress += SolverSearchProgress;
+            IList<ArmorSetSearchResult> result = await Extensions.Solver.SelectedValue.SearchArmorSets(solverData, cancellationToken);
 
-            try
+            sw.Stop();
+
+            SearchMetrics metrics = SearchMetrics;
+
+            metrics.TimeElapsed = (int)sw.ElapsedMilliseconds;
+            metrics.MatchingResults = result?.Count ?? 0;
+
+            SearchMetrics = null;
+            SearchMetrics = metrics;
+
+            if (solverData == null)
             {
-                IList<ArmorSetSearchResult> result = await solver.SearchArmorSets(cancellationToken);
-
-                if (SolverData == null)
-                {
-                    rawFoundArmorSets = null;
-                    return;
-                }
-
-                if (result != null)
-                {
-                    rawFoundArmorSets = result.Where(x => x.IsMatch).Select(x => new ArmorSetViewModel(
-                        SolverData,
-                        x.ArmorPieces,
-                        x.Charm,
-                        x.Jewels.Select(j => new ArmorSetJewelViewModel(j.Jewel, j.Count)).ToList(),
-                        x.SpareSlots
-                    ));
-
-                    ApplySorting(true);
-                }
+                rawFoundArmorSets = null;
+                return;
             }
-            finally
+
+            if (result != null)
             {
-                solver.SearchMetricsChanged -= SolverSearchMetricsChanged;
-                solver.SearchProgress -= SolverSearchProgress;
-            }
-        }
+                rawFoundArmorSets = result.Where(x => x.IsMatch).Select(x => new ArmorSetViewModel(
+                    this,
+                    solverData,
+                    x.ArmorPieces,
+                    x.Charm,
+                    x.Jewels.Select(j => new ArmorSetJewelViewModel(j.Jewel, j.Count)).ToList(),
+                    x.SpareSlots
+                ));
 
-        private void SolverSearchProgress(double progressRatio)
-        {
-            SearchProgression = progressRatio;
+                ApplySorting(true);
+            }
         }
 
         private SolverDataJewelModel CreateSolverDataJewelModel(IJewel jewel)
@@ -472,12 +506,23 @@ namespace MHArmory.ViewModels
 
                 if (decoOverrides != null)
                 {
-                    if (decoOverrides.TryGetValue(jewel.Name, out DecorationOverrideConfigurationItem found) && found.IsOverriding)
+                    if (decoOverrides.TryGetValue(Localization.GetDefault(jewel.Name), out DecorationOverrideConfigurationItem found) && found.IsOverriding)
                         return new SolverDataJewelModel(jewel, found.Count);
                 }
             }
 
             return new SolverDataJewelModel(jewel, int.MaxValue);
+        }
+
+        internal void WeaponSlotsChanged()
+        {
+            CreateSolverData();
+
+            if (IsAutoSearch)
+                SearchArmorSets();
+
+            if (loadoutManager != null)
+                loadoutManager.IsModified = true;
         }
 
         private DispatcherOperation abilityChangingDispatcherOperation;
@@ -509,24 +554,11 @@ namespace MHArmory.ViewModels
             }
         }
 
-        private void SolverSearchMetricsChanged(SearchMetrics metricsData)
-        {
-            Dispatcher.BeginInvoke((Action)delegate ()
-            {
-                SearchMetrics = null;
-                SearchMetrics = metricsData;
-            });
-        }
-
         private SearchMetrics searchMetrics;
         public SearchMetrics SearchMetrics
         {
             get { return searchMetrics; }
-            private set
-            {
-                searchMetrics = value;
-                NotifyPropertyChanged();
-            }
+            internal set { SetValue(ref searchMetrics, value); }
         }
     }
 }

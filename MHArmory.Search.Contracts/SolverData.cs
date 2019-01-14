@@ -1,74 +1,16 @@
+using MHArmory.Core;
+using MHArmory.Core.DataStructures;
+using MHArmory.Search.Contracts;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using MHArmory.Core.DataStructures;
 
-namespace MHArmory.Search
+namespace MHArmory.Search.Contracts
 {
-    public class SolverDataJewelModel : IHasAbilities
-    {
-        public IJewel Jewel { get; }
-        public int Available { get; set; }
-
-        IAbility[] IHasAbilities.Abilities { get { return Jewel.Abilities; } }
-
-        public SolverDataJewelModel(IJewel jewel, int available)
-        {
-            Jewel = jewel;
-            Available = available;
-        }
-    }
-
-    public class SolverDataEquipmentModel : ISolverDataEquipmentModel
-    {
-        public IEquipment Equipment { get; }
-
-        public bool IsMatchingArmorSetSkill { get; set; }
-        public int MatchingSkillTotalLevel { get; set; }
-        public double AverageSkillCompletionRatio { get; set; }
-        public bool ToBeRemoved { get; set; }
-
-        public event EventHandler SelectionChanged;
-
-        private bool originalValue;
-
-        private bool isSelected;
-        public bool IsSelected
-        {
-            get { return isSelected; }
-            set
-            {
-                if (isSelected != value)
-                {
-                    isSelected = value;
-                    SelectionChanged?.Invoke(this, EventArgs.Empty);
-                }
-            }
-        }
-
-        public void FreezeSelection()
-        {
-            originalValue = isSelected;
-        }
-
-        public void RestoreOriginalSelection()
-        {
-            IsSelected = originalValue;
-        }
-
-        public SolverDataEquipmentModel(IEquipment equipment)
-        {
-            Equipment = equipment;
-        }
-
-        public override string ToString()
-        {
-            return $"[{(IsSelected ? "O" : "X")}] {Equipment.Name}";
-        }
-    }
-
     public class SolverData : ISolverData
     {
+        public const double MinimumAverageSkillCompletionRatio = 0.75;
+
         public int[] WeaponSlots { get; private set; }
         public ISolverDataEquipmentModel[] AllHeads { get; private set; }
         public ISolverDataEquipmentModel[] AllChests { get; private set; }
@@ -77,22 +19,24 @@ namespace MHArmory.Search
         public ISolverDataEquipmentModel[] AllLegs { get; private set; }
         public ISolverDataEquipmentModel[] AllCharms { get; private set; }
         public SolverDataJewelModel[] AllJewels { get; private set; }
-        public IAbility[] DesiredAbilities { get; }
+        public IAbility[] DesiredAbilities { get; private set; }
 
-        private readonly List<SolverDataEquipmentModel> inputHeads;
-        private readonly List<SolverDataEquipmentModel> inputChests;
-        private readonly List<SolverDataEquipmentModel> inputGloves;
-        private readonly List<SolverDataEquipmentModel> inputWaists;
-        private readonly List<SolverDataEquipmentModel> inputLegs;
-        private readonly List<SolverDataEquipmentModel> inputCharms;
-        private readonly List<SolverDataJewelModel> inputJewels;
+        private List<SolverDataEquipmentModel> inputHeads;
+        private List<SolverDataEquipmentModel> inputChests;
+        private List<SolverDataEquipmentModel> inputGloves;
+        private List<SolverDataEquipmentModel> inputWaists;
+        private List<SolverDataEquipmentModel> inputLegs;
+        private List<SolverDataEquipmentModel> inputCharms;
+        private List<SolverDataJewelModel> inputJewels;
 
         public int MaxSkillCountPerArmorPiece { get; private set; }
 
-        public int MinJewelSize { get; private set; }
-        public int MaxJewelSize { get; private set; }
+        public string Name { get; } = "Armory - Default";
+        public string Author { get; } = "TanukiSharp";
+        public string Description { get; } = "Default solver data processor";
+        public int Version { get; } = 1;
 
-        public SolverData(
+        public void Setup(
             IList<int> weaponSlots,
             IEnumerable<IArmorPiece> heads,
             IEnumerable<IArmorPiece> chests,
@@ -124,6 +68,10 @@ namespace MHArmory.Search
             DesiredAbilities = desiredAbilities.ToArray();
 
             ProcessInputData();
+
+            UpdateReferences();
+
+            FreezeEquipmentSelection();
         }
 
         private void ProcessInputData()
@@ -132,17 +80,6 @@ namespace MHArmory.Search
             RemoveJewelsMatchingExcludedSkills();
 
             RemoveEquipmentsBySkillExclusion();
-
-            if (inputJewels.Count > 0)
-            {
-                MinJewelSize = inputJewels.Min(x => x.Jewel.SlotSize);
-                MaxJewelSize = inputJewels.Max(x => x.Jewel.SlotSize);
-            }
-            else
-            {
-                MinJewelSize = 0;
-                MaxJewelSize = 0;
-            }
 
             ComputeMatchingSkillCount();
 
@@ -155,15 +92,6 @@ namespace MHArmory.Search
             UpdateSelection();
 
             UnselectLessPoweredCharms();
-        }
-
-        public ISolverData Done()
-        {
-            UpdateReferences();
-
-            FreezeEquipmentSelection();
-
-            return this;
         }
 
         private void UpdateReferences()
@@ -331,10 +259,11 @@ namespace MHArmory.Search
         private void SetBestSlotScore(IEnumerable<SolverDataEquipmentModel> equipments, int slotCount)
         {
             IEnumerable<SolverDataEquipmentModel> bestSlots = equipments
+                .Where(x => x.ToBeRemoved)
                 .Where(x => x.Equipment.Slots.Length == slotCount)
                 .OrderByDescending(x => x.Equipment.Slots.Sum())
                 .ThenByDescending(x => x.Equipment is IArmorPiece armorPiece ? armorPiece.Defense.Augmented : 0)
-                .Take(3);
+                .Take(5);
 
             bool isFirst = true;
 
@@ -366,7 +295,7 @@ namespace MHArmory.Search
             {
                 e.IsSelected =
                     e.IsMatchingArmorSetSkill ||
-                    e.AverageSkillCompletionRatio >= Heuristics.MinimumAverageSkillCompletionRatio ||
+                    e.AverageSkillCompletionRatio >= MinimumAverageSkillCompletionRatio ||
                     e.MatchingSkillTotalLevel >= MaxSkillCountPerArmorPiece ||
                     (e.MatchingSkillTotalLevel == e.Equipment.Abilities.Length && e.Equipment.Slots.Length > 0) ||
                     (e.Equipment.Slots.Length >= 2 && e.Equipment.Slots.Count(x => x >= 2) >= 1);

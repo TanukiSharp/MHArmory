@@ -1,7 +1,15 @@
 [
     {
         "id": 0,
-        "name": "Leather Trousers",
+        "name": {
+            "EN": "Leather Trousers",
+            "FR": "Pantalon en cuir",
+            "JP": "レザーパンツ",
+            "IT": "Pantaloni di cuoio",
+            "DE": "Leder-Hose",
+            "KR": "레더팬츠",
+            "CN": "皮製長褲"
+        },
         "rarity": 1,
         "defense": {
             "base": 2,
@@ -21,7 +29,15 @@
     },
     {
         "id": 1,
-        "name": "Chainmail Trousers",
+        "name": {
+            "EN": "Chainmail Trousers",
+            "FR": "Pantalon de mailles",
+            "JP": "チェーンパンツ",
+            "IT": "Pantaloni di maglia",
+            "DE": "Ketten-Hose",
+            "KR": "체인팬츠",
+            "CN": "鎖甲長褲"
+        },
         "rarity": 1,
         "defense": {
             "base": 2,
@@ -41,7 +57,15 @@
     },
     {
         "id": 2,
-        "name": "Hunter's Greaves",
+        "name": {
+            "EN": "Hunter's Greaves",
+            "FR": "Grèves de chasseur",
+            "JP": "ハンターグリーヴ",
+            "IT": "Schinieri del cacciatore",
+            "DE": "Jäger-Beinschienen",
+            "KR": "헌터그리브",
+            "CN": "獵人護腿"
+        },
         "rarity": 1,
         "abilityIds": [
             299
@@ -64,7 +88,15 @@
     },
     {
         "id": 3,
-        "name": "Bone Greaves",
+        "name": {
+            "EN": "Bone Greaves",
+            "FR": "Jambières d'os",
+            "JP": "ボーングリーヴ",
+            "IT": "Schinieri d'osso",
+            "DE": "Knochen-Beinschienen",
+            "KR": "본그리브",
+            "CN": "骨製護腿"
+        },
         "rarity": 1,
         "abilityIds": [
             290
@@ -87,7 +119,15 @@
     },
     {
         "id": 4,
-        "name": "Vespoid Greaves",
+        "name": {
+            "EN": "Vespoid Greaves",
+            "FR": "Jambières Vespoid",
+            "JP": "ランゴグリーブ",
+            "IT": "Schinieri di Vespoid",
+            "DE": "Vespoid-Beinschienen",
+            "KR": "랑고그리브",
+            "CN": "巨蜂護腿"
+        },
         "rarity": 1,
         "abilityIds": [
             249
@@ -110,7 +150,15 @@
     },
     {
         "id": 6,
-        "name": "Gajau Boots",
+        "name": {
+            "EN": "Gajau Boots",
+            "FR": "Bottes Gajau",
+            "JP": "ガライ－ブーツ",
+            "IT": "Stivali di Gajau",
+            "DE": "Gajau-Stiefel",
+            "KR": "가쟈우부츠",
+            "CN": "咬鱼靴"
+        },
         "rarity": 1,
         "abilityIds": [
             284
@@ -133,7 +181,15 @@
     },
     {
         "id": 7,
-        "name": "Jagras Greaves",
+        "name": {
+            "EN": "Jagras Greaves",
+            "FR": "Cuissardes Jagras",
+            "JP": "ジャグラスグリーブ",
+            "IT": "Schinieri di Jagras",
+            "DE": "Jagras-Beinschienen",
+            "KR": "쟈그라스그리브",
+            "CN": "凶豺龍護腿"
+        },
         "rarity": 1,
         "abilityIds": [
             279
@@ -156,7 +212,15 @@
     },
     {
         "id": 8,
-        "name": "Kulu Greaves",
+        "name": {
+            "EN": "Kulu Greaves",
+            "FR": "Pantalon Kulu",
+            "JP": "クルルグリーブ",
+            "IT": "Schinieri di Kulu",
+            "DE": "Kulu-Beinschienen",
+            "KR": "쿠루루그리브",
+            "CN": "搔鳥護腿"
+        },
         "rarity": 1,
         "abilityIds": [
             122
@@ -179,7 +243,15 @@
     },
     {
         "id": 9,
-        "name": "Alloy Greaves",
+        "name": {
+            "EN": "Alloy Greaves",
+            "FR": "Grèves en alliage",
+            "JP": "アロイグリーヴ",
+            "IT": "Schinieri in lega",
+            "DE": "Legierungs-Beinschienen",
+            "KR": "얼로이그리브",
+            "CN": "合金護腿"
+        },
         "rarity": 2,
         "abilityIds": [
             237
@@ -202,7 +274,15 @@
     },
     {
         "id": 10,
-        "name": "Pukei Greaves",
+        "name": {
+            "EN": "Pukei Greaves",
+            "FR": "Bottes Pukei",
+            "JP": "プケプケグリーブ",
+            "IT": "Schinieri di Pukei",
+            "DE": "Pukei-Beinschienen",
+            "KR": "푸케푸케그리브",
+            "CN": "毒妖鳥護腿"
+        },
         "rarity": 2,
         "abilityIds": [
             259
@@ -225,7 +305,15 @@
     },
     {
         "id": 11,
-        "name": "Barroth Greaves",
+        "name": {
+            "EN": "Barroth Greaves",
+            "FR": "Grèves Barroth",
+            "JP": "ボロスグリーヴ",
+            "IT": "Schinieri di Barroth",
+            "DE": "Barroth-Beinschienen",
+            "KR": "보로스그리브",
+            "CN": "土砂龍護腿"
+        },
         "rarity": 2,
         "abilityIds": [
             9
@@ -248,7 +336,15 @@
     },
     {
         "id": 12,
-        "name": "Jyura Greaves",
+        "name": {
+            "EN": "Jyura Greaves",
+            "FR": "Grèves Jyura",
+            "JP": "ジュラグリーヴ",
+            "IT": "Schinieri di Jyura",
+            "DE": "Jyura-Beinschienen",
+            "KR": "쥬라그리브",
+            "CN": "泥魚龍護腿"
+        },
         "rarity": 2,
         "abilityIds": [
             135
@@ -271,7 +367,15 @@
     },
     {
         "id": 13,
-        "name": "Kadachi Greaves",
+        "name": {
+            "EN": "Kadachi Greaves",
+            "FR": "Grèves Kadachi",
+            "JP": "カガチグリーヴ",
+            "IT": "Schinieri di Kadachi",
+            "DE": "Kadachi-Beinschienen",
+            "KR": "카가치그리브",
+            "CN": "飛雷龍護腿"
+        },
         "rarity": 2,
         "abilityIds": [
             70
@@ -294,7 +398,15 @@
     },
     {
         "id": 14,
-        "name": "High Metal Greaves",
+        "name": {
+            "EN": "High Metal Greaves",
+            "FR": "Grèves haut-métal",
+            "JP": "ハイメタグリーヴ",
+            "IT": "Schinieri in ipermetallo",
+            "DE": "Hochmetall-Beinschienen",
+            "KR": "하이메탈그리브",
+            "CN": "礦石護腿"
+        },
         "rarity": 3,
         "abilityIds": [
             192
@@ -317,7 +429,15 @@
     },
     {
         "id": 15,
-        "name": "King Beetle Crura",
+        "name": {
+            "EN": "King Beetle Crura",
+            "FR": "Crura Scarabée",
+            "JP": "オウビートガンバ",
+            "IT": "Crura dello scarabeo",
+            "DE": "Königskäfer-Crura",
+            "KR": "킹비트감바",
+            "CN": "獨角仙脚"
+        },
         "rarity": 3,
         "abilityIds": [
             297
@@ -340,7 +460,15 @@
     },
     {
         "id": 16,
-        "name": "Butterfly Crura",
+        "name": {
+            "EN": "Butterfly Crura",
+            "FR": "Crura Papillon",
+            "JP": "パピメルガンバ",
+            "IT": "Crura di farfalla",
+            "DE": "Schmetterling-Crura",
+            "KR": "파피메르감바",
+            "CN": "燕尾蝶脚"
+        },
         "rarity": 3,
         "abilityIds": [
             297
@@ -363,7 +491,15 @@
     },
     {
         "id": 18,
-        "name": "Hornetaur Greaves",
+        "name": {
+            "EN": "Hornetaur Greaves",
+            "FR": "Grèves Hornetaur",
+            "JP": "タロスグリーヴ",
+            "IT": "Schinieri di Hornetaur",
+            "DE": "Hornetaur-Beinschienen",
+            "KR": "타로스그리브",
+            "CN": "巨甲蟲護腿"
+        },
         "rarity": 3,
         "abilityIds": [
             141
@@ -386,7 +522,15 @@
     },
     {
         "id": 19,
-        "name": "Anja Greaves",
+        "name": {
+            "EN": "Anja Greaves",
+            "FR": "Genouillère Anjanath",
+            "JP": "ジャナフグリーヴ",
+            "IT": "Schinieri di Anja",
+            "DE": "Anjanath-Beinschienen",
+            "KR": "쟈나프그리브",
+            "CN": "蠻顎龍護腿"
+        },
         "rarity": 3,
         "abilityIds": [
             189
@@ -412,7 +556,15 @@
     },
     {
         "id": 20,
-        "name": "Rathian Greaves",
+        "name": {
+            "EN": "Rathian Greaves",
+            "FR": "Grèves Rathian",
+            "JP": "レイアグリーヴ",
+            "IT": "Schinieri di Rathian",
+            "DE": "Rathian-Beinschienen",
+            "KR": "레이아그리브",
+            "CN": "雌火龍護腿"
+        },
         "rarity": 3,
         "abilityIds": [
             55
@@ -435,7 +587,15 @@
     },
     {
         "id": 21,
-        "name": "Tzitzi Greaves",
+        "name": {
+            "EN": "Tzitzi Greaves",
+            "FR": "Grèves Tzitzi",
+            "JP": "ツィツィグリーヴ",
+            "IT": "Schinieri di Tzitzi",
+            "DE": "Tzitzi-Beinschienen",
+            "KR": "치치그리브",
+            "CN": "眩鳥護腿"
+        },
         "rarity": 3,
         "abilityIds": [
             6
@@ -458,7 +618,15 @@
     },
     {
         "id": 22,
-        "name": "Lumu Greaves",
+        "name": {
+            "EN": "Lumu Greaves",
+            "FR": "Pantalon Lumu",
+            "JP": "ウルムーグリーヴ",
+            "IT": "Schinieri di Lumu",
+            "DE": "Paolumu-Beinschienen",
+            "KR": "우르무그리브",
+            "CN": "浮空龍護腿"
+        },
         "rarity": 3,
         "abilityIds": [
             27
@@ -481,7 +649,15 @@
     },
     {
         "id": 23,
-        "name": "Girros Greaves",
+        "name": {
+            "EN": "Girros Greaves",
+            "FR": "Pantalon Girros",
+            "JP": "ギルオスグリーヴ",
+            "IT": "Schinieri di Girros",
+            "DE": "Girros-Beinschienen",
+            "KR": "기르오스그리브",
+            "CN": "凶顎龍護腿"
+        },
         "rarity": 3,
         "abilityIds": [
             107
@@ -504,7 +680,15 @@
     },
     {
         "id": 24,
-        "name": "Baan Greaves",
+        "name": {
+            "EN": "Baan Greaves",
+            "FR": "Grèves Radobaan",
+            "JP": "バルキングリーヴ",
+            "IT": "Schinieri di Baan",
+            "DE": "Baan-Beinschienen",
+            "KR": "발킨그리브",
+            "CN": "骨鎚龍護腿"
+        },
         "rarity": 3,
         "abilityIds": [
             16
@@ -527,7 +711,15 @@
     },
     {
         "id": 25,
-        "name": "Ingot Greaves",
+        "name": {
+            "EN": "Ingot Greaves",
+            "FR": "Chausses en lingot",
+            "JP": "インゴットグリーヴ",
+            "IT": "Schinieri del lingotto",
+            "DE": "Guss-Beinschienen",
+            "KR": "잉곳그리브",
+            "CN": "鑄鐵護腿"
+        },
         "rarity": 4,
         "abilityIds": [
             45
@@ -550,7 +742,15 @@
     },
     {
         "id": 26,
-        "name": "Death Stench Heel",
+        "name": {
+            "EN": "Death Stench Heel",
+            "FR": "Étreinte putride β",
+            "JP": "デスギアフェルゼ",
+            "IT": "Tallone putrefatto",
+            "DE": "Todesgestank-Ferse",
+            "KR": "데스기어페르제",
+            "CN": "死神腳跟"
+        },
         "rarity": 4,
         "abilityIds": [
             141
@@ -573,7 +773,15 @@
     },
     {
         "id": 27,
-        "name": "Brigade Boots",
+        "name": {
+            "EN": "Brigade Boots",
+            "FR": "Bottes de brigade",
+            "JP": "ブリゲイドブーツ",
+            "IT": "Stivali di brigata",
+            "DE": "Brigade-Stiefel",
+            "KR": "브리게이드부츠",
+            "CN": "旅團靴"
+        },
         "rarity": 4,
         "abilityIds": [
             289
@@ -596,7 +804,15 @@
     },
     {
         "id": 28,
-        "name": "Legiana Greaves",
+        "name": {
+            "EN": "Legiana Greaves",
+            "FR": "Grèves Legiana",
+            "JP": "ギエナグリーヴ",
+            "IT": "Schinieri di Legiana",
+            "DE": "Legiana-Beinschienen",
+            "KR": "기에나그리브",
+            "CN": "風漂龍護腿"
+        },
         "rarity": 4,
         "abilityIds": [
             67
@@ -622,7 +838,15 @@
     },
     {
         "id": 29,
-        "name": "Odogaron Greaves",
+        "name": {
+            "EN": "Odogaron Greaves",
+            "FR": "Cuissards Odogaron",
+            "JP": "ガロングリーヴ",
+            "IT": "Schinieri di Odogaron",
+            "DE": "Odogaron-Beinschienen",
+            "KR": "가론그리브",
+            "CN": "慘爪龍護腿"
+        },
         "rarity": 4,
         "abilityIds": [
             222
@@ -648,7 +872,15 @@
     },
     {
         "id": 30,
-        "name": "Rathalos Greaves",
+        "name": {
+            "EN": "Rathalos Greaves",
+            "FR": "Grèves Rathalos",
+            "JP": "レウスグリーヴ",
+            "IT": "Schinieri di Rathalos",
+            "DE": "Rathalos-Beinschienen",
+            "KR": "레우스그리브",
+            "CN": "火龍護腿"
+        },
         "rarity": 4,
         "abilityIds": [
             280
@@ -674,7 +906,15 @@
     },
     {
         "id": 31,
-        "name": "Diablos Greaves",
+        "name": {
+            "EN": "Diablos Greaves",
+            "FR": "Grèves Diablos",
+            "JP": "ディアブログリーヴ",
+            "IT": "Schinieri di Diablos",
+            "DE": "Diablos-Beinschienen",
+            "KR": "디아블로그리브",
+            "CN": "角龍護腿"
+        },
         "rarity": 4,
         "abilityIds": [
             32
@@ -700,7 +940,15 @@
     },
     {
         "id": 32,
-        "name": "Kirin Leg Guards",
+        "name": {
+            "EN": "Kirin Leg Guards",
+            "FR": "Bottines Kirin",
+            "JP": "キリンレガース",
+            "IT": "Paragambe di Kirin",
+            "DE": "Kirin-Beinschutz",
+            "KR": "키린레그가드",
+            "CN": "麒麟護脛"
+        },
         "rarity": 4,
         "abilityIds": [
             70
@@ -726,7 +974,15 @@
     },
     {
         "id": 33,
-        "name": "Leather Trousers α",
+        "name": {
+            "EN": "Leather Trousers α",
+            "FR": "Pantalon en cuir α",
+            "JP": "レザーパンツ α",
+            "IT": "Pantaloni di cuoio α",
+            "DE": "Leder-Hose α",
+            "KR": "레더팬츠 α",
+            "CN": "皮製長褲 α"
+        },
         "rarity": 5,
         "abilityIds": [
             287
@@ -749,7 +1005,15 @@
     },
     {
         "id": 34,
-        "name": "Leather Trousers β",
+        "name": {
+            "EN": "Leather Trousers β",
+            "FR": "Pantalon en cuir β",
+            "JP": "レザーパンツ β",
+            "IT": "Pantaloni di cuoio β",
+            "DE": "Leder-Hose β",
+            "KR": "레더팬츠 β",
+            "CN": "皮製長褲 β"
+        },
         "rarity": 5,
         "slots": [
             1
@@ -772,7 +1036,15 @@
     },
     {
         "id": 35,
-        "name": "Chainmail Trousers α",
+        "name": {
+            "EN": "Chainmail Trousers α",
+            "FR": "Pantalon de mailles α",
+            "JP": "チェーンパンツ α",
+            "IT": "Pantaloni di maglia α",
+            "DE": "Ketten-Hose α",
+            "KR": "체인팬츠 α",
+            "CN": "鎖甲長褲 α"
+        },
         "rarity": 5,
         "abilityIds": [
             55
@@ -795,7 +1067,15 @@
     },
     {
         "id": 36,
-        "name": "Chainmail Trousers β",
+        "name": {
+            "EN": "Chainmail Trousers β",
+            "FR": "Pantalon de mailles β",
+            "JP": "チェーンパンツ β",
+            "IT": "Pantaloni di maglia β",
+            "DE": "Ketten-Hose β",
+            "KR": "체인팬츠 β",
+            "CN": "鎖甲長褲 β"
+        },
         "rarity": 5,
         "slots": [
             1
@@ -818,7 +1098,15 @@
     },
     {
         "id": 37,
-        "name": "Hunter's Greaves α",
+        "name": {
+            "EN": "Hunter's Greaves α",
+            "FR": "Grèves de chasseur α",
+            "JP": "ハンターグリーヴ α",
+            "IT": "Schinieri del cacciatore α",
+            "DE": "Jäger-Beinschienen α",
+            "KR": "헌터그리브 α",
+            "CN": "獵人護腿 α"
+        },
         "rarity": 5,
         "abilityIds": [
             296,
@@ -842,7 +1130,15 @@
     },
     {
         "id": 38,
-        "name": "Hunter's Greaves β",
+        "name": {
+            "EN": "Hunter's Greaves β",
+            "FR": "Grèves de chasseur β",
+            "JP": "ハンターグリーヴ β",
+            "IT": "Schinieri del cacciatore β",
+            "DE": "Jäger-Beinschienen β",
+            "KR": "헌터그리브 β",
+            "CN": "獵人護腿 β"
+        },
         "rarity": 5,
         "slots": [
             1
@@ -868,7 +1164,15 @@
     },
     {
         "id": 39,
-        "name": "Bone Greaves α",
+        "name": {
+            "EN": "Bone Greaves α",
+            "FR": "Jambières d'os α",
+            "JP": "ボーングリーヴ α",
+            "IT": "Schinieri d'osso α",
+            "DE": "Knochen-Beinschienen α",
+            "KR": "본그리브 α",
+            "CN": "骨製護腿 α"
+        },
         "rarity": 5,
         "abilityIds": [
             291
@@ -891,7 +1195,15 @@
     },
     {
         "id": 40,
-        "name": "Bone Greaves β",
+        "name": {
+            "EN": "Bone Greaves β",
+            "FR": "Jambières d'os β",
+            "JP": "ボーングリーヴ β",
+            "IT": "Schinieri d'osso β",
+            "DE": "Knochen-Beinschienen β",
+            "KR": "본그리브 β",
+            "CN": "骨製護腿 β"
+        },
         "rarity": 5,
         "slots": [
             1
@@ -917,7 +1229,15 @@
     },
     {
         "id": 41,
-        "name": "Alloy Greaves α",
+        "name": {
+            "EN": "Alloy Greaves α",
+            "FR": "Grèves en alliage α",
+            "JP": "アロイグリーヴ α",
+            "IT": "Schinieri in lega α",
+            "DE": "Legierungs-Beinschienen α",
+            "KR": "얼로이그리브 α",
+            "CN": "合金護腿 α"
+        },
         "rarity": 5,
         "abilityIds": [
             238
@@ -940,7 +1260,15 @@
     },
     {
         "id": 42,
-        "name": "Alloy Greaves β",
+        "name": {
+            "EN": "Alloy Greaves β",
+            "FR": "Grèves en alliage β",
+            "JP": "アロイグリーヴ β",
+            "IT": "Schinieri in lega β",
+            "DE": "Legierungs-Beinschienen β",
+            "KR": "얼로이그리브 β",
+            "CN": "合金護腿 β"
+        },
         "rarity": 5,
         "slots": [
             1
@@ -966,7 +1294,15 @@
     },
     {
         "id": 43,
-        "name": "King Beetle Crura α",
+        "name": {
+            "EN": "King Beetle Crura α",
+            "FR": "Crura Scarabée α",
+            "JP": "オウビートガンバ α",
+            "IT": "Crura dello scarabeo α",
+            "DE": "Königskäfer-Crura α",
+            "KR": "킹비트감바 α",
+            "CN": "獨角仙脚 α"
+        },
         "rarity": 5,
         "slots": [
             1
@@ -993,7 +1329,15 @@
     },
     {
         "id": 44,
-        "name": "King Beetle Crura β",
+        "name": {
+            "EN": "King Beetle Crura β",
+            "FR": "Crura Scarabée β",
+            "JP": "オウビートガンバ β",
+            "IT": "Crura dello scarabeo β",
+            "DE": "Königskäfer-Crura β",
+            "KR": "킹비트감바 β",
+            "CN": "獨角仙脚 β"
+        },
         "rarity": 5,
         "slots": [
             2,
@@ -1020,7 +1364,15 @@
     },
     {
         "id": 45,
-        "name": "Butterfly Crura α",
+        "name": {
+            "EN": "Butterfly Crura α",
+            "FR": "Crura Papillon α",
+            "JP": "パピメルガンバ α",
+            "IT": "Crura di farfalla α",
+            "DE": "Schmetterling-Crura α",
+            "KR": "파피메르감바 α",
+            "CN": "燕尾蝶脚 α"
+        },
         "rarity": 5,
         "slots": [
             1
@@ -1047,7 +1399,15 @@
     },
     {
         "id": 46,
-        "name": "Butterfly Crura β",
+        "name": {
+            "EN": "Butterfly Crura β",
+            "FR": "Crura Papillon β",
+            "JP": "パピメルガンバ β",
+            "IT": "Crura di farfalla β",
+            "DE": "Schmetterling-Crura β",
+            "KR": "파피메르감바 β",
+            "CN": "燕尾蝶脚 β"
+        },
         "rarity": 5,
         "slots": [
             2,
@@ -1074,7 +1434,15 @@
     },
     {
         "id": 47,
-        "name": "Vespoid Greaves α",
+        "name": {
+            "EN": "Vespoid Greaves α",
+            "FR": "Jambières Vespoid α",
+            "JP": "ランゴグリーヴ α",
+            "IT": "Schinieri di Vespoid α",
+            "DE": "Vespoid-Beinschienen α",
+            "KR": "랑고그리브 α",
+            "CN": "巨蜂護腿 α"
+        },
         "rarity": 5,
         "abilityIds": [
             249,
@@ -1098,7 +1466,15 @@
     },
     {
         "id": 48,
-        "name": "Vespoid Greaves β",
+        "name": {
+            "EN": "Vespoid Greaves β",
+            "FR": "Jambières Vespoid β",
+            "JP": "ランゴグリーヴ β",
+            "IT": "Schinieri di Vespoid β",
+            "DE": "Vespoid-Beinschienen β",
+            "KR": "랑고그리브 β",
+            "CN": "巨蜂護腿 β"
+        },
         "rarity": 5,
         "slots": [
             1
@@ -1124,7 +1500,15 @@
     },
     {
         "id": 49,
-        "name": "Hornetaur Greaves α",
+        "name": {
+            "EN": "Hornetaur Greaves α",
+            "FR": "Grèves Hornetaur α",
+            "JP": "タロスグリーヴ α",
+            "IT": "Schinieri di Hornetaur α",
+            "DE": "Hornetaur-Beinschienen α",
+            "KR": "타로스그리브 α",
+            "CN": "巨甲蟲護腿 α"
+        },
         "rarity": 5,
         "abilityIds": [
             141,
@@ -1148,7 +1532,15 @@
     },
     {
         "id": 50,
-        "name": "Hornetaur Greaves β",
+        "name": {
+            "EN": "Hornetaur Greaves β",
+            "FR": "Grèves Hornetauβ",
+            "JP": "タロスグリーヴ β",
+            "IT": "Schinieri di Hornetaur β",
+            "DE": "Hornetaur-Beinschienen β",
+            "KR": "타로스그리브 β",
+            "CN": "巨甲蟲護腿 β"
+        },
         "rarity": 5,
         "slots": [
             1
@@ -1174,7 +1566,15 @@
     },
     {
         "id": 54,
-        "name": "Gajau Boots α",
+        "name": {
+            "EN": "Gajau Boots α",
+            "FR": "Bottes Gajau α",
+            "JP": "ガライーブーツ α",
+            "IT": "Stivali di Gajau α",
+            "DE": "Gajau-Stiefel α",
+            "KR": "가쟈우부츠 α",
+            "CN": "咬鱼靴 α"
+        },
         "rarity": 5,
         "abilityIds": [
             285,
@@ -1198,7 +1598,15 @@
     },
     {
         "id": 55,
-        "name": "Gajau Boots β",
+        "name": {
+            "EN": "Gajau Boots β",
+            "FR": "Bottes Gajau β",
+            "JP": "ガライーブーツ β",
+            "IT": "Stivali di Gajau β",
+            "DE": "Gajau-Stiefel β",
+            "KR": "가쟈우부츠 β",
+            "CN": "咬鱼靴 β"
+        },
         "rarity": 5,
         "slots": [
             1
@@ -1225,7 +1633,15 @@
     },
     {
         "id": 58,
-        "name": "Jagras Greaves α",
+        "name": {
+            "EN": "Jagras Greaves α",
+            "FR": "Cuissardes Jagras α",
+            "JP": "ジャグラスグリーブ α",
+            "IT": "Schinieri di Jagras α",
+            "DE": "Jagras-Beinschienen α",
+            "KR": "쟈그라스그리브 α",
+            "CN": "凶豺龍護腿 α"
+        },
         "rarity": 5,
         "abilityIds": [
             279,
@@ -1249,7 +1665,15 @@
     },
     {
         "id": 59,
-        "name": "Jagras Greaves β",
+        "name": {
+            "EN": "Jagras Greaves β",
+            "FR": "Cuissardes Jagras β",
+            "JP": "ジャグラスグリーブ β",
+            "IT": "Schinieri di Jagras β",
+            "DE": "Jagras-Beinschienen β",
+            "KR": "쟈그라스그리브 β",
+            "CN": "凶豺龍護腿 β"
+        },
         "rarity": 5,
         "slots": [
             1
@@ -1275,7 +1699,15 @@
     },
     {
         "id": 60,
-        "name": "Kulu Greaves α",
+        "name": {
+            "EN": "Kulu Greaves α",
+            "FR": "Pantalon Kulu α",
+            "JP": "クルルグリーブ α",
+            "IT": "Schinieri di Kulu α",
+            "DE": "Kulu-Beinschienen α",
+            "KR": "쿠루루그리브 α",
+            "CN": "搔鳥護腿 α"
+        },
         "rarity": 5,
         "abilityIds": [
             122,
@@ -1299,7 +1731,15 @@
     },
     {
         "id": 61,
-        "name": "Kulu Greaves β",
+        "name": {
+            "EN": "Kulu Greaves β",
+            "FR": "Pantalon Kulu β",
+            "JP": "クルルグリーブ β",
+            "IT": "Schinieri di Kulu β",
+            "DE": "Kulu-Beinschienen β",
+            "KR": "쿠루루그리브 β",
+            "CN": "搔鳥護腿 β"
+        },
         "rarity": 5,
         "slots": [
             1
@@ -1325,7 +1765,15 @@
     },
     {
         "id": 62,
-        "name": "Tzitzi Greaves α",
+        "name": {
+            "EN": "Tzitzi Greaves α",
+            "FR": "Grèves Tzitzi α",
+            "JP": "ツィツィグリーヴ α",
+            "IT": "Schinieri di Tzitzi α",
+            "DE": "Tzitzi-Beinschienen α",
+            "KR": "치치그리브 α",
+            "CN": "眩鳥護腿 α"
+        },
         "rarity": 5,
         "abilityIds": [
             7
@@ -1348,7 +1796,15 @@
     },
     {
         "id": 63,
-        "name": "Tzitzi Greaves β",
+        "name": {
+            "EN": "Tzitzi Greaves β",
+            "FR": "Grèves Tzitzi β",
+            "JP": "ツィツィグリーヴ β",
+            "IT": "Schinieri di Tzitzi β",
+            "DE": "Tzitzi-Beinschienen β",
+            "KR": "치치그리브 β",
+            "CN": "眩鳥護腿 β"
+        },
         "rarity": 5,
         "slots": [
             1
@@ -1374,7 +1830,15 @@
     },
     {
         "id": 64,
-        "name": "Girros Greaves α",
+        "name": {
+            "EN": "Girros Greaves α",
+            "FR": "Pantalon Girros α",
+            "JP": "ギルオスグリーヴ α",
+            "IT": "Schinieri di Girros α",
+            "DE": "Girros-Beinschienen α",
+            "KR": "기르오스그리브 α",
+            "CN": "凶顎龍護腿 α"
+        },
         "rarity": 5,
         "abilityIds": [
             108
@@ -1397,7 +1861,15 @@
     },
     {
         "id": 65,
-        "name": "Girros Greaves β",
+        "name": {
+            "EN": "Girros Greaves β",
+            "FR": "Pantalon Girros β",
+            "JP": "ギルオスグリーヴ β",
+            "IT": "Schinieri di Girros β",
+            "DE": "Girros-Beinschienen β",
+            "KR": "기르오스그리브 β",
+            "CN": "凶顎龍護腿 β"
+        },
         "rarity": 5,
         "slots": [
             1
@@ -1423,7 +1895,15 @@
     },
     {
         "id": 66,
-        "name": "Pukei Greaves α",
+        "name": {
+            "EN": "Pukei Greaves α",
+            "FR": "Bottes Pukei α",
+            "JP": "プケプケグリーヴ α",
+            "IT": "Schinieri di Pukei α",
+            "DE": "Pukei-Beinschienen α",
+            "KR": "푸케푸케그리브 α",
+            "CN": "毒妖鳥護腿 α"
+        },
         "rarity": 5,
         "abilityIds": [
             260,
@@ -1447,7 +1927,15 @@
     },
     {
         "id": 67,
-        "name": "Pukei Greaves β",
+        "name": {
+            "EN": "Pukei Greaves β",
+            "FR": "Bottes Pukei β",
+            "JP": "プケプケグリーヴ β",
+            "IT": "Schinieri di Pukei β",
+            "DE": "Pukei-Beinschienen β",
+            "KR": "푸케푸케그리브 β",
+            "CN": "毒妖鳥護腿 β"
+        },
         "rarity": 5,
         "slots": [
             2
@@ -1473,7 +1961,15 @@
     },
     {
         "id": 68,
-        "name": "Barroth Greaves α",
+        "name": {
+            "EN": "Barroth Greaves α",
+            "FR": "Grèves Barroth α",
+            "JP": "ボロスグリーヴ α",
+            "IT": "Schinieri di Barroth α",
+            "DE": "Barroth-Beinschienen α",
+            "KR": "보로스그리브 α",
+            "CN": "土砂龍護腿 α"
+        },
         "rarity": 5,
         "abilityIds": [
             10,
@@ -1497,7 +1993,15 @@
     },
     {
         "id": 69,
-        "name": "Barroth Greaves β",
+        "name": {
+            "EN": "Barroth Greaves β",
+            "FR": "Grèves Barroth β",
+            "JP": "ボロスグリーヴ β",
+            "IT": "Schinieri di Barroth β",
+            "DE": "Barroth-Beinschienen β",
+            "KR": "보로스그리브 β",
+            "CN": "土砂龍護腿 β"
+        },
         "rarity": 5,
         "slots": [
             1,
@@ -1524,7 +2028,15 @@
     },
     {
         "id": 70,
-        "name": "Anja Greaves α",
+        "name": {
+            "EN": "Anja Greaves α",
+            "FR": "Genouillère Anjanath α",
+            "JP": "ジャナフグリーヴ α",
+            "IT": "Schinieri di Anja α",
+            "DE": "Anjanath-Beinschienen α",
+            "KR": "쟈나프그리브 α",
+            "CN": "蠻顎龍護腿 α"
+        },
         "rarity": 5,
         "abilityIds": [
             190
@@ -1550,7 +2062,15 @@
     },
     {
         "id": 71,
-        "name": "Anja Greaves β",
+        "name": {
+            "EN": "Anja Greaves β",
+            "FR": "Genouillère Anjanath β",
+            "JP": "ジャナフグリーヴ β",
+            "IT": "Schinieri di Anja β",
+            "DE": "Anjanath-Beinschienen β",
+            "KR": "쟈나프그리브 β",
+            "CN": "蠻顎龍護腿 β"
+        },
         "rarity": 5,
         "slots": [
             1
@@ -1579,7 +2099,15 @@
     },
     {
         "id": 72,
-        "name": "Jyura Greaves α",
+        "name": {
+            "EN": "Jyura Greaves α",
+            "FR": "Grèves Jyura α",
+            "JP": "ジュラグリーヴ α",
+            "IT": "Schinieri di Jyura α",
+            "DE": "Jyura-Beinschienen α",
+            "KR": "쥬라그리브 α",
+            "CN": "泥魚龍護腿 α"
+        },
         "rarity": 5,
         "abilityIds": [
             136
@@ -1602,7 +2130,15 @@
     },
     {
         "id": 73,
-        "name": "Jyura Greaves β",
+        "name": {
+            "EN": "Jyura Greaves β",
+            "FR": "Grèves Jyura β",
+            "JP": "ジュラグリーヴ β",
+            "IT": "Schinieri di Jyura β",
+            "DE": "Jyura-Beinschienen β",
+            "KR": "쥬라그리브 β",
+            "CN": "泥魚龍護腿 β"
+        },
         "rarity": 5,
         "slots": [
             2
@@ -1628,7 +2164,15 @@
     },
     {
         "id": 74,
-        "name": "Kadachi Greaves α",
+        "name": {
+            "EN": "Kadachi Greaves α",
+            "FR": "Grèves Kadachi α",
+            "JP": "カガチグリーヴ α",
+            "IT": "Schinieri di Kadachi α",
+            "DE": "Kadachi-Beinschienen α",
+            "KR": "카가치그리브 α",
+            "CN": "飛雷龍護腿 α"
+        },
         "rarity": 5,
         "abilityIds": [
             71,
@@ -1652,7 +2196,15 @@
     },
     {
         "id": 75,
-        "name": "Kadachi Greaves β",
+        "name": {
+            "EN": "Kadachi Greaves β",
+            "FR": "Grèves Kadachi β",
+            "JP": "カガチグリーヴ β",
+            "IT": "Schinieri di Kadachi β",
+            "DE": "Kadachi-Beinschienen β",
+            "KR": "카가치그리브 β",
+            "CN": "飛雷龍護腿 β"
+        },
         "rarity": 5,
         "slots": [
             1,
@@ -1679,7 +2231,15 @@
     },
     {
         "id": 76,
-        "name": "Lumu Greaves α",
+        "name": {
+            "EN": "Lumu Greaves α",
+            "FR": "Pantalon Lumu α",
+            "JP": "ウルムーグリーヴ α",
+            "IT": "Schinieri di Lumu α",
+            "DE": "Paolumu-Beinschienen α",
+            "KR": "우르무그리브 α",
+            "CN": "浮空龍護腿 α"
+        },
         "rarity": 5,
         "abilityIds": [
             27,
@@ -1703,7 +2263,15 @@
     },
     {
         "id": 77,
-        "name": "Lumu Greaves β",
+        "name": {
+            "EN": "Lumu Greaves β",
+            "FR": "Pantalon Lumu β",
+            "JP": "ウルムーグリーヴ β",
+            "IT": "Schinieri di Lumu β",
+            "DE": "Paolumu-Beinschienen β",
+            "KR": "우르무그리브 β",
+            "CN": "浮空龍護腿 β"
+        },
         "rarity": 5,
         "slots": [
             1,
@@ -1730,7 +2298,15 @@
     },
     {
         "id": 78,
-        "name": "Rathian Greaves α",
+        "name": {
+            "EN": "Rathian Greaves α",
+            "FR": "Grèves Rathian α",
+            "JP": "レイアグリーヴ α",
+            "IT": "Schinieri di Rathian α",
+            "DE": "Rathian-Beinschienen α",
+            "KR": "레이아그리브 α",
+            "CN": "雌火龍護腿 α"
+        },
         "rarity": 5,
         "abilityIds": [
             56
@@ -1753,7 +2329,15 @@
     },
     {
         "id": 79,
-        "name": "Rathian Greaves β",
+        "name": {
+            "EN": "Rathian Greaves β",
+            "FR": "Grèves Rathian β",
+            "JP": "レイアグリーヴ β",
+            "IT": "Schinieri di Rathian β",
+            "DE": "Rathian-Beinschienen β",
+            "KR": "레이아그리브 β",
+            "CN": "雌火龍護腿 β"
+        },
         "rarity": 5,
         "slots": [
             1
@@ -1779,7 +2363,15 @@
     },
     {
         "id": 80,
-        "name": "Rath Heart Greaves α",
+        "name": {
+            "EN": "Rath Heart Greaves α",
+            "FR": "Grèves Cœur Rathian α",
+            "JP": "リオハートグリーヴ α",
+            "IT": "Schinieri cuore di Rath α",
+            "DE": "RathianherzBeinschienen α",
+            "KR": "리오하트그리브 α",
+            "CN": "火龍心護腿 α"
+        },
         "rarity": 6,
         "abilityIds": [
             300,
@@ -1806,7 +2398,15 @@
     },
     {
         "id": 81,
-        "name": "Rath Heart Greaves β",
+        "name": {
+            "EN": "Rath Heart Greaves β",
+            "FR": "Grèves Cœur Rathian β",
+            "JP": "リオハートグリーヴ β",
+            "IT": "Schinieri cuore di Rath β",
+            "DE": "RathianherzBeinschienen β",
+            "KR": "리오하트그리브 β",
+            "CN": "火龍心護腿 β"
+        },
         "rarity": 6,
         "slots": [
             2
@@ -1835,7 +2435,15 @@
     },
     {
         "id": 82,
-        "name": "Baan Greaves α",
+        "name": {
+            "EN": "Baan Greaves α",
+            "FR": "Grèves Radobaan α",
+            "JP": "バルキングリーヴ α",
+            "IT": "Schinieri di Baan α",
+            "DE": "Baan-Beinschienen α",
+            "KR": "발킨그리브 α",
+            "CN": "骨鎚龍護腿 α"
+        },
         "rarity": 6,
         "abilityIds": [
             17
@@ -1858,7 +2466,15 @@
     },
     {
         "id": 83,
-        "name": "Baan Greaves β",
+        "name": {
+            "EN": "Baan Greaves β",
+            "FR": "Grèves Radobaan β",
+            "JP": "バルキングリーヴ β",
+            "IT": "Schinieri di Baan β",
+            "DE": "Baan-Beinschienen β",
+            "KR": "발킨그리브 β",
+            "CN": "骨鎚龍護腿 β"
+        },
         "rarity": 6,
         "slots": [
             1
@@ -1884,7 +2500,15 @@
     },
     {
         "id": 88,
-        "name": "Dodogama Greaves α",
+        "name": {
+            "EN": "Dodogama Greaves α",
+            "FR": "Tassette Dodogama β",
+            "JP": "ガマルヴリーヴ α",
+            "IT": "Schinieri di Dodogama α",
+            "DE": "Dodogama-Beinschienen α",
+            "KR": "가마루그리브 α",
+            "CN": "岩賊龍護腿 α"
+        },
         "rarity": 5,
         "abilityIds": [
             186,
@@ -1908,7 +2532,15 @@
     },
     {
         "id": 89,
-        "name": "Dodogama Greaves β",
+        "name": {
+            "EN": "Dodogama Greaves β",
+            "FR": "Grèves Dodogama β",
+            "JP": "ガマルヴリーヴ β",
+            "IT": "Schinieri di Dodogama β",
+            "DE": "Dodogama-Beinschienen β",
+            "KR": "가마루그리브 β",
+            "CN": "岩賊龍護腿 β"
+        },
         "rarity": 5,
         "slots": [
             1
@@ -1934,7 +2566,15 @@
     },
     {
         "id": 90,
-        "name": "Zorah Spurs α",
+        "name": {
+            "EN": "Zorah Spurs α",
+            "FR": "Éperons Zorah α",
+            "JP": "ゾラマグナフット α",
+            "IT": "Speroni di Zorah α",
+            "DE": "Zorah-Sporen α",
+            "KR": "조라마그나풋 α",
+            "CN": "鑄島熔岩靴 α"
+        },
         "rarity": 6,
         "abilityIds": [
             241,
@@ -1961,7 +2601,15 @@
     },
     {
         "id": 91,
-        "name": "Zorah Spurs β",
+        "name": {
+            "EN": "Zorah Spurs β",
+            "FR": "Éperons Zorah β",
+            "JP": "ゾラマグナフット β",
+            "IT": "Speroni di Zorah β",
+            "DE": "Zorah-Sporen β",
+            "KR": "조라마그나풋 β",
+            "CN": "鑄島熔岩靴 β"
+        },
         "rarity": 6,
         "slots": [
             2
@@ -1990,7 +2638,15 @@
     },
     {
         "id": 92,
-        "name": "High Metal Greaves α",
+        "name": {
+            "EN": "High Metal Greaves α",
+            "FR": "Grèves haut-métal α",
+            "JP": "ハイメタグリーヴ α",
+            "IT": "Schinieri in ipermetallo α",
+            "DE": "HochmetallBeinschienen α",
+            "KR": "하이메탈그리브 α",
+            "CN": "礦石護腿 α"
+        },
         "rarity": 6,
         "abilityIds": [
             192,
@@ -2014,7 +2670,15 @@
     },
     {
         "id": 93,
-        "name": "High Metal Greaves β",
+        "name": {
+            "EN": "High Metal Greaves β",
+            "FR": "Grèves haut-métal β",
+            "JP": "ハイメタグリーヴ β",
+            "IT": "Schinieri in ipermetallo β",
+            "DE": "HochmetallBeinschienen β",
+            "KR": "하이메탈그리브 β",
+            "CN": "礦石護腿 β"
+        },
         "rarity": 6,
         "slots": [
             1
@@ -2040,7 +2704,15 @@
     },
     {
         "id": 94,
-        "name": "Ingot Greaves α",
+        "name": {
+            "EN": "Ingot Greaves α",
+            "FR": "Chausses en lingot α",
+            "JP": "インゴットグリーヴ α",
+            "IT": "Schinieri del lingotto α",
+            "DE": "Guss-Beinschienen α",
+            "KR": "잉곳그리브 α",
+            "CN": "鑄鐵護腿 α"
+        },
         "rarity": 6,
         "abilityIds": [
             46,
@@ -2064,7 +2736,15 @@
     },
     {
         "id": 95,
-        "name": "Ingot Greaves β",
+        "name": {
+            "EN": "Ingot Greaves β",
+            "FR": "Chausses en lingot β",
+            "JP": "インゴットグリーヴ β",
+            "IT": "Schinieri del lingotto β",
+            "DE": "Guss-Beinschienen β",
+            "KR": "잉곳그리브 β",
+            "CN": "鑄鐵護腿 β"
+        },
         "rarity": 6,
         "slots": [
             2
@@ -2090,7 +2770,15 @@
     },
     {
         "id": 96,
-        "name": "Brigade Boots α",
+        "name": {
+            "EN": "Brigade Boots α",
+            "FR": "Bottes de brigade α",
+            "JP": "ブリゲイドブーツ α",
+            "IT": "Stivali di brigata α",
+            "DE": "Brigade-Stiefel α",
+            "KR": "브리게이드부츠 α",
+            "CN": "旅團靴 α"
+        },
         "rarity": 6,
         "slots": [
             1
@@ -2117,7 +2805,15 @@
     },
     {
         "id": 97,
-        "name": "Brigade Boots β",
+        "name": {
+            "EN": "Brigade Boots β",
+            "FR": "Bottes de brigade β",
+            "JP": "ブリゲイドブーツ β",
+            "IT": "Stivali di brigata β",
+            "DE": "Brigade-Stiefel β",
+            "KR": "브리게이드부츠 β",
+            "CN": "旅團靴 β"
+        },
         "rarity": 6,
         "slots": [
             3
@@ -2143,7 +2839,15 @@
     },
     {
         "id": 100,
-        "name": "Lavasioth Greaves α",
+        "name": {
+            "EN": "Lavasioth Greaves α",
+            "FR": "Grèves Lavasioth α",
+            "JP": "ラヴァグリーヴ α",
+            "IT": "Schinieri di Lavasioth α",
+            "DE": "Lavasioth-Beinschienen α",
+            "KR": "라바그리브 α",
+            "CN": "熔岩龍護腿 α"
+        },
         "rarity": 6,
         "slots": [
             1
@@ -2170,7 +2874,15 @@
     },
     {
         "id": 101,
-        "name": "Lavasioth Greaves β",
+        "name": {
+            "EN": "Lavasioth Greaves β",
+            "FR": "Grèves Lavasioth β",
+            "JP": "ラヴァグリーヴ β",
+            "IT": "Schinieri di Lavasioth β",
+            "DE": "Lavasioth-Beinschienen β",
+            "KR": "라바그리브 β",
+            "CN": "熔岩龍護腿 β"
+        },
         "rarity": 6,
         "slots": [
             2
@@ -2196,7 +2908,15 @@
     },
     {
         "id": 102,
-        "name": "Legiana Greaves α",
+        "name": {
+            "EN": "Legiana Greaves α",
+            "FR": "Grèves Legiana α",
+            "JP": "ギエナグリーヴ α",
+            "IT": "Schinieri di Legiana α",
+            "DE": "Legiana-Beinschienen α",
+            "KR": "기에나그리브 α",
+            "CN": "風漂龍護腿 α"
+        },
         "rarity": 6,
         "abilityIds": [
             68,
@@ -2223,7 +2943,15 @@
     },
     {
         "id": 103,
-        "name": "Legiana Greaves β",
+        "name": {
+            "EN": "Legiana Greaves β",
+            "FR": "Grèves Legiana β",
+            "JP": "ギエナグリーヴ β",
+            "IT": "Schinieri di Legiana β",
+            "DE": "Legiana-Beinschienen β",
+            "KR": "기에나그리브 β",
+            "CN": "風漂龍護腿 β"
+        },
         "rarity": 6,
         "slots": [
             3
@@ -2252,7 +2980,15 @@
     },
     {
         "id": 104,
-        "name": "Odogaron Greaves α",
+        "name": {
+            "EN": "Odogaron Greaves α",
+            "FR": "Cuissards Odogaron α",
+            "JP": "ガロングリーヴ α",
+            "IT": "Schinieri di Odogaron α",
+            "DE": "Odogaron-Beinschienen α",
+            "KR": "가론그리브 α",
+            "CN": "慘爪龍護腿 α"
+        },
         "rarity": 6,
         "abilityIds": [
             222,
@@ -2279,7 +3015,15 @@
     },
     {
         "id": 105,
-        "name": "Odogaron Greaves β",
+        "name": {
+            "EN": "Odogaron Greaves β",
+            "FR": "Cuissards Odogaron β",
+            "JP": "ガロングリーヴ β",
+            "IT": "Schinieri di Odogaron β",
+            "DE": "Odogaron-Beinschienen β",
+            "KR": "가론그리브 β",
+            "CN": "慘爪龍護腿 β"
+        },
         "rarity": 6,
         "slots": [
             1
@@ -2308,7 +3052,15 @@
     },
     {
         "id": 106,
-        "name": "Rathalos Greaves α",
+        "name": {
+            "EN": "Rathalos Greaves α",
+            "FR": "Grèves Rathalos α",
+            "JP": "レウスグリーヴ α",
+            "IT": "Schinieri di Rathalos α",
+            "DE": "Rathalos-Beinschienen α",
+            "KR": "레우스그리브 α",
+            "CN": "火龍護腿 α"
+        },
         "rarity": 6,
         "abilityIds": [
             280,
@@ -2335,7 +3087,15 @@
     },
     {
         "id": 107,
-        "name": "Rathalos Greaves β",
+        "name": {
+            "EN": "Rathalos Greaves β",
+            "FR": "Grèves Rathalos β",
+            "JP": "レウスグリーヴ β",
+            "IT": "Schinieri di Rathalos β",
+            "DE": "Rathalos-Beinschienen β",
+            "KR": "레우스그리브 β",
+            "CN": "火龍護腿 β"
+        },
         "rarity": 6,
         "slots": [
             3
@@ -2364,7 +3124,15 @@
     },
     {
         "id": 108,
-        "name": "Rath Soul Greaves α",
+        "name": {
+            "EN": "Rath Soul Greaves α",
+            "FR": "Garde-jambes me Rathalos α",
+            "JP": "リオソウルグリーヴ α",
+            "IT": "Schinieri anima di Rath α",
+            "DE": "RathalosselnBeinschinen α",
+            "KR": "리오소울그리브 α",
+            "CN": "火龍魂護腿 α"
+        },
         "rarity": 7,
         "abilityIds": [
             135,
@@ -2391,7 +3159,15 @@
     },
     {
         "id": 109,
-        "name": "Rath Soul Greaves β",
+        "name": {
+            "EN": "Rath Soul Greaves β",
+            "FR": "Garde-jambes me Rathalos β",
+            "JP": "リオソウルグリーヴ β",
+            "IT": "Schinieri anima di Rath β",
+            "DE": "RathalosselnBeinschinen β",
+            "KR": "리오소울그리브 β",
+            "CN": "火龍魂護腿 β"
+        },
         "rarity": 7,
         "slots": [
             1
@@ -2420,7 +3196,15 @@
     },
     {
         "id": 110,
-        "name": "Diablos Greaves α",
+        "name": {
+            "EN": "Diablos Greaves α",
+            "FR": "Grèves Diablos α",
+            "JP": "ディアブログリーヴ α",
+            "IT": "Schinieri di Diablos α",
+            "DE": "Diablos-Beinschienen α",
+            "KR": "디아블로그리브 α",
+            "CN": "角龍護腿 α"
+        },
         "rarity": 6,
         "abilityIds": [
             33,
@@ -2447,7 +3231,15 @@
     },
     {
         "id": 111,
-        "name": "Diablos Greaves β",
+        "name": {
+            "EN": "Diablos Greaves β",
+            "FR": "Grèves Diablos β",
+            "JP": "ディアブログリーヴ β",
+            "IT": "Schinieri di Diablos β",
+            "DE": "Diablos-Beinschienen β",
+            "KR": "디아블로그리브 β",
+            "CN": "角龍護腿 β"
+        },
         "rarity": 6,
         "slots": [
             1,
@@ -2477,7 +3269,15 @@
     },
     {
         "id": 112,
-        "name": "Diablos Nero Greaves α",
+        "name": {
+            "EN": "Diablos Nero Greaves α",
+            "FR": "Grèves Diablos noire α",
+            "JP": "ディアネログリーヴ α",
+            "IT": "Schinieri di Diablos nera α",
+            "DE": "DiablosNeroBeinschienen α",
+            "KR": "디아네로그리브 α",
+            "CN": "暴君角龍護腿 α"
+        },
         "rarity": 7,
         "slots": [
             1
@@ -2507,7 +3307,15 @@
     },
     {
         "id": 113,
-        "name": "Diablos Nero Greaves β",
+        "name": {
+            "EN": "Diablos Nero Greaves β",
+            "FR": "Grèves Diablos noire β",
+            "JP": "ディアネログリーヴ β",
+            "IT": "Schinieri di Diablos nera β",
+            "DE": "DiablosNeroBeinschienen β",
+            "KR": "디아네로그리브 β",
+            "CN": "暴君角龍護腿 β"
+        },
         "rarity": 7,
         "slots": [
             2
@@ -2536,7 +3344,15 @@
     },
     {
         "id": 114,
-        "name": "Uragaan Greaves α",
+        "name": {
+            "EN": "Uragaan Greaves α",
+            "FR": "Bottes Uragaan α",
+            "JP": "ガンキングリーヴ α",
+            "IT": "Schinieri di Uragaan α",
+            "DE": "Uragaan-Beinschienen α",
+            "KR": "간킨그리브 α",
+            "CN": "爆鎚龍護腿 α"
+        },
         "rarity": 7,
         "slots": [
             1
@@ -2565,7 +3381,15 @@
     },
     {
         "id": 115,
-        "name": "Uragaan Greaves β",
+        "name": {
+            "EN": "Uragaan Greaves β",
+            "FR": "Bottes Uragaan β",
+            "JP": "ガンキングリーヴ β",
+            "IT": "Schinieri di Uragaan β",
+            "DE": "Uragaan-Beinschienen β",
+            "KR": "간킨그리브 β",
+            "CN": "爆鎚龍護腿 β"
+        },
         "rarity": 7,
         "slots": [
             3
@@ -2594,7 +3418,15 @@
     },
     {
         "id": 116,
-        "name": "Bazel Greaves α",
+        "name": {
+            "EN": "Bazel Greaves α",
+            "FR": "Grèves Bazelgeuse α",
+            "JP": "バゼルグリーヴ α",
+            "IT": "Schinieri di Bazel α",
+            "DE": "Bazel-Beinschienen α",
+            "KR": "바젤그리브 α",
+            "CN": "爆鱗龍護腿 α"
+        },
         "rarity": 7,
         "slots": [
             1
@@ -2624,7 +3456,15 @@
     },
     {
         "id": 117,
-        "name": "Bazel Greaves β",
+        "name": {
+            "EN": "Bazel Greaves β",
+            "FR": "Grèves Bazelgeuse β",
+            "JP": "バゼルグリーヴ β",
+            "IT": "Schinieri di Bazel β",
+            "DE": "Bazel-Beinschienen β",
+            "KR": "바젤그리브 β",
+            "CN": "爆鱗龍護腿 β"
+        },
         "rarity": 7,
         "slots": [
             3
@@ -2653,7 +3493,15 @@
     },
     {
         "id": 118,
-        "name": "Damascus Greaves α",
+        "name": {
+            "EN": "Damascus Greaves α",
+            "FR": "Jambières Damascus α",
+            "JP": "ダマスクグリーヴ α",
+            "IT": "Schinieri di Damasco α",
+            "DE": "Damaskus-Beinschienen α",
+            "KR": "다마스크그리브 α",
+            "CN": "大馬士革護腿 α"
+        },
         "rarity": 7,
         "slots": [
             1
@@ -2680,7 +3528,15 @@
     },
     {
         "id": 119,
-        "name": "Damascus Greaves β",
+        "name": {
+            "EN": "Damascus Greaves β",
+            "FR": "Jambières Damascus β",
+            "JP": "ダマスクグリーヴ β",
+            "IT": "Schinieri di Damasco β",
+            "DE": "Damaskus-Beinschienen β",
+            "KR": "다마스크그리브 β",
+            "CN": "大馬士革護腿 β"
+        },
         "rarity": 7,
         "slots": [
             3
@@ -2706,7 +3562,15 @@
     },
     {
         "id": 120,
-        "name": "Dober Greaves α",
+        "name": {
+            "EN": "Dober Greaves α",
+            "FR": "Bottes Dober α",
+            "JP": "ドーベルグリーヴ α",
+            "IT": "Schinieri di Dober α",
+            "DE": "Dober-Beinschienen α",
+            "KR": "도베르그리브 α",
+            "CN": "杜賓護腿 α"
+        },
         "rarity": 7,
         "abilityIds": [
             39,
@@ -2730,7 +3594,15 @@
     },
     {
         "id": 121,
-        "name": "Dober Greaves β",
+        "name": {
+            "EN": "Dober Greaves β",
+            "FR": "Bottes Dober β",
+            "JP": "ドーベルグリーヴ β",
+            "IT": "Schinieri di Dober β",
+            "DE": "Dober-Beinschienen β",
+            "KR": "도베르그리브 β",
+            "CN": "杜賓護腿 β"
+        },
         "rarity": 7,
         "slots": [
             1
@@ -2756,7 +3628,15 @@
     },
     {
         "id": 122,
-        "name": "Death Stench Heel α",
+        "name": {
+            "EN": "Death Stench Heel α",
+            "FR": "Talon putride α",
+            "JP": "デスギアフェルゼ α",
+            "IT": "Tallone putrefatto α",
+            "DE": "Todesgestank-Ferse α",
+            "KR": "데스기어페르제 α",
+            "CN": "死神腳跟 α"
+        },
         "rarity": 7,
         "abilityIds": [
             142,
@@ -2780,7 +3660,15 @@
     },
     {
         "id": 123,
-        "name": "Death Stench Heel β",
+        "name": {
+            "EN": "Death Stench Heel β",
+            "FR": "Talon putride β",
+            "JP": "デスギアフェルゼ β",
+            "IT": "Tallone putrefatto β",
+            "DE": "Todesgestank-Ferse β",
+            "KR": "데스기어페르제 β",
+            "CN": "死神腳跟 β"
+        },
         "rarity": 7,
         "slots": [
             1,
@@ -2807,7 +3695,15 @@
     },
     {
         "id": 125,
-        "name": "Nergigante Greaves α",
+        "name": {
+            "EN": "Nergigante Greaves α",
+            "FR": "Jambières Nergigante α",
+            "JP": "オーググリーヴ α",
+            "IT": "Schinieri di Nergigante α",
+            "DE": "NergiganteBeinschienen α",
+            "KR": "오그그리브 α",
+            "CN": "戰紋護腿 α"
+        },
         "rarity": 8,
         "slots": [
             1
@@ -2837,7 +3733,15 @@
     },
     {
         "id": 126,
-        "name": "Nergigante Greaves β",
+        "name": {
+            "EN": "Nergigante Greaves β",
+            "FR": "Jambières Nergigante β",
+            "JP": "オーググリーヴ β",
+            "IT": "Schinieri di Nergigante β",
+            "DE": "NergiganteBeinschienen β",
+            "KR": "오그그리브 β",
+            "CN": "戰紋護腿 β"
+        },
         "rarity": 8,
         "slots": [
             2
@@ -2866,7 +3770,15 @@
     },
     {
         "id": 127,
-        "name": "Kaiser Greaves α",
+        "name": {
+            "EN": "Kaiser Greaves α",
+            "FR": "Cuissards Kaiser α",
+            "JP": "カイザーグリーヴ α",
+            "IT": "Schinieri del Kaiser α",
+            "DE": "Kaiser-Beinschienen α",
+            "KR": "카이저그리브 α",
+            "CN": "帝王護腿 α"
+        },
         "rarity": 8,
         "abilityIds": [
             161,
@@ -2893,7 +3805,15 @@
     },
     {
         "id": 128,
-        "name": "Kaiser Greaves β",
+        "name": {
+            "EN": "Kaiser Greaves β",
+            "FR": "Cuissards Kaiser β",
+            "JP": "カイザーグリーヴ β",
+            "IT": "Schinieri del Kaiser β",
+            "DE": "Kaiser-Beinschienen β",
+            "KR": "카이저그리브 β",
+            "CN": "帝王護腿 β"
+        },
         "rarity": 8,
         "slots": [
             1
@@ -2922,7 +3842,15 @@
     },
     {
         "id": 129,
-        "name": "Kushala Crus α",
+        "name": {
+            "EN": "Kushala Crus α",
+            "FR": "Mollet Kushala α",
+            "JP": "クシャナペイル α",
+            "IT": "Tibia di Kushala α",
+            "DE": "Kushala-Crus α",
+            "KR": "크샤나페이르 α",
+            "CN": "鋼龍踏實 α"
+        },
         "rarity": 8,
         "abilityIds": [
             215,
@@ -2949,7 +3877,15 @@
     },
     {
         "id": 130,
-        "name": "Kushala Crus β",
+        "name": {
+            "EN": "Kushala Crus β",
+            "FR": "Mollet Kushala β",
+            "JP": "クシャナペイル β",
+            "IT": "Tibia di Kushala β",
+            "DE": "Kushala-Crus β",
+            "KR": "크샤나페이르 β",
+            "CN": "鋼龍踏實 β"
+        },
         "rarity": 8,
         "slots": [
             3
@@ -2978,7 +3914,15 @@
     },
     {
         "id": 131,
-        "name": "Vaal Hazak Greaves α",
+        "name": {
+            "EN": "Vaal Hazak Greaves α",
+            "FR": "Cuissardes Vaal Hazak α",
+            "JP": "ウルズグリーヴ α",
+            "IT": "Schinieri di Vaal Hazak α",
+            "DE": "VaalHazak-Beinschienen α",
+            "KR": "우르즈그리브 α",
+            "CN": "烏爾德護腿 α"
+        },
         "rarity": 8,
         "slots": [
             1
@@ -3008,7 +3952,15 @@
     },
     {
         "id": 132,
-        "name": "Vaal Hazak Greaves β",
+        "name": {
+            "EN": "Vaal Hazak Greaves β",
+            "FR": "Cuissardes Vaal Hazak β",
+            "JP": "ウルズグリーヴ β",
+            "IT": "Schinieri di Vaal Hazak β",
+            "DE": "VaalHazak-Beinschienen β",
+            "KR": "우르즈그리브 β",
+            "CN": "烏爾德護腿 β"
+        },
         "rarity": 8,
         "slots": [
             1,
@@ -3038,7 +3990,15 @@
     },
     {
         "id": 133,
-        "name": "Kirin Leg Guards α",
+        "name": {
+            "EN": "Kirin Leg Guards α",
+            "FR": "Bottines Kirin α",
+            "JP": "キリンレガース α",
+            "IT": "Paragambe di Kirin α",
+            "DE": "Kirin-Beinschutz α",
+            "KR": "키린레그가드 α",
+            "CN": "麒麟護脛 α"
+        },
         "rarity": 6,
         "abilityIds": [
             120,
@@ -3065,7 +4025,15 @@
     },
     {
         "id": 134,
-        "name": "Kirin Leg Guards β",
+        "name": {
+            "EN": "Kirin Leg Guards β",
+            "FR": "Bottines Kirin β",
+            "JP": "キリンレガース β",
+            "IT": "Paragambe di Kirin β",
+            "DE": "Kirin-Beinschutz β",
+            "KR": "키린레그가드 β",
+            "CN": "麒麟護脛 β"
+        },
         "rarity": 6,
         "slots": [
             1,
@@ -3095,7 +4063,15 @@
     },
     {
         "id": 135,
-        "name": "Xeno'jiiva Spurs α",
+        "name": {
+            "EN": "Xeno'jiiva Spurs α",
+            "FR": "Éperons Xeno'jiiva α",
+            "JP": "ゼノラージフット α",
+            "IT": "Speroni di Xeno'jiiva α",
+            "DE": "Xeno'jiiva-Sporen α",
+            "KR": "제노라지풋 α",
+            "CN": "異種大型靴 α"
+        },
         "rarity": 8,
         "slots": [
             1
@@ -3125,7 +4101,15 @@
     },
     {
         "id": 136,
-        "name": "Xeno'jiiva Spurs β",
+        "name": {
+            "EN": "Xeno'jiiva Spurs β",
+            "FR": "Éperons Xeno'jiiva β",
+            "JP": "ゼノラージフット β",
+            "IT": "Speroni di Xeno'jiiva β",
+            "DE": "Xeno'jiiva-Sporen β",
+            "KR": "제노라지풋 β",
+            "CN": "異種大型靴 β"
+        },
         "rarity": 8,
         "slots": [
             1,
@@ -3155,7 +4139,15 @@
     },
     {
         "id": 137,
-        "name": "Guild Cross Boots α",
+        "name": {
+            "EN": "Guild Cross Boots α",
+            "FR": "Bottes Croix de Guilde α",
+            "JP": "ギルドクロスブーツ α",
+            "IT": "Stivali della Gilda α",
+            "DE": "Gildenkreuz-Stiefel α",
+            "KR": "길드크로스부츠 α",
+            "CN": "公會十字靴 α"
+        },
         "rarity": 8,
         "slots": [
             1
@@ -3185,7 +4177,15 @@
     },
     {
         "id": 138,
-        "name": "Guild Cross Boots β",
+        "name": {
+            "EN": "Guild Cross Boots β",
+            "FR": "Bottes Croix de Guilde β",
+            "JP": "ギルドクロスブーツ β",
+            "IT": "Stivali della Gilda β",
+            "DE": "Gildenkreuz-Stiefel β",
+            "KR": "길드크로스부츠 β",
+            "CN": "公會十字靴 β"
+        },
         "rarity": 8,
         "slots": [
             3
@@ -3214,7 +4214,15 @@
     },
     {
         "id": 140,
-        "name": "Commission Pants α",
+        "name": {
+            "EN": "Commission Pants α",
+            "FR": "Pantalon de la Commission α",
+            "JP": "シーカーパンツ α",
+            "IT": "Brache della commissione α",
+            "DE": "Kommissionshose α",
+            "KR": "시커팬츠 α",
+            "CN": "追蹤者長褲 α"
+        },
         "rarity": 8,
         "abilityIds": [
             273,
@@ -3241,7 +4249,15 @@
     },
     {
         "id": 141,
-        "name": "Commission Pants β",
+        "name": {
+            "EN": "Commission Pants β",
+            "FR": "Pantalon de la Commission β",
+            "JP": "シーカーパンツ β",
+            "IT": "Brache della commissione β",
+            "DE": "Kommissionshose β",
+            "KR": "시커팬츠s β",
+            "CN": "追蹤者長褲 β"
+        },
         "rarity": 8,
         "slots": [
             2
@@ -3270,7 +4286,15 @@
     },
     {
         "id": 142,
-        "name": "Vangis Greaves α",
+        "name": {
+            "EN": "Vangis Greaves α",
+            "FR": "Grèves Vangis α",
+            "JP": "バンギスグリーヴ α",
+            "IT": "Schinieri Vangis α",
+            "DE": "Vangis-Beinschienen α",
+            "KR": "반기스그리브 α",
+            "CN": "殘虐護腿 α"
+        },
         "rarity": 7,
         "abilityIds": [
             235,
@@ -3295,7 +4319,15 @@
     },
     {
         "id": 143,
-        "name": "Vangis Greaves β",
+        "name": {
+            "EN": "Vangis Greaves β",
+            "FR": "Grèves Vangis β",
+            "JP": "バンギスグリーヴ β",
+            "IT": "Schinieri Vangis β",
+            "DE": "Vangis-Beinschienen β",
+            "KR": "반기스그리브 β",
+            "CN": "殘虐護腿 β"
+        },
         "rarity": 7,
         "slots": [
             1,
@@ -3323,7 +4355,15 @@
     },
     {
         "id": 144,
-        "name": "Empress Greaves α",
+        "name": {
+            "EN": "Empress Greaves α",
+            "FR": "Cuissards Impératrix α",
+            "JP": "エンプレスグリーヴ α",
+            "IT": "Schinieri dell'imperatrice α",
+            "DE": "Kaiserin-Beinschienen α",
+            "KR": "엠프리스그리브 α",
+            "CN": "皇后護腿 α"
+        },
         "rarity": 8,
         "slots": [
             2,
@@ -3355,7 +4395,15 @@
     },
     {
         "id": 145,
-        "name": "Empress Greaves β",
+        "name": {
+            "EN": "Empress Greaves β",
+            "FR": "Cuissards Impératrix β",
+            "JP": "エンプレスグリーヴ β",
+            "IT": "Schinieri dell'imperatrice β",
+            "DE": "Kaiserin-Beinschienen β",
+            "KR": "엠프리스그리브 β",
+            "CN": "皇后護腿 β"
+        },
         "rarity": 8,
         "slots": [
             2,
@@ -3386,7 +4434,15 @@
     },
     {
         "id": 146,
-        "name": "Drachen Greaves α",
+        "name": {
+            "EN": "Drachen Greaves α",
+            "FR": "Jambards Drachen α",
+            "JP": "ドラケングリーヴ α",
+            "IT": "Gambali drachen α",
+            "DE": "Drachenreiter-Beinschutz α",
+            "KR": "용기사 그리브 α",
+            "CN": "騰龍護腿 α"
+        },
         "rarity": 8,
         "slots": [
             2
@@ -3417,7 +4473,15 @@
     },
     {
         "id": 147,
-        "name": "Aloy's Leggings α",
+        "name": {
+            "EN": "Aloy's Leggings α",
+            "FR": "Aloy - Bottes α",
+            "JP": "アーロイレッグ α",
+            "IT": "Gambe di Aloy α",
+            "DE": "Aloy-Beine α",
+            "KR": "에일로이레그 α",
+            "CN": "Aloy's Leggings α"
+        },
         "rarity": 5,
         "slots": [
             2
@@ -3448,7 +4512,15 @@
     },
     {
         "id": 148,
-        "name": "Ryu's Legs",
+        "name": {
+            "EN": "Ryu's Legs",
+            "FR": "Ryu - Karategi (bas)",
+            "JP": "リュウレッグ",
+            "IT": "Gambe di Ryu",
+            "DE": "Ryu-Beine",
+            "KR": "류 레그",
+            "CN": "Ryu's Legs"
+        },
         "rarity": 2,
         "abilityIds": [
             45
@@ -3473,7 +4545,15 @@
     },
     {
         "id": 149,
-        "name": "Ryu's Legs α",
+        "name": {
+            "EN": "Ryu's Legs α",
+            "FR": "Ryu - Karategi (bas) α",
+            "JP": "リュウレッグ α",
+            "IT": "Gambe di Ryu α",
+            "DE": "Ryu-Beine α",
+            "KR": "류 레그 α",
+            "CN": "Ryu's Legs α"
+        },
         "rarity": 7,
         "slots": [
             1,
@@ -3506,7 +4586,15 @@
     },
     {
         "id": 150,
-        "name": "Sakura's Legs α",
+        "name": {
+            "EN": "Sakura's Legs α",
+            "FR": "Sakura - Chaussures α",
+            "JP": "さくらレッグ α",
+            "IT": "Gambe di Sakura α",
+            "DE": "Sakura-Beine α",
+            "KR": "사쿠라 레그 α",
+            "CN": "Sakura's Legs α"
+        },
         "rarity": 6,
         "slots": [
             1,
@@ -3539,7 +4627,15 @@
     },
     {
         "id": 151,
-        "name": "Butterfly Crura",
+        "name": {
+            "EN": "Butterfly Crura",
+            "FR": "Crura Papillon",
+            "JP": "パピメルガンバ",
+            "IT": "Crura di farfalla",
+            "DE": "Schmetterling-Crura",
+            "KR": "파피메르감바",
+            "CN": "燕尾蝶脚"
+        },
         "rarity": 3,
         "abilityIds": [
             194
@@ -3563,7 +4659,15 @@
     },
     {
         "id": 152,
-        "name": "Queen Beetle Crura",
+        "name": {
+            "EN": "Queen Beetle Crura",
+            "FR": "Crura Scarabée",
+            "JP": "クインビートガンバ",
+            "IT": "Crura dello scarabeo",
+            "DE": "Königinnenkäfer-Crura",
+            "KR": "퀸비트감바",
+            "CN": "獨角仙后脚"
+        },
         "rarity": 3,
         "abilityIds": [
             194
@@ -3587,7 +4691,15 @@
     },
     {
         "id": 153,
-        "name": "Blossom Boots",
+        "name": {
+            "EN": "Blossom Boots",
+            "FR": "Bottes Printemps",
+            "JP": "ブロッサムブーツ α",
+            "IT": "Stivali floreali",
+            "DE": "Blüten-Stiefel",
+            "KR": "블로섬부츠",
+            "CN": "巴魯特靴"
+        },
         "rarity": 3,
         "abilityIds": [
             58
@@ -3611,7 +4723,15 @@
     },
     {
         "id": 154,
-        "name": "Blossom Boots α",
+        "name": {
+            "EN": "Blossom Boots α",
+            "FR": "Bottes Printemps α",
+            "JP": "ブロッサムブーツ α",
+            "IT": "Stivali floreali α",
+            "DE": "Blüten-Stiefel α",
+            "KR": "블로섬부츠 α",
+            "CN": "巴魯特靴 α"
+        },
         "rarity": 5,
         "slots": [
             1,
@@ -3639,7 +4759,15 @@
     },
     {
         "id": 155,
-        "name": "Harvest Raiz",
+        "name": {
+            "EN": "Harvest Raiz",
+            "FR": "Harvest Raiz",
+            "JP": "ハーベストライース",
+            "IT": "Raiz del raccolto",
+            "DE": "Ernte-Raiz",
+            "KR": "하베스트라이스",
+            "CN": "收穫護腿"
+        },
         "rarity": 3,
         "abilityIds": [
             243
@@ -3663,11 +4791,19 @@
     },
     {
         "id": 156,
-        "name": "Harvest Raiz α",
+        "name": {
+            "EN": "Harvest Raiz α",
+            "FR": "Harvest Raiz α",
+            "JP": "ハーベストライースα",
+            "IT": "Raiz del raccolto α",
+            "DE": "Ernte-Raiz α",
+            "KR": "하베스트라이스 α",
+            "CN": "收穫護腿 α"
+        },
         "rarity": 6,
         "slots": [
-            1,
-            2
+            2,
+            1
         ],
         "abilityIds": [
             243
@@ -3691,7 +4827,83 @@
     },
     {
         "id": 157,
-        "name": "Kulve Taroth's Wrath α",
+        "name": {
+            "EN": "Orion Boots",
+            "FR": "Pantalon Orion",
+            "JP": "オリオンブーツ",
+            "IT": "Stivali di Orione",
+            "DE": "Orion-Stiefel",
+            "KR": "오리온부츠",
+            "CN": "獵戶星靴"
+        },
+        "rarity": 4,
+        "abilityIds": [
+            173
+        ],
+        "defense": {
+            "base": 30,
+            "max": 54,
+            "augmented": 74
+        },
+        "resistances": {
+            "fire": 1,
+            "water": 1,
+            "thunder": 1,
+            "ice": 4,
+            "dragon": 1
+        },
+        "attributes": {
+            "gender": 3
+        },
+        "eventId": 26
+    },
+    {
+        "id": 158,
+        "name": {
+            "EN": "Orion Boots α",
+            "FR": "Pantalon Orion α",
+            "JP": "オリオンブーツα",
+            "IT": "Stivali di Orione α",
+            "DE": "Orion-Stiefel α",
+            "KR": "오리온부츠 α",
+            "CN": "獵戶星靴 α"
+        },
+        "rarity": 6,
+        "slots": [
+            3,
+            1
+        ],
+        "abilityIds": [
+            173
+        ],
+        "defense": {
+            "base": 58,
+            "max": 78,
+            "augmented": 90
+        },
+        "resistances": {
+            "fire": 1,
+            "water": 1,
+            "thunder": 1,
+            "ice": 4,
+            "dragon": 1
+        },
+        "attributes": {
+            "gender": 3
+        },
+        "eventId": 26
+    },
+    {
+        "id": 159,
+        "name": {
+            "EN": "Kulve Taroth's Wrath α",
+            "FR": "Fureur Kulve Taroth β",
+            "JP": "マムガイラグリーヴ α",
+            "IT": "Collera di Kulve Taroth α",
+            "DE": "Kulve Taroths Zorn α",
+            "KR": "맘가이라그리브 α",
+            "CN": "絢輝龍鎧羅護腿 α"
+        },
         "rarity": 8,
         "slots": [
             1
@@ -3701,9 +4913,9 @@
             171
         ],
         "defense": {
-            "base": 64,
-            "max": 70,
-            "augmented": 84
+            "base": 72,
+            "max": 78,
+            "augmented": 92
         },
         "resistances": {
             "fire": 4,
@@ -3718,8 +4930,16 @@
         "eventId": 7
     },
     {
-        "id": 158,
-        "name": "Kulve Taroth's Wrath β",
+        "id": 160,
+        "name": {
+            "EN": "Kulve Taroth's Wrath β",
+            "FR": "Fureur Kulve Taroth β",
+            "JP": "マムガイラグリーヴ β",
+            "IT": "Collera di Kulve Taroth β",
+            "DE": "Kulve Taroths Zorn β",
+            "KR": "맘가이라그리브 β",
+            "CN": "絢輝龍鎧羅護腿 β"
+        },
         "rarity": 8,
         "slots": [
             2,
@@ -3730,9 +4950,9 @@
             170
         ],
         "defense": {
-            "base": 64,
-            "max": 70,
-            "augmented": 84
+            "base": 72,
+            "max": 78,
+            "augmented": 92
         },
         "resistances": {
             "fire": 4,
@@ -3747,8 +4967,16 @@
         "eventId": 7
     },
     {
-        "id": 159,
-        "name": "Dante's Leather Boots α",
+        "id": 161,
+        "name": {
+            "EN": "Dante's Leather Boots α",
+            "FR": "Bottes de cuir Dantes α",
+            "JP": "ダンテレザー α",
+            "IT": "Stivali di Dante α",
+            "DE": "Dantes Lederstiefel α",
+            "KR": "단테 레더 α",
+            "CN": "但丁皮製靴 α"
+        },
         "rarity": 8,
         "slots": [
             1,
@@ -3775,8 +5003,16 @@
         "eventId": 8
     },
     {
-        "id": 160,
-        "name": "Azure Starlord Guards α",
+        "id": 162,
+        "name": {
+            "EN": "Azure Starlord Guards α",
+            "FR": "Bottes Paladin des étoiles α",
+            "JP": "蒼星ノ将【具足】 α",
+            "IT": "Gambali sommo celeste α",
+            "DE": "AzursternGebiterBeinschtz α",
+            "KR": "파란별 장군[다리] α",
+            "CN": "蒼星之將【護腿】 α"
+        },
         "rarity": 7,
         "slots": [
             3
@@ -3805,8 +5041,16 @@
         "eventId": 9
     },
     {
-        "id": 161,
-        "name": "Kirin Leg Guards γ",
+        "id": 163,
+        "name": {
+            "EN": "Kirin Leg Guards γ",
+            "FR": "Bottines Kirin γ",
+            "JP": "キリンレガース γ",
+            "IT": "Paragambe di Kirin γ",
+            "DE": "Kirin-Beinschutz γ",
+            "KR": "키린레그가드 γ",
+            "CN": "麒麟護脛 γ"
+        },
         "rarity": 8,
         "slots": [
             3
@@ -3836,8 +5080,16 @@
         "eventId": 15
     },
     {
-        "id": 162,
-        "name": "Vaal Hazak Greaves γ",
+        "id": 164,
+        "name": {
+            "EN": "Vaal Hazak Greaves γ",
+            "FR": "Cuissardes Vaal Hazak γ",
+            "JP": "ウルズグリーヴ γ",
+            "IT": "Schinieri di Vaal Hazak γ",
+            "DE": "VaalHazak-Beinschienen γ",
+            "KR": "우르즈그리브 γ",
+            "CN": "烏爾德護腿 γ"
+        },
         "rarity": 8,
         "slots": [
             3,
@@ -3868,8 +5120,16 @@
         "eventId": 16
     },
     {
-        "id": 163,
-        "name": "Kaiser Greaves γ",
+        "id": 165,
+        "name": {
+            "EN": "Kaiser Greaves γ",
+            "FR": "Cuissards Kaiser γ",
+            "JP": "カイザーグリーヴ γ",
+            "IT": "Schinieri del Kaiser γ",
+            "DE": "Kaiser-Beinschienen γ",
+            "KR": "카이저그리브 γ",
+            "CN": "帝王護腿 γ"
+        },
         "rarity": 8,
         "slots": [
             3,
@@ -3899,8 +5159,16 @@
         "eventId": 20
     },
     {
-        "id": 164,
-        "name": "Kushala Crus γ",
+        "id": 166,
+        "name": {
+            "EN": "Kushala Crus γ",
+            "FR": "Mollet Kushala γ",
+            "JP": "クシャナペイル γ",
+            "IT": "Tibia di Kushala γ",
+            "DE": "Kushala-Crus γ",
+            "KR": "크샤나페이르 γ",
+            "CN": "鋼龍踏實 γ"
+        },
         "rarity": 8,
         "slots": [
             3
@@ -3929,8 +5197,16 @@
         "eventId": 21
     },
     {
-        "id": 165,
-        "name": "Empress Greaves γ",
+        "id": 167,
+        "name": {
+            "EN": "Empress Greaves γ",
+            "FR": "Cuissards Impératrix γ",
+            "JP": "エンプレスグリーヴ γ",
+            "IT": "Schinieri dell'imperatrice γ",
+            "DE": "Kaiserin-Beinschienen γ",
+            "KR": "엠프리스그리브 γ",
+            "CN": "皇后護腿 γ"
+        },
         "rarity": 8,
         "slots": [
             3
@@ -3960,8 +5236,16 @@
         "eventId": 14
     },
     {
-        "id": 166,
-        "name": "Zorah Spurs γ",
+        "id": 168,
+        "name": {
+            "EN": "Zorah Spurs γ",
+            "FR": "Éperons Zorah γ",
+            "JP": "ゾラマグナフット γ",
+            "IT": "Speroni di Zorah γ",
+            "DE": "Zorah-Sporen γ",
+            "KR": "조라마그나풋 γ",
+            "CN": "鑄島熔岩靴 γ"
+        },
         "rarity": 8,
         "slots": [
             3,
@@ -3992,8 +5276,16 @@
         "eventId": 24
     },
     {
-        "id": 167,
-        "name": "Xeno'jiiva Spurs γ",
+        "id": 169,
+        "name": {
+            "EN": "Xeno'jiiva Spurs γ",
+            "FR": "Éperons Xeno'jiiva γ",
+            "JP": "ゼノラージフット γ",
+            "IT": "Speroni di Xeno'jiiva γ",
+            "DE": "Xeno'jiiva-Sporen γ",
+            "KR": "제노라지풋 γ",
+            "CN": "異種大型靴 γ"
+        },
         "rarity": 8,
         "slots": [
             2,
@@ -4024,8 +5316,53 @@
         "eventId": 25
     },
     {
-        "id": 168,
-        "name": "Diver's Boots",
+        "id": 170,
+        "name": {
+            "EN": "Kulve Taroth's Wrath γ",
+            "FR": "Fureur Kulve Taroth γ",
+            "JP": "マムガイラグリーヴ γ",
+            "IT": "Collera di Kulve Taroth γ",
+            "DE": "Kulve Taroths Zorn γ",
+            "KR": "맘가이라그리브 γ",
+            "CN": "絢輝龍鎧羅護腿 γ"
+        },
+        "rarity": 8,
+        "slots": [
+            3,
+            1
+        ],
+        "abilityIds": [
+            166,
+            37
+        ],
+        "defense": {
+            "base": 72,
+            "max": 78,
+            "augmented": 92
+        },
+        "resistances": {
+            "fire": 4,
+            "water": -2,
+            "thunder": 3,
+            "ice": -4,
+            "dragon": -2
+        },
+        "attributes": {
+            "gender": 3
+        },
+        "eventId": 7
+    },
+    {
+        "id": 171,
+        "name": {
+            "EN": "Diver's Boots",
+            "FR": "Pantalon de plongée",
+            "JP": "ダイバーブーツ",
+            "IT": "Stivali da sommozzatore",
+            "DE": "Taucherstiefel",
+            "KR": "다이버부츠",
+            "CN": "潛水夫靴"
+        },
         "rarity": 3,
         "abilityIds": [
             206
@@ -4048,8 +5385,16 @@
         "eventId": 17
     },
     {
-        "id": 169,
-        "name": "Diver's Boots α",
+        "id": 172,
+        "name": {
+            "EN": "Diver's Boots α",
+            "FR": "Pantalon de plongée α",
+            "JP": "ダイバーブーツ α",
+            "IT": "Stivali da sommozzatore α",
+            "DE": "Taucherstiefel α",
+            "KR": "다이버부츠 α",
+            "CN": "潛水夫靴 α"
+        },
         "rarity": 5,
         "slots": [
             2
@@ -4075,8 +5420,16 @@
         "eventId": 17
     },
     {
-        "id": 170,
-        "name": "Butterfly Crura α",
+        "id": 173,
+        "name": {
+            "EN": "Butterfly Crura α",
+            "FR": "Crura Papillon α",
+            "JP": "パピメルガンバ α",
+            "IT": "Crura di farfalla α",
+            "DE": "Schmetterling-Crura α",
+            "KR": "파피메르감바 α",
+            "CN": "燕尾蝶脚 α"
+        },
         "rarity": 5,
         "abilityIds": [
             195,
@@ -4100,8 +5453,16 @@
         "eventId": 18
     },
     {
-        "id": 171,
-        "name": "Butterfly Crura β",
+        "id": 174,
+        "name": {
+            "EN": "Butterfly Crura β",
+            "FR": "Crura Papillon β",
+            "JP": "パピメルガンバ β",
+            "IT": "Crura di farfalla β",
+            "DE": "Schmetterling-Crura β",
+            "KR": "파피메르감바 β",
+            "CN": "燕尾蝶脚 β"
+        },
         "rarity": 5,
         "slots": [
             1
@@ -4127,8 +5488,16 @@
         "eventId": 18
     },
     {
-        "id": 172,
-        "name": "Queen Beetle Crura α",
+        "id": 175,
+        "name": {
+            "EN": "Queen Beetle Crura α",
+            "FR": "Crura Scarabée α",
+            "JP": "クインビートガンバ α",
+            "IT": "Crura dello scarabeo α",
+            "DE": "Königinnenkäfer-Crura α",
+            "KR": "퀸비트감바 α",
+            "CN": "獨角仙后脚 α"
+        },
         "rarity": 5,
         "abilityIds": [
             195,
@@ -4152,8 +5521,16 @@
         "eventId": 18
     },
     {
-        "id": 173,
-        "name": "Queen Beetle Crura β",
+        "id": 176,
+        "name": {
+            "EN": "Queen Beetle Crura β",
+            "FR": "Crura Scarabée β",
+            "JP": "クインビートガンバ β",
+            "IT": "Crura dello scarabeo β",
+            "DE": "Königinnenkäfer-Crura β",
+            "KR": "퀸비트감바 β",
+            "CN": "獨角仙后脚 β"
+        },
         "rarity": 5,
         "slots": [
             1

@@ -1,7 +1,15 @@
 [
     {
         "id": 0,
-        "name": "Leather Mail",
+        "name": {
+            "EN": "Leather Mail",
+            "FR": "Cotte en cuir",
+            "JP": "レザーベスト",
+            "IT": "Maglia di cuoio",
+            "DE": "Leder-Panzerung",
+            "KR": "레더베스트",
+            "CN": "皮製服飾"
+        },
         "rarity": 1,
         "defense": {
             "base": 2,
@@ -21,7 +29,15 @@
     },
     {
         "id": 1,
-        "name": "Chainmail Vest",
+        "name": {
+            "EN": "Chainmail Vest",
+            "FR": "Cotte de mailles",
+            "JP": "チェーンベスト",
+            "IT": "Pettorina di maglia",
+            "DE": "Ketten-Weste",
+            "KR": "체인베스트",
+            "CN": "鎖甲服飾"
+        },
         "rarity": 1,
         "defense": {
             "base": 2,
@@ -41,7 +57,15 @@
     },
     {
         "id": 2,
-        "name": "Hunter's Mail",
+        "name": {
+            "EN": "Hunter's Mail",
+            "FR": "Cotte de chasseur",
+            "JP": "ハンターメイル",
+            "IT": "Cotta del cacciatore",
+            "DE": "Jäger-Panzerung",
+            "KR": "헌터메일",
+            "CN": "獵人鎧甲"
+        },
         "rarity": 1,
         "abilityIds": [
             269
@@ -64,7 +88,15 @@
     },
     {
         "id": 3,
-        "name": "Bone Mail",
+        "name": {
+            "EN": "Bone Mail",
+            "FR": "Veste d'os",
+            "JP": "ボーンメイル",
+            "IT": "Cotta d'osso",
+            "DE": "Knochen-Panzerung",
+            "KR": "본메일",
+            "CN": "骨製鎧甲"
+        },
         "rarity": 1,
         "abilityIds": [
             38
@@ -87,7 +119,15 @@
     },
     {
         "id": 4,
-        "name": "Vespoid Mail",
+        "name": {
+            "EN": "Vespoid Mail",
+            "FR": "Cotte Vespoid",
+            "JP": "ランゴメイル",
+            "IT": "Cotta di Vespoid",
+            "DE": "Vespoid-Panzerung",
+            "KR": "랑고메일",
+            "CN": "巨蜂鎧甲"
+        },
         "rarity": 1,
         "abilityIds": [
             27
@@ -110,7 +150,15 @@
     },
     {
         "id": 7,
-        "name": "Jagras Mail",
+        "name": {
+            "EN": "Jagras Mail",
+            "FR": "Tunique Jagras",
+            "JP": "ジャグラスメイル",
+            "IT": "Cotta di Jagras",
+            "DE": "Jagras-Panzerung",
+            "KR": "쟈그라스메일",
+            "CN": "凶豺龍鎧甲"
+        },
         "rarity": 1,
         "abilityIds": [
             304
@@ -133,7 +181,15 @@
     },
     {
         "id": 8,
-        "name": "Kulu Mail",
+        "name": {
+            "EN": "Kulu Mail",
+            "FR": "Corset Kulu",
+            "JP": "クルルメイル",
+            "IT": "Cotta di Kulu",
+            "DE": "Kulu-Panzerung",
+            "KR": "쿠루루메일",
+            "CN": "搔鳥鎧甲"
+        },
         "rarity": 1,
         "abilityIds": [
             203
@@ -156,7 +212,15 @@
     },
     {
         "id": 9,
-        "name": "Alloy Mail",
+        "name": {
+            "EN": "Alloy Mail",
+            "FR": "Cotte en alliage",
+            "JP": "アロイメイル",
+            "IT": "Cotta in lega",
+            "DE": "Legierungs-Panzerung",
+            "KR": "얼로이메일",
+            "CN": "合金鎧甲"
+        },
         "rarity": 2,
         "abilityIds": [
             64
@@ -179,7 +243,15 @@
     },
     {
         "id": 10,
-        "name": "Pukei Mail",
+        "name": {
+            "EN": "Pukei Mail",
+            "FR": "Cotte Pukei",
+            "JP": "プケプケメイル",
+            "IT": "Cotta di Pukei",
+            "DE": "Pukei-Panzerung",
+            "KR": "푸케푸케메일",
+            "CN": "毒妖鳥鎧甲"
+        },
         "rarity": 2,
         "abilityIds": [
             230
@@ -202,7 +274,15 @@
     },
     {
         "id": 11,
-        "name": "Barroth Mail",
+        "name": {
+            "EN": "Barroth Mail",
+            "FR": "Cuirasse Barroth",
+            "JP": "ボロスメイル",
+            "IT": "Cotta di Barroth",
+            "DE": "Barroth-Panzerung",
+            "KR": "보로스메일",
+            "CN": "土砂龍鎧甲"
+        },
         "rarity": 2,
         "abilityIds": [
             155
@@ -225,7 +305,15 @@
     },
     {
         "id": 12,
-        "name": "Jyura Mail",
+        "name": {
+            "EN": "Jyura Mail",
+            "FR": "Cuirasse Jyura",
+            "JP": "ジュラメイル",
+            "IT": "Cotta di Jyura",
+            "DE": "Jyura-Panzerung",
+            "KR": "쥬라메일",
+            "CN": "泥魚龍鎧甲"
+        },
         "rarity": 2,
         "abilityIds": [
             12
@@ -248,7 +336,15 @@
     },
     {
         "id": 13,
-        "name": "Kadachi Mail",
+        "name": {
+            "EN": "Kadachi Mail",
+            "FR": "Veste Kadachi",
+            "JP": "カガチメイル",
+            "IT": "Cotta di Kadachi",
+            "DE": "Kadachi-Panzerung",
+            "KR": "카가치메일",
+            "CN": "飛雷龍鎧甲"
+        },
         "rarity": 2,
         "abilityIds": [
             280
@@ -271,7 +367,15 @@
     },
     {
         "id": 14,
-        "name": "High Metal Mail",
+        "name": {
+            "EN": "High Metal Mail",
+            "FR": "Cotte haut-métal",
+            "JP": "ハイメタメイル",
+            "IT": "Cotta in ipermetallo",
+            "DE": "Hochmetall-Panzerung",
+            "KR": "하이메탈메일",
+            "CN": "礦石鎧甲"
+        },
         "rarity": 3,
         "abilityIds": [
             22
@@ -294,7 +398,15 @@
     },
     {
         "id": 15,
-        "name": "King Beetle Thorax",
+        "name": {
+            "EN": "King Beetle Thorax",
+            "FR": "Thorax Scarabée",
+            "JP": "オウビートペット",
+            "IT": "Torace dello scarabeo",
+            "DE": "Königskäfer-Thorax",
+            "KR": "킹비트페트",
+            "CN": "獨角仙上身"
+        },
         "rarity": 3,
         "abilityIds": [
             222
@@ -317,7 +429,15 @@
     },
     {
         "id": 16,
-        "name": "Butterfly Thorax",
+        "name": {
+            "EN": "Butterfly Thorax",
+            "FR": "Thorax Papillon",
+            "JP": "パピメルペット",
+            "IT": "Torace di farfalla",
+            "DE": "Schmetterling-Thorax",
+            "KR": "파피메르페트",
+            "CN": "燕尾蝶上身"
+        },
         "rarity": 3,
         "abilityIds": [
             222
@@ -340,7 +460,15 @@
     },
     {
         "id": 18,
-        "name": "Hornetaur Mail",
+        "name": {
+            "EN": "Hornetaur Mail",
+            "FR": "Cuirasse Hornetaur",
+            "JP": "タロスメイル",
+            "IT": "Cotta di Hornetaur",
+            "DE": "Hornetaur-Panzerung",
+            "KR": "타로스메일",
+            "CN": "巨甲蟲鎧甲"
+        },
         "rarity": 3,
         "abilityIds": [
             36
@@ -363,7 +491,15 @@
     },
     {
         "id": 19,
-        "name": "Anja Mail",
+        "name": {
+            "EN": "Anja Mail",
+            "FR": "Manteau Anjanath",
+            "JP": "ジャナフメイル",
+            "IT": "Cotta di Anja",
+            "DE": "Anjanath-Panzerung",
+            "KR": "쟈나프메일",
+            "CN": "蠻顎龍鎧甲"
+        },
         "rarity": 3,
         "abilityIds": [
             194
@@ -389,7 +525,15 @@
     },
     {
         "id": 20,
-        "name": "Rathian Mail",
+        "name": {
+            "EN": "Rathian Mail",
+            "FR": "Cotte Rathian",
+            "JP": "レイアメイル",
+            "IT": "Cotta di Rathian",
+            "DE": "Rathian-Panzerung",
+            "KR": "레이아메일",
+            "CN": "雌火龍鎧甲"
+        },
         "rarity": 3,
         "abilityIds": [
             259
@@ -412,7 +556,15 @@
     },
     {
         "id": 21,
-        "name": "Tzitzi Mail",
+        "name": {
+            "EN": "Tzitzi Mail",
+            "FR": "Cotte Tzitzi",
+            "JP": "ツィツィメイル",
+            "IT": "Cotta di Tzitzi",
+            "DE": "Tzitzi-Panzerung",
+            "KR": "치치메일",
+            "CN": "眩鳥鎧甲"
+        },
         "rarity": 3,
         "abilityIds": [
             197
@@ -435,7 +587,15 @@
     },
     {
         "id": 22,
-        "name": "Lumu Mail",
+        "name": {
+            "EN": "Lumu Mail",
+            "FR": "Veste Lumu",
+            "JP": "ウルムーメイル",
+            "IT": "Cotta di Lumu",
+            "DE": "Paolumu-Panzerung",
+            "KR": "우르무메일",
+            "CN": "浮空龍鎧甲"
+        },
         "rarity": 3,
         "abilityIds": [
             158
@@ -458,7 +618,15 @@
     },
     {
         "id": 23,
-        "name": "Girros Mail",
+        "name": {
+            "EN": "Girros Mail",
+            "FR": "Cotte Girros",
+            "JP": "ギルオスメイル",
+            "IT": "Cotta di Girros",
+            "DE": "Girros-Panzerung",
+            "KR": "기르오스메일",
+            "CN": "凶顎龍鎧甲"
+        },
         "rarity": 3,
         "abilityIds": [
             3
@@ -481,7 +649,15 @@
     },
     {
         "id": 24,
-        "name": "Baan Mail",
+        "name": {
+            "EN": "Baan Mail",
+            "FR": "Cuirasse Radobaan",
+            "JP": "バルキンメイル",
+            "IT": "Cotta di Baan",
+            "DE": "Baan-Panzerung",
+            "KR": "발킨메일",
+            "CN": "骨鎚龍鎧甲"
+        },
         "rarity": 3,
         "defense": {
             "base": 24,
@@ -501,7 +677,15 @@
     },
     {
         "id": 25,
-        "name": "Ingot Mail",
+        "name": {
+            "EN": "Ingot Mail",
+            "FR": "Cuirasse en lingot",
+            "JP": "インゴットメイル",
+            "IT": "Cotta del lingotto",
+            "DE": "Guss-Panzerung",
+            "KR": "잉곳메일",
+            "CN": "鑄鐵鎧甲"
+        },
         "rarity": 4,
         "abilityIds": [
             70
@@ -524,7 +708,15 @@
     },
     {
         "id": 26,
-        "name": "Death Stench Muscle",
+        "name": {
+            "EN": "Death Stench Muscle",
+            "FR": "Muscle putride",
+            "JP": "デスギアムスケル",
+            "IT": "Muscolo putrefatto",
+            "DE": "Todesgestank-Muskel",
+            "KR": "데스기어무스켈",
+            "CN": "死神肌肉"
+        },
         "rarity": 4,
         "abilityIds": [
             178
@@ -547,7 +739,15 @@
     },
     {
         "id": 27,
-        "name": "Brigade Suit",
+        "name": {
+            "EN": "Brigade Suit",
+            "FR": "Tenue de brigade",
+            "JP": "ブリゲイドスーツ",
+            "IT": "Cotta di brigata",
+            "DE": "Brigade-Anzug",
+            "KR": "브리게이드슈트",
+            "CN": "旅團戰衣"
+        },
         "rarity": 4,
         "abilityIds": [
             251
@@ -570,7 +770,15 @@
     },
     {
         "id": 28,
-        "name": "Legiana Mail",
+        "name": {
+            "EN": "Legiana Mail",
+            "FR": "Veste Legiana",
+            "JP": "ギエナメイル",
+            "IT": "Cotta di Legiana",
+            "DE": "Legiana-Panzerung",
+            "KR": "기에나메일",
+            "CN": "風漂龍鎧甲"
+        },
         "rarity": 4,
         "abilityIds": [
             209
@@ -596,7 +804,15 @@
     },
     {
         "id": 29,
-        "name": "Odogaron Mail",
+        "name": {
+            "EN": "Odogaron Mail",
+            "FR": "Cotte Odogaron",
+            "JP": "ガロンメイル",
+            "IT": "Cotta di Odogaron",
+            "DE": "Odogaron-Panzerung",
+            "KR": "가론메일",
+            "CN": "慘爪龍鎧甲"
+        },
         "rarity": 4,
         "abilityIds": [
             237
@@ -622,7 +838,15 @@
     },
     {
         "id": 30,
-        "name": "Rathalos Mail",
+        "name": {
+            "EN": "Rathalos Mail",
+            "FR": "Cotte Rathalos",
+            "JP": "レウスメイル",
+            "IT": "Cotta di Rathalos",
+            "DE": "Rathalos-Panzerung",
+            "KR": "레우스메일",
+            "CN": "火龍鎧甲"
+        },
         "rarity": 4,
         "abilityIds": [
             132
@@ -648,7 +872,15 @@
     },
     {
         "id": 31,
-        "name": "Diablos Mail",
+        "name": {
+            "EN": "Diablos Mail",
+            "FR": "Cuirasse Diablos",
+            "JP": "ディアブロメイル",
+            "IT": "Cotta di Diablos",
+            "DE": "Diablos-Panzerung",
+            "KR": "디아블로메일",
+            "CN": "角龍鎧甲"
+        },
         "rarity": 4,
         "abilityIds": [
             152
@@ -674,7 +906,15 @@
     },
     {
         "id": 32,
-        "name": "Kirin Jacket",
+        "name": {
+            "EN": "Kirin Jacket",
+            "FR": "Veste Kirin",
+            "JP": "キリンベスト",
+            "IT": "Pettino di Kirin",
+            "DE": "Kirin-Jacke",
+            "KR": "키린베스트",
+            "CN": "麒麟服飾"
+        },
         "rarity": 4,
         "abilityIds": [
             251
@@ -700,7 +940,15 @@
     },
     {
         "id": 33,
-        "name": "Leather Mail α",
+        "name": {
+            "EN": "Leather Mail α",
+            "FR": "Veste en cuir α",
+            "JP": "レザーベスト α",
+            "IT": "Cotta di cuoio α",
+            "DE": "Leder-Panzerung α",
+            "KR": "레더베스트 α",
+            "CN": "皮製服飾 α"
+        },
         "rarity": 5,
         "abilityIds": [
             61
@@ -723,7 +971,15 @@
     },
     {
         "id": 34,
-        "name": "Leather Mail β",
+        "name": {
+            "EN": "Leather Mail β",
+            "FR": "Veste en cuir β",
+            "JP": "レザーベスト β",
+            "IT": "Cotta di cuoio β",
+            "DE": "Leder-Panzerung β",
+            "KR": "레더베스트 β",
+            "CN": "皮製服飾 β"
+        },
         "rarity": 5,
         "slots": [
             1
@@ -746,7 +1002,15 @@
     },
     {
         "id": 35,
-        "name": "Chainmail Armor α",
+        "name": {
+            "EN": "Chainmail Armor α",
+            "FR": "Cotte de mailles α",
+            "JP": "チェーンベスト α",
+            "IT": "Armatura di maglia α",
+            "DE": "Ketten-Rüstung α",
+            "KR": "체인베스트 α",
+            "CN": "鎖甲服飾 α"
+        },
         "rarity": 5,
         "abilityIds": [
             64
@@ -769,7 +1033,15 @@
     },
     {
         "id": 36,
-        "name": "Chainmail Armor β",
+        "name": {
+            "EN": "Chainmail Armor β",
+            "FR": "Cotte de mailles β",
+            "JP": "チェーンベスト β",
+            "IT": "Armatura di maglia β",
+            "DE": "Ketten-Rüstung β",
+            "KR": "체인베스트 β",
+            "CN": "鎖甲服飾 β"
+        },
         "rarity": 5,
         "slots": [
             1
@@ -792,7 +1064,15 @@
     },
     {
         "id": 37,
-        "name": "Hunter's Mail α",
+        "name": {
+            "EN": "Hunter's Mail α",
+            "FR": "Cotte de chasseur α",
+            "JP": "ハンターメイル α",
+            "IT": "Cotta del cacciatore α",
+            "DE": "Jäger-Panzerung α",
+            "KR": "헌터메일 α",
+            "CN": "獵人鎧甲 α"
+        },
         "rarity": 5,
         "abilityIds": [
             270
@@ -815,7 +1095,15 @@
     },
     {
         "id": 38,
-        "name": "Hunter's Mail β",
+        "name": {
+            "EN": "Hunter's Mail β",
+            "FR": "Cotte de chasseur β",
+            "JP": "ハンターメイル β",
+            "IT": "Cotta del cacciatore β",
+            "DE": "Jäger-Panzerung β",
+            "KR": "헌터메일 β",
+            "CN": "獵人鎧甲 β"
+        },
         "rarity": 5,
         "slots": [
             1
@@ -841,7 +1129,15 @@
     },
     {
         "id": 39,
-        "name": "Bone Mail α",
+        "name": {
+            "EN": "Bone Mail α",
+            "FR": "Veste d'os α",
+            "JP": "ボーンメイル α",
+            "IT": "Cotta d'osso α",
+            "DE": "Knochen-Panzerung α",
+            "KR": "본메일 α",
+            "CN": "骨製鎧甲 α"
+        },
         "rarity": 5,
         "abilityIds": [
             39
@@ -864,7 +1160,15 @@
     },
     {
         "id": 40,
-        "name": "Bone Mail β",
+        "name": {
+            "EN": "Bone Mail β",
+            "FR": "Veste d'os β",
+            "JP": "ボーンメイル β",
+            "IT": "Cotta d'osso β",
+            "DE": "Knochen-Panzerung β",
+            "KR": "본메일 β",
+            "CN": "骨製鎧甲 β"
+        },
         "rarity": 5,
         "slots": [
             1
@@ -890,7 +1194,15 @@
     },
     {
         "id": 41,
-        "name": "Alloy Mail α",
+        "name": {
+            "EN": "Alloy Mail α",
+            "FR": "Cotte en alliage α",
+            "JP": "アロイメイル α",
+            "IT": "Cotta in lega α",
+            "DE": "Legierungs-Panzerung α",
+            "KR": "얼로이메일 α",
+            "CN": "合金鎧甲 α"
+        },
         "rarity": 5,
         "abilityIds": [
             65
@@ -913,7 +1225,15 @@
     },
     {
         "id": 42,
-        "name": "Alloy Mail β",
+        "name": {
+            "EN": "Alloy Mail β",
+            "FR": "Cotte en alliage β",
+            "JP": "アロイメイル β",
+            "IT": "Cotta in lega β",
+            "DE": "Legierungs-Panzerung β",
+            "KR": "얼로이메일 β",
+            "CN": "合金鎧甲 β"
+        },
         "rarity": 5,
         "slots": [
             1
@@ -939,7 +1259,15 @@
     },
     {
         "id": 43,
-        "name": "King Beetle Thorax α",
+        "name": {
+            "EN": "King Beetle Thorax α",
+            "FR": "Thorax Scarabée α",
+            "JP": "オウビートペット α",
+            "IT": "Torace dello scarabeo α",
+            "DE": "Königskäfer-Thorax α",
+            "KR": "킹비트페트 α",
+            "CN": "獨角仙上身 α"
+        },
         "rarity": 5,
         "abilityIds": [
             223,
@@ -963,7 +1291,15 @@
     },
     {
         "id": 44,
-        "name": "King Beetle Thorax β",
+        "name": {
+            "EN": "King Beetle Thorax β",
+            "FR": "Thorax Scarabée β",
+            "JP": "オウビートペット β",
+            "IT": "Torace dello scarabeo β",
+            "DE": "Königskäfer-Thorax β",
+            "KR": "킹비트페트 β",
+            "CN": "獨角仙上身 β"
+        },
         "rarity": 5,
         "slots": [
             1
@@ -989,7 +1325,15 @@
     },
     {
         "id": 45,
-        "name": "Butterfly Thorax α",
+        "name": {
+            "EN": "Butterfly Thorax α",
+            "FR": "Thorax Papillon α",
+            "JP": "パピメルペット α",
+            "IT": "Torace di farfalla α",
+            "DE": "Schmetterling-Thorax α",
+            "KR": "파피메르페트 α",
+            "CN": "燕尾蝶上身 α"
+        },
         "rarity": 5,
         "abilityIds": [
             223,
@@ -1013,7 +1357,15 @@
     },
     {
         "id": 46,
-        "name": "Butterfly Thorax β",
+        "name": {
+            "EN": "Butterfly Thorax β",
+            "FR": "Thorax Papillon β",
+            "JP": "パピメルペット β",
+            "IT": "Torace di farfalla β",
+            "DE": "Schmetterling-Thorax β",
+            "KR": "파피메르페트 β",
+            "CN": "燕尾蝶上身 β"
+        },
         "rarity": 5,
         "slots": [
             1
@@ -1039,7 +1391,15 @@
     },
     {
         "id": 47,
-        "name": "Vespoid Mail α",
+        "name": {
+            "EN": "Vespoid Mail α",
+            "FR": "Cotte Vespoid α",
+            "JP": "ランゴメイル α",
+            "IT": "Cotta di Vespoid α",
+            "DE": "Vespoid-Panzerung α",
+            "KR": "랑고메일 α",
+            "CN": "巨蜂鎧甲 α"
+        },
         "rarity": 5,
         "abilityIds": [
             28
@@ -1062,7 +1422,15 @@
     },
     {
         "id": 48,
-        "name": "Vespoid Mail β",
+        "name": {
+            "EN": "Vespoid Mail β",
+            "FR": "Cotte Vespoid β",
+            "JP": "ランゴメイル β",
+            "IT": "Cotta di Vespoid β",
+            "DE": "Vespoid-Panzerung β",
+            "KR": "랑고메일 β",
+            "CN": "巨蜂鎧甲 β"
+        },
         "rarity": 5,
         "slots": [
             1
@@ -1088,7 +1456,15 @@
     },
     {
         "id": 49,
-        "name": "Hornetaur Mail α",
+        "name": {
+            "EN": "Hornetaur Mail α",
+            "FR": "Cuirasse Hornetaur α",
+            "JP": "タロスメイル α",
+            "IT": "Cotta di Hornetaur α",
+            "DE": "Hornetaur-Panzerung α",
+            "KR": "타로스메일 α",
+            "CN": "巨甲蟲鎧甲 α"
+        },
         "rarity": 5,
         "abilityIds": [
             36,
@@ -1112,7 +1488,15 @@
     },
     {
         "id": 50,
-        "name": "Hornetaur Mail β",
+        "name": {
+            "EN": "Hornetaur Mail β",
+            "FR": "Cuirasse Hornetaur β",
+            "JP": "タロスメイル β",
+            "IT": "Cotta di Hornetaur β",
+            "DE": "Hornetaur-Panzerung β",
+            "KR": "타로스메일 β",
+            "CN": "巨甲蟲鎧甲 β"
+        },
         "rarity": 5,
         "slots": [
             1
@@ -1138,7 +1522,15 @@
     },
     {
         "id": 58,
-        "name": "Jagras Mail α",
+        "name": {
+            "EN": "Jagras Mail α",
+            "FR": "Tunique Jagras α",
+            "JP": "ジャグラスメイル α",
+            "IT": "Cotta di Jagras α",
+            "DE": "Jagras-Panzerung α",
+            "KR": "쟈그라스메일 α",
+            "CN": "凶豺龍鎧甲 α"
+        },
         "rarity": 5,
         "abilityIds": [
             305
@@ -1161,7 +1553,15 @@
     },
     {
         "id": 59,
-        "name": "Jagras Mail β",
+        "name": {
+            "EN": "Jagras Mail β",
+            "FR": "Tunique Jagras β",
+            "JP": "ジャグラスメイル β",
+            "IT": "Cotta di Jagras β",
+            "DE": "Jagras-Panzerung β",
+            "KR": "쟈그라스메일 β",
+            "CN": "凶豺龍鎧甲 β"
+        },
         "rarity": 5,
         "slots": [
             1
@@ -1187,7 +1587,15 @@
     },
     {
         "id": 60,
-        "name": "Kulu Mail α",
+        "name": {
+            "EN": "Kulu Mail α",
+            "FR": "Corset Kulu α",
+            "JP": "クルルメイル α",
+            "IT": "Cotta di Kulu α",
+            "DE": "Kulu-Panzerung α",
+            "KR": "쿠루루메일 α",
+            "CN": "搔鳥鎧甲 α"
+        },
         "rarity": 5,
         "abilityIds": [
             203,
@@ -1211,7 +1619,15 @@
     },
     {
         "id": 61,
-        "name": "Kulu Mail β",
+        "name": {
+            "EN": "Kulu Mail β",
+            "FR": "Corset Kulu β",
+            "JP": "クルルメイル β",
+            "IT": "Cotta di Kulu β",
+            "DE": "Kulu-Panzerung β",
+            "KR": "쿠루루메일 β",
+            "CN": "搔鳥鎧甲 β"
+        },
         "rarity": 5,
         "slots": [
             1
@@ -1237,7 +1653,15 @@
     },
     {
         "id": 62,
-        "name": "Tzitzi Mail α",
+        "name": {
+            "EN": "Tzitzi Mail α",
+            "FR": "Cotte Tzitzi α",
+            "JP": "ツィツィメイル α",
+            "IT": "Cotta di Tzitzi α",
+            "DE": "Tzitzi-Panzerung α",
+            "KR": "치치메일 α",
+            "CN": "眩鳥鎧甲 α"
+        },
         "rarity": 5,
         "abilityIds": [
             197,
@@ -1261,7 +1685,15 @@
     },
     {
         "id": 63,
-        "name": "Tzitzi Mail β",
+        "name": {
+            "EN": "Tzitzi Mail β",
+            "FR": "Cotte Tzitzi β",
+            "JP": "ツィツィメイル β",
+            "IT": "Cotta di Tzitzi β",
+            "DE": "Tzitzi-Panzerung β",
+            "KR": "치치메일 β",
+            "CN": "眩鳥鎧甲 β"
+        },
         "rarity": 5,
         "slots": [
             1,
@@ -1288,7 +1720,15 @@
     },
     {
         "id": 64,
-        "name": "Girros Mail α",
+        "name": {
+            "EN": "Girros Mail α",
+            "FR": "Cotte Girros α",
+            "JP": "ギルオスメイル α",
+            "IT": "Cotta di Girros α",
+            "DE": "Girros-Panzerung α",
+            "KR": "기르오스메일 α",
+            "CN": "凶顎龍鎧甲 α"
+        },
         "rarity": 5,
         "abilityIds": [
             4
@@ -1311,7 +1751,15 @@
     },
     {
         "id": 65,
-        "name": "Girros Mail β",
+        "name": {
+            "EN": "Girros Mail β",
+            "FR": "Cotte Girros β",
+            "JP": "ギルオスメイル β",
+            "IT": "Cotta di Girros β",
+            "DE": "Girros-Panzerung β",
+            "KR": "기르오스메일 β",
+            "CN": "凶顎龍鎧甲 β"
+        },
         "rarity": 5,
         "slots": [
             1
@@ -1337,7 +1785,15 @@
     },
     {
         "id": 66,
-        "name": "Pukei Mail α",
+        "name": {
+            "EN": "Pukei Mail α",
+            "FR": "Cotte Pukei α",
+            "JP": "プケプケメイル α",
+            "IT": "Cotta di Pukei α",
+            "DE": "Pukei-Panzerung α",
+            "KR": "푸케푸케메일 α",
+            "CN": "毒妖鳥鎧甲 α"
+        },
         "rarity": 5,
         "abilityIds": [
             230,
@@ -1361,7 +1817,15 @@
     },
     {
         "id": 67,
-        "name": "Pukei Mail β",
+        "name": {
+            "EN": "Pukei Mail β",
+            "FR": "Cotte Pukei β",
+            "JP": "プケプケメイル β",
+            "IT": "Cotta di Pukei β",
+            "DE": "Pukei-Panzerung β",
+            "KR": "푸케푸케메일 β",
+            "CN": "毒妖鳥鎧甲 β"
+        },
         "rarity": 5,
         "slots": [
             1
@@ -1387,7 +1851,15 @@
     },
     {
         "id": 68,
-        "name": "Barroth Mail α",
+        "name": {
+            "EN": "Barroth Mail α",
+            "FR": "Cuirasse Barroth α",
+            "JP": "ボロスメイル α",
+            "IT": "Cotta di Barroth α",
+            "DE": "Barroth-Panzerung α",
+            "KR": "보로스메일 α",
+            "CN": "土砂龍鎧甲 α"
+        },
         "rarity": 5,
         "abilityIds": [
             156
@@ -1410,7 +1882,15 @@
     },
     {
         "id": 69,
-        "name": "Barroth Mail β",
+        "name": {
+            "EN": "Barroth Mail β",
+            "FR": "Cuirasse Barroth β",
+            "JP": "ボロスメイル β",
+            "IT": "Cotta di Barroth β",
+            "DE": "Barroth-Panzerung β",
+            "KR": "보로스메일 β",
+            "CN": "土砂龍鎧甲 β"
+        },
         "rarity": 5,
         "slots": [
             1
@@ -1436,7 +1916,15 @@
     },
     {
         "id": 70,
-        "name": "Anja Mail α",
+        "name": {
+            "EN": "Anja Mail α",
+            "FR": "Manteau Anjanath α",
+            "JP": "ジャナフメイル α",
+            "IT": "Cotta di Anja α",
+            "DE": "Anjanath-Panzerung α",
+            "KR": "쟈나프메일 α",
+            "CN": "蠻顎龍鎧甲 α"
+        },
         "rarity": 5,
         "abilityIds": [
             194,
@@ -1463,7 +1951,15 @@
     },
     {
         "id": 71,
-        "name": "Anja Mail β",
+        "name": {
+            "EN": "Anja Mail β",
+            "FR": "Manteau Anjanath β",
+            "JP": "ジャナフメイル β",
+            "IT": "Cotta di Anja β",
+            "DE": "Anjanath-Panzerung β",
+            "KR": "쟈나프메일 β",
+            "CN": "蠻顎龍鎧甲 β"
+        },
         "rarity": 5,
         "slots": [
             1,
@@ -1493,7 +1989,15 @@
     },
     {
         "id": 72,
-        "name": "Jyura Mail α",
+        "name": {
+            "EN": "Jyura Mail α",
+            "FR": "Cuirasse Jyura α",
+            "JP": "ジュラメイル α",
+            "IT": "Cotta di Jyura α",
+            "DE": "Jyura-Panzerung α",
+            "KR": "쥬라메일 α",
+            "CN": "泥魚龍鎧甲 α"
+        },
         "rarity": 5,
         "abilityIds": [
             12,
@@ -1517,7 +2021,15 @@
     },
     {
         "id": 73,
-        "name": "Jyura Mail β",
+        "name": {
+            "EN": "Jyura Mail β",
+            "FR": "Cuirasse Jyura β",
+            "JP": "ジュラメイル β",
+            "IT": "Cotta di Jyura β",
+            "DE": "Jyura-Panzerung β",
+            "KR": "쥬라메일 β",
+            "CN": "泥魚龍鎧甲 β"
+        },
         "rarity": 5,
         "slots": [
             1
@@ -1543,7 +2055,15 @@
     },
     {
         "id": 74,
-        "name": "Kadachi Mail α",
+        "name": {
+            "EN": "Kadachi Mail α",
+            "FR": "Veste Kadachi α",
+            "JP": "カガチメイル α",
+            "IT": "Cotta di Kadachi α",
+            "DE": "Kadachi-Panzerung α",
+            "KR": "카가치메일 α",
+            "CN": "飛雷龍鎧甲 α"
+        },
         "rarity": 5,
         "abilityIds": [
             280,
@@ -1567,7 +2087,15 @@
     },
     {
         "id": 75,
-        "name": "Kadachi Mail β",
+        "name": {
+            "EN": "Kadachi Mail β",
+            "FR": "Veste Kadachi β",
+            "JP": "カガチメイル β",
+            "IT": "Cotta di Kadachi β",
+            "DE": "Kadachi-Panzerung β",
+            "KR": "카가치메일 β",
+            "CN": "飛雷龍鎧甲 β"
+        },
         "rarity": 5,
         "slots": [
             2
@@ -1593,7 +2121,15 @@
     },
     {
         "id": 76,
-        "name": "Lumu Mail α",
+        "name": {
+            "EN": "Lumu Mail α",
+            "FR": "Veste Lumu α",
+            "JP": "ウルムーメイル α",
+            "IT": "Cotta di Lumu α",
+            "DE": "Paolumu-Panzerung α",
+            "KR": "우르무메일 α",
+            "CN": "浮空龍鎧甲 α"
+        },
         "rarity": 5,
         "abilityIds": [
             158,
@@ -1617,7 +2153,15 @@
     },
     {
         "id": 77,
-        "name": "Lumu Mail β",
+        "name": {
+            "EN": "Lumu Mail β",
+            "FR": "Veste Lumu β",
+            "JP": "ウルムーメイル β",
+            "IT": "Cotta di Lumu β",
+            "DE": "Paolumu-Panzerung β",
+            "KR": "우르무메일 β",
+            "CN": "浮空龍鎧甲 β"
+        },
         "rarity": 5,
         "slots": [
             1
@@ -1643,7 +2187,15 @@
     },
     {
         "id": 78,
-        "name": "Rathian Mail α",
+        "name": {
+            "EN": "Rathian Mail α",
+            "FR": "Cotte Rathian α",
+            "JP": "レイアメイル α",
+            "IT": "Cotta di Rathian α",
+            "DE": "Rathian-Panzerung α",
+            "KR": "레이아메일 α",
+            "CN": "雌火龍鎧甲 α"
+        },
         "rarity": 5,
         "abilityIds": [
             260,
@@ -1667,7 +2219,15 @@
     },
     {
         "id": 79,
-        "name": "Rathian Mail β",
+        "name": {
+            "EN": "Rathian Mail β",
+            "FR": "Cotte Rathian β",
+            "JP": "レイアメイル β",
+            "IT": "Cotta di Rathian β",
+            "DE": "Rathian-Panzerung β",
+            "KR": "레이아메일 β",
+            "CN": "雌火龍鎧甲 β"
+        },
         "rarity": 5,
         "slots": [
             1
@@ -1694,7 +2254,15 @@
     },
     {
         "id": 80,
-        "name": "Rath Heart Mail α",
+        "name": {
+            "EN": "Rath Heart Mail α",
+            "FR": "Cotte Cœur Rathian α",
+            "JP": "リオハートメイル α",
+            "IT": "Cotta cuore di Rath α",
+            "DE": "Rathianherz-Panzerung α",
+            "KR": "리오하트메일 α",
+            "CN": "火龍心鎧甲 α"
+        },
         "rarity": 6,
         "abilityIds": [
             301
@@ -1720,7 +2288,15 @@
     },
     {
         "id": 81,
-        "name": "Rath Heart Mail β",
+        "name": {
+            "EN": "Rath Heart Mail β",
+            "FR": "Cotte Cœur Rathian β",
+            "JP": "リオハートメイル β",
+            "IT": "Cotta Cuore di Rath β",
+            "DE": "Rathianherz-Panzerung β",
+            "KR": "리오하트메일 β",
+            "CN": "火龍心鎧甲 β"
+        },
         "rarity": 6,
         "slots": [
             1,
@@ -1750,7 +2326,15 @@
     },
     {
         "id": 82,
-        "name": "Baan Mail α",
+        "name": {
+            "EN": "Baan Mail α",
+            "FR": "Cuirasse Radobaan α",
+            "JP": "バルキンメイル α",
+            "IT": "Cotta di Baan α",
+            "DE": "Baan-Panzerung α",
+            "KR": "발킨메일 α",
+            "CN": "骨鎚龍鎧甲 α"
+        },
         "rarity": 6,
         "abilityIds": [
             110,
@@ -1774,7 +2358,15 @@
     },
     {
         "id": 83,
-        "name": "Baan Mail β",
+        "name": {
+            "EN": "Baan Mail β",
+            "FR": "Cuirasse Radobaan β",
+            "JP": "バルキンメイル β",
+            "IT": "Cotta di Baan β",
+            "DE": "Baan-Panzerung β",
+            "KR": "발킨메일 β",
+            "CN": "骨鎚龍鎧甲 β"
+        },
         "rarity": 6,
         "slots": [
             1
@@ -1800,7 +2392,15 @@
     },
     {
         "id": 86,
-        "name": "Barnos Jacket α",
+        "name": {
+            "EN": "Barnos Jacket α",
+            "FR": "Veste Barnos α",
+            "JP": "バルノスマント α",
+            "IT": "Pettino di Barnos α",
+            "DE": "Barnos-Jacke α",
+            "KR": "바르노스망토 α",
+            "CN": "酸翼龍斗篷 α"
+        },
         "rarity": 5,
         "abilityIds": [
             37,
@@ -1824,7 +2424,15 @@
     },
     {
         "id": 87,
-        "name": "Barnos Jacket β",
+        "name": {
+            "EN": "Barnos Jacket β",
+            "FR": "Veste Barnos β",
+            "JP": "バルノスマント β",
+            "IT": "Pettino di Barnos β",
+            "DE": "Barnos-Jacke β",
+            "KR": "바르노스망토 β",
+            "CN": "酸翼龍斗篷 β"
+        },
         "rarity": 5,
         "slots": [
             1
@@ -1850,7 +2458,15 @@
     },
     {
         "id": 88,
-        "name": "Dodogama Mail α",
+        "name": {
+            "EN": "Dodogama Mail α",
+            "FR": "Cuirasse Dodogama α",
+            "JP": "ガマルメイル α",
+            "IT": "Cotta di Dodogama α",
+            "DE": "Dodogama-Panzerung α",
+            "KR": "가마루메일 α",
+            "CN": "岩賊龍鎧甲 α"
+        },
         "rarity": 5,
         "abilityIds": [
             114
@@ -1873,7 +2489,15 @@
     },
     {
         "id": 89,
-        "name": "Dodogama Mail β",
+        "name": {
+            "EN": "Dodogama Mail β",
+            "FR": "Cuirasse Dodogama β",
+            "JP": "ガマルメイル β",
+            "IT": "Cotta di Dodogama β",
+            "DE": "Dodogama-Panzerung β",
+            "KR": "가마루메일 β",
+            "CN": "岩賊龍鎧甲 β"
+        },
         "rarity": 5,
         "slots": [
             1
@@ -1899,7 +2523,15 @@
     },
     {
         "id": 90,
-        "name": "Zorah Hide α",
+        "name": {
+            "EN": "Zorah Hide α",
+            "FR": "Cotte Zorah Magdaros α",
+            "JP": "ゾラマグナハイド α",
+            "IT": "Pelle di Zorah α",
+            "DE": "Zorah-Lederhaut α",
+            "KR": "조라마그나하이드 α",
+            "CN": "鑄島熔岩皮 α"
+        },
         "rarity": 6,
         "abilityIds": [
             114,
@@ -1926,7 +2558,15 @@
     },
     {
         "id": 91,
-        "name": "Zorah Hide β",
+        "name": {
+            "EN": "Zorah Hide β",
+            "FR": "Peau Zorah β",
+            "JP": "ゾラマグナハイド β",
+            "IT": "Pelle di Zorah β",
+            "DE": "Zorah-Lederhaut β",
+            "KR": "조라마그나하이드 β",
+            "CN": "鑄島熔岩皮 β"
+        },
         "rarity": 6,
         "slots": [
             2
@@ -1955,7 +2595,15 @@
     },
     {
         "id": 92,
-        "name": "High Metal Mail α",
+        "name": {
+            "EN": "High Metal Mail α",
+            "FR": "Cotte haut-métal α",
+            "JP": "ハイメタメイル α",
+            "IT": "Cotta in ipermetallo α",
+            "DE": "Hochmetall-Panzerung α",
+            "KR": "하이메탈메일 α",
+            "CN": "礦石鎧甲 α"
+        },
         "rarity": 6,
         "abilityIds": [
             23,
@@ -1979,7 +2627,15 @@
     },
     {
         "id": 93,
-        "name": "High Metal Mail β",
+        "name": {
+            "EN": "High Metal Mail β",
+            "FR": "Cotte haut-métal β",
+            "JP": "ハイメタメイル β",
+            "IT": "Cotta in ipermetallo β",
+            "DE": "Hochmetall-Panzerung β",
+            "KR": "하이메탈메일 β",
+            "CN": "礦石鎧甲 β"
+        },
         "rarity": 6,
         "slots": [
             2
@@ -2006,7 +2662,15 @@
     },
     {
         "id": 94,
-        "name": "Ingot Mail α",
+        "name": {
+            "EN": "Ingot Mail α",
+            "FR": "Cuirasse en lingot α",
+            "JP": "インゴットメイル α",
+            "IT": "Cotta del lingotto α",
+            "DE": "Guss-Panzerung α",
+            "KR": "잉곳메일 α",
+            "CN": "鑄鐵鎧甲 α"
+        },
         "rarity": 6,
         "abilityIds": [
             71
@@ -2029,7 +2693,15 @@
     },
     {
         "id": 95,
-        "name": "Ingot Mail β",
+        "name": {
+            "EN": "Ingot Mail β",
+            "FR": "Cuirasse en lingot β",
+            "JP": "インゴットメイル β",
+            "IT": "Cotta del lingotto β",
+            "DE": "Guss-Panzerung β",
+            "KR": "잉곳메일 β",
+            "CN": "鑄鐵鎧甲 β"
+        },
         "rarity": 6,
         "slots": [
             1
@@ -2055,7 +2727,15 @@
     },
     {
         "id": 96,
-        "name": "Brigade Suit α",
+        "name": {
+            "EN": "Brigade Suit α",
+            "FR": "Tenue de brigade α",
+            "JP": "ブリゲイドスーツ α",
+            "IT": "Cotta di brigata α",
+            "DE": "Brigade-Anzug α",
+            "KR": "브리게이드슈트 α",
+            "CN": "旅團戰衣 α"
+        },
         "rarity": 6,
         "slots": [
             2
@@ -2081,7 +2761,15 @@
     },
     {
         "id": 97,
-        "name": "Brigade Suit β",
+        "name": {
+            "EN": "Brigade Suit β",
+            "FR": "Tenue de brigade β",
+            "JP": "ブリゲイドスーツ β",
+            "IT": "Cotta di brigata β",
+            "DE": "Brigade-Anzug β",
+            "KR": "브리게이드슈트 β",
+            "CN": "旅團戰衣 β"
+        },
         "rarity": 6,
         "slots": [
             2,
@@ -2108,7 +2796,15 @@
     },
     {
         "id": 100,
-        "name": "Lavasioth Mail α",
+        "name": {
+            "EN": "Lavasioth Mail α",
+            "FR": "Cotte Lavasioth α",
+            "JP": "ラヴァメイル α",
+            "IT": "Cotta di Lavasioth α",
+            "DE": "Lavasioth-Panzerung α",
+            "KR": "라바메일 α",
+            "CN": "熔岩龍鎧甲 α"
+        },
         "rarity": 6,
         "abilityIds": [
             80,
@@ -2132,7 +2828,15 @@
     },
     {
         "id": 101,
-        "name": "Lavasioth Mail β",
+        "name": {
+            "EN": "Lavasioth Mail β",
+            "FR": "Cotte Lavasioth β",
+            "JP": "ラヴァメイル β",
+            "IT": "Cotta di Lavasioth β",
+            "DE": "Lavasioth-Panzerung β",
+            "KR": "라바메일 β",
+            "CN": "熔岩龍鎧甲 β"
+        },
         "rarity": 6,
         "slots": [
             1,
@@ -2159,7 +2863,15 @@
     },
     {
         "id": 102,
-        "name": "Legiana Mail α",
+        "name": {
+            "EN": "Legiana Mail α",
+            "FR": "Veste Legiana α",
+            "JP": "ギエナメイル α",
+            "IT": "Cotta di Legiana α",
+            "DE": "Legiana-Panzerung α",
+            "KR": "기에나메일 α",
+            "CN": "風漂龍鎧甲 α"
+        },
         "rarity": 6,
         "abilityIds": [
             210,
@@ -2186,7 +2898,15 @@
     },
     {
         "id": 103,
-        "name": "Legiana Mail β",
+        "name": {
+            "EN": "Legiana Mail β",
+            "FR": "Veste Legiana β",
+            "JP": "ギエナメイル β",
+            "IT": "Cotta di Legiana β",
+            "DE": "Legiana-Panzerung β",
+            "KR": "기에나메일 β",
+            "CN": "風漂龍鎧甲 β"
+        },
         "rarity": 6,
         "slots": [
             1
@@ -2215,7 +2935,15 @@
     },
     {
         "id": 104,
-        "name": "Odogaron Mail α",
+        "name": {
+            "EN": "Odogaron Mail α",
+            "FR": "Cotte Odogaron α",
+            "JP": "ガロンメイル α",
+            "IT": "Cotta di Odogaron α",
+            "DE": "Odogaron-Panzerung α",
+            "KR": "가론메일 α",
+            "CN": "慘爪龍鎧甲 α"
+        },
         "rarity": 6,
         "abilityIds": [
             238,
@@ -2242,7 +2970,15 @@
     },
     {
         "id": 105,
-        "name": "Odogaron Mail β",
+        "name": {
+            "EN": "Odogaron Mail β",
+            "FR": "Cotte Odogaron β",
+            "JP": "ガロンメイル β",
+            "IT": "Cotta di Odogaron β",
+            "DE": "Odogaron-Panzerung β",
+            "KR": "가론메일 β",
+            "CN": "慘爪龍鎧甲 β"
+        },
         "rarity": 6,
         "slots": [
             1
@@ -2271,7 +3007,15 @@
     },
     {
         "id": 106,
-        "name": "Rathalos Mail α",
+        "name": {
+            "EN": "Rathalos Mail α",
+            "FR": "Cotte Rathalos α",
+            "JP": "レウスメイル α",
+            "IT": "Cotta di Rathalos α",
+            "DE": "Rathalos-Panzerung α",
+            "KR": "레우스메일 α",
+            "CN": "火龍鎧甲 α"
+        },
         "rarity": 6,
         "abilityIds": [
             133,
@@ -2298,7 +3042,15 @@
     },
     {
         "id": 107,
-        "name": "Rathalos Mail β",
+        "name": {
+            "EN": "Rathalos Mail β",
+            "FR": "Cotte Rathalos β",
+            "JP": "レウスメイル β",
+            "IT": "Cotta di Rathalos β",
+            "DE": "Rathalos-Panzerung β",
+            "KR": "레우스메일 β",
+            "CN": "火龍鎧甲 β"
+        },
         "rarity": 6,
         "slots": [
             1
@@ -2327,7 +3079,15 @@
     },
     {
         "id": 108,
-        "name": "Rath Soul Mail α",
+        "name": {
+            "EN": "Rath Soul Mail α",
+            "FR": "Cotte me Rathalos α",
+            "JP": "リオソウルメイル α",
+            "IT": "Cotta anima di Rath α",
+            "DE": "Rathalosseelen-Panzerung α",
+            "KR": "리오소울메일 α",
+            "CN": "火龍魂鎧甲 α"
+        },
         "rarity": 7,
         "abilityIds": [
             119,
@@ -2354,7 +3114,15 @@
     },
     {
         "id": 109,
-        "name": "Rath Soul Mail β",
+        "name": {
+            "EN": "Rath Soul Mail β",
+            "FR": "Cotte me Rathalos β",
+            "JP": "リオソウルメイル β",
+            "IT": "Cotta anima di Rath β",
+            "DE": "Rathalosseelen-Panzerung β",
+            "KR": "리오소울메일 β",
+            "CN": "火龍魂鎧甲 β"
+        },
         "rarity": 7,
         "slots": [
             2
@@ -2383,7 +3151,15 @@
     },
     {
         "id": 110,
-        "name": "Diablos Mail α",
+        "name": {
+            "EN": "Diablos Mail α",
+            "FR": "Cuirasse Diablos α",
+            "JP": "ディアブロメイル α",
+            "IT": "Cotta di Diablos α",
+            "DE": "Diablos-Panzerung α",
+            "KR": "디아블로메일 α",
+            "CN": "角龍鎧甲 α"
+        },
         "rarity": 6,
         "abilityIds": [
             153,
@@ -2410,7 +3186,15 @@
     },
     {
         "id": 111,
-        "name": "Diablos Mail β",
+        "name": {
+            "EN": "Diablos Mail β",
+            "FR": "Cuirasse Diablos β",
+            "JP": "ディアブロメイル β",
+            "IT": "Cotta di Diablos β",
+            "DE": "Diablos-Panzerung β",
+            "KR": "디아블로메일 β",
+            "CN": "角龍鎧甲 β"
+        },
         "rarity": 6,
         "slots": [
             2
@@ -2439,7 +3223,15 @@
     },
     {
         "id": 112,
-        "name": "Diablos Nero Mail α",
+        "name": {
+            "EN": "Diablos Nero Mail α",
+            "FR": "Cuirasse Diablos noire α",
+            "JP": "ディアネロメイル α",
+            "IT": "Cotta di Diablos nera α",
+            "DE": "Diablos-Nero-Panzerung α",
+            "KR": "디아네로메일 α",
+            "CN": "暴君角龍鎧甲 α"
+        },
         "rarity": 7,
         "slots": [
             1
@@ -2468,7 +3260,15 @@
     },
     {
         "id": 113,
-        "name": "Diablos Nero Mail β",
+        "name": {
+            "EN": "Diablos Nero Mail β",
+            "FR": "Cuirasse Diablos noire β",
+            "JP": "ディアネロメイル β",
+            "IT": "Cotta di Diablos nera β",
+            "DE": "Diablos-Nero-Panzerung β",
+            "KR": "디아네로메일 β",
+            "CN": "暴君角龍鎧甲 β"
+        },
         "rarity": 7,
         "slots": [
             2,
@@ -2498,7 +3298,15 @@
     },
     {
         "id": 114,
-        "name": "Uragaan Mail α",
+        "name": {
+            "EN": "Uragaan Mail α",
+            "FR": "Cotte Uragaan α",
+            "JP": "ガンキンメイル α",
+            "IT": "Cotta di Uragaan α",
+            "DE": "Uragaan-Panzerung α",
+            "KR": "간킨메일 α",
+            "CN": "爆鎚龍鎧甲 α"
+        },
         "rarity": 7,
         "slots": [
             1
@@ -2527,7 +3335,15 @@
     },
     {
         "id": 115,
-        "name": "Uragaan Mail β",
+        "name": {
+            "EN": "Uragaan Mail β",
+            "FR": "Cotte Uragaan β",
+            "JP": "ガンキンメイル β",
+            "IT": "Cotta di Uragaan β",
+            "DE": "Uragaan-Panzerung β",
+            "KR": "간킨메일 β",
+            "CN": "爆鎚龍鎧甲 β"
+        },
         "rarity": 7,
         "slots": [
             3
@@ -2556,7 +3372,15 @@
     },
     {
         "id": 116,
-        "name": "Bazel Mail α",
+        "name": {
+            "EN": "Bazel Mail α",
+            "FR": "Haubert Bazelgeuse α",
+            "JP": "バゼルメイル α",
+            "IT": "Cotta di Bazel α",
+            "DE": "Bazel-Panzerung α",
+            "KR": "바젤메일 α",
+            "CN": "爆鱗龍鎧甲 α"
+        },
         "rarity": 7,
         "abilityIds": [
             218,
@@ -2583,7 +3407,15 @@
     },
     {
         "id": 117,
-        "name": "Bazel Mail β",
+        "name": {
+            "EN": "Bazel Mail β",
+            "FR": "Haubert Bazelgeuse β",
+            "JP": "バゼルメイル β",
+            "IT": "Cotta di Bazel β",
+            "DE": "Bazel-Panzerung β",
+            "KR": "바젤메일 β",
+            "CN": "爆鱗龍鎧甲 β"
+        },
         "rarity": 7,
         "slots": [
             1,
@@ -2613,7 +3445,15 @@
     },
     {
         "id": 118,
-        "name": "Damascus Mail α",
+        "name": {
+            "EN": "Damascus Mail α",
+            "FR": "Cotte Damascus α",
+            "JP": "ダマスクメイル α",
+            "IT": "Cotta di Damasco α",
+            "DE": "Damaskus-Panzerung α",
+            "KR": "다마스크메일 α",
+            "CN": "大馬士革鎧甲 α"
+        },
         "rarity": 7,
         "slots": [
             1
@@ -2640,7 +3480,15 @@
     },
     {
         "id": 119,
-        "name": "Damascus Mail β",
+        "name": {
+            "EN": "Damascus Mail β",
+            "FR": "Cotte Damascus β",
+            "JP": "ダマスクメイル β",
+            "IT": "Cotta di Damasco β",
+            "DE": "Damaskus-Panzerung β",
+            "KR": "다마스크메일 β",
+            "CN": "大馬士革鎧甲 β"
+        },
         "rarity": 7,
         "slots": [
             1,
@@ -2668,7 +3516,15 @@
     },
     {
         "id": 120,
-        "name": "Dober Mail α",
+        "name": {
+            "EN": "Dober Mail α",
+            "FR": "Gilet Dober α",
+            "JP": "ドーベルメイル α",
+            "IT": "Cotta di Dober α",
+            "DE": "Dober-Panzerung α",
+            "KR": "도베르메일 α",
+            "CN": "杜賓鎧甲 α"
+        },
         "rarity": 7,
         "slots": [
             1
@@ -2695,7 +3551,15 @@
     },
     {
         "id": 121,
-        "name": "Dober Mail β",
+        "name": {
+            "EN": "Dober Mail β",
+            "FR": "Gilet Dober β",
+            "JP": "ドーベルメイル β",
+            "IT": "Cotta di Dober β",
+            "DE": "Dober-Panzerung β",
+            "KR": "도베르메일 β",
+            "CN": "杜賓鎧甲 β"
+        },
         "rarity": 7,
         "slots": [
             3
@@ -2721,7 +3585,15 @@
     },
     {
         "id": 122,
-        "name": "Death Stench Muscle α",
+        "name": {
+            "EN": "Death Stench Muscle α",
+            "FR": "Muscle putride α",
+            "JP": "デスギアムスケル α",
+            "IT": "Muscolo putrefatto α",
+            "DE": "Todesgestank-Muskel α",
+            "KR": "데스기어무스 α",
+            "CN": "死神肌肉 α"
+        },
         "rarity": 7,
         "abilityIds": [
             178,
@@ -2745,7 +3617,15 @@
     },
     {
         "id": 123,
-        "name": "Death Stench Muscle β",
+        "name": {
+            "EN": "Death Stench Muscle β",
+            "FR": "Muscle putride β",
+            "JP": "デスギアムスケル β",
+            "IT": "Muscolo putrefatto β",
+            "DE": "Todesgestank-Muskel β",
+            "KR": "데스기어무스 β",
+            "CN": "死神肌肉 β"
+        },
         "rarity": 7,
         "slots": [
             3
@@ -2771,7 +3651,15 @@
     },
     {
         "id": 125,
-        "name": "Nergigante Mail α",
+        "name": {
+            "EN": "Nergigante Mail α",
+            "FR": "Corselet Nergigante α",
+            "JP": "オーグメイル α",
+            "IT": "Cotta di Nergigante α",
+            "DE": "Nergigante-Panzerung α",
+            "KR": "오그메일 α",
+            "CN": "戰紋鎧甲 α"
+        },
         "rarity": 8,
         "slots": [
             1
@@ -2801,7 +3689,15 @@
     },
     {
         "id": 126,
-        "name": "Nergigante Mail β",
+        "name": {
+            "EN": "Nergigante Mail β",
+            "FR": "Corselet Nergigante β",
+            "JP": "オーグメイル β",
+            "IT": "Cotta di Nergigante β",
+            "DE": "Nergigante-Panzerung β",
+            "KR": "오그메일 β",
+            "CN": "戰紋鎧甲 β"
+        },
         "rarity": 8,
         "slots": [
             2,
@@ -2831,7 +3727,15 @@
     },
     {
         "id": 127,
-        "name": "Kaiser Mail α",
+        "name": {
+            "EN": "Kaiser Mail α",
+            "FR": "Cuissards Kaiser β",
+            "JP": "カイザーメイル α",
+            "IT": "Cotta del Kaiser α",
+            "DE": "Kaiser-Panzerung α",
+            "KR": "카이저메일 α",
+            "CN": "帝王鎧甲 α"
+        },
         "rarity": 8,
         "abilityIds": [
             188,
@@ -2858,7 +3762,15 @@
     },
     {
         "id": 128,
-        "name": "Kaiser Mail β",
+        "name": {
+            "EN": "Kaiser Mail β",
+            "FR": "Cuissards Kaiser β",
+            "JP": "カイザーメイル β",
+            "IT": "Cotta del Kaiser β",
+            "DE": "Kaiser-Panzerung β",
+            "KR": "카이저메일 β",
+            "CN": "帝王鎧甲 β"
+        },
         "rarity": 8,
         "slots": [
             1,
@@ -2888,7 +3800,15 @@
     },
     {
         "id": 129,
-        "name": "Kushala Cista α",
+        "name": {
+            "EN": "Kushala Cista α",
+            "FR": "Cista Kushala α",
+            "JP": "クシャナディール α",
+            "IT": "Cista di Kushala α",
+            "DE": "Kushala-Zista α",
+            "KR": "크샤나딜 α",
+            "CN": "鋼龍恐懼 α"
+        },
         "rarity": 8,
         "abilityIds": [
             142,
@@ -2915,7 +3835,15 @@
     },
     {
         "id": 130,
-        "name": "Kushala Cista β",
+        "name": {
+            "EN": "Kushala Cista β",
+            "FR": "Cista Kushala β",
+            "JP": "クシャナディール β",
+            "IT": "Cista di Kushala β",
+            "DE": "Kushala-Zista β",
+            "KR": "크샤나딜 β",
+            "CN": "鋼龍恐懼 β"
+        },
         "rarity": 8,
         "slots": [
             2
@@ -2944,7 +3872,15 @@
     },
     {
         "id": 131,
-        "name": "Vaal Hazak Mail α",
+        "name": {
+            "EN": "Vaal Hazak Mail α",
+            "FR": "Cotte Vaal Hazak α",
+            "JP": "ウルズメイル α",
+            "IT": "Cotta di Vaal Hazak α",
+            "DE": "Vaal-Hazak-Panzerung α",
+            "KR": "우르즈메일 α",
+            "CN": "烏爾德鎧甲 α"
+        },
         "rarity": 8,
         "slots": [
             1
@@ -2974,7 +3910,15 @@
     },
     {
         "id": 132,
-        "name": "Vaal Hazak Mail β",
+        "name": {
+            "EN": "Vaal Hazak Mail β",
+            "FR": "Cotte Vaal Hazak β",
+            "JP": "ウルズメイル β",
+            "IT": "Cotta di Vaal Hazak β",
+            "DE": "Vaal-Hazak-Panzerung β",
+            "KR": "우르즈메일 β",
+            "CN": "烏爾德鎧甲 β"
+        },
         "rarity": 8,
         "slots": [
             1,
@@ -3004,7 +3948,15 @@
     },
     {
         "id": 133,
-        "name": "Kirin Jacket α",
+        "name": {
+            "EN": "Kirin Jacket α",
+            "FR": "Veste Kirin α",
+            "JP": "キリンベスト α",
+            "IT": "Pettino di Kirin α",
+            "DE": "Kirin-Jacke α",
+            "KR": "키린베스트 α",
+            "CN": "麒麟服飾 α"
+        },
         "rarity": 6,
         "abilityIds": [
             252,
@@ -3031,7 +3983,15 @@
     },
     {
         "id": 134,
-        "name": "Kirin Jacket β",
+        "name": {
+            "EN": "Kirin Jacket β",
+            "FR": "Veste Kirin β",
+            "JP": "キリンベスト β",
+            "IT": "Pettino di Kirin β",
+            "DE": "Kirin-Jacke β",
+            "KR": "키린베스트 β",
+            "CN": "麒麟服飾 β"
+        },
         "rarity": 6,
         "slots": [
             1
@@ -3060,7 +4020,15 @@
     },
     {
         "id": 135,
-        "name": "Xeno'jiiva Hide α",
+        "name": {
+            "EN": "Xeno'jiiva Hide α",
+            "FR": "Peau Xeno'jiiva α",
+            "JP": "ゼノラージハイド α",
+            "IT": "Pelle di Xeno'jiiva α",
+            "DE": "Xeno'jiiva-Lederhaut α",
+            "KR": "제노라지하이드 α",
+            "CN": "異種大型皮 α"
+        },
         "rarity": 8,
         "slots": [
             1
@@ -3090,7 +4058,15 @@
     },
     {
         "id": 136,
-        "name": "Xeno'jiiva Hide β",
+        "name": {
+            "EN": "Xeno'jiiva Hide β",
+            "FR": "Peau Xeno'jiiva β",
+            "JP": "ゼノラージハイド β",
+            "IT": "Pelle di Xeno'jiiva β",
+            "DE": "Xeno'jiiva-Lederhaut β",
+            "KR": "제노라지하이드 β",
+            "CN": "異種大型皮 β"
+        },
         "rarity": 8,
         "slots": [
             1,
@@ -3120,7 +4096,15 @@
     },
     {
         "id": 137,
-        "name": "Guild Cross Suit α",
+        "name": {
+            "EN": "Guild Cross Suit α",
+            "FR": "Tenue Croix de Guilde α",
+            "JP": "ギルドクロススーツ α",
+            "IT": "Abito della Gilda α",
+            "DE": "Gildenkreuz-Anzug α",
+            "KR": "길드크로스슈트 α",
+            "CN": "公會十字戰衣 α"
+        },
         "rarity": 8,
         "slots": [
             1
@@ -3150,7 +4134,15 @@
     },
     {
         "id": 138,
-        "name": "Guild Cross Suit β",
+        "name": {
+            "EN": "Guild Cross Suit β",
+            "FR": "Tenue Croix de Guilde β",
+            "JP": "ギルドクロススーツ β",
+            "IT": "Abito della Gilda β",
+            "DE": "Gildenkreuz-Anzug β",
+            "KR": "길드크로스슈트 β",
+            "CN": "公會十字戰衣 β"
+        },
         "rarity": 8,
         "slots": [
             3
@@ -3179,7 +4171,15 @@
     },
     {
         "id": 140,
-        "name": "Commission Jacket α",
+        "name": {
+            "EN": "Commission Jacket α",
+            "FR": "Veste de la Commission α",
+            "JP": "シーカーベスト α",
+            "IT": "Pettino della commissione α",
+            "DE": "Kommissionsjacke α",
+            "KR": "시커베스트 α",
+            "CN": "追蹤者服飾 α"
+        },
         "rarity": 8,
         "abilityIds": [
             226,
@@ -3206,7 +4206,15 @@
     },
     {
         "id": 141,
-        "name": "Commission Jacket β",
+        "name": {
+            "EN": "Commission Jacket β",
+            "FR": "Veste de la Commission β",
+            "JP": "シーカーベスト β",
+            "IT": "Pettino della commissione β",
+            "DE": "Kommissionsjacke β",
+            "KR": "시커베스트 β",
+            "CN": "追蹤者服飾 β"
+        },
         "rarity": 8,
         "slots": [
             1
@@ -3235,7 +4243,15 @@
     },
     {
         "id": 142,
-        "name": "Vangis Mail α",
+        "name": {
+            "EN": "Vangis Mail α",
+            "FR": "Cotte Vangis α",
+            "JP": "バンギスメイル α",
+            "IT": "Cotta Vangis α",
+            "DE": "Vangis-Panzerung α",
+            "KR": "반기스메일 α",
+            "CN": "殘虐鎧甲 α"
+        },
         "rarity": 7,
         "slots": [
             2
@@ -3263,7 +4279,15 @@
     },
     {
         "id": 143,
-        "name": "Vangis Mail β",
+        "name": {
+            "EN": "Vangis Mail β",
+            "FR": "Cotte Vangis β",
+            "JP": "バンギスメイル β",
+            "IT": "Cotta Vangis β",
+            "DE": "Vangis-Panzerung β",
+            "KR": "반기스메일 β",
+            "CN": "殘虐鎧甲 β"
+        },
         "rarity": 7,
         "slots": [
             3
@@ -3290,7 +4314,15 @@
     },
     {
         "id": 144,
-        "name": "Empress Mail α",
+        "name": {
+            "EN": "Empress Mail α",
+            "FR": "Armure Impératrix α",
+            "JP": "エンプレスメイル α",
+            "IT": "Cotta dell'imperatrice α",
+            "DE": "Kaiserin-Panzerung α",
+            "KR": "엠프리스메일 α",
+            "CN": "皇后鎧甲 α"
+        },
         "rarity": 8,
         "slots": [
             1,
@@ -3322,7 +4354,15 @@
     },
     {
         "id": 145,
-        "name": "Empress Mail β",
+        "name": {
+            "EN": "Empress Mail β",
+            "FR": "Armure Impératrix β",
+            "JP": "エンプレスメイル β",
+            "IT": "Cotta dell'imperatrice β",
+            "DE": "Kaiserin-Panzerung β",
+            "KR": "엠프리스메일 β",
+            "CN": "皇后鎧甲 β"
+        },
         "rarity": 8,
         "slots": [
             1,
@@ -3354,7 +4394,15 @@
     },
     {
         "id": 146,
-        "name": "Drachen Mail α",
+        "name": {
+            "EN": "Drachen Mail α",
+            "FR": "Armure de mailles Drachen α",
+            "JP": "ドラケンメイル α",
+            "IT": "Cotta drachen α",
+            "DE": "Drachenreiter-Hemd α",
+            "KR": "용기사 메일 α",
+            "CN": "騰龍戰鎧 α"
+        },
         "rarity": 8,
         "slots": [
             3
@@ -3385,7 +4433,15 @@
     },
     {
         "id": 147,
-        "name": "Aloy's Body α",
+        "name": {
+            "EN": "Aloy's Body α",
+            "FR": "Aloy - Jupe α",
+            "JP": "アーロイボディ α",
+            "IT": "Torace di Aloy α",
+            "DE": "Aloy-Körper α",
+            "KR": "에일로이보디 α",
+            "CN": "Aloy's Body α"
+        },
         "rarity": 5,
         "slots": [
             1,
@@ -3417,7 +4473,15 @@
     },
     {
         "id": 148,
-        "name": "Ryu's Karate Gi",
+        "name": {
+            "EN": "Ryu's Karate Gi",
+            "FR": "Ryu - Karategi (haut)",
+            "JP": "リュウボディ",
+            "IT": "Karategi di Ryu",
+            "DE": "Ryu-Körper",
+            "KR": "류 보디",
+            "CN": "Ryu's Karate Gi"
+        },
         "rarity": 2,
         "abilityIds": [
             52
@@ -3442,7 +4506,15 @@
     },
     {
         "id": 149,
-        "name": "Ryu's Karate Gi α",
+        "name": {
+            "EN": "Ryu's Karate Gi α",
+            "FR": "Ryu - Karategi (haut) α",
+            "JP": "リュウボディ α",
+            "IT": "Karategi di Ryu α",
+            "DE": "Ryu-Körper α",
+            "KR": "류 보디 α",
+            "CN": "Ryu's Karate Gi α"
+        },
         "rarity": 7,
         "slots": [
             1,
@@ -3475,7 +4547,15 @@
     },
     {
         "id": 150,
-        "name": "Sakura's Work Uniform α",
+        "name": {
+            "EN": "Sakura's Work Uniform α",
+            "FR": "Sakura - Uniforme α",
+            "JP": "さくらボディ α",
+            "IT": "Uniforme di Sakura α",
+            "DE": "Sakura-Körper α",
+            "KR": "사쿠라 보디 α",
+            "CN": "Sakura's Work Uniform α"
+        },
         "rarity": 6,
         "slots": [
             1,
@@ -3508,7 +4588,15 @@
     },
     {
         "id": 151,
-        "name": "Butterfly Thorax",
+        "name": {
+            "EN": "Butterfly Thorax",
+            "FR": "Thorax Papillon",
+            "JP": "パピメルペット",
+            "IT": "Torace di farfalla",
+            "DE": "Schmetterling-Thorax",
+            "KR": "파피메르페트",
+            "CN": "燕尾蝶男上身"
+        },
         "rarity": 3,
         "abilityIds": [
             52
@@ -3532,7 +4620,15 @@
     },
     {
         "id": 152,
-        "name": "Queen Beetle Thorax",
+        "name": {
+            "EN": "Queen Beetle Thorax",
+            "FR": "Thorax Scarabée",
+            "JP": "クインビートペット",
+            "IT": "Torace dello scarabeo",
+            "DE": "Königinnenkäfer-Thorax",
+            "KR": "퀸비트페트",
+            "CN": "獨角仙后上身"
+        },
         "rarity": 3,
         "abilityIds": [
             52
@@ -3556,7 +4652,15 @@
     },
     {
         "id": 153,
-        "name": "Blossom Vest",
+        "name": {
+            "EN": "Blossom Vest",
+            "FR": "Veste Printemps",
+            "JP": "ブロッサムベスト",
+            "IT": "Pettorina floreale",
+            "DE": "Blüten-Weste",
+            "KR": "블로섬베스트",
+            "CN": "巴魯特服飾"
+        },
         "rarity": 3,
         "abilityIds": [
             222
@@ -3580,7 +4684,15 @@
     },
     {
         "id": 154,
-        "name": "Blossom Vest α",
+        "name": {
+            "EN": "Blossom Vest α",
+            "FR": "Veste Printemps α",
+            "JP": "ブロッサムベスト α",
+            "IT": "Pettorina floreale α",
+            "DE": "Blüten-Weste α",
+            "KR": "블로섬베스트 α",
+            "CN": "巴魯特服飾 α"
+        },
         "rarity": 5,
         "slots": [
             1,
@@ -3608,7 +4720,15 @@
     },
     {
         "id": 155,
-        "name": "Harvest Tronco",
+        "name": {
+            "EN": "Harvest Tronco",
+            "FR": "Harvest Tronco",
+            "JP": "ハーベストトロンコ",
+            "IT": "Tronco del raccolto",
+            "DE": "Ernte-Tronco",
+            "KR": "하베스트트롱코",
+            "CN": "收穫裝甲"
+        },
         "rarity": 3,
         "abilityIds": [
             32
@@ -3632,11 +4752,19 @@
     },
     {
         "id": 156,
-        "name": "Harvest Tronco α",
+        "name": {
+            "EN": "Harvest Tronco α",
+            "FR": "Harvest Tronco α",
+            "JP": "ハーベストトロンコα",
+            "IT": "Tronco del raccolto α",
+            "DE": "Ernte-Tronco α",
+            "KR": "하베스트트롱코 α",
+            "CN": "收穫裝甲 α"
+        },
         "rarity": 6,
         "slots": [
-            1,
-            2
+            2,
+            1
         ],
         "abilityIds": [
             32
@@ -3660,7 +4788,82 @@
     },
     {
         "id": 157,
-        "name": "Kulve Taroth's Ire α",
+        "name": {
+            "EN": "Orion Vest",
+            "FR": "Veste Orion",
+            "JP": "オリオンベスト",
+            "IT": "Pettino di Orione",
+            "DE": "Orion-Weste",
+            "KR": "오리온베스트",
+            "CN": "獵戶星服飾"
+        },
+        "rarity": 4,
+        "abilityIds": [
+            275
+        ],
+        "defense": {
+            "base": 30,
+            "max": 54,
+            "augmented": 74
+        },
+        "resistances": {
+            "fire": 1,
+            "water": 1,
+            "thunder": 1,
+            "ice": 4,
+            "dragon": 1
+        },
+        "attributes": {
+            "gender": 3
+        },
+        "eventId": 26
+    },
+    {
+        "id": 158,
+        "name": {
+            "EN": "Orion Vest α",
+            "FR": "Veste Orion α",
+            "JP": "オリオンベストα",
+            "IT": "Pettino di Orione α",
+            "DE": "Orion-Weste α",
+            "KR": "오리온베스트 α",
+            "CN": "獵戶星服飾 α"
+        },
+        "rarity": 6,
+        "slots": [
+            3
+        ],
+        "abilityIds": [
+            275
+        ],
+        "defense": {
+            "base": 58,
+            "max": 78,
+            "augmented": 90
+        },
+        "resistances": {
+            "fire": 1,
+            "water": 1,
+            "thunder": 1,
+            "ice": 4,
+            "dragon": 1
+        },
+        "attributes": {
+            "gender": 3
+        },
+        "eventId": 26
+    },
+    {
+        "id": 159,
+        "name": {
+            "EN": "Kulve Taroth's Ire α",
+            "FR": "Colère kulve Taroth α",
+            "JP": "マムガイラメイル α",
+            "IT": "Rabbia di Kulve Taroth α",
+            "DE": "Kulve Taroths Ärger α",
+            "KR": "맘가이라메일 α",
+            "CN": "絢輝龍鎧羅鎧甲 α"
+        },
         "rarity": 8,
         "slots": [
             1
@@ -3670,9 +4873,9 @@
             130
         ],
         "defense": {
-            "base": 64,
-            "max": 70,
-            "augmented": 84
+            "base": 72,
+            "max": 78,
+            "augmented": 92
         },
         "resistances": {
             "fire": 4,
@@ -3687,8 +4890,16 @@
         "eventId": 7
     },
     {
-        "id": 158,
-        "name": "Kulve Taroth's Ire β",
+        "id": 160,
+        "name": {
+            "EN": "Kulve Taroth's Ire β",
+            "FR": "Colère kulve Taroth β",
+            "JP": "マムガイラメイル β",
+            "IT": "Rabbia di Kulve Taroth β",
+            "DE": "Kulve Taroths Ärger β",
+            "KR": "맘가이라메일 β",
+            "CN": "絢輝龍鎧羅鎧甲 β"
+        },
         "rarity": 8,
         "slots": [
             3,
@@ -3699,9 +4910,9 @@
             129
         ],
         "defense": {
-            "base": 64,
-            "max": 70,
-            "augmented": 84
+            "base": 72,
+            "max": 78,
+            "augmented": 92
         },
         "resistances": {
             "fire": 4,
@@ -3716,8 +4927,16 @@
         "eventId": 7
     },
     {
-        "id": 159,
-        "name": "Dante's Coat α",
+        "id": 161,
+        "name": {
+            "EN": "Dante's Coat α",
+            "FR": "Manteau de Dante α",
+            "JP": "ダンテコート α",
+            "IT": "Cappotto di Dante α",
+            "DE": "Dantes Mantel α",
+            "KR": "단테 코트 α",
+            "CN": "但丁風衣 α"
+        },
         "rarity": 8,
         "slots": [
             3
@@ -3744,8 +4963,16 @@
         "eventId": 8
     },
     {
-        "id": 160,
-        "name": "Azure Starlord Armor α",
+        "id": 162,
+        "name": {
+            "EN": "Azure Starlord Armor α",
+            "FR": "Armure Paladin des étoiles α",
+            "JP": "蒼星ノ将【鎧】 α",
+            "IT": "Cotta sommo celeste α",
+            "DE": "AzursternGebieterRüstung α",
+            "KR": "파란별 장군[갑옷] α",
+            "CN": "蒼星之將【鎧甲】 α"
+        },
         "rarity": 7,
         "slots": [
             2
@@ -3774,8 +5001,16 @@
         "eventId": 9
     },
     {
-        "id": 161,
-        "name": "Kirin Jacket γ",
+        "id": 163,
+        "name": {
+            "EN": "Kirin Jacket γ",
+            "FR": "Veste Kirin γ",
+            "JP": "キリンベスト γ",
+            "IT": "Pettino di Kirin γ",
+            "DE": "Kirin-Jacke γ",
+            "KR": "키린베스트 γ",
+            "CN": "麒麟服飾 γ"
+        },
         "rarity": 8,
         "slots": [
             1,
@@ -3805,8 +5040,16 @@
         "eventId": 15
     },
     {
-        "id": 162,
-        "name": "Vaal Hazak Mail γ",
+        "id": 164,
+        "name": {
+            "EN": "Vaal Hazak Mail γ",
+            "FR": "Cotte Vaal Hazak γ",
+            "JP": "ウルズメイル γ",
+            "IT": "Cotta di Vaal Hazak γ",
+            "DE": "Vaal-Hazak-Panzerung γ",
+            "KR": "우르즈메일 γ",
+            "CN": "烏爾德鎧甲 γ"
+        },
         "rarity": 8,
         "slots": [
             3
@@ -3836,8 +5079,16 @@
         "eventId": 16
     },
     {
-        "id": 163,
-        "name": "Kaiser Mail γ",
+        "id": 165,
+        "name": {
+            "EN": "Kaiser Mail γ",
+            "FR": "Cuissards Kaiser γ",
+            "JP": "カイザーメイル γ",
+            "IT": "Cotta del Kaiser γ",
+            "DE": "Kaiser-Panzerung γ",
+            "KR": "카이저메일 γ",
+            "CN": "帝王鎧甲 γ"
+        },
         "rarity": 8,
         "slots": [
             2
@@ -3867,8 +5118,16 @@
         "eventId": 20
     },
     {
-        "id": 164,
-        "name": "Kushala Cista γ",
+        "id": 166,
+        "name": {
+            "EN": "Kushala Cista γ",
+            "FR": "Cista Kushala γ",
+            "JP": "クシャナディール γ",
+            "IT": "Cista di Kushala γ",
+            "DE": "Kushala-Zista γ",
+            "KR": "크샤나딜 γ",
+            "CN": "鋼龍恐懼 γ"
+        },
         "rarity": 8,
         "slots": [
             2
@@ -3898,8 +5157,16 @@
         "eventId": 21
     },
     {
-        "id": 165,
-        "name": "Empress Mail γ",
+        "id": 167,
+        "name": {
+            "EN": "Empress Mail γ",
+            "FR": "Armure Impératrix γ",
+            "JP": "エンプレスメイル γ",
+            "IT": "Cotta dell'imperatrice γ",
+            "DE": "Kaiserin-Panzerung γ",
+            "KR": "엠프리스메일 γ",
+            "CN": "皇后鎧甲 γ"
+        },
         "rarity": 8,
         "slots": [
             3
@@ -3929,8 +5196,16 @@
         "eventId": 14
     },
     {
-        "id": 166,
-        "name": "Zorah Hide γ",
+        "id": 168,
+        "name": {
+            "EN": "Zorah Hide γ",
+            "FR": "Cotte Zorah Magdaros γ",
+            "JP": "ゾラマグナハイド γ",
+            "IT": "Pelle di Zorah γ",
+            "DE": "Zorah-Lederhaut γ",
+            "KR": "조라마그나하이드 γ",
+            "CN": "鑄島熔岩皮 γ"
+        },
         "rarity": 8,
         "slots": [
             1,
@@ -3961,8 +5236,16 @@
         "eventId": 24
     },
     {
-        "id": 167,
-        "name": "Xeno'jiiva Hide γ",
+        "id": 169,
+        "name": {
+            "EN": "Xeno'jiiva Hide γ",
+            "FR": "Peau Xeno'jiiva γ",
+            "JP": "ゼノラージハイド γ",
+            "IT": "Pelle di Xeno'jiiva γ",
+            "DE": "Xeno'jiiva-Lederhaut γ",
+            "KR": "제노라지하이드 γ",
+            "CN": "異種大型皮 γ"
+        },
         "rarity": 8,
         "slots": [
             1,
@@ -3992,8 +5275,52 @@
         "eventId": 25
     },
     {
-        "id": 168,
-        "name": "Diver's Suit",
+        "id": 170,
+        "name": {
+            "EN": "Kulve Taroth's Ire γ",
+            "FR": "Colère kulve Taroth γ",
+            "JP": "マムガイラメイル γ",
+            "IT": "Rabbia di Kulve Taroth γ",
+            "DE": "Kulve Taroths Ärger γ",
+            "KR": "맘가이라메일 γ",
+            "CN": "絢輝龍鎧羅鎧甲 γ"
+        },
+        "rarity": 8,
+        "slots": [
+            1
+        ],
+        "abilityIds": [
+            142,
+            165
+        ],
+        "defense": {
+            "base": 72,
+            "max": 78,
+            "augmented": 92
+        },
+        "resistances": {
+            "fire": 4,
+            "water": -2,
+            "thunder": 3,
+            "ice": -4,
+            "dragon": -2
+        },
+        "attributes": {
+            "gender": 3
+        },
+        "eventId": 7
+    },
+    {
+        "id": 171,
+        "name": {
+            "EN": "Diver's Suit",
+            "FR": "Combinaison de plongée",
+            "JP": "ダイバースーツ",
+            "IT": "Muta da sommozzatore",
+            "DE": "Taucheranzug",
+            "KR": "다이버슈트",
+            "CN": "潛水夫服裝"
+        },
         "rarity": 3,
         "abilityIds": [
             122
@@ -4016,8 +5343,16 @@
         "eventId": 17
     },
     {
-        "id": 169,
-        "name": "Diver's Suit α",
+        "id": 172,
+        "name": {
+            "EN": "Diver's Suit α",
+            "FR": "Combinaison de plongée α",
+            "JP": "ダイバースーツ α",
+            "IT": "Muta da sommozzatore α",
+            "DE": "Taucheranzug α",
+            "KR": "다이버슈트 α",
+            "CN": "潛水夫服裝 α"
+        },
         "rarity": 5,
         "slots": [
             2
@@ -4043,8 +5378,16 @@
         "eventId": 17
     },
     {
-        "id": 170,
-        "name": "Butterfly Thorax α",
+        "id": 173,
+        "name": {
+            "EN": "Butterfly Thorax α",
+            "FR": "Thorax Papillon α",
+            "JP": "パピメルペット α",
+            "IT": "Torace di farfalla α",
+            "DE": "Schmetterling-Thorax α",
+            "KR": "파피메르페트 α",
+            "CN": "燕尾蝶男上身 α"
+        },
         "rarity": 5,
         "abilityIds": [
             53,
@@ -4068,8 +5411,16 @@
         "eventId": 18
     },
     {
-        "id": 171,
-        "name": "Butterfly Thorax β",
+        "id": 174,
+        "name": {
+            "EN": "Butterfly Thorax β",
+            "FR": "Thorax Papillon β",
+            "JP": "パピメルペット β",
+            "IT": "Torace di farfalla β",
+            "DE": "Schmetterling-Thorax β",
+            "KR": "파피메르페트 β",
+            "CN": "燕尾蝶男上身 β"
+        },
         "rarity": 5,
         "slots": [
             1
@@ -4095,8 +5446,16 @@
         "eventId": 18
     },
     {
-        "id": 172,
-        "name": "Queen Beetle Thorax α",
+        "id": 175,
+        "name": {
+            "EN": "Queen Beetle Thorax α",
+            "FR": "Thorax Scarabée α",
+            "JP": "クインビートペット α",
+            "IT": "Torace dello scarabeo α",
+            "DE": "Königinnenkäfer-Thorax α",
+            "KR": "퀸비트페트 α",
+            "CN": "獨角仙后上身 α"
+        },
         "rarity": 5,
         "abilityIds": [
             53,
@@ -4120,8 +5479,16 @@
         "eventId": 18
     },
     {
-        "id": 173,
-        "name": "Queen Beetle Thorax β",
+        "id": 176,
+        "name": {
+            "EN": "Queen Beetle Thorax β",
+            "FR": "Thorax Scarabée β",
+            "JP": "クインビートペット β",
+            "IT": "Torace dello scarabeo β",
+            "DE": "Königinnenkäfer-Thorax β",
+            "KR": "퀸비트페트 β",
+            "CN": "獨角仙后上身 β"
+        },
         "rarity": 5,
         "slots": [
             1

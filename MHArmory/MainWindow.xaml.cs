@@ -21,7 +21,7 @@ namespace MHArmory
     /// </summary>
     public partial class MainWindow : Window
     {
-        public readonly RootViewModel rootViewModel = new RootViewModel();
+        public readonly RootViewModel rootViewModel;
 
         private SkillSelectorWindow skillSelectorWindow;
         private AdvancedSearchWindow advancedSearchWindow;
@@ -33,6 +33,8 @@ namespace MHArmory
             WindowManager.FitInScreen(this);
 
             LoadConfiguration();
+
+            rootViewModel = new RootViewModel();
 
             WindowManager.NotifyConfigurationLoaded();
             rootViewModel.NotifyConfigurationLoaded();
@@ -85,10 +87,10 @@ namespace MHArmory
             rootViewModel.SetLoadoutManager(loadoutManager);
 
             string lastOpenedLoadout = GlobalData.Instance.Configuration.LastOpenedLoadout;
-            Dictionary<string, SkillLoadoutItemConfigurationV2[]> loadout = GlobalData.Instance.Configuration.SkillLoadouts;
+            Dictionary<string, SkillLoadoutItemConfigurationV3> loadout = GlobalData.Instance.Configuration.SkillLoadouts;
 
-            if (loadout != null && lastOpenedLoadout != null && loadout.TryGetValue(lastOpenedLoadout, out SkillLoadoutItemConfigurationV2[] abilities))
-                loadoutManager.Open(lastOpenedLoadout, abilities);
+            if (loadout != null && lastOpenedLoadout != null && loadout.TryGetValue(lastOpenedLoadout, out SkillLoadoutItemConfigurationV3 loadoutConfig))
+                loadoutManager.Open(lastOpenedLoadout, loadoutConfig);
 
             rootViewModel.IsDataLoading = false;
             rootViewModel.IsDataLoaded = true;
@@ -100,7 +102,7 @@ namespace MHArmory
 
         private void LoadConfiguration()
         {
-            ConfigurationV2 configuration = ConfigurationManager.Load<ConfigurationV2>();
+            ConfigurationV3 configuration = ConfigurationManager.Load<ConfigurationV3>();
 
             // Possibly process stuffs.
 
@@ -132,7 +134,7 @@ namespace MHArmory
             }
 
             IList<SkillViewModel> allSkills = skills
-                .OrderBy(x => x.Name)
+                .OrderBy(x => x.Id)
                 .Select(x => new SkillViewModel(x, jewels.Where(j => j.Abilities.Any(a => a.Skill.Id == x.Id)).ToList(), rootViewModel, skillSelectorWindow.SkillSelector))
                 .ToList();
 
@@ -182,7 +184,7 @@ namespace MHArmory
             if (WindowManager.IsInitialized<DecorationsOverrideWindow>() == false)
                 WindowManager.InitializeWindow(new DecorationsOverrideWindow(rootViewModel) { Owner = this });
 
-            WindowManager.ShowDialog<DecorationsOverrideWindow>();
+            WindowManager.Show<DecorationsOverrideWindow>();
         }
 
         private void OpenEquipmentOverride(object obj)
@@ -190,7 +192,7 @@ namespace MHArmory
             if (WindowManager.IsInitialized<EquipmentOverrideWindow>() == false)
                 WindowManager.InitializeWindow(new EquipmentOverrideWindow(rootViewModel) { Owner = this });
 
-            WindowManager.ShowDialog<EquipmentOverrideWindow>();
+            WindowManager.Show<EquipmentOverrideWindow>();
         }
 
         private void OpenEquipmentExplorer(object obj)

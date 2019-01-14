@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using MHArmory.Core.DataStructures;
+using MHArmory.Search.Contracts;
 
 namespace MHArmory.Search.OpenCL
 {

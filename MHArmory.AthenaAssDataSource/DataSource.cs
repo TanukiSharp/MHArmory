@@ -22,12 +22,15 @@ namespace MHArmory.AthenaAssDataSource
         public const string WaistsFilename = "waist.txt";
         public const string LegsFilename = "legs.txt";
         public const string SkillsFilename = "skills.txt";
-        public const string SkillsDescriptionsFilename = "Languages/English/skills.txt";
-        public const string AbilitiesDescriptionsFilename = "Languages/English/skill_descriptions.txt";
+        public const string SetSkillsFilename = "set_skills.txt";
+        public const string SkillsDescriptionsFilename = "skills.txt";
+        public const string AbilitiesDescriptionsFilename = "skill_descriptions.txt";
         public const string CharmsFilename = "charms.txt";
         public const string JewelsFilename = "decorations.txt";
         public const string EventsFilename = "events.txt";
         public const string EventNamesFilename = "Languages/English/events.txt";
+
+        private Dictionary<string, string[]> skillsLocalizations;
 
         public DataSource(ILogger logger, IDirectoryBrowserService directoryBrowserService, IMessageBoxService messageBoxService)
         {
@@ -157,6 +160,8 @@ namespace MHArmory.AthenaAssDataSource
 
             string[] allLines = File.ReadAllLines(jewelsFilePath);
 
+            Dictionary<string, string[]> localizations = LoadLocalizations(JewelsFilename);
+
             (int headerIndex, int dataIndex) = FindIndexes(allLines);
             if (headerIndex < 0)
             {
@@ -175,12 +180,18 @@ namespace MHArmory.AthenaAssDataSource
                 if (string.IsNullOrWhiteSpace(jewelPrimitive.Name))
                     continue;
 
-                IAbility ability = abilities.FirstOrDefault(a => a.Skill.Name == jewelPrimitive.Skill && a.Level == 1);
+                IAbility ability = abilities.FirstOrDefault(a => Localization.GetDefault(a.Skill.Name) == jewelPrimitive.Skill && a.Level == 1);
 
                 if (ability == null)
                     throw new FormatException($"Cannot find skill '{jewelPrimitive.Name}'");
 
-                localJewels.Add(new Jewel(i - dataIndex, jewelPrimitive.Name, jewelPrimitive.Rarity, jewelPrimitive.SlotSize, new IAbility[] { ability }));
+                localJewels.Add(new Jewel(
+                    i - dataIndex,
+                    localizations.ToDictionary(kv1 => kv1.Key, kv2 => $"{kv2.Value[i - dataIndex]}"),
+                    jewelPrimitive.Rarity,
+                    jewelPrimitive.SlotSize,
+                    new IAbility[] { ability }
+                ));
             }
 
             jewels = Task.FromResult(localJewels.ToArray());
@@ -191,6 +202,8 @@ namespace MHArmory.AthenaAssDataSource
             string charmsFilePath = Path.Combine(dataFolderPath, CharmsFilename);
 
             string[] allLines = File.ReadAllLines(charmsFilePath);
+
+            Dictionary<string, string[]> localizations = LoadLocalizations(CharmsFilename);
 
             (int headerIndex, int dataIndex) = FindIndexes(allLines);
             if (headerIndex < 0)
@@ -227,11 +240,32 @@ namespace MHArmory.AthenaAssDataSource
                     charmPrimitive.Material4
                 );
 
-                charmLevels.Add(new CharmLevel(i - dataIndex, level, charmPrimitive.Name, 0, noSlots, ParseAbilities(charmPrimitive), foundEvent));
+                charmLevels.Add(new CharmLevel(
+                    i - dataIndex,
+                    level,
+                    localizations.ToDictionary(kv1 => kv1.Key, kv2 => $"{kv2.Value[i - dataIndex]}"),
+                    0,
+                    noSlots,
+                    ParseAbilities(charmPrimitive),
+                    foundEvent
+                ));
+            }
+
+            Dictionary<string, string> DetermineCharmsLocalizations(ICharmLevel charmLevel)
+            {
+                var resut = new Dictionary<string, string>();
+
+                foreach (KeyValuePair<string, string> kv in charmLevel.Name)
+                {
+                    (string charmName, int _) = DetermineCharmNameAndLevel(kv.Value);
+                    resut[kv.Key] = charmName;
+                }
+
+                return resut;
             }
 
             ICharm[] nonTaskCharms = localCharms
-                .Select((kv, i) => new Charm(i, kv.Key, kv.Value.ToArray()))
+                .Select((kv, i) => new Charm(i, DetermineCharmsLocalizations(kv.Value[0]), kv.Value.ToArray()))
                 .Cast<ICharm>()
                 .ToArray();
 
@@ -259,15 +293,17 @@ namespace MHArmory.AthenaAssDataSource
 
         private void LoadArmorSetSkills()
         {
-            string filename = Path.Combine(dataFolderPath, "set_skills.txt");
+            string filename = Path.Combine(dataFolderPath, SetSkillsFilename);
             armorSetSkillPrimitives = LoadArmorSetSkills(filename).ToList();
+
+            Dictionary<string, string[]> localizations = LoadLocalizations(SkillsFilename);
 
             int id = 0;
             int partId = 0;
 
             IAbility FindAbility(string skillName)
             {
-                return abilities.FirstOrDefault(a => a.Skill.Name == skillName && a.Level == 1);
+                return abilities.FirstOrDefault(a => Localization.GetDefault(a.Skill.Name) == skillName && a.Level == 1);
             }
 
             foreach (IGrouping<string, ArmorSetSkillPrimitive> armorSetSkillGroup in armorSetSkillPrimitives.GroupBy(x => x.Name))
@@ -276,7 +312,13 @@ namespace MHArmory.AthenaAssDataSource
                     .Select(x => new ArmorSetSkillPart(partId++, x.PiecesNeeded, new IAbility[] { FindAbility(x.SkillGranted) }))
                     .ToArray();
 
-                armorSetSkills.Add(new ArmorSetSkill(id++, armorSetSkillGroup.Key, armorSetSkillParts));
+                armorSetSkills.Add(new ArmorSetSkill(
+                    id,
+                    Localization.AvailableLanguageCodes.ToDictionary(kv1 => kv1.Key, kv2 => skillsLocalizations[kv2.Key][nonTaskSkills.Length + id]),
+                    armorSetSkillParts
+                ));
+
+                id++;
             }
         }
 
@@ -291,12 +333,12 @@ namespace MHArmory.AthenaAssDataSource
         private void LoadSkills()
         {
             string skillsFilePath = Path.Combine(dataFolderPath, SkillsFilename);
-            string skillsDescriptionsFilePath = Path.Combine(dataFolderPath, SkillsDescriptionsFilename);
-            string abilitiesDescriptionsFilePath = Path.Combine(dataFolderPath, AbilitiesDescriptionsFilename);
 
             string[] allLines = File.ReadAllLines(skillsFilePath);
-            string[] allSkillsDescriptions = File.ReadAllLines(skillsDescriptionsFilePath);
-            string[] allAbilitiesDescriptions = File.ReadAllLines(abilitiesDescriptionsFilePath);
+
+            skillsLocalizations = LoadLocalizations(SkillsFilename);
+            Dictionary<string, string[]> skillsDescriptionsLocalizations = LoadLocalizations(SkillsDescriptionsFilename);
+            Dictionary<string, string[]> abilitiesDescriptionsLocalizations = LoadLocalizations(AbilitiesDescriptionsFilename);
 
             (int headerIndex, int dataIndex) = FindIndexes(allLines);
             if (headerIndex < 0)
@@ -307,24 +349,35 @@ namespace MHArmory.AthenaAssDataSource
                 return;
             }
 
-            var dataLoader = new DataLoader<SkillPrimitive>(allLines[headerIndex].Substring(1).Split(','), logger);
+            var dataLoader = new DataLoader<SkillPrimitiveLowLevel>(allLines[headerIndex].Substring(1).Split(','), logger);
 
             var localSkills = new List<ISkill>();
 
             for (int i = dataIndex; i < allLines.Length; i++)
             {
-                SkillPrimitive skillPrimitive = dataLoader.CreateObject(allLines[i].Split(','), i + dataIndex);
+                SkillPrimitiveLowLevel skillPrimitive = dataLoader.CreateObject(allLines[i].Split(','), i + dataIndex);
 
                 if (string.IsNullOrWhiteSpace(skillPrimitive.Name))
                     continue;
 
                 int index = i - dataIndex;
-                localSkills.Add(new DataStructures.Skill(index, allSkillsDescriptions[index], skillPrimitive));
+
+                var skill = new SkillPrimitiveHighLevel
+                {
+                    MaxLevel = skillPrimitive.MaxLevel,
+                    Name = Localization.AvailableLanguageCodes.ToDictionary(kv1 => kv1.Key, kv2 => skillsLocalizations[kv2.Key][index])
+                };
+
+                localSkills.Add(new DataStructures.Skill(
+                    index,
+                    Localization.AvailableLanguageCodes.ToDictionary(kv1 => kv1.Key, kv2 => skillsDescriptionsLocalizations[kv2.Key][index]),
+                    skill
+                ));
             }
 
             abilities = localSkills
                 .SelectMany(s => s.Abilities)
-                .ForEach((a, i) => ((Ability)a).Update(i, allAbilitiesDescriptions[i]))
+                .ForEach((a, i) => ((Ability)a).Update(i, Localization.AvailableLanguageCodes.ToDictionary(kv1 => kv1.Key, kv2 => abilitiesDescriptionsLocalizations[kv2.Key][i])))
                 .Distinct(AbilityEqualityComparer.Default)
                 .ToArray();
 
@@ -360,19 +413,13 @@ namespace MHArmory.AthenaAssDataSource
 
         private void LoadArmorPieces()
         {
-            string headsFilePath = Path.Combine(dataFolderPath, HeadsFilename);
-            string chestsFilePath = Path.Combine(dataFolderPath, ChestsFilename);
-            string glovesFilePath = Path.Combine(dataFolderPath, GlovesFilename);
-            string waistsFilePath = Path.Combine(dataFolderPath, WaistsFilename);
-            string legsFilePath = Path.Combine(dataFolderPath, LegsFilename);
-
             try
             {
-                var heads = LoadArmorPieceParts(EquipmentType.Head, headsFilePath).ToList();
-                var chests = LoadArmorPieceParts(EquipmentType.Chest, chestsFilePath).ToList();
-                var gloves = LoadArmorPieceParts(EquipmentType.Gloves, glovesFilePath).ToList();
-                var waists = LoadArmorPieceParts(EquipmentType.Waist, waistsFilePath).ToList();
-                var legs = LoadArmorPieceParts(EquipmentType.Legs, legsFilePath).ToList();
+                var heads = LoadArmorPieceParts(EquipmentType.Head, HeadsFilename).ToList();
+                var chests = LoadArmorPieceParts(EquipmentType.Chest, ChestsFilename).ToList();
+                var gloves = LoadArmorPieceParts(EquipmentType.Gloves, GlovesFilename).ToList();
+                var waists = LoadArmorPieceParts(EquipmentType.Waist, WaistsFilename).ToList();
+                var legs = LoadArmorPieceParts(EquipmentType.Legs, LegsFilename).ToList();
 
                 var allArmorSetContainers = heads
                     .Concat(chests)
@@ -427,7 +474,7 @@ namespace MHArmory.AthenaAssDataSource
                     eventPrimitive.CraftItems.Contains(material3) ||
                     eventPrimitive.CraftItems.Contains(material4))
                 {
-                    foundEventPrimitive = new Event(eventPrimitive.Id, eventPrimitive.Name);
+                    foundEventPrimitive = new Event(eventPrimitive.Id, null);
                     break;
                 }
             }
@@ -448,7 +495,7 @@ namespace MHArmory.AthenaAssDataSource
 
             return new ArmorPiece(
                 primitive.Id,
-                primitive.Name,
+                container.Names,
                 container.Type,
                 primitive.Rarity,
                 ParseSlots(primitive.Slots),
@@ -546,7 +593,7 @@ namespace MHArmory.AthenaAssDataSource
             if (string.IsNullOrEmpty(name) || level <= 0)
                 return null;
 
-            ISkill skill = nonTaskSkills.FirstOrDefault(s => s.Name == name);
+            ISkill skill = nonTaskSkills.FirstOrDefault(s => Localization.GetDefault(s.Name) == name);
 
             if (skill == null)
                 return null;
@@ -558,9 +605,9 @@ namespace MHArmory.AthenaAssDataSource
         {
             var result = new List<IArmorSetSkill>
             {
-                armorSetSkills.FirstOrDefault(x => x.Name == primitive.Skill1),
-                armorSetSkills.FirstOrDefault(x => x.Name == primitive.Skill2),
-                armorSetSkills.FirstOrDefault(x => x.Name == primitive.Skill3)
+                armorSetSkills.FirstOrDefault(x => Localization.GetDefault(x.Name) == primitive.Skill1),
+                armorSetSkills.FirstOrDefault(x => Localization.GetDefault(x.Name) == primitive.Skill2),
+                armorSetSkills.FirstOrDefault(x => Localization.GetDefault(x.Name) == primitive.Skill3)
             };
 
             if (result.Any(x => x != null))
@@ -571,7 +618,10 @@ namespace MHArmory.AthenaAssDataSource
 
         private IEnumerable<ArmorPieceContainer> LoadArmorPieceParts(EquipmentType type, string filename)
         {
-            string[] allLines = File.ReadAllLines(filename);
+            string fullFilename = Path.Combine(dataFolderPath, filename);
+            string[] allLines = File.ReadAllLines(fullFilename);
+
+            Dictionary<string, string[]> localizations = LoadLocalizations(filename);
 
             (int headerIndex, int dataIndex) = FindIndexes(allLines);
             if (headerIndex < 0)
@@ -597,6 +647,7 @@ namespace MHArmory.AthenaAssDataSource
                 var container = new ArmorPieceContainer
                 {
                     Primitive = armorPiecePrimitive,
+                    Names = localizations.ToDictionary(kv1 => kv1.Key, kv2 => kv2.Value[i - dataIndex]),
                     Type = type
                 };
 
@@ -665,6 +716,19 @@ namespace MHArmory.AthenaAssDataSource
         public Task<ISkill[]> GetSkills()
         {
             return Task.FromResult(nonTaskSkills);
+        }
+
+        private Dictionary<string, string[]> LoadLocalizations(string file)
+        {
+            var result = new Dictionary<string, string[]>();
+
+            foreach (KeyValuePair<string, string> language in Localization.AvailableLanguageCodes)
+            {
+                string fullFilePath = Path.Combine(dataFolderPath, "Languages", language.Value, file);
+                result[language.Key] = File.ReadAllLines(fullFilePath);
+            }
+
+            return result;
         }
     }
 

@@ -32,8 +32,6 @@ namespace MHArmory
         {
             InitializeComponent();
 
-            WindowManager.FitInScreen(this);
-
             this.rootViewModel = rootViewModel;
 
             decorationsOverrideViewModel = new DecorationsOverrideViewModel(GlobalData.Instance.Jewels, ProvideSaveSlotInfo);
@@ -90,7 +88,7 @@ namespace MHArmory
 
                 foreach (JewelOverrideViewModel vm in decorationsOverrideViewModel.Jewels.Where(x => x.IsOverriding || x.Count > 0))
                 {
-                    items.Add(vm.Name, new DecorationOverrideConfigurationItem
+                    items.Add(Core.Localization.GetDefault(vm.Name), new DecorationOverrideConfigurationItem
                     {
                         IsOverriding = vm.IsOverriding,
                         Count = vm.Count

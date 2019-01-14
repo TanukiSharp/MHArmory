@@ -39,13 +39,19 @@ namespace MHArmory.Services
             // call to UpdateLayout is required to force children to be rendered too
             element.UpdateLayout();
 
-            var renderTarget = new RenderTargetBitmap((int)element.DesiredSize.Width, (int)element.DesiredSize.Height, 96.0, 96.0, PixelFormats.Pbgra32);
+            DpiScale dpiInfo = VisualTreeHelper.GetDpi(App.Current.MainWindow);
+
+            var renderTarget = new RenderTargetBitmap(
+                (int)(element.DesiredSize.Width * dpiInfo.DpiScaleX),
+                (int)(element.DesiredSize.Height * dpiInfo.DpiScaleY),
+                96.0, 96.0, PixelFormats.Pbgra32
+            );
 
             var drawingVisual = new DrawingVisual();
 
             using (DrawingContext drawingContext = drawingVisual.RenderOpen())
             {
-                var rect = new Rect(new Point(0, 0), new Point(element.DesiredSize.Width, element.DesiredSize.Height));
+                var rect = new Rect(new Point(0, 0), new Point(renderTarget.Width, renderTarget.Height));
 
                 drawingContext.DrawRectangle(Brushes.White, null, rect);
                 drawingContext.DrawRectangle(new VisualBrush(element), null, rect);

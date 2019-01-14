@@ -55,8 +55,11 @@ namespace MHArmory.ViewModels
                 .OrderByDescending(x => x)
                 .ToList();
 
-            foreach (WeaponViewModel weapon in allWeapons.Values)
-                weapon.IsHighlight = IsWeaponMatchingSlots(weapon, inputSlots);
+            if (allWeapons != null)
+            {
+                foreach (WeaponViewModel weapon in allWeapons.Values)
+                    weapon.IsHighlight = IsWeaponMatchingSlots(weapon, inputSlots);
+            }
         }
 
         private bool IsWeaponMatchingSlots(WeaponViewModel weapon, IList<int> inputSlots)
