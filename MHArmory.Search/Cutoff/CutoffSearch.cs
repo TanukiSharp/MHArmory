@@ -45,30 +45,39 @@ namespace MHArmory.Search.Cutoff
         public Task<IList<ArmorSetSearchResult>> SearchArmorSets(ISolverData solverData, CancellationToken cancellationToken)
         {
             statistics = new CutoffStatistics();
-            var heads = solverData.AllHeads.Where(x => x.IsSelected).Select(x => x.Equipment).ToList();
-            var chests = solverData.AllChests.Where(x => x.IsSelected).Select(x => x.Equipment).ToList();
-            var gloves = solverData.AllGloves.Where(x => x.IsSelected).Select(x => x.Equipment).ToList();
-            var waists = solverData.AllWaists.Where(x => x.IsSelected).Select(x => x.Equipment).ToList();
-            var legs = solverData.AllLegs.Where(x => x.IsSelected).Select(x => x.Equipment).ToList();
+            var heads = solverData.AllHeads.Where(x => x.IsSelected).Select(x => (IArmorPiece)x.Equipment).ToList();
+            var chests = solverData.AllChests.Where(x => x.IsSelected).Select(x => (IArmorPiece)x.Equipment).ToList();
+            var gloves = solverData.AllGloves.Where(x => x.IsSelected).Select(x => (IArmorPiece)x.Equipment).ToList();
+            var waists = solverData.AllWaists.Where(x => x.IsSelected).Select(x => (IArmorPiece)x.Equipment).ToList();
+            var legs = solverData.AllLegs.Where(x => x.IsSelected).Select(x => (IArmorPiece)x.Equipment).ToList();
             var charms = solverData.AllCharms.Where(x => x.IsSelected).Select(x => x.Equipment).ToList();
 
-            IList<IList<IEquipment>> allArmorPieces = new List<IList<IEquipment>>
+            IList<IList<IArmorPiece>> allArmorPieces = new List<IList<IArmorPiece>>
             {
                 heads,
                 chests,
                 gloves,
                 waists,
-                legs,
+                legs
+            };
+
+            IList<IFullArmorSet> fullSets = FilterAndRemoveFullSetEquipment(allArmorPieces);
+
+            IList<IList<IEquipment>> allEquipment = new List<IList<IEquipment>>(allArmorPieces.Select(x => x.Cast<IEquipment>().ToList()))
+            {
                 charms
             };
 
-            statistics.Init(allArmorPieces);
+            statistics.Init(allEquipment);
             
-            MappingResults maps = mapper.MapEverything(allArmorPieces, solverData.DesiredAbilities, solverData.AllJewels);
-            SupersetInfo[] supersets = allArmorPieces.Select(list => supersetMaker.CreateSupersetModel(list, solverData.DesiredAbilities)).ToArray();
+            MappingResults maps = mapper.MapEverything(allEquipment, solverData.DesiredAbilities, solverData.AllJewels);
+
+            SupersetInfo[] supersets = allEquipment.Select(list => supersetMaker.CreateSupersetModel(list, solverData.DesiredAbilities)).ToArray();
             MappedEquipment[] supersetMaps = mapper.MapSupersets(supersets, maps);
 
             IList<ArmorSetSearchResult> results = new List<ArmorSetSearchResult>();
+
+            FullSetSearch(fullSets, solverData.WeaponSlots, solverData.DesiredAbilities, charms, solverData.AllJewels, results, cancellationToken);
 
             var combination = new Combination(supersetMaps, solverData.WeaponSlots, maps);
             ParallelizedDepthFirstSearch(combination, 0, maps.Equipment, supersetMaps, results, cancellationToken);
@@ -76,6 +85,48 @@ namespace MHArmory.Search.Cutoff
             //statistics.Dump();
             var resultTask = Task.FromResult(results);
             return resultTask;
+        }
+
+        private void FullSetSearch(IList<IFullArmorSet> fullSets, int[] weaponSlots, IAbility[] desiredAbilities, IList<IEquipment> charms, IList<SolverDataJewelModel> jewels, IList<ArmorSetSearchResult> results, CancellationToken cancellationToken)
+        {
+            foreach (IFullArmorSet fullSet in fullSets)
+            {
+                var allEquipment = fullSet.ArmorPieces.Select(x => (IList<IEquipment>)new List<IEquipment>() {x}).ToList();
+                allEquipment.Add(charms);
+                MappingResults maps = mapper.MapEverything(allEquipment, desiredAbilities, jewels);
+                SupersetInfo[] supersets = allEquipment.Select(list => supersetMaker.CreateSupersetModel(list, desiredAbilities)).ToArray();
+                MappedEquipment[] supersetMaps = mapper.MapSupersets(supersets, maps);
+                var combination = new Combination(supersetMaps, weaponSlots, maps);
+                DepthFirstSearch(combination, 0, maps.Equipment, supersetMaps, results, new object(), cancellationToken);
+            }
+        }
+
+        private IList<IFullArmorSet> FilterAndRemoveFullSetEquipment(IList<IList<IArmorPiece>> allArmorPieces)
+        {
+            var fullSetPieces = new List<IArmorPiece>();
+            for (int i = 0; i < allArmorPieces.Count; i++)
+            {
+                IList<IArmorPiece> equipments = allArmorPieces[i];
+                var nonFullSetPieceList = new List<IArmorPiece>();
+                foreach (IArmorPiece equipment in equipments)
+                {
+                    if (equipment.FullArmorSet != null)
+                    {
+                        fullSetPieces.Add(equipment);
+                    }
+                    else
+                    {
+                        nonFullSetPieceList.Add(equipment);
+                    }
+                }
+                allArmorPieces[i] = nonFullSetPieceList.ToArray();
+            }
+            var fullSetsDictionary = new Dictionary<int, IFullArmorSet>();
+            foreach (IArmorPiece fullSetPiece in fullSetPieces)
+            {
+                fullSetsDictionary[fullSetPiece.FullArmorSet.Id] = fullSetPiece.FullArmorSet;
+            }
+            return fullSetsDictionary.Values.ToList();
         }
 
         private void ParallelizedDepthFirstSearch(Combination combination, int depth, MappedEquipment[][] allEquipment, MappedEquipment[] supersets, IList<ArmorSetSearchResult> results, CancellationToken ct)
