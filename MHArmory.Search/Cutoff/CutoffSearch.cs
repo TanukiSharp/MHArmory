@@ -12,7 +12,7 @@ namespace MHArmory.Search.Cutoff
     {
         public string Name { get; } = "Cutoff solver";
         public string Author { get; } = "Gediminas Masaitis";
-        public string Description { get; } = "Optimized search with cutoff capabilities";
+        public string Description { get; } = "Tree search with cutoffs";
         public int Version { get; } = 1;
 
         public event Action<double> SearchProgress;
