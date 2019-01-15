@@ -2,6 +2,7 @@ using MHArmory.Configurations;
 using MHArmory.Core.DataStructures;
 using MHArmory.Search;
 using MHArmory.Search.Contracts;
+using MHArmory.Search.Contracts.Incremental;
 using System;
 using System.Collections.Generic;
 using System.Linq;
