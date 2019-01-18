@@ -5,7 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace MHArmory.Search.Contracts
+namespace MHArmory.Search.Default
 {
     public class SolverData : ISolverData
     {
