@@ -1,0 +1,14 @@
+<Window x:Class="MHArmory.Search.Testing.SampleExtensionConfigurationWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        Title="Sample extension configuration" Height="300" Width="400" Background="WhiteSmoke">
+    <Window.Resources>
+        <ResourceDictionary Source="Views.xaml"/>
+    </Window.Resources>
+    <Grid>
+        <ContentControl ContentTemplate="{StaticResource TestView}" Focusable="False"/>
+    </Grid>
+</Window>

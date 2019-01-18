@@ -1,34 +1,205 @@
 using MHArmory.Configurations;
 using MHArmory.Core.DataStructures;
-using MHArmory.Search;
+using MHArmory.Search.Default;
 using MHArmory.Search.Contracts;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
-using MHArmory.Search.OpenCL;
+using System.Windows.Input;
 
 namespace MHArmory.ViewModels
 {
+    public class ExtensionViewModel : ViewModelBase
+    {
+        public IExtension Extension { get; }
+
+        private bool isActive;
+        public bool IsActive
+        {
+            get { return isActive; }
+            set
+            {
+                if (SetValue(ref isActive, value))
+                    parent.OnExtensionSelectionChanged(this);
+            }
+        }
+
+        public bool IsConfigurable { get; }
+        public ICommand ConfigureCommand { get; }
+
+        private readonly ExtensionCategoryViewModelBase parent;
+
+        public ExtensionViewModel(ExtensionCategoryViewModelBase parent, IExtension extension)
+        {
+            this.parent = parent;
+            Extension = extension;
+
+            if (extension is IConfigurable configurable)
+            {
+                IsConfigurable = true;
+                ConfigureCommand = new AnonymousCommand(configurable.Configure);
+            }
+        }
+
+        public override string ToString()
+        {
+            return $"{Extension.Name} [{Extension.Description}]";
+        }
+    }
+
+    public enum ExtensionCategory
+    {
+        SolverData,
+        Solver,
+    }
+
+    public abstract class ExtensionCategoryViewModelBase : ViewModelBase
+    {
+        public string Name { get; }
+        public ExtensionCategory Category { get; }
+        public IList<ExtensionViewModel> Extensions { get; }
+
+        protected ExtensionCategoryViewModelBase(
+            string name,
+            ExtensionCategory category,
+            IList<IExtension> extenions
+        )
+        {
+            if (extenions == null)
+                throw new ArgumentNullException(nameof(extenions));
+            if (extenions.Count(x => x != null) == 0)
+                throw new ArgumentException("At least one extension is required", nameof(extenions));
+
+            for (int i = 0; i < extenions.Count; i++)
+            {
+                for (int j = i + 1; j < extenions.Count; j++)
+                {
+                    if (extenions[i].Name == extenions[j].Name)
+                        throw new ArgumentException($"Extension with name '{extenions[i].Name}' is duplicated", nameof(extenions));
+                }
+            }
+
+            Name = name;
+            Category = category;
+            Extensions = extenions
+                .Where(x => x != null)
+                .Select(x => new ExtensionViewModel(this, x))
+                .ToList();
+        }
+
+        protected internal abstract void OnExtensionSelectionChanged(ExtensionViewModel extension);
+    }
+
+    public class SingleSelectionExtensionCategoryViewModel : ExtensionCategoryViewModelBase
+    {
+        public delegate void SingleSelectionExtensionSelectionChangedHandler(SingleSelectionExtensionCategoryViewModel category, ExtensionViewModel oldExtension, ExtensionViewModel newExtension);
+
+        private ExtensionViewModel selected;
+        public ExtensionViewModel Selected
+        {
+            get { return selected; }
+            set
+            {
+                if (value == null)
+                    throw new ArgumentException(nameof(Selected));
+
+                ExtensionViewModel oldValue = selected;
+
+                if (SetValue(ref selected, value))
+                {
+                    if (oldValue != null)
+                        oldValue.IsActive = false;
+                    selected.IsActive = true;
+                }
+            }
+        }
+
+        private readonly SingleSelectionExtensionSelectionChangedHandler onSelectionChanged;
+
+        public SingleSelectionExtensionCategoryViewModel(
+            string name,
+            ExtensionCategory category,
+            IList<IExtension> extenions,
+            string selectedExtensionName,
+            SingleSelectionExtensionSelectionChangedHandler onSelectionChanged
+        ) : base(name, category, extenions)
+        {
+            this.onSelectionChanged = onSelectionChanged;
+
+            bool hasSelection = false;
+
+            foreach (ExtensionViewModel ext in Extensions)
+            {
+                if (ext.Extension.Name == selectedExtensionName)
+                {
+                    ext.IsActive = true;
+                    hasSelection = true;
+                }
+            }
+
+            if (hasSelection == false)
+                Extensions[0].IsActive = true;
+        }
+
+        protected internal override void OnExtensionSelectionChanged(ExtensionViewModel extension)
+        {
+            if (extension.IsActive == false)
+                return;
+
+            ExtensionViewModel oldExtension = Selected;
+            Selected = extension;
+
+            onSelectionChanged(this, oldExtension, extension);
+        }
+    }
+
+    public class MultiSelectionExtensionCategoryViewModel : ExtensionCategoryViewModelBase
+    {
+        public delegate void MultiSelectionExtensionSelectionChangedHandler(MultiSelectionExtensionCategoryViewModel category, ExtensionViewModel extension);
+
+        private readonly MultiSelectionExtensionSelectionChangedHandler onSelectionChanged;
+
+        public MultiSelectionExtensionCategoryViewModel(
+            string name,
+            ExtensionCategory category,
+            IList<IExtension> extenions,
+            IEnumerable<string> selectedExtensionNames,
+            MultiSelectionExtensionSelectionChangedHandler onSelectionChanged
+        ) : base(name, category, extenions)
+        {
+            this.onSelectionChanged = onSelectionChanged;
+
+            bool hasSelection = false;
+
+            foreach (string extName in selectedExtensionNames.Distinct())
+            {
+                foreach (ExtensionViewModel ext in Extensions)
+                {
+                    if (ext.Extension.Name == extName)
+                    {
+                        ext.IsActive = true;
+                        hasSelection = true;
+                    }
+                }
+            }
+
+            if (hasSelection == false)
+                Extensions[0].IsActive = true;
+        }
+
+        protected internal override void OnExtensionSelectionChanged(ExtensionViewModel extension)
+        {
+            onSelectionChanged(this, extension);
+        }
+    }
+
     public class ExtensionSelectorViewModel : ViewModelBase
     {
-        private static readonly ISolverData[] availableSolverData = new ISolverData[]
-        {
-            new SolverData(),
-            //new TestSolverData(),
-        };
-
-        private static readonly ISolver[] availableSolvers = new ISolver[]
-        {
-            new Solver(),
-            OpenCLSearch.Instance,
-            //new TestSolver(),
-        };
-
-        public ExtensionSelector<ISolverData> SolverData { get; }
-        public ExtensionSelector<ISolver> Solver { get; }
+        public ExtensionCategoryViewModelBase[] Categories { get; }
 
         private readonly RootViewModel root;
 
@@ -36,41 +207,40 @@ namespace MHArmory.ViewModels
         {
             this.root = root;
 
-            SolverData = new ExtensionSelector<ISolverData>(
-                nameof(SolverData),
-                availableSolverData,
-                GlobalData.Instance.Configuration.Extensions.SolverData,
-                OnSolverDataChanged
-            );
-
-            Solver = new ExtensionSelector<ISolver>(
-                nameof(Solver),
-                availableSolvers,
-                GlobalData.Instance.Configuration.Extensions.Solver,
-                OnSolverChanged
-            );
+            Categories = new ExtensionCategoryViewModelBase[]
+            {
+                new SingleSelectionExtensionCategoryViewModel(
+                    nameof(SolverData),
+                    ExtensionCategory.SolverData,
+                    AvailableExtensions.SolverData,
+                    GlobalData.Instance.Configuration.Extensions.SolverData,
+                    OnSolverDataChanged
+                ),
+                new SingleSelectionExtensionCategoryViewModel(
+                    nameof(Solver),
+                    ExtensionCategory.Solver,
+                    AvailableExtensions.Solvers,
+                    GlobalData.Instance.Configuration.Extensions.Solver,
+                    OnSolverChanged
+                ),
+            };
         }
 
-        private void OnSolverDataChanged(ISolverData oldValue, ISolverData newValue)
+        private void OnSolverDataChanged(ExtensionCategoryViewModelBase category, ExtensionViewModel oldExtension, ExtensionViewModel newExtension)
         {
             root.CreateSolverData();
 
-            GlobalData.Instance.Configuration.Extensions.SolverData = newValue.Name;
+            GlobalData.Instance.Configuration.Extensions.SolverData = newExtension.Extension.Name;
             ConfigurationManager.Save(GlobalData.Instance.Configuration);
-
-            if (oldValue is IDisposable disposable)
-                disposable.Dispose();
         }
 
-        private void OnSolverChanged(ISolver oldValue, ISolver newValue)
+        private void OnSolverChanged(ExtensionCategoryViewModelBase category, ExtensionViewModel oldExtension, ExtensionViewModel newExtension)
         {
-            if (oldValue != null)
-            {
-                oldValue.SearchProgress -= SolverSearchProgress;
+            var oldValue = oldExtension?.Extension as ISolver;
+            var newValue = newExtension?.Extension as ISolver;
 
-                if (oldValue is IDisposable disposable)
-                    disposable.Dispose();
-            }
+            if (oldValue != null)
+                oldValue.SearchProgress -= SolverSearchProgress;
 
             if (newValue != null)
                 newValue.SearchProgress += SolverSearchProgress;
@@ -84,139 +254,4 @@ namespace MHArmory.ViewModels
             root.SearchProgression = progressRatio;
         }
     }
-
-    // ==========================================================================================================
-
-    public class ExtensionSelector<T> : Selector<T> where T : class, IExtension
-    {
-        public ExtensionSelector(string propertyName, IList<T> availableValues, string selectedExtensionName, Action<T, T> onChanged)
-            : base(propertyName, availableValues, FindExtensionIndex(availableValues, selectedExtensionName), onChanged)
-        {
-            for (int i = 0; i < availableValues.Count; i++)
-            {
-                for (int j = i + 1; j < availableValues.Count; j++)
-                {
-                    if (availableValues[i].Name == availableValues[j].Name)
-                        throw new ArgumentException($"Invalid '{nameof(availableValues)}' argument, '{availableValues[i].Name}' is duplicated", nameof(availableValues));
-                }
-            }
-        }
-
-        private static int FindExtensionIndex(IList<T> extensions, string name)
-        {
-            for (int i = 0; i < extensions.Count; i++)
-            {
-                if (extensions[i].Name == name)
-                    return i;
-            }
-
-            return 0;
-        }
-
-        public static implicit operator T(ExtensionSelector<T> selector)
-        {
-            return selector.SelectedValue;
-        }
-    }
-
-    public class Selector<T> : ViewModelBase where T : class
-    {
-        private readonly string propertyName;
-        private readonly Action<T, T> onChanged;
-
-        public IList<T> AvailableValues { get; }
-
-        private T selectedValue;
-        public T SelectedValue
-        {
-            get { return selectedValue; }
-            set
-            {
-                if (value == null)
-                    throw new ArgumentNullException(propertyName, $"Null value is illegal for '{propertyName}'");
-
-                T oldValue = selectedValue;
-                if (SetValue(ref selectedValue, value))
-                    onChanged?.Invoke(oldValue, selectedValue);
-            }
-        }
-
-        public static implicit operator T(Selector<T> selector)
-        {
-            return selector.SelectedValue;
-        }
-
-        public Selector(string propertyName, IList<T> availableValues, int selectedIndex, Action<T, T> onChanged)
-        {
-            if (availableValues == null)
-                throw new ArgumentNullException(nameof(availableValues));
-
-            if (availableValues.Count == 0)
-                throw new ArgumentException($"{nameof(availableValues)} is invalid", nameof(availableValues));
-
-            if (selectedIndex < 0 || selectedIndex >= availableValues.Count)
-                throw new ArgumentException($"{nameof(selectedIndex)} ({selectedIndex}) is invalid", nameof(selectedIndex));
-
-            this.propertyName = propertyName;
-            this.onChanged = onChanged;
-
-            AvailableValues = availableValues;
-
-            SelectedValue = availableValues[selectedIndex];
-        }
-    }
-
-    /*
-    public class TestSolverData : ISolverData
-    {
-        public int[] WeaponSlots { get; private set; }
-
-        public ISolverDataEquipmentModel[] AllHeads { get; private set; }
-        public ISolverDataEquipmentModel[] AllChests { get; private set; }
-        public ISolverDataEquipmentModel[] AllGloves { get; private set; }
-        public ISolverDataEquipmentModel[] AllWaists { get; private set; }
-        public ISolverDataEquipmentModel[] AllLegs { get; private set; }
-        public ISolverDataEquipmentModel[] AllCharms { get; private set; }
-
-        public SolverDataJewelModel[] AllJewels { get; private set; }
-
-        public IAbility[] DesiredAbilities { get; private set; }
-
-        public string Name { get; } = "Armory - Test SolverData";
-        public string Author { get; } = "TanukiSharp Blablabla long name";
-        public string Description { get; } = "Test solver search algorithm";
-        public int Version { get; } = 51;
-
-        public void Setup(IList<int> weaponSlots, IEnumerable<IArmorPiece> heads, IEnumerable<IArmorPiece> chests, IEnumerable<IArmorPiece> gloves, IEnumerable<IArmorPiece> waists, IEnumerable<IArmorPiece> legs, IEnumerable<ICharmLevel> charms, IEnumerable<SolverDataJewelModel> jewels, IEnumerable<IAbility> desiredAbilities)
-        {
-            WeaponSlots = weaponSlots.ToArray();
-
-            AllHeads = heads.Select(x => new SolverDataEquipmentModel(x)).Take(6).ToArray();
-            AllChests = chests.Select(x => new SolverDataEquipmentModel(x)).Take(6).ToArray();
-            AllGloves = gloves.Select(x => new SolverDataEquipmentModel(x)).Take(6).ToArray();
-            AllWaists = waists.Select(x => new SolverDataEquipmentModel(x)).Take(6).ToArray();
-            AllLegs = legs.Select(x => new SolverDataEquipmentModel(x)).Take(6).ToArray();
-            AllCharms = charms.Select(x => new SolverDataEquipmentModel(x)).Take(6).ToArray();
-
-            AllJewels = jewels.Take(32).ToArray();
-
-            DesiredAbilities = desiredAbilities.ToArray();
-        }
-    }
-
-    public class TestSolver : ISolver
-    {
-        public string Name { get; } = "Armory - Test Solver";
-        public string Author { get; } = "TanukiSharp";
-        public string Description { get; } = "Test solver data with very very long description or maybe a bit too long description";
-        public int Version { get; } = 37;
-
-        public event Action<double> SearchProgress = delegate { };
-
-        public Task<IList<ArmorSetSearchResult>> SearchArmorSets(ISolverData solverData, CancellationToken cancellationToken)
-        {
-            return Task.FromResult<IList<ArmorSetSearchResult>>(new ArmorSetSearchResult[0]);
-        }
-    }
-    */
 }
