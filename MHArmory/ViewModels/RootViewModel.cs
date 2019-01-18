@@ -335,12 +335,51 @@ namespace MHArmory.ViewModels
             }
         }
 
+        private ExtensionCategoryViewModelBase GetExtensionCategory(ExtensionCategory category)
+        {
+            ExtensionCategoryViewModelBase categoryViewModel = Extensions.Categories.FirstOrDefault(x => x.Category == category);
+
+            if (categoryViewModel == null)
+                throw new InvalidOperationException($"Extension category '{category}' unavailable");
+
+            return categoryViewModel;
+        }
+
+        private ExtensionViewModel GetSingleSelectedExtension(ExtensionCategoryViewModelBase category)
+        {
+            if (category == null)
+                throw new ArgumentNullException(nameof(category));
+
+            return category.Extensions.Single(x => x.IsActive);
+        }
+
+        private ExtensionViewModel GetSingleSelectedExtension(ExtensionCategory category)
+        {
+            ExtensionCategoryViewModelBase categoryViewModel = GetExtensionCategory(category);
+            return GetSingleSelectedExtension(categoryViewModel);
+        }
+
+        private T GetSingleSelectedExtension<T>(ExtensionCategory category)
+        {
+            return (T)GetSingleSelectedExtension(category).Extension;
+        }
+
+        private ISolver GetSelectedSolver()
+        {
+            return GetSingleSelectedExtension<ISolver>(ExtensionCategory.Solver);
+        }
+
+        private ISolverData GetSelectedSolverData()
+        {
+            return GetSingleSelectedExtension<ISolverData>(ExtensionCategory.SolverData);
+        }
+
         public void CreateSolverData()
         {
             if (IsDataLoaded == false || SelectedAbilities == null)
                 return;
 
-            ISolverData solverData = Extensions.SolverData.SelectedValue;
+            ISolverData solverData = GetSelectedSolverData();
 
             var desiredAbilities = SelectedAbilities
                 .Where(x => x.IsChecked)
@@ -432,7 +471,7 @@ namespace MHArmory.ViewModels
 
         public void UpdateAdvancedSearch()
         {
-            ISolverData solverData = Extensions.SolverData.SelectedValue;
+            ISolverData solverData = GetSelectedSolverData();
 
             var armorPieceTypesViewModels = new ArmorPieceTypesViewModel[]
             {
@@ -456,14 +495,14 @@ namespace MHArmory.ViewModels
 
         private async Task SearchArmorSetsInternal(CancellationToken cancellationToken)
         {
-            ISolverData solverData = Extensions.SolverData.SelectedValue;
+            ISolverData solverData = GetSelectedSolverData();
 
             if (solverData == null)
                 return;
 
             var sw = Stopwatch.StartNew();
 
-            IList<ArmorSetSearchResult> result = await Extensions.Solver.SelectedValue.SearchArmorSets(solverData, cancellationToken);
+            IList<ArmorSetSearchResult> result = await GetSelectedSolver().SearchArmorSets(solverData, cancellationToken);
 
             sw.Stop();
 

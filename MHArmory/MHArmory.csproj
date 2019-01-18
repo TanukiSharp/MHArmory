@@ -85,6 +85,10 @@
     <Compile Include="EquipmentOverrideWindow.xaml.cs">
       <DependentUpon>EquipmentOverrideWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Extensions.cs" />
+    <Compile Include="ExtensionsWindow.xaml.cs">
+      <DependentUpon>ExtensionsWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="GitInfo.cs" />
     <ApplicationDefinition Include="App.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -204,6 +208,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="EquipmentOverrideWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ExtensionsWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -381,7 +389,7 @@
       <Name>MHArmory.Search.Contracts</Name>
     </ProjectReference>
     <ProjectReference Include="..\MHArmory.Search\MHArmory.Search.csproj">
-      <Project>{375922DD-84D4-46FA-9F2C-0FC45EFC0BDD}</Project>
+      <Project>{efc218f1-aae3-499a-a26c-85878b8cec3a}</Project>
       <Name>MHArmory.Search</Name>
     </ProjectReference>
     <ProjectReference Include="..\MHWSaveUtils\MHWSaveUtils\MHWSaveUtils.csproj">

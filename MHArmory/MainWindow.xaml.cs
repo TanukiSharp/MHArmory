@@ -46,6 +46,7 @@ namespace MHArmory
             CommandBindings.Add(RoutedCommands.CreateCommandBinding(RoutedCommands.OpenEquipmentExplorer, OpenEquipmentExplorer));
             CommandBindings.Add(RoutedCommands.CreateCommandBinding(RoutedCommands.OpenSearchResultProcessing, OpenSearchResultProcessing));
             CommandBindings.Add(RoutedCommands.CreateCommandBinding(RoutedCommands.OpenWeapons, OpenWeapons));
+            CommandBindings.Add(RoutedCommands.CreateCommandBinding(RoutedCommands.OpenExtensions, OpenExtensions));
 
             CommandBindings.Add(RoutedCommands.CreateCommandBinding(RoutedCommands.NewLoadout, OnNewLoadout));
             CommandBindings.Add(RoutedCommands.CreateCommandBinding(RoutedCommands.OpenLoadout, OnOpenLoadout));
@@ -217,6 +218,14 @@ namespace MHArmory
                 WindowManager.InitializeWindow(new WeaponsWindow(rootViewModel) { Owner = this });
 
             WindowManager.Show<WeaponsWindow>();
+        }
+
+        private void OpenExtensions(object obj)
+        {
+            if (WindowManager.IsInitialized<ExtensionsWindow>() == false)
+                WindowManager.InitializeWindow(new ExtensionsWindow(rootViewModel) { Owner = this });
+
+            WindowManager.Show<ExtensionsWindow>();
         }
 
         private LoadoutManager loadoutManager;
