@@ -57,6 +57,8 @@ namespace MHArmory.Search.Testing
 
         public void Configure()
         {
+            var window = new SampleExtensionConfigurationWindow();
+            window.ShowDialog();
         }
 
         public Task<IList<ArmorSetSearchResult>> SearchArmorSets(ISolverData solverData, CancellationToken cancellationToken)
