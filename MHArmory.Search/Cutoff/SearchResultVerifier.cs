@@ -55,10 +55,28 @@ namespace MHArmory.Search.Cutoff
                 return false;
             }
 
+            bool excludedCheckPass = CheckForExcludedSkills(combination);
+            if (!excludedCheckPass)
+            {
+                return false;
+            }
+
             result.IsMatch = true;
             result.SpareSlots = totalSlots.Skip(1).ToArray();
             result.ArmorPieces = combination.Equipments.Take(5).Select(x => x.Equipment).Cast<IArmorPiece>().ToList();
             result.Charm = (ICharmLevel)combination.Equipments[5].Equipment;
+            return true;
+        }
+
+        private bool CheckForExcludedSkills(Combination combination)
+        {
+            foreach (int index in combination.ExcludedAbilityIndices)
+            {
+                if (combination.RemainingSkills[index] < 0)
+                {
+                    return false;
+                }
+            }
             return true;
         }
 

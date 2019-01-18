@@ -1,4 +1,6 @@
+using System.Collections.Generic;
 using System.Linq;
+using MHArmory.Core.DataStructures;
 
 namespace MHArmory.Search.Cutoff
 {
@@ -10,6 +12,8 @@ namespace MHArmory.Search.Cutoff
         public int[] RemainingSkills { get; }
         public MappedJewel[] Jewels { get; }
 
+        public int[] ExcludedAbilityIndices { get; }
+
         public Combination(MappedEquipment[] initialEquipment, int[] weaponSlots, MappingResults results)
         {
             Equipments = initialEquipment.ToArray();
@@ -20,6 +24,7 @@ namespace MHArmory.Search.Cutoff
             }
             Grants = results.SetParts.Select(x => new ArmorSetSkillGrant(x)).ToArray();
             RemainingSkills = results.DesiredAbilities.Select(x => x.Level).ToArray();
+            ExcludedAbilityIndices = results.DesiredAbilities.Where(x => x.Level == 0).Select(x => x.MappedId).ToArray();
             Jewels = results.Jewels;
             foreach (MappedEquipment equipment in initialEquipment)
             {
@@ -34,6 +39,8 @@ namespace MHArmory.Search.Cutoff
             Grants = combination.Grants.Select(x => new ArmorSetSkillGrant(x.Part) {Progress = x.Progress}).ToArray();
             RemainingSkills = (int[]) combination.RemainingSkills.Clone();
             Jewels = (MappedJewel[]) combination.Jewels.Clone();
+
+            ExcludedAbilityIndices = combination.ExcludedAbilityIndices;
         }
 
         public void Replace(int index, MappedEquipment replacement)
