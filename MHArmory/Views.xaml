@@ -31,20 +31,43 @@
     <SolidColorBrush x:Key="InactiveToggleBackgroundBrush" Color="#FFFFB7B7"/>
 
     <DataTemplate x:Key="ExtensionView">
-        <StackPanel Orientation="Horizontal">
-            <StackPanel Margin="1 1 6 1">
-                <TextBlock Text="{Binding Name, Mode=OneTime}" FontWeight="Bold" Margin="2"/>
-                <TextBlock Text="{Binding Description, Mode=OneTime}" Margin="2" MaxWidth="250" TextTrimming="CharacterEllipsis" ToolTip="{Binding Description, Mode=OneTime}"/>
-            </StackPanel>
-            <StackPanel Margin="1">
-                <TextBlock Text="{Binding Version, StringFormat='Version {0}', Mode=OneTime}" Margin="2" Foreground="Gray" FontSize="10"/>
-                <TextBlock Text="{Binding Author, Mode=OneTime}" Margin="2" Foreground="Gray" FontSize="10" MaxWidth="120" TextTrimming="CharacterEllipsis" ToolTip="{Binding Author, Mode=OneTime}"/>
-            </StackPanel>
-        </StackPanel>
+        <RadioButton Margin="2" Padding="2" IsChecked="{Binding IsActive}" IsThreeState="False" VerticalContentAlignment="Center">
+            <Border x:Name="x" CornerRadius="3" Padding="2" Background="WhiteSmoke">
+                <StackPanel Orientation="Horizontal">
+                    <StackPanel Orientation="Horizontal" DataContext="{Binding Extension, Mode=OneTime}">
+                        <StackPanel Margin="1 1 6 1">
+                            <TextBlock Text="{Binding Name, Mode=OneTime}" FontWeight="Bold" Margin="2"/>
+                            <TextBlock Text="{Binding Description, Mode=OneTime}" Margin="2" MaxWidth="250" TextTrimming="CharacterEllipsis" ToolTip="{Binding Description, Mode=OneTime}"/>
+                        </StackPanel>
+                        <StackPanel Margin="1">
+                            <TextBlock Text="{Binding Version, StringFormat='Version {0}', Mode=OneTime}" Margin="2" Foreground="Gray" FontSize="10"/>
+                            <TextBlock Text="{Binding Author, Mode=OneTime}" Margin="2" Foreground="Gray" FontSize="10" MaxWidth="120" TextTrimming="CharacterEllipsis" ToolTip="{Binding Author, Mode=OneTime}"/>
+                        </StackPanel>
+                    </StackPanel>
+                    <Button Content="Configure..." VerticalAlignment="Center" Margin="4" Padding="4" Visibility="{Binding IsConfigurable, Mode=OneTime, Converter={StaticResource CollapsedVisibilityValueConverter}}" Command="{Binding ConfigureCommand, Mode=OneTime}"/>
+                </StackPanel>
+            </Border>
+        </RadioButton>
+        <DataTemplate.Triggers>
+            <DataTrigger Binding="{Binding IsActive}" Value="True">
+                <Setter TargetName="x" Property="Background" Value="#A0C0E0"/>
+            </DataTrigger>
+        </DataTemplate.Triggers>
     </DataTemplate>
 
-    <DataTemplate x:Key="ExtensionMenuHeaderTemplate">
-        <ComboBox VerticalAlignment="Center" ItemsSource="{Binding AvailableValues, Mode=OneTime}" SelectedItem="{Binding SelectedValue}" ItemTemplate="{StaticResource ExtensionView}"/>
+    <DataTemplate x:Key="ExtensionCategoryView">
+        <Expander Margin="8" Padding="4" Background="#E0E0E0" IsExpanded="True">
+            <Expander.Header>
+                <TextBlock Text="{Binding Name, Mode=OneTime}" FontWeight="Bold"/>
+            </Expander.Header>
+            <ItemsControl ItemsSource="{Binding Extensions, Mode=OneTime}" Margin="16 0 0 0" ItemTemplate="{StaticResource ExtensionView}" Focusable="False"/>
+        </Expander>
+    </DataTemplate>
+
+    <DataTemplate x:Key="ExtensionSelectorView">
+        <ScrollViewer HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Visible">
+            <ItemsControl ItemsSource="{Binding Categories, Mode=OneTime}" ItemTemplate="{StaticResource ExtensionCategoryView}" Focusable="False"/>
+        </ScrollViewer>
     </DataTemplate>
 
     <DataTemplate x:Key="SaveDataSlotView">
@@ -877,24 +900,7 @@
                             </Style>
                         </MenuItem.ItemContainerStyle>
                     </MenuItem>
-                    <MenuItem Header="Extensions" DataContext="{Binding Extensions, Mode=OneTime}" pnl:KeyValueGrid.IsSharedSizeScope="True">
-                        <ctrl:UnclickableMenuItem DataContext="{Binding SolverData, Mode=OneTime}">
-                            <ctrl:UnclickableMenuItem.Header>
-                                <pnl:KeyValueGrid Margin="4" KeyColumnSharedSizeGroup="A">
-                                    <TextBlock Text="SolverData: " VerticalAlignment="Center"/>
-                                    <ContentControl Content="{Binding}" ContentTemplate="{StaticResource ExtensionMenuHeaderTemplate}" Focusable="False"/>
-                                </pnl:KeyValueGrid>
-                            </ctrl:UnclickableMenuItem.Header>
-                        </ctrl:UnclickableMenuItem>
-                        <ctrl:UnclickableMenuItem DataContext="{Binding Solver, Mode=OneTime}">
-                            <ctrl:UnclickableMenuItem.Header>
-                                <pnl:KeyValueGrid Margin="4" KeyColumnSharedSizeGroup="A">
-                                    <TextBlock Text="Solver: " VerticalAlignment="Center"/>
-                                    <ContentControl Content="{Binding}" ContentTemplate="{StaticResource ExtensionMenuHeaderTemplate}" Focusable="False"/>
-                                </pnl:KeyValueGrid>
-                            </ctrl:UnclickableMenuItem.Header>
-                        </ctrl:UnclickableMenuItem>
-                    </MenuItem>
+                    <MenuItem Header="Extensions" Command="{x:Static local:RoutedCommands.OpenExtensions}"/>
                     <MenuItem Header="?">
                         <MenuItem Header="Integrated help" Command="{x:Static local:RoutedCommands.OpenIntegratedHelp}" CommandParameter="GettingStarted"/>
                         <Separator/>

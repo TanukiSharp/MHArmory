@@ -1,23 +1,27 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFrameworks>net47;netstandard2.0</TargetFrameworks>
-    <Version>0.0.2</Version>
-  </PropertyGroup>
-
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <TargetFrameworks>net47</TargetFrameworks>
+    <Version>0.0.3</Version>
     <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
     <WarningsAsErrors />
+    <Copyright>Copyright © Sebastien ROBERT - 2018 ~ 2019</Copyright>
   </PropertyGroup>
 
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
-    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
-    <WarningsAsErrors />
-  </PropertyGroup>
+  <ItemGroup>
+    <Page Include="**\*.xaml" SubType="Designer" Generator="MSBuild:Compile" />
+  </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\MHArmory.Core\MHArmory.Core.csproj" />
     <ProjectReference Include="..\MHArmory.Search.Contracts\MHArmory.Search.Contracts.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="WindowsBase" />
   </ItemGroup>
 
 </Project>

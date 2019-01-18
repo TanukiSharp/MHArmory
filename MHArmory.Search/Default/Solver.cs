@@ -10,7 +10,7 @@ using MHArmory.Core;
 using MHArmory.Core.DataStructures;
 using MHArmory.Search.Contracts;
 
-namespace MHArmory.Search
+namespace MHArmory.Search.Default
 {
     public class Solver : ISolver, IDisposable
     {
