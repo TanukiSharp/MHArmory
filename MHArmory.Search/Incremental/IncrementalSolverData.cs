@@ -1,8 +1,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using MHArmory.Core.DataStructures;
+using MHArmory.Search.Contracts;
 
-namespace MHArmory.Search.Contracts.Incremental
+namespace MHArmory.Search.Incremental
 {
 
     public class IncrementalSolverData : ISolverData
