@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Input;
 using MHArmory.ViewModels;
+using MHArmory.Core.WPF;
 
 namespace MHArmory
 {

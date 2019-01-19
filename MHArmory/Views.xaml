@@ -1,11 +1,15 @@
 <ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:local="clr-namespace:MHArmory"
-                    xmlns:cvt="clr-namespace:MHArmory.ValueConverters"
-                    xmlns:bhv="clr-namespace:MHArmory.Behaviors"
-                    xmlns:ctrl="clr-namespace:MHArmory.Controls"
-                    xmlns:mxt="clr-namespace:MHArmory.MarkupExtensions"
-                    xmlns:pnl="clr-namespace:MHArmory.Panels">
+                    xmlns:localcvt="clr-namespace:MHArmory.ValueConverters"
+                    xmlns:cvt="clr-namespace:MHArmory.Core.WPF.ValueConverters;assembly=MHArmory.Core.WPF"
+                    xmlns:bhv="clr-namespace:MHArmory.Core.WPF.Behaviors;assembly=MHArmory.Core.WPF"
+                    xmlns:ctrl="clr-namespace:MHArmory.Core.WPF.Controls;assembly=MHArmory.Core.WPF"
+                    xmlns:mxt="clr-namespace:MHArmory.Core.WPF.MarkupExtensions;assembly=MHArmory.Core.WPF"
+                    xmlns:pnl="clr-namespace:MHArmory.Core.WPF.Panels;assembly=MHArmory.Core.WPF">
+
+    <localcvt:AbilityToViewModelValueConverter x:Key="AbilityToViewModelValueConverter"/>
+    <localcvt:SortCriteriaNameValueConverter x:Key="SortCriteriaNameValueConverter"/>
 
     <cvt:HiddenVisibilityValueConverter x:Key="HiddenVisibilityValueConverter"/>
     <cvt:CollapsedVisibilityValueConverter x:Key="CollapsedVisibilityValueConverter"/>
@@ -16,14 +20,12 @@
     <cvt:SlotToImageSourceValueConverter x:Key="SlotToImageSourceValueConverter"/>
     <cvt:SlotSizeToolTipValueConverter x:Key="SlotSizeToolTipValueConverter"/>
     <cvt:HasDefenseVisibilityValueConverter x:Key="HasDefenseVisibilityValueConverter"/>
-    <cvt:SortCriteriaNameValueConverter x:Key="SortCriteriaNameValueConverter"/>
     <cvt:WeaponNameValueConverter x:Key="WeaponNameValueConverter"/>
     <cvt:SharpnessNameValueConverter x:Key="SharpnessNameValueConverter"/>
     <cvt:ElementNameValueConverter x:Key="ElementNameValueConverter"/>
     <cvt:MillisecondsToTimeValueConverter x:Key="MillisecondsToTimeValueConverter"/>
     <cvt:NumToSeparatedStringValueConverter x:Key="NumToSeparatedStringValueConverter"/>
     <cvt:FreeElementNameValueConverter x:Key="FreeElementNameValueConverter"/>
-    <cvt:AbilityToViewModelValueConverter x:Key="AbilityToViewModelValueConverter"/>
     <cvt:CombinationPerSecondValueConverter x:Key="CombinationPerSecondValueConverter"/>
 
     <SolidColorBrush x:Key="ActiveWeaponBackgroundBrush" Color="#FFB7FFA7"/>

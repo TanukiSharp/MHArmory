@@ -12,6 +12,7 @@ using MHArmory.Core.DataStructures;
 using MHArmory.Search;
 using MHArmory.Search.Contracts;
 using MHArmory.Services;
+using MHArmory.Core.WPF;
 using Microsoft.Win32;
 
 namespace MHArmory.ViewModels

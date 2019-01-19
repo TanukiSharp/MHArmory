@@ -9,6 +9,7 @@ using Newtonsoft.Json;
 using MHArmory.Search.Contracts;
 using MHArmory.Services;
 using MHArmory.Core.ServiceContracts;
+using MHArmory.Core.WPF;
 
 namespace MHArmory.ViewModels
 {

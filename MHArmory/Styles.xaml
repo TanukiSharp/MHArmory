@@ -1,8 +1,8 @@
 <ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:local="clr-namespace:MHArmory"
-                    xmlns:ctrl="clr-namespace:MHArmory.Controls"
-                    xmlns:bhv="clr-namespace:MHArmory.Behaviors">
+                    xmlns:ctrl="clr-namespace:MHArmory.Core.WPF.Controls;assembly=MHArmory.Core.WPF"
+                    xmlns:bhv="clr-namespace:MHArmory.Core.WPF.Behaviors;assembly=MHArmory.Core.WPF">
 
     <Style TargetType="ctrl:CustomTreeView">
         <Setter Property="Template">
