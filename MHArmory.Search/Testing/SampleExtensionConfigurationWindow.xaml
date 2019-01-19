@@ -9,6 +9,6 @@
         <ResourceDictionary Source="Views.xaml"/>
     </Window.Resources>
     <Grid>
-        <ContentControl ContentTemplate="{StaticResource TestView}" Focusable="False"/>
+        <ContentControl Content="{Binding}" ContentTemplate="{StaticResource TestView}" Focusable="False"/>
     </Grid>
 </Window>

@@ -57,7 +57,7 @@ namespace MHArmory.Search.Testing
 
         public void Configure()
         {
-            var window = new SampleExtensionConfigurationWindow();
+            var window = new SampleExtensionConfigurationWindow(this);
             window.ShowDialog();
         }
 

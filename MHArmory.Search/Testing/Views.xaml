@@ -1,8 +1,27 @@
 <ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:pnl="clr-namespace:MHArmory.Core.WPF.Panels;assembly=MHArmory.Core.WPF">
 
     <DataTemplate x:Key="TestView">
-        <TextBlock Text="Test" Margin="4"/>
+        <pnl:KeyValueGrid>
+            <!-- First row of the grid -->
+            <TextBlock Text="Text value:" VerticalAlignment="Center"/>
+            <TextBox Text="{Binding TextValue, UpdateSourceTrigger=PropertyChanged}" Margin="4" Padding="2" VerticalAlignment="Center"/>
+
+            <!-- Second row of the grid -->
+            <TextBlock Text="Numeric value:" VerticalAlignment="Center"/>
+            <TextBox Text="{Binding NumericValue}" Margin="4" Padding="2" VerticalAlignment="Center"/>
+
+            <!-- Third row of the grid -->
+            <TextBlock Text="Another numeric value:" VerticalAlignment="Center"/>
+            <TextBox Text="{Binding AnotherNumericValue}" Margin="4" Padding="2" VerticalAlignment="Center"/>
+
+            <!-- Fourth row of the grid -->
+            <TextBlock Text="Action: " VerticalAlignment="Center"/>
+            <Button Content="Execute" Command="{Binding ActionCommand, Mode=OneTime}" Margin="4" Padding="2" VerticalAlignment="Center"/>
+            <!-- Binding on readonly getter is usually Mode=OneTime to save resources -->
+
+        </pnl:KeyValueGrid>
     </DataTemplate>
 
 </ResourceDictionary>
