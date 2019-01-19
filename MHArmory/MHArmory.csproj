@@ -157,7 +157,6 @@
     <Compile Include="ViewModels\SearchResultProcessingContainerViewModel.cs" />
     <Compile Include="ViewModels\SearchResultSortItemViewModel.cs" />
     <Compile Include="ViewModels\TextInputViewModel.cs" />
-    <Compile Include="ViewModels\ViewModelBase.cs" />
     <Compile Include="ViewModels\WeaponsContainerViewModel.cs" />
     <Compile Include="ViewModels\WeaponTypeViewModel.cs" />
     <Compile Include="ViewModels\WeaponViewModel.cs" />

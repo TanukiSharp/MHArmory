@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using MHArmory.ArmoryDataSource.DataStructures;
+using MHArmory.Core.WPF;
 using Newtonsoft.Json;
 
 namespace MHArmory.ViewModels

@@ -1,10 +1,10 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using System.Windows.Threading;
 
-namespace MHArmory.ViewModels
+namespace MHArmory.Core.WPF
 {
     public abstract class ViewModelBase : INotifyPropertyChanged
     {
