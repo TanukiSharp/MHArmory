@@ -34,22 +34,33 @@ namespace MHArmory.Search.Default
             SearchProgress = null;
         }
 
-        public Task<IList<ArmorSetSearchResult>> SearchArmorSets(ISolverData solverData, CancellationToken cancellationToken)
+        public async Task<IList<ArmorSetSearchResult>> SearchArmorSets(ISolverData solverData, CancellationToken cancellationToken)
         {
-            UpdateSearchProgression(cancellationToken);
+            var innerCancellation = new CancellationTokenSource();
 
-            return Task.Factory.StartNew(() =>
+            Task updateTask = UpdateSearchProgression(innerCancellation.Token, cancellationToken);
+
+            IList<ArmorSetSearchResult> result = await Task.Factory.StartNew(() =>
             {
                 return SearchArmorSetsInternal(
                     solverData,
                     cancellationToken
                 );
             }, TaskCreationOptions.LongRunning).Unwrap();
+
+            innerCancellation.Cancel();
+
+            await updateTask;
+
+            if (cancellationToken.IsCancellationRequested == false)
+                SearchProgress?.Invoke(1.0);
+
+            return result;
         }
 
-        private async void UpdateSearchProgression(CancellationToken cancellationToken)
+        private async Task UpdateSearchProgression(CancellationToken innerCancel, CancellationToken cancellationToken)
         {
-            while (cancellationToken.IsCancellationRequested == false)
+            while (innerCancel.IsCancellationRequested == false && cancellationToken.IsCancellationRequested == false)
             {
                 if (totalCombinations > 0)
                     SearchProgress?.Invoke(currentCombinations / totalCombinations);
@@ -160,9 +171,6 @@ namespace MHArmory.Search.Default
 
                     searchEquipmentsObjectPool.PutObject(equips);
                 });
-
-                if (cancellationToken.IsCancellationRequested == false)
-                    SearchProgress?.Invoke(1.0);
             }
             finally
             {
