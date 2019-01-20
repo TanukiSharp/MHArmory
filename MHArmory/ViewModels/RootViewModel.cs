@@ -82,7 +82,11 @@ namespace MHArmory.ViewModels
         public IEnumerable<ArmorSetViewModel> FoundArmorSets
         {
             get { return foundArmorSets; }
-            private set { SetValue(ref foundArmorSets, value); }
+            private set
+            {
+                if (SetValue(ref foundArmorSets, value))
+                    OnFoundArmorSets();
+            }
         }
 
         public InParametersViewModel InParameters { get; }
@@ -191,6 +195,26 @@ namespace MHArmory.ViewModels
 
             if (SearchResultProcessing.ApplySort(ref result, container, force, limit))
                 FoundArmorSets = result;
+        }
+
+        private void OnFoundArmorSets()
+        {
+            SearchResultsGrouping grouping =
+                SearchResultsGrouping.RequiredDecorations |
+                SearchResultsGrouping.Defense |
+                SearchResultsGrouping.SpareSlots |
+                SearchResultsGrouping.AdditionalSKills |
+                SearchResultsGrouping.Resistances |
+                SearchResultsGrouping.None;
+
+            var sw = Stopwatch.StartNew();
+
+            IEnumerable<IGrouping<string, ArmorSetViewModel>> groups = SearchResultGrouper.Default
+                .GroupBy(foundArmorSets, grouping)
+                .ToList();
+
+            sw.Stop();
+            Console.WriteLine($"Grouping took {sw.ElapsedMilliseconds} ms");
         }
 
         private LoadoutManager loadoutManager;

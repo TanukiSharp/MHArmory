@@ -111,6 +111,7 @@
     <Compile Include="SaveDataSlotSelectorWindow.xaml.cs">
       <DependentUpon>SaveDataSlotSelectorWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="SearchResultGrouper.cs" />
     <Compile Include="SearchResultProcessingWindow.xaml.cs">
       <DependentUpon>SearchResultProcessingWindow.xaml</DependentUpon>
     </Compile>
