@@ -512,27 +512,42 @@ namespace MHArmory.ViewModels
             metrics.TimeElapsed = (int)sw.ElapsedMilliseconds;
             metrics.MatchingResults = result?.Count ?? 0;
 
+            await Dispatcher.Yield(DispatcherPriority.SystemIdle);
+
             SearchMetrics = null;
             SearchMetrics = metrics;
 
-            if (solverData == null)
+            IsDataLoading = true;
+            IsDataLoaded = false;
+
+            await Dispatcher.Yield(DispatcherPriority.SystemIdle);
+
+            try
             {
-                rawFoundArmorSets = null;
-                return;
+                if (solverData == null)
+                {
+                    rawFoundArmorSets = null;
+                    return;
+                }
+
+                if (result != null)
+                {
+                    rawFoundArmorSets = result.Where(x => x.IsMatch).Select(x => new ArmorSetViewModel(
+                        this,
+                        solverData,
+                        x.ArmorPieces,
+                        x.Charm,
+                        x.Jewels.Select(j => new ArmorSetJewelViewModel(j.Jewel, j.Count)).ToList(),
+                        x.SpareSlots
+                    ));
+
+                    ApplySorting(true);
+                }
             }
-
-            if (result != null)
+            finally
             {
-                rawFoundArmorSets = result.Where(x => x.IsMatch).Select(x => new ArmorSetViewModel(
-                    this,
-                    solverData,
-                    x.ArmorPieces,
-                    x.Charm,
-                    x.Jewels.Select(j => new ArmorSetJewelViewModel(j.Jewel, j.Count)).ToList(),
-                    x.SpareSlots
-                ));
-
-                ApplySorting(true);
+                IsDataLoading = false;
+                IsDataLoaded = true;
             }
         }
 
