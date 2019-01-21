@@ -197,6 +197,13 @@ namespace MHArmory.ViewModels
                 FoundArmorSets = result;
         }
 
+        private IEnumerable<KeyValuePair<ArmorSetViewModel, IEnumerable<ArmorSetViewModel>>> groupedFoundArmorSets;
+        public IEnumerable<KeyValuePair<ArmorSetViewModel, IEnumerable<ArmorSetViewModel>>> GroupedFoundArmorSets
+        {
+            get { return groupedFoundArmorSets; }
+            private set { SetValue(ref groupedFoundArmorSets, value); }
+        }
+
         private void OnFoundArmorSets()
         {
             SearchResultsGrouping grouping =
@@ -209,12 +216,15 @@ namespace MHArmory.ViewModels
 
             var sw = Stopwatch.StartNew();
 
-            IEnumerable<IGrouping<string, ArmorSetViewModel>> groups = SearchResultGrouper.Default
+            IEnumerable<KeyValuePair<ArmorSetViewModel, IEnumerable<ArmorSetViewModel>>> groups = SearchResultGrouper.Default
                 .GroupBy(foundArmorSets, grouping)
+                .Select(g => new KeyValuePair<ArmorSetViewModel, IEnumerable<ArmorSetViewModel>>(g.FirstOrDefault(), g))
                 .ToList();
 
             sw.Stop();
             Console.WriteLine($"Grouping took {sw.ElapsedMilliseconds} ms");
+
+            GroupedFoundArmorSets = groups;
         }
 
         private LoadoutManager loadoutManager;
