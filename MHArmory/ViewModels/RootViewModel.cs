@@ -134,6 +134,8 @@ namespace MHArmory.ViewModels
 
             SetupLocalization();
 
+            GroupedSearchResultsViewModel = new GroupedSearchResultsViewModel(this);
+
             Extensions = new ExtensionSelectorViewModel(this);
         }
 
@@ -197,34 +199,36 @@ namespace MHArmory.ViewModels
                 FoundArmorSets = result;
         }
 
-        private IEnumerable<KeyValuePair<ArmorSetViewModel, IEnumerable<ArmorSetViewModel>>> groupedFoundArmorSets;
-        public IEnumerable<KeyValuePair<ArmorSetViewModel, IEnumerable<ArmorSetViewModel>>> GroupedFoundArmorSets
-        {
-            get { return groupedFoundArmorSets; }
-            private set { SetValue(ref groupedFoundArmorSets, value); }
-        }
+        public GroupedSearchResultsViewModel GroupedSearchResultsViewModel { get; }
+
+        //private IEnumerable<KeyValuePair<ArmorSetViewModel, IEnumerable<ArmorSetViewModel>>> groupedFoundArmorSets;
+        //public IEnumerable<KeyValuePair<ArmorSetViewModel, IEnumerable<ArmorSetViewModel>>> GroupedFoundArmorSets
+        //{
+        //    get { return groupedFoundArmorSets; }
+        //    private set { SetValue(ref groupedFoundArmorSets, value); }
+        //}
 
         private void OnFoundArmorSets()
         {
-            SearchResultsGrouping grouping =
-                SearchResultsGrouping.RequiredDecorations |
-                SearchResultsGrouping.Defense |
-                SearchResultsGrouping.SpareSlots |
-                SearchResultsGrouping.AdditionalSKills |
-                SearchResultsGrouping.Resistances |
-                SearchResultsGrouping.None;
+            //SearchResultsGrouping grouping =
+            //    SearchResultsGrouping.RequiredDecorations |
+            //    SearchResultsGrouping.Defense |
+            //    SearchResultsGrouping.SpareSlots |
+            //    SearchResultsGrouping.AdditionalSKills |
+            //    SearchResultsGrouping.Resistances |
+            //    SearchResultsGrouping.None;
 
-            var sw = Stopwatch.StartNew();
+            //var sw = Stopwatch.StartNew();
 
-            IEnumerable<KeyValuePair<ArmorSetViewModel, IEnumerable<ArmorSetViewModel>>> groups = SearchResultGrouper.Default
-                .GroupBy(foundArmorSets, grouping)
-                .Select(g => new KeyValuePair<ArmorSetViewModel, IEnumerable<ArmorSetViewModel>>(g.FirstOrDefault(), g))
-                .ToList();
+            //IEnumerable<KeyValuePair<ArmorSetViewModel, IEnumerable<ArmorSetViewModel>>> groups = SearchResultGrouper.Default
+            //    .GroupBy(foundArmorSets, grouping)
+            //    .Select(g => new KeyValuePair<ArmorSetViewModel, IEnumerable<ArmorSetViewModel>>(g.FirstOrDefault(), g))
+            //    .ToList();
 
-            sw.Stop();
-            Console.WriteLine($"Grouping took {sw.ElapsedMilliseconds} ms");
+            //sw.Stop();
+            //Console.WriteLine($"Grouping took {sw.ElapsedMilliseconds} ms");
 
-            GroupedFoundArmorSets = groups;
+            //GroupedFoundArmorSets = groups;
         }
 
         private LoadoutManager loadoutManager;

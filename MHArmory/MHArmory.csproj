@@ -145,6 +145,7 @@
     <Compile Include="ViewModels\EquipmentOverrideViewModel.cs" />
     <Compile Include="ViewModels\EquipmentViewModel.cs" />
     <Compile Include="ViewModels\ExtensionSelectorViewModel.cs" />
+    <Compile Include="ViewModels\GroupedSearchResultsViewModel.cs" />
     <Compile Include="ViewModels\HelpViewModel.cs" />
     <Compile Include="ViewModels\InParametersViewModel.cs" />
     <Compile Include="ViewModels\JewelOverrideViewModel.cs" />
