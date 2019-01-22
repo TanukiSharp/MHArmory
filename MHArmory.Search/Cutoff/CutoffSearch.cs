@@ -15,12 +15,12 @@ namespace MHArmory.Search.Cutoff
         public string Description { get; } = "Tree search with cutoffs";
         public int Version { get; } = 1;
 
+        public bool SearchNullPieces { get; set; }
+        public int MaxResults { get; set; }
+
         public event Action<double> SearchProgress;
 
         public static CutoffSearch Instance { get; } = new CutoffSearch(new Mapper(), new SupersetMaker(), new SearchResultVerifier());
-
-        // I'm not sure how to consume this data. I think some GUI changes will have to be made
-        public event EventHandler<CutoffStatistics> ProgressChanged;
 
         private readonly Mapper mapper;
         private readonly SupersetMaker supersetMaker;
@@ -33,17 +33,23 @@ namespace MHArmory.Search.Cutoff
             this.mapper = mapper;
             this.supersetMaker = supersetMaker;
             this.verifier = verifier;
+            SearchNullPieces = true;
+            MaxResults = 10000;
         }
 
-        private void InvokeProgressChanged()
+        private void InvokeProgressChanged(double value)
         {
-            ProgressChanged?.Invoke(this, statistics);
-            SearchProgress?.Invoke(0d);
+            SearchProgress?.Invoke(value);
         }
 
-        
         public Task<IList<ArmorSetSearchResult>> SearchArmorSets(ISolverData solverData, CancellationToken cancellationToken)
         {
+            return Task.Run(() => SearchArmorSetsInner(solverData, cancellationToken));
+        }
+
+        public IList<ArmorSetSearchResult> SearchArmorSetsInner(ISolverData solverData, CancellationToken cancellationToken)
+        {
+            InvokeProgressChanged(0d);
             statistics = new CutoffStatistics();
             var heads = solverData.AllHeads.Where(x => x.IsSelected).Select(x => (IArmorPiece)x.Equipment).ToList();
             var chests = solverData.AllChests.Where(x => x.IsSelected).Select(x => (IArmorPiece)x.Equipment).ToList();
@@ -68,9 +74,10 @@ namespace MHArmory.Search.Cutoff
                 charms
             };
 
-            statistics.Init(allEquipment);
-            
-            MappingResults maps = mapper.MapEverything(allEquipment, solverData.DesiredAbilities, solverData.AllJewels, true);
+            MappingResults maps = mapper.MapEverything(allEquipment, solverData.DesiredAbilities, solverData.AllJewels, SearchNullPieces);
+
+            int[] mapLengths = maps.Equipment.Select(x => x.Length).ToArray();
+            statistics.Init(mapLengths);
 
             SupersetInfo[] supersets = allEquipment.Select(list => supersetMaker.CreateSupersetModel(list, solverData.DesiredAbilities)).ToArray();
             MappedEquipment[] supersetMaps = mapper.MapSupersets(supersets, maps);
@@ -81,10 +88,9 @@ namespace MHArmory.Search.Cutoff
 
             var combination = new Combination(supersetMaps, solverData.WeaponSlots, maps);
             ParallelizedDepthFirstSearch(combination, 0, maps.Equipment, supersetMaps, results, cancellationToken);
-            //DepthFirstSearch(combination, 0, maps.Equipment, supersetMaps, results, new object(), ct);
+            //DepthFirstSearch(combination, 0, maps.Equipment, supersetMaps, results, new object(), cancellationToken);
             //statistics.Dump();
-            var resultTask = Task.FromResult(results);
-            return resultTask;
+            return results;
         }
 
         private void FullSetSearch(IList<IFullArmorSet> fullSets, int[] weaponSlots, IAbility[] desiredAbilities, IList<IEquipment> charms, IList<SolverDataJewelModel> jewels, IList<ArmorSetSearchResult> results, CancellationToken cancellationToken)
@@ -142,14 +148,14 @@ namespace MHArmory.Search.Cutoff
 
         private void DepthFirstSearch(Combination combination, int depth, MappedEquipment[][] allEquipment, MappedEquipment[] supersets, IList<ArmorSetSearchResult> results, object sync, CancellationToken ct)
         {
-            if (ct.IsCancellationRequested || results.Count >= 100000)
+            if (ct.IsCancellationRequested || results.Count >= MaxResults)
             {
                 return;
             }
             if (depth == allEquipment.Length)
             {
                 bool match = verifier.TryGetSearchResult(combination, false, out ArmorSetSearchResult result);
-                statistics.RealSearch(match, InvokeProgressChanged);
+                statistics.RealSearch(match);
                 if (match)
                 {
                     lock (sync)
@@ -161,11 +167,13 @@ namespace MHArmory.Search.Cutoff
             }
 
             bool supersetMatch = verifier.TryGetSearchResult(combination, true,  out _);
-            statistics.SupersetSearch(depth, supersetMatch, InvokeProgressChanged);
+            statistics.SupersetSearch(depth, supersetMatch);
             if (!supersetMatch)
             {
                 return;
             }
+
+            InvokeProgressChanged(statistics.GetCurrentProgress());
 
             int depthLength = allEquipment[depth].Length;
             for (int i = 0; i < depthLength; i++)

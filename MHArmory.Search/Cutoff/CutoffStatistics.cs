@@ -10,12 +10,12 @@ namespace MHArmory.Search.Cutoff
 {
     public class CutoffStatistics
     {
-        public long CombinationsPossible { get; private set; }
-        public long RealSearches { get; private set; }
-        public long[] SupersetSearches { get; private set; }
-        public long[] Cutoffs { get; private set; }
-        public long[] Savings { get; private set; }
-        public long Results { get; private set; }
+        private long combinationsPossible;
+        private long realSearches;
+        private long[] SupersetSearches;
+        private long[] Cutoffs;
+        private long[] Savings;
+        private long Results;
 
         private Stopwatch Stopwatch { get; }
 
@@ -28,36 +28,34 @@ namespace MHArmory.Search.Cutoff
             Stopwatch.Start();
         }
 
-        public void Init(IList<IList<IEquipment>> allArmorPieces)
+        public void Init(int[] equipmentCounts)
         {
-            SupersetSearches = new long[allArmorPieces.Count];
-            Cutoffs = new long[allArmorPieces.Count];
-            Savings = new long[allArmorPieces.Count];
-            CombinationsPossible = 1;
-            for (int i = allArmorPieces.Count - 1; i >= 0; i--)
+            SupersetSearches = new long[equipmentCounts.Length];
+            Cutoffs = new long[equipmentCounts.Length];
+            Savings = new long[equipmentCounts.Length];
+            combinationsPossible = 1;
+            for (int i = equipmentCounts.Length - 1; i >= 0; i--)
             {
-                IList<IEquipment> equipments = allArmorPieces[i];
-                CombinationsPossible *= equipments.Count;
-                Savings[i] = CombinationsPossible;
+                combinationsPossible *= equipmentCounts[i];
+                Savings[i] = combinationsPossible;
             }
             realSync = new object();
             superSync = new object();
         }
 
-        public void RealSearch(bool match, Action afterUpdate)
+        public void RealSearch(bool match)
         {
             lock (realSync)
             {
-                RealSearches++;
+                realSearches++;
                 if (match)
                 {
                     Results++;
                 }
-                afterUpdate?.Invoke();
             }
         }
 
-        public void SupersetSearch(int depth, bool match, Action afterUpdate)
+        public void SupersetSearch(int depth, bool match)
         {
             lock (superSync)
             {
@@ -66,8 +64,18 @@ namespace MHArmory.Search.Cutoff
                 {
                     Cutoffs[depth]++;
                 }
-                afterUpdate?.Invoke();
             }
+        }
+
+        public double GetCurrentProgress()
+        {
+            long supposedlySearched = realSearches;
+            for (int i = 0; i < Cutoffs.Length; i++)
+            {
+                supposedlySearched += Cutoffs[i] * Savings[i];
+            }
+            double progress = supposedlySearched / (double) combinationsPossible;
+            return progress;
         }
 
         public void Dump()
@@ -81,18 +89,18 @@ namespace MHArmory.Search.Cutoff
             var sb = new StringBuilder();
             sb.AppendLine($"Total search time: {Stopwatch.Elapsed:c}");
             sb.AppendLine();
-            sb.AppendLine($"Combinations possible: {CombinationsPossible:N0}");
-            sb.AppendLine($"Real combinations searched: {RealSearches:N0}");
+            sb.AppendLine($"Combinations possible: {combinationsPossible:N0}");
+            sb.AppendLine($"Real combinations searched: {realSearches:N0}");
             long totalSupersetSearches = SupersetSearches.Sum();
             sb.AppendLine($"Superset combinations searched: {totalSupersetSearches:N0}");
-            long totalSearches = RealSearches + totalSupersetSearches;
+            long totalSearches = realSearches + totalSupersetSearches;
             sb.AppendLine($"Total combinations searched: {totalSearches:N0}");
             sb.AppendLine($"Results: {Results:N0}");
             sb.AppendLine();
 
-            double treeCoverage = (double)RealSearches / CombinationsPossible;
+            double treeCoverage = (double)realSearches / combinationsPossible;
             sb.AppendLine($"Search tree coverage: {treeCoverage:P5} (less is better)");
-            double searchPercentage = (double)totalSearches / CombinationsPossible;
+            double searchPercentage = (double)totalSearches / combinationsPossible;
             sb.AppendLine($"Search efficiency: {searchPercentage:P5} (less is better)");
             sb.AppendLine();
 
