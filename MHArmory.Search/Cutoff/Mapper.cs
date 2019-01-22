@@ -7,13 +7,13 @@ namespace MHArmory.Search.Cutoff
 {
     internal class Mapper
     {
-        public MappingResults MapEverything(IList<IList<IEquipment>> allEquipment, IAbility[] desiredAbilities, IEnumerable<SolverDataJewelModel> jewels)
+        public MappingResults MapEverything(IList<IList<IEquipment>> allEquipment, IAbility[] desiredAbilities, IEnumerable<SolverDataJewelModel> jewels, bool createNullEquipments)
         {
             var results = new MappingResults();
             results.DesiredAbilities = MapDesiredAbilities(desiredAbilities);
             IDictionary<int, int> desiredDict = results.DesiredAbilities.ToDictionary(x => x.SkillId, x => x.MappedId);
             results.SetParts = MapSkillParts(allEquipment, desiredDict, results.DesiredAbilities);
-            results.Equipment = MapAllEquipment(allEquipment, desiredDict, results);
+            results.Equipment = MapAllEquipment(allEquipment, desiredDict, results, createNullEquipments);
             results.Jewels = MapJewels(jewels, desiredDict, results.DesiredAbilities);
             return results;
         }
@@ -22,7 +22,7 @@ namespace MHArmory.Search.Cutoff
         {
             IDictionary<int, int> desiredDict = existingResults.DesiredAbilities.ToDictionary(x => x.SkillId, x => x.MappedId);
             var equipments = supersets.Select(x => x.Equipment).ToList();
-            MappedEquipment[] mappedEquipments = MapEquipments(equipments, desiredDict, existingResults);
+            MappedEquipment[] mappedEquipments = MapEquipments(equipments, desiredDict, existingResults, false);
             for (int i = 0; i < mappedEquipments.Length; i++)
             {
                 MappedEquipment equipment = mappedEquipments[i];
@@ -105,23 +105,37 @@ namespace MHArmory.Search.Cutoff
             return mappedArr;
         }
 
-        private MappedEquipment[][] MapAllEquipment(IList<IList<IEquipment>> allEquipment, IDictionary<int, int> desiredDict, MappingResults results)
+        private MappedEquipment[][] MapAllEquipment(IList<IList<IEquipment>> allEquipment, IDictionary<int, int> desiredDict, MappingResults results, bool createNullEquipments)
         {
             var allMapped = new MappedEquipment[allEquipment.Count][];
             for (int i = 0; i < allEquipment.Count; i++)
             {
                 IList<IEquipment> equipments = allEquipment[i];
-                allMapped[i] = MapEquipments(equipments, desiredDict, results);
+                allMapped[i] = MapEquipments(equipments, desiredDict, results, createNullEquipments);
             }
             return allMapped;
         }
 
-        private MappedEquipment[] MapEquipments(IList<IEquipment> equipments, IDictionary<int, int> desiredDict, MappingResults results)
+        private MappedEquipment[] MapEquipments(IList<IEquipment> equipments, IDictionary<int, int> desiredDict, MappingResults results, bool createNullEquipment)
         {
-            var mappedEquipments = new MappedEquipment[equipments.Count];
-            for (int j = 0; j < equipments.Count; j++)
+            int startingIndex = 0;
+            int count = equipments.Count;
+            if (createNullEquipment)
             {
-                IEquipment equipment = equipments[j];
+                startingIndex = 1;
+                count++;
+            }
+            var mappedEquipments = new MappedEquipment[count];
+            if (createNullEquipment)
+            {
+                var nullEquipment = new MappedEquipment();
+                nullEquipment.Skills = new MappedSkill[0];
+                nullEquipment.SkillParts = new MappedSkillPart[0];
+                mappedEquipments[0] = nullEquipment;
+            }
+            for (int j = startingIndex; j < count; j++)
+            {
+                IEquipment equipment = equipments[j-startingIndex];
                 var mappedEquipment = new MappedEquipment();
                 mappedEquipments[j] = mappedEquipment;
                 mappedEquipment.Equipment = equipment;

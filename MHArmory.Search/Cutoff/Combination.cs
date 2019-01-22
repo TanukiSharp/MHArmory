@@ -52,6 +52,10 @@ namespace MHArmory.Search.Cutoff
 
         private void Add(MappedEquipment equipment)
         {
+            if (equipment.Equipment == null)
+            {
+                return;
+            }
             foreach (MappedSkill skill in equipment.Skills)
             {
                 RemainingSkills[skill.MappedId] -= skill.Level;
@@ -78,6 +82,10 @@ namespace MHArmory.Search.Cutoff
 
         private void Subtract(MappedEquipment equipment)
         {
+            if (equipment.Equipment == null)
+            {
+                return;
+            }
             foreach (MappedSkill skill in equipment.Skills)
             {
                 RemainingSkills[skill.MappedId] += skill.Level;

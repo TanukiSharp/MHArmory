@@ -70,7 +70,7 @@ namespace MHArmory.Search.Cutoff
 
             statistics.Init(allEquipment);
             
-            MappingResults maps = mapper.MapEverything(allEquipment, solverData.DesiredAbilities, solverData.AllJewels);
+            MappingResults maps = mapper.MapEverything(allEquipment, solverData.DesiredAbilities, solverData.AllJewels, true);
 
             SupersetInfo[] supersets = allEquipment.Select(list => supersetMaker.CreateSupersetModel(list, solverData.DesiredAbilities)).ToArray();
             MappedEquipment[] supersetMaps = mapper.MapSupersets(supersets, maps);
@@ -93,7 +93,7 @@ namespace MHArmory.Search.Cutoff
             {
                 var allEquipment = fullSet.ArmorPieces.Select(x => (IList<IEquipment>)new List<IEquipment>() {x}).ToList();
                 allEquipment.Add(charms);
-                MappingResults maps = mapper.MapEverything(allEquipment, desiredAbilities, jewels);
+                MappingResults maps = mapper.MapEverything(allEquipment, desiredAbilities, jewels, false);
                 SupersetInfo[] supersets = allEquipment.Select(list => supersetMaker.CreateSupersetModel(list, desiredAbilities)).ToArray();
                 MappedEquipment[] supersetMaps = mapper.MapSupersets(supersets, maps);
                 var combination = new Combination(supersetMaps, weaponSlots, maps);

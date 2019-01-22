@@ -63,7 +63,7 @@ namespace MHArmory.Search.Cutoff
 
             result.IsMatch = true;
             result.SpareSlots = totalSlots.Skip(1).ToArray();
-            result.ArmorPieces = combination.Equipments.Take(5).Select(x => x.Equipment).Cast<IArmorPiece>().ToList();
+            result.ArmorPieces = combination.Equipments.Take(5).Where(x => x.Equipment != null).Select(x => x.Equipment).Cast<IArmorPiece>().ToList();
             result.Charm = (ICharmLevel)combination.Equipments[5].Equipment;
             return true;
         }
