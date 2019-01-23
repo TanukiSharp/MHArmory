@@ -34,7 +34,7 @@ namespace MHArmory.Search.Cutoff
             this.supersetMaker = supersetMaker;
             this.verifier = verifier;
             SearchNullPieces = true;
-            MaxResults = 10000;
+            MaxResults = 200000;
         }
 
         private void InvokeProgressChanged(double value)
@@ -87,8 +87,8 @@ namespace MHArmory.Search.Cutoff
             FullSetSearch(fullSets, solverData.WeaponSlots, solverData.DesiredAbilities, charms, solverData.AllJewels, results, cancellationToken);
 
             var combination = new Combination(supersetMaps, solverData.WeaponSlots, maps);
-            ParallelizedDepthFirstSearch(combination, 0, maps.Equipment, supersetMaps, results, cancellationToken);
-            //DepthFirstSearch(combination, 0, maps.Equipment, supersetMaps, results, new object(), cancellationToken);
+            //ParallelizedDepthFirstSearch(combination, 0, maps.Equipment, supersetMaps, results, cancellationToken);
+            DepthFirstSearch(combination, 0, maps.Equipment, supersetMaps, results, new object(), cancellationToken);
             //statistics.Dump();
             return results;
         }
