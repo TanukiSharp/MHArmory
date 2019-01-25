@@ -1,4 +1,4 @@
-namespace MHArmory.Search.Cutoff
+namespace MHArmory.Search.Cutoff.Models.Mapped
 {
     internal class MappedSkill
     {

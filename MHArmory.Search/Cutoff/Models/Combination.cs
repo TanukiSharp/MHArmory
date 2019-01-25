@@ -1,8 +1,7 @@
-using System.Collections.Generic;
 using System.Linq;
-using MHArmory.Core.DataStructures;
+using MHArmory.Search.Cutoff.Models.Mapped;
 
-namespace MHArmory.Search.Cutoff
+namespace MHArmory.Search.Cutoff.Models
 {
     internal class Combination
     {

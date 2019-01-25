@@ -1,6 +1,6 @@
 using MHArmory.Search.Contracts;
 
-namespace MHArmory.Search.Cutoff
+namespace MHArmory.Search.Cutoff.Models.Mapped
 {
     internal class MappedJewel
     {

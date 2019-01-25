@@ -1,4 +1,6 @@
-namespace MHArmory.Search.Cutoff
+using MHArmory.Search.Cutoff.Models.Mapped;
+
+namespace MHArmory.Search.Cutoff.Models
 {
     internal class ArmorSetSkillGrant
     {

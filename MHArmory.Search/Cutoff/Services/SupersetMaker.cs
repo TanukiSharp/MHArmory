@@ -1,10 +1,11 @@
 using System.Collections.Generic;
 using System.Linq;
 using MHArmory.Core.DataStructures;
+using MHArmory.Search.Cutoff.Models;
 
-namespace MHArmory.Search.Cutoff
+namespace MHArmory.Search.Cutoff.Services
 {
-    internal class SupersetMaker
+    internal class SupersetMaker : ISupersetMaker
     {
         public SupersetInfo CreateSupersetModel(IList<IEquipment> equipments, IAbility[] desiredAbilities)
         {

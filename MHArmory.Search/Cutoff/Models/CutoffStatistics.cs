@@ -1,12 +1,9 @@
-using System;
-using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Text;
-using MHArmory.Core.DataStructures;
 
-namespace MHArmory.Search.Cutoff
+namespace MHArmory.Search.Cutoff.Models
 {
     public class CutoffStatistics
     {

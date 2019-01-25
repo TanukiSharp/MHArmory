@@ -2,10 +2,12 @@ using System.Collections.Generic;
 using System.Linq;
 using MHArmory.Core.DataStructures;
 using MHArmory.Search.Contracts;
+using MHArmory.Search.Cutoff.Models;
+using MHArmory.Search.Cutoff.Models.Mapped;
 
-namespace MHArmory.Search.Cutoff
+namespace MHArmory.Search.Cutoff.Services
 {
-    internal class Mapper
+    internal class Mapper : IMapper
     {
         public MappingResults MapEverything(IList<IList<IEquipment>> allEquipment, IAbility[] desiredAbilities, IEnumerable<SolverDataJewelModel> jewels, bool createNullEquipments)
         {

@@ -3,10 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using MHArmory.Core.DataStructures;
 using MHArmory.Search.Contracts;
+using MHArmory.Search.Cutoff.Models;
+using MHArmory.Search.Cutoff.Models.Mapped;
 
-namespace MHArmory.Search.Cutoff
+namespace MHArmory.Search.Cutoff.Services
 {
-    internal class SearchResultVerifier
+    internal class SearchResultVerifier : ISearchResultVerifier
     {
         public bool TryGetSearchResult(Combination combination, bool hasSuperset, out ArmorSetSearchResult result)
         {

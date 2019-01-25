@@ -1,6 +1,6 @@
 using MHArmory.Core.DataStructures;
 
-namespace MHArmory.Search.Cutoff
+namespace MHArmory.Search.Cutoff.Models
 {
     internal class SupersetInfo
     {
