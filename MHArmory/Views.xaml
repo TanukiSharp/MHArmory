@@ -349,7 +349,7 @@
                             <Run Text="{Binding Defense.Augmented, Mode=OneTime}"/>
                         </TextBlock>
                     </StackPanel>
-                    <Image x:Name="possessedIcon" Source="{mxt:RasterizedImage Location=Icons/Others/cube_chest.svg, Size=16}" Width="16" Height="16" Margin="1" HorizontalAlignment="Left" IsHitTestVisible="False" SnapsToDevicePixels="True"/>
+                    <Image x:Name="possessedIcon" Source="{mxt:RasterizedImage Location=Icons/Others/cube_chest.svg, Size=16}" Visibility="Hidden" Width="16" Height="16" Margin="1" HorizontalAlignment="Left" IsHitTestVisible="False" SnapsToDevicePixels="True"/>
                 </StackPanel>
                 <StackPanel Grid.Column="1" Margin="0 0 8 0" Orientation="Vertical">
                     <TextBlock VerticalAlignment="Top" HorizontalAlignment="Left" Focusable="False">
@@ -374,6 +374,9 @@
             </Grid>
         </Border>
         <DataTemplate.Triggers>
+            <DataTrigger Binding="{Binding ShowIsPossessed, Mode=OneTime}" Value="True">
+                <Setter TargetName="possessedIcon" Property="Visibility" Value="Visible"/>
+            </DataTrigger>
             <DataTrigger Binding="{Binding IsPossessed}" Value="False">
                 <Setter TargetName="possessedIcon" Property="Opacity" Value="0.1"/>
             </DataTrigger>

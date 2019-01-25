@@ -34,6 +34,10 @@ namespace MHArmory.ViewModels
         public IEvent Event { get { return Equipment.Event; } }
         public IAbility[] Abilities { get { return Equipment.Abilities; } }
 
+        // This is used for the view, other types without see property
+        // are considered not displaying the possessed mark.
+        public bool ShowIsPossessed { get; } = true;
+
         private bool isPossessed = true;
         public bool IsPossessed
         {
