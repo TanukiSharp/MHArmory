@@ -491,7 +491,7 @@
         <Border CornerRadius="2" BorderThickness="2" BorderBrush="#300077aa" Background="#100077aa" Margin="2 2 2 24" Padding="2">
             <StackPanel Orientation="Horizontal">
                 <ContentControl Content="{Binding Key, Mode=OneTime}" ContentTemplate="{StaticResource SearchResultArmorSetDetailsView}" Margin="4 4 12 4" Focusable="False"/>
-                <ListBox ClipToBounds="True" ItemsSource="{Binding Value, Mode=OneTime}" Margin="4" Padding="0 0 0 -22" MaxHeight="600" ScrollViewer.VerticalScrollBarVisibility="Auto" ScrollViewer.HorizontalScrollBarVisibility="Disabled" Focusable="False" VirtualizingPanel.IsVirtualizing="True" VirtualizingPanel.ScrollUnit="Pixel" VirtualizingPanel.VirtualizationMode="Standard">
+                <ListBox ClipToBounds="True" ItemsSource="{Binding Value, Mode=OneTime}" Margin="4" Padding="0 0 0 -22" MaxHeight="600" ScrollViewer.VerticalScrollBarVisibility="Auto" ScrollViewer.HorizontalScrollBarVisibility="Disabled" Focusable="False" VirtualizingPanel.IsVirtualizing="True" VirtualizingPanel.ScrollUnit="Pixel">
                     <ListBox.ItemTemplate>
                         <DataTemplate>
                             <Border CornerRadius="2" BorderThickness="2" BorderBrush="#300077aa" Background="#100077aa" Margin="2 2 2 24" Padding="2">
@@ -926,7 +926,7 @@
     </DataTemplate>
 
     <DataTemplate x:Key="GroupedSearchResultsView">
-        <ListBox ItemsSource="{Binding Mode=OneTime}" ItemTemplate="{StaticResource GroupedSearchResultArmorSetView}" ScrollViewer.VerticalScrollBarVisibility="Visible" ClipToBounds="True" Padding="0 0 0 -22" Focusable="False" VirtualizingPanel.IsVirtualizing="True" VirtualizingPanel.ScrollUnit="Pixel" VirtualizingPanel.VirtualizationMode="Recycling">
+        <ListBox ItemsSource="{Binding Mode=OneTime}" ItemTemplate="{StaticResource GroupedSearchResultArmorSetView}" ScrollViewer.VerticalScrollBarVisibility="Visible" ClipToBounds="True" Padding="0 0 0 -22" Focusable="False" VirtualizingPanel.IsVirtualizing="True" VirtualizingPanel.ScrollUnit="Pixel">
             <ListBox.ItemContainerStyle>
                 <Style TargetType="{x:Type ListBoxItem}">
                     <Setter Property="Template">
@@ -945,7 +945,7 @@
     </DataTemplate>
 
     <DataTemplate x:Key="UngroupedSearchResultsView">
-        <ListBox ItemsSource="{Binding Mode=OneTime}" ItemTemplate="{StaticResource SearchResultArmorSetView}" ScrollViewer.VerticalScrollBarVisibility="Visible" ClipToBounds="True" Padding="0 0 0 -22" Focusable="False" VirtualizingPanel.IsVirtualizing="True" VirtualizingPanel.ScrollUnit="Pixel" VirtualizingPanel.VirtualizationMode="Recycling">
+        <ListBox ItemsSource="{Binding Mode=OneTime}" ItemTemplate="{StaticResource SearchResultArmorSetView}" ScrollViewer.VerticalScrollBarVisibility="Visible" ClipToBounds="True" Padding="0 0 0 -22" Focusable="False" VirtualizingPanel.IsVirtualizing="True" VirtualizingPanel.ScrollUnit="Pixel">
             <ListBox.ItemContainerStyle>
                 <Style TargetType="{x:Type ListBoxItem}">
                     <Setter Property="Template">
@@ -1205,7 +1205,7 @@
                 <TextBox Text="{Binding SearchText, UpdateSourceTrigger=PropertyChanged}" Margin="2" Padding="2" VerticalAlignment="Center" MinWidth="160" MaxWidth="350" bhv:FocusOnLoadBehavior.IsAttached="True"/>
             </StackPanel>
 
-            <ItemsControl ItemsSource="{Binding Equipments, Mode=OneTime}" ItemTemplate="{StaticResource ArmorPieceView}" VirtualizingStackPanel.IsVirtualizing="True" VirtualizingStackPanel.ScrollUnit="Pixel" VirtualizingStackPanel.VirtualizationMode="Recycling" ScrollViewer.CanContentScroll="True" Focusable="False">
+            <ItemsControl ItemsSource="{Binding Equipments, Mode=OneTime}" ItemTemplate="{StaticResource ArmorPieceView}" VirtualizingStackPanel.IsVirtualizing="True" VirtualizingStackPanel.ScrollUnit="Pixel" ScrollViewer.CanContentScroll="True" Focusable="False">
                 <ItemsControl.ItemsPanel>
                     <ItemsPanelTemplate>
                         <VirtualizingStackPanel />
