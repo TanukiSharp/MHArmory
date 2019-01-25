@@ -18,13 +18,11 @@ using MHArmory.Core.WPF;
 
 namespace MHArmory.ViewModels
 {
-    public class RootViewModel : ViewModelBase, IDisposable
+    public sealed class RootViewModel : ViewModelBase, IDisposable
     {
         public ICommand CloseApplicationCommand { get; }
 
         public ICommand OpenSkillSelectorCommand { get; }
-        public ICommand SearchArmorSetsCommand { get; }
-        public ICommand CancelArmorSetsSearchCommand { get; }
         public ICommand AdvancedSearchCommand { get; }
         public ICommand OpenDecorationsOverrideCommand { get; }
         public ICommand OpenEquipmentOverrideCommand { get; }
@@ -38,20 +36,7 @@ namespace MHArmory.ViewModels
 
         public AutoUpdateViewModel AutoUpdateViewModel { get; } = new AutoUpdateViewModel();
 
-        private bool isDataLoading = true;
-        public bool IsDataLoading
-        {
-            get { return isDataLoading; }
-            set { SetValue(ref isDataLoading, value); }
-        }
-
-        private bool isDataLoaded;
-        public bool IsDataLoaded
-        {
-            get { return isDataLoaded; }
-            set { SetValue(ref isDataLoaded, value); }
-        }
-
+        public SearchResultsViewModel SearchResultsViewModel { get; }
         public AdvancedSearchViewModel AdvancedSearchViewModel { get; } = new AdvancedSearchViewModel();
 
         private IEnumerable<AbilityViewModel> selectedAbilities;
@@ -76,26 +61,13 @@ namespace MHArmory.ViewModels
             EquipmentOverride.NotifyDataLoaded();
         }
 
-        private IEnumerable<ArmorSetViewModel> rawFoundArmorSets;
-
-        private IEnumerable<ArmorSetViewModel> foundArmorSets;
-        public IEnumerable<ArmorSetViewModel> FoundArmorSets
-        {
-            get { return foundArmorSets; }
-            private set
-            {
-                if (SetValue(ref foundArmorSets, value))
-                    OnFoundArmorSets();
-            }
-        }
-
         public InParametersViewModel InParameters { get; }
 
         private bool isSearching;
         public bool IsSearching
         {
             get { return isSearching; }
-            private set { SetValue(ref isSearching, value); }
+            internal set { SetValue(ref isSearching, value); }
         }
 
         private bool isAutoSearch;
@@ -115,11 +87,11 @@ namespace MHArmory.ViewModels
 
         public RootViewModel()
         {
+            SearchResultsViewModel = new SearchResultsViewModel(this);
+
             CloseApplicationCommand = new AnonymousCommand(OnCloseApplication);
 
             OpenSkillSelectorCommand = new AnonymousCommand(OpenSkillSelector);
-            SearchArmorSetsCommand = new AnonymousCommand(SearchArmorSets);
-            CancelArmorSetsSearchCommand = new AnonymousCommand(CancelArmorSetsSearchForCommand);
             AdvancedSearchCommand = new AnonymousCommand(AdvancedSearch);
             OpenDecorationsOverrideCommand = new AnonymousCommand(OpenDecorationsOverride);
             OpenEquipmentOverrideCommand = new AnonymousCommand(OpenEquipmentOverride);
@@ -134,9 +106,9 @@ namespace MHArmory.ViewModels
 
             SetupLocalization();
 
-            GroupedSearchResultsViewModel = new GroupedSearchResultsViewModel(this);
-
             Extensions = new ExtensionSelectorViewModel(this);
+
+            SearchResultsViewModel.Initialize();
         }
 
         private void SetupLocalization()
@@ -175,60 +147,6 @@ namespace MHArmory.ViewModels
         private void OnCloseApplication(object parameters)
         {
             App.Current.MainWindow.Close();
-        }
-
-        public void ApplySorting(bool force, int limit = 200)
-        {
-            if (rawFoundArmorSets == null)
-                return;
-
-            IEnumerable<ArmorSetViewModel> result = rawFoundArmorSets;
-
-            if (SearchResultProcessing.ApplySort(ref result, force, limit))
-                FoundArmorSets = result;
-        }
-
-        public void ApplySorting(SearchResultProcessingContainerViewModel container, bool force, int limit = 200)
-        {
-            if (rawFoundArmorSets == null)
-                return;
-
-            IEnumerable<ArmorSetViewModel> result = rawFoundArmorSets;
-
-            if (SearchResultProcessing.ApplySort(ref result, container, force, limit))
-                FoundArmorSets = result;
-        }
-
-        public GroupedSearchResultsViewModel GroupedSearchResultsViewModel { get; }
-
-        //private IEnumerable<KeyValuePair<ArmorSetViewModel, IEnumerable<ArmorSetViewModel>>> groupedFoundArmorSets;
-        //public IEnumerable<KeyValuePair<ArmorSetViewModel, IEnumerable<ArmorSetViewModel>>> GroupedFoundArmorSets
-        //{
-        //    get { return groupedFoundArmorSets; }
-        //    private set { SetValue(ref groupedFoundArmorSets, value); }
-        //}
-
-        private void OnFoundArmorSets()
-        {
-            //SearchResultsGrouping grouping =
-            //    SearchResultsGrouping.RequiredDecorations |
-            //    SearchResultsGrouping.Defense |
-            //    SearchResultsGrouping.SpareSlots |
-            //    SearchResultsGrouping.AdditionalSKills |
-            //    SearchResultsGrouping.Resistances |
-            //    SearchResultsGrouping.None;
-
-            //var sw = Stopwatch.StartNew();
-
-            //IEnumerable<KeyValuePair<ArmorSetViewModel, IEnumerable<ArmorSetViewModel>>> groups = SearchResultGrouper.Default
-            //    .GroupBy(foundArmorSets, grouping)
-            //    .Select(g => new KeyValuePair<ArmorSetViewModel, IEnumerable<ArmorSetViewModel>>(g.FirstOrDefault(), g))
-            //    .ToList();
-
-            //sw.Stop();
-            //Console.WriteLine($"Grouping took {sw.ElapsedMilliseconds} ms");
-
-            //GroupedFoundArmorSets = groups;
         }
 
         private LoadoutManager loadoutManager;
@@ -305,75 +223,6 @@ namespace MHArmory.ViewModels
             RoutedCommands.OpenSearchResultProcessing.ExecuteIfPossible(null);
         }
 
-        public async void SearchArmorSets()
-        {
-            try
-            {
-                await SearchArmorSetsInternal();
-            }
-            catch (TaskCanceledException)
-            {
-            }
-        }
-
-        private async void CancelArmorSetsSearchForCommand()
-        {
-            await CancelArmorSetsSearch();
-        }
-
-        public async Task CancelArmorSetsSearch()
-        {
-            if (searchCancellationTokenSource != null)
-            {
-                if (searchCancellationTokenSource.IsCancellationRequested)
-                    return;
-
-                searchCancellationTokenSource.Cancel();
-
-                if (previousSearchTask != null)
-                {
-                    try
-                    {
-                        await previousSearchTask;
-                    }
-                    catch
-                    {
-                    }
-                }
-            }
-        }
-
-        private CancellationTokenSource searchCancellationTokenSource;
-        private Task previousSearchTask;
-
-        private async Task SearchArmorSetsInternal()
-        {
-            await CancelArmorSetsSearch();
-
-            searchCancellationTokenSource = new CancellationTokenSource();
-            previousSearchTask = SearchArmorSetsInternal(searchCancellationTokenSource.Token);
-
-            SearchProgression = 0.0;
-            IsSearching = true;
-
-            try
-            {
-                await previousSearchTask;
-            }
-            finally
-            {
-                IsSearching = false;
-
-                previousSearchTask = null;
-
-                if (searchCancellationTokenSource != null)
-                {
-                    searchCancellationTokenSource.Cancel();
-                    searchCancellationTokenSource = null;
-                }
-            }
-        }
-
         private ExtensionCategoryViewModelBase GetExtensionCategory(ExtensionCategory category)
         {
             ExtensionCategoryViewModelBase categoryViewModel = Extensions.Categories.FirstOrDefault(x => x.Category == category);
@@ -403,19 +252,19 @@ namespace MHArmory.ViewModels
             return (T)GetSingleSelectedExtension(category).Extension;
         }
 
-        private ISolver GetSelectedSolver()
+        public ISolver GetSelectedSolver()
         {
             return GetSingleSelectedExtension<ISolver>(ExtensionCategory.Solver);
         }
 
-        private ISolverData GetSelectedSolverData()
+        public ISolverData GetSelectedSolverData()
         {
             return GetSingleSelectedExtension<ISolverData>(ExtensionCategory.SolverData);
         }
 
         public void CreateSolverData()
         {
-            if (IsDataLoaded == false || SelectedAbilities == null)
+            if (SearchResultsViewModel.IsDataLoaded == false || SelectedAbilities == null)
                 return;
 
             ISolverData solverData = GetSelectedSolverData();
@@ -466,7 +315,7 @@ namespace MHArmory.ViewModels
 
             UpdateAdvancedSearch();
 
-            rawFoundArmorSets = null;
+            SearchResultsViewModel.ResetResults();
         }
 
         private bool DecorationMatchInParameters(IJewel jewel)
@@ -532,63 +381,6 @@ namespace MHArmory.ViewModels
             internal set { SetValue(ref searchProgression, value); }
         }
 
-        private async Task SearchArmorSetsInternal(CancellationToken cancellationToken)
-        {
-            ISolverData solverData = GetSelectedSolverData();
-
-            if (solverData == null)
-                return;
-
-            var sw = Stopwatch.StartNew();
-
-            IList<ArmorSetSearchResult> result = await GetSelectedSolver().SearchArmorSets(solverData, cancellationToken);
-
-            sw.Stop();
-
-            SearchMetrics metrics = SearchMetrics;
-
-            metrics.TimeElapsed = (int)sw.ElapsedMilliseconds;
-            metrics.MatchingResults = result?.Count ?? 0;
-
-            await Dispatcher.Yield(DispatcherPriority.SystemIdle);
-
-            SearchMetrics = null;
-            SearchMetrics = metrics;
-
-            IsDataLoading = true;
-            IsDataLoaded = false;
-
-            await Dispatcher.Yield(DispatcherPriority.SystemIdle);
-
-            try
-            {
-                if (solverData == null)
-                {
-                    rawFoundArmorSets = null;
-                    return;
-                }
-
-                if (result != null)
-                {
-                    rawFoundArmorSets = result.Where(x => x.IsMatch).Select(x => new ArmorSetViewModel(
-                        this,
-                        solverData,
-                        x.ArmorPieces,
-                        x.Charm,
-                        x.Jewels.Select(j => new ArmorSetJewelViewModel(j.Jewel, j.Count)).ToList(),
-                        x.SpareSlots
-                    ));
-
-                    ApplySorting(true);
-                }
-            }
-            finally
-            {
-                IsDataLoading = false;
-                IsDataLoaded = true;
-            }
-        }
-
         private SolverDataJewelModel CreateSolverDataJewelModel(IJewel jewel)
         {
             DecorationOverrideConfigurationV2 decorationOverrideConfig = GlobalData.Instance.Configuration.InParameters?.DecorationOverride;
@@ -612,7 +404,7 @@ namespace MHArmory.ViewModels
             CreateSolverData();
 
             if (IsAutoSearch)
-                SearchArmorSets();
+                SearchResultsViewModel.SearchArmorSets();
 
             if (loadoutManager != null)
                 loadoutManager.IsModified = true;
@@ -633,7 +425,7 @@ namespace MHArmory.ViewModels
                         self.CreateSolverData();
 
                         if (self.IsAutoSearch)
-                            self.SearchArmorSets();
+                            self.SearchResultsViewModel.SearchArmorSets();
 
                         self.AbilitiesChanged?.Invoke(self, EventArgs.Empty);
                     }

@@ -923,38 +923,65 @@
     </DataTemplate>
 
     <DataTemplate x:Key="GroupedSearchResultsView">
-        <DockPanel LastChildFill="True">
-            <ItemsControl DockPanel.Dock="Top" ItemsSource="{Binding Flags, Mode=OneTime}" HorizontalAlignment="Right">
-                <ItemsControl.ItemTemplate>
-                    <DataTemplate>
-                        <CheckBox IsChecked="{Binding IsSet}" VerticalContentAlignment="Center" Margin="2">
-                            <TextBlock Text="{Binding Name, Mode=OneTime}" Margin="2"/>
-                        </CheckBox>
-                    </DataTemplate>
-                </ItemsControl.ItemTemplate>
-                <ItemsControl.ItemsPanel>
-                    <ItemsPanelTemplate>
-                        <StackPanel Orientation="Horizontal"/>
-                    </ItemsPanelTemplate>
-                </ItemsControl.ItemsPanel>
-            </ItemsControl>
-            <ListBox ItemsSource="{Binding GroupedFoundArmorSets, Mode=OneWay}" ItemTemplate="{StaticResource GroupedSearchResultArmorSetView}" ScrollViewer.VerticalScrollBarVisibility="Visible" ClipToBounds="True" Padding="0 0 0 -22" Visibility="{Binding IsDataLoaded, Converter={StaticResource CollapsedVisibilityValueConverter}, Mode=OneWay}" Focusable="False" VirtualizingPanel.IsVirtualizing="True" VirtualizingPanel.ScrollUnit="Pixel" VirtualizingPanel.VirtualizationMode="Recycling">
-                <ListBox.ItemContainerStyle>
-                    <Style TargetType="{x:Type ListBoxItem}">
-                        <Setter Property="Template">
-                            <Setter.Value>
-                                <ControlTemplate TargetType="{x:Type ListBoxItem}">
-                                    <Border Name="root" Padding="2" SnapsToDevicePixels="True" Focusable="False">
-                                        <ContentPresenter Focusable="False"/>
-                                    </Border>
-                                </ControlTemplate>
-                            </Setter.Value>
-                        </Setter>
-                        <Setter Property="Focusable" Value="False"/>
-                    </Style>
-                </ListBox.ItemContainerStyle>
-            </ListBox>
-        </DockPanel>
+        <ListBox ItemsSource="{Binding Mode=OneTime}" ItemTemplate="{StaticResource GroupedSearchResultArmorSetView}" ScrollViewer.VerticalScrollBarVisibility="Visible" ClipToBounds="True" Padding="0 0 0 -22" Focusable="False" VirtualizingPanel.IsVirtualizing="True" VirtualizingPanel.ScrollUnit="Pixel" VirtualizingPanel.VirtualizationMode="Recycling">
+            <ListBox.ItemContainerStyle>
+                <Style TargetType="{x:Type ListBoxItem}">
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="{x:Type ListBoxItem}">
+                                <Border Name="root" Padding="2" SnapsToDevicePixels="True" Focusable="False">
+                                    <ContentPresenter Focusable="False"/>
+                                </Border>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                    <Setter Property="Focusable" Value="False"/>
+                </Style>
+            </ListBox.ItemContainerStyle>
+        </ListBox>
+    </DataTemplate>
+
+    <DataTemplate x:Key="UngroupedSearchResultsView">
+        <ListBox ItemsSource="{Binding Mode=OneTime}" ItemTemplate="{StaticResource SearchResultArmorSetView}" ScrollViewer.VerticalScrollBarVisibility="Visible" ClipToBounds="True" Padding="0 0 0 -22" Focusable="False" VirtualizingPanel.IsVirtualizing="True" VirtualizingPanel.ScrollUnit="Pixel" VirtualizingPanel.VirtualizationMode="Recycling">
+            <ListBox.ItemContainerStyle>
+                <Style TargetType="{x:Type ListBoxItem}">
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="{x:Type ListBoxItem}">
+                                <Border Name="root" Padding="2" SnapsToDevicePixels="True" Focusable="False">
+                                    <ContentPresenter Focusable="False"/>
+                                </Border>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                    <Setter Property="Focusable" Value="False"/>
+                </Style>
+            </ListBox.ItemContainerStyle>
+        </ListBox>
+    </DataTemplate>
+
+    <DataTemplate x:Key="SearchResultsView">
+        <Grid>
+            <TextBlock x:Name="loading" Text="Loading..." HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="24" Foreground="DarkGray" FontWeight="Bold" Visibility="{Binding IsDataLoading, Converter={StaticResource CollapsedVisibilityValueConverter}, Mode=OneWay}"/>
+            <DockPanel LastChildFill="True" Visibility="{Binding IsDataLoaded, Converter={StaticResource CollapsedVisibilityValueConverter}, Mode=OneWay}">
+                <!--<ItemsControl DockPanel.Dock="Top" ItemsSource="{Binding GroupFlags, Mode=OneTime}" HorizontalAlignment="Right">
+                    <ItemsControl.ItemTemplate>
+                        <DataTemplate>
+                            <CheckBox IsChecked="{Binding IsSet}" VerticalContentAlignment="Center" Margin="2">
+                                <TextBlock Text="{Binding Name, Mode=OneTime}" Margin="2"/>
+                            </CheckBox>
+                        </DataTemplate>
+                    </ItemsControl.ItemTemplate>
+                    <ItemsControl.ItemsPanel>
+                        <ItemsPanelTemplate>
+                            <StackPanel Orientation="Horizontal"/>
+                        </ItemsPanelTemplate>
+                    </ItemsControl.ItemsPanel>
+                </ItemsControl>-->
+                <!--<ContentControl Content="{Binding GroupedFoundArmorSets, Mode=OneWay}" ContentTemplate="{StaticResource GroupedSearchResultsView}" Focusable="False"/>-->
+                <ContentControl Content="{Binding UngroupedFoundArmorSets, Mode=OneWay}" ContentTemplate="{StaticResource UngroupedSearchResultsView}" Focusable="False"/>
+            </DockPanel>
+        </Grid>
     </DataTemplate>
 
     <DataTemplate x:Key="RootView">
@@ -1006,7 +1033,7 @@
                         </CheckBox.Content>
                     </CheckBox>
                     <Button DockPanel.Dock="Bottom" Content="Advanced search..." Margin="2" Padding="4" Command="{Binding AdvancedSearchCommand, Mode=OneTime}"/>
-                    <Grid DockPanel.Dock="Bottom">
+                    <Grid DataContext="{Binding SearchResultsViewModel, Mode=OneTime}" DockPanel.Dock="Bottom">
                         <Button x:Name="btnSearch" Content="Search" Margin="2" Padding="4" Command="{Binding SearchArmorSetsCommand, Mode=OneTime}"/>
                         <Button x:Name="btnCancelSearch" Content="Cancel" Margin="2" Padding="4" Command="{Binding CancelArmorSetsSearchCommand, Mode=OneTime}" Visibility="Hidden"/>
                     </Grid>
@@ -1024,33 +1051,14 @@
 
                 <DockPanel Grid.Column="2" LastChildFill="True">
                     <ContentControl DockPanel.Dock="Bottom" Content="{Binding SearchMetrics, Mode=OneWay}" ContentTemplate="{StaticResource SearchMetricsView}" Focusable="False"/>
-                    <Grid>
-                        <TextBlock x:Name="loading" Text="Loading..." HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="24" Foreground="DarkGray" FontWeight="Bold" Visibility="{Binding IsDataLoading, Converter={StaticResource CollapsedVisibilityValueConverter}, Mode=OneWay}"/>
-                        <DockPanel LastChildFill="True">
-                            <DockPanel DockPanel.Dock="Top" HorizontalAlignment="Stretch">
-                                <ContentControl DockPanel.Dock="Left" Content="{Binding InParameters, Mode=OneTime}" ContentTemplate="{StaticResource InParametersView}" Focusable="False"/>
-                                <Button DockPanel.Dock="Right" HorizontalAlignment="Right" Content="Sort results..." Command="{Binding OpenSearchResultProcessingCommand, Mode=OneTime}" Margin="2" Padding="8" VerticalAlignment="Center"/>
-                                <Button DockPanel.Dock="Right" HorizontalAlignment="Right" Content="?" MinWidth="20" Margin="2" Padding="4" VerticalAlignment="Center" Command="{x:Static local:RoutedCommands.OpenIntegratedHelp}" CommandParameter="Sorting" bhv:ToolTipEx.Content="Show help about sorting"/>
-                            </DockPanel>
-                            <!--<ContentControl Content="{Binding GroupedSearchResultsViewModel, Mode=OneTime}" ContentTemplate="{StaticResource GroupedSearchResultsView}" Focusable="False"/>-->
-                            <ListBox ItemsSource="{Binding FoundArmorSets, Mode=OneWay}" ItemTemplate="{StaticResource SearchResultArmorSetView}" ScrollViewer.VerticalScrollBarVisibility="Visible" ClipToBounds="True" Padding="0 0 0 -22" Visibility="{Binding IsDataLoaded, Converter={StaticResource CollapsedVisibilityValueConverter}, Mode=OneWay}" Focusable="False" VirtualizingPanel.IsVirtualizing="True" VirtualizingPanel.ScrollUnit="Pixel" VirtualizingPanel.VirtualizationMode="Standard">
-                                <ListBox.ItemContainerStyle>
-                                    <Style TargetType="{x:Type ListBoxItem}">
-                                        <Setter Property="Template">
-                                            <Setter.Value>
-                                                <ControlTemplate TargetType="{x:Type ListBoxItem}">
-                                                    <Border Name="root" Padding="2" SnapsToDevicePixels="True" Focusable="False">
-                                                        <ContentPresenter Focusable="False"/>
-                                                    </Border>
-                                                </ControlTemplate>
-                                            </Setter.Value>
-                                        </Setter>
-                                        <Setter Property="Focusable" Value="False"/>
-                                    </Style>
-                                </ListBox.ItemContainerStyle>
-                            </ListBox>
+                    <DockPanel LastChildFill="True">
+                        <DockPanel DockPanel.Dock="Top" HorizontalAlignment="Stretch">
+                            <ContentControl DockPanel.Dock="Left" Content="{Binding InParameters, Mode=OneTime}" ContentTemplate="{StaticResource InParametersView}" Focusable="False"/>
+                            <Button DockPanel.Dock="Right" HorizontalAlignment="Right" Content="Sort results..." Command="{Binding OpenSearchResultProcessingCommand, Mode=OneTime}" Margin="2" Padding="8" VerticalAlignment="Center"/>
+                            <Button DockPanel.Dock="Right" HorizontalAlignment="Right" Content="?" MinWidth="20" Margin="2" Padding="4" VerticalAlignment="Center" Command="{x:Static local:RoutedCommands.OpenIntegratedHelp}" CommandParameter="Sorting" bhv:ToolTipEx.Content="Show help about sorting"/>
                         </DockPanel>
-                    </Grid>
+                        <ContentControl Content="{Binding SearchResultsViewModel, Mode=OneTime}" ContentTemplate="{StaticResource SearchResultsView}" Focusable="False"/>
+                    </DockPanel>
                 </DockPanel>
             </Grid>
         </DockPanel>

@@ -82,12 +82,12 @@ namespace MHArmory.ViewModels
 
         internal void ApplyContainerRules(SearchResultProcessingContainerViewModel container)
         {
-            rootViewModel.ApplySorting(container, false);
+            rootViewModel.SearchResultsViewModel.ApplySorting(container, false);
         }
 
         internal void ActiveContainerChanged()
         {
-            rootViewModel.ApplySorting(false);
+            rootViewModel.SearchResultsViewModel.ApplySorting(false);
         }
 
         private void Containers_CollectionChanged(object sender, NotifyCollectionChangedEventArgs e)
