@@ -64,11 +64,10 @@ namespace MHArmory.Search.Cutoff.Services
             }
 
             result.IsMatch = true;
-            //result.SpareSlots = totalSlots.Skip(1).ToArray();
             result.SpareSlots = new int[]{totalSlots[1], totalSlots[2], totalSlots[3]};
             
-            result.ArmorPieces = new List<IArmorPiece>(6);
-            for (int i = 0; i < 5; i++)
+            result.ArmorPieces = new List<IArmorPiece>(CutoffSearchConstants.ArmorTypes);
+            for (int i = 0; i < CutoffSearchConstants.ArmorTypes; i++)
             {
                 MappedEquipment equipment = combination.Equipments[i];
                 if (equipment.Equipment != null)
@@ -76,8 +75,7 @@ namespace MHArmory.Search.Cutoff.Services
                     result.ArmorPieces.Add((IArmorPiece)equipment.Equipment);
                 }
             }
-            //result.ArmorPieces = combination.Equipments.Take(5).Where(x => x.Equipment != null).Select(x => x.Equipment).Cast<IArmorPiece>().ToList();
-            result.Charm = (ICharmLevel)combination.Equipments[5].Equipment;
+            result.Charm = (ICharmLevel)combination.Equipments[CutoffSearchConstants.ArmorTypes].Equipment;
             return true;
         }
 
