@@ -28,7 +28,7 @@ namespace MHArmory.ViewModels
         public EnumFlagViewModel(string name, bool initialValue, T enumValue, Action<bool, T> onChanged)
         {
             Name = name;
-            IsSet = initialValue;
+            isSet = initialValue;
             this.enumValue = enumValue;
             notifyChanged = onChanged;
         }
