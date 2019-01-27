@@ -27,6 +27,7 @@
     <cvt:NumToSeparatedStringValueConverter x:Key="NumToSeparatedStringValueConverter"/>
     <cvt:FreeElementNameValueConverter x:Key="FreeElementNameValueConverter"/>
     <cvt:CombinationPerSecondValueConverter x:Key="CombinationPerSecondValueConverter"/>
+    <cvt:ScrollBarVisibilityValueConverter x:Key="ScrollBarVisibilityValueConverter"/>
 
     <SolidColorBrush x:Key="ActiveWeaponBackgroundBrush" Color="#FFB7FFA7"/>
     <SolidColorBrush x:Key="ActiveWeaponBorderBrush" Color="#FF55D15A"/>
@@ -386,14 +387,14 @@
     <DataTemplate x:Key="SearchResultArmorSetDetailsView">
         <StackPanel Orientation="Vertical">
             <TextBlock Text="Required decorations:" FontWeight="Bold"/>
-            <ItemsControl ItemsSource="{Binding Jewels}" Margin="16 1 0 12" Focusable="False">
+            <ItemsControl ItemsSource="{Binding Jewels, Mode=OneTime}" Margin="16 1 0 12" Focusable="False">
                 <ItemsControl.ItemTemplate>
                     <DataTemplate>
                         <StackPanel Orientation="Horizontal">
                             <Image Source="{Binding Jewel.SlotSize, Converter={StaticResource SlotToImageSourceValueConverter}, ConverterParameter=16, Mode=OneTime}" Width="16" Height="16" SnapsToDevicePixels="True" VerticalAlignment="Center"/>
                             <TextBlock VerticalAlignment="Center" Margin="1 0 0 3">
-                                            <Run Text="{mxt:Localization Jewel.Name}"/>
-                                            <Run Text="{Binding Count, Mode=OneTime, StringFormat=x{0}}" Foreground="Blue"/>
+                                <Run Text="{mxt:Localization Jewel.Name}"/>
+                                <Run Text="{Binding Count, Mode=OneTime, StringFormat=x{0}}" Foreground="Blue"/>
                             </TextBlock>
                         </StackPanel>
                     </DataTemplate>
@@ -424,7 +425,7 @@
                 <TextBlock Text="{Binding SpareSlots[0], Mode=OneTime, StringFormat=x{0}}" Margin="2 0 8 0" Foreground="Blue"/>
             </StackPanel>
             <TextBlock Text="Additional skills:" FontWeight="Bold"/>
-            <ItemsControl ItemsSource="{Binding AdditionalSkills}" Margin="16 1 0 12" Focusable="False">
+            <ItemsControl ItemsSource="{Binding AdditionalSkills, Mode=OneTime}" Margin="16 1 0 12" Focusable="False">
                 <ItemsControl.ItemTemplate>
                     <DataTemplate>
                         <TextBlock HorizontalAlignment="Left">
@@ -465,7 +466,7 @@
     </DataTemplate>
 
     <DataTemplate x:Key="SearchResultArmorSetView">
-        <Border CornerRadius="2" BorderThickness="2" BorderBrush="#300077aa" Background="#100077aa" Margin="2 2 2 24" Padding="2">
+        <Border Style="{StaticResource ThickResultBorderStyle}">
             <Border.ContextMenu>
                 <ContextMenu>
                     <MenuItem Header="Take screenshot (save to clipboard)" Command="{Binding SaveScreenshotToClipboardCommand, Mode=OneTime}"/>
@@ -480,7 +481,7 @@
                     <ItemsControl ItemsSource="{Binding ArmorPieces, Mode=OneTime}" ItemTemplate="{StaticResource ArmorPieceView}" Focusable="False"/>
                     <ContentControl Content="{Binding Charm, Mode=OneTime}" ContentTemplate="{StaticResource ArmorPieceView}" Focusable="False"/>
                 </StackPanel>
-                <Border CornerRadius="2" BorderThickness="1" BorderBrush="#30000000" Background="#10000000" Margin="16 2 2 2" Padding="4" HorizontalAlignment="Stretch">
+                <Border Style="{StaticResource ThinResultBorderStyle}" HorizontalAlignment="Stretch">
                     <ContentControl Content="{Binding}" ContentTemplate="{StaticResource SearchResultArmorSetDetailsView}" Focusable="False"/>
                 </Border>
             </DockPanel>
@@ -488,44 +489,19 @@
     </DataTemplate>
 
     <DataTemplate x:Key="GroupedSearchResultArmorSetView">
-        <Border CornerRadius="2" BorderThickness="2" BorderBrush="#300077aa" Background="#100077aa" Margin="2 2 2 24" Padding="2">
-            <StackPanel Orientation="Horizontal">
-                <ContentControl Content="{Binding Key, Mode=OneTime}" ContentTemplate="{StaticResource SearchResultArmorSetDetailsView}" Margin="4 4 12 4" Focusable="False"/>
-                <ListBox ClipToBounds="True" ItemsSource="{Binding Value, Mode=OneTime}" Margin="4" Padding="0 0 0 -22" MaxHeight="600" ScrollViewer.VerticalScrollBarVisibility="Auto" ScrollViewer.HorizontalScrollBarVisibility="Disabled" Focusable="False" VirtualizingPanel.IsVirtualizing="True" VirtualizingPanel.ScrollUnit="Pixel">
-                    <ListBox.ItemTemplate>
-                        <DataTemplate>
-                            <Border CornerRadius="2" BorderThickness="2" BorderBrush="#300077aa" Background="#100077aa" Margin="2 2 2 24" Padding="2">
-                                <Border.ContextMenu>
-                                    <ContextMenu>
-                                        <MenuItem Header="Take screenshot (save to clipboard)" Command="{Binding SaveScreenshotToClipboardCommand, Mode=OneTime}"/>
-                                        <MenuItem Header="Take screenshot (save to file)" Command="{Binding SaveScreenshotToFileCommand, Mode=OneTime}"/>
-                                        <Separator/>
-                                        <MenuItem Header="Copy to text (save to clipboard)" Command="{Binding SaveTextToClipboardCommand, Mode=OneTime}"/>
-                                        <MenuItem Header="Copy to text (save to file)" Command="{Binding SaveTextToFileCommand, Mode=OneTime}"/>
-                                    </ContextMenu>
-                                </Border.ContextMenu>
-                                <StackPanel DockPanel.Dock="Left" Orientation="Vertical" Grid.IsSharedSizeScope="True">
-                                    <ItemsControl ItemsSource="{Binding ArmorPieces, Mode=OneTime}" ItemTemplate="{StaticResource ArmorPieceView}" Focusable="False"/>
-                                    <ContentControl Content="{Binding Charm, Mode=OneTime}" ContentTemplate="{StaticResource ArmorPieceView}" Focusable="False"/>
-                                </StackPanel>
-                            </Border>
-                        </DataTemplate>
-                    </ListBox.ItemTemplate>
-                    <ListBox.ItemContainerStyle>
-                        <Style TargetType="{x:Type ListBoxItem}">
-                            <Setter Property="Template">
-                                <Setter.Value>
-                                    <ControlTemplate TargetType="{x:Type ListBoxItem}">
-                                        <Border Name="root" Padding="2" SnapsToDevicePixels="True" Focusable="False">
-                                            <ContentPresenter Focusable="False"/>
-                                        </Border>
-                                    </ControlTemplate>
-                                </Setter.Value>
-                            </Setter>
-                            <Setter Property="Focusable" Value="False"/>
-                        </Style>
-                    </ListBox.ItemContainerStyle>
-                </ListBox>
+        <Border Style="{StaticResource ThickResultBorderStyle}">
+            <Border.ContextMenu>
+                <ContextMenu>
+                    <MenuItem Header="Take screenshot (save to clipboard)" Command="{Binding SaveScreenshotToClipboardCommand, Mode=OneTime}"/>
+                    <MenuItem Header="Take screenshot (save to file)" Command="{Binding SaveScreenshotToFileCommand, Mode=OneTime}"/>
+                    <Separator/>
+                    <MenuItem Header="Copy to text (save to clipboard)" Command="{Binding SaveTextToClipboardCommand, Mode=OneTime}"/>
+                    <MenuItem Header="Copy to text (save to file)" Command="{Binding SaveTextToFileCommand, Mode=OneTime}"/>
+                </ContextMenu>
+            </Border.ContextMenu>
+            <StackPanel DockPanel.Dock="Left" Orientation="Vertical" Grid.IsSharedSizeScope="True">
+                <ItemsControl ItemsSource="{Binding ArmorPieces, Mode=OneTime}" ItemTemplate="{StaticResource ArmorPieceView}" Focusable="False"/>
+                <ContentControl Content="{Binding Charm, Mode=OneTime}" ContentTemplate="{StaticResource ArmorPieceView}" Focusable="False"/>
             </StackPanel>
         </Border>
     </DataTemplate>
@@ -926,22 +902,67 @@
     </DataTemplate>
 
     <DataTemplate x:Key="GroupedSearchResultsView">
-        <ListBox ItemsSource="{Binding Mode=OneTime}" ItemTemplate="{StaticResource GroupedSearchResultArmorSetView}" ScrollViewer.VerticalScrollBarVisibility="Visible" ClipToBounds="True" Padding="0 0 0 -22" Focusable="False" VirtualizingPanel.IsVirtualizing="True" VirtualizingPanel.ScrollUnit="Pixel">
-            <ListBox.ItemContainerStyle>
-                <Style TargetType="{x:Type ListBoxItem}">
-                    <Setter Property="Template">
-                        <Setter.Value>
-                            <ControlTemplate TargetType="{x:Type ListBoxItem}">
-                                <Border Name="root" Padding="2" SnapsToDevicePixels="True" Focusable="False">
-                                    <ContentPresenter Focusable="False"/>
-                                </Border>
-                            </ControlTemplate>
-                        </Setter.Value>
-                    </Setter>
-                    <Setter Property="Focusable" Value="False"/>
-                </Style>
-            </ListBox.ItemContainerStyle>
-        </ListBox>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <pnl:GrowOnlyPanel >
+                <!-- Cannot use ListBox here because of virtualization and variable item height :( -->
+                <ItemsControl Grid.Column="0" ItemsSource="{Binding GroupedFoundArmorSets, Mode=OneWay}" ctrl:CustomScrollViewer.IsScrollEnabled="{Binding IsMasterViewUnlocked, Mode=OneWay}" ctrl:CustomScrollViewer.VerticalScrollBarVisibility="{Binding IsMasterViewUnlocked, Mode=OneWay, Converter={StaticResource ScrollBarVisibilityValueConverter}}" ClipToBounds="False" Padding="0 0 0 0" Focusable="False" VirtualizingPanel.IsVirtualizing="True" VirtualizingPanel.ScrollUnit="Pixel" ScrollViewer.CanContentScroll="True">
+                    <ItemsControl.ItemsPanel>
+                        <ItemsPanelTemplate>
+                            <VirtualizingStackPanel />
+                        </ItemsPanelTemplate>
+                    </ItemsControl.ItemsPanel>
+                    <ItemsControl.ItemTemplate>
+                        <ItemContainerTemplate>
+                            <Button Style="{StaticResource SeamlessButtonStyle}" Command="{Binding SelectionCommand, Mode=OneTime}" Focusable="False">
+                                <StackPanel Focusable="False">
+                                    <TextBlock Text="Scroll locked, click to unlock" FontWeight="Bold" Foreground="Goldenrod" HorizontalAlignment="Center" Visibility="{Binding IsSelected, Mode=OneWay, Converter={StaticResource HiddenVisibilityValueConverter}}"/>
+                                    <Border x:Name="root" Style="{StaticResource ThickResultBorderStyle}" Margin="2" Padding="2" SnapsToDevicePixels="True" Focusable="False" Opacity="0.4">
+                                        <ContentControl Content="{Binding Mode=OneTime}" ContentTemplate="{StaticResource SearchResultArmorSetDetailsView}" Margin="4" Focusable="False"/>
+                                    </Border>
+                                </StackPanel>
+                            </Button>
+                            <ItemContainerTemplate.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter TargetName="root" Property="Opacity" Value="0.6"/>
+                                </Trigger>
+                                <DataTrigger Binding="{Binding IsSelected, Mode=OneWay}" Value="True">
+                                    <Setter TargetName="root" Property="Opacity" Value="1.0"/>
+                                    <Setter TargetName="root" Property="Style" Value="{StaticResource SelectedThickResultBorderStyle}"/>
+                                </DataTrigger>
+                            </ItemContainerTemplate.Triggers>
+                        </ItemContainerTemplate>
+                    </ItemsControl.ItemTemplate>
+                    <ItemsControl.Template>
+                        <ControlTemplate>
+                            <ctrl:CustomScrollViewer Style="{StaticResource CustomVerticalScrollViewerStyle}" Padding="{TemplateBinding Control.Padding}" Focusable="False">
+                                <ItemsPresenter SnapsToDevicePixels="{TemplateBinding UIElement.SnapsToDevicePixels}" />
+                            </ctrl:CustomScrollViewer>
+                        </ControlTemplate>
+                    </ItemsControl.Template>
+                </ItemsControl>
+            </pnl:GrowOnlyPanel>
+            <ListBox Grid.Column="1" ItemsSource="{Binding SelectedGroup.Items, Mode=OneWay}" ItemTemplate="{StaticResource GroupedSearchResultArmorSetView}" ScrollViewer.VerticalScrollBarVisibility="Visible" ClipToBounds="True" Padding="0 0 0 -22" Focusable="False" VirtualizingPanel.IsVirtualizing="True" VirtualizingPanel.ScrollUnit="Pixel">
+                <ListBox.ItemContainerStyle>
+                    <Style TargetType="{x:Type ListBoxItem}">
+                        <Setter Property="Template">
+                            <Setter.Value>
+                                <ControlTemplate TargetType="{x:Type ListBoxItem}">
+                                    <Border Padding="2" SnapsToDevicePixels="True" Focusable="False">
+                                        <ContentPresenter Focusable="False"/>
+                                    </Border>
+                                </ControlTemplate>
+                            </Setter.Value>
+                        </Setter>
+                        <Setter Property="Focusable" Value="False"/>
+                    </Style>
+                </ListBox.ItemContainerStyle>
+            </ListBox>
+        </Grid>
     </DataTemplate>
 
     <DataTemplate x:Key="UngroupedSearchResultsView">
@@ -967,7 +988,7 @@
         <Grid>
             <TextBlock x:Name="loading" Text="Loading..." HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="24" Foreground="DarkGray" FontWeight="Bold" Visibility="{Binding IsDataLoading, Converter={StaticResource CollapsedVisibilityValueConverter}, Mode=OneWay}"/>
             <DockPanel LastChildFill="True" Visibility="{Binding IsDataLoaded, Converter={StaticResource CollapsedVisibilityValueConverter}, Mode=OneWay}">
-                <!--<ItemsControl DockPanel.Dock="Top" ItemsSource="{Binding GroupFlags, Mode=OneTime}" HorizontalAlignment="Right">
+                <!--<ItemsControl DockPanel.Dock="Top" ItemsSource="{Binding GroupFlags, Mode=OneTime}" HorizontalAlignment="Right" Focusable="False">
                     <ItemsControl.ItemTemplate>
                         <DataTemplate>
                             <CheckBox IsChecked="{Binding IsSet}" VerticalContentAlignment="Center" Margin="2">
@@ -980,8 +1001,8 @@
                             <StackPanel Orientation="Horizontal"/>
                         </ItemsPanelTemplate>
                     </ItemsControl.ItemsPanel>
-                </ItemsControl>-->
-                <!--<ContentControl Content="{Binding GroupedFoundArmorSets, Mode=OneWay}" ContentTemplate="{StaticResource GroupedSearchResultsView}" Focusable="False"/>-->
+                </ItemsControl>
+                <ContentControl Content="{Binding Mode=OneWay}" ContentTemplate="{StaticResource GroupedSearchResultsView}" Focusable="False"/>-->
                 <ContentControl Content="{Binding UngroupedFoundArmorSets, Mode=OneWay}" ContentTemplate="{StaticResource UngroupedSearchResultsView}" Focusable="False"/>
             </DockPanel>
         </Grid>

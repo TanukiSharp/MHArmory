@@ -33,10 +33,52 @@ namespace MHArmory.ViewModels
         public EnumFlagViewModel<SearchResultsGrouping>[] GroupFlags { get; }
 
         private SearchResultsGrouping currentGroupingFlags = SearchResultsGrouping.None;
+            //SearchResultsGrouping.RequiredDecorations |
+            //SearchResultsGrouping.Defense |
+            //SearchResultsGrouping.SpareSlots |
+            //SearchResultsGrouping.AdditionalSKills |
+            //SearchResultsGrouping.Resistances;
+
         private IEnumerable<ArmorSetViewModel> rawFoundArmorSets;
 
-        private IEnumerable<KeyValuePair<ArmorSetViewModel, IEnumerable<ArmorSetViewModel>>> groupedFoundArmorSets;
-        public IEnumerable<KeyValuePair<ArmorSetViewModel, IEnumerable<ArmorSetViewModel>>> GroupedFoundArmorSets
+        private bool isMasterViewUnlocked;
+        public bool IsMasterViewUnlocked
+        {
+            get { return isMasterViewUnlocked; }
+            private set { SetValue(ref isMasterViewUnlocked, value); }
+        }
+
+        private GroupedArmorSetHeaderViewModel selectedGroup;
+        public GroupedArmorSetHeaderViewModel SelectedGroup
+        {
+            get { return selectedGroup; }
+            set
+            {
+                GroupedArmorSetHeaderViewModel oldGroup = selectedGroup;
+
+                if (SetValue(ref selectedGroup, value))
+                {
+                    if (oldGroup != null)
+                        oldGroup.IsSelected = false;
+
+                    if (selectedGroup != null)
+                    {
+                        selectedGroup.IsSelected = true;
+                        IsMasterViewUnlocked = false;
+                    }
+                }
+                else
+                {
+                    IsMasterViewUnlocked = true;
+
+                    if (SelectedGroup != null) // This if avoids stack overflow exception.
+                        SelectedGroup = null;
+                }
+            }
+        }
+
+        private IList<GroupedArmorSetHeaderViewModel> groupedFoundArmorSets;
+        public IList<GroupedArmorSetHeaderViewModel> GroupedFoundArmorSets
         {
             get { return groupedFoundArmorSets; }
             private set { SetValue(ref groupedFoundArmorSets, value); }
@@ -49,7 +91,7 @@ namespace MHArmory.ViewModels
             private set
             {
                 if (SetValue(ref ungroupedFoundArmorSets, value))
-                    OnFoundArmorSets();
+                    UpdateGroups();
             }
         }
 
@@ -99,20 +141,39 @@ namespace MHArmory.ViewModels
             else
                 currentGroupingFlags &= ~value;
 
+            UpdateGroups();
+        }
+
+        private void UpdateGroups()
+        {
             if (UngroupedFoundArmorSets == null || currentGroupingFlags == SearchResultsGrouping.None)
                 return;
 
             var sw = Stopwatch.StartNew();
 
-            IEnumerable<KeyValuePair<ArmorSetViewModel, IEnumerable<ArmorSetViewModel>>> groups = SearchResultGrouper.Default
+            IList<GroupedArmorSetHeaderViewModel> groups = SearchResultGrouper.Default
                 .GroupBy(UngroupedFoundArmorSets, currentGroupingFlags)
-                .Select(g => new KeyValuePair<ArmorSetViewModel, IEnumerable<ArmorSetViewModel>>(g.FirstOrDefault(), g))
+                .Where(x => x.Any())
+                .Select(g => new GroupedArmorSetHeaderViewModel(this, g.ToList()))
+                .OrderBy(x => x.AdditionalSkills.Length + x.Jewels.Count)
                 .ToList();
+
+            //var newGroups = new List<GroupedArmorSetHeaderViewModel>();
+            //for (int i = 0; i < 10; i++)
+            //    newGroups.AddRange(groups);
 
             sw.Stop();
             Console.WriteLine($"Grouping took {sw.ElapsedMilliseconds} ms");
 
+            //GroupedFoundArmorSets = newGroups;
             GroupedFoundArmorSets = groups;
+
+            if (groups.Count > 0)
+                SelectedGroup = groups[0];
+            //if (newGroups.Count > 0)
+            //    SelectedGroup = newGroups[0];
+            else
+                SelectedGroup = null;
         }
 
         public void ApplySorting(bool force, int limit = 200)
@@ -261,29 +322,6 @@ namespace MHArmory.ViewModels
                 IsDataLoading = false;
                 IsDataLoaded = true;
             }
-        }
-
-        private void OnFoundArmorSets()
-        {
-            //SearchResultsGrouping grouping =
-            //    SearchResultsGrouping.RequiredDecorations |
-            //    SearchResultsGrouping.Defense |
-            //    SearchResultsGrouping.SpareSlots |
-            //    SearchResultsGrouping.AdditionalSKills |
-            //    SearchResultsGrouping.Resistances |
-            //    SearchResultsGrouping.None;
-
-            //var sw = Stopwatch.StartNew();
-
-            //IEnumerable<KeyValuePair<ArmorSetViewModel, IEnumerable<ArmorSetViewModel>>> groups = SearchResultGrouper.Default
-            //    .GroupBy(foundArmorSets, grouping)
-            //    .Select(g => new KeyValuePair<ArmorSetViewModel, IEnumerable<ArmorSetViewModel>>(g.FirstOrDefault(), g))
-            //    .ToList();
-
-            //sw.Stop();
-            //Console.WriteLine($"Grouping took {sw.ElapsedMilliseconds} ms");
-
-            //GroupedFoundArmorSets = groups;
         }
     }
 }
