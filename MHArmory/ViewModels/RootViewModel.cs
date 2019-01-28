@@ -107,8 +107,6 @@ namespace MHArmory.ViewModels
             SetupLocalization();
 
             Extensions = new ExtensionSelectorViewModel(this);
-
-            SearchResultsViewModel.Initialize();
         }
 
         private void SetupLocalization()

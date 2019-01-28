@@ -35,40 +35,12 @@ namespace MHArmory.Core.WPF.Controls
             new PropertyMetadata(true)
         );
 
-        //private ScrollBar verticalScrollBar = null;
-
-        protected override void OnTemplateChanged(ControlTemplate oldTemplate, ControlTemplate newTemplate)
-        {
-            base.OnTemplateChanged(oldTemplate, newTemplate);
-
-            //if (newTemplate != null)
-            //{
-            //    ApplyTemplate();
-            //    object lol = newTemplate.FindName("PART_VerticalScrollBar", this);
-            //    verticalScrollBar = (ScrollBar)lol;
-            //    Console.WriteLine(lol);
-            //}
-        }
-
         protected override void OnMouseWheel(MouseWheelEventArgs e)
         {
             if (GetIsScrollEnabled(TemplatedParent) == false)
                 e.Handled = true;
             else
                 base.OnMouseWheel(e);
-        }
-
-        protected override void OnPropertyChanged(DependencyPropertyChangedEventArgs e)
-        {
-            base.OnPropertyChanged(e);
-
-
-            //if (e.Property.Name.Contains("ScrollBar"))
-            //{
-            //    Console.WriteLine($"{e.Property.Name}: {e.OldValue} -> {e.NewValue}");
-            //    if (verticalScrollBar != null)
-            //        verticalScrollBar.Visibility = Visibility.Visible;
-            //}
         }
     }
 }

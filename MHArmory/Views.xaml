@@ -907,45 +907,42 @@
                 <ColumnDefinition Width="Auto"/>
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
-
-            <pnl:GrowOnlyPanel >
-                <!-- Cannot use ListBox here because of virtualization and variable item height :( -->
-                <ItemsControl Grid.Column="0" ItemsSource="{Binding GroupedFoundArmorSets, Mode=OneWay}" ctrl:CustomScrollViewer.IsScrollEnabled="{Binding IsMasterViewUnlocked, Mode=OneWay}" ctrl:CustomScrollViewer.VerticalScrollBarVisibility="{Binding IsMasterViewUnlocked, Mode=OneWay, Converter={StaticResource ScrollBarVisibilityValueConverter}}" ClipToBounds="False" Padding="0 0 0 0" Focusable="False" VirtualizingPanel.IsVirtualizing="True" VirtualizingPanel.ScrollUnit="Pixel" ScrollViewer.CanContentScroll="True">
-                    <ItemsControl.ItemsPanel>
-                        <ItemsPanelTemplate>
-                            <VirtualizingStackPanel />
-                        </ItemsPanelTemplate>
-                    </ItemsControl.ItemsPanel>
-                    <ItemsControl.ItemTemplate>
-                        <ItemContainerTemplate>
-                            <Button Style="{StaticResource SeamlessButtonStyle}" Command="{Binding SelectionCommand, Mode=OneTime}" Focusable="False">
-                                <StackPanel Focusable="False">
-                                    <TextBlock Text="Scroll locked, click to unlock" FontWeight="Bold" Foreground="Goldenrod" HorizontalAlignment="Center" Visibility="{Binding IsSelected, Mode=OneWay, Converter={StaticResource HiddenVisibilityValueConverter}}"/>
-                                    <Border x:Name="root" Style="{StaticResource ThickResultBorderStyle}" Margin="2" Padding="2" SnapsToDevicePixels="True" Focusable="False" Opacity="0.4">
-                                        <ContentControl Content="{Binding Mode=OneTime}" ContentTemplate="{StaticResource SearchResultArmorSetDetailsView}" Margin="4" Focusable="False"/>
-                                    </Border>
-                                </StackPanel>
-                            </Button>
-                            <ItemContainerTemplate.Triggers>
-                                <Trigger Property="IsMouseOver" Value="True">
-                                    <Setter TargetName="root" Property="Opacity" Value="0.6"/>
-                                </Trigger>
-                                <DataTrigger Binding="{Binding IsSelected, Mode=OneWay}" Value="True">
-                                    <Setter TargetName="root" Property="Opacity" Value="1.0"/>
-                                    <Setter TargetName="root" Property="Style" Value="{StaticResource SelectedThickResultBorderStyle}"/>
-                                </DataTrigger>
-                            </ItemContainerTemplate.Triggers>
-                        </ItemContainerTemplate>
-                    </ItemsControl.ItemTemplate>
-                    <ItemsControl.Template>
-                        <ControlTemplate>
-                            <ctrl:CustomScrollViewer Style="{StaticResource CustomVerticalScrollViewerStyle}" Padding="{TemplateBinding Control.Padding}" Focusable="False">
-                                <ItemsPresenter SnapsToDevicePixels="{TemplateBinding UIElement.SnapsToDevicePixels}" />
-                            </ctrl:CustomScrollViewer>
-                        </ControlTemplate>
-                    </ItemsControl.Template>
-                </ItemsControl>
-            </pnl:GrowOnlyPanel>
+            <!-- Cannot use ListBox here because of virtualization and variable item height :( -->
+            <ItemsControl Grid.Column="0" bhv:SelectionChangedViewNotifierBehavior.IsAttached="True" ItemsSource="{Binding GroupedFoundArmorSets, Mode=OneWay}" Visibility="{Binding HasGroupedResults, Mode=OneWay, Converter={StaticResource CollapsedVisibilityValueConverter}}" ctrl:CustomScrollViewer.IsScrollEnabled="{Binding IsMasterViewUnlocked, Mode=OneWay}" ctrl:CustomScrollViewer.VerticalScrollBarVisibility="{Binding IsMasterViewUnlocked, Mode=OneWay, Converter={StaticResource ScrollBarVisibilityValueConverter}}" ClipToBounds="False" Padding="0 0 0 0" Focusable="False" VirtualizingPanel.IsVirtualizing="True" VirtualizingPanel.ScrollUnit="Pixel" ScrollViewer.CanContentScroll="True">
+                <ItemsControl.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <VirtualizingStackPanel Margin="0 0 6 0"/>
+                    </ItemsPanelTemplate>
+                </ItemsControl.ItemsPanel>
+                <ItemsControl.ItemTemplate>
+                    <ItemContainerTemplate>
+                        <Button Style="{StaticResource SeamlessButtonStyle}" Command="{Binding SelectionCommand, Mode=OneTime}" Focusable="False">
+                            <StackPanel Focusable="False">
+                                <TextBlock Text="Scroll locked, click to unlock" FontWeight="Bold" Foreground="Goldenrod" HorizontalAlignment="Center" Visibility="{Binding IsSelected, Mode=OneWay, Converter={StaticResource HiddenVisibilityValueConverter}}"/>
+                                <Border x:Name="root" Style="{StaticResource ThickResultBorderStyle}" Margin="2" Padding="2" SnapsToDevicePixels="True" Focusable="False" Opacity="0.4">
+                                    <ContentControl Content="{Binding Mode=OneTime}" ContentTemplate="{StaticResource SearchResultArmorSetDetailsView}" Margin="4" Focusable="False"/>
+                                </Border>
+                            </StackPanel>
+                        </Button>
+                        <ItemContainerTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter TargetName="root" Property="Opacity" Value="0.6"/>
+                            </Trigger>
+                            <DataTrigger Binding="{Binding IsSelected, Mode=OneWay}" Value="True">
+                                <Setter TargetName="root" Property="Opacity" Value="1.0"/>
+                                <Setter TargetName="root" Property="Style" Value="{StaticResource SelectedThickResultBorderStyle}"/>
+                            </DataTrigger>
+                        </ItemContainerTemplate.Triggers>
+                    </ItemContainerTemplate>
+                </ItemsControl.ItemTemplate>
+                <ItemsControl.Template>
+                    <ControlTemplate>
+                        <ctrl:CustomScrollViewer Style="{StaticResource CustomVerticalScrollViewerStyle}" Padding="{TemplateBinding Control.Padding}" Focusable="False">
+                            <ItemsPresenter SnapsToDevicePixels="{TemplateBinding UIElement.SnapsToDevicePixels}" />
+                        </ctrl:CustomScrollViewer>
+                    </ControlTemplate>
+                </ItemsControl.Template>
+            </ItemsControl>
             <ListBox Grid.Column="1" ItemsSource="{Binding SelectedGroup.Items, Mode=OneWay}" ItemTemplate="{StaticResource GroupedSearchResultArmorSetView}" ScrollViewer.VerticalScrollBarVisibility="Visible" ClipToBounds="True" Padding="0 0 0 -22" Focusable="False" VirtualizingPanel.IsVirtualizing="True" VirtualizingPanel.ScrollUnit="Pixel">
                 <ListBox.ItemContainerStyle>
                     <Style TargetType="{x:Type ListBoxItem}">
@@ -987,25 +984,37 @@
     <DataTemplate x:Key="SearchResultsView">
         <Grid>
             <TextBlock x:Name="loading" Text="Loading..." HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="24" Foreground="DarkGray" FontWeight="Bold" Visibility="{Binding IsDataLoading, Converter={StaticResource CollapsedVisibilityValueConverter}, Mode=OneWay}"/>
-            <DockPanel LastChildFill="True" Visibility="{Binding IsDataLoaded, Converter={StaticResource CollapsedVisibilityValueConverter}, Mode=OneWay}">
-                <!--<ItemsControl DockPanel.Dock="Top" ItemsSource="{Binding GroupFlags, Mode=OneTime}" HorizontalAlignment="Right" Focusable="False">
-                    <ItemsControl.ItemTemplate>
-                        <DataTemplate>
-                            <CheckBox IsChecked="{Binding IsSet}" VerticalContentAlignment="Center" Margin="2">
-                                <TextBlock Text="{Binding Name, Mode=OneTime}" Margin="2"/>
-                            </CheckBox>
-                        </DataTemplate>
-                    </ItemsControl.ItemTemplate>
-                    <ItemsControl.ItemsPanel>
-                        <ItemsPanelTemplate>
-                            <StackPanel Orientation="Horizontal"/>
-                        </ItemsPanelTemplate>
-                    </ItemsControl.ItemsPanel>
-                </ItemsControl>
-                <ContentControl Content="{Binding Mode=OneWay}" ContentTemplate="{StaticResource GroupedSearchResultsView}" Focusable="False"/>-->
-                <ContentControl Content="{Binding UngroupedFoundArmorSets, Mode=OneWay}" ContentTemplate="{StaticResource UngroupedSearchResultsView}" Focusable="False"/>
+            <DockPanel LastChildFill="True">
+                <Rectangle DockPanel.Dock="Top" Height="1" HorizontalAlignment="Stretch" Fill="LightGray" Margin="4 8 4 0" UseLayoutRounding="True" SnapsToDevicePixels="True"/>
+                <StackPanel DockPanel.Dock="Top" Orientation="Horizontal" HorizontalAlignment="Right" Margin="0 4 0 4">
+                    <TextBlock Text="Grouping: " VerticalAlignment="Center"/>
+                    <ItemsControl ItemsSource="{Binding GroupFlags, Mode=OneTime}" VerticalAlignment="Center" Focusable="False">
+                        <ItemsControl.ItemTemplate>
+                            <DataTemplate>
+                                <CheckBox IsChecked="{Binding IsSet}" VerticalContentAlignment="Center" Margin="2">
+                                    <TextBlock Text="{Binding Name, Mode=OneTime}" Margin="2"/>
+                                </CheckBox>
+                            </DataTemplate>
+                        </ItemsControl.ItemTemplate>
+                        <ItemsControl.ItemsPanel>
+                            <ItemsPanelTemplate>
+                                <StackPanel Orientation="Horizontal"/>
+                            </ItemsPanelTemplate>
+                        </ItemsControl.ItemsPanel>
+                    </ItemsControl>
+                </StackPanel>
+                <Grid Visibility="{Binding IsDataLoaded, Converter={StaticResource CollapsedVisibilityValueConverter}, Mode=OneWay}">
+                    <ContentControl x:Name="grouped" Content="{Binding Mode=OneWay}" ContentTemplate="{StaticResource GroupedSearchResultsView}" Focusable="False" Visibility="Hidden"/>
+                    <ContentControl x:Name="ungrouped" Content="{Binding UngroupedFoundArmorSets, Mode=OneWay}" ContentTemplate="{StaticResource UngroupedSearchResultsView}" Focusable="False"/>
+                </Grid>
             </DockPanel>
         </Grid>
+        <DataTemplate.Triggers>
+            <DataTrigger Binding="{Binding IsGroupedViewMode, Mode=OneWay}" Value="True">
+                <Setter TargetName="grouped" Property="Visibility" Value="Visible"/>
+                <Setter TargetName="ungrouped" Property="Visibility" Value="Hidden"/>
+            </DataTrigger>
+        </DataTemplate.Triggers>
     </DataTemplate>
 
     <DataTemplate x:Key="RootView">

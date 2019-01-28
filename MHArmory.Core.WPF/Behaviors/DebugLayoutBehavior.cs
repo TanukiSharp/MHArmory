@@ -47,17 +47,17 @@ namespace MHArmory.Core.WPF.Behaviors
         private static void OnAttachedElementLoaded(FrameworkElement item)
         {
             item.Name = "ROOT";
-            Go(item);
+            ListenLayoutChanges(item);
         }
 
-        private static void Go(DependencyObject item)
+        private static void ListenLayoutChanges(DependencyObject item)
         {
             if (item is UIElement element)
                 element.LayoutUpdated += (s, e) => OnLayoutUpdated(element, s, e);
 
             int childCount = VisualTreeHelper.GetChildrenCount(item);
             for (int i = 0; i < childCount; i++)
-                Go(VisualTreeHelper.GetChild(item, i));
+                ListenLayoutChanges(VisualTreeHelper.GetChild(item, i));
         }
 
         private static void OnLayoutUpdated(UIElement element, object sender, EventArgs e)

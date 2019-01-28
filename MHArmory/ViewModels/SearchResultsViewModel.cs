@@ -12,7 +12,7 @@ using MHArmory.Search.Contracts;
 
 namespace MHArmory.ViewModels
 {
-    public class SearchResultsViewModel : ViewModelBase
+    public class SearchResultsViewModel : ViewModelBase, Core.WPF.Behaviors.ISelectionChangedViewNotifier
     {
         private readonly RootViewModel root;
 
@@ -65,6 +65,7 @@ namespace MHArmory.ViewModels
                     {
                         selectedGroup.IsSelected = true;
                         IsMasterViewUnlocked = false;
+                        SelectionChangedHandler?.Invoke(selectedGroup);
                     }
                 }
                 else
@@ -95,8 +96,24 @@ namespace MHArmory.ViewModels
             }
         }
 
+        private bool isGroupedViewMode;
+        public bool IsGroupedViewMode
+        {
+            get { return isGroupedViewMode; }
+            private set { SetValue(ref isGroupedViewMode, value); }
+        }
+
+        private bool hasGroupedResults;
+        public bool HasGroupedResults
+        {
+            get { return hasGroupedResults; }
+            private set { SetValue(ref hasGroupedResults, value); }
+        }
+
         public ICommand SearchArmorSetsCommand { get; }
         public ICommand CancelArmorSetsSearchCommand { get; }
+
+        public Action<object> SelectionChangedHandler { get; set; }
 
         public SearchResultsViewModel(RootViewModel root)
         {
@@ -113,10 +130,8 @@ namespace MHArmory.ViewModels
                 CreateEnumFlag("Additional skills", SearchResultsGrouping.AdditionalSKills),
                 CreateEnumFlag("Resistances", SearchResultsGrouping.Resistances),
             };
-        }
 
-        public void Initialize()
-        {
+            IsGroupedViewMode = currentGroupingFlags != SearchResultsGrouping.None;
         }
 
         public void ResetResults()
@@ -141,6 +156,8 @@ namespace MHArmory.ViewModels
             else
                 currentGroupingFlags &= ~value;
 
+            IsGroupedViewMode = currentGroupingFlags != SearchResultsGrouping.None;
+
             UpdateGroups();
         }
 
@@ -149,31 +166,21 @@ namespace MHArmory.ViewModels
             if (UngroupedFoundArmorSets == null || currentGroupingFlags == SearchResultsGrouping.None)
                 return;
 
-            var sw = Stopwatch.StartNew();
-
             IList<GroupedArmorSetHeaderViewModel> groups = SearchResultGrouper.Default
                 .GroupBy(UngroupedFoundArmorSets, currentGroupingFlags)
                 .Where(x => x.Any())
                 .Select(g => new GroupedArmorSetHeaderViewModel(this, g.ToList()))
-                .OrderBy(x => x.AdditionalSkills.Length + x.Jewels.Count)
                 .ToList();
 
-            //var newGroups = new List<GroupedArmorSetHeaderViewModel>();
-            //for (int i = 0; i < 10; i++)
-            //    newGroups.AddRange(groups);
-
-            sw.Stop();
-            Console.WriteLine($"Grouping took {sw.ElapsedMilliseconds} ms");
-
-            //GroupedFoundArmorSets = newGroups;
             GroupedFoundArmorSets = groups;
+            HasGroupedResults = groups.Count > 0;
 
-            if (groups.Count > 0)
+            if (HasGroupedResults)
                 SelectedGroup = groups[0];
-            //if (newGroups.Count > 0)
-            //    SelectedGroup = newGroups[0];
             else
                 SelectedGroup = null;
+
+            SelectionChangedHandler?.Invoke(SelectedGroup);
         }
 
         public void ApplySorting(bool force, int limit = 200)
