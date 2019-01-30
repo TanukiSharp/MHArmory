@@ -29,7 +29,11 @@ namespace MHArmory
             DataContext = helpRootViewModel;
         }
 
-        public void OnOpen(bool isAlreadyOpened, object argument)
+        public void OnOpening(bool isAlreadyOpened, object argument)
+        {
+        }
+
+        public void OnOpened(bool isAlreadyOpened, object argument)
         {
             HelpCategory helpCategory;
 

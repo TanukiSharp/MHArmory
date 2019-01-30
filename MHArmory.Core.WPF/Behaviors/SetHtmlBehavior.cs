@@ -30,7 +30,8 @@ namespace MHArmory.Core.WPF.Behaviors
 
         static void OnHtmlChanged(DependencyObject sender, DependencyPropertyChangedEventArgs e)
         {
-            ((WebBrowser)sender).NavigateToString(e.NewValue as string);
+            if (e.NewValue is string content)
+                ((WebBrowser)sender).NavigateToString(content);
         }
     }
 }

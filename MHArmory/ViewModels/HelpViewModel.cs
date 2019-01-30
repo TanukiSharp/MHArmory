@@ -69,6 +69,7 @@ namespace MHArmory.ViewModels
             if (helpViewModel == null)
                 return false;
 
+            Selected = null;
             Selected = helpViewModel;
 
             return true;

@@ -44,12 +44,16 @@ namespace MHArmory
             rootViewModel.WeaponsContainer.ActivateDefaultIfNeeded();
         }
 
-        public void OnOpen(bool isAlreadyOpened, object argument)
+        public void OnOpening(bool isAlreadyOpened, object argument)
         {
             if (isAlreadyOpened)
                 return;
 
             rootViewModel.WeaponsContainer.UpdateHighlights();
+        }
+
+        public void OnOpened(bool isAlreadyOpened, object argument)
+        {
         }
 
         private void OnCancel()

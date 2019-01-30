@@ -630,7 +630,7 @@
                     <RadioButton Content="All" IsChecked="{Binding VisibilityModeAll, Mode=OneWayToSource, FallbackValue=true}" bhv:ToolTipEx.Content="See all available jewels" Style="{StaticResource SelectorRadioButton}"/>
                     <RadioButton Content="Modified" IsChecked="{Binding VisibilityModeModified, Mode=OneWayToSource}" bhv:ToolTipEx.Content="See only jewels with override checkbox checked or a count greater than zero" Style="{StaticResource SelectorRadioButton}"/>
                     <RadioButton Content="Unmodified" IsChecked="{Binding VisibilityModeUnmodified, Mode=OneWayToSource}" bhv:ToolTipEx.Content="See only jewels with override checkbox unchecked and a count of zero" Style="{StaticResource SelectorRadioButton}"/>
-                    <Button Content="?" MinWidth="20" Margin="2" Padding="4" VerticalAlignment="Center" Command="{Binding OpenIntegratedHelpCommand, Mode=OneTime}" CommandParameter="DecorationOverride" IsEnabled="True" bhv:ToolTipEx.Content="Show help about decorations override"/>
+                    <Button Content="?" MinWidth="20" Margin="2" Padding="4" VerticalAlignment="Center" Command="{Binding OpenIntegratedHelpCommand, Mode=OneTime}" CommandParameter="DecorationsOverride" IsEnabled="True" bhv:ToolTipEx.Content="Show help about decorations override"/>
                 </StackPanel>
                 <TextBox Margin="2" Padding="3" FocusManager.FocusedElement="{Binding RelativeSource={RelativeSource Self}}" Text="{Binding SearchText, UpdateSourceTrigger=PropertyChanged}" bhv:TextBoxFocusOnEmptyBehavior.IsAttached="True"/>
             </DockPanel>
