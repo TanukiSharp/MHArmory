@@ -3,7 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:bhv="clr-namespace:MHArmory.Behaviors"
+        xmlns:bhv="clr-namespace:MHArmory.Core.WPF.Behaviors;assembly=MHArmory.Core.WPF"
         mc:Ignorable="d"
         Title="Help" Width="700" Height="450" Background="WhiteSmoke" WindowStartupLocation="CenterOwner">
     <TabControl x:Name="rootTabControl" ItemsSource="{Binding Categories}" Margin="8" SelectedItem="{Binding Selected, Mode=TwoWay}">

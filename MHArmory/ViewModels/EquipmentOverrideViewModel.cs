@@ -10,6 +10,7 @@ using MHArmory.Configurations;
 using MHArmory.Core;
 using MHArmory.Core.DataStructures;
 using MHArmory.Services;
+using MHArmory.Core.WPF;
 using MHWSaveUtils;
 using Newtonsoft.Json;
 

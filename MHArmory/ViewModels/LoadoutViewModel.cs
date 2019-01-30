@@ -8,6 +8,7 @@ using System.Windows.Input;
 using MHArmory.Configurations;
 using MHArmory.Core;
 using MHArmory.Services;
+using MHArmory.Core.WPF;
 
 namespace MHArmory.ViewModels
 {

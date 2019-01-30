@@ -93,8 +93,8 @@ namespace MHArmory
             if (loadout != null && lastOpenedLoadout != null && loadout.TryGetValue(lastOpenedLoadout, out SkillLoadoutItemConfigurationV3 loadoutConfig))
                 loadoutManager.Open(lastOpenedLoadout, loadoutConfig);
 
-            rootViewModel.IsDataLoading = false;
-            rootViewModel.IsDataLoaded = true;
+            rootViewModel.SearchResultsViewModel.IsDataLoading = false;
+            rootViewModel.SearchResultsViewModel.IsDataLoaded = true;
 
             rootViewModel.NotifyDataLoaded();
 

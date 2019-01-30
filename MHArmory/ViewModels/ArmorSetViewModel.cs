@@ -12,6 +12,7 @@ using MHArmory.Core.DataStructures;
 using MHArmory.Search;
 using MHArmory.Search.Contracts;
 using MHArmory.Services;
+using MHArmory.Core.WPF;
 using Microsoft.Win32;
 
 namespace MHArmory.ViewModels
@@ -152,6 +153,68 @@ namespace MHArmory.ViewModels
         {
             this.jewel = jewel;
             this.count = count;
+        }
+    }
+
+    public class GroupedArmorSetHeaderViewModel : ViewModelBase
+    {
+        private bool isSelected;
+        public bool IsSelected
+        {
+            get { return isSelected; }
+            set { SetValue(ref isSelected, value); }
+        }
+
+        public ICommand SelectionCommand { get; }
+
+        public IList<ArmorSetJewelViewModel> Jewels { get; }
+        public SearchResultSkillViewModel[] AdditionalSkills { get; }
+
+        public int[] SpareSlots { get; }
+
+        public int TotalBaseDefense { get; }
+        public int TotalMaxDefense { get; }
+        public int TotalAugmentedDefense { get; }
+
+        public int TotalFireResistance { get; }
+        public int TotalWaterResistance { get; }
+        public int TotalThunderResistance { get; }
+        public int TotalIceResistance { get; }
+        public int TotalDragonResistance { get; }
+
+        public IList<ArmorSetViewModel> Items { get; }
+
+        private readonly SearchResultsViewModel parent;
+
+        public GroupedArmorSetHeaderViewModel(SearchResultsViewModel parent, IList<ArmorSetViewModel> items)
+        {
+            this.parent = parent;
+            SelectionCommand = new AnonymousCommand(OnSelection);
+
+            ArmorSetViewModel source = items[0];
+
+            Jewels = source.Jewels;
+
+            AdditionalSkills = source.AdditionalSkills;
+
+            SpareSlots = source.SpareSlots;
+
+            TotalBaseDefense = source.TotalBaseDefense;
+            TotalMaxDefense = source.TotalMaxDefense;
+            TotalAugmentedDefense = source.TotalAugmentedDefense;
+
+            TotalFireResistance = source.TotalFireResistance;
+            TotalWaterResistance = source.TotalWaterResistance;
+            TotalThunderResistance = source.TotalThunderResistance;
+            TotalIceResistance = source.TotalIceResistance;
+            TotalDragonResistance = source.TotalDragonResistance;
+
+            Items = items;
+        }
+
+        private void OnSelection()
+        {
+            parent.SelectedGroup = this;
         }
     }
 
@@ -297,6 +360,14 @@ namespace MHArmory.ViewModels
         public ArmorSetViewModel(RootViewModel root, ISolverData solverData, IList<IArmorPiece> armorPieces, ICharmLevel charm, IList<ArmorSetJewelViewModel> jewels, int[] spareSlots)
         {
             this.root = root;
+
+            if (armorPieces.Count(x => x == null) > 0)
+            {
+            }
+
+            if (charm == null)
+            {
+            }
 
             this.armorPieces = armorPieces;
             this.charm = charm;

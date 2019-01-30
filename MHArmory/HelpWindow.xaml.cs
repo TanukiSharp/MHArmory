@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Input;
 using MHArmory.ViewModels;
+using MHArmory.Core.WPF;
 
 namespace MHArmory
 {
@@ -28,7 +29,11 @@ namespace MHArmory
             DataContext = helpRootViewModel;
         }
 
-        public void OnOpen(bool isAlreadyOpened, object argument)
+        public void OnOpening(bool isAlreadyOpened, object argument)
+        {
+        }
+
+        public void OnOpened(bool isAlreadyOpened, object argument)
         {
             HelpCategory helpCategory;
 
