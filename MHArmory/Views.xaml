@@ -987,6 +987,7 @@
             <DockPanel LastChildFill="True">
                 <Rectangle DockPanel.Dock="Top" Height="1" HorizontalAlignment="Stretch" Fill="LightGray" Margin="4 8 4 0" UseLayoutRounding="True" SnapsToDevicePixels="True"/>
                 <StackPanel DockPanel.Dock="Top" Orientation="Horizontal" HorizontalAlignment="Right" Margin="0 4 0 4">
+                    <Button Content="?" MinWidth="20" Margin="2 2 6 2" Padding="2" VerticalAlignment="Center" Command="{x:Static local:RoutedCommands.OpenIntegratedHelp}" CommandParameter="Grouping" bhv:ToolTipEx.Content="Show help about grouping"/>
                     <TextBlock Text="Grouping: " VerticalAlignment="Center"/>
                     <ItemsControl ItemsSource="{Binding GroupFlags, Mode=OneTime}" VerticalAlignment="Center" Focusable="False">
                         <ItemsControl.ItemTemplate>
