@@ -1,11 +1,14 @@
 # Change log
 
-## vNext (?)
+## 0.0.9 (2019/01/30)
 
+- Search results grouping
+    ![Search results grouping](docs/misc/changelog_0.0.9.0_grouping.png)
 - Improved armor pieces selection based on slots
 - Fixed armor pieces data
     - Kulve Taroth armor pieces had wrong elemental resistance values
     - Previously failed to import Drachen Vambraces α
+- Added Gala Suit armor for save import reference
 
 ## 0.0.8.6 (2019/01/07)
 

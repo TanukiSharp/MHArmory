@@ -4,7 +4,7 @@
 <img src="docs/images/blue_shield.png" width="64" height="64"/>
 </td>
 <td border-collapse="collapse" border="none">
-<i>Current version: <b><a href="https://github.com/TanukiSharp/MHArmory/raw/master/Distributions/MHArmory_0.0.8.6.zip">0.0.8.6</a></b></i><br/><i>Last modification: <b>2019/01/07</b></i>
+<i>Current version: <b><a href="https://github.com/TanukiSharp/MHArmory/raw/master/Distributions/MHArmory_0.0.9.0.zip">0.0.9</a></b></i><br/><i>Last modification: <b>2019/01/30</b></i>
 </td>
 </tr>
 </table>
@@ -27,7 +27,7 @@ If you are a developer and want to contribute to code, I recommend to first open
 
 # Download
 
-Link to direct download: https://github.com/TanukiSharp/MHArmory/raw/master/Distributions/MHArmory_0.0.8.6.zip
+Link to direct download: https://github.com/TanukiSharp/MHArmory/raw/master/Distributions/MHArmory_0.0.9.0.zip
 
 Or here: https://tanukisharp.github.io/MHArmory/download.html<br/>
 Older versions can be downloaded as well, here: https://github.com/TanukiSharp/MHArmory/tree/master/Distributions
