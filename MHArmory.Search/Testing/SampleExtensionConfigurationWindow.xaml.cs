@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -11,6 +12,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using MHArmory.Search.Contracts;
 
 namespace MHArmory.Search.Testing
 {
@@ -19,9 +21,24 @@ namespace MHArmory.Search.Testing
     /// </summary>
     public partial class SampleExtensionConfigurationWindow : Window
     {
-        public SampleExtensionConfigurationWindow()
+        private readonly ISolver solver;
+
+        private readonly SampleViewModel viewModel;
+
+        public SampleExtensionConfigurationWindow(ISolver solver)
         {
             InitializeComponent();
+
+            this.solver = solver;
+
+            viewModel = new SampleViewModel(solver);
+            DataContext = viewModel;
+        }
+
+        protected override void OnClosing(CancelEventArgs e)
+        {
+            base.OnClosing(e);
+            viewModel.OnClose();
         }
     }
 }

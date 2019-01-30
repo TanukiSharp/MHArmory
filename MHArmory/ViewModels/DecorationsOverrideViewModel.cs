@@ -10,6 +10,7 @@ using System.Windows.Input;
 using MHArmory.Configurations;
 using MHArmory.Core.DataStructures;
 using MHArmory.Services;
+using MHArmory.Core.WPF;
 using MHWSaveUtils;
 using Microsoft.Win32;
 using Newtonsoft.Json;

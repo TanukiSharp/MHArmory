@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Windows.Input;
 using MHArmory.AutoUpdate;
 using MHArmory.Configurations;
+using MHArmory.Core.WPF;
 using Microsoft.Extensions.Logging;
 
 namespace MHArmory.ViewModels

@@ -13,6 +13,11 @@
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="11.0.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\MHArmory.Core.WPF\MHArmory.Core.WPF.csproj" />
     <ProjectReference Include="..\MHArmory.Core\MHArmory.Core.csproj" />
     <ProjectReference Include="..\MHArmory.Search.Contracts\MHArmory.Search.Contracts.csproj" />
   </ItemGroup>

@@ -14,6 +14,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using MHArmory.Configurations;
 using MHArmory.ViewModels;
+using MHArmory.Core.WPF;
 using MHWSaveUtils;
 
 namespace MHArmory

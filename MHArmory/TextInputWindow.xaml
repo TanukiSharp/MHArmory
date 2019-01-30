@@ -1,10 +1,10 @@
-﻿<Window x:Class="MHArmory.TextInputWindow"
+<Window x:Class="MHArmory.TextInputWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MHArmory"
-        xmlns:bhv="clr-namespace:MHArmory.Behaviors"
+        xmlns:bhv="clr-namespace:MHArmory.Core.WPF.Behaviors;assembly=MHArmory.Core.WPF"
         mc:Ignorable="d"
         Title="Input" Height="238" Width="545" Background="WhiteSmoke" WindowStartupLocation="CenterScreen" WindowStyle="ToolWindow">
     <DockPanel LastChildFill="False" Margin="12" Focusable="False">

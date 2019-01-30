@@ -7,6 +7,7 @@ using System.Windows.Input;
 using MHArmory.Core.DataStructures;
 using MHArmory.Search;
 using MHArmory.Search.Contracts;
+using MHArmory.Core.WPF;
 
 namespace MHArmory.ViewModels
 {

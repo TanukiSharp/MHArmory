@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using MHArmory.ArmoryDataSource.DataStructures;
 using MHArmory.Core.DataStructures;
+using MHArmory.Core.WPF;
 
 namespace MHArmory.ViewModels
 {
