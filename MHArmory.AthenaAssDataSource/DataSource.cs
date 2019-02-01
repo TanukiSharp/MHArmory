@@ -23,7 +23,6 @@ namespace MHArmory.AthenaAssDataSource
         public const string LegsFilename = "legs.txt";
         public const string SkillsFilename = "skills.txt";
         public const string SetSkillsFilename = "set_skills.txt";
-        public const string SkillsDescriptionsFilename = "skills.txt";
         public const string AbilitiesDescriptionsFilename = "skill_descriptions.txt";
         public const string CharmsFilename = "charms.txt";
         public const string JewelsFilename = "decorations.txt";
@@ -337,7 +336,6 @@ namespace MHArmory.AthenaAssDataSource
             string[] allLines = File.ReadAllLines(skillsFilePath);
 
             skillsLocalizations = LoadLocalizations(SkillsFilename);
-            Dictionary<string, string[]> skillsDescriptionsLocalizations = LoadLocalizations(SkillsDescriptionsFilename);
             Dictionary<string, string[]> abilitiesDescriptionsLocalizations = LoadLocalizations(AbilitiesDescriptionsFilename);
 
             (int headerIndex, int dataIndex) = FindIndexes(allLines);
@@ -362,16 +360,13 @@ namespace MHArmory.AthenaAssDataSource
 
                 int index = i - dataIndex;
 
-                var skill = new SkillPrimitiveHighLevel
-                {
-                    MaxLevel = skillPrimitive.MaxLevel,
-                    Name = Localization.AvailableLanguageCodes.ToDictionary(kv1 => kv1.Key, kv2 => skillsLocalizations[kv2.Key][index])
-                };
+                var name = Localization.AvailableLanguageCodes.ToDictionary(kv1 => kv1.Key, kv2 => skillsLocalizations[kv2.Key][index]);
 
                 localSkills.Add(new DataStructures.Skill(
                     index,
-                    Localization.AvailableLanguageCodes.ToDictionary(kv1 => kv1.Key, kv2 => skillsDescriptionsLocalizations[kv2.Key][index]),
-                    skill
+                    name,
+                    skillPrimitive.MaxLevel,
+                    skillPrimitive.Category != null ? new string[] { skillPrimitive.Category } : null
                 ));
             }
 

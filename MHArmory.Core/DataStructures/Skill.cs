@@ -76,17 +76,19 @@ namespace MHArmory.Core.DataStructures
         Dictionary<string, string> Description { get; }
         int MaxLevel { get; }
         IAbility[] Abilities { get; }
+        string[] Categories { get; }
     }
 
     public class Skill : ISkill
     {
-        public Skill(int id, Dictionary<string, string> name, Dictionary<string, string> description, IAbility[] abilities)
+        public Skill(int id, Dictionary<string, string> name, Dictionary<string, string> description, IAbility[] abilities, string[] categories)
         {
             Id = id;
             Name = name;
             Description = description;
             MaxLevel = abilities.Max(x => x.Level);
             Abilities = abilities;
+            Categories = categories;
         }
 
         public int Id { get; }
@@ -94,6 +96,7 @@ namespace MHArmory.Core.DataStructures
         public Dictionary<string, string> Description { get; }
         public int MaxLevel { get; }
         public IAbility[] Abilities { get; }
+        public string[] Categories { get; }
 
         public override int GetHashCode()
         {

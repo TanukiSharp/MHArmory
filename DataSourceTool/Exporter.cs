@@ -211,7 +211,8 @@ namespace DataSourceTool
                 Id = x.Id,
                 Name = x.Name,
                 Description = x.Description,
-                AbilityIds = MakeAbilities(x.Abilities)
+                AbilityIds = MakeAbilities(x.Abilities),
+                Categories = x.Categories
             });
         }
 
