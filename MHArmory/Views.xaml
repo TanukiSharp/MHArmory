@@ -556,16 +556,29 @@
 
     <DataTemplate x:Key="SkillSelectorView">
         <DockPanel LastChildFill="True">
-
-            <DockPanel DockPanel.Dock="Top" LastChildFill="True">
-                <TextBlock DockPanel.Dock="Left" Text="Filter: " Margin="4" VerticalAlignment="Center"/>
-                <StackPanel DockPanel.Dock="Right" Orientation="Horizontal">
-                    <RadioButton Content="All" IsChecked="{Binding VisibilityModeAll, Mode=OneWayToSource, FallbackValue=true}" bhv:ToolTipEx.Content="See all available skills" Style="{StaticResource SelectorRadioButton}"/>
-                    <RadioButton Content="Selected" IsChecked="{Binding VisibilityModeSelected, Mode=OneWayToSource}" bhv:ToolTipEx.Content="See only selected skills" Style="{StaticResource SelectorRadioButton}"/>
-                    <RadioButton Content="Unselected" IsChecked="{Binding VisibilityModeUnselected, Mode=OneWayToSource}" bhv:ToolTipEx.Content="See only unselected skills" Style="{StaticResource SelectorRadioButton}"/>
-                </StackPanel>
-                <TextBox Margin="2" Padding="3" FocusManager.FocusedElement="{Binding RelativeSource={RelativeSource Self}}" Text="{Binding SearchText, UpdateSourceTrigger=PropertyChanged}" bhv:TextBoxFocusOnEmptyBehavior.IsAttached="True"/>
-            </DockPanel>
+            <StackPanel DockPanel.Dock="Top">
+                <DockPanel LastChildFill="True">
+                    <TextBlock DockPanel.Dock="Left" Text="Filter: " Margin="4" VerticalAlignment="Center"/>
+                    <StackPanel DockPanel.Dock="Right" Orientation="Horizontal">
+                        <RadioButton Content="All" IsChecked="{Binding VisibilityModeAll, Mode=OneWayToSource, FallbackValue=true}" bhv:ToolTipEx.Content="See all available skills" Style="{StaticResource SelectorRadioButton}"/>
+                        <RadioButton Content="Selected" IsChecked="{Binding VisibilityModeSelected, Mode=OneWayToSource}" bhv:ToolTipEx.Content="See only selected skills" Style="{StaticResource SelectorRadioButton}"/>
+                        <RadioButton Content="Unselected" IsChecked="{Binding VisibilityModeUnselected, Mode=OneWayToSource}" bhv:ToolTipEx.Content="See only unselected skills" Style="{StaticResource SelectorRadioButton}"/>
+                    </StackPanel>
+                    <TextBox Margin="2" Padding="3" FocusManager.FocusedElement="{Binding RelativeSource={RelativeSource Self}}" Text="{Binding SearchText, UpdateSourceTrigger=PropertyChanged}" bhv:TextBoxFocusOnEmptyBehavior.IsAttached="True"/>
+                </DockPanel>
+                <ItemsControl ItemsSource="{Binding Categories, Mode=OneWay}" Margin="0 2 0 2" HorizontalAlignment="Right" Focusable="False">
+                    <ItemsControl.ItemTemplate>
+                        <DataTemplate>
+                            <CheckBox IsChecked="{Binding Value}" Content="{Binding Name, Mode=OneTime}" VerticalAlignment="Center" VerticalContentAlignment="Center" Margin="4 2 4 2"/>
+                        </DataTemplate>
+                    </ItemsControl.ItemTemplate>
+                    <ItemsControl.ItemsPanel>
+                        <ItemsPanelTemplate>
+                            <StackPanel Orientation="Horizontal"/>
+                        </ItemsPanelTemplate>
+                    </ItemsControl.ItemsPanel>
+                </ItemsControl>
+            </StackPanel>
             <ListBox Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" ItemsSource="{Binding Skills, Mode=OneWay}" ItemTemplate="{StaticResource SkillView}" VirtualizingPanel.IsVirtualizing="False" VirtualizingPanel.ScrollUnit="Pixel" Focusable="False">
                 <ListBox.ItemContainerStyle>
                     <Style TargetType="{x:Type ListBoxItem}">

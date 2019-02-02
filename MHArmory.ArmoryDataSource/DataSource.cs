@@ -262,7 +262,9 @@ namespace MHArmory.ArmoryDataSource
                     x.Id,
                     x.Name,
                     x.Description,
-                    x.AbilityIds?.JoinEx(abilities, inner => inner.Id).ToArray() ?? Array.Empty<IAbility>()))
+                    x.AbilityIds?.JoinEx(abilities, inner => inner.Id).ToArray() ?? Array.Empty<IAbility>(),
+                    x.Categories
+                ))
                 .ToArray<ISkill>();
 
             foreach (ISkill skill in skills)

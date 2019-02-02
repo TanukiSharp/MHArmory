@@ -147,6 +147,9 @@ namespace MHArmory.AthenaAssDataSource
 
             foreach (KeyValuePair<int, Setter> kv in members)
             {
+                if (kv.Key >= lineData.Length)
+                    continue;
+
                 if (kv.Value(result, lineData[kv.Key]) == false)
                     logger?.LogError($"line {lineNum}: failed to parse data at column {kv.Key + 1}.");
             }
