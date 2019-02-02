@@ -78,6 +78,7 @@ namespace MHArmory.ViewModels
         }
 
         public IList<AbilityViewModel> Abilities { get; }
+        public IList<string> Categories { get; }
 
         private static readonly Dictionary<string, string> ExcludeText = new Dictionary<string, string> { [Localization.DefaultLanguage] = "Exclude" };
 
@@ -87,6 +88,8 @@ namespace MHArmory.ViewModels
             this.jewels = jewels;
             this.root = root;
             this.skillSelector = skillSelector;
+
+            Categories = skill.Categories;
 
             UpdateJewelsText();
 

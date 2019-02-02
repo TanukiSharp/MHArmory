@@ -23,7 +23,18 @@ namespace MHArmory.ViewModels
         public IEnumerable<SkillViewModel> Skills
         {
             get { return skills; }
-            set { SetValue(ref skills, value); }
+            set
+            {
+                if (SetValue(ref skills, value))
+                    UpdateCategories();
+            }
+        }
+
+        private IList<NamedValueViewModel<bool>> categories;
+        public IList<NamedValueViewModel<bool>> Categories
+        {
+            get { return categories; }
+            private set { SetValue(ref categories, value); }
         }
 
         private VisibilityMode visibilityMode = VisibilityMode.All;
@@ -103,7 +114,30 @@ namespace MHArmory.ViewModels
                 }
             }
 
+            if (Categories.Any(x => x.Value))
+            {
+                if (IsMatchingByCategory(skillViewModel) == false)
+                {
+                    skillViewModel.IsVisible = false;
+                    return;
+                }
+            }
+
             skillViewModel.ApplySearchText(SearchStatement.Create(searchText));
+        }
+
+        private bool IsMatchingByCategory(SkillViewModel skillViewModel)
+        {
+            if (skillViewModel.Categories == null)
+                return false;
+
+            foreach (NamedValueViewModel<bool> category in Categories.Where(x => x.Value))
+            {
+                if (skillViewModel.Categories.Contains(category.Name))
+                    return true;
+            }
+
+            return false;
         }
 
         public ICommand CancelCommand { get; }
@@ -123,6 +157,50 @@ namespace MHArmory.ViewModels
                     cancellable.IsCancelled = true;
                 }
             }
+        }
+
+        private void UpdateCategories()
+        {
+            var categories = new HashSet<string>();
+
+            foreach (SkillViewModel skill in Skills)
+            {
+                if (skill.Categories == null)
+                    continue;
+
+                foreach (string category in skill.Categories)
+                    categories.Add(category);
+            }
+
+            Categories = categories
+                .Select(x => new NamedValueViewModel<bool>(x, false, _ => ComputeVisibility()))
+                .ToList();
+        }
+    }
+
+    public class NamedValueViewModel<T> : ValueViewModel<T>
+    {
+        public string Name { get; }
+
+        public NamedValueViewModel(string name)
+            : this(name, default(T))
+        {
+        }
+
+        public NamedValueViewModel(string name, T initialValue)
+            : this(name, initialValue, null)
+        {
+        }
+
+        public NamedValueViewModel(string name, Action<T> notifyChanged)
+            : this(name, default(T), notifyChanged)
+        {
+        }
+
+        public NamedValueViewModel(string name, T initialValue, Action<T> notifyChanged)
+            : base(initialValue, notifyChanged)
+        {
+            Name = name;
         }
     }
 }
