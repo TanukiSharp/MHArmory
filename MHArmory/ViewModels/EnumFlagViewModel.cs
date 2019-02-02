@@ -18,18 +18,19 @@ namespace MHArmory.ViewModels
             set
             {
                 if (SetValue(ref isSet, value))
-                    notifyChanged(value, enumValue);
+                    notifyChanged(value, EnumValue);
             }
         }
 
-        private readonly T enumValue;
+        public T EnumValue { get; }
+
         private readonly Action<bool, T> notifyChanged;
 
         public EnumFlagViewModel(string name, bool initialValue, T enumValue, Action<bool, T> onChanged)
         {
             Name = name;
             isSet = initialValue;
-            this.enumValue = enumValue;
+            EnumValue = enumValue;
             notifyChanged = onChanged;
         }
     }
