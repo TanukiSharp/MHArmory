@@ -17,6 +17,9 @@
             0,
             1,
             2
+        ],
+        "categories": [
+            "Resistance"
         ]
     },
     {
@@ -37,6 +40,9 @@
             3,
             4,
             5
+        ],
+        "categories": [
+            "Resistance"
         ]
     },
     {
@@ -57,6 +63,9 @@
             6,
             7,
             8
+        ],
+        "categories": [
+            "Resistance"
         ]
     },
     {
@@ -77,6 +86,9 @@
             9,
             10,
             11
+        ],
+        "categories": [
+            "Resistance"
         ]
     },
     {
@@ -95,6 +107,9 @@
         },
         "abilityIds": [
             12
+        ],
+        "categories": [
+            "Resistance"
         ]
     },
     {
@@ -115,6 +130,9 @@
             13,
             14,
             15
+        ],
+        "categories": [
+            "Resistance"
         ]
     },
     {
@@ -135,6 +153,9 @@
             16,
             17,
             18
+        ],
+        "categories": [
+            "Resistance"
         ]
     },
     {
@@ -155,6 +176,9 @@
             19,
             20,
             21
+        ],
+        "categories": [
+            "Resistance"
         ]
     },
     {
@@ -177,6 +201,9 @@
             24,
             25,
             26
+        ],
+        "categories": [
+            "Resistance"
         ]
     },
     {
@@ -199,6 +226,9 @@
             29,
             30,
             31
+        ],
+        "categories": [
+            "Resistance"
         ]
     },
     {
@@ -219,6 +249,9 @@
             32,
             33,
             34
+        ],
+        "categories": [
+            "Resistance"
         ]
     },
     {
@@ -255,6 +288,9 @@
         },
         "abilityIds": [
             36
+        ],
+        "categories": [
+            "Resistance"
         ]
     },
     {
@@ -273,6 +309,9 @@
         },
         "abilityIds": [
             37
+        ],
+        "categories": [
+            "Resistance"
         ]
     },
     {
@@ -297,6 +336,9 @@
             42,
             43,
             44
+        ],
+        "categories": [
+            "Offensive"
         ]
     },
     {
@@ -321,6 +363,9 @@
             49,
             50,
             51
+        ],
+        "categories": [
+            "Defensive"
         ]
     },
     {
@@ -341,6 +386,9 @@
             52,
             53,
             54
+        ],
+        "categories": [
+            "Defensive"
         ]
     },
     {
@@ -361,6 +409,9 @@
             55,
             56,
             57
+        ],
+        "categories": [
+            "Defensive"
         ]
     },
     {
@@ -381,6 +432,9 @@
             58,
             59,
             60
+        ],
+        "categories": [
+            "Defensive"
         ]
     },
     {
@@ -401,6 +455,9 @@
             61,
             62,
             63
+        ],
+        "categories": [
+            "Resistance"
         ]
     },
     {
@@ -421,6 +478,9 @@
             64,
             65,
             66
+        ],
+        "categories": [
+            "Resistance"
         ]
     },
     {
@@ -441,6 +501,9 @@
             67,
             68,
             69
+        ],
+        "categories": [
+            "Resistance"
         ]
     },
     {
@@ -461,6 +524,9 @@
             70,
             71,
             72
+        ],
+        "categories": [
+            "Resistance"
         ]
     },
     {
@@ -481,6 +547,9 @@
             73,
             74,
             75
+        ],
+        "categories": [
+            "Resistance"
         ]
     },
     {
@@ -501,6 +570,9 @@
             76,
             77,
             78
+        ],
+        "categories": [
+            "Resistance"
         ]
     },
     {
@@ -523,6 +595,9 @@
             81,
             82,
             83
+        ],
+        "categories": [
+            "Offensive"
         ]
     },
     {
@@ -545,6 +620,9 @@
             86,
             87,
             88
+        ],
+        "categories": [
+            "Offensive"
         ]
     },
     {
@@ -567,6 +645,9 @@
             91,
             92,
             93
+        ],
+        "categories": [
+            "Offensive"
         ]
     },
     {
@@ -589,6 +670,9 @@
             96,
             97,
             98
+        ],
+        "categories": [
+            "Offensive"
         ]
     },
     {
@@ -611,6 +695,9 @@
             101,
             102,
             103
+        ],
+        "categories": [
+            "Offensive"
         ]
     },
     {
@@ -631,6 +718,9 @@
             104,
             105,
             106
+        ],
+        "categories": [
+            "Offensive"
         ]
     },
     {
@@ -651,6 +741,9 @@
             107,
             108,
             109
+        ],
+        "categories": [
+            "Offensive"
         ]
     },
     {
@@ -671,6 +764,9 @@
             110,
             111,
             112
+        ],
+        "categories": [
+            "Offensive"
         ]
     },
     {
@@ -691,6 +787,9 @@
             113,
             114,
             115
+        ],
+        "categories": [
+            "Offensive"
         ]
     },
     {
@@ -709,6 +808,9 @@
         },
         "abilityIds": [
             116
+        ],
+        "categories": [
+            "Bow/Gunner"
         ]
     },
     {
@@ -727,6 +829,9 @@
         },
         "abilityIds": [
             117
+        ],
+        "categories": [
+            "Bow/Gunner"
         ]
     },
     {
@@ -745,6 +850,9 @@
         },
         "abilityIds": [
             118
+        ],
+        "categories": [
+            "Bow/Gunner"
         ]
     },
     {
@@ -765,6 +873,9 @@
             119,
             120,
             121
+        ],
+        "categories": [
+            "Offensive"
         ]
     },
     {
@@ -789,6 +900,9 @@
             126,
             127,
             128
+        ],
+        "categories": [
+            "Offensive"
         ]
     },
     {
@@ -809,6 +923,9 @@
             129,
             130,
             131
+        ],
+        "categories": [
+            "Offensive"
         ]
     },
     {
@@ -829,6 +946,9 @@
             132,
             133,
             134
+        ],
+        "categories": [
+            "Offensive"
         ]
     },
     {
@@ -849,6 +969,9 @@
             135,
             136,
             137
+        ],
+        "categories": [
+            "Offensive"
         ]
     },
     {
@@ -891,6 +1014,9 @@
             143,
             144,
             145
+        ],
+        "categories": [
+            "Blademaster"
         ]
     },
     {
@@ -911,6 +1037,9 @@
             146,
             147,
             148
+        ],
+        "categories": [
+            "Offensive"
         ]
     },
     {
@@ -931,6 +1060,9 @@
             149,
             150,
             151
+        ],
+        "categories": [
+            "Gathering"
         ]
     },
     {
@@ -951,6 +1083,9 @@
             152,
             153,
             154
+        ],
+        "categories": [
+            "Blademaster"
         ]
     },
     {
@@ -1007,6 +1142,9 @@
         },
         "abilityIds": [
             159
+        ],
+        "categories": [
+            "Offensive"
         ]
     },
     {
@@ -1029,6 +1167,9 @@
             162,
             163,
             164
+        ],
+        "categories": [
+            "Offensive"
         ]
     },
     {
@@ -1051,6 +1192,9 @@
             167,
             168,
             169
+        ],
+        "categories": [
+            "Offensive"
         ]
     },
     {
@@ -1071,6 +1215,9 @@
             170,
             171,
             172
+        ],
+        "categories": [
+            "Offensive"
         ]
     },
     {
@@ -1093,6 +1240,9 @@
             175,
             176,
             177
+        ],
+        "categories": [
+            "Offensive"
         ]
     },
     {
@@ -1111,6 +1261,9 @@
         },
         "abilityIds": [
             178
+        ],
+        "categories": [
+            "Offensive"
         ]
     },
     {
@@ -1133,6 +1286,9 @@
             181,
             182,
             183
+        ],
+        "categories": [
+            "Offensive"
         ]
     },
     {
@@ -1151,6 +1307,9 @@
         },
         "abilityIds": [
             184
+        ],
+        "categories": [
+            "Defensive"
         ]
     },
     {
@@ -1169,6 +1328,9 @@
         },
         "abilityIds": [
             185
+        ],
+        "categories": [
+            "Blademaster"
         ]
     },
     {
@@ -1187,6 +1349,9 @@
         },
         "abilityIds": [
             186
+        ],
+        "categories": [
+            "Bow/Gunner"
         ]
     },
     {
@@ -1226,6 +1391,9 @@
             189,
             190,
             191
+        ],
+        "categories": [
+            "Offensive"
         ]
     },
     {
@@ -1245,6 +1413,9 @@
         "abilityIds": [
             192,
             193
+        ],
+        "categories": [
+            "Offensive"
         ]
     },
     {
@@ -1265,6 +1436,9 @@
             194,
             195,
             196
+        ],
+        "categories": [
+            "Defensive"
         ]
     },
     {
@@ -1287,6 +1461,9 @@
             199,
             200,
             201
+        ],
+        "categories": [
+            "Defensive"
         ]
     },
     {
@@ -1305,6 +1482,9 @@
         },
         "abilityIds": [
             202
+        ],
+        "categories": [
+            "Defensive"
         ]
     },
     {
@@ -1345,6 +1525,9 @@
             206,
             207,
             208
+        ],
+        "categories": [
+            "Resistance"
         ]
     },
     {
@@ -1367,6 +1550,9 @@
             211,
             212,
             213
+        ],
+        "categories": [
+            "Defensive"
         ]
     },
     {
@@ -1387,6 +1573,9 @@
             214,
             215,
             216
+        ],
+        "categories": [
+            "Defensive"
         ]
     },
     {
@@ -1409,6 +1598,9 @@
             219,
             220,
             221
+        ],
+        "categories": [
+            "Defensive"
         ]
     },
     {
@@ -1429,6 +1621,9 @@
             222,
             223,
             224
+        ],
+        "categories": [
+            "Defensive"
         ]
     },
     {
@@ -1529,6 +1724,9 @@
             237,
             238,
             239
+        ],
+        "categories": [
+            "Blademaster"
         ]
     },
     {
@@ -1549,6 +1747,9 @@
             240,
             241,
             242
+        ],
+        "categories": [
+            "Offensive"
         ]
     },
     {
@@ -1587,6 +1788,9 @@
         },
         "abilityIds": [
             246
+        ],
+        "categories": [
+            "Gathering"
         ]
     },
     {
@@ -1605,6 +1809,9 @@
         },
         "abilityIds": [
             247
+        ],
+        "categories": [
+            "Gathering"
         ]
     },
     {
@@ -1623,6 +1830,9 @@
         },
         "abilityIds": [
             248
+        ],
+        "categories": [
+            "Gathering"
         ]
     },
     {
@@ -1641,6 +1851,9 @@
         },
         "abilityIds": [
             249
+        ],
+        "categories": [
+            "Gathering"
         ]
     },
     {
@@ -1659,6 +1872,9 @@
         },
         "abilityIds": [
             250
+        ],
+        "categories": [
+            "Gathering"
         ]
     },
     {
@@ -1679,6 +1895,9 @@
             251,
             252,
             253
+        ],
+        "categories": [
+            "Defensive"
         ]
     },
     {
@@ -1722,6 +1941,9 @@
             260,
             261,
             262
+        ],
+        "categories": [
+            "Gathering"
         ]
     },
     {
@@ -1742,6 +1964,9 @@
             263,
             264,
             265
+        ],
+        "categories": [
+            "Gathering"
         ]
     },
     {
@@ -1762,6 +1987,9 @@
             266,
             267,
             268
+        ],
+        "categories": [
+            "Offensive"
         ]
     },
     {
@@ -1802,6 +2030,9 @@
             272,
             273,
             274
+        ],
+        "categories": [
+            "Defensive"
         ]
     },
     {
@@ -1822,6 +2053,9 @@
             275,
             276,
             277
+        ],
+        "categories": [
+            "Defensive"
         ]
     },
     {
@@ -1840,6 +2074,9 @@
         },
         "abilityIds": [
             278
+        ],
+        "categories": [
+            "Gathering"
         ]
     },
     {
@@ -1896,6 +2133,9 @@
             281,
             282,
             283
+        ],
+        "categories": [
+            "Defensive"
         ]
     },
     {
@@ -1916,6 +2156,9 @@
             284,
             285,
             286
+        ],
+        "categories": [
+            "Resistance"
         ]
     },
     {
@@ -1970,6 +2213,9 @@
         },
         "abilityIds": [
             289
+        ],
+        "categories": [
+            "Gathering"
         ]
     },
     {
@@ -1990,6 +2236,9 @@
             290,
             291,
             292
+        ],
+        "categories": [
+            "Gathering"
         ]
     },
     {
@@ -2010,6 +2259,9 @@
             293,
             294,
             295
+        ],
+        "categories": [
+            "Resistance"
         ]
     },
     {
@@ -2028,6 +2280,9 @@
         },
         "abilityIds": [
             296
+        ],
+        "categories": [
+            "Gathering"
         ]
     },
     {
@@ -2046,6 +2301,9 @@
         },
         "abilityIds": [
             297
+        ],
+        "categories": [
+            "Gathering"
         ]
     },
     {
@@ -2064,6 +2322,9 @@
         },
         "abilityIds": [
             298
+        ],
+        "categories": [
+            "Gathering"
         ]
     },
     {
@@ -2120,6 +2381,9 @@
         },
         "abilityIds": [
             303
+        ],
+        "categories": [
+            "Offensive"
         ]
     },
     {
@@ -2140,6 +2404,9 @@
             304,
             305,
             306
+        ],
+        "categories": [
+            "Defensive"
         ]
     },
     {
@@ -2158,6 +2425,9 @@
         },
         "abilityIds": [
             307
+        ],
+        "categories": [
+            "Defensive"
         ]
     },
     {
@@ -2176,6 +2446,9 @@
         },
         "abilityIds": [
             308
+        ],
+        "categories": [
+            "Defensive"
         ]
     },
     {
@@ -2248,6 +2521,9 @@
         },
         "abilityIds": [
             312
+        ],
+        "categories": [
+            "Offensive"
         ]
     },
     {
@@ -2266,6 +2542,9 @@
         },
         "abilityIds": [
             313
+        ],
+        "categories": [
+            "Blademaster"
         ]
     },
     {
@@ -2284,6 +2563,9 @@
         },
         "abilityIds": [
             314
+        ],
+        "categories": [
+            "Blademaster"
         ]
     },
     {
@@ -2302,6 +2584,9 @@
         },
         "abilityIds": [
             315
+        ],
+        "categories": [
+            "Offensive"
         ]
     },
     {
@@ -2320,6 +2605,9 @@
         },
         "abilityIds": [
             316
+        ],
+        "categories": [
+            "Gathering"
         ]
     },
     {
@@ -2338,6 +2626,9 @@
         },
         "abilityIds": [
             317
+        ],
+        "categories": [
+            "Defensive"
         ]
     },
     {
@@ -2356,6 +2647,9 @@
         },
         "abilityIds": [
             318
+        ],
+        "categories": [
+            "Defensive"
         ]
     },
     {
@@ -2374,6 +2668,9 @@
         },
         "abilityIds": [
             319
+        ],
+        "categories": [
+            "Blademaster"
         ]
     },
     {
@@ -2392,6 +2689,9 @@
         },
         "abilityIds": [
             320
+        ],
+        "categories": [
+            "Resistance"
         ]
     },
     {
@@ -2428,6 +2728,9 @@
         },
         "abilityIds": [
             322
+        ],
+        "categories": [
+            "Offensive"
         ]
     },
     {
@@ -2446,6 +2749,9 @@
         },
         "abilityIds": [
             323
+        ],
+        "categories": [
+            "Gathering"
         ]
     },
     {
@@ -2464,6 +2770,9 @@
         },
         "abilityIds": [
             324
+        ],
+        "categories": [
+            "Bow/Gunner"
         ]
     },
     {
@@ -2482,6 +2791,9 @@
         },
         "abilityIds": [
             325
+        ],
+        "categories": [
+            "Blademaster"
         ]
     },
     {
@@ -2500,6 +2812,9 @@
         },
         "abilityIds": [
             326
+        ],
+        "categories": [
+            "Blademaster"
         ]
     },
     {
@@ -2518,6 +2833,9 @@
         },
         "abilityIds": [
             327
+        ],
+        "categories": [
+            "Bow/Gunner"
         ]
     },
     {
@@ -2536,6 +2854,9 @@
         },
         "abilityIds": [
             328
+        ],
+        "categories": [
+            "Bow/Gunner"
         ]
     },
     {
@@ -2554,6 +2875,9 @@
         },
         "abilityIds": [
             329
+        ],
+        "categories": [
+            "Bow/Gunner"
         ]
     },
     {
@@ -2572,6 +2896,9 @@
         },
         "abilityIds": [
             330
+        ],
+        "categories": [
+            "Bow/Gunner"
         ]
     },
     {
@@ -2608,6 +2935,9 @@
         },
         "abilityIds": [
             332
+        ],
+        "categories": [
+            "Gathering"
         ]
     },
     {
@@ -2626,6 +2956,9 @@
         },
         "abilityIds": [
             333
+        ],
+        "categories": [
+            "Gathering"
         ]
     },
     {
@@ -2644,6 +2977,9 @@
         },
         "abilityIds": [
             334
+        ],
+        "categories": [
+            "Offensive"
         ]
     }
 ]

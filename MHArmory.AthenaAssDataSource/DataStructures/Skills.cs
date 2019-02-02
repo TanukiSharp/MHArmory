@@ -12,34 +12,22 @@ namespace MHArmory.AthenaAssDataSource.DataStructures
         internal string Name = null;
         [Name("Max Level")]
         internal int MaxLevel = 0;
-    }
-
-    internal class SkillPrimitiveHighLevel
-    {
-        internal Dictionary<string, string> Name;
-        internal int MaxLevel = 0;
+        [Name("Tags")]
+        internal string Category = null;
     }
 
     internal class Skill : ISkill
     {
-        public Skill(int id, Dictionary<string, string> description, SkillPrimitiveHighLevel skillPrimitive)
-        {
-            Id = id;
-            Name = skillPrimitive.Name;
-            Description = description;
-            MaxLevel = skillPrimitive.MaxLevel;
-            Abilities = Enumerable.Range(1, skillPrimitive.MaxLevel)
-                .Select(i => new Ability(this, i, CreateAbilityDescriptions(Name, i)))
-                .ToArray();
-        }
-
-        public Skill(int id, Dictionary<string, string> name, Dictionary<string, string> description, IAbility ability)
+        public Skill(int id, Dictionary<string, string> name, int maxLevel, string[] categories)
         {
             Id = id;
             Name = name;
-            Description = description;
-            MaxLevel = ability.Skill.MaxLevel;
-            Abilities = new IAbility[] { ability };
+            Description = name;
+            MaxLevel = maxLevel;
+            Abilities = Enumerable.Range(1, maxLevel)
+                .Select(i => new Ability(this, i, CreateAbilityDescriptions(Name, i)))
+                .ToArray();
+            Categories = categories;
         }
 
         public int Id { get; }
@@ -47,6 +35,7 @@ namespace MHArmory.AthenaAssDataSource.DataStructures
         public Dictionary<string, string> Description { get; private set; }
         public int MaxLevel { get; }
         public IAbility[] Abilities { get; }
+        public string[] Categories { get; }
 
         public void UpdateDescription(Dictionary<string, string> description)
         {
