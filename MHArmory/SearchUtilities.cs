@@ -1,5 +1,6 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -15,6 +16,19 @@ namespace MHArmory
         {
             IsExact = isExact;
             Text = text;
+        }
+
+        public bool IsMatching(string textToLower)
+        {
+            if (IsExact)
+            {
+                if (textToLower == Text)
+                    return true;
+            }
+            else if (textToLower.Contains(Text))
+                return true;
+
+            return false;
         }
 
         public override bool Equals(object obj)
@@ -42,23 +56,25 @@ namespace MHArmory
 
     public class SearchStatement
     {
-        private readonly List<SearchInfo> searchInfo = new List<SearchInfo>();
+        public readonly ReadOnlyCollection<SearchInfo> SearchInfo;
 
-        public static SearchStatement Create(string searchText)
+        public static SearchStatement Create(string searchText, IDictionary<string, string> aliases = null)
         {
             if (string.IsNullOrWhiteSpace(searchText))
                 return null;
 
-            return new SearchStatement(searchText);
+            return new SearchStatement(searchText, aliases);
         }
 
-        public SearchStatement(string searchText)
+        public SearchStatement(string searchText, IDictionary<string, string> aliases = null)
         {
             if (searchText == null)
             {
                 IsEmpty = true;
                 return;
             }
+
+            var searchInfo = new List<SearchInfo>();
 
             foreach (string sub in searchText.Split(',', ';', '/', ':'))
             {
@@ -74,10 +90,21 @@ namespace MHArmory
                 if (isExact)
                     subText = subText.Substring(1).TrimStart();
 
+                if (aliases != null)
+                {
+                    foreach (string key in aliases.Keys)
+                    {
+                        if (subText.Contains(key))
+                            subText = subText.Replace(key, aliases[key]);
+                    }
+                }
+
                 searchInfo.Add(new SearchInfo(isExact, subText));
             }
 
             IsEmpty = searchInfo.Count == 0;
+
+            SearchInfo = new ReadOnlyCollection<SearchInfo>(searchInfo);
         }
 
         public bool IsEmpty { get; }
@@ -88,15 +115,10 @@ namespace MHArmory
                 return true;
 
             string textToLower = text.Trim().ToLower();
-
-            foreach (SearchInfo si in searchInfo)
+            
+            foreach (SearchInfo si in SearchInfo)
             {
-                if (si.IsExact)
-                {
-                    if (textToLower == si.Text)
-                        return true;
-                }
-                else if (textToLower.Contains(si.Text))
+                if (si.IsMatching(textToLower))
                     return true;
             }
 
