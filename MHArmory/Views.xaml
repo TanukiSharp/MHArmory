@@ -575,7 +575,7 @@
                         <RadioButton Content="Selected" IsChecked="{Binding VisibilityModeSelected, Mode=OneWayToSource}" bhv:ToolTipEx.Content="See only selected skills" Style="{StaticResource SelectorRadioButton}"/>
                         <RadioButton Content="Unselected" IsChecked="{Binding VisibilityModeUnselected, Mode=OneWayToSource}" bhv:ToolTipEx.Content="See only unselected skills" Style="{StaticResource SelectorRadioButton}"/>
                     </StackPanel>
-                    <TextBox Margin="2" Padding="3" FocusManager.FocusedElement="{Binding RelativeSource={RelativeSource Self}}" Text="{Binding SearchText, UpdateSourceTrigger=PropertyChanged}" bhv:TextBoxFocusOnEmptyBehavior.IsAttached="True"/>
+                    <TextBox Margin="2" Padding="3" FocusManager.FocusedElement="{Binding RelativeSource={RelativeSource Self}}" Text="{Binding SearchText, UpdateSourceTrigger=PropertyChanged}" bhv:TextBoxFocusOnEmptyBehavior.IsAttached="True" bhv:CommandOnEnterKeyBehavior.Command="{Binding SearchTextBasedSkillLevelSetCommand, Mode=OneTime}"/>
                 </DockPanel>
                 <ItemsControl ItemsSource="{Binding Categories, Mode=OneWay}" Margin="0 2 0 2" HorizontalAlignment="Right" Focusable="False">
                     <ItemsControl.ItemTemplate>
