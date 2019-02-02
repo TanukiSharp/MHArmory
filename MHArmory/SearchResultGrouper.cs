@@ -27,9 +27,14 @@ namespace MHArmory
 
         private void AppendJewelsGroup(ArmorSetViewModel result)
         {
-            for (int i = 0; i < result.Jewels.Count; i++)
-                builder.Append($"{result.Jewels[i].Jewel.Id},{result.Jewels[i].Count};");
-            builder.Append(":");
+            string key = string.Join(
+                ";",
+                result.Jewels
+                    .OrderBy(x => x.Jewel.Id)
+                    .Select(x => $"{x.Jewel.Id},{x.Count}")
+            );
+
+            builder.Append($"{key}:");
         }
 
         private void AppendDefenseGroup(ArmorSetViewModel result)
@@ -59,9 +64,14 @@ namespace MHArmory
 
         private void AppendAdditionalSkillsGroup(ArmorSetViewModel result)
         {
-            for (int i = 0; i < result.AdditionalSkills.Length; i++)
-                builder.Append($"{result.AdditionalSkills[i].Skill.Id},{result.AdditionalSkills[i].TotalLevel},");
-            builder.Append(":");
+            string key = string.Join(
+                ";",
+                result.AdditionalSkills
+                    .OrderBy(x => x.Skill.Id)
+                    .Select(x => $"{x.Skill.Id},{x.TotalLevel}")
+            );
+
+            builder.Append($"{key}:");
         }
 
         private void AppendResistancesGroup(ArmorSetViewModel result)
