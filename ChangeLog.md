@@ -1,5 +1,12 @@
 # Change log
 
+## 0.0.9.1 (2019/02/02)
+
+- Added skill categories filtering<br/>
+    ![Skill categories](docs/misc/changelog_0.0.9.1_skill_categories.png)
+    - You can select multiple categories, showing all skills that are in at least one of those categories
+    - Selecting no category or all categories has the same effect of showing all skills
+
 ## 0.0.9 (2019/01/30)
 
 - Search results grouping<br/>
