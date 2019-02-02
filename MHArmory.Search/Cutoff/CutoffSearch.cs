@@ -67,30 +67,22 @@ namespace MHArmory.Search.Cutoff
                 waists,
                 legs
             };
-
             IList<IFullArmorSet> fullSets = FilterAndRemoveFullSetEquipment(allArmorPieces);
-
-            IList<IList<IEquipment>> allEquipment =
-                new List<IList<IEquipment>>(allArmorPieces.Select(x => x.Cast<IEquipment>().ToList()))
-                {
-                    charms
-                };
-
+            IList<IList<IEquipment>> allEquipment = allArmorPieces.Select(x => (IList<IEquipment>)x.Cast<IEquipment>().ToList()).ToList();
+            allEquipment.Add(charms);
             MappingResults maps = mapper.MapEverything(allEquipment, solverData.DesiredAbilities, solverData.AllJewels, SearchNullPieces);
 
             int[] mapLengths = maps.Equipment.Select(x => x.Length).ToArray();
             var statistics = new CutoffStatistics();
             statistics.Init(mapLengths);
-
-            SupersetInfo[] supersets = allEquipment
-                .Select(list => supersetMaker.CreateSupersetModel(list, solverData.DesiredAbilities))
-                .ToArray();
-            MappedEquipment[] supersetMaps = mapper.MapSupersets(supersets, maps);
-
             IList<ArmorSetSearchResult> results = new List<ArmorSetSearchResult>();
 
             FullSetSearch(statistics, fullSets, solverData.WeaponSlots, solverData.DesiredAbilities, charms, solverData.AllJewels, results, cancellationToken);
 
+            IList<SupersetInfo> supersets = allEquipment
+                .Select(list => supersetMaker.CreateSupersetModel(list, solverData.DesiredAbilities))
+                .ToList();
+            MappedEquipment[] supersetMaps = mapper.MapSupersets(supersets, maps);
             var combination = new Combination(supersetMaps, solverData.WeaponSlots, maps);
 
             var parameters = new MappedCutoffSearchParameters
@@ -105,6 +97,7 @@ namespace MHArmory.Search.Cutoff
             mappedCutoffSearch.ParallelizedDepthFirstSearch(parameters, 0, cancellationToken);
             //mappedCutoffSearch.DepthFirstSearch(parameters, 0, cancellationToken);
             //statistics.Dump();
+
             return results;
         }
 

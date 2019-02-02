@@ -1,4 +1,4 @@
-﻿using MHArmory.Search.Contracts;
+using MHArmory.Search.Contracts;
 using MHArmory.Search.Cutoff.Models;
 
 namespace MHArmory.Search.Cutoff.Services

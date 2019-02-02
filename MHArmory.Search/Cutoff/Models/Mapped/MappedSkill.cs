@@ -22,5 +22,10 @@ namespace MHArmory.Search.Cutoff.Models.Mapped
         {
             return CopyWithLevel(Level);
         }
+
+        public override string ToString()
+        {
+            return $"Mapped skill {SkillId} lv{Level}";
+        }
     }
 }

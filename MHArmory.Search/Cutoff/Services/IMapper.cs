@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 using MHArmory.Core.DataStructures;
 using MHArmory.Search.Contracts;
 using MHArmory.Search.Cutoff.Models;

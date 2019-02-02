@@ -19,7 +19,7 @@ namespace MHArmory.Search.Cutoff.Services
 
         public MappedCutoffSearchService(ISearchResultVerifier verifier)
         {
-            MaxResults = 200000;
+            MaxResults = 100000; // Seems like a reasonable default value? Idk.
 
             this.verifier = verifier;
         }

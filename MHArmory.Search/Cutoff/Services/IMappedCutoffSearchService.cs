@@ -7,7 +7,7 @@ using MHArmory.Search.Cutoff.Models.Mapped;
 
 namespace MHArmory.Search.Cutoff.Services
 {
-    interface IMappedCutoffSearchService
+    internal interface IMappedCutoffSearchService
     {
         int MaxResults { get; set; }
 

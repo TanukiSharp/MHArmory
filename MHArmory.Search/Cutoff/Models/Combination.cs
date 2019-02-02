@@ -11,9 +11,6 @@ namespace MHArmory.Search.Cutoff.Models
         public int[] RemainingSkills { get; }
         public MappedJewel[] Jewels { get; }
         
-        //public int TotalSkillsRemaining { get; set; }
-        //public int TotalDebt { get; set; }
-
         public int[] ExcludedAbilityIndices { get; }
 
         public Combination(MappedEquipment[] initialEquipment, int[] weaponSlots, MappingResults results)
@@ -26,7 +23,6 @@ namespace MHArmory.Search.Cutoff.Models
             }
             Grants = results.SetParts.Select(x => new ArmorSetSkillGrant(x)).ToArray();
             RemainingSkills = results.DesiredAbilities.Select(x => x.Level).ToArray();
-            //TotalSkillsRemaining = RemainingSkills.Sum();
             ExcludedAbilityIndices = results.DesiredAbilities.Where(x => x.Level == 0).Select(x => x.MappedId).ToArray();
             Jewels = results.Jewels;
             foreach (MappedEquipment equipment in initialEquipment)
@@ -42,9 +38,6 @@ namespace MHArmory.Search.Cutoff.Models
             Grants = combination.Grants.Select(x => new ArmorSetSkillGrant(x.Part) {Progress = x.Progress}).ToArray();
             RemainingSkills = (int[]) combination.RemainingSkills.Clone();
             Jewels = (MappedJewel[]) combination.Jewels.Clone();
-            //TotalSkillsRemaining = combination.TotalSkillsRemaining;
-            //TotalDebt = combination.TotalDebt;
-
             ExcludedAbilityIndices = combination.ExcludedAbilityIndices;
         }
 
@@ -64,9 +57,7 @@ namespace MHArmory.Search.Cutoff.Models
             foreach (MappedSkill skill in equipment.Skills)
             {
                 RemainingSkills[skill.MappedId] -= skill.Level;
-                //TotalSkillsRemaining -= skill.Level;
             }
-            //TotalDebt += equipment.SkillDebt;
 
             foreach (int slot in equipment.Equipment.Slots)
             {
@@ -96,9 +87,7 @@ namespace MHArmory.Search.Cutoff.Models
             foreach (MappedSkill skill in equipment.Skills)
             {
                 RemainingSkills[skill.MappedId] += skill.Level;
-                //TotalSkillsRemaining += skill.Level;
             }
-            //TotalDebt -= equipment.SkillDebt;
 
             foreach (int slot in equipment.Equipment.Slots)
             {
