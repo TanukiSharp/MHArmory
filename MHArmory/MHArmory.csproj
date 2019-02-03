@@ -464,6 +464,9 @@
   <ItemGroup>
     <Resource Include="HelpText\Grouping.html" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="HelpText\TextualSkillSelection.html" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <PreBuildEvent>call "$(ProjectDir)PreBuildEventGitInfo.bat" "$(ProjectDir)"</PreBuildEvent>
