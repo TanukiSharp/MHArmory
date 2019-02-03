@@ -33,12 +33,6 @@ namespace MHArmory.ViewModels
 
         public void Update(ArmorPieceTypesViewModel[] armorPieceTypes)
         {
-            if (ArmorPieceTypes != null)
-            {
-                foreach (ArmorPieceTypesViewModel x in ArmorPieceTypes)
-                    x.Dispose();
-            }
-
             ArmorPieceTypes = armorPieceTypes;
         }
 
@@ -85,8 +79,6 @@ namespace MHArmory.ViewModels
                         else
                             eqp.IsSelected = true;
                     }
-
-                    type.ForceRefreshEquipments();
                 }
 
                 if (eqpErrors.Count > 0)

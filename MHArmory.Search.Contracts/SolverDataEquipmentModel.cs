@@ -15,33 +15,7 @@ namespace MHArmory.Search.Contracts
         public double AverageSkillCompletionRatio { get; set; }
         public bool ToBeRemoved { get; set; }
 
-        public event EventHandler SelectionChanged;
-
-        private bool originalValue;
-
-        private bool isSelected;
-        public bool IsSelected
-        {
-            get { return isSelected; }
-            set
-            {
-                if (isSelected != value)
-                {
-                    isSelected = value;
-                    SelectionChanged?.Invoke(this, EventArgs.Empty);
-                }
-            }
-        }
-
-        public void FreezeSelection()
-        {
-            originalValue = isSelected;
-        }
-
-        public void RestoreOriginalSelection()
-        {
-            IsSelected = originalValue;
-        }
+        public bool IsSelected { get; set; }
 
         public SolverDataEquipmentModel(IEquipment equipment)
         {
