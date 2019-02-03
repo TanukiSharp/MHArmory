@@ -538,9 +538,14 @@
                 <ItemsControl ItemsSource="{Binding Abilities, Mode=OneTime}" Focusable="False" Margin="32 0 0 0">
                     <ItemsControl.ItemTemplate>
                         <DataTemplate>
-                            <StackPanel Orientation="Horizontal" Focusable="False">
+                            <StackPanel x:Name="ability" Orientation="Horizontal" Focusable="False">
                                 <CheckBox Focusable="False" HorizontalContentAlignment="Left" Content="{Binding}" ContentTemplate="{StaticResource AbilityView}" Margin="0" Padding="5 3 5 3" IsChecked="{Binding IsChecked, Mode=TwoWay}" VerticalContentAlignment="Center"/>
                             </StackPanel>
+                            <DataTemplate.Triggers>
+                                <DataTrigger Binding="{Binding IsHidden, Mode=OneWay}" Value="True">
+                                    <Setter TargetName="ability" Property="Opacity" Value="0.25"/>
+                                </DataTrigger>
+                            </DataTemplate.Triggers>
                         </DataTemplate>
                     </ItemsControl.ItemTemplate>
                 </ItemsControl>

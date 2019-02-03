@@ -25,6 +25,13 @@ namespace MHArmory.ViewModels
             }
         }
 
+        private bool isHidden;
+        public bool IsHidden
+        {
+            get { return isHidden; }
+            internal set { SetValue(ref isHidden, value); }
+        }
+
         public int SkillId { get { return Ability.Skill.Id; } }
         public Dictionary<string, string> SkillName { get { return Ability.Skill.Name; } }
         public int Level { get { return Ability.Level; } }
@@ -159,13 +166,16 @@ namespace MHArmory.ViewModels
 
         public void ApplySearchText(SearchStatement searchStatement)
         {
+            searchTextSkillLevel = -1;
+
+            foreach (AbilityViewModel x in Abilities)
+                x.IsHidden = false;
+
             if (searchStatement == null || searchStatement.IsEmpty)
             {
                 IsVisible = true;
                 return;
             }
-
-            searchTextSkillLevel = -1;
 
             string localizedSkillName = Localization.Get(skill.Name);
 
@@ -199,6 +209,10 @@ namespace MHArmory.ViewModels
                         if (new SearchInfo(searchInfo.IsExact, firstPart).IsMatching(localizedSkillName))
                         {
                             searchTextSkillLevel = num;
+
+                            foreach (AbilityViewModel x in Abilities)
+                                x.IsHidden = x.Level != num;
+
                             return true;
                         }
                     }
