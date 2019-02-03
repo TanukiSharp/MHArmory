@@ -1,5 +1,10 @@
 # Change log
 
+
+## vNext (?)
+- Fixed presentation issues with grouped search results
+- Added name filtering in advanced search window
+
 ## 0.0.9.1 (2019/02/02)
 
 - Added skill categories filtering<br/>

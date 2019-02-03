@@ -384,85 +384,114 @@
         </DataTemplate.Triggers>
     </DataTemplate>
 
+    <BlurBitmapEffect x:Key="blur" KernelType="Gaussian" Radius="12"/>
+
     <DataTemplate x:Key="SearchResultArmorSetDetailsView">
-        <StackPanel Orientation="Vertical">
-            <TextBlock Text="Required decorations:" FontWeight="Bold"/>
-            <ItemsControl ItemsSource="{Binding Jewels, Mode=OneTime}" Margin="16 1 0 12" Focusable="False">
-                <ItemsControl.ItemTemplate>
-                    <DataTemplate>
-                        <StackPanel Orientation="Horizontal">
-                            <Image Source="{Binding Jewel.SlotSize, Converter={StaticResource SlotToImageSourceValueConverter}, ConverterParameter=16, Mode=OneTime}" Width="16" Height="16" SnapsToDevicePixels="True" VerticalAlignment="Center"/>
-                            <TextBlock VerticalAlignment="Center" Margin="1 0 0 3">
-                                <Run Text="{mxt:Localization Jewel.Name}"/>
-                                <Run Text="{Binding Count, Mode=OneTime, StringFormat=x{0}}" Foreground="Blue"/>
+        <StackPanel>
+            <StackPanel x:Name="deco">
+                <TextBlock Text="Required decorations:" FontWeight="Bold"/>
+                <ItemsControl ItemsSource="{Binding Jewels, Mode=OneTime}" Margin="16 1 0 12" Focusable="False">
+                    <ItemsControl.ItemTemplate>
+                        <DataTemplate>
+                            <StackPanel Orientation="Horizontal">
+                                <Image Source="{Binding Jewel.SlotSize, Converter={StaticResource SlotToImageSourceValueConverter}, ConverterParameter=16, Mode=OneTime}" Width="16" Height="16" SnapsToDevicePixels="True" VerticalAlignment="Center"/>
+                                <TextBlock VerticalAlignment="Center" Margin="1 0 0 3">
+                                    <Run Text="{mxt:Localization Jewel.Name}"/>
+                                    <Run Text="{Binding Count, Mode=OneTime, StringFormat=x{0}}" Foreground="Blue"/>
+                                </TextBlock>
+                            </StackPanel>
+                        </DataTemplate>
+                    </ItemsControl.ItemTemplate>
+                </ItemsControl>
+            </StackPanel>
+            <StackPanel x:Name="def">
+                <TextBlock Text="Defenses:" FontWeight="Bold"/>
+                <StackPanel Margin="16 1 0 12">
+                    <TextBlock>
+                        <Run Text="Base: "/>
+                        <Run Text="{Binding TotalBaseDefense, Mode=OneTime}" Foreground="Blue"/>
+                    </TextBlock>
+                    <TextBlock>
+                        <Run Text="Maximum: "/>
+                        <Run Text="{Binding TotalMaxDefense, Mode=OneTime}" Foreground="Blue"/>
+                    </TextBlock>
+                    <TextBlock>
+                        <Run Text="Augmented: "/>
+                        <Run Text="{Binding TotalAugmentedDefense, Mode=OneTime}" Foreground="Blue"/>
+                    </TextBlock>
+                </StackPanel>
+            </StackPanel>
+            <StackPanel x:Name="slots">
+                <TextBlock Text="Spare slots:" FontWeight="Bold"/>
+                <StackPanel Orientation="Horizontal" Margin="16 1 0 12">
+                    <Image Source="{mxt:RasterizedImage Location=Icons/Jewels/Jewel3.svg, Size=16}" Style="{StaticResource ComboBoxItemSlotStyle}"/>
+                    <TextBlock Text="{Binding SpareSlots[2], Mode=OneTime, StringFormat=x{0}}" Margin="2 0 8 0" Foreground="Blue"/>
+                    <Image Source="{mxt:RasterizedImage Location=Icons/Jewels/Jewel2.svg, Size=16}" Style="{StaticResource ComboBoxItemSlotStyle}"/>
+                    <TextBlock Text="{Binding SpareSlots[1], Mode=OneTime, StringFormat=x{0}}" Margin="2 0 8 0" Foreground="Blue"/>
+                    <Image Source="{mxt:RasterizedImage Location=Icons/Jewels/Jewel1.svg, Size=16}" Style="{StaticResource ComboBoxItemSlotStyle}"/>
+                    <TextBlock Text="{Binding SpareSlots[0], Mode=OneTime, StringFormat=x{0}}" Margin="2 0 8 0" Foreground="Blue"/>
+                </StackPanel>
+            </StackPanel>
+            <StackPanel x:Name="skills">
+                <TextBlock Text="Additional skills:" FontWeight="Bold"/>
+                <ItemsControl ItemsSource="{Binding AdditionalSkills, Mode=OneTime}" Margin="16 1 0 12" Focusable="False">
+                    <ItemsControl.ItemTemplate>
+                        <DataTemplate>
+                            <TextBlock HorizontalAlignment="Left">
+                                <bhv:ToolTipEx.Content>
+                                    <ContentControl Content="{Binding Description, Mode=OneTime}" ContentTemplate="{StaticResource FullSkillDescriptionView}"/>
+                                </bhv:ToolTipEx.Content>
+                                <Run Text="{mxt:Localization Skill.Name}" x:Name="skillName"/>
+                                <Run Text=": "/>
+                                <Run Text="{Binding TotalLevel, Mode=OneTime}" Foreground="Blue"/>
+                                <Run Text="/"/>
+                                <Run Text="{Binding Skill.MaxLevel, Mode=OneTime}"/>
                             </TextBlock>
-                        </StackPanel>
-                    </DataTemplate>
-                </ItemsControl.ItemTemplate>
-            </ItemsControl>
-            <TextBlock Text="Defenses:" FontWeight="Bold"/>
-            <StackPanel Margin="16 1 0 12">
-                <TextBlock>
-                    <Run Text="Base: "/>
-                    <Run Text="{Binding TotalBaseDefense, Mode=OneTime}" Foreground="Blue"/>
-                </TextBlock>
-                <TextBlock>
-                    <Run Text="Maximum: "/>
-                    <Run Text="{Binding TotalMaxDefense, Mode=OneTime}" Foreground="Blue"/>
-                </TextBlock>
-                <TextBlock>
-                    <Run Text="Augmented: "/>
-                    <Run Text="{Binding TotalAugmentedDefense, Mode=OneTime}" Foreground="Blue"/>
-                </TextBlock>
+                            <DataTemplate.Triggers>
+                                <DataTrigger Binding="{Binding IsExtra, Mode=OneTime}" Value="False">
+                                    <Setter TargetName="skillName" Property="TextBlock.Foreground" Value="#FFAE00FF"/>
+                                </DataTrigger>
+                                <DataTrigger Binding="{Binding IsOver, Mode=OneTime}" Value="True">
+                                    <Setter TargetName="skillName" Property="TextBlock.Foreground" Value="Red"/>
+                                </DataTrigger>
+                            </DataTemplate.Triggers>
+                        </DataTemplate>
+                    </ItemsControl.ItemTemplate>
+                </ItemsControl>
             </StackPanel>
-            <TextBlock Text="Spare slots:" FontWeight="Bold"/>
-            <StackPanel Orientation="Horizontal" Margin="16 1 0 12">
-                <Image Source="{mxt:RasterizedImage Location=Icons/Jewels/Jewel3.svg, Size=16}" Style="{StaticResource ComboBoxItemSlotStyle}"/>
-                <TextBlock Text="{Binding SpareSlots[2], Mode=OneTime, StringFormat=x{0}}" Margin="2 0 8 0" Foreground="Blue"/>
-                <Image Source="{mxt:RasterizedImage Location=Icons/Jewels/Jewel2.svg, Size=16}" Style="{StaticResource ComboBoxItemSlotStyle}"/>
-                <TextBlock Text="{Binding SpareSlots[1], Mode=OneTime, StringFormat=x{0}}" Margin="2 0 8 0" Foreground="Blue"/>
-                <Image Source="{mxt:RasterizedImage Location=Icons/Jewels/Jewel1.svg, Size=16}" Style="{StaticResource ComboBoxItemSlotStyle}"/>
-                <TextBlock Text="{Binding SpareSlots[0], Mode=OneTime, StringFormat=x{0}}" Margin="2 0 8 0" Foreground="Blue"/>
-            </StackPanel>
-            <TextBlock Text="Additional skills:" FontWeight="Bold"/>
-            <ItemsControl ItemsSource="{Binding AdditionalSkills, Mode=OneTime}" Margin="16 1 0 12" Focusable="False">
-                <ItemsControl.ItemTemplate>
-                    <DataTemplate>
-                        <TextBlock HorizontalAlignment="Left">
-                            <bhv:ToolTipEx.Content>
-                                <ContentControl Content="{Binding Description, Mode=OneTime}" ContentTemplate="{StaticResource FullSkillDescriptionView}"/>
-                            </bhv:ToolTipEx.Content>
-                            <Run Text="{mxt:Localization Skill.Name}" x:Name="skillName"/>
-                            <Run Text=": "/>
-                            <Run Text="{Binding TotalLevel, Mode=OneTime}" Foreground="Blue"/>
-                            <Run Text="/"/>
-                            <Run Text="{Binding Skill.MaxLevel, Mode=OneTime}"/>
-                        </TextBlock>
-                        <DataTemplate.Triggers>
-                            <DataTrigger Binding="{Binding IsExtra, Mode=OneTime}" Value="False">
-                                <Setter TargetName="skillName" Property="TextBlock.Foreground" Value="#FFAE00FF"/>
-                            </DataTrigger>
-                            <DataTrigger Binding="{Binding IsOver, Mode=OneTime}" Value="True">
-                                <Setter TargetName="skillName" Property="TextBlock.Foreground" Value="Red"/>
-                            </DataTrigger>
-                        </DataTemplate.Triggers>
-                    </DataTemplate>
-                </ItemsControl.ItemTemplate>
-            </ItemsControl>
-            <TextBlock Text="Resistances:" FontWeight="Bold"/>
-            <StackPanel Margin="16 1 0 0" Orientation="Horizontal">
-                <Image Source="{mxt:RasterizedImage Location=Icons/Elements/Fire.svg, Size=16}" Style="{StaticResource ElementImageStyle}" VerticalAlignment="Center" SnapsToDevicePixels="True"/>
-                <TextBlock Text="{Binding TotalFireResistance, Mode=OneTime, StringFormat=: {0}}" Margin="0 0 12 0" VerticalAlignment="Center" Foreground="Blue"/>
-                <Image Source="{mxt:RasterizedImage Location=Icons/Elements/Water.svg, Size=16}" Style="{StaticResource ElementImageStyle}" VerticalAlignment="Center" SnapsToDevicePixels="True"/>
-                <TextBlock Text="{Binding TotalWaterResistance, Mode=OneTime, StringFormat=: {0}}" Margin="0 0 12 0" VerticalAlignment="Center" Foreground="Blue"/>
-                <Image Source="{mxt:RasterizedImage Location=Icons/Elements/Thunder.svg, Size=16}" Style="{StaticResource ElementImageStyle}" VerticalAlignment="Center" SnapsToDevicePixels="True"/>
-                <TextBlock Text="{Binding TotalThunderResistance, Mode=OneTime, StringFormat=: {0}}" Margin="0 0 12 0" VerticalAlignment="Center" Foreground="Blue"/>
-                <Image Source="{mxt:RasterizedImage Location=Icons/Elements/Ice.svg, Size=16}" Style="{StaticResource ElementImageStyle}" VerticalAlignment="Center" SnapsToDevicePixels="True"/>
-                <TextBlock Text="{Binding TotalIceResistance, Mode=OneTime, StringFormat=: {0}}" Margin="0 0 12 0" VerticalAlignment="Center" Foreground="Blue"/>
-                <Image Source="{mxt:RasterizedImage Location=Icons/Elements/Dragon.svg, Size=16}" Style="{StaticResource ElementImageStyle}" VerticalAlignment="Center" SnapsToDevicePixels="True"/>
-                <TextBlock Text="{Binding TotalDragonResistance, Mode=OneTime, StringFormat=: {0}}" VerticalAlignment="Center" Foreground="Blue"/>
+            <StackPanel x:Name="res">
+                <TextBlock Text="Resistances:" FontWeight="Bold"/>
+                <StackPanel Margin="16 1 0 0" Orientation="Horizontal">
+                    <Image Source="{mxt:RasterizedImage Location=Icons/Elements/Fire.svg, Size=16}" Style="{StaticResource ElementImageStyle}" VerticalAlignment="Center" SnapsToDevicePixels="True"/>
+                    <TextBlock Text="{Binding TotalFireResistance, Mode=OneTime, StringFormat=: {0}}" Margin="0 0 12 0" VerticalAlignment="Center" Foreground="Blue"/>
+                    <Image Source="{mxt:RasterizedImage Location=Icons/Elements/Water.svg, Size=16}" Style="{StaticResource ElementImageStyle}" VerticalAlignment="Center" SnapsToDevicePixels="True"/>
+                    <TextBlock Text="{Binding TotalWaterResistance, Mode=OneTime, StringFormat=: {0}}" Margin="0 0 12 0" VerticalAlignment="Center" Foreground="Blue"/>
+                    <Image Source="{mxt:RasterizedImage Location=Icons/Elements/Thunder.svg, Size=16}" Style="{StaticResource ElementImageStyle}" VerticalAlignment="Center" SnapsToDevicePixels="True"/>
+                    <TextBlock Text="{Binding TotalThunderResistance, Mode=OneTime, StringFormat=: {0}}" Margin="0 0 12 0" VerticalAlignment="Center" Foreground="Blue"/>
+                    <Image Source="{mxt:RasterizedImage Location=Icons/Elements/Ice.svg, Size=16}" Style="{StaticResource ElementImageStyle}" VerticalAlignment="Center" SnapsToDevicePixels="True"/>
+                    <TextBlock Text="{Binding TotalIceResistance, Mode=OneTime, StringFormat=: {0}}" Margin="0 0 12 0" VerticalAlignment="Center" Foreground="Blue"/>
+                    <Image Source="{mxt:RasterizedImage Location=Icons/Elements/Dragon.svg, Size=16}" Style="{StaticResource ElementImageStyle}" VerticalAlignment="Center" SnapsToDevicePixels="True"/>
+                    <TextBlock Text="{Binding TotalDragonResistance, Mode=OneTime, StringFormat=: {0}}" VerticalAlignment="Center" Foreground="Blue"/>
+                </StackPanel>
             </StackPanel>
         </StackPanel>
+        <DataTemplate.Triggers>
+            <DataTrigger Binding="{Binding HasRequiredDecorations, Mode=OneTime}" Value="False">
+                <Setter TargetName="deco" Property="BitmapEffect" Value="{StaticResource blur}"/>
+            </DataTrigger>
+            <DataTrigger Binding="{Binding HasDefense, Mode=OneTime}" Value="False">
+                <Setter TargetName="def" Property="BitmapEffect" Value="{StaticResource blur}"/>
+            </DataTrigger>
+            <DataTrigger Binding="{Binding HasSpareSlots, Mode=OneTime}" Value="False">
+                <Setter TargetName="slots" Property="BitmapEffect" Value="{StaticResource blur}"/>
+            </DataTrigger>
+            <DataTrigger Binding="{Binding HasAdditionalSkills, Mode=OneTime}" Value="False">
+                <Setter TargetName="skills" Property="BitmapEffect" Value="{StaticResource blur}"/>
+            </DataTrigger>
+            <DataTrigger Binding="{Binding HasResistances, Mode=OneTime}" Value="False">
+                <Setter TargetName="res" Property="BitmapEffect" Value="{StaticResource blur}"/>
+            </DataTrigger>
+        </DataTemplate.Triggers>
     </DataTemplate>
 
     <DataTemplate x:Key="SearchResultArmorSetView">
@@ -485,24 +514,6 @@
                     <ContentControl Content="{Binding}" ContentTemplate="{StaticResource SearchResultArmorSetDetailsView}" Focusable="False"/>
                 </Border>
             </DockPanel>
-        </Border>
-    </DataTemplate>
-
-    <DataTemplate x:Key="GroupedSearchResultArmorSetView">
-        <Border Style="{StaticResource ThickResultBorderStyle}">
-            <Border.ContextMenu>
-                <ContextMenu>
-                    <MenuItem Header="Take screenshot (save to clipboard)" Command="{Binding SaveScreenshotToClipboardCommand, Mode=OneTime}"/>
-                    <MenuItem Header="Take screenshot (save to file)" Command="{Binding SaveScreenshotToFileCommand, Mode=OneTime}"/>
-                    <Separator/>
-                    <MenuItem Header="Copy to text (save to clipboard)" Command="{Binding SaveTextToClipboardCommand, Mode=OneTime}"/>
-                    <MenuItem Header="Copy to text (save to file)" Command="{Binding SaveTextToFileCommand, Mode=OneTime}"/>
-                </ContextMenu>
-            </Border.ContextMenu>
-            <StackPanel DockPanel.Dock="Left" Orientation="Vertical" Grid.IsSharedSizeScope="True">
-                <ItemsControl ItemsSource="{Binding ArmorPieces, Mode=OneTime}" ItemTemplate="{StaticResource ArmorPieceView}" Focusable="False"/>
-                <ContentControl Content="{Binding Charm, Mode=OneTime}" ContentTemplate="{StaticResource ArmorPieceView}" Focusable="False"/>
-            </StackPanel>
         </Border>
     </DataTemplate>
 
@@ -956,7 +967,7 @@
                     </ControlTemplate>
                 </ItemsControl.Template>
             </ItemsControl>
-            <ListBox Grid.Column="1" ItemsSource="{Binding SelectedGroup.Items, Mode=OneWay}" ItemTemplate="{StaticResource GroupedSearchResultArmorSetView}" ScrollViewer.VerticalScrollBarVisibility="Visible" ClipToBounds="True" Padding="0 0 0 -22" Focusable="False" VirtualizingPanel.IsVirtualizing="True" VirtualizingPanel.ScrollUnit="Pixel">
+            <ListBox Grid.Column="1" ItemsSource="{Binding SelectedGroup.Items, Mode=OneWay}" ItemTemplate="{StaticResource SearchResultArmorSetView}" ScrollViewer.VerticalScrollBarVisibility="Visible" ClipToBounds="True" Padding="0 0 0 -22" Focusable="False" VirtualizingPanel.IsVirtualizing="True" VirtualizingPanel.ScrollUnit="Pixel">
                 <ListBox.ItemContainerStyle>
                     <Style TargetType="{x:Type ListBoxItem}">
                         <Setter Property="Template">
@@ -1120,6 +1131,7 @@
     <DataTemplate x:Key="ArmorPieceTypesView">
         <DockPanel LastChildFill="True" Background="#0F000000" Margin="4">
             <TextBlock DockPanel.Dock="Top" Text="{Binding Type, Mode=OneTime}" Margin="4"/>
+            <TextBox DockPanel.Dock="Top" Text="{Binding SearchText, Mode=OneWayToSource, UpdateSourceTrigger=PropertyChanged}" Margin="1" Padding="2"/>
             <TextBlock DockPanel.Dock="Bottom" Margin="2" Text="{Binding Equipments.Count, Mode=OneTime, StringFormat=Total: {0}}"/>
             <TextBlock DockPanel.Dock="Bottom" Margin="2" Text="{Binding SelectedCount, StringFormat=Selected: {0}}"/>
             <Grid DockPanel.Dock="Bottom">
@@ -1154,9 +1166,26 @@
                 </Button>
             </Grid>
             <ListBox ItemsSource="{Binding Equipments}" Margin="2" VirtualizingPanel.IsVirtualizing="True" VirtualizingPanel.IsContainerVirtualizable="True" VirtualizingPanel.ScrollUnit="Pixel">
+                <ListBox.ItemContainerStyle>
+                    <Style TargetType="{x:Type ListBoxItem}">
+                        <Setter Property="Template">
+                            <Setter.Value>
+                                <ControlTemplate TargetType="{x:Type ListBoxItem}">
+                                    <ContentPresenter Name="root" Focusable="False"/>
+                                    <ControlTemplate.Triggers>
+                                        <DataTrigger Binding="{Binding IsVisible}" Value="False">
+                                            <Setter TargetName="root" Property="Visibility" Value="Collapsed"/>
+                                        </DataTrigger>
+                                    </ControlTemplate.Triggers>
+                                </ControlTemplate>
+                            </Setter.Value>
+                        </Setter>
+                        <Setter Property="Focusable" Value="False"/>
+                    </Style>
+                </ListBox.ItemContainerStyle>
                 <ListBox.ItemTemplate>
                     <DataTemplate>
-                        <CheckBox IsThreeState="False" IsChecked="{Binding IsSelected}" Content="{mxt:Localization Equipment.Name}">
+                        <CheckBox IsThreeState="False" Padding="1" IsChecked="{Binding IsSelected}" Content="{mxt:Localization Equipment.Name}" VerticalContentAlignment="Center" Visibility="{Binding IsVisible, Mode=OneWay, Converter={StaticResource CollapsedVisibilityValueConverter}}">
                             <bhv:ToolTipEx.Content>
                                 <ContentControl Content="{Binding Equipment, Mode=OneTime}" ContentTemplate="{StaticResource ArmorPieceView}" Focusable="False"/>
                             </bhv:ToolTipEx.Content>
@@ -1173,7 +1202,7 @@
                 <Button Margin="4" Padding="4" Content="Export to clipboard" Command="{Binding ExportToClipboardCommand, Mode=OneTime}"/>
                 <Button Margin="4" Padding="4" Content="Import from clipboard" Command="{Binding ImportFromClipboardCommand, Mode=OneTime}"/>
             </UniformGrid>
-            <ItemsControl ItemsSource="{Binding ArmorPieceTypes}" ItemTemplate="{StaticResource ArmorPieceTypesView}">
+            <ItemsControl ItemsSource="{Binding ArmorPieceTypes}" ItemTemplate="{StaticResource ArmorPieceTypesView}" Focusable="False">
                 <ItemsControl.ItemsPanel>
                     <ItemsPanelTemplate>
                         <UniformGrid Columns="6"/>

@@ -184,12 +184,43 @@ namespace MHArmory.ViewModels
 
         public IList<ArmorSetViewModel> Items { get; }
 
+        public bool HasRequiredDecorations { get; }
+        public bool HasDefense { get; }
+        public bool HasSpareSlots { get; }
+        public bool HasAdditionalSkills { get; }
+        public bool HasResistances { get; }
+
         private readonly SearchResultsViewModel parent;
 
         public GroupedArmorSetHeaderViewModel(SearchResultsViewModel parent, IList<ArmorSetViewModel> items)
         {
             this.parent = parent;
             SelectionCommand = new AnonymousCommand(OnSelection);
+
+            foreach (EnumFlagViewModel<SearchResultsGrouping> flag in parent.GroupFlags)
+            {
+                if (flag.IsSet == false)
+                    continue;
+
+                switch (flag.EnumValue)
+                {
+                    case SearchResultsGrouping.RequiredDecorations:
+                        HasRequiredDecorations = true;
+                        break;
+                    case SearchResultsGrouping.Defense:
+                        HasDefense = true;
+                        break;
+                    case SearchResultsGrouping.SpareSlots:
+                        HasSpareSlots = true;
+                        break;
+                    case SearchResultsGrouping.AdditionalSKills:
+                        HasAdditionalSkills = true;
+                        break;
+                    case SearchResultsGrouping.Resistances:
+                        HasResistances = true;
+                        break;
+                }
+            }
 
             ArmorSetViewModel source = items[0];
 

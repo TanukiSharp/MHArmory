@@ -8,10 +8,7 @@ namespace MHArmory.Search.Contracts
     public interface ISolverDataEquipmentModel
     {
         IEquipment Equipment { get; }
-        event EventHandler SelectionChanged;
         bool IsSelected { get; set; }
-        void FreezeSelection();
-        void RestoreOriginalSelection();
     }
 
     public interface ISolverData : IExtension
