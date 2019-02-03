@@ -1131,6 +1131,7 @@
     <DataTemplate x:Key="ArmorPieceTypesView">
         <DockPanel LastChildFill="True" Background="#0F000000" Margin="4">
             <TextBlock DockPanel.Dock="Top" Text="{Binding Type, Mode=OneTime}" Margin="4"/>
+            <TextBox DockPanel.Dock="Top" Text="{Binding SearchText, Mode=OneWayToSource, UpdateSourceTrigger=PropertyChanged}" Margin="1" Padding="2"/>
             <TextBlock DockPanel.Dock="Bottom" Margin="2" Text="{Binding Equipments.Count, Mode=OneTime, StringFormat=Total: {0}}"/>
             <TextBlock DockPanel.Dock="Bottom" Margin="2" Text="{Binding SelectedCount, StringFormat=Selected: {0}}"/>
             <Grid DockPanel.Dock="Bottom">
@@ -1165,9 +1166,26 @@
                 </Button>
             </Grid>
             <ListBox ItemsSource="{Binding Equipments}" Margin="2" VirtualizingPanel.IsVirtualizing="True" VirtualizingPanel.IsContainerVirtualizable="True" VirtualizingPanel.ScrollUnit="Pixel">
+                <ListBox.ItemContainerStyle>
+                    <Style TargetType="{x:Type ListBoxItem}">
+                        <Setter Property="Template">
+                            <Setter.Value>
+                                <ControlTemplate TargetType="{x:Type ListBoxItem}">
+                                    <ContentPresenter Name="root" Focusable="False"/>
+                                    <ControlTemplate.Triggers>
+                                        <DataTrigger Binding="{Binding IsVisible}" Value="False">
+                                            <Setter TargetName="root" Property="Visibility" Value="Collapsed"/>
+                                        </DataTrigger>
+                                    </ControlTemplate.Triggers>
+                                </ControlTemplate>
+                            </Setter.Value>
+                        </Setter>
+                        <Setter Property="Focusable" Value="False"/>
+                    </Style>
+                </ListBox.ItemContainerStyle>
                 <ListBox.ItemTemplate>
                     <DataTemplate>
-                        <CheckBox IsThreeState="False" IsChecked="{Binding IsSelected}" Content="{mxt:Localization Equipment.Name}">
+                        <CheckBox IsThreeState="False" Padding="1" IsChecked="{Binding IsSelected}" Content="{mxt:Localization Equipment.Name}" VerticalContentAlignment="Center" Visibility="{Binding IsVisible, Mode=OneWay, Converter={StaticResource CollapsedVisibilityValueConverter}}">
                             <bhv:ToolTipEx.Content>
                                 <ContentControl Content="{Binding Equipment, Mode=OneTime}" ContentTemplate="{StaticResource ArmorPieceView}" Focusable="False"/>
                             </bhv:ToolTipEx.Content>
@@ -1184,7 +1202,7 @@
                 <Button Margin="4" Padding="4" Content="Export to clipboard" Command="{Binding ExportToClipboardCommand, Mode=OneTime}"/>
                 <Button Margin="4" Padding="4" Content="Import from clipboard" Command="{Binding ImportFromClipboardCommand, Mode=OneTime}"/>
             </UniformGrid>
-            <ItemsControl ItemsSource="{Binding ArmorPieceTypes}" ItemTemplate="{StaticResource ArmorPieceTypesView}">
+            <ItemsControl ItemsSource="{Binding ArmorPieceTypes}" ItemTemplate="{StaticResource ArmorPieceTypesView}" Focusable="False">
                 <ItemsControl.ItemsPanel>
                     <ItemsPanelTemplate>
                         <UniformGrid Columns="6"/>
