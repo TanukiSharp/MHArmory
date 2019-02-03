@@ -66,6 +66,8 @@ namespace MHArmory
             return new SearchStatement(searchText, aliases);
         }
 
+        private static readonly char[] searchInfoSeparators = new[] { ',', ';', '/', ':' };
+
         public SearchStatement(string searchText, IDictionary<string, string> aliases)
         {
             if (searchText == null)
@@ -76,7 +78,7 @@ namespace MHArmory
 
             var searchInfo = new List<SearchInfo>();
 
-            foreach (string sub in searchText.Split(',', ';', '/', ':'))
+            foreach (string sub in searchText.Split(searchInfoSeparators))
             {
                 string subText = sub.Trim();
 
