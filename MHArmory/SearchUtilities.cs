@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
 namespace MHArmory
@@ -97,7 +98,7 @@ namespace MHArmory
                     foreach (string key in aliases.Keys)
                     {
                         if (subText.Contains(key))
-                            subText = subText.Replace(key, aliases[key]);
+                            subText = Regex.Replace(subText, $"\\b{Regex.Escape(key)}\\b", aliases[key]);
                     }
                 }
 
@@ -117,7 +118,7 @@ namespace MHArmory
                 return true;
 
             string textToLower = text.Trim().ToLower();
-            
+
             foreach (SearchInfo si in SearchInfo)
             {
                 if (si.IsMatching(textToLower))
