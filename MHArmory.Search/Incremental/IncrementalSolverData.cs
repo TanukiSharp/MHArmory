@@ -27,11 +27,19 @@ namespace MHArmory.Search.Incremental
 
         private IDictionary<int, SolverDataJewelModel> jewelsBySkillId;
 
-        public void Setup(IList<int> weaponSlots, IEnumerable<IArmorPiece> heads, IEnumerable<IArmorPiece> chests, IEnumerable<IArmorPiece> gloves, IEnumerable<IArmorPiece> waists,
-            IEnumerable<IArmorPiece> legs, IEnumerable<ICharmLevel> charms, IEnumerable<SolverDataJewelModel> jewels, IEnumerable<IAbility> desiredAbilities)
+        public void Setup(
+            IList<int> weaponSlots,
+            IEnumerable<IArmorPiece> heads,
+            IEnumerable<IArmorPiece> chests,
+            IEnumerable<IArmorPiece> gloves,
+            IEnumerable<IArmorPiece> waists,
+            IEnumerable<IArmorPiece> legs,
+            IEnumerable<ICharmLevel> charms,
+            IEnumerable<SolverDataJewelModel> jewels,
+            IEnumerable<IAbility> desiredAbilities
+        )
         {
             AllJewels = jewels.ToArray();
-
             WeaponSlots = weaponSlots.ToArray();
             DesiredAbilities = desiredAbilities.ToArray();
 
@@ -56,7 +64,8 @@ namespace MHArmory.Search.Incremental
             ElectionModel[] gloves,
             ElectionModel[] waists,
             ElectionModel[] legs,
-            ElectionModel[] charms)
+            ElectionModel[] charms
+        )
         {
             AllHeads = ElectEquipments(heads);
             AllChests = ElectEquipments(chests);
@@ -377,29 +386,6 @@ namespace MHArmory.Search.Incremental
             }
 
             return false;
-        }
-
-        public ISolverData Done()
-        {
-            foreach (ISolverDataEquipmentModel x in AllHeads)
-                x.FreezeSelection();
-
-            foreach (ISolverDataEquipmentModel x in AllChests)
-                x.FreezeSelection();
-
-            foreach (ISolverDataEquipmentModel x in AllGloves)
-                x.FreezeSelection();
-
-            foreach (ISolverDataEquipmentModel x in AllWaists)
-                x.FreezeSelection();
-
-            foreach (ISolverDataEquipmentModel x in AllLegs)
-                x.FreezeSelection();
-
-            foreach (ISolverDataEquipmentModel x in AllCharms)
-                x.FreezeSelection();
-
-            return this;
         }
     }
 }
