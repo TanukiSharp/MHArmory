@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.IO;
 using System.Linq;
 using System.Reflection;
 using System.Text;
@@ -33,6 +34,7 @@ namespace MHArmory
             WindowManager.FitInScreen(this);
 
             LoadConfiguration();
+            LoadAliases();
 
             rootViewModel = new RootViewModel();
 
@@ -108,6 +110,11 @@ namespace MHArmory
             // Possibly process stuffs.
 
             GlobalData.Instance.Configuration = configuration;
+        }
+
+        private void LoadAliases()
+        {
+            GlobalData.Instance.SetAliases(Aliases.Load());
         }
 
         private async Task<bool> LoadData()

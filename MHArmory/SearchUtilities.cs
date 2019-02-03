@@ -58,7 +58,7 @@ namespace MHArmory
     {
         public readonly ReadOnlyCollection<SearchInfo> SearchInfo;
 
-        public static SearchStatement Create(string searchText, IDictionary<string, string> aliases = null)
+        public static SearchStatement Create(string searchText, IDictionary<string, string> aliases)
         {
             if (string.IsNullOrWhiteSpace(searchText))
                 return null;
@@ -66,7 +66,7 @@ namespace MHArmory
             return new SearchStatement(searchText, aliases);
         }
 
-        public SearchStatement(string searchText, IDictionary<string, string> aliases = null)
+        public SearchStatement(string searchText, IDictionary<string, string> aliases)
         {
             if (searchText == null)
             {

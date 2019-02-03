@@ -97,13 +97,6 @@ namespace MHArmory.ViewModels
                 ComputeVisibility(vm);
         }
 
-        private Dictionary<string, string> aliases = new Dictionary<string, string>
-        {
-            ["atk"] = "attack",
-            ["def"] = "defense",
-            ["crit"] = "critical"
-        };
-
         internal void ComputeVisibility(SkillViewModel skillViewModel)
         {
             if (visibilityMode == VisibilityMode.Selected)
@@ -132,7 +125,7 @@ namespace MHArmory.ViewModels
                 }
             }
 
-            skillViewModel.ApplySearchText(SearchStatement.Create(searchText, aliases));
+            skillViewModel.ApplySearchText(SearchStatement.Create(searchText, GlobalData.Instance.Aliases));
         }
 
         private bool IsMatchingByCategory(SkillViewModel skillViewModel)

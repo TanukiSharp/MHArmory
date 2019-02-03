@@ -65,6 +65,7 @@
     <Compile Include="AboutWindow.xaml.cs">
       <DependentUpon>AboutWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Aliases.cs" />
     <Compile Include="AutoUpdate\AutoUpdater.cs" />
     <Compile Include="AutoUpdate\EventArguments.cs" />
     <Compile Include="Configurations\ConfigurationV3.cs" />
