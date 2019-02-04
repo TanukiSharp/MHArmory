@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
 namespace MHArmory
@@ -58,7 +59,7 @@ namespace MHArmory
     {
         public readonly ReadOnlyCollection<SearchInfo> SearchInfo;
 
-        public static SearchStatement Create(string searchText, IDictionary<string, string> aliases = null)
+        public static SearchStatement Create(string searchText, IDictionary<string, string> aliases)
         {
             if (string.IsNullOrWhiteSpace(searchText))
                 return null;
@@ -66,7 +67,9 @@ namespace MHArmory
             return new SearchStatement(searchText, aliases);
         }
 
-        public SearchStatement(string searchText, IDictionary<string, string> aliases = null)
+        private static readonly char[] searchInfoSeparators = new[] { ',', ';', '/', ':' };
+
+        public SearchStatement(string searchText, IDictionary<string, string> aliases)
         {
             if (searchText == null)
             {
@@ -76,7 +79,7 @@ namespace MHArmory
 
             var searchInfo = new List<SearchInfo>();
 
-            foreach (string sub in searchText.Split(',', ';', '/', ':'))
+            foreach (string sub in searchText.Split(searchInfoSeparators))
             {
                 string subText = sub.Trim();
 
@@ -95,7 +98,7 @@ namespace MHArmory
                     foreach (string key in aliases.Keys)
                     {
                         if (subText.Contains(key))
-                            subText = subText.Replace(key, aliases[key]);
+                            subText = Regex.Replace(subText, $"\\b{Regex.Escape(key)}\\b", aliases[key]);
                     }
                 }
 
@@ -115,7 +118,7 @@ namespace MHArmory
                 return true;
 
             string textToLower = text.Trim().ToLower();
-            
+
             foreach (SearchInfo si in SearchInfo)
             {
                 if (si.IsMatching(textToLower))

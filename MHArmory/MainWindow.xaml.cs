@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.IO;
 using System.Linq;
 using System.Reflection;
 using System.Text;
@@ -33,11 +34,14 @@ namespace MHArmory
             WindowManager.FitInScreen(this);
 
             LoadConfiguration();
+            LoadAliases();
 
             rootViewModel = new RootViewModel();
 
             WindowManager.NotifyConfigurationLoaded();
             rootViewModel.NotifyConfigurationLoaded();
+
+            ApplicationCommands.SaveAs.InputGestures.Add(new KeyGesture(Key.S, ModifierKeys.Control | ModifierKeys.Shift));
 
             CommandBindings.Add(RoutedCommands.CreateCommandBinding(RoutedCommands.OpenSkillsSelector, OpenSkillSelector));
             CommandBindings.Add(RoutedCommands.CreateCommandBinding(RoutedCommands.OpenAdvancedSearch, OpenAdvancedSearch));
@@ -48,10 +52,11 @@ namespace MHArmory
             CommandBindings.Add(RoutedCommands.CreateCommandBinding(RoutedCommands.OpenWeapons, OpenWeapons));
             CommandBindings.Add(RoutedCommands.CreateCommandBinding(RoutedCommands.OpenExtensions, OpenExtensions));
 
-            CommandBindings.Add(RoutedCommands.CreateCommandBinding(RoutedCommands.NewLoadout, OnNewLoadout));
-            CommandBindings.Add(RoutedCommands.CreateCommandBinding(RoutedCommands.OpenLoadout, OnOpenLoadout));
-            CommandBindings.Add(RoutedCommands.CreateCommandBinding(RoutedCommands.SaveLoadout, OnSaveLoadout));
-            CommandBindings.Add(RoutedCommands.CreateCommandBinding(RoutedCommands.SaveLoadoutAs, OnSaveLoadoutAs));
+            CommandBindings.Add(RoutedCommands.CreateCommandBinding(ApplicationCommands.New, OnNewLoadout));
+            CommandBindings.Add(RoutedCommands.CreateCommandBinding(RoutedCommands.ResetLoadout, OnResetLoadout));
+            CommandBindings.Add(RoutedCommands.CreateCommandBinding(ApplicationCommands.Open, OnOpenLoadout));
+            CommandBindings.Add(RoutedCommands.CreateCommandBinding(ApplicationCommands.Save, OnSaveLoadout));
+            CommandBindings.Add(RoutedCommands.CreateCommandBinding(ApplicationCommands.SaveAs, OnSaveLoadoutAs));
             CommandBindings.Add(RoutedCommands.CreateCommandBinding(RoutedCommands.ManageLoadouts, OnManageLoadouts));
 
             CommandBindings.Add(RoutedCommands.CreateCommandBinding(RoutedCommands.OpenIntegratedHelp, OpenIntegratedHelp));
@@ -108,6 +113,11 @@ namespace MHArmory
             // Possibly process stuffs.
 
             GlobalData.Instance.Configuration = configuration;
+        }
+
+        private void LoadAliases()
+        {
+            GlobalData.Instance.SetAliases(Aliases.Load());
         }
 
         private async Task<bool> LoadData()
@@ -233,6 +243,11 @@ namespace MHArmory
         private void OnNewLoadout(object parameter)
         {
             loadoutManager.Close();
+        }
+
+        private void OnResetLoadout(object parameter)
+        {
+            loadoutManager.Reset();
         }
 
         private void OnOpenLoadout(object parameter)

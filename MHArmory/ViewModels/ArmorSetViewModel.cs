@@ -388,7 +388,7 @@ namespace MHArmory.ViewModels
 
         private readonly RootViewModel root;
 
-        public ArmorSetViewModel(RootViewModel root, ISolverData solverData, IList<IArmorPiece> armorPieces, ICharmLevel charm, IList<ArmorSetJewelViewModel> jewels, int[] spareSlots)
+        public ArmorSetViewModel(RootViewModel root, ISolverData solverData, IList<IArmorPiece> armorPieces, ICharmLevel charm, IEnumerable<ArmorSetJewelViewModel> jewels, int[] spareSlots)
         {
             this.root = root;
 
@@ -402,7 +402,7 @@ namespace MHArmory.ViewModels
 
             this.armorPieces = armorPieces;
             this.charm = charm;
-            this.jewels = jewels;
+            this.jewels = jewels.OrderBy(x => x.Jewel.Id).ToList();
 
             DesiredAbilities = solverData.DesiredAbilities;
 
@@ -628,7 +628,7 @@ namespace MHArmory.ViewModels
                     localAdditionalSkills.Add(new SearchResultSkillViewModel(skill, totalLevel, false));
             }
 
-            additionalSkills = localAdditionalSkills.ToArray();
+            additionalSkills = localAdditionalSkills.OrderBy(x => x.Skill.Id).ToArray();
         }
 
         private void CheckAbilitiesOnArmorSet(Dictionary<int, int> skills)

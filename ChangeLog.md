@@ -1,9 +1,20 @@
 # Change log
 
 
-## vNext (?)
-- Fixed presentation issues with grouped search results
-- Added name filtering in advanced search window
+## 0.0.9.2 (2019/02/04)
+- Fixed presentation issues with grouped search results (+ grouping bug fix)<br/>
+    ![Search results grouping](docs/misc/changelog_0.0.9.2_grouping_fix.png)
+- Added name filtering in advanced search window<br/>
+    ![Advanced search name filtering](docs/misc/changelog_0.0.9.2_advanced_search_name_filtering.png)
+- Skill loadout minor improvements<br/>
+    ![Reset current loadout](docs/misc/changelog_0.0.9.2_skill_loadout_menu.png)
+    - Added a `Reset` menu (reverts the current loadout to its original state)
+    - Added keyboard shortcut keys
+- Added text based skill selection in skill selector window<br/>
+    ![Text based skill selection](docs/misc/changelog_0.0.9.2_text_based_skill_selection.png)
+    - Then press `Enter` key to toggle selection of the skill level
+    - Read integrated help `Text-based skill selection` category for more information
+- Bug fixes
 
 ## 0.0.9.1 (2019/02/02)
 

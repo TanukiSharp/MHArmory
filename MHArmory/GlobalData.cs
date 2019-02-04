@@ -27,6 +27,8 @@ namespace MHArmory
         public IList<IArmorPiece> Waists { get; private set; }
         public IList<IArmorPiece> Legs { get; private set; }
 
+        public IDictionary<string, string> Aliases { get; private set; }
+
         public void SetArmors(IArmorPiece[] armorPieces)
         {
             Heads = armorPieces.Where(x => x.Type == EquipmentType.Head).ToList();
@@ -40,6 +42,13 @@ namespace MHArmory
         {
             Skills = skills;
             Abilities = skills.SelectMany(s => s.Abilities).Distinct().ToList();
+        }
+
+        public void SetAliases(IDictionary<string, string> aliases)
+        {
+            Aliases = aliases
+                .Where(kv => kv.Key != null && kv.Value != null)
+                .ToDictionary(x => x.Key.Trim().ToLower(), y => y.Value.Trim().ToLower());
         }
 
         //// ================================================================================================================

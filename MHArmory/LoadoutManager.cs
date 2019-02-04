@@ -25,7 +25,7 @@ namespace MHArmory
         }
     }
 
-    public class LoadoutManager : IDisposable
+    public sealed class LoadoutManager : IDisposable
     {
         public event EventHandler ModifiedChanged;
 
@@ -115,7 +115,7 @@ namespace MHArmory
             return result;
         }
 
-        private YesNoCancel SaveDialog()
+        private static YesNoCancel SaveDialog()
         {
             MessageBoxResult dlgResult = MessageBox.Show("Do you want to save loadout modification ?", "Save loadout ?", MessageBoxButton.YesNoCancel);
             if (dlgResult == MessageBoxResult.Cancel)
@@ -125,6 +125,23 @@ namespace MHArmory
                 return YesNoCancel.Yes;
 
             return YesNoCancel.No;
+        }
+
+        private void InternalReset()
+        {
+            if (CurrentLoadoutName == null || IsModified == false)
+                return;
+
+            MessageBoxResult dlgResult = MessageBox.Show("Do you want to reset loadout modifications ?", "Reset loadout ?", MessageBoxButton.YesNo);
+
+            if (dlgResult == MessageBoxResult.No)
+                return;
+
+            LoadLoadoutFromConfig(GlobalData.Instance.Configuration.SkillLoadouts[CurrentLoadoutName]);
+
+            // Postponing rest of the IsModified flag to false to the next scheduler frame is
+            // because of a change in the way ability/skill checkboxes are processed, for performance reasons.
+            rootViewModel.Dispatcher.BeginInvoke((Action)delegate { IsModified = false; });
         }
 
         private bool InternalOpen(string loadoutName, SkillLoadoutItemConfigurationV3 loadoutConfig)
@@ -149,19 +166,20 @@ namespace MHArmory
                 if (showResult != true)
                     return false;
 
-                if (CurrentLoadoutName != loadoutWindow.SelectedLoadout.Name)
-                {
+                bool hasLoadoutChanged = CurrentLoadoutName != loadoutWindow.SelectedLoadout.Name;
+
+                if (isModified || hasLoadoutChanged)
                     LoadLoadoutFromViewModel(loadoutWindow.SelectedLoadout);
 
+                if (hasLoadoutChanged)
+                {
                     CurrentLoadoutName = loadoutWindow.SelectedLoadout.Name;
-
                     ConfigurationManager.Save(GlobalData.Instance.Configuration);
                 }
             }
             else
             {
                 LoadLoadoutFromConfig(loadoutConfig);
-
                 CurrentLoadoutName = loadoutName;
             }
 
@@ -313,6 +331,11 @@ namespace MHArmory
         public bool ApplicationClose()
         {
             return InternalClose(false);
+        }
+
+        public void Reset()
+        {
+            InternalReset();
         }
 
         public void Open(string loadoutName, SkillLoadoutItemConfigurationV3 loadoutConfig)
