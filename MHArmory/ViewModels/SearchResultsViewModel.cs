@@ -317,7 +317,7 @@ namespace MHArmory.ViewModels
                         solverData,
                         x.ArmorPieces,
                         x.Charm,
-                        x.Jewels.Select(j => new ArmorSetJewelViewModel(j.Jewel, j.Count)).ToList(),
+                        x.Jewels.Select(j => new ArmorSetJewelViewModel(j.Jewel, j.Count)),
                         x.SpareSlots
                     ));
 

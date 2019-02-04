@@ -538,9 +538,14 @@
                 <ItemsControl ItemsSource="{Binding Abilities, Mode=OneTime}" Focusable="False" Margin="32 0 0 0">
                     <ItemsControl.ItemTemplate>
                         <DataTemplate>
-                            <StackPanel Orientation="Horizontal" Focusable="False">
+                            <StackPanel x:Name="ability" Orientation="Horizontal" Focusable="False">
                                 <CheckBox Focusable="False" HorizontalContentAlignment="Left" Content="{Binding}" ContentTemplate="{StaticResource AbilityView}" Margin="0" Padding="5 3 5 3" IsChecked="{Binding IsChecked, Mode=TwoWay}" VerticalContentAlignment="Center"/>
                             </StackPanel>
+                            <DataTemplate.Triggers>
+                                <DataTrigger Binding="{Binding IsHidden, Mode=OneWay}" Value="True">
+                                    <Setter TargetName="ability" Property="Opacity" Value="0.25"/>
+                                </DataTrigger>
+                            </DataTemplate.Triggers>
                         </DataTemplate>
                     </ItemsControl.ItemTemplate>
                 </ItemsControl>
@@ -575,7 +580,7 @@
                         <RadioButton Content="Selected" IsChecked="{Binding VisibilityModeSelected, Mode=OneWayToSource}" bhv:ToolTipEx.Content="See only selected skills" Style="{StaticResource SelectorRadioButton}"/>
                         <RadioButton Content="Unselected" IsChecked="{Binding VisibilityModeUnselected, Mode=OneWayToSource}" bhv:ToolTipEx.Content="See only unselected skills" Style="{StaticResource SelectorRadioButton}"/>
                     </StackPanel>
-                    <TextBox Margin="2" Padding="3" FocusManager.FocusedElement="{Binding RelativeSource={RelativeSource Self}}" Text="{Binding SearchText, UpdateSourceTrigger=PropertyChanged}" bhv:TextBoxFocusOnEmptyBehavior.IsAttached="True"/>
+                    <TextBox Margin="2" Padding="3" FocusManager.FocusedElement="{Binding RelativeSource={RelativeSource Self}}" Text="{Binding SearchText, UpdateSourceTrigger=PropertyChanged}" bhv:TextBoxFocusOnEmptyBehavior.IsAttached="True" bhv:CommandOnEnterKeyBehavior.Command="{Binding SearchTextBasedSkillLevelSetCommand, Mode=OneTime}"/>
                 </DockPanel>
                 <ItemsControl ItemsSource="{Binding Categories, Mode=OneWay}" Margin="0 2 0 2" HorizontalAlignment="Right" Focusable="False">
                     <ItemsControl.ItemTemplate>
@@ -1053,10 +1058,13 @@
                         <MenuItem Header="Close" Command="{Binding CloseApplicationCommand, Mode=OneTime}"/>
                     </MenuItem>
                     <MenuItem Header="Skill loadouts">
-                        <MenuItem Header="New" Command="{x:Static local:RoutedCommands.NewLoadout}"/>
-                        <MenuItem Header="Open..." Command="{x:Static local:RoutedCommands.OpenLoadout}"/>
-                        <MenuItem Header="Save" Command="{x:Static local:RoutedCommands.SaveLoadout}"/>
-                        <MenuItem Header="Save as..." Command="{x:Static local:RoutedCommands.SaveLoadoutAs}"/>
+                        <MenuItem Header="New" Command="{x:Static ApplicationCommands.New}"/>
+                        <MenuItem Header="Reset" Command="{x:Static local:RoutedCommands.ResetLoadout}"/>
+                        <Separator/>
+                        <MenuItem Header="Open..." Command="{x:Static ApplicationCommands.Open}"/>
+                        <Separator/>
+                        <MenuItem Header="Save" Command="{x:Static ApplicationCommands.Save}"/>
+                        <MenuItem Header="Save as..." Command="{x:Static ApplicationCommands.SaveAs}"/>
                         <Separator/>
                         <MenuItem Header="Manage..." Command="{x:Static local:RoutedCommands.ManageLoadouts}"/>
                     </MenuItem>

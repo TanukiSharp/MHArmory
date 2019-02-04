@@ -170,7 +170,7 @@ namespace MHArmory.ViewModels
             if (isLoadingConfiguration)
                 return;
 
-            var searchStatement = SearchStatement.Create(SearchText);
+            var searchStatement = SearchStatement.Create(SearchText, GlobalData.Instance.Aliases);
 
             foreach (JewelOverrideViewModel vm in Jewels)
                 ComputeVisibility(vm, searchStatement);
@@ -196,7 +196,7 @@ namespace MHArmory.ViewModels
             }
 
             if (searchStatement == null)
-                searchStatement = SearchStatement.Create(searchText);
+                searchStatement = SearchStatement.Create(searchText, GlobalData.Instance.Aliases);
 
             jewelOverrideViewModel.ApplySearchText(searchStatement);
         }

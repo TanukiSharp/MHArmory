@@ -30,7 +30,6 @@ namespace MHArmory
             string key = string.Join(
                 ";",
                 result.Jewels
-                    .OrderBy(x => x.Jewel.Id)
                     .Select(x => $"{x.Jewel.Id},{x.Count}")
             );
 
@@ -67,7 +66,6 @@ namespace MHArmory
             string key = string.Join(
                 ";",
                 result.AdditionalSkills
-                    .OrderBy(x => x.Skill.Id)
                     .Select(x => $"{x.Skill.Id},{x.TotalLevel}")
             );
 

@@ -25,6 +25,13 @@ namespace MHArmory.ViewModels
             }
         }
 
+        private bool isHidden;
+        public bool IsHidden
+        {
+            get { return isHidden; }
+            internal set { SetValue(ref isHidden, value); }
+        }
+
         public int SkillId { get { return Ability.Skill.Id; } }
         public Dictionary<string, string> SkillName { get { return Ability.Skill.Name; } }
         public int Level { get { return Ability.Level; } }
@@ -154,19 +161,77 @@ namespace MHArmory.ViewModels
             set { SetValue(ref isAvailable, value); }
         }
 
+        // This variable is set to a 0 or higher value if it is subject to be set by search text, -1 otherwise.
+        private int searchTextSkillLevel = -1;
+
         public void ApplySearchText(SearchStatement searchStatement)
         {
+            searchTextSkillLevel = -1;
+
+            foreach (AbilityViewModel x in Abilities)
+                x.IsHidden = false;
+
             if (searchStatement == null || searchStatement.IsEmpty)
             {
                 IsVisible = true;
                 return;
             }
 
+            string localizedSkillName = Localization.Get(skill.Name);
+
             IsVisible =
-                searchStatement.IsMatching(Localization.Get(skill.Name)) ||
+                searchStatement.IsMatching(localizedSkillName) ||
                 searchStatement.IsMatching(Localization.Get(skill.Description)) ||
                 skill.Abilities.Any(x => searchStatement.IsMatching(Localization.Get(x.Description))) ||
                 searchStatement.IsMatching(JewelsText);
+
+            if (IsVisible == false)
+                IsVisible = UpdateSearchTextSkillLevel(localizedSkillName, searchStatement);
+        }
+
+        private static readonly char[] whitespaces = new[] { ' ', '\t' };
+
+        private bool UpdateSearchTextSkillLevel(string localizedSkillName, SearchStatement searchStatement)
+        {
+            localizedSkillName = localizedSkillName.ToLower();
+
+            foreach (SearchInfo searchInfo in searchStatement.SearchInfo)
+            {
+                int lastSpace = searchInfo.Text.LastIndexOfAny(whitespaces);
+                if (lastSpace >= 0)
+                {
+                    string lastPart = searchInfo.Text.Substring(lastSpace);
+
+                    if (int.TryParse(lastPart, out int num) && num >= 0 && num <= skill.MaxLevel)
+                    {
+                        string firstPart = searchInfo.Text.Substring(0, lastSpace).Trim();
+
+                        if (new SearchInfo(searchInfo.IsExact, firstPart).IsMatching(localizedSkillName))
+                        {
+                            searchTextSkillLevel = num;
+
+                            foreach (AbilityViewModel x in Abilities)
+                                x.IsHidden = x.Level != num;
+
+                            return true;
+                        }
+                    }
+                }
+            }
+
+            return false;
+        }
+
+        public void ApplySearchTextSkillLevel()
+        {
+            if (searchTextSkillLevel < 0)
+                return;
+
+            if (searchTextSkillLevel <= Abilities.Count)
+            {
+                Abilities[searchTextSkillLevel].IsChecked = !Abilities[searchTextSkillLevel].IsChecked;
+                CheckChanged(searchTextSkillLevel, true);
+            }
         }
 
         private bool isCheckChanging = false;
