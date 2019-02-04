@@ -149,19 +149,20 @@ namespace MHArmory
                 if (showResult != true)
                     return false;
 
-                if (CurrentLoadoutName != loadoutWindow.SelectedLoadout.Name)
-                {
+                bool hasLoadoutChanged = CurrentLoadoutName != loadoutWindow.SelectedLoadout.Name;
+
+                if (isModified || hasLoadoutChanged)
                     LoadLoadoutFromViewModel(loadoutWindow.SelectedLoadout);
 
+                if (hasLoadoutChanged)
+                {
                     CurrentLoadoutName = loadoutWindow.SelectedLoadout.Name;
-
                     ConfigurationManager.Save(GlobalData.Instance.Configuration);
                 }
             }
             else
             {
                 LoadLoadoutFromConfig(loadoutConfig);
-
                 CurrentLoadoutName = loadoutName;
             }
 
