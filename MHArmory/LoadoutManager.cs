@@ -127,6 +127,23 @@ namespace MHArmory
             return YesNoCancel.No;
         }
 
+        private void InternalReset()
+        {
+            if (CurrentLoadoutName == null || IsModified == false)
+                return;
+
+            MessageBoxResult dlgResult = MessageBox.Show("Do you want to reset loadout modifications ?", "Reset loadout ?", MessageBoxButton.YesNo);
+
+            if (dlgResult == MessageBoxResult.No)
+                return;
+
+            LoadLoadoutFromConfig(GlobalData.Instance.Configuration.SkillLoadouts[CurrentLoadoutName]);
+
+            // Postponing rest of the IsModified flag to false to the next scheduler frame is
+            // because of a change in the way ability/skill checkboxes are processed, for performance reasons.
+            rootViewModel.Dispatcher.BeginInvoke((Action)delegate { IsModified = false; });
+        }
+
         private bool InternalOpen(string loadoutName, SkillLoadoutItemConfigurationV3 loadoutConfig)
         {
             if (IsModified)
@@ -314,6 +331,11 @@ namespace MHArmory
         public bool ApplicationClose()
         {
             return InternalClose(false);
+        }
+
+        public void Reset()
+        {
+            InternalReset();
         }
 
         public void Open(string loadoutName, SkillLoadoutItemConfigurationV3 loadoutConfig)

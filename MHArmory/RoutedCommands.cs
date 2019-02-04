@@ -18,10 +18,11 @@ namespace MHArmory
         public static readonly ICommand OpenWeapons = new RoutedCommand("OpenWeapons", typeof(RoutedCommand));
         public static readonly ICommand OpenExtensions = new RoutedCommand("OpenExtensions", typeof(RoutedCommands));
 
-        public static readonly ICommand NewLoadout = new RoutedCommand("NewLoadout", typeof(RoutedCommands));
-        public static readonly ICommand OpenLoadout = new RoutedCommand("OpenLoadout", typeof(RoutedCommands));
-        public static readonly ICommand SaveLoadout = new RoutedCommand("SaveLoadout", typeof(RoutedCommands));
-        public static readonly ICommand SaveLoadoutAs = new RoutedCommand("SaveLoadoutAs", typeof(RoutedCommands));
+        //public static readonly ICommand NewLoadout = new RoutedCommand("NewLoadout", typeof(RoutedCommands));
+        public static readonly ICommand ResetLoadout = new RoutedCommand("ResetLoadout", typeof(RoutedCommands));
+        //public static readonly ICommand OpenLoadout = new RoutedCommand("OpenLoadout", typeof(RoutedCommands));
+        //public static readonly ICommand SaveLoadout = new RoutedCommand("SaveLoadout", typeof(RoutedCommands));
+        //public static readonly ICommand SaveLoadoutAs = new RoutedCommand("SaveLoadoutAs", typeof(RoutedCommands));
         public static readonly ICommand ManageLoadouts = new RoutedCommand("ManageLoadouts", typeof(RoutedCommands));
 
         public static readonly ICommand OpenIntegratedHelp = new RoutedCommand("OpenIntegratedHelp", typeof(RoutedCommands));
