@@ -25,7 +25,7 @@ namespace MHArmory
         }
     }
 
-    public class LoadoutManager : IDisposable
+    public sealed class LoadoutManager : IDisposable
     {
         public event EventHandler ModifiedChanged;
 
@@ -115,7 +115,7 @@ namespace MHArmory
             return result;
         }
 
-        private YesNoCancel SaveDialog()
+        private static YesNoCancel SaveDialog()
         {
             MessageBoxResult dlgResult = MessageBox.Show("Do you want to save loadout modification ?", "Save loadout ?", MessageBoxButton.YesNoCancel);
             if (dlgResult == MessageBoxResult.Cancel)
