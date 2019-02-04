@@ -65,6 +65,7 @@
     <Compile Include="AboutWindow.xaml.cs">
       <DependentUpon>AboutWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Aliases.cs" />
     <Compile Include="AutoUpdate\AutoUpdater.cs" />
     <Compile Include="AutoUpdate\EventArguments.cs" />
     <Compile Include="Configurations\ConfigurationV3.cs" />
@@ -463,6 +464,9 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="HelpText\Grouping.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="HelpText\TextualSkillSelection.html" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>

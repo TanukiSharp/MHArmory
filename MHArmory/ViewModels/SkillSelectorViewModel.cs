@@ -89,6 +89,8 @@ namespace MHArmory.ViewModels
             }
         }
 
+        public ICommand SearchTextBasedSkillLevelSetCommand { get; }
+
         private void ComputeVisibility()
         {
             foreach (SkillViewModel vm in Skills)
@@ -123,7 +125,7 @@ namespace MHArmory.ViewModels
                 }
             }
 
-            skillViewModel.ApplySearchText(SearchStatement.Create(searchText));
+            skillViewModel.ApplySearchText(SearchStatement.Create(searchText, GlobalData.Instance.Aliases));
         }
 
         private bool IsMatchingByCategory(SkillViewModel skillViewModel)
@@ -144,7 +146,14 @@ namespace MHArmory.ViewModels
 
         public SkillSelectorViewModel()
         {
+            SearchTextBasedSkillLevelSetCommand = new AnonymousCommand(OnSearchTextBasedSkillLevelSet);
             CancelCommand = new AnonymousCommand(OnCancel);
+        }
+
+        private void OnSearchTextBasedSkillLevelSet()
+        {
+            foreach (SkillViewModel skill in Skills)
+                skill.ApplySearchTextSkillLevel();
         }
 
         private void OnCancel(object parameter)
