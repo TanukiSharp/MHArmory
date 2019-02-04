@@ -41,8 +41,16 @@ namespace MHArmory
             else
             {
                 currentLoadout = loadoutSelectorViewModel.Loadouts.FirstOrDefault(x => x.Name == selectedLoadoutName);
-                CurrentLoadoutName = currentLoadout.Name;
-                loadoutSelectorViewModel.SelectedLoadout = currentLoadout;
+                if (currentLoadout != null)
+                {
+                    CurrentLoadoutName = currentLoadout.Name;
+                    loadoutSelectorViewModel.SelectedLoadout = currentLoadout;
+                }
+                else
+                {
+                    CurrentLoadoutName = null;
+                    loadoutSelectorViewModel.SelectedLoadout = null;
+                }
             }
 
             InputBindings.Add(new KeyBinding(loadoutSelectorViewModel.AcceptCommand, new KeyGesture(Key.Enter, ModifierKeys.None)));
