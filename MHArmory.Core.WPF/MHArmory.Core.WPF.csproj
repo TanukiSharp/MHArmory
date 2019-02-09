@@ -1,7 +1,7 @@
-<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
 
   <PropertyGroup>
-    <TargetFrameworks>net47</TargetFrameworks>
+    <TargetFrameworks>netcoreapp3.0</TargetFrameworks>
     <Version>0.0.1</Version>
     <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
     <WarningsAsErrors />
@@ -13,16 +13,12 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\MHArmory.Core\MHArmory.Core.csproj" />
-    <ProjectReference Include="..\MHArmory.Search.Contracts\MHArmory.Search.Contracts.csproj" />
+    <PackageReference Include="System.Management" Version="4.5.0" />
   </ItemGroup>
 
   <ItemGroup>
-    <Reference Include="PresentationCore" />
-    <Reference Include="PresentationFramework" />
-    <Reference Include="System.Management" />
-    <Reference Include="System.Xaml" />
-    <Reference Include="WindowsBase" />
+    <ProjectReference Include="..\MHArmory.Core\MHArmory.Core.csproj" />
+    <ProjectReference Include="..\MHArmory.Search.Contracts\MHArmory.Search.Contracts.csproj" />
   </ItemGroup>
 
 </Project>
