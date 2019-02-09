@@ -1020,7 +1020,6 @@
         <Grid>
             <TextBlock x:Name="loading" Text="Loading..." HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="24" Foreground="DarkGray" FontWeight="Bold" Visibility="{Binding IsDataLoading, Converter={StaticResource CollapsedVisibilityValueConverter}, Mode=OneWay}"/>
             <DockPanel LastChildFill="True">
-                <Rectangle DockPanel.Dock="Top" Height="1" HorizontalAlignment="Stretch" Fill="LightGray" Margin="4 8 4 0" UseLayoutRounding="True" SnapsToDevicePixels="True"/>
                 <StackPanel DockPanel.Dock="Top" Orientation="Horizontal" HorizontalAlignment="Right" Margin="0 4 0 4">
                     <Button Content="?" MinWidth="20" Margin="2 2 6 2" Padding="2" VerticalAlignment="Center" Command="{x:Static local:RoutedCommands.OpenIntegratedHelp}" CommandParameter="Grouping" bhv:ToolTipEx.Content="Show help about grouping"/>
                     <TextBlock Text="Grouping: " VerticalAlignment="Center"/>
@@ -1091,11 +1090,18 @@
                     </MenuItem>
                 </Menu>
             </DockPanel>
+            <Border DockPanel.Dock="Top" Background="#0A000000" HorizontalAlignment="Stretch" Padding="1 4 1 4">
+                <DockPanel>
+                    <ContentControl DockPanel.Dock="Left" Content="{Binding InParameters, Mode=OneTime}" ContentTemplate="{StaticResource InParametersView}" Focusable="False"/>
+                    <Button DockPanel.Dock="Right" HorizontalAlignment="Right" Content="Sort results..." Command="{Binding OpenSearchResultProcessingCommand, Mode=OneTime}" Margin="2" Padding="8" VerticalAlignment="Center"/>
+                    <Button DockPanel.Dock="Right" HorizontalAlignment="Right" Content="?" MinWidth="20" Margin="2" Padding="4" VerticalAlignment="Center" Command="{x:Static local:RoutedCommands.OpenIntegratedHelp}" CommandParameter="Sorting" bhv:ToolTipEx.Content="Show help about sorting"/>
+                </DockPanel>
+            </Border>
             <Grid>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*"/>
                     <ColumnDefinition Width="6"/>
-                    <ColumnDefinition Width="3*"/>
+                    <ColumnDefinition Width="4*"/>
                 </Grid.ColumnDefinitions>
                 <DockPanel Grid.Column="0" LastChildFill="True">
                     <Button DockPanel.Dock="Top" Content="Change skills" Margin="2" Padding="4" Command="{Binding OpenSkillSelectorCommand, Mode=OneTime}"/>
@@ -1120,17 +1126,9 @@
                     </DockPanel>
                 </DockPanel>
                 <GridSplitter Grid.Column="1" HorizontalAlignment="Stretch"/>
-
                 <DockPanel Grid.Column="2" LastChildFill="True">
                     <ContentControl DockPanel.Dock="Bottom" Content="{Binding SearchMetrics, Mode=OneWay}" ContentTemplate="{StaticResource SearchMetricsView}" Focusable="False"/>
-                    <DockPanel LastChildFill="True">
-                        <DockPanel DockPanel.Dock="Top" HorizontalAlignment="Stretch">
-                            <ContentControl DockPanel.Dock="Left" Content="{Binding InParameters, Mode=OneTime}" ContentTemplate="{StaticResource InParametersView}" Focusable="False"/>
-                            <Button DockPanel.Dock="Right" HorizontalAlignment="Right" Content="Sort results..." Command="{Binding OpenSearchResultProcessingCommand, Mode=OneTime}" Margin="2" Padding="8" VerticalAlignment="Center"/>
-                            <Button DockPanel.Dock="Right" HorizontalAlignment="Right" Content="?" MinWidth="20" Margin="2" Padding="4" VerticalAlignment="Center" Command="{x:Static local:RoutedCommands.OpenIntegratedHelp}" CommandParameter="Sorting" bhv:ToolTipEx.Content="Show help about sorting"/>
-                        </DockPanel>
-                        <ContentControl Content="{Binding SearchResultsViewModel, Mode=OneTime}" ContentTemplate="{StaticResource SearchResultsView}" Focusable="False"/>
-                    </DockPanel>
+                    <ContentControl Content="{Binding SearchResultsViewModel, Mode=OneTime}" ContentTemplate="{StaticResource SearchResultsView}" Focusable="False"/>
                 </DockPanel>
             </Grid>
         </DockPanel>
