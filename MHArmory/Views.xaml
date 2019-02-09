@@ -462,16 +462,26 @@
             <StackPanel x:Name="res">
                 <TextBlock Text="Resistances:" FontWeight="Bold"/>
                 <StackPanel Margin="16 1 0 0" Orientation="Horizontal">
-                    <Image Source="{mxt:RasterizedImage Location=Icons/Elements/Fire.svg, Size=16}" Style="{StaticResource ElementImageStyle}" VerticalAlignment="Center" SnapsToDevicePixels="True"/>
-                    <TextBlock Text="{Binding TotalFireResistance, Mode=OneTime, StringFormat=: {0}}" Margin="0 0 12 0" VerticalAlignment="Center" Foreground="Blue"/>
-                    <Image Source="{mxt:RasterizedImage Location=Icons/Elements/Water.svg, Size=16}" Style="{StaticResource ElementImageStyle}" VerticalAlignment="Center" SnapsToDevicePixels="True"/>
-                    <TextBlock Text="{Binding TotalWaterResistance, Mode=OneTime, StringFormat=: {0}}" Margin="0 0 12 0" VerticalAlignment="Center" Foreground="Blue"/>
-                    <Image Source="{mxt:RasterizedImage Location=Icons/Elements/Thunder.svg, Size=16}" Style="{StaticResource ElementImageStyle}" VerticalAlignment="Center" SnapsToDevicePixels="True"/>
-                    <TextBlock Text="{Binding TotalThunderResistance, Mode=OneTime, StringFormat=: {0}}" Margin="0 0 12 0" VerticalAlignment="Center" Foreground="Blue"/>
-                    <Image Source="{mxt:RasterizedImage Location=Icons/Elements/Ice.svg, Size=16}" Style="{StaticResource ElementImageStyle}" VerticalAlignment="Center" SnapsToDevicePixels="True"/>
-                    <TextBlock Text="{Binding TotalIceResistance, Mode=OneTime, StringFormat=: {0}}" Margin="0 0 12 0" VerticalAlignment="Center" Foreground="Blue"/>
-                    <Image Source="{mxt:RasterizedImage Location=Icons/Elements/Dragon.svg, Size=16}" Style="{StaticResource ElementImageStyle}" VerticalAlignment="Center" SnapsToDevicePixels="True"/>
-                    <TextBlock Text="{Binding TotalDragonResistance, Mode=OneTime, StringFormat=: {0}}" VerticalAlignment="Center" Foreground="Blue"/>
+                    <StackPanel Margin="0 0 12 0">
+                        <Image Source="{mxt:RasterizedImage Location=Icons/Elements/Fire.svg, Size=16}" Style="{StaticResource ElementImageStyle}" HorizontalAlignment="Center" SnapsToDevicePixels="True"/>
+                        <TextBlock Text="{Binding TotalFireResistance, Mode=OneTime}" HorizontalAlignment="Center"/>
+                    </StackPanel>
+                    <StackPanel Margin="0 0 12 0">
+                        <Image Source="{mxt:RasterizedImage Location=Icons/Elements/Water.svg, Size=16}" Style="{StaticResource ElementImageStyle}" HorizontalAlignment="Center" SnapsToDevicePixels="True"/>
+                        <TextBlock Text="{Binding TotalWaterResistance, Mode=OneTime}" HorizontalAlignment="Center"/>
+                    </StackPanel>
+                    <StackPanel Margin="0 0 12 0">
+                        <Image Source="{mxt:RasterizedImage Location=Icons/Elements/Thunder.svg, Size=16}" Style="{StaticResource ElementImageStyle}" HorizontalAlignment="Center" SnapsToDevicePixels="True"/>
+                        <TextBlock Text="{Binding TotalThunderResistance, Mode=OneTime}" HorizontalAlignment="Center"/>
+                    </StackPanel>
+                    <StackPanel Margin="0 0 12 0">
+                        <Image Source="{mxt:RasterizedImage Location=Icons/Elements/Ice.svg, Size=16}" Style="{StaticResource ElementImageStyle}" HorizontalAlignment="Center" SnapsToDevicePixels="True"/>
+                        <TextBlock Text="{Binding TotalIceResistance, Mode=OneTime}" HorizontalAlignment="Center"/>
+                    </StackPanel>
+                    <StackPanel Margin="0 0 12 0">
+                        <Image Source="{mxt:RasterizedImage Location=Icons/Elements/Dragon.svg, Size=16}" Style="{StaticResource ElementImageStyle}" HorizontalAlignment="Center" SnapsToDevicePixels="True"/>
+                        <TextBlock Text="{Binding TotalDragonResistance, Mode=OneTime}" HorizontalAlignment="Center"/>
+                    </StackPanel>
                 </StackPanel>
             </StackPanel>
         </StackPanel>
@@ -972,42 +982,38 @@
                     </ControlTemplate>
                 </ItemsControl.Template>
             </ItemsControl>
-            <ListBox Grid.Column="1" ItemsSource="{Binding SelectedGroup.Items, Mode=OneWay}" ItemTemplate="{StaticResource SearchResultArmorSetView}" ScrollViewer.VerticalScrollBarVisibility="Visible" ClipToBounds="True" Padding="0 0 0 -22" Focusable="False" VirtualizingPanel.IsVirtualizing="True" VirtualizingPanel.ScrollUnit="Pixel">
-                <ListBox.ItemContainerStyle>
-                    <Style TargetType="{x:Type ListBoxItem}">
-                        <Setter Property="Template">
-                            <Setter.Value>
-                                <ControlTemplate TargetType="{x:Type ListBoxItem}">
-                                    <Border Padding="2" SnapsToDevicePixels="True" Focusable="False">
-                                        <ContentPresenter Focusable="False"/>
-                                    </Border>
-                                </ControlTemplate>
-                            </Setter.Value>
-                        </Setter>
-                        <Setter Property="Focusable" Value="False"/>
-                    </Style>
-                </ListBox.ItemContainerStyle>
-            </ListBox>
+            <ItemsControl Grid.Column="1" ItemsSource="{Binding SelectedGroup.Items, Mode=OneWay}" ItemTemplate="{StaticResource SearchResultArmorSetView}" ScrollViewer.VerticalScrollBarVisibility="Visible" ClipToBounds="True" Padding="0 0 0 -22" Focusable="False" VirtualizingPanel.IsVirtualizing="True" VirtualizingPanel.ScrollUnit="Pixel" ScrollViewer.CanContentScroll="True">
+                <ItemsControl.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <VirtualizingStackPanel/>
+                    </ItemsPanelTemplate>
+                </ItemsControl.ItemsPanel>
+                <ItemsControl.Template>
+                    <ControlTemplate>
+                        <ScrollViewer Padding="{TemplateBinding Control.Padding}" Focusable="False">
+                            <ItemsPresenter SnapsToDevicePixels="{TemplateBinding UIElement.SnapsToDevicePixels}" />
+                        </ScrollViewer>
+                    </ControlTemplate>
+                </ItemsControl.Template>
+            </ItemsControl>
         </Grid>
     </DataTemplate>
 
     <DataTemplate x:Key="UngroupedSearchResultsView">
-        <ListBox ItemsSource="{Binding Mode=OneTime}" ItemTemplate="{StaticResource SearchResultArmorSetView}" ScrollViewer.VerticalScrollBarVisibility="Visible" ClipToBounds="True" Padding="0 0 0 -22" Focusable="False" VirtualizingPanel.IsVirtualizing="True" VirtualizingPanel.ScrollUnit="Pixel">
-            <ListBox.ItemContainerStyle>
-                <Style TargetType="{x:Type ListBoxItem}">
-                    <Setter Property="Template">
-                        <Setter.Value>
-                            <ControlTemplate TargetType="{x:Type ListBoxItem}">
-                                <Border Name="root" Padding="2" SnapsToDevicePixels="True" Focusable="False">
-                                    <ContentPresenter Focusable="False"/>
-                                </Border>
-                            </ControlTemplate>
-                        </Setter.Value>
-                    </Setter>
-                    <Setter Property="Focusable" Value="False"/>
-                </Style>
-            </ListBox.ItemContainerStyle>
-        </ListBox>
+        <ItemsControl ItemsSource="{Binding Mode=OneTime}" ItemTemplate="{StaticResource SearchResultArmorSetView}" ScrollViewer.VerticalScrollBarVisibility="Visible" ClipToBounds="True" Padding="0 0 0 -22" Focusable="False" VirtualizingPanel.IsVirtualizing="True" VirtualizingPanel.ScrollUnit="Pixel" ScrollViewer.CanContentScroll="True">
+            <ItemsControl.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <VirtualizingStackPanel/>
+                </ItemsPanelTemplate>
+            </ItemsControl.ItemsPanel>
+            <ItemsControl.Template>
+                <ControlTemplate>
+                    <ScrollViewer Padding="{TemplateBinding Control.Padding}" Focusable="False">
+                        <ItemsPresenter SnapsToDevicePixels="{TemplateBinding UIElement.SnapsToDevicePixels}" />
+                    </ScrollViewer>
+                </ControlTemplate>
+            </ItemsControl.Template>
+        </ItemsControl>
     </DataTemplate>
 
     <DataTemplate x:Key="SearchResultsView">
