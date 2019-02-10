@@ -835,7 +835,7 @@
                     <TextBlock Text="Combination/sec: "/>
                     <TextBlock Text="{Binding Converter={StaticResource CombinationPerSecondValueConverter}, Mode=OneTime}" Margin="0 0 16 0" Style="{StaticResource highlight}"/>
                     <StackPanel Orientation="Horizontal" ToolTip="Combinations per million CPU cycles / CPU cycles per combination">
-                        <TextBlock Text="Speed score: "/>
+                        <TextBlock Text="Computation score: "/>
                         <TextBlock Text="{Binding Converter={StaticResource SearchSpeedScoreValueConverter}, Mode=OneTime}" Margin="0 0 16 0" Style="{StaticResource highlight}"/>
                     </StackPanel>
                 </StackPanel>
@@ -919,7 +919,7 @@
                                 <TextBlock Text="{Binding Converter={StaticResource CombinationPerSecondValueConverter}, Mode=OneTime}" Style="{StaticResource highlight}"/>
                             </StackPanel>
                             <StackPanel Orientation="Horizontal" ToolTip="Combinations per million CPU cycles / CPU cycles per combination">
-                                <TextBlock Text="Speed score:"/>
+                                <TextBlock Text="Computation score:"/>
                                 <TextBlock Text="{Binding Converter={StaticResource SearchSpeedScoreValueConverter}, Mode=OneTime}" Style="{StaticResource highlight}"/>
                             </StackPanel>
                         </StackPanel>

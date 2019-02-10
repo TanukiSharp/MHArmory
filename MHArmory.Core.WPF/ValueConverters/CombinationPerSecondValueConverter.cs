@@ -61,7 +61,7 @@ namespace MHArmory.Core.WPF.ValueConverters
                 double cps = searchMetrics.CombinationCount / time;
                 double score = cps / Environment.ProcessorCount / clockSpeed;
 
-                return $"{score:f3} / {1_000_000d / score:f3}";
+                return $"{score:f3} / {1_000_000d / score:f1}";
             }
 
             return "-";
