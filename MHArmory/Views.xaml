@@ -27,6 +27,7 @@
     <cvt:NumToSeparatedStringValueConverter x:Key="NumToSeparatedStringValueConverter"/>
     <cvt:FreeElementNameValueConverter x:Key="FreeElementNameValueConverter"/>
     <cvt:CombinationPerSecondValueConverter x:Key="CombinationPerSecondValueConverter"/>
+    <cvt:SearchSpeedScoreValueConverter x:Key="SearchSpeedScoreValueConverter"/>
     <cvt:ScrollBarVisibilityValueConverter x:Key="ScrollBarVisibilityValueConverter"/>
 
     <SolidColorBrush x:Key="ActiveWeaponBackgroundBrush" Color="#FFB7FFA7"/>
@@ -833,6 +834,10 @@
                     <TextBlock Text="{Binding TimeElapsed, Converter={StaticResource MillisecondsToTimeValueConverter}, Mode=OneTime}" bhv:ToolTipEx.Content="{Binding TimeElapsed}" Margin="0 0 16 0" Style="{StaticResource highlight}"/>
                     <TextBlock Text="Combination/sec: "/>
                     <TextBlock Text="{Binding Converter={StaticResource CombinationPerSecondValueConverter}, Mode=OneTime}" Margin="0 0 16 0" Style="{StaticResource highlight}"/>
+                    <StackPanel Orientation="Horizontal" ToolTip="Combinations per million CPU cycles / CPU cycles per combination">
+                        <TextBlock Text="Speed score: "/>
+                        <TextBlock Text="{Binding Converter={StaticResource SearchSpeedScoreValueConverter}, Mode=OneTime}" Margin="0 0 16 0" Style="{StaticResource highlight}"/>
+                    </StackPanel>
                 </StackPanel>
             </Expander.Header>
             <Expander.Content>
@@ -912,6 +917,10 @@
                             <StackPanel Orientation="Horizontal">
                                 <TextBlock Text="Combination/sec:"/>
                                 <TextBlock Text="{Binding Converter={StaticResource CombinationPerSecondValueConverter}, Mode=OneTime}" Style="{StaticResource highlight}"/>
+                            </StackPanel>
+                            <StackPanel Orientation="Horizontal" ToolTip="Combinations per million CPU cycles / CPU cycles per combination">
+                                <TextBlock Text="Speed score:"/>
+                                <TextBlock Text="{Binding Converter={StaticResource SearchSpeedScoreValueConverter}, Mode=OneTime}" Style="{StaticResource highlight}"/>
                             </StackPanel>
                         </StackPanel>
                     </Border>
