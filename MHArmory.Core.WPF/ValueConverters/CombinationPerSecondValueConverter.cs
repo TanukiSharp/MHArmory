@@ -34,17 +34,20 @@ namespace MHArmory.Core.WPF.ValueConverters
 
     public class SearchSpeedScoreValueConverter : IValueConverter
     {
-        private static readonly double clockSpeed;
+        private static readonly double totalClockSpeed;
 
         static SearchSpeedScoreValueConverter()
         {
-            using (var searcher = new ManagementObjectSearcher("select MaxClockSpeed from Win32_Processor"))
+            using (var searcher = new ManagementObjectSearcher("SELECT * FROM Win32_Processor"))
             {
                 foreach (ManagementBaseObject item in searcher.Get())
                 {
-                    clockSpeed = (uint)item["MaxClockSpeed"];
+                    uint coresCount = (uint)item["NumberOfCores"];
+                    uint clockSpeed = (uint)item["MaxClockSpeed"];
+
+                    totalClockSpeed += coresCount * clockSpeed;
+
                     item.Dispose();
-                    break;
                 }
             }
         }
@@ -59,7 +62,7 @@ namespace MHArmory.Core.WPF.ValueConverters
                     return "-";
 
                 double cps = searchMetrics.CombinationCount / time;
-                double score = cps / Environment.ProcessorCount / clockSpeed;
+                double score = cps / totalClockSpeed;
 
                 return $"{score:f3} / {1_000_000d / score:f1}";
             }
