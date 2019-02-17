@@ -28,6 +28,7 @@ namespace DataSourceTool
             IList<ISkill> skills = (await source.GetSkills()).OrderBy(x => x.Id).ToList();
             IList<ICharm> charms = (await source.GetCharms()).OrderBy(x => x.Id).ToList();
             IList<IJewel> jewels = (await source.GetJewels()).OrderBy(x => x.Id).ToList();
+            IList<ILocalizedItem> craftMaterials = (await source.GetCraftMaterials()).OrderBy(x => x.Id).ToList();
 
             IList<IAbility> abilities = skills
                 .SelectMany(x => x.Abilities)
@@ -43,6 +44,9 @@ namespace DataSourceTool
 
             if (Directory.Exists(outputPath) == false)
                 Directory.CreateDirectory(outputPath);
+            //--------------------------------------------------------------------------
+
+            Common.SerializeJson(Path.Combine(outputPath, $"{nameof(craftMaterials)}.json"), Export(craftMaterials));
 
             //--------------------------------------------------------------------------
 
@@ -104,6 +108,15 @@ namespace DataSourceTool
             Common.SerializeJson(Path.Combine(outputPath, $"{nameof(jewels)}.json"), Export(jewels));
         }
 
+        private object Export(IEnumerable<ILocalizedItem> craftMaterials)
+        {
+            return craftMaterials.Select(x => new MHArmory.ArmoryDataSource.DataStructures.LocalizedItem
+            {
+                Id = x.Id,
+                Values = x.Values
+            });
+        }
+
         private object Export(IEnumerable<IAbility> abilities)
         {
             return abilities.Select((x, i) => new AbilityPrimitive
@@ -143,7 +156,8 @@ namespace DataSourceTool
                 },
                 ArmorSetSkillIds = x.ArmorSetSkills?.Select(s => s.Id).ToList(),
                 FullArmorSetId = x.FullArmorSet?.Id,
-                EventId = x.Event?.Id
+                EventId = x.Event?.Id,
+                CraftMaterials = MakeCraftMaterials(x.CraftMaterials)
             });
         }
 
@@ -181,7 +195,8 @@ namespace DataSourceTool
                 Rarity = x.Rarity,
                 AbilityIds = MakeAbilities(x.Abilities),
                 Slots = MakeSlots(x.Slots),
-                EventId = x.Event?.Id
+                EventId = x.Event?.Id,
+                CraftMaterials = MakeCraftMaterials(x.CraftMaterials)
             });
         }
 
@@ -244,6 +259,17 @@ namespace DataSourceTool
                 return abilities.Select(a => a.Id).ToList();
 
             return null;
+        }
+
+        private MHArmory.ArmoryDataSource.DataStructures.CraftMaterial[] MakeCraftMaterials(IEnumerable<ICraftMaterial> craftMaterials)
+        {
+            return craftMaterials
+                .Select(c => new MHArmory.ArmoryDataSource.DataStructures.CraftMaterial
+                {
+                    Id = c.LocalizedItem.Id,
+                    Quantity = c.Quantity
+                })
+                .ToArray();
         }
     }
 }

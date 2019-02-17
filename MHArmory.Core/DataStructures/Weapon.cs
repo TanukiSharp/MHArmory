@@ -44,6 +44,7 @@ namespace MHArmory.Core.DataStructures
         public int[] Slots { get; }
         public IAbility[] Abilities { get; }
         public IEvent Event { get; }
+        public ICraftMaterial[] CraftMaterials { get; }
 
         public Weapon(int id, WeaponType weaponType, int[] slots, IAbility[] abilities, IEvent evt)
         {

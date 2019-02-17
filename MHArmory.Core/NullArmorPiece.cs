@@ -28,6 +28,7 @@ namespace MHArmory.Core
         public int[] Slots { get; } = new int[0];
         public IEvent Event { get; } = null;
         public IAbility[] Abilities { get; } = new IAbility[0];
+        public ICraftMaterial[] CraftMaterials { get; } = new ICraftMaterial[0];
 
         public NullArmorPiece(EquipmentType type)
         {

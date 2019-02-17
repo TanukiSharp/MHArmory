@@ -327,6 +327,13 @@
         </StackPanel>
     </DataTemplate>
 
+    <DataTemplate x:Key="CraftMaterialView">
+        <TextBlock>
+            <Run Text="{mxt:Localization LocalizedItem.Values}"/>
+            <Run Text="{Binding Quantity, Mode=OneTime, StringFormat='x{0}'}"/>
+        </TextBlock>
+    </DataTemplate>
+
     <DataTemplate x:Key="ArmorPieceView">
         <Border CornerRadius="2" BorderThickness="1" BorderBrush="#30000000" Background="#10000000" Margin="2" Padding="4" HorizontalAlignment="Stretch">
             <Grid>
@@ -336,6 +343,10 @@
                     <ColumnDefinition Width="Auto" SharedSizeGroup="C"/>
                     <ColumnDefinition Width="Auto"/>
                 </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
                 <StackPanel Orientation="Vertical">
                     <StackPanel Grid.Column="0" Orientation="Vertical" Margin="0 0 8 0">
                         <StackPanel Orientation="Horizontal" Grid.IsSharedSizeScope="True">
@@ -373,11 +384,24 @@
                 </StackPanel>
                 <ItemsControl Grid.Column="2" ItemsSource="{Binding Abilities, Mode=OneTime, Converter={StaticResource AbilityToViewModelValueConverter}}" ItemTemplate="{StaticResource StandaloneAbilityView}" Margin="0 0 8 0" Focusable="False"/>
                 <ItemsControl Grid.Column="3" ItemsSource="{Binding ArmorSetSkills, Mode=OneTime}" ItemTemplate="{StaticResource ArmorSetSkillView}" Margin="0 0 8 0" Focusable="False"/>
+                <ItemsControl x:Name="craftMaterials" Grid.Row="1" Grid.ColumnSpan="3" ItemsSource="{Binding CraftMaterials, Mode=OneTime}" Visibility="Collapsed">
+                    <ItemsControl.ItemTemplate>
+                        <DataTemplate>
+                            <ContentControl Content="{Binding}" ContentTemplate="{StaticResource CraftMaterialView}" Margin="1 1 18 1"/>
+                        </DataTemplate>
+                    </ItemsControl.ItemTemplate>
+                    <ItemsControl.ItemsPanel>
+                        <ItemsPanelTemplate>
+                            <StackPanel Orientation="Horizontal"/>
+                        </ItemsPanelTemplate>
+                    </ItemsControl.ItemsPanel>
+                </ItemsControl>
             </Grid>
         </Border>
         <DataTemplate.Triggers>
             <DataTrigger Binding="{Binding ShowIsPossessed, Mode=OneTime}" Value="True">
                 <Setter TargetName="possessedIcon" Property="Visibility" Value="Visible"/>
+                <Setter TargetName="craftMaterials" Property="Visibility" Value="Visible"/>
             </DataTrigger>
             <DataTrigger Binding="{Binding IsPossessed}" Value="False">
                 <Setter TargetName="possessedIcon" Property="Opacity" Value="0.1"/>
@@ -521,6 +545,9 @@
                     <ItemsControl ItemsSource="{Binding ArmorPieces, Mode=OneTime}" ItemTemplate="{StaticResource ArmorPieceView}" Focusable="False"/>
                     <ContentControl Content="{Binding Charm, Mode=OneTime}" ContentTemplate="{StaticResource ArmorPieceView}" Focusable="False"/>
                 </StackPanel>
+                <Border DockPanel.Dock="Right" Visibility="{Binding Parent.ShowCraftMaterials, Converter={StaticResource CollapsedVisibilityValueConverter}}" Style="{StaticResource ThinResultBorderStyle}" HorizontalAlignment="Right">
+                    <ItemsControl ItemsSource="{Binding CraftMaterials}" ItemTemplate="{StaticResource CraftMaterialView}" Focusable="False"/>
+                </Border>
                 <Border Style="{StaticResource ThinResultBorderStyle}" HorizontalAlignment="Stretch">
                     <ContentControl Content="{Binding}" ContentTemplate="{StaticResource SearchResultArmorSetDetailsView}" Focusable="False"/>
                 </Border>
@@ -991,7 +1018,7 @@
                     </ControlTemplate>
                 </ItemsControl.Template>
             </ItemsControl>
-            <ItemsControl Grid.Column="1" ItemsSource="{Binding SelectedGroup.Items, Mode=OneWay}" ItemTemplate="{StaticResource SearchResultArmorSetView}" ScrollViewer.VerticalScrollBarVisibility="Visible" ClipToBounds="True" Padding="0 0 0 -22" Focusable="False" VirtualizingPanel.IsVirtualizing="True" VirtualizingPanel.ScrollUnit="Pixel" ScrollViewer.CanContentScroll="True">
+            <ItemsControl Grid.Column="1" ItemsSource="{Binding SelectedGroup.Items, Mode=OneWay}" ItemTemplate="{StaticResource SearchResultArmorSetView}" ScrollViewer.VerticalScrollBarVisibility="Visible" ScrollViewer.HorizontalScrollBarVisibility="Auto" ClipToBounds="True" Padding="0 0 0 -22" Focusable="False" VirtualizingPanel.IsVirtualizing="True" VirtualizingPanel.ScrollUnit="Pixel" ScrollViewer.CanContentScroll="True">
                 <ItemsControl.ItemsPanel>
                     <ItemsPanelTemplate>
                         <VirtualizingStackPanel/>
@@ -1009,7 +1036,7 @@
     </DataTemplate>
 
     <DataTemplate x:Key="UngroupedSearchResultsView">
-        <ItemsControl ItemsSource="{Binding Mode=OneTime}" ItemTemplate="{StaticResource SearchResultArmorSetView}" ScrollViewer.VerticalScrollBarVisibility="Visible" ClipToBounds="True" Padding="0 0 0 -22" Focusable="False" VirtualizingPanel.IsVirtualizing="True" VirtualizingPanel.ScrollUnit="Pixel" ScrollViewer.CanContentScroll="True">
+        <ItemsControl ItemsSource="{Binding Mode=OneTime}" ItemTemplate="{StaticResource SearchResultArmorSetView}" ScrollViewer.VerticalScrollBarVisibility="Visible" ScrollViewer.HorizontalScrollBarVisibility="Auto" ClipToBounds="True" Padding="0 0 0 -22" Focusable="False" VirtualizingPanel.IsVirtualizing="True" VirtualizingPanel.ScrollUnit="Pixel" ScrollViewer.CanContentScroll="True">
             <ItemsControl.ItemsPanel>
                 <ItemsPanelTemplate>
                     <VirtualizingStackPanel/>
@@ -1029,24 +1056,27 @@
         <Grid>
             <TextBlock x:Name="loading" Text="Loading..." HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="24" Foreground="DarkGray" FontWeight="Bold" Visibility="{Binding IsDataLoading, Converter={StaticResource CollapsedVisibilityValueConverter}, Mode=OneWay}"/>
             <DockPanel LastChildFill="True">
-                <StackPanel DockPanel.Dock="Top" Orientation="Horizontal" HorizontalAlignment="Right" Margin="0 4 0 4">
-                    <Button Content="?" MinWidth="20" Margin="2 2 6 2" Padding="2" VerticalAlignment="Center" Command="{x:Static local:RoutedCommands.OpenIntegratedHelp}" CommandParameter="Grouping" bhv:ToolTipEx.Content="Show help about grouping"/>
-                    <TextBlock Text="Grouping: " VerticalAlignment="Center"/>
-                    <ItemsControl ItemsSource="{Binding GroupFlags, Mode=OneTime}" VerticalAlignment="Center" Focusable="False">
-                        <ItemsControl.ItemTemplate>
-                            <DataTemplate>
-                                <CheckBox IsChecked="{Binding IsSet}" VerticalContentAlignment="Center" Margin="2">
-                                    <TextBlock Text="{Binding Name, Mode=OneTime}" Margin="2"/>
-                                </CheckBox>
-                            </DataTemplate>
-                        </ItemsControl.ItemTemplate>
-                        <ItemsControl.ItemsPanel>
-                            <ItemsPanelTemplate>
-                                <StackPanel Orientation="Horizontal"/>
-                            </ItemsPanelTemplate>
-                        </ItemsControl.ItemsPanel>
-                    </ItemsControl>
-                </StackPanel>
+                <DockPanel DockPanel.Dock="Top">
+                    <CheckBox DockPanel.Dock="Left" Content="Show craft materials" IsChecked="{Binding ShowCraftMaterials}" VerticalAlignment="Center"/>
+                    <StackPanel DockPanel.Dock="Right" Orientation="Horizontal" Margin="0 4 0 4" HorizontalAlignment="Right" VerticalAlignment="Center">
+                        <Button Content="?" MinWidth="20" Margin="2 2 6 2" Padding="2" VerticalAlignment="Center" Command="{x:Static local:RoutedCommands.OpenIntegratedHelp}" CommandParameter="Grouping" bhv:ToolTipEx.Content="Show help about grouping"/>
+                        <TextBlock Text="Grouping: " VerticalAlignment="Center"/>
+                        <ItemsControl ItemsSource="{Binding GroupFlags, Mode=OneTime}" VerticalAlignment="Center" Focusable="False">
+                            <ItemsControl.ItemTemplate>
+                                <DataTemplate>
+                                    <CheckBox IsChecked="{Binding IsSet}" VerticalContentAlignment="Center" Margin="2">
+                                        <TextBlock Text="{Binding Name, Mode=OneTime}" Margin="2"/>
+                                    </CheckBox>
+                                </DataTemplate>
+                            </ItemsControl.ItemTemplate>
+                            <ItemsControl.ItemsPanel>
+                                <ItemsPanelTemplate>
+                                    <StackPanel Orientation="Horizontal"/>
+                                </ItemsPanelTemplate>
+                            </ItemsControl.ItemsPanel>
+                        </ItemsControl>
+                    </StackPanel>
+                </DockPanel>
                 <Grid Visibility="{Binding IsDataLoaded, Converter={StaticResource CollapsedVisibilityValueConverter}, Mode=OneWay}">
                     <ContentControl x:Name="grouped" Content="{Binding Mode=OneWay}" ContentTemplate="{StaticResource GroupedSearchResultsView}" Focusable="False" Visibility="Hidden"/>
                     <ContentControl x:Name="ungrouped" Content="{Binding UngroupedFoundArmorSets, Mode=OneWay}" ContentTemplate="{StaticResource UngroupedSearchResultsView}" Focusable="False"/>

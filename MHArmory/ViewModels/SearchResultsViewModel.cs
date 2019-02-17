@@ -7,6 +7,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Input;
 using System.Windows.Threading;
+using MHArmory.Configurations;
 using MHArmory.Core.WPF;
 using MHArmory.Search.Contracts;
 
@@ -28,6 +29,20 @@ namespace MHArmory.ViewModels
         {
             get { return isDataLoaded; }
             set { SetValue(ref isDataLoaded, value); }
+        }
+
+        private bool showCraftMaterials;
+        public bool ShowCraftMaterials
+        {
+            get { return showCraftMaterials; }
+            set
+            {
+                if (SetValue(ref showCraftMaterials, value))
+                {
+                    GlobalData.Instance.Configuration.View.ShowCraftMaterials = showCraftMaterials;
+                    ConfigurationManager.Save(GlobalData.Instance.Configuration);
+                }
+            }
         }
 
         public EnumFlagViewModel<SearchResultsGrouping>[] GroupFlags { get; }
@@ -113,6 +128,8 @@ namespace MHArmory.ViewModels
         public SearchResultsViewModel(RootViewModel root)
         {
             this.root = root;
+
+            showCraftMaterials = GlobalData.Instance.Configuration.View.ShowCraftMaterials;
 
             SearchArmorSetsCommand = new AnonymousCommand(SearchArmorSets);
             CancelArmorSetsSearchCommand = new AnonymousCommand(OnCancelArmorSetsSearch);

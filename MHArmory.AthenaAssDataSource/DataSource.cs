@@ -25,6 +25,7 @@ namespace MHArmory.AthenaAssDataSource
         public const string SetSkillsFilename = "set_skills.txt";
         public const string AbilitiesDescriptionsFilename = "skill_descriptions.txt";
         public const string CharmsFilename = "charms.txt";
+        public const string ComponentsFilename = "components.txt";
         public const string JewelsFilename = "decorations.txt";
         public const string EventsFilename = "events.txt";
         public const string EventNamesFilename = "Languages/English/events.txt";
@@ -140,6 +141,7 @@ namespace MHArmory.AthenaAssDataSource
 
         private void LoadData()
         {
+            LoadCraftMaterials();
             LoadSkills();
             LoadArmorSetSkills();
             LoadJewels();
@@ -149,6 +151,36 @@ namespace MHArmory.AthenaAssDataSource
 
             string filename = Path.Combine(AppContext.BaseDirectory, "ass_path.txt");
             File.WriteAllText(filename, dataFolderPath);
+        }
+
+        private void LoadCraftMaterials()
+        {
+            string componentsFilePath = Path.Combine(dataFolderPath, ComponentsFilename);
+
+            string[] allLines = File.ReadAllLines(componentsFilePath);
+
+            Dictionary<string, string[]> componentsLocalizations = LoadLocalizations(ComponentsFilename);
+
+            var localCraftMaterials = new List<ILocalizedItem>();
+
+            for (int i = 0; i < allLines.Length; i++)
+            {
+                string name = allLines[i];
+
+                if (string.IsNullOrWhiteSpace(name))
+                    continue;
+
+                int index = name.IndexOf(',');
+                if (index >= 0)
+                    name = name.Substring(0, index);
+
+                localCraftMaterials.Add(new LocalizedItem(
+                    i,
+                    componentsLocalizations.ToDictionary(kv1 => kv1.Key, kv2 => kv2.Value[i])
+                ));
+            }
+
+            nonTaskCraftMaterials = localCraftMaterials.ToArray();
         }
 
         private IList<ArmorSetSkillPrimitive> armorSetSkillPrimitives;
@@ -243,10 +275,11 @@ namespace MHArmory.AthenaAssDataSource
                     i - dataIndex,
                     level,
                     localizations.ToDictionary(kv1 => kv1.Key, kv2 => $"{kv2.Value[i - dataIndex]}"),
-                    0,
+                    charmPrimitive.Acquire,
                     noSlots,
-                    ParseAbilities(charmPrimitive),
-                    foundEvent
+                    ParseAbilities(in charmPrimitive),
+                    foundEvent,
+                    CreateCraftMaterials(in charmPrimitive)
                 ));
             }
 
@@ -458,6 +491,48 @@ namespace MHArmory.AthenaAssDataSource
             return (-1, -1);
         }
 
+        private ICraftMaterial CreateCraftMaterial(string name, int quantity)
+        {
+            ILocalizedItem localizedItem = nonTaskCraftMaterials.FirstOrDefault(x => Localization.GetDefault(x) == name);
+
+            if (localizedItem == null)
+                throw new FormatException($"Could not find '{name}' in craft materials localization");
+
+            return new CraftMaterial(localizedItem, quantity);
+        }
+
+        private ICraftMaterial[] CreateCraftMaterials(in ArmorPiecePrimitive primitive)
+        {
+            var result = new List<ICraftMaterial>();
+
+            if (string.IsNullOrWhiteSpace(primitive.Material1) == false)
+                result.Add(CreateCraftMaterial(primitive.Material1, primitive.Material1Points));
+            if (string.IsNullOrWhiteSpace(primitive.Material2) == false)
+                result.Add(CreateCraftMaterial(primitive.Material2, primitive.Material2Points));
+            if (string.IsNullOrWhiteSpace(primitive.Material3) == false)
+                result.Add(CreateCraftMaterial(primitive.Material3, primitive.Material3Points));
+            if (string.IsNullOrWhiteSpace(primitive.Material4) == false)
+                result.Add(CreateCraftMaterial(primitive.Material4, primitive.Material4Points));
+
+            return result.ToArray();
+        }
+
+        private ICraftMaterial[] CreateCraftMaterials(in CharmPrimitive primitive)
+        {
+            var result = new List<ICraftMaterial>();
+
+            if (string.IsNullOrWhiteSpace(primitive.Material1) == false)
+                result.Add(CreateCraftMaterial(primitive.Material1, primitive.Material1Points));
+            if (string.IsNullOrWhiteSpace(primitive.Material2) == false)
+                result.Add(CreateCraftMaterial(primitive.Material2, primitive.Material2Points));
+            if (string.IsNullOrWhiteSpace(primitive.Material3) == false)
+                result.Add(CreateCraftMaterial(primitive.Material3, primitive.Material3Points));
+            if (string.IsNullOrWhiteSpace(primitive.Material4) == false)
+                result.Add(CreateCraftMaterial(primitive.Material4, primitive.Material4Points));
+
+            return result.ToArray();
+        }
+
         private IEvent CreateEvent(string material1, string material2, string material3, string material4)
         {
             IEvent foundEventPrimitive = null;
@@ -501,7 +576,8 @@ namespace MHArmory.AthenaAssDataSource
                 CreateArmorPieceAttributes(primitive),
                 ArmorPieceAssets.Null,
                 null,
-                foundEventPrimitive
+                foundEventPrimitive,
+                CreateCraftMaterials(in primitive)
             );
         }
 
@@ -569,7 +645,7 @@ namespace MHArmory.AthenaAssDataSource
             return result.Where(x => x != null).ToArray();
         }
 
-        private IAbility[] ParseAbilities(CharmPrimitive primitive)
+        private IAbility[] ParseAbilities(in CharmPrimitive primitive)
         {
             var result = new List<IAbility>
             {
@@ -681,8 +757,17 @@ namespace MHArmory.AthenaAssDataSource
         private Task<IArmorPiece[]> armorPiecesTask;
         private Task<ICharm[]> charmsTask;
         private Task<IJewel[]> jewelsTask;
+        private ILocalizedItem[] nonTaskCraftMaterials;
         private ISkill[] nonTaskSkills;
         private IAbility[] abilities;
+
+        public Task<ILocalizedItem[]> GetCraftMaterials()
+        {
+            if (nonTaskCraftMaterials == null)
+                return Task.FromResult<ILocalizedItem[]>(null);
+
+            return Task.FromResult(nonTaskCraftMaterials);
+        }
 
         public Task<IArmorPiece[]> GetArmorPieces()
         {

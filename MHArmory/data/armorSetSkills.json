@@ -572,5 +572,54 @@
                 ]
             }
         ]
+    },
+    {
+        "id": 25,
+        "name": {
+            "EN": "Astera Blessing",
+            "FR": "Bénédiction d'Astera",
+            "JP": "アステラの祝福",
+            "IT": "Benedizione di Astera",
+            "DE": "Astera-Segen",
+            "KR": "아스테라의 축복",
+            "CN": "星辰的祝福"
+        },
+        "parts": [
+            {
+                "id": 32,
+                "requiredArmorPieceCount": 5,
+                "abilityIds": [
+                    332
+                ]
+            }
+        ]
+    },
+    {
+        "id": 26,
+        "name": {
+            "EN": "Witcher's Knowledge",
+            "FR": "Savoir du sorceleur",
+            "JP": "ウィッチャーの心得",
+            "IT": "Sapienza del witcher",
+            "DE": "Hexerwissen",
+            "KR": "위쳐의 마음가짐",
+            "CN": "Witcher's Knowledge"
+        },
+        "parts": [
+            {
+                "id": 33,
+                "requiredArmorPieceCount": 2,
+                "abilityIds": [
+                    335
+                ]
+            },
+            {
+                "id": 34,
+                "requiredArmorPieceCount": 4,
+                "abilityIds": [
+                    308
+                ]
+            }
+        ]
     }
 ]
