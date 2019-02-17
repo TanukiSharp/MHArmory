@@ -733,7 +733,7 @@
     <DataTemplate x:Key="ArmorSetsOverrideView">
         <Grid>
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*" SharedSizeGroup="A"/>
+                <ColumnDefinition Width="*" SharedSizeGroup="ArmorSetNameColumn"/>
                 <ColumnDefinition Width="Auto"/>
             </Grid.ColumnDefinitions>
             <TextBlock Grid.Column="0" Text="{mxt:Localization Name}" Padding="4" VerticalAlignment="Center" FontWeight="Bold" FontSize="14"/>
