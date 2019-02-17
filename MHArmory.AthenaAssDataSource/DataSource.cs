@@ -165,7 +165,7 @@ namespace MHArmory.AthenaAssDataSource
             if (headerIndex < 0)
             {
                 Console.WriteLine($"[ERROR] Failed to create data loader for decorations");
-                jewels = Task.FromResult<IJewel[]>(null);
+                jewelsTask = Task.FromResult<IJewel[]>(null);
                 return;
             }
 
@@ -186,14 +186,14 @@ namespace MHArmory.AthenaAssDataSource
 
                 localJewels.Add(new Jewel(
                     i - dataIndex,
-                    localizations.ToDictionary(kv1 => kv1.Key, kv2 => $"{kv2.Value[i - dataIndex]}"),
+                    localizations.ToDictionary(kv1 => kv1.Key, kv2 => kv2.Value[i - dataIndex]),
                     jewelPrimitive.Rarity,
                     jewelPrimitive.SlotSize,
                     new IAbility[] { ability }
                 ));
             }
 
-            jewels = Task.FromResult(localJewels.ToArray());
+            jewelsTask = Task.FromResult(localJewels.ToArray());
         }
 
         private void LoadCharms()
@@ -208,7 +208,7 @@ namespace MHArmory.AthenaAssDataSource
             if (headerIndex < 0)
             {
                 Console.WriteLine($"[ERROR] Failed to create data loader for charms");
-                charms = Task.FromResult<ICharm[]>(null);
+                charmsTask = Task.FromResult<ICharm[]>(null);
                 return;
             }
 
@@ -268,7 +268,7 @@ namespace MHArmory.AthenaAssDataSource
                 .Cast<ICharm>()
                 .ToArray();
 
-            charms = Task.FromResult(nonTaskCharms);
+            charmsTask = Task.FromResult(nonTaskCharms);
         }
 
         private (string charmName, int level) DetermineCharmNameAndLevel(string name)
@@ -679,8 +679,8 @@ namespace MHArmory.AthenaAssDataSource
         public string Description { get; } = "Athena's ASS";
 
         private Task<IArmorPiece[]> armorPiecesTask;
-        private Task<ICharm[]> charms;
-        private Task<IJewel[]> jewels;
+        private Task<ICharm[]> charmsTask;
+        private Task<IJewel[]> jewelsTask;
         private ISkill[] nonTaskSkills;
         private IAbility[] abilities;
 
@@ -694,18 +694,18 @@ namespace MHArmory.AthenaAssDataSource
 
         public Task<ICharm[]> GetCharms()
         {
-            if (charms == null)
+            if (charmsTask == null)
                 return Task.FromResult<ICharm[]>(null);
 
-            return charms;
+            return charmsTask;
         }
 
         public Task<IJewel[]> GetJewels()
         {
-            if (jewels == null)
+            if (jewelsTask == null)
                 return Task.FromResult<IJewel[]>(null);
 
-            return jewels;
+            return jewelsTask;
         }
 
         public Task<ISkill[]> GetSkills()

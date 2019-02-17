@@ -66,7 +66,7 @@ namespace MHArmory.AthenaAssDataSource
                     if (p.PropertyType == typeof(int))
                         members.Add(i, (x, y) => IntPropertySetter(p, x, y));
                     else
-                        members.Add(i, (x, y) =>StringPropertySetter(p, x, y));
+                        members.Add(i, (x, y) => StringPropertySetter(p, x, y));
                 }
             }
         }

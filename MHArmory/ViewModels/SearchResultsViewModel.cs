@@ -33,11 +33,6 @@ namespace MHArmory.ViewModels
         public EnumFlagViewModel<SearchResultsGrouping>[] GroupFlags { get; }
 
         private SearchResultsGrouping currentGroupingFlags = SearchResultsGrouping.None;
-            //SearchResultsGrouping.RequiredDecorations |
-            //SearchResultsGrouping.Defense |
-            //SearchResultsGrouping.SpareSlots |
-            //SearchResultsGrouping.AdditionalSKills |
-            //SearchResultsGrouping.Resistances;
 
         private IEnumerable<ArmorSetViewModel> rawFoundArmorSets;
 
