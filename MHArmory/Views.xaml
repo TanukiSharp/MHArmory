@@ -1292,7 +1292,23 @@
                 <ColumnDefinition Width="1.5*"/>
             </Grid.ColumnDefinitions>
 
-            <ListBox x:Name="lst" Grid.Column="0" SelectedItem="{Binding SelectedLoadout}" HorizontalContentAlignment="Stretch" ItemsSource="{Binding Loadouts, Mode=OneTime}" ItemTemplate="{StaticResource LoadoutView}"/>
+            <DockPanel Grid.Column="0">
+                <DockPanel DockPanel.Dock="Top">
+                    <TextBlock DockPanel.Dock="Left" Text="Filter: " VerticalAlignment="Center" HorizontalAlignment="Left"/>
+                    <TextBox x:Name="filter" Text="{Binding SearchText, UpdateSourceTrigger=PropertyChanged}" Margin="2" Padding="3" VerticalAlignment="Center"/>
+                </DockPanel>
+                <ListBox x:Name="lst" SelectedItem="{Binding SelectedLoadout}" HorizontalContentAlignment="Stretch" ItemsSource="{Binding Loadouts, Mode=OneTime}" ItemTemplate="{StaticResource LoadoutView}" Margin="1">
+                    <ListBox.ItemContainerStyle>
+                        <Style TargetType="{x:Type ListBoxItem}">
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding IsVisible}" Value="False">
+                                    <Setter Property="Visibility" Value="Collapsed"/>
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </ListBox.ItemContainerStyle>
+                </ListBox>
+            </DockPanel>
 
             <GridSplitter Grid.Column="1" HorizontalAlignment="Stretch" Focusable="False"/>
 
@@ -1314,7 +1330,7 @@
         <DataTemplate.Triggers>
             <DataTrigger Binding="{Binding IsManageMode, Mode=OneTime}" Value="False">
                 <Setter TargetName="lst" Property="bhv:DoubleClickBehavior.Command" Value="{Binding AcceptCommand}"/>
-                <Setter TargetName="lst" Property="bhv:FocusOnLoadBehavior.IsAttached" Value="True"/>
+                <Setter TargetName="filter" Property="bhv:FocusOnLoadBehavior.IsAttached" Value="True"/>
             </DataTrigger>
             <!--<DataTrigger Binding="{Binding IsManageMode, Mode=OneTime}" Value="True">
                 <Setter TargetName="lst" Property="ItemContainerStyle" Value="{StaticResource NoSelectionItemContainerStyle}"/>
