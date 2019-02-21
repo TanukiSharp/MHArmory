@@ -677,6 +677,9 @@
             <ItemsControl x:Name="lst" Grid.Column="2" ItemsSource="{Binding Abilities, Mode=OneTime}" ItemTemplate="{StaticResource SkillNameAbilityView}" VerticalAlignment="Top" Padding="4" Focusable="False"/>
         </Grid>
         <DataTemplate.Triggers>
+            <DataTrigger Binding="{Binding HasAllJewels, Mode=OneWay}" Value="True">
+                <Setter TargetName="lst" Property="TextBlock.Foreground" Value="Blue"/>
+            </DataTrigger>
             <DataTrigger Binding="{Binding HasTooManyJewels, Mode=OneWay}" Value="True">
                 <Setter TargetName="lst" Property="TextBlock.Foreground" Value="DarkOrange"/>
             </DataTrigger>
