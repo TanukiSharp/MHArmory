@@ -667,7 +667,7 @@
             <CheckBox Grid.Column="0" IsChecked="{Binding IsOverriding}" Padding="4" VerticalAlignment="Stretch" VerticalContentAlignment="Center" bhv:ToolTipEx.Content="Check to override default jewel availability">
                 <StackPanel Orientation="Horizontal">
                     <TextBlock Text="{mxt:Localization Name}" VerticalAlignment="Center" Margin="0 0 4 0"/>
-                    <Image Source="{Binding SlotSize, Converter={StaticResource SlotToImageSourceValueConverter}, ConverterParameter=24, Mode=OneTime}" VerticalAlignment="Center" bhv:ToolTipEx.Content="{Binding Converter={StaticResource SlotSizeToolTipValueConverter}, Mode=OneTime}" Width="24" Height="24" SnapsToDevicePixels="True"/>
+                    <Image Source="{Binding SlotSize, Converter={StaticResource SlotToImageSourceValueConverter}, ConverterParameter=24, Mode=OneTime}" VerticalAlignment="Center" bhv:ToolTipEx.Content="{Binding SlotSize, Converter={StaticResource SlotSizeToolTipValueConverter}, Mode=OneTime}" Width="24" Height="24" SnapsToDevicePixels="True"/>
                 </StackPanel>
             </CheckBox>
             <StackPanel Grid.Column="1" Orientation="Horizontal" VerticalAlignment="Top" Margin="4">
