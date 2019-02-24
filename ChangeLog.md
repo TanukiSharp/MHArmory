@@ -1,5 +1,14 @@
 # Change log
 
+## 0.0.9.4 (2019/02/24)
+
+- Added craft materials to equipment<br/>
+    ![Craft materials](docs/misc/changelog_0.0.9.4_craft_materials.png)
+- Added a filter box to the skill loadouts window<br/>
+    ![Skill loadouts filtering](docs/misc/changelog_0.0.9.4_skill_loadouts_filtering.png)
+- In decoration override window, when decorations you own make an amount of skill points exceeding the skill max level, it is displayed in orange. Now additionally, if the amount is equal, it is displayed in blue.
+- Minor bug fixes
+
 ## 0.0.9.3 (2019/02/09)
 
 - Fixed decorations and additional skills ordering in the search results (now it is consistent)
