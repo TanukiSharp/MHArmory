@@ -341,6 +341,7 @@ namespace MHArmory.ViewModels
             reusableEquipmentArray[5] = charm;
 
             craftMaterials = reusableEquipmentArray
+                .Where(x => x != null)
                 .SelectMany(x => x.CraftMaterials)
                 .GroupBy(x => x.LocalizedItem)
                 .Select(g => (ICraftMaterial)new CraftMaterial(g.Key, g.Sum(x => x.Quantity)))
