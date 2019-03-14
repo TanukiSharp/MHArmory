@@ -8298,8 +8298,8 @@
         ],
         "defense": {
             "base": 64,
-            "max": 70,
-            "augmented": 84
+            "max": 76,
+            "augmented": 90
         },
         "resistances": {
             "fire": 1,
