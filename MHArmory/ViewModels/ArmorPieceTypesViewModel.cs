@@ -83,8 +83,12 @@ namespace MHArmory.ViewModels
         public ICommand InverseSelectionCommand { get; }
         public ICommand ResetSelectionCommand { get; }
 
-        public ArmorPieceTypesViewModel(EquipmentType type, IEnumerable<ISolverDataEquipmentModel> equipments)
+        private readonly RootViewModel root;
+
+        public ArmorPieceTypesViewModel(RootViewModel root, EquipmentType type, IEnumerable<ISolverDataEquipmentModel> equipments)
         {
+            this.root = root;
+
             Type = type;
             Equipments = equipments
                 .OrderBy(x => x.Equipment.Id)
@@ -115,33 +119,79 @@ namespace MHArmory.ViewModels
             }
         }
 
+        private bool isInBatch;
+
         private void UpdateSelectedCount()
         {
+            if (isInBatch)
+                return;
+
             SelectedCount = Equipments.Count(x => x.IsSelected);
+            root.UpdateMetrics();
         }
 
         private void OnSelectAll(object parameter)
         {
-            foreach (AdvancedSearchEquipment x in Equipments.Where(x => x.IsVisible))
-                x.IsSelected = true;
+            isInBatch = true;
+
+            try
+            {
+                foreach (AdvancedSearchEquipment x in Equipments.Where(x => x.IsVisible))
+                    x.IsSelected = true;
+            }
+            finally
+            {
+                isInBatch = false;
+                UpdateSelectedCount();
+            }
         }
 
         private void OnUnselectAll(object parameter)
         {
-            foreach (AdvancedSearchEquipment x in Equipments.Where(x => x.IsVisible))
+            isInBatch = true;
+
+            try
+            {
+                foreach (AdvancedSearchEquipment x in Equipments.Where(x => x.IsVisible))
                 x.IsSelected = false;
+            }
+            finally
+            {
+                isInBatch = false;
+                UpdateSelectedCount();
+            }
         }
 
         private void OnInverseSelection(object parameter)
         {
-            foreach (AdvancedSearchEquipment x in Equipments.Where(x => x.IsVisible))
+            isInBatch = true;
+
+            try
+            {
+                foreach (AdvancedSearchEquipment x in Equipments.Where(x => x.IsVisible))
                 x.IsSelected = !x.IsSelected;
+            }
+            finally
+            {
+                isInBatch = false;
+                UpdateSelectedCount();
+            }
         }
 
         private void OnResetSelection(object parameter)
         {
-            foreach (AdvancedSearchEquipment x in Equipments.Where(x => x.IsVisible))
+            isInBatch = true;
+
+            try
+            {
+                foreach (AdvancedSearchEquipment x in Equipments.Where(x => x.IsVisible))
                 x.RestoreOriginalSelection();
+            }
+            finally
+            {
+                isInBatch = false;
+                UpdateSelectedCount();
+            }
         }
     }
 }
