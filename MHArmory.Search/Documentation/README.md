@@ -3,8 +3,8 @@
 ## Equipment
 
 The five armor pieces (helm, chest, arms, waist, legs) are categorized as *armor pieces*. The charm is not an armor piece.<br/>
-The charm is categorized as *charm level* (explanation bellow).
-Armor pieces and charm are categorized as *equipment*`*.
+The charm is categorized as *charm level* (explanation bellow).<br/>
+Armor pieces and charm are categorized as *equipment*.
 
 A simpler hierarchical view is as follow:
 
@@ -21,6 +21,8 @@ A simpler hierarchical view is as follow:
 
 A charm level (represented by the `ICharmLevel` interface) is what you may actually call a charm in the game. A charm `ICharm` represents a charm type, for example the *Attack Charm*. An `ICharmLevel` is a specific charm of this type, for example the *Attack Charm I*, *Attack Charm II* or *Attack Charm III*.
 
+My apologize for this being confusing.
+
 ## Skill
 
 A skill (represented by the `ISkill` interface) is actually a general skill type, for example *Attack Boost*, and a specific level of this skill is called an ability (represented by the `IAbility` interface), for example *Attack Boost level 2* or *Attack Boost level 3*.
@@ -36,17 +38,17 @@ Before implementing a solver, it is important to understand how a classic solver
 
 Note that all solvers do not necessarily work the same way, the implementation is entirely up to you.
 
-The explanations in this document are given based on the default implementation, which is a naïve brute-force solving, consisting of a function that tells whether a given combination or parameters is valid or not, and then testing all the combination against that function.
+The explanations in this document are given based on the default implementation, which is a naive brute-force solving, consisting of a function that tells whether a given combination of parameters is valid or not, and then testing all the combinations against that function.
 
 In such a solver, two aspects are important.
 1. The test function must be as fast as possible.
 2. The least combinations possible must be tested.
 
-The point 2 is actually the most important, because the amount of combination grows exponentially with the amount of equipment involved.
+The point 2 is actually the most important, because the amount of combinations grows exponentially with the amount of equipment involved.
 
-To give an example, with the average of 15 armor pieces per category (15 helms, 15 chests, etc...) and 5 charms, it makes 3'796'875 combinations to test.
+To give an example, with the average case where about 15 armor pieces per category (15 helms, 15 chests, etc...) and 5 charms are elected, it makes 3'796'875 combinations to test.
 
-So because all combinations have to be tested, it is very important to minimize the amount of equipment that takes place in the solving, in order to minimize the amount of combination to test.
+So because all combinations have to be tested, it is very important to minimize the amount of equipment that take place in the solving, in order to minimize the amount of combinations to test.
 
 Classically, a solver works in 3 phases:
 
@@ -58,7 +60,9 @@ This phase removes all equipment and decorations that do not match any desired s
 
 This phase is actually the most complicated one. Its role is to mark which equipment will really be involved in the search.
 
-The difference with the phase 1 is that phase 1 removes what is absolutely useless. Phase 2 does not remove anything, it simply marks the equipment that will be used in the solving. This let's the user tweak which equipment he or she want to still use, or remove anyway, through the `Advanced search` window.
+The difference with the phase 1 is that phase 1 removes equipment, whereas phase 2 does not remove anything, it simply marks the equipment that will really be used in the solving. It means that is suggests not to use some equipment, or to prefer some over some others.
+
+This let's the user tweak which equipment he or she wants to still use, or remove anyway, through the `Advanced search` window.
 
 Phases 1 and 2 occur during input selection, which are:
 - Skill selection
@@ -72,7 +76,7 @@ Phases 1 and 2 constitute what is called the **solver data**, which will be the 
 
 ## Phase 3 - Resolution
 
-This phase will construct a collection of combinations of equipment to test, based on election done in phase 2, and naively test all combinations, keeping the ones that satisfy the user's skills selection.
+This phase will construct a collection of combinations of equipment and jewels to test, based on election done in phase 2, and naively test all combinations, keeping the ones that satisfy the user's desired skills selection.
 
 The test function is complicated to implement as well, but very mechanical, so one just has to follow many logical rules in order to get a complex test function.
 
@@ -80,9 +84,9 @@ The test function is complicated to implement as well, but very mechanical, so o
 
 It is important to understand that the 3 phases of the default algorithm are not necessarily what must be done.
 
-For example, the phase 1 removes what matches absolutely no desired skills, but you could still keep some matching nothing for a cosmetic purpose or any other reason that would make sense in your solver's context.
+For example, the phase 1 removes what matches absolutely no desired skills, but you could still want to keep some equipment matching nothing, for a cosmetic purpose or any other reason that would make sense in your solver's context.
 
-Your phase 2 could keep all equipment if you have a crazy blazing ultra fast test function, why bother electing.
+Your phase 2 could keep all equipment if you have a crazy blazing ultra fast test function. In such a case, why bother electing.
 
 The only rules you have to respect are:
 1. Creation of the solver data *(happens before the search and let the user tweaks stuffs)*
@@ -96,6 +100,8 @@ The rule 2 is the phase 3.
 Here the term solver is used to describe both the solver data and the solver.
 
 All types you will need in order to implement a custom solver are located in assemblies `MHArmory.Search.Contracts` and `MHArmory.Core`, and you mainly have to implement two interfaces, `ISolverData` and `ISolver`. Your extension also have to inherit from the `IExtension` interface.
+
+For a logical understanding purpose, the `ISolver` interface is described before the `ISolverData` interface. Note that in the timeline of events, and even in construction of all the bricks, the `ISolverData` comes first, since it ends up being the input of the `ISolver`.
 
 ## Fundamental types
 
@@ -113,13 +119,13 @@ public interface IExtension
 }
 ```
 
-- `Name`: The name of the extension. It doesn't have to be unique but it is better to make it a bit verbose in order to avoid confusion with possible other extensions.
+- `Name`: The name of the extension. It has to be unique among other extension included in **Armory**. It is recommended to make it a bit verbose in order to avoid confusion with possible other extensions.
 
 - `Author`: The name of the extension author. Either your real name, or the name of your GitHub account, or a pseudonym, up to you.
 
 - `Description`: The description of the extension, can be used to describe the nature of the algorithm.
 
-- `Version`: This property is purely descriptive and no rules are enforce. Simply avoid going down or changing things without incrementing the version. Don't be afraid to reach crazy high version number if needed.
+- `Version`: This property is purely descriptive and no rules are enforced. Simply avoid going down or changing things without incrementing the version. Don't be afraid to reach crazy high version number if needed.
 
 ### ISolver
 
@@ -138,11 +144,39 @@ public interface ISolver : IExtension
 ```
 
 - `SearchProgress` method<br/>
-    This event is used to report progress from within the solver when running. This event can be raised from any thread.
+    This event is used to report progress from within the solver when running. This event can be raised from any thread. The value to raise has to be in range 0.0 to 1.0 included.
 
 - `SearchArmorSets` method<br/>
     This method receives the solver data, and a cancellation token that indicates the algorithm when to stop because the user requested a cancellation.<br/>
     This method has to run asynchronously, and upon completion must return a collection of armor set search results.
+
+### ArmorSetSearchResult
+
+This structure is returned by the `SearchArmorSets` method of the `ISolver` interface, and is described as follow:
+
+```cs
+public struct ArmorSetSearchResult
+{
+    public static readonly ArmorSetSearchResult NoMatch =
+        new ArmorSetSearchResult { IsMatch = false };
+
+    public bool IsMatch;
+    public IList<IArmorPiece> ArmorPieces;
+    public ICharmLevel Charm;
+    public IList<ArmorSetJewelResult> Jewels;
+    public int[] SpareSlots;
+}
+```
+
+The static property `NoMatch` can be used by the test function to return when the input parameters do not satisfy the desired skills.
+
+The `IsMatch` property has to be set to true when a set or equipment and jewels satisfy the desired skills.
+
+When this is the case, the properties `ArmorPieces` and `Charm` have to be set, as well as the `Jewels` property. The latter is not a collection of `IJewel`, but a collection of `ArmorSetJewelResult`, which describes a jewel (represented by the `IJewel` interface) and an amount of this jewel.
+
+Finally, you have to set the `SpareSlots` property. This has to be a array of N elements where N is the maximum slot size. For the moment it's 3. The value at index `i` indicates the amount of spare slots of size `i + 1`.<br/>
+For example, the value at index 2 indicates the amount of spare slots of size 3.
+A value `[2, 0, 1]` indicates there are 2 spare slots of size 1, and 1 spare slots of size 3.
 
 ### ISolverData
 

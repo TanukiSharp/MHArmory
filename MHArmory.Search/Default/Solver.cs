@@ -12,7 +12,7 @@ using MHArmory.Search.Contracts;
 
 namespace MHArmory.Search.Default
 {
-    public class Solver : ISolver, IDisposable
+    public sealed class Solver : ISolver, IDisposable
     {
         private int currentCombinations;
         private double totalCombinations;
