@@ -14,7 +14,7 @@ namespace MHArmory.Core.DataStructures
 
     public class CharmLevel : ICharmLevel
     {
-        public CharmLevel(int id, int level, Dictionary<string, string> name, int rarity, int[] slots, IAbility[] abilities, IEvent evt)
+        public CharmLevel(int id, int level, Dictionary<string, string> name, int rarity, int[] slots, IAbility[] abilities, IEvent evt, ICraftMaterial[] craftMaterials)
         {
             Id = id;
             Level = level;
@@ -24,6 +24,7 @@ namespace MHArmory.Core.DataStructures
             Slots = slots;
             Abilities = abilities;
             Event = evt;
+            CraftMaterials = craftMaterials;
         }
 
         public ICharm Charm { get; private set; }
@@ -35,6 +36,7 @@ namespace MHArmory.Core.DataStructures
         public int[] Slots { get; }
         public IAbility[] Abilities { get; }
         public IEvent Event { get; }
+        public ICraftMaterial[] CraftMaterials { get; }
 
         public void UpdateCharm(ICharm charm)
         {

@@ -164,12 +164,9 @@ namespace MHArmory.ViewModels
         // This variable is set to a 0 or higher value if it is subject to be set by search text, -1 otherwise.
         private int searchTextSkillLevel = -1;
 
-        public void ApplySearchText(SearchStatement searchStatement)
+        public void ApplySearchText(SearchStatement searchStatement, int? numercModifier)
         {
             searchTextSkillLevel = -1;
-
-            foreach (AbilityViewModel x in Abilities)
-                x.IsHidden = false;
 
             if (searchStatement == null || searchStatement.IsEmpty)
             {
@@ -177,49 +174,31 @@ namespace MHArmory.ViewModels
                 return;
             }
 
-            string localizedSkillName = Localization.Get(skill.Name);
-
             IsVisible =
-                searchStatement.IsMatching(localizedSkillName) ||
+                searchStatement.IsMatching(Localization.Get(skill.Name)) ||
                 searchStatement.IsMatching(Localization.Get(skill.Description)) ||
                 skill.Abilities.Any(x => searchStatement.IsMatching(Localization.Get(x.Description))) ||
                 searchStatement.IsMatching(JewelsText);
 
-            if (IsVisible == false)
-                IsVisible = UpdateSearchTextSkillLevel(localizedSkillName, searchStatement);
-        }
-
-        private static readonly char[] whitespaces = new[] { ' ', '\t' };
-
-        private bool UpdateSearchTextSkillLevel(string localizedSkillName, SearchStatement searchStatement)
-        {
-            localizedSkillName = localizedSkillName.ToLower();
-
-            foreach (SearchInfo searchInfo in searchStatement.SearchInfo)
+            if (IsVisible)
             {
-                int lastSpace = searchInfo.Text.LastIndexOfAny(whitespaces);
-                if (lastSpace >= 0)
+                if (numercModifier.HasValue == false)
                 {
-                    string lastPart = searchInfo.Text.Substring(lastSpace);
-
-                    if (int.TryParse(lastPart, out int num) && num >= 0 && num <= skill.MaxLevel)
+                    foreach (AbilityViewModel x in Abilities)
+                        x.IsHidden = false;
+                }
+                else
+                {
+                    if (numercModifier.Value < 0 || numercModifier.Value > skill.MaxLevel)
+                        IsVisible = false;
+                    else
                     {
-                        string firstPart = searchInfo.Text.Substring(0, lastSpace).Trim();
-
-                        if (new SearchInfo(searchInfo.IsExact, firstPart).IsMatching(localizedSkillName))
-                        {
-                            searchTextSkillLevel = num;
-
-                            foreach (AbilityViewModel x in Abilities)
-                                x.IsHidden = x.Level != num;
-
-                            return true;
-                        }
+                        searchTextSkillLevel = numercModifier.Value;
+                        foreach (AbilityViewModel x in Abilities)
+                            x.IsHidden = x.Level != numercModifier.Value;
                     }
                 }
             }
-
-            return false;
         }
 
         public void ApplySearchTextSkillLevel()

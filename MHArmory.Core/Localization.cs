@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using MHArmory.Core.DataStructures;
 
 namespace MHArmory.Core
 {
@@ -72,6 +73,11 @@ namespace MHArmory.Core
             listeners.RemoveAll(x => x.OnEvent == null);
         }
 
+        public static string Get(ILocalizedItem localizations)
+        {
+            return Get(localizations.Values);
+        }
+
         public static string Get(Dictionary<string, string> localizations)
         {
             if (localizations == null)
@@ -86,6 +92,11 @@ namespace MHArmory.Core
                 return value;
 
             return null;
+        }
+
+        public static string GetDefault(ILocalizedItem localizations)
+        {
+            return GetDefault(localizations.Values);
         }
 
         public static string GetDefault(Dictionary<string, string> localizations)

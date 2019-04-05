@@ -8,6 +8,7 @@ namespace MHArmory.Core
     public interface IDataSource
     {
         string Description { get; }
+        Task<ILocalizedItem[]> GetCraftMaterials();
         Task<IArmorPiece[]> GetArmorPieces();
         Task<ISkill[]> GetSkills();
         Task<ICharm[]> GetCharms();

@@ -83,9 +83,31 @@ namespace MHArmory.ViewModels
             {
                 if (SetValue(ref searchText, value))
                 {
+                    OnSearchTextChanged();
                     if (Skills != null)
                         ComputeVisibility();
                 }
+            }
+        }
+
+        private string searchTextPayload;
+        private int? searchTextNumericModifier;
+
+        private static readonly char[] separators = new[] { ' ', '\t' };
+
+        private void OnSearchTextChanged()
+        {
+            searchTextPayload = searchText.Trim();
+            searchTextNumericModifier = null;
+
+            if (string.IsNullOrWhiteSpace(searchTextPayload))
+                return;
+
+            int lastSpace = searchTextPayload.LastIndexOfAny(separators);
+            if (lastSpace >= 0 && int.TryParse(searchTextPayload.Substring(lastSpace + 1), out int num))
+            {
+                searchTextNumericModifier = num;
+                searchTextPayload = searchTextPayload.Substring(0, lastSpace);
             }
         }
 
@@ -125,7 +147,7 @@ namespace MHArmory.ViewModels
                 }
             }
 
-            skillViewModel.ApplySearchText(SearchStatement.Create(searchText, GlobalData.Instance.Aliases));
+            skillViewModel.ApplySearchText(SearchStatement.Create(searchTextPayload, GlobalData.Instance.Aliases), searchTextNumericModifier);
         }
 
         private bool IsMatchingByCategory(SkillViewModel skillViewModel)

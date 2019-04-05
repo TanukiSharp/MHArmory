@@ -11,9 +11,27 @@
             "CN": "耐毒護石 I"
         },
         "level": 1,
-        "rarity": 0,
+        "rarity": 4,
         "abilityIds": [
             0
+        ],
+        "craftMaterials": [
+            {
+                "id": 390,
+                "quantity": 1
+            },
+            {
+                "id": 395,
+                "quantity": 2
+            },
+            {
+                "id": 143,
+                "quantity": 4
+            },
+            {
+                "id": 25,
+                "quantity": 1
+            }
         ]
     },
     {
@@ -28,9 +46,27 @@
             "CN": "耐毒護石 II"
         },
         "level": 2,
-        "rarity": 0,
+        "rarity": 6,
         "abilityIds": [
             1
+        ],
+        "craftMaterials": [
+            {
+                "id": 391,
+                "quantity": 2
+            },
+            {
+                "id": 396,
+                "quantity": 2
+            },
+            {
+                "id": 137,
+                "quantity": 3
+            },
+            {
+                "id": 457,
+                "quantity": 1
+            }
         ]
     },
     {
@@ -45,9 +81,27 @@
             "CN": "耐毒護石 III"
         },
         "level": 3,
-        "rarity": 0,
+        "rarity": 6,
         "abilityIds": [
             2
+        ],
+        "craftMaterials": [
+            {
+                "id": 412,
+                "quantity": 1
+            },
+            {
+                "id": 418,
+                "quantity": 2
+            },
+            {
+                "id": 154,
+                "quantity": 1
+            },
+            {
+                "id": 138,
+                "quantity": 1
+            }
         ]
     },
     {
@@ -62,9 +116,27 @@
             "CN": "攻擊護石 I"
         },
         "level": 1,
-        "rarity": 0,
+        "rarity": 3,
         "abilityIds": [
             38
+        ],
+        "craftMaterials": [
+            {
+                "id": 464,
+                "quantity": 4
+            },
+            {
+                "id": 82,
+                "quantity": 4
+            },
+            {
+                "id": 302,
+                "quantity": 1
+            },
+            {
+                "id": 25,
+                "quantity": 1
+            }
         ]
     },
     {
@@ -79,9 +151,27 @@
             "CN": "攻擊護石 II"
         },
         "level": 2,
-        "rarity": 0,
+        "rarity": 6,
         "abilityIds": [
             39
+        ],
+        "craftMaterials": [
+            {
+                "id": 397,
+                "quantity": 3
+            },
+            {
+                "id": 132,
+                "quantity": 1
+            },
+            {
+                "id": 349,
+                "quantity": 1
+            },
+            {
+                "id": 457,
+                "quantity": 1
+            }
         ]
     },
     {
@@ -96,9 +186,27 @@
             "CN": "攻擊護石 III"
         },
         "level": 3,
-        "rarity": 0,
+        "rarity": 8,
         "abilityIds": [
             40
+        ],
+        "craftMaterials": [
+            {
+                "id": 145,
+                "quantity": 2
+            },
+            {
+                "id": 222,
+                "quantity": 1
+            },
+            {
+                "id": 84,
+                "quantity": 2
+            },
+            {
+                "id": 138,
+                "quantity": 1
+            }
         ]
     },
     {
@@ -113,9 +221,27 @@
             "CN": "防禦護石 I"
         },
         "level": 1,
-        "rarity": 0,
+        "rarity": 4,
         "abilityIds": [
             45
+        ],
+        "craftMaterials": [
+            {
+                "id": 135,
+                "quantity": 4
+            },
+            {
+                "id": 313,
+                "quantity": 4
+            },
+            {
+                "id": 302,
+                "quantity": 1
+            },
+            {
+                "id": 25,
+                "quantity": 1
+            }
         ]
     },
     {
@@ -130,9 +256,27 @@
             "CN": "防禦護石 II"
         },
         "level": 2,
-        "rarity": 0,
+        "rarity": 6,
         "abilityIds": [
             46
+        ],
+        "craftMaterials": [
+            {
+                "id": 88,
+                "quantity": 6
+            },
+            {
+                "id": 135,
+                "quantity": 8
+            },
+            {
+                "id": 349,
+                "quantity": 1
+            },
+            {
+                "id": 457,
+                "quantity": 1
+            }
         ]
     },
     {
@@ -147,9 +291,27 @@
             "CN": "防禦護石 III"
         },
         "level": 3,
-        "rarity": 0,
+        "rarity": 6,
         "abilityIds": [
             47
+        ],
+        "craftMaterials": [
+            {
+                "id": 164,
+                "quantity": 6
+            },
+            {
+                "id": 88,
+                "quantity": 8
+            },
+            {
+                "id": 154,
+                "quantity": 1
+            },
+            {
+                "id": 138,
+                "quantity": 1
+            }
         ]
     },
     {
@@ -164,9 +326,27 @@
             "CN": "耐痹護石 I"
         },
         "level": 1,
-        "rarity": 0,
+        "rarity": 4,
         "abilityIds": [
             3
+        ],
+        "craftMaterials": [
+            {
+                "id": 195,
+                "quantity": 1
+            },
+            {
+                "id": 191,
+                "quantity": 2
+            },
+            {
+                "id": 528,
+                "quantity": 6
+            },
+            {
+                "id": 25,
+                "quantity": 1
+            }
         ]
     },
     {
@@ -181,9 +361,27 @@
             "CN": "耐痹護石 II"
         },
         "level": 2,
-        "rarity": 0,
+        "rarity": 6,
         "abilityIds": [
             4
+        ],
+        "craftMaterials": [
+            {
+                "id": 196,
+                "quantity": 2
+            },
+            {
+                "id": 363,
+                "quantity": 4
+            },
+            {
+                "id": 137,
+                "quantity": 3
+            },
+            {
+                "id": 457,
+                "quantity": 1
+            }
         ]
     },
     {
@@ -198,9 +396,27 @@
             "CN": "耐痹護石 III"
         },
         "level": 3,
-        "rarity": 0,
+        "rarity": 8,
         "abilityIds": [
             5
+        ],
+        "craftMaterials": [
+            {
+                "id": 472,
+                "quantity": 1
+            },
+            {
+                "id": 473,
+                "quantity": 2
+            },
+            {
+                "id": 154,
+                "quantity": 1
+            },
+            {
+                "id": 138,
+                "quantity": 1
+            }
         ]
     },
     {
@@ -215,9 +431,27 @@
             "CN": "耐眠護石 I"
         },
         "level": 1,
-        "rarity": 0,
+        "rarity": 4,
         "abilityIds": [
             6
+        ],
+        "craftMaterials": [
+            {
+                "id": 399,
+                "quantity": 1
+            },
+            {
+                "id": 401,
+                "quantity": 2
+            },
+            {
+                "id": 96,
+                "quantity": 3
+            },
+            {
+                "id": 25,
+                "quantity": 1
+            }
         ]
     },
     {
@@ -232,9 +466,27 @@
             "CN": "耐眠護石 II"
         },
         "level": 2,
-        "rarity": 0,
+        "rarity": 6,
         "abilityIds": [
             7
+        ],
+        "craftMaterials": [
+            {
+                "id": 400,
+                "quantity": 1
+            },
+            {
+                "id": 401,
+                "quantity": 3
+            },
+            {
+                "id": 137,
+                "quantity": 3
+            },
+            {
+                "id": 457,
+                "quantity": 1
+            }
         ]
     },
     {
@@ -249,9 +501,27 @@
             "CN": "耐眠護石 III"
         },
         "level": 3,
-        "rarity": 0,
+        "rarity": 6,
         "abilityIds": [
             8
+        ],
+        "craftMaterials": [
+            {
+                "id": 510,
+                "quantity": 1
+            },
+            {
+                "id": 508,
+                "quantity": 2
+            },
+            {
+                "id": 154,
+                "quantity": 1
+            },
+            {
+                "id": 138,
+                "quantity": 1
+            }
         ]
     },
     {
@@ -266,9 +536,27 @@
             "CN": "耐絶護石 I"
         },
         "level": 1,
-        "rarity": 0,
+        "rarity": 3,
         "abilityIds": [
             9
+        ],
+        "craftMaterials": [
+            {
+                "id": 502,
+                "quantity": 1
+            },
+            {
+                "id": 498,
+                "quantity": 2
+            },
+            {
+                "id": 96,
+                "quantity": 4
+            },
+            {
+                "id": 25,
+                "quantity": 1
+            }
         ]
     },
     {
@@ -283,9 +571,27 @@
             "CN": "耐絶護石 II"
         },
         "level": 2,
-        "rarity": 0,
+        "rarity": 6,
         "abilityIds": [
             10
+        ],
+        "craftMaterials": [
+            {
+                "id": 503,
+                "quantity": 2
+            },
+            {
+                "id": 499,
+                "quantity": 2
+            },
+            {
+                "id": 349,
+                "quantity": 1
+            },
+            {
+                "id": 457,
+                "quantity": 1
+            }
         ]
     },
     {
@@ -300,9 +606,27 @@
             "CN": "耐絶護石 III"
         },
         "level": 3,
-        "rarity": 0,
+        "rarity": 6,
         "abilityIds": [
             11
+        ],
+        "craftMaterials": [
+            {
+                "id": 74,
+                "quantity": 3
+            },
+            {
+                "id": 73,
+                "quantity": 2
+            },
+            {
+                "id": 84,
+                "quantity": 2
+            },
+            {
+                "id": 138,
+                "quantity": 1
+            }
         ]
     },
     {
@@ -317,9 +641,27 @@
             "CN": "防風護石 I"
         },
         "level": 1,
-        "rarity": 0,
+        "rarity": 3,
         "abilityIds": [
             27
+        ],
+        "craftMaterials": [
+            {
+                "id": 370,
+                "quantity": 3
+            },
+            {
+                "id": 369,
+                "quantity": 5
+            },
+            {
+                "id": 96,
+                "quantity": 3
+            },
+            {
+                "id": 25,
+                "quantity": 1
+            }
         ]
     },
     {
@@ -334,9 +676,27 @@
             "CN": "防風護石 II"
         },
         "level": 2,
-        "rarity": 0,
+        "rarity": 6,
         "abilityIds": [
             28
+        ],
+        "craftMaterials": [
+            {
+                "id": 371,
+                "quantity": 3
+            },
+            {
+                "id": 540,
+                "quantity": 2
+            },
+            {
+                "id": 137,
+                "quantity": 1
+            },
+            {
+                "id": 457,
+                "quantity": 1
+            }
         ]
     },
     {
@@ -351,9 +711,27 @@
             "CN": "防風護石 III"
         },
         "level": 3,
-        "rarity": 0,
+        "rarity": 6,
         "abilityIds": [
             29
+        ],
+        "craftMaterials": [
+            {
+                "id": 37,
+                "quantity": 3
+            },
+            {
+                "id": 412,
+                "quantity": 1
+            },
+            {
+                "id": 349,
+                "quantity": 1
+            },
+            {
+                "id": 138,
+                "quantity": 1
+            }
         ]
     },
     {
@@ -368,9 +746,27 @@
             "CN": "體力護石 I"
         },
         "level": 1,
-        "rarity": 0,
+        "rarity": 3,
         "abilityIds": [
             52
+        ],
+        "craftMaterials": [
+            {
+                "id": 421,
+                "quantity": 1
+            },
+            {
+                "id": 428,
+                "quantity": 3
+            },
+            {
+                "id": 143,
+                "quantity": 3
+            },
+            {
+                "id": 25,
+                "quantity": 1
+            }
         ]
     },
     {
@@ -385,9 +781,27 @@
             "CN": "體力護石 II"
         },
         "level": 2,
-        "rarity": 0,
+        "rarity": 6,
         "abilityIds": [
             53
+        ],
+        "craftMaterials": [
+            {
+                "id": 422,
+                "quantity": 1
+            },
+            {
+                "id": 426,
+                "quantity": 2
+            },
+            {
+                "id": 137,
+                "quantity": 3
+            },
+            {
+                "id": 457,
+                "quantity": 1
+            }
         ]
     },
     {
@@ -402,9 +816,27 @@
             "CN": "體力護石 III"
         },
         "level": 3,
-        "rarity": 0,
+        "rarity": 8,
         "abilityIds": [
             54
+        ],
+        "craftMaterials": [
+            {
+                "id": 339,
+                "quantity": 1
+            },
+            {
+                "id": 343,
+                "quantity": 2
+            },
+            {
+                "id": 84,
+                "quantity": 2
+            },
+            {
+                "id": 138,
+                "quantity": 1
+            }
         ]
     },
     {
@@ -419,9 +851,27 @@
             "CN": "治癒護石 I"
         },
         "level": 1,
-        "rarity": 0,
+        "rarity": 3,
         "abilityIds": [
             55
+        ],
+        "craftMaterials": [
+            {
+                "id": 421,
+                "quantity": 1
+            },
+            {
+                "id": 426,
+                "quantity": 2
+            },
+            {
+                "id": 143,
+                "quantity": 3
+            },
+            {
+                "id": 25,
+                "quantity": 1
+            }
         ]
     },
     {
@@ -436,9 +886,27 @@
             "CN": "治癒護石 II"
         },
         "level": 2,
-        "rarity": 0,
+        "rarity": 7,
         "abilityIds": [
             56
+        ],
+        "craftMaterials": [
+            {
+                "id": 375,
+                "quantity": 2
+            },
+            {
+                "id": 427,
+                "quantity": 1
+            },
+            {
+                "id": 349,
+                "quantity": 1
+            },
+            {
+                "id": 457,
+                "quantity": 1
+            }
         ]
     },
     {
@@ -453,9 +921,27 @@
             "CN": "治癒護石 III"
         },
         "level": 3,
-        "rarity": 0,
+        "rarity": 8,
         "abilityIds": [
             57
+        ],
+        "craftMaterials": [
+            {
+                "id": 339,
+                "quantity": 1
+            },
+            {
+                "id": 343,
+                "quantity": 2
+            },
+            {
+                "id": 84,
+                "quantity": 2
+            },
+            {
+                "id": 138,
+                "quantity": 1
+            }
         ]
     },
     {
@@ -470,9 +956,27 @@
             "CN": "耐火護石 I"
         },
         "level": 1,
-        "rarity": 0,
+        "rarity": 4,
         "abilityIds": [
             61
+        ],
+        "craftMaterials": [
+            {
+                "id": 17,
+                "quantity": 1
+            },
+            {
+                "id": 10,
+                "quantity": 2
+            },
+            {
+                "id": 528,
+                "quantity": 3
+            },
+            {
+                "id": 25,
+                "quantity": 1
+            }
         ]
     },
     {
@@ -487,9 +991,27 @@
             "CN": "耐火護石 II"
         },
         "level": 2,
-        "rarity": 0,
+        "rarity": 6,
         "abilityIds": [
             62
+        ],
+        "craftMaterials": [
+            {
+                "id": 12,
+                "quantity": 1
+            },
+            {
+                "id": 11,
+                "quantity": 2
+            },
+            {
+                "id": 143,
+                "quantity": 4
+            },
+            {
+                "id": 457,
+                "quantity": 1
+            }
         ]
     },
     {
@@ -504,9 +1026,27 @@
             "CN": "耐火護石 III"
         },
         "level": 3,
-        "rarity": 0,
+        "rarity": 8,
         "abilityIds": [
             63
+        ],
+        "craftMaterials": [
+            {
+                "id": 222,
+                "quantity": 1
+            },
+            {
+                "id": 412,
+                "quantity": 1
+            },
+            {
+                "id": 233,
+                "quantity": 3
+            },
+            {
+                "id": 138,
+                "quantity": 1
+            }
         ]
     },
     {
@@ -521,9 +1061,27 @@
             "CN": "耐水護石 I"
         },
         "level": 1,
-        "rarity": 0,
+        "rarity": 3,
         "abilityIds": [
             64
+        ],
+        "craftMaterials": [
+            {
+                "id": 243,
+                "quantity": 3
+            },
+            {
+                "id": 241,
+                "quantity": 3
+            },
+            {
+                "id": 143,
+                "quantity": 6
+            },
+            {
+                "id": 25,
+                "quantity": 1
+            }
         ]
     },
     {
@@ -538,9 +1096,27 @@
             "CN": "耐水護石 II"
         },
         "level": 2,
-        "rarity": 0,
+        "rarity": 6,
         "abilityIds": [
             65
+        ],
+        "craftMaterials": [
+            {
+                "id": 244,
+                "quantity": 3
+            },
+            {
+                "id": 242,
+                "quantity": 2
+            },
+            {
+                "id": 96,
+                "quantity": 4
+            },
+            {
+                "id": 457,
+                "quantity": 1
+            }
         ]
     },
     {
@@ -555,9 +1131,27 @@
             "CN": "耐水護石 III"
         },
         "level": 3,
-        "rarity": 0,
+        "rarity": 8,
         "abilityIds": [
             66
+        ],
+        "craftMaterials": [
+            {
+                "id": 222,
+                "quantity": 1
+            },
+            {
+                "id": 540,
+                "quantity": 1
+            },
+            {
+                "id": 492,
+                "quantity": 3
+            },
+            {
+                "id": 138,
+                "quantity": 1
+            }
         ]
     },
     {
@@ -572,9 +1166,27 @@
             "CN": "耐雷護石 I"
         },
         "level": 1,
-        "rarity": 0,
+        "rarity": 3,
         "abilityIds": [
             70
+        ],
+        "craftMaterials": [
+            {
+                "id": 485,
+                "quantity": 1
+            },
+            {
+                "id": 483,
+                "quantity": 2
+            },
+            {
+                "id": 5,
+                "quantity": 6
+            },
+            {
+                "id": 25,
+                "quantity": 1
+            }
         ]
     },
     {
@@ -589,9 +1201,27 @@
             "CN": "耐雷護石 II"
         },
         "level": 2,
-        "rarity": 0,
+        "rarity": 6,
         "abilityIds": [
             71
+        ],
+        "craftMaterials": [
+            {
+                "id": 486,
+                "quantity": 1
+            },
+            {
+                "id": 484,
+                "quantity": 2
+            },
+            {
+                "id": 143,
+                "quantity": 4
+            },
+            {
+                "id": 457,
+                "quantity": 1
+            }
         ]
     },
     {
@@ -606,9 +1236,27 @@
             "CN": "耐雷護石 III"
         },
         "level": 3,
-        "rarity": 0,
+        "rarity": 8,
         "abilityIds": [
             72
+        ],
+        "craftMaterials": [
+            {
+                "id": 222,
+                "quantity": 1
+            },
+            {
+                "id": 540,
+                "quantity": 1
+            },
+            {
+                "id": 479,
+                "quantity": 3
+            },
+            {
+                "id": 138,
+                "quantity": 1
+            }
         ]
     },
     {
@@ -623,9 +1271,27 @@
             "CN": "火炎護石 I"
         },
         "level": 1,
-        "rarity": 0,
+        "rarity": 4,
         "abilityIds": [
             79
+        ],
+        "craftMaterials": [
+            {
+                "id": 17,
+                "quantity": 1
+            },
+            {
+                "id": 10,
+                "quantity": 2
+            },
+            {
+                "id": 528,
+                "quantity": 3
+            },
+            {
+                "id": 25,
+                "quantity": 1
+            }
         ]
     },
     {
@@ -640,9 +1306,27 @@
             "CN": "火炎護石 II"
         },
         "level": 2,
-        "rarity": 0,
+        "rarity": 6,
         "abilityIds": [
             80
+        ],
+        "craftMaterials": [
+            {
+                "id": 285,
+                "quantity": 3
+            },
+            {
+                "id": 284,
+                "quantity": 2
+            },
+            {
+                "id": 143,
+                "quantity": 6
+            },
+            {
+                "id": 457,
+                "quantity": 1
+            }
         ]
     },
     {
@@ -657,9 +1341,27 @@
             "CN": "火炎護石 III"
         },
         "level": 3,
-        "rarity": 0,
+        "rarity": 8,
         "abilityIds": [
             81
+        ],
+        "craftMaterials": [
+            {
+                "id": 472,
+                "quantity": 1
+            },
+            {
+                "id": 473,
+                "quantity": 2
+            },
+            {
+                "id": 233,
+                "quantity": 3
+            },
+            {
+                "id": 138,
+                "quantity": 1
+            }
         ]
     },
     {
@@ -674,9 +1376,27 @@
             "CN": "流水護石 I"
         },
         "level": 1,
-        "rarity": 0,
+        "rarity": 3,
         "abilityIds": [
             84
+        ],
+        "craftMaterials": [
+            {
+                "id": 243,
+                "quantity": 2
+            },
+            {
+                "id": 241,
+                "quantity": 2
+            },
+            {
+                "id": 143,
+                "quantity": 3
+            },
+            {
+                "id": 25,
+                "quantity": 1
+            }
         ]
     },
     {
@@ -691,9 +1411,27 @@
             "CN": "流水護石 II"
         },
         "level": 2,
-        "rarity": 0,
+        "rarity": 6,
         "abilityIds": [
             85
+        ],
+        "craftMaterials": [
+            {
+                "id": 244,
+                "quantity": 3
+            },
+            {
+                "id": 242,
+                "quantity": 2
+            },
+            {
+                "id": 96,
+                "quantity": 6
+            },
+            {
+                "id": 457,
+                "quantity": 1
+            }
         ]
     },
     {
@@ -708,9 +1446,27 @@
             "CN": "流水護石 III"
         },
         "level": 3,
-        "rarity": 0,
+        "rarity": 8,
         "abilityIds": [
             86
+        ],
+        "craftMaterials": [
+            {
+                "id": 515,
+                "quantity": 1
+            },
+            {
+                "id": 518,
+                "quantity": 2
+            },
+            {
+                "id": 492,
+                "quantity": 3
+            },
+            {
+                "id": 138,
+                "quantity": 1
+            }
         ]
     },
     {
@@ -725,9 +1481,27 @@
             "CN": "雷光護石 I"
         },
         "level": 1,
-        "rarity": 0,
+        "rarity": 3,
         "abilityIds": [
             94
+        ],
+        "craftMaterials": [
+            {
+                "id": 485,
+                "quantity": 2
+            },
+            {
+                "id": 483,
+                "quantity": 2
+            },
+            {
+                "id": 5,
+                "quantity": 4
+            },
+            {
+                "id": 25,
+                "quantity": 1
+            }
         ]
     },
     {
@@ -742,9 +1516,27 @@
             "CN": "雷光護石 II"
         },
         "level": 2,
-        "rarity": 0,
+        "rarity": 6,
         "abilityIds": [
             95
+        ],
+        "craftMaterials": [
+            {
+                "id": 486,
+                "quantity": 2
+            },
+            {
+                "id": 484,
+                "quantity": 2
+            },
+            {
+                "id": 143,
+                "quantity": 6
+            },
+            {
+                "id": 457,
+                "quantity": 1
+            }
         ]
     },
     {
@@ -759,9 +1551,27 @@
             "CN": "雷光護石 III"
         },
         "level": 3,
-        "rarity": 0,
+        "rarity": 8,
         "abilityIds": [
             96
+        ],
+        "craftMaterials": [
+            {
+                "id": 252,
+                "quantity": 1
+            },
+            {
+                "id": 258,
+                "quantity": 2
+            },
+            {
+                "id": 479,
+                "quantity": 3
+            },
+            {
+                "id": 138,
+                "quantity": 1
+            }
         ]
     },
     {
@@ -776,9 +1586,27 @@
             "CN": "毒擊護石 I"
         },
         "level": 1,
-        "rarity": 0,
+        "rarity": 3,
         "abilityIds": [
             104
+        ],
+        "craftMaterials": [
+            {
+                "id": 421,
+                "quantity": 1
+            },
+            {
+                "id": 426,
+                "quantity": 1
+            },
+            {
+                "id": 143,
+                "quantity": 3
+            },
+            {
+                "id": 25,
+                "quantity": 1
+            }
         ]
     },
     {
@@ -793,9 +1621,27 @@
             "CN": "毒擊護石 II"
         },
         "level": 2,
-        "rarity": 0,
+        "rarity": 7,
         "abilityIds": [
             105
+        ],
+        "craftMaterials": [
+            {
+                "id": 375,
+                "quantity": 2
+            },
+            {
+                "id": 427,
+                "quantity": 1
+            },
+            {
+                "id": 88,
+                "quantity": 4
+            },
+            {
+                "id": 457,
+                "quantity": 1
+            }
         ]
     },
     {
@@ -810,9 +1656,27 @@
             "CN": "毒擊護石 III"
         },
         "level": 3,
-        "rarity": 0,
+        "rarity": 8,
         "abilityIds": [
             106
+        ],
+        "craftMaterials": [
+            {
+                "id": 222,
+                "quantity": 1
+            },
+            {
+                "id": 422,
+                "quantity": 1
+            },
+            {
+                "id": 493,
+                "quantity": 3
+            },
+            {
+                "id": 138,
+                "quantity": 1
+            }
         ]
     },
     {
@@ -827,9 +1691,27 @@
             "CN": "痹擊護石 I"
         },
         "level": 1,
-        "rarity": 0,
+        "rarity": 4,
         "abilityIds": [
             107
+        ],
+        "craftMaterials": [
+            {
+                "id": 195,
+                "quantity": 2
+            },
+            {
+                "id": 191,
+                "quantity": 2
+            },
+            {
+                "id": 528,
+                "quantity": 4
+            },
+            {
+                "id": 25,
+                "quantity": 1
+            }
         ]
     },
     {
@@ -844,9 +1726,27 @@
             "CN": "痹擊護石 II"
         },
         "level": 2,
-        "rarity": 0,
+        "rarity": 6,
         "abilityIds": [
             108
+        ],
+        "craftMaterials": [
+            {
+                "id": 196,
+                "quantity": 1
+            },
+            {
+                "id": 192,
+                "quantity": 2
+            },
+            {
+                "id": 88,
+                "quantity": 4
+            },
+            {
+                "id": 457,
+                "quantity": 1
+            }
         ]
     },
     {
@@ -861,9 +1761,27 @@
             "CN": "痹擊護石 III"
         },
         "level": 3,
-        "rarity": 0,
+        "rarity": 8,
         "abilityIds": [
             109
+        ],
+        "craftMaterials": [
+            {
+                "id": 222,
+                "quantity": 1
+            },
+            {
+                "id": 540,
+                "quantity": 1
+            },
+            {
+                "id": 363,
+                "quantity": 3
+            },
+            {
+                "id": 138,
+                "quantity": 1
+            }
         ]
     },
     {
@@ -878,9 +1796,27 @@
             "CN": "睡擊護石 I"
         },
         "level": 1,
-        "rarity": 0,
+        "rarity": 4,
         "abilityIds": [
             110
+        ],
+        "craftMaterials": [
+            {
+                "id": 399,
+                "quantity": 1
+            },
+            {
+                "id": 401,
+                "quantity": 2
+            },
+            {
+                "id": 96,
+                "quantity": 3
+            },
+            {
+                "id": 25,
+                "quantity": 1
+            }
         ]
     },
     {
@@ -895,9 +1831,27 @@
             "CN": "睡擊護石 II"
         },
         "level": 2,
-        "rarity": 0,
+        "rarity": 6,
         "abilityIds": [
             111
+        ],
+        "craftMaterials": [
+            {
+                "id": 400,
+                "quantity": 1
+            },
+            {
+                "id": 401,
+                "quantity": 3
+            },
+            {
+                "id": 88,
+                "quantity": 4
+            },
+            {
+                "id": 457,
+                "quantity": 1
+            }
         ]
     },
     {
@@ -912,9 +1866,27 @@
             "CN": "睡擊護石 III"
         },
         "level": 3,
-        "rarity": 0,
+        "rarity": 8,
         "abilityIds": [
             112
+        ],
+        "craftMaterials": [
+            {
+                "id": 222,
+                "quantity": 1
+            },
+            {
+                "id": 515,
+                "quantity": 1
+            },
+            {
+                "id": 92,
+                "quantity": 3
+            },
+            {
+                "id": 138,
+                "quantity": 1
+            }
         ]
     },
     {
@@ -929,9 +1901,27 @@
             "CN": "KO護石 I"
         },
         "level": 1,
-        "rarity": 0,
+        "rarity": 4,
         "abilityIds": [
             152
+        ],
+        "craftMaterials": [
+            {
+                "id": 399,
+                "quantity": 1
+            },
+            {
+                "id": 401,
+                "quantity": 2
+            },
+            {
+                "id": 96,
+                "quantity": 3
+            },
+            {
+                "id": 25,
+                "quantity": 1
+            }
         ]
     },
     {
@@ -946,9 +1936,27 @@
             "CN": "KO護石 II"
         },
         "level": 2,
-        "rarity": 0,
+        "rarity": 6,
         "abilityIds": [
             153
+        ],
+        "craftMaterials": [
+            {
+                "id": 400,
+                "quantity": 1
+            },
+            {
+                "id": 401,
+                "quantity": 3
+            },
+            {
+                "id": 528,
+                "quantity": 6
+            },
+            {
+                "id": 457,
+                "quantity": 1
+            }
         ]
     },
     {
@@ -963,9 +1971,27 @@
             "CN": "KO護石 III"
         },
         "level": 3,
-        "rarity": 0,
+        "rarity": 8,
         "abilityIds": [
             154
+        ],
+        "craftMaterials": [
+            {
+                "id": 472,
+                "quantity": 1
+            },
+            {
+                "id": 473,
+                "quantity": 2
+            },
+            {
+                "id": 154,
+                "quantity": 1
+            },
+            {
+                "id": 138,
+                "quantity": 1
+            }
         ]
     },
     {
@@ -980,9 +2006,27 @@
             "CN": "奪氣護石 I"
         },
         "level": 1,
-        "rarity": 0,
+        "rarity": 4,
         "abilityIds": [
             155
+        ],
+        "craftMaterials": [
+            {
+                "id": 50,
+                "quantity": 2
+            },
+            {
+                "id": 45,
+                "quantity": 2
+            },
+            {
+                "id": 143,
+                "quantity": 3
+            },
+            {
+                "id": 25,
+                "quantity": 1
+            }
         ]
     },
     {
@@ -997,9 +2041,27 @@
             "CN": "奪氣護石 II"
         },
         "level": 2,
-        "rarity": 0,
+        "rarity": 6,
         "abilityIds": [
             156
+        ],
+        "craftMaterials": [
+            {
+                "id": 50,
+                "quantity": 3
+            },
+            {
+                "id": 46,
+                "quantity": 2
+            },
+            {
+                "id": 528,
+                "quantity": 6
+            },
+            {
+                "id": 457,
+                "quantity": 1
+            }
         ]
     },
     {
@@ -1014,9 +2076,27 @@
             "CN": "奪氣護石 III"
         },
         "level": 3,
-        "rarity": 0,
+        "rarity": 6,
         "abilityIds": [
             157
+        ],
+        "craftMaterials": [
+            {
+                "id": 77,
+                "quantity": 1
+            },
+            {
+                "id": 121,
+                "quantity": 3
+            },
+            {
+                "id": 84,
+                "quantity": 2
+            },
+            {
+                "id": 138,
+                "quantity": 1
+            }
         ]
     },
     {
@@ -1031,9 +2111,27 @@
             "CN": "砲術護石 I"
         },
         "level": 1,
-        "rarity": 0,
+        "rarity": 4,
         "abilityIds": [
             189
+        ],
+        "craftMaterials": [
+            {
+                "id": 17,
+                "quantity": 1
+            },
+            {
+                "id": 10,
+                "quantity": 2
+            },
+            {
+                "id": 528,
+                "quantity": 3
+            },
+            {
+                "id": 25,
+                "quantity": 1
+            }
         ]
     },
     {
@@ -1048,9 +2146,27 @@
             "CN": "砲術護石 II"
         },
         "level": 2,
-        "rarity": 0,
+        "rarity": 6,
         "abilityIds": [
             190
+        ],
+        "craftMaterials": [
+            {
+                "id": 12,
+                "quantity": 1
+            },
+            {
+                "id": 11,
+                "quantity": 2
+            },
+            {
+                "id": 349,
+                "quantity": 1
+            },
+            {
+                "id": 457,
+                "quantity": 1
+            }
         ]
     },
     {
@@ -1065,9 +2181,27 @@
             "CN": "砲術護石 III"
         },
         "level": 3,
-        "rarity": 0,
+        "rarity": 8,
         "abilityIds": [
             191
+        ],
+        "craftMaterials": [
+            {
+                "id": 472,
+                "quantity": 1
+            },
+            {
+                "id": 473,
+                "quantity": 2
+            },
+            {
+                "id": 154,
+                "quantity": 1
+            },
+            {
+                "id": 138,
+                "quantity": 1
+            }
         ]
     },
     {
@@ -1082,9 +2216,27 @@
             "CN": "無食護石 I"
         },
         "level": 1,
-        "rarity": 0,
+        "rarity": 4,
         "abilityIds": [
             206
+        ],
+        "craftMaterials": [
+            {
+                "id": 174,
+                "quantity": 2
+            },
+            {
+                "id": 175,
+                "quantity": 4
+            },
+            {
+                "id": 96,
+                "quantity": 3
+            },
+            {
+                "id": 25,
+                "quantity": 1
+            }
         ]
     },
     {
@@ -1099,9 +2251,27 @@
             "CN": "無食護石 II"
         },
         "level": 2,
-        "rarity": 0,
+        "rarity": 6,
         "abilityIds": [
             207
+        ],
+        "craftMaterials": [
+            {
+                "id": 237,
+                "quantity": 6
+            },
+            {
+                "id": 239,
+                "quantity": 8
+            },
+            {
+                "id": 302,
+                "quantity": 1
+            },
+            {
+                "id": 457,
+                "quantity": 1
+            }
         ]
     },
     {
@@ -1116,9 +2286,27 @@
             "CN": "無食護石 III"
         },
         "level": 3,
-        "rarity": 0,
+        "rarity": 6,
         "abilityIds": [
             208
+        ],
+        "craftMaterials": [
+            {
+                "id": 540,
+                "quantity": 1
+            },
+            {
+                "id": 164,
+                "quantity": 5
+            },
+            {
+                "id": 132,
+                "quantity": 1
+            },
+            {
+                "id": 138,
+                "quantity": 1
+            }
         ]
     },
     {
@@ -1133,9 +2321,27 @@
             "CN": "鐵壁護石 I"
         },
         "level": 1,
-        "rarity": 0,
+        "rarity": 4,
         "abilityIds": [
             217
+        ],
+        "craftMaterials": [
+            {
+                "id": 399,
+                "quantity": 1
+            },
+            {
+                "id": 401,
+                "quantity": 2
+            },
+            {
+                "id": 96,
+                "quantity": 3
+            },
+            {
+                "id": 25,
+                "quantity": 1
+            }
         ]
     },
     {
@@ -1150,9 +2356,27 @@
             "CN": "鐵壁護石 II"
         },
         "level": 2,
-        "rarity": 0,
+        "rarity": 6,
         "abilityIds": [
             218
+        ],
+        "craftMaterials": [
+            {
+                "id": 400,
+                "quantity": 1
+            },
+            {
+                "id": 401,
+                "quantity": 3
+            },
+            {
+                "id": 349,
+                "quantity": 1
+            },
+            {
+                "id": 457,
+                "quantity": 1
+            }
         ]
     },
     {
@@ -1167,9 +2391,27 @@
             "CN": "鐵壁護石 III"
         },
         "level": 3,
-        "rarity": 0,
+        "rarity": 8,
         "abilityIds": [
             219
+        ],
+        "craftMaterials": [
+            {
+                "id": 515,
+                "quantity": 1
+            },
+            {
+                "id": 518,
+                "quantity": 2
+            },
+            {
+                "id": 154,
+                "quantity": 1
+            },
+            {
+                "id": 138,
+                "quantity": 1
+            }
         ]
     },
     {
@@ -1184,9 +2426,27 @@
             "CN": "友愛護石 I"
         },
         "level": 1,
-        "rarity": 0,
+        "rarity": 3,
         "abilityIds": [
             225
+        ],
+        "craftMaterials": [
+            {
+                "id": 502,
+                "quantity": 2
+            },
+            {
+                "id": 498,
+                "quantity": 2
+            },
+            {
+                "id": 96,
+                "quantity": 4
+            },
+            {
+                "id": 25,
+                "quantity": 1
+            }
         ]
     },
     {
@@ -1201,9 +2461,27 @@
             "CN": "友愛護石 II"
         },
         "level": 2,
-        "rarity": 0,
+        "rarity": 6,
         "abilityIds": [
             226
+        ],
+        "craftMaterials": [
+            {
+                "id": 503,
+                "quantity": 1
+            },
+            {
+                "id": 499,
+                "quantity": 2
+            },
+            {
+                "id": 349,
+                "quantity": 1
+            },
+            {
+                "id": 457,
+                "quantity": 1
+            }
         ]
     },
     {
@@ -1218,9 +2496,27 @@
             "CN": "友愛護石 III"
         },
         "level": 3,
-        "rarity": 0,
+        "rarity": 8,
         "abilityIds": [
             227
+        ],
+        "craftMaterials": [
+            {
+                "id": 144,
+                "quantity": 1
+            },
+            {
+                "id": 222,
+                "quantity": 1
+            },
+            {
+                "id": 84,
+                "quantity": 2
+            },
+            {
+                "id": 138,
+                "quantity": 1
+            }
         ]
     },
     {
@@ -1235,9 +2531,27 @@
             "CN": "持續護石 I"
         },
         "level": 1,
-        "rarity": 0,
+        "rarity": 3,
         "abilityIds": [
             230
+        ],
+        "craftMaterials": [
+            {
+                "id": 261,
+                "quantity": 2
+            },
+            {
+                "id": 265,
+                "quantity": 2
+            },
+            {
+                "id": 5,
+                "quantity": 4
+            },
+            {
+                "id": 25,
+                "quantity": 1
+            }
         ]
     },
     {
@@ -1252,9 +2566,27 @@
             "CN": "持續護石 II"
         },
         "level": 2,
-        "rarity": 0,
+        "rarity": 7,
         "abilityIds": [
             231
+        ],
+        "craftMaterials": [
+            {
+                "id": 375,
+                "quantity": 2
+            },
+            {
+                "id": 427,
+                "quantity": 1
+            },
+            {
+                "id": 349,
+                "quantity": 1
+            },
+            {
+                "id": 457,
+                "quantity": 1
+            }
         ]
     },
     {
@@ -1269,9 +2601,27 @@
             "CN": "持續護石 III"
         },
         "level": 3,
-        "rarity": 0,
+        "rarity": 8,
         "abilityIds": [
             232
+        ],
+        "craftMaterials": [
+            {
+                "id": 222,
+                "quantity": 1
+            },
+            {
+                "id": 103,
+                "quantity": 1
+            },
+            {
+                "id": 154,
+                "quantity": 1
+            },
+            {
+                "id": 138,
+                "quantity": 1
+            }
         ]
     },
     {
@@ -1286,9 +2636,27 @@
             "CN": "快吃護石 I"
         },
         "level": 1,
-        "rarity": 0,
+        "rarity": 3,
         "abilityIds": [
             234
+        ],
+        "craftMaterials": [
+            {
+                "id": 206,
+                "quantity": 2
+            },
+            {
+                "id": 202,
+                "quantity": 2
+            },
+            {
+                "id": 5,
+                "quantity": 4
+            },
+            {
+                "id": 25,
+                "quantity": 1
+            }
         ]
     },
     {
@@ -1303,9 +2671,27 @@
             "CN": "快吃護石 II"
         },
         "level": 2,
-        "rarity": 0,
+        "rarity": 6,
         "abilityIds": [
             235
+        ],
+        "craftMaterials": [
+            {
+                "id": 12,
+                "quantity": 1
+            },
+            {
+                "id": 11,
+                "quantity": 2
+            },
+            {
+                "id": 349,
+                "quantity": 1
+            },
+            {
+                "id": 457,
+                "quantity": 1
+            }
         ]
     },
     {
@@ -1320,9 +2706,27 @@
             "CN": "快吃護石 III"
         },
         "level": 3,
-        "rarity": 0,
+        "rarity": 8,
         "abilityIds": [
             236
+        ],
+        "craftMaterials": [
+            {
+                "id": 339,
+                "quantity": 1
+            },
+            {
+                "id": 343,
+                "quantity": 2
+            },
+            {
+                "id": 397,
+                "quantity": 2
+            },
+            {
+                "id": 138,
+                "quantity": 1
+            }
         ]
     },
     {
@@ -1337,9 +2741,27 @@
             "CN": "加護護石 I"
         },
         "level": 1,
-        "rarity": 0,
+        "rarity": 3,
         "abilityIds": [
             251
+        ],
+        "craftMaterials": [
+            {
+                "id": 370,
+                "quantity": 2
+            },
+            {
+                "id": 365,
+                "quantity": 3
+            },
+            {
+                "id": 95,
+                "quantity": 4
+            },
+            {
+                "id": 25,
+                "quantity": 1
+            }
         ]
     },
     {
@@ -1354,9 +2776,27 @@
             "CN": "加護護石 II"
         },
         "level": 2,
-        "rarity": 0,
+        "rarity": 6,
         "abilityIds": [
             252
+        ],
+        "craftMaterials": [
+            {
+                "id": 371,
+                "quantity": 2
+            },
+            {
+                "id": 366,
+                "quantity": 4
+            },
+            {
+                "id": 464,
+                "quantity": 6
+            },
+            {
+                "id": 457,
+                "quantity": 1
+            }
         ]
     },
     {
@@ -1371,9 +2811,27 @@
             "CN": "加護護石 III"
         },
         "level": 3,
-        "rarity": 0,
+        "rarity": 8,
         "abilityIds": [
             253
+        ],
+        "craftMaterials": [
+            {
+                "id": 222,
+                "quantity": 1
+            },
+            {
+                "id": 132,
+                "quantity": 1
+            },
+            {
+                "id": 84,
+                "quantity": 2
+            },
+            {
+                "id": 138,
+                "quantity": 1
+            }
         ]
     },
     {
@@ -1388,9 +2846,27 @@
             "CN": "指揮護石 I"
         },
         "level": 1,
-        "rarity": 0,
+        "rarity": 4,
         "abilityIds": [
             254
+        ],
+        "craftMaterials": [
+            {
+                "id": 469,
+                "quantity": 1
+            },
+            {
+                "id": 448,
+                "quantity": 1
+            },
+            {
+                "id": 302,
+                "quantity": 1
+            },
+            {
+                "id": 25,
+                "quantity": 1
+            }
         ]
     },
     {
@@ -1405,9 +2881,27 @@
             "CN": "指揮護石 II"
         },
         "level": 2,
-        "rarity": 0,
+        "rarity": 6,
         "abilityIds": [
             255
+        ],
+        "craftMaterials": [
+            {
+                "id": 469,
+                "quantity": 2
+            },
+            {
+                "id": 302,
+                "quantity": 2
+            },
+            {
+                "id": 464,
+                "quantity": 6
+            },
+            {
+                "id": 457,
+                "quantity": 1
+            }
         ]
     },
     {
@@ -1422,9 +2916,27 @@
             "CN": "指揮護石 III"
         },
         "level": 3,
-        "rarity": 0,
+        "rarity": 8,
         "abilityIds": [
             256
+        ],
+        "craftMaterials": [
+            {
+                "id": 469,
+                "quantity": 3
+            },
+            {
+                "id": 222,
+                "quantity": 2
+            },
+            {
+                "id": 397,
+                "quantity": 2
+            },
+            {
+                "id": 138,
+                "quantity": 1
+            }
         ]
     },
     {
@@ -1439,9 +2951,27 @@
             "CN": "植學護石 I"
         },
         "level": 1,
-        "rarity": 0,
+        "rarity": 3,
         "abilityIds": [
             259
+        ],
+        "craftMaterials": [
+            {
+                "id": 5,
+                "quantity": 3
+            },
+            {
+                "id": 82,
+                "quantity": 3
+            },
+            {
+                "id": 302,
+                "quantity": 1
+            },
+            {
+                "id": 25,
+                "quantity": 1
+            }
         ]
     },
     {
@@ -1456,9 +2986,27 @@
             "CN": "植學護石 II"
         },
         "level": 2,
-        "rarity": 0,
+        "rarity": 6,
         "abilityIds": [
             260
+        ],
+        "craftMaterials": [
+            {
+                "id": 397,
+                "quantity": 3
+            },
+            {
+                "id": 132,
+                "quantity": 1
+            },
+            {
+                "id": 143,
+                "quantity": 6
+            },
+            {
+                "id": 457,
+                "quantity": 1
+            }
         ]
     },
     {
@@ -1473,9 +3021,27 @@
             "CN": "植學護石 III"
         },
         "level": 3,
-        "rarity": 0,
+        "rarity": 8,
         "abilityIds": [
             261
+        ],
+        "craftMaterials": [
+            {
+                "id": 222,
+                "quantity": 1
+            },
+            {
+                "id": 349,
+                "quantity": 1
+            },
+            {
+                "id": 397,
+                "quantity": 2
+            },
+            {
+                "id": 138,
+                "quantity": 1
+            }
         ]
     },
     {
@@ -1490,9 +3056,27 @@
             "CN": "地學護石 I"
         },
         "level": 1,
-        "rarity": 0,
+        "rarity": 4,
         "abilityIds": [
             263
+        ],
+        "craftMaterials": [
+            {
+                "id": 135,
+                "quantity": 4
+            },
+            {
+                "id": 313,
+                "quantity": 4
+            },
+            {
+                "id": 302,
+                "quantity": 1
+            },
+            {
+                "id": 25,
+                "quantity": 1
+            }
         ]
     },
     {
@@ -1507,9 +3091,27 @@
             "CN": "地學護石 II"
         },
         "level": 2,
-        "rarity": 0,
+        "rarity": 6,
         "abilityIds": [
             264
+        ],
+        "craftMaterials": [
+            {
+                "id": 88,
+                "quantity": 6
+            },
+            {
+                "id": 135,
+                "quantity": 8
+            },
+            {
+                "id": 302,
+                "quantity": 2
+            },
+            {
+                "id": 457,
+                "quantity": 1
+            }
         ]
     },
     {
@@ -1524,9 +3126,27 @@
             "CN": "地學護石 III"
         },
         "level": 3,
-        "rarity": 0,
+        "rarity": 8,
         "abilityIds": [
             265
+        ],
+        "craftMaterials": [
+            {
+                "id": 222,
+                "quantity": 1
+            },
+            {
+                "id": 349,
+                "quantity": 1
+            },
+            {
+                "id": 154,
+                "quantity": 1
+            },
+            {
+                "id": 138,
+                "quantity": 1
+            }
         ]
     },
     {
@@ -1541,9 +3161,27 @@
             "CN": "投石護石 I"
         },
         "level": 1,
-        "rarity": 0,
+        "rarity": 4,
         "abilityIds": [
             269
+        ],
+        "craftMaterials": [
+            {
+                "id": 399,
+                "quantity": 1
+            },
+            {
+                "id": 401,
+                "quantity": 2
+            },
+            {
+                "id": 96,
+                "quantity": 3
+            },
+            {
+                "id": 25,
+                "quantity": 1
+            }
         ]
     },
     {
@@ -1558,9 +3196,27 @@
             "CN": "投石護石 II"
         },
         "level": 2,
-        "rarity": 0,
+        "rarity": 6,
         "abilityIds": [
             270
+        ],
+        "craftMaterials": [
+            {
+                "id": 400,
+                "quantity": 1
+            },
+            {
+                "id": 401,
+                "quantity": 3
+            },
+            {
+                "id": 132,
+                "quantity": 1
+            },
+            {
+                "id": 457,
+                "quantity": 1
+            }
         ]
     },
     {
@@ -1575,9 +3231,27 @@
             "CN": "投石護石 III"
         },
         "level": 3,
-        "rarity": 0,
+        "rarity": 8,
         "abilityIds": [
             271
+        ],
+        "craftMaterials": [
+            {
+                "id": 222,
+                "quantity": 1
+            },
+            {
+                "id": 68,
+                "quantity": 1
+            },
+            {
+                "id": 154,
+                "quantity": 1
+            },
+            {
+                "id": 138,
+                "quantity": 1
+            }
         ]
     },
     {
@@ -1592,9 +3266,27 @@
             "CN": "潛伏護石 I"
         },
         "level": 1,
-        "rarity": 0,
+        "rarity": 3,
         "abilityIds": [
             272
+        ],
+        "craftMaterials": [
+            {
+                "id": 206,
+                "quantity": 2
+            },
+            {
+                "id": 202,
+                "quantity": 2
+            },
+            {
+                "id": 302,
+                "quantity": 1
+            },
+            {
+                "id": 25,
+                "quantity": 1
+            }
         ]
     },
     {
@@ -1609,9 +3301,27 @@
             "CN": "潛伏護石 II"
         },
         "level": 2,
-        "rarity": 0,
+        "rarity": 6,
         "abilityIds": [
             273
+        ],
+        "craftMaterials": [
+            {
+                "id": 285,
+                "quantity": 3
+            },
+            {
+                "id": 284,
+                "quantity": 2
+            },
+            {
+                "id": 132,
+                "quantity": 3
+            },
+            {
+                "id": 457,
+                "quantity": 1
+            }
         ]
     },
     {
@@ -1626,9 +3336,27 @@
             "CN": "潛伏護石 III"
         },
         "level": 3,
-        "rarity": 0,
+        "rarity": 8,
         "abilityIds": [
             274
+        ],
+        "craftMaterials": [
+            {
+                "id": 222,
+                "quantity": 1
+            },
+            {
+                "id": 68,
+                "quantity": 1
+            },
+            {
+                "id": 397,
+                "quantity": 2
+            },
+            {
+                "id": 138,
+                "quantity": 1
+            }
         ]
     },
     {
@@ -1643,9 +3371,27 @@
             "CN": "煙復護石 I"
         },
         "level": 1,
-        "rarity": 0,
+        "rarity": 3,
         "abilityIds": [
             281
+        ],
+        "craftMaterials": [
+            {
+                "id": 390,
+                "quantity": 2
+            },
+            {
+                "id": 395,
+                "quantity": 2
+            },
+            {
+                "id": 143,
+                "quantity": 2
+            },
+            {
+                "id": 25,
+                "quantity": 1
+            }
         ]
     },
     {
@@ -1660,9 +3406,27 @@
             "CN": "煙復護石 II"
         },
         "level": 2,
-        "rarity": 0,
+        "rarity": 6,
         "abilityIds": [
             282
+        ],
+        "craftMaterials": [
+            {
+                "id": 540,
+                "quantity": 1
+            },
+            {
+                "id": 93,
+                "quantity": 5
+            },
+            {
+                "id": 143,
+                "quantity": 6
+            },
+            {
+                "id": 457,
+                "quantity": 1
+            }
         ]
     },
     {
@@ -1677,9 +3441,27 @@
             "CN": "煙復護石 III"
         },
         "level": 3,
-        "rarity": 0,
+        "rarity": 8,
         "abilityIds": [
             283
+        ],
+        "craftMaterials": [
+            {
+                "id": 222,
+                "quantity": 1
+            },
+            {
+                "id": 68,
+                "quantity": 1
+            },
+            {
+                "id": 154,
+                "quantity": 1
+            },
+            {
+                "id": 138,
+                "quantity": 1
+            }
         ]
     },
     {
@@ -1694,9 +3476,27 @@
             "CN": "沼渡護石 I"
         },
         "level": 1,
-        "rarity": 0,
+        "rarity": 3,
         "abilityIds": [
             284
+        ],
+        "craftMaterials": [
+            {
+                "id": 243,
+                "quantity": 2
+            },
+            {
+                "id": 241,
+                "quantity": 2
+            },
+            {
+                "id": 143,
+                "quantity": 4
+            },
+            {
+                "id": 25,
+                "quantity": 1
+            }
         ]
     },
     {
@@ -1711,9 +3511,27 @@
             "CN": "沼渡護石 II"
         },
         "level": 2,
-        "rarity": 0,
+        "rarity": 6,
         "abilityIds": [
             285
+        ],
+        "craftMaterials": [
+            {
+                "id": 244,
+                "quantity": 3
+            },
+            {
+                "id": 242,
+                "quantity": 2
+            },
+            {
+                "id": 96,
+                "quantity": 6
+            },
+            {
+                "id": 457,
+                "quantity": 1
+            }
         ]
     },
     {
@@ -1728,9 +3546,27 @@
             "CN": "沼渡護石 III"
         },
         "level": 3,
-        "rarity": 0,
+        "rarity": 6,
         "abilityIds": [
             286
+        ],
+        "craftMaterials": [
+            {
+                "id": 540,
+                "quantity": 1
+            },
+            {
+                "id": 93,
+                "quantity": 5
+            },
+            {
+                "id": 95,
+                "quantity": 6
+            },
+            {
+                "id": 138,
+                "quantity": 1
+            }
         ]
     },
     {
@@ -1745,9 +3581,27 @@
             "CN": "昆蟲學護石護石 I"
         },
         "level": 1,
-        "rarity": 0,
+        "rarity": 6,
         "abilityIds": [
             290
+        ],
+        "craftMaterials": [
+            {
+                "id": 525,
+                "quantity": 2
+            },
+            {
+                "id": 524,
+                "quantity": 2
+            },
+            {
+                "id": 5,
+                "quantity": 4
+            },
+            {
+                "id": 25,
+                "quantity": 1
+            }
         ]
     },
     {
@@ -1762,9 +3616,27 @@
             "CN": "昆蟲學護石護石 II"
         },
         "level": 2,
-        "rarity": 0,
+        "rarity": 6,
         "abilityIds": [
             291
+        ],
+        "craftMaterials": [
+            {
+                "id": 523,
+                "quantity": 4
+            },
+            {
+                "id": 522,
+                "quantity": 6
+            },
+            {
+                "id": 302,
+                "quantity": 2
+            },
+            {
+                "id": 457,
+                "quantity": 1
+            }
         ]
     },
     {
@@ -1779,9 +3651,27 @@
             "CN": "昆蟲學護石護石 III"
         },
         "level": 3,
-        "rarity": 0,
+        "rarity": 6,
         "abilityIds": [
             292
+        ],
+        "craftMaterials": [
+            {
+                "id": 540,
+                "quantity": 1
+            },
+            {
+                "id": 93,
+                "quantity": 5
+            },
+            {
+                "id": 397,
+                "quantity": 2
+            },
+            {
+                "id": 138,
+                "quantity": 1
+            }
         ]
     },
     {
@@ -1796,9 +3686,27 @@
             "CN": "威嚇護石 I"
         },
         "level": 1,
-        "rarity": 0,
+        "rarity": 4,
         "abilityIds": [
             304
+        ],
+        "craftMaterials": [
+            {
+                "id": 195,
+                "quantity": 2
+            },
+            {
+                "id": 191,
+                "quantity": 2
+            },
+            {
+                "id": 528,
+                "quantity": 4
+            },
+            {
+                "id": 25,
+                "quantity": 1
+            }
         ]
     },
     {
@@ -1813,9 +3721,27 @@
             "CN": "威嚇護石 II"
         },
         "level": 2,
-        "rarity": 0,
+        "rarity": 6,
         "abilityIds": [
             305
+        ],
+        "craftMaterials": [
+            {
+                "id": 206,
+                "quantity": 3
+            },
+            {
+                "id": 203,
+                "quantity": 2
+            },
+            {
+                "id": 82,
+                "quantity": 6
+            },
+            {
+                "id": 457,
+                "quantity": 1
+            }
         ]
     },
     {
@@ -1830,9 +3756,27 @@
             "CN": "威嚇護石 III"
         },
         "level": 3,
-        "rarity": 0,
+        "rarity": 6,
         "abilityIds": [
             306
+        ],
+        "craftMaterials": [
+            {
+                "id": 412,
+                "quantity": 1
+            },
+            {
+                "id": 418,
+                "quantity": 2
+            },
+            {
+                "id": 528,
+                "quantity": 4
+            },
+            {
+                "id": 138,
+                "quantity": 1
+            }
         ]
     },
     {
@@ -1847,9 +3791,27 @@
             "CN": "砲撃手護石 I"
         },
         "level": 1,
-        "rarity": 0,
+        "rarity": 4,
         "abilityIds": [
             192
+        ],
+        "craftMaterials": [
+            {
+                "id": 135,
+                "quantity": 4
+            },
+            {
+                "id": 498,
+                "quantity": 3
+            },
+            {
+                "id": 302,
+                "quantity": 1
+            },
+            {
+                "id": 25,
+                "quantity": 1
+            }
         ]
     },
     {
@@ -1864,9 +3826,27 @@
             "CN": "砲撃手護石 II"
         },
         "level": 2,
-        "rarity": 0,
+        "rarity": 4,
         "abilityIds": [
             193
+        ],
+        "craftMaterials": [
+            {
+                "id": 553,
+                "quantity": 3
+            },
+            {
+                "id": 554,
+                "quantity": 1
+            },
+            {
+                "id": 137,
+                "quantity": 3
+            },
+            {
+                "id": 25,
+                "quantity": 1
+            }
         ]
     },
     {
@@ -1881,9 +3861,27 @@
             "CN": "小胃口護石"
         },
         "level": 1,
-        "rarity": 0,
+        "rarity": 4,
         "abilityIds": [
             233
+        ],
+        "craftMaterials": [
+            {
+                "id": 226,
+                "quantity": 4
+            },
+            {
+                "id": 229,
+                "quantity": 6
+            },
+            {
+                "id": 191,
+                "quantity": 3
+            },
+            {
+                "id": 25,
+                "quantity": 1
+            }
         ]
     },
     {
@@ -1898,9 +3896,27 @@
             "CN": "追蹤護石"
         },
         "level": 1,
-        "rarity": 0,
+        "rarity": 4,
         "abilityIds": [
             296
+        ],
+        "craftMaterials": [
+            {
+                "id": 13,
+                "quantity": 1
+            },
+            {
+                "id": 15,
+                "quantity": 5
+            },
+            {
+                "id": 50,
+                "quantity": 2
+            },
+            {
+                "id": 25,
+                "quantity": 1
+            }
         ]
     },
     {
@@ -1915,9 +3931,27 @@
             "CN": "不屈護石"
         },
         "level": 1,
-        "rarity": 0,
+        "rarity": 4,
         "abilityIds": [
             178
+        ],
+        "craftMaterials": [
+            {
+                "id": 448,
+                "quantity": 3
+            },
+            {
+                "id": 10,
+                "quantity": 3
+            },
+            {
+                "id": 528,
+                "quantity": 5
+            },
+            {
+                "id": 25,
+                "quantity": 1
+            }
         ]
     },
     {
@@ -1932,9 +3966,27 @@
             "CN": "吹笛護石"
         },
         "level": 1,
-        "rarity": 0,
+        "rarity": 4,
         "abilityIds": [
             185
+        ],
+        "craftMaterials": [
+            {
+                "id": 195,
+                "quantity": 3
+            },
+            {
+                "id": 390,
+                "quantity": 5
+            },
+            {
+                "id": 464,
+                "quantity": 5
+            },
+            {
+                "id": 25,
+                "quantity": 1
+            }
         ]
     },
     {
@@ -1949,9 +4001,27 @@
             "CN": "裝填護石"
         },
         "level": 1,
-        "rarity": 0,
+        "rarity": 4,
         "abilityIds": [
             186
+        ],
+        "craftMaterials": [
+            {
+                "id": 135,
+                "quantity": 8
+            },
+            {
+                "id": 406,
+                "quantity": 3
+            },
+            {
+                "id": 302,
+                "quantity": 2
+            },
+            {
+                "id": 25,
+                "quantity": 1
+            }
         ]
     },
     {
@@ -1966,9 +4036,27 @@
             "CN": "耐裂護石 I"
         },
         "level": 1,
-        "rarity": 0,
+        "rarity": 6,
         "abilityIds": [
             16
+        ],
+        "craftMaterials": [
+            {
+                "id": 357,
+                "quantity": 1
+            },
+            {
+                "id": 354,
+                "quantity": 2
+            },
+            {
+                "id": 528,
+                "quantity": 4
+            },
+            {
+                "id": 25,
+                "quantity": 1
+            }
         ]
     },
     {
@@ -1983,9 +4071,27 @@
             "CN": "耐裂護石 II"
         },
         "level": 2,
-        "rarity": 0,
+        "rarity": 6,
         "abilityIds": [
             17
+        ],
+        "craftMaterials": [
+            {
+                "id": 356,
+                "quantity": 1
+            },
+            {
+                "id": 353,
+                "quantity": 2
+            },
+            {
+                "id": 349,
+                "quantity": 1
+            },
+            {
+                "id": 457,
+                "quantity": 1
+            }
         ]
     },
     {
@@ -2000,9 +4106,27 @@
             "CN": "耐裂護石 III"
         },
         "level": 3,
-        "rarity": 0,
+        "rarity": 8,
         "abilityIds": [
             18
+        ],
+        "craftMaterials": [
+            {
+                "id": 515,
+                "quantity": 1
+            },
+            {
+                "id": 518,
+                "quantity": 2
+            },
+            {
+                "id": 84,
+                "quantity": 2
+            },
+            {
+                "id": 138,
+                "quantity": 1
+            }
         ]
     },
     {
@@ -2017,9 +4141,27 @@
             "CN": "早復l護石 I"
         },
         "level": 1,
-        "rarity": 0,
+        "rarity": 5,
         "abilityIds": [
             58
+        ],
+        "craftMaterials": [
+            {
+                "id": 93,
+                "quantity": 1
+            },
+            {
+                "id": 464,
+                "quantity": 3
+            },
+            {
+                "id": 302,
+                "quantity": 1
+            },
+            {
+                "id": 25,
+                "quantity": 1
+            }
         ]
     },
     {
@@ -2034,9 +4176,27 @@
             "CN": "早復l護石 II"
         },
         "level": 2,
-        "rarity": 0,
+        "rarity": 6,
         "abilityIds": [
             59
+        ],
+        "craftMaterials": [
+            {
+                "id": 285,
+                "quantity": 3
+            },
+            {
+                "id": 284,
+                "quantity": 2
+            },
+            {
+                "id": 349,
+                "quantity": 1
+            },
+            {
+                "id": 457,
+                "quantity": 1
+            }
         ]
     },
     {
@@ -2051,9 +4211,27 @@
             "CN": "早復l護石 III"
         },
         "level": 3,
-        "rarity": 0,
+        "rarity": 8,
         "abilityIds": [
             60
+        ],
+        "craftMaterials": [
+            {
+                "id": 515,
+                "quantity": 1
+            },
+            {
+                "id": 520,
+                "quantity": 2
+            },
+            {
+                "id": 84,
+                "quantity": 2
+            },
+            {
+                "id": 138,
+                "quantity": 1
+            }
         ]
     },
     {
@@ -2068,9 +4246,27 @@
             "CN": "耐冰護石 I"
         },
         "level": 1,
-        "rarity": 0,
+        "rarity": 6,
         "abilityIds": [
             67
+        ],
+        "craftMaterials": [
+            {
+                "id": 292,
+                "quantity": 1
+            },
+            {
+                "id": 287,
+                "quantity": 2
+            },
+            {
+                "id": 96,
+                "quantity": 3
+            },
+            {
+                "id": 25,
+                "quantity": 1
+            }
         ]
     },
     {
@@ -2085,9 +4281,27 @@
             "CN": "耐冰護石 II"
         },
         "level": 2,
-        "rarity": 0,
+        "rarity": 6,
         "abilityIds": [
             68
+        ],
+        "craftMaterials": [
+            {
+                "id": 540,
+                "quantity": 1
+            },
+            {
+                "id": 288,
+                "quantity": 2
+            },
+            {
+                "id": 96,
+                "quantity": 4
+            },
+            {
+                "id": 457,
+                "quantity": 1
+            }
         ]
     },
     {
@@ -2102,9 +4316,27 @@
             "CN": "耐冰護石 III"
         },
         "level": 3,
-        "rarity": 0,
+        "rarity": 8,
         "abilityIds": [
             69
+        ],
+        "craftMaterials": [
+            {
+                "id": 222,
+                "quantity": 1
+            },
+            {
+                "id": 289,
+                "quantity": 1
+            },
+            {
+                "id": 162,
+                "quantity": 3
+            },
+            {
+                "id": 138,
+                "quantity": 1
+            }
         ]
     },
     {
@@ -2119,9 +4351,27 @@
             "CN": "耐屬護石 I"
         },
         "level": 1,
-        "rarity": 0,
+        "rarity": 8,
         "abilityIds": [
             76
+        ],
+        "craftMaterials": [
+            {
+                "id": 257,
+                "quantity": 1
+            },
+            {
+                "id": 255,
+                "quantity": 2
+            },
+            {
+                "id": 95,
+                "quantity": 3
+            },
+            {
+                "id": 25,
+                "quantity": 1
+            }
         ]
     },
     {
@@ -2136,9 +4386,27 @@
             "CN": "耐屬護石 II"
         },
         "level": 2,
-        "rarity": 0,
+        "rarity": 8,
         "abilityIds": [
             77
+        ],
+        "craftMaterials": [
+            {
+                "id": 252,
+                "quantity": 1
+            },
+            {
+                "id": 258,
+                "quantity": 2
+            },
+            {
+                "id": 349,
+                "quantity": 1
+            },
+            {
+                "id": 138,
+                "quantity": 1
+            }
         ]
     },
     {
@@ -2153,9 +4421,27 @@
             "CN": "耐屬護石 III"
         },
         "level": 3,
-        "rarity": 0,
+        "rarity": 9,
         "abilityIds": [
             78
+        ],
+        "craftMaterials": [
+            {
+                "id": 101,
+                "quantity": 1
+            },
+            {
+                "id": 546,
+                "quantity": 2
+            },
+            {
+                "id": 84,
+                "quantity": 2
+            },
+            {
+                "id": 133,
+                "quantity": 1
+            }
         ]
     },
     {
@@ -2170,9 +4456,27 @@
             "CN": "冰結護石 I"
         },
         "level": 1,
-        "rarity": 0,
+        "rarity": 6,
         "abilityIds": [
             89
+        ],
+        "craftMaterials": [
+            {
+                "id": 292,
+                "quantity": 1
+            },
+            {
+                "id": 287,
+                "quantity": 2
+            },
+            {
+                "id": 96,
+                "quantity": 3
+            },
+            {
+                "id": 25,
+                "quantity": 1
+            }
         ]
     },
     {
@@ -2187,9 +4491,27 @@
             "CN": "冰結護石 II"
         },
         "level": 2,
-        "rarity": 0,
+        "rarity": 6,
         "abilityIds": [
             90
+        ],
+        "craftMaterials": [
+            {
+                "id": 289,
+                "quantity": 1
+            },
+            {
+                "id": 288,
+                "quantity": 2
+            },
+            {
+                "id": 96,
+                "quantity": 6
+            },
+            {
+                "id": 457,
+                "quantity": 1
+            }
         ]
     },
     {
@@ -2204,9 +4526,27 @@
             "CN": "冰結護石 III"
         },
         "level": 3,
-        "rarity": 0,
+        "rarity": 8,
         "abilityIds": [
             91
+        ],
+        "craftMaterials": [
+            {
+                "id": 101,
+                "quantity": 1
+            },
+            {
+                "id": 103,
+                "quantity": 1
+            },
+            {
+                "id": 162,
+                "quantity": 3
+            },
+            {
+                "id": 138,
+                "quantity": 1
+            }
         ]
     },
     {
@@ -2221,9 +4561,27 @@
             "CN": "達人護石 I"
         },
         "level": 1,
-        "rarity": 0,
+        "rarity": 6,
         "abilityIds": [
             122
+        ],
+        "craftMaterials": [
+            {
+                "id": 357,
+                "quantity": 1
+            },
+            {
+                "id": 354,
+                "quantity": 2
+            },
+            {
+                "id": 528,
+                "quantity": 3
+            },
+            {
+                "id": 25,
+                "quantity": 1
+            }
         ]
     },
     {
@@ -2238,9 +4596,27 @@
             "CN": "達人護石 II"
         },
         "level": 2,
-        "rarity": 0,
+        "rarity": 6,
         "abilityIds": [
             123
+        ],
+        "craftMaterials": [
+            {
+                "id": 356,
+                "quantity": 1
+            },
+            {
+                "id": 353,
+                "quantity": 2
+            },
+            {
+                "id": 397,
+                "quantity": 3
+            },
+            {
+                "id": 457,
+                "quantity": 1
+            }
         ]
     },
     {
@@ -2255,9 +4631,27 @@
             "CN": "達人護石 III"
         },
         "level": 3,
-        "rarity": 0,
+        "rarity": 8,
         "abilityIds": [
             124
+        ],
+        "craftMaterials": [
+            {
+                "id": 339,
+                "quantity": 1
+            },
+            {
+                "id": 343,
+                "quantity": 2
+            },
+            {
+                "id": 84,
+                "quantity": 2
+            },
+            {
+                "id": 138,
+                "quantity": 1
+            }
         ]
     },
     {
@@ -2272,9 +4666,27 @@
             "CN": "回避護石 I"
         },
         "level": 1,
-        "rarity": 0,
+        "rarity": 6,
         "abilityIds": [
             209
+        ],
+        "craftMaterials": [
+            {
+                "id": 295,
+                "quantity": 2
+            },
+            {
+                "id": 287,
+                "quantity": 2
+            },
+            {
+                "id": 96,
+                "quantity": 3
+            },
+            {
+                "id": 25,
+                "quantity": 1
+            }
         ]
     },
     {
@@ -2289,9 +4701,27 @@
             "CN": "回避護石 II"
         },
         "level": 2,
-        "rarity": 0,
+        "rarity": 6,
         "abilityIds": [
             210
+        ],
+        "craftMaterials": [
+            {
+                "id": 289,
+                "quantity": 1
+            },
+            {
+                "id": 288,
+                "quantity": 2
+            },
+            {
+                "id": 164,
+                "quantity": 1
+            },
+            {
+                "id": 457,
+                "quantity": 1
+            }
         ]
     },
     {
@@ -2306,9 +4736,27 @@
             "CN": "回避護石 III"
         },
         "level": 3,
-        "rarity": 0,
+        "rarity": 8,
         "abilityIds": [
             211
+        ],
+        "craftMaterials": [
+            {
+                "id": 101,
+                "quantity": 1
+            },
+            {
+                "id": 103,
+                "quantity": 1
+            },
+            {
+                "id": 84,
+                "quantity": 2
+            },
+            {
+                "id": 138,
+                "quantity": 1
+            }
         ]
     },
     {
@@ -2323,9 +4771,27 @@
             "CN": "納刀護石 I"
         },
         "level": 1,
-        "rarity": 0,
+        "rarity": 6,
         "abilityIds": [
             222
+        ],
+        "craftMaterials": [
+            {
+                "id": 122,
+                "quantity": 1
+            },
+            {
+                "id": 121,
+                "quantity": 2
+            },
+            {
+                "id": 143,
+                "quantity": 3
+            },
+            {
+                "id": 25,
+                "quantity": 1
+            }
         ]
     },
     {
@@ -2340,9 +4806,27 @@
             "CN": "納刀護石 II"
         },
         "level": 2,
-        "rarity": 0,
+        "rarity": 6,
         "abilityIds": [
             223
+        ],
+        "craftMaterials": [
+            {
+                "id": 285,
+                "quantity": 1
+            },
+            {
+                "id": 284,
+                "quantity": 2
+            },
+            {
+                "id": 349,
+                "quantity": 1
+            },
+            {
+                "id": 457,
+                "quantity": 1
+            }
         ]
     },
     {
@@ -2357,9 +4841,27 @@
             "CN": "納刀護石 III"
         },
         "level": 3,
-        "rarity": 0,
+        "rarity": 9,
         "abilityIds": [
             224
+        ],
+        "craftMaterials": [
+            {
+                "id": 55,
+                "quantity": 1
+            },
+            {
+                "id": 543,
+                "quantity": 1
+            },
+            {
+                "id": 154,
+                "quantity": 1
+            },
+            {
+                "id": 138,
+                "quantity": 1
+            }
         ]
     },
     {
@@ -2374,9 +4876,27 @@
             "CN": "研磨護石 I"
         },
         "level": 1,
-        "rarity": 0,
+        "rarity": 6,
         "abilityIds": [
             237
+        ],
+        "craftMaterials": [
+            {
+                "id": 357,
+                "quantity": 1
+            },
+            {
+                "id": 354,
+                "quantity": 2
+            },
+            {
+                "id": 528,
+                "quantity": 3
+            },
+            {
+                "id": 25,
+                "quantity": 1
+            }
         ]
     },
     {
@@ -2391,9 +4911,27 @@
             "CN": "研磨護石 II"
         },
         "level": 2,
-        "rarity": 0,
+        "rarity": 6,
         "abilityIds": [
             238
+        ],
+        "craftMaterials": [
+            {
+                "id": 356,
+                "quantity": 1
+            },
+            {
+                "id": 353,
+                "quantity": 2
+            },
+            {
+                "id": 349,
+                "quantity": 1
+            },
+            {
+                "id": 457,
+                "quantity": 1
+            }
         ]
     },
     {
@@ -2408,9 +4946,27 @@
             "CN": "研磨護石 III"
         },
         "level": 3,
-        "rarity": 0,
+        "rarity": 8,
         "abilityIds": [
             239
+        ],
+        "craftMaterials": [
+            {
+                "id": 339,
+                "quantity": 1
+            },
+            {
+                "id": 343,
+                "quantity": 2
+            },
+            {
+                "id": 154,
+                "quantity": 1
+            },
+            {
+                "id": 138,
+                "quantity": 1
+            }
         ]
     },
     {
@@ -2425,9 +4981,27 @@
             "CN": "耐爆護石 I"
         },
         "level": 1,
-        "rarity": 0,
+        "rarity": 6,
         "abilityIds": [
             13
+        ],
+        "craftMaterials": [
+            {
+                "id": 128,
+                "quantity": 1
+            },
+            {
+                "id": 131,
+                "quantity": 2
+            },
+            {
+                "id": 154,
+                "quantity": 1
+            },
+            {
+                "id": 457,
+                "quantity": 1
+            }
         ]
     },
     {
@@ -2442,9 +5016,27 @@
             "CN": "耐爆護石 II"
         },
         "level": 2,
-        "rarity": 0,
+        "rarity": 7,
         "abilityIds": [
             14
+        ],
+        "craftMaterials": [
+            {
+                "id": 55,
+                "quantity": 1
+            },
+            {
+                "id": 58,
+                "quantity": 2
+            },
+            {
+                "id": 349,
+                "quantity": 1
+            },
+            {
+                "id": 457,
+                "quantity": 1
+            }
         ]
     },
     {
@@ -2459,9 +5051,27 @@
             "CN": "耐爆護石 III"
         },
         "level": 3,
-        "rarity": 0,
+        "rarity": 8,
         "abilityIds": [
             15
+        ],
+        "craftMaterials": [
+            {
+                "id": 472,
+                "quantity": 1
+            },
+            {
+                "id": 473,
+                "quantity": 2
+            },
+            {
+                "id": 154,
+                "quantity": 1
+            },
+            {
+                "id": 138,
+                "quantity": 1
+            }
         ]
     },
     {
@@ -2476,9 +5086,27 @@
             "CN": "耐龍護石 I"
         },
         "level": 1,
-        "rarity": 0,
+        "rarity": 6,
         "abilityIds": [
             73
+        ],
+        "craftMaterials": [
+            {
+                "id": 132,
+                "quantity": 1
+            },
+            {
+                "id": 397,
+                "quantity": 3
+            },
+            {
+                "id": 137,
+                "quantity": 3
+            },
+            {
+                "id": 457,
+                "quantity": 1
+            }
         ]
     },
     {
@@ -2493,9 +5121,27 @@
             "CN": "耐龍護石 II"
         },
         "level": 2,
-        "rarity": 0,
+        "rarity": 6,
         "abilityIds": [
             74
+        ],
+        "craftMaterials": [
+            {
+                "id": 510,
+                "quantity": 1
+            },
+            {
+                "id": 508,
+                "quantity": 1
+            },
+            {
+                "id": 137,
+                "quantity": 1
+            },
+            {
+                "id": 457,
+                "quantity": 1
+            }
         ]
     },
     {
@@ -2510,9 +5156,27 @@
             "CN": "耐龍護石 III"
         },
         "level": 3,
-        "rarity": 0,
+        "rarity": 8,
         "abilityIds": [
             75
+        ],
+        "craftMaterials": [
+            {
+                "id": 144,
+                "quantity": 1
+            },
+            {
+                "id": 515,
+                "quantity": 1
+            },
+            {
+                "id": 132,
+                "quantity": 3
+            },
+            {
+                "id": 138,
+                "quantity": 1
+            }
         ]
     },
     {
@@ -2527,9 +5191,27 @@
             "CN": "破龍護石 I"
         },
         "level": 1,
-        "rarity": 0,
+        "rarity": 6,
         "abilityIds": [
             99
+        ],
+        "craftMaterials": [
+            {
+                "id": 132,
+                "quantity": 1
+            },
+            {
+                "id": 397,
+                "quantity": 3
+            },
+            {
+                "id": 137,
+                "quantity": 2
+            },
+            {
+                "id": 457,
+                "quantity": 1
+            }
         ]
     },
     {
@@ -2544,9 +5226,27 @@
             "CN": "破龍護石 II"
         },
         "level": 2,
-        "rarity": 0,
+        "rarity": 8,
         "abilityIds": [
             100
+        ],
+        "craftMaterials": [
+            {
+                "id": 515,
+                "quantity": 1
+            },
+            {
+                "id": 518,
+                "quantity": 2
+            },
+            {
+                "id": 137,
+                "quantity": 4
+            },
+            {
+                "id": 138,
+                "quantity": 1
+            }
         ]
     },
     {
@@ -2561,9 +5261,27 @@
             "CN": "破龍護石 III"
         },
         "level": 3,
-        "rarity": 0,
+        "rarity": 9,
         "abilityIds": [
             101
+        ],
+        "craftMaterials": [
+            {
+                "id": 542,
+                "quantity": 1
+            },
+            {
+                "id": 541,
+                "quantity": 2
+            },
+            {
+                "id": 132,
+                "quantity": 3
+            },
+            {
+                "id": 138,
+                "quantity": 1
+            }
         ]
     },
     {
@@ -2578,9 +5296,27 @@
             "CN": "爆破護石 I"
         },
         "level": 1,
-        "rarity": 0,
+        "rarity": 6,
         "abilityIds": [
             113
+        ],
+        "craftMaterials": [
+            {
+                "id": 128,
+                "quantity": 2
+            },
+            {
+                "id": 131,
+                "quantity": 2
+            },
+            {
+                "id": 154,
+                "quantity": 1
+            },
+            {
+                "id": 457,
+                "quantity": 1
+            }
         ]
     },
     {
@@ -2595,9 +5331,27 @@
             "CN": "爆破護石 II"
         },
         "level": 2,
-        "rarity": 0,
+        "rarity": 7,
         "abilityIds": [
             114
+        ],
+        "craftMaterials": [
+            {
+                "id": 55,
+                "quantity": 1
+            },
+            {
+                "id": 58,
+                "quantity": 2
+            },
+            {
+                "id": 88,
+                "quantity": 4
+            },
+            {
+                "id": 138,
+                "quantity": 1
+            }
         ]
     },
     {
@@ -2612,9 +5366,27 @@
             "CN": "爆破護石 III"
         },
         "level": 3,
-        "rarity": 0,
+        "rarity": 9,
         "abilityIds": [
             115
+        ],
+        "craftMaterials": [
+            {
+                "id": 472,
+                "quantity": 1
+            },
+            {
+                "id": 544,
+                "quantity": 3
+            },
+            {
+                "id": 154,
+                "quantity": 1
+            },
+            {
+                "id": 138,
+                "quantity": 1
+            }
         ]
     },
     {
@@ -2629,9 +5401,27 @@
             "CN": "拔刀護石 I"
         },
         "level": 1,
-        "rarity": 0,
+        "rarity": 6,
         "abilityIds": [
             146
+        ],
+        "craftMaterials": [
+            {
+                "id": 122,
+                "quantity": 1
+            },
+            {
+                "id": 121,
+                "quantity": 3
+            },
+            {
+                "id": 143,
+                "quantity": 3
+            },
+            {
+                "id": 457,
+                "quantity": 1
+            }
         ]
     },
     {
@@ -2646,9 +5436,27 @@
             "CN": "拔刀護石 II"
         },
         "level": 2,
-        "rarity": 0,
+        "rarity": 8,
         "abilityIds": [
             147
+        ],
+        "craftMaterials": [
+            {
+                "id": 472,
+                "quantity": 1
+            },
+            {
+                "id": 473,
+                "quantity": 2
+            },
+            {
+                "id": 164,
+                "quantity": 1
+            },
+            {
+                "id": 138,
+                "quantity": 1
+            }
         ]
     },
     {
@@ -2663,9 +5471,27 @@
             "CN": "特射護石 I"
         },
         "level": 1,
-        "rarity": 0,
+        "rarity": 6,
         "abilityIds": [
             187
+        ],
+        "craftMaterials": [
+            {
+                "id": 17,
+                "quantity": 1
+            },
+            {
+                "id": 10,
+                "quantity": 2
+            },
+            {
+                "id": 528,
+                "quantity": 3
+            },
+            {
+                "id": 457,
+                "quantity": 1
+            }
         ]
     },
     {
@@ -2680,9 +5506,27 @@
             "CN": "特射護石 II"
         },
         "level": 2,
-        "rarity": 0,
+        "rarity": 9,
         "abilityIds": [
             188
+        ],
+        "craftMaterials": [
+            {
+                "id": 55,
+                "quantity": 1
+            },
+            {
+                "id": 549,
+                "quantity": 2
+            },
+            {
+                "id": 349,
+                "quantity": 1
+            },
+            {
+                "id": 138,
+                "quantity": 1
+            }
         ]
     },
     {
@@ -2697,9 +5541,27 @@
             "CN": "强走護石 I"
         },
         "level": 1,
-        "rarity": 0,
+        "rarity": 6,
         "abilityIds": [
             194
+        ],
+        "craftMaterials": [
+            {
+                "id": 50,
+                "quantity": 2
+            },
+            {
+                "id": 46,
+                "quantity": 2
+            },
+            {
+                "id": 137,
+                "quantity": 3
+            },
+            {
+                "id": 457,
+                "quantity": 1
+            }
         ]
     },
     {
@@ -2714,9 +5576,27 @@
             "CN": "强走護石 II"
         },
         "level": 2,
-        "rarity": 0,
+        "rarity": 9,
         "abilityIds": [
             195
+        ],
+        "craftMaterials": [
+            {
+                "id": 542,
+                "quantity": 1
+            },
+            {
+                "id": 548,
+                "quantity": 2
+            },
+            {
+                "id": 164,
+                "quantity": 1
+            },
+            {
+                "id": 138,
+                "quantity": 1
+            }
         ]
     },
     {
@@ -2731,9 +5611,27 @@
             "CN": "體術護石 I"
         },
         "level": 1,
-        "rarity": 0,
+        "rarity": 6,
         "abilityIds": [
             197
+        ],
+        "craftMaterials": [
+            {
+                "id": 486,
+                "quantity": 2
+            },
+            {
+                "id": 484,
+                "quantity": 2
+            },
+            {
+                "id": 137,
+                "quantity": 3
+            },
+            {
+                "id": 457,
+                "quantity": 1
+            }
         ]
     },
     {
@@ -2748,9 +5646,27 @@
             "CN": "體術護石 II"
         },
         "level": 2,
-        "rarity": 0,
+        "rarity": 6,
         "abilityIds": [
             198
+        ],
+        "craftMaterials": [
+            {
+                "id": 356,
+                "quantity": 1
+            },
+            {
+                "id": 353,
+                "quantity": 2
+            },
+            {
+                "id": 164,
+                "quantity": 1
+            },
+            {
+                "id": 138,
+                "quantity": 1
+            }
         ]
     },
     {
@@ -2765,9 +5681,27 @@
             "CN": "體術護石 III"
         },
         "level": 3,
-        "rarity": 0,
+        "rarity": 8,
         "abilityIds": [
             199
+        ],
+        "craftMaterials": [
+            {
+                "id": 101,
+                "quantity": 1
+            },
+            {
+                "id": 99,
+                "quantity": 1
+            },
+            {
+                "id": 96,
+                "quantity": 3
+            },
+            {
+                "id": 138,
+                "quantity": 1
+            }
         ]
     },
     {
@@ -2782,9 +5716,27 @@
             "CN": "早氣護石 I"
         },
         "level": 1,
-        "rarity": 0,
+        "rarity": 6,
         "abilityIds": [
             203
+        ],
+        "craftMaterials": [
+            {
+                "id": 371,
+                "quantity": 2
+            },
+            {
+                "id": 366,
+                "quantity": 3
+            },
+            {
+                "id": 132,
+                "quantity": 3
+            },
+            {
+                "id": 457,
+                "quantity": 1
+            }
         ]
     },
     {
@@ -2799,9 +5751,27 @@
             "CN": "早氣護石 II"
         },
         "level": 2,
-        "rarity": 0,
+        "rarity": 8,
         "abilityIds": [
             204
+        ],
+        "craftMaterials": [
+            {
+                "id": 339,
+                "quantity": 1
+            },
+            {
+                "id": 343,
+                "quantity": 2
+            },
+            {
+                "id": 164,
+                "quantity": 1
+            },
+            {
+                "id": 138,
+                "quantity": 1
+            }
         ]
     },
     {
@@ -2816,9 +5786,27 @@
             "CN": "跳躍護石 I"
         },
         "level": 1,
-        "rarity": 0,
+        "rarity": 6,
         "abilityIds": [
             214
+        ],
+        "craftMaterials": [
+            {
+                "id": 486,
+                "quantity": 2
+            },
+            {
+                "id": 484,
+                "quantity": 2
+            },
+            {
+                "id": 137,
+                "quantity": 3
+            },
+            {
+                "id": 457,
+                "quantity": 1
+            }
         ]
     },
     {
@@ -2833,9 +5821,27 @@
             "CN": "跳躍護石 II"
         },
         "level": 2,
-        "rarity": 0,
+        "rarity": 8,
         "abilityIds": [
             215
+        ],
+        "craftMaterials": [
+            {
+                "id": 101,
+                "quantity": 1
+            },
+            {
+                "id": 103,
+                "quantity": 1
+            },
+            {
+                "id": 154,
+                "quantity": 1
+            },
+            {
+                "id": 138,
+                "quantity": 1
+            }
         ]
     },
     {
@@ -2850,9 +5856,27 @@
             "CN": "爆師護石 I"
         },
         "level": 1,
-        "rarity": 0,
+        "rarity": 6,
         "abilityIds": [
             240
+        ],
+        "craftMaterials": [
+            {
+                "id": 128,
+                "quantity": 2
+            },
+            {
+                "id": 131,
+                "quantity": 2
+            },
+            {
+                "id": 154,
+                "quantity": 1
+            },
+            {
+                "id": 457,
+                "quantity": 1
+            }
         ]
     },
     {
@@ -2867,9 +5891,27 @@
             "CN": "爆師護石 II"
         },
         "level": 2,
-        "rarity": 0,
+        "rarity": 7,
         "abilityIds": [
             241
+        ],
+        "craftMaterials": [
+            {
+                "id": 55,
+                "quantity": 1
+            },
+            {
+                "id": 58,
+                "quantity": 2
+            },
+            {
+                "id": 349,
+                "quantity": 1
+            },
+            {
+                "id": 457,
+                "quantity": 1
+            }
         ]
     },
     {
@@ -2884,9 +5926,27 @@
             "CN": "爆師護石 III"
         },
         "level": 3,
-        "rarity": 0,
+        "rarity": 8,
         "abilityIds": [
             242
+        ],
+        "craftMaterials": [
+            {
+                "id": 472,
+                "quantity": 1
+            },
+            {
+                "id": 473,
+                "quantity": 2
+            },
+            {
+                "id": 154,
+                "quantity": 1
+            },
+            {
+                "id": 138,
+                "quantity": 1
+            }
         ]
     },
     {
@@ -2901,9 +5961,27 @@
             "CN": "茸好護石 I"
         },
         "level": 1,
-        "rarity": 0,
+        "rarity": 5,
         "abilityIds": [
             243
+        ],
+        "craftMaterials": [
+            {
+                "id": 93,
+                "quantity": 1
+            },
+            {
+                "id": 335,
+                "quantity": 5
+            },
+            {
+                "id": 349,
+                "quantity": 1
+            },
+            {
+                "id": 138,
+                "quantity": 1
+            }
         ]
     },
     {
@@ -2918,9 +5996,27 @@
             "CN": "茸好護石 II"
         },
         "level": 2,
-        "rarity": 0,
+        "rarity": 9,
         "abilityIds": [
             244
+        ],
+        "craftMaterials": [
+            {
+                "id": 432,
+                "quantity": 1
+            },
+            {
+                "id": 222,
+                "quantity": 1
+            },
+            {
+                "id": 349,
+                "quantity": 1
+            },
+            {
+                "id": 133,
+                "quantity": 1
+            }
         ]
     },
     {
@@ -2935,9 +6031,27 @@
             "CN": "覺醒護石 I"
         },
         "level": 1,
-        "rarity": 0,
+        "rarity": 6,
         "abilityIds": [
             119
+        ],
+        "craftMaterials": [
+            {
+                "id": 551,
+                "quantity": 1
+            },
+            {
+                "id": 553,
+                "quantity": 5
+            },
+            {
+                "id": 137,
+                "quantity": 4
+            },
+            {
+                "id": 25,
+                "quantity": 1
+            }
         ]
     },
     {
@@ -2952,9 +6066,27 @@
             "CN": "覺醒護石 II"
         },
         "level": 2,
-        "rarity": 0,
+        "rarity": 8,
         "abilityIds": [
             120
+        ],
+        "craftMaterials": [
+            {
+                "id": 252,
+                "quantity": 1
+            },
+            {
+                "id": 258,
+                "quantity": 1
+            },
+            {
+                "id": 349,
+                "quantity": 1
+            },
+            {
+                "id": 138,
+                "quantity": 1
+            }
         ]
     },
     {
@@ -2969,9 +6101,27 @@
             "CN": "匠之護石 I"
         },
         "level": 1,
-        "rarity": 0,
+        "rarity": 6,
         "abilityIds": [
             141
+        ],
+        "craftMaterials": [
+            {
+                "id": 551,
+                "quantity": 1
+            },
+            {
+                "id": 554,
+                "quantity": 3
+            },
+            {
+                "id": 137,
+                "quantity": 4
+            },
+            {
+                "id": 457,
+                "quantity": 1
+            }
         ]
     },
     {
@@ -2986,9 +6136,27 @@
             "CN": "匠之護石 II"
         },
         "level": 2,
-        "rarity": 0,
+        "rarity": 8,
         "abilityIds": [
             142
+        ],
+        "craftMaterials": [
+            {
+                "id": 101,
+                "quantity": 1
+            },
+            {
+                "id": 103,
+                "quantity": 1
+            },
+            {
+                "id": 540,
+                "quantity": 1
+            },
+            {
+                "id": 138,
+                "quantity": 1
+            }
         ]
     },
     {
@@ -3003,9 +6171,27 @@
             "CN": "匠之護石 III"
         },
         "level": 3,
-        "rarity": 0,
+        "rarity": 9,
         "abilityIds": [
             143
+        ],
+        "craftMaterials": [
+            {
+                "id": 432,
+                "quantity": 1
+            },
+            {
+                "id": 542,
+                "quantity": 1
+            },
+            {
+                "id": 541,
+                "quantity": 2
+            },
+            {
+                "id": 133,
+                "quantity": 1
+            }
         ]
     },
     {
@@ -3020,10 +6206,28 @@
             "CN": "泥浴護石"
         },
         "level": 1,
-        "rarity": 0,
+        "rarity": 6,
         "abilityIds": [
             12,
             202
+        ],
+        "craftMaterials": [
+            {
+                "id": 242,
+                "quantity": 2
+            },
+            {
+                "id": 486,
+                "quantity": 3
+            },
+            {
+                "id": 137,
+                "quantity": 5
+            },
+            {
+                "id": 457,
+                "quantity": 2
+            }
         ]
     },
     {
@@ -3038,10 +6242,28 @@
             "CN": "陷阱彈護石"
         },
         "level": 1,
-        "rarity": 0,
+        "rarity": 6,
         "abilityIds": [
             35,
             288
+        ],
+        "craftMaterials": [
+            {
+                "id": 46,
+                "quantity": 2
+            },
+            {
+                "id": 503,
+                "quantity": 3
+            },
+            {
+                "id": 302,
+                "quantity": 2
+            },
+            {
+                "id": 457,
+                "quantity": 2
+            }
         ]
     },
     {
@@ -3056,10 +6278,28 @@
             "CN": "狩獵生活護石"
         },
         "level": 1,
-        "rarity": 0,
+        "rarity": 6,
         "abilityIds": [
             299,
             246
+        ],
+        "craftMaterials": [
+            {
+                "id": 223,
+                "quantity": 3
+            },
+            {
+                "id": 527,
+                "quantity": 5
+            },
+            {
+                "id": 374,
+                "quantity": 5
+            },
+            {
+                "id": 457,
+                "quantity": 1
+            }
         ]
     },
     {
@@ -3074,10 +6314,28 @@
             "CN": "調查達人護石"
         },
         "level": 1,
-        "rarity": 0,
+        "rarity": 6,
         "abilityIds": [
             247,
             249
+        ],
+        "craftMaterials": [
+            {
+                "id": 249,
+                "quantity": 5
+            },
+            {
+                "id": 250,
+                "quantity": 5
+            },
+            {
+                "id": 522,
+                "quantity": 5
+            },
+            {
+                "id": 457,
+                "quantity": 1
+            }
         ]
     },
     {
@@ -3092,10 +6350,28 @@
             "CN": "採集鐵人護石"
         },
         "level": 1,
-        "rarity": 0,
+        "rarity": 6,
         "abilityIds": [
             248,
             250
+        ],
+        "craftMaterials": [
+            {
+                "id": 335,
+                "quantity": 5
+            },
+            {
+                "id": 239,
+                "quantity": 5
+            },
+            {
+                "id": 237,
+                "quantity": 5
+            },
+            {
+                "id": 457,
+                "quantity": 1
+            }
         ]
     },
     {
@@ -3110,9 +6386,27 @@
             "CN": "耐防護石 I"
         },
         "level": 1,
-        "rarity": 0,
+        "rarity": 6,
         "abilityIds": [
             19
+        ],
+        "craftMaterials": [
+            {
+                "id": 42,
+                "quantity": 3
+            },
+            {
+                "id": 41,
+                "quantity": 3
+            },
+            {
+                "id": 84,
+                "quantity": 6
+            },
+            {
+                "id": 457,
+                "quantity": 1
+            }
         ]
     },
     {
@@ -3127,9 +6421,27 @@
             "CN": "耐防護石 II"
         },
         "level": 2,
-        "rarity": 0,
+        "rarity": 6,
         "abilityIds": [
             20
+        ],
+        "craftMaterials": [
+            {
+                "id": 540,
+                "quantity": 1
+            },
+            {
+                "id": 154,
+                "quantity": 1
+            },
+            {
+                "id": 135,
+                "quantity": 6
+            },
+            {
+                "id": 457,
+                "quantity": 1
+            }
         ]
     },
     {
@@ -3144,9 +6456,27 @@
             "CN": "耐防護石 III"
         },
         "level": 3,
-        "rarity": 0,
+        "rarity": 8,
         "abilityIds": [
             21
+        ],
+        "craftMaterials": [
+            {
+                "id": 144,
+                "quantity": 1
+            },
+            {
+                "id": 222,
+                "quantity": 1
+            },
+            {
+                "id": 137,
+                "quantity": 2
+            },
+            {
+                "id": 138,
+                "quantity": 1
+            }
         ]
     },
     {
@@ -3161,9 +6491,27 @@
             "CN": "耳塞護石 I"
         },
         "level": 1,
-        "rarity": 0,
+        "rarity": 6,
         "abilityIds": [
             22
+        ],
+        "craftMaterials": [
+            {
+                "id": 77,
+                "quantity": 1
+            },
+            {
+                "id": 314,
+                "quantity": 2
+            },
+            {
+                "id": 154,
+                "quantity": 2
+            },
+            {
+                "id": 138,
+                "quantity": 1
+            }
         ]
     },
     {
@@ -3178,9 +6526,27 @@
             "CN": "耳塞護石 II"
         },
         "level": 2,
-        "rarity": 0,
+        "rarity": 7,
         "abilityIds": [
             23
+        ],
+        "craftMaterials": [
+            {
+                "id": 55,
+                "quantity": 1
+            },
+            {
+                "id": 58,
+                "quantity": 2
+            },
+            {
+                "id": 349,
+                "quantity": 1
+            },
+            {
+                "id": 138,
+                "quantity": 1
+            }
         ]
     },
     {
@@ -3195,9 +6561,27 @@
             "CN": "耳塞護石 III"
         },
         "level": 3,
-        "rarity": 0,
+        "rarity": 8,
         "abilityIds": [
             24
+        ],
+        "craftMaterials": [
+            {
+                "id": 472,
+                "quantity": 1
+            },
+            {
+                "id": 473,
+                "quantity": 2
+            },
+            {
+                "id": 540,
+                "quantity": 1
+            },
+            {
+                "id": 133,
+                "quantity": 1
+            }
         ]
     },
     {
@@ -3212,9 +6596,27 @@
             "CN": "耐震護石 I"
         },
         "level": 1,
-        "rarity": 0,
+        "rarity": 6,
         "abilityIds": [
             32
+        ],
+        "craftMaterials": [
+            {
+                "id": 77,
+                "quantity": 1
+            },
+            {
+                "id": 124,
+                "quantity": 2
+            },
+            {
+                "id": 154,
+                "quantity": 1
+            },
+            {
+                "id": 138,
+                "quantity": 1
+            }
         ]
     },
     {
@@ -3229,9 +6631,27 @@
             "CN": "耐震護石 II"
         },
         "level": 2,
-        "rarity": 0,
+        "rarity": 8,
         "abilityIds": [
             33
+        ],
+        "craftMaterials": [
+            {
+                "id": 515,
+                "quantity": 1
+            },
+            {
+                "id": 518,
+                "quantity": 2
+            },
+            {
+                "id": 349,
+                "quantity": 1
+            },
+            {
+                "id": 138,
+                "quantity": 1
+            }
         ]
     },
     {
@@ -3246,9 +6666,27 @@
             "CN": "痛擊護石 I"
         },
         "level": 1,
-        "rarity": 0,
+        "rarity": 6,
         "abilityIds": [
             132
+        ],
+        "craftMaterials": [
+            {
+                "id": 411,
+                "quantity": 1
+            },
+            {
+                "id": 410,
+                "quantity": 1
+            },
+            {
+                "id": 349,
+                "quantity": 1
+            },
+            {
+                "id": 138,
+                "quantity": 1
+            }
         ]
     },
     {
@@ -3263,9 +6701,27 @@
             "CN": "痛擊護石 II"
         },
         "level": 2,
-        "rarity": 0,
+        "rarity": 8,
         "abilityIds": [
             133
+        ],
+        "craftMaterials": [
+            {
+                "id": 472,
+                "quantity": 1
+            },
+            {
+                "id": 473,
+                "quantity": 2
+            },
+            {
+                "id": 154,
+                "quantity": 1
+            },
+            {
+                "id": 133,
+                "quantity": 1
+            }
         ]
     },
     {
@@ -3280,9 +6736,27 @@
             "CN": "集中護石 I"
         },
         "level": 1,
-        "rarity": 0,
+        "rarity": 6,
         "abilityIds": [
             135
+        ],
+        "craftMaterials": [
+            {
+                "id": 77,
+                "quantity": 1
+            },
+            {
+                "id": 124,
+                "quantity": 2
+            },
+            {
+                "id": 154,
+                "quantity": 1
+            },
+            {
+                "id": 457,
+                "quantity": 1
+            }
         ]
     },
     {
@@ -3297,9 +6771,27 @@
             "CN": "集中護石 II"
         },
         "level": 2,
-        "rarity": 0,
+        "rarity": 8,
         "abilityIds": [
             136
+        ],
+        "craftMaterials": [
+            {
+                "id": 515,
+                "quantity": 1
+            },
+            {
+                "id": 518,
+                "quantity": 2
+            },
+            {
+                "id": 164,
+                "quantity": 1
+            },
+            {
+                "id": 138,
+                "quantity": 1
+            }
         ]
     },
     {
@@ -3314,9 +6806,27 @@
             "CN": "重擊護石 I"
         },
         "level": 1,
-        "rarity": 0,
+        "rarity": 6,
         "abilityIds": [
             149
+        ],
+        "craftMaterials": [
+            {
+                "id": 509,
+                "quantity": 1
+            },
+            {
+                "id": 508,
+                "quantity": 2
+            },
+            {
+                "id": 154,
+                "quantity": 1
+            },
+            {
+                "id": 457,
+                "quantity": 1
+            }
         ]
     },
     {
@@ -3331,9 +6841,27 @@
             "CN": "重擊護石 II"
         },
         "level": 2,
-        "rarity": 0,
+        "rarity": 9,
         "abilityIds": [
             150
+        ],
+        "craftMaterials": [
+            {
+                "id": 472,
+                "quantity": 1
+            },
+            {
+                "id": 545,
+                "quantity": 6
+            },
+            {
+                "id": 154,
+                "quantity": 1
+            },
+            {
+                "id": 138,
+                "quantity": 1
+            }
         ]
     },
     {
@@ -3348,9 +6876,27 @@
             "CN": "逆上護石 I"
         },
         "level": 1,
-        "rarity": 0,
+        "rarity": 6,
         "abilityIds": [
             179
+        ],
+        "craftMaterials": [
+            {
+                "id": 74,
+                "quantity": 1
+            },
+            {
+                "id": 124,
+                "quantity": 2
+            },
+            {
+                "id": 154,
+                "quantity": 1
+            },
+            {
+                "id": 457,
+                "quantity": 1
+            }
         ]
     },
     {
@@ -3365,9 +6911,27 @@
             "CN": "逆上護石 II"
         },
         "level": 2,
-        "rarity": 0,
+        "rarity": 9,
         "abilityIds": [
             180
+        ],
+        "craftMaterials": [
+            {
+                "id": 339,
+                "quantity": 1
+            },
+            {
+                "id": 545,
+                "quantity": 6
+            },
+            {
+                "id": 154,
+                "quantity": 1
+            },
+            {
+                "id": 138,
+                "quantity": 1
+            }
         ]
     },
     {
@@ -3382,9 +6946,27 @@
             "CN": "底力護石 I"
         },
         "level": 1,
-        "rarity": 0,
+        "rarity": 6,
         "abilityIds": [
             173
+        ],
+        "craftMaterials": [
+            {
+                "id": 77,
+                "quantity": 1
+            },
+            {
+                "id": 124,
+                "quantity": 2
+            },
+            {
+                "id": 154,
+                "quantity": 1
+            },
+            {
+                "id": 457,
+                "quantity": 1
+            }
         ]
     },
     {
@@ -3399,9 +6981,27 @@
             "CN": "底力護石 II"
         },
         "level": 2,
-        "rarity": 0,
+        "rarity": 8,
         "abilityIds": [
             174
+        ],
+        "craftMaterials": [
+            {
+                "id": 101,
+                "quantity": 1
+            },
+            {
+                "id": 103,
+                "quantity": 2
+            },
+            {
+                "id": 137,
+                "quantity": 3
+            },
+            {
+                "id": 138,
+                "quantity": 1
+            }
         ]
     },
     {
@@ -3416,9 +7016,27 @@
             "CN": "整備護石 I"
         },
         "level": 1,
-        "rarity": 0,
+        "rarity": 7,
         "abilityIds": [
             300
+        ],
+        "craftMaterials": [
+            {
+                "id": 375,
+                "quantity": 2
+            },
+            {
+                "id": 426,
+                "quantity": 2
+            },
+            {
+                "id": 84,
+                "quantity": 3
+            },
+            {
+                "id": 457,
+                "quantity": 1
+            }
         ]
     },
     {
@@ -3433,9 +7051,27 @@
             "CN": "整備護石 II"
         },
         "level": 2,
-        "rarity": 0,
+        "rarity": 8,
         "abilityIds": [
             301
+        ],
+        "craftMaterials": [
+            {
+                "id": 472,
+                "quantity": 1
+            },
+            {
+                "id": 473,
+                "quantity": 2
+            },
+            {
+                "id": 397,
+                "quantity": 2
+            },
+            {
+                "id": 138,
+                "quantity": 1
+            }
         ]
     },
     {
@@ -3450,9 +7086,27 @@
             "CN": "整備護石 III"
         },
         "level": 3,
-        "rarity": 0,
+        "rarity": 9,
         "abilityIds": [
             302
+        ],
+        "craftMaterials": [
+            {
+                "id": 515,
+                "quantity": 1
+            },
+            {
+                "id": 548,
+                "quantity": 2
+            },
+            {
+                "id": 137,
+                "quantity": 2
+            },
+            {
+                "id": 138,
+                "quantity": 1
+            }
         ]
     },
     {
@@ -3467,9 +7121,27 @@
             "CN": "全開護石 I"
         },
         "level": 1,
-        "rarity": 0,
+        "rarity": 8,
         "abilityIds": [
             160
+        ],
+        "craftMaterials": [
+            {
+                "id": 473,
+                "quantity": 3
+            },
+            {
+                "id": 474,
+                "quantity": 2
+            },
+            {
+                "id": 349,
+                "quantity": 1
+            },
+            {
+                "id": 138,
+                "quantity": 1
+            }
         ]
     },
     {
@@ -3484,9 +7156,27 @@
             "CN": "全開護石 II"
         },
         "level": 2,
-        "rarity": 0,
+        "rarity": 8,
         "abilityIds": [
             161
+        ],
+        "craftMaterials": [
+            {
+                "id": 472,
+                "quantity": 1
+            },
+            {
+                "id": 473,
+                "quantity": 2
+            },
+            {
+                "id": 154,
+                "quantity": 1
+            },
+            {
+                "id": 133,
+                "quantity": 1
+            }
         ]
     },
     {
@@ -3501,9 +7191,27 @@
             "CN": "挑戰護石 I"
         },
         "level": 1,
-        "rarity": 0,
+        "rarity": 8,
         "abilityIds": [
             165
+        ],
+        "craftMaterials": [
+            {
+                "id": 339,
+                "quantity": 1
+            },
+            {
+                "id": 340,
+                "quantity": 2
+            },
+            {
+                "id": 349,
+                "quantity": 1
+            },
+            {
+                "id": 138,
+                "quantity": 1
+            }
         ]
     },
     {
@@ -3518,9 +7226,27 @@
             "CN": "挑戰護石 II"
         },
         "level": 2,
-        "rarity": 0,
+        "rarity": 8,
         "abilityIds": [
             166
+        ],
+        "craftMaterials": [
+            {
+                "id": 339,
+                "quantity": 1
+            },
+            {
+                "id": 343,
+                "quantity": 2
+            },
+            {
+                "id": 164,
+                "quantity": 1
+            },
+            {
+                "id": 133,
+                "quantity": 1
+            }
         ]
     },
     {
@@ -3535,9 +7261,27 @@
             "CN": "無傷護石 I"
         },
         "level": 1,
-        "rarity": 0,
+        "rarity": 8,
         "abilityIds": [
             170
+        ],
+        "craftMaterials": [
+            {
+                "id": 515,
+                "quantity": 1
+            },
+            {
+                "id": 514,
+                "quantity": 2
+            },
+            {
+                "id": 349,
+                "quantity": 1
+            },
+            {
+                "id": 138,
+                "quantity": 1
+            }
         ]
     },
     {
@@ -3552,9 +7296,27 @@
             "CN": "無傷護石 II"
         },
         "level": 2,
-        "rarity": 0,
+        "rarity": 8,
         "abilityIds": [
             171
+        ],
+        "craftMaterials": [
+            {
+                "id": 515,
+                "quantity": 1
+            },
+            {
+                "id": 518,
+                "quantity": 2
+            },
+            {
+                "id": 164,
+                "quantity": 1
+            },
+            {
+                "id": 133,
+                "quantity": 1
+            }
         ]
     },
     {
@@ -3569,9 +7331,27 @@
             "CN": "渾身護石 I"
         },
         "level": 1,
-        "rarity": 0,
+        "rarity": 8,
         "abilityIds": [
             266
+        ],
+        "craftMaterials": [
+            {
+                "id": 339,
+                "quantity": 1
+            },
+            {
+                "id": 340,
+                "quantity": 2
+            },
+            {
+                "id": 349,
+                "quantity": 1
+            },
+            {
+                "id": 138,
+                "quantity": 1
+            }
         ]
     },
     {
@@ -3586,9 +7366,27 @@
             "CN": "渾身護石 II"
         },
         "level": 2,
-        "rarity": 0,
+        "rarity": 9,
         "abilityIds": [
             267
+        ],
+        "craftMaterials": [
+            {
+                "id": 542,
+                "quantity": 1
+            },
+            {
+                "id": 546,
+                "quantity": 2
+            },
+            {
+                "id": 349,
+                "quantity": 1
+            },
+            {
+                "id": 133,
+                "quantity": 1
+            }
         ]
     },
     {
@@ -3603,9 +7401,27 @@
             "CN": "耐衝護石 I"
         },
         "level": 1,
-        "rarity": 0,
+        "rarity": 9,
         "abilityIds": [
             275
+        ],
+        "craftMaterials": [
+            {
+                "id": 542,
+                "quantity": 1
+            },
+            {
+                "id": 543,
+                "quantity": 2
+            },
+            {
+                "id": 154,
+                "quantity": 1
+            },
+            {
+                "id": 138,
+                "quantity": 1
+            }
         ]
     },
     {
@@ -3620,9 +7436,27 @@
             "CN": "耐衝護石 II"
         },
         "level": 2,
-        "rarity": 0,
+        "rarity": 9,
         "abilityIds": [
             276
+        ],
+        "craftMaterials": [
+            {
+                "id": 101,
+                "quantity": 1
+            },
+            {
+                "id": 544,
+                "quantity": 5
+            },
+            {
+                "id": 145,
+                "quantity": 2
+            },
+            {
+                "id": 133,
+                "quantity": 1
+            }
         ]
     },
     {
@@ -3637,9 +7471,27 @@
             "CN": "耐瘴護石 I"
         },
         "level": 1,
-        "rarity": 0,
+        "rarity": 8,
         "abilityIds": [
             293
+        ],
+        "craftMaterials": [
+            {
+                "id": 515,
+                "quantity": 1
+            },
+            {
+                "id": 514,
+                "quantity": 2
+            },
+            {
+                "id": 349,
+                "quantity": 1
+            },
+            {
+                "id": 138,
+                "quantity": 1
+            }
         ]
     },
     {
@@ -3654,9 +7506,27 @@
             "CN": "耐瘴護石 II"
         },
         "level": 2,
-        "rarity": 0,
+        "rarity": 8,
         "abilityIds": [
             294
+        ],
+        "craftMaterials": [
+            {
+                "id": 515,
+                "quantity": 1
+            },
+            {
+                "id": 518,
+                "quantity": 2
+            },
+            {
+                "id": 302,
+                "quantity": 2
+            },
+            {
+                "id": 138,
+                "quantity": 1
+            }
         ]
     },
     {
@@ -3671,9 +7541,27 @@
             "CN": "耐瘴護石 III"
         },
         "level": 3,
-        "rarity": 0,
+        "rarity": 9,
         "abilityIds": [
             295
+        ],
+        "craftMaterials": [
+            {
+                "id": 222,
+                "quantity": 3
+            },
+            {
+                "id": 549,
+                "quantity": 2
+            },
+            {
+                "id": 132,
+                "quantity": 3
+            },
+            {
+                "id": 138,
+                "quantity": 1
+            }
         ]
     },
     {
@@ -3688,9 +7576,27 @@
             "CN": "通常彈護石"
         },
         "level": 1,
-        "rarity": 0,
+        "rarity": 8,
         "abilityIds": [
             116
+        ],
+        "craftMaterials": [
+            {
+                "id": 222,
+                "quantity": 2
+            },
+            {
+                "id": 540,
+                "quantity": 1
+            },
+            {
+                "id": 68,
+                "quantity": 2
+            },
+            {
+                "id": 138,
+                "quantity": 1
+            }
         ]
     },
     {
@@ -3705,10 +7611,28 @@
             "CN": "心靜自然涼護石"
         },
         "level": 1,
-        "rarity": 0,
+        "rarity": 8,
         "abilityIds": [
             37,
             36
+        ],
+        "craftMaterials": [
+            {
+                "id": 472,
+                "quantity": 1
+            },
+            {
+                "id": 515,
+                "quantity": 1
+            },
+            {
+                "id": 513,
+                "quantity": 5
+            },
+            {
+                "id": 138,
+                "quantity": 2
+            }
         ]
     },
     {
@@ -3723,10 +7647,28 @@
             "CN": "騎手護石"
         },
         "level": 1,
-        "rarity": 0,
+        "rarity": 8,
         "abilityIds": [
             158,
             280
+        ],
+        "craftMaterials": [
+            {
+                "id": 101,
+                "quantity": 1
+            },
+            {
+                "id": 289,
+                "quantity": 1
+            },
+            {
+                "id": 294,
+                "quantity": 5
+            },
+            {
+                "id": 138,
+                "quantity": 2
+            }
         ]
     },
     {
@@ -3741,10 +7683,28 @@
             "CN": "調查達人護石"
         },
         "level": 1,
-        "rarity": 0,
+        "rarity": 8,
         "abilityIds": [
             278,
             289
+        ],
+        "craftMaterials": [
+            {
+                "id": 339,
+                "quantity": 1
+            },
+            {
+                "id": 552,
+                "quantity": 5
+            },
+            {
+                "id": 553,
+                "quantity": 3
+            },
+            {
+                "id": 138,
+                "quantity": 2
+            }
         ]
     },
     {
@@ -3759,9 +7719,27 @@
             "CN": "超心護石"
         },
         "level": 1,
-        "rarity": 0,
+        "rarity": 9,
         "abilityIds": [
             129
+        ],
+        "craftMaterials": [
+            {
+                "id": 412,
+                "quantity": 1
+            },
+            {
+                "id": 422,
+                "quantity": 1
+            },
+            {
+                "id": 542,
+                "quantity": 1
+            },
+            {
+                "id": 133,
+                "quantity": 1
+            }
         ]
     },
     {
@@ -3776,9 +7754,27 @@
             "CN": "昂揚護石 I"
         },
         "level": 1,
-        "rarity": 0,
+        "rarity": 9,
         "abilityIds": [
             138
+        ],
+        "craftMaterials": [
+            {
+                "id": 542,
+                "quantity": 1
+            },
+            {
+                "id": 543,
+                "quantity": 1
+            },
+            {
+                "id": 349,
+                "quantity": 1
+            },
+            {
+                "id": 138,
+                "quantity": 1
+            }
         ]
     },
     {
@@ -3793,9 +7789,27 @@
             "CN": "昂揚護石 II"
         },
         "level": 2,
-        "rarity": 0,
+        "rarity": 9,
         "abilityIds": [
             139
+        ],
+        "craftMaterials": [
+            {
+                "id": 339,
+                "quantity": 1
+            },
+            {
+                "id": 541,
+                "quantity": 2
+            },
+            {
+                "id": 154,
+                "quantity": 3
+            },
+            {
+                "id": 133,
+                "quantity": 1
+            }
         ]
     },
     {
@@ -3810,9 +7824,27 @@
             "CN": "貫通彈護石"
         },
         "level": 1,
-        "rarity": 0,
+        "rarity": 9,
         "abilityIds": [
             117
+        ],
+        "craftMaterials": [
+            {
+                "id": 432,
+                "quantity": 1
+            },
+            {
+                "id": 542,
+                "quantity": 1
+            },
+            {
+                "id": 546,
+                "quantity": 3
+            },
+            {
+                "id": 133,
+                "quantity": 1
+            }
         ]
     },
     {
@@ -3827,9 +7859,27 @@
             "CN": "散彈護石"
         },
         "level": 1,
-        "rarity": 0,
+        "rarity": 9,
         "abilityIds": [
             118
+        ],
+        "craftMaterials": [
+            {
+                "id": 432,
+                "quantity": 1
+            },
+            {
+                "id": 339,
+                "quantity": 1
+            },
+            {
+                "id": 342,
+                "quantity": 3
+            },
+            {
+                "id": 133,
+                "quantity": 1
+            }
         ]
     },
     {
@@ -3844,9 +7894,27 @@
             "CN": "毒瓶護石"
         },
         "level": 1,
-        "rarity": 0,
+        "rarity": 6,
         "abilityIds": [
             327
+        ],
+        "craftMaterials": [
+            {
+                "id": 422,
+                "quantity": 1
+            },
+            {
+                "id": 427,
+                "quantity": 3
+            },
+            {
+                "id": 493,
+                "quantity": 3
+            },
+            {
+                "id": 133,
+                "quantity": 1
+            }
         ]
     },
     {
@@ -3861,9 +7929,27 @@
             "CN": "麻痹瓶護石"
         },
         "level": 1,
-        "rarity": 0,
+        "rarity": 6,
         "abilityIds": [
             328
+        ],
+        "craftMaterials": [
+            {
+                "id": 196,
+                "quantity": 5
+            },
+            {
+                "id": 199,
+                "quantity": 5
+            },
+            {
+                "id": 363,
+                "quantity": 3
+            },
+            {
+                "id": 133,
+                "quantity": 1
+            }
         ]
     },
     {
@@ -3878,9 +7964,27 @@
             "CN": "睡眠瓶護石"
         },
         "level": 1,
-        "rarity": 0,
+        "rarity": 6,
         "abilityIds": [
             329
+        ],
+        "craftMaterials": [
+            {
+                "id": 400,
+                "quantity": 1
+            },
+            {
+                "id": 540,
+                "quantity": 2
+            },
+            {
+                "id": 92,
+                "quantity": 3
+            },
+            {
+                "id": 133,
+                "quantity": 1
+            }
         ]
     },
     {
@@ -3895,9 +7999,27 @@
             "CN": "爆破瓶護石"
         },
         "level": 1,
-        "rarity": 0,
+        "rarity": 8,
         "abilityIds": [
             330
+        ],
+        "craftMaterials": [
+            {
+                "id": 55,
+                "quantity": 1
+            },
+            {
+                "id": 57,
+                "quantity": 3
+            },
+            {
+                "id": 54,
+                "quantity": 3
+            },
+            {
+                "id": 133,
+                "quantity": 1
+            }
         ]
     },
     {
@@ -3912,10 +8034,28 @@
             "CN": "風水護石"
         },
         "level": 1,
-        "rarity": 0,
+        "rarity": 9,
         "abilityIds": [
             297,
             298
+        ],
+        "craftMaterials": [
+            {
+                "id": 542,
+                "quantity": 1
+            },
+            {
+                "id": 548,
+                "quantity": 3
+            },
+            {
+                "id": 474,
+                "quantity": 2
+            },
+            {
+                "id": 138,
+                "quantity": 2
+            }
         ]
     },
     {
@@ -3930,10 +8070,28 @@
             "CN": "疾風護石"
         },
         "level": 1,
-        "rarity": 0,
+        "rarity": 9,
         "abilityIds": [
             303,
             159
+        ],
+        "craftMaterials": [
+            {
+                "id": 432,
+                "quantity": 1
+            },
+            {
+                "id": 356,
+                "quantity": 1
+            },
+            {
+                "id": 289,
+                "quantity": 1
+            },
+            {
+                "id": 133,
+                "quantity": 2
+            }
         ]
     },
     {
@@ -3948,10 +8106,28 @@
             "CN": "滅龍護石"
         },
         "level": 1,
-        "rarity": 0,
+        "rarity": 9,
         "abilityIds": [
             331,
             99
+        ],
+        "craftMaterials": [
+            {
+                "id": 432,
+                "quantity": 1
+            },
+            {
+                "id": 542,
+                "quantity": 1
+            },
+            {
+                "id": 518,
+                "quantity": 1
+            },
+            {
+                "id": 133,
+                "quantity": 2
+            }
         ]
     },
     {
@@ -3966,10 +8142,28 @@
             "CN": "堅守護石"
         },
         "level": 1,
-        "rarity": 0,
+        "rarity": 9,
         "abilityIds": [
             317,
             184
+        ],
+        "craftMaterials": [
+            {
+                "id": 432,
+                "quantity": 1
+            },
+            {
+                "id": 314,
+                "quantity": 2
+            },
+            {
+                "id": 74,
+                "quantity": 2
+            },
+            {
+                "id": 133,
+                "quantity": 2
+            }
         ]
     },
     {
@@ -3984,10 +8178,16 @@
             "CN": "追風護石"
         },
         "level": 1,
-        "rarity": 0,
+        "rarity": 1,
         "abilityIds": [
             38,
             251
+        ],
+        "craftMaterials": [
+            {
+                "id": 557,
+                "quantity": 0
+            }
         ]
     }
 ]

@@ -360,6 +360,9 @@ namespace MHArmory.ViewModels
 
             ISaveDataService saveDataService = ServicesContainer.GetService<ISaveDataService>();
 
+            if (saveDataService == null)
+                return;
+
             IList<SaveDataInfo> saveDataInfoItems = saveDataService.GetSaveInfo();
 
             if (saveDataInfoItems == null)

@@ -52,11 +52,19 @@ namespace MHArmory.AthenaAssDataSource.DataStructures
         internal int PointSkill3 = 0;
         [Name("Material 1")]
         internal string Material1 = null;
+        [Name("Num 1")]
+        internal int Material1Points = 0;
         [Name("Material 2")]
         internal string Material2 = null;
+        [Name("Num 2")]
+        internal int Material2Points = 0;
         [Name("Material 3")]
         internal string Material3 = null;
+        [Name("Num 3")]
+        internal int Material3Points = 0;
         [Name("Material 4")]
         internal string Material4 = null;
+        [Name("Num 4")]
+        internal int Material4Points = 0;
     }
 }

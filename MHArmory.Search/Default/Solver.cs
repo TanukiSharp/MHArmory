@@ -12,7 +12,7 @@ using MHArmory.Search.Contracts;
 
 namespace MHArmory.Search.Default
 {
-    public class Solver : ISolver, IDisposable
+    public sealed class Solver : ISolver, IDisposable
     {
         private int currentCombinations;
         private double totalCombinations;
@@ -215,7 +215,7 @@ namespace MHArmory.Search.Default
                 if (DataUtility.AreOnSameFullArmorSet(equipments) == false)
                 {
                     OnArmorSetMismatch();
-                    return new ArmorSetSearchResult { IsMatch = false };
+                    return ArmorSetSearchResult.NoMatch;
                 }
             }
 
@@ -274,7 +274,7 @@ namespace MHArmory.Search.Default
                     if (isAll)
                     {
                         OnArmorSetMismatch();
-                        return new ArmorSetSearchResult { IsMatch = false };
+                        return ArmorSetSearchResult.NoMatch;
                     }
 
                     foreach (SolverDataJewelModel j in matchingJewels)
@@ -289,13 +289,13 @@ namespace MHArmory.Search.Default
                             if (j.Available < requiredJewelCount)
                             {
                                 OnArmorSetMismatch();
-                                return new ArmorSetSearchResult { IsMatch = false };
+                                return ArmorSetSearchResult.NoMatch;
                             }
 
                             if (ConsumeSlots(availableSlots, j.Jewel.SlotSize, requiredJewelCount) == false)
                             {
                                 OnArmorSetMismatch();
-                                return new ArmorSetSearchResult { IsMatch = false };
+                                return ArmorSetSearchResult.NoMatch;
                             }
 
                             remaingAbilityLevels -= requiredJewelCount * a.Level;
@@ -309,7 +309,7 @@ namespace MHArmory.Search.Default
                     if (remaingAbilityLevels > 0)
                     {
                         OnArmorSetMismatch();
-                        return new ArmorSetSearchResult { IsMatch = false };
+                        return ArmorSetSearchResult.NoMatch;
                     }
                 }
             }

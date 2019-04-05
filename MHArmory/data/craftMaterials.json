@@ -1,0 +1,6722 @@
+[
+    {
+        "id": 0,
+        "values": {
+            "EN": "Ace Hunter Coin",
+            "FR": "Pièce \"As de la chasse\"",
+            "JP": "撃龍王のコイン",
+            "IT": "Moneta Grancaccia",
+            "DE": "Jägerass-Münze",
+            "KR": "격룡왕코인",
+            "CN": "擊龍王硬幣"
+        }
+    },
+    {
+        "id": 1,
+        "values": {
+            "EN": "Adamant Pill",
+            "FR": "Philtre de métal",
+            "JP": "忍耐の丸薬 ",
+            "IT": "Pillola della difesa",
+            "DE": "Diamantpille",
+            "KR": "인내의 환약",
+            "CN": "忍耐藥丸"
+        }
+    },
+    {
+        "id": 2,
+        "values": {
+            "EN": "Adamant Seed",
+            "FR": "Graine de ténacité",
+            "JP": "忍耐の種",
+            "IT": "Seme della difesa",
+            "DE": "Diamantsamen",
+            "KR": "인내의 씨앗",
+            "CN": "忍耐種子"
+        }
+    },
+    {
+        "id": 3,
+        "values": {
+            "EN": "Advanced Armor Sphere",
+            "FR": "Sphère d'armure II",
+            "JP": "尖鎧玉",
+            "IT": "Advanced Armor Sphere",
+            "DE": "Rüstkugel III",
+            "KR": "첨갑옥",
+            "CN": "尖鎧玉"
+        }
+    },
+    {
+        "id": 4,
+        "values": {
+            "EN": "Aetheryte Shard",
+            "FR": "Éclat d'éthérite",
+            "JP": "エーテライトの欠片",
+            "IT": "Frammento di eterite",
+            "DE": "Ätheryten-Splitter",
+            "KR": "에테라이트 조각",
+            "CN": "Aetheryte Shard"
+        }
+    },
+    {
+        "id": 5,
+        "values": {
+            "EN": "Ancient Bone",
+            "FR": "Os ancien",
+            "JP": "太古の大骨",
+            "IT": "Osso Antico",
+            "DE": "Alter Knochen",
+            "KR": "태고의 대골",
+            "CN": "太古大骨"
+        }
+    },
+    {
+        "id": 6,
+        "values": {
+            "EN": "Ancient Cursed Bone",
+            "FR": "Os maudit ancien",
+            "JP": "Ancient Cursed Bone",
+            "IT": "Osso maledetto antico",
+            "DE": "Ancient Cursed Bone",
+            "KR": "괴물의 고대 저주 뼈",
+            "CN": "Ancient Cursed Bone"
+        }
+    },
+    {
+        "id": 7,
+        "values": {
+            "EN": "Ancient Leshen Claw",
+            "FR": "Griffe de leshen ancien",
+            "JP": "Ancient Leshen Claw",
+            "IT": "Leshen: artiglio antico",
+            "DE": "Ancient Leshen Claw",
+            "KR": "레센의 나무 손톱+",
+            "CN": "Ancient Leshen Claw"
+        }
+    },
+    {
+        "id": 8,
+        "values": {
+            "EN": "Ancient Leshen Skull",
+            "FR": "Crâne de leshen ancien",
+            "JP": "Ancient Leshen Skull",
+            "IT": "Leshen: teschio antico",
+            "DE": "Ancient Leshen Skull",
+            "KR": "고대 레셴 토벌의 증거",
+            "CN": "Ancient Leshen Skull"
+        }
+    },
+    {
+        "id": 9,
+        "values": {
+            "EN": "Ancient Potion",
+            "FR": "Potion ancestrale",
+            "JP": "いにしえの秘薬",
+            "IT": "Pillola Antica",
+            "DE": "Uralter Trank",
+            "KR": "고대의 비약",
+            "CN": "古老的秘藥"
+        }
+    },
+    {
+        "id": 10,
+        "values": {
+            "EN": "Anjanath Fang",
+            "FR": "Croc Anjanath",
+            "JP": "蛮顎竜の牙",
+            "IT": "Anjanath: zanna",
+            "DE": "Anjanath-Reißzahn",
+            "KR": "만악룡의 어금니",
+            "CN": "蠻顎龍的牙"
+        }
+    },
+    {
+        "id": 11,
+        "values": {
+            "EN": "Anjanath Fang+",
+            "FR": "Croc Anjanath +",
+            "JP": "蛮顎竜の鋭牙",
+            "IT": "Anjanath: zanna+",
+            "DE": "Anjanath-Reißzahn+",
+            "KR": "만악룡의 어금니+",
+            "CN": "蠻顎龍的銳牙"
+        }
+    },
+    {
+        "id": 12,
+        "values": {
+            "EN": "Anjanath Gem",
+            "FR": "Gemme Anjanath",
+            "JP": "蛮顎竜の宝玉",
+            "IT": "Anjanath: gemma",
+            "DE": "Anjanath-Edelstein",
+            "KR": "만악룡의 보옥",
+            "CN": "蠻顎龍的寶玉"
+        }
+    },
+    {
+        "id": 13,
+        "values": {
+            "EN": "Anjanath Nosebone",
+            "FR": "Os nasal Anjanath",
+            "JP": "蛮顎竜の鼻骨",
+            "IT": "Anjanath: osso nasale",
+            "DE": "Anjanath-Nasenbein",
+            "KR": "만악룡의 코뼈",
+            "CN": "蠻顎龍的鼻骨"
+        }
+    },
+    {
+        "id": 14,
+        "values": {
+            "EN": "Anjanath Nosebone+",
+            "FR": "Os nasal Anjanath +",
+            "JP": "蛮顎竜の上鼻骨",
+            "IT": "Anjanath: osso nasale+",
+            "DE": "Anjanath-Nasenbein+",
+            "KR": "만악룡의 코뼈+",
+            "CN": "蠻顎龍的大鼻骨"
+        }
+    },
+    {
+        "id": 15,
+        "values": {
+            "EN": "Anjanath Pelt",
+            "FR": "Pelage Anjanath",
+            "JP": "蛮顎竜の毛皮",
+            "IT": "Anjanath: pelle",
+            "DE": "Anjanath-Pelz",
+            "KR": "만악룡의 모피",
+            "CN": "蠻顎龍的毛皮"
+        }
+    },
+    {
+        "id": 16,
+        "values": {
+            "EN": "Anjanath Pelt+",
+            "FR": "Pelage Anjanath +",
+            "JP": "蛮顎竜の上毛皮",
+            "IT": "Anjanath: pelle+",
+            "DE": "Anjanath-Pelz+",
+            "KR": "만악룡의 모피+",
+            "CN": "蠻顎龍的上毛皮"
+        }
+    },
+    {
+        "id": 17,
+        "values": {
+            "EN": "Anjanath Plate",
+            "FR": "Plaque Anjanath",
+            "JP": "蛮顎竜の逆鱗",
+            "IT": "Anjanath: piastra ",
+            "DE": "Anjanath-Platte",
+            "KR": "만악룡의 역린",
+            "CN": "蠻顎龍的逆鱗"
+        }
+    },
+    {
+        "id": 18,
+        "values": {
+            "EN": "Anjanath Scale",
+            "FR": "Écaille Anjanath",
+            "JP": "蛮顎竜の鱗",
+            "IT": "Anjanath: scaglia",
+            "DE": "Anjanath-Schuppe",
+            "KR": "만악룡의 비늘",
+            "CN": "蠻顎龍的鱗"
+        }
+    },
+    {
+        "id": 19,
+        "values": {
+            "EN": "Anjanath Scale+",
+            "FR": "Écaille Anjanath +",
+            "JP": "蛮顎竜の上鱗",
+            "IT": "Anjanath: scaglia+",
+            "DE": "Anjanath-Schuppe+",
+            "KR": "만악룡의 비늘+",
+            "CN": "蠻顎龍的上鱗"
+        }
+    },
+    {
+        "id": 20,
+        "values": {
+            "EN": "Anjanath Tail",
+            "FR": "Queue Anjanath",
+            "JP": "蛮顎竜の尻尾",
+            "IT": "Anjanath: coda",
+            "DE": "Anjanath-Schwanz",
+            "KR": "만악룡의 꼬리",
+            "CN": "蠻顎龍的尾巴"
+        }
+    },
+    {
+        "id": 21,
+        "values": {
+            "EN": "Antidote",
+            "FR": "Antidote",
+            "JP": "解毒薬",
+            "IT": "Antidoto",
+            "DE": "Gegengift",
+            "KR": "해독제",
+            "CN": "解毒藥"
+        }
+    },
+    {
+        "id": 22,
+        "values": {
+            "EN": "Antidote Herb",
+            "FR": "Herbe à antidote",
+            "JP": "げどく草",
+            "IT": "Erba antidoto",
+            "DE": "Gegengiftkraut",
+            "KR": "해독초",
+            "CN": "解毒草"
+        }
+    },
+    {
+        "id": 23,
+        "values": {
+            "EN": "Appreciation Ticket",
+            "FR": "Ticket Anniversaire",
+            "JP": "感謝チケット",
+            "IT": "Buono di ringraziamento",
+            "DE": "Dankbarkeit-Ticket",
+            "KR": "감사 티켓",
+            "CN": "感謝票"
+        }
+    },
+    {
+        "id": 24,
+        "values": {
+            "EN": "Aqua Sac",
+            "FR": "Poche d'eau",
+            "JP": "水袋",
+            "IT": "Sacca acquatica",
+            "DE": "Aqua-Beutel",
+            "KR": "물주머니",
+            "CN": "水袋"
+        }
+    },
+    {
+        "id": 25,
+        "values": {
+            "EN": "Aquacore Ore",
+            "FR": "Pierre marine",
+            "JP": "水晶原石",
+            "IT": "Minerale aqualux",
+            "DE": "Wasserkern-Erz",
+            "KR": "수정원석",
+            "CN": "水晶原石"
+        }
+    },
+    {
+        "id": 26,
+        "values": {
+            "EN": "Armor Sphere",
+            "FR": "Sphère d'armure",
+            "JP": "鎧玉",
+            "IT": "Sfera-armatura I",
+            "DE": "Rüstkugel I",
+            "KR": "갑옥",
+            "CN": "鎧玉"
+        }
+    },
+    {
+        "id": 27,
+        "values": {
+            "EN": "Armor Sphere+",
+            "FR": "Sphère d'armure +",
+            "JP": "上鎧玉",
+            "IT": "Sfera-armatura II",
+            "DE": "Rüstkugel II",
+            "KR": "갑옥+",
+            "CN": "上鎧玉"
+        }
+    },
+    {
+        "id": 28,
+        "values": {
+            "EN": "Armorcharm",
+            "FR": "Amulette de défense",
+            "JP": "守りの護符",
+            "IT": "Talismano della difesa",
+            "DE": "Panzeramulett",
+            "KR": "인내의 부적",
+            "CN": "守護之護符"
+        }
+    },
+    {
+        "id": 29,
+        "values": {
+            "EN": "Armorskin",
+            "FR": "Potion de pierre",
+            "JP": "硬化薬",
+            "IT": "Siero armatura",
+            "DE": "Panzerhaut",
+            "KR": "경화약",
+            "CN": "硬化藥"
+        }
+    },
+    {
+        "id": 30,
+        "values": {
+            "EN": "Armortalon",
+            "FR": "Griffe de défense",
+            "JP": "守りの爪",
+            "IT": "Artiglio della difesa",
+            "DE": "Panzerkralle",
+            "KR": "인내의 발톱",
+            "CN": "守護之爪"
+        }
+    },
+    {
+        "id": 31,
+        "values": {
+            "EN": "Arowana Bait",
+            "FR": "Appât Arowana",
+            "JP": "アロワナダンゴ",
+            "IT": "Esca arowana",
+            "DE": "Arowana-Köder",
+            "KR": "아로와나 미끼",
+            "CN": "龍魚糰子"
+        }
+    },
+    {
+        "id": 32,
+        "values": {
+            "EN": "Astera Jerky",
+            "FR": "Viande astera",
+            "JP": "アステラジャーキー",
+            "IT": "Carne di Astera",
+            "DE": "Astera-Jerky",
+            "KR": "아스테라 저키",
+            "CN": "星辰肉干"
+        }
+    },
+    {
+        "id": 33,
+        "values": {
+            "EN": "Autumn Harvest Ticket",
+            "FR": "Ticket automne",
+            "JP": "豊穣チケット",
+            "IT": "Buono Raccolto d’Autunno",
+            "DE": "Herbsternte-Ticket",
+            "KR": "풍작 티켓",
+            "CN": "Autumn Harvest Ticket"
+        }
+    },
+    {
+        "id": 34,
+        "values": {
+            "EN": "Azure Rathalos Carapace",
+            "FR": "Cuirasse Rathalos azur",
+            "JP": "蒼火竜の堅殻",
+            "IT": "Rathalos azzurro: carapace",
+            "DE": "Azurner-Rathalos-Rückenpanzer",
+            "KR": "창화룡의 견갑각",
+            "CN": "蒼火龍的堅殼"
+        }
+    },
+    {
+        "id": 35,
+        "values": {
+            "EN": "Azure Rathalos Scale+",
+            "FR": "Écaille Rathalos azur +",
+            "JP": "蒼火竜の上鱗",
+            "IT": "Rathalos azzurro: scaglia+",
+            "DE": "Azurner-Rathalos-Schuppe+",
+            "KR": "창화룡의 비늘+",
+            "CN": "蒼火龍的上鱗"
+        }
+    },
+    {
+        "id": 36,
+        "values": {
+            "EN": "Azure Rathalos Tail",
+            "FR": "Queue Rathalos azur",
+            "JP": "蒼火竜の尻尾",
+            "IT": "Rathalos azzurro: coda",
+            "DE": "Azurner-Rathalos-Schwanz",
+            "KR": "창화룡의 꼬리",
+            "CN": "蒼火龍的尾巴"
+        }
+    },
+    {
+        "id": 37,
+        "values": {
+            "EN": "Azure Rathalos Wing",
+            "FR": "Aile Rathalos azur",
+            "JP": "蒼火竜の翼",
+            "IT": "Rathalos azzurro: ala",
+            "DE": "Azurner-Rathalos-Flügel",
+            "KR": "창화룡의 날개",
+            "CN": "蒼火龍之翼"
+        }
+    },
+    {
+        "id": 38,
+        "values": {
+            "EN": "Azure Star Shard",
+            "FR": "Rubis Rathalos",
+            "JP": "蒼星のかけら",
+            "IT": "Azure Star Shard",
+            "DE": "Azurstern-Scherbe",
+            "KR": "파란별의 조각",
+            "CN": "Azure Star Shard"
+        }
+    },
+    {
+        "id": 39,
+        "values": {
+            "EN": "Azure Stargem",
+            "FR": "Fragment d'astre bleu",
+            "JP": "蒼星の宝玉",
+            "IT": "Azure Stargem",
+            "DE": "Azurstern-Juwel",
+            "KR": "파란별의 보옥",
+            "CN": "Azure Stargem"
+        }
+    },
+    {
+        "id": 40,
+        "values": {
+            "EN": "Baitbug",
+            "FR": "Délicioptère",
+            "JP": "イレグイコガネ",
+            "IT": "Insetto dolcetto",
+            "DE": "Köderkäfer",
+            "KR": "넣자마자풍뎅이",
+            "CN": "陸續上鉤黃金餌"
+        }
+    },
+    {
+        "id": 41,
+        "values": {
+            "EN": "Barnos Hide+",
+            "FR": "Peau Barnos +",
+            "JP": "バルノスの上皮",
+            "IT": "Barnos: pelle+",
+            "DE": "Barnos-Lederhaut+",
+            "KR": "바르노스의 가죽+",
+            "CN": "酸翼龍的上皮"
+        }
+    },
+    {
+        "id": 42,
+        "values": {
+            "EN": "Barnos Talon",
+            "FR": "Serre Barnos",
+            "JP": "バルノスの尖爪",
+            "IT": "Barnos: sperone",
+            "DE": "Barnos-Kralle",
+            "KR": "바르노스의 첨예발톱",
+            "CN": "酸翼龍的尖爪"
+        }
+    },
+    {
+        "id": 43,
+        "values": {
+            "EN": "Barrel Bomb",
+            "FR": "Bombe Barril",
+            "JP": "小タル爆弾",
+            "IT": "Bomba-botte",
+            "DE": "Fassbombe",
+            "KR": "소형나무통폭탄",
+            "CN": "小爆彈桶"
+        }
+    },
+    {
+        "id": 44,
+        "values": {
+            "EN": "Barroth Carapace",
+            "FR": "Cuirasse Barroth",
+            "JP": "土砂竜の堅殻",
+            "IT": "Barroth: carapace",
+            "DE": "Barroth-Rückenpanzer",
+            "KR": "토사룡의 견갑각",
+            "CN": "土砂龍的堅殼"
+        }
+    },
+    {
+        "id": 45,
+        "values": {
+            "EN": "Barroth Claw",
+            "FR": "Griffe Barroth",
+            "JP": "土砂竜の爪",
+            "IT": "Barroth: artiglio",
+            "DE": "Barroth-Klaue",
+            "KR": "토사룡의 발톱",
+            "CN": "土砂龍的爪"
+        }
+    },
+    {
+        "id": 46,
+        "values": {
+            "EN": "Barroth Claw+",
+            "FR": "Griffe Barroth +",
+            "JP": "土砂竜の鋭爪",
+            "IT": "Barroth: artiglio+",
+            "DE": "Barroth-Klaue+",
+            "KR": "토사룡의 발톱+",
+            "CN": "土砂龍的鋭爪"
+        }
+    },
+    {
+        "id": 47,
+        "values": {
+            "EN": "Barroth Coin",
+            "FR": "Pièce Barroth",
+            "JP": "ボロスコイン",
+            "IT": "Moneta Barroth",
+            "DE": "Barroth-Münze",
+            "KR": "보로스코인",
+            "CN": "土砂龍硬幣"
+        }
+    },
+    {
+        "id": 48,
+        "values": {
+            "EN": "Barroth Ridge",
+            "FR": "Vertèbre Barroth",
+            "JP": "土砂竜の背甲",
+            "IT": "Barroth: cresta",
+            "DE": "Barroth-Rückgrat",
+            "KR": "토사룡의 배갑",
+            "CN": "土砂龍的背甲"
+        }
+    },
+    {
+        "id": 49,
+        "values": {
+            "EN": "Barroth Ridge+",
+            "FR": "Thorax Barroth +",
+            "JP": "土砂竜の堅甲",
+            "IT": "Barroth: cresta+",
+            "DE": "Barroth-Thorax",
+            "KR": "토사룡의 견갑",
+            "CN": "土砂龍的堅甲"
+        }
+    },
+    {
+        "id": 50,
+        "values": {
+            "EN": "Barroth Scalp",
+            "FR": "Scalp Barroth",
+            "JP": "土砂竜の頭殻",
+            "IT": "Barroth: scalpo",
+            "DE": "Barroth-Skalp",
+            "KR": "토사룡의 두갑각",
+            "CN": "土砂龍的頭殼"
+        }
+    },
+    {
+        "id": 51,
+        "values": {
+            "EN": "Barroth Shell",
+            "FR": "Carapace Barroth",
+            "JP": "土砂竜の甲殻",
+            "IT": "Barroth: corazza",
+            "DE": "Barroth-Panzer",
+            "KR": "토사룡의 갑각",
+            "CN": "土砂龍的甲殼"
+        }
+    },
+    {
+        "id": 52,
+        "values": {
+            "EN": "Barroth Tail",
+            "FR": "Queue Barroth",
+            "JP": "土砂竜の尻尾",
+            "IT": "Barroth: coda",
+            "DE": "Barroth-Schwanz",
+            "KR": "토사룡의 꼬리",
+            "CN": "土砂龍的尾巴"
+        }
+    },
+    {
+        "id": 53,
+        "values": {
+            "EN": "Bazelgeuse Carapace",
+            "FR": "Cuirasse Bazelgeuse",
+            "JP": "爆鱗竜の堅殻",
+            "IT": "Bazelgeuse: carapace",
+            "DE": "Bazelgeuse-Rückenpanzer",
+            "KR": "폭린룡의 견갑각",
+            "CN": "爆鱗龍的堅殼"
+        }
+    },
+    {
+        "id": 54,
+        "values": {
+            "EN": "Bazelgeuse Fuse",
+            "FR": "Mèche Bazelgeuse",
+            "JP": "爆鱗竜の爆腺",
+            "IT": "Bazelgeuse: spoletta",
+            "DE": "Bazelgeuse-Lunte",
+            "KR": "폭린룡의 폭선",
+            "CN": "爆鱗龍的爆腺"
+        }
+    },
+    {
+        "id": 55,
+        "values": {
+            "EN": "Bazelgeuse Gem",
+            "FR": "Gemme Bazelgeuse",
+            "JP": "爆鱗竜の宝玉",
+            "IT": "Bazelgeuse: gemma",
+            "DE": "Bazelgeuse-Edelstein",
+            "KR": "폭린룡의 보옥",
+            "CN": "爆鱗龍的寶玉"
+        }
+    },
+    {
+        "id": 56,
+        "values": {
+            "EN": "Bazelgeuse Scale+",
+            "FR": "Écaille Bazelgeuse +",
+            "JP": "爆鱗竜の上鱗",
+            "IT": "Bazelgeuse: scaglia+",
+            "DE": "Bazelgeuse-Schuppe+",
+            "KR": "폭린룡의 비늘+",
+            "CN": "爆鱗龍的上鱗"
+        }
+    },
+    {
+        "id": 57,
+        "values": {
+            "EN": "Bazelgeuse Tail",
+            "FR": "Queue Bazelgeuse",
+            "JP": "爆鱗竜の尻尾",
+            "IT": "Bazelgeuse: coda",
+            "DE": "Bazelgeuse-Schwanz",
+            "KR": "폭린룡의 꼬리",
+            "CN": "爆鱗龍的尾巴"
+        }
+    },
+    {
+        "id": 58,
+        "values": {
+            "EN": "Bazelgeuse Talon",
+            "FR": "Serre Bazelgeuse",
+            "JP": "爆鱗竜の尖爪",
+            "IT": "Bazelgeuse: sperone",
+            "DE": "Bazelgeuse-Kralle",
+            "KR": "폭린룡의 첨예발톱",
+            "CN": "爆鱗龍的尖爪"
+        }
+    },
+    {
+        "id": 59,
+        "values": {
+            "EN": "Bazelgeuse Wing",
+            "FR": "Aile Bazelgeuse",
+            "JP": "爆鱗竜の翼",
+            "IT": "Bazelgeuse: ala",
+            "DE": "Bazelgeuse-Flügel",
+            "KR": "폭린룡의 날개",
+            "CN": "爆鱗龍之翼"
+        }
+    },
+    {
+        "id": 60,
+        "values": {
+            "EN": "Beautiful Scale",
+            "FR": "Écaille magnifique",
+            "JP": "きれいなウロコ",
+            "IT": "Beautiful Scale",
+            "DE": "Hübsche Schuppe",
+            "KR": "예쁜 비늘",
+            "CN": "Beautiful Scale"
+        }
+    },
+    {
+        "id": 61,
+        "values": {
+            "EN": "Behemoth Bone",
+            "FR": "Crinière Béhémoth",
+            "JP": "魔獣の堅骨",
+            "IT": "Behemoth: criniera",
+            "DE": "Behemoth-Knochen",
+            "KR": "마수의 단단한 뼈",
+            "CN": "Behemoth Bone"
+        }
+    },
+    {
+        "id": 62,
+        "values": {
+            "EN": "Behemoth Great Horn",
+            "FR": "Os Béhemoth",
+            "JP": "魔獣の大角",
+            "IT": "Behemoth: osso",
+            "DE": "Behemoth-Großhorn",
+            "KR": "마수의 큰뿔",
+            "CN": "Behemoth Great Horn"
+        }
+    },
+    {
+        "id": 63,
+        "values": {
+            "EN": "Behemoth Mane",
+            "FR": "Grande corne Béhémoth",
+            "JP": "魔獣のたてがみ",
+            "IT": "Behemoth: corno enorme",
+            "DE": "Behemoth-Mähne",
+            "KR": "마수의 갈기",
+            "CN": "Behemoth Mane"
+        }
+    },
+    {
+        "id": 64,
+        "values": {
+            "EN": "Behemoth Shearclaw",
+            "FR": "Griffe Béhémoth",
+            "JP": "魔獣の裂爪",
+            "IT": "Behemoth: artigli affilati",
+            "DE": "Behemoth-Scherklaue",
+            "KR": "마수의 열조",
+            "CN": "Behemoth Shearclaw"
+        }
+    },
+    {
+        "id": 65,
+        "values": {
+            "EN": "Behemoth Tail",
+            "FR": "Queue Béhémoth",
+            "JP": "魔獣の尻尾 ",
+            "IT": "Behemoth: coda",
+            "DE": "Behemoth-Schwanz",
+            "KR": "마수의 꼬리",
+            "CN": "Behemoth Tail"
+        }
+    },
+    {
+        "id": 66,
+        "values": {
+            "EN": "Bhernastone",
+            "FR": "Pierre Bherna",
+            "JP": "ベルナストーン",
+            "IT": "Bhernastone",
+            "DE": "Bhernastein",
+            "KR": "Bhernastone 베르네스톤 교역아이템",
+            "CN": "Bhernastone"
+        }
+    },
+    {
+        "id": 67,
+        "values": {
+            "EN": "Binoculars",
+            "FR": "Jumelles",
+            "JP": "双眼鏡",
+            "IT": "Binoculars",
+            "DE": "Fernglas",
+            "KR": "쌍안경",
+            "CN": "望遠鏡"
+        }
+    },
+    {
+        "id": 68,
+        "values": {
+            "EN": "Bird Wyvern Gem",
+            "FR": "Gemme wyverne rapace",
+            "JP": "鳥竜玉",
+            "IT": "Gemma wyvern rapace",
+            "DE": "Vogelwyvern-Edelstein",
+            "KR": "조룡옥",
+            "CN": "鳥龍玉"
+        }
+    },
+    {
+        "id": 69,
+        "values": {
+            "EN": "Bitterbug",
+            "FR": "Amerinsecte",
+            "JP": "にが虫",
+            "IT": "Bitterbug",
+            "DE": "Bitterkäfer",
+            "KR": "씁쓸충",
+            "CN": "苦蟲"
+        }
+    },
+    {
+        "id": 70,
+        "values": {
+            "EN": "Black Bandage",
+            "FR": "Bandage",
+            "JP": "黒い包帯",
+            "IT": "Tessuto nero",
+            "DE": "Schwarze Bandage",
+            "KR": "검은 붕대",
+            "CN": "黑色繃帶"
+        }
+    },
+    {
+        "id": 71,
+        "values": {
+            "EN": "Black Crystal Ticket",
+            "FR": "Ticket cristal noir",
+            "JP": "黒い水晶チケット",
+            "IT": "Buono cristallo nero",
+            "DE": "Schwarzer-Kristall-Ticket",
+            "KR": "검은수정티켓",
+            "CN": "黑水晶票"
+        }
+    },
+    {
+        "id": 72,
+        "values": {
+            "EN": "Black Diablos Carapace",
+            "FR": "Cuirasse Diablos noire",
+            "JP": "黒角竜の堅殻",
+            "IT": "Diablos nera: carapace",
+            "DE": "Schwarze-Diablos-Rückenpanzer",
+            "KR": "흑각룡의 견갑각",
+            "CN": "黑角龍的堅殼"
+        }
+    },
+    {
+        "id": 73,
+        "values": {
+            "EN": "Black Diablos Ridge+",
+            "FR": "Thorax Diablos noire",
+            "JP": "黒角竜の堅甲",
+            "IT": "Diablos nera: cresta+",
+            "DE": "Schwarze-Diablos-Thorax",
+            "KR": "흑각룡의 견갑",
+            "CN": "黑角龍的堅甲"
+        }
+    },
+    {
+        "id": 74,
+        "values": {
+            "EN": "Black Spiral Horn+",
+            "FR": "Corne spiralée noire +",
+            "JP": "上質な黒巻き角",
+            "IT": "Corno a spirale nero+",
+            "DE": "Schwarzes Spiralhorn+",
+            "KR": "양질의 검은회오리뿔",
+            "CN": "優質的黑卷角"
+        }
+    },
+    {
+        "id": 75,
+        "values": {
+            "EN": "Blastnut",
+            "FR": "Noix explosive",
+            "JP": "バクレツの実",
+            "IT": "Blastnut",
+            "DE": "Sprengnuss",
+            "KR": "폭렬열매",
+            "CN": "爆裂果實"
+        }
+    },
+    {
+        "id": 76,
+        "values": {
+            "EN": "Blazenut",
+            "FR": "Noix frappe du dragon",
+            "JP": "ハッカの実",
+            "IT": "Blazenut",
+            "DE": "Brandnuss",
+            "KR": "착화열매",
+            "CN": "薄荷果實"
+        }
+    },
+    {
+        "id": 77,
+        "values": {
+            "EN": "Blos Medulla",
+            "FR": "Medulla à épines",
+            "JP": "角竜の延髄",
+            "IT": "Bulbo spinoso",
+            "DE": "Diablos-Medulla",
+            "KR": "각룡의 연수",
+            "CN": "角龍的延髓"
+        }
+    },
+    {
+        "id": 78,
+        "values": {
+            "EN": "Blue Mushroom",
+            "FR": "Champignon bleu",
+            "JP": "アオキノコ",
+            "IT": "Fungo blu",
+            "DE": "Blaupilz",
+            "KR": "푸른버섯",
+            "CN": "青菇"
+        }
+    },
+    {
+        "id": 79,
+        "values": {
+            "EN": "Bomb Arowana Scale",
+            "FR": "Écaille d'arowana bombe",
+            "JP": "バクレツウロコ",
+            "IT": "Scaglia arowana scoppio",
+            "DE": "Bomben-Arowana-Schuppe",
+            "KR": "폭렬아로와나비늘",
+            "CN": "爆裂鱗片"
+        }
+    },
+    {
+        "id": 80,
+        "values": {
+            "EN": "Bomberry",
+            "FR": "Bombaie",
+            "JP": "カクサンの実",
+            "IT": "Bomberry",
+            "DE": "Bombeere",
+            "KR": "확산열매",
+            "CN": "擴散果實"
+        }
+    },
+    {
+        "id": 81,
+        "values": {
+            "EN": "Boomerang",
+            "FR": "Boomerang",
+            "JP": "ブーメラン",
+            "IT": "Boomerang",
+            "DE": "Bumerang",
+            "KR": "부메랑",
+            "CN": "迴力標"
+        }
+    },
+    {
+        "id": 82,
+        "values": {
+            "EN": "Boulder Bone",
+            "FR": "Os fossilisé",
+            "JP": "強固な岩骨",
+            "IT": "Osso roccioso",
+            "DE": "Felsknochen",
+            "KR": "강고한 암골",
+            "CN": "堅硬岩骨"
+        }
+    },
+    {
+        "id": 83,
+        "values": {
+            "EN": "Bounce Bomb",
+            "FR": "Bombe artifice",
+            "JP": "打上げタル爆弾",
+            "IT": "Bounce Bomb",
+            "DE": "Abprallbombe",
+            "KR": "발사나무폭탄",
+            "CN": "木桶飛彈"
+        }
+    },
+    {
+        "id": 84,
+        "values": {
+            "EN": "Brutal Bone",
+            "FR": "Os bestial",
+            "JP": "荒々しい蛮骨",
+            "IT": "Osso brutale",
+            "DE": "Brutaler Knochen",
+            "KR": "난폭한 만골",
+            "CN": "狂亂蠻骨"
+        }
+    },
+    {
+        "id": 85,
+        "values": {
+            "EN": "Brute Coin",
+            "FR": "Pièce brute",
+            "JP": "獣竜コイン",
+            "IT": "Moneta brutale",
+            "DE": "Kampf-Münze",
+            "KR": "수룡코인",
+            "CN": "獸龍硬幣"
+        }
+    },
+    {
+        "id": 86,
+        "values": {
+            "EN": "Burnt Meat",
+            "FR": "Viande brûlée",
+            "JP": "コゲ肉",
+            "IT": "Burnt Meat",
+            "DE": "Verkohltes Fleisch",
+            "KR": "탄 고기",
+            "CN": "燒焦的肉"
+        }
+    },
+    {
+        "id": 87,
+        "values": {
+            "EN": "Burst Arowana Scale",
+            "FR": "Écaille d'arowana explosif",
+            "JP": "ハレツウロコ",
+            "IT": "Burst Arowana Scale",
+            "DE": "Berst-Arowana-Schuppe",
+            "KR": "파열아로와나비늘",
+            "CN": "破裂鱗片"
+        }
+    },
+    {
+        "id": 88,
+        "values": {
+            "EN": "Carbalite Ore",
+            "FR": "Carbalite",
+            "JP": "カブレライト鉱石",
+            "IT": "Minerale carbalite",
+            "DE": "Karbalit-Erz",
+            "KR": "카브레라이트광성",
+            "CN": "靈鶴石"
+        }
+    },
+    {
+        "id": 89,
+        "values": {
+            "EN": "Catalyst",
+            "FR": "Catalyseur",
+            "JP": "増強剤",
+            "IT": "Catalizzatore",
+            "DE": "Beschleuniger",
+            "KR": "증강제",
+            "CN": "增強劑"
+        }
+    },
+    {
+        "id": 90,
+        "values": {
+            "EN": "Chillshroom",
+            "FR": "Champicool",
+            "JP": "ヒンヤリダケ",
+            "IT": "Chillshroom",
+            "DE": "Frostpilz",
+            "KR": "서늘버섯",
+            "CN": "冰冷菇"
+        }
+    },
+    {
+        "id": 91,
+        "values": {
+            "EN": "Chipped Scale",
+            "FR": "Ecaille moisie",
+            "JP": "欠けたウロコ",
+            "IT": "Chipped Scale",
+            "DE": "Kaputte Schuppe",
+            "KR": "싸구려 비늘",
+            "CN": "Chipped Scale"
+        }
+    },
+    {
+        "id": 92,
+        "values": {
+            "EN": "Coma Sac",
+            "FR": "Poche de coma",
+            "JP": "昏睡袋 ",
+            "IT": "Sacca comatosa",
+            "DE": "Komabeutel",
+            "KR": "혼수주머니",
+            "CN": "昏睡袋"
+        }
+    },
+    {
+        "id": 93,
+        "values": {
+            "EN": "Commendation",
+            "FR": "Certificat du champion",
+            "JP": "勇気の証",
+            "IT": "Encomio",
+            "DE": "Belobigung",
+            "KR": "용기의 증표",
+            "CN": "勇氣之証"
+        }
+    },
+    {
+        "id": 94,
+        "values": {
+            "EN": "Cool Drink",
+            "FR": "Boisson fraîche",
+            "JP": "クーラードリンク",
+            "IT": "Cool Drink",
+            "DE": "Kaltgetränk",
+            "KR": "쿨드링크",
+            "CN": "冷飲"
+        }
+    },
+    {
+        "id": 95,
+        "values": {
+            "EN": "Coral Bone",
+            "FR": "Os de corail",
+            "JP": "サンゴの紅骨",
+            "IT": "Osso corallino",
+            "DE": "Korallenknochen",
+            "KR": "산호의 홍골",
+            "CN": "珊瑚紅骨"
+        }
+    },
+    {
+        "id": 96,
+        "values": {
+            "EN": "Coral Crystal",
+            "FR": "Cristal de corail",
+            "JP": "深海の結晶",
+            "IT": "Cristallo corallino",
+            "DE": "Korallenkristall",
+            "KR": "심해의 결정",
+            "CN": "深海結晶"
+        }
+    },
+    {
+        "id": 97,
+        "values": {
+            "EN": "Cursed Bone",
+            "FR": "Os maudit",
+            "JP": "怪物の呪骨",
+            "IT": "Osso maledetto",
+            "DE": "Verfluchter Knochen",
+            "KR": "괴물의 저주 뼈",
+            "CN": "Cursed Bone"
+        }
+    },
+    {
+        "id": 98,
+        "values": {
+            "EN": "Daora Carapace",
+            "FR": "Cuirasse Daora",
+            "JP": "鋼龍の堅殻",
+            "IT": "Daora: carapace",
+            "DE": "Daora-Rückenpanzer",
+            "KR": "강룡의 견갑각",
+            "CN": "鋼龍的堅殼"
+        }
+    },
+    {
+        "id": 99,
+        "values": {
+            "EN": "Daora Claw+",
+            "FR": "Griffe Daora +",
+            "JP": "鋼龍の尖爪",
+            "IT": "Daora: artiglio+",
+            "DE": "Daora-Klaue+",
+            "KR": "강룡의 첨예발톱",
+            "CN": "鋼龍的尖爪"
+        }
+    },
+    {
+        "id": 100,
+        "values": {
+            "EN": "Daora Dragon Scale+",
+            "FR": "Écaille Daora +",
+            "JP": "鋼の上龍鱗",
+            "IT": "Daora: scaglia+",
+            "DE": "Daora-Drachenschuppe+",
+            "KR": "강룡의 용비늘+",
+            "CN": "鋼的上龍鱗"
+        }
+    },
+    {
+        "id": 101,
+        "values": {
+            "EN": "Daora Gem",
+            "FR": "Joyau Daora",
+            "JP": "鋼龍の宝玉",
+            "IT": "Daora: gemma",
+            "DE": "Daora-Edelstein",
+            "KR": "강룡의 보옥",
+            "CN": "鋼龍的寶玉"
+        }
+    },
+    {
+        "id": 102,
+        "values": {
+            "EN": "Daora Horn+",
+            "FR": "Corne Daora +",
+            "JP": "鋼龍の尖角",
+            "IT": "Daora: corno+",
+            "DE": "Daora-Horn+",
+            "KR": "강룡의 첨예뿔",
+            "CN": "鋼龍的尖角"
+        }
+    },
+    {
+        "id": 103,
+        "values": {
+            "EN": "Daora Tail",
+            "FR": "Queue Daora",
+            "JP": "鋼龍の尻尾",
+            "IT": "Daora: coda",
+            "DE": "Daora-Schwanz",
+            "KR": "강룡의 꼬리",
+            "CN": "鋼龍的尾巴"
+        }
+    },
+    {
+        "id": 104,
+        "values": {
+            "EN": "Daora Webbing",
+            "FR": "Palmure Daora",
+            "JP": "鋼龍の翼膜",
+            "IT": "Daora: membrana",
+            "DE": "Daora-Gewebe",
+            "KR": "강룡의 날개",
+            "CN": "鋼龍的翼膜"
+        }
+    },
+    {
+        "id": 105,
+        "values": {
+            "EN": "Dash Extract",
+            "FR": "Extrait de vitalité",
+            "JP": "狂走エキス",
+            "IT": "Dash Extract",
+            "DE": "Sprint-Extrakt",
+            "KR": "질주진액",
+            "CN": "急奔萃取液"
+        }
+    },
+    {
+        "id": 106,
+        "values": {
+            "EN": "Dash Juice",
+            "FR": "Potion de vitalité",
+            "JP": "強走薬",
+            "IT": "Dash Juice",
+            "DE": "Sprintsaft",
+            "KR": "강주약",
+            "CN": "強走藥"
+        }
+    },
+    {
+        "id": 107,
+        "values": {
+            "EN": "Deceased Scale",
+            "FR": "Écaille de dragon-zombie",
+            "JP": "死屍の龍鱗",
+            "IT": "Scaglia putrefatta",
+            "DE": "Verstorbene Schuppe",
+            "KR": "사체의 용비늘",
+            "CN": "死屍的龍鱗"
+        }
+    },
+    {
+        "id": 108,
+        "values": {
+            "EN": "Deluxe First Wyverian Print",
+            "FR": "Billet des Anciens Wyvériens",
+            "JP": "古代竜人の手形G",
+            "IT": "Stampa wyvern premium",
+            "DE": "Deluxe-Erster-Wyverianer-Druck",
+            "KR": "고대용인의 증서G",
+            "CN": "Deluxe First Wyverian Print"
+        }
+    },
+    {
+        "id": 109,
+        "values": {
+            "EN": "Demon Powder",
+            "FR": "Poudre démon",
+            "JP": "鬼人の粉塵",
+            "IT": "Polvere demoniaca",
+            "DE": "Dämonenpulver",
+            "KR": "귀인의 가루",
+            "CN": "鬼人粉塵"
+        }
+    },
+    {
+        "id": 110,
+        "values": {
+            "EN": "Demondrug",
+            "FR": "Philtre du démon",
+            "JP": "鬼人薬 ",
+            "IT": "Demondrug",
+            "DE": "Dämonenmittel",
+            "KR": "귀인약",
+            "CN": "鬼人藥"
+        }
+    },
+    {
+        "id": 111,
+        "values": {
+            "EN": "Devil's Blight",
+            "FR": "Fléau du diable",
+            "JP": "鬼ニトロダケ",
+            "IT": "Devil's Blight",
+            "DE": "Teufelspest",
+            "KR": "도깨비 니트로버섯",
+            "CN": "鬼爆炸菇"
+        }
+    },
+    {
+        "id": 112,
+        "values": {
+            "EN": "Deviljho Hide",
+            "FR": "Peau Deviljho",
+            "JP": "恐暴竜の黒皮",
+            "IT": "Deviljho: pelle",
+            "DE": "Dämonjho-Lederhaut",
+            "KR": "공폭룡의 흑피",
+            "CN": "恐暴龍的黑皮"
+        }
+    },
+    {
+        "id": 113,
+        "values": {
+            "EN": "Deviljho Scalp",
+            "FR": "Scalp Deviljho",
+            "JP": "恐暴竜の頭殻",
+            "IT": "Deviljho: scalpo",
+            "DE": "Dämonjho-Skalp",
+            "KR": "공폭룡의 두갑각",
+            "CN": "恐暴龍的頭殼"
+        }
+    },
+    {
+        "id": 114,
+        "values": {
+            "EN": "Deviljho Talon",
+            "FR": "Serre Deviljho",
+            "JP": "恐暴竜の鉤爪",
+            "IT": "Deviljho: sperone",
+            "DE": "Dämonjho-Kralle",
+            "KR": "공폭룡의 발톱",
+            "CN": "恐暴龍的鉤爪"
+        }
+    },
+    {
+        "id": 115,
+        "values": {
+            "EN": "Deviljho Gem",
+            "FR": "Gemme Deviljho",
+            "JP": "恐暴竜の宝玉",
+            "IT": "Deviljho: gemma",
+            "DE": "Dämonjho-Edelstein",
+            "KR": "공폭룡의 보옥",
+            "CN": "恐暴龍的寶玉"
+        }
+    },
+    {
+        "id": 116,
+        "values": {
+            "EN": "Deviljho Scale",
+            "FR": "Écaille Deviljho",
+            "JP": "恐暴竜の黒鱗",
+            "IT": "Deviljho: scaglia",
+            "DE": "Dämonjho-Schuppe",
+            "KR": "공폭룡의 흑린",
+            "CN": "恐暴龍的黑鱗"
+        }
+    },
+    {
+        "id": 117,
+        "values": {
+            "EN": "Deviljho Saliva",
+            "FR": "Salive Deviljho",
+            "JP": "恐暴竜の唾液",
+            "IT": "Deviljho: saliva",
+            "DE": "Dämonjho-Speichel",
+            "KR": "공폭룡의 타액",
+            "CN": "恐暴龍的唾液"
+        }
+    },
+    {
+        "id": 118,
+        "values": {
+            "EN": "Deviljho Tail",
+            "FR": "Queue Deviljho",
+            "JP": "恐暴竜の尻尾",
+            "IT": "Deviljho: coda",
+            "DE": "Dämonjho-Schwanz",
+            "KR": "공폭룡의 꼬리",
+            "CN": "恐暴龍的尾巴"
+        }
+    },
+    {
+        "id": 119,
+        "values": {
+            "EN": "Deviljho Tallfang",
+            "FR": "Grand croc Deviljho",
+            "JP": "恐暴竜の大牙",
+            "IT": "Deviljho: zanna",
+            "DE": "Dämonjho-Großreißzahn",
+            "KR": "공폭룡의 큰이빨",
+            "CN": "恐暴龍的大牙"
+        }
+    },
+    {
+        "id": 120,
+        "values": {
+            "EN": "Diablos Carapace",
+            "FR": "Cuirasse Diablos",
+            "JP": "角竜の堅殻",
+            "IT": "Diablos: carapace",
+            "DE": "Diablos-Rückenpanzer",
+            "KR": "각룡의 견갑각",
+            "CN": "角龍的堅殼"
+        }
+    },
+    {
+        "id": 121,
+        "values": {
+            "EN": "Diablos Fang",
+            "FR": "Croc Diablos",
+            "JP": "角竜の牙",
+            "IT": "Diablos: zanna",
+            "DE": "Diablos-Reißzahn",
+            "KR": "각룡의 어금니",
+            "CN": "角龍的牙"
+        }
+    },
+    {
+        "id": 122,
+        "values": {
+            "EN": "Diablos Marrow",
+            "FR": "Moelle Diablos",
+            "JP": "角竜の骨髄",
+            "IT": "Diablos: midollo",
+            "DE": "Diablos-Rückenmark",
+            "KR": "각룡의 골수",
+            "CN": "角龍的骨髓"
+        }
+    },
+    {
+        "id": 123,
+        "values": {
+            "EN": "Diablos Ridge",
+            "FR": "Vertèbre Diablos",
+            "JP": "角竜の背甲",
+            "IT": "Diablos: cresta",
+            "DE": "Diablos-Rückgrat",
+            "KR": "각룡의 배갑",
+            "CN": "角龍的背甲"
+        }
+    },
+    {
+        "id": 124,
+        "values": {
+            "EN": "Diablos Ridge+",
+            "FR": "Thorax Diablos",
+            "JP": "角竜の堅甲",
+            "IT": "Diablos: cresta+",
+            "DE": "Diablos-Thorax",
+            "KR": "각룡의 견갑",
+            "CN": "角龍的堅甲"
+        }
+    },
+    {
+        "id": 125,
+        "values": {
+            "EN": "Diablos Shell",
+            "FR": "Carapace Diablos",
+            "JP": "角竜の甲殻",
+            "IT": "Diablos: corazza",
+            "DE": "Diablos-Panzer",
+            "KR": "각룡의 갑각",
+            "CN": "角龍的甲殼"
+        }
+    },
+    {
+        "id": 126,
+        "values": {
+            "EN": "Diablos Tailcase",
+            "FR": "Chevron Diablos",
+            "JP": "角竜の尾甲",
+            "IT": "Diablos: caudale",
+            "DE": "Diablos-Schwanzschutz",
+            "KR": "각룡의 미갑",
+            "CN": "角龍的尾甲"
+        }
+    },
+    {
+        "id": 127,
+        "values": {
+            "EN": "Dodogama Hide+",
+            "FR": "Peau Dodogama +",
+            "JP": "岩賊竜の上皮",
+            "IT": "Dodogama: pelle+",
+            "DE": "Dodogama-Lederhaut+",
+            "KR": "암적룡의 가죽+",
+            "CN": "岩賊龍的上皮"
+        }
+    },
+    {
+        "id": 128,
+        "values": {
+            "EN": "Dodogama Jaw",
+            "FR": "Machoire Dodogama",
+            "JP": "岩賊竜の顎",
+            "IT": "Dodogama: mandibola",
+            "DE": "Dodogama-Kiefer",
+            "KR": "암적룡의 턱",
+            "CN": "岩賊龍的顎"
+        }
+    },
+    {
+        "id": 129,
+        "values": {
+            "EN": "Dodogama Scale+",
+            "FR": "Écaille Dodogama +",
+            "JP": "岩賊竜の上鱗",
+            "IT": "Dodogama: scaglia+",
+            "DE": "Dodogama-Schuppe+",
+            "KR": "암적룡의 비늘+",
+            "CN": "岩賊龍的上鱗"
+        }
+    },
+    {
+        "id": 130,
+        "values": {
+            "EN": "Dodogama Tail",
+            "FR": "Queue Dodogama",
+            "JP": "岩賊竜の尻尾",
+            "IT": "Dodogama: coda",
+            "DE": "Dodogama-Schwanz",
+            "KR": "암적룡의 꼬리",
+            "CN": "岩賊龍的尾巴"
+        }
+    },
+    {
+        "id": 131,
+        "values": {
+            "EN": "Dodogama Talon",
+            "FR": "Serre Dodogama",
+            "JP": "岩賊竜の尖爪",
+            "IT": "Dodogama: sperone",
+            "DE": "Dodogama-Kralle",
+            "KR": "암적룡의 첨예발톱",
+            "CN": "岩賊龍的尖爪"
+        }
+    },
+    {
+        "id": 132,
+        "values": {
+            "EN": "Dragonbone Relic",
+            "FR": "Relique Dragon",
+            "JP": "いにしえの龍骨",
+            "IT": "Reliquia osso di drago",
+            "DE": "Drachenknochen-Relikt",
+            "KR": "고대의 용골",
+            "CN": "古老龍骨"
+        }
+    },
+    {
+        "id": 133,
+        "values": {
+            "EN": "Dragoncore Ore",
+            "FR": "Quartz de wyrm",
+            "JP": "龍晶原石",
+            "IT": "Dragoncore Ore",
+            "DE": "Drachenkern-Erz",
+            "KR": "용정원석",
+            "CN": "龍晶原石"
+        }
+    },
+    {
+        "id": 134,
+        "values": {
+            "EN": "Dragonfell Berry",
+            "FR": "Baie-dragon ",
+            "JP": "龍殺しの実",
+            "IT": "Dragonfell Berry",
+            "DE": "Drachentod-Beere",
+            "KR": "용살열매",
+            "CN": "屠龍果實"
+        }
+    },
+    {
+        "id": 135,
+        "values": {
+            "EN": "Dragonite Ore",
+            "FR": "Dragonite",
+            "JP": "ドラグライト鉱石",
+            "IT": "Minerale dragonite",
+            "DE": "Drachenit-Erz",
+            "KR": "드래그라이트광석",
+            "CN": "輝龍石"
+        }
+    },
+    {
+        "id": 136,
+        "values": {
+            "EN": "Dragonstrike Nut",
+            "FR": "Capsule draconique",
+            "JP": "リュウゲキの実",
+            "IT": "Dragonstrike nut",
+            "DE": "Drachenschlag-Nuss",
+            "KR": "용격열매",
+            "CN": "龍擊果實"
+        }
+    },
+    {
+        "id": 137,
+        "values": {
+            "EN": "Dragonvein Crystal",
+            "FR": "Cristal de dragon ancien",
+            "JP": "龍脈の結晶",
+            "IT": "Cristallo venadrago",
+            "DE": "Drachenader-Kristall",
+            "KR": "용맥의 결정",
+            "CN": "龍脈結晶"
+        }
+    },
+    {
+        "id": 138,
+        "values": {
+            "EN": "Dreamcore Ore",
+            "FR": "Onirite",
+            "JP": "幻晶原石",
+            "IT": "Dreamcore Ore",
+            "DE": "Traumkern-Erz",
+            "KR": "환정원석",
+            "CN": "幻晶原石"
+        }
+    },
+    {
+        "id": 139,
+        "values": {
+            "EN": "Drugged Meat",
+            "FR": "Viande droguée",
+            "JP": "眠り生肉",
+            "IT": "Drugged Meat",
+            "DE": "Rauschfleisch",
+            "KR": "수면고기",
+            "CN": "睡眠生肉"
+        }
+    },
+    {
+        "id": 140,
+        "values": {
+            "EN": "Dundormarin",
+            "FR": "objet vente",
+            "JP": "ドンドルマリン",
+            "IT": "Dundormarin",
+            "DE": "Dundormarin",
+            "KR": "Dundormarin 돈도르마린 교역아이템",
+            "CN": "Dundormarin"
+        }
+    },
+    {
+        "id": 141,
+        "values": {
+            "EN": "Dung",
+            "FR": "Bouse",
+            "JP": "モンスターのフン",
+            "IT": "Dung",
+            "DE": "Dung",
+            "KR": "몬스터의 대변",
+            "CN": "魔物的糞便"
+        }
+    },
+    {
+        "id": 142,
+        "values": {
+            "EN": "Dung Pod",
+            "FR": "Capsule de bouse",
+            "JP": "こやし玉",
+            "IT": "Dung Pod",
+            "DE": "Dungkapsel",
+            "KR": "슬링어 거름탄",
+            "CN": "投射器異臭彈"
+        }
+    },
+    {
+        "id": 143,
+        "values": {
+            "EN": "Earth Crystal",
+            "FR": "Cristal de terre",
+            "JP": "大地の結晶",
+            "IT": "Cristallo terra",
+            "DE": "Erdkristall",
+            "KR": "대지의 결정",
+            "CN": "大地結晶"
+        }
+    },
+    {
+        "id": 144,
+        "values": {
+            "EN": "Elder Dragon Blood",
+            "FR": "Sang de dragon ancien",
+            "JP": "古龍の血",
+            "IT": "Sangue di drago anziano",
+            "DE": "Drachenältester-Blut",
+            "KR": "고룡의 피",
+            "CN": "古龍之血"
+        }
+    },
+    {
+        "id": 145,
+        "values": {
+            "EN": "Elder Dragon Bone",
+            "FR": "Os de dragon ancien",
+            "JP": "古龍骨",
+            "IT": "Osso di drago anziano",
+            "DE": "Drachenältester-Knochen",
+            "KR": "고룡골",
+            "CN": "古龍骨"
+        }
+    },
+    {
+        "id": 146,
+        "values": {
+            "EN": "Electro Sac",
+            "FR": "Poche électrique",
+            "JP": "電気袋",
+            "IT": "Sacca elettrica",
+            "DE": "Strombeutel",
+            "KR": "전기주머니",
+            "CN": "電氣袋"
+        }
+    },
+    {
+        "id": 147,
+        "values": {
+            "EN": "Empty Phial",
+            "FR": "Fiole vide",
+            "JP": "空きビン",
+            "IT": "Empty Phial",
+            "DE": "Leere Phiole",
+            "KR": "빈 병",
+            "CN": "空瓶"
+        }
+    },
+    {
+        "id": 148,
+        "values": {
+            "EN": "Energy Drink",
+            "FR": "Boisson énergétique",
+            "JP": "元気ドリンコ",
+            "IT": "Energy Drink",
+            "DE": "Energy-Drink",
+            "KR": "에너지 드링크",
+            "CN": "元氣飲料"
+        }
+    },
+    {
+        "id": 149,
+        "values": {
+            "EN": "Exciteshroom",
+            "FR": "Champexciteur",
+            "JP": "ドキドキノコ",
+            "IT": "Exciteshroom",
+            "DE": "Reizpilz",
+            "KR": "두근두근버섯",
+            "CN": "心跳加速蘑菇"
+        }
+    },
+    {
+        "id": 150,
+        "values": {
+            "EN": "Farcaster",
+            "FR": "Téléportogène",
+            "JP": "モドリ玉",
+            "IT": "Farcaster",
+            "DE": "Teleporter",
+            "KR": "귀환옥",
+            "CN": "回歸球"
+        }
+    },
+    {
+        "id": 151,
+        "values": {
+            "EN": "Fertile Mud",
+            "FR": "Boue fertile",
+            "JP": "肥沃なドロ",
+            "IT": "Fango fertile",
+            "DE": "Fruchtbarer Schlamm",
+            "KR": "비옥한 진흙",
+            "CN": "肥沃的泥土"
+        }
+    },
+    {
+        "id": 152,
+        "values": {
+            "EN": "Fire Dragon Scale+",
+            "FR": "Écaille Teostra +",
+            "JP": "獄炎の龍鱗",
+            "IT": "Teostra: scaglia+",
+            "DE": "Feuerdrachen-Schuppe+",
+            "KR": "옥염의 용비늘",
+            "CN": "獄炎的龍鱗"
+        }
+    },
+    {
+        "id": 153,
+        "values": {
+            "EN": "Fire Herb",
+            "FR": "Herbe de feu",
+            "JP": "火薬草",
+            "IT": "Fire Herb",
+            "DE": "Feuerkraut",
+            "KR": "화염초",
+            "CN": "火藥草"
+        }
+    },
+    {
+        "id": 154,
+        "values": {
+            "EN": "Firecell Stone",
+            "FR": "Pierre de lave",
+            "JP": "獄炎石",
+            "IT": "Minerale lavico",
+            "DE": "Feuerzellenstein",
+            "KR": "옥염석",
+            "CN": "獄炎石"
+        }
+    },
+    {
+        "id": 155,
+        "values": {
+            "EN": "First Wyverian Print",
+            "FR": "Billet wyvérien",
+            "JP": "古代竜人の手形",
+            "IT": "Stampa antico wyverniano",
+            "DE": "Erster-Wyverianer-Druck",
+            "KR": "고대용인의 증서",
+            "CN": "First Wyverian Print"
+        }
+    },
+    {
+        "id": 156,
+        "values": {
+            "EN": "Flame Sac",
+            "FR": "Poche de flamme",
+            "JP": "火炎袋",
+            "IT": "Sacca fiammeggiante",
+            "DE": "Flammenbeutel",
+            "KR": "화염주머니",
+            "CN": "火炎袋"
+        }
+    },
+    {
+        "id": 157,
+        "values": {
+            "EN": "Flamenut",
+            "FR": "Noix de feu",
+            "JP": "チャッカの実",
+            "IT": "Flamenut",
+            "DE": "Feuernuss",
+            "KR": "발화열매",
+            "CN": "結果果實"
+        }
+    },
+    {
+        "id": 158,
+        "values": {
+            "EN": "Flash Pod",
+            "FR": "Capsule aveuglante",
+            "JP": "スリンガー閃光弾",
+            "IT": "Flash Pod",
+            "DE": "Blitzkapsel",
+            "KR": "슬링어 섬광탄",
+            "CN": "投射器閃光彈"
+        }
+    },
+    {
+        "id": 159,
+        "values": {
+            "EN": "Flashbug",
+            "FR": "Flashinsecte",
+            "JP": "光蟲",
+            "IT": "Flashbug",
+            "DE": "Blitzkäfer",
+            "KR": "광충",
+            "CN": "光蟲"
+        }
+    },
+    {
+        "id": 160,
+        "values": {
+            "EN": "Flowfern",
+            "FR": "Ondulite",
+            "JP": "流水草",
+            "IT": "Flowfern",
+            "DE": "Flussfarn",
+            "KR": "유수초",
+            "CN": "流水草"
+        }
+    },
+    {
+        "id": 161,
+        "values": {
+            "EN": "Flying Coin",
+            "FR": "Pièce de l'air",
+            "JP": "飛竜コイン",
+            "IT": "Moneta volante",
+            "DE": "Flieger-Münze",
+            "KR": "비룡코인",
+            "CN": "飛龍硬幣"
+        }
+    },
+    {
+        "id": 162,
+        "values": {
+            "EN": "Freezer Sac",
+            "FR": "Poche de glace",
+            "JP": "凍結袋",
+            "IT": "Sacca siderale",
+            "DE": "Frierbeutel",
+            "KR": "빙결주머니",
+            "CN": "凍結袋"
+        }
+    },
+    {
+        "id": 163,
+        "values": {
+            "EN": "Frost Sac",
+            "FR": "Poche de givre",
+            "JP": "氷結袋",
+            "IT": "Sacca congelante",
+            "DE": "Frostbeutel",
+            "KR": "동결주머니",
+            "CN": "冰結袋"
+        }
+    },
+    {
+        "id": 164,
+        "values": {
+            "EN": "Fucium Ore",
+            "FR": "Fucium",
+            "JP": "ユニオン鉱石",
+            "IT": "Minerale fucium",
+            "DE": "Fusium-Erz",
+            "KR": "유니언광성",
+            "CN": "白鳩石"
+        }
+    },
+    {
+        "id": 165,
+        "values": {
+            "EN": "Gajalaka Sketch",
+            "FR": "Dessin Galjalaka",
+            "JP": "奇面族スケッチ",
+            "IT": "Scarabocchio Gajalaka",
+            "DE": "Gajalaka-Skizze",
+            "KR": "기면족의 스케치",
+            "CN": "Gajalaka Sketch"
+        }
+    },
+    {
+        "id": 166,
+        "values": {
+            "EN": "Gajau Scale",
+            "FR": "Écaille de Gajau",
+            "JP": "咬魚の上皮",
+            "IT": "Gajau: scaglia",
+            "DE": "Gajau-Schuppe",
+            "KR": "교어의 껍질+",
+            "CN": "Gajau Scale"
+        }
+    },
+    {
+        "id": 167,
+        "values": {
+            "EN": "Gajau Skin",
+            "FR": "Peau Gajau",
+            "JP": "咬魚の皮",
+            "IT": "Gajau: pelle",
+            "DE": "Gajau-Haut",
+            "KR": "교어의 껍질",
+            "CN": "咬魚的皮"
+        }
+    },
+    {
+        "id": 168,
+        "values": {
+            "EN": "Gajau Whisker",
+            "FR": "Moustache Gajau",
+            "JP": "咬魚のヒレ",
+            "IT": "Gajau: baffo",
+            "DE": "Gajau-Barthaar",
+            "KR": "교어의 수염",
+            "CN": "咬魚的鬚"
+        }
+    },
+    {
+        "id": 169,
+        "values": {
+            "EN": "Gama Coin",
+            "FR": "Pièce Dodogama",
+            "JP": "ガマルコイン",
+            "IT": "Moneta Gama",
+            "DE": "Gama-Münze",
+            "KR": "가마루코인",
+            "CN": "岩賊龍硬幣"
+        }
+    },
+    {
+        "id": 170,
+        "values": {
+            "EN": "Gastodon Carapace",
+            "FR": "Cuirasse Gastodon",
+            "JP": "ガストドンの堅殻",
+            "IT": "Gastodon: carapace",
+            "DE": "Gastodon-Rückenpanzer",
+            "KR": "가스토돈의 견갑각",
+            "CN": "突擊龍的堅殼"
+        }
+    },
+    {
+        "id": 171,
+        "values": {
+            "EN": "Gastodon Horn",
+            "FR": "Corne Gastodon",
+            "JP": "ガストドンの尖角",
+            "IT": "Gastodon: corno",
+            "DE": "Gastodon-Horn",
+            "KR": "가스토돈의 첨예뿔",
+            "CN": "突擊龍的尖角"
+        }
+    },
+    {
+        "id": 172,
+        "values": {
+            "EN": "Gilded Scale",
+            "FR": "Écaille rouge",
+            "JP": "金色のうろこ",
+            "IT": "Gilded: scaglia",
+            "DE": "Vergoldete Schuppe",
+            "KR": "Gilded Scale 교역아이템",
+            "CN": "Gilded Scale"
+        }
+    },
+    {
+        "id": 173,
+        "values": {
+            "EN": "Gilded Scale+",
+            "FR": "Écaille rouge +",
+            "JP": "金色の大ウロコ",
+            "IT": "Gilded: scaglia+",
+            "DE": "Vergoldete Schuppe+",
+            "KR": "Gilded Scale+ 교역아이템",
+            "CN": "Gilded Scale+"
+        }
+    },
+    {
+        "id": 174,
+        "values": {
+            "EN": "Girros Fang",
+            "FR": "Croc Girros",
+            "JP": "ギルオスの麻痺牙",
+            "IT": "Girros: zanna",
+            "DE": "Girros-Reißzahn",
+            "KR": "기르오스의 어금니",
+            "CN": "凶顎龍的麻痺牙"
+        }
+    },
+    {
+        "id": 175,
+        "values": {
+            "EN": "Girros Hide",
+            "FR": "Peau Girros",
+            "JP": "ギルオスの皮",
+            "IT": "Girros: pelle",
+            "DE": "Girros-Lederhaut",
+            "KR": "기르오스의 가죽",
+            "CN": "凶顎龍的皮"
+        }
+    },
+    {
+        "id": 176,
+        "values": {
+            "EN": "Girros Hide+",
+            "FR": "Peau Girros +",
+            "JP": "ギルオスの上皮",
+            "IT": "Girros: pelle+",
+            "DE": "Girros-Lederhaut+",
+            "KR": "기르오스의 가죽+",
+            "CN": "凶顎龍的上皮"
+        }
+    },
+    {
+        "id": 177,
+        "values": {
+            "EN": "Girros Scale",
+            "FR": "Écaille Girros",
+            "JP": "ギルオスの鱗",
+            "IT": "Girros: scaglia",
+            "DE": "Girros-Schuppe",
+            "KR": "기르오스의 비늘",
+            "CN": "凶顎龍的鱗"
+        }
+    },
+    {
+        "id": 178,
+        "values": {
+            "EN": "Girros Scale+",
+            "FR": "Écaille Girros +",
+            "JP": "ギルオスの上鱗",
+            "IT": "Girros: scaglia+",
+            "DE": "Girros-Schuppe+",
+            "KR": "기르오스의 비늘+",
+            "CN": "凶顎龍的上鱗"
+        }
+    },
+    {
+        "id": 179,
+        "values": {
+            "EN": "Gleaming Streamstone",
+            "FR": "Pierre-dragon scintillante",
+            "JP": "大龍脈石",
+            "IT": "Gleaming Streamstone",
+            "DE": "Schimmernder Stromstein",
+            "KR": "대용맥석",
+            "CN": "Gleaming Streamstone"
+        }
+    },
+    {
+        "id": 180,
+        "values": {
+            "EN": "Glimmering Scale",
+            "FR": "Écaille scintillante",
+            "JP": "かがやくウロコ",
+            "IT": "Glimmering Scale",
+            "DE": "Schimmernde Schuppe",
+            "KR": "Glimmering Scale 교역아이템",
+            "CN": "Glimmering Scale"
+        }
+    },
+    {
+        "id": 181,
+        "values": {
+            "EN": "Glowing Feystone",
+            "FR": "Joyau ???1",
+            "JP": "光る珠",
+            "IT": "Glowing Feystone",
+            "DE": "Glowing Feystone",
+            "KR": "빛나는 구슬",
+            "CN": "Glowing Feystone"
+        }
+    },
+    {
+        "id": 182,
+        "values": {
+            "EN": "Godbug",
+            "FR": "Insecte-dieu",
+            "JP": "不死虫",
+            "IT": "Insetto divino",
+            "DE": "Götterkäfer",
+            "KR": "불사충",
+            "CN": "不死蟲"
+        }
+    },
+    {
+        "id": 183,
+        "values": {
+            "EN": "Gold Wyverian Print",
+            "FR": "Billet wyvérien en or",
+            "JP": "金の竜人手形",
+            "IT": "Stampa wyvern oro",
+            "DE": "Goldener Wyverianer-Druck",
+            "KR": "금용인증서",
+            "CN": "金之龍人票據"
+        }
+    },
+    {
+        "id": 184,
+        "values": {
+            "EN": "Golden Egg",
+            "FR": "Œuf d'or",
+            "JP": "金のたまご",
+            "IT": "Golden Egg",
+            "DE": "Goldei",
+            "KR": "황금알",
+            "CN": "金蛋"
+        }
+    },
+    {
+        "id": 185,
+        "values": {
+            "EN": "Golden Scale",
+            "FR": "Écaille dorée",
+            "JP": "黄金のウロコ",
+            "IT": "Golden Scale",
+            "DE": "Golden-Schuppe",
+            "KR": "금빛 비늘 환급아이템",
+            "CN": "Golden Scale"
+        }
+    },
+    {
+        "id": 186,
+        "values": {
+            "EN": "Golden Scale+",
+            "FR": "Écaille dorée+",
+            "JP": "黄金の大ウロコ",
+            "IT": "Golden Scale+",
+            "DE": "Golden-Schuppe+",
+            "KR": "금빛 비늘+ 환급아이템",
+            "CN": "Golden Scale+"
+        }
+    },
+    {
+        "id": 187,
+        "values": {
+            "EN": "Goldenfish Bait",
+            "FR": "Appât pour poisson d'or",
+            "JP": "黄金ダンゴ",
+            "IT": "Goldenfish Bait",
+            "DE": "Goldenfish-Köder",
+            "KR": "금붕어 떡밥",
+            "CN": "金魚糰子"
+        }
+    },
+    {
+        "id": 188,
+        "values": {
+            "EN": "Grand Gajau Whisker",
+            "FR": "Grande moustache Gajau",
+            "JP": "咬魚の大ヒレ",
+            "IT": "Gajau: gran baffo",
+            "DE": "Großer Gajau-Barthaar",
+            "KR": "교어의 큰수염",
+            "CN": "咬魚的大鬚"
+        }
+    },
+    {
+        "id": 189,
+        "values": {
+            "EN": "Great Bomb Arowana Scale",
+            "FR": "Écaille de grand arowana explosif",
+            "JP": "大バクレツウロコ",
+            "IT": "Scaglia gran arowana scoppio",
+            "DE": "GroßerBombenArowanaSchuppe",
+            "KR": "대형폭렬아로와나비늘",
+            "CN": "大爆裂鱗片"
+        }
+    },
+    {
+        "id": 190,
+        "values": {
+            "EN": "Great Burst Arowana Scale",
+            "FR": "Écaille de grand poisson-poudre",
+            "JP": "大ハレツウロコ",
+            "IT": "Scaglia gran arowana bomba",
+            "DE": "GroßerBerstArowanaSchuppe",
+            "KR": "대형파열아로와나비늘",
+            "CN": "大破裂鱗片"
+        }
+    },
+    {
+        "id": 191,
+        "values": {
+            "EN": "Great Girros Fang",
+            "FR": "Croc Grand Girros",
+            "JP": "痺賊竜の牙",
+            "IT": "Gran Girros: zanna",
+            "DE": "Groß-Girros-Reißzahn",
+            "KR": "비적룡의 어금니",
+            "CN": "大凶顎龍的牙"
+        }
+    },
+    {
+        "id": 192,
+        "values": {
+            "EN": "Great Girros Fang+",
+            "FR": "Croc Grand Girros +",
+            "JP": "痺賊竜の鋭牙",
+            "IT": "Gran Girros: zanna+",
+            "DE": "Groß-Girros-Reißzahn+",
+            "KR": "비적룡의 어금니+",
+            "CN": "大凶顎龍的銳牙"
+        }
+    },
+    {
+        "id": 193,
+        "values": {
+            "EN": "Great Girros Hide",
+            "FR": "Peau Grand Girros",
+            "JP": "痺賊竜の皮",
+            "IT": "Gran Girros: pelle",
+            "DE": "Groß-Girros-Lederhaut",
+            "KR": "비적룡의 가죽",
+            "CN": "大凶顎龍的皮"
+        }
+    },
+    {
+        "id": 194,
+        "values": {
+            "EN": "Great Girros Hide+",
+            "FR": "Peau Grand Girros +",
+            "JP": "痺賊竜の上皮",
+            "IT": "Gran Girros: pelle+",
+            "DE": "Groß-Girros-Lederhaut+",
+            "KR": "비적룡의 가죽+",
+            "CN": "大凶顎龍的上皮"
+        }
+    },
+    {
+        "id": 195,
+        "values": {
+            "EN": "Great Girros Hood",
+            "FR": "Capuchon Grand Girros",
+            "JP": "痺賊竜の頭巾殻",
+            "IT": "Gran Girros: cappuccio",
+            "DE": "Groß-Girros-Haube",
+            "KR": "비적룡의두건각",
+            "CN": "大凶顎龍的頭巾殼"
+        }
+    },
+    {
+        "id": 196,
+        "values": {
+            "EN": "Great Girros Hood+",
+            "FR": "Capuchon Grand Girros +",
+            "JP": "痺賊竜の大頭巾",
+            "IT": "Gran Girros: cappuccio+",
+            "DE": "Groß-Girros-Haube+",
+            "KR": "비적룡의두건각+",
+            "CN": "大凶顎龍的大頭巾"
+        }
+    },
+    {
+        "id": 197,
+        "values": {
+            "EN": "Great Girros Scale",
+            "FR": "Écaille Grand Girros",
+            "JP": "痺賊竜の鱗",
+            "IT": "Gran Girros: scaglia",
+            "DE": "Groß-Girros-Schuppe",
+            "KR": "비적룡의 비늘",
+            "CN": "大凶顎龍的鱗"
+        }
+    },
+    {
+        "id": 198,
+        "values": {
+            "EN": "Great Girros Scale+",
+            "FR": "Écaille Grand Girros +",
+            "JP": "痺賊竜の上鱗",
+            "IT": "Gran Girros: scaglia+",
+            "DE": "Groß-Girros-Schuppe+",
+            "KR": "비적룡의 비늘+",
+            "CN": "大凶顎龍的上鱗"
+        }
+    },
+    {
+        "id": 199,
+        "values": {
+            "EN": "Great Girros Tail",
+            "FR": "Queue Grand Girros",
+            "JP": "痺賊竜の尻尾",
+            "IT": "Gran Girros: coda",
+            "DE": "Groß-Girros-Schwanz",
+            "KR": "비적룡의 꼬리",
+            "CN": "大凶顎龍的尾巴"
+        }
+    },
+    {
+        "id": 200,
+        "values": {
+            "EN": "Great Gunpowderfish Scale",
+            "FR": "Grande écaille poisson-poudre",
+            "JP": "大バクヤクウロコ",
+            "IT": "Great Gunpowderfish Scale",
+            "DE": "GroßerSchießpulverfischSchuppe",
+            "KR": "대형 폭약 비늘",
+            "CN": "大火藥金魚鱗片"
+        }
+    },
+    {
+        "id": 201,
+        "values": {
+            "EN": "Great Hornfly",
+            "FR": "Grand papillon corne",
+            "JP": "オオツノアゲハ",
+            "IT": "Mosca-corno",
+            "DE": "Große Hornfliege",
+            "KR": "장수호랑나비",
+            "CN": "大角鳳蝶"
+        }
+    },
+    {
+        "id": 202,
+        "values": {
+            "EN": "Great Jagras Claw",
+            "FR": "Griffe Grand Jagras",
+            "JP": "賊竜の爪",
+            "IT": "Gran Jagras: artiglio",
+            "DE": "Groß-Jagras-Klaue",
+            "KR": "적룡의 발톱",
+            "CN": "大凶豺龍的爪"
+        }
+    },
+    {
+        "id": 203,
+        "values": {
+            "EN": "Great Jagras Claw+",
+            "FR": "Griffe Grand Jagras +",
+            "JP": "賊竜の尖爪",
+            "IT": "Gran Jagras: artiglio+",
+            "DE": "Groß-Jagras-Klaue+",
+            "KR": "적룡의 발톱+",
+            "CN": "大凶豺龍的尖爪"
+        }
+    },
+    {
+        "id": 204,
+        "values": {
+            "EN": "Great Jagras Hide",
+            "FR": "Peau Grand Jagras",
+            "JP": "賊竜の皮",
+            "IT": "Gran Jagras: pelle",
+            "DE": "Groß-Jagras-Lederhaut",
+            "KR": "적룡의 가죽",
+            "CN": "大凶豺龍的皮"
+        }
+    },
+    {
+        "id": 205,
+        "values": {
+            "EN": "Great Jagras Hide+",
+            "FR": "Peau Grand Jagras +",
+            "JP": "賊竜の上皮",
+            "IT": "Gran Jagras: pelle+",
+            "DE": "Groß-Jagras-Lederhaut+",
+            "KR": "적룡의 가죽+",
+            "CN": "大凶豺龍的上皮"
+        }
+    },
+    {
+        "id": 206,
+        "values": {
+            "EN": "Great Jagras Mane",
+            "FR": "Crinière Grand Jagras",
+            "JP": "賊竜のたてがみ",
+            "IT": "Gran Jagras: criniera",
+            "DE": "Groß-Jagras-Mähne",
+            "KR": "적룡의 갈기",
+            "CN": "大凶豺龍的鬃毛"
+        }
+    },
+    {
+        "id": 207,
+        "values": {
+            "EN": "Great Jagras Scale",
+            "FR": "Écaille Grand Jagras",
+            "JP": "賊竜の鱗",
+            "IT": "Gran Jagras: scaglia",
+            "DE": "Groß-Jagras-Schuppe",
+            "KR": "적룡의 비늘",
+            "CN": "大凶豺龍的鱗"
+        }
+    },
+    {
+        "id": 208,
+        "values": {
+            "EN": "Great Jagras Scale+",
+            "FR": "Écaille Grand Jagras +",
+            "JP": "賊竜の上鱗",
+            "IT": "Gran Jagras: scaglia+",
+            "DE": "Groß-Jagras-Schuppe+",
+            "KR": "적룡의 비늘+",
+            "CN": "大凶豺龍的上鱗"
+        }
+    },
+    {
+        "id": 209,
+        "values": {
+            "EN": "Great Sushifish Scale",
+            "FR": "Grande écaille de sushipoisson",
+            "JP": "大サシミウロコ",
+            "IT": "Great Sushifish Scale",
+            "DE": "GroßerSushifischSchuppe",
+            "KR": "대형 사시미 비늘",
+            "CN": "大刺身鱗片"
+        }
+    },
+    {
+        "id": 210,
+        "values": {
+            "EN": "Gunpowder",
+            "FR": "Poudre à canon",
+            "JP": "爆薬",
+            "IT": "Gunpowder",
+            "DE": "Schießpulver",
+            "KR": "화약분",
+            "CN": "爆藥"
+        }
+    },
+    {
+        "id": 211,
+        "values": {
+            "EN": "Gunpowder Level 2",
+            "FR": "Poudre à canon II",
+            "JP": "LV2火薬粉",
+            "IT": "Gunpowder Level 2",
+            "DE": "Schießpulver Stufe 2",
+            "KR": "화약분 2",
+            "CN": "LV2火藥粉"
+        }
+    },
+    {
+        "id": 212,
+        "values": {
+            "EN": "Gunpowderfish Bait",
+            "FR": "Appât pour poisson-poudre",
+            "JP": "デメキンダンゴ",
+            "IT": "Gunpowderfish Bait",
+            "DE": "Schießpulverfisch-Köder",
+            "KR": "금붕어 경단",
+            "CN": "火藥金魚糰子"
+        }
+    },
+    {
+        "id": 213,
+        "values": {
+            "EN": "Gunpowderfish Scale",
+            "FR": "Écaille poisson-poudre",
+            "JP": "バクヤクウロコ",
+            "IT": "Gunpowderfish Scale",
+            "DE": "Schießpulverfisch-Schuppe",
+            "KR": "폭약 비늘",
+            "CN": "火藥金魚鱗片"
+        }
+    },
+    {
+        "id": 214,
+        "values": {
+            "EN": "Gunpowder Level 3",
+            "FR": "Poudre à canon III",
+            "JP": "LV3火薬粉",
+            "IT": "Gunpowser Level 3",
+            "DE": "Schießpulver Stufe 3",
+            "KR": "화약분 3",
+            "CN": "LV3火藥粉"
+        }
+    },
+    {
+        "id": 215,
+        "values": {
+            "EN": "Hard Armor Sphere",
+            "FR": "Sphère d'armure III",
+            "JP": "堅鎧玉",
+            "IT": "Hard Armor Sphere",
+            "DE": "Rüstkugel IV",
+            "KR": "견갑옥",
+            "CN": "堅鎧玉"
+        }
+    },
+    {
+        "id": 216,
+        "values": {
+            "EN": "Hardshell Powder",
+            "FR": "Poudre de pierre",
+            "JP": "硬化の粉塵",
+            "IT": "Hardshell Powder",
+            "DE": "Harthülsenpulver",
+            "KR": "경화의 가루",
+            "CN": "硬化粉塵"
+        }
+    },
+    {
+        "id": 217,
+        "values": {
+            "EN": "Heavy Armor Sphere",
+            "FR": "Sphère d'armure IV",
+            "JP": "重鎧玉",
+            "IT": "Heavy Armor Sphere",
+            "DE": "Rüstkugel V",
+            "KR": "중갑옥",
+            "CN": "Heavy Armor Sphere"
+        }
+    },
+    {
+        "id": 218,
+        "values": {
+            "EN": "Herb",
+            "FR": "Herbe",
+            "JP": "薬草",
+            "IT": "Herb",
+            "DE": "Kraut",
+            "KR": "약초",
+            "CN": "藥草"
+        }
+    },
+    {
+        "id": 219,
+        "values": {
+            "EN": "Herbal Medicine",
+            "FR": "Remède d'herbe",
+            "JP": "漢方薬",
+            "IT": "Herbal Medicine",
+            "DE": "Kräutermedizin",
+            "KR": "한방약",
+            "CN": "漢方藥"
+        }
+    },
+    {
+        "id": 220,
+        "values": {
+            "EN": "Herbal Powder",
+            "FR": "Poudre végétale",
+            "JP": "漢方の粉塵",
+            "IT": "Herbal Powder",
+            "DE": "Kräuterpulver",
+            "KR": "한방가루",
+            "CN": "漢方粉塵"
+        }
+    },
+    {
+        "id": 221,
+        "values": {
+            "EN": "Hero's Streamstone",
+            "FR": "Pierre-dragon du héro",
+            "JP": "英雄の龍脈石",
+            "IT": "Hero's Streamstone",
+            "DE": "Helden-Stromstein",
+            "KR": "영웅의 용맥석",
+            "CN": "Hero's Streamstone"
+        }
+    },
+    {
+        "id": 222,
+        "values": {
+            "EN": "High Commendation",
+            "FR": "Certificat du héros",
+            "JP": "勇気の証G",
+            "IT": "Alto encomio",
+            "DE": "Große Belobigung",
+            "KR": "용기의 증표G",
+            "CN": "勇氣之証G"
+        }
+    },
+    {
+        "id": 223,
+        "values": {
+            "EN": "High-quality Pelt",
+            "FR": "Pelage de qualité",
+            "JP": "上質な毛皮",
+            "IT": "Pelle lussuosa",
+            "DE": "Hochwertiger Pelz",
+            "KR": "양질의 모피",
+            "CN": "良質毛皮"
+        }
+    },
+    {
+        "id": 224,
+        "values": {
+            "EN": "Honey",
+            "FR": "Miel",
+            "JP": "ハチミツ",
+            "IT": "Honey",
+            "DE": "Honig",
+            "KR": "벌꿀",
+            "CN": "蜂蜜"
+        }
+    },
+    {
+        "id": 225,
+        "values": {
+            "EN": "Hornetaur Carapace",
+            "FR": "Cuirasse Honetaur",
+            "JP": "カンタロスの堅殻",
+            "IT": "Hornetaur: carapace",
+            "DE": "Hornetaur-Rückenpanzer",
+            "KR": "칸타로스의 견갑각",
+            "CN": "巨甲蟲的堅殼"
+        }
+    },
+    {
+        "id": 226,
+        "values": {
+            "EN": "Hornetaur Head",
+            "FR": "Tête Hornetaur",
+            "JP": "カンタロスの頭",
+            "IT": "Hornetaur: testa",
+            "DE": "Hornetaur-Kopf",
+            "KR": "칸타로스의 머리",
+            "CN": "巨甲蟲的頭"
+        }
+    },
+    {
+        "id": 227,
+        "values": {
+            "EN": "Hornetaur Innerwing",
+            "FR": "Aile fine Hornetaur",
+            "JP": "カンタロスの薄羽",
+            "IT": "Hornetaur: ala interna",
+            "DE": "Hornetaur-Innenflügel",
+            "KR": "칸타로스의 얇은날개",
+            "CN": "巨甲蟲的薄羽"
+        }
+    },
+    {
+        "id": 228,
+        "values": {
+            "EN": "Hornetaur Shell",
+            "FR": "Carapace Honetaur",
+            "JP": "カンタロスの甲殻",
+            "IT": "Hornetaur: corazza",
+            "DE": "Hornetaur-Panzer",
+            "KR": "칸타로스의 갑각",
+            "CN": "巨甲蟲的甲殼"
+        }
+    },
+    {
+        "id": 229,
+        "values": {
+            "EN": "Hornetaur Wing",
+            "FR": "Aile Hornetaur",
+            "JP": "カンタロスの羽",
+            "IT": "Hornetaur: ala",
+            "DE": "Hornetaur-Flügel",
+            "KR": "칸타로스의 날개",
+            "CN": "巨甲蟲的羽"
+        }
+    },
+    {
+        "id": 230,
+        "values": {
+            "EN": "Hunter King Coin",
+            "FR": "Pièce roi chasseur",
+            "JP": "狩猟王のコイン",
+            "IT": "Moneta re dei cacciatori",
+            "DE": "Jägerkönigs-Münze",
+            "KR": "수렵왕코인",
+            "CN": "狩獵王硬幣"
+        }
+    },
+    {
+        "id": 231,
+        "values": {
+            "EN": "Immortal Dragonscale",
+            "FR": "Écaille de dragon immortel",
+            "JP": "不滅の龍鱗",
+            "IT": "Scaglia immortale",
+            "DE": "Unsterbliche Drachenschuppe",
+            "KR": "불멸의 용비늘",
+            "CN": "不滅的龍鱗"
+        }
+    },
+    {
+        "id": 232,
+        "values": {
+            "EN": "Immunizer",
+            "FR": "Immunisateur",
+            "JP": "活力剤",
+            "IT": "Immunizer",
+            "DE": "Immunisierer",
+            "KR": "활력제",
+            "CN": "活力劑"
+        }
+    },
+    {
+        "id": 233,
+        "values": {
+            "EN": "Inferno Sac",
+            "FR": "Poche infernale",
+            "JP": "爆炎袋",
+            "IT": "Sacca infernale",
+            "DE": "Höllenbeutel",
+            "KR": "폭염주머니",
+            "CN": "爆炎袋"
+        }
+    },
+    {
+        "id": 234,
+        "values": {
+            "EN": "Iron Ore",
+            "FR": "Minerai de fer",
+            "JP": "鉄鉱石",
+            "IT": "Minerale ferro",
+            "DE": "Eisenerz",
+            "KR": "철광석",
+            "CN": "鐵礦石"
+        }
+    },
+    {
+        "id": 235,
+        "values": {
+            "EN": "Ivy",
+            "FR": "Lierre",
+            "JP": "ツタの葉",
+            "IT": "Ivy",
+            "DE": "Efeu",
+            "KR": "덩굴의 잎",
+            "CN": "常春藤葉"
+        }
+    },
+    {
+        "id": 236,
+        "values": {
+            "EN": "Jagras Hide",
+            "FR": "Peau Jagras",
+            "JP": "ジャグラスの皮",
+            "IT": "Jagras: pelle",
+            "DE": "Jagras-Lederhaut",
+            "KR": "쟈그라스의 가죽",
+            "CN": "凶豺龍的皮"
+        }
+    },
+    {
+        "id": 237,
+        "values": {
+            "EN": "Jagras Hide+",
+            "FR": "Peau Jagras +",
+            "JP": "ジャグラスの上皮",
+            "IT": "Jagras: pelle+",
+            "DE": "Jagras-Lederhaut+",
+            "KR": "쟈그라스의 가죽+",
+            "CN": "凶豺龍的上皮"
+        }
+    },
+    {
+        "id": 238,
+        "values": {
+            "EN": "Jagras Scale",
+            "FR": "Écaille Jagras",
+            "JP": "ジャグラスの鱗",
+            "IT": "Jagras: scaglia",
+            "DE": "Jagras-Schuppe",
+            "KR": "쟈그라스의 비늘",
+            "CN": "凶豺龍的鱗"
+        }
+    },
+    {
+        "id": 239,
+        "values": {
+            "EN": "Jagras Scale+",
+            "FR": "Écaille Jagras +",
+            "JP": "ジャグラスの上鱗",
+            "IT": "Jagras: scaglia+",
+            "DE": "Jagras-Schuppe+",
+            "KR": "쟈그라스의 비늘+",
+            "CN": "凶豺龍的上鱗"
+        }
+    },
+    {
+        "id": 240,
+        "values": {
+            "EN": "Jyuratodus Carapace",
+            "FR": "Cuirasse Jyuratodus",
+            "JP": "泥魚竜の堅殻",
+            "IT": "Jyuratodus: carapace",
+            "DE": "Jyuratodus-Rückenpanzer",
+            "KR": "이어룡의 견갑각",
+            "CN": "泥魚龍的堅殼"
+        }
+    },
+    {
+        "id": 241,
+        "values": {
+            "EN": "Jyuratodus Fang",
+            "FR": "Croc Jyuratodus",
+            "JP": "泥魚竜の牙",
+            "IT": "Jyuratodus: zanna",
+            "DE": "Jyuratodus-Reißzahn",
+            "KR": "이어룡의 어금니",
+            "CN": "泥魚龍的牙"
+        }
+    },
+    {
+        "id": 242,
+        "values": {
+            "EN": "Jyuratodus Fang+",
+            "FR": "Croc Jyuratodus +",
+            "JP": "泥魚竜の鋭牙",
+            "IT": "Jyuratodus: zanna+",
+            "DE": "Jyuratodus-Reißzahn+",
+            "KR": "이어룡의 어금니+",
+            "CN": "泥魚龍的銳牙"
+        }
+    },
+    {
+        "id": 243,
+        "values": {
+            "EN": "Jyuratodus Fin",
+            "FR": "Nageoire Jyuratodus",
+            "JP": "泥魚竜のヒレ",
+            "IT": "Jyuratodus: pinna",
+            "DE": "Jyuratodus-Flosse",
+            "KR": "이어룡의 지느러미",
+            "CN": "泥魚龍的腰內肉"
+        }
+    },
+    {
+        "id": 244,
+        "values": {
+            "EN": "Jyuratodus Fin+",
+            "FR": "Nageoire Jyuratodus +",
+            "JP": "泥魚竜の上ヒレ",
+            "IT": "Jyuratodus: pinna+",
+            "DE": "Jyuratodus-Flosse+",
+            "KR": "이어룡의 지느러미+",
+            "CN": "泥魚龍的上腰內肉"
+        }
+    },
+    {
+        "id": 245,
+        "values": {
+            "EN": "Jyuratodus Scale",
+            "FR": "Écaille Jyuratodus",
+            "JP": "泥魚竜の鱗",
+            "IT": "Jyuratodus: scaglia",
+            "DE": "Jyuratodus-Schuppe",
+            "KR": "이어룡의 비늘",
+            "CN": "泥魚龍的鱗"
+        }
+    },
+    {
+        "id": 246,
+        "values": {
+            "EN": "Jyuratodus Scale+",
+            "FR": "Écaille Jyuratodus +",
+            "JP": "泥魚竜の上鱗",
+            "IT": "Jyuratodus: scaglia+",
+            "DE": "Jyuratodus-Schuppe+",
+            "KR": "이어룡의 비늘+",
+            "CN": "泥魚龍的上鱗"
+        }
+    },
+    {
+        "id": 247,
+        "values": {
+            "EN": "Jyuratodus Shell",
+            "FR": "Carapace Jyuratodus",
+            "JP": "泥魚竜の甲殻",
+            "IT": "Jyuratodus: corazza",
+            "DE": "Jyuratodus-Panzer",
+            "KR": "이어룡의 갑각",
+            "CN": "泥魚龍的甲殼"
+        }
+    },
+    {
+        "id": 248,
+        "values": {
+            "EN": "Kelbi Horn",
+            "FR": "Corne de Kelbi",
+            "JP": "ケルビの角",
+            "IT": "Kelbi: corno",
+            "DE": "Kelbi-Horn",
+            "KR": "켈비의 뿔",
+            "CN": "精靈鹿角"
+        }
+    },
+    {
+        "id": 249,
+        "values": {
+            "EN": "Kestodon Carapace",
+            "FR": "Cuirasse Kestodon",
+            "JP": "ケストドンの堅殻",
+            "IT": "Kestodon: carapace",
+            "DE": "Kestodon-Rückenpanzer",
+            "KR": "케스토돈의 견갑각",
+            "CN": "冠突龍的堅殼"
+        }
+    },
+    {
+        "id": 250,
+        "values": {
+            "EN": "Kestodon Scalp",
+            "FR": "Scalp Kestodon",
+            "JP": "ケストドンの頭殻",
+            "IT": "Kestodon: scalpo",
+            "DE": "Kestodon-Skalp",
+            "KR": "케스토돈의 두갑각",
+            "CN": "冠突龍的頭殼"
+        }
+    },
+    {
+        "id": 251,
+        "values": {
+            "EN": "Kestodon Shell",
+            "FR": "Carapace Kestodon",
+            "JP": "ケストドンの甲殻",
+            "IT": "Kestodon: corazza",
+            "DE": "Kestodon-Panzer",
+            "KR": "캐스토돈의 갑각",
+            "CN": "冠突龍的甲殼"
+        }
+    },
+    {
+        "id": 252,
+        "values": {
+            "EN": "Kirin Azure Horn",
+            "FR": "Corne azur Kirin",
+            "JP": "幻獣の蒼角",
+            "IT": "Kirin: corno azzurro",
+            "DE": "Azurnes Kirin-Horn",
+            "KR": "환수의 창각",
+            "CN": "麒麟的蒼角"
+        }
+    },
+    {
+        "id": 253,
+        "values": {
+            "EN": "Kirin Hide",
+            "FR": "Peau Kirin",
+            "JP": "幻獣の皮",
+            "IT": "Kirin: pelle",
+            "DE": "Kirin-Lederhaut",
+            "KR": "환수의 가죽",
+            "CN": "麒麟的皮"
+        }
+    },
+    {
+        "id": 254,
+        "values": {
+            "EN": "Kirin Hide+",
+            "FR": "Peau Kirin +",
+            "JP": "幻獣の上皮",
+            "IT": "Kirin: pelle+",
+            "DE": "Kirin-Lederhaut+",
+            "KR": "환수의 가죽+",
+            "CN": "麒麟的上皮"
+        }
+    },
+    {
+        "id": 255,
+        "values": {
+            "EN": "Kirin Mane",
+            "FR": "Crinière Kirin",
+            "JP": "幻獣のたてがみ",
+            "IT": "Kirin: criniera",
+            "DE": "Kirin-Mähne",
+            "KR": "환수의 갈기",
+            "CN": "麒麟的鬃毛"
+        }
+    },
+    {
+        "id": 256,
+        "values": {
+            "EN": "Kirin Tail",
+            "FR": "Queue de Kirin",
+            "JP": "幻獣の尾",
+            "IT": "Kirin: coda",
+            "DE": "Kirin-Schwanz",
+            "KR": "환수의 꼬리",
+            "CN": "麒麟的尾"
+        }
+    },
+    {
+        "id": 257,
+        "values": {
+            "EN": "Kirin Thunderhorn",
+            "FR": "Corne de foudre Kirin",
+            "JP": "幻獣の雷角",
+            "IT": "Kirin: cornotuono",
+            "DE": "Kirin-Donnerhorn",
+            "KR": "환수의 뇌각",
+            "CN": "麒麟的雷角"
+        }
+    },
+    {
+        "id": 258,
+        "values": {
+            "EN": "Kirin Thundertail",
+            "FR": "Queue de foudre Kirin",
+            "JP": "幻獣の雷尾",
+            "IT": "Kirin: codatuono",
+            "DE": "Kirin-Donnerschwanz",
+            "KR": "환수의 뇌미",
+            "CN": "麒麟的雷尾"
+        }
+    },
+    {
+        "id": 259,
+        "values": {
+            "EN": "Kirin Ticket",
+            "FR": "Ticket Kirin",
+            "JP": "幻獣チケット",
+            "IT": "Stampa Kirin",
+            "DE": "Kirin-Ticket",
+            "KR": "환수 티켓",
+            "CN": "麒麟硬幣"
+        }
+    },
+    {
+        "id": 260,
+        "values": {
+            "EN": "Kulu Coin",
+            "FR": "Pièce Kulu-Ya-ku",
+            "JP": "クルルコイン",
+            "IT": "Moneta Kulu",
+            "DE": "Kulu-Münze",
+            "KR": "쿠루루코인",
+            "CN": "搔鳥硬幣"
+        }
+    },
+    {
+        "id": 261,
+        "values": {
+            "EN": "Kulu-Ya-Ku Beak",
+            "FR": "Bec Kulu-Ya-Ku",
+            "JP": "掻鳥のクチバシ",
+            "IT": "Kulu-Ya-Ku: becco",
+            "DE": "Kulu-Ya-Ku-Schnabel",
+            "KR": "소조의 부리",
+            "CN": "搔鳥的啄"
+        }
+    },
+    {
+        "id": 262,
+        "values": {
+            "EN": "Kulu-Ya-Ku Beak+",
+            "FR": "Bec Kulu-Ya-Ku +",
+            "JP": "掻鳥の大クチバシ",
+            "IT": "Kulu-Ya-Ku: becco+",
+            "DE": "Kulu-Ya-Ku-Schnabel+",
+            "KR": "소조의 부리+",
+            "CN": "搔鳥的大啄"
+        }
+    },
+    {
+        "id": 263,
+        "values": {
+            "EN": "Kulu-Ya-Ku Hide",
+            "FR": "Peau Kulu-Ya-Ku",
+            "JP": "掻鳥の皮",
+            "IT": "Kulu-Ya-Ku: pelle",
+            "DE": "Kulu-Ya-Ku-Lederhaut",
+            "KR": "소조의 가죽",
+            "CN": "搔鳥的皮"
+        }
+    },
+    {
+        "id": 264,
+        "values": {
+            "EN": "Kulu-Ya-Ku Hide+",
+            "FR": "Peau Kulu-Ya-Ku +",
+            "JP": "掻鳥の上皮",
+            "IT": "Kulu-Ya-Ku: pelle+",
+            "DE": "Kulu-Ya-Ku-Lederhaut+",
+            "KR": "소조의 가죽+",
+            "CN": "搔鳥的上皮"
+        }
+    },
+    {
+        "id": 265,
+        "values": {
+            "EN": "Kulu-Ya-Ku Plume",
+            "FR": "Aigrette Kulu-Ya-Ku",
+            "JP": "掻鳥の飾り羽",
+            "IT": "Kulu-Ya-Ku: piuma",
+            "DE": "Kulu-Ya-Ku-Prachtfeder",
+            "KR": "소조의 장식깃털",
+            "CN": "搔鳥的飾羽"
+        }
+    },
+    {
+        "id": 266,
+        "values": {
+            "EN": "Kulu-Ya-Ku Plume+",
+            "FR": "Aigrette Kulu-Ya-Ku +",
+            "JP": "掻鳥の大飾り羽",
+            "IT": "Kulu-Ya-Ku: piuma+",
+            "DE": "Kulu-Ya-Ku-Prachtfeder+",
+            "KR": "소조의 장식깃털+",
+            "CN": "搔鳥的大飾羽"
+        }
+    },
+    {
+        "id": 267,
+        "values": {
+            "EN": "Kulu-Ya-Ku Scale",
+            "FR": "Écaille Kulu-Ya-Ku",
+            "JP": "掻鳥の鱗",
+            "IT": "Kulu-Ya-Ku: scaglia",
+            "DE": "Kulu-Ya-Ku-Schuppe",
+            "KR": "소조의 비늘",
+            "CN": "搔鳥的鱗"
+        }
+    },
+    {
+        "id": 268,
+        "values": {
+            "EN": "Kulu-Ya-Ku Scale+",
+            "FR": "Écaille Kulu-Ya-Ku +",
+            "JP": "掻鳥の上鱗",
+            "IT": "Kulu-Ya-Ku: scaglia+",
+            "DE": "Kulu-Ya-Ku-Schuppe+",
+            "KR": "소조의 비늘+",
+            "CN": "搔鳥的上鱗"
+        }
+    },
+    {
+        "id": 269,
+        "values": {
+            "EN": "Kulu-Ya-Ku Ticket",
+            "FR": "Ticket Kulu-Ya-Ku",
+            "JP": "掻鳥チケット",
+            "IT": "Stampa Kulu-Ya-Ku",
+            "DE": "Kulu-Ya-Ku-Ticket",
+            "KR": "쿠루루티켓",
+            "CN": "搔鳥票"
+        }
+    },
+    {
+        "id": 270,
+        "values": {
+            "EN": "Kulve Taroth Emperor Nugget",
+            "FR": "Pépite impériale Kulve Taroth",
+            "JP": "爛輝龍の皇金塊",
+            "IT": "Kulve Taroth: pepita imperatore",
+            "DE": "KT Kaiserklumpen",
+            "KR": "난휘룡의 황제금괴",
+            "CN": "Kulve Taroth Emperor Nugget"
+        }
+    },
+    {
+        "id": 271,
+        "values": {
+            "EN": "Kulve Taroth Golden Glimstone",
+            "FR": "Gemme d'or Kulve Taroth",
+            "JP": "爛輝龍の金煌玉",
+            "IT": "Kulve Taroth: gemma dorata",
+            "DE": "KT Goldener Glimmstein",
+            "KR": "난휘룡의 금황옥",
+            "CN": "爛輝龍的金煌玉"
+        }
+    },
+    {
+        "id": 272,
+        "values": {
+            "EN": "Kulve Taroth Golden Nugget",
+            "FR": "Pépite d'or Kulve Taroth",
+            "JP": "爛輝龍の金塊",
+            "IT": "Kulve Taroth: pepita dorata",
+            "DE": "KT Goldener Klumpen",
+            "KR": "난휘룡의 금괴",
+            "CN": "爛輝龍的金塊"
+        }
+    },
+    {
+        "id": 273,
+        "values": {
+            "EN": "Kulve Taroth Golden Scale",
+            "FR": "Écaille d'or Kulve Taroth",
+            "JP": "爛輝龍の金鱗",
+            "IT": "Kulve Taroth: scaglia dorata",
+            "DE": "KT Goldene Schuppe",
+            "KR": "난휘룡의 금린",
+            "CN": "爛輝龍的金鱗"
+        }
+    },
+    {
+        "id": 274,
+        "values": {
+            "EN": "Kulve Taroth Golden Shell",
+            "FR": "Carapace d'or Kulve Taroth",
+            "JP": "爛輝龍の金殻",
+            "IT": "Kulve Taroth: corazza dorata",
+            "DE": "KT Goldener Panzer",
+            "KR": "난휘룡의 금각",
+            "CN": "爛輝龍的金殼"
+        }
+    },
+    {
+        "id": 275,
+        "values": {
+            "EN": "Kulve Taroth Golden Spiralhorn",
+            "FR": "Corne d'or Kulve Taroth",
+            "JP": "爛輝龍の金巻角",
+            "IT": "Kulve Taroth: corno dorato",
+            "DE": "KT Goldenes Spiralhorn",
+            "KR": "난휘룡의 금권각",
+            "CN": "爛輝龍的金卷角"
+        }
+    },
+    {
+        "id": 276,
+        "values": {
+            "EN": "Kulve Taroth Golden Tailshell",
+            "FR": "Queue d'or Kulve Taroth",
+            "JP": "爛輝龍の金尾殻",
+            "IT": "Kulve Taroth: coda dorata",
+            "DE": "KT Goldener Schwanzpanzer",
+            "KR": "난휘룡의 금미각",
+            "CN": "爛輝龍的金尾殼"
+        }
+    },
+    {
+        "id": 277,
+        "values": {
+            "EN": "Kushala Daora Ticket",
+            "FR": "Ticket Kushala Daora",
+            "JP": "鋼龍チケット",
+            "IT": "Stampa Kushala Daora",
+            "DE": "Kushala-Daora-Ticket",
+            "KR": "강룡 티켓",
+            "CN": "鋼龍硬幣"
+        }
+    },
+    {
+        "id": 278,
+        "values": {
+            "EN": "Large Barrel",
+            "FR": "Grand baril",
+            "JP": "大タル",
+            "IT": "Large Barrel",
+            "DE": "Großes Fass",
+            "KR": "대형나무통",
+            "CN": "大桶"
+        }
+    },
+    {
+        "id": 279,
+        "values": {
+            "EN": "Large Barrel Bomb",
+            "FR": "Grande bombe baril",
+            "JP": "大タル爆弾",
+            "IT": "Large Barrel Bomb",
+            "DE": "Große Fassbombe",
+            "KR": "대형나무통폭탄",
+            "CN": "大爆彈桶"
+        }
+    },
+    {
+        "id": 280,
+        "values": {
+            "EN": "Large Scale",
+            "FR": "Grande écaille",
+            "JP": "大きなウロコ",
+            "IT": "Large Scale",
+            "DE": "Große Schuppe",
+            "KR": "Large Scale 교역아이템",
+            "CN": "Large Scale"
+        }
+    },
+    {
+        "id": 281,
+        "values": {
+            "EN": "Latchberry",
+            "FR": "Béryl",
+            "JP": "ツラヌキの実",
+            "IT": "Latchberry",
+            "DE": "Schnallenbeere",
+            "KR": "관통열매",
+            "CN": "螺旋果實"
+        }
+    },
+    {
+        "id": 282,
+        "values": {
+            "EN": "Lava Nugget",
+            "FR": "Pépite-lave",
+            "JP": "溶岩塊",
+            "IT": "Roccia lavica",
+            "DE": "Lavabrocken",
+            "KR": "용암 덩어리",
+            "CN": "熔岩塊"
+        }
+    },
+    {
+        "id": 283,
+        "values": {
+            "EN": "Lavasioth Carapace",
+            "FR": "Cuirasse Lavasioth",
+            "JP": "溶岩竜の堅殻",
+            "IT": "Lavasioth: carapace",
+            "DE": "Lavasioth-Rückenpanzer",
+            "KR": "용암룡의 견갑각",
+            "CN": "熔岩龍的堅殼"
+        }
+    },
+    {
+        "id": 284,
+        "values": {
+            "EN": "Lavasioth Fang+",
+            "FR": "Croc Lavasioth +",
+            "JP": "溶岩竜の鋭牙",
+            "IT": "Lavasioth: zanna+",
+            "DE": "Lavasioth-Reißzahn+",
+            "KR": "용암룡의 어금니+",
+            "CN": "熔岩龍的銳牙"
+        }
+    },
+    {
+        "id": 285,
+        "values": {
+            "EN": "Lavasioth Fin+",
+            "FR": "Nageoire Lavasioth +",
+            "JP": "溶岩竜の上ヒレ",
+            "IT": "Lavasioth: pinna+",
+            "DE": "Lavasioth-Flosse+",
+            "KR": "용암룡의 지느러미+",
+            "CN": "熔岩龍的上腰內肉"
+        }
+    },
+    {
+        "id": 286,
+        "values": {
+            "EN": "Lavasioth Scale+",
+            "FR": "Écaille Lavasioth +",
+            "JP": "溶岩竜の鱗",
+            "IT": "Lavasioth: scaglia+",
+            "DE": "Lavasioth-Schuppe+",
+            "KR": "용암룡의 비늘+",
+            "CN": "熔岩龍的上鱗"
+        }
+    },
+    {
+        "id": 287,
+        "values": {
+            "EN": "Legiana Claw",
+            "FR": "Griffe Legiana",
+            "JP": "風漂竜の爪",
+            "IT": "Legiana: artiglio",
+            "DE": "Legiana-Klaue",
+            "KR": "풍표룡의 발톱",
+            "CN": "風漂龍的爪"
+        }
+    },
+    {
+        "id": 288,
+        "values": {
+            "EN": "Legiana Claw+",
+            "FR": "Griffe Legiana +",
+            "JP": "風漂竜の尖爪",
+            "IT": "Legiana: artiglio+",
+            "DE": "Legiana-Klaue+",
+            "KR": "풍표룡의 발톱+",
+            "CN": "風漂龍的尖爪"
+        }
+    },
+    {
+        "id": 289,
+        "values": {
+            "EN": "Legiana Gem",
+            "FR": "Gemme Legiana",
+            "JP": "風漂竜の宝玉",
+            "IT": "Legiana: gemma",
+            "DE": "Legiana-Edelstein",
+            "KR": "풍표룡의 보옥",
+            "CN": "風漂龍的寶玉"
+        }
+    },
+    {
+        "id": 290,
+        "values": {
+            "EN": "Legiana Hide",
+            "FR": "Peau Legiana",
+            "JP": "風漂竜の皮",
+            "IT": "Legiana: pelle",
+            "DE": "Legiana-Lederhaut",
+            "KR": "풍표룡의 가죽",
+            "CN": "風漂龍的皮"
+        }
+    },
+    {
+        "id": 291,
+        "values": {
+            "EN": "Legiana Hide+",
+            "FR": "Peau Legiana +",
+            "JP": "風漂竜の上皮",
+            "IT": "Legiana: pelle+",
+            "DE": "Legiana-Lederhaut+",
+            "KR": "풍표룡의 가죽+",
+            "CN": "風漂龍的上皮"
+        }
+    },
+    {
+        "id": 292,
+        "values": {
+            "EN": "Legiana Plate",
+            "FR": "Plaque Legiana",
+            "JP": "風漂竜の逆鱗",
+            "IT": "Legiana: piastra",
+            "DE": "Legiana-Platte",
+            "KR": "풍표룡의 역린",
+            "CN": "風漂龍的逆鱗"
+        }
+    },
+    {
+        "id": 293,
+        "values": {
+            "EN": "Legiana Scale",
+            "FR": "Écaille Legiana",
+            "JP": "風漂竜の鱗",
+            "IT": "Legiana: scaglia",
+            "DE": "Legiana-Schuppe",
+            "KR": "풍퓨룡의 비늘",
+            "CN": "風漂龍的鱗"
+        }
+    },
+    {
+        "id": 294,
+        "values": {
+            "EN": "Legiana Scale+",
+            "FR": "Écaille Legiana +",
+            "JP": "風漂竜の上鱗",
+            "IT": "Legiana: scaglia+",
+            "DE": "Legiana-Schuppe+",
+            "KR": "풍퓨룡의 비늘+",
+            "CN": "風漂龍的上鱗"
+        }
+    },
+    {
+        "id": 295,
+        "values": {
+            "EN": "Legiana Tail Webbing",
+            "FR": "Palmure de queue Legiana",
+            "JP": "風漂竜の尾膜",
+            "IT": "Legiana: membrana caudale",
+            "DE": "Legiana-Schwanzgewebe",
+            "KR": "풍표룡의 꼬리",
+            "CN": "風漂龍的尾膜"
+        }
+    },
+    {
+        "id": 296,
+        "values": {
+            "EN": "Legiana Webbing",
+            "FR": "Palmure Legiana",
+            "JP": "風漂竜の翼膜",
+            "IT": "Legiana: membrana",
+            "DE": "Legiana-Gewebe",
+            "KR": "풍표룡의 익막",
+            "CN": "風漂龍的翼膜"
+        }
+    },
+    {
+        "id": 297,
+        "values": {
+            "EN": "Legiana Wing",
+            "FR": "Aile Legiana",
+            "JP": "風漂竜の翼",
+            "IT": "Legiana: ala",
+            "DE": "Legiana-Flügel",
+            "KR": "풍표룡의 날개",
+            "CN": "風漂龍之翼"
+        }
+    },
+    {
+        "id": 298,
+        "values": {
+            "EN": "Leshen Claw",
+            "FR": "Griffe de leshen",
+            "JP": "レーシェンの木爪",
+            "IT": "Leshen: artiglio",
+            "DE": "Waldschrat-Klaue",
+            "KR": "레셴의 나무 손톱",
+            "CN": "Leshen Claw"
+        }
+    },
+    {
+        "id": 299,
+        "values": {
+            "EN": "Leshen Resin",
+            "FR": "Résine de leshen",
+            "JP": "レーシェンの樹脂",
+            "IT": "Leshen: resina",
+            "DE": "Waldschrat-Harz",
+            "KR": "레센의 나뭇진",
+            "CN": "Leshen Resin"
+        }
+    },
+    {
+        "id": 300,
+        "values": {
+            "EN": "Leshen Skull",
+            "FR": "Crâne de leshen",
+            "JP": "レーシェン討伐の証",
+            "IT": "Leshen: teschio",
+            "DE": "Waldschrat-Schädel",
+            "KR": "레센 토벌의 증거",
+            "CN": "Leshen Skull"
+        }
+    },
+    {
+        "id": 301,
+        "values": {
+            "EN": "Lifepowder",
+            "FR": "Poudre de vie",
+            "JP": "生命の粉塵",
+            "IT": "Lifepowder",
+            "DE": "Lebenspulver",
+            "KR": "생명의 가루",
+            "CN": "生命粉塵"
+        }
+    },
+    {
+        "id": 302,
+        "values": {
+            "EN": "Lightcrystal",
+            "FR": "Cristal de lumière",
+            "JP": "ライトクリスタル",
+            "IT": "Cristallo luce",
+            "DE": "Lichtkristall",
+            "KR": "라이트크리스탈",
+            "CN": "亮水晶"
+        }
+    },
+    {
+        "id": 303,
+        "values": {
+            "EN": "Loc Lac Ore",
+            "FR": "Minerai loc lac",
+            "JP": "ロックラック鉱",
+            "IT": "Loc Lac Ore",
+            "DE": "Loc-Lac-Erz",
+            "KR": "Loc Lac Ore 교역아이템",
+            "CN": "Loc Lac Ore"
+        }
+    },
+    {
+        "id": 304,
+        "values": {
+            "EN": "Lunastra Carapace",
+            "FR": "Cuirasse Lunastra",
+            "JP": "炎妃龍の堅殻",
+            "IT": "Lunastra: carapace",
+            "DE": "Lunastra-Rückenpanzer",
+            "KR": "염비룡의 견갑각",
+            "CN": "炎妃龍的堅殼"
+        }
+    },
+    {
+        "id": 305,
+        "values": {
+            "EN": "Lunastra Gem",
+            "FR": "Gemme Lunastra",
+            "JP": "炎妃龍の宝玉",
+            "IT": "Lunastra: gemma",
+            "DE": "Lunastra-Edelstein",
+            "KR": "염비룡의 보옥",
+            "CN": "炎妃龍的寶玉"
+        }
+    },
+    {
+        "id": 306,
+        "values": {
+            "EN": "Lunastra Horn",
+            "FR": "Corne Lunastra",
+            "JP": "炎妃龍の尖角",
+            "IT": "Lunastra: corno",
+            "DE": "Lunastra-Horn",
+            "KR": "염비룡의 첨예뿔",
+            "CN": "炎妃龍的尖角"
+        }
+    },
+    {
+        "id": 307,
+        "values": {
+            "EN": "Lunastra Mane",
+            "FR": "Crinière Lunastra",
+            "JP": "炎妃龍のたてがみ",
+            "IT": "Lunastra: criniera",
+            "DE": "Lunastra-Mähne",
+            "KR": "염비룡의 갈기",
+            "CN": "炎妃龍的鬚"
+        }
+    },
+    {
+        "id": 308,
+        "values": {
+            "EN": "Lunastra Scale+",
+            "FR": "Écaille Lunastra +",
+            "JP": "炎妃龍の上鱗",
+            "IT": "Lunastra: scaglia+",
+            "DE": "Lunastra-Schuppe+",
+            "KR": "염비룡의 비늘+",
+            "CN": "炎妃龍上鱗"
+        }
+    },
+    {
+        "id": 309,
+        "values": {
+            "EN": "Lunastra Tail",
+            "FR": "Queue Lunastra",
+            "JP": "炎妃龍の尻尾",
+            "IT": "Lunastra: coda",
+            "DE": "Lunastra-Schwanz",
+            "KR": "염비룡의 꼬리",
+            "CN": "炎妃龍的尾巴"
+        }
+    },
+    {
+        "id": 310,
+        "values": {
+            "EN": "Lunastra Ticket",
+            "FR": "Ticket Lunastra",
+            "JP": "炎妃龍チケット",
+            "IT": "Buono Lunastra",
+            "DE": "Lunastra-Ticket",
+            "KR": "염비룡 티켓",
+            "CN": "炎妃龍硬幣"
+        }
+    },
+    {
+        "id": 311,
+        "values": {
+            "EN": "Lunastra Wing",
+            "FR": "Aile Lunastra",
+            "JP": "炎妃龍の翼",
+            "IT": "Lunastra: ala",
+            "DE": "Lunastra-Flügel",
+            "KR": "염비룡의 날개",
+            "CN": "炎妃龍之翼"
+        }
+    },
+    {
+        "id": 312,
+        "values": {
+            "EN": "Lustrous Scale",
+            "FR": "Écaille brillante",
+            "JP": "つやめくウロコ",
+            "IT": "Lustrous Scale",
+            "DE": "Glänzende Schuppe",
+            "KR": "염비룡의 비늘",
+            "CN": "Lustrous Scale"
+        }
+    },
+    {
+        "id": 313,
+        "values": {
+            "EN": "Machalite Ore",
+            "FR": "Machalite",
+            "JP": "マカライト鉱石",
+            "IT": "Minerale machalite",
+            "DE": "Machalit-Erz",
+            "KR": "마카라이트 광석",
+            "CN": "燕雀石"
+        }
+    },
+    {
+        "id": 314,
+        "values": {
+            "EN": "Majestic Horn",
+            "FR": "Corne majestueuse",
+            "JP": "上質なねじれた角",
+            "IT": "Corno maestoso",
+            "DE": "Erhabenes Horn",
+            "KR": "양질의 비틀린뿔",
+            "CN": "優質的彎曲角"
+        }
+    },
+    {
+        "id": 315,
+        "values": {
+            "EN": "Mandragora",
+            "FR": "Mandragore",
+            "JP": "マンドラゴラ",
+            "IT": "Mandragora",
+            "DE": "Mandragora",
+            "KR": "만드라고라",
+            "CN": "風茄"
+        }
+    },
+    {
+        "id": 316,
+        "values": {
+            "EN": "Max Potion",
+            "FR": "Potion secrète",
+            "JP": "秘薬",
+            "IT": "Max Potion",
+            "DE": "Maxi-Trank",
+            "KR": "비약",
+            "CN": "秘藥"
+        }
+    },
+    {
+        "id": 317,
+        "values": {
+            "EN": "Mega Armorskin",
+            "FR": "Potion de pierre +",
+            "JP": "硬化薬グレート",
+            "IT": "Mega Armorskin",
+            "DE": "Mega-Panzerhaut",
+            "KR": "그레이트경화약",
+            "CN": "硬化藥．大"
+        }
+    },
+    {
+        "id": 318,
+        "values": {
+            "EN": "Mega Barrel Bomb",
+            "FR": "Méga bombe baril",
+            "JP": "大タル爆弾Ｇ",
+            "IT": "Mega Barrel Bomb",
+            "DE": "Mega-Fassbombe",
+            "KR": "대형나무통폭탄G",
+            "CN": "大爆弾桶G"
+        }
+    },
+    {
+        "id": 319,
+        "values": {
+            "EN": "Mega Bounce Bomb",
+            "FR": "Méga bombe artifice",
+            "JP": "打上げタル爆弾Ｇ",
+            "IT": "Mega Bounce Bomb",
+            "DE": "Mega-Abprallbombe",
+            "KR": "발사나무통폭탄G",
+            "CN": "木桶飛彈G"
+        }
+    },
+    {
+        "id": 320,
+        "values": {
+            "EN": "Mega Dash Juice",
+            "FR": "Potion de vitalité +",
+            "JP": "強走薬グレート",
+            "IT": "Mega Dash Juice",
+            "DE": "Mega-Sprintsaft",
+            "KR": "그레이트강주약",
+            "CN": "強走藥．大"
+        }
+    },
+    {
+        "id": 321,
+        "values": {
+            "EN": "Mega Demondrug",
+            "FR": "Philtre du diable +",
+            "JP": "鬼人薬グレート ",
+            "IT": "Mega Demondrug",
+            "DE": "Mega-Dämonenmittel",
+            "KR": "그레이트귀인약",
+            "CN": "鬼人藥．大"
+        }
+    },
+    {
+        "id": 322,
+        "values": {
+            "EN": "Mega Nutrients",
+            "FR": "Méga nutriments",
+            "JP": "栄養剤グレート",
+            "IT": "Mega Nutrients",
+            "DE": "Mega-Nährstoffe",
+            "KR": "그레이트영양제",
+            "CN": "營養劑．大"
+        }
+    },
+    {
+        "id": 323,
+        "values": {
+            "EN": "Mega Potion",
+            "FR": "Méga Potion",
+            "JP": "回復薬グレート",
+            "IT": "Mega Potion",
+            "DE": "Mega-Trank",
+            "KR": "그레이트회복약",
+            "CN": "回復藥．大"
+        }
+    },
+    {
+        "id": 324,
+        "values": {
+            "EN": "Might Pill",
+            "FR": "Philtre du diable",
+            "JP": "怪力の丸薬",
+            "IT": "Might Pill",
+            "DE": "Machtpille",
+            "KR": "귀인의 환약",
+            "CN": "怪力藥丸"
+        }
+    },
+    {
+        "id": 325,
+        "values": {
+            "EN": "Might Seed",
+            "FR": "Graine pouvoir",
+            "JP": "怪力の種",
+            "IT": "Might Seed",
+            "DE": "Machtsamen",
+            "KR": "괴력씨앗",
+            "CN": "怪力種子"
+        }
+    },
+    {
+        "id": 326,
+        "values": {
+            "EN": "Minegardenite",
+            "FR": "Minegardenite",
+            "JP": "ミナガルデナイト",
+            "IT": "Minegardenite",
+            "DE": "Minnegardenit",
+            "KR": "Minegardenite 교역아이템",
+            "CN": "Minegardenite"
+        }
+    },
+    {
+        "id": 327,
+        "values": {
+            "EN": "Monster Bone L",
+            "FR": "Os de wyverne (G)",
+            "JP": "竜骨【大】",
+            "IT": "Osso di mostro grande",
+            "DE": "Monsterknochen L",
+            "KR": "용골 (대)",
+            "CN": "龍骨【大】"
+        }
+    },
+    {
+        "id": 328,
+        "values": {
+            "EN": "Monster Bone M",
+            "FR": "Os de wyverne (M)",
+            "JP": "竜骨【中】",
+            "IT": "Osso di mostro medio",
+            "DE": "Monsterknochen M",
+            "KR": "용골 (중)",
+            "CN": "龍骨【中】"
+        }
+    },
+    {
+        "id": 329,
+        "values": {
+            "EN": "Monster Bone S",
+            "FR": "Os de monstre +",
+            "JP": "竜骨【小】",
+            "IT": "Osso di mostro piccolo",
+            "DE": "Monsterknochen S",
+            "KR": "용골 (소)",
+            "CN": "龍骨【小】"
+        }
+    },
+    {
+        "id": 330,
+        "values": {
+            "EN": "Monster Bone+",
+            "FR": "Os de wyverne (P)",
+            "JP": "上竜骨",
+            "IT": "Osso di mostro+",
+            "DE": "Monsterknochen+",
+            "KR": "용골 +",
+            "CN": "上龍骨"
+        }
+    },
+    {
+        "id": 331,
+        "values": {
+            "EN": "Monster Broth",
+            "FR": "Bouillon de monstre",
+            "JP": "モンスターの濃汁",
+            "IT": "Brodo di mostro",
+            "DE": "Monsterbrühe",
+            "KR": "몬스터의 농즙",
+            "CN": "魔物濃汁"
+        }
+    },
+    {
+        "id": 332,
+        "values": {
+            "EN": "Monster Fluid",
+            "FR": "Liquide de monstre",
+            "JP": "モンスターの体液",
+            "IT": "Fluido di mostro",
+            "DE": "Monsterfluid",
+            "KR": "몬스터의 체액",
+            "CN": "魔物體液"
+        }
+    },
+    {
+        "id": 333,
+        "values": {
+            "EN": "Monster Hardbone",
+            "FR": "Os duros",
+            "JP": "堅竜骨",
+            "IT": "Osso di mostro granitico",
+            "DE": "Monster-Hartknochen",
+            "KR": "견룡골",
+            "CN": "堅龍骨"
+        }
+    },
+    {
+        "id": 334,
+        "values": {
+            "EN": "Monster Keenbone",
+            "FR": "Os acéros",
+            "JP": "尖竜骨",
+            "IT": "Osso di mostro affilato",
+            "DE": "Monster-Spitzknochen",
+            "KR": "첨룡골",
+            "CN": "尖龍骨"
+        }
+    },
+    {
+        "id": 335,
+        "values": {
+            "EN": "Mosswine Hide",
+            "FR": "Peau de Mosswine",
+            "JP": "モスの苔皮",
+            "IT": "Mosswine: pelle",
+            "DE": "Mosswine-Mooshaut",
+            "KR": "모스의 태피",
+            "CN": "菌豬苔皮"
+        }
+    },
+    {
+        "id": 336,
+        "values": {
+            "EN": "Mysterious Feystone",
+            "FR": "Joyau ???2",
+            "JP": "なぞの珠",
+            "IT": "Mysterious Feystone",
+            "DE": "Mysterious Feystone",
+            "KR": "수수께끼의 구슬",
+            "CN": "Mysterious Feystone"
+        }
+    },
+    {
+        "id": 337,
+        "values": {
+            "EN": "Needleberry",
+            "FR": "Noix aiguille",
+            "JP": "ハリの実",
+            "IT": "Needleberry",
+            "DE": "Nadelbeere",
+            "KR": "바늘열매",
+            "CN": "針果實"
+        }
+    },
+    {
+        "id": 338,
+        "values": {
+            "EN": "Nergigante Carapace",
+            "FR": "Cuirasse Nergigante",
+            "JP": "滅尽龍の堅殻",
+            "IT": "Nergigante: carapace",
+            "DE": "Nergigante-Rückenpanzer",
+            "KR": "멸진룡의 견갑각",
+            "CN": "滅盡龍的堅殼"
+        }
+    },
+    {
+        "id": 339,
+        "values": {
+            "EN": "Nergigante Gem",
+            "FR": "Gemme Nergigante",
+            "JP": "滅尽龍の宝玉",
+            "IT": "Nergigante: gemma",
+            "DE": "Nergigante-Edelstein",
+            "KR": "멸진룡의 보옥",
+            "CN": "滅盡龍的寶玉"
+        }
+    },
+    {
+        "id": 340,
+        "values": {
+            "EN": "Nergigante Horn+",
+            "FR": "Corne Nergigante +",
+            "JP": "滅尽龍の大角",
+            "IT": "Nergigante: corno+",
+            "DE": "Nergigante-Horn+",
+            "KR": "멸진룡의 큰뿔",
+            "CN": "滅盡龍的大角"
+        }
+    },
+    {
+        "id": 341,
+        "values": {
+            "EN": "Nergigante Regrowth Plate",
+            "FR": "Plaque régénératrice Nergigante",
+            "JP": "滅尽龍の再生殻",
+            "IT": "Nergigante: piastra rigenerata",
+            "DE": "Nergigante-Nachwachsplatte",
+            "KR": "멸진룡의 재생각",
+            "CN": "滅盡龍的再生殼"
+        }
+    },
+    {
+        "id": 342,
+        "values": {
+            "EN": "Nergigante Tail",
+            "FR": "Queue Nergigante",
+            "JP": "滅尽龍の尻尾",
+            "IT": "Nergigante: coda",
+            "DE": "Nergigante-Schwanz",
+            "KR": "멸진룡의 꼬리",
+            "CN": "滅盡龍的尾巴"
+        }
+    },
+    {
+        "id": 343,
+        "values": {
+            "EN": "Nergigante Talon",
+            "FR": "Serre Nergigante",
+            "JP": "滅尽龍の尖爪",
+            "IT": "Nergigante: sperone",
+            "DE": "Nergigante-Kralle",
+            "KR": "멸진룡의 첨예발톱",
+            "CN": "滅盡龍的尖爪"
+        }
+    },
+    {
+        "id": 344,
+        "values": {
+            "EN": "Nergigante Ticket",
+            "FR": "Ticket Nergigante",
+            "JP": "滅尽龍チケット",
+            "IT": "Buono Nergigante",
+            "DE": "Nergigante-Ticket",
+            "KR": "멸진룡 티켓",
+            "CN": "滅盡龍硬幣"
+        }
+    },
+    {
+        "id": 345,
+        "values": {
+            "EN": "Net",
+            "FR": "Filet",
+            "JP": "ネット",
+            "IT": "Net",
+            "DE": "Netz",
+            "KR": "그물",
+            "CN": "網子"
+        }
+    },
+    {
+        "id": 346,
+        "values": {
+            "EN": "Nitroshroom",
+            "FR": "Champinitro",
+            "JP": "ニトロダケ",
+            "IT": "Nitroshroom",
+            "DE": "Nitropilz",
+            "KR": "니트로버섯",
+            "CN": "爆炸菇"
+        }
+    },
+    {
+        "id": 347,
+        "values": {
+            "EN": "Nora Brave Trophy",
+            "FR": "Trophée de valeur Nora",
+            "JP": "ノラ族義勇兵の証",
+            "IT": "Trofeo Audace Nora",
+            "DE": "Nora-Kriegertrophäe",
+            "KR": "노라 부족 의용병의 증표",
+            "CN": "諾拉族勇者之証"
+        }
+    },
+    {
+        "id": 348,
+        "values": {
+            "EN": "Nourishing Extract",
+            "FR": "Extrait d’arginine",
+            "JP": "アルビノエキス",
+            "IT": "Estratto corroborante",
+            "DE": "Nährendes Extrakt",
+            "KR": "자양진액",
+            "CN": "滋養萃取液"
+        }
+    },
+    {
+        "id": 349,
+        "values": {
+            "EN": "Novacrystal",
+            "FR": "Cristal nova",
+            "JP": "ノヴァクリスタル",
+            "IT": "Novacristallo",
+            "DE": "Novakristall",
+            "KR": "노바크리스탈",
+            "CN": "璀璨水晶"
+        }
+    },
+    {
+        "id": 350,
+        "values": {
+            "EN": "Nulberry",
+            "FR": "Baie-soin",
+            "JP": "ウチケシの実",
+            "IT": "Nulberry",
+            "DE": "Nullbeere",
+            "KR": "지움열매",
+            "CN": "打消果實"
+        }
+    },
+    {
+        "id": 351,
+        "values": {
+            "EN": "Nutrients",
+            "FR": "Nutriments",
+            "JP": "栄養剤",
+            "IT": "Nutrients",
+            "DE": "Nährstoffe",
+            "KR": "영양제",
+            "CN": "營養劑"
+        }
+    },
+    {
+        "id": 352,
+        "values": {
+            "EN": "Odogaron Claw",
+            "FR": "Griffe Odogaron",
+            "JP": "惨爪竜の爪",
+            "IT": "Odogaron: artiglio",
+            "DE": "Odogaron-Klaue",
+            "KR": "참조룡의 발톱",
+            "CN": "慘爪龍的爪"
+        }
+    },
+    {
+        "id": 353,
+        "values": {
+            "EN": "Odogaron Claw+",
+            "FR": "Griffe Odogaron +",
+            "JP": "惨爪竜の尖爪",
+            "IT": "Odogaron: artiglio+",
+            "DE": "Odogaron-Klaue+",
+            "KR": "참조룡의 발톱+",
+            "CN": "慘爪龍的尖爪"
+        }
+    },
+    {
+        "id": 354,
+        "values": {
+            "EN": "Odogaron Fang",
+            "FR": "Croc Odogaron",
+            "JP": "惨爪竜の牙",
+            "IT": "Odogaron: zanna",
+            "DE": "Odogaron-Reißzahn",
+            "KR": "참조룡의 어금니",
+            "CN": "慘爪龍的牙"
+        }
+    },
+    {
+        "id": 355,
+        "values": {
+            "EN": "Odogaron Fang+",
+            "FR": "Croc Odogaron +",
+            "JP": "惨爪竜の鋭牙",
+            "IT": "Odogaron: zanna+",
+            "DE": "Odogaron-Reißzahn+",
+            "KR": "참조룡의 어금니+",
+            "CN": "慘爪龍的銳牙"
+        }
+    },
+    {
+        "id": 356,
+        "values": {
+            "EN": "Odogaron Gem",
+            "FR": "Gemme Odogaron",
+            "JP": "惨爪竜の宝玉",
+            "IT": "Odogaron: gemma",
+            "DE": "Odogaron-Edelstein",
+            "KR": "참조룡의 보옥",
+            "CN": "慘爪龍的寶玉"
+        }
+    },
+    {
+        "id": 357,
+        "values": {
+            "EN": "Odogaron Plate",
+            "FR": "Plaque Odogaron",
+            "JP": "惨爪竜の逆鱗",
+            "IT": "Odogaron: piastra",
+            "DE": "Odogaron-Platte",
+            "KR": "참조룡의역린",
+            "CN": "慘爪龍的逆鱗"
+        }
+    },
+    {
+        "id": 358,
+        "values": {
+            "EN": "Odogaron Scale",
+            "FR": "Écaille Odogaron",
+            "JP": "惨爪竜の鱗",
+            "IT": "Odogaron: scaglia",
+            "DE": "Odogaron-Schuppe",
+            "KR": "참조룡의 비늘",
+            "CN": "慘爪龍的鱗"
+        }
+    },
+    {
+        "id": 359,
+        "values": {
+            "EN": "Odogaron Scale+",
+            "FR": "Écaille Odogaron +",
+            "JP": "惨爪竜の上鱗",
+            "IT": "Odogaron: scaglia+",
+            "DE": "Odogaron-Schuppe+",
+            "KR": "참조룡의 비늘+",
+            "CN": "慘爪龍的上鱗"
+        }
+    },
+    {
+        "id": 360,
+        "values": {
+            "EN": "Odogaron Sinew",
+            "FR": "Tendon Odogaron",
+            "JP": "惨爪竜の硬筋",
+            "IT": "Odogaron: tendine",
+            "DE": "Odogaron-Sehne",
+            "KR": "참초룡의 경근",
+            "CN": "慘爪龍的硬筋"
+        }
+    },
+    {
+        "id": 361,
+        "values": {
+            "EN": "Odogaron Sinew+",
+            "FR": "Tendon Odogaron +",
+            "JP": "惨爪竜の大硬筋",
+            "IT": "Odogaron: tendine+",
+            "DE": "Odogaron-Sehne+",
+            "KR": "참초룡의 경근+",
+            "CN": "慘爪龍的大硬筋"
+        }
+    },
+    {
+        "id": 362,
+        "values": {
+            "EN": "Odogaron Tail",
+            "FR": "Queue Odogaron",
+            "JP": "惨爪竜の尻尾",
+            "IT": "Odogaron: coda",
+            "DE": "Odogaron-Schwanz",
+            "KR": "참조룡의 꼬리",
+            "CN": "慘爪龍的尻尾"
+        }
+    },
+    {
+        "id": 363,
+        "values": {
+            "EN": "Omniplegia Sac",
+            "FR": "Poche d'omniplégie",
+            "JP": "強力麻痺袋",
+            "IT": "Sacca inabilitante",
+            "DE": "Omniplegia-Beutel",
+            "KR": "강력마비주머니",
+            "CN": "強力麻痺袋"
+        }
+    },
+    {
+        "id": 364,
+        "values": {
+            "EN": "Paolumu Carapace+",
+            "FR": "Cuirasse Paolumu +",
+            "JP": "ゴム質の堅殻",
+            "IT": "Paolumu: carapace+",
+            "DE": "Paolumu-Rückenpanzer+",
+            "KR": "부공룡의견갑각",
+            "CN": "橡膠質的堅殼"
+        }
+    },
+    {
+        "id": 365,
+        "values": {
+            "EN": "Paolumu Pelt",
+            "FR": "Pelage Paolumu",
+            "JP": "浮空竜の毛皮",
+            "IT": "Paolumu: pelle",
+            "DE": "Paolumu-Pelz",
+            "KR": "부공룡의 모피",
+            "CN": "浮空龍的毛皮"
+        }
+    },
+    {
+        "id": 366,
+        "values": {
+            "EN": "Paolumu Pelt+",
+            "FR": "Pelage Paolumu +",
+            "JP": "浮空竜の上毛皮",
+            "IT": "Paolumu: pelle+",
+            "DE": "Paolumu-Pelz+",
+            "KR": "부공룡의 모피+",
+            "CN": "浮空龍的上毛皮"
+        }
+    },
+    {
+        "id": 367,
+        "values": {
+            "EN": "Paolumu Scale",
+            "FR": "Écaille Paolumu",
+            "JP": "浮空竜の鱗",
+            "IT": "Paolumu: scaglia",
+            "DE": "Paolumu-Schuppe",
+            "KR": "부공룡의 비늘",
+            "CN": "浮空龍的鱗"
+        }
+    },
+    {
+        "id": 368,
+        "values": {
+            "EN": "Paolumu Scale+",
+            "FR": "Écaille Paolumu +",
+            "JP": "浮空竜の上鱗",
+            "IT": "Paolumu: scaglia+",
+            "DE": "Paolumu-Schuppe+",
+            "KR": "부공룡의 비늘+",
+            "CN": "浮空龍的上鱗"
+        }
+    },
+    {
+        "id": 369,
+        "values": {
+            "EN": "Paolumu Shell",
+            "FR": "Carapace Paolumu",
+            "JP": "ゴム質の甲殻",
+            "IT": "Paolumu: corazza",
+            "DE": "Paolumu-Panzer",
+            "KR": "고무질의 갑각",
+            "CN": "橡膠質的甲殼"
+        }
+    },
+    {
+        "id": 370,
+        "values": {
+            "EN": "Paolumu Webbing",
+            "FR": "Palmure Paolumu",
+            "JP": "浮空竜の翼膜",
+            "IT": "Paolumu: membrana",
+            "DE": "Paolumu-Gewebe",
+            "KR": "부공룡의 익막",
+            "CN": "浮空龍的翼膜"
+        }
+    },
+    {
+        "id": 371,
+        "values": {
+            "EN": "Paolumu Wing",
+            "FR": "Aile Paolumu",
+            "JP": "浮空竜の翼",
+            "IT": "Paolumu: ala",
+            "DE": "Paolumu-Flügel",
+            "KR": "부공룡의 날개",
+            "CN": "浮空龍之翼"
+        }
+    },
+    {
+        "id": 372,
+        "values": {
+            "EN": "Paralysis Sac",
+            "FR": "Poche de paralysie",
+            "JP": "麻痺袋",
+            "IT": "Sacca paralizzzante",
+            "DE": "Lähmbeutel",
+            "KR": "마미주머니",
+            "CN": "麻痺袋"
+        }
+    },
+    {
+        "id": 373,
+        "values": {
+            "EN": "Parashroom",
+            "FR": "Champaralysie",
+            "JP": "マヒダケ",
+            "IT": "Parashroom",
+            "DE": "Lähmpilz",
+            "KR": "마비버섯",
+            "CN": "麻痺菇"
+        }
+    },
+    {
+        "id": 374,
+        "values": {
+            "EN": "Piercing Claw",
+            "FR": "Griffe perforante",
+            "JP": "鋭利な爪",
+            "IT": "Artiglio perforante",
+            "DE": "Stechklaue",
+            "KR": "예리한 발돕",
+            "CN": "銳爪"
+        }
+    },
+    {
+        "id": 375,
+        "values": {
+            "EN": "Pink Rathian Carapace",
+            "FR": "Cuirasse Rathian sakura",
+            "JP": "桜火竜の堅殻",
+            "IT": "Rathian rosa: carapace",
+            "DE": "Rosa-Rathian-Rückenpanzer",
+            "KR": "앵화룡의 견갑각",
+            "CN": "櫻火龍的堅殼"
+        }
+    },
+    {
+        "id": 376,
+        "values": {
+            "EN": "Pink Rathian Scale+",
+            "FR": "Écaille Rathian sakura",
+            "JP": "桜火竜の上鱗",
+            "IT": "Rathian rosa: scaglia+",
+            "DE": "Rosa-Rathian-Schuppe+",
+            "KR": "앵화룡의 비늘+",
+            "CN": "櫻火龍的上鱗"
+        }
+    },
+    {
+        "id": 377,
+        "values": {
+            "EN": "Pinnacle Coin",
+            "FR": "Pièce \"Apogée\"",
+            "JP": "闘技王のコイン",
+            "IT": "Moneta apogeo",
+            "DE": "Spitzenmünze",
+            "KR": "격투왕코인",
+            "CN": "鬪技王的硬幣"
+        }
+    },
+    {
+        "id": 378,
+        "values": {
+            "EN": "Pitfall Trap",
+            "FR": "Piège à fosse",
+            "JP": "落とし穴",
+            "IT": "Pitfall Trap",
+            "DE": "Fallgrube",
+            "KR": "구멍함정",
+            "CN": "地洞"
+        }
+    },
+    {
+        "id": 379,
+        "values": {
+            "EN": "Platinum Scale",
+            "FR": "Écaille de platine",
+            "JP": "白金のウロコ",
+            "IT": "Platinum Scale",
+            "DE": "Platin-Schuppe",
+            "KR": "Platinum Scale 교역아이템",
+            "CN": "Platinum Scale"
+        }
+    },
+    {
+        "id": 380,
+        "values": {
+            "EN": "Platinum Scale+",
+            "FR": "Écaille de platine +",
+            "JP": "白金の大ウロコ",
+            "IT": "Platinum Scale+",
+            "DE": "Platin-Schuppe+",
+            "KR": "Platinum Scale+ 교역아이템",
+            "CN": "Platinum Scale+"
+        }
+    },
+    {
+        "id": 381,
+        "values": {
+            "EN": "Poison Sac",
+            "FR": "Poche de poison",
+            "JP": "毒袋",
+            "IT": "Sacca velenosa",
+            "DE": "Giftbeutel",
+            "KR": "독주머니",
+            "CN": "毒袋"
+        }
+    },
+    {
+        "id": 382,
+        "values": {
+            "EN": "Poison Smoke Bomb",
+            "FR": "Bombe de poison",
+            "JP": "毒けむり玉",
+            "IT": "Poison Smoke Bomb",
+            "DE": "Giftrauchbombe",
+            "KR": "독연기구슬",
+            "CN": "毒煙霧球"
+        }
+    },
+    {
+        "id": 383,
+        "values": {
+            "EN": "Poisoned Meat",
+            "FR": "Viande empoisonnée",
+            "JP": "毒生肉",
+            "IT": "Poisoned Meat",
+            "DE": "Giftfleisch",
+            "KR": "독고기",
+            "CN": "毒生肉"
+        }
+    },
+    {
+        "id": 384,
+        "values": {
+            "EN": "Potion",
+            "FR": "Couteau poison",
+            "JP": "回復薬",
+            "IT": "Potion",
+            "DE": "Trank",
+            "KR": "회복약",
+            "CN": "回復藥"
+        }
+    },
+    {
+        "id": 385,
+        "values": {
+            "EN": "Powercharm",
+            "FR": "Amulette de force",
+            "JP": "力の護符",
+            "IT": "Powercharm",
+            "DE": "Kraftamulett",
+            "KR": "힘의 부적",
+            "CN": "力量之護符"
+        }
+    },
+    {
+        "id": 386,
+        "values": {
+            "EN": "Powertalon",
+            "FR": "Griffe de force",
+            "JP": "力の爪",
+            "IT": "Powertalon",
+            "DE": "Kraftkralle",
+            "KR": "힘의 발톱",
+            "CN": "力之爪"
+        }
+    },
+    {
+        "id": 387,
+        "values": {
+            "EN": "Pukei Coin",
+            "FR": "Pièce Pukei-Pukei",
+            "JP": "プケプケコイン",
+            "IT": "Moneta Pukei",
+            "DE": "Pukei-Münze",
+            "KR": "푸케푸케코인",
+            "CN": "毒妖鳥硬幣"
+        }
+    },
+    {
+        "id": 388,
+        "values": {
+            "EN": "Pukei-Pukei Carapace",
+            "FR": "Cuirasse Pukei-Pukei",
+            "JP": "毒妖鳥の堅殻",
+            "IT": "Pukei-Pukei: carapace",
+            "DE": "Pukei-Pukei-Rückenpanzer",
+            "KR": "독요조의 견갑각",
+            "CN": "毒妖鳥的堅殼"
+        }
+    },
+    {
+        "id": 389,
+        "values": {
+            "EN": "Pukei-Pukei Quill",
+            "FR": "Plume Pukei-Pukei",
+            "JP": "毒妖鳥の根羽",
+            "IT": "Pukei-Pukei: penna",
+            "DE": "Pukei-Pukei-Feder",
+            "KR": "독요조의 우근",
+            "CN": "毒妖鳥的羽毛"
+        }
+    },
+    {
+        "id": 390,
+        "values": {
+            "EN": "Pukei-Pukei Sac",
+            "FR": "Poche Pukei-Pukei",
+            "JP": "毒妖鳥の喉袋",
+            "IT": "Pukei-Pukei: sacca",
+            "DE": "Pukei-Pukei-Beutel",
+            "KR": "독요조의 후대",
+            "CN": "毒妖鳥的喉袋"
+        }
+    },
+    {
+        "id": 391,
+        "values": {
+            "EN": "Pukei-Pukei Sac+",
+            "FR": "Poche Pukei-Pukei +",
+            "JP": "毒妖鳥の大喉袋",
+            "IT": "Pukei-Pukei: sacca+",
+            "DE": "Pukei-Pukei-Beutel+",
+            "KR": "독요조의 후대+",
+            "CN": "毒妖鳥的大喉袋"
+        }
+    },
+    {
+        "id": 392,
+        "values": {
+            "EN": "Pukei-Pukei Scale",
+            "FR": "Écaille Pukei-Pukei",
+            "JP": "毒妖鳥の鱗",
+            "IT": "Pukei-Pukei: scaglia",
+            "DE": "Pukei-Pukei-Schuppe",
+            "KR": "독요조의 비늘",
+            "CN": "毒妖鳥的鱗"
+        }
+    },
+    {
+        "id": 393,
+        "values": {
+            "EN": "Pukei-Pukei Scale+",
+            "FR": "Écaille Pukei-Pukei +",
+            "JP": "毒妖鳥の上鱗",
+            "IT": "Pukei-Pukei: scaglia+",
+            "DE": "Pukei-Pukei-Schuppe+",
+            "KR": "독요조의 비늘+",
+            "CN": "毒妖鳥的上鱗"
+        }
+    },
+    {
+        "id": 394,
+        "values": {
+            "EN": "Pukei-Pukei Shell",
+            "FR": "Carapace Pukei-Pukei",
+            "JP": "毒妖鳥の甲殻",
+            "IT": "Pukei-Pukei: corazza",
+            "DE": "Pukei-Pukei-Panzer",
+            "KR": "독요조의 갑각",
+            "CN": "毒妖鳥的甲殼"
+        }
+    },
+    {
+        "id": 395,
+        "values": {
+            "EN": "Pukei-Pukei Tail",
+            "FR": "Queue Pukei-Pukei",
+            "JP": "毒妖鳥の尻尾",
+            "IT": "Pukei-Pukei: coda",
+            "DE": "Pukei-Pukei-Schwanz",
+            "KR": "독요조의꼬리",
+            "CN": "毒妖鳥的尾巴"
+        }
+    },
+    {
+        "id": 396,
+        "values": {
+            "EN": "Pukei-Pukei Wing",
+            "FR": "Aile Pukei-Pukei",
+            "JP": "毒妖鳥の翼",
+            "IT": "Pukei-Pukei: ala",
+            "DE": "Pukei-Pukei-Flügel",
+            "KR": "독요조의 날개",
+            "CN": "毒妖鳥之翼"
+        }
+    },
+    {
+        "id": 397,
+        "values": {
+            "EN": "Quality Bone",
+            "FR": "Os de qualité",
+            "JP": "上質な堅骨",
+            "IT": "Osso di qualità",
+            "DE": "Hochwertiger knochen",
+            "KR": "양질의 견골",
+            "CN": "良質硬骨"
+        }
+    },
+    {
+        "id": 398,
+        "values": {
+            "EN": "Radobaan Carapace",
+            "FR": "Cuirasse Radobaan",
+            "JP": "骨鎚竜の堅殻",
+            "IT": "Radobaan: carapace",
+            "DE": "Radobaan-Rückenpanzer",
+            "KR": "골추량의 견갑각",
+            "CN": "骨鎚竜的堅殼"
+        }
+    },
+    {
+        "id": 399,
+        "values": {
+            "EN": "Radobaan Marrow",
+            "FR": "Moelle Radobaan",
+            "JP": "骨鎚竜の骨髄",
+            "IT": "Radobaan: bulbo",
+            "DE": "Radobaan-Rückenmark",
+            "KR": "골추룡의 골수",
+            "CN": "骨鎚龍的骨髓"
+        }
+    },
+    {
+        "id": 400,
+        "values": {
+            "EN": "Radobaan Medulla",
+            "FR": "Médulla Radobaan",
+            "JP": "骨鎚竜の延髄",
+            "IT": "Radobaan: midollo",
+            "DE": "Radobaan-Medulla",
+            "KR": "골추룡의 연수",
+            "CN": "骨鎚竜的延髄"
+        }
+    },
+    {
+        "id": 401,
+        "values": {
+            "EN": "Radobaan Oilshell",
+            "FR": "Carapace huileuse Radobaan",
+            "JP": "骨鎚竜の黒油殻",
+            "IT": "Radobaan: corazza oleosa",
+            "DE": "Radobaan-Ölpanzer",
+            "KR": "골추룡의 흑유각",
+            "CN": "骨鎚龍的黑油殼"
+        }
+    },
+    {
+        "id": 402,
+        "values": {
+            "EN": "Radobaan Scale",
+            "FR": "Écaille Radobaan",
+            "JP": "骨鎚竜の鱗",
+            "IT": "Radobaan: scaglia",
+            "DE": "Radobaan-Schuppe",
+            "KR": "골추룡의 비늘",
+            "CN": "骨鎚龍的鱗"
+        }
+    },
+    {
+        "id": 403,
+        "values": {
+            "EN": "Radobaan Scale+",
+            "FR": "Écaille Radobaan +",
+            "JP": "骨鎚竜の上鱗",
+            "IT": "Radobaan: scaglia+",
+            "DE": "Radobaan-Schuppe+",
+            "KR": "골추룡의 비늘+",
+            "CN": "骨鎚竜的上鱗"
+        }
+    },
+    {
+        "id": 404,
+        "values": {
+            "EN": "Radobaan Shell",
+            "FR": "Carapace Radobaan",
+            "JP": "骨鎚竜の甲殻",
+            "IT": "Radobaan: corazza",
+            "DE": "Radobaan-Panzer",
+            "KR": "골추룡의 갑각",
+            "CN": "骨鎚龍的甲殼"
+        }
+    },
+    {
+        "id": 405,
+        "values": {
+            "EN": "Rare Steak",
+            "FR": "Steak saignant",
+            "JP": "生焼け肉",
+            "IT": "Rare Steak",
+            "DE": "Blutiges Steak",
+            "KR": "덜익은 고기",
+            "CN": "半生熟肉"
+        }
+    },
+    {
+        "id": 406,
+        "values": {
+            "EN": "Rath Wingtalon",
+            "FR": "Serre Rathalos",
+            "JP": "火竜の翼爪",
+            "IT": "Rath: sperone",
+            "DE": "Rath-Flügelkralle",
+            "KR": "화룡의 날개발톱",
+            "CN": "火龍的翼爪"
+        }
+    },
+    {
+        "id": 407,
+        "values": {
+            "EN": "Rathalos Carapace",
+            "FR": "Carapace Rathalos",
+            "JP": "火竜の堅殻",
+            "IT": "Rathalos: carapace",
+            "DE": "Rathalos-Rückenpanzer",
+            "KR": "화룡의 견갑각",
+            "CN": "火龍的堅殼"
+        }
+    },
+    {
+        "id": 408,
+        "values": {
+            "EN": "Rathalos Coin",
+            "FR": "Pièce Rathalos",
+            "JP": "レウスコイン",
+            "IT": "Moneta Rathalos",
+            "DE": "Rathalos-Münze",
+            "KR": "레우스코인",
+            "CN": "火龍硬幣"
+        }
+    },
+    {
+        "id": 409,
+        "values": {
+            "EN": "Rathalos Marrow",
+            "FR": "Moelle Rathalos",
+            "JP": "火竜の骨髄",
+            "IT": "Rathalos: bulbo",
+            "DE": "Rathalos-Rückenmark",
+            "KR": "화룡의 골수",
+            "CN": "火龍的骨髓"
+        }
+    },
+    {
+        "id": 410,
+        "values": {
+            "EN": "Rathalos Medulla",
+            "FR": "Medulla Rath",
+            "JP": "火竜の延髄",
+            "IT": "Rathalos: midollo",
+            "DE": "Rathalos-Medulla",
+            "KR": "화룡의 연수",
+            "CN": "火龍的延髓"
+        }
+    },
+    {
+        "id": 411,
+        "values": {
+            "EN": "Rathalos Plate",
+            "FR": "Plaque Rathalos",
+            "JP": "火竜の逆鱗",
+            "IT": "Rathalos: piastra",
+            "DE": "Rathalos-Platte",
+            "KR": "화룡의 역린",
+            "CN": "火龍的逆鱗"
+        }
+    },
+    {
+        "id": 412,
+        "values": {
+            "EN": "Rathalos Ruby",
+            "FR": "Rubie Rathalos",
+            "JP": "火竜の紅玉",
+            "IT": "Rathalos: rubino",
+            "DE": "Rathalos-Rubin",
+            "KR": "화룡의 홍옥",
+            "CN": "火龍的紅玉"
+        }
+    },
+    {
+        "id": 413,
+        "values": {
+            "EN": "Rathalos Scale",
+            "FR": "Écaille Rathalos",
+            "JP": "火竜の鱗",
+            "IT": "Rathalos: scaglia",
+            "DE": "Rathalos-Schuppe",
+            "KR": "화룡의 비늘",
+            "CN": "火龍的鱗"
+        }
+    },
+    {
+        "id": 414,
+        "values": {
+            "EN": "Rathalos Scale+",
+            "FR": "Écaille Rathalos +",
+            "JP": "火竜の上鱗",
+            "IT": "Rathalos: scaglia+",
+            "DE": "Rathalos-Schuppe+",
+            "KR": "화룡의 비늘+",
+            "CN": "火龍的上鱗"
+        }
+    },
+    {
+        "id": 415,
+        "values": {
+            "EN": "Rathalos Shell",
+            "FR": "Cuirasse Rathalos",
+            "JP": "火竜の甲殻",
+            "IT": "Rathalos: corazza",
+            "DE": "Rathalos-Panzer",
+            "KR": "화룡의 갑각",
+            "CN": "火龍的甲殼"
+        }
+    },
+    {
+        "id": 416,
+        "values": {
+            "EN": "Rathalos Tail",
+            "FR": "Queue Rathalos",
+            "JP": "火竜の尻尾",
+            "IT": "Rathalos: coda",
+            "DE": "Rathalos-Schwanz",
+            "KR": "화룡의 꼬리",
+            "CN": "火龍的尾巴"
+        }
+    },
+    {
+        "id": 417,
+        "values": {
+            "EN": "Rathalos Webbing",
+            "FR": "Palmure Rathalos",
+            "JP": "火竜の翼膜",
+            "IT": "Rathalos: membrana",
+            "DE": "Rathalos-Gewebe",
+            "KR": "화룡의 익막",
+            "CN": "火龍的翼膜"
+        }
+    },
+    {
+        "id": 418,
+        "values": {
+            "EN": "Rathalos Wing",
+            "FR": "Aile Rathalos",
+            "JP": "火竜の翼",
+            "IT": "Rathalos: ala",
+            "DE": "Rathalos-Flügel",
+            "KR": "화룡의 날개",
+            "CN": "火龍之翼"
+        }
+    },
+    {
+        "id": 419,
+        "values": {
+            "EN": "Rathian Carapace",
+            "FR": "Carapace Rathian",
+            "JP": "雌火竜の堅殻",
+            "IT": "Rathian: carapace",
+            "DE": "Rathian-Rückenpanzer",
+            "KR": "자화룡의 견갑각",
+            "CN": "雌火龍的堅殼"
+        }
+    },
+    {
+        "id": 420,
+        "values": {
+            "EN": "Rathian Coin",
+            "FR": "Pièce Rathian",
+            "JP": "レイアコイン",
+            "IT": "Moneta Rathian",
+            "DE": "Rathian-Münze",
+            "KR": "레이아코인",
+            "CN": "雌火龍硬幣"
+        }
+    },
+    {
+        "id": 421,
+        "values": {
+            "EN": "Rathian Plate",
+            "FR": "Plaque Rathian",
+            "JP": "雌火竜の逆鱗",
+            "IT": "Rathian: piastra",
+            "DE": "Rathian-Platte",
+            "KR": "자화룡의 역린",
+            "CN": "雌火龍的逆鱗"
+        }
+    },
+    {
+        "id": 422,
+        "values": {
+            "EN": "Rathian Ruby",
+            "FR": "Rubis Rathian",
+            "JP": "雌火竜の紅玉",
+            "IT": "Rathian: rubino",
+            "DE": "Rathian-Rubin",
+            "KR": "자화룡의 홍옥",
+            "CN": "雌火龍的紅玉"
+        }
+    },
+    {
+        "id": 423,
+        "values": {
+            "EN": "Rathian Scale",
+            "FR": "Écaille Rathian",
+            "JP": "雌火竜の鱗",
+            "IT": "Rathian: scaglia",
+            "DE": "Rathian-Schuppe",
+            "KR": "자화룡의 비늘",
+            "CN": "雌火龍的鱗"
+        }
+    },
+    {
+        "id": 424,
+        "values": {
+            "EN": "Rathian Scale+",
+            "FR": "Écaille Rathian +",
+            "JP": "雌火竜の上鱗",
+            "IT": "Rathian: scaglia+",
+            "DE": "Rathian-Schuppe+",
+            "KR": "자화룡의 비늘+",
+            "CN": "雌火龍的上鱗"
+        }
+    },
+    {
+        "id": 425,
+        "values": {
+            "EN": "Rathian Shell",
+            "FR": "Cuirasse Rathian",
+            "JP": "雌火竜の甲殻",
+            "IT": "Rathian: corazza",
+            "DE": "Rathian-Panzer",
+            "KR": "자화룡의 갑각",
+            "CN": "雌火龍的甲殼"
+        }
+    },
+    {
+        "id": 426,
+        "values": {
+            "EN": "Rathian Spike",
+            "FR": "Pointe Rathian",
+            "JP": "雌火竜の棘",
+            "IT": "Rathian: punta",
+            "DE": "Rathian-Stachel",
+            "KR": "자화룡의 가시",
+            "CN": "雌火龍的棘"
+        }
+    },
+    {
+        "id": 427,
+        "values": {
+            "EN": "Rathian Spike+",
+            "FR": "Pointe Rathian +",
+            "JP": "雌火竜の上棘",
+            "IT": "Rathian: punta+",
+            "DE": "Rathian-Stachel+",
+            "KR": "자화룡의 가시+",
+            "CN": "雌火龍的上棘"
+        }
+    },
+    {
+        "id": 428,
+        "values": {
+            "EN": "Rathian Webbing",
+            "FR": "Palmure Rathian",
+            "JP": "雌火竜の翼膜",
+            "IT": "Rathian: membrana",
+            "DE": "Rathian-Gewebe",
+            "KR": "자화룡의 익막",
+            "CN": "雌火龍的羽膜"
+        }
+    },
+    {
+        "id": 429,
+        "values": {
+            "EN": "Ration",
+            "FR": "Ration",
+            "JP": "携帯食料",
+            "IT": "Ration",
+            "DE": "Ration",
+            "KR": "휴대 식량",
+            "CN": "攜帶糧食"
+        }
+    },
+    {
+        "id": 430,
+        "values": {
+            "EN": "Raw Meat",
+            "FR": "Viande crue",
+            "JP": "生肉",
+            "IT": "Raw Meat",
+            "DE": "Rohes Fleisch",
+            "KR": "생고기",
+            "CN": "生肉"
+        }
+    },
+    {
+        "id": 431,
+        "values": {
+            "EN": "Red Orb",
+            "FR": "Orbe Rouge",
+            "JP": "レッドオーブ",
+            "IT": "Red Orb",
+            "DE": "Rote Kugel",
+            "KR": "레드 오브",
+            "CN": "Red Orb"
+        }
+    },
+    {
+        "id": 432,
+        "values": {
+            "EN": "Research Commission Ticket",
+            "FR": "Ticket de commission de recherche",
+            "JP": "調査団チケット",
+            "IT": "Buono commissione di ricerca",
+            "DE": "Forschungskommission-Ticket",
+            "KR": "조사단 티켓",
+            "CN": "調查團票"
+        }
+    },
+    {
+        "id": 433,
+        "values": {
+            "EN": "Rolled-up Dung",
+            "FR": "Boule de bouse",
+            "JP": "ころがされたフン",
+            "IT": "Rolled-up Dung",
+            "DE": "Gerollter Dung",
+            "KR": "Rolled-up Dung 쇠똥구리가 굴린 몬스터의 대변",
+            "CN": "堆起的糞便"
+        }
+    },
+    {
+        "id": 434,
+        "values": {
+            "EN": "SFV Ticket",
+            "FR": "Ticket SFV",
+            "JP": "SFVチケット",
+            "IT": "Stampa SFV I",
+            "DE": "SFV-Ticket",
+            "KR": "SFV 티켓",
+            "CN": "SFV Ticket"
+        }
+    },
+    {
+        "id": 435,
+        "values": {
+            "EN": "SFV Ticket II",
+            "FR": "Ticket SFV II",
+            "JP": "SFVチケットII",
+            "IT": "Stampa SFV II",
+            "DE": "SFV-Ticket II",
+            "KR": "SFV 티켓 II",
+            "CN": "SFV Ticket II"
+        }
+    },
+    {
+        "id": 436,
+        "values": {
+            "EN": "SFV Ticket III",
+            "FR": "Ticket SFV III",
+            "JP": "SFVチケットIII",
+            "IT": "Stampa SFV III",
+            "DE": "SFV-Ticket III",
+            "KR": "SFV 티켓 III",
+            "CN": "SFV Ticket III"
+        }
+    },
+    {
+        "id": 437,
+        "values": {
+            "EN": "Screamer Pod",
+            "FR": "Capsule sonore",
+            "JP": "スリンガー音爆弾",
+            "IT": "Baccello urlante",
+            "DE": "Schreikapsel",
+            "KR": "슬링어 음폭탄",
+            "CN": "投射器音爆彈"
+        }
+    },
+    {
+        "id": 438,
+        "values": {
+            "EN": "Screamer Sac",
+            "FR": "Poche hurlante",
+            "JP": "鳴き袋",
+            "IT": "Sacca urlante",
+            "DE": "Kreischbeutel",
+            "KR": "울음주머니",
+            "CN": "鳴袋"
+        }
+    },
+    {
+        "id": 439,
+        "values": {
+            "EN": "Shamos Hide",
+            "FR": "Peau Shamos",
+            "JP": "シャムオスの皮",
+            "IT": "Shamos: pelle",
+            "DE": "Shamos-Lederhaut",
+            "KR": "샤무오스의 가죽",
+            "CN": "貓蜥龍的皮"
+        }
+    },
+    {
+        "id": 440,
+        "values": {
+            "EN": "Shamos Hide+",
+            "FR": "Peau Shamos +",
+            "JP": "シャムオスの上皮",
+            "IT": "Shamos: pelle+",
+            "DE": "Shamos-Lederhaut+",
+            "KR": "샤무오스의 가죽+",
+            "CN": "貓蜥龍的上皮"
+        }
+    },
+    {
+        "id": 441,
+        "values": {
+            "EN": "Shamos Scale",
+            "FR": "Écaille Shamos",
+            "JP": "シャムオスの鱗",
+            "IT": "Shamos: scaglia",
+            "DE": "Shamos-Schuppe",
+            "KR": "샤무오스의 비늘",
+            "CN": "貓蜥龍的鱗"
+        }
+    },
+    {
+        "id": 442,
+        "values": {
+            "EN": "Shamos Scale+",
+            "FR": "Écaille Shamos +",
+            "JP": "シャムオスの上鱗",
+            "IT": "Shamos: scaglia+",
+            "DE": "Shamos-Schuppe+",
+            "KR": "샤무오스의 비늘+",
+            "CN": "貓蜥龍的上鱗"
+        }
+    },
+    {
+        "id": 443,
+        "values": {
+            "EN": "Sharp Claw",
+            "FR": "Griffe aiguisée",
+            "JP": "とがった爪",
+            "IT": "Artiglio affilato",
+            "DE": "Scharfe Klaue",
+            "KR": "뾰족한 발톱",
+            "CN": "尖爪"
+        }
+    },
+    {
+        "id": 444,
+        "values": {
+            "EN": "Shining Streamstone",
+            "FR": "Pierre-dragon brillante",
+            "JP": "輝く龍脈石",
+            "IT": "Shining Streamstone",
+            "DE": "Leuchtender Stromstein",
+            "KR": "빛나는 용맥석",
+            "CN": "Shining Streamstone"
+        }
+    },
+    {
+        "id": 445,
+        "values": {
+            "EN": "Shock Trap",
+            "FR": "Piège électrochoc",
+            "JP": "シビレ罠",
+            "IT": "Shock Trap",
+            "DE": "Schockfalle",
+            "KR": "마비함정",
+            "CN": "麻痺陷阱"
+        }
+    },
+    {
+        "id": 446,
+        "values": {
+            "EN": "Silver Egg",
+            "FR": "Œuf d'argent",
+            "JP": "銀のたまご",
+            "IT": "Silver Egg",
+            "DE": "Silberei",
+            "KR": "은알",
+            "CN": "銀蛋"
+        }
+    },
+    {
+        "id": 447,
+        "values": {
+            "EN": "Silver Wyverian Print",
+            "FR": "Billet wyvérien en argent",
+            "JP": "銀の竜人手形",
+            "IT": "Stampa wyvern argento",
+            "DE": "Silberner Wyverianer-Druck",
+            "KR": "은용인증서",
+            "CN": "銀之龍人票據"
+        }
+    },
+    {
+        "id": 448,
+        "values": {
+            "EN": "Sinister Cloth",
+            "FR": "Étoffe sinistre",
+            "JP": "禍々しい布",
+            "IT": "Tessuto malevolo",
+            "DE": "Finsteres Tuch",
+            "KR": "불길한 천",
+            "CN": "災禍之布"
+        }
+    },
+    {
+        "id": 449,
+        "values": {
+            "EN": "Slashberry",
+            "FR": "Noix tranchante",
+            "JP": "ザンレツの実",
+            "IT": "Slashberry",
+            "DE": "Schlitzbeere",
+            "KR": "참렬열매",
+            "CN": "斬裂果實"
+        }
+    },
+    {
+        "id": 450,
+        "values": {
+            "EN": "Sleep Herb",
+            "FR": "Herbe sommeil",
+            "JP": "ネムリ草",
+            "IT": "Sleep Herb",
+            "DE": "Schlafkraut",
+            "KR": "수면초",
+            "CN": "眠草"
+        }
+    },
+    {
+        "id": 451,
+        "values": {
+            "EN": "Sleep Sac",
+            "FR": "Poche de somnifère",
+            "JP": "睡眠袋",
+            "IT": "Sacca soporifera",
+            "DE": "Schlafbeutel",
+            "KR": "수면주머니",
+            "CN": "睡眠袋"
+        }
+    },
+    {
+        "id": 452,
+        "values": {
+            "EN": "Small Barrel",
+            "FR": "Petit baril",
+            "JP": "小タル",
+            "IT": "Small Barrel",
+            "DE": "Kleines Fass",
+            "KR": "소형나무통",
+            "CN": "小桶"
+        }
+    },
+    {
+        "id": 453,
+        "values": {
+            "EN": "Smoke Bomb",
+            "FR": "Bombe fumigène",
+            "JP": "けむり玉",
+            "IT": "Smoke Bomb",
+            "DE": "Rauchbombe",
+            "KR": "연기옥",
+            "CN": "煙霧球"
+        }
+    },
+    {
+        "id": 454,
+        "values": {
+            "EN": "Smokenut",
+            "FR": "Noix fumigène",
+            "JP": "ケムリの実",
+            "IT": "Smokenut",
+            "DE": "Rauchnuss",
+            "KR": "연기열매",
+            "CN": "煙果實"
+        }
+    },
+    {
+        "id": 455,
+        "values": {
+            "EN": "Snow Herb",
+            "FR": "Herbe de neige",
+            "JP": "霜ふり草",
+            "IT": "Snow Herb",
+            "DE": "Schneekraut",
+            "KR": "빙결초",
+            "CN": "霜降草"
+        }
+    },
+    {
+        "id": 456,
+        "values": {
+            "EN": "Spider Web",
+            "FR": "Toile d'araignée",
+            "JP": "クモの巣",
+            "IT": "Spider Web",
+            "DE": "Spinnennetz",
+            "KR": "거미줄",
+            "CN": "蜘蛛網"
+        }
+    },
+    {
+        "id": 457,
+        "values": {
+            "EN": "Spiritcore Ore",
+            "FR": "Minerai solaire",
+            "JP": "精晶原石",
+            "IT": "Spiritcore Ore",
+            "DE": "Seelenkern-Erz",
+            "KR": "정정원석",
+            "CN": "精晶原石"
+        }
+    },
+    {
+        "id": 458,
+        "values": {
+            "EN": "Spring Blossom Ticket",
+            "FR": "Ticket printemps",
+            "JP": "開花チケット",
+            "IT": "Buono fiori di primavera",
+            "DE": "Frühlingsblüten-Ticket",
+            "KR": "개화 티켓",
+            "CN": "Spring Blossom Ticket"
+        }
+    },
+    {
+        "id": 459,
+        "values": {
+            "EN": "Spring Insect Field Guide",
+            "FR": "Bestiaire - Insecte (printemps)",
+            "JP": "昆虫図鑑【春】",
+            "IT": "Spring Insect Field Guide",
+            "DE": "Spring Insect Field Guide",
+            "KR": "곤충도감 [봄]",
+            "CN": "Spring Insect Field Guide"
+        }
+    },
+    {
+        "id": 460,
+        "values": {
+            "EN": "Steel Egg",
+            "FR": "Œuf d'acier",
+            "JP": "鋼のたまご",
+            "IT": "Steel Egg",
+            "DE": "Stahlei",
+            "KR": "강철알",
+            "CN": "鋼蛋"
+        }
+    },
+    {
+        "id": 461,
+        "values": {
+            "EN": "Steel Wyverian Print",
+            "FR": "Ticket wyverien acier",
+            "JP": "鋼の竜人手形",
+            "IT": "Stampa wyvern acciaio",
+            "DE": "Stählerner Wyverianer-Druck",
+            "KR": "철용인증서",
+            "CN": "鋼之龍人票據"
+        }
+    },
+    {
+        "id": 462,
+        "values": {
+            "EN": "Streamstone",
+            "FR": "Pierre-dragon",
+            "JP": "龍脈石",
+            "IT": "Streamstone",
+            "DE": "Stromstein",
+            "KR": "용맥석",
+            "CN": "Streamstone"
+        }
+    },
+    {
+        "id": 463,
+        "values": {
+            "EN": "Streamstone Shard",
+            "FR": "Éclat de pierre-dragon",
+            "JP": "龍脈石のかけら",
+            "IT": "Streamstone Shard",
+            "DE": "Stromsteinscherbe",
+            "KR": "용맥석의 조각",
+            "CN": "Streamstone Shard"
+        }
+    },
+    {
+        "id": 464,
+        "values": {
+            "EN": "Sturdy Bone",
+            "FR": "Os solide",
+            "JP": "頑丈な骨",
+            "IT": "Osso resistente",
+            "DE": "Fester Knochen",
+            "KR": "단단한 뼈",
+            "CN": "硬質骨頭"
+        }
+    },
+    {
+        "id": 465,
+        "values": {
+            "EN": "Sullied Streamstone",
+            "FR": "Fragment Pierre-dragon",
+            "JP": "汚れた龍脈石",
+            "IT": "Sullied Streamstone",
+            "DE": "Sullied Streamstone",
+            "KR": "더러운 용맥석",
+            "CN": "Sullied Streamstone"
+        }
+    },
+    {
+        "id": 466,
+        "values": {
+            "EN": "Summer Insect Guide",
+            "FR": "Ticket Été",
+            "JP": "昆虫図鑑【夏】",
+            "IT": "Summer Insect Guide",
+            "DE": "Sommerinsektenlexikon",
+            "KR": "곤충도감 [여름]",
+            "CN": "Summer Insect Guide"
+        }
+    },
+    {
+        "id": 467,
+        "values": {
+            "EN": "Summer Twilight Ticket",
+            "FR": "Bestiaire - Insectes (été)",
+            "JP": "納涼チケット",
+            "IT": "Ticket del tramonto d'estate",
+            "DE": "Sommerdämmerung-Ticket",
+            "KR": "납량 티켓",
+            "CN": "Summer Twilight Ticket"
+        }
+    },
+    {
+        "id": 468,
+        "values": {
+            "EN": "Sushifish Scale",
+            "FR": "Écaille Sushipoisson",
+            "JP": "サシミウロコ",
+            "IT": "Scaglia pesce sushi",
+            "DE": "Sushifisch-Schuppe",
+            "KR": "회어 비늘",
+            "CN": "刺身魚鱗片"
+        }
+    },
+    {
+        "id": 469,
+        "values": {
+            "EN": "Tailraider Voucher",
+            "FR": "Coupon Chasseur de miaonstres",
+            "JP": "オトモダチケット",
+            "IT": "Tailraider Voucher",
+            "DE": "Schnurrtrupp-Gutschein",
+            "KR": "동료 티켓",
+            "CN": "隨從票"
+        }
+    },
+    {
+        "id": 470,
+        "values": {
+            "EN": "Teostra Carapace",
+            "FR": "Cuirasse Teostra",
+            "JP": "炎王龍の堅殻",
+            "IT": "Teostra: carapace",
+            "DE": "Teostra-Rückenpanzer",
+            "KR": "염왕룡의 견갑각",
+            "CN": "炎王龍的堅殼"
+        }
+    },
+    {
+        "id": 471,
+        "values": {
+            "EN": "Teostra Claw+",
+            "FR": "Griffe Teostra +",
+            "JP": "炎王龍の尖爪",
+            "IT": "Teostra: artiglio+",
+            "DE": "Teostra-Klaue+",
+            "KR": "염왕룡의 첨예발톱",
+            "CN": "炎龍的尖爪"
+        }
+    },
+    {
+        "id": 472,
+        "values": {
+            "EN": "Teostra Gem",
+            "FR": "Gemme Teostra",
+            "JP": "炎王龍の宝玉",
+            "IT": "Teostra: gemma",
+            "DE": "Teostra-Edelstein",
+            "KR": "염왕룡의 보옥",
+            "CN": "炎龍的寶玉"
+        }
+    },
+    {
+        "id": 473,
+        "values": {
+            "EN": "Teostra Horn+",
+            "FR": "Corne Teostra +",
+            "JP": "炎王龍の尖角",
+            "IT": "Teostra: corno+",
+            "DE": "Teostra-Horn+",
+            "KR": "염왕룡의 첨예뿔",
+            "CN": "炎王龍的尖角"
+        }
+    },
+    {
+        "id": 474,
+        "values": {
+            "EN": "Teostra Mane",
+            "FR": "Crinière Teostra",
+            "JP": "炎王龍のたてがみ",
+            "IT": "Teostra: criniera",
+            "DE": "Teostra-Mähne",
+            "KR": "염왕룡의 갈기",
+            "CN": "炎王龍的鬃毛"
+        }
+    },
+    {
+        "id": 475,
+        "values": {
+            "EN": "Teostra Powder",
+            "FR": "Poudre Teostra",
+            "JP": "炎王龍の塵粉",
+            "IT": "Teostra: polvere",
+            "DE": "Teostra-Pulver",
+            "KR": "염룡의 가루",
+            "CN": "炎龍的粉塵"
+        }
+    },
+    {
+        "id": 476,
+        "values": {
+            "EN": "Teostra Tail",
+            "FR": "Queue Teostra",
+            "JP": "炎王龍の尻尾",
+            "IT": "Teostra: coda",
+            "DE": "Teostra-Schwanz",
+            "KR": "염왕룡의 꼬리",
+            "CN": "炎王龍的尾巴"
+        }
+    },
+    {
+        "id": 477,
+        "values": {
+            "EN": "Teostra Ticket",
+            "FR": "Ticket Teostra",
+            "JP": "炎王龍チケット",
+            "IT": "Stampa Teostra",
+            "DE": "Teostra-Ticket",
+            "KR": "염왕룡 티켓",
+            "CN": "炎王龍硬幣"
+        }
+    },
+    {
+        "id": 478,
+        "values": {
+            "EN": "Teostra Webbing",
+            "FR": "Membrane Teostra",
+            "JP": "炎王龍の翼膜",
+            "IT": "Teostra: membrana",
+            "DE": "Teostra-Gewebe",
+            "KR": "염왕룡의 날개",
+            "CN": "炎龍的翼膜"
+        }
+    },
+    {
+        "id": 479,
+        "values": {
+            "EN": "Thunder Sac",
+            "FR": "Poche de foudre",
+            "JP": "電撃袋",
+            "IT": "Sacca tonante",
+            "DE": "Donnerbeutel",
+            "KR": "전격주머니",
+            "CN": "電擊袋"
+        }
+    },
+    {
+        "id": 480,
+        "values": {
+            "EN": "Thunderbug",
+            "FR": "Foudrinsecte",
+            "JP": "雷光虫",
+            "IT": "Insetto elettrico",
+            "DE": "Donnerkäfer",
+            "KR": "뇌광충",
+            "CN": "雷光蟲"
+        }
+    },
+    {
+        "id": 481,
+        "values": {
+            "EN": "Tinged Meat",
+            "FR": "Viande paralysante",
+            "JP": "シビレ生肉",
+            "IT": "Tinged Meat",
+            "DE": "Tinged Meat",
+            "KR": "마비고기",
+            "CN": "麻痺生肉"
+        }
+    },
+    {
+        "id": 482,
+        "values": {
+            "EN": "Toadstool",
+            "FR": "Champi vénéneux",
+            "JP": "毒テングダケ",
+            "IT": "Toadstool",
+            "DE": "Giftpilz",
+            "KR": "독광대버섯",
+            "CN": "毒菇"
+        }
+    },
+    {
+        "id": 483,
+        "values": {
+            "EN": "Tobi-Kadachi Claw",
+            "FR": "Griffe Tobi-Kadachi",
+            "JP": "飛雷竜の爪",
+            "IT": "Tobi-Kadachi: artiglio",
+            "DE": "Tobi-Kadachi-Klaue",
+            "KR": "비뢰룡의 손톱",
+            "CN": "飛雷龍的爪"
+        }
+    },
+    {
+        "id": 484,
+        "values": {
+            "EN": "Tobi-Kadachi Claw+",
+            "FR": "Griffe Tobi-Kadachi +",
+            "JP": "飛雷竜の尖爪",
+            "IT": "Tobi-Kadachi: artiglio+",
+            "DE": "Tobi-Kadachi-Klaue+",
+            "KR": "비뢰룡의 첨예발톱",
+            "CN": "飛雷龍的尖爪"
+        }
+    },
+    {
+        "id": 485,
+        "values": {
+            "EN": "Tobi-Kadachi Electrode",
+            "FR": "Électrode Tobi-Kadachi",
+            "JP": "飛雷竜の電極針",
+            "IT": "Tobi-Kadachi: elettrodo",
+            "DE": "Tobi-Kadachi-Elektrode",
+            "KR": "비뢰룡의 전극침",
+            "CN": "飛雷龍的電極針"
+        }
+    },
+    {
+        "id": 486,
+        "values": {
+            "EN": "Tobi-Kadachi Electrode+",
+            "FR": "Électrode Tobi-Kadachi +",
+            "JP": "飛雷竜の雷極針",
+            "IT": "Tobi-Kadachi: elettrodo+",
+            "DE": "Tobi-Kadachi-Elektrode+",
+            "KR": "비뢰룡의 전극침+",
+            "CN": "飛雷龍的雷極針"
+        }
+    },
+    {
+        "id": 487,
+        "values": {
+            "EN": "Tobi-Kadachi Membrane",
+            "FR": "Membrane Tobi-Kadachi",
+            "JP": "飛雷竜の皮膜",
+            "IT": "Tobi-Kadachi Membrane",
+            "DE": "Tobi-Kadachi-Membran",
+            "KR": "비뢰룡의 피막",
+            "CN": "飛雷龍的皮膜"
+        }
+    },
+    {
+        "id": 488,
+        "values": {
+            "EN": "Tobi-Kadachi Pelt",
+            "FR": "Pelage Tobi-Kadachi",
+            "JP": "飛雷竜の毛皮",
+            "IT": "Tobi-Kadachi: pelle",
+            "DE": "Tobi-Kadachi-Pelz",
+            "KR": "비뢰룡의 모피",
+            "CN": "飛雷龍的毛皮"
+        }
+    },
+    {
+        "id": 489,
+        "values": {
+            "EN": "Tobi-Kadachi Pelt+",
+            "FR": "Pelage Tobi-Kadachi +",
+            "JP": "飛雷竜の上毛皮",
+            "IT": "Tobi-Kadachi: pelle+",
+            "DE": "Tobi-Kadachi-Pelz+",
+            "KR": "비뢰룡의 모피+",
+            "CN": "飛雷龍的上毛皮"
+        }
+    },
+    {
+        "id": 490,
+        "values": {
+            "EN": "Tobi-Kadachi Scale",
+            "FR": "Écaille Tobi-Kadachi",
+            "JP": "飛雷竜の鱗",
+            "IT": "Tobi-Kadachi: scaglia",
+            "DE": "Tobi-Kadachi-Schuppe",
+            "KR": "비뢰룡의 비늘",
+            "CN": "飛雷龍的鱗"
+        }
+    },
+    {
+        "id": 491,
+        "values": {
+            "EN": "Tobi-Kadachi Scale+",
+            "FR": "Écaille Tobi-Kadachi +",
+            "JP": "飛雷竜の上鱗",
+            "IT": "Tobi-Kadachi: scaglia+",
+            "DE": "Tobi-Kadachi-Schuppe+",
+            "KR": "비뢰룡의 비늘+",
+            "CN": "飛雷龍的上鱗"
+        }
+    },
+    {
+        "id": 492,
+        "values": {
+            "EN": "Torrent Sac",
+            "FR": "Poche de torrent",
+            "JP": "大水袋",
+            "IT": "Sacca torrente",
+            "DE": "Sturzflutbeutel",
+            "KR": "큰물주머니",
+            "CN": "大水袋"
+        }
+    },
+    {
+        "id": 493,
+        "values": {
+            "EN": "Toxin Sac",
+            "FR": "Poche de toxine",
+            "JP": "猛毒袋",
+            "IT": "Sacca tossica",
+            "DE": "Toxinbeutel",
+            "KR": "맹독주머니",
+            "CN": "猛毒袋"
+        }
+    },
+    {
+        "id": 494,
+        "values": {
+            "EN": "Tranq Bomb",
+            "FR": "Bombe tranquilisante",
+            "JP": "捕獲用麻酔玉",
+            "IT": "Tranq Bomb",
+            "DE": "Beruhigungsbombe",
+            "KR": "포획옥",
+            "CN": "捕獲用麻醉球"
+        }
+    },
+    {
+        "id": 495,
+        "values": {
+            "EN": "Trap Tool",
+            "FR": "Kit de piège",
+            "JP": "トラップツール",
+            "IT": "Trap Tool",
+            "DE": "Fallengerät",
+            "KR": "트랩툴",
+            "CN": "陷阱工具"
+        }
+    },
+    {
+        "id": 496,
+        "values": {
+            "EN": "Twisted Horn",
+            "FR": "Corne tordue",
+            "JP": "ねじれた角",
+            "IT": "Corno contorto",
+            "DE": "Gedrehtes Horn",
+            "KR": "비틀린 뿔",
+            "CN": "彎曲角"
+        }
+    },
+    {
+        "id": 497,
+        "values": {
+            "EN": "Tzitzi Coin",
+            "FR": "Pièce tzitzi",
+            "JP": "ツィツィコイン",
+            "IT": "Moneta Tzitzi",
+            "DE": "Tzitzi-Münze",
+            "KR": "치치코인",
+            "CN": "眩鳥硬幣"
+        }
+    },
+    {
+        "id": 498,
+        "values": {
+            "EN": "Tzitzi-Ya-Ku Claw",
+            "FR": "Griffe Tzitzi-Ya-Ku",
+            "JP": "眩鳥の爪",
+            "IT": "Tzitzi-Ya-Ku: artiglio",
+            "DE": "Tzitzi-Ya-Ku-Klaue",
+            "KR": "현조의 발톱",
+            "CN": "眩鳥的爪"
+        }
+    },
+    {
+        "id": 499,
+        "values": {
+            "EN": "Tzitzi-Ya-Ku Claw+",
+            "FR": "Griffe Tzitzi-Ya-Ku +",
+            "JP": "眩鳥の尖爪",
+            "IT": "Tzitzi-Ya-Ku: artiglio+",
+            "DE": "Tzitzi-Ya-Ku-Klaue+",
+            "KR": "현조의 첨예발톱",
+            "CN": "眩鳥的尖爪"
+        }
+    },
+    {
+        "id": 500,
+        "values": {
+            "EN": "Tzitzi-Ya-Ku Hide",
+            "FR": "Peau Tzitzi-Ya-Ku",
+            "JP": "眩鳥の皮",
+            "IT": "Tzitzi-Ya-Ku: pelle",
+            "DE": "Tzitzi-Ya-Ku-Lederhaut",
+            "KR": "현조의 가죽",
+            "CN": "眩鳥的皮"
+        }
+    },
+    {
+        "id": 501,
+        "values": {
+            "EN": "Tzitzi-Ya-Ku Hide+",
+            "FR": "Peau Tzitzi-Ya-Ku +",
+            "JP": "眩鳥の上皮",
+            "IT": "Tzitzi-Ya-Ku: pelle+",
+            "DE": "Tzitzi-Ya-Ku-Lederhaut+",
+            "KR": "현조의 가죽+",
+            "CN": "眩鳥的上皮"
+        }
+    },
+    {
+        "id": 502,
+        "values": {
+            "EN": "Tzitzi-Ya-Ku Photophore",
+            "FR": "Photophore Tzitzi-Ya-Ku",
+            "JP": "眩鳥の発光膜",
+            "IT": "Tzitzi-Ya-Ku: fotoforo",
+            "DE": "Tzitzi-Ya-Ku-Leuchtorgan",
+            "KR": "현조의 발광막",
+            "CN": "眩鳥的發光膜"
+        }
+    },
+    {
+        "id": 503,
+        "values": {
+            "EN": "Tzitzi-Ya-Ku Photophore+",
+            "FR": "Photophore Tzitzi-Ya-Ku +",
+            "JP": "眩鳥の閃光膜",
+            "IT": "Tzitzi-Ya-Ku: fotoforo+",
+            "DE": "Tzitzi-Ya-Ku-Leuchtorgan+",
+            "KR": "현조의 섬광막",
+            "CN": "眩鳥的閃光膜"
+        }
+    },
+    {
+        "id": 504,
+        "values": {
+            "EN": "Tzitzi-Ya-Ku Scale",
+            "FR": "Écaille Tzitzi-Ya-Ku",
+            "JP": "眩鳥の鱗",
+            "IT": "Tzitzi-Ya-Ku: scaglia",
+            "DE": "Tzitzi-Ya-Ku-Schuppe",
+            "KR": "현조의 비늘",
+            "CN": "眩鳥的鱗"
+        }
+    },
+    {
+        "id": 505,
+        "values": {
+            "EN": "Tzitzi-Ya-Ku Scale+",
+            "FR": "Écaille Tzitzi-Ya-Ku +",
+            "JP": "眩鳥の上鱗",
+            "IT": "Tzitzi-Ya-Ku: scaglia+",
+            "DE": "Tzitzi-Ya-Ku-Schuppe+",
+            "KR": "현조의 비늘+",
+            "CN": "眩鳥的上鱗"
+        }
+    },
+    {
+        "id": 506,
+        "values": {
+            "EN": "Unknown Skull",
+            "FR": "Crâne Inconnu",
+            "JP": "なぞの頭骨",
+            "IT": "Teschio ignoto",
+            "DE": "Anonymer Schädel",
+            "KR": "수수께끼의 머리뼈",
+            "CN": "謎樣的頭骨"
+        }
+    },
+    {
+        "id": 507,
+        "values": {
+            "EN": "Uragaan Carapace",
+            "FR": "Carapace Uragaan",
+            "JP": "爆鎚竜の堅殻",
+            "IT": "Uragaan: carapace",
+            "DE": "Uragaan-Rückenpanzer",
+            "KR": "폭푸룡의 견갑각",
+            "CN": "爆鎚龍的堅殼"
+        }
+    },
+    {
+        "id": 508,
+        "values": {
+            "EN": "Uragaan Jaw",
+            "FR": "Mâchoir Uragaan",
+            "JP": "爆鎚竜の顎",
+            "IT": "Uragaan: mandibola",
+            "DE": "Uragaan-Kiefer",
+            "KR": "폭추룡의 턱",
+            "CN": "爆鎚龍的顎"
+        }
+    },
+    {
+        "id": 509,
+        "values": {
+            "EN": "Uragaan Marrow",
+            "FR": "Moelle Uragaan",
+            "JP": "爆鎚竜の骨髄",
+            "IT": "Uragaan: midollo",
+            "DE": "Uragaan-Rückenmark",
+            "KR": "폭추룡의 연수",
+            "CN": "爆鎚龍的延髓"
+        }
+    },
+    {
+        "id": 510,
+        "values": {
+            "EN": "Uragaan Ruby",
+            "FR": "Rubis Uragaan",
+            "JP": "爆鎚竜の紅玉",
+            "IT": "Uragaan: rubino",
+            "DE": "Uragaan-Rubin",
+            "KR": "폭추룡의 홍옥",
+            "CN": "爆鎚龍的紅玉"
+        }
+    },
+    {
+        "id": 511,
+        "values": {
+            "EN": "Uragaan Scale+",
+            "FR": "Écaille Uragaan +",
+            "JP": "爆鎚竜の鱗",
+            "IT": "Uragaan: scaglia+",
+            "DE": "Uragaan-Schuppe+",
+            "KR": "폭추룡의 비늘+",
+            "CN": "爆鎚龍的上鱗"
+        }
+    },
+    {
+        "id": 512,
+        "values": {
+            "EN": "Uragaan Scute",
+            "FR": "Scutum Uragaan",
+            "JP": "爆鎚竜の耐熱殻",
+            "IT": "Uragaan: placca",
+            "DE": "Uragaan-Schild",
+            "KR": "폭추룡의 내열갑각",
+            "CN": "爆鎚龍的耐熱殼"
+        }
+    },
+    {
+        "id": 513,
+        "values": {
+            "EN": "Vaal Hazak Carapace",
+            "FR": "Cuirasse Vaal Hazak",
+            "JP": "屍套龍の堅殻",
+            "IT": "Vaal Hazak: carapace",
+            "DE": "Vaal-Hazak-Rückenpanzer",
+            "KR": "시투룡의 견갑각",
+            "CN": "屍套龍的堅殼"
+        }
+    },
+    {
+        "id": 514,
+        "values": {
+            "EN": "Vaal Hazak Fang+",
+            "FR": "Croc Vaal Hazak +",
+            "JP": "屍套龍の鋭牙",
+            "IT": "Vaal Hazak: zanna+",
+            "DE": "Vaal-Hazak-Reißzahn+",
+            "KR": "시투룡의 어금니+",
+            "CN": "屍套龍的銳牙"
+        }
+    },
+    {
+        "id": 515,
+        "values": {
+            "EN": "Vaal Hazak Gem",
+            "FR": "Gemme Vaal Hazak",
+            "JP": "屍套龍の宝玉",
+            "IT": "Vaal Hazak: gemma",
+            "DE": "Vaal-Hazak-Edelstein",
+            "KR": "시투룡의 보옥",
+            "CN": "屍套龍的寶玉"
+        }
+    },
+    {
+        "id": 516,
+        "values": {
+            "EN": "Vaal Hazak Membrane",
+            "FR": "Membrane Vaal Hazak",
+            "JP": "屍套龍の被膜",
+            "IT": "Vaal Hazak: membrana",
+            "DE": "Vaal-Hazak-Membran",
+            "KR": "시투룡의 피막",
+            "CN": "屍套龍的皮膜"
+        }
+    },
+    {
+        "id": 517,
+        "values": {
+            "EN": "Vaal Hazak Tail",
+            "FR": "Queue Vaal Hazak",
+            "JP": "屍套龍の尻尾",
+            "IT": "Vaal Hazak: coda",
+            "DE": "Vaal-Hazak-Schwanz",
+            "KR": "시투룡의 꼬리",
+            "CN": "屍套龍的尾巴"
+        }
+    },
+    {
+        "id": 518,
+        "values": {
+            "EN": "Vaal Hazak Talon",
+            "FR": "Serre Vaal Hazak",
+            "JP": "屍套龍の尖爪",
+            "IT": "Vaal Hazak: sperone",
+            "DE": "Vaal-Hazak-Kralle",
+            "KR": "시투룡의 첨예발톱",
+            "CN": "屍套龍的尖爪"
+        }
+    },
+    {
+        "id": 519,
+        "values": {
+            "EN": "Vaal Hazak Ticket",
+            "FR": "Ticket Vaal Hazak",
+            "JP": "屍套龍チケット",
+            "IT": "Buono Vaal Hazak",
+            "DE": "Vaal-Hazak-Ticket",
+            "KR": "시투룡 티켓",
+            "CN": "屍套龍硬幣"
+        }
+    },
+    {
+        "id": 520,
+        "values": {
+            "EN": "Vaal Hazak Wing",
+            "FR": "Aile Vaal Hazak",
+            "JP": "屍套龍の翼",
+            "IT": "Vaal Hazak: ala",
+            "DE": "Vaal-Hazak-Flügel",
+            "KR": "시투룡의 날개",
+            "CN": "屍套龍之翼"
+        }
+    },
+    {
+        "id": 521,
+        "values": {
+            "EN": "Val Habar Quartz",
+            "FR": "Quartz Val Habar",
+            "JP": "バルバレクォーツ",
+            "IT": "Val Habar Quartz",
+            "DE": "Val-Habar-Quarz",
+            "KR": "Val Habar Quartz 교역 아이템",
+            "CN": "Val Habar Quartz"
+        }
+    },
+    {
+        "id": 522,
+        "values": {
+            "EN": "Vespoid Carapace",
+            "FR": "Carapace Vespoid",
+            "JP": "ランゴスタの堅殻",
+            "IT": "Vespoid: carapace",
+            "DE": "Vespoid-Rückenpanzer",
+            "KR": "랑고스타의 견갑각",
+            "CN": "巨蜂的堅殼"
+        }
+    },
+    {
+        "id": 523,
+        "values": {
+            "EN": "Vespoid Innerwing",
+            "FR": "Aile fine Vespoid",
+            "JP": "ランゴスタの薄羽",
+            "IT": "Vespoid: ala interna",
+            "DE": "Vespoid-Innenflügel",
+            "KR": "랑고스타의 얇은날개",
+            "CN": "巨蜂的薄羽"
+        }
+    },
+    {
+        "id": 524,
+        "values": {
+            "EN": "Vespoid Shell",
+            "FR": "Cuirasse Vespoid",
+            "JP": "ランゴスタの甲殻",
+            "IT": "Vespoid: corazza",
+            "DE": "Vespoid-Panzer",
+            "KR": "랑고스타의 갑각",
+            "CN": "巨蜂的甲殼"
+        }
+    },
+    {
+        "id": 525,
+        "values": {
+            "EN": "Vespoid Wing",
+            "FR": "Aile Vespoid",
+            "JP": "ランゴスタの羽",
+            "IT": "Vespoid: ala",
+            "DE": "Vespoid-Flügel",
+            "KR": "랑고스타의 날개",
+            "CN": "巨蜂的羽"
+        }
+    },
+    {
+        "id": 526,
+        "values": {
+            "EN": "Voucher",
+            "FR": "Ticket",
+            "JP": "お食事券",
+            "IT": "Buono pasto",
+            "DE": "Gutschein",
+            "KR": "식사권",
+            "CN": "餐劵"
+        }
+    },
+    {
+        "id": 527,
+        "values": {
+            "EN": "Warm Pelt",
+            "FR": "Pelage chaud",
+            "JP": "暖かい毛皮",
+            "IT": "Pelle calda",
+            "DE": "Warmer Pelz",
+            "KR": "따뜻한 모피",
+            "CN": "溫暖的毛皮"
+        }
+    },
+    {
+        "id": 528,
+        "values": {
+            "EN": "Warped Bone",
+            "FR": "Os déformé",
+            "JP": "いびつな狂骨",
+            "IT": "Osso deforme",
+            "DE": "Krummer Knochen",
+            "KR": "찌그러진 광골",
+            "CN": "扭曲狂骨"
+        }
+    },
+    {
+        "id": 529,
+        "values": {
+            "EN": "Warped Feystone",
+            "FR": "Joyau ???3",
+            "JP": "風化した珠",
+            "IT": "Warped Feystone",
+            "DE": "Warped Feystone",
+            "KR": "풍화된 구슬",
+            "CN": "Warped Feystone"
+        }
+    },
+    {
+        "id": 530,
+        "values": {
+            "EN": "Warrior's Streamstone",
+            "FR": "Pierre-dragon du guerrier",
+            "JP": "猛者の龍脈石",
+            "IT": "Warrior's Streamstone",
+            "DE": "Krieger-Stromstein",
+            "KR": "용자의 용맥석",
+            "CN": "Warrior's Streamstone"
+        }
+    },
+    {
+        "id": 531,
+        "values": {
+            "EN": "Well-done Steak",
+            "FR": "Steak à point",
+            "JP": "こんがり肉",
+            "IT": "Well-done Steak",
+            "DE": "Gebratenes Steak",
+            "KR": "잘 익은 고기",
+            "CN": "全熟肉"
+        }
+    },
+    {
+        "id": 532,
+        "values": {
+            "EN": "Whetfish Fin",
+            "FR": "Écaille de Poissaiguiseur",
+            "JP": "キレアジのヒレ ",
+            "IT": "Whetfish Fin",
+            "DE": "Wetzfisch-Flosse",
+            "KR": "예리어 지느러미",
+            "CN": "切味魚的鯺"
+        }
+    },
+    {
+        "id": 533,
+        "values": {
+            "EN": "Whetfish Fin+",
+            "FR": "Écaille de Poissaiguiseur+",
+            "JP": "キレアジの上ヒレ",
+            "IT": "Whetfish Fin+",
+            "DE": "Wetzfisch-Flosse+",
+            "KR": "예리어 지느러미+",
+            "CN": "切味魚的上鯺"
+        }
+    },
+    {
+        "id": 534,
+        "values": {
+            "EN": "Wiggler Ticket",
+            "FR": "Ticket tortilleur",
+            "JP": "ユラユラチケット",
+            "IT": "Buono tremoglia",
+            "DE": "Wackelwurm-Ticket",
+            "KR": "흔들흔들 티켓",
+            "CN": "孑孓票"
+        }
+    },
+    {
+        "id": 535,
+        "values": {
+            "EN": "Wingdrake Hide",
+            "FR": "Peau drake ailé",
+            "JP": "翼竜の皮",
+            "IT": "Pterowyvern: pelle",
+            "DE": "Flugdrachen-Lederhaut",
+            "KR": "익룡의 가죽",
+            "CN": "翼龍的皮"
+        }
+    },
+    {
+        "id": 536,
+        "values": {
+            "EN": "Wingdrake Hide+",
+            "FR": "Peau drake ailé +",
+            "JP": "翼竜の上皮",
+            "IT": "Pterowyvern: pelle+",
+            "DE": "Flugdrachen-Lederhaut+",
+            "KR": "익룡의 가죽+",
+            "CN": "翼龍的上皮"
+        }
+    },
+    {
+        "id": 537,
+        "values": {
+            "EN": "Winter Star Ticket",
+            "FR": "Ticket Hiver",
+            "JP": "煌めきチケット",
+            "IT": "Buono stelle d’inverno",
+            "DE": "Winterstern-Ticket",
+            "KR": "반짝임 티켓",
+            "CN": "Winter Star Ticket"
+        }
+    },
+    {
+        "id": 538,
+        "values": {
+            "EN": "Worn Feystone",
+            "FR": "Joyau ???4",
+            "JP": "古びた珠",
+            "IT": "Worn Feystone",
+            "DE": "Worn Feystone",
+            "KR": "낡은 구슬",
+            "CN": "Worn Feystone"
+        }
+    },
+    {
+        "id": 539,
+        "values": {
+            "EN": "Wyvern Bonemass",
+            "FR": "Masse osseuse wyvern",
+            "JP": "竜骨塊",
+            "IT": "Massa ossea wyvern",
+            "DE": "Wyvern-Knochenmasse",
+            "KR": "용골 덩어리",
+            "CN": "龍骨塊"
+        }
+    },
+    {
+        "id": 540,
+        "values": {
+            "EN": "Wyvern Gem",
+            "FR": "Gemme wyverne",
+            "JP": "竜玉",
+            "IT": "Gemma Wyvern",
+            "DE": "Wyvern-Edelstein",
+            "KR": "용옥",
+            "CN": "龍玉"
+        }
+    },
+    {
+        "id": 541,
+        "values": {
+            "EN": "Xeno'jiiva Claw",
+            "FR": "Griffe Xeno’jiiva",
+            "JP": "冥灯龍の幽爪",
+            "IT": "Xeno'jiiva: artiglio",
+            "DE": "Xeno'jiiva-Klaue",
+            "KR": "명등룡의 유조",
+            "CN": "冥燈龍的幽爪"
+        }
+    },
+    {
+        "id": 542,
+        "values": {
+            "EN": "Xeno'jiiva Gem",
+            "FR": "Gemme Xeno’jiiva",
+            "JP": "冥灯龍の幽玉",
+            "IT": "Xeno'jiiva: gemma",
+            "DE": "Xeno'jiiva-Edelstein",
+            "KR": "명등룡의 유옥",
+            "CN": "冥燈龍的幽玉"
+        }
+    },
+    {
+        "id": 543,
+        "values": {
+            "EN": "Xeno'jiiva Horn",
+            "FR": "Corne Xeno’jiiva",
+            "JP": "冥灯龍の幽角",
+            "IT": "Xeno'jiiva: corno",
+            "DE": "Xeno'jiiva-Horn",
+            "KR": "명등룡의 유각",
+            "CN": "冥燈龍的幽角"
+        }
+    },
+    {
+        "id": 544,
+        "values": {
+            "EN": "Xeno'jiiva Shell",
+            "FR": "Carapace Xeno’jiiva",
+            "JP": "冥灯龍の白殻",
+            "IT": "Xeno'jiiva: corazza",
+            "DE": "Xeno'jiiva-Panzer",
+            "KR": "명등룡의 백각",
+            "CN": "冥燈龍的幽鱗"
+        }
+    },
+    {
+        "id": 545,
+        "values": {
+            "EN": "Xeno'jiiva Soulscale",
+            "FR": "Écaille d’âme Xeno’jiiva",
+            "JP": "冥灯龍の幽鱗",
+            "IT": "Xeno'jiiva: scaglia anima",
+            "DE": "Xeno'jiiva-Seelenschuppe",
+            "KR": "명등룡의 유린",
+            "CN": "冥燈龍的白殼"
+        }
+    },
+    {
+        "id": 546,
+        "values": {
+            "EN": "Xeno'jiiva Tail",
+            "FR": "Queue Xeno’jiiva",
+            "JP": "冥灯龍の尻尾",
+            "IT": "Xeno'jiiva: coda",
+            "DE": "Xeno'jiiva-Schwanz",
+            "KR": "명등룡의 꼬리",
+            "CN": "冥燈龍的尾巴"
+        }
+    },
+    {
+        "id": 547,
+        "values": {
+            "EN": "Xeno'jiiva Ticket",
+            "FR": "Ticket Xeno'jiiva",
+            "JP": "冥灯龍チケット",
+            "IT": "Buono Xeno'jiiva",
+            "DE": "Xeno'jiiva-Ticket",
+            "KR": "명등룡 티켓",
+            "CN": "冥燈龍硬幣"
+        }
+    },
+    {
+        "id": 548,
+        "values": {
+            "EN": "Xeno'jiiva Veil",
+            "FR": "Voile Xeno’jiiva",
+            "JP": "冥灯龍の幽幕",
+            "IT": "Xeno'jiiva: velo",
+            "DE": "Xeno'jiiva-Schleier",
+            "KR": "명등룡의 유막",
+            "CN": "冥燈龍的幽幕"
+        }
+    },
+    {
+        "id": 549,
+        "values": {
+            "EN": "Xeno'jiiva Wing",
+            "FR": "Aile Xeno’jiiva",
+            "JP": "冥灯龍の幽翼",
+            "IT": "Xeno'jiiva: ala",
+            "DE": "Xeno'jiiva-Flügel",
+            "KR": "명등룡의 유익",
+            "CN": "冥燈龍的幽翼"
+        }
+    },
+    {
+        "id": 550,
+        "values": {
+            "EN": "Zorah Magdaros Carapace",
+            "FR": "Cuirasse Zorah Magdaros",
+            "JP": "焙山龍の岩殻",
+            "IT": "Zorah Magdaros: carapace",
+            "DE": "Zorah-Magdaros-Rückenpanzer",
+            "KR": "용산룡의 암각",
+            "CN": "熔山龍的岩殼"
+        }
+    },
+    {
+        "id": 551,
+        "values": {
+            "EN": "Zorah Magdaros Gem",
+            "FR": "Gemme Zorah Magdaros",
+            "JP": "焙山龍の宝玉",
+            "IT": "Zorah Magdaros: gemma",
+            "DE": "Zorah-Magdaros-Edelstein",
+            "KR": "용산룡의 보옥",
+            "CN": "熔山龍的寶玉"
+        }
+    },
+    {
+        "id": 552,
+        "values": {
+            "EN": "Zorah Magdaros Heat Scale",
+            "FR": "Écaille colorifuge Zorah Magdaros",
+            "JP": "焙山龍の熱鱗",
+            "IT": "Zorah Magdaros: scaglia rovente",
+            "DE": "Zorah-Magdaros-Hitzeschuppe",
+            "KR": "용산룡의 열비늘",
+            "CN": "熔山龍的熱鱗"
+        }
+    },
+    {
+        "id": 553,
+        "values": {
+            "EN": "Zorah Magdaros Magma",
+            "FR": "Magma Zorah Magdaros",
+            "JP": "焙山龍のマグマ",
+            "IT": "Zorah Magdaros: magma",
+            "DE": "Zorah-Magdaros-Magma",
+            "KR": "용산룡의 마그마",
+            "CN": "熔山龍的岩漿"
+        }
+    },
+    {
+        "id": 554,
+        "values": {
+            "EN": "Zorah Magdaros Pleura",
+            "FR": "Plexus Zorah Magdaros",
+            "JP": "焙山龍の胸殻",
+            "IT": "Zorah Magdaros: pleura",
+            "DE": "Zorah-Magdaros-Pleura",
+            "KR": "용산룡의 흉각",
+            "CN": "熔山龍的胸殼"
+        }
+    },
+    {
+        "id": 555,
+        "values": {
+            "EN": "Zorah Magdaros Ridge",
+            "FR": "Vertèbre Zorah Magdaros",
+            "JP": "焙山龍の背甲",
+            "IT": "Zorah Magdaros: cresta",
+            "DE": "Zorah-Magdaros-Kamm",
+            "KR": "용산룡의 배갑",
+            "CN": "熔山龍的背甲"
+        }
+    },
+    {
+        "id": 556,
+        "values": {
+            "EN": "Zorah Magdaros Ticket",
+            "FR": "Ticket Zorah Magdaros",
+            "JP": "焙山龍チケット",
+            "IT": "Buono Zorah Magdaros",
+            "DE": "Zorah-Magdaros-Ticket",
+            "KR": "용산룡 티켓",
+            "CN": "熔山龍硬幣"
+        }
+    },
+    {
+        "id": 557,
+        "values": {
+            "EN": "(Pre-Order Exclusive)",
+            "FR": "(Exclu pré-commande)",
+            "JP": "(予約購入独占)",
+            "IT": "(Esclusiva Pre-ordine)",
+            "DE": "(Vorbesteller Exclusiv)",
+            "KR": "(예약구매 독점)",
+            "CN": "(Pre-Order Exclusive)"
+        }
+    },
+    {
+        "id": 558,
+        "values": {
+            "EN": "(B-Rank Arena Quests 1-7)",
+            "FR": "(Rang B Quêtes arène 1-7)",
+            "JP": "(闘技大会★1~7 B以上達成)",
+            "IT": "(Quest Arena Grado B 1-7)",
+            "DE": "(B-Rang Arena Quests 1-7)",
+            "KR": "(격투대회 1-7 B랭크 이상 달성)",
+            "CN": "(B-Rank Arena Quests 1-7)"
+        }
+    },
+    {
+        "id": 559,
+        "values": {
+            "EN": "(B-Rank Arena Quests 8-9)",
+            "FR": "(Rang B Quêtes arène 8-9)",
+            "JP": "(闘技大会★8~9 B以上達成)",
+            "IT": "(Quest Arena Grado B 8-9)",
+            "DE": "(B-Rang Arena Quests 8-9)",
+            "KR": "(격투대회 8-9 B랭크 이상 달성)",
+            "CN": "(B-Rank Arena Quests 8-9)"
+        }
+    }
+]

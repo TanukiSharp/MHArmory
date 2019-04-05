@@ -60,5 +60,7 @@ namespace MHArmory.ArmoryDataSource.DataStructures
         public int? FullArmorSetId { get; set; }
         [JsonProperty("eventId")]
         public int? EventId { get; set; }
+        [JsonProperty("craftMaterials")]
+        public CraftMaterial[] CraftMaterials { get; set; }
     }
 }

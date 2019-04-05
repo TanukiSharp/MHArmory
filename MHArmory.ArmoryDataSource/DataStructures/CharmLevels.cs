@@ -21,5 +21,7 @@ namespace MHArmory.ArmoryDataSource.DataStructures
         public IList<int> Slots { get; set; }
         [JsonProperty("eventId")]
         public int? EventId { get; set; }
+        [JsonProperty("craftMaterials")]
+        public CraftMaterial[] CraftMaterials { get; set; }
     }
 }

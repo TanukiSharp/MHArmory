@@ -27,6 +27,7 @@
     <cvt:NumToSeparatedStringValueConverter x:Key="NumToSeparatedStringValueConverter"/>
     <cvt:FreeElementNameValueConverter x:Key="FreeElementNameValueConverter"/>
     <cvt:CombinationPerSecondValueConverter x:Key="CombinationPerSecondValueConverter"/>
+    <cvt:SearchSpeedScoreValueConverter x:Key="SearchSpeedScoreValueConverter"/>
     <cvt:ScrollBarVisibilityValueConverter x:Key="ScrollBarVisibilityValueConverter"/>
 
     <SolidColorBrush x:Key="ActiveWeaponBackgroundBrush" Color="#FFB7FFA7"/>
@@ -326,6 +327,13 @@
         </StackPanel>
     </DataTemplate>
 
+    <DataTemplate x:Key="CraftMaterialView">
+        <TextBlock>
+            <Run Text="{mxt:Localization LocalizedItem.Values}"/>
+            <Run Text="{Binding Quantity, Mode=OneTime, StringFormat='x{0}'}"/>
+        </TextBlock>
+    </DataTemplate>
+
     <DataTemplate x:Key="ArmorPieceView">
         <Border CornerRadius="2" BorderThickness="1" BorderBrush="#30000000" Background="#10000000" Margin="2" Padding="4" HorizontalAlignment="Stretch">
             <Grid>
@@ -335,6 +343,10 @@
                     <ColumnDefinition Width="Auto" SharedSizeGroup="C"/>
                     <ColumnDefinition Width="Auto"/>
                 </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
                 <StackPanel Orientation="Vertical">
                     <StackPanel Grid.Column="0" Orientation="Vertical" Margin="0 0 8 0">
                         <StackPanel Orientation="Horizontal" Grid.IsSharedSizeScope="True">
@@ -372,11 +384,24 @@
                 </StackPanel>
                 <ItemsControl Grid.Column="2" ItemsSource="{Binding Abilities, Mode=OneTime, Converter={StaticResource AbilityToViewModelValueConverter}}" ItemTemplate="{StaticResource StandaloneAbilityView}" Margin="0 0 8 0" Focusable="False"/>
                 <ItemsControl Grid.Column="3" ItemsSource="{Binding ArmorSetSkills, Mode=OneTime}" ItemTemplate="{StaticResource ArmorSetSkillView}" Margin="0 0 8 0" Focusable="False"/>
+                <ItemsControl x:Name="craftMaterials" Grid.Row="1" Grid.ColumnSpan="3" ItemsSource="{Binding CraftMaterials, Mode=OneTime}" Visibility="Collapsed">
+                    <ItemsControl.ItemTemplate>
+                        <DataTemplate>
+                            <ContentControl Content="{Binding}" ContentTemplate="{StaticResource CraftMaterialView}" Margin="1 1 18 1"/>
+                        </DataTemplate>
+                    </ItemsControl.ItemTemplate>
+                    <ItemsControl.ItemsPanel>
+                        <ItemsPanelTemplate>
+                            <StackPanel Orientation="Horizontal"/>
+                        </ItemsPanelTemplate>
+                    </ItemsControl.ItemsPanel>
+                </ItemsControl>
             </Grid>
         </Border>
         <DataTemplate.Triggers>
             <DataTrigger Binding="{Binding ShowIsPossessed, Mode=OneTime}" Value="True">
                 <Setter TargetName="possessedIcon" Property="Visibility" Value="Visible"/>
+                <Setter TargetName="craftMaterials" Property="Visibility" Value="Visible"/>
             </DataTrigger>
             <DataTrigger Binding="{Binding IsPossessed}" Value="False">
                 <Setter TargetName="possessedIcon" Property="Opacity" Value="0.1"/>
@@ -462,16 +487,26 @@
             <StackPanel x:Name="res">
                 <TextBlock Text="Resistances:" FontWeight="Bold"/>
                 <StackPanel Margin="16 1 0 0" Orientation="Horizontal">
-                    <Image Source="{mxt:RasterizedImage Location=Icons/Elements/Fire.svg, Size=16}" Style="{StaticResource ElementImageStyle}" VerticalAlignment="Center" SnapsToDevicePixels="True"/>
-                    <TextBlock Text="{Binding TotalFireResistance, Mode=OneTime, StringFormat=: {0}}" Margin="0 0 12 0" VerticalAlignment="Center" Foreground="Blue"/>
-                    <Image Source="{mxt:RasterizedImage Location=Icons/Elements/Water.svg, Size=16}" Style="{StaticResource ElementImageStyle}" VerticalAlignment="Center" SnapsToDevicePixels="True"/>
-                    <TextBlock Text="{Binding TotalWaterResistance, Mode=OneTime, StringFormat=: {0}}" Margin="0 0 12 0" VerticalAlignment="Center" Foreground="Blue"/>
-                    <Image Source="{mxt:RasterizedImage Location=Icons/Elements/Thunder.svg, Size=16}" Style="{StaticResource ElementImageStyle}" VerticalAlignment="Center" SnapsToDevicePixels="True"/>
-                    <TextBlock Text="{Binding TotalThunderResistance, Mode=OneTime, StringFormat=: {0}}" Margin="0 0 12 0" VerticalAlignment="Center" Foreground="Blue"/>
-                    <Image Source="{mxt:RasterizedImage Location=Icons/Elements/Ice.svg, Size=16}" Style="{StaticResource ElementImageStyle}" VerticalAlignment="Center" SnapsToDevicePixels="True"/>
-                    <TextBlock Text="{Binding TotalIceResistance, Mode=OneTime, StringFormat=: {0}}" Margin="0 0 12 0" VerticalAlignment="Center" Foreground="Blue"/>
-                    <Image Source="{mxt:RasterizedImage Location=Icons/Elements/Dragon.svg, Size=16}" Style="{StaticResource ElementImageStyle}" VerticalAlignment="Center" SnapsToDevicePixels="True"/>
-                    <TextBlock Text="{Binding TotalDragonResistance, Mode=OneTime, StringFormat=: {0}}" VerticalAlignment="Center" Foreground="Blue"/>
+                    <StackPanel Margin="0 0 12 0">
+                        <Image Source="{mxt:RasterizedImage Location=Icons/Elements/Fire.svg, Size=16}" Style="{StaticResource ElementImageStyle}" HorizontalAlignment="Center" SnapsToDevicePixels="True"/>
+                        <TextBlock Text="{Binding TotalFireResistance, Mode=OneTime}" HorizontalAlignment="Center"/>
+                    </StackPanel>
+                    <StackPanel Margin="0 0 12 0">
+                        <Image Source="{mxt:RasterizedImage Location=Icons/Elements/Water.svg, Size=16}" Style="{StaticResource ElementImageStyle}" HorizontalAlignment="Center" SnapsToDevicePixels="True"/>
+                        <TextBlock Text="{Binding TotalWaterResistance, Mode=OneTime}" HorizontalAlignment="Center"/>
+                    </StackPanel>
+                    <StackPanel Margin="0 0 12 0">
+                        <Image Source="{mxt:RasterizedImage Location=Icons/Elements/Thunder.svg, Size=16}" Style="{StaticResource ElementImageStyle}" HorizontalAlignment="Center" SnapsToDevicePixels="True"/>
+                        <TextBlock Text="{Binding TotalThunderResistance, Mode=OneTime}" HorizontalAlignment="Center"/>
+                    </StackPanel>
+                    <StackPanel Margin="0 0 12 0">
+                        <Image Source="{mxt:RasterizedImage Location=Icons/Elements/Ice.svg, Size=16}" Style="{StaticResource ElementImageStyle}" HorizontalAlignment="Center" SnapsToDevicePixels="True"/>
+                        <TextBlock Text="{Binding TotalIceResistance, Mode=OneTime}" HorizontalAlignment="Center"/>
+                    </StackPanel>
+                    <StackPanel Margin="0 0 12 0">
+                        <Image Source="{mxt:RasterizedImage Location=Icons/Elements/Dragon.svg, Size=16}" Style="{StaticResource ElementImageStyle}" HorizontalAlignment="Center" SnapsToDevicePixels="True"/>
+                        <TextBlock Text="{Binding TotalDragonResistance, Mode=OneTime}" HorizontalAlignment="Center"/>
+                    </StackPanel>
                 </StackPanel>
             </StackPanel>
         </StackPanel>
@@ -510,6 +545,9 @@
                     <ItemsControl ItemsSource="{Binding ArmorPieces, Mode=OneTime}" ItemTemplate="{StaticResource ArmorPieceView}" Focusable="False"/>
                     <ContentControl Content="{Binding Charm, Mode=OneTime}" ContentTemplate="{StaticResource ArmorPieceView}" Focusable="False"/>
                 </StackPanel>
+                <Border DockPanel.Dock="Right" Visibility="{Binding Parent.ShowCraftMaterials, Converter={StaticResource CollapsedVisibilityValueConverter}}" Style="{StaticResource ThinResultBorderStyle}" HorizontalAlignment="Right">
+                    <ItemsControl ItemsSource="{Binding CraftMaterials}" ItemTemplate="{StaticResource CraftMaterialView}" Focusable="False"/>
+                </Border>
                 <Border Style="{StaticResource ThinResultBorderStyle}" HorizontalAlignment="Stretch">
                     <ContentControl Content="{Binding}" ContentTemplate="{StaticResource SearchResultArmorSetDetailsView}" Focusable="False"/>
                 </Border>
@@ -629,7 +667,7 @@
             <CheckBox Grid.Column="0" IsChecked="{Binding IsOverriding}" Padding="4" VerticalAlignment="Stretch" VerticalContentAlignment="Center" bhv:ToolTipEx.Content="Check to override default jewel availability">
                 <StackPanel Orientation="Horizontal">
                     <TextBlock Text="{mxt:Localization Name}" VerticalAlignment="Center" Margin="0 0 4 0"/>
-                    <Image Source="{Binding SlotSize, Converter={StaticResource SlotToImageSourceValueConverter}, ConverterParameter=24, Mode=OneTime}" VerticalAlignment="Center" bhv:ToolTipEx.Content="{Binding Converter={StaticResource SlotSizeToolTipValueConverter}, Mode=OneTime}" Width="24" Height="24" SnapsToDevicePixels="True"/>
+                    <Image Source="{Binding SlotSize, Converter={StaticResource SlotToImageSourceValueConverter}, ConverterParameter=24, Mode=OneTime}" VerticalAlignment="Center" bhv:ToolTipEx.Content="{Binding SlotSize, Converter={StaticResource SlotSizeToolTipValueConverter}, Mode=OneTime}" Width="24" Height="24" SnapsToDevicePixels="True"/>
                 </StackPanel>
             </CheckBox>
             <StackPanel Grid.Column="1" Orientation="Horizontal" VerticalAlignment="Top" Margin="4">
@@ -639,6 +677,9 @@
             <ItemsControl x:Name="lst" Grid.Column="2" ItemsSource="{Binding Abilities, Mode=OneTime}" ItemTemplate="{StaticResource SkillNameAbilityView}" VerticalAlignment="Top" Padding="4" Focusable="False"/>
         </Grid>
         <DataTemplate.Triggers>
+            <DataTrigger Binding="{Binding HasAllJewels, Mode=OneWay}" Value="True">
+                <Setter TargetName="lst" Property="TextBlock.Foreground" Value="Blue"/>
+            </DataTrigger>
             <DataTrigger Binding="{Binding HasTooManyJewels, Mode=OneWay}" Value="True">
                 <Setter TargetName="lst" Property="TextBlock.Foreground" Value="DarkOrange"/>
             </DataTrigger>
@@ -722,7 +763,7 @@
     <DataTemplate x:Key="ArmorSetsOverrideView">
         <Grid>
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*" SharedSizeGroup="A"/>
+                <ColumnDefinition Width="*" SharedSizeGroup="ArmorSetNameColumn"/>
                 <ColumnDefinition Width="Auto"/>
             </Grid.ColumnDefinitions>
             <TextBlock Grid.Column="0" Text="{mxt:Localization Name}" Padding="4" VerticalAlignment="Center" FontWeight="Bold" FontSize="14"/>
@@ -823,6 +864,10 @@
                     <TextBlock Text="{Binding TimeElapsed, Converter={StaticResource MillisecondsToTimeValueConverter}, Mode=OneTime}" bhv:ToolTipEx.Content="{Binding TimeElapsed}" Margin="0 0 16 0" Style="{StaticResource highlight}"/>
                     <TextBlock Text="Combination/sec: "/>
                     <TextBlock Text="{Binding Converter={StaticResource CombinationPerSecondValueConverter}, Mode=OneTime}" Margin="0 0 16 0" Style="{StaticResource highlight}"/>
+                    <StackPanel Orientation="Horizontal" ToolTip="Combinations per million CPU cycles / CPU cycles per combination">
+                        <TextBlock Text="Computation score: "/>
+                        <TextBlock Text="{Binding Converter={StaticResource SearchSpeedScoreValueConverter}, Mode=OneTime}" Margin="0 0 16 0" Style="{StaticResource highlight}"/>
+                    </StackPanel>
                 </StackPanel>
             </Expander.Header>
             <Expander.Content>
@@ -903,6 +948,10 @@
                                 <TextBlock Text="Combination/sec:"/>
                                 <TextBlock Text="{Binding Converter={StaticResource CombinationPerSecondValueConverter}, Mode=OneTime}" Style="{StaticResource highlight}"/>
                             </StackPanel>
+                            <StackPanel Orientation="Horizontal" ToolTip="Combinations per million CPU cycles / CPU cycles per combination">
+                                <TextBlock Text="Computation score:"/>
+                                <TextBlock Text="{Binding Converter={StaticResource SearchSpeedScoreValueConverter}, Mode=OneTime}" Style="{StaticResource highlight}"/>
+                            </StackPanel>
                         </StackPanel>
                     </Border>
                 </StackPanel>
@@ -972,67 +1021,65 @@
                     </ControlTemplate>
                 </ItemsControl.Template>
             </ItemsControl>
-            <ListBox Grid.Column="1" ItemsSource="{Binding SelectedGroup.Items, Mode=OneWay}" ItemTemplate="{StaticResource SearchResultArmorSetView}" ScrollViewer.VerticalScrollBarVisibility="Visible" ClipToBounds="True" Padding="0 0 0 -22" Focusable="False" VirtualizingPanel.IsVirtualizing="True" VirtualizingPanel.ScrollUnit="Pixel">
-                <ListBox.ItemContainerStyle>
-                    <Style TargetType="{x:Type ListBoxItem}">
-                        <Setter Property="Template">
-                            <Setter.Value>
-                                <ControlTemplate TargetType="{x:Type ListBoxItem}">
-                                    <Border Padding="2" SnapsToDevicePixels="True" Focusable="False">
-                                        <ContentPresenter Focusable="False"/>
-                                    </Border>
-                                </ControlTemplate>
-                            </Setter.Value>
-                        </Setter>
-                        <Setter Property="Focusable" Value="False"/>
-                    </Style>
-                </ListBox.ItemContainerStyle>
-            </ListBox>
+            <ItemsControl Grid.Column="1" ItemsSource="{Binding SelectedGroup.Items, Mode=OneWay}" ItemTemplate="{StaticResource SearchResultArmorSetView}" ScrollViewer.VerticalScrollBarVisibility="Visible" ScrollViewer.HorizontalScrollBarVisibility="Auto" ClipToBounds="True" Padding="0 0 0 -22" Focusable="False" VirtualizingPanel.IsVirtualizing="True" VirtualizingPanel.ScrollUnit="Pixel" ScrollViewer.CanContentScroll="True">
+                <ItemsControl.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <VirtualizingStackPanel/>
+                    </ItemsPanelTemplate>
+                </ItemsControl.ItemsPanel>
+                <ItemsControl.Template>
+                    <ControlTemplate>
+                        <ScrollViewer Padding="{TemplateBinding Control.Padding}" Focusable="False">
+                            <ItemsPresenter SnapsToDevicePixels="{TemplateBinding UIElement.SnapsToDevicePixels}" />
+                        </ScrollViewer>
+                    </ControlTemplate>
+                </ItemsControl.Template>
+            </ItemsControl>
         </Grid>
     </DataTemplate>
 
     <DataTemplate x:Key="UngroupedSearchResultsView">
-        <ListBox ItemsSource="{Binding Mode=OneTime}" ItemTemplate="{StaticResource SearchResultArmorSetView}" ScrollViewer.VerticalScrollBarVisibility="Visible" ClipToBounds="True" Padding="0 0 0 -22" Focusable="False" VirtualizingPanel.IsVirtualizing="True" VirtualizingPanel.ScrollUnit="Pixel">
-            <ListBox.ItemContainerStyle>
-                <Style TargetType="{x:Type ListBoxItem}">
-                    <Setter Property="Template">
-                        <Setter.Value>
-                            <ControlTemplate TargetType="{x:Type ListBoxItem}">
-                                <Border Name="root" Padding="2" SnapsToDevicePixels="True" Focusable="False">
-                                    <ContentPresenter Focusable="False"/>
-                                </Border>
-                            </ControlTemplate>
-                        </Setter.Value>
-                    </Setter>
-                    <Setter Property="Focusable" Value="False"/>
-                </Style>
-            </ListBox.ItemContainerStyle>
-        </ListBox>
+        <ItemsControl ItemsSource="{Binding Mode=OneTime}" ItemTemplate="{StaticResource SearchResultArmorSetView}" ScrollViewer.VerticalScrollBarVisibility="Visible" ScrollViewer.HorizontalScrollBarVisibility="Auto" ClipToBounds="True" Padding="0 0 0 -22" Focusable="False" VirtualizingPanel.IsVirtualizing="True" VirtualizingPanel.ScrollUnit="Pixel" ScrollViewer.CanContentScroll="True">
+            <ItemsControl.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <VirtualizingStackPanel/>
+                </ItemsPanelTemplate>
+            </ItemsControl.ItemsPanel>
+            <ItemsControl.Template>
+                <ControlTemplate>
+                    <ScrollViewer Padding="{TemplateBinding Control.Padding}" Focusable="False">
+                        <ItemsPresenter SnapsToDevicePixels="{TemplateBinding UIElement.SnapsToDevicePixels}" />
+                    </ScrollViewer>
+                </ControlTemplate>
+            </ItemsControl.Template>
+        </ItemsControl>
     </DataTemplate>
 
     <DataTemplate x:Key="SearchResultsView">
         <Grid>
             <TextBlock x:Name="loading" Text="Loading..." HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="24" Foreground="DarkGray" FontWeight="Bold" Visibility="{Binding IsDataLoading, Converter={StaticResource CollapsedVisibilityValueConverter}, Mode=OneWay}"/>
             <DockPanel LastChildFill="True">
-                <Rectangle DockPanel.Dock="Top" Height="1" HorizontalAlignment="Stretch" Fill="LightGray" Margin="4 8 4 0" UseLayoutRounding="True" SnapsToDevicePixels="True"/>
-                <StackPanel DockPanel.Dock="Top" Orientation="Horizontal" HorizontalAlignment="Right" Margin="0 4 0 4">
-                    <Button Content="?" MinWidth="20" Margin="2 2 6 2" Padding="2" VerticalAlignment="Center" Command="{x:Static local:RoutedCommands.OpenIntegratedHelp}" CommandParameter="Grouping" bhv:ToolTipEx.Content="Show help about grouping"/>
-                    <TextBlock Text="Grouping: " VerticalAlignment="Center"/>
-                    <ItemsControl ItemsSource="{Binding GroupFlags, Mode=OneTime}" VerticalAlignment="Center" Focusable="False">
-                        <ItemsControl.ItemTemplate>
-                            <DataTemplate>
-                                <CheckBox IsChecked="{Binding IsSet}" VerticalContentAlignment="Center" Margin="2">
-                                    <TextBlock Text="{Binding Name, Mode=OneTime}" Margin="2"/>
-                                </CheckBox>
-                            </DataTemplate>
-                        </ItemsControl.ItemTemplate>
-                        <ItemsControl.ItemsPanel>
-                            <ItemsPanelTemplate>
-                                <StackPanel Orientation="Horizontal"/>
-                            </ItemsPanelTemplate>
-                        </ItemsControl.ItemsPanel>
-                    </ItemsControl>
-                </StackPanel>
+                <DockPanel DockPanel.Dock="Top">
+                    <CheckBox DockPanel.Dock="Left" Content="Show craft materials" IsChecked="{Binding ShowCraftMaterials}" VerticalAlignment="Center"/>
+                    <StackPanel DockPanel.Dock="Right" Orientation="Horizontal" Margin="0 4 0 4" HorizontalAlignment="Right" VerticalAlignment="Center">
+                        <Button Content="?" MinWidth="20" Margin="2 2 6 2" Padding="2" VerticalAlignment="Center" Command="{x:Static local:RoutedCommands.OpenIntegratedHelp}" CommandParameter="Grouping" bhv:ToolTipEx.Content="Show help about grouping"/>
+                        <TextBlock Text="Grouping: " VerticalAlignment="Center"/>
+                        <ItemsControl ItemsSource="{Binding GroupFlags, Mode=OneTime}" VerticalAlignment="Center" Focusable="False">
+                            <ItemsControl.ItemTemplate>
+                                <DataTemplate>
+                                    <CheckBox IsChecked="{Binding IsSet}" VerticalContentAlignment="Center" Margin="2">
+                                        <TextBlock Text="{Binding Name, Mode=OneTime}" Margin="2"/>
+                                    </CheckBox>
+                                </DataTemplate>
+                            </ItemsControl.ItemTemplate>
+                            <ItemsControl.ItemsPanel>
+                                <ItemsPanelTemplate>
+                                    <StackPanel Orientation="Horizontal"/>
+                                </ItemsPanelTemplate>
+                            </ItemsControl.ItemsPanel>
+                        </ItemsControl>
+                    </StackPanel>
+                </DockPanel>
                 <Grid Visibility="{Binding IsDataLoaded, Converter={StaticResource CollapsedVisibilityValueConverter}, Mode=OneWay}">
                     <ContentControl x:Name="grouped" Content="{Binding Mode=OneWay}" ContentTemplate="{StaticResource GroupedSearchResultsView}" Focusable="False" Visibility="Hidden"/>
                     <ContentControl x:Name="ungrouped" Content="{Binding UngroupedFoundArmorSets, Mode=OneWay}" ContentTemplate="{StaticResource UngroupedSearchResultsView}" Focusable="False"/>
@@ -1085,11 +1132,18 @@
                     </MenuItem>
                 </Menu>
             </DockPanel>
+            <Border DockPanel.Dock="Top" Background="#0A000000" HorizontalAlignment="Stretch" Padding="1 4 1 4">
+                <DockPanel>
+                    <ContentControl DockPanel.Dock="Left" Content="{Binding InParameters, Mode=OneTime}" ContentTemplate="{StaticResource InParametersView}" Focusable="False"/>
+                    <Button DockPanel.Dock="Right" HorizontalAlignment="Right" Content="Sort results..." Command="{Binding OpenSearchResultProcessingCommand, Mode=OneTime}" Margin="2" Padding="8" VerticalAlignment="Center"/>
+                    <Button DockPanel.Dock="Right" HorizontalAlignment="Right" Content="?" MinWidth="20" Margin="2" Padding="4" VerticalAlignment="Center" Command="{x:Static local:RoutedCommands.OpenIntegratedHelp}" CommandParameter="Sorting" bhv:ToolTipEx.Content="Show help about sorting"/>
+                </DockPanel>
+            </Border>
             <Grid>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*"/>
                     <ColumnDefinition Width="6"/>
-                    <ColumnDefinition Width="3*"/>
+                    <ColumnDefinition Width="4*"/>
                 </Grid.ColumnDefinitions>
                 <DockPanel Grid.Column="0" LastChildFill="True">
                     <Button DockPanel.Dock="Top" Content="Change skills" Margin="2" Padding="4" Command="{Binding OpenSkillSelectorCommand, Mode=OneTime}"/>
@@ -1114,17 +1168,9 @@
                     </DockPanel>
                 </DockPanel>
                 <GridSplitter Grid.Column="1" HorizontalAlignment="Stretch"/>
-
                 <DockPanel Grid.Column="2" LastChildFill="True">
                     <ContentControl DockPanel.Dock="Bottom" Content="{Binding SearchMetrics, Mode=OneWay}" ContentTemplate="{StaticResource SearchMetricsView}" Focusable="False"/>
-                    <DockPanel LastChildFill="True">
-                        <DockPanel DockPanel.Dock="Top" HorizontalAlignment="Stretch">
-                            <ContentControl DockPanel.Dock="Left" Content="{Binding InParameters, Mode=OneTime}" ContentTemplate="{StaticResource InParametersView}" Focusable="False"/>
-                            <Button DockPanel.Dock="Right" HorizontalAlignment="Right" Content="Sort results..." Command="{Binding OpenSearchResultProcessingCommand, Mode=OneTime}" Margin="2" Padding="8" VerticalAlignment="Center"/>
-                            <Button DockPanel.Dock="Right" HorizontalAlignment="Right" Content="?" MinWidth="20" Margin="2" Padding="4" VerticalAlignment="Center" Command="{x:Static local:RoutedCommands.OpenIntegratedHelp}" CommandParameter="Sorting" bhv:ToolTipEx.Content="Show help about sorting"/>
-                        </DockPanel>
-                        <ContentControl Content="{Binding SearchResultsViewModel, Mode=OneTime}" ContentTemplate="{StaticResource SearchResultsView}" Focusable="False"/>
-                    </DockPanel>
+                    <ContentControl Content="{Binding SearchResultsViewModel, Mode=OneTime}" ContentTemplate="{StaticResource SearchResultsView}" Focusable="False"/>
                 </DockPanel>
             </Grid>
         </DockPanel>
@@ -1249,7 +1295,23 @@
                 <ColumnDefinition Width="1.5*"/>
             </Grid.ColumnDefinitions>
 
-            <ListBox x:Name="lst" Grid.Column="0" SelectedItem="{Binding SelectedLoadout}" HorizontalContentAlignment="Stretch" ItemsSource="{Binding Loadouts, Mode=OneTime}" ItemTemplate="{StaticResource LoadoutView}"/>
+            <DockPanel Grid.Column="0">
+                <DockPanel DockPanel.Dock="Top">
+                    <TextBlock DockPanel.Dock="Left" Text="Filter: " VerticalAlignment="Center" HorizontalAlignment="Left"/>
+                    <TextBox x:Name="filter" Text="{Binding SearchText, UpdateSourceTrigger=PropertyChanged}" Margin="2" Padding="3" VerticalAlignment="Center"/>
+                </DockPanel>
+                <ListBox x:Name="lst" SelectedItem="{Binding SelectedLoadout}" HorizontalContentAlignment="Stretch" ItemsSource="{Binding Loadouts, Mode=OneTime}" ItemTemplate="{StaticResource LoadoutView}" Margin="1">
+                    <ListBox.ItemContainerStyle>
+                        <Style TargetType="{x:Type ListBoxItem}">
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding IsVisible}" Value="False">
+                                    <Setter Property="Visibility" Value="Collapsed"/>
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </ListBox.ItemContainerStyle>
+                </ListBox>
+            </DockPanel>
 
             <GridSplitter Grid.Column="1" HorizontalAlignment="Stretch" Focusable="False"/>
 
@@ -1271,7 +1333,7 @@
         <DataTemplate.Triggers>
             <DataTrigger Binding="{Binding IsManageMode, Mode=OneTime}" Value="False">
                 <Setter TargetName="lst" Property="bhv:DoubleClickBehavior.Command" Value="{Binding AcceptCommand}"/>
-                <Setter TargetName="lst" Property="bhv:FocusOnLoadBehavior.IsAttached" Value="True"/>
+                <Setter TargetName="filter" Property="bhv:FocusOnLoadBehavior.IsAttached" Value="True"/>
             </DataTrigger>
             <!--<DataTrigger Binding="{Binding IsManageMode, Mode=OneTime}" Value="True">
                 <Setter TargetName="lst" Property="ItemContainerStyle" Value="{StaticResource NoSelectionItemContainerStyle}"/>
