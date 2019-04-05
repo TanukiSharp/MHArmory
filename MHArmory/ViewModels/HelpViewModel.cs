@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Resources;
+using MHArmory.Core.WPF;
 
 namespace MHArmory.ViewModels
 {
@@ -14,7 +15,9 @@ namespace MHArmory.ViewModels
         DecorationsOverride,
         EquipmentOverride,
         KeyboardShortcuts,
-        Sorting
+        Sorting,
+        Grouping,
+        TextualSkillSelection
     }
 
     public class HelpViewModel : ViewModelBase
@@ -68,6 +71,7 @@ namespace MHArmory.ViewModels
             if (helpViewModel == null)
                 return false;
 
+            Selected = null;
             Selected = helpViewModel;
 
             return true;

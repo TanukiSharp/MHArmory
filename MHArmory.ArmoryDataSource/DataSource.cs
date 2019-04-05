@@ -25,6 +25,26 @@ namespace MHArmory.ArmoryDataSource
             dataPath = Path.Combine(AppContext.BaseDirectory, "data");
         }
 
+        private ILocalizedItem[] craftMaterials;
+
+        private void FetchCraftMaterials()
+        {
+            if (craftMaterials != null)
+                return;
+
+            string craftMaterialsContent = File.ReadAllText(Path.Combine(dataPath, "craftMaterials.json"));
+
+            craftMaterials = JsonConvert.DeserializeObject<IList<DataStructures.LocalizedItem>>(craftMaterialsContent)
+                .Select(x => (ILocalizedItem)new Core.DataStructures.LocalizedItem(x.Id, x.Values))
+                .ToArray();
+        }
+
+        public Task<ILocalizedItem[]> GetCraftMaterials()
+        {
+            FetchCraftMaterials();
+            return Task.FromResult(craftMaterials);
+        }
+
         private IList<IArmorSetSkill> armorSetSkills;
 
         private void FetchArmorSetSkills()
@@ -100,6 +120,7 @@ namespace MHArmory.ArmoryDataSource
             if (armorPiecesTask != null)
                 return armorPiecesTask;
 
+            FetchCraftMaterials();
             FetchSkills();
             FetchArmorSetSkills();
 
@@ -149,6 +170,11 @@ namespace MHArmory.ArmoryDataSource
             );
         }
 
+        private IEnumerable<TResult> JoinLocalized<TInner, TResult>(IEnumerable<TInner> source, Func<TInner, int> innerSelector, Func<ILocalizedItem, TInner, TResult> selector)
+        {
+            return craftMaterials.Join(source, o => o.Id, innerSelector, selector);
+        }
+
         private void LoadArmorPieces(EquipmentType type, IList<ArmorPiecePrimitive> armorPiecePrimitives, List<(ArmorPiece armorPiece, int? fullArmorSetId)> output)
         {
             foreach (ArmorPiecePrimitive x in armorPiecePrimitives)
@@ -166,7 +192,8 @@ namespace MHArmory.ArmoryDataSource
                     new ArmorPieceAttributes(x.Attributes.Gender),
                     null,
                     null,
-                    null
+                    null,
+                    JoinLocalized(x.CraftMaterials, i => i.Id, (loc, i) => new Core.DataStructures.CraftMaterial(loc, i.Quantity)).ToArray()
                 );
                 output.Add((armorPiece, x.FullArmorSetId));
             }
@@ -179,6 +206,8 @@ namespace MHArmory.ArmoryDataSource
         {
             if (charmsTask != null)
                 return charmsTask;
+
+            FetchCraftMaterials();
 
             string charmsContent = File.ReadAllText(Path.Combine(dataPath, "charms.json"));
             string charmLevelsContent = File.ReadAllText(Path.Combine(dataPath, "charmLevels.json"));
@@ -193,7 +222,8 @@ namespace MHArmory.ArmoryDataSource
                 x.Rarity,
                 x.Slots?.ToArray() ?? Array.Empty<int>(),
                 x.AbilityIds?.JoinEx(abilities, inner => inner.Id).ToArray() ?? Array.Empty<IAbility>(),
-                null
+                null,
+                JoinLocalized(x.CraftMaterials, i => i.Id, (loc, i) => new Core.DataStructures.CraftMaterial(loc, i.Quantity)).ToArray()
             ))
             .ToList<ICharmLevel>();
 
@@ -262,7 +292,9 @@ namespace MHArmory.ArmoryDataSource
                     x.Id,
                     x.Name,
                     x.Description,
-                    x.AbilityIds?.JoinEx(abilities, inner => inner.Id).ToArray() ?? Array.Empty<IAbility>()))
+                    x.AbilityIds?.JoinEx(abilities, inner => inner.Id).ToArray() ?? Array.Empty<IAbility>(),
+                    x.Categories
+                ))
                 .ToArray<ISkill>();
 
             foreach (ISkill skill in skills)

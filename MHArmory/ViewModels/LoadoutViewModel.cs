@@ -8,6 +8,7 @@ using System.Windows.Input;
 using MHArmory.Configurations;
 using MHArmory.Core;
 using MHArmory.Services;
+using MHArmory.Core.WPF;
 
 namespace MHArmory.ViewModels
 {
@@ -27,6 +28,13 @@ namespace MHArmory.ViewModels
         {
             get { return name; }
             set { SetValue(ref name, value); }
+        }
+
+        private bool isVisible = true;
+        public bool IsVisible
+        {
+            get { return isVisible; }
+            internal set { SetValue(ref isVisible, value); }
         }
 
         public int[] WeaponSlots { get; }
@@ -85,6 +93,17 @@ namespace MHArmory.ViewModels
 
         public bool IsManageMode { get; }
 
+        private string searchText;
+        public string SearchText
+        {
+            get { return searchText; }
+            set
+            {
+                if (SetValue(ref searchText, value))
+                    OnSearchTextChanged();
+            }
+        }
+
         private readonly Action<bool?> endFunc;
         private readonly IEnumerable<AbilityViewModel> abilities;
 
@@ -109,6 +128,22 @@ namespace MHArmory.ViewModels
 
             if (Loadouts.Count > 1)
                 SelectedLoadout = Loadouts[1];
+        }
+
+        private void OnSearchTextChanged()
+        {
+            if (string.IsNullOrWhiteSpace(SearchText))
+            {
+                foreach (LoadoutViewModel loadout in Loadouts)
+                    loadout.IsVisible = true;
+            }
+            else
+            {
+                var searchStatement = SearchStatement.Create(SearchText, GlobalData.Instance.Aliases);
+
+                foreach (LoadoutViewModel loadout in Loadouts)
+                    loadout.IsVisible = searchStatement.IsMatching(loadout.Name);
+            }
         }
 
         private AbilityViewModel[] CreateAbilities(SkillLoadoutItemConfigurationV2[] abilityInfo)
@@ -182,6 +217,16 @@ namespace MHArmory.ViewModels
 
         private void OnCancel(object parameter)
         {
+            if (parameter is CancellationCommandArgument cancellable)
+            {
+                if (string.IsNullOrWhiteSpace(SearchText) == false)
+                {
+                    SearchText = string.Empty;
+                    cancellable.IsCancelled = true;
+                    return;
+                }
+            }
+
             SelectedLoadout = null;
             endFunc(false);
         }

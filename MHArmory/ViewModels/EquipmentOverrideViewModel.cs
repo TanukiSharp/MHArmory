@@ -10,6 +10,7 @@ using MHArmory.Configurations;
 using MHArmory.Core;
 using MHArmory.Core.DataStructures;
 using MHArmory.Services;
+using MHArmory.Core.WPF;
 using MHWSaveUtils;
 using Newtonsoft.Json;
 
@@ -359,6 +360,9 @@ namespace MHArmory.ViewModels
 
             ISaveDataService saveDataService = ServicesContainer.GetService<ISaveDataService>();
 
+            if (saveDataService == null)
+                return;
+
             IList<SaveDataInfo> saveDataInfoItems = saveDataService.GetSaveInfo();
 
             if (saveDataInfoItems == null)
@@ -504,7 +508,7 @@ namespace MHArmory.ViewModels
 
         public void ComputeVisibility()
         {
-            var searchStatement = SearchStatement.Create(SearchText);
+            var searchStatement = SearchStatement.Create(SearchText, GlobalData.Instance.Aliases);
 
             foreach (EquipmentGroupViewModel vm in AllEquipments)
                 ComputeVisibility(vm, searchStatement);
@@ -553,7 +557,7 @@ namespace MHArmory.ViewModels
             }
 
             if (searchStatement == null)
-                searchStatement = SearchStatement.Create(searchText);
+                searchStatement = SearchStatement.Create(searchText, GlobalData.Instance.Aliases);
 
             group.ApplySearchText(searchStatement);
         }

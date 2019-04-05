@@ -9,6 +9,7 @@ using System.Windows.Input;
 using MHArmory.Core.DataStructures;
 using MHArmory.Search;
 using MHArmory.ViewModels;
+using MHArmory.Core.WPF;
 
 namespace MHArmory
 {

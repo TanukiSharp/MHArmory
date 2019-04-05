@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using System.Windows.Input;
 using MHArmory.Core;
 using MHArmory.Core.DataStructures;
+using MHArmory.Core.WPF;
 
 namespace MHArmory.ViewModels
 {
@@ -36,7 +37,7 @@ namespace MHArmory.ViewModels
             }
             else
             {
-                var searchStatement = SearchStatement.Create(searchText);
+                var searchStatement = SearchStatement.Create(searchText, GlobalData.Instance.Aliases);
 
                 foreach (EquipmentViewModel x in rootViewModel.AllEquipments)
                 {

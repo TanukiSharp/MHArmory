@@ -2965,6 +2965,11 @@
         "name": "Empress Tassets"
     },
     {
+        "id": 141,
+        "type": 5,
+        "name": "Empress Greaves"
+    },
+    {
         "id": 143,
         "type": 3,
         "name": "Escadora Armguards"
@@ -3190,6 +3195,21 @@
         "name": "Harvest Layered Chest"
     },
     {
+        "id": 153,
+        "type": 3,
+        "name": "Gala Suit Layered Arms"
+    },
+    {
+        "id": 153,
+        "type": 4,
+        "name": "Gala Suit Layered Torso"
+    },
+    {
+        "id": 153,
+        "type": 5,
+        "name": "Gala Suit Layered Legs"
+    },
+    {
         "id": 154,
         "type": 1,
         "name": "Mosswine Mask α"
@@ -3205,6 +3225,11 @@
         "name": "Brigade Layered Head"
     },
     {
+        "id": 155,
+        "type": 2,
+        "name": "Gala Suit Layered Chest"
+    },
+    {
         "id": 156,
         "type": 1,
         "name": "Guild Cross Layered Head"
@@ -3218,6 +3243,11 @@
         "id": 158,
         "type": 1,
         "name": "Orion Layered Cap"
+    },
+    {
+        "id": 159,
+        "type": 1,
+        "name": "Gala Suit Layered Head"
     },
     {
         "id": 159,
@@ -3281,6 +3311,11 @@
     },
     {
         "id": 162,
+        "type": 2,
+        "name": "Twitch Layered Chest Armor"
+    },
+    {
+        "id": 162,
         "type": 3,
         "name": "Brigade Layered Arms"
     },
@@ -3293,6 +3328,11 @@
         "id": 162,
         "type": 5,
         "name": "Brigade Layered Legs"
+    },
+    {
+        "id": 163,
+        "type": 2,
+        "name": "Twitch Prime T-shirt"
     },
     {
         "id": 163,
@@ -3373,6 +3413,16 @@
         "id": 171,
         "type": 1,
         "name": "Butterfly Vertex β"
+    },
+    {
+        "id": 172,
+        "type": 1,
+        "name": "Twitch Layered Head Armor"
+    },
+    {
+        "id": 173,
+        "type": 1,
+        "name": "Twitch Prime Cap"
     },
     {
         "id": 174,
@@ -3578,6 +3628,31 @@
         "id": 196,
         "type": 5,
         "name": "Orion Boots"
+    },
+    {
+        "id": 197,
+        "type": 1,
+        "name": "Gala Suit Top Hat"
+    },
+    {
+        "id": 197,
+        "type": 2,
+        "name": "Gala Suit Jacket"
+    },
+    {
+        "id": 197,
+        "type": 3,
+        "name": "Gala Suit Cuffs"
+    },
+    {
+        "id": 197,
+        "type": 4,
+        "name": "Gala Suit Tail"
+    },
+    {
+        "id": 197,
+        "type": 5,
+        "name": "Gala Suit Slacks"
     },
     {
         "id": 200,
@@ -3853,6 +3928,31 @@
         "id": 210,
         "type": 5,
         "name": "Orion Boots α"
+    },
+    {
+        "id": 211,
+        "type": 1,
+        "name": "Gala Suit Top Hat α"
+    },
+    {
+        "id": 211,
+        "type": 2,
+        "name": "Gala Suit Jacket α"
+    },
+    {
+        "id": 211,
+        "type": 3,
+        "name": "Gala Suit Cuffs α"
+    },
+    {
+        "id": 211,
+        "type": 4,
+        "name": "Gala Suit Tail α"
+    },
+    {
+        "id": 211,
+        "type": 5,
+        "name": "Gala Suit Slacks α"
     },
     {
         "id": 212,
@@ -4401,8 +4501,23 @@
     },
     {
         "id": 239,
+        "type": 2,
+        "name": "Beetle Layered Chest"
+    },
+    {
+        "id": 239,
+        "type": 3,
+        "name": "Beetle Layered Arms"
+    },
+    {
+        "id": 239,
         "type": 4,
         "name": "Commission Layered Torso"
+    },
+    {
+        "id": 239,
+        "type": 5,
+        "name": "Beetle Layered Legs"
     },
     {
         "id": 240,
@@ -4418,6 +4533,11 @@
         "id": 241,
         "type": 1,
         "name": "Commission Layered Head"
+    },
+    {
+        "id": 241,
+        "type": 4,
+        "name": "Beetle Layered Torso"
     },
     {
         "id": 242,
@@ -4438,6 +4558,11 @@
         "id": 242,
         "type": 5,
         "name": "Empress Greaves γ"
+    },
+    {
+        "id": 243,
+        "type": 1,
+        "name": "Beetle Layered Head"
     },
     {
         "id": 244,
@@ -4468,6 +4593,16 @@
         "id": 249,
         "type": 1,
         "name": "Wiggler Head Layered Armor"
+    },
+    {
+        "id": 250,
+        "type": 1,
+        "name": "Skull Mask Layered Head"
+    },
+    {
+        "id": 251,
+        "type": 1,
+        "name": "Kulu-Ya-Ku Layered Head"
     },
     {
         "id": 253,

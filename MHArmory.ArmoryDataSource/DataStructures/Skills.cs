@@ -15,5 +15,7 @@ namespace MHArmory.ArmoryDataSource.DataStructures
         public Dictionary<string, string> Description { get; set; }
         [JsonProperty("abilityIds")]
         public IList<int> AbilityIds { get; set; }
+        [JsonProperty("categories")]
+        public string[] Categories { get; set; }
     }
 }

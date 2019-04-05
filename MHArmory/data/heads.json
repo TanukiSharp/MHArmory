@@ -28,7 +28,13 @@
         },
         "attributes": {
             "gender": 3
-        }
+        },
+        "craftMaterials": [
+            {
+                "id": 234,
+                "quantity": 2
+            }
+        ]
     },
     {
         "id": 1,
@@ -59,7 +65,13 @@
         },
         "attributes": {
             "gender": 3
-        }
+        },
+        "craftMaterials": [
+            {
+                "id": 234,
+                "quantity": 2
+            }
+        ]
     },
     {
         "id": 2,
@@ -90,7 +102,17 @@
         },
         "attributes": {
             "gender": 3
-        }
+        },
+        "craftMaterials": [
+            {
+                "id": 236,
+                "quantity": 2
+            },
+            {
+                "id": 238,
+                "quantity": 2
+            }
+        ]
     },
     {
         "id": 3,
@@ -121,7 +143,17 @@
         },
         "attributes": {
             "gender": 3
-        }
+        },
+        "craftMaterials": [
+            {
+                "id": 329,
+                "quantity": 2
+            },
+            {
+                "id": 5,
+                "quantity": 2
+            }
+        ]
     },
     {
         "id": 4,
@@ -152,7 +184,17 @@
         },
         "attributes": {
             "gender": 3
-        }
+        },
+        "craftMaterials": [
+            {
+                "id": 524,
+                "quantity": 2
+            },
+            {
+                "id": 234,
+                "quantity": 2
+            }
+        ]
     },
     {
         "id": 7,
@@ -183,7 +225,25 @@
         },
         "attributes": {
             "gender": 3
-        }
+        },
+        "craftMaterials": [
+            {
+                "id": 204,
+                "quantity": 2
+            },
+            {
+                "id": 206,
+                "quantity": 2
+            },
+            {
+                "id": 202,
+                "quantity": 2
+            },
+            {
+                "id": 5,
+                "quantity": 1
+            }
+        ]
     },
     {
         "id": 8,
@@ -214,7 +274,21 @@
         },
         "attributes": {
             "gender": 3
-        }
+        },
+        "craftMaterials": [
+            {
+                "id": 267,
+                "quantity": 2
+            },
+            {
+                "id": 263,
+                "quantity": 1
+            },
+            {
+                "id": 265,
+                "quantity": 1
+            }
+        ]
     },
     {
         "id": 9,
@@ -245,7 +319,21 @@
         },
         "attributes": {
             "gender": 3
-        }
+        },
+        "craftMaterials": [
+            {
+                "id": 313,
+                "quantity": 4
+            },
+            {
+                "id": 234,
+                "quantity": 4
+            },
+            {
+                "id": 143,
+                "quantity": 2
+            }
+        ]
     },
     {
         "id": 10,
@@ -276,7 +364,25 @@
         },
         "attributes": {
             "gender": 3
-        }
+        },
+        "craftMaterials": [
+            {
+                "id": 394,
+                "quantity": 2
+            },
+            {
+                "id": 395,
+                "quantity": 1
+            },
+            {
+                "id": 389,
+                "quantity": 2
+            },
+            {
+                "id": 313,
+                "quantity": 2
+            }
+        ]
     },
     {
         "id": 11,
@@ -307,7 +413,25 @@
         },
         "attributes": {
             "gender": 3
-        }
+        },
+        "craftMaterials": [
+            {
+                "id": 48,
+                "quantity": 2
+            },
+            {
+                "id": 52,
+                "quantity": 1
+            },
+            {
+                "id": 45,
+                "quantity": 2
+            },
+            {
+                "id": 251,
+                "quantity": 2
+            }
+        ]
     },
     {
         "id": 12,
@@ -338,7 +462,25 @@
         },
         "attributes": {
             "gender": 3
-        }
+        },
+        "craftMaterials": [
+            {
+                "id": 245,
+                "quantity": 2
+            },
+            {
+                "id": 247,
+                "quantity": 1
+            },
+            {
+                "id": 243,
+                "quantity": 1
+            },
+            {
+                "id": 167,
+                "quantity": 3
+            }
+        ]
     },
     {
         "id": 13,
@@ -369,7 +511,25 @@
         },
         "attributes": {
             "gender": 3
-        }
+        },
+        "craftMaterials": [
+            {
+                "id": 488,
+                "quantity": 2
+            },
+            {
+                "id": 485,
+                "quantity": 2
+            },
+            {
+                "id": 483,
+                "quantity": 1
+            },
+            {
+                "id": 146,
+                "quantity": 1
+            }
+        ]
     },
     {
         "id": 14,
@@ -400,7 +560,21 @@
         },
         "attributes": {
             "gender": 3
-        }
+        },
+        "craftMaterials": [
+            {
+                "id": 135,
+                "quantity": 2
+            },
+            {
+                "id": 313,
+                "quantity": 1
+            },
+            {
+                "id": 234,
+                "quantity": 6
+            }
+        ]
     },
     {
         "id": 15,
@@ -431,7 +605,25 @@
         },
         "attributes": {
             "gender": 1
-        }
+        },
+        "craftMaterials": [
+            {
+                "id": 201,
+                "quantity": 2
+            },
+            {
+                "id": 135,
+                "quantity": 2
+            },
+            {
+                "id": 96,
+                "quantity": 2
+            },
+            {
+                "id": 156,
+                "quantity": 1
+            }
+        ]
     },
     {
         "id": 16,
@@ -462,7 +654,25 @@
         },
         "attributes": {
             "gender": 2
-        }
+        },
+        "craftMaterials": [
+            {
+                "id": 201,
+                "quantity": 2
+            },
+            {
+                "id": 135,
+                "quantity": 2
+            },
+            {
+                "id": 96,
+                "quantity": 2
+            },
+            {
+                "id": 156,
+                "quantity": 1
+            }
+        ]
     },
     {
         "id": 17,
@@ -493,7 +703,25 @@
         },
         "attributes": {
             "gender": 3
-        }
+        },
+        "craftMaterials": [
+            {
+                "id": 439,
+                "quantity": 2
+            },
+            {
+                "id": 441,
+                "quantity": 3
+            },
+            {
+                "id": 95,
+                "quantity": 1
+            },
+            {
+                "id": 96,
+                "quantity": 1
+            }
+        ]
     },
     {
         "id": 18,
@@ -524,7 +752,25 @@
         },
         "attributes": {
             "gender": 3
-        }
+        },
+        "craftMaterials": [
+            {
+                "id": 226,
+                "quantity": 1
+            },
+            {
+                "id": 228,
+                "quantity": 1
+            },
+            {
+                "id": 313,
+                "quantity": 1
+            },
+            {
+                "id": 332,
+                "quantity": 1
+            }
+        ]
     },
     {
         "id": 19,
@@ -558,6 +804,24 @@
         },
         "armorSetSkillIds": [
             0
+        ],
+        "craftMaterials": [
+            {
+                "id": 15,
+                "quantity": 3
+            },
+            {
+                "id": 18,
+                "quantity": 3
+            },
+            {
+                "id": 20,
+                "quantity": 1
+            },
+            {
+                "id": 156,
+                "quantity": 1
+            }
         ]
     },
     {
@@ -589,7 +853,25 @@
         },
         "attributes": {
             "gender": 3
-        }
+        },
+        "craftMaterials": [
+            {
+                "id": 425,
+                "quantity": 2
+            },
+            {
+                "id": 423,
+                "quantity": 3
+            },
+            {
+                "id": 428,
+                "quantity": 2
+            },
+            {
+                "id": 156,
+                "quantity": 1
+            }
+        ]
     },
     {
         "id": 21,
@@ -620,7 +902,25 @@
         },
         "attributes": {
             "gender": 3
-        }
+        },
+        "craftMaterials": [
+            {
+                "id": 504,
+                "quantity": 2
+            },
+            {
+                "id": 500,
+                "quantity": 1
+            },
+            {
+                "id": 502,
+                "quantity": 1
+            },
+            {
+                "id": 96,
+                "quantity": 1
+            }
+        ]
     },
     {
         "id": 22,
@@ -651,7 +951,25 @@
         },
         "attributes": {
             "gender": 3
-        }
+        },
+        "craftMaterials": [
+            {
+                "id": 367,
+                "quantity": 2
+            },
+            {
+                "id": 370,
+                "quantity": 2
+            },
+            {
+                "id": 369,
+                "quantity": 2
+            },
+            {
+                "id": 302,
+                "quantity": 1
+            }
+        ]
     },
     {
         "id": 23,
@@ -682,7 +1000,25 @@
         },
         "attributes": {
             "gender": 3
-        }
+        },
+        "craftMaterials": [
+            {
+                "id": 197,
+                "quantity": 2
+            },
+            {
+                "id": 193,
+                "quantity": 1
+            },
+            {
+                "id": 195,
+                "quantity": 1
+            },
+            {
+                "id": 177,
+                "quantity": 3
+            }
+        ]
     },
     {
         "id": 24,
@@ -713,7 +1049,25 @@
         },
         "attributes": {
             "gender": 3
-        }
+        },
+        "craftMaterials": [
+            {
+                "id": 404,
+                "quantity": 3
+            },
+            {
+                "id": 401,
+                "quantity": 2
+            },
+            {
+                "id": 539,
+                "quantity": 2
+            },
+            {
+                "id": 399,
+                "quantity": 1
+            }
+        ]
     },
     {
         "id": 25,
@@ -744,7 +1098,25 @@
         },
         "attributes": {
             "gender": 3
-        }
+        },
+        "craftMaterials": [
+            {
+                "id": 135,
+                "quantity": 2
+            },
+            {
+                "id": 330,
+                "quantity": 1
+            },
+            {
+                "id": 234,
+                "quantity": 8
+            },
+            {
+                "id": 313,
+                "quantity": 3
+            }
+        ]
     },
     {
         "id": 26,
@@ -775,7 +1147,25 @@
         },
         "attributes": {
             "gender": 3
-        }
+        },
+        "craftMaterials": [
+            {
+                "id": 448,
+                "quantity": 1
+            },
+            {
+                "id": 528,
+                "quantity": 1
+            },
+            {
+                "id": 330,
+                "quantity": 2
+            },
+            {
+                "id": 443,
+                "quantity": 3
+            }
+        ]
     },
     {
         "id": 27,
@@ -806,7 +1196,25 @@
         },
         "attributes": {
             "gender": 3
-        }
+        },
+        "craftMaterials": [
+            {
+                "id": 377,
+                "quantity": 2
+            },
+            {
+                "id": 387,
+                "quantity": 2
+            },
+            {
+                "id": 260,
+                "quantity": 2
+            },
+            {
+                "id": 93,
+                "quantity": 1
+            }
+        ]
     },
     {
         "id": 28,
@@ -840,6 +1248,24 @@
         },
         "armorSetSkillIds": [
             1
+        ],
+        "craftMaterials": [
+            {
+                "id": 293,
+                "quantity": 2
+            },
+            {
+                "id": 290,
+                "quantity": 1
+            },
+            {
+                "id": 287,
+                "quantity": 1
+            },
+            {
+                "id": 441,
+                "quantity": 2
+            }
         ]
     },
     {
@@ -874,6 +1300,24 @@
         },
         "armorSetSkillIds": [
             2
+        ],
+        "craftMaterials": [
+            {
+                "id": 358,
+                "quantity": 2
+            },
+            {
+                "id": 360,
+                "quantity": 1
+            },
+            {
+                "id": 352,
+                "quantity": 1
+            },
+            {
+                "id": 528,
+                "quantity": 1
+            }
         ]
     },
     {
@@ -908,6 +1352,24 @@
         },
         "armorSetSkillIds": [
             3
+        ],
+        "craftMaterials": [
+            {
+                "id": 413,
+                "quantity": 2
+            },
+            {
+                "id": 415,
+                "quantity": 2
+            },
+            {
+                "id": 406,
+                "quantity": 2
+            },
+            {
+                "id": 409,
+                "quantity": 1
+            }
         ]
     },
     {
@@ -942,6 +1404,24 @@
         },
         "armorSetSkillIds": [
             4
+        ],
+        "craftMaterials": [
+            {
+                "id": 123,
+                "quantity": 3
+            },
+            {
+                "id": 121,
+                "quantity": 2
+            },
+            {
+                "id": 496,
+                "quantity": 1
+            },
+            {
+                "id": 122,
+                "quantity": 1
+            }
         ]
     },
     {
@@ -976,6 +1456,24 @@
         },
         "armorSetSkillIds": [
             5
+        ],
+        "craftMaterials": [
+            {
+                "id": 253,
+                "quantity": 2
+            },
+            {
+                "id": 256,
+                "quantity": 2
+            },
+            {
+                "id": 257,
+                "quantity": 3
+            },
+            {
+                "id": 302,
+                "quantity": 1
+            }
         ]
     },
     {
@@ -1007,7 +1505,17 @@
         },
         "attributes": {
             "gender": 3
-        }
+        },
+        "craftMaterials": [
+            {
+                "id": 88,
+                "quantity": 3
+            },
+            {
+                "id": 223,
+                "quantity": 1
+            }
+        ]
     },
     {
         "id": 34,
@@ -1041,7 +1549,17 @@
         },
         "attributes": {
             "gender": 3
-        }
+        },
+        "craftMaterials": [
+            {
+                "id": 88,
+                "quantity": 3
+            },
+            {
+                "id": 223,
+                "quantity": 1
+            }
+        ]
     },
     {
         "id": 35,
@@ -1073,7 +1591,17 @@
         },
         "attributes": {
             "gender": 3
-        }
+        },
+        "craftMaterials": [
+            {
+                "id": 88,
+                "quantity": 3
+            },
+            {
+                "id": 135,
+                "quantity": 2
+            }
+        ]
     },
     {
         "id": 36,
@@ -1107,7 +1635,17 @@
         },
         "attributes": {
             "gender": 3
-        }
+        },
+        "craftMaterials": [
+            {
+                "id": 88,
+                "quantity": 3
+            },
+            {
+                "id": 135,
+                "quantity": 2
+            }
+        ]
     },
     {
         "id": 37,
@@ -1139,7 +1677,17 @@
         },
         "attributes": {
             "gender": 3
-        }
+        },
+        "craftMaterials": [
+            {
+                "id": 237,
+                "quantity": 3
+            },
+            {
+                "id": 239,
+                "quantity": 4
+            }
+        ]
     },
     {
         "id": 38,
@@ -1173,7 +1721,17 @@
         },
         "attributes": {
             "gender": 3
-        }
+        },
+        "craftMaterials": [
+            {
+                "id": 237,
+                "quantity": 3
+            },
+            {
+                "id": 239,
+                "quantity": 4
+            }
+        ]
     },
     {
         "id": 39,
@@ -1205,7 +1763,21 @@
         },
         "attributes": {
             "gender": 3
-        }
+        },
+        "craftMaterials": [
+            {
+                "id": 397,
+                "quantity": 3
+            },
+            {
+                "id": 330,
+                "quantity": 2
+            },
+            {
+                "id": 528,
+                "quantity": 2
+            }
+        ]
     },
     {
         "id": 40,
@@ -1239,7 +1811,21 @@
         },
         "attributes": {
             "gender": 3
-        }
+        },
+        "craftMaterials": [
+            {
+                "id": 397,
+                "quantity": 3
+            },
+            {
+                "id": 330,
+                "quantity": 2
+            },
+            {
+                "id": 528,
+                "quantity": 2
+            }
+        ]
     },
     {
         "id": 41,
@@ -1271,7 +1857,25 @@
         },
         "attributes": {
             "gender": 3
-        }
+        },
+        "craftMaterials": [
+            {
+                "id": 88,
+                "quantity": 3
+            },
+            {
+                "id": 135,
+                "quantity": 6
+            },
+            {
+                "id": 137,
+                "quantity": 3
+            },
+            {
+                "id": 313,
+                "quantity": 5
+            }
+        ]
     },
     {
         "id": 42,
@@ -1305,7 +1909,25 @@
         },
         "attributes": {
             "gender": 3
-        }
+        },
+        "craftMaterials": [
+            {
+                "id": 88,
+                "quantity": 3
+            },
+            {
+                "id": 135,
+                "quantity": 6
+            },
+            {
+                "id": 137,
+                "quantity": 3
+            },
+            {
+                "id": 313,
+                "quantity": 5
+            }
+        ]
     },
     {
         "id": 43,
@@ -1337,7 +1959,25 @@
         },
         "attributes": {
             "gender": 1
-        }
+        },
+        "craftMaterials": [
+            {
+                "id": 201,
+                "quantity": 1
+            },
+            {
+                "id": 88,
+                "quantity": 2
+            },
+            {
+                "id": 331,
+                "quantity": 2
+            },
+            {
+                "id": 233,
+                "quantity": 3
+            }
+        ]
     },
     {
         "id": 44,
@@ -1371,7 +2011,25 @@
         },
         "attributes": {
             "gender": 1
-        }
+        },
+        "craftMaterials": [
+            {
+                "id": 201,
+                "quantity": 1
+            },
+            {
+                "id": 88,
+                "quantity": 2
+            },
+            {
+                "id": 331,
+                "quantity": 2
+            },
+            {
+                "id": 233,
+                "quantity": 3
+            }
+        ]
     },
     {
         "id": 45,
@@ -1403,7 +2061,25 @@
         },
         "attributes": {
             "gender": 2
-        }
+        },
+        "craftMaterials": [
+            {
+                "id": 201,
+                "quantity": 1
+            },
+            {
+                "id": 88,
+                "quantity": 2
+            },
+            {
+                "id": 331,
+                "quantity": 2
+            },
+            {
+                "id": 233,
+                "quantity": 3
+            }
+        ]
     },
     {
         "id": 46,
@@ -1437,7 +2113,25 @@
         },
         "attributes": {
             "gender": 2
-        }
+        },
+        "craftMaterials": [
+            {
+                "id": 201,
+                "quantity": 1
+            },
+            {
+                "id": 88,
+                "quantity": 2
+            },
+            {
+                "id": 331,
+                "quantity": 2
+            },
+            {
+                "id": 233,
+                "quantity": 3
+            }
+        ]
     },
     {
         "id": 47,
@@ -1469,7 +2163,21 @@
         },
         "attributes": {
             "gender": 3
-        }
+        },
+        "craftMaterials": [
+            {
+                "id": 522,
+                "quantity": 3
+            },
+            {
+                "id": 523,
+                "quantity": 2
+            },
+            {
+                "id": 334,
+                "quantity": 2
+            }
+        ]
     },
     {
         "id": 48,
@@ -1503,7 +2211,21 @@
         },
         "attributes": {
             "gender": 3
-        }
+        },
+        "craftMaterials": [
+            {
+                "id": 522,
+                "quantity": 3
+            },
+            {
+                "id": 523,
+                "quantity": 2
+            },
+            {
+                "id": 334,
+                "quantity": 2
+            }
+        ]
     },
     {
         "id": 49,
@@ -1535,7 +2257,21 @@
         },
         "attributes": {
             "gender": 3
-        }
+        },
+        "craftMaterials": [
+            {
+                "id": 225,
+                "quantity": 3
+            },
+            {
+                "id": 227,
+                "quantity": 2
+            },
+            {
+                "id": 331,
+                "quantity": 2
+            }
+        ]
     },
     {
         "id": 50,
@@ -1569,7 +2305,21 @@
         },
         "attributes": {
             "gender": 3
-        }
+        },
+        "craftMaterials": [
+            {
+                "id": 225,
+                "quantity": 3
+            },
+            {
+                "id": 227,
+                "quantity": 2
+            },
+            {
+                "id": 331,
+                "quantity": 2
+            }
+        ]
     },
     {
         "id": 51,
@@ -1600,7 +2350,25 @@
         },
         "attributes": {
             "gender": 3
-        }
+        },
+        "craftMaterials": [
+            {
+                "id": 335,
+                "quantity": 3
+            },
+            {
+                "id": 14,
+                "quantity": 1
+            },
+            {
+                "id": 194,
+                "quantity": 3
+            },
+            {
+                "id": 349,
+                "quantity": 1
+            }
+        ]
     },
     {
         "id": 56,
@@ -1632,7 +2400,21 @@
         },
         "attributes": {
             "gender": 3
-        }
+        },
+        "craftMaterials": [
+            {
+                "id": 440,
+                "quantity": 3
+            },
+            {
+                "id": 442,
+                "quantity": 4
+            },
+            {
+                "id": 137,
+                "quantity": 3
+            }
+        ]
     },
     {
         "id": 57,
@@ -1666,7 +2448,21 @@
         },
         "attributes": {
             "gender": 3
-        }
+        },
+        "craftMaterials": [
+            {
+                "id": 440,
+                "quantity": 3
+            },
+            {
+                "id": 442,
+                "quantity": 4
+            },
+            {
+                "id": 137,
+                "quantity": 3
+            }
+        ]
     },
     {
         "id": 58,
@@ -1697,7 +2493,25 @@
         },
         "attributes": {
             "gender": 3
-        }
+        },
+        "craftMaterials": [
+            {
+                "id": 205,
+                "quantity": 4
+            },
+            {
+                "id": 206,
+                "quantity": 2
+            },
+            {
+                "id": 203,
+                "quantity": 4
+            },
+            {
+                "id": 374,
+                "quantity": 2
+            }
+        ]
     },
     {
         "id": 59,
@@ -1731,7 +2545,25 @@
         },
         "attributes": {
             "gender": 3
-        }
+        },
+        "craftMaterials": [
+            {
+                "id": 205,
+                "quantity": 4
+            },
+            {
+                "id": 206,
+                "quantity": 2
+            },
+            {
+                "id": 203,
+                "quantity": 4
+            },
+            {
+                "id": 374,
+                "quantity": 2
+            }
+        ]
     },
     {
         "id": 60,
@@ -1763,7 +2595,21 @@
         },
         "attributes": {
             "gender": 3
-        }
+        },
+        "craftMaterials": [
+            {
+                "id": 268,
+                "quantity": 4
+            },
+            {
+                "id": 264,
+                "quantity": 2
+            },
+            {
+                "id": 266,
+                "quantity": 2
+            }
+        ]
     },
     {
         "id": 61,
@@ -1798,7 +2644,21 @@
         },
         "attributes": {
             "gender": 3
-        }
+        },
+        "craftMaterials": [
+            {
+                "id": 268,
+                "quantity": 4
+            },
+            {
+                "id": 264,
+                "quantity": 2
+            },
+            {
+                "id": 266,
+                "quantity": 2
+            }
+        ]
     },
     {
         "id": 62,
@@ -1830,7 +2690,25 @@
         },
         "attributes": {
             "gender": 3
-        }
+        },
+        "craftMaterials": [
+            {
+                "id": 505,
+                "quantity": 4
+            },
+            {
+                "id": 501,
+                "quantity": 2
+            },
+            {
+                "id": 503,
+                "quantity": 2
+            },
+            {
+                "id": 96,
+                "quantity": 5
+            }
+        ]
     },
     {
         "id": 63,
@@ -1864,7 +2742,25 @@
         },
         "attributes": {
             "gender": 3
-        }
+        },
+        "craftMaterials": [
+            {
+                "id": 505,
+                "quantity": 4
+            },
+            {
+                "id": 501,
+                "quantity": 2
+            },
+            {
+                "id": 503,
+                "quantity": 2
+            },
+            {
+                "id": 96,
+                "quantity": 5
+            }
+        ]
     },
     {
         "id": 64,
@@ -1896,7 +2792,25 @@
         },
         "attributes": {
             "gender": 3
-        }
+        },
+        "craftMaterials": [
+            {
+                "id": 198,
+                "quantity": 4
+            },
+            {
+                "id": 194,
+                "quantity": 2
+            },
+            {
+                "id": 196,
+                "quantity": 1
+            },
+            {
+                "id": 178,
+                "quantity": 4
+            }
+        ]
     },
     {
         "id": 65,
@@ -1930,7 +2844,25 @@
         },
         "attributes": {
             "gender": 3
-        }
+        },
+        "craftMaterials": [
+            {
+                "id": 198,
+                "quantity": 4
+            },
+            {
+                "id": 194,
+                "quantity": 2
+            },
+            {
+                "id": 196,
+                "quantity": 1
+            },
+            {
+                "id": 178,
+                "quantity": 4
+            }
+        ]
     },
     {
         "id": 66,
@@ -1961,7 +2893,25 @@
         },
         "attributes": {
             "gender": 3
-        }
+        },
+        "craftMaterials": [
+            {
+                "id": 388,
+                "quantity": 2
+            },
+            {
+                "id": 395,
+                "quantity": 2
+            },
+            {
+                "id": 396,
+                "quantity": 3
+            },
+            {
+                "id": 493,
+                "quantity": 2
+            }
+        ]
     },
     {
         "id": 67,
@@ -1996,7 +2946,25 @@
         },
         "attributes": {
             "gender": 3
-        }
+        },
+        "craftMaterials": [
+            {
+                "id": 388,
+                "quantity": 2
+            },
+            {
+                "id": 395,
+                "quantity": 2
+            },
+            {
+                "id": 396,
+                "quantity": 3
+            },
+            {
+                "id": 493,
+                "quantity": 2
+            }
+        ]
     },
     {
         "id": 68,
@@ -2027,7 +2995,25 @@
         },
         "attributes": {
             "gender": 3
-        }
+        },
+        "craftMaterials": [
+            {
+                "id": 49,
+                "quantity": 3
+            },
+            {
+                "id": 52,
+                "quantity": 2
+            },
+            {
+                "id": 46,
+                "quantity": 3
+            },
+            {
+                "id": 249,
+                "quantity": 4
+            }
+        ]
     },
     {
         "id": 69,
@@ -2061,7 +3047,25 @@
         },
         "attributes": {
             "gender": 3
-        }
+        },
+        "craftMaterials": [
+            {
+                "id": 49,
+                "quantity": 3
+            },
+            {
+                "id": 52,
+                "quantity": 2
+            },
+            {
+                "id": 46,
+                "quantity": 3
+            },
+            {
+                "id": 249,
+                "quantity": 4
+            }
+        ]
     },
     {
         "id": 70,
@@ -2096,6 +3100,24 @@
         },
         "armorSetSkillIds": [
             6
+        ],
+        "craftMaterials": [
+            {
+                "id": 16,
+                "quantity": 4
+            },
+            {
+                "id": 19,
+                "quantity": 4
+            },
+            {
+                "id": 20,
+                "quantity": 2
+            },
+            {
+                "id": 233,
+                "quantity": 3
+            }
         ]
     },
     {
@@ -2133,6 +3155,24 @@
         },
         "armorSetSkillIds": [
             6
+        ],
+        "craftMaterials": [
+            {
+                "id": 16,
+                "quantity": 4
+            },
+            {
+                "id": 19,
+                "quantity": 4
+            },
+            {
+                "id": 20,
+                "quantity": 2
+            },
+            {
+                "id": 233,
+                "quantity": 3
+            }
         ]
     },
     {
@@ -2164,7 +3204,25 @@
         },
         "attributes": {
             "gender": 3
-        }
+        },
+        "craftMaterials": [
+            {
+                "id": 246,
+                "quantity": 4
+            },
+            {
+                "id": 240,
+                "quantity": 2
+            },
+            {
+                "id": 244,
+                "quantity": 2
+            },
+            {
+                "id": 166,
+                "quantity": 6
+            }
+        ]
     },
     {
         "id": 73,
@@ -2198,7 +3256,25 @@
         },
         "attributes": {
             "gender": 3
-        }
+        },
+        "craftMaterials": [
+            {
+                "id": 246,
+                "quantity": 4
+            },
+            {
+                "id": 240,
+                "quantity": 2
+            },
+            {
+                "id": 244,
+                "quantity": 2
+            },
+            {
+                "id": 166,
+                "quantity": 6
+            }
+        ]
     },
     {
         "id": 74,
@@ -2229,7 +3305,25 @@
         },
         "attributes": {
             "gender": 3
-        }
+        },
+        "craftMaterials": [
+            {
+                "id": 489,
+                "quantity": 4
+            },
+            {
+                "id": 486,
+                "quantity": 4
+            },
+            {
+                "id": 484,
+                "quantity": 4
+            },
+            {
+                "id": 540,
+                "quantity": 1
+            }
+        ]
     },
     {
         "id": 75,
@@ -2263,7 +3357,25 @@
         },
         "attributes": {
             "gender": 3
-        }
+        },
+        "craftMaterials": [
+            {
+                "id": 489,
+                "quantity": 4
+            },
+            {
+                "id": 486,
+                "quantity": 4
+            },
+            {
+                "id": 484,
+                "quantity": 4
+            },
+            {
+                "id": 540,
+                "quantity": 1
+            }
+        ]
     },
     {
         "id": 76,
@@ -2294,7 +3406,25 @@
         },
         "attributes": {
             "gender": 3
-        }
+        },
+        "craftMaterials": [
+            {
+                "id": 368,
+                "quantity": 4
+            },
+            {
+                "id": 371,
+                "quantity": 2
+            },
+            {
+                "id": 366,
+                "quantity": 2
+            },
+            {
+                "id": 302,
+                "quantity": 2
+            }
+        ]
     },
     {
         "id": 77,
@@ -2328,7 +3458,25 @@
         },
         "attributes": {
             "gender": 3
-        }
+        },
+        "craftMaterials": [
+            {
+                "id": 368,
+                "quantity": 4
+            },
+            {
+                "id": 371,
+                "quantity": 2
+            },
+            {
+                "id": 366,
+                "quantity": 2
+            },
+            {
+                "id": 302,
+                "quantity": 2
+            }
+        ]
     },
     {
         "id": 78,
@@ -2360,7 +3508,25 @@
         },
         "attributes": {
             "gender": 3
-        }
+        },
+        "craftMaterials": [
+            {
+                "id": 419,
+                "quantity": 4
+            },
+            {
+                "id": 424,
+                "quantity": 4
+            },
+            {
+                "id": 428,
+                "quantity": 2
+            },
+            {
+                "id": 233,
+                "quantity": 3
+            }
+        ]
     },
     {
         "id": 79,
@@ -2395,7 +3561,25 @@
         },
         "attributes": {
             "gender": 3
-        }
+        },
+        "craftMaterials": [
+            {
+                "id": 419,
+                "quantity": 4
+            },
+            {
+                "id": 424,
+                "quantity": 4
+            },
+            {
+                "id": 428,
+                "quantity": 2
+            },
+            {
+                "id": 233,
+                "quantity": 3
+            }
+        ]
     },
     {
         "id": 80,
@@ -2430,6 +3614,24 @@
         },
         "armorSetSkillIds": [
             7
+        ],
+        "craftMaterials": [
+            {
+                "id": 376,
+                "quantity": 4
+            },
+            {
+                "id": 375,
+                "quantity": 2
+            },
+            {
+                "id": 333,
+                "quantity": 3
+            },
+            {
+                "id": 442,
+                "quantity": 4
+            }
         ]
     },
     {
@@ -2467,6 +3669,24 @@
         },
         "armorSetSkillIds": [
             7
+        ],
+        "craftMaterials": [
+            {
+                "id": 376,
+                "quantity": 4
+            },
+            {
+                "id": 375,
+                "quantity": 2
+            },
+            {
+                "id": 333,
+                "quantity": 3
+            },
+            {
+                "id": 442,
+                "quantity": 4
+            }
         ]
     },
     {
@@ -2498,7 +3718,25 @@
         },
         "attributes": {
             "gender": 3
-        }
+        },
+        "craftMaterials": [
+            {
+                "id": 398,
+                "quantity": 6
+            },
+            {
+                "id": 403,
+                "quantity": 4
+            },
+            {
+                "id": 400,
+                "quantity": 1
+            },
+            {
+                "id": 540,
+                "quantity": 1
+            }
+        ]
     },
     {
         "id": 83,
@@ -2532,7 +3770,25 @@
         },
         "attributes": {
             "gender": 3
-        }
+        },
+        "craftMaterials": [
+            {
+                "id": 398,
+                "quantity": 6
+            },
+            {
+                "id": 403,
+                "quantity": 4
+            },
+            {
+                "id": 400,
+                "quantity": 1
+            },
+            {
+                "id": 540,
+                "quantity": 1
+            }
+        ]
     },
     {
         "id": 84,
@@ -2564,7 +3820,25 @@
         },
         "attributes": {
             "gender": 3
-        }
+        },
+        "craftMaterials": [
+            {
+                "id": 171,
+                "quantity": 3
+            },
+            {
+                "id": 170,
+                "quantity": 4
+            },
+            {
+                "id": 249,
+                "quantity": 3
+            },
+            {
+                "id": 135,
+                "quantity": 5
+            }
+        ]
     },
     {
         "id": 85,
@@ -2598,7 +3872,25 @@
         },
         "attributes": {
             "gender": 3
-        }
+        },
+        "craftMaterials": [
+            {
+                "id": 171,
+                "quantity": 3
+            },
+            {
+                "id": 170,
+                "quantity": 4
+            },
+            {
+                "id": 249,
+                "quantity": 3
+            },
+            {
+                "id": 135,
+                "quantity": 5
+            }
+        ]
     },
     {
         "id": 88,
@@ -2629,7 +3921,25 @@
         },
         "attributes": {
             "gender": 3
-        }
+        },
+        "craftMaterials": [
+            {
+                "id": 129,
+                "quantity": 4
+            },
+            {
+                "id": 127,
+                "quantity": 2
+            },
+            {
+                "id": 128,
+                "quantity": 1
+            },
+            {
+                "id": 171,
+                "quantity": 3
+            }
+        ]
     },
     {
         "id": 89,
@@ -2663,7 +3973,25 @@
         },
         "attributes": {
             "gender": 3
-        }
+        },
+        "craftMaterials": [
+            {
+                "id": 129,
+                "quantity": 4
+            },
+            {
+                "id": 127,
+                "quantity": 2
+            },
+            {
+                "id": 128,
+                "quantity": 1
+            },
+            {
+                "id": 171,
+                "quantity": 3
+            }
+        ]
     },
     {
         "id": 90,
@@ -2698,6 +4026,24 @@
         },
         "armorSetSkillIds": [
             8
+        ],
+        "craftMaterials": [
+            {
+                "id": 552,
+                "quantity": 3
+            },
+            {
+                "id": 555,
+                "quantity": 2
+            },
+            {
+                "id": 550,
+                "quantity": 6
+            },
+            {
+                "id": 135,
+                "quantity": 8
+            }
         ]
     },
     {
@@ -2735,6 +4081,24 @@
         },
         "armorSetSkillIds": [
             8
+        ],
+        "craftMaterials": [
+            {
+                "id": 552,
+                "quantity": 3
+            },
+            {
+                "id": 555,
+                "quantity": 2
+            },
+            {
+                "id": 550,
+                "quantity": 6
+            },
+            {
+                "id": 135,
+                "quantity": 8
+            }
         ]
     },
     {
@@ -2767,7 +4131,25 @@
         },
         "attributes": {
             "gender": 3
-        }
+        },
+        "craftMaterials": [
+            {
+                "id": 164,
+                "quantity": 3
+            },
+            {
+                "id": 88,
+                "quantity": 4
+            },
+            {
+                "id": 137,
+                "quantity": 2
+            },
+            {
+                "id": 41,
+                "quantity": 3
+            }
+        ]
     },
     {
         "id": 93,
@@ -2801,7 +4183,25 @@
         },
         "attributes": {
             "gender": 3
-        }
+        },
+        "craftMaterials": [
+            {
+                "id": 164,
+                "quantity": 3
+            },
+            {
+                "id": 88,
+                "quantity": 4
+            },
+            {
+                "id": 137,
+                "quantity": 2
+            },
+            {
+                "id": 41,
+                "quantity": 3
+            }
+        ]
     },
     {
         "id": 94,
@@ -2832,7 +4232,25 @@
         },
         "attributes": {
             "gender": 3
-        }
+        },
+        "craftMaterials": [
+            {
+                "id": 164,
+                "quantity": 1
+            },
+            {
+                "id": 333,
+                "quantity": 2
+            },
+            {
+                "id": 135,
+                "quantity": 4
+            },
+            {
+                "id": 171,
+                "quantity": 2
+            }
+        ]
     },
     {
         "id": 95,
@@ -2866,7 +4284,25 @@
         },
         "attributes": {
             "gender": 3
-        }
+        },
+        "craftMaterials": [
+            {
+                "id": 164,
+                "quantity": 1
+            },
+            {
+                "id": 333,
+                "quantity": 2
+            },
+            {
+                "id": 135,
+                "quantity": 4
+            },
+            {
+                "id": 171,
+                "quantity": 2
+            }
+        ]
     },
     {
         "id": 96,
@@ -2898,7 +4334,25 @@
         },
         "attributes": {
             "gender": 3
-        }
+        },
+        "craftMaterials": [
+            {
+                "id": 230,
+                "quantity": 2
+            },
+            {
+                "id": 497,
+                "quantity": 4
+            },
+            {
+                "id": 169,
+                "quantity": 3
+            },
+            {
+                "id": 333,
+                "quantity": 2
+            }
+        ]
     },
     {
         "id": 97,
@@ -2932,7 +4386,25 @@
         },
         "attributes": {
             "gender": 3
-        }
+        },
+        "craftMaterials": [
+            {
+                "id": 230,
+                "quantity": 2
+            },
+            {
+                "id": 497,
+                "quantity": 4
+            },
+            {
+                "id": 169,
+                "quantity": 3
+            },
+            {
+                "id": 333,
+                "quantity": 2
+            }
+        ]
     },
     {
         "id": 98,
@@ -2963,7 +4435,25 @@
         },
         "attributes": {
             "gender": 3
-        }
+        },
+        "craftMaterials": [
+            {
+                "id": 469,
+                "quantity": 3
+            },
+            {
+                "id": 366,
+                "quantity": 3
+            },
+            {
+                "id": 223,
+                "quantity": 3
+            },
+            {
+                "id": 154,
+                "quantity": 1
+            }
+        ]
     },
     {
         "id": 99,
@@ -2997,7 +4487,21 @@
         },
         "attributes": {
             "gender": 3
-        }
+        },
+        "craftMaterials": [
+            {
+                "id": 154,
+                "quantity": 2
+            },
+            {
+                "id": 349,
+                "quantity": 2
+            },
+            {
+                "id": 164,
+                "quantity": 6
+            }
+        ]
     },
     {
         "id": 100,
@@ -3029,7 +4533,25 @@
         },
         "attributes": {
             "gender": 3
-        }
+        },
+        "craftMaterials": [
+            {
+                "id": 286,
+                "quantity": 4
+            },
+            {
+                "id": 283,
+                "quantity": 2
+            },
+            {
+                "id": 285,
+                "quantity": 2
+            },
+            {
+                "id": 333,
+                "quantity": 6
+            }
+        ]
     },
     {
         "id": 101,
@@ -3065,7 +4587,25 @@
         },
         "attributes": {
             "gender": 3
-        }
+        },
+        "craftMaterials": [
+            {
+                "id": 286,
+                "quantity": 4
+            },
+            {
+                "id": 283,
+                "quantity": 2
+            },
+            {
+                "id": 285,
+                "quantity": 2
+            },
+            {
+                "id": 333,
+                "quantity": 6
+            }
+        ]
     },
     {
         "id": 102,
@@ -3100,6 +4640,24 @@
         },
         "armorSetSkillIds": [
             9
+        ],
+        "craftMaterials": [
+            {
+                "id": 294,
+                "quantity": 4
+            },
+            {
+                "id": 291,
+                "quantity": 2
+            },
+            {
+                "id": 162,
+                "quantity": 2
+            },
+            {
+                "id": 505,
+                "quantity": 2
+            }
         ]
     },
     {
@@ -3137,6 +4695,24 @@
         },
         "armorSetSkillIds": [
             9
+        ],
+        "craftMaterials": [
+            {
+                "id": 294,
+                "quantity": 4
+            },
+            {
+                "id": 291,
+                "quantity": 2
+            },
+            {
+                "id": 162,
+                "quantity": 2
+            },
+            {
+                "id": 505,
+                "quantity": 2
+            }
         ]
     },
     {
@@ -3172,6 +4748,24 @@
         },
         "armorSetSkillIds": [
             10
+        ],
+        "craftMaterials": [
+            {
+                "id": 359,
+                "quantity": 4
+            },
+            {
+                "id": 361,
+                "quantity": 2
+            },
+            {
+                "id": 353,
+                "quantity": 2
+            },
+            {
+                "id": 528,
+                "quantity": 3
+            }
         ]
     },
     {
@@ -3209,6 +4803,24 @@
         },
         "armorSetSkillIds": [
             10
+        ],
+        "craftMaterials": [
+            {
+                "id": 359,
+                "quantity": 4
+            },
+            {
+                "id": 361,
+                "quantity": 2
+            },
+            {
+                "id": 353,
+                "quantity": 2
+            },
+            {
+                "id": 528,
+                "quantity": 3
+            }
         ]
     },
     {
@@ -3244,6 +4856,24 @@
         },
         "armorSetSkillIds": [
             11
+        ],
+        "craftMaterials": [
+            {
+                "id": 414,
+                "quantity": 4
+            },
+            {
+                "id": 407,
+                "quantity": 4
+            },
+            {
+                "id": 233,
+                "quantity": 2
+            },
+            {
+                "id": 410,
+                "quantity": 1
+            }
         ]
     },
     {
@@ -3281,6 +4911,24 @@
         },
         "armorSetSkillIds": [
             11
+        ],
+        "craftMaterials": [
+            {
+                "id": 414,
+                "quantity": 4
+            },
+            {
+                "id": 407,
+                "quantity": 4
+            },
+            {
+                "id": 233,
+                "quantity": 2
+            },
+            {
+                "id": 410,
+                "quantity": 1
+            }
         ]
     },
     {
@@ -3316,6 +4964,24 @@
         },
         "armorSetSkillIds": [
             11
+        ],
+        "craftMaterials": [
+            {
+                "id": 35,
+                "quantity": 4
+            },
+            {
+                "id": 34,
+                "quantity": 4
+            },
+            {
+                "id": 37,
+                "quantity": 3
+            },
+            {
+                "id": 412,
+                "quantity": 1
+            }
         ]
     },
     {
@@ -3354,6 +5020,24 @@
         },
         "armorSetSkillIds": [
             11
+        ],
+        "craftMaterials": [
+            {
+                "id": 35,
+                "quantity": 4
+            },
+            {
+                "id": 34,
+                "quantity": 4
+            },
+            {
+                "id": 37,
+                "quantity": 3
+            },
+            {
+                "id": 412,
+                "quantity": 1
+            }
         ]
     },
     {
@@ -3389,6 +5073,24 @@
         },
         "armorSetSkillIds": [
             12
+        ],
+        "craftMaterials": [
+            {
+                "id": 124,
+                "quantity": 4
+            },
+            {
+                "id": 121,
+                "quantity": 4
+            },
+            {
+                "id": 314,
+                "quantity": 2
+            },
+            {
+                "id": 540,
+                "quantity": 1
+            }
         ]
     },
     {
@@ -3426,6 +5128,24 @@
         },
         "armorSetSkillIds": [
             12
+        ],
+        "craftMaterials": [
+            {
+                "id": 124,
+                "quantity": 4
+            },
+            {
+                "id": 121,
+                "quantity": 4
+            },
+            {
+                "id": 314,
+                "quantity": 2
+            },
+            {
+                "id": 540,
+                "quantity": 1
+            }
         ]
     },
     {
@@ -3463,6 +5183,24 @@
         },
         "armorSetSkillIds": [
             12
+        ],
+        "craftMaterials": [
+            {
+                "id": 73,
+                "quantity": 4
+            },
+            {
+                "id": 314,
+                "quantity": 2
+            },
+            {
+                "id": 74,
+                "quantity": 1
+            },
+            {
+                "id": 349,
+                "quantity": 1
+            }
         ]
     },
     {
@@ -3500,6 +5238,24 @@
         },
         "armorSetSkillIds": [
             12
+        ],
+        "craftMaterials": [
+            {
+                "id": 73,
+                "quantity": 4
+            },
+            {
+                "id": 314,
+                "quantity": 2
+            },
+            {
+                "id": 74,
+                "quantity": 1
+            },
+            {
+                "id": 349,
+                "quantity": 1
+            }
         ]
     },
     {
@@ -3537,6 +5293,24 @@
         },
         "armorSetSkillIds": [
             13
+        ],
+        "craftMaterials": [
+            {
+                "id": 511,
+                "quantity": 4
+            },
+            {
+                "id": 507,
+                "quantity": 2
+            },
+            {
+                "id": 282,
+                "quantity": 4
+            },
+            {
+                "id": 154,
+                "quantity": 1
+            }
         ]
     },
     {
@@ -3575,6 +5349,24 @@
         },
         "armorSetSkillIds": [
             13
+        ],
+        "craftMaterials": [
+            {
+                "id": 511,
+                "quantity": 4
+            },
+            {
+                "id": 507,
+                "quantity": 2
+            },
+            {
+                "id": 282,
+                "quantity": 4
+            },
+            {
+                "id": 154,
+                "quantity": 1
+            }
         ]
     },
     {
@@ -3613,6 +5405,24 @@
         },
         "armorSetSkillIds": [
             14
+        ],
+        "craftMaterials": [
+            {
+                "id": 53,
+                "quantity": 5
+            },
+            {
+                "id": 58,
+                "quantity": 2
+            },
+            {
+                "id": 59,
+                "quantity": 2
+            },
+            {
+                "id": 55,
+                "quantity": 1
+            }
         ]
     },
     {
@@ -3651,6 +5461,24 @@
         },
         "armorSetSkillIds": [
             14
+        ],
+        "craftMaterials": [
+            {
+                "id": 53,
+                "quantity": 5
+            },
+            {
+                "id": 58,
+                "quantity": 2
+            },
+            {
+                "id": 59,
+                "quantity": 2
+            },
+            {
+                "id": 55,
+                "quantity": 1
+            }
         ]
     },
     {
@@ -3686,7 +5514,25 @@
         },
         "attributes": {
             "gender": 3
-        }
+        },
+        "craftMaterials": [
+            {
+                "id": 144,
+                "quantity": 2
+            },
+            {
+                "id": 164,
+                "quantity": 3
+            },
+            {
+                "id": 196,
+                "quantity": 3
+            },
+            {
+                "id": 349,
+                "quantity": 1
+            }
+        ]
     },
     {
         "id": 119,
@@ -3720,7 +5566,25 @@
         },
         "attributes": {
             "gender": 3
-        }
+        },
+        "craftMaterials": [
+            {
+                "id": 144,
+                "quantity": 2
+            },
+            {
+                "id": 164,
+                "quantity": 3
+            },
+            {
+                "id": 196,
+                "quantity": 3
+            },
+            {
+                "id": 349,
+                "quantity": 1
+            }
+        ]
     },
     {
         "id": 120,
@@ -3752,7 +5616,25 @@
         },
         "attributes": {
             "gender": 3
-        }
+        },
+        "craftMaterials": [
+            {
+                "id": 145,
+                "quantity": 3
+            },
+            {
+                "id": 397,
+                "quantity": 3
+            },
+            {
+                "id": 54,
+                "quantity": 1
+            },
+            {
+                "id": 132,
+                "quantity": 1
+            }
+        ]
     },
     {
         "id": 121,
@@ -3786,7 +5668,25 @@
         },
         "attributes": {
             "gender": 3
-        }
+        },
+        "craftMaterials": [
+            {
+                "id": 145,
+                "quantity": 3
+            },
+            {
+                "id": 397,
+                "quantity": 3
+            },
+            {
+                "id": 54,
+                "quantity": 1
+            },
+            {
+                "id": 132,
+                "quantity": 1
+            }
+        ]
     },
     {
         "id": 122,
@@ -3821,7 +5721,25 @@
         },
         "attributes": {
             "gender": 3
-        }
+        },
+        "craftMaterials": [
+            {
+                "id": 448,
+                "quantity": 2
+            },
+            {
+                "id": 84,
+                "quantity": 1
+            },
+            {
+                "id": 516,
+                "quantity": 1
+            },
+            {
+                "id": 374,
+                "quantity": 3
+            }
+        ]
     },
     {
         "id": 123,
@@ -3855,7 +5773,25 @@
         },
         "attributes": {
             "gender": 3
-        }
+        },
+        "craftMaterials": [
+            {
+                "id": 448,
+                "quantity": 2
+            },
+            {
+                "id": 84,
+                "quantity": 1
+            },
+            {
+                "id": 516,
+                "quantity": 1
+            },
+            {
+                "id": 374,
+                "quantity": 3
+            }
+        ]
     },
     {
         "id": 124,
@@ -3889,7 +5825,25 @@
         },
         "attributes": {
             "gender": 3
-        }
+        },
+        "craftMaterials": [
+            {
+                "id": 506,
+                "quantity": 1
+            },
+            {
+                "id": 84,
+                "quantity": 2
+            },
+            {
+                "id": 528,
+                "quantity": 3
+            },
+            {
+                "id": 132,
+                "quantity": 1
+            }
+        ]
     },
     {
         "id": 125,
@@ -3927,6 +5881,24 @@
         },
         "armorSetSkillIds": [
             15
+        ],
+        "craftMaterials": [
+            {
+                "id": 340,
+                "quantity": 2
+            },
+            {
+                "id": 338,
+                "quantity": 6
+            },
+            {
+                "id": 231,
+                "quantity": 4
+            },
+            {
+                "id": 339,
+                "quantity": 1
+            }
         ]
     },
     {
@@ -3965,6 +5937,24 @@
         },
         "armorSetSkillIds": [
             15
+        ],
+        "craftMaterials": [
+            {
+                "id": 340,
+                "quantity": 2
+            },
+            {
+                "id": 338,
+                "quantity": 6
+            },
+            {
+                "id": 231,
+                "quantity": 4
+            },
+            {
+                "id": 339,
+                "quantity": 1
+            }
         ]
     },
     {
@@ -3999,6 +5989,24 @@
         },
         "armorSetSkillIds": [
             16
+        ],
+        "craftMaterials": [
+            {
+                "id": 470,
+                "quantity": 5
+            },
+            {
+                "id": 473,
+                "quantity": 2
+            },
+            {
+                "id": 476,
+                "quantity": 2
+            },
+            {
+                "id": 154,
+                "quantity": 1
+            }
         ]
     },
     {
@@ -4036,6 +6044,24 @@
         },
         "armorSetSkillIds": [
             16
+        ],
+        "craftMaterials": [
+            {
+                "id": 470,
+                "quantity": 5
+            },
+            {
+                "id": 473,
+                "quantity": 2
+            },
+            {
+                "id": 476,
+                "quantity": 2
+            },
+            {
+                "id": 154,
+                "quantity": 1
+            }
         ]
     },
     {
@@ -4071,6 +6097,24 @@
         },
         "armorSetSkillIds": [
             17
+        ],
+        "craftMaterials": [
+            {
+                "id": 100,
+                "quantity": 4
+            },
+            {
+                "id": 98,
+                "quantity": 4
+            },
+            {
+                "id": 104,
+                "quantity": 2
+            },
+            {
+                "id": 145,
+                "quantity": 4
+            }
         ]
     },
     {
@@ -4110,6 +6154,24 @@
         },
         "armorSetSkillIds": [
             17
+        ],
+        "craftMaterials": [
+            {
+                "id": 100,
+                "quantity": 4
+            },
+            {
+                "id": 98,
+                "quantity": 4
+            },
+            {
+                "id": 104,
+                "quantity": 2
+            },
+            {
+                "id": 145,
+                "quantity": 4
+            }
         ]
     },
     {
@@ -4145,6 +6207,24 @@
         },
         "armorSetSkillIds": [
             18
+        ],
+        "craftMaterials": [
+            {
+                "id": 107,
+                "quantity": 5
+            },
+            {
+                "id": 513,
+                "quantity": 4
+            },
+            {
+                "id": 518,
+                "quantity": 4
+            },
+            {
+                "id": 145,
+                "quantity": 4
+            }
         ]
     },
     {
@@ -4182,6 +6262,24 @@
         },
         "armorSetSkillIds": [
             18
+        ],
+        "craftMaterials": [
+            {
+                "id": 107,
+                "quantity": 5
+            },
+            {
+                "id": 513,
+                "quantity": 4
+            },
+            {
+                "id": 518,
+                "quantity": 4
+            },
+            {
+                "id": 145,
+                "quantity": 4
+            }
         ]
     },
     {
@@ -4217,6 +6315,24 @@
         },
         "armorSetSkillIds": [
             19
+        ],
+        "craftMaterials": [
+            {
+                "id": 254,
+                "quantity": 3
+            },
+            {
+                "id": 252,
+                "quantity": 1
+            },
+            {
+                "id": 442,
+                "quantity": 2
+            },
+            {
+                "id": 479,
+                "quantity": 4
+            }
         ]
     },
     {
@@ -4254,6 +6370,24 @@
         },
         "armorSetSkillIds": [
             19
+        ],
+        "craftMaterials": [
+            {
+                "id": 254,
+                "quantity": 3
+            },
+            {
+                "id": 252,
+                "quantity": 1
+            },
+            {
+                "id": 442,
+                "quantity": 2
+            },
+            {
+                "id": 479,
+                "quantity": 4
+            }
         ]
     },
     {
@@ -4292,6 +6426,24 @@
         },
         "armorSetSkillIds": [
             20
+        ],
+        "craftMaterials": [
+            {
+                "id": 545,
+                "quantity": 5
+            },
+            {
+                "id": 544,
+                "quantity": 4
+            },
+            {
+                "id": 543,
+                "quantity": 2
+            },
+            {
+                "id": 411,
+                "quantity": 1
+            }
         ]
     },
     {
@@ -4329,6 +6481,24 @@
         },
         "armorSetSkillIds": [
             20
+        ],
+        "craftMaterials": [
+            {
+                "id": 545,
+                "quantity": 5
+            },
+            {
+                "id": 544,
+                "quantity": 4
+            },
+            {
+                "id": 543,
+                "quantity": 2
+            },
+            {
+                "id": 411,
+                "quantity": 1
+            }
         ]
     },
     {
@@ -4367,6 +6537,24 @@
         },
         "armorSetSkillIds": [
             21
+        ],
+        "craftMaterials": [
+            {
+                "id": 0,
+                "quantity": 3
+            },
+            {
+                "id": 161,
+                "quantity": 2
+            },
+            {
+                "id": 230,
+                "quantity": 2
+            },
+            {
+                "id": 222,
+                "quantity": 1
+            }
         ]
     },
     {
@@ -4406,6 +6594,24 @@
         },
         "armorSetSkillIds": [
             21
+        ],
+        "craftMaterials": [
+            {
+                "id": 0,
+                "quantity": 3
+            },
+            {
+                "id": 161,
+                "quantity": 2
+            },
+            {
+                "id": 230,
+                "quantity": 2
+            },
+            {
+                "id": 222,
+                "quantity": 1
+            }
         ]
     },
     {
@@ -4440,7 +6646,21 @@
         },
         "attributes": {
             "gender": 3
-        }
+        },
+        "craftMaterials": [
+            {
+                "id": 137,
+                "quantity": 2
+            },
+            {
+                "id": 222,
+                "quantity": 1
+            },
+            {
+                "id": 231,
+                "quantity": 6
+            }
+        ]
     },
     {
         "id": 140,
@@ -4478,6 +6698,24 @@
         },
         "armorSetSkillIds": [
             22
+        ],
+        "craftMaterials": [
+            {
+                "id": 432,
+                "quantity": 1
+            },
+            {
+                "id": 424,
+                "quantity": 8
+            },
+            {
+                "id": 448,
+                "quantity": 2
+            },
+            {
+                "id": 222,
+                "quantity": 2
+            }
         ]
     },
     {
@@ -4515,6 +6753,24 @@
         },
         "armorSetSkillIds": [
             22
+        ],
+        "craftMaterials": [
+            {
+                "id": 432,
+                "quantity": 1
+            },
+            {
+                "id": 424,
+                "quantity": 8
+            },
+            {
+                "id": 448,
+                "quantity": 2
+            },
+            {
+                "id": 222,
+                "quantity": 2
+            }
         ]
     },
     {
@@ -4551,7 +6807,25 @@
         "attributes": {
             "gender": 3
         },
-        "eventId": 0
+        "eventId": 0,
+        "craftMaterials": [
+            {
+                "id": 112,
+                "quantity": 5
+            },
+            {
+                "id": 113,
+                "quantity": 2
+            },
+            {
+                "id": 114,
+                "quantity": 2
+            },
+            {
+                "id": 115,
+                "quantity": 1
+            }
+        ]
     },
     {
         "id": 143,
@@ -4587,7 +6861,25 @@
         "attributes": {
             "gender": 3
         },
-        "eventId": 0
+        "eventId": 0,
+        "craftMaterials": [
+            {
+                "id": 112,
+                "quantity": 5
+            },
+            {
+                "id": 113,
+                "quantity": 2
+            },
+            {
+                "id": 114,
+                "quantity": 2
+            },
+            {
+                "id": 115,
+                "quantity": 1
+            }
+        ]
     },
     {
         "id": 144,
@@ -4627,7 +6919,25 @@
         "armorSetSkillIds": [
             23
         ],
-        "eventId": 14
+        "eventId": 14,
+        "craftMaterials": [
+            {
+                "id": 308,
+                "quantity": 4
+            },
+            {
+                "id": 304,
+                "quantity": 4
+            },
+            {
+                "id": 311,
+                "quantity": 2
+            },
+            {
+                "id": 145,
+                "quantity": 4
+            }
+        ]
     },
     {
         "id": 145,
@@ -4666,7 +6976,25 @@
         "armorSetSkillIds": [
             23
         ],
-        "eventId": 14
+        "eventId": 14,
+        "craftMaterials": [
+            {
+                "id": 308,
+                "quantity": 4
+            },
+            {
+                "id": 304,
+                "quantity": 4
+            },
+            {
+                "id": 311,
+                "quantity": 2
+            },
+            {
+                "id": 145,
+                "quantity": 4
+            }
+        ]
     },
     {
         "id": 146,
@@ -4706,7 +7034,25 @@
         "armorSetSkillIds": [
             24
         ],
-        "eventId": 19
+        "eventId": 19,
+        "craftMaterials": [
+            {
+                "id": 63,
+                "quantity": 2
+            },
+            {
+                "id": 61,
+                "quantity": 3
+            },
+            {
+                "id": 62,
+                "quantity": 1
+            },
+            {
+                "id": 4,
+                "quantity": 3
+            }
+        ]
     },
     {
         "id": 147,
@@ -4745,7 +7091,25 @@
             6
         ],
         "fullArmorSetId": 0,
-        "eventId": 1
+        "eventId": 1,
+        "craftMaterials": [
+            {
+                "id": 347,
+                "quantity": 4
+            },
+            {
+                "id": 16,
+                "quantity": 14
+            },
+            {
+                "id": 14,
+                "quantity": 6
+            },
+            {
+                "id": 12,
+                "quantity": 1
+            }
+        ]
     },
     {
         "id": 148,
@@ -4778,7 +7142,25 @@
             "gender": 3
         },
         "fullArmorSetId": 1,
-        "eventId": 2
+        "eventId": 2,
+        "craftMaterials": [
+            {
+                "id": 434,
+                "quantity": 7
+            },
+            {
+                "id": 328,
+                "quantity": 6
+            },
+            {
+                "id": 143,
+                "quantity": 6
+            },
+            {
+                "id": 51,
+                "quantity": 5
+            }
+        ]
     },
     {
         "id": 149,
@@ -4819,7 +7201,25 @@
             11
         ],
         "fullArmorSetId": 2,
-        "eventId": 3
+        "eventId": 3,
+        "craftMaterials": [
+            {
+                "id": 436,
+                "quantity": 4
+            },
+            {
+                "id": 230,
+                "quantity": 5
+            },
+            {
+                "id": 231,
+                "quantity": 6
+            },
+            {
+                "id": 411,
+                "quantity": 1
+            }
+        ]
     },
     {
         "id": 150,
@@ -4860,7 +7260,25 @@
             7
         ],
         "fullArmorSetId": 3,
-        "eventId": 4
+        "eventId": 4,
+        "craftMaterials": [
+            {
+                "id": 435,
+                "quantity": 4
+            },
+            {
+                "id": 230,
+                "quantity": 4
+            },
+            {
+                "id": 420,
+                "quantity": 4
+            },
+            {
+                "id": 376,
+                "quantity": 6
+            }
+        ]
     },
     {
         "id": 151,
@@ -4892,7 +7310,25 @@
         "attributes": {
             "gender": 1
         },
-        "eventId": 5
+        "eventId": 5,
+        "craftMaterials": [
+            {
+                "id": 459,
+                "quantity": 1
+            },
+            {
+                "id": 201,
+                "quantity": 1
+            },
+            {
+                "id": 524,
+                "quantity": 1
+            },
+            {
+                "id": 332,
+                "quantity": 1
+            }
+        ]
     },
     {
         "id": 152,
@@ -4924,7 +7360,25 @@
         "attributes": {
             "gender": 2
         },
-        "eventId": 5
+        "eventId": 5,
+        "craftMaterials": [
+            {
+                "id": 459,
+                "quantity": 1
+            },
+            {
+                "id": 201,
+                "quantity": 1
+            },
+            {
+                "id": 524,
+                "quantity": 1
+            },
+            {
+                "id": 332,
+                "quantity": 1
+            }
+        ]
     },
     {
         "id": 153,
@@ -4956,7 +7410,17 @@
         "attributes": {
             "gender": 3
         },
-        "eventId": 6
+        "eventId": 6,
+        "craftMaterials": [
+            {
+                "id": 458,
+                "quantity": 1
+            },
+            {
+                "id": 143,
+                "quantity": 1
+            }
+        ]
     },
     {
         "id": 154,
@@ -4992,7 +7456,17 @@
         "attributes": {
             "gender": 3
         },
-        "eventId": 6
+        "eventId": 6,
+        "craftMaterials": [
+            {
+                "id": 458,
+                "quantity": 3
+            },
+            {
+                "id": 88,
+                "quantity": 1
+            }
+        ]
     },
     {
         "id": 155,
@@ -5024,14 +7498,24 @@
         "attributes": {
             "gender": 3
         },
-        "eventId": 22
+        "eventId": 22,
+        "craftMaterials": [
+            {
+                "id": 33,
+                "quantity": 1
+            },
+            {
+                "id": 464,
+                "quantity": 1
+            }
+        ]
     },
     {
         "id": 156,
         "name": {
             "EN": "Harvest Flor α",
             "FR": "Harvest Flor α",
-            "JP": "ハーベストフロールα",
+            "JP": "ハーベストフロール α",
             "IT": "Fior del raccolto α",
             "DE": "Ernte-Flor α",
             "KR": "하베스트플로르 α",
@@ -5060,7 +7544,21 @@
         "attributes": {
             "gender": 3
         },
-        "eventId": 22
+        "eventId": 22,
+        "craftMaterials": [
+            {
+                "id": 33,
+                "quantity": 1
+            },
+            {
+                "id": 333,
+                "quantity": 2
+            },
+            {
+                "id": 334,
+                "quantity": 1
+            }
+        ]
     },
     {
         "id": 157,
@@ -5092,14 +7590,24 @@
         "attributes": {
             "gender": 3
         },
-        "eventId": 26
+        "eventId": 26,
+        "craftMaterials": [
+            {
+                "id": 537,
+                "quantity": 1
+            },
+            {
+                "id": 330,
+                "quantity": 1
+            }
+        ]
     },
     {
         "id": 158,
         "name": {
             "EN": "Orion Cap α",
             "FR": "Ushanka Orion α",
-            "JP": "オリオンヘッドα",
+            "JP": "オリオンヘッド α",
             "IT": "Copricapo di Orione α",
             "DE": "Orion-Mütze α",
             "KR": "오리온헤드 α",
@@ -5128,7 +7636,21 @@
         "attributes": {
             "gender": 3
         },
-        "eventId": 26
+        "eventId": 26,
+        "craftMaterials": [
+            {
+                "id": 537,
+                "quantity": 1
+            },
+            {
+                "id": 164,
+                "quantity": 1
+            },
+            {
+                "id": 333,
+                "quantity": 1
+            }
+        ]
     },
     {
         "id": 159,
@@ -5164,7 +7686,25 @@
         "attributes": {
             "gender": 3
         },
-        "eventId": 7
+        "eventId": 7,
+        "craftMaterials": [
+            {
+                "id": 273,
+                "quantity": 12
+            },
+            {
+                "id": 274,
+                "quantity": 7
+            },
+            {
+                "id": 275,
+                "quantity": 6
+            },
+            {
+                "id": 339,
+                "quantity": 1
+            }
+        ]
     },
     {
         "id": 160,
@@ -5201,7 +7741,25 @@
         "attributes": {
             "gender": 3
         },
-        "eventId": 7
+        "eventId": 7,
+        "craftMaterials": [
+            {
+                "id": 273,
+                "quantity": 12
+            },
+            {
+                "id": 274,
+                "quantity": 7
+            },
+            {
+                "id": 275,
+                "quantity": 6
+            },
+            {
+                "id": 339,
+                "quantity": 1
+            }
+        ]
     },
     {
         "id": 161,
@@ -5237,7 +7795,25 @@
         "attributes": {
             "gender": 3
         },
-        "eventId": 8
+        "eventId": 8,
+        "craftMaterials": [
+            {
+                "id": 431,
+                "quantity": 1
+            },
+            {
+                "id": 414,
+                "quantity": 5
+            },
+            {
+                "id": 359,
+                "quantity": 5
+            },
+            {
+                "id": 19,
+                "quantity": 5
+            }
+        ]
     },
     {
         "id": 162,
@@ -5275,7 +7851,25 @@
         "armorSetSkillIds": [
             11
         ],
-        "eventId": 9
+        "eventId": 9,
+        "craftMaterials": [
+            {
+                "id": 39,
+                "quantity": 1
+            },
+            {
+                "id": 129,
+                "quantity": 5
+            },
+            {
+                "id": 127,
+                "quantity": 6
+            },
+            {
+                "id": 128,
+                "quantity": 3
+            }
+        ]
     },
     {
         "id": 163,
@@ -5314,7 +7908,25 @@
         "armorSetSkillIds": [
             19
         ],
-        "eventId": 15
+        "eventId": 15,
+        "craftMaterials": [
+            {
+                "id": 259,
+                "quantity": 1
+            },
+            {
+                "id": 254,
+                "quantity": 3
+            },
+            {
+                "id": 252,
+                "quantity": 1
+            },
+            {
+                "id": 258,
+                "quantity": 2
+            }
+        ]
     },
     {
         "id": 164,
@@ -5353,7 +7965,25 @@
         "armorSetSkillIds": [
             18
         ],
-        "eventId": 16
+        "eventId": 16,
+        "craftMaterials": [
+            {
+                "id": 519,
+                "quantity": 1
+            },
+            {
+                "id": 107,
+                "quantity": 5
+            },
+            {
+                "id": 513,
+                "quantity": 4
+            },
+            {
+                "id": 518,
+                "quantity": 4
+            }
+        ]
     },
     {
         "id": 165,
@@ -5392,7 +8022,25 @@
         "armorSetSkillIds": [
             16
         ],
-        "eventId": 20
+        "eventId": 20,
+        "craftMaterials": [
+            {
+                "id": 477,
+                "quantity": 1
+            },
+            {
+                "id": 470,
+                "quantity": 5
+            },
+            {
+                "id": 478,
+                "quantity": 4
+            },
+            {
+                "id": 475,
+                "quantity": 4
+            }
+        ]
     },
     {
         "id": 166,
@@ -5430,7 +8078,25 @@
         "armorSetSkillIds": [
             17
         ],
-        "eventId": 21
+        "eventId": 21,
+        "craftMaterials": [
+            {
+                "id": 277,
+                "quantity": 1
+            },
+            {
+                "id": 98,
+                "quantity": 5
+            },
+            {
+                "id": 102,
+                "quantity": 3
+            },
+            {
+                "id": 101,
+                "quantity": 1
+            }
+        ]
     },
     {
         "id": 167,
@@ -5471,7 +8137,25 @@
         "armorSetSkillIds": [
             23
         ],
-        "eventId": 14
+        "eventId": 14,
+        "craftMaterials": [
+            {
+                "id": 310,
+                "quantity": 1
+            },
+            {
+                "id": 304,
+                "quantity": 4
+            },
+            {
+                "id": 311,
+                "quantity": 3
+            },
+            {
+                "id": 307,
+                "quantity": 2
+            }
+        ]
     },
     {
         "id": 168,
@@ -5510,7 +8194,25 @@
         "armorSetSkillIds": [
             8
         ],
-        "eventId": 24
+        "eventId": 24,
+        "craftMaterials": [
+            {
+                "id": 556,
+                "quantity": 1
+            },
+            {
+                "id": 552,
+                "quantity": 5
+            },
+            {
+                "id": 554,
+                "quantity": 2
+            },
+            {
+                "id": 553,
+                "quantity": 3
+            }
+        ]
     },
     {
         "id": 169,
@@ -5551,7 +8253,25 @@
         "armorSetSkillIds": [
             20
         ],
-        "eventId": 25
+        "eventId": 25,
+        "craftMaterials": [
+            {
+                "id": 547,
+                "quantity": 1
+            },
+            {
+                "id": 544,
+                "quantity": 4
+            },
+            {
+                "id": 549,
+                "quantity": 3
+            },
+            {
+                "id": 546,
+                "quantity": 2
+            }
+        ]
     },
     {
         "id": 170,
@@ -5589,7 +8309,25 @@
         "attributes": {
             "gender": 3
         },
-        "eventId": 7
+        "eventId": 7,
+        "craftMaterials": [
+            {
+                "id": 270,
+                "quantity": 7
+            },
+            {
+                "id": 273,
+                "quantity": 15
+            },
+            {
+                "id": 274,
+                "quantity": 12
+            },
+            {
+                "id": 275,
+                "quantity": 8
+            }
+        ]
     },
     {
         "id": 171,
@@ -5621,7 +8359,17 @@
         "attributes": {
             "gender": 3
         },
-        "eventId": 17
+        "eventId": 17,
+        "craftMaterials": [
+            {
+                "id": 467,
+                "quantity": 1
+            },
+            {
+                "id": 96,
+                "quantity": 1
+            }
+        ]
     },
     {
         "id": 172,
@@ -5656,7 +8404,21 @@
         "attributes": {
             "gender": 3
         },
-        "eventId": 17
+        "eventId": 17,
+        "craftMaterials": [
+            {
+                "id": 467,
+                "quantity": 1
+            },
+            {
+                "id": 88,
+                "quantity": 2
+            },
+            {
+                "id": 397,
+                "quantity": 1
+            }
+        ]
     },
     {
         "id": 173,
@@ -5692,7 +8454,25 @@
         "attributes": {
             "gender": 1
         },
-        "eventId": 18
+        "eventId": 18,
+        "craftMaterials": [
+            {
+                "id": 466,
+                "quantity": 1
+            },
+            {
+                "id": 225,
+                "quantity": 1
+            },
+            {
+                "id": 88,
+                "quantity": 2
+            },
+            {
+                "id": 397,
+                "quantity": 1
+            }
+        ]
     },
     {
         "id": 174,
@@ -5727,7 +8507,25 @@
         "attributes": {
             "gender": 1
         },
-        "eventId": 18
+        "eventId": 18,
+        "craftMaterials": [
+            {
+                "id": 466,
+                "quantity": 1
+            },
+            {
+                "id": 225,
+                "quantity": 1
+            },
+            {
+                "id": 88,
+                "quantity": 2
+            },
+            {
+                "id": 397,
+                "quantity": 1
+            }
+        ]
     },
     {
         "id": 175,
@@ -5763,7 +8561,25 @@
         "attributes": {
             "gender": 2
         },
-        "eventId": 18
+        "eventId": 18,
+        "craftMaterials": [
+            {
+                "id": 466,
+                "quantity": 1
+            },
+            {
+                "id": 225,
+                "quantity": 1
+            },
+            {
+                "id": 88,
+                "quantity": 2
+            },
+            {
+                "id": 397,
+                "quantity": 1
+            }
+        ]
     },
     {
         "id": 176,
@@ -5798,10 +8614,280 @@
         "attributes": {
             "gender": 2
         },
-        "eventId": 18
+        "eventId": 18,
+        "craftMaterials": [
+            {
+                "id": 466,
+                "quantity": 1
+            },
+            {
+                "id": 225,
+                "quantity": 1
+            },
+            {
+                "id": 88,
+                "quantity": 2
+            },
+            {
+                "id": 397,
+                "quantity": 1
+            }
+        ]
     },
     {
         "id": 177,
+        "name": {
+            "EN": "Gala Suit Top Hat",
+            "FR": "Chapeau de gala",
+            "JP": "フルドレスハット",
+            "IT": "Cilindro gran galà",
+            "DE": "Galaanzug-Zylinder",
+            "KR": "풀드레스햇",
+            "CN": "盛裝頭飾"
+        },
+        "rarity": 4,
+        "abilityIds": [
+            129
+        ],
+        "defense": {
+            "base": 34,
+            "max": 58,
+            "augmented": 78
+        },
+        "resistances": {
+            "fire": 1,
+            "water": 1,
+            "thunder": 1,
+            "ice": 1,
+            "dragon": 4
+        },
+        "attributes": {
+            "gender": 3
+        },
+        "armorSetSkillIds": [
+            25
+        ],
+        "eventId": 28,
+        "craftMaterials": [
+            {
+                "id": 23,
+                "quantity": 1
+            },
+            {
+                "id": 330,
+                "quantity": 3
+            }
+        ]
+    },
+    {
+        "id": 178,
+        "name": {
+            "EN": "Gala Suit Top Hat α",
+            "FR": "Chapeau de gala α",
+            "JP": "フルドレスハットα",
+            "IT": "Cilindro gran galà α",
+            "DE": "Galaanzug-Zylinder α",
+            "KR": "풀드레스햇 α",
+            "CN": "盛裝頭飾 α"
+        },
+        "rarity": 7,
+        "slots": [
+            2,
+            1,
+            1
+        ],
+        "abilityIds": [
+            129
+        ],
+        "defense": {
+            "base": 64,
+            "max": 76,
+            "augmented": 90
+        },
+        "resistances": {
+            "fire": 1,
+            "water": 1,
+            "thunder": 1,
+            "ice": 1,
+            "dragon": 4
+        },
+        "attributes": {
+            "gender": 3
+        },
+        "armorSetSkillIds": [
+            25
+        ],
+        "eventId": 28,
+        "craftMaterials": [
+            {
+                "id": 23,
+                "quantity": 3
+            },
+            {
+                "id": 145,
+                "quantity": 3
+            },
+            {
+                "id": 222,
+                "quantity": 2
+            }
+        ]
+    },
+    {
+        "id": 179,
+        "name": {
+            "EN": "Geralt's Head α",
+            "FR": "Geralt - Tête α",
+            "JP": "ゲラルトフェイス α",
+            "IT": "Testa di Geralt α",
+            "DE": "Geralt-Kopf α",
+            "KR": "게롤트 페이스 α",
+            "CN": "Geralt's Head α"
+        },
+        "rarity": 8,
+        "slots": [
+            1,
+            1
+        ],
+        "abilityIds": [
+            133,
+            58
+        ],
+        "defense": {
+            "base": 70,
+            "max": 76,
+            "augmented": 90
+        },
+        "resistances": {
+            "fire": 2,
+            "water": 1,
+            "thunder": -2,
+            "ice": -1,
+            "dragon": 3
+        },
+        "attributes": {
+            "gender": 3
+        },
+        "armorSetSkillIds": [
+            26
+        ],
+        "fullArmorSetId": 4,
+        "eventId": 29,
+        "craftMaterials": [
+            {
+                "id": 300,
+                "quantity": 1
+            },
+            {
+                "id": 298,
+                "quantity": 3
+            },
+            {
+                "id": 97,
+                "quantity": 4
+            },
+            {
+                "id": 299,
+                "quantity": 2
+            }
+        ]
+    },
+    {
+        "id": 180,
+        "name": {
+            "EN": "Ciri's Head α",
+            "FR": "Ciri - Tête α",
+            "JP": "シリフェイス α",
+            "IT": "Testa di Ciri α",
+            "DE": "Ciri-Kopf α",
+            "KR": "시리 페이스 α",
+            "CN": "Ciri's Head α"
+        },
+        "rarity": 8,
+        "defense": {
+            "base": 70,
+            "max": 76,
+            "augmented": 90
+        },
+        "resistances": {
+            "fire": 0,
+            "water": 0,
+            "thunder": 0,
+            "ice": 0,
+            "dragon": 0
+        },
+        "attributes": {
+            "gender": 3
+        },
+        "fullArmorSetId": 5,
+        "eventId": 29,
+        "craftMaterials": [
+            {
+                "id": 8,
+                "quantity": 1
+            },
+            {
+                "id": 7,
+                "quantity": 4
+            },
+            {
+                "id": 6,
+                "quantity": 8
+            },
+            {
+                "id": 299,
+                "quantity": 10
+            }
+        ]
+    },
+    {
+        "id": 181,
+        "name": {
+            "EN": "Nergigante Helm γ",
+            "FR": "Coiffe Nergigante γ",
+            "JP": "オーグヘルム γ",
+            "IT": "Elmo di Nergigante γ",
+            "DE": "Nergigante-Helm γ",
+            "KR": "오그헬름 γ",
+            "CN": "戰紋頭盔 γ"
+        },
+        "rarity": 8,
+        "slots": [
+            2,
+            2
+        ],
+        "abilityIds": [
+            203,
+            165
+        ],
+        "defense": {
+            "base": 72,
+            "max": 78,
+            "augmented": 92
+        },
+        "resistances": {
+            "fire": 1,
+            "water": 1,
+            "thunder": -3,
+            "ice": 1,
+            "dragon": -3
+        },
+        "attributes": {
+            "gender": 3
+        },
+        "armorSetSkillIds": [
+            15
+        ],
+        "eventId": 31,
+        "craftMaterials": [
+            {
+                "id": 344,
+                "quantity": 1
+            }
+        ]
+    },
+    {
+        "id": 182,
         "name": {
             "EN": "Sealed Eyepatch α",
             "FR": "Cache-oeil interdit α",
@@ -5834,10 +8920,28 @@
         "attributes": {
             "gender": 3
         },
-        "eventId": 10
+        "eventId": 10,
+        "craftMaterials": [
+            {
+                "id": 70,
+                "quantity": 2
+            },
+            {
+                "id": 442,
+                "quantity": 7
+            },
+            {
+                "id": 440,
+                "quantity": 5
+            },
+            {
+                "id": 374,
+                "quantity": 4
+            }
+        ]
     },
     {
-        "id": 178,
+        "id": 183,
         "name": {
             "EN": "Shadow Shades α",
             "FR": "Lunettes teintées α",
@@ -5871,10 +8975,28 @@
         "attributes": {
             "gender": 3
         },
-        "eventId": 11
+        "eventId": 11,
+        "craftMaterials": [
+            {
+                "id": 71,
+                "quantity": 3
+            },
+            {
+                "id": 302,
+                "quantity": 1
+            },
+            {
+                "id": 349,
+                "quantity": 1
+            },
+            {
+                "id": 137,
+                "quantity": 3
+            }
+        ]
     },
     {
-        "id": 179,
+        "id": 184,
         "name": {
             "EN": "Kulu-Ya-Ku Head α",
             "FR": "Tête Kulu-Ya-Ku α",
@@ -5907,10 +9029,28 @@
         "attributes": {
             "gender": 3
         },
-        "eventId": 12
+        "eventId": 12,
+        "craftMaterials": [
+            {
+                "id": 269,
+                "quantity": 3
+            },
+            {
+                "id": 262,
+                "quantity": 1
+            },
+            {
+                "id": 266,
+                "quantity": 4
+            },
+            {
+                "id": 264,
+                "quantity": 5
+            }
+        ]
     },
     {
-        "id": 180,
+        "id": 185,
         "name": {
             "EN": "Wiggler Head α",
             "FR": "Tête de tortilleur α",
@@ -5943,10 +9083,28 @@
         "attributes": {
             "gender": 3
         },
-        "eventId": 13
+        "eventId": 13,
+        "craftMaterials": [
+            {
+                "id": 534,
+                "quantity": 3
+            },
+            {
+                "id": 440,
+                "quantity": 4
+            },
+            {
+                "id": 166,
+                "quantity": 4
+            },
+            {
+                "id": 95,
+                "quantity": 3
+            }
+        ]
     },
     {
-        "id": 181,
+        "id": 186,
         "name": {
             "EN": "Dragonseal Earrings α",
             "FR": "Cache-eil Roi-dragon α",
@@ -5974,10 +9132,16 @@
         },
         "attributes": {
             "gender": 3
-        }
+        },
+        "craftMaterials": [
+            {
+                "id": 559,
+                "quantity": 0
+            }
+        ]
     },
     {
-        "id": 182,
+        "id": 187,
         "name": {
             "EN": "Pulverizing Feather",
             "FR": "Plume destructrice",
@@ -6005,6 +9169,12 @@
         },
         "attributes": {
             "gender": 3
-        }
+        },
+        "craftMaterials": [
+            {
+                "id": 558,
+                "quantity": 0
+            }
+        ]
     }
 ]

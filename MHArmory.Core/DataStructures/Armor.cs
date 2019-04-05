@@ -132,7 +132,8 @@ namespace MHArmory.Core.DataStructures
             IArmorPieceAttributes attributes,
             IArmorPieceAssets assets,
             IFullArmorSet fullArmorSet,
-            IEvent evt
+            IEvent evt,
+            ICraftMaterial[] craftMaterials
         )
         {
             Id = id;
@@ -148,6 +149,7 @@ namespace MHArmory.Core.DataStructures
             Assets = assets;
             FullArmorSet = fullArmorSet;
             Event = evt;
+            CraftMaterials = craftMaterials;
         }
 
         public int Id { get; }
@@ -163,6 +165,7 @@ namespace MHArmory.Core.DataStructures
         public IArmorPieceAssets Assets { get; }
         public IFullArmorSet FullArmorSet { get; private set; }
         public IEvent Event { get; }
+        public ICraftMaterial[] CraftMaterials { get; }
 
         public void SetFullArmorSet(IFullArmorSet fullArmorSet)
         {

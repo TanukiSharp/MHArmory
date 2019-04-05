@@ -12,6 +12,7 @@ using MHArmory.Core.DataStructures;
 using MHArmory.Search;
 using MHArmory.Search.Contracts;
 using MHArmory.Services;
+using MHArmory.Core.WPF;
 using Microsoft.Win32;
 
 namespace MHArmory.ViewModels
@@ -155,6 +156,99 @@ namespace MHArmory.ViewModels
         }
     }
 
+    public class GroupedArmorSetHeaderViewModel : ViewModelBase
+    {
+        private bool isSelected;
+        public bool IsSelected
+        {
+            get { return isSelected; }
+            set { SetValue(ref isSelected, value); }
+        }
+
+        public ICommand SelectionCommand { get; }
+
+        public IList<ArmorSetJewelViewModel> Jewels { get; }
+        public SearchResultSkillViewModel[] AdditionalSkills { get; }
+
+        public int[] SpareSlots { get; }
+
+        public int TotalBaseDefense { get; }
+        public int TotalMaxDefense { get; }
+        public int TotalAugmentedDefense { get; }
+
+        public int TotalFireResistance { get; }
+        public int TotalWaterResistance { get; }
+        public int TotalThunderResistance { get; }
+        public int TotalIceResistance { get; }
+        public int TotalDragonResistance { get; }
+
+        public IList<ArmorSetViewModel> Items { get; }
+
+        public bool HasRequiredDecorations { get; }
+        public bool HasDefense { get; }
+        public bool HasSpareSlots { get; }
+        public bool HasAdditionalSkills { get; }
+        public bool HasResistances { get; }
+
+        private readonly SearchResultsViewModel parent;
+
+        public GroupedArmorSetHeaderViewModel(SearchResultsViewModel parent, IList<ArmorSetViewModel> items)
+        {
+            this.parent = parent;
+            SelectionCommand = new AnonymousCommand(OnSelection);
+
+            foreach (EnumFlagViewModel<SearchResultsGrouping> flag in parent.GroupFlags)
+            {
+                if (flag.IsSet == false)
+                    continue;
+
+                switch (flag.EnumValue)
+                {
+                    case SearchResultsGrouping.RequiredDecorations:
+                        HasRequiredDecorations = true;
+                        break;
+                    case SearchResultsGrouping.Defense:
+                        HasDefense = true;
+                        break;
+                    case SearchResultsGrouping.SpareSlots:
+                        HasSpareSlots = true;
+                        break;
+                    case SearchResultsGrouping.AdditionalSKills:
+                        HasAdditionalSkills = true;
+                        break;
+                    case SearchResultsGrouping.Resistances:
+                        HasResistances = true;
+                        break;
+                }
+            }
+
+            ArmorSetViewModel source = items[0];
+
+            Jewels = source.Jewels;
+
+            AdditionalSkills = source.AdditionalSkills;
+
+            SpareSlots = source.SpareSlots;
+
+            TotalBaseDefense = source.TotalBaseDefense;
+            TotalMaxDefense = source.TotalMaxDefense;
+            TotalAugmentedDefense = source.TotalAugmentedDefense;
+
+            TotalFireResistance = source.TotalFireResistance;
+            TotalWaterResistance = source.TotalWaterResistance;
+            TotalThunderResistance = source.TotalThunderResistance;
+            TotalIceResistance = source.TotalIceResistance;
+            TotalDragonResistance = source.TotalDragonResistance;
+
+            Items = items;
+        }
+
+        private void OnSelection()
+        {
+            parent.SelectedGroup = this;
+        }
+    }
+
     public class ArmorSetViewModel : ViewModelBase
     {
         private IList<IArmorPiece> armorPieces;
@@ -222,6 +316,37 @@ namespace MHArmory.ViewModels
                     spareSlotSizeCube = DataUtility.SlotSizeScoreCube(SpareSlots);
                 return spareSlotSizeCube;
             }
+        }
+
+        // Works because the code that uses this is single threaded.
+        private static readonly IEquipment[] reusableEquipmentArray = new IEquipment[6];
+
+        private IList<ICraftMaterial> craftMaterials;
+        public IList<ICraftMaterial> CraftMaterials
+        {
+            get
+            {
+                SetCraftMaterials();
+                return craftMaterials;
+            }
+        }
+
+        private void SetCraftMaterials()
+        {
+            if (craftMaterials != null)
+                return;
+
+            for (int i = 0; i < armorPieces.Count; i++)
+                reusableEquipmentArray[i] = armorPieces[i];
+            reusableEquipmentArray[5] = charm;
+
+            craftMaterials = reusableEquipmentArray
+                .Where(x => x != null)
+                .SelectMany(x => x.CraftMaterials)
+                .GroupBy(x => x.LocalizedItem)
+                .Select(g => (ICraftMaterial)new CraftMaterial(g.Key, g.Sum(x => x.Quantity)))
+                .OrderBy(x => x.LocalizedItem.Id)
+                .ToList();
         }
 
         public int TotalRarity { get; }
@@ -292,15 +417,25 @@ namespace MHArmory.ViewModels
 
         public IAbility[] DesiredAbilities { get; }
 
+        public SearchResultsViewModel Parent { get { return root.SearchResultsViewModel; } }
+
         private readonly RootViewModel root;
 
-        public ArmorSetViewModel(RootViewModel root, ISolverData solverData, IList<IArmorPiece> armorPieces, ICharmLevel charm, IList<ArmorSetJewelViewModel> jewels, int[] spareSlots)
+        public ArmorSetViewModel(RootViewModel root, ISolverData solverData, IList<IArmorPiece> armorPieces, ICharmLevel charm, IEnumerable<ArmorSetJewelViewModel> jewels, int[] spareSlots)
         {
             this.root = root;
 
+            if (armorPieces.Count(x => x == null) > 0)
+            {
+            }
+
+            if (charm == null)
+            {
+            }
+
             this.armorPieces = armorPieces;
             this.charm = charm;
-            this.jewels = jewels;
+            this.jewels = jewels.OrderBy(x => x.Jewel.Id).ToList();
 
             DesiredAbilities = solverData.DesiredAbilities;
 
@@ -467,6 +602,15 @@ namespace MHArmory.ViewModels
             sb.Append($"- Ice: {TotalIceResistance}{newLine}");
             sb.Append($"- Dragon: {TotalDragonResistance}{newLine}");
 
+            if (Parent.ShowCraftMaterials)
+            {
+                sb.Append(newLine);
+
+                sb.Append($"**Craft materials**{newLine}");
+                foreach (ICraftMaterial craft in CraftMaterials)
+                    sb.Append($"- {Core.Localization.Get(craft.LocalizedItem)} x{craft.Quantity}{newLine}");
+            }
+
             return sb.ToString();
         }
 
@@ -526,7 +670,7 @@ namespace MHArmory.ViewModels
                     localAdditionalSkills.Add(new SearchResultSkillViewModel(skill, totalLevel, false));
             }
 
-            additionalSkills = localAdditionalSkills.ToArray();
+            additionalSkills = localAdditionalSkills.OrderBy(x => x.Skill.Id).ToArray();
         }
 
         private void CheckAbilitiesOnArmorSet(Dictionary<int, int> skills)

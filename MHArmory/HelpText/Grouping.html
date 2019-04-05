@@ -1,0 +1,62 @@
+Grouping
+
+<body style='font-family:"Segoe UI"'>
+<h3>Overview</h3>
+It is possible to group search results by five categories:
+<ul>
+    <li>Decorations</li>
+    <li>Defense</li>
+    <li>Spare slots</li>
+    <li>Additional skills</li>
+    <li>Resistances</li>
+</ul>
+When there is no grouping selected, the behavior is the same as before and all search results are presented separately.<br/>
+As soon as a grouping is selected, the search results are presented differently:
+<ul>
+    <li>a pane on the left shows the group representatives</li>
+    <li>a pane on the right shows the results contained in the selected group</li>
+</ul>
+This type of view is called a master/details view. Master on the left showing groups, details on the right showing detail of the currently selected group.<br/><br/>
+
+<h3>Scroll lock</h3>
+When a group is selected, it is indicated by a <b><span style="color:goldenrod">yellow highlight</span></b>, and the master view scrolling is locked. This is to ensure you never lose sight of what is representing the search results you see in the details view.<br/><br/>
+You can select another group visible while a different is already selected, switching the selection from a group to another directly. This keeps the scroll locked.<br/>
+If you want to scroll to see other groups, click on the currently selected group in order to deselect it, and thus release the lock.<br/><br/>
+
+<h3>Grouping</h3>
+When grouping by <b><span style="color: darkblue">Decorations</span></b>, <b>Armory</b> ensures all groups have different required decorations.<br/>
+What makes the discriminant for the group are the type of decorations and their amount required.<br/>
+For example, if there are two sets, one requires one <b><span style="color: orange">Steadfast</span></b> jewel, and another requires two <b><span style="color: orange">Steadfast</span></b> jewels, then they will be in two different groups.<br/><br/>
+
+When grouping by <b><span style="color: darkblue">Defense</span></b>, <b>Armory</b> ensures all groups have different defense values.<br/>
+What makes the discriminant for the group are the base defense, the maximum defense and the augmented defense all together.<br/>
+For example, if there are two sets, one gives 342 / 380 / 450 (Base / Max / Augmented), and another gives 344 / 380 / 450 (base defense differs, this is just an example), then they will be in two different groups.<br/><br/>
+
+When grouping by <b><span style="color: darkblue">Spare slots</span></b>, <b>Armory</b> ensures all groups have different spare slots.<br/>
+What makes the discriminant for the group are the size of the slot and their amount.<br/>
+For example, if there are two sets, one has only one slot size [2] available, and another has two slots size [2] available, then they will be in two different groups.<br/><br/>
+
+When grouping by <b><span style="color: darkblue">Additional skills</span></b>, <b>Armory</b> ensures all groups have different additional skills.<br/>
+What makes the discriminant for the group are the skill and their level.<br/>
+For example, if there are two sets, one additionally provides <b><span style="color: orange">Attack Boost</span></b> 2 / 7, and another additionally provides <b><span style="color: orange">Attack Boost</span></b> 3 / 7, then they will be in two different groups.<br/><br/>
+
+When grouping by <b><span style="color: darkblue">Resistances</span></b>, <b>Armory</b> ensures all groups have different elemental resistances.<br/>
+What makes the discriminant for the group are all the elemental resistance values.<br/>
+For example, if there are two sets, one gives 8, -10, 15, -16, 2 (Fire, Water, Thunder, Ice and Dragon), and another gives 8, -11, 15, -16, 2 (Water differs by one, this is just an example), then they will be in two different groups.<br/><br/>
+
+<h3>Multiple group selection</h3>
+It is possible to select multiple grouping criterias, making each group a unique combination of the selected groupings.<br/>
+For example, selecting <b><span style="color: darkblue">Defense</span></b> and <b><span style="color: darkblue">Spare slots</span></b>, having the following results:
+<ol>
+    <li>Defense: <b>340</b> / <b>380</b> / <b>420</b> - Spare slots: <b>[3] x0</b> / <b>[2] x1</b> / <b>[1] x0</b></li>
+    <li>Defense: <b>340</b> / <b>380</b> / <b>420</b> - Spare slots: <b>[3] x0</b> / <b>[2] x2</b> / <b>[1] x0</b></li>
+    <li>Defense: <b>344</b> / <b>384</b> / <b>424</b> - Spare slots: <b>[3] x0</b> / <b>[2] x1</b> / <b>[1] x0</b></li>
+    <li>Defense: <b>344</b> / <b>384</b> / <b>424</b> - Spare slots: <b>[3] x0</b> / <b>[2] x2</b> / <b>[1] x0</b></li>
+</ol>
+The above fours sets will end up in 4 different groups.<br/><br/>
+
+Sets 1 and 2 have the same defense, as well as sets 3 and 4. On the other hand, sets 1 and 3 have the same spare slots, as well as sets 2 and 4.<br/>
+If you were grouping by <b><span style="color: darkblue">Defense</span></b> you would get two groups with 1,2 and 3,4. If you were grouping by <b><span style="color: darkblue">Spare slots</span></b> you would get two groups with 1,3 and 2,4.<br/><br/>
+
+However, because you are grouping by <b><span style="color: darkblue">Defense</span></b> AND <b><span style="color: darkblue">Spare slots</span></b>, then you get four groups with only one set each, because combination of those produce different grouping discrimant for all cases.
+</body>

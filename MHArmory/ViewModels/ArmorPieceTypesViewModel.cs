@@ -7,12 +7,56 @@ using System.Windows.Input;
 using MHArmory.Core.DataStructures;
 using MHArmory.Search;
 using MHArmory.Search.Contracts;
+using MHArmory.Core.WPF;
+using MHArmory.Core;
 
 namespace MHArmory.ViewModels
 {
-    public class ArmorPieceTypesViewModel : ViewModelBase, IDisposable
+    public class AdvancedSearchEquipment : ViewModelBase, ISolverDataEquipmentModel
     {
-        public IList<ISolverDataEquipmentModel> Equipments { get; private set; }
+        public bool IsSelected
+        {
+            get { return model.IsSelected; }
+            set
+            {
+                if (model.IsSelected != value)
+                {
+                    model.IsSelected = value;
+                    onSelectionChanged();
+                    NotifyPropertyChanged();
+                }
+            }
+        }
+
+        private bool isVisible = true;
+        public bool IsVisible
+        {
+            get { return isVisible; }
+            set { SetValue(ref isVisible, value); }
+        }
+
+        public IEquipment Equipment { get { return model.Equipment; } }
+
+        private readonly ISolverDataEquipmentModel model;
+        private readonly Action onSelectionChanged;
+        private readonly bool originalSelection;
+
+        public AdvancedSearchEquipment(ISolverDataEquipmentModel model, Action onSelectionChanged)
+        {
+            this.model = model;
+            this.onSelectionChanged = onSelectionChanged;
+            originalSelection = model.IsSelected;
+        }
+
+        public void RestoreOriginalSelection()
+        {
+            IsSelected = originalSelection;
+        }
+    }
+
+    public class ArmorPieceTypesViewModel : ViewModelBase
+    {
+        public IList<AdvancedSearchEquipment> Equipments { get; private set; }
 
         public EquipmentType Type { get; }
 
@@ -23,78 +67,131 @@ namespace MHArmory.ViewModels
             private set { SetValue(ref selectedCount, value); }
         }
 
+        private string searchText;
+        public string SearchText
+        {
+            get { return searchText; }
+            set
+            {
+                if (SetValue(ref searchText, value))
+                    OnSearchTextChanged();
+            }
+        }
+
         public ICommand SelectAllCommand { get; }
         public ICommand UnselectAllCommand { get; }
         public ICommand InverseSelectionCommand { get; }
         public ICommand ResetSelectionCommand { get; }
 
-        public ArmorPieceTypesViewModel(EquipmentType type, IEnumerable<ISolverDataEquipmentModel> equipments)
+        private readonly RootViewModel root;
+
+        public ArmorPieceTypesViewModel(RootViewModel root, EquipmentType type, IEnumerable<ISolverDataEquipmentModel> equipments)
         {
+            this.root = root;
+
             Type = type;
-            Equipments = equipments.OrderBy(x => x.Equipment.Id).ToList();
+            Equipments = equipments
+                .OrderBy(x => x.Equipment.Id)
+                .Select(x => new AdvancedSearchEquipment(x, UpdateSelectedCount))
+                .ToList();
 
             SelectAllCommand = new AnonymousCommand(OnSelectAll);
             UnselectAllCommand = new AnonymousCommand(OnUnselectAll);
             InverseSelectionCommand = new AnonymousCommand(OnInverseSelection);
             ResetSelectionCommand = new AnonymousCommand(OnResetSelection);
 
-            foreach (ISolverDataEquipmentModel x in Equipments)
-                x.SelectionChanged += ItemSelectionChanged;
-
             UpdateSelectedCount();
         }
+
+        private void OnSearchTextChanged()
+        {
+            if (string.IsNullOrWhiteSpace(searchText))
+            {
+                foreach (AdvancedSearchEquipment x in Equipments)
+                    x.IsVisible = true;
+            }
+            else
+            {
+                var searchStatement = SearchStatement.Create(searchText, GlobalData.Instance.Aliases);
+
+                foreach (AdvancedSearchEquipment x in Equipments)
+                    x.IsVisible = searchStatement.IsMatching(Localization.Get(x.Equipment.Name));
+            }
+        }
+
+        private bool isInBatch;
 
         private void UpdateSelectedCount()
         {
-            SelectedCount = Equipments.Count(x => x.IsSelected);
-        }
+            if (isInBatch)
+                return;
 
-        private void ItemSelectionChanged(object sender, EventArgs e)
-        {
-            UpdateSelectedCount();
+            SelectedCount = Equipments.Count(x => x.IsSelected);
+            root.UpdateMetrics();
         }
 
         private void OnSelectAll(object parameter)
         {
-            foreach (ISolverDataEquipmentModel x in Equipments)
-                x.IsSelected = true;
-            ForceRefreshEquipments();
+            isInBatch = true;
+
+            try
+            {
+                foreach (AdvancedSearchEquipment x in Equipments.Where(x => x.IsVisible))
+                    x.IsSelected = true;
+            }
+            finally
+            {
+                isInBatch = false;
+                UpdateSelectedCount();
+            }
         }
 
         private void OnUnselectAll(object parameter)
         {
-            foreach (ISolverDataEquipmentModel x in Equipments)
+            isInBatch = true;
+
+            try
+            {
+                foreach (AdvancedSearchEquipment x in Equipments.Where(x => x.IsVisible))
                 x.IsSelected = false;
-            ForceRefreshEquipments();
+            }
+            finally
+            {
+                isInBatch = false;
+                UpdateSelectedCount();
+            }
         }
 
         private void OnInverseSelection(object parameter)
         {
-            foreach (ISolverDataEquipmentModel x in Equipments)
+            isInBatch = true;
+
+            try
+            {
+                foreach (AdvancedSearchEquipment x in Equipments.Where(x => x.IsVisible))
                 x.IsSelected = !x.IsSelected;
-            ForceRefreshEquipments();
+            }
+            finally
+            {
+                isInBatch = false;
+                UpdateSelectedCount();
+            }
         }
 
         private void OnResetSelection(object parameter)
         {
-            foreach (ISolverDataEquipmentModel x in Equipments)
+            isInBatch = true;
+
+            try
+            {
+                foreach (AdvancedSearchEquipment x in Equipments.Where(x => x.IsVisible))
                 x.RestoreOriginalSelection();
-            ForceRefreshEquipments();
-        }
-
-        internal void ForceRefreshEquipments()
-        {
-            IList<ISolverDataEquipmentModel> equipmentsReference = Equipments;
-            Equipments = null;
-            NotifyPropertyChanged(nameof(Equipments));
-            Equipments = equipmentsReference;
-            NotifyPropertyChanged(nameof(Equipments));
-        }
-
-        public void Dispose()
-        {
-            foreach (ISolverDataEquipmentModel x in Equipments)
-                x.SelectionChanged -= ItemSelectionChanged;
+            }
+            finally
+            {
+                isInBatch = false;
+                UpdateSelectedCount();
+            }
         }
     }
 }

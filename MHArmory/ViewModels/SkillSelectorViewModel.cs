@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Windows.Input;
 using MHArmory.Core;
 using MHArmory.Core.DataStructures;
+using MHArmory.Core.WPF;
 
 namespace MHArmory.ViewModels
 {
@@ -22,7 +23,18 @@ namespace MHArmory.ViewModels
         public IEnumerable<SkillViewModel> Skills
         {
             get { return skills; }
-            set { SetValue(ref skills, value); }
+            set
+            {
+                if (SetValue(ref skills, value))
+                    UpdateCategories();
+            }
+        }
+
+        private IList<NamedValueViewModel<bool>> categories;
+        public IList<NamedValueViewModel<bool>> Categories
+        {
+            get { return categories; }
+            private set { SetValue(ref categories, value); }
         }
 
         private VisibilityMode visibilityMode = VisibilityMode.All;
@@ -71,11 +83,35 @@ namespace MHArmory.ViewModels
             {
                 if (SetValue(ref searchText, value))
                 {
+                    OnSearchTextChanged();
                     if (Skills != null)
                         ComputeVisibility();
                 }
             }
         }
+
+        private string searchTextPayload;
+        private int? searchTextNumericModifier;
+
+        private static readonly char[] separators = new[] { ' ', '\t' };
+
+        private void OnSearchTextChanged()
+        {
+            searchTextPayload = searchText.Trim();
+            searchTextNumericModifier = null;
+
+            if (string.IsNullOrWhiteSpace(searchTextPayload))
+                return;
+
+            int lastSpace = searchTextPayload.LastIndexOfAny(separators);
+            if (lastSpace >= 0 && int.TryParse(searchTextPayload.Substring(lastSpace + 1), out int num))
+            {
+                searchTextNumericModifier = num;
+                searchTextPayload = searchTextPayload.Substring(0, lastSpace);
+            }
+        }
+
+        public ICommand SearchTextBasedSkillLevelSetCommand { get; }
 
         private void ComputeVisibility()
         {
@@ -102,14 +138,44 @@ namespace MHArmory.ViewModels
                 }
             }
 
-            skillViewModel.ApplySearchText(SearchStatement.Create(searchText));
+            if (Categories.Any(x => x.Value))
+            {
+                if (IsMatchingByCategory(skillViewModel) == false)
+                {
+                    skillViewModel.IsVisible = false;
+                    return;
+                }
+            }
+
+            skillViewModel.ApplySearchText(SearchStatement.Create(searchTextPayload, GlobalData.Instance.Aliases), searchTextNumericModifier);
+        }
+
+        private bool IsMatchingByCategory(SkillViewModel skillViewModel)
+        {
+            if (skillViewModel.Categories == null)
+                return false;
+
+            foreach (NamedValueViewModel<bool> category in Categories.Where(x => x.Value))
+            {
+                if (skillViewModel.Categories.Contains(category.Name))
+                    return true;
+            }
+
+            return false;
         }
 
         public ICommand CancelCommand { get; }
 
         public SkillSelectorViewModel()
         {
+            SearchTextBasedSkillLevelSetCommand = new AnonymousCommand(OnSearchTextBasedSkillLevelSet);
             CancelCommand = new AnonymousCommand(OnCancel);
+        }
+
+        private void OnSearchTextBasedSkillLevelSet()
+        {
+            foreach (SkillViewModel skill in Skills)
+                skill.ApplySearchTextSkillLevel();
         }
 
         private void OnCancel(object parameter)
@@ -122,6 +188,50 @@ namespace MHArmory.ViewModels
                     cancellable.IsCancelled = true;
                 }
             }
+        }
+
+        private void UpdateCategories()
+        {
+            var categories = new HashSet<string>();
+
+            foreach (SkillViewModel skill in Skills)
+            {
+                if (skill.Categories == null)
+                    continue;
+
+                foreach (string category in skill.Categories)
+                    categories.Add(category);
+            }
+
+            Categories = categories
+                .Select(x => new NamedValueViewModel<bool>(x, false, _ => ComputeVisibility()))
+                .ToList();
+        }
+    }
+
+    public class NamedValueViewModel<T> : ValueViewModel<T>
+    {
+        public string Name { get; }
+
+        public NamedValueViewModel(string name)
+            : this(name, default(T))
+        {
+        }
+
+        public NamedValueViewModel(string name, T initialValue)
+            : this(name, initialValue, null)
+        {
+        }
+
+        public NamedValueViewModel(string name, Action<T> notifyChanged)
+            : this(name, default(T), notifyChanged)
+        {
+        }
+
+        public NamedValueViewModel(string name, T initialValue, Action<T> notifyChanged)
+            : base(initialValue, notifyChanged)
+        {
+            Name = name;
         }
     }
 }

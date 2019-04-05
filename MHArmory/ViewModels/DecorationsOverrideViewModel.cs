@@ -10,6 +10,7 @@ using System.Windows.Input;
 using MHArmory.Configurations;
 using MHArmory.Core.DataStructures;
 using MHArmory.Services;
+using MHArmory.Core.WPF;
 using MHWSaveUtils;
 using Microsoft.Win32;
 using Newtonsoft.Json;
@@ -169,7 +170,7 @@ namespace MHArmory.ViewModels
             if (isLoadingConfiguration)
                 return;
 
-            var searchStatement = SearchStatement.Create(SearchText);
+            var searchStatement = SearchStatement.Create(SearchText, GlobalData.Instance.Aliases);
 
             foreach (JewelOverrideViewModel vm in Jewels)
                 ComputeVisibility(vm, searchStatement);
@@ -195,7 +196,7 @@ namespace MHArmory.ViewModels
             }
 
             if (searchStatement == null)
-                searchStatement = SearchStatement.Create(searchText);
+                searchStatement = SearchStatement.Create(searchText, GlobalData.Instance.Aliases);
 
             jewelOverrideViewModel.ApplySearchText(searchStatement);
         }
@@ -217,6 +218,9 @@ namespace MHArmory.ViewModels
         private async Task ImportInternal()
         {
             ISaveDataService saveDataService = ServicesContainer.GetService<ISaveDataService>();
+
+            if (saveDataService == null)
+                return;
 
             IList<SaveDataInfo> saveDataInfoItems = saveDataService.GetSaveInfo();
 

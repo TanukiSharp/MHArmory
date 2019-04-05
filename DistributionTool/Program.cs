@@ -4,6 +4,7 @@ using System.IO.Compression;
 using System.Linq;
 using System.Reflection;
 using System.Threading.Tasks;
+using Newtonsoft.Json;
 
 namespace DistributionTool
 {
@@ -16,6 +17,7 @@ namespace DistributionTool
         private const string BinaryFilename = "MHArmory.exe";
         private const string DistributionRootFolderName = "MHArmory";
         private const string DataFolderName = "data";
+        private const string ManifestFilename = "manifest.json";
 
         static int Main(string[] args)
         {
@@ -36,7 +38,8 @@ namespace DistributionTool
             FileCopyFailed = -5,
             OutputDirectoryDeletionFailed = -6,
             OutputArchiveDeletionFailed = -7,
-            ZipCreationFailed = -8
+            ZipCreationFailed = -8,
+            UpdateManifestFailed = -9,
         }
 
         private int Run(string[] args)
@@ -127,7 +130,8 @@ namespace DistributionTool
             if (CopyFiles(Path.Combine(sourceBinaryFullPath, DataFolderName), "json", dataOutputFilePath) == false)
                 return (int)ErrorCodes.FileCopyFailed;
 
-            string targetZipArchiveFullFilename = PathCombine(solutionFullPath, OutputDistributionsFolder, $"{DistributionRootFolderName}_{assemblyVersion}.zip");
+            string targetZipArchiveFilename = $"{DistributionRootFolderName}_{assemblyVersion}.zip";
+            string targetZipArchiveFullFilename = PathCombine(solutionFullPath, OutputDistributionsFolder, targetZipArchiveFilename);
 
             if (File.Exists(targetZipArchiveFullFilename))
             {
@@ -162,6 +166,15 @@ namespace DistributionTool
                 Console.WriteLine(ex.ToString());
                 return (int)ErrorCodes.ZipCreationFailed;
             }
+
+            bool updateManifestResult = UpdateManifest(
+                PathCombine(solutionFullPath, OutputDistributionsFolder, ManifestFilename),
+                targetZipArchiveFilename,
+                assemblyVersion
+            );
+
+            if (updateManifestResult == false)
+                return (int)ErrorCodes.UpdateManifestFailed;
 
             Console.WriteLine("Done.");
 
@@ -258,6 +271,50 @@ namespace DistributionTool
             // Make all paths Linux style, since Linux does not
             // support backslashes but Windows supports both.
             return Path.Combine(paths).Replace('\\', '/');
+        }
+
+        private bool UpdateManifest(string manifestFullFilename, string targetZipArchiveFilename, Version assemblyVersion)
+        {
+            try
+            {
+                SerializeJson(manifestFullFilename, new
+                {
+                    latestVersion = assemblyVersion.ToString(),
+                    latestArchive = targetZipArchiveFilename,
+                });
+
+                return true;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Failed to update manifest '{manifestFullFilename}'");
+                Console.WriteLine();
+                Console.WriteLine(ex.ToString());
+                return false;
+            }
+        }
+
+        public static void SerializeJson(string filename, object instance)
+        {
+            using (var sw = new StringWriter())
+            {
+                using (var jw = new JsonTextWriter(sw))
+                {
+                    jw.Formatting = Formatting.Indented;
+                    jw.IndentChar = ' ';
+                    jw.Indentation = 4;
+
+                    var serializer = new JsonSerializer
+                    {
+                        NullValueHandling = NullValueHandling.Ignore
+                    };
+                    serializer.Serialize(jw, instance);
+
+                    sw.WriteLine();
+
+                    File.WriteAllText(filename, sw.ToString());
+                }
+            }
         }
     }
 }

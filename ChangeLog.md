@@ -1,11 +1,52 @@
 # Change log
 
-## vNext (?)
+## 0.0.9.4 (2019/02/24)
 
+- Added craft materials to equipment<br/>
+    ![Craft materials](docs/misc/changelog_0.0.9.4_craft_materials.png)
+- Added a filter box to the skill loadouts window<br/>
+    ![Skill loadouts filtering](docs/misc/changelog_0.0.9.4_skill_loadouts_filtering.png)
+- In decoration override window, when decorations you own make an amount of skill points exceeding the skill max level, it is displayed in orange. Now additionally, if the amount is equal, it is displayed in blue.
+- Minor bug fixes
+
+## 0.0.9.3 (2019/02/09)
+
+- Fixed decorations and additional skills ordering in the search results (now it is consistent)
+- Improved text based skill selection by allowing more matches
+- Changed layout of the main window to allow more compact view
+
+## 0.0.9.2 (2019/02/04)
+
+- Fixed presentation issues with grouped search results (+ grouping bug fix)<br/>
+    ![Search results grouping](docs/misc/changelog_0.0.9.2_grouping_fix.png)
+- Added name filtering in advanced search window<br/>
+    ![Advanced search name filtering](docs/misc/changelog_0.0.9.2_advanced_search_name_filtering.png)
+- Skill loadout minor improvements<br/>
+    ![Reset current loadout](docs/misc/changelog_0.0.9.2_skill_loadout_menu.png)
+    - Added a `Reset` menu (reverts the current loadout to its original state)
+    - Added keyboard shortcut keys
+- Added text based skill selection in skill selector window<br/>
+    ![Text based skill selection](docs/misc/changelog_0.0.9.2_text_based_skill_selection.png)
+    - Then press `Enter` key to toggle selection of the skill level
+    - Read integrated help `Text-based skill selection` category for more information
+- Bug fixes
+
+## 0.0.9.1 (2019/02/02)
+
+- Added skill categories filtering<br/>
+    ![Skill categories](docs/misc/changelog_0.0.9.1_skill_categories.png)
+    - You can select multiple categories, showing all skills that are in at least one of those categories
+    - Selecting no category or all categories has the same effect of showing all skills
+
+## 0.0.9 (2019/01/30)
+
+- Search results grouping<br/>
+    ![Search results grouping](docs/misc/changelog_0.0.9.0_grouping.png)
 - Improved armor pieces selection based on slots
 - Fixed armor pieces data
     - Kulve Taroth armor pieces had wrong elemental resistance values
     - Previously failed to import Drachen Vambraces α
+- Added Gala Suit armor for save import reference
 
 ## 0.0.8.6 (2019/01/07)
 
@@ -46,8 +87,7 @@ Note that 0.0.8.2 has been skipped, it was an experimental build distributed to 
 - Added another condition to select candidate equipment for the search algorithm
     - Note that this may slow down searches that were previously faster
 
-- For PC players, you can now import equipments from your save data!
-
+- For PC players, you can now import equipments from your save data!<br/>
     ![Import button](docs/misc/changelog_0.0.8.0_import_equipment.png)
 
     It works like the jewels import feature, if you have more than one save data slot, a selector shows up for you to choose where to import from.
@@ -57,13 +97,13 @@ Note that 0.0.8.2 has been skipped, it was an experimental build distributed to 
 ## 0.0.7.3 (2018/11/14)
 
 - Added skill exclusion feature, based on [user suggestion](https://github.com/TanukiSharp/MHArmory/issues/2)<br/>
-This comes in very handy in specific cases where you want to exclude a skill because it is mutually exclusive with another.
+This comes in very handy in specific cases where you want to exclude a skill because it is mutually exclusive with another.<br/>
 
     ![Skill exclusion](docs/misc/changelog_0.0.7.3_skill_exclusion.png)
 
 - Added equipment override window<br/>
 You can now indicate the equipment pieces you do not own in order to exclude them from armor set search.<br/>
-The window comes with some good filtering to help you easily find what you look for.
+The window comes with some good filtering to help you easily find what you look for.<br/>
 
     ![Equipment override](docs/misc/changelog_0.0.7.3_equipment_override.png)
 
@@ -78,7 +118,7 @@ The window comes with some good filtering to help you easily find what you look 
 
 ## 0.0.7 (2018/10/30)
 
-- For PC players, you can now import jewels from your save data!
+- For PC players, you can now import jewels from your save data!<br/>
 
     ![Import button](docs/misc/changelog_0.0.7.0_import_jewels_01.png)
 
@@ -86,14 +126,14 @@ The window comes with some good filtering to help you easily find what you look 
 
     ![Save slot selector](docs/misc/changelog_0.0.7.0_import_jewels_02.png)
 
-- Take a screenshot of a specific armor set search result
+- Take a screenshot of a specific armor set search result<br/>
 
     ![search result screenshot](docs/misc/changelog_0.0.6.5_search_result_screenshot.png)
 
     - You can take directly to clipboard, very useful to quickly paste to a chat, email or image editor
     - You can also save it disk as PNG for later use
 
-- Now it is possible to filter equipments in the equipment window by also typing skill name or description
+- Now it is possible to filter equipments in the equipment window by also typing skill name or description<br/>
 
     ![search equipment by skill](docs/misc/changelog_0.0.6.5_equipment_search_skills.png)
 
@@ -102,7 +142,7 @@ The window comes with some good filtering to help you easily find what you look 
 This release contains optimizations that may not be perceivable for users with powerful computers.<br/>
 Hereafter are perceivable changes:
 
-- Auto-update is now available. Right-click on the red text when it appears for options
+- Auto-update is now available. Right-click on the red text when it appears for options<br/>
 
     ![auto-update](docs/misc/changelog_0.0.6.4_auto_update.png)
 
@@ -112,7 +152,7 @@ Hereafter are perceivable changes:
 - Added Harvest armors and event
 - Added another equipment selection condition that should result in more armor sets finding (but may also increase search time)
 - Events window now have select all, unselect all and inverse selection buttons too
-- Added a button to reset to the default selection in the advanced search window
+- Added a button to reset to the default selection in the advanced search window<br/>
 
     ![reset to default selection](docs/misc/changelog_0.0.6.4_reset_advanced_search.png)
 
@@ -126,12 +166,12 @@ From the end-user's perspective, here are the minor changes:
 - Now armor set search has a progress bar
 - Weapons tree can now be panned with mouse left button drag
 - Updated general description of all skills
-- Added skill general description to skill tooltips for even more context:
+- Added skill general description to skill tooltips for even more context:<br/>
 
     ![skill tooltop after again](docs/misc/changelog_0.0.6.3_skill_tooltip_after_again.png)
 
 - Improved integrated help, now showing on first run of **Armory**.
-- Moved skill loadouts menus
+- Moved skill loadouts menus<br/>
 
     ![skill loadouts menus](docs/misc/changelog_0.0.6.3_skill_loadouts_menus.png)
 
@@ -139,11 +179,11 @@ From the end-user's perspective, here are the minor changes:
 
 - Better skill tooltips
 
-    - Before:
+    - Before:<br/>
 
     ![skill tooltip before](docs/misc/changelog_0.0.6.2_skill_tooltip_before.png)
 
-    - After:
+    - After:<br/>
 
     ![skill tooltip after](docs/misc/changelog_0.0.6.2_skill_tooltip_after.png)
 
@@ -152,7 +192,7 @@ From the end-user's perspective, here are the minor changes:
 
 ## 0.0.6.1 (2018/09/25)
 
-- Added help window with decorations override explanation
+- Added help window with decorations override explanation<br/>
 
 ![integrated help menu](docs/misc/changelog_0.0.6.1_integrated_help.png)
 

@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using MHArmory.Core;
 using MHArmory.Core.DataStructures;
+using MHArmory.Core.WPF;
 
 namespace MHArmory.ViewModels
 {
@@ -22,6 +23,13 @@ namespace MHArmory.ViewModels
                 if (SetValue(ref isChecked, value))
                     parent?.CheckChanged(Level, isChecked);
             }
+        }
+
+        private bool isHidden;
+        public bool IsHidden
+        {
+            get { return isHidden; }
+            internal set { SetValue(ref isHidden, value); }
         }
 
         public int SkillId { get { return Ability.Skill.Id; } }
@@ -77,6 +85,7 @@ namespace MHArmory.ViewModels
         }
 
         public IList<AbilityViewModel> Abilities { get; }
+        public IList<string> Categories { get; }
 
         private static readonly Dictionary<string, string> ExcludeText = new Dictionary<string, string> { [Localization.DefaultLanguage] = "Exclude" };
 
@@ -86,6 +95,8 @@ namespace MHArmory.ViewModels
             this.jewels = jewels;
             this.root = root;
             this.skillSelector = skillSelector;
+
+            Categories = skill.Categories;
 
             UpdateJewelsText();
 
@@ -150,8 +161,13 @@ namespace MHArmory.ViewModels
             set { SetValue(ref isAvailable, value); }
         }
 
-        public void ApplySearchText(SearchStatement searchStatement)
+        // This variable is set to a 0 or higher value if it is subject to be set by search text, -1 otherwise.
+        private int searchTextSkillLevel = -1;
+
+        public void ApplySearchText(SearchStatement searchStatement, int? numercModifier)
         {
+            searchTextSkillLevel = -1;
+
             if (searchStatement == null || searchStatement.IsEmpty)
             {
                 IsVisible = true;
@@ -163,6 +179,38 @@ namespace MHArmory.ViewModels
                 searchStatement.IsMatching(Localization.Get(skill.Description)) ||
                 skill.Abilities.Any(x => searchStatement.IsMatching(Localization.Get(x.Description))) ||
                 searchStatement.IsMatching(JewelsText);
+
+            if (IsVisible)
+            {
+                if (numercModifier.HasValue == false)
+                {
+                    foreach (AbilityViewModel x in Abilities)
+                        x.IsHidden = false;
+                }
+                else
+                {
+                    if (numercModifier.Value < 0 || numercModifier.Value > skill.MaxLevel)
+                        IsVisible = false;
+                    else
+                    {
+                        searchTextSkillLevel = numercModifier.Value;
+                        foreach (AbilityViewModel x in Abilities)
+                            x.IsHidden = x.Level != numercModifier.Value;
+                    }
+                }
+            }
+        }
+
+        public void ApplySearchTextSkillLevel()
+        {
+            if (searchTextSkillLevel < 0)
+                return;
+
+            if (searchTextSkillLevel <= Abilities.Count)
+            {
+                Abilities[searchTextSkillLevel].IsChecked = !Abilities[searchTextSkillLevel].IsChecked;
+                CheckChanged(searchTextSkillLevel, true);
+            }
         }
 
         private bool isCheckChanging = false;

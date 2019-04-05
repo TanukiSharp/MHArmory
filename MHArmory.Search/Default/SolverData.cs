@@ -29,7 +29,7 @@ namespace MHArmory.Search.Default
         private List<SolverDataEquipmentModel> inputCharms;
         private List<SolverDataJewelModel> inputJewels;
 
-        public int MaxSkillCountPerArmorPiece { get; private set; }
+        private int maxSkillCountPerArmorPiece;
 
         public string Name { get; } = "Armory - Default";
         public string Author { get; } = "TanukiSharp";
@@ -62,7 +62,7 @@ namespace MHArmory.Search.Default
             maxSkills = Math.Max(maxSkills, inputWaists.MaxOrZero(x => x.Equipment.Abilities.Length));
             maxSkills = Math.Max(maxSkills, inputLegs.MaxOrZero(x => x.Equipment.Abilities.Length));
 
-            MaxSkillCountPerArmorPiece = maxSkills;
+            maxSkillCountPerArmorPiece = maxSkills;
 
             WeaponSlots = weaponSlots.ToArray();
             DesiredAbilities = desiredAbilities.ToArray();
@@ -70,8 +70,6 @@ namespace MHArmory.Search.Default
             ProcessInputData();
 
             UpdateReferences();
-
-            FreezeEquipmentSelection();
         }
 
         private void ProcessInputData()
@@ -103,27 +101,6 @@ namespace MHArmory.Search.Default
             AllLegs = inputLegs.ToArray<ISolverDataEquipmentModel>();
             AllCharms = inputCharms.ToArray<ISolverDataEquipmentModel>();
             AllJewels = inputJewels.ToArray<SolverDataJewelModel>();
-        }
-
-        private void FreezeEquipmentSelection()
-        {
-            foreach (ISolverDataEquipmentModel x in AllHeads)
-                x.FreezeSelection();
-
-            foreach (ISolverDataEquipmentModel x in AllChests)
-                x.FreezeSelection();
-
-            foreach (ISolverDataEquipmentModel x in AllGloves)
-                x.FreezeSelection();
-
-            foreach (ISolverDataEquipmentModel x in AllWaists)
-                x.FreezeSelection();
-
-            foreach (ISolverDataEquipmentModel x in AllLegs)
-                x.FreezeSelection();
-
-            foreach (ISolverDataEquipmentModel x in AllCharms)
-                x.FreezeSelection();
         }
 
         private void RemoveJewelsNotMatchingAnySkill()
@@ -296,7 +273,7 @@ namespace MHArmory.Search.Default
                 e.IsSelected =
                     e.IsMatchingArmorSetSkill ||
                     e.AverageSkillCompletionRatio >= MinimumAverageSkillCompletionRatio ||
-                    e.MatchingSkillTotalLevel >= MaxSkillCountPerArmorPiece ||
+                    e.MatchingSkillTotalLevel >= maxSkillCountPerArmorPiece ||
                     (e.MatchingSkillTotalLevel == e.Equipment.Abilities.Length && e.Equipment.Slots.Length > 0) ||
                     (e.Equipment.Slots.Length >= 2 && e.Equipment.Slots.Count(x => x >= 2) >= 1);
             }

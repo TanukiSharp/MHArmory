@@ -4,7 +4,7 @@
 <img src="docs/images/blue_shield.png" width="64" height="64"/>
 </td>
 <td border-collapse="collapse" border="none">
-<i>Current version: <b><a href="https://github.com/TanukiSharp/MHArmory/raw/master/Distributions/MHArmory_0.0.8.6.zip">0.0.8.6</a></b></i><br/><i>Last modification: <b>2019/01/07</b></i>
+<i>Current version: <b><a href="https://tanukisharp.github.io/MHArmory/download.html">0.0.9.4</a></b></i><br/><i>Last modification: <b>2019/02/24</b></i>
 </td>
 </tr>
 </table>
@@ -19,6 +19,8 @@ There are some parts in [Athena's ASS][10] I think could be improved, and for pr
 
 Also, I want to make **Armory** a community driven project, for people to be able to give their opinion and request features, thus open sourcing it on GitHub.
 
+![Main window](docs/images/main_hires.png)
+
 # How to contribute
 
 For any bug report or feature request, please fill an issue [here][9].
@@ -27,9 +29,8 @@ If you are a developer and want to contribute to code, I recommend to first open
 
 # Download
 
-Link to direct download: https://github.com/TanukiSharp/MHArmory/raw/master/Distributions/MHArmory_0.0.8.6.zip
+Link to direct download: https://tanukisharp.github.io/MHArmory/download.html
 
-Or here: https://tanukisharp.github.io/MHArmory/download.html<br/>
 Older versions can be downloaded as well, here: https://github.com/TanukiSharp/MHArmory/tree/master/Distributions
 
 When you update to a newer version of Armory, you can copy the `config.json` file from the old version to the new.
