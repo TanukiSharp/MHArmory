@@ -318,6 +318,37 @@ namespace MHArmory.ViewModels
             }
         }
 
+        // Works because the code that uses this is single threaded.
+        private static readonly IEquipment[] reusableEquipmentArray = new IEquipment[6];
+
+        private IList<ICraftMaterial> craftMaterials;
+        public IList<ICraftMaterial> CraftMaterials
+        {
+            get
+            {
+                SetCraftMaterials();
+                return craftMaterials;
+            }
+        }
+
+        private void SetCraftMaterials()
+        {
+            if (craftMaterials != null)
+                return;
+
+            for (int i = 0; i < armorPieces.Count; i++)
+                reusableEquipmentArray[i] = armorPieces[i];
+            reusableEquipmentArray[5] = charm;
+
+            craftMaterials = reusableEquipmentArray
+                .Where(x => x != null)
+                .SelectMany(x => x.CraftMaterials)
+                .GroupBy(x => x.LocalizedItem)
+                .Select(g => (ICraftMaterial)new CraftMaterial(g.Key, g.Sum(x => x.Quantity)))
+                .OrderBy(x => x.LocalizedItem.Id)
+                .ToList();
+        }
+
         public int TotalRarity { get; }
 
         public int TotalBaseDefense { get; }
@@ -385,6 +416,8 @@ namespace MHArmory.ViewModels
         }
 
         public IAbility[] DesiredAbilities { get; }
+
+        public SearchResultsViewModel Parent { get { return root.SearchResultsViewModel; } }
 
         private readonly RootViewModel root;
 
@@ -568,6 +601,15 @@ namespace MHArmory.ViewModels
             sb.Append($"- Thunder: {TotalThunderResistance}{newLine}");
             sb.Append($"- Ice: {TotalIceResistance}{newLine}");
             sb.Append($"- Dragon: {TotalDragonResistance}{newLine}");
+
+            if (Parent.ShowCraftMaterials)
+            {
+                sb.Append(newLine);
+
+                sb.Append($"**Craft materials**{newLine}");
+                foreach (ICraftMaterial craft in CraftMaterials)
+                    sb.Append($"- {Core.Localization.Get(craft.LocalizedItem)} x{craft.Quantity}{newLine}");
+            }
 
             return sb.ToString();
         }

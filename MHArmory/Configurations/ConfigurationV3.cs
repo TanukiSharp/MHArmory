@@ -21,6 +21,12 @@ namespace MHArmory.Configurations
         public SkillLoadoutItemConfigurationV2[] Skills { get; set; }
     }
 
+    public class ViewConfiguration
+    {
+        [JsonProperty("showCraftMaterials")]
+        public bool ShowCraftMaterials { get; set; }
+    }
+
     public class ConfigurationV3 : IConfiguration
     {
         [JsonProperty("version")]
@@ -49,6 +55,9 @@ namespace MHArmory.Configurations
 
         [JsonProperty("inParameters")]
         public InParametersConfigurationV2 InParameters { get; } = new InParametersConfigurationV2();
+
+        [JsonProperty("view")]
+        public ViewConfiguration View { get; } = new ViewConfiguration();
 
         [JsonProperty("windows")]
         public Dictionary<string, WindowConfiguration> Windows { get; } = new Dictionary<string, WindowConfiguration>();

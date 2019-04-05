@@ -1018,7 +1018,7 @@
         "level": 3,
         "description": {
             "EN": "Nullifies all elemental blights.",
-            "FR": "Annule les fléaux éémentaires",
+            "FR": "Annule les fléaux élémentaires",
             "JP": "すべての属性やられを無効化する。",
             "IT": "Annulla tutti i malus.",
             "DE": "Negiert die Wirkung von allen elementbasierten Pestarten.",
@@ -4352,6 +4352,19 @@
             "DE": "Erhöht den Element-Schaden durch gesprungene Angriffe.",
             "KR": "점프 공격의 속성 대미지 UP",
             "CN": "跳躍攻擊的屬性傷害UP"
+        }
+    },
+    {
+        "id": 335,
+        "level": 1,
+        "description": {
+            "EN": "Only those who complete the rigorous witcher training are allowed to use the powerful magic of the Igni Sign.",
+            "FR": "Seuls ceux qui complètent l'entraînement rigoureux des sorceleurs peuvent utilisar la puissante magie du signe d'Igni.",
+            "JP": "強力な炎魔法「イグニの印」を使用することができる。",
+            "IT": "Solo coloro che completano il rigoroso allenamento witcher possono usare la potente magia del segno Igni.",
+            "DE": "Nur wer das harte Hexer-Training absolviert hat, darf die Magie des mächtigen Igni-Zeichens einsetzen.",
+            "KR": "위쳐의 엄격한 시련을 견뎌내고, 뜻을 깨우친 자만이 강력한 화염마법1이그니 표식욜 다룰 수 있다.",
+            "CN": "Only those who complete the rigorous witcher training are allowed to use the powerful magic of the Igni Sign."
         }
     }
 ]

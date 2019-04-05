@@ -33,6 +33,7 @@ namespace MHArmory.ViewModels
         public int[] Slots { get { return Equipment.Slots; } }
         public IEvent Event { get { return Equipment.Event; } }
         public IAbility[] Abilities { get { return Equipment.Abilities; } }
+        public ICraftMaterial[] CraftMaterials { get { return Equipment.CraftMaterials; } }
 
         // This is used for the view, other types without see property
         // are considered not displaying the possessed mark.

@@ -4,7 +4,7 @@
 <img src="docs/images/blue_shield.png" width="64" height="64"/>
 </td>
 <td border-collapse="collapse" border="none">
-<i>Current version: <b><a href="https://tanukisharp.github.io/MHArmory/download.html">0.0.9.2</a></b></i><br/><i>Last modification: <b>2019/02/04</b></i>
+<i>Current version: <b><a href="https://tanukisharp.github.io/MHArmory/download.html">0.0.9.4</a></b></i><br/><i>Last modification: <b>2019/02/24</b></i>
 </td>
 </tr>
 </table>
@@ -18,6 +18,8 @@ The main motivation to do it has been led by the marvelous [Athena's ASS][10] ap
 There are some parts in [Athena's ASS][10] I think could be improved, and for programming language preference reasons, I decided to make my own application, in order to make it the way I want. Note that the data used by **Armory** is the one provided by [Athena's ASS][10].
 
 Also, I want to make **Armory** a community driven project, for people to be able to give their opinion and request features, thus open sourcing it on GitHub.
+
+![Main window](docs/images/main_hires.png)
 
 # How to contribute
 

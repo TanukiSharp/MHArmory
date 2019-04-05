@@ -29,7 +29,7 @@ namespace MHArmory.Search.Default
         private List<SolverDataEquipmentModel> inputCharms;
         private List<SolverDataJewelModel> inputJewels;
 
-        public int MaxSkillCountPerArmorPiece { get; private set; }
+        private int maxSkillCountPerArmorPiece;
 
         public string Name { get; } = "Armory - Default";
         public string Author { get; } = "TanukiSharp";
@@ -62,7 +62,7 @@ namespace MHArmory.Search.Default
             maxSkills = Math.Max(maxSkills, inputWaists.MaxOrZero(x => x.Equipment.Abilities.Length));
             maxSkills = Math.Max(maxSkills, inputLegs.MaxOrZero(x => x.Equipment.Abilities.Length));
 
-            MaxSkillCountPerArmorPiece = maxSkills;
+            maxSkillCountPerArmorPiece = maxSkills;
 
             WeaponSlots = weaponSlots.ToArray();
             DesiredAbilities = desiredAbilities.ToArray();
@@ -273,7 +273,7 @@ namespace MHArmory.Search.Default
                 e.IsSelected =
                     e.IsMatchingArmorSetSkill ||
                     e.AverageSkillCompletionRatio >= MinimumAverageSkillCompletionRatio ||
-                    e.MatchingSkillTotalLevel >= MaxSkillCountPerArmorPiece ||
+                    e.MatchingSkillTotalLevel >= maxSkillCountPerArmorPiece ||
                     (e.MatchingSkillTotalLevel == e.Equipment.Abilities.Length && e.Equipment.Slots.Length > 0) ||
                     (e.Equipment.Slots.Length >= 2 && e.Equipment.Slots.Count(x => x >= 2) >= 1);
             }

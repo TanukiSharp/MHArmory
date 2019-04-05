@@ -260,31 +260,11 @@ namespace MHArmory.ViewModels
             return GetSingleSelectedExtension<ISolverData>(ExtensionCategory.SolverData);
         }
 
-        public void CreateSolverData()
+        public void UpdateMetrics(ISolverData solverData = null)
         {
-            if (SearchResultsViewModel.IsDataLoaded == false || SelectedAbilities == null)
-                return;
+            if (solverData == null)
+                solverData = GetSelectedSolverData();
 
-            ISolverData solverData = GetSelectedSolverData();
-
-            var desiredAbilities = SelectedAbilities
-                .Where(x => x.IsChecked)
-                .Select(x => x.Ability)
-                .ToList();
-
-            solverData.Setup(
-                InParameters.Slots.Select(x => x.Value).ToList(),
-                GlobalData.Instance.Heads.Where(x => ArmorPieceMatchInParameters(x)),
-                GlobalData.Instance.Chests.Where(x => ArmorPieceMatchInParameters(x)),
-                GlobalData.Instance.Gloves.Where(x => ArmorPieceMatchInParameters(x)),
-                GlobalData.Instance.Waists.Where(x => ArmorPieceMatchInParameters(x)),
-                GlobalData.Instance.Legs.Where(x => ArmorPieceMatchInParameters(x)),
-                GlobalData.Instance.Charms.Where(x => EquipmentMatchInParameters(x)),
-                GlobalData.Instance.Jewels.Where(x => DecorationMatchInParameters(x)).Select(CreateSolverDataJewelModel),
-                desiredAbilities
-            );
-
-            /*************************************************************/
             var metrics = new SearchMetrics
             {
                 Heads = solverData.AllHeads.Count(x => x.IsSelected),
@@ -309,7 +289,33 @@ namespace MHArmory.ViewModels
             metrics.UpdateCombinationCount();
 
             SearchMetrics = metrics;
-            /*************************************************************/
+        }
+
+        public void CreateSolverData()
+        {
+            if (SearchResultsViewModel.IsDataLoaded == false || SelectedAbilities == null)
+                return;
+
+            ISolverData solverData = GetSelectedSolverData();
+
+            var desiredAbilities = SelectedAbilities
+                .Where(x => x.IsChecked)
+                .Select(x => x.Ability)
+                .ToList();
+
+            solverData.Setup(
+                InParameters.Slots.Select(x => x.Value).ToList(),
+                GlobalData.Instance.Heads.Where(x => ArmorPieceMatchInParameters(x)),
+                GlobalData.Instance.Chests.Where(x => ArmorPieceMatchInParameters(x)),
+                GlobalData.Instance.Gloves.Where(x => ArmorPieceMatchInParameters(x)),
+                GlobalData.Instance.Waists.Where(x => ArmorPieceMatchInParameters(x)),
+                GlobalData.Instance.Legs.Where(x => ArmorPieceMatchInParameters(x)),
+                GlobalData.Instance.Charms.Where(x => EquipmentMatchInParameters(x)),
+                GlobalData.Instance.Jewels.Where(x => DecorationMatchInParameters(x)).Select(CreateSolverDataJewelModel),
+                desiredAbilities
+            );
+
+            UpdateMetrics(solverData);
 
             UpdateAdvancedSearch();
 
@@ -361,12 +367,12 @@ namespace MHArmory.ViewModels
 
             var armorPieceTypesViewModels = new ArmorPieceTypesViewModel[]
             {
-                new ArmorPieceTypesViewModel(EquipmentType.Head, solverData.AllHeads),
-                new ArmorPieceTypesViewModel(EquipmentType.Chest, solverData.AllChests),
-                new ArmorPieceTypesViewModel(EquipmentType.Gloves, solverData.AllGloves),
-                new ArmorPieceTypesViewModel(EquipmentType.Waist, solverData.AllWaists),
-                new ArmorPieceTypesViewModel(EquipmentType.Legs, solverData.AllLegs),
-                new ArmorPieceTypesViewModel(EquipmentType.Charm, solverData.AllCharms)
+                new ArmorPieceTypesViewModel(this, EquipmentType.Head, solverData.AllHeads),
+                new ArmorPieceTypesViewModel(this, EquipmentType.Chest, solverData.AllChests),
+                new ArmorPieceTypesViewModel(this, EquipmentType.Gloves, solverData.AllGloves),
+                new ArmorPieceTypesViewModel(this, EquipmentType.Waist, solverData.AllWaists),
+                new ArmorPieceTypesViewModel(this, EquipmentType.Legs, solverData.AllLegs),
+                new ArmorPieceTypesViewModel(this, EquipmentType.Charm, solverData.AllCharms)
             };
 
             AdvancedSearchViewModel.Update(armorPieceTypesViewModels);

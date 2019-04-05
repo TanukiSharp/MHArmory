@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Input;
 using MHArmory.Configurations;
+using MHArmory.Core.WPF;
 using MHArmory.ViewModels;
 
 namespace MHArmory
@@ -54,9 +55,19 @@ namespace MHArmory
             }
 
             InputBindings.Add(new KeyBinding(loadoutSelectorViewModel.AcceptCommand, new KeyGesture(Key.Enter, ModifierKeys.None)));
-            InputBindings.Add(new KeyBinding(loadoutSelectorViewModel.CancelCommand, new KeyGesture(Key.Escape, ModifierKeys.None)));
+            InputBindings.Add(new KeyBinding(new AnonymousCommand(OnCancel), new KeyGesture(Key.Escape, ModifierKeys.None)));
 
             DataContext = loadoutSelectorViewModel;
+        }
+
+        private void OnCancel()
+        {
+            var cancellable = new CancellationCommandArgument();
+
+            loadoutSelectorViewModel.CancelCommand.ExecuteIfPossible(cancellable);
+
+            if (cancellable.IsCancelled == false)
+                Close();
         }
 
         private void OnEnd(bool? value)
