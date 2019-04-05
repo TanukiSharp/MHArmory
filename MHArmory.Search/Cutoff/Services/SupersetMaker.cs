@@ -49,11 +49,12 @@ namespace MHArmory.Search.Cutoff.Services
             {
                 { "EN", name }
             };
+            var craftMaterials = new CraftMaterial[0];
             IEvent ev = null;
             IEquipment equipment;
             if (type == EquipmentType.Charm)
             {
-                equipment = new CharmLevel(-1, 0, nameDict, 0, slots, abilities, ev);
+                equipment = new CharmLevel(-1, 0, nameDict, 0, slots, abilities, ev, craftMaterials);
             }
             else
             {
@@ -64,7 +65,7 @@ namespace MHArmory.Search.Cutoff.Services
                     .Distinct()
                     .ToArray();
                 IArmorPiece firstArmor = armorPieces.First();
-                equipment = new ArmorPiece(-1, nameDict, firstArmor.Type, 0, slots, abilities, setSkills, firstArmor.Defense, firstArmor.Resistances, firstArmor.Attributes, firstArmor.Assets, firstArmor.FullArmorSet, ev);
+                equipment = new ArmorPiece(-1, nameDict, firstArmor.Type, 0, slots, abilities, setSkills, firstArmor.Defense, firstArmor.Resistances, firstArmor.Attributes, firstArmor.Assets, firstArmor.FullArmorSet, ev, craftMaterials);
             }
             var info = new SupersetInfo(equipment, maxSkills);
             return info;

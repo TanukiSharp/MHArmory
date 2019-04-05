@@ -95,9 +95,7 @@ namespace MHArmory.Search.Cutoff
                 Sync = new object()
             };
             mappedCutoffSearch.ParallelizedDepthFirstSearch(parameters, 0, cancellationToken);
-            //mappedCutoffSearch.DepthFirstSearch(parameters, 0, cancellationToken);
-            //statistics.Dump();
-
+            
             return results;
         }
 

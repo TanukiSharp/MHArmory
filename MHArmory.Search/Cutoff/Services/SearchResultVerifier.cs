@@ -63,8 +63,11 @@ namespace MHArmory.Search.Cutoff.Services
                 return false;
             }
 
-            result.IsMatch = true;
-            result.SpareSlots = new int[]{totalSlots[1], totalSlots[2], totalSlots[3]};
+            result.SpareSlots = new int[CutoffSearchConstants.Slots];
+            for (int i = 0; i < CutoffSearchConstants.Slots; i++)
+            {
+                result.SpareSlots[i] = totalSlots[i+1];
+            }
             
             result.ArmorPieces = new List<IArmorPiece>(CutoffSearchConstants.ArmorTypes);
             for (int i = 0; i < CutoffSearchConstants.ArmorTypes; i++)
@@ -75,6 +78,8 @@ namespace MHArmory.Search.Cutoff.Services
                     result.ArmorPieces.Add((IArmorPiece)equipment.Equipment);
                 }
             }
+
+            result.IsMatch = true;
             result.Charm = (ICharmLevel)combination.Equipments[CutoffSearchConstants.ArmorTypes].Equipment;
             return true;
         }
@@ -102,13 +107,13 @@ namespace MHArmory.Search.Cutoff.Services
                     skillOverload -= remainingSkill;
                 }
             }
-            //int debt = combination.TotalDebt;
-            //int debt = combination.Equipments.Sum(x => x.SkillDebt);
+            
             int debt = 0;
-            for (int i = 0; i < 6; i++)
+            for (int i = 0; i < CutoffSearchConstants.EquipmentTypes; i++)
             {
                 debt += combination.Equipments[i].SkillDebt;
             }
+
             int remainingSlots = 0;
             for (int i = 1; i <= CutoffSearchConstants.Slots; ++i)
             {
