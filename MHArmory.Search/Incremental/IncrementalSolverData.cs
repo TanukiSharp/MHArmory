@@ -39,6 +39,8 @@ namespace MHArmory.Search.Incremental
             IEnumerable<IAbility> desiredAbilities
         )
         {
+            EnableSkillCompensation = false; // Should make this configurable
+
             AllJewels = jewels.ToArray();
             WeaponSlots = weaponSlots.ToArray();
             DesiredAbilities = desiredAbilities.ToArray();
@@ -75,21 +77,11 @@ namespace MHArmory.Search.Incremental
             AllCharms = ElectEquipments(charms);
         }
 
-        private ISolverDataEquipmentModel[] ElectEquipments(ElectionModel[] models)
+        private ISolverDataEquipmentModel[] ElectEquipments(IList<ElectionModel> models)
         {
-            /*SetComparisonLists(models);
-            var ordered = models
-                .OrderBy(x => x.AbsolutelyWorseThan.Count)
-                .ThenByDescending(x => x.AbsolutelyBetterThan.Count)
-                .ToList();
+            SetComparisonLists(models);
+            var list = models.Where(x => x.AbsolutelyWorseThan.Count <= 0).ToList();
 
-            var list = models.Where(x => x.AbsolutelyWorseThan.Count <= 0).ToList();*/
-
-            var list = new List<ElectionModel>();
-            foreach (ElectionModel model in models)
-            {
-                ElectEquipment(list, model);
-            }
             return list.Select(x => x.Model).ToArray();
         }
 
@@ -129,56 +121,25 @@ namespace MHArmory.Search.Incremental
             }
         }
 
-        private void ElectEquipment(IList<ElectionModel> list, ElectionModel equipment)
-        {
-            list.Add(equipment);
-            for (int i = 0; i < list.Count-1; i++)
-            {
-                ElectionModel other = list[i];
-                if (!other.IsSelected)
-                {
-                    continue;
-                }
-
-                bool currentBetter = IsBetter(equipment, other);
-                bool otherBetter = IsBetter(other, equipment);
-
-                if (currentBetter)
-                {
-                    if (!otherBetter)
-                    {
-                        other.IsSelected = false;
-                        //list.Remove(other);
-                        //i--;
-                    }
-                }
-                else if (otherBetter)
-                {
-                    equipment.IsSelected = false;
-                    return;
-                }
-            }
-        }
-
         private bool IsBetter(ElectionModel model, ElectionModel other)
         {
-            if (HasBetterByNonStats(model, other))
+            if (IsBetterByNonStats(model, other))
             {
                 return true;
             }
 
-            /*if(!HasBetterByNonStats(other, model))
+            if (!IsBetterByNonStats(other, model))
             {
                 if (HasBetterStats(model, other))
                 {
                     return true;
                 }
-            }*/
+            }
 
             return false;
         }
 
-        private bool HasBetterByNonStats(ElectionModel model, ElectionModel other)
+        private bool IsBetterByNonStats(ElectionModel model, ElectionModel other)
         {
             if (!model.FullSet && other.FullSet)
             {
@@ -189,11 +150,6 @@ namespace MHArmory.Search.Incremental
             {
                 return true;
             }
-
-            /*if (HasBetterSlots(model, other))
-            {
-                return true;
-            }*/
 
             if (HasBetterDesiredAbilities(model, other))
             {
@@ -215,26 +171,6 @@ namespace MHArmory.Search.Incremental
                     return true;
                 }
             }
-            return false;
-        }
-
-        private bool HasBetterSlots(ElectionModel model, ElectionModel other)
-        {
-            if (model.SlotCount > other.SlotCount)
-            {
-                return true;
-            }
-
-            if (model.MaxSlot > other.MaxSlot)
-            {
-                return true;
-            }
-
-            if (model.SlotSum > other.SlotSum)
-            {
-                return true;
-            }
-
             return false;
         }
 
@@ -283,7 +219,6 @@ namespace MHArmory.Search.Incremental
 
                 if (levelsMissing > 0)
                 {
-                    //canCompensateBySlots = false;
                     if (canCompensateBySlots)
                     {
                         int currentCompensation = CompensateBySlots(desiredAbility, levelsMissing, extraSlots);
