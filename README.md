@@ -27,6 +27,9 @@ For any bug report or feature request, please fill an issue [here][9].
 
 If you are a developer and want to contribute to code, I recommend to first open an [issue][9] to describe the problem to solve or feature to be implemented, before implementing it, in order to discuss about it.
 
+You can also extend **Armory** by implementing your own solver if you want. Here is a documentation about how a solver works, and how to make your own.<br/>
+[./MHArmory.Search/Documentation/README.md](./MHArmory.Search/Documentation/README.md)
+
 # Download
 
 Link to direct download: https://tanukisharp.github.io/MHArmory/download.html
