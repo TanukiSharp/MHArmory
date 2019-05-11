@@ -4,7 +4,7 @@
 <img src="docs/images/blue_shield.png" width="64" height="64"/>
 </td>
 <td border-collapse="collapse" border="none">
-<i>Current version: <b><a href="https://tanukisharp.github.io/MHArmory/download.html">0.0.9.4</a></b></i><br/><i>Last modification: <b>2019/02/24</b></i>
+<i>Current version: <b><a href="https://tanukisharp.github.io/MHArmory/download.html">0.0.9.5</a></b></i><br/><i>Last modification: <b>2019/05/10</b></i>
 </td>
 </tr>
 </table>
