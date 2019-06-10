@@ -1,5 +1,9 @@
 # Change log
 
+## 0.0.9.6 (2019/06/10)
+
+- Fixed bug preventing Armory from starting. Sincerely sorry for the troubles.
+
 ## 0.0.9.5 (2019/05/10)
 
 - Fixed data (added new armors for equipment import, localizations)
