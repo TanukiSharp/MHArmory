@@ -4,7 +4,7 @@
 <img src="docs/images/blue_shield.png" width="64" height="64"/>
 </td>
 <td border-collapse="collapse" border="none">
-<i>Current version: <b><a href="https://tanukisharp.github.io/MHArmory/download.html">0.0.9.4</a></b></i><br/><i>Last modification: <b>2019/02/24</b></i>
+<i>Current version: <b><a href="https://tanukisharp.github.io/MHArmory/download.html">0.0.9.6</a></b></i><br/><i>Last modification: <b>2019/06/10</b></i>
 </td>
 </tr>
 </table>
@@ -26,6 +26,9 @@ Also, I want to make **Armory** a community driven project, for people to be abl
 For any bug report or feature request, please fill an issue [here][9].
 
 If you are a developer and want to contribute to code, I recommend to first open an [issue][9] to describe the problem to solve or feature to be implemented, before implementing it, in order to discuss about it.
+
+You can also extend **Armory** by implementing your own solver if you want. Here is a documentation about how a solver works, and how to make your own.<br/>
+[./MHArmory.Search/Documentation/README.md](./MHArmory.Search/Documentation/README.md)
 
 # Download
 

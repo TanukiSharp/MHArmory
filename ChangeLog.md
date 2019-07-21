@@ -1,5 +1,18 @@
 # Change log
 
+## 0.0.9.6 (2019/06/10)
+
+- Fixed bug preventing Armory from starting. Sincerely sorry for the troubles.
+
+## 0.0.9.5 (2019/05/10)
+
+- Fixed data (added new armors for equipment import, localizations)
+- Several bug fixes
+- Now jewels are sorted by slot size and by quantity in search results<br/>
+    ![Search results jewels ordered](docs/misc/changelog_0.0.9.5_jewels_ordered.png)
+- Added a documentation to explain how a solver works, and how to extend Armory by implementing your own if you want<br/>
+    [./MHArmory.Search/Documentation/README.md](./MHArmory.Search/Documentation/README.md)
+
 ## 0.0.9.4 (2019/02/24)
 
 - Added craft materials to equipment<br/>
