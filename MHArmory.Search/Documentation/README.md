@@ -1,4 +1,8 @@
-﻿# Terminology
+﻿# Overview
+
+This document explains how a solver works, and how to extend **Armory** by implementing your own if you want.
+
+# Terminology
 
 ## Equipment
 

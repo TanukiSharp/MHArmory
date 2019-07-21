@@ -4201,8 +4201,28 @@
     },
     {
         "id": 222,
+        "type": 1,
+        "name": "Nergigante Helm γ"
+    },
+    {
+        "id": 222,
+        "type": 2,
+        "name": "Nergigante Mail γ"
+    },
+    {
+        "id": 222,
+        "type": 3,
+        "name": "Nergigante Vambraces γ"
+    },
+    {
+        "id": 222,
         "type": 4,
         "name": "Kushala Cocoon γ"
+    },
+    {
+        "id": 222,
+        "type": 5,
+        "name": "Nergigante Greaves γ"
     },
     {
         "id": 223,
@@ -4218,6 +4238,11 @@
         "id": 223,
         "type": 3,
         "name": "Zorah Claws γ"
+    },
+    {
+        "id": 223,
+        "type": 4,
+        "name": "Nergigante Coil γ"
     },
     {
         "id": 223,
@@ -4585,6 +4610,21 @@
         "name": "Faux Felyne Layered Head"
     },
     {
+        "id": 247,
+        "type": 2,
+        "name": "Kulve Taroth's Ire γ"
+    },
+    {
+        "id": 247,
+        "type": 3,
+        "name": "Kulve Taroth's Rage γ"
+    },
+    {
+        "id": 247,
+        "type": 5,
+        "name": "Kulve Taroth's Wrath γ"
+    },
+    {
         "id": 248,
         "type": 1,
         "name": "Sealed Eyepatch Layered Armor"
@@ -4593,6 +4633,11 @@
         "id": 249,
         "type": 1,
         "name": "Wiggler Head Layered Armor"
+    },
+    {
+        "id": 249,
+        "type": 4,
+        "name": "Kulve Taroth's Malice γ"
     },
     {
         "id": 250,
@@ -4608,6 +4653,11 @@
         "id": 253,
         "type": 1,
         "name": "Empress Crown γ"
+    },
+    {
+        "id": 258,
+        "type": 1,
+        "name": "Kulve Taroth's Fury γ"
     },
     {
         "id": 292,
@@ -4633,6 +4683,131 @@
         "id": 292,
         "type": 5,
         "name": "Sakura Layered Legs"
+    },
+    {
+        "id": 293,
+        "type": 1,
+        "name": "Geralt's Head α"
+    },
+    {
+        "id": 293,
+        "type": 2,
+        "name": "Geralt's Body α"
+    },
+    {
+        "id": 293,
+        "type": 3,
+        "name": "Geralt's Arms α"
+    },
+    {
+        "id": 293,
+        "type": 4,
+        "name": "Geralt's Torso α"
+    },
+    {
+        "id": 293,
+        "type": 5,
+        "name": "Geralt's Legs α"
+    },
+    {
+        "id": 294,
+        "type": 1,
+        "name": "Ciri's Head α"
+    },
+    {
+        "id": 294,
+        "type": 2,
+        "name": "Ciri's Body α"
+    },
+    {
+        "id": 294,
+        "type": 3,
+        "name": "Ciri's Arms α"
+    },
+    {
+        "id": 294,
+        "type": 4,
+        "name": "Ciri's Torso α"
+    },
+    {
+        "id": 294,
+        "type": 5,
+        "name": "Ciri's Legs α"
+    },
+    {
+        "id": 295,
+        "type": 1,
+        "name": "Geralt Layered Head"
+    },
+    {
+        "id": 295,
+        "type": 2,
+        "name": "Geralt Layered Chest"
+    },
+    {
+        "id": 295,
+        "type": 3,
+        "name": "Geralt Layered Arms"
+    },
+    {
+        "id": 295,
+        "type": 4,
+        "name": "Geralt Layered Torso"
+    },
+    {
+        "id": 295,
+        "type": 5,
+        "name": "Geralt Layered Legs"
+    },
+    {
+        "id": 296,
+        "type": 1,
+        "name": "Ciri Layered Head"
+    },
+    {
+        "id": 296,
+        "type": 2,
+        "name": "Ciri Layered Chest"
+    },
+    {
+        "id": 296,
+        "type": 3,
+        "name": "Ciri Layered Arms"
+    },
+    {
+        "id": 296,
+        "type": 4,
+        "name": "Ciri Layered Torso"
+    },
+    {
+        "id": 296,
+        "type": 5,
+        "name": "Ciri Layered Legs"
+    },
+    {
+        "id": 297,
+        "type": 1,
+        "name": "Bayek Layered Head"
+    },
+    {
+        "id": 297,
+        "type": 2,
+        "name": "Bayek Layered Chest"
+    },
+    {
+        "id": 297,
+        "type": 3,
+        "name": "Bayek Layered Arms"
+    },
+    {
+        "id": 297,
+        "type": 4,
+        "name": "Bayek Layered Torso"
+    },
+    {
+        "id": 297,
+        "type": 5,
+        "name": "Bayek Layered Legs"
     },
     {
         "id": 298,
