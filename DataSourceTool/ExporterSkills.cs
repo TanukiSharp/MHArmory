@@ -23,7 +23,11 @@ namespace DataSourceTool
     {
         public async Task Run(string[] args)
         {
-            string outputPath = Path.Combine(AppContext.BaseDirectory, "data");
+            string solutionPath = Common.FindSolutionPath();
+            if (solutionPath == null)
+                throw new InvalidOperationException($"Could not find solution path for '{Common.SolutionFilename}'");
+
+            string outputPath = Path.Combine(solutionPath, "MHArmory", "data");
 
             if (Directory.Exists(outputPath) == false)
                 Directory.CreateDirectory(outputPath);

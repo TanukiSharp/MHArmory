@@ -435,7 +435,7 @@ namespace MHArmory.ViewModels
 
             this.armorPieces = armorPieces;
             this.charm = charm;
-            this.jewels = jewels.OrderBy(x => x.Jewel.Id).ToList();
+            this.jewels = jewels.OrderByDescending(x => x.Jewel.SlotSize).ThenByDescending(x => x.Count).ThenBy(x => x.Jewel.Id).ToList();
 
             DesiredAbilities = solverData.DesiredAbilities;
 
