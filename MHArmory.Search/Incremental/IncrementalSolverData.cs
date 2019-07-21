@@ -176,15 +176,6 @@ namespace MHArmory.Search.Incremental
 
         private bool HasBetterDesiredAbilities(ElectionModel model, ElectionModel other)
         {
-            if (model.Equipment.Name["EN"].StartsWith("Nerg") && other.Equipment.Name["EN"].StartsWith("Nerg"))
-            {
-                int foo = 123;
-                if (foo == 0)
-                {
-                    return true;
-                }
-            }
-
             int compensatedBySots = 0;
             bool canCompensateBySlots = EnableSkillCompensation;
             var extraSlots = other.Equipment.Slots.ToList();
