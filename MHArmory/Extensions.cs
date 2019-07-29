@@ -2,6 +2,7 @@ using System;
 using MHArmory.Search.Default;
 using MHArmory.Search.Testing;
 using MHArmory.Search.Contracts;
+using MHArmory.Search.Cutoff;
 
 namespace MHArmory
 {
@@ -16,6 +17,7 @@ namespace MHArmory
         public static readonly ISolver[] Solvers = new ISolver[]
         {
             new Solver(),
+            CutoffSearch.Instance,
             new TestSolver(),
         };
     }
