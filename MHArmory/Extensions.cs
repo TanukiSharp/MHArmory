@@ -11,6 +11,7 @@ namespace MHArmory
         public static readonly ISolverData[] SolverData = new ISolverData[]
         {
             new SolverData(),
+            new IncrementalSolverData(),
             new TestSolverData(),
         };
 
