@@ -202,6 +202,14 @@ namespace MHArmory.Search.Default
             return true;
         }
 
+        private void ReturnSlotsArray(int[] slotsArray)
+        {
+            for (int i = 0; i < slotsArray.Length; i++)
+                slotsArray[i] = 0;
+
+            availableSlotsObjectPool.PutObject(slotsArray);
+        }
+
         private ArmorSetSearchResult IsArmorSetMatching(
             int[] weaponSlots, IEquipment[] equipments,
             SolverDataJewelModel[] matchingJewels,
@@ -216,9 +224,7 @@ namespace MHArmory.Search.Default
                 requiredJewels.Clear();
                 jewelResultObjectPool.PutObject(requiredJewels);
 
-                for (int i = 0; i < availableSlots.Length; i++)
-                    availableSlots[i] = 0;
-                availableSlotsObjectPool.PutObject(availableSlots);
+                ReturnSlotsArray(availableSlots);
             }
 
             if (IsAnyFullArmorSet(equipments))
