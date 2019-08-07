@@ -191,6 +191,17 @@ namespace MHArmory.Search.Default
             return false;
         }
 
+        private static bool AreAllSlotsUsed(int[] availableSlots)
+        {
+            foreach (int x in availableSlots)
+            {
+                if (x > 0)
+                    return false;
+            }
+
+            return true;
+        }
+
         private ArmorSetSearchResult IsArmorSetMatching(
             int[] weaponSlots, IEquipment[] equipments,
             SolverDataJewelModel[] matchingJewels,
@@ -261,18 +272,7 @@ namespace MHArmory.Search.Default
                 if (remaingAbilityLevels <= 0)
                     continue;
 
-                bool isAll = true;
-
-                foreach (int x in availableSlots)
-                {
-                    if (x > 0)
-                    {
-                        isAll = false;
-                        break;
-                    }
-                }
-
-                if (isAll)
+                if (AreAllSlotsUsed(availableSlots))
                 {
                     OnArmorSetMismatch();
                     return ArmorSetSearchResult.NoMatch;
