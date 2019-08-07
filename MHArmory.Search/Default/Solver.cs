@@ -258,59 +258,59 @@ namespace MHArmory.Search.Default
 
                 int remaingAbilityLevels = ability.Level - armorAbilityTotal;
 
+                if (remaingAbilityLevels <= 0)
+                    continue;
+
+                bool isAll = true;
+
+                foreach (int x in availableSlots)
+                {
+                    if (x > 0)
+                    {
+                        isAll = false;
+                        break;
+                    }
+                }
+
+                if (isAll)
+                {
+                    OnArmorSetMismatch();
+                    return ArmorSetSearchResult.NoMatch;
+                }
+
+                foreach (SolverDataJewelModel j in matchingJewels)
+                {
+                    // bold assumption, will be fucked if they decide to create jewels with multiple skills
+                    IAbility a = j.Jewel.Abilities[0];
+
+                    if (a.Skill.Id == ability.Skill.Id)
+                    {
+                        int requiredJewelCount = remaingAbilityLevels / a.Level;
+
+                        if (j.Available < requiredJewelCount)
+                        {
+                            OnArmorSetMismatch();
+                            return ArmorSetSearchResult.NoMatch;
+                        }
+
+                        if (ConsumeSlots(availableSlots, j.Jewel.SlotSize, requiredJewelCount) == false)
+                        {
+                            OnArmorSetMismatch();
+                            return ArmorSetSearchResult.NoMatch;
+                        }
+
+                        remaingAbilityLevels -= requiredJewelCount * a.Level;
+
+                        requiredJewels.Add(new ArmorSetJewelResult { Jewel = j.Jewel, Count = requiredJewelCount });
+
+                        break;
+                    }
+                }
+
                 if (remaingAbilityLevels > 0)
                 {
-                    bool isAll = true;
-
-                    foreach (int x in availableSlots)
-                    {
-                        if (x > 0)
-                        {
-                            isAll = false;
-                            break;
-                        }
-                    }
-
-                    if (isAll)
-                    {
-                        OnArmorSetMismatch();
-                        return ArmorSetSearchResult.NoMatch;
-                    }
-
-                    foreach (SolverDataJewelModel j in matchingJewels)
-                    {
-                        // bold assumption, will be fucked if they decide to create jewels with multiple skills
-                        IAbility a = j.Jewel.Abilities[0];
-
-                        if (a.Skill.Id == ability.Skill.Id)
-                        {
-                            int requiredJewelCount = remaingAbilityLevels / a.Level;
-
-                            if (j.Available < requiredJewelCount)
-                            {
-                                OnArmorSetMismatch();
-                                return ArmorSetSearchResult.NoMatch;
-                            }
-
-                            if (ConsumeSlots(availableSlots, j.Jewel.SlotSize, requiredJewelCount) == false)
-                            {
-                                OnArmorSetMismatch();
-                                return ArmorSetSearchResult.NoMatch;
-                            }
-
-                            remaingAbilityLevels -= requiredJewelCount * a.Level;
-
-                            requiredJewels.Add(new ArmorSetJewelResult { Jewel = j.Jewel, Count = requiredJewelCount });
-
-                            break;
-                        }
-                    }
-
-                    if (remaingAbilityLevels > 0)
-                    {
-                        OnArmorSetMismatch();
-                        return ArmorSetSearchResult.NoMatch;
-                    }
+                    OnArmorSetMismatch();
+                    return ArmorSetSearchResult.NoMatch;
                 }
             }
 
