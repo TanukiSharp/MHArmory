@@ -246,13 +246,13 @@ namespace MHArmory.Search.Default
 
                 foreach (IEquipment equipment in equipments)
                 {
-                    if (equipment != null)
+                    if (equipment == null)
+                        continue;
+
+                    foreach (IAbility a in equipment.Abilities)
                     {
-                        foreach (IAbility a in equipment.Abilities)
-                        {
-                            if (a.Skill.Id == ability.Skill.Id)
-                                armorAbilityTotal += a.Level;
-                        }
+                        if (a.Skill.Id == ability.Skill.Id)
+                            armorAbilityTotal += a.Level;
                     }
                 }
 
