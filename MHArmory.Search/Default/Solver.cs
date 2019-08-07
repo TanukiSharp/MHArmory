@@ -286,7 +286,7 @@ namespace MHArmory.Search.Default
                     if (a.Skill.Id != ability.Skill.Id)
                         continue;
 
-                    int requiredJewelCount = remaingAbilityLevels / a.Level;
+                    int requiredJewelCount = remaingAbilityLevels / a.Level; // This will turn into a bug with jewels providing skill with level 2 or more.
 
                     if (j.Available < requiredJewelCount)
                     {
