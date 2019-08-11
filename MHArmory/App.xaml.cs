@@ -90,9 +90,12 @@ namespace MHArmory
 
         public static void GetAssemblyInfo(StringBuilder sb)
         {
-            AssemblyName assemblyName = Assembly.GetEntryAssembly().GetName();
+            Type stringType = typeof(string);
+            var frameworkVersionInfo = FileVersionInfo.GetVersionInfo(new Uri(stringType.Assembly.CodeBase).LocalPath);
 
             sb.AppendFormat("Version: {0}\n", Version);
+            sb.AppendFormat("Runtime: {0}\n", Environment.Version);
+            sb.AppendFormat("Framework: {0}\n", frameworkVersionInfo.FileVersion);
             sb.AppendFormat("CurrentCulture: {0}\n", Thread.CurrentThread.CurrentCulture);
             sb.AppendFormat("CurrentUICulture: {0}\n", Thread.CurrentThread.CurrentUICulture);
             sb.AppendFormat("GitBranch: {0}\n", GitBranch);
