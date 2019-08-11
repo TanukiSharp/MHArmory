@@ -38,7 +38,8 @@ namespace MHArmory.Search.Default
         }
 
         protected override ArmorSetSearchResult IsArmorSetMatching(
-            int[] weaponSlots, IEquipment[] equipments,
+            int[] weaponSlots,
+            IEquipment[] equipments,
             SolverDataJewelModel[] matchingJewels,
             IAbility[] desiredAbilities
         )
