@@ -12,195 +12,22 @@ using MHArmory.Search.Contracts;
 
 namespace MHArmory.Search.Default
 {
-    public sealed class Solver : ISolver, IDisposable
+    public sealed class Solver : SolverBase, IDisposable
     {
-        private int currentCombinations;
-        private double totalCombinations;
-
-        public event Action<double> SearchProgress;
-
-        public string Name { get; } = "Armory - Default";
-        public string Author { get; } = "TaukiSharp";
-        public string Description { get; } = "Default search algorithm";
-        public int Version { get; } = 1;
+        public override string Name { get; } = "Armory - Default";
+        public override string Description { get; } = "Default search algorithm";
+        public override int Version { get; } = 1;
 
         public void Dispose()
         {
             jewelResultObjectPool.Dispose();
             availableSlotsObjectPool.Dispose();
             armorSetSkillPartsObjectPool.Dispose();
-            searchEquipmentsObjectPool.Dispose();
-
-            SearchProgress = null;
-        }
-
-        public async Task<IList<ArmorSetSearchResult>> SearchArmorSets(ISolverData solverData, CancellationToken cancellationToken)
-        {
-            var innerCancellation = new CancellationTokenSource();
-
-            Task updateTask = UpdateSearchProgression(innerCancellation.Token, cancellationToken);
-
-            IList<ArmorSetSearchResult> result = await Task.Factory.StartNew(() =>
-            {
-                return SearchArmorSetsInternal(
-                    solverData,
-                    cancellationToken
-                );
-            }, TaskCreationOptions.LongRunning).Unwrap();
-
-            innerCancellation.Cancel();
-
-            await updateTask;
-
-            if (cancellationToken.IsCancellationRequested == false)
-                SearchProgress?.Invoke(1.0);
-
-            return result;
-        }
-
-        private async Task UpdateSearchProgression(CancellationToken innerCancel, CancellationToken cancellationToken)
-        {
-            while (innerCancel.IsCancellationRequested == false && cancellationToken.IsCancellationRequested == false)
-            {
-                if (totalCombinations > 0)
-                    SearchProgress?.Invoke(currentCombinations / totalCombinations);
-
-                await Task.Delay(250);
-            }
         }
 
         private readonly ObjectPool<List<ArmorSetJewelResult>> jewelResultObjectPool = new ObjectPool<List<ArmorSetJewelResult>>(() => new List<ArmorSetJewelResult>());
         private readonly ObjectPool<int[]> availableSlotsObjectPool = new ObjectPool<int[]>(() => new int[3]);
         private readonly ObjectPool<Dictionary<IArmorSetSkillPart, int>> armorSetSkillPartsObjectPool = new ObjectPool<Dictionary<IArmorSetSkillPart, int>>(() => new Dictionary<IArmorSetSkillPart, int>(ArmorSetSkillPartEqualityComparer.Default));
-        private readonly ObjectPool<IEquipment[]> searchEquipmentsObjectPool = new ObjectPool<IEquipment[]>(() => new IEquipment[6]);
-
-        private async Task<IList<ArmorSetSearchResult>> SearchArmorSetsInternal(
-            ISolverData data,
-            CancellationToken cancellationToken
-        )
-        {
-            if (cancellationToken.IsCancellationRequested)
-                return null;
-
-            var allCharms = new List<ICharmLevel>();
-
-            if (cancellationToken.IsCancellationRequested)
-                return null;
-
-            var heads = new List<IArmorPiece>();
-            var chests = new List<IArmorPiece>();
-            var gloves = new List<IArmorPiece>();
-            var waists = new List<IArmorPiece>();
-            var legs = new List<IArmorPiece>();
-
-            var test = new List<ArmorSetSearchResult>();
-
-            var generator = new EquipmentCombinationGenerator(
-                searchEquipmentsObjectPool,
-                data.AllHeads.Where(x => x.IsSelected).Select(x => x.Equipment),
-                data.AllChests.Where(x => x.IsSelected).Select(x => x.Equipment),
-                data.AllGloves.Where(x => x.IsSelected).Select(x => x.Equipment),
-                data.AllWaists.Where(x => x.IsSelected).Select(x => x.Equipment),
-                data.AllLegs.Where(x => x.IsSelected).Select(x => x.Equipment),
-                data.AllCharms.Where(x => x.IsSelected).Select(x => x.Equipment)
-            );
-
-            var sb = new StringBuilder();
-
-            long hh = data.AllHeads.Count(x => x.IsSelected);
-            long cc = data.AllChests.Count(x => x.IsSelected);
-            long gg = data.AllGloves.Count(x => x.IsSelected);
-            long ww = data.AllWaists.Count(x => x.IsSelected);
-            long ll = data.AllLegs.Count(x => x.IsSelected);
-            long ch = data.AllCharms.Count(x => x.IsSelected);
-
-            long combinationCount =
-                Math.Max(hh, 1) *
-                Math.Max(cc, 1) *
-                Math.Max(gg, 1) *
-                Math.Max(ww, 1) *
-                Math.Max(ll, 1) *
-                Math.Max(ch, 1);
-
-            await Task.Yield();
-
-            var parallelOptions = new ParallelOptions
-            {
-                //MaxDegreeOfParallelism = 1, // to ease debugging
-                MaxDegreeOfParallelism = Environment.ProcessorCount
-            };
-
-            currentCombinations = 0;
-            totalCombinations = combinationCount;
-
-            ParallelLoopResult parallelResult;
-
-            try
-            {
-                OrderablePartitioner<IEquipment[]> partitioner = Partitioner.Create(generator.All(cancellationToken), EnumerablePartitionerOptions.NoBuffering);
-
-                parallelResult = Parallel.ForEach(partitioner, parallelOptions, equips =>
-                {
-                    if (cancellationToken.IsCancellationRequested)
-                    {
-                        searchEquipmentsObjectPool.PutObject(equips);
-                        return;
-                    }
-
-                    ArmorSetSearchResult searchResult = IsArmorSetMatching(data.WeaponSlots, equips, data.AllJewels, data.DesiredAbilities);
-
-                    Interlocked.Increment(ref currentCombinations);
-
-                    if (searchResult.IsMatch)
-                    {
-                        searchResult.ArmorPieces = new IArmorPiece[]
-                        {
-                            (IArmorPiece)equips[0],
-                            (IArmorPiece)equips[1],
-                            (IArmorPiece)equips[2],
-                            (IArmorPiece)equips[3],
-                            (IArmorPiece)equips[4],
-                        };
-                        searchResult.Charm = (ICharmLevel)equips[5];
-
-                        lock (test)
-                        {
-                            test.Add(searchResult);
-                        }
-                    }
-
-                    searchEquipmentsObjectPool.PutObject(equips);
-                });
-            }
-            finally
-            {
-                generator.Reset();
-            }
-
-            return test;
-        }
-
-        private static bool IsAnyFullArmorSet(IEquipment[] equipments)
-        {
-            foreach (IEquipment equipment in equipments)
-            {
-                if (equipment is IArmorPiece armorPiece && armorPiece.FullArmorSet != null)
-                    return true;
-            }
-
-            return false;
-        }
-
-        private static bool AreAllSlotsUsed(int[] availableSlots)
-        {
-            foreach (int x in availableSlots)
-            {
-                if (x > 0)
-                    return false;
-            }
-
-            return true;
-        }
 
         private void ReturnSlotsArray(int[] slotsArray)
         {
@@ -210,7 +37,7 @@ namespace MHArmory.Search.Default
             availableSlotsObjectPool.PutObject(slotsArray);
         }
 
-        private ArmorSetSearchResult IsArmorSetMatching(
+        protected override ArmorSetSearchResult IsArmorSetMatching(
             int[] weaponSlots, IEquipment[] equipments,
             SolverDataJewelModel[] matchingJewels,
             IAbility[] desiredAbilities
@@ -227,7 +54,7 @@ namespace MHArmory.Search.Default
                 ReturnSlotsArray(availableSlots);
             }
 
-            if (IsAnyFullArmorSet(equipments))
+            if (SolverUtils.IsAnyFullArmorSet(equipments))
             {
                 if (DataUtility.AreOnSameFullArmorSet(equipments) == false)
                 {
@@ -278,7 +105,7 @@ namespace MHArmory.Search.Default
                 if (remaingAbilityLevels <= 0)
                     continue;
 
-                if (AreAllSlotsUsed(availableSlots))
+                if (SolverUtils.AreAllSlotsUsed(availableSlots))
                 {
                     OnArmorSetMismatch();
                     return ArmorSetSearchResult.NoMatch;
@@ -408,111 +235,6 @@ namespace MHArmory.Search.Default
             }
 
             return jewelCount <= 0;
-        }
-
-        private class EquipmentCombinationGenerator
-        {
-            private readonly object syncRoot = new object();
-            private readonly ObjectPool<IEquipment[]> searchEquipmentsObjectPool;
-            private readonly IList<IEquipment>[] allEquipments;
-            private readonly int[] indexes;
-            private bool isEnd;
-
-            public int CombinationCount { get; }
-
-            public EquipmentCombinationGenerator(
-                ObjectPool<IEquipment[]> searchEquipmentsObjectPool,
-                IEnumerable<IEquipment> heads,
-                IEnumerable<IEquipment> chests,
-                IEnumerable<IEquipment> gloves,
-                IEnumerable<IEquipment> waists,
-                IEnumerable<IEquipment> legs,
-                IEnumerable<IEquipment> charms
-            )
-            {
-                this.searchEquipmentsObjectPool = searchEquipmentsObjectPool;
-
-                allEquipments = new IList<IEquipment>[]
-                {
-                    heads.ToList(),
-                    chests.ToList(),
-                    gloves.ToList(),
-                    waists.ToList(),
-                    legs.ToList(),
-                    charms.ToList()
-                };
-
-                indexes = new int[allEquipments.Length];
-
-                if (allEquipments.All(x => x.Count == 0))
-                    CombinationCount = 0;
-                else
-                {
-                    int combinationCount = 1;
-                    for (int i = 0; i < allEquipments.Length; i++)
-                        combinationCount *= Math.Max(allEquipments[i].Count, 1);
-                    CombinationCount = combinationCount;
-                }
-            }
-
-            private bool Increment()
-            {
-                for (int i = 0; i < indexes.Length; i++)
-                {
-                    indexes[i]++;
-
-                    if (indexes[i] < allEquipments[i].Count)
-                        return true;
-
-                    indexes[i] = 0;
-                }
-
-                return false;
-            }
-
-            public IEquipment[] Next(CancellationToken cancellationToken)
-            {
-                if (cancellationToken.IsCancellationRequested)
-                    return null;
-
-                lock (syncRoot)
-                {
-                    if (isEnd)
-                        return null;
-
-                    IEquipment[] equipments = searchEquipmentsObjectPool.GetObject();
-
-                    for (int i = 0; i < equipments.Length; i++)
-                    {
-                        IList<IEquipment> allCategoryEquipments = allEquipments[i];
-
-                        if (allCategoryEquipments.Count > indexes[i])
-                            equipments[i] = allCategoryEquipments[indexes[i]];
-                        else
-                            equipments[i] = null;
-                    }
-
-                    isEnd = Increment() == false;
-
-                    return equipments;
-                }
-            }
-
-            public IEnumerable<IEquipment[]> All(CancellationToken cancellationToken)
-            {
-                IEquipment[] result;
-
-                while ((result = Next(cancellationToken)) != null)
-                    yield return result;
-            }
-
-            public void Reset()
-            {
-                for (int i = 0; i < indexes.Length; i++)
-                    indexes[i] = 0;
-
-                isEnd = false;
-            }
         }
 
         private class ArmorSetSkillPartEqualityComparer : IEqualityComparer<IArmorSetSkillPart>
