@@ -13,8 +13,7 @@ namespace MHArmory.Search.Contracts
 
     public interface ISolverData : IExtension
     {
-        int[] WeaponSlots { get; }
-
+        IEquipment Weapon { get; }
         ISolverDataEquipmentModel[] AllHeads { get; }
         ISolverDataEquipmentModel[] AllChests { get; }
         ISolverDataEquipmentModel[] AllGloves { get; }
@@ -25,7 +24,7 @@ namespace MHArmory.Search.Contracts
         IAbility[] DesiredAbilities { get; }
 
         void Setup(
-            IList<int> weaponSlots,
+            IEquipment weapon,
             IEnumerable<IArmorPiece> heads,
             IEnumerable<IArmorPiece> chests,
             IEnumerable<IArmorPiece> gloves,

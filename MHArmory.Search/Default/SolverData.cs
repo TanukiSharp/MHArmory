@@ -11,7 +11,7 @@ namespace MHArmory.Search.Default
     {
         public const double MinimumAverageSkillCompletionRatio = 0.75;
 
-        public int[] WeaponSlots { get; private set; }
+        public IEquipment Weapon { get; private set; }
         public ISolverDataEquipmentModel[] AllHeads { get; private set; }
         public ISolverDataEquipmentModel[] AllChests { get; private set; }
         public ISolverDataEquipmentModel[] AllGloves { get; private set; }
@@ -37,7 +37,7 @@ namespace MHArmory.Search.Default
         public int Version { get; } = 1;
 
         public void Setup(
-            IList<int> weaponSlots,
+            IEquipment weapon,
             IEnumerable<IArmorPiece> heads,
             IEnumerable<IArmorPiece> chests,
             IEnumerable<IArmorPiece> gloves,
@@ -64,7 +64,7 @@ namespace MHArmory.Search.Default
 
             maxSkillCountPerArmorPiece = maxSkills;
 
-            WeaponSlots = weaponSlots.ToArray();
+            Weapon = weapon;
             DesiredAbilities = desiredAbilities.ToArray();
 
             ProcessInputData();

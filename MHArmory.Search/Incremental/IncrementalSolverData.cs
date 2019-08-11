@@ -5,7 +5,6 @@ using MHArmory.Search.Contracts;
 
 namespace MHArmory.Search.Incremental
 {
-
     public class IncrementalSolverData : ISolverData
     {
         public string Name { get; } = "Incremental solver data";
@@ -15,7 +14,7 @@ namespace MHArmory.Search.Incremental
 
         public bool EnableSkillCompensation { get; set; }
 
-        public int[] WeaponSlots { get; private set; }
+        public IEquipment Weapon { get; private set; }
         public ISolverDataEquipmentModel[] AllHeads { get; private set; }
         public ISolverDataEquipmentModel[] AllChests { get; private set; }
         public ISolverDataEquipmentModel[] AllGloves { get; private set; }
@@ -28,7 +27,7 @@ namespace MHArmory.Search.Incremental
         private IDictionary<int, SolverDataJewelModel> jewelsBySkillId;
 
         public void Setup(
-            IList<int> weaponSlots,
+            IEquipment weapon,
             IEnumerable<IArmorPiece> heads,
             IEnumerable<IArmorPiece> chests,
             IEnumerable<IArmorPiece> gloves,
@@ -42,7 +41,7 @@ namespace MHArmory.Search.Incremental
             EnableSkillCompensation = false; // Should make this configurable
 
             AllJewels = jewels.ToArray();
-            WeaponSlots = weaponSlots.ToArray();
+            Weapon = weapon;
             DesiredAbilities = desiredAbilities.ToArray();
 
             var desiredSkills = DesiredAbilities.Where(x => x.Level > 0).ToDictionary(x => x.Skill.Id);

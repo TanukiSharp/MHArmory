@@ -77,13 +77,13 @@ namespace MHArmory.Search.Cutoff
             statistics.Init(mapLengths);
             IList<ArmorSetSearchResult> results = new List<ArmorSetSearchResult>();
 
-            FullSetSearch(statistics, fullSets, solverData.WeaponSlots, solverData.DesiredAbilities, charms, solverData.AllJewels, results, cancellationToken);
+            FullSetSearch(statistics, fullSets, solverData.Weapon.Slots, solverData.DesiredAbilities, charms, solverData.AllJewels, results, cancellationToken);
 
             IList<SupersetInfo> supersets = allEquipment
                 .Select(list => supersetMaker.CreateSupersetModel(list, solverData.DesiredAbilities))
                 .ToList();
             MappedEquipment[] supersetMaps = mapper.MapSupersets(supersets, maps);
-            var combination = new Combination(supersetMaps, solverData.WeaponSlots, maps);
+            var combination = new Combination(supersetMaps, solverData.Weapon.Slots, maps);
 
             var parameters = new MappedCutoffSearchParameters
             {

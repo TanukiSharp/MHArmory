@@ -303,8 +303,11 @@ namespace MHArmory.ViewModels
                 .Select(x => x.Ability)
                 .ToList();
 
+            int[] weaponSlots = InParameters.Slots.Select(x => x.Value).ToArray();
+            var solverDataWeapon = new Weapon(-1, (WeaponType)(-1), weaponSlots, new IAbility[0], null);
+
             solverData.Setup(
-                InParameters.Slots.Select(x => x.Value).ToList(),
+                solverDataWeapon,
                 GlobalData.Instance.Heads.Where(x => ArmorPieceMatchInParameters(x)),
                 GlobalData.Instance.Chests.Where(x => ArmorPieceMatchInParameters(x)),
                 GlobalData.Instance.Gloves.Where(x => ArmorPieceMatchInParameters(x)),

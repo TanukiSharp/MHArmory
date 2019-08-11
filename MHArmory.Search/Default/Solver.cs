@@ -38,7 +38,7 @@ namespace MHArmory.Search.Default
         }
 
         protected override ArmorSetSearchResult IsArmorSetMatching(
-            int[] weaponSlots,
+            IEquipment weapon,
             IEquipment[] equipments,
             SolverDataJewelModel[] matchingJewels,
             IAbility[] desiredAbilities
@@ -64,9 +64,9 @@ namespace MHArmory.Search.Default
                 }
             }
 
-            if (weaponSlots != null)
+            if (weapon.Slots != null)
             {
-                foreach (int slotSize in weaponSlots)
+                foreach (int slotSize in weapon.Slots)
                 {
                     if (slotSize > 0)
                         availableSlots[slotSize - 1]++;

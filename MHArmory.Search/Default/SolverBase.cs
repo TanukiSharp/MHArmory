@@ -36,7 +36,7 @@ namespace MHArmory.Search.Default
             }
         }
 
-        protected abstract ArmorSetSearchResult IsArmorSetMatching(int[] weaponSlots, IEquipment[] equips, SolverDataJewelModel[] allJewels, IAbility[] desiredAbilities);
+        protected abstract ArmorSetSearchResult IsArmorSetMatching(IEquipment weapon, IEquipment[] equips, SolverDataJewelModel[] allJewels, IAbility[] desiredAbilities);
 
         private async Task<IList<ArmorSetSearchResult>> SearchArmorSetsInternal(
             ISolverData data,
@@ -105,7 +105,7 @@ namespace MHArmory.Search.Default
                         return;
                     }
 
-                    ArmorSetSearchResult searchResult = IsArmorSetMatching(data.WeaponSlots, equips, data.AllJewels, data.DesiredAbilities);
+                    ArmorSetSearchResult searchResult = IsArmorSetMatching(data.Weapon, equips, data.AllJewels, data.DesiredAbilities);
 
                     Interlocked.Increment(ref currentCombinations);
 

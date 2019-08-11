@@ -11,7 +11,7 @@ namespace MHArmory.Search.Testing
 {
     public class TestSolverData : ISolverData
     {
-        public int[] WeaponSlots { get; private set; }
+        public IEquipment Weapon { get; private set; }
 
         public ISolverDataEquipmentModel[] AllHeads { get; private set; }
         public ISolverDataEquipmentModel[] AllChests { get; private set; }
@@ -29,9 +29,9 @@ namespace MHArmory.Search.Testing
         public string Description { get; } = "Test solver search algorithm";
         public int Version { get; } = 51;
 
-        public void Setup(IList<int> weaponSlots, IEnumerable<IArmorPiece> heads, IEnumerable<IArmorPiece> chests, IEnumerable<IArmorPiece> gloves, IEnumerable<IArmorPiece> waists, IEnumerable<IArmorPiece> legs, IEnumerable<ICharmLevel> charms, IEnumerable<SolverDataJewelModel> jewels, IEnumerable<IAbility> desiredAbilities)
+        public void Setup(IEquipment weapon, IEnumerable<IArmorPiece> heads, IEnumerable<IArmorPiece> chests, IEnumerable<IArmorPiece> gloves, IEnumerable<IArmorPiece> waists, IEnumerable<IArmorPiece> legs, IEnumerable<ICharmLevel> charms, IEnumerable<SolverDataJewelModel> jewels, IEnumerable<IAbility> desiredAbilities)
         {
-            WeaponSlots = weaponSlots.ToArray();
+            Weapon = weapon;
 
             AllHeads = heads.Select(x => new SolverDataEquipmentModel(x)).Take(6).ToArray();
             AllChests = chests.Select(x => new SolverDataEquipmentModel(x)).Take(6).ToArray();
