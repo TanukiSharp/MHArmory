@@ -30,5 +30,17 @@ namespace MHArmory.Search.Default
 
             return true;
         }
+
+        public static void AccumulateAvailableSlots(IEquipment equipment, int[] availableSlots)
+        {
+            if (equipment == null)
+                return;
+
+            foreach (int slotSize in equipment.Slots)
+            {
+                if (slotSize > 0)
+                    availableSlots[slotSize - 1]++;
+            }
+        }
     }
 }

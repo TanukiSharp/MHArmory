@@ -64,23 +64,10 @@ namespace MHArmory.Search.Default
                 }
             }
 
-            if (weapon.Slots != null)
-            {
-                foreach (int slotSize in weapon.Slots)
-                {
-                    if (slotSize > 0)
-                        availableSlots[slotSize - 1]++;
-                }
-            }
+            SolverUtils.AccumulateAvailableSlots(weapon, availableSlots);
 
             foreach (IEquipment equipment in equipments)
-            {
-                if (equipment == null)
-                    continue;
-
-                foreach (int slotSize in equipment.Slots)
-                    availableSlots[slotSize - 1]++;
-            }
+                SolverUtils.AccumulateAvailableSlots(equipment, availableSlots);
 
             foreach (IAbility ability in desiredAbilities)
             {
