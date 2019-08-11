@@ -1,10 +1,8 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.27703.2035
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29201.188
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MHArmory", "MHArmory\MHArmory.csproj", "{B0A72C5D-4CE0-4417-BD68-B902B8C00EC6}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MHArmory.Core", "MHArmory.Core\MHArmory.Core.csproj", "{BD19A211-15EA-4896-8257-83A14F3C634F}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MHArmory.AthenaAssDataSource", "MHArmory.AthenaAssDataSource\MHArmory.AthenaAssDataSource.csproj", "{3796097E-B739-4F78-87B1-689DE3B66DBF}"
@@ -26,7 +24,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MHArmory.Search.Contracts",
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MHArmory.Search", "MHArmory.Search\MHArmory.Search.csproj", "{EFC218F1-AAE3-499A-A26C-85878B8CEC3A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MHArmory.Core.WPF", "MHArmory.Core.WPF\MHArmory.Core.WPF.csproj", "{0F590F55-0EEF-4F1B-ABBB-1D561BCEAD48}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MHArmory.Core.WPF", "MHArmory.Core.WPF\MHArmory.Core.WPF.csproj", "{0F590F55-0EEF-4F1B-ABBB-1D561BCEAD48}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MHArmory", "MHArmory\MHArmory.csproj", "{895541DA-19DF-4805-932C-2834BF8DB74F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -34,10 +34,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{B0A72C5D-4CE0-4417-BD68-B902B8C00EC6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{B0A72C5D-4CE0-4417-BD68-B902B8C00EC6}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{B0A72C5D-4CE0-4417-BD68-B902B8C00EC6}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{B0A72C5D-4CE0-4417-BD68-B902B8C00EC6}.Release|Any CPU.Build.0 = Release|Any CPU
 		{BD19A211-15EA-4896-8257-83A14F3C634F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{BD19A211-15EA-4896-8257-83A14F3C634F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BD19A211-15EA-4896-8257-83A14F3C634F}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -74,6 +70,10 @@ Global
 		{0F590F55-0EEF-4F1B-ABBB-1D561BCEAD48}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0F590F55-0EEF-4F1B-ABBB-1D561BCEAD48}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0F590F55-0EEF-4F1B-ABBB-1D561BCEAD48}.Release|Any CPU.Build.0 = Release|Any CPU
+		{895541DA-19DF-4805-932C-2834BF8DB74F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{895541DA-19DF-4805-932C-2834BF8DB74F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{895541DA-19DF-4805-932C-2834BF8DB74F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{895541DA-19DF-4805-932C-2834BF8DB74F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
