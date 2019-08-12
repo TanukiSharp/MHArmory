@@ -55,15 +55,6 @@ namespace MHArmory.Search.Default
                 ReturnSlotsArray(availableSlots);
             }
 
-            if (SolverUtils.IsAnyFullArmorSet(equipments))
-            {
-                if (DataUtility.AreOnSameFullArmorSet(equipments) == false)
-                {
-                    OnArmorSetMismatch();
-                    return ArmorSetSearchResult.NoMatch;
-                }
-            }
-
             SolverUtils.AccumulateAvailableSlots(weapon, availableSlots);
 
             foreach (IEquipment equipment in equipments)

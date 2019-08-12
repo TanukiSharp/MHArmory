@@ -105,6 +105,15 @@ namespace MHArmory.Search.Default
                         return;
                     }
 
+                    if (SolverUtils.IsAnyFullArmorSet(equips))
+                    {
+                        if (DataUtility.AreOnSameFullArmorSet(equips) == false)
+                        {
+                            searchEquipmentsObjectPool.PutObject(equips);
+                            return;
+                        }
+                    }
+
                     ArmorSetSearchResult searchResult = IsArmorSetMatching(data.Weapon, equips, data.AllJewels, data.DesiredAbilities);
 
                     Interlocked.Increment(ref currentCombinations);
