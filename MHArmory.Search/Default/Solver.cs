@@ -37,12 +37,16 @@ namespace MHArmory.Search.Default
             availableSlotsObjectPool.PutObject(slotsArray);
         }
 
-        protected override ArmorSetSearchResult IsArmorSetMatching(
-            IEquipment weapon,
-            IEquipment[] equipments,
-            SolverDataJewelModel[] matchingJewels,
-            IAbility[] desiredAbilities
-        )
+        private SolverDataJewelModel[] matchingJewels;
+        private IAbility[] desiredAbilities;
+
+        protected override void SetFixedArguments(SolverDataJewelModel[] matchingJewels, IAbility[] desiredAbilities)
+        {
+            this.matchingJewels = matchingJewels;
+            this.desiredAbilities = desiredAbilities;
+        }
+
+        protected override ArmorSetSearchResult IsArmorSetMatching(IEquipment weapon, IEquipment[] equipments)
         {
             List<ArmorSetJewelResult> requiredJewels = jewelResultObjectPool.GetObject();
             int[] availableSlots = availableSlotsObjectPool.GetObject();

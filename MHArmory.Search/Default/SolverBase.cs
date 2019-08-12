@@ -36,7 +36,8 @@ namespace MHArmory.Search.Default
             }
         }
 
-        protected abstract ArmorSetSearchResult IsArmorSetMatching(IEquipment weapon, IEquipment[] equips, SolverDataJewelModel[] allJewels, IAbility[] desiredAbilities);
+        protected abstract void SetFixedArguments(SolverDataJewelModel[] matchingJewels, IAbility[] desiredAbilities);
+        protected abstract ArmorSetSearchResult IsArmorSetMatching(IEquipment weapon, IEquipment[] equips);
 
         private async Task<IList<ArmorSetSearchResult>> SearchArmorSetsInternal(
             ISolverData data,
@@ -114,7 +115,7 @@ namespace MHArmory.Search.Default
                         }
                     }
 
-                    ArmorSetSearchResult searchResult = IsArmorSetMatching(data.Weapon, equips, data.AllJewels, data.DesiredAbilities);
+                    ArmorSetSearchResult searchResult = IsArmorSetMatching(data.Weapon, equips);
 
                     Interlocked.Increment(ref currentCombinations);
 
@@ -150,6 +151,8 @@ namespace MHArmory.Search.Default
             var innerCancellation = new CancellationTokenSource();
 
             Task updateTask = UpdateSearchProgression(innerCancellation.Token, cancellationToken);
+
+            SetFixedArguments(solverData.AllJewels, solverData.DesiredAbilities);
 
             IList<ArmorSetSearchResult> result = await Task.Factory.StartNew(
                 () => SearchArmorSetsInternal(solverData, cancellationToken),
