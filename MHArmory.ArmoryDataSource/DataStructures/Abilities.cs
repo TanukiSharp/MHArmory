@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using MHArmory.Core;
 using MHArmory.Core.DataStructures;
 using Newtonsoft.Json;
 
@@ -33,6 +34,11 @@ namespace MHArmory.ArmoryDataSource.DataStructures
         internal void Update(ISkill skill)
         {
             Skill = skill;
+        }
+
+        public override string ToString()
+        {
+            return $"{Localization.GetDefault(Skill.Name)} level {Level} ({Localization.GetDefault(Description)})";
         }
     }
 }
