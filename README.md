@@ -75,6 +75,8 @@ You can find a change log file [here](ChangeLog.md)
     - API website: https://docs.mhw-db.com
 - **AsteriskAmpersand**, helped a lot about save data
     - GitHub project site: https://github.com/AsteriskAmpersand/MHW-Save-Editor
+- **Frederik Schumacher**, for his work on the master data wiki
+    - GitLab wiki site: https://gitlab.com/frederik-schumacher/mhw-equipment-docs/wikis/home (private)
 - **Gediminas Masaitis**, for his awesome work on OpenCL to speed up the search algorithm
     - GitHub fork of Armory: https://github.com/GediminasMasaitis/MHArmory
 - **Testers/Contributors:** Deiv, Bjorn Lim, xaviex, Fatmice
