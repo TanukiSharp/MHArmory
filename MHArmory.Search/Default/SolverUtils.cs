@@ -42,5 +42,15 @@ namespace MHArmory.Search.Default
                     availableSlots[slotSize - 1]++;
             }
         }
+
+        public static int ComputeRequiredJewelsCount(int remaingAbilityLevels, int skillLevel, bool allowWaste)
+        {
+            int count = remaingAbilityLevels / skillLevel;
+
+            if (allowWaste && skillLevel * count < remaingAbilityLevels)
+                count++;
+
+            return count;
+        }
     }
 }
