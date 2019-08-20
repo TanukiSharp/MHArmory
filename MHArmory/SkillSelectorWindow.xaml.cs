@@ -83,7 +83,7 @@ namespace MHArmory
             if (EqualityComparer<T>.Default.Equals(field, value) == false)
             {
                 field = value;
-                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+                PropertyChanged?.Invoke(this, PropertyChangedEventArgsCache.Get(propertyName));
                 return true;
             }
 

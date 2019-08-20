@@ -4,6 +4,8 @@ using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using System.Windows.Threading;
 
+[assembly:InternalsVisibleTo("MHArmory")]
+
 namespace MHArmory.Core.WPF
 {
     public abstract class ViewModelBase : INotifyPropertyChanged
@@ -29,9 +31,25 @@ namespace MHArmory.Core.WPF
 
         protected void NotifyPropertyChanged([CallerMemberName]string propertyName = null)
         {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+            PropertyChanged?.Invoke(this, PropertyChangedEventArgsCache.Get(propertyName));
         }
 
         public event PropertyChangedEventHandler PropertyChanged;
+    }
+
+    internal class PropertyChangedEventArgsCache
+    {
+        private static readonly Dictionary<string, PropertyChangedEventArgs> cache = new Dictionary<string, PropertyChangedEventArgs>();
+
+        internal static PropertyChangedEventArgs Get(string name)
+        {
+            if (cache.TryGetValue(name, out PropertyChangedEventArgs result) == false)
+            {
+                result = new PropertyChangedEventArgs(name);
+                cache.Add(name, result);
+            }
+
+            return result;
+        }
     }
 }
