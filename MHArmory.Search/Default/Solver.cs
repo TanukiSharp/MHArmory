@@ -40,7 +40,7 @@ namespace MHArmory.Search.Default
         private SolverDataJewelModel[] matchingJewels;
         private IAbility[] desiredAbilities;
 
-        protected override void SetFixedArguments(SolverDataJewelModel[] matchingJewels, IAbility[] desiredAbilities)
+        protected override void OnSearchBegin(SolverDataJewelModel[] matchingJewels, IAbility[] desiredAbilities)
         {
             this.matchingJewels = matchingJewels;
             this.desiredAbilities = desiredAbilities;

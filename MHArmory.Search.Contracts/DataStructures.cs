@@ -12,7 +12,7 @@ namespace MHArmory.Search.Contracts
 
     public struct ArmorSetSearchResult
     {
-        public static readonly ArmorSetSearchResult NoMatch = new ArmorSetSearchResult { IsMatch = false };
+        public static readonly ArmorSetSearchResult NoMatch = default;
 
         public bool IsMatch;
         public IList<IArmorPiece> ArmorPieces;
