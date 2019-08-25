@@ -192,6 +192,13 @@ namespace MHArmory.ViewModels
         public IList<WeaponElementViewModel> Elements { get; }
         public bool IsCraftable { get; }
 
+        private bool isPossessed;
+        public bool IsPossessed
+        {
+            get { return isPossessed; }
+            set { SetValue(ref isPossessed, value); }
+        }
+
         private readonly IList<int> originalSlots;
 
         private IList<int> slots;
@@ -241,6 +248,8 @@ namespace MHArmory.ViewModels
             private set { SetValue(ref isFiltered, value); }
         }
 
+        public int SortIndex { get; }
+
         public WeaponTypeViewModel Parent { get; private set; }
 
         public WeaponViewModel(WeaponBase weapon)
@@ -251,6 +260,8 @@ namespace MHArmory.ViewModels
             Rarity = weapon.Rarity;
             Attack = weapon.Damage;
             Attributes = new WeaponAttributesViewModel(weapon);
+
+            SortIndex = weapon.SortOrder;
 
             if (weapon is MeleeWeapon meleeWeapon)
                 SharpnessLevels = meleeWeapon.Sharpness.Select(x => x.ToArray()).ToList();

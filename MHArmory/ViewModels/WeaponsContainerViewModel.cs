@@ -90,6 +90,46 @@ namespace MHArmory.ViewModels
                 WeaponTypes[0].IsActive = true;
         }
 
+        private static WeaponType ConvertWeaponType(MHWSaveUtils.WeaponType weaponType)
+        {
+            switch (weaponType)
+            {
+                case MHWSaveUtils.WeaponType.GreatSword: return WeaponType.GreatSword;
+                case MHWSaveUtils.WeaponType.SwordAndShield: return WeaponType.SwordAndShield;
+                case MHWSaveUtils.WeaponType.DualBlades: return WeaponType.DualBlades;
+                case MHWSaveUtils.WeaponType.LongSword: return WeaponType.LongSword;
+                case MHWSaveUtils.WeaponType.Hammer: return WeaponType.Hammer;
+                case MHWSaveUtils.WeaponType.HuntingHorn: return WeaponType.HuntingHorn;
+                case MHWSaveUtils.WeaponType.Lance: return WeaponType.Lance;
+                case MHWSaveUtils.WeaponType.Gunlance: return WeaponType.Gunlance;
+                case MHWSaveUtils.WeaponType.SwitchAxe: return WeaponType.SwitchAxe;
+                case MHWSaveUtils.WeaponType.ChargeBlade: return WeaponType.ChargeBlade;
+                case MHWSaveUtils.WeaponType.InsectGlaive: return WeaponType.InsectGlaive;
+                case MHWSaveUtils.WeaponType.Bow: return WeaponType.Bow;
+                case MHWSaveUtils.WeaponType.HeavyBowgun: return WeaponType.HeavyBowgun;
+                case MHWSaveUtils.WeaponType.LightBowgun: return WeaponType.LightBowgun;
+            }
+
+            throw new ArgumentException($"Unknown '{nameof(weaponType)}' argument value '{weaponType}'.");
+        }
+
+        public void UpdateSaveData(MHWSaveUtils.EquipmentsSaveSlotInfo saveData)
+        {
+            Dictionary<(WeaponType, int), int> saveDataWeapons = saveData.Equipments
+                .Where(x => x.Type == MHWSaveUtils.EquipmentType.Weapon)
+                .GroupBy(x => (ConvertWeaponType(x.WeaponType), (int)x.ClassId))
+                .ToDictionary(g => g.Key, g => g.Count());
+
+            foreach (WeaponViewModel weapon in allWeapons.Values)
+            {
+                if (saveDataWeapons.TryGetValue((weapon.Type, weapon.SortIndex), out int count))
+                {
+                    if (count > 0)
+                        weapon.IsPossessed = true;
+                }
+            }
+        }
+
         public async Task LoadWeaponsAsync()
         {
             try
