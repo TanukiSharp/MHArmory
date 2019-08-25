@@ -28,6 +28,19 @@ namespace MHArmory.Core.WPF.Controls
             new PropertyMetadata(Brushes.Gray)
         );
 
+        public double FullSharpnessHeight
+        {
+            get { return (double)GetValue(FullSharpnessHeightProperty); }
+            set { SetValue(FullSharpnessHeightProperty, value); }
+        }
+
+        public static readonly DependencyProperty FullSharpnessHeightProperty = DependencyProperty.Register(
+            nameof(FullSharpnessHeight),
+            typeof(double),
+            typeof(SharpnessRenderer),
+            new PropertyMetadata(0.0)
+        );
+
         public int SharpnessRank
         {
             get { return (int)GetValue(SharpnessRankProperty); }
@@ -41,15 +54,15 @@ namespace MHArmory.Core.WPF.Controls
             new PropertyMetadata(0, OnSharpnessParametersChanged)
         );
 
-        public IList<int[]> SharpnessLevels
+        public IList<ushort[]> SharpnessLevels
         {
-            get { return (IList<int[]>)GetValue(SharpnessLevelsProperty); }
+            get { return (IList<ushort[]>)GetValue(SharpnessLevelsProperty); }
             set { SetValue(SharpnessLevelsProperty, value); }
         }
 
         public static readonly DependencyProperty SharpnessLevelsProperty = DependencyProperty.Register(
             nameof(SharpnessLevels),
-            typeof(IList<int[]>),
+            typeof(IList<ushort[]>),
             typeof(SharpnessRenderer),
             new PropertyMetadata(OnSharpnessParametersChanged)
         );
@@ -67,6 +80,7 @@ namespace MHArmory.Core.WPF.Controls
             new SolidColorBrush(Color.FromRgb(0, 255, 0)), // green
             new SolidColorBrush(Color.FromRgb(0, 128, 255)), // blue
             new SolidColorBrush(Color.FromRgb(255, 255, 255)), // white
+            new SolidColorBrush(Color.FromRgb(200, 50, 200)), // purple
         };
 
         static SharpnessRenderer()
@@ -85,27 +99,40 @@ namespace MHArmory.Core.WPF.Controls
             base.OnRender(drawingContext);
 
             int localSharpnessRank = SharpnessRank;
-            IList<int[]> localSharpnessLevels = SharpnessLevels;
+            IList<ushort[]> localSharpnessLevels = SharpnessLevels;
 
-            if (localSharpnessLevels == null || localSharpnessRank < 0 || localSharpnessRank > localSharpnessLevels.Count - 1)
+            if (localSharpnessLevels == null || localSharpnessRank < 0)
                 return;
 
-            int[] sharpnessValues = localSharpnessLevels[localSharpnessRank];
+            ushort[] sharpnessValues = localSharpnessLevels[Math.Min(localSharpnessRank, localSharpnessLevels.Count - 1)];
 
             double localWidth = Width;
             double localHeight = Height;
+
+            double localFullSharpnessHeight = FullSharpnessHeight;
+            double currentSharpnessHeight = localHeight - localFullSharpnessHeight;
 
             double left = 0.0;
 
             for (int i = 0; i < sharpnessValues.Length; i++)
             {
                 double width = Math.Round(localWidth * sharpnessValues[i] / MaxSharpness);
-                drawingContext.DrawRectangle(SharpnessBrushes[i], null, new Rect(left, 0.0, width, localHeight));
+                drawingContext.DrawRectangle(SharpnessBrushes[i], null, new Rect(left, 0.0, width, currentSharpnessHeight));
                 left += width;
             }
 
             if (left < localWidth)
                 drawingContext.DrawRectangle(Background, null, new Rect(left, 0.0, localWidth - left, localHeight));
+
+            left = 0.0;
+            sharpnessValues = localSharpnessLevels[localSharpnessLevels.Count - 1];
+
+            for (int i = 0; i < sharpnessValues.Length; i++)
+            {
+                double width = Math.Round(localWidth * sharpnessValues[i] / MaxSharpness);
+                drawingContext.DrawRectangle(SharpnessBrushes[i], null, new Rect(left, currentSharpnessHeight, width, localFullSharpnessHeight));
+                left += width;
+            }
         }
     }
 }

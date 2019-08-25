@@ -1484,12 +1484,12 @@
     </DataTemplate>
 
     <HierarchicalDataTemplate x:Key="WeaponView" ItemsSource="{Binding Branches}">
-        <Grid Width="160" Height="96" Margin="12" TextBlock.FontWeight="Bold">
+        <Grid Width="185" Height="96" Margin="12" TextBlock.FontWeight="Bold">
             <Border x:Name="filtered" BorderBrush="#FF0080FF" BorderThickness="6" Margin="-5" CornerRadius="4" Visibility="Hidden" IsHitTestVisible="False"/>
             <Border x:Name="root" BorderBrush="Gray" Background="LightGray" BorderThickness="1" CornerRadius="3">
                 <StackPanel HorizontalAlignment="Stretch" VerticalAlignment="Stretch"> <!-- Splits name at top and the rest at bottom -->
                     <Viewbox VerticalAlignment="Top" HorizontalAlignment="Left" StretchDirection="DownOnly">
-                        <TextBlock Text="{Binding Name, Mode=OneTime}" FontWeight="Bold" Margin="5" VerticalAlignment="Center"/>
+                        <TextBlock Text="{mxt:Localization Name}" FontWeight="Bold" Margin="5" VerticalAlignment="Center"/>
                     </Viewbox>
                     <StackPanel Orientation="Horizontal" VerticalAlignment="Stretch"> <!-- Splits attributes on the right and the rest on the left -->
                         <DockPanel VerticalAlignment="Stretch"> <!-- Splits slots at bottom and the rest at top -->
@@ -1503,7 +1503,7 @@
                                         <TextBlock Text="{Binding Attack, Mode=OneTime}" Margin="2"/>
                                     </StackPanel>
                                     <Border BorderThickness="1" BorderBrush="Black" CornerRadius="0" Margin="3" Visibility="{Binding HasSharpness, Mode=OneTime, Converter={StaticResource CollapsedVisibilityValueConverter}}">
-                                        <ctrl:SharpnessRenderer Width="55" Height="6" Background="#FF1E1E1E" SharpnessLevels="{Binding SharpnessLevels, Mode=OneTime}" SharpnessRank="{Binding Parent.SharpnessRank}"/>
+                                        <ctrl:SharpnessRenderer Width="80" Height="10" FullSharpnessHeight="3" Background="#FF1E1E1E" SharpnessLevels="{Binding SharpnessLevels, Mode=OneTime}" SharpnessRank="{Binding Parent.SharpnessRank}"/>
                                     </Border>
                                     <StackPanel Orientation="Horizontal" Visibility="{Binding HasDeviation, Mode=OneTime, Converter={StaticResource CollapsedVisibilityValueConverter}}">
                                         <Image Source="{mxt:RasterizedImage Location=Icons/Attributes/Deviation.svg, Size=14}" Width="14" Height="14" VerticalAlignment="Center" Margin="2" SnapsToDevicePixels="True" bhv:ToolTipEx.Content="Deviation"/>

@@ -15,8 +15,8 @@ namespace MHArmory.ViewModels
 
         private readonly IList<WeaponViewModel> awaitingRootWeapons;
 
-        public WeaponType Type { get; }
-
+        public MHWMasterDataUtils.Core.WeaponType Type { get; }
+    
         private bool isDataLoading;
         public bool IsDataLoading
         {
@@ -100,7 +100,7 @@ namespace MHArmory.ViewModels
             }
         }
 
-        public WeaponTypeViewModel(WeaponType type, IList<WeaponViewModel> rootWeapons, WeaponsContainerViewModel parent)
+        public WeaponTypeViewModel(MHWMasterDataUtils.Core.WeaponType type, IList<WeaponViewModel> rootWeapons, WeaponsContainerViewModel parent)
         {
             Parent = parent;
 
@@ -112,7 +112,7 @@ namespace MHArmory.ViewModels
             ActivateCommand = new AnonymousCommand(OnActivate);
 
             foreach (WeaponViewModel weapon in rootWeapons)
-                weapon.SetParent(this);
+                weapon.SetParentType(this);
         }
 
         private async void SetRootWeapons()
@@ -135,17 +135,17 @@ namespace MHArmory.ViewModels
         {
             switch (Type)
             {
-                case WeaponType.GreatSword:
-                case WeaponType.LongSword:
-                case WeaponType.SwordAndShield:
-                case WeaponType.DualBlades:
-                case WeaponType.Hammer:
-                case WeaponType.HuntingHorn:
-                case WeaponType.Lance:
-                case WeaponType.Gunlance:
-                case WeaponType.SwitchAxe:
-                case WeaponType.ChargeBlade:
-                case WeaponType.InsectGlaive:
+                case MHWMasterDataUtils.Core.WeaponType.GreatSword:
+                case MHWMasterDataUtils.Core.WeaponType.LongSword:
+                case MHWMasterDataUtils.Core.WeaponType.SwordAndShield:
+                case MHWMasterDataUtils.Core.WeaponType.DualBlades:
+                case MHWMasterDataUtils.Core.WeaponType.Hammer:
+                case MHWMasterDataUtils.Core.WeaponType.HuntingHorn:
+                case MHWMasterDataUtils.Core.WeaponType.Lance:
+                case MHWMasterDataUtils.Core.WeaponType.Gunlance:
+                case MHWMasterDataUtils.Core.WeaponType.SwitchAxe:
+                case MHWMasterDataUtils.Core.WeaponType.ChargeBlade:
+                case MHWMasterDataUtils.Core.WeaponType.InsectGlaive:
                     IsSharpnessWeapon = true;
                     return;
             }

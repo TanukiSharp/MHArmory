@@ -268,10 +268,10 @@
     <None Include="data\arms.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="data\bow.json">
+    <None Include="data\bows.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="data\charge-blade.json">
+    <None Include="data\charge-blades.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Include="data\charmLevels.json">
@@ -295,49 +295,49 @@
     <None Include="data\gameEquipments.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="data\great-sword.json">
+    <None Include="data\great-swords.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="data\gunlance.json">
+    <None Include="data\gunlances.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="data\hammer.json">
+    <None Include="data\hammers.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Include="data\heads.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="data\heavy-bowgun.json">
+    <None Include="data\heavy-bowguns.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="data\hunting-horn.json">
+    <None Include="data\hunting-horns.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="data\insect-glaive.json">
+    <None Include="data\insect-glaives.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Include="data\jewels.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="data\lance.json">
+    <None Include="data\lances.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Include="data\legs.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="data\light-bowgun.json">
+    <None Include="data\light-bowguns.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="data\long-sword.json">
+    <None Include="data\long-swords.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Include="data\skills.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="data\switch-axe.json">
+    <None Include="data\switch-axes.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="data\sword-and-shield.json">
+    <None Include="data\sword-and-shields.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Include="data\waists.json">
@@ -367,6 +367,10 @@
     <ProjectReference Include="..\MHArmory.Search\MHArmory.Search.csproj">
       <Project>{efc218f1-aae3-499a-a26c-85878b8cec3a}</Project>
       <Name>MHArmory.Search</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MHWMasterDataUtils\MHWMasterDataUtils.Core\MHWMasterDataUtils.Core.csproj">
+      <Project>{ccec18d6-21c1-421f-9a38-4a7d71e7ab32}</Project>
+      <Name>MHWMasterDataUtils.Core</Name>
     </ProjectReference>
     <ProjectReference Include="..\MHWSaveUtils\MHWSaveUtils\MHWSaveUtils.csproj">
       <Project>{e0f3fd6a-4633-40f5-9a5d-6652a175727a}</Project>

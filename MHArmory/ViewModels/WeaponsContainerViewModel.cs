@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using MHArmory.ArmoryDataSource.DataStructures;
 using MHArmory.Core.WPF;
 using Newtonsoft.Json;
+using MHWMasterDataUtils.Core;
 
 namespace MHArmory.ViewModels
 {
@@ -21,7 +22,7 @@ namespace MHArmory.ViewModels
             private set { SetValue(ref isFeatureEnabled, value); }
         }
 
-        private string featureDisabledReason;
+        private string featureDisabledReason = string.Empty;
         public string FeatureDisabledReason
         {
             get { return featureDisabledReason; }
@@ -34,7 +35,7 @@ namespace MHArmory.ViewModels
                 weaponType.IsActive = weaponType == weaponTypeToActivate;
         }
 
-        private IDictionary<int, WeaponViewModel> allWeapons;
+        private IDictionary<(WeaponType, int), WeaponViewModel> allWeapons;
 
         private IList<WeaponTypeViewModel> weaponTypes;
         public IList<WeaponTypeViewModel> WeaponTypes
@@ -106,93 +107,132 @@ namespace MHArmory.ViewModels
             }
         }
 
-        private Task<IList<WeaponPrimitive>> LoadPrimitives(IList<string> filenames)
+        private Task<List<WeaponBase>> LoadWeaponPrimitives()
         {
-            IList<WeaponPrimitive> LoadPrimitivesInternal()
+            List<WeaponBase> LoadPrimitivesInternal()
             {
-                var weaponPrimitives = new List<WeaponPrimitive>();
+                var result = new List<WeaponBase>();
 
-                foreach (string filename in filenames)
-                {
-                    string weaponsContent = File.ReadAllText(filename);
-                    weaponPrimitives.AddRange(JsonConvert.DeserializeObject<IEnumerable<WeaponPrimitive>>(weaponsContent));
-                }
+                LoadWeapons<MeleeWeapon>(WeaponType.GreatSword, "great-swords", result);
+                LoadWeapons<MeleeWeapon>(WeaponType.LongSword, "long-swords", result);
+                LoadWeapons<DualBlades>(WeaponType.DualBlades, "dual-blades", result);
+                LoadWeapons<MeleeWeapon>(WeaponType.SwordAndShield, "sword-and-shields", result);
+                LoadWeapons<MeleeWeapon>(WeaponType.Hammer, "hammers", result);
+                LoadWeapons<HuntingHorn>(WeaponType.HuntingHorn, "hunting-horns", result);
+                LoadWeapons<MeleeWeapon>(WeaponType.Lance, "lances", result);
+                LoadWeapons<Gunlance>(WeaponType.Gunlance, "gunlances", result);
+                LoadWeapons<SwitchAxe>(WeaponType.SwitchAxe, "switch-axes", result);
+                LoadWeapons<ChargeBlade>(WeaponType.ChargeBlade, "charge-blades", result);
+                LoadWeapons<InsectGlaive>(WeaponType.InsectGlaive, "insect-glaives", result);
+                LoadWeapons<Bow>(WeaponType.Bow, "bows", result);
+                LoadWeapons<Bowgun>(WeaponType.HeavyBowgun, "heavy-bowguns", result);
+                LoadWeapons<Bowgun>(WeaponType.LightBowgun, "light-bowguns", result);
 
-                return weaponPrimitives;
+                return result;
             }
 
             return Task.Factory.StartNew(LoadPrimitivesInternal, TaskCreationOptions.LongRunning);
         }
 
-        private static readonly string[] weaponFilenames = new string[]
+        private static string ConvertToLegacyLocalizationKey(string newLocalizationKey)
         {
-            "great-sword",
-            "long-sword",
-            "sword-and-shield",
-            "dual-blades",
-            "hammer",
-            "hunting-horn",
-            "lance",
-            "gunlance",
-            "switch-axe",
-            "charge-blade",
-            "insect-glaive",
-            "light-bowgun",
-            "heavy-bowgun",
-            "bow"
-        };
+            switch (newLocalizationKey)
+            {
+                case "eng": return "EN";
+                case "fre": return "FR";
+                case "jpn": return "JP";
+                case "ita": return "IT";
+                case "ger": return "DE";
+                case "kor": return "KR";
+                case "cht": return "CN";
+            }
+
+            return null;
+        }
+
+        private static Dictionary<string, string> ConvertToLegacyLocalization(Dictionary<string, string> newLocalization)
+        {
+            var result = new Dictionary<string, string>();
+
+            foreach (KeyValuePair<string, string> kv in newLocalization)
+            {
+                string legacyLocalizationKey = ConvertToLegacyLocalizationKey(kv.Key);
+
+                if (legacyLocalizationKey == null)
+                    continue; // Dropping known language :'(
+
+                result.Add(legacyLocalizationKey, kv.Value);
+            }
+
+            return result;
+        }
+
+        private void LoadWeapons<T>(WeaponType weaponType, string filename, List<WeaponBase> output) where T : WeaponBase
+        {
+            string fullFilename = Path.Combine(AppContext.BaseDirectory, "data", $"{filename}.json");
+
+            if (File.Exists(fullFilename) == false)
+            {
+                IsFeatureEnabled = false;
+                FeatureDisabledReason += $"Weapons data unavailable ('{filename}' missing)";
+                return;
+            }
+
+            string weaponsContent = File.ReadAllText(fullFilename);
+            IEnumerable<T> weapons = JsonConvert.DeserializeObject<IEnumerable<T>>(weaponsContent);
+
+            foreach (WeaponBase weapon in weapons)
+            {
+                weapon.Type = weaponType;
+                weapon.Name = ConvertToLegacyLocalization(weapon.Name);
+                weapon.Description = ConvertToLegacyLocalization(weapon.Description);
+            }
+
+            output.AddRange(weapons);
+        }
 
         private async Task<bool> LoadWeaponsInternal()
         {
-            var fullFilenames = new List<string>();
-
-            foreach (string filename in weaponFilenames)
-            {
-                string fullFilename = Path.Combine(AppContext.BaseDirectory, "data", $"{filename}.json");
-
-                if (File.Exists(fullFilename) == false)
-                {
-                    IsFeatureEnabled = false;
-                    FeatureDisabledReason = $"Weapons data unavailable ('{filename}' missing)";
-                    return false;
-                }
-
-                fullFilenames.Add(fullFilename);
-            }
-
-            IList<WeaponPrimitive> allWeaponPrimitives = await LoadPrimitives(fullFilenames);
+            List<WeaponBase> allWeaponPrimitives = await LoadWeaponPrimitives();
 
             allWeapons = allWeaponPrimitives
                 .Select(x => new WeaponViewModel(x))
-                .ToDictionary(x => x.Id, x => x);
+                .ToDictionary(x => (x.Type, x.Id), x => x);
 
-            bool hasRoots = false;
+            var rootWeapons = new Dictionary<WeaponType, List<WeaponViewModel>>();
 
-            foreach (WeaponPrimitive primitive in allWeaponPrimitives)
+            foreach (WeaponBase primitive in allWeaponPrimitives)
             {
-                WeaponViewModel weapon = allWeapons[primitive.Id];
+                WeaponViewModel weapon = allWeapons[(primitive.Type, (int)primitive.Id)];
 
                 WeaponViewModel previous = null;
-                if (primitive.Crafting.Previous.HasValue)
-                    previous = allWeapons[primitive.Crafting.Previous.Value];
+                if (primitive.ParentId > -1)
+                    previous = allWeapons[(primitive.Type, primitive.ParentId)];
 
-                if (previous == null)
-                    hasRoots = true;
+                if (previous != null)
+                    weapon.SetParent(previous);
+                else
+                {
+                    if (rootWeapons.TryGetValue(weapon.Type, out List<WeaponViewModel> weapons) == false)
+                    {
+                        weapons = new List<WeaponViewModel>();
+                        rootWeapons.Add(weapon.Type, weapons);
+                    }
 
-                weapon.Update(previous, primitive.Crafting.Branches.Select(id => allWeapons[id]).ToList());
+                    weapons.Add(weapon);
+                }
             }
 
-            if (hasRoots == false)
+            if (rootWeapons.Count == 0)
             {
                 IsFeatureEnabled = false;
                 FeatureDisabledReason = "No weapons available";
+                return false;
             }
 
-            WeaponTypes = allWeaponPrimitives
-                .Where(x => x.Crafting.Previous == null)
-                .Select(x => allWeapons[x.Id])
-                .GroupBy(x => x.Type)
-                .Select(x => new WeaponTypeViewModel(x.Key, x.ToList(), this))
+            WeaponTypes = rootWeapons
+                .Select(kv => new WeaponTypeViewModel(kv.Key, kv.Value, this))
+                .OrderBy(x => x.Type)
                 .ToList();
 
             return true;

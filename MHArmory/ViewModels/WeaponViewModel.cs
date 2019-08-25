@@ -4,8 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using MHArmory.ArmoryDataSource.DataStructures;
+using MHArmory.Core;
 using MHArmory.Core.DataStructures;
 using MHArmory.Core.WPF;
+using MHWMasterDataUtils.Core;
 
 namespace MHArmory.ViewModels
 {
@@ -41,30 +43,41 @@ namespace MHArmory.ViewModels
         public int Defense { get; }
         public WeaponDeviation Deviation { get; }
 
-        public WeaponAttributesViewModel(WeaponAttributesPrimitive primitive)
+        public WeaponAttributesViewModel(WeaponBase weapon)
         {
-            switch (primitive.DamageType)
+            switch (weapon.Type)
             {
-                case "severe":
+                case MHWMasterDataUtils.Core.WeaponType.GreatSword:
+                case MHWMasterDataUtils.Core.WeaponType.LongSword:
+                case MHWMasterDataUtils.Core.WeaponType.DualBlades:
+                case MHWMasterDataUtils.Core.WeaponType.SwordAndShield:
+                case MHWMasterDataUtils.Core.WeaponType.ChargeBlade:
+                case MHWMasterDataUtils.Core.WeaponType.SwitchAxe:
+                case MHWMasterDataUtils.Core.WeaponType.Lance:
+                case MHWMasterDataUtils.Core.WeaponType.Gunlance:
+                case MHWMasterDataUtils.Core.WeaponType.InsectGlaive:
                     DamageType = WeaponDamageType.Severe;
                     break;
-                case "blunt":
+                case MHWMasterDataUtils.Core.WeaponType.Hammer:
+                case MHWMasterDataUtils.Core.WeaponType.HuntingHorn:
                     DamageType = WeaponDamageType.Blunt;
                     break;
-                case "projectile":
+                case MHWMasterDataUtils.Core.WeaponType.Bow:
+                case MHWMasterDataUtils.Core.WeaponType.LightBowgun:
+                case MHWMasterDataUtils.Core.WeaponType.HeavyBowgun:
                     DamageType = WeaponDamageType.Projectile;
                     break;
             }
 
-            switch (primitive.Elderseal)
+            switch (weapon.Elderseal)
             {
-                case "low":
+                case MHWMasterDataUtils.Core.Elderseal.Low:
                     Elderseal = WeaponElderseal.Low;
                     break;
-                case "average":
+                case MHWMasterDataUtils.Core.Elderseal.Average:
                     Elderseal = WeaponElderseal.Average;
                     break;
-                case "high":
+                case MHWMasterDataUtils.Core.Elderseal.High:
                     Elderseal = WeaponElderseal.High;
                     break;
                 default:
@@ -72,27 +85,30 @@ namespace MHArmory.ViewModels
                     break;
             }
 
-            switch (primitive.Deviation)
+            if (weapon is Bowgun bowgun)
             {
-                case "none":
-                    Deviation = WeaponDeviation.None;
-                    break;
-                case "low":
-                    Deviation = WeaponDeviation.Low;
-                    break;
-                case "average":
-                    Deviation = WeaponDeviation.Average;
-                    break;
-                case "high":
-                    Deviation = WeaponDeviation.High;
-                    break;
-                default:
-                    Deviation = WeaponDeviation.Unset;
-                    break;
+                switch (bowgun.Deviation)
+                {
+                    case BowgunDeviation.None:
+                        Deviation = WeaponDeviation.None;
+                        break;
+                    case BowgunDeviation.Low:
+                        Deviation = WeaponDeviation.Low;
+                        break;
+                    case BowgunDeviation.Average:
+                        Deviation = WeaponDeviation.Average;
+                        break;
+                    case BowgunDeviation.High:
+                        Deviation = WeaponDeviation.High;
+                        break;
+                    default:
+                        Deviation = WeaponDeviation.Unset;
+                        break;
+                }
             }
 
-            Affinity = primitive.Affinity;
-            Defense = primitive.Defense;
+            Affinity = weapon.Affinity;
+            Defense = weapon.Defense;
         }
     }
 
@@ -117,33 +133,33 @@ namespace MHArmory.ViewModels
             private set { SetValue(ref isHidden, value); }
         }
 
-        public WeaponElementViewModel(WeaponElementPrimitive primitive)
+        public WeaponElementViewModel(int damage, bool isHidden, ElementStatus elementStatus)
         {
-            originalValue = primitive.Value;
-            originalIsHidden = primitive.IsHidden;
+            originalValue = damage;
+            originalIsHidden = isHidden;
 
-            Type = ConvertElementType(primitive.Type);
+            Type = ConvertElementType(elementStatus);
 
             Value = originalValue;
             IsHidden = originalIsHidden;
         }
 
-        private ElementType ConvertElementType(string elementType)
+        private ElementType ConvertElementType(ElementStatus elementStatus)
         {
-            switch (elementType)
+            switch (elementStatus)
             {
-                case "fire": return ElementType.Fire;
-                case "water": return ElementType.Water;
-                case "thunder": return ElementType.Thunder;
-                case "ice": return ElementType.Ice;
-                case "dragon": return ElementType.Dragon;
-                case "poison": return ElementType.Poison;
-                case "sleep": return ElementType.Sleep;
-                case "paralysis": return ElementType.Paralysis;
-                case "blast": return ElementType.Blast;
+                case ElementStatus.Fire: return ElementType.Fire;
+                case ElementStatus.Water: return ElementType.Water;
+                case ElementStatus.Thunder: return ElementType.Thunder;
+                case ElementStatus.Ice: return ElementType.Ice;
+                case ElementStatus.Dragon: return ElementType.Dragon;
+                case ElementStatus.Poison: return ElementType.Poison;
+                case ElementStatus.Sleep: return ElementType.Sleep;
+                case ElementStatus.Paralysis: return ElementType.Paralysis;
+                case ElementStatus.Blast: return ElementType.Blast;
             }
 
-            throw new FormatException($"Unknown '{elementType}' element type.");
+            throw new FormatException($"Unknown '{elementStatus}' element type.");
         }
 
         public void FreeElementSkillChanged(int level)
@@ -167,16 +183,16 @@ namespace MHArmory.ViewModels
     public class WeaponViewModel : ViewModelBase
     {
         public int Id { get; }
-        public string Name { get; } // TODO: localization here
-        public WeaponType Type { get; }
+        public Dictionary<string, string> Name { get; }
+        public MHWMasterDataUtils.Core.WeaponType Type { get; }
         public int Rarity { get; }
         public int Attack { get; }
         public WeaponAttributesViewModel Attributes { get; }
-        public IList<int[]> SharpnessLevels { get; }
+        public List<ushort[]> SharpnessLevels { get; }
         public IList<WeaponElementViewModel> Elements { get; }
         public bool IsCraftable { get; }
 
-        private IList<int> originalSlots;
+        private readonly IList<int> originalSlots;
 
         private IList<int> slots;
         public IList<int> Slots
@@ -202,11 +218,11 @@ namespace MHArmory.ViewModels
 
         public bool HasSharpness
         {
-            get { return SharpnessLevels != null && SharpnessLevels.Count > 0; }
+            get { return SharpnessLevels != null; }
         }
 
         public WeaponViewModel Previous { get; private set; }
-        public IList<WeaponViewModel> Branches { get; private set; }
+        public List<WeaponViewModel> Branches { get; private set; }
 
         public bool HasParent { get; private set; }
         public bool HasChildren { get; private set; }
@@ -227,77 +243,76 @@ namespace MHArmory.ViewModels
 
         public WeaponTypeViewModel Parent { get; private set; }
 
-        public WeaponViewModel(WeaponPrimitive primitive)
+        public WeaponViewModel(WeaponBase weapon)
         {
-            Id = primitive.Id;
-            Name = primitive.Name;
-            Type = ConvertWeaponType(primitive.Type);
-            Rarity = primitive.Rarity;
-            Attack = primitive.Attack.Display;
-            Attributes = new WeaponAttributesViewModel(primitive.Attributes);
-            SharpnessLevels = primitive.SharpnessLevels?
-                .Select(p => new int[] { p.Red, p.Orange, p.Yellow, p.Green, p.Blue, p.White })
-                .ToList();
-            Elements = primitive.Elements.Select(x => new WeaponElementViewModel(x)).ToList();
-            IsCraftable = primitive.Crafting.IsCraftable;
+            Id = (int)weapon.Id;
+            Name = weapon.Name;
+            Type = weapon.Type;
+            Rarity = weapon.Rarity;
+            Attack = weapon.Damage;
+            Attributes = new WeaponAttributesViewModel(weapon);
 
-            originalSlots = primitive.Slots.Select(x => x.Rank).OrderByDescending(x => x).ToList();
+            if (weapon is MeleeWeapon meleeWeapon)
+                SharpnessLevels = meleeWeapon.Sharpness.Select(x => x.ToArray()).ToList();
+
+            Elements = CreateElements(weapon);
+
+            IsCraftable = weapon.Craft?.IsCraftable ?? false;
+
+            originalSlots = weapon.Slots.OrderByDescending(x => x).ToList();
             Slots = originalSlots;
         }
 
-        public void SetParent(WeaponTypeViewModel parent)
+        private static WeaponElementViewModel[] CreateElements(WeaponBase weapon)
+        {
+            var result = new List<WeaponElementViewModel>();
+
+            if (weapon.ElementStatus != ElementStatus.None)
+            {
+                int value = weapon.ElementStatusDamage > 0 ? weapon.ElementStatusDamage : weapon.HiddenElementStatusDamage;
+                bool isHidden = weapon.HiddenElementStatusDamage > 0;
+                ElementStatus elementStatus = weapon.ElementStatusDamage > 0 ? weapon.ElementStatus : weapon.HiddenElementStatus;
+
+                result.Add(new WeaponElementViewModel(value, isHidden, elementStatus));
+
+                if (weapon is DualBlades dualBlades && dualBlades.SecondaryElementStatus.HasValue)
+                {
+                    value = dualBlades.SecondaryElementStatusDamage.Value;
+                    elementStatus = dualBlades.SecondaryElementStatus.Value;
+
+                    result.Add(new WeaponElementViewModel(value, false, elementStatus));
+                }
+            }
+
+            return result.ToArray();
+        }
+
+        internal void SetParentType(WeaponTypeViewModel parent)
         {
             Parent = parent;
 
             if (Branches != null && Branches.Count > 0)
             {
                 foreach (WeaponViewModel child in Branches)
-                    child.SetParent(parent);
+                    child.SetParentType(parent);
             }
         }
 
-        private WeaponType ConvertWeaponType(string weaponType)
+        internal void SetParent(WeaponViewModel parent)
         {
-            switch (weaponType)
-            {
-                case "great-sword": return WeaponType.GreatSword;
-                case "long-sword": return WeaponType.LongSword;
-                case "sword-and-shield": return WeaponType.SwordAndShield;
-                case "dual-blades": return WeaponType.DualBlades;
-                case "hammer": return WeaponType.Hammer;
-                case "hunting-horn": return WeaponType.HuntingHorn;
-                case "lance": return WeaponType.Lance;
-                case "gunlance": return WeaponType.Gunlance;
-                case "switch-axe": return WeaponType.SwitchAxe;
-                case "charge-blade": return WeaponType.ChargeBlade;
-                case "insect-glaive": return WeaponType.InsectGlaive;
-                case "light-bowgun": return WeaponType.LightBowgun;
-                case "heavy-bowgun": return WeaponType.HeavyBowgun;
-                case "bow": return WeaponType.Bow;
-            }
-
-            throw new FormatException($"Unknown weapon type '{weaponType}'");
+            Previous = parent;
+            parent.AddChild(this);
         }
 
-        internal void Update(WeaponViewModel previous, IList<WeaponViewModel> children)
+        internal void AddChild(WeaponViewModel child)
         {
-            Previous = previous;
+            if (child == null)
+                throw new ArgumentNullException(nameof(child));
 
-            if (Previous != null)
-            {
-                HasParent = true;
-                if (Previous.Branches == null)
-                {
-                    // TODO: file data issue to mhw-db.com
-                    Previous.Branches = new WeaponViewModel[] { this };
-                }
-            }
+            if (Branches == null)
+                Branches = new List<WeaponViewModel>();
 
-            if (children != null && children.Count > 0)
-            {
-                Branches = children;
-                HasChildren = true;
-            }
+            Branches.Add(child);
         }
 
         public override string ToString()
@@ -318,7 +333,7 @@ namespace MHArmory.ViewModels
 
         public void UpdateFiltered(SearchStatement st)
         {
-            IsFiltered = st.IsMatching(Name);
+            IsFiltered = st.IsMatching(Localization.Get(Name));
 
             if (Branches != null)
             {
