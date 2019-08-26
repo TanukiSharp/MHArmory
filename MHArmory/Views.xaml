@@ -1485,7 +1485,7 @@
 
     <HierarchicalDataTemplate x:Key="WeaponView" ItemsSource="{Binding Branches}">
         <Grid Width="185" Height="96" Margin="12" TextBlock.FontWeight="Bold">
-            <Border x:Name="filtered" BorderBrush="#FF0080FF" BorderThickness="6" Margin="-5" CornerRadius="4" Visibility="Hidden" IsHitTestVisible="False"/>
+            <Border x:Name="filteredText" BorderBrush="#FF0080FF" BorderThickness="6" Margin="-5" CornerRadius="4" Visibility="Hidden" IsHitTestVisible="False"/>
             <Border x:Name="root" BorderBrush="Gray" Background="LightGray" BorderThickness="1" CornerRadius="3">
                 <StackPanel HorizontalAlignment="Stretch" VerticalAlignment="Stretch"> <!-- Splits name at top and the rest at bottom -->
                     <Viewbox VerticalAlignment="Top" HorizontalAlignment="Left" StretchDirection="DownOnly">
@@ -1545,7 +1545,7 @@
                 <Setter TargetName="fg" Property="Visibility" Value="Visible"/>
             </DataTrigger>
             <DataTrigger Binding="{Binding IsFiltered}" Value="True">
-                <Setter TargetName="filtered" Property="Visibility" Value="Visible"/>
+                <Setter TargetName="filteredText" Property="Visibility" Value="Visible"/>
             </DataTrigger>
         </HierarchicalDataTemplate.Triggers>
     </HierarchicalDataTemplate>
@@ -1588,8 +1588,8 @@
                 </StackPanel>
                 <ctrl:DraggableScrollViewer HorizontalScrollBarVisibility="Visible" VerticalScrollBarVisibility="Visible" bhv:HorizontalScrollBehavior.IsAttached="True">
                     <ctrl:CustomTreeView LineBrush="#FFC0C0C0" LineThickness="3" Margin="16"
-                                          ItemsSource="{Binding RootWeapons}" ItemTemplate="{StaticResource WeaponView}"
-                                          ScrollViewer.HorizontalScrollBarVisibility="Disabled" ScrollViewer.VerticalScrollBarVisibility="Disabled" ScrollViewer.CanContentScroll="False"/>
+                                         ItemsSource="{Binding RootWeapons}" ItemTemplate="{StaticResource WeaponView}"
+                                         ScrollViewer.HorizontalScrollBarVisibility="Disabled" ScrollViewer.VerticalScrollBarVisibility="Disabled" ScrollViewer.CanContentScroll="False"/>
                 </ctrl:DraggableScrollViewer>
             </Grid>
         </DockPanel>

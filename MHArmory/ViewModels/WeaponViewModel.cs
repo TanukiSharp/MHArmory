@@ -241,11 +241,11 @@ namespace MHArmory.ViewModels
             set { SetValue(ref isHihglight, value); }
         }
 
-        private bool isFiltered;
-        public bool IsFiltered
+        private bool isFilteredText;
+        public bool IsFilteredText
         {
-            get { return isFiltered; }
-            private set { SetValue(ref isFiltered, value); }
+            get { return isFilteredText; }
+            private set { SetValue(ref isFilteredText, value); }
         }
 
         public int SortIndex { get; }
@@ -334,7 +334,7 @@ namespace MHArmory.ViewModels
 
         public void ClearFiltered()
         {
-            IsFiltered = false;
+            IsFilteredText = false;
 
             if (Branches != null)
             {
@@ -345,7 +345,7 @@ namespace MHArmory.ViewModels
 
         public void UpdateFiltered(SearchStatement st)
         {
-            IsFiltered = st.IsMatching(Localization.Get(Name));
+            IsFilteredText = st.IsMatching(Localization.Get(Name));
 
             if (Branches != null)
             {
