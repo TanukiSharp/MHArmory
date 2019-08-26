@@ -18,6 +18,7 @@ namespace MHArmory.Services
             RegisterService<IRenderService>(new RenderService());
             RegisterService<ISearchResultScreenshotService>(new SearchResultScreenshotService());
             RegisterService<ISaveDataService>(new SaveDataService());
+            RegisterService<ISaveDataAdvancedService>(new SaveDataAdvancedService());
         }
 
         public static void RegisterService<T>(T instance)

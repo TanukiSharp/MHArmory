@@ -122,6 +122,7 @@
     <Compile Include="Services\MessageBoxService.cs" />
     <Compile Include="Services\RenameService.cs" />
     <Compile Include="Services\RenderService.cs" />
+    <Compile Include="Services\SaveDataAdvancedService.cs" />
     <Compile Include="Services\SaveDataService.cs" />
     <Compile Include="Services\SearchResultScreenshotService.cs" />
     <Compile Include="Services\ServicesContainer.cs" />
