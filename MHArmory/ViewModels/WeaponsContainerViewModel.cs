@@ -8,6 +8,8 @@ using MHArmory.ArmoryDataSource.DataStructures;
 using MHArmory.Core.WPF;
 using Newtonsoft.Json;
 using MHWMasterDataUtils.Core;
+using System.Windows.Input;
+using MHArmory.Services;
 
 namespace MHArmory.ViewModels
 {
@@ -44,9 +46,13 @@ namespace MHArmory.ViewModels
             set { SetValue(ref weaponTypes, value); }
         }
 
+        public ICommand ImportCommand { get; }
+
         public WeaponsContainerViewModel(RootViewModel rootViewModel)
         {
             this.rootViewModel = rootViewModel;
+
+            ImportCommand = new AnonymousCommand(OnImport);
         }
 
         public void UpdateHighlights()
@@ -115,7 +121,7 @@ namespace MHArmory.ViewModels
 
         public void UpdateSaveData(MHWSaveUtils.EquipmentsSaveSlotInfo saveData)
         {
-            Dictionary<(WeaponType, int), int> saveDataWeapons = saveData.Equipments
+            var saveDataWeapons = saveData.Equipments
                 .Where(x => x.Type == MHWSaveUtils.EquipmentType.Weapon)
                 .GroupBy(x => (ConvertWeaponType(x.WeaponType), (int)x.ClassId))
                 .ToDictionary(g => g.Key, g => g.Count());
@@ -276,6 +282,35 @@ namespace MHArmory.ViewModels
                 .ToList();
 
             return true;
+        }
+
+        private async void OnImport(object parameter)
+        {
+            ((AnonymousCommand)ImportCommand).IsEnabled = false;
+
+            try
+            {
+                await ImportInternal();
+            }
+            finally
+            {
+                ((AnonymousCommand)ImportCommand).IsEnabled = true;
+            }
+        }
+
+        private async Task ImportInternal()
+        {
+            ISaveDataAdvancedService saveDataService = ServicesContainer.GetService<ISaveDataAdvancedService>();
+
+            if (saveDataService == null)
+                return;
+
+            MHWSaveUtils.EquipmentsSaveSlotInfo saveDataInfo = await saveDataService.GetEquipmentSaveSlot();
+
+            if (saveDataInfo == null)
+                return;
+
+            UpdateSaveData(saveDataInfo);
         }
     }
 }

@@ -1552,35 +1552,37 @@
 
     <DataTemplate x:Key="WeaponTypeView">
         <DockPanel LastChildFill="True" Visibility="{Binding IsActive, Converter={StaticResource CollapsedVisibilityValueConverter}}">
-            <ScrollViewer DockPanel.Dock="Top" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Disabled">
-                <StackPanel Orientation="Horizontal" VerticalAlignment="Center" Margin="0 0 32 0">
-                    <StackPanel VerticalAlignment="Center" Margin="0 0 32 0">
-                        <TextBlock Text="Search: " Margin="2" VerticalAlignment="Center"/>
-                        <TextBox Text="{Binding SearchText, UpdateSourceTrigger=PropertyChanged}" Width="200" Margin="2" Padding="3" VerticalAlignment="Center"/>
-                    </StackPanel>
-                    <StackPanel VerticalAlignment="Center" Margin="0 0 32 0" Visibility="{Binding IsSharpnessWeapon, Mode=OneTime, Converter={StaticResource CollapsedVisibilityValueConverter}}">
-                        <TextBlock Text="Sharpness rank: " Margin="2"/>
-                        <StackPanel Orientation="Horizontal">
-                            <Slider Minimum="0" Maximum="5" Value="{Binding SharpnessRank}" Width="120" TickPlacement="BottomRight" VerticalAlignment="Center" Margin="2"/>
-                            <TextBlock Text="{Binding SharpnessRank, Converter={StaticResource SharpnessNameValueConverter}}" VerticalAlignment="Top" Margin="2"/>
+            <Border DockPanel.Dock="Top" BorderThickness="0,0,0,1" BorderBrush="LightGray">
+                <ScrollViewer HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Disabled" Background="#FFE8E8E8">
+                    <StackPanel Orientation="Horizontal" VerticalAlignment="Center" Margin="0 0 32 0">
+                        <StackPanel VerticalAlignment="Center" Margin="0 0 32 0">
+                            <TextBlock Text="Search: " Margin="2" VerticalAlignment="Center"/>
+                            <TextBox Text="{Binding SearchText, UpdateSourceTrigger=PropertyChanged}" Width="200" Margin="2,2,2,4" Padding="3" VerticalAlignment="Center"/>
+                        </StackPanel>
+                        <StackPanel VerticalAlignment="Center" Margin="0 0 32 0" Visibility="{Binding IsSharpnessWeapon, Mode=OneTime, Converter={StaticResource CollapsedVisibilityValueConverter}}">
+                            <TextBlock Text="Sharpness rank: " Margin="2"/>
+                            <StackPanel Orientation="Horizontal">
+                                <Slider Minimum="0" Maximum="5" Value="{Binding SharpnessRank}" Width="120" TickPlacement="BottomRight" VerticalAlignment="Center" Margin="2"/>
+                                <TextBlock Text="{Binding SharpnessRank, Converter={StaticResource SharpnessNameValueConverter}}" VerticalAlignment="Top" Margin="2" bhv:MinWidthBehavior.IsAttached="True"/>
+                            </StackPanel>
+                        </StackPanel>
+                        <StackPanel VerticalAlignment="Center" Margin="0 0 32 0" Visibility="{Binding IsSharpnessWeapon, Mode=OneTime, Converter={StaticResource CollapsedVisibilityValueConverter}}">
+                            <TextBlock Text="Free element: " Margin="2"/>
+                            <StackPanel Orientation="Horizontal">
+                                <Slider Minimum="0" Maximum="3" Value="{Binding FreeElementLevel}" Width="120" TickPlacement="BottomRight" VerticalAlignment="Center" Margin="2"/>
+                                <TextBlock Text="{Binding FreeElementLevel, Converter={StaticResource FreeElementNameValueConverter}}" VerticalAlignment="Top" Margin="2" bhv:MinWidthBehavior.IsAttached="True"/>
+                            </StackPanel>
+                        </StackPanel>
+                        <StackPanel VerticalAlignment="Center" Margin="0 0 32 0">
+                            <TextBlock Text="Slot augmentation: " Margin="2"/>
+                            <StackPanel Orientation="Horizontal">
+                                <Slider Minimum="0" Maximum="3" Value="{Binding SlotAugmentationCount}" Width="120" TickPlacement="BottomRight" VerticalAlignment="Center" Margin="2"/>
+                                <TextBlock Text="{Binding SlotAugmentationCount, StringFormat=+\{0\}}" VerticalAlignment="Top" Margin="2" bhv:MinWidthBehavior.IsAttached="True"/>
+                            </StackPanel>
                         </StackPanel>
                     </StackPanel>
-                    <StackPanel VerticalAlignment="Center" Margin="0 0 32 0" Visibility="{Binding IsSharpnessWeapon, Mode=OneTime, Converter={StaticResource CollapsedVisibilityValueConverter}}">
-                        <TextBlock Text="Free element: " Margin="2"/>
-                        <StackPanel Orientation="Horizontal">
-                            <Slider Minimum="0" Maximum="3" Value="{Binding FreeElementLevel}" Width="120" TickPlacement="BottomRight" VerticalAlignment="Center" Margin="2"/>
-                            <TextBlock Text="{Binding FreeElementLevel, Converter={StaticResource FreeElementNameValueConverter}}" VerticalAlignment="Top" Margin="2"/>
-                        </StackPanel>
-                    </StackPanel>
-                    <StackPanel VerticalAlignment="Center" Margin="0 0 32 0">
-                        <TextBlock Text="Slot augmentation: " Margin="2"/>
-                        <StackPanel Orientation="Horizontal">
-                            <Slider Minimum="0" Maximum="3" Value="{Binding SlotAugmentationCount}" Width="120" TickPlacement="BottomRight" VerticalAlignment="Center" Margin="2"/>
-                            <TextBlock Text="{Binding SlotAugmentationCount, StringFormat=+\{0\}}" VerticalAlignment="Top" Margin="2"/>
-                        </StackPanel>
-                    </StackPanel>
-                </StackPanel>
-            </ScrollViewer>
+                </ScrollViewer>
+            </Border>
             <Grid>
                 <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Visibility="{Binding IsDataLoading, Converter={StaticResource CollapsedVisibilityValueConverter}, Mode=OneWay}">
                     <TextBlock Text="Constructing user interface..." FontSize="20" HorizontalAlignment="Center" Margin="2"/>
@@ -1597,29 +1599,36 @@
 
     <DataTemplate x:Key="WeaponsContainerView">
         <DockPanel LastChildFill="True" Visibility="{Binding IsDataLoaded, Converter={StaticResource HiddenVisibilityValueConverter}}">
-            <ScrollViewer DockPanel.Dock="Top" VerticalAlignment="Center" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Disabled">
-                <ItemsControl ItemsSource="{Binding WeaponTypes}">
-                    <ItemsControl.ItemTemplate>
-                        <DataTemplate>
-                            <Button x:Name="toggle" Command="{Binding ActivateCommand, Mode=OneTime}" Margin="2" Padding="4" VerticalContentAlignment="Center" HorizontalAlignment="Center" ToolTip="{Binding Type, Mode=OneTime, Converter={StaticResource WeaponNameValueConverter}}">
-                                <Button.Content>
-                                    <Image Source="{Binding Type, Mode=OneTime, Converter={StaticResource WeaponEnumToImageSourceValueConverter}, ConverterParameter=32}" Width="32" Height="32"/>
-                                </Button.Content>
-                            </Button>
-                            <DataTemplate.Triggers>
-                                <DataTrigger Binding="{Binding IsActive}" Value="True">
-                                    <Setter TargetName="toggle" Property="Background" Value="{StaticResource ActiveWeaponBackgroundBrush}"/>
-                                </DataTrigger>
-                            </DataTemplate.Triggers>
-                        </DataTemplate>
-                    </ItemsControl.ItemTemplate>
-                    <ItemsControl.ItemsPanel>
-                        <ItemsPanelTemplate>
-                            <StackPanel Orientation="Horizontal"/>
-                        </ItemsPanelTemplate>
-                    </ItemsControl.ItemsPanel>
-                </ItemsControl>
-            </ScrollViewer>
+            <Grid DockPanel.Dock="Top" Background="#FFE8E8E8">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+                <ScrollViewer Grid.Column="0" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Disabled">
+                    <ItemsControl ItemsSource="{Binding WeaponTypes}">
+                        <ItemsControl.ItemTemplate>
+                            <DataTemplate>
+                                <Button x:Name="toggle" Command="{Binding ActivateCommand, Mode=OneTime}" Margin="2" Padding="4" VerticalContentAlignment="Center" HorizontalAlignment="Center" ToolTip="{Binding Type, Mode=OneTime, Converter={StaticResource WeaponNameValueConverter}}">
+                                    <Button.Content>
+                                        <Image Source="{Binding Type, Mode=OneTime, Converter={StaticResource WeaponEnumToImageSourceValueConverter}, ConverterParameter=32}" Width="32" Height="32"/>
+                                    </Button.Content>
+                                </Button>
+                                <DataTemplate.Triggers>
+                                    <DataTrigger Binding="{Binding IsActive}" Value="True">
+                                        <Setter TargetName="toggle" Property="Background" Value="{StaticResource ActiveWeaponBackgroundBrush}"/>
+                                    </DataTrigger>
+                                </DataTemplate.Triggers>
+                            </DataTemplate>
+                        </ItemsControl.ItemTemplate>
+                        <ItemsControl.ItemsPanel>
+                            <ItemsPanelTemplate>
+                                <StackPanel Orientation="Horizontal"/>
+                            </ItemsPanelTemplate>
+                        </ItemsControl.ItemsPanel>
+                    </ItemsControl>
+                </ScrollViewer>
+                <Button Grid.Column="1" Margin="2" Padding="8" VerticalAlignment="Top" Content="Import from save..." Command="{Binding ImportCommand, Mode=OneTime}"/>
+            </Grid>
             <ItemsControl ItemsSource="{Binding WeaponTypes}" ItemTemplate="{StaticResource WeaponTypeView}" Background="#06000000">
                 <ItemsControl.ItemsPanel>
                     <ItemsPanelTemplate>
