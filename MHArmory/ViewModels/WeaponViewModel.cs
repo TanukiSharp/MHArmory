@@ -278,10 +278,11 @@ namespace MHArmory.ViewModels
         {
             var result = new List<WeaponElementViewModel>();
 
-            if (weapon.ElementStatus != ElementStatus.None)
+            if (weapon.ElementStatus != ElementStatus.None || weapon.HiddenElementStatus != ElementStatus.None)
             {
                 int value = weapon.ElementStatusDamage > 0 ? weapon.ElementStatusDamage : weapon.HiddenElementStatusDamage;
                 bool isHidden = weapon.HiddenElementStatusDamage > 0;
+
                 ElementStatus elementStatus = weapon.ElementStatusDamage > 0 ? weapon.ElementStatus : weapon.HiddenElementStatus;
 
                 result.Add(new WeaponElementViewModel(value, isHidden, elementStatus));
