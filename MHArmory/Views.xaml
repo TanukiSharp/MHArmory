@@ -1547,7 +1547,7 @@
             <DataTrigger Binding="{Binding IsHighlight}" Value="False">
                 <Setter TargetName="fg" Property="Visibility" Value="Visible"/>
             </DataTrigger>
-            <DataTrigger Binding="{Binding IsFiltered}" Value="True">
+            <DataTrigger Binding="{Binding IsFilteredText}" Value="True">
                 <Setter TargetName="filteredText" Property="Visibility" Value="Visible"/>
             </DataTrigger>
         </HierarchicalDataTemplate.Triggers>
