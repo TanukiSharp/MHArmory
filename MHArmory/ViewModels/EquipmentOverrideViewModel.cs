@@ -392,9 +392,6 @@ namespace MHArmory.ViewModels
             System.Windows.MessageBox.Show("Save data import done.", "Import", System.Windows.MessageBoxButton.OK);
 
             ApplySaveDataEquipments(selected);
-
-            // TODO: Temporary location to test the feature
-            rootViewModel.WeaponsContainer.UpdateSaveData(selected);
         }
 
         private async Task<IList<EquipmentsSaveSlotInfo>> ReadSaveData(SaveDataInfo saveDataInfo)
