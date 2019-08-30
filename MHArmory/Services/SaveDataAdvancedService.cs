@@ -12,14 +12,33 @@ namespace MHArmory.Services
 {
     public interface ISaveDataAdvancedService
     {
-        Task<EquipmentsSaveSlotInfo> GetEquipmentSaveSlot();
+        Func<IList<T>, T> CreateSaveSlotSelector<T>(Window ownerWindow) where T : BaseSaveSlotInfo;
+        Task<EquipmentsSaveSlotInfo> GetEquipmentSaveSlot(Func<IList<EquipmentsSaveSlotInfo>, EquipmentsSaveSlotInfo> saveSlotInfoSelector);
     }
 
     public class SaveDataAdvancedService : ISaveDataAdvancedService
     {
-        public Task<EquipmentsSaveSlotInfo> GetEquipmentSaveSlot()
+        public Task<EquipmentsSaveSlotInfo> GetEquipmentSaveSlot(Func<IList<EquipmentsSaveSlotInfo>, EquipmentsSaveSlotInfo> saveSlotInfoSelector)
         {
-            return Get(ReadEquipmentSaveData, ProvideEquipmentSaveSlotInfo);
+            return Get(ReadEquipmentSaveData, saveSlotInfoSelector);
+        }
+
+        public Func<IList<T>, T> CreateSaveSlotSelector<T>(Window ownerWindow) where T : BaseSaveSlotInfo
+        {
+            return slots =>
+            {
+                var dialog = new SaveDataSlotSelectorWindow()
+                {
+                    Owner = ownerWindow
+                };
+
+                dialog.Initialize(slots);
+
+                if (dialog.ShowDialog() != true)
+                    return null;
+
+                return (T)dialog.SelectedSaveSlot;
+            };
         }
 
         private async Task<T> Get<T>(Func<SaveDataInfo, Task<IList<T>>> reader, Func<IList<T>, T> saveSlotInfoSelector) where T : BaseSaveSlotInfo
@@ -81,26 +100,6 @@ namespace MHArmory.Services
 
                 return list;
             }
-        }
-
-        private EquipmentsSaveSlotInfo ProvideEquipmentSaveSlotInfo(IList<EquipmentsSaveSlotInfo> allSlots)
-        {
-            return ProvideSaveSlotInfo<EquipmentsSaveSlotInfo>(allSlots);
-        }
-
-        private T ProvideSaveSlotInfo<T>(IList<T> allSlots) where T : BaseSaveSlotInfo
-        {
-            var dialog = new SaveDataSlotSelectorWindow()
-            {
-                Owner = null
-            };
-
-            dialog.Initialize(allSlots);
-
-            if (dialog.ShowDialog() != true)
-                return null;
-
-            return (T)dialog.SelectedSaveSlot;
         }
     }
 }

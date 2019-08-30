@@ -48,11 +48,18 @@ namespace MHArmory.ViewModels
 
         public ICommand ImportCommand { get; }
 
+        private Func<IList<MHWSaveUtils.EquipmentsSaveSlotInfo>, MHWSaveUtils.EquipmentsSaveSlotInfo> saveSlotSelector;
+
         public WeaponsContainerViewModel(RootViewModel rootViewModel)
         {
             this.rootViewModel = rootViewModel;
 
             ImportCommand = new AnonymousCommand(OnImport);
+        }
+
+        public void SetSaveSlotSelector(Func<IList<MHWSaveUtils.EquipmentsSaveSlotInfo>, MHWSaveUtils.EquipmentsSaveSlotInfo> saveSlotSelector)
+        {
+            this.saveSlotSelector = saveSlotSelector;
         }
 
         public void UpdateHighlights()
@@ -302,7 +309,7 @@ namespace MHArmory.ViewModels
             if (saveDataService == null)
                 return;
 
-            MHWSaveUtils.EquipmentsSaveSlotInfo saveDataInfo = await saveDataService.GetEquipmentSaveSlot();
+            MHWSaveUtils.EquipmentsSaveSlotInfo saveDataInfo = await saveDataService.GetEquipmentSaveSlot(saveSlotSelector);
 
             if (saveDataInfo == null)
                 return;

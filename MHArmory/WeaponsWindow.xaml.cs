@@ -14,6 +14,8 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using MHArmory.ViewModels;
 using MHArmory.Core.WPF;
+using MHArmory.Services;
+using MHWSaveUtils;
 
 namespace MHArmory
 {
@@ -50,6 +52,10 @@ namespace MHArmory
                 return;
 
             rootViewModel.WeaponsContainer.UpdateHighlights();
+
+            ISaveDataAdvancedService saveDataService = ServicesContainer.GetService<ISaveDataAdvancedService>();
+            Func<IList<EquipmentsSaveSlotInfo>, EquipmentsSaveSlotInfo> saveSlotSelector = saveDataService.CreateSaveSlotSelector<EquipmentsSaveSlotInfo>(this);
+            rootViewModel.WeaponsContainer.SetSaveSlotSelector(saveSlotSelector);
         }
 
         public void OnOpened(bool isAlreadyOpened, object argument)
