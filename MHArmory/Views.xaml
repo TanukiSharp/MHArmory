@@ -1536,7 +1536,11 @@
             <Border x:Name="fg" Background="#80FFFFFF" CornerRadius="3" IsHitTestVisible="False" Visibility="Hidden"/>
             <Grid Visibility="{Binding IsPossessed, Converter={StaticResource HiddenVisibilityValueConverter}}" HorizontalAlignment="Right" VerticalAlignment="Top" IsHitTestVisible="False" SnapsToDevicePixels="True" Margin="3">
                 <Image Source="{mxt:RasterizedImage Location=Icons/Others/cube_chest.svg, Size=16}" Width="16" Height="16"/>
-                <TextBlock Text="{Binding PossessedCount}" FontSize="10" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center" Visibility="{Binding IsPossessedMoreThanOnce, Converter={StaticResource HiddenVisibilityValueConverter}}"/>
+                <TextBlock Text="{Binding PossessedCount}" FontSize="1" Foreground="White" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center" Visibility="{Binding IsPossessedMoreThanOnce, Converter={StaticResource HiddenVisibilityValueConverter}}" RenderTransformOrigin="0.5, 0.5">
+                    <TextBlock.RenderTransform>
+                        <ScaleTransform ScaleX="12" ScaleY="12"/>
+                    </TextBlock.RenderTransform>
+                </TextBlock>
             </Grid>
         </Grid>
         <HierarchicalDataTemplate.Triggers>

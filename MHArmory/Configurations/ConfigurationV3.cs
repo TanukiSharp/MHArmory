@@ -59,6 +59,9 @@ namespace MHArmory.Configurations
         [JsonProperty("view")]
         public ViewConfiguration View { get; } = new ViewConfiguration();
 
+        [JsonProperty("possessedWeapons")]
+        public Dictionary<string, int> PossessedWeapons { get; } = new Dictionary<string, int>();
+
         [JsonProperty("windows")]
         public Dictionary<string, WindowConfiguration> Windows { get; } = new Dictionary<string, WindowConfiguration>();
     }

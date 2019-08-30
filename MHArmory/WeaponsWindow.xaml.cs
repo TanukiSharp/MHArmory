@@ -70,6 +70,9 @@ namespace MHArmory
         protected override void OnClosing(CancelEventArgs e)
         {
             base.OnClosing(e);
+
+            rootViewModel.WeaponsContainer.SaveConfiguration();
+
             e.Cancel = true;
             Hide();
         }

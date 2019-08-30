@@ -10,6 +10,8 @@ using Newtonsoft.Json;
 using MHWMasterDataUtils.Core;
 using System.Windows.Input;
 using MHArmory.Services;
+using MHArmory.Configurations;
+using MHArmory.Core;
 
 namespace MHArmory.ViewModels
 {
@@ -60,6 +62,11 @@ namespace MHArmory.ViewModels
         public void SetSaveSlotSelector(Func<IList<MHWSaveUtils.EquipmentsSaveSlotInfo>, MHWSaveUtils.EquipmentsSaveSlotInfo> saveSlotSelector)
         {
             this.saveSlotSelector = saveSlotSelector;
+        }
+
+        internal void NotifyDataLoaded()
+        {
+            LoadConfiguration();
         }
 
         public void UpdateHighlights()
@@ -315,6 +322,32 @@ namespace MHArmory.ViewModels
                 return;
 
             UpdateSaveData(saveDataInfo);
+        }
+
+        private void LoadConfiguration()
+        {
+            Dictionary<string, int> possessedWeapons = GlobalData.Instance.Configuration.PossessedWeapons;
+
+            foreach (WeaponViewModel weapon in allWeapons.Values)
+            {
+                possessedWeapons.TryGetValue(Localization.GetDefault(weapon.Name), out int count);
+                weapon.PossessedCount = count;
+            }
+        }
+
+        public void SaveConfiguration()
+        {
+            Dictionary<string, int> possessedWeapons = GlobalData.Instance.Configuration.PossessedWeapons;
+
+            possessedWeapons.Clear();
+
+            foreach (WeaponViewModel weapon in allWeapons.Values)
+            {
+                if (weapon.PossessedCount > 0)
+                    possessedWeapons.Add(Localization.GetDefault(weapon.Name), weapon.PossessedCount);
+            }
+
+            ConfigurationManager.Save(GlobalData.Instance.Configuration);
         }
     }
 }

@@ -54,9 +54,15 @@ namespace MHArmory.ViewModels
             InParameters.NotifyConfigurationLoaded();
         }
 
+        private async Task LoadWeaponsAsync()
+        {
+            await WeaponsContainer.LoadWeaponsAsync();
+            WeaponsContainer.NotifyDataLoaded();
+        }
+
         internal void NotifyDataLoaded()
         {
-            WeaponsContainer.LoadWeaponsAsync().Forget(ex => throw new Exception("rethrow", ex));
+            LoadWeaponsAsync().Forget(ex => throw new Exception("rethrow", ex));
 
             EquipmentOverride.NotifyDataLoaded();
         }
