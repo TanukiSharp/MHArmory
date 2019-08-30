@@ -129,10 +129,7 @@ namespace MHArmory.ViewModels
             foreach (WeaponViewModel weapon in allWeapons.Values)
             {
                 if (saveDataWeapons.TryGetValue((weapon.Type, weapon.SortIndex), out int count))
-                {
-                    if (count > 0)
-                        weapon.IsPossessed = true;
-                }
+                    weapon.PossessedCount = count;
             }
         }
 

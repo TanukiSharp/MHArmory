@@ -196,7 +196,28 @@ namespace MHArmory.ViewModels
         public bool IsPossessed
         {
             get { return isPossessed; }
-            set { SetValue(ref isPossessed, value); }
+            private set { SetValue(ref isPossessed, value); }
+        }
+
+        private bool isPossessedMoreThanOnce;
+        public bool IsPossessedMoreThanOnce
+        {
+            get { return isPossessedMoreThanOnce; }
+            private set { SetValue(ref isPossessedMoreThanOnce, value); }
+        }
+
+        private int possessedCount;
+        public int PossessedCount
+        {
+            get { return possessedCount; }
+            set
+            {
+                if (SetValue(ref possessedCount, value))
+                {
+                    IsPossessed = possessedCount > 0;
+                    IsPossessedMoreThanOnce = possessedCount > 1;
+                }
+            }
         }
 
         private readonly IList<int> originalSlots;

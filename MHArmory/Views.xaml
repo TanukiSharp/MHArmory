@@ -1534,7 +1534,10 @@
                 </StackPanel>
             </Border>
             <Border x:Name="fg" Background="#80FFFFFF" CornerRadius="3" IsHitTestVisible="False" Visibility="Hidden"/>
-            <Image x:Name="possessedIcon" Source="{mxt:RasterizedImage Location=Icons/Others/cube_chest.svg, Size=16}" Width="16" Height="16" Margin="3" Visibility="{Binding IsPossessed, Converter={StaticResource HiddenVisibilityValueConverter}}" HorizontalAlignment="Right" VerticalAlignment="Top" IsHitTestVisible="False" SnapsToDevicePixels="True"/>
+            <Grid Visibility="{Binding IsPossessed, Converter={StaticResource HiddenVisibilityValueConverter}}" HorizontalAlignment="Right" VerticalAlignment="Top" IsHitTestVisible="False" SnapsToDevicePixels="True" Margin="3">
+                <Image Source="{mxt:RasterizedImage Location=Icons/Others/cube_chest.svg, Size=16}" Width="16" Height="16"/>
+                <TextBlock Text="{Binding PossessedCount}" FontSize="10" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center" Visibility="{Binding IsPossessedMoreThanOnce, Converter={StaticResource HiddenVisibilityValueConverter}}"/>
+            </Grid>
         </Grid>
         <HierarchicalDataTemplate.Triggers>
             <DataTrigger Binding="{Binding IsHighlight}" Value="True">
