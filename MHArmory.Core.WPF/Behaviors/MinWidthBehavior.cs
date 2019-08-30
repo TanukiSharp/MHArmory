@@ -18,7 +18,7 @@ namespace MHArmory.Core.WPF.Behaviors
         public static readonly DependencyProperty IsAttachedProperty = DependencyProperty.RegisterAttached(
             "IsAttached",
             typeof(bool),
-            typeof(FocusOnLoadBehavior),
+            typeof(MinWidthBehavior),
             new PropertyMetadata(OnIsAttachedChanged)
         );
 
