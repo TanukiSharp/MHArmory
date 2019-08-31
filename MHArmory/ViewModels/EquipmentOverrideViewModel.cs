@@ -295,7 +295,7 @@ namespace MHArmory.ViewModels
         public ICommand OpenIntegratedHelpCommand { get; }
         public ICommand CancelCommand { get; }
 
-        private Func<IList<EquipmentsSaveSlotInfo>, EquipmentsSaveSlotInfo> saveSlotInfoSelector;
+        private Func<IList<EquipmentSaveSlotInfo>, EquipmentSaveSlotInfo> saveSlotInfoSelector;
 
         public EquipmentOverrideViewModel(RootViewModel rootViewModel)
         {
@@ -328,7 +328,7 @@ namespace MHArmory.ViewModels
             }
         }
 
-        public void SetSaveSelector(Func<IList<EquipmentsSaveSlotInfo>, EquipmentsSaveSlotInfo> saveSlotInfoSelector)
+        public void SetSaveSelector(Func<IList<EquipmentSaveSlotInfo>, EquipmentSaveSlotInfo> saveSlotInfoSelector)
         {
             this.saveSlotInfoSelector = saveSlotInfoSelector;
         }
@@ -358,7 +358,7 @@ namespace MHArmory.ViewModels
                     return;
             }
 
-            EquipmentsSaveSlotInfo selected = await SaveDataUtils.GetEquipmentSaveSlot(saveSlotInfoSelector);
+            EquipmentSaveSlotInfo selected = await SaveDataUtils.GetEquipmentSaveSlot(saveSlotInfoSelector);
 
             if (selected == null)
                 return;
@@ -382,7 +382,7 @@ namespace MHArmory.ViewModels
             return false;
         }
 
-        private void ApplySaveDataEquipments(EquipmentsSaveSlotInfo saveSlotEquipments)
+        private void ApplySaveDataEquipments(EquipmentSaveSlotInfo saveSlotEquipments)
         {
             foreach (EquipmentGroupViewModel group in AllEquipments)
             {
@@ -396,7 +396,7 @@ namespace MHArmory.ViewModels
                         Console.WriteLine($"Missing equipment from master data: {equipment.Name}");
                     else
                     {
-                        Equipment n = saveSlotEquipments.Equipments
+                        Equipment n = saveSlotEquipments.Equipment
                             .FirstOrDefault(x => IsMatch(x, foundGameEquipmentFromMasterData));
 
                         if (n != null)

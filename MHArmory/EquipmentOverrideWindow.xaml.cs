@@ -31,7 +31,7 @@ namespace MHArmory
 
             this.rootViewModel = rootViewModel;
 
-            Func<IList<EquipmentsSaveSlotInfo>, EquipmentsSaveSlotInfo> saveSlotSelector = SaveDataUtils.CreateSaveSlotSelector<EquipmentsSaveSlotInfo>(this);
+            Func<IList<EquipmentSaveSlotInfo>, EquipmentSaveSlotInfo> saveSlotSelector = SaveDataUtils.CreateSaveSlotSelector<EquipmentSaveSlotInfo>(this);
             rootViewModel.EquipmentOverride.SetSaveSelector(saveSlotSelector);
 
             InputBindings.Add(new InputBinding(new AnonymousCommand(OnCancel), new KeyGesture(Key.Escape, ModifierKeys.None)));

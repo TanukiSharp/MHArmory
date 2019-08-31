@@ -56,7 +56,7 @@ namespace MHArmory
             return saveDataInfoItems;
         }
 
-        public static Task<EquipmentsSaveSlotInfo> GetEquipmentSaveSlot(Func<IList<EquipmentsSaveSlotInfo>, EquipmentsSaveSlotInfo> saveSlotInfoSelector)
+        public static Task<EquipmentSaveSlotInfo> GetEquipmentSaveSlot(Func<IList<EquipmentSaveSlotInfo>, EquipmentSaveSlotInfo> saveSlotInfoSelector)
         {
             return Get(ReadEquipmentSaveData, saveSlotInfoSelector);
         }
@@ -66,7 +66,7 @@ namespace MHArmory
             return Get(ReadDecorationsSaveData, saveSlotInfoSelector);
         }
 
-        public static Func<IList<T>, T> CreateSaveSlotSelector<T>(Window ownerWindow) where T : BaseSaveSlotInfo
+        public static Func<IList<T>, T> CreateSaveSlotSelector<T>(Window ownerWindow) where T : SaveSlotInfoBase
         {
             return slots =>
             {
@@ -84,7 +84,7 @@ namespace MHArmory
             };
         }
 
-        private static async Task<T> Get<T>(Func<SaveDataInfo, Task<IList<T>>> reader, Func<IList<T>, T> saveSlotInfoSelector) where T : BaseSaveSlotInfo
+        private static async Task<T> Get<T>(Func<SaveDataInfo, Task<IList<T>>> reader, Func<IList<T>, T> saveSlotInfoSelector) where T : SaveSlotInfoBase
         {
             IList<SaveDataInfo> saveDataInfoItems = GetSaveInfo();
 
@@ -117,7 +117,7 @@ namespace MHArmory
             return selected;
         }
 
-        private static async Task<IList<EquipmentsSaveSlotInfo>> ReadEquipmentSaveData(SaveDataInfo saveDataInfo)
+        private static async Task<IList<EquipmentSaveSlotInfo>> ReadEquipmentSaveData(SaveDataInfo saveDataInfo)
         {
             var ms = new MemoryStream();
 
@@ -126,11 +126,11 @@ namespace MHArmory
                 await Crypto.DecryptAsync(inputStream, ms, CancellationToken.None);
             }
 
-            using (var reader = new EquipmentsReader(ms))
+            using (var reader = new EquipmentReader(ms))
             {
-                var list = new List<EquipmentsSaveSlotInfo>();
+                var list = new List<EquipmentSaveSlotInfo>();
 
-                foreach (EquipmentsSaveSlotInfo info in reader.Read())
+                foreach (EquipmentSaveSlotInfo info in reader.Read())
                 {
                     info.SetSaveDataInfo(saveDataInfo);
                     list.Add(info);

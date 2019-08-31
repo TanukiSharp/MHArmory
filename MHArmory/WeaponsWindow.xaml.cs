@@ -53,7 +53,7 @@ namespace MHArmory
 
             rootViewModel.WeaponsContainer.UpdateHighlights();
 
-            Func<IList<EquipmentsSaveSlotInfo>, EquipmentsSaveSlotInfo> saveSlotSelector = SaveDataUtils.CreateSaveSlotSelector<EquipmentsSaveSlotInfo>(this);
+            Func<IList<EquipmentSaveSlotInfo>, EquipmentSaveSlotInfo> saveSlotSelector = SaveDataUtils.CreateSaveSlotSelector<EquipmentSaveSlotInfo>(this);
             rootViewModel.WeaponsContainer.SetSaveSlotSelector(saveSlotSelector);
         }
 

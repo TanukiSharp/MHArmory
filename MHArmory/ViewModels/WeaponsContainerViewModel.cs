@@ -50,7 +50,7 @@ namespace MHArmory.ViewModels
 
         public ICommand ImportCommand { get; }
 
-        private Func<IList<MHWSaveUtils.EquipmentsSaveSlotInfo>, MHWSaveUtils.EquipmentsSaveSlotInfo> saveSlotSelector;
+        private Func<IList<MHWSaveUtils.EquipmentSaveSlotInfo>, MHWSaveUtils.EquipmentSaveSlotInfo> saveSlotSelector;
 
         public WeaponsContainerViewModel(RootViewModel rootViewModel)
         {
@@ -59,7 +59,7 @@ namespace MHArmory.ViewModels
             ImportCommand = new AnonymousCommand(OnImport);
         }
 
-        public void SetSaveSlotSelector(Func<IList<MHWSaveUtils.EquipmentsSaveSlotInfo>, MHWSaveUtils.EquipmentsSaveSlotInfo> saveSlotSelector)
+        public void SetSaveSlotSelector(Func<IList<MHWSaveUtils.EquipmentSaveSlotInfo>, MHWSaveUtils.EquipmentSaveSlotInfo> saveSlotSelector)
         {
             this.saveSlotSelector = saveSlotSelector;
         }
@@ -133,9 +133,9 @@ namespace MHArmory.ViewModels
             throw new ArgumentException($"Unknown '{nameof(weaponType)}' argument value '{weaponType}'.");
         }
 
-        public void UpdateSaveData(MHWSaveUtils.EquipmentsSaveSlotInfo saveData)
+        public void UpdateSaveData(MHWSaveUtils.EquipmentSaveSlotInfo saveData)
         {
-            var saveDataWeapons = saveData.Equipments
+            var saveDataWeapons = saveData.Equipment
                 .Where(x => x.Type == MHWSaveUtils.EquipmentType.Weapon)
                 .GroupBy(x => (ConvertWeaponType(x.WeaponType), (int)x.ClassId))
                 .ToDictionary(g => g.Key, g => g.Count());
@@ -311,7 +311,7 @@ namespace MHArmory.ViewModels
 
         private async Task ImportInternal()
         {
-            MHWSaveUtils.EquipmentsSaveSlotInfo saveDataInfo = await SaveDataUtils.GetEquipmentSaveSlot(saveSlotSelector);
+            MHWSaveUtils.EquipmentSaveSlotInfo saveDataInfo = await SaveDataUtils.GetEquipmentSaveSlot(saveSlotSelector);
 
             if (saveDataInfo == null)
                 return;

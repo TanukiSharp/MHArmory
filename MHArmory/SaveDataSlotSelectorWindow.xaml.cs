@@ -15,18 +15,18 @@ namespace MHArmory
     /// </summary>
     public partial class SaveDataSlotSelectorWindow : Window
     {
-        private SaveDataSlotSelectorViewModel<BaseSaveSlotInfo> dataSlotSelectorViewModel;
+        private SaveDataSlotSelectorViewModel<SaveSlotInfoBase> dataSlotSelectorViewModel;
 
-        public BaseSaveSlotInfo SelectedSaveSlot { get; private set; }
+        public SaveSlotInfoBase SelectedSaveSlot { get; private set; }
 
         public SaveDataSlotSelectorWindow()
         {
             InitializeComponent();
         }
 
-        public void Initialize<T>(IList<T> saveSlots) where T : BaseSaveSlotInfo
+        public void Initialize<T>(IList<T> saveSlots) where T : SaveSlotInfoBase
         {
-            dataSlotSelectorViewModel = new SaveDataSlotSelectorViewModel<BaseSaveSlotInfo>();
+            dataSlotSelectorViewModel = new SaveDataSlotSelectorViewModel<SaveSlotInfoBase>();
 
             foreach (IGrouping<string, T> group in saveSlots.GroupBy(x => x.SaveDataInfo.UserId))
                 dataSlotSelectorViewModel.AddAccount(group.Key, group);

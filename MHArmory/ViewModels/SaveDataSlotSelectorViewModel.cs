@@ -10,7 +10,7 @@ using MHWSaveUtils;
 
 namespace MHArmory.ViewModels
 {
-    public class SaveDataSlotViewModel<T> : ViewModelBase where T : BaseSaveSlotInfo
+    public class SaveDataSlotViewModel<T> : ViewModelBase where T : SaveSlotInfoBase
     {
         private bool isSelected;
         public bool IsSelected
@@ -53,7 +53,7 @@ namespace MHArmory.ViewModels
         }
     }
 
-    public class SaveDataAccountViewModel<T> : ViewModelBase where T : BaseSaveSlotInfo
+    public class SaveDataAccountViewModel<T> : ViewModelBase where T : SaveSlotInfoBase
     {
         public string UserId { get; }
         public IReadOnlyCollection<SaveDataSlotViewModel<T>> SaveDataSlots { get; }
@@ -70,7 +70,7 @@ namespace MHArmory.ViewModels
         }
     }
 
-    public class SaveDataSlotSelectorViewModel<T> : ViewModelBase where T : BaseSaveSlotInfo
+    public class SaveDataSlotSelectorViewModel<T> : ViewModelBase where T : SaveSlotInfoBase
     {
         private readonly ObservableCollection<SaveDataAccountViewModel<T>> accounts = new ObservableCollection<SaveDataAccountViewModel<T>>();
         public ReadOnlyObservableCollection<SaveDataAccountViewModel<T>> Accounts { get; }
