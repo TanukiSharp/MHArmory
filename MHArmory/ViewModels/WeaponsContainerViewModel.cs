@@ -311,12 +311,7 @@ namespace MHArmory.ViewModels
 
         private async Task ImportInternal()
         {
-            ISaveDataAdvancedService saveDataService = ServicesContainer.GetService<ISaveDataAdvancedService>();
-
-            if (saveDataService == null)
-                return;
-
-            MHWSaveUtils.EquipmentsSaveSlotInfo saveDataInfo = await saveDataService.GetEquipmentSaveSlot(saveSlotSelector);
+            MHWSaveUtils.EquipmentsSaveSlotInfo saveDataInfo = await SaveDataUtils.GetEquipmentSaveSlot(saveSlotSelector);
 
             if (saveDataInfo == null)
                 return;

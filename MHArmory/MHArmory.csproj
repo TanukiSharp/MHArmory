@@ -112,6 +112,7 @@
     <Compile Include="SaveDataSlotSelectorWindow.xaml.cs">
       <DependentUpon>SaveDataSlotSelectorWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="SaveDataUtils.cs" />
     <Compile Include="SearchResultGrouper.cs" />
     <Compile Include="SearchResultProcessingWindow.xaml.cs">
       <DependentUpon>SearchResultProcessingWindow.xaml</DependentUpon>
@@ -121,8 +122,6 @@
     <Compile Include="Services\MessageBoxService.cs" />
     <Compile Include="InputUtils.cs" />
     <Compile Include="RenderUtils.cs" />
-    <Compile Include="Services\SaveDataAdvancedService.cs" />
-    <Compile Include="Services\SaveDataService.cs" />
     <Compile Include="SearchResultScreenshotUtils.cs" />
     <Compile Include="Services\ServicesContainer.cs" />
     <Compile Include="TaskExtensions.cs" />
