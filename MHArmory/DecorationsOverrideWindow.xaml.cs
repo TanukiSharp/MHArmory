@@ -35,26 +35,12 @@ namespace MHArmory
 
             this.rootViewModel = rootViewModel;
 
-            decorationsOverrideViewModel = new DecorationsOverrideViewModel(GlobalData.Instance.Jewels, ProvideSaveSlotInfo);
+            Func<IList<DecorationsSaveSlotInfo>, DecorationsSaveSlotInfo> saveSlotSelector = SaveDataUtils.CreateSaveSlotSelector<DecorationsSaveSlotInfo>(this);
+            decorationsOverrideViewModel = new DecorationsOverrideViewModel(GlobalData.Instance.Jewels, saveSlotSelector);
 
             InputBindings.Add(new InputBinding(new AnonymousCommand(OnCancel), new KeyGesture(Key.Escape, ModifierKeys.None)));
 
             DataContext = decorationsOverrideViewModel;
-        }
-
-        private DecorationsSaveSlotInfo ProvideSaveSlotInfo(IList<DecorationsSaveSlotInfo> allSlots)
-        {
-            var dialog = new SaveDataSlotSelectorWindow()
-            {
-                Owner = this
-            };
-
-            dialog.Initialize(allSlots);
-
-            if (dialog.ShowDialog() != true)
-                return null;
-
-            return (DecorationsSaveSlotInfo)dialog.SelectedSaveSlot;
         }
 
         private void OnCancel(object parameter)

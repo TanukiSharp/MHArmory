@@ -217,30 +217,10 @@ namespace MHArmory.ViewModels
 
         private async Task ImportInternal()
         {
-            IList<SaveDataInfo> saveDataInfoItems = SaveDataUtils.GetSaveInfo();
+            DecorationsSaveSlotInfo selected = await SaveDataUtils.GetDecorationsSaveSlot(saveSlotInfoSelector);
 
-            IList<Task<IList<DecorationsSaveSlotInfo>>> allTasks = saveDataInfoItems
-                .Select(ReadSaveData)
-                .ToList();
-
-            await Task.WhenAll(allTasks);
-
-            IList<DecorationsSaveSlotInfo> allSlots = allTasks
-                .SelectMany(x => x.Result)
-                .ToList();
-
-            DecorationsSaveSlotInfo selected;
-
-            if (allSlots.Count > 1)
-            {
-                selected = saveSlotInfoSelector(allSlots);
-                if (selected == null)
-                    return;
-            }
-            else
-                selected = allSlots[0];
-
-            MessageBox.Show("Save data import done.", "Import", MessageBoxButton.OK);
+            if (selected == null)
+                return;
 
             ApplySaveDataDecorations(selected);
         }
@@ -278,29 +258,6 @@ namespace MHArmory.ViewModels
             ComputeVisibility();
 
             HasChanged = true;
-        }
-
-        private async Task<IList<DecorationsSaveSlotInfo>> ReadSaveData(SaveDataInfo saveDataInfo)
-        {
-            var ms = new MemoryStream();
-
-            using (Stream inputStream = File.OpenRead(saveDataInfo.SaveDataFullFilename))
-            {
-                await Crypto.DecryptAsync(inputStream, ms, CancellationToken.None);
-            }
-
-            using (var reader = new DecorationsReader(ms))
-            {
-                var list = new List<DecorationsSaveSlotInfo>();
-
-                foreach (DecorationsSaveSlotInfo info in reader.Read())
-                {
-                    info.SetSaveDataInfo(saveDataInfo);
-                    list.Add(info);
-                }
-
-                return list;
-            }
         }
 
         public class GameJewel

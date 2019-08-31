@@ -358,58 +358,12 @@ namespace MHArmory.ViewModels
                     return;
             }
 
-            IList<SaveDataInfo> saveDataInfoItems = SaveDataUtils.GetSaveInfo();
+            EquipmentsSaveSlotInfo selected = await SaveDataUtils.GetEquipmentSaveSlot(saveSlotInfoSelector);
 
-            if (saveDataInfoItems == null)
+            if (selected == null)
                 return;
 
-            IList<Task<IList<EquipmentsSaveSlotInfo>>> allTasks = saveDataInfoItems
-                .Select(ReadSaveData)
-                .ToList();
-
-            await Task.WhenAll(allTasks);
-
-            IList<EquipmentsSaveSlotInfo> allSlots = allTasks
-                .SelectMany(x => x.Result)
-                .ToList();
-
-            EquipmentsSaveSlotInfo selected;
-
-            if (allSlots.Count > 1)
-            {
-                selected = saveSlotInfoSelector(allSlots);
-                if (selected == null)
-                    return;
-            }
-            else
-                selected = allSlots[0];
-
-            System.Windows.MessageBox.Show("Save data import done.", "Import", System.Windows.MessageBoxButton.OK);
-
             ApplySaveDataEquipments(selected);
-        }
-
-        private async Task<IList<EquipmentsSaveSlotInfo>> ReadSaveData(SaveDataInfo saveDataInfo)
-        {
-            var ms = new MemoryStream();
-
-            using (Stream inputStream = File.OpenRead(saveDataInfo.SaveDataFullFilename))
-            {
-                await Crypto.DecryptAsync(inputStream, ms, CancellationToken.None);
-            }
-
-            using (var reader = new EquipmentsReader(ms))
-            {
-                var list = new List<EquipmentsSaveSlotInfo>();
-
-                foreach (EquipmentsSaveSlotInfo info in reader.Read())
-                {
-                    info.SetSaveDataInfo(saveDataInfo);
-                    list.Add(info);
-                }
-
-                return list;
-            }
         }
 
         private static bool IsMatch(Equipment saveDataEquipment, GameEquipment masterDataEquipment)

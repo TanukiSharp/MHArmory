@@ -61,6 +61,11 @@ namespace MHArmory
             return Get(ReadEquipmentSaveData, saveSlotInfoSelector);
         }
 
+        public static Task<DecorationsSaveSlotInfo> GetDecorationsSaveSlot(Func<IList<DecorationsSaveSlotInfo>, DecorationsSaveSlotInfo> saveSlotInfoSelector)
+        {
+            return Get(ReadDecorationsSaveData, saveSlotInfoSelector);
+        }
+
         public static Func<IList<T>, T> CreateSaveSlotSelector<T>(Window ownerWindow) where T : BaseSaveSlotInfo
         {
             return slots =>
@@ -126,6 +131,29 @@ namespace MHArmory
                 var list = new List<EquipmentsSaveSlotInfo>();
 
                 foreach (EquipmentsSaveSlotInfo info in reader.Read())
+                {
+                    info.SetSaveDataInfo(saveDataInfo);
+                    list.Add(info);
+                }
+
+                return list;
+            }
+        }
+
+        private static async Task<IList<DecorationsSaveSlotInfo>> ReadDecorationsSaveData(SaveDataInfo saveDataInfo)
+        {
+            var ms = new MemoryStream();
+
+            using (Stream inputStream = File.OpenRead(saveDataInfo.SaveDataFullFilename))
+            {
+                await Crypto.DecryptAsync(inputStream, ms, CancellationToken.None);
+            }
+
+            using (var reader = new DecorationsReader(ms))
+            {
+                var list = new List<DecorationsSaveSlotInfo>();
+
+                foreach (DecorationsSaveSlotInfo info in reader.Read())
                 {
                     info.SetSaveDataInfo(saveDataInfo);
                     list.Add(info);

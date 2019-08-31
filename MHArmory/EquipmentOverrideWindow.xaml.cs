@@ -31,7 +31,8 @@ namespace MHArmory
 
             this.rootViewModel = rootViewModel;
 
-            rootViewModel.EquipmentOverride.SetSaveSelector(ProvideSaveSlotInfo);
+            Func<IList<EquipmentsSaveSlotInfo>, EquipmentsSaveSlotInfo> saveSlotSelector = SaveDataUtils.CreateSaveSlotSelector<EquipmentsSaveSlotInfo>(this);
+            rootViewModel.EquipmentOverride.SetSaveSelector(saveSlotSelector);
 
             InputBindings.Add(new InputBinding(new AnonymousCommand(OnCancel), new KeyGesture(Key.Escape, ModifierKeys.None)));
 
@@ -46,21 +47,6 @@ namespace MHArmory
 
             lblLoading.Visibility = Visibility.Collapsed;
             cntRoot.Visibility = Visibility.Visible;
-        }
-
-        private EquipmentsSaveSlotInfo ProvideSaveSlotInfo(IList<EquipmentsSaveSlotInfo> allSlots)
-        {
-            var dialog = new SaveDataSlotSelectorWindow()
-            {
-                Owner = this
-            };
-
-            dialog.Initialize(allSlots);
-
-            if (dialog.ShowDialog() != true)
-                return null;
-
-            return (EquipmentsSaveSlotInfo)dialog.SelectedSaveSlot;
         }
 
         private void OnCancel(object parameter)
