@@ -162,7 +162,7 @@ namespace MHArmory.ViewModels
 
         public bool RenameLoadout(LoadoutViewModel loadoutViewModel)
         {
-            var renameOptions = new RenameOptions
+            var inputOptions = new InputOptions
             {
                 WindowTitle = $"Rename skill loadout",
                 WindowPrompt = $"Rename skill loadout '{loadoutViewModel.Name}'",
@@ -171,7 +171,7 @@ namespace MHArmory.ViewModels
                 IsValid = x => Loadouts.Where(l => l != loadoutViewModel).All(l => l.Name != x)
             };
 
-            if (ServicesContainer.GetService<IRenameService>().Rename(renameOptions, out string newName))
+            if (InputUtils.Show(inputOptions, out string newName))
             {
                 loadoutViewModel.Name = newName;
                 return true;

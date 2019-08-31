@@ -14,7 +14,6 @@ namespace MHArmory.Services
         static ServicesContainer()
         {
             RegisterService<IMessageBoxService>(new MessageBoxService());
-            RegisterService<IRenameService>(new RenameService());
             RegisterService<IRenderService>(new RenderService());
             RegisterService<ISearchResultScreenshotService>(new SearchResultScreenshotService());
             RegisterService<ISaveDataService>(new SaveDataService());
