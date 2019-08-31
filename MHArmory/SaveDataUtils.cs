@@ -66,6 +66,16 @@ namespace MHArmory
             return Get(ReadDecorationsSaveData, saveSlotInfoSelector);
         }
 
+        private static Task<IList<EquipmentSaveSlotInfo>> ReadEquipmentSaveData(SaveDataInfo saveDataInfo)
+        {
+            return ReadSaveData<EquipmentSaveSlotInfo, EquipmentReader>(saveDataInfo, ms => new EquipmentReader(ms));
+        }
+
+        private static Task<IList<DecorationsSaveSlotInfo>> ReadDecorationsSaveData(SaveDataInfo saveDataInfo)
+        {
+            return ReadSaveData<DecorationsSaveSlotInfo, DecorationsReader>(saveDataInfo, ms => new DecorationsReader(ms));
+        }
+
         public static Func<IList<T>, T> CreateSaveSlotSelector<T>(Window ownerWindow) where T : SaveSlotInfoBase
         {
             return slots =>
@@ -117,7 +127,9 @@ namespace MHArmory
             return selected;
         }
 
-        private static async Task<IList<EquipmentSaveSlotInfo>> ReadEquipmentSaveData(SaveDataInfo saveDataInfo)
+        private static async Task<IList<TSaveSlotInfo>> ReadSaveData<TSaveSlotInfo, TSaveDataReader>(SaveDataInfo saveDataInfo, Func<Stream, TSaveDataReader> readerFactory)
+            where TSaveSlotInfo : SaveSlotInfoBase
+            where TSaveDataReader : SaveDataReaderBase<TSaveSlotInfo>
         {
             var ms = new MemoryStream();
 
@@ -126,34 +138,11 @@ namespace MHArmory
                 await Crypto.DecryptAsync(inputStream, ms, CancellationToken.None);
             }
 
-            using (var reader = new EquipmentReader(ms))
+            using (TSaveDataReader reader = readerFactory(ms))
             {
-                var list = new List<EquipmentSaveSlotInfo>();
+                var list = new List<TSaveSlotInfo>();
 
-                foreach (EquipmentSaveSlotInfo info in reader.Read())
-                {
-                    info.SetSaveDataInfo(saveDataInfo);
-                    list.Add(info);
-                }
-
-                return list;
-            }
-        }
-
-        private static async Task<IList<DecorationsSaveSlotInfo>> ReadDecorationsSaveData(SaveDataInfo saveDataInfo)
-        {
-            var ms = new MemoryStream();
-
-            using (Stream inputStream = File.OpenRead(saveDataInfo.SaveDataFullFilename))
-            {
-                await Crypto.DecryptAsync(inputStream, ms, CancellationToken.None);
-            }
-
-            using (var reader = new DecorationsReader(ms))
-            {
-                var list = new List<DecorationsSaveSlotInfo>();
-
-                foreach (DecorationsSaveSlotInfo info in reader.Read())
+                foreach (TSaveSlotInfo info in reader.Read())
                 {
                     info.SetSaveDataInfo(saveDataInfo);
                     list.Add(info);
