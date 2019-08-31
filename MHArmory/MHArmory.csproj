@@ -118,7 +118,6 @@
     </Compile>
     <Compile Include="SearchResultSortCriteria.cs" />
     <Compile Include="SearchUtilities.cs" />
-    <Compile Include="Services\DirectoryBrowserService.cs" />
     <Compile Include="Services\MessageBoxService.cs" />
     <Compile Include="InputUtils.cs" />
     <Compile Include="RenderUtils.cs" />
