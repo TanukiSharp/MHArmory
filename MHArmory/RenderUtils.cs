@@ -8,17 +8,11 @@ using System.Windows.Controls;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 
-namespace MHArmory.Services
+namespace MHArmory
 {
-    public interface IRenderService
+    public static class RenderUtils
     {
-        BitmapSource RenderToImage(object item, string dataTemplateName);
-        BitmapSource RenderToImage(UIElement element);
-    }
-
-    public class RenderService : IRenderService
-    {
-        public BitmapSource RenderToImage(object item, string dataTemplateName)
+        public static BitmapSource RenderToImage(object item, string dataTemplateName)
         {
             var contentControl = new ContentControl
             {
@@ -31,7 +25,7 @@ namespace MHArmory.Services
             return RenderToImage(contentControl);
         }
 
-        public BitmapSource RenderToImage(UIElement element)
+        public static BitmapSource RenderToImage(UIElement element)
         {
             element.Measure(new Size(double.PositiveInfinity, double.PositiveInfinity));
             element.Arrange(new Rect(new Point(), element.DesiredSize));

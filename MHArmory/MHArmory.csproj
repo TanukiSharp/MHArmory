@@ -121,7 +121,7 @@
     <Compile Include="Services\DirectoryBrowserService.cs" />
     <Compile Include="Services\MessageBoxService.cs" />
     <Compile Include="InputUtils.cs" />
-    <Compile Include="Services\RenderService.cs" />
+    <Compile Include="RenderUtils.cs" />
     <Compile Include="Services\SaveDataAdvancedService.cs" />
     <Compile Include="Services\SaveDataService.cs" />
     <Compile Include="Services\SearchResultScreenshotService.cs" />
