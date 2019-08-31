@@ -124,7 +124,7 @@
     <Compile Include="RenderUtils.cs" />
     <Compile Include="Services\SaveDataAdvancedService.cs" />
     <Compile Include="Services\SaveDataService.cs" />
-    <Compile Include="Services\SearchResultScreenshotService.cs" />
+    <Compile Include="SearchResultScreenshotUtils.cs" />
     <Compile Include="Services\ServicesContainer.cs" />
     <Compile Include="TaskExtensions.cs" />
     <Compile Include="TaskRunner.cs" />

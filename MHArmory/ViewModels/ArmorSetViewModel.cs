@@ -460,14 +460,12 @@ namespace MHArmory.ViewModels
 
         private void OnSaveScreenshotToClipboard()
         {
-            ISearchResultScreenshotService service = ServicesContainer.GetService<ISearchResultScreenshotService>();
-            Clipboard.SetImage(service.RenderToImage(this, root.InParameters.Slots.Select(x => x.Value)));
+            BitmapSource render = SearchResultScreenshotUtils.RenderToImage(this, root.InParameters.Slots.Select(x => x.Value));
+            Clipboard.SetImage(render);
         }
 
         private void OnSaveScreenshotToFile()
         {
-            ISearchResultScreenshotService service = ServicesContainer.GetService<ISearchResultScreenshotService>();
-
             var saveFileDialog = new SaveFileDialog
             {
                 CheckFileExists = false,
@@ -482,7 +480,9 @@ namespace MHArmory.ViewModels
                 return;
 
             var encoder = new PngBitmapEncoder();
-            encoder.Frames.Add(BitmapFrame.Create(service.RenderToImage(this, root.InParameters.Slots.Select(x => x.Value))));
+
+            BitmapSource render = SearchResultScreenshotUtils.RenderToImage(this, root.InParameters.Slots.Select(x => x.Value));
+            encoder.Frames.Add(BitmapFrame.Create(render));
 
             using (FileStream fs = File.OpenWrite(saveFileDialog.FileName))
                 encoder.Save(fs);

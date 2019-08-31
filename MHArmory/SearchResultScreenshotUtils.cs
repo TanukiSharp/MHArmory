@@ -10,18 +10,12 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using MHArmory.ViewModels;
-using Microsoft.Win32;
 
-namespace MHArmory.Services
+namespace MHArmory
 {
-    public interface ISearchResultScreenshotService
+    public static class SearchResultScreenshotUtils
     {
-        BitmapSource RenderToImage(ArmorSetViewModel searchResult, IEnumerable<int> weaponSlots);
-    }
-
-    public class SearchResultScreenshotService : ISearchResultScreenshotService
-    {
-        public BitmapSource RenderToImage(ArmorSetViewModel searchResult, IEnumerable<int> weaponSlots)
+        public static BitmapSource RenderToImage(ArmorSetViewModel searchResult, IEnumerable<int> weaponSlots)
         {
             var root = new StackPanel
             {
@@ -104,7 +98,7 @@ namespace MHArmory.Services
                 ContentTemplate = (DataTemplate)App.Current.FindResource("SearchResultArmorSetView")
             });
 
-            return ServicesContainer.GetService<IRenderService>().RenderToImage(root);
+            return RenderUtils.RenderToImage(root);
         }
     }
 }
