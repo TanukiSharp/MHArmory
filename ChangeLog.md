@@ -1,5 +1,23 @@
 # Change log
 
+## 0.0.9.7 (??)
+
+- Improved search algorithm performance by 2 to 2.5.<br/>
+Reduced the overhead of context switching in parallelism by batching armor sets to evaluate, maximizing CPU usage.<br/>
+    ![Performance improvement](docs/misc/changelog_0.0.9.7_perf_improvement.png)
+
+- Overall weapon tree improvements:<br/>
+    ![Weapon tree improvement](docs/misc/changelog_0.0.9.7_weapons_improvement.png)
+    - Now all weapons available (events, Kulve, etc...) *(For World only at the moment, not Iceborne)*
+    - Added possession icon
+    - Added import weapons from save data
+    - Added `Handicraft +5` sharpness render à la Iceborne
+    - Added weapon possession count to help you find duplicates
+
+    ![Weapon possession count](docs/misc/changelog_0.0.9.7_weapon_count.png)
+
+
+
 ## 0.0.9.6 (2019/06/10)
 
 - Fixed bug preventing Armory from starting. Sincerely sorry for the troubles.
