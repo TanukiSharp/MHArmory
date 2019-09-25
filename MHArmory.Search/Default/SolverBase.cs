@@ -39,6 +39,40 @@ namespace MHArmory.Search.Default
         protected abstract void OnSearchBegin(SolverDataJewelModel[] matchingJewels, IAbility[] desiredAbilities);
         protected abstract ArmorSetSearchResult IsArmorSetMatching(IEquipment weapon, IEquipment[] equips);
 
+        private void EvaluateArmorSet(IEquipment[] equips, ISolverData data, List<ArmorSetSearchResult> results)
+        {
+            if (SolverUtils.IsAnyFullArmorSet(equips))
+            {
+                if (DataUtility.AreOnSameFullArmorSet(equips) == false)
+                {
+                    searchEquipmentsObjectPool.PutObject(equips);
+                    return;
+                }
+            }
+
+            ArmorSetSearchResult searchResult = IsArmorSetMatching(data.Weapon, equips);
+
+            Interlocked.Increment(ref currentCombinations);
+
+            if (searchResult.IsMatch)
+            {
+                searchResult.ArmorPieces = new IArmorPiece[]
+                {
+                    (IArmorPiece)equips[0],
+                    (IArmorPiece)equips[1],
+                    (IArmorPiece)equips[2],
+                    (IArmorPiece)equips[3],
+                    (IArmorPiece)equips[4],
+                };
+                searchResult.Charm = (ICharmLevel)equips[5];
+
+                lock (results)
+                    results.Add(searchResult);
+            }
+
+            searchEquipmentsObjectPool.PutObject(equips);
+        }
+
         private async Task<IList<ArmorSetSearchResult>> SearchArmorSetsInternal(
             ISolverData data,
             CancellationToken cancellationToken
@@ -96,47 +130,26 @@ namespace MHArmory.Search.Default
 
             try
             {
-                OrderablePartitioner<IEquipment[]> partitioner = Partitioner.Create(generator.All(cancellationToken), EnumerablePartitionerOptions.NoBuffering);
+                const int batchSize = 4096;
 
-                parallelResult = Parallel.ForEach(partitioner, parallelOptions, equips =>
+                using (var equipmentBatchObjectPool = new ObjectPool<EquipmentBatch>(() => EquipmentBatch.Create(batchSize)))
                 {
-                    if (cancellationToken.IsCancellationRequested)
-                    {
-                        searchEquipmentsObjectPool.PutObject(equips);
-                        return;
-                    }
+                    OrderablePartitioner<EquipmentBatch> partitioner = Partitioner.Create(generator.AllBatch(equipmentBatchObjectPool, cancellationToken), EnumerablePartitionerOptions.NoBuffering);
 
-                    if (SolverUtils.IsAnyFullArmorSet(equips))
+                    parallelResult = Parallel.ForEach(partitioner, parallelOptions, equipmentBatch =>
                     {
-                        if (DataUtility.AreOnSameFullArmorSet(equips) == false)
+                        if (cancellationToken.IsCancellationRequested)
                         {
-                            searchEquipmentsObjectPool.PutObject(equips);
+                            equipmentBatchObjectPool.PutObject(equipmentBatch);
                             return;
                         }
-                    }
 
-                    ArmorSetSearchResult searchResult = IsArmorSetMatching(data.Weapon, equips);
+                        for (int i = 0; i < equipmentBatch.Size; i++)
+                            EvaluateArmorSet(equipmentBatch.Equipment[i], data, results);
 
-                    Interlocked.Increment(ref currentCombinations);
-
-                    if (searchResult.IsMatch)
-                    {
-                        searchResult.ArmorPieces = new IArmorPiece[]
-                        {
-                            (IArmorPiece)equips[0],
-                            (IArmorPiece)equips[1],
-                            (IArmorPiece)equips[2],
-                            (IArmorPiece)equips[3],
-                            (IArmorPiece)equips[4],
-                        };
-                        searchResult.Charm = (ICharmLevel)equips[5];
-
-                        lock (results)
-                            results.Add(searchResult);
-                    }
-
-                    searchEquipmentsObjectPool.PutObject(equips);
-                });
+                        equipmentBatchObjectPool.PutObject(equipmentBatch);
+                    });
+                }
             }
             finally
             {

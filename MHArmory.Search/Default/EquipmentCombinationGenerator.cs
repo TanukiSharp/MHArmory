@@ -9,6 +9,20 @@ using MHArmory.Core.DataStructures;
 
 namespace MHArmory.Search.Default
 {
+    public struct EquipmentBatch
+    {
+        public int Size;
+        public IEquipment[][] Equipment;
+
+        public static EquipmentBatch Create(int batchSize)
+        {
+            return new EquipmentBatch
+            {
+                Equipment = new IEquipment[batchSize][]
+            };
+        }
+    }
+
     public class EquipmentCombinationGenerator
     {
         private readonly object syncRoot = new object();
@@ -103,6 +117,34 @@ namespace MHArmory.Search.Default
 
             while ((result = Next(cancellationToken)) != null)
                 yield return result;
+        }
+
+        public IEnumerable<EquipmentBatch> AllBatch(ObjectPool<EquipmentBatch> equipmentBatchObjectPool, CancellationToken cancellationToken)
+        {
+            IEquipment[] result;
+
+            while (true)
+            {
+                EquipmentBatch equipmentBatch = equipmentBatchObjectPool.GetObject();
+
+                for (int i = 0; i < equipmentBatch.Equipment.Length; i++)
+                {
+                    result = Next(cancellationToken);
+
+                    if (result == null)
+                    {
+                        equipmentBatch.Size = i;
+                        yield return equipmentBatch;
+
+                        yield break;
+                    }
+
+                    equipmentBatch.Equipment[i] = result;
+                }
+
+                equipmentBatch.Size = equipmentBatch.Equipment.Length;
+                yield return equipmentBatch;
+            }
         }
 
         public void Reset()
