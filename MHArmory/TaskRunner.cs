@@ -105,7 +105,6 @@ namespace MHArmory
                 currentTask = null;
 
                 localToken.Dispose();
-                localToken = null;
             }
         }
 
@@ -121,7 +120,7 @@ namespace MHArmory
             if (await CancelInternal(throwTaskCanceledException) == false)
             {
                 if (throwTaskCanceledException == false)
-                    return default(T);
+                    return default;
                 else
                     throw new TaskCanceledException();
             }
@@ -137,14 +136,13 @@ namespace MHArmory
             }
             catch (TaskCanceledException) when (throwTaskCanceledException == false)
             {
-                return default(T);
+                return default;
             }
             finally
             {
                 currentTask = null;
 
                 localToken.Dispose();
-                localToken = null;
             }
         }
     }
