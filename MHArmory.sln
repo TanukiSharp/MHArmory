@@ -26,9 +26,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MHArmory.Search", "MHArmory
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MHArmory.Core.WPF", "MHArmory.Core.WPF\MHArmory.Core.WPF.csproj", "{0F590F55-0EEF-4F1B-ABBB-1D561BCEAD48}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MHArmory", "MHArmory\MHArmory.csproj", "{B0A72C5D-4CE0-4417-BD68-B902B8C00EC6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MHArmory", "MHArmory\MHArmory.csproj", "{B0A72C5D-4CE0-4417-BD68-B902B8C00EC6}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MHWMasterDataUtils.Core", "MHWMasterDataUtils\MHWMasterDataUtils.Core\MHWMasterDataUtils.Core.csproj", "{CCEC18D6-21C1-421F-9A38-4A7D71E7AB32}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MHWMasterDataUtils", "MHWMasterDataUtils\MHWMasterDataUtils\MHWMasterDataUtils.csproj", "{099EE587-F3B9-4E1C-B22B-D976BBB1EAFB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -80,6 +82,10 @@ Global
 		{CCEC18D6-21C1-421F-9A38-4A7D71E7AB32}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CCEC18D6-21C1-421F-9A38-4A7D71E7AB32}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CCEC18D6-21C1-421F-9A38-4A7D71E7AB32}.Release|Any CPU.Build.0 = Release|Any CPU
+		{099EE587-F3B9-4E1C-B22B-D976BBB1EAFB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{099EE587-F3B9-4E1C-B22B-D976BBB1EAFB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{099EE587-F3B9-4E1C-B22B-D976BBB1EAFB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{099EE587-F3B9-4E1C-B22B-D976BBB1EAFB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
