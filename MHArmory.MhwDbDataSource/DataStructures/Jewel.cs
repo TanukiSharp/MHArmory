@@ -23,19 +23,26 @@ namespace MHArmory.MhwDbDataSource.DataStructures
 
     internal class Jewel : IJewel
     {
-        public int Id { get; }
-        public string Name { get; }
-        public int Rarity { get; }
-        public int SlotSize { get; }
-        public IAbility[] Abilities { get; }
+        public int Id { get; private set; }
+        public Dictionary<string, string> Name { get; private set; } =  new Dictionary<string, string>();
+        public int Rarity { get; private set; }
+        public int SlotSize { get; private set; }
+        public IAbility[] Abilities { get; private set; }
+
 
         internal Jewel(JewelPrimitive primitive, IAbility[] abilities)
         {
             Id = primitive.Id;
-            Name = primitive.Name;
             Rarity = primitive.Rarity;
             SlotSize = primitive.SlotSize;
             Abilities = abilities;
+            AddLocalization("EN", primitive);
+        }
+
+        internal void AddLocalization(string languageKey, JewelPrimitive primitive)
+        {
+            if(primitive.Name != null)
+                Name[languageKey] = primitive.Name;
         }
 
         public override string ToString()

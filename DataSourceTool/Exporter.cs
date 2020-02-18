@@ -22,7 +22,8 @@ namespace DataSourceTool
             //var httpClient = new HttpClient();
             //Task<string> fetchWeaponsTask = httpClient.GetStringAsync("https://mhw-db.com/weapons?p={\"slug\":false,\"crafting\":false,\"assets\":false}");
 
-            IDataSource source = new MHArmory.AthenaAssDataSource.DataSource(logger, null, null);
+            IDataSource source = new MHArmory.MhwDbDataSource.DataSource(logger, false);
+            //IDataSource source = new MHArmory.AthenaAssDataSource.DataSource(logger, null, null);
 
             IList<IArmorPiece> armorPieces = (await source.GetArmorPieces()).OrderBy(x => x.Id).ToList();
             IList<ISkill> skills = (await source.GetSkills()).OrderBy(x => x.Id).ToList();
@@ -117,11 +118,20 @@ namespace DataSourceTool
             });
         }
 
+        //private object Export(IEnumerable<IAbility> abilities)
+        //{
+        //    return abilities.Select((x, i) => new AbilityPrimitive
+        //    {
+        //        Id = i,
+        //        Level = x.Level,
+        //        Description = x.Description
+        //    });
+        //}
         private object Export(IEnumerable<IAbility> abilities)
         {
-            return abilities.Select((x, i) => new AbilityPrimitive
+            return abilities.Select(x => new AbilityPrimitive
             {
-                Id = i,
+                Id = x.Id,
                 Level = x.Level,
                 Description = x.Description
             });

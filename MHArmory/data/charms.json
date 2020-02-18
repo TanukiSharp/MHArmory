@@ -1,14 +1,8 @@
 [
     {
-        "id": 0,
+        "id": 234,
         "name": {
-            "EN": "Poison Charm",
-            "FR": "Collier antipoison",
-            "JP": "耐毒の護石",
-            "IT": "Amuleto veleno",
-            "DE": "Gift-Talisman",
-            "KR": "내독의 호석",
-            "CN": "耐毒護石"
+            "EN": "Poison Charm"
         },
         "levelIds": [
             0,
@@ -17,66 +11,34 @@
         ]
     },
     {
-        "id": 1,
+        "id": 235,
         "name": {
-            "EN": "Attack Charm",
-            "FR": "Collier de guerre",
-            "JP": "攻撃の護石",
-            "IT": "Amuleto attacco",
-            "DE": "Angriff-Talisman",
-            "KR": "공격의 호석",
-            "CN": "攻擊護石"
+            "EN": "Attack Charm"
         },
         "levelIds": [
             3,
             4,
-            5
+            5,
+            6
         ]
     },
     {
-        "id": 2,
+        "id": 236,
         "name": {
-            "EN": "Defense Charm",
-            "FR": "Collier de défense",
-            "JP": "防御の護石",
-            "IT": "Amuleto difesa",
-            "DE": "Verteidigung-Talisman",
-            "KR": "방어의 호석",
-            "CN": "防禦護石"
+            "EN": "Defense Charm"
         },
         "levelIds": [
-            6,
             7,
-            8
-        ]
-    },
-    {
-        "id": 3,
-        "name": {
-            "EN": "Paralysis Charm",
-            "FR": "Collier de fougue",
-            "JP": "耐痺の護石",
-            "IT": "Amuleto paralisi",
-            "DE": "Lähm-Talisman",
-            "KR": "내마비의 호석",
-            "CN": "耐痹護石"
-        },
-        "levelIds": [
+            8,
             9,
             10,
             11
         ]
     },
     {
-        "id": 4,
+        "id": 237,
         "name": {
-            "EN": "Sleep Charm",
-            "FR": "Collier de minuit",
-            "JP": "耐眠の護石",
-            "IT": "Amuleto sonno",
-            "DE": "Schlaf-Talisman",
-            "KR": "내수면의 호석",
-            "CN": "耐眠護石"
+            "EN": "Paralysis Charm"
         },
         "levelIds": [
             12,
@@ -85,15 +47,9 @@
         ]
     },
     {
-        "id": 5,
+        "id": 238,
         "name": {
-            "EN": "Stun Charm",
-            "FR": "Collier viride",
-            "JP": "耐絶の護石",
-            "IT": "Amuleto stordimento",
-            "DE": "Betäubung-Talisman",
-            "KR": "내기절의 호석",
-            "CN": "耐絶護石"
+            "EN": "Sleep Charm"
         },
         "levelIds": [
             15,
@@ -102,15 +58,9 @@
         ]
     },
     {
-        "id": 6,
+        "id": 239,
         "name": {
-            "EN": "Windproof Charm",
-            "FR": "Collier du vent",
-            "JP": "防風の護石",
-            "IT": "Amuleto paravento",
-            "DE": "Windsicher-Talisman",
-            "KR": "방풍의 호석",
-            "CN": "防風護石"
+            "EN": "Stun Charm"
         },
         "levelIds": [
             18,
@@ -119,406 +69,222 @@
         ]
     },
     {
-        "id": 7,
+        "id": 240,
         "name": {
-            "EN": "Health Charm",
-            "FR": "Collier de péridot",
-            "JP": "体力の護石",
-            "IT": "Amuleto salute",
-            "DE": "Gesundheit-Talisman",
-            "KR": "체력의 호석",
-            "CN": "體力護石"
+            "EN": "Windproof Charm"
         },
         "levelIds": [
             21,
             22,
-            23
-        ]
-    },
-    {
-        "id": 8,
-        "name": {
-            "EN": "Recovery Charm",
-            "FR": "Collier d'émeraude",
-            "JP": "治癒の護石",
-            "IT": "Amuleto cura",
-            "DE": "Erholung-Talisman",
-            "KR": "치유의 호석",
-            "CN": "治癒護石"
-        },
-        "levelIds": [
+            23,
             24,
-            25,
-            26
+            25
         ]
     },
     {
-        "id": 9,
+        "id": 241,
         "name": {
-            "EN": "Fire Charm",
-            "FR": "Collier de rubis",
-            "JP": "耐火の護石",
-            "IT": "Amuleto fuoco",
-            "DE": "Feuer-Talisman",
-            "KR": "내화의 호석",
-            "CN": "耐火護石"
+            "EN": "Health Charm"
         },
         "levelIds": [
+            26,
             27,
-            28,
-            29
+            28
         ]
     },
     {
-        "id": 10,
+        "id": 242,
         "name": {
-            "EN": "Water Charm",
-            "FR": "Collier d'opale",
-            "JP": "耐水の護石",
-            "IT": "Amuleto acqua",
-            "DE": "Wasser-Talisman",
-            "KR": "내수의 호석",
-            "CN": "耐水護石"
+            "EN": "Recovery Charm"
         },
         "levelIds": [
+            29,
             30,
-            31,
-            32
+            31
         ]
     },
     {
-        "id": 11,
+        "id": 243,
         "name": {
-            "EN": "Thunder Charm",
-            "FR": "Collier oeil de chat",
-            "JP": "耐雷の護石",
-            "IT": "Amuleto tuono",
-            "DE": "Donner-Talisman",
-            "KR": "내뢰의 호석",
-            "CN": "耐雷護石"
+            "EN": "Fire Charm"
         },
         "levelIds": [
+            32,
             33,
-            34,
-            35
+            34
         ]
     },
     {
-        "id": 12,
+        "id": 244,
         "name": {
-            "EN": "Blaze Charm",
-            "FR": "Collier de feu",
-            "JP": "火炎の護石",
-            "IT": "Amuleto vampa",
-            "DE": "Geloder-Talisman",
-            "KR": "화염의 호석",
-            "CN": "火炎護石"
+            "EN": "Water Charm"
         },
         "levelIds": [
+            35,
             36,
-            37,
-            38
+            37
         ]
     },
     {
-        "id": 13,
+        "id": 245,
         "name": {
-            "EN": "Flood Charm",
-            "FR": "Collier de cobalt",
-            "JP": "流水の護石",
-            "IT": "Amuleto alluvione",
-            "DE": "Flut-Talisman",
-            "KR": "유수의 호석",
-            "CN": "流水護石"
+            "EN": "Thunder Charm"
         },
         "levelIds": [
+            38,
             39,
-            40,
-            41
+            40
         ]
     },
     {
-        "id": 14,
+        "id": 246,
         "name": {
-            "EN": "Shock Charm",
-            "FR": "Collier de topaze",
-            "JP": "雷光の護石",
-            "IT": "Amuleto scossa",
-            "DE": "Gewitter-Talisman",
-            "KR": "뇌광의 호석",
-            "CN": "雷光護石"
+            "EN": "Blaze Charm"
         },
         "levelIds": [
+            41,
             42,
             43,
-            44
+            44,
+            45
         ]
     },
     {
-        "id": 15,
+        "id": 247,
         "name": {
-            "EN": "Venom Charm",
-            "FR": "Collier de cinabre",
-            "JP": "毒撃の護石",
-            "IT": "Amuleto tossico",
-            "DE": "Giftbiss-Talisman",
-            "KR": "독격의 호석",
-            "CN": "毒擊護石"
+            "EN": "Flood Charm"
         },
         "levelIds": [
-            45,
             46,
-            47
-        ]
-    },
-    {
-        "id": 16,
-        "name": {
-            "EN": "Immobilize Charm",
-            "FR": "Collier d'akinésie",
-            "JP": "痺撃の護石",
-            "IT": "Amuleto stasi",
-            "DE": "Immobilität-Talisman",
-            "KR": "I마비격의 호석",
-            "CN": "痹擊護石"
-        },
-        "levelIds": [
+            47,
             48,
             49,
             50
         ]
     },
     {
-        "id": 17,
+        "id": 248,
         "name": {
-            "EN": "Tranq Charm",
-            "FR": "Collier lotus bleu",
-            "JP": "睡撃の護石",
-            "IT": "Amuleto soporifero",
-            "DE": "Beruhigung-Talisman",
-            "KR": "수면격의 호석",
-            "CN": "睡擊護石"
+            "EN": "Shock Charm"
         },
         "levelIds": [
             51,
             52,
-            53
-        ]
-    },
-    {
-        "id": 18,
-        "name": {
-            "EN": "KO Charm",
-            "FR": "Collier de malachite",
-            "JP": "KOの護石",
-            "IT": "Amuleto KO",
-            "DE": "KO-Talisman",
-            "KR": "KO의 호석",
-            "CN": "KO護石"
-        },
-        "levelIds": [
+            53,
             54,
-            55,
-            56
+            55
         ]
     },
     {
-        "id": 19,
+        "id": 249,
         "name": {
-            "EN": "Enervate Charm",
-            "FR": "Collier de faiblesse",
-            "JP": "奪気の護石",
-            "IT": "Amuleto logorante",
-            "DE": "Entkräften-Talisman",
-            "KR": "탈기의 호석",
-            "CN": "奪氣護石"
+            "EN": "Venom Charm"
         },
         "levelIds": [
+            56,
             57,
             58,
             59
         ]
     },
     {
-        "id": 20,
+        "id": 250,
         "name": {
-            "EN": "Artillery Charm",
-            "FR": "Collier fulminant",
-            "JP": "砲術の護石",
-            "IT": "Amuleto artigliere",
-            "DE": "Artillerie-Talisman",
-            "KR": "포술의 호석",
-            "CN": "砲術護石"
+            "EN": "Immobilize Charm"
         },
         "levelIds": [
             60,
             61,
-            62
+            62,
+            63
         ]
     },
     {
-        "id": 21,
+        "id": 251,
         "name": {
-            "EN": "Hungerless Charm",
-            "FR": "Collier d'austérité",
-            "JP": "無食の護石",
-            "IT": "Amuleto fame",
-            "DE": "Hungerfrei-Talisman",
-            "KR": "단식의 호석",
-            "CN": "無食護石"
+            "EN": "Tranq Charm"
         },
         "levelIds": [
-            63,
             64,
-            65
-        ]
-    },
-    {
-        "id": 22,
-        "name": {
-            "EN": "Ironside Charm",
-            "FR": "Collier du preux",
-            "JP": "鉄壁の護石",
-            "IT": "Amuleto ferreo",
-            "DE": "Eisenplatte-Talisman",
-            "KR": "철벽의 호석",
-            "CN": "鐵壁護石"
-        },
-        "levelIds": [
+            65,
             66,
-            67,
-            68
+            67
         ]
     },
     {
-        "id": 23,
+        "id": 252,
         "name": {
-            "EN": "Friendship Charm",
-            "FR": "Collier de l'amitié",
-            "JP": "友愛の護石",
-            "IT": "Amuleto amicizia",
-            "DE": "Freundschaft-Talisman",
-            "KR": "우애의 호석",
-            "CN": "友愛護石"
+            "EN": "KO Charm"
         },
         "levelIds": [
+            68,
             69,
-            70,
-            71
+            70
         ]
     },
     {
-        "id": 24,
+        "id": 253,
         "name": {
-            "EN": "Extension Charm",
-            "FR": "Collier ésotérique",
-            "JP": "持続の護石",
-            "IT": "Amuleto estensione",
-            "DE": "Verlängerung-Talisman",
-            "KR": "지속의 호석",
-            "CN": "持續護石"
+            "EN": "Enervate Charm"
         },
         "levelIds": [
+            71,
             72,
-            73,
-            74
+            73
         ]
     },
     {
-        "id": 25,
+        "id": 254,
         "name": {
-            "EN": "Glutton's Charm",
-            "FR": "Collier du glouton",
-            "JP": "早食の護石",
-            "IT": "Amuleto ghiotto",
-            "DE": "Vielfraß-Talisman",
-            "KR": "빨리 먹기의 호석",
-            "CN": "快吃護石"
+            "EN": "Artillery Charm"
         },
         "levelIds": [
+            74,
             75,
-            76,
-            77
+            76
         ]
     },
     {
-        "id": 26,
+        "id": 255,
         "name": {
-            "EN": "Blessing Charm",
-            "FR": "Collier sacré",
-            "JP": "加護の護石",
-            "IT": "Amuleto angelo",
-            "DE": "Segen-Talisman",
-            "KR": "가호의 호석",
-            "CN": "加護護石"
+            "EN": "Hungerless Charm"
         },
         "levelIds": [
+            77,
             78,
-            79,
-            80
+            79
         ]
     },
     {
-        "id": 27,
+        "id": 256,
         "name": {
-            "EN": "Rally Charm",
-            "FR": "Collier Palico",
-            "JP": "采配の護石",
-            "IT": "Amuleto adunata",
-            "DE": "Versammlung-Talisman",
-            "KR": "지휘의 호석",
-            "CN": "指揮護石"
+            "EN": "Ironside Charm"
         },
         "levelIds": [
+            80,
             81,
             82,
-            83
+            83,
+            84
         ]
     },
     {
-        "id": 28,
+        "id": 257,
         "name": {
-            "EN": "Botany Charm",
-            "FR": "Collier d'amazonite",
-            "JP": "植学の護石",
-            "IT": "Amuleto botanica",
-            "DE": "Botanik-Talisman",
-            "KR": "식물학의 호석",
-            "CN": "植學護石"
+            "EN": "Friendship Charm"
         },
         "levelIds": [
-            84,
             85,
-            86
-        ]
-    },
-    {
-        "id": 29,
-        "name": {
-            "EN": "Geology Charm",
-            "FR": "Collier minéral",
-            "JP": "地学の護石",
-            "IT": "Amuleto geologia",
-            "DE": "Geologie-Talisman",
-            "KR": "지학의 호석",
-            "CN": "地學護石"
-        },
-        "levelIds": [
+            86,
             87,
             88,
             89
         ]
     },
     {
-        "id": 30,
+        "id": 258,
         "name": {
-            "EN": "Slinger Charm",
-            "FR": "Collier de Lugus",
-            "JP": "投石の護石",
-            "IT": "Amuleto fionda",
-            "DE": "Schleuder-Talisman",
-            "KR": "투석의 호석",
-            "CN": "投石護石"
+            "EN": "Extension Charm"
         },
         "levelIds": [
             90,
@@ -527,15 +293,9 @@
         ]
     },
     {
-        "id": 31,
+        "id": 259,
         "name": {
-            "EN": "Stealth Charm",
-            "FR": "Collier de la nuit",
-            "JP": "潜伏の護石",
-            "IT": "Amuleto furtivo",
-            "DE": "Tarnung-Talisman",
-            "KR": "잠복의 호석",
-            "CN": "潛伏護石"
+            "EN": "Glutton's Charm"
         },
         "levelIds": [
             93,
@@ -544,15 +304,9 @@
         ]
     },
     {
-        "id": 32,
+        "id": 260,
         "name": {
-            "EN": "Smoke Charm",
-            "FR": "Collier de fumée",
-            "JP": "煙復の護石",
-            "IT": "Amuleto spore",
-            "DE": "Rauch-Talisman",
-            "KR": "연기 회복의 호석",
-            "CN": "煙復護石"
+            "EN": "Blessing Charm"
         },
         "levelIds": [
             96,
@@ -561,1104 +315,851 @@
         ]
     },
     {
-        "id": 33,
+        "id": 261,
         "name": {
-            "EN": "Mirewalker Charm",
-            "FR": "Collier de sirène",
-            "JP": "沼渡りの護石",
-            "IT": "Amuleto guado",
-            "DE": "Sumpfläufer-Talisman",
-            "KR": "늪 건너기의 호석",
-            "CN": "沼渡護石"
+            "EN": "Rally Charm"
         },
         "levelIds": [
             99,
             100,
-            101
-        ]
-    },
-    {
-        "id": 34,
-        "name": {
-            "EN": "Insect Charm",
-            "FR": "Collier de la mante",
-            "JP": "昆虫学の護石",
-            "IT": "Amuleto insetto",
-            "DE": "Insekten-Talisman",
-            "KR": "곤충학의 호석",
-            "CN": "昆蟲學護石護石"
-        },
-        "levelIds": [
+            101,
             102,
-            103,
-            104
+            103
         ]
     },
     {
-        "id": 35,
+        "id": 262,
         "name": {
-            "EN": "Intimidator Charm",
-            "FR": "Collier de malepeur",
-            "JP": "威嚇の護石",
-            "IT": "Amuleto intimdatore",
-            "DE": "Einschüchtern-Talisman",
-            "KR": "위협의 호석",
-            "CN": "威嚇護石"
+            "EN": "Botany Charm"
         },
         "levelIds": [
+            104,
             105,
             106,
             107
         ]
     },
     {
-        "id": 36,
+        "id": 263,
         "name": {
-            "EN": "Heavy Artillery Charm",
-            "FR": "Collier de métal",
-            "JP": "砲撃手の護石",
-            "IT": "Amuleto pesante",
-            "DE": "Geschütz-Talisman",
-            "KR": "포격수의 호석",
-            "CN": "砲撃手護石"
+            "EN": "Geology Charm"
         },
         "levelIds": [
             108,
-            109
-        ]
-    },
-    {
-        "id": 37,
-        "name": {
-            "EN": "Light Eater's Charm",
-            "FR": "Collier du parasite",
-            "JP": "小食の護石",
-            "IT": "Amuleto chef",
-            "DE": "KleinHungerTalisman",
-            "KR": "조금먹기의 호석",
-            "CN": "小胃口護石"
-        },
-        "levelIds": [
+            109,
             110
         ]
     },
     {
-        "id": 38,
+        "id": 264,
         "name": {
-            "EN": "Tracker Charm",
-            "FR": "Collier de prémonition",
-            "JP": "追跡の護石",
-            "IT": "Amuleto esploratore",
-            "DE": "Spürhund-Talisman",
-            "KR": "추적의 호석",
-            "CN": "追蹤護石"
+            "EN": "Slinger Charm"
         },
         "levelIds": [
-            111
-        ]
-    },
-    {
-        "id": 39,
-        "name": {
-            "EN": "Fortification Charm",
-            "FR": "Collier d'immortalité",
-            "JP": "不屈の護石",
-            "IT": "Amuleto fortificazione",
-            "DE": "Kräftigung-Talisman",
-            "KR": "불굴의 호석",
-            "CN": "不屈護石"
-        },
-        "levelIds": [
-            112
-        ]
-    },
-    {
-        "id": 40,
-        "name": {
-            "EN": "Performer's Charm",
-            "FR": "Collier du mélomane",
-            "JP": "笛吹きの護石",
-            "IT": "Amuleto musicista",
-            "DE": "Darbietung-Talisman",
-            "KR": "피리불기의 호석 ",
-            "CN": "吹笛護石"
-        },
-        "levelIds": [
+            111,
+            112,
             113
         ]
     },
     {
-        "id": 41,
+        "id": 265,
         "name": {
-            "EN": "Capacity Charm",
-            "FR": "Collier de plomb",
-            "JP": "装填の護石",
-            "IT": "Amuleto capienza",
-            "DE": "Kapazität-Talisman",
-            "KR": "장전의 호석",
-            "CN": "裝填護石"
+            "EN": "Stealth Charm"
         },
         "levelIds": [
-            114
-        ]
-    },
-    {
-        "id": 42,
-        "name": {
-            "EN": "Bleed Charm",
-            "FR": "Collier de sang",
-            "JP": "耐裂の護石",
-            "IT": "Amuleto sangue",
-            "DE": "Blutung-Talisman",
-            "KR": "내열상의 호석",
-            "CN": "耐裂護石"
-        },
-        "levelIds": [
+            114,
             115,
-            116,
-            117
+            116
         ]
     },
     {
-        "id": 43,
+        "id": 266,
         "name": {
-            "EN": "Speed Heal Charm",
-            "FR": "Collier de jade",
-            "JP": "早復の護石",
-            "IT": "Amuleto guarigione",
-            "DE": "SchnellheilungTalisman",
-            "KR": "조복의 호석",
-            "CN": "早復l護石"
+            "EN": "Smoke Charm"
         },
         "levelIds": [
+            117,
             118,
-            119,
-            120
+            119
         ]
     },
     {
-        "id": 44,
+        "id": 267,
         "name": {
-            "EN": "Ice Charm",
-            "FR": "Collier de glace",
-            "JP": "耐氷の護石",
-            "IT": "Amuleto ghiaccio",
-            "DE": "Eis-Talisman",
-            "KR": "내빙의 호석",
-            "CN": "耐冰護石"
+            "EN": "Mirewalker Charm"
         },
         "levelIds": [
+            120,
             121,
-            122,
-            123
+            122
         ]
     },
     {
-        "id": 45,
+        "id": 268,
         "name": {
-            "EN": "Blight Charm",
-            "FR": "Collier du druide",
-            "JP": "耐属の護石",
-            "IT": "Amuleto malus",
-            "DE": "Pest-Talisman",
-            "KR": "내속의 호석",
-            "CN": "耐屬護石"
+            "EN": "Insect Charm"
         },
         "levelIds": [
+            123,
             124,
-            125,
-            126
+            125
         ]
     },
     {
-        "id": 46,
+        "id": 269,
         "name": {
-            "EN": "Frost Charm",
-            "FR": "Collier d'hiver",
-            "JP": "氷結の護石",
-            "IT": "Amuleto bufera",
-            "DE": "Frost-Talisman",
-            "KR": "빙결의 호석",
-            "CN": "冰結護石"
+            "EN": "Intimidator Charm"
         },
         "levelIds": [
+            126,
             127,
-            128,
-            129
+            128
         ]
     },
     {
-        "id": 47,
+        "id": 270,
         "name": {
-            "EN": "Master's Charm",
-            "FR": "Collier spirituel",
-            "JP": "達人の護石",
-            "IT": "Amuleto esperto",
-            "DE": "Meister-Talisman",
-            "KR": "달인의 호석",
-            "CN": "達人護石"
+            "EN": "Heavy Artillery Charm"
         },
         "levelIds": [
-            130,
-            131,
+            129,
+            130
+        ]
+    },
+    {
+        "id": 271,
+        "name": {
+            "EN": "Light Eater's Charm"
+        },
+        "levelIds": [
+            131
+        ]
+    },
+    {
+        "id": 272,
+        "name": {
+            "EN": "Tracker Charm"
+        },
+        "levelIds": [
             132
         ]
     },
     {
-        "id": 48,
+        "id": 273,
         "name": {
-            "EN": "Evasion Charm",
-            "FR": "Collier angélique",
-            "JP": "回避の護石",
-            "IT": "Amuleto evasione",
-            "DE": "Ausweich-Talisman",
-            "KR": "회피의 호석",
-            "CN": "回避護石"
+            "EN": "Fortification Charm"
         },
         "levelIds": [
-            133,
+            133
+        ]
+    },
+    {
+        "id": 274,
+        "name": {
+            "EN": "Performer's Charm"
+        },
+        "levelIds": [
             134,
             135
         ]
     },
     {
-        "id": 49,
+        "id": 275,
         "name": {
-            "EN": "Sheath Charm",
-            "FR": "Collier du sensei",
-            "JP": "납도의 호석",
-            "IT": "Amuleto rinfodero",
-            "DE": "Wegstecken-Talisman",
-            "KR": "납도의 호석",
-            "CN": "納刀護石"
+            "EN": "Capacity Charm"
         },
         "levelIds": [
-            136,
+            136
+        ]
+    },
+    {
+        "id": 276,
+        "name": {
+            "EN": "Bleed Charm"
+        },
+        "levelIds": [
             137,
-            138
+            138,
+            139
         ]
     },
     {
-        "id": 50,
+        "id": 277,
         "name": {
-            "EN": "Whetstone Charm",
-            "FR": "Collier de verre",
-            "JP": "研磨の護石",
-            "IT": "Amuleto cote",
-            "DE": "Wetzstein-Talisman",
-            "KR": "연마의 호석",
-            "CN": "研磨護石"
+            "EN": "Speed Heal Charm"
         },
         "levelIds": [
-            139,
             140,
-            141
+            141,
+            142
         ]
     },
     {
-        "id": 51,
+        "id": 278,
         "name": {
-            "EN": "Blast Charm",
-            "FR": "Talisman du pyrope",
-            "JP": "耐爆の護石",
-            "IT": "Amuleto scoppio",
-            "DE": "Explosion-Talisman",
-            "KR": "내폭파의 호석",
-            "CN": "耐爆護石"
+            "EN": "Ice Charm"
         },
         "levelIds": [
-            142,
             143,
-            144
+            144,
+            145
         ]
     },
     {
-        "id": 52,
+        "id": 279,
         "name": {
-            "EN": "Dragon Charm",
-            "FR": "Talisman draconique",
-            "JP": "耐龍の護石",
-            "IT": "Amuleto drago",
-            "DE": "Drachen-Talisman",
-            "KR": "내룡의 호석",
-            "CN": "耐龍護石"
+            "EN": "Blight Charm"
         },
         "levelIds": [
-            145,
             146,
-            147
+            147,
+            148
         ]
     },
     {
-        "id": 53,
+        "id": 280,
         "name": {
-            "EN": "Wyrmsbane Charm",
-            "FR": "Talisman du dragon",
-            "JP": "破龍の護石",
-            "IT": "Amuleto iperdrago",
-            "DE": "Wyrmgeißel-Talisman",
-            "KR": "파룡의 호석",
-            "CN": "破龍護石"
+            "EN": "Frost Charm"
         },
         "levelIds": [
-            148,
             149,
-            150
-        ]
-    },
-    {
-        "id": 54,
-        "name": {
-            "EN": "Demolition Charm",
-            "FR": "Talisman du chaos",
-            "JP": "爆破の護石",
-            "IT": "Amuleto schianto",
-            "DE": "Zerstörung-Talisman",
-            "KR": "폭파의 호석",
-            "CN": "爆破護石"
-        },
-        "levelIds": [
+            150,
             151,
             152,
             153
         ]
     },
     {
-        "id": 55,
+        "id": 281,
         "name": {
-            "EN": "Draw Charm",
-            "FR": "Talisman du battosai",
-            "JP": "抜刀の護石",
-            "IT": "Amuleto sfoderata",
-            "DE": "Ziehen-Talisman",
-            "KR": "발도의 호석",
-            "CN": "拔刀護石"
+            "EN": "Master's Charm"
         },
         "levelIds": [
             154,
-            155
-        ]
-    },
-    {
-        "id": 56,
-        "name": {
-            "EN": "Special Shot Charm",
-            "FR": "Talisman du tireur",
-            "JP": "特射の護石",
-            "IT": "Amuleto speciale",
-            "DE": "SpezialschussTalismn",
-            "KR": "특사의 호석",
-            "CN": "特射護石"
-        },
-        "levelIds": [
+            155,
             156,
             157
         ]
     },
     {
-        "id": 57,
+        "id": 282,
         "name": {
-            "EN": "Marathon Charm",
-            "FR": "Talisman d'énergie",
-            "JP": "強走の護石",
-            "IT": "Amuleto maratona",
-            "DE": "Marathon-Talisman",
-            "KR": "강주의 호석",
-            "CN": "强走護石"
+            "EN": "Evasion Charm"
         },
         "levelIds": [
             158,
-            159
-        ]
-    },
-    {
-        "id": 58,
-        "name": {
-            "EN": "Fitness Charm",
-            "FR": "Talisman de santé",
-            "JP": "体術の護石",
-            "IT": "Amuleto tonico",
-            "DE": "Fitness-Talisman",
-            "KR": "체술의 호석",
-            "CN": "體術護石"
-        },
-        "levelIds": [
+            159,
             160,
-            161,
-            162
+            161
         ]
     },
     {
-        "id": 59,
+        "id": 283,
         "name": {
-            "EN": "Surge Charm",
-            "FR": "Talisman d'afflux",
-            "JP": "早気の護石",
-            "IT": "Amuleto super",
-            "DE": "Energie-Talisman",
-            "KR": "조기의 호석",
-            "CN": "早氣護石"
+            "EN": "Sheath Charm"
         },
         "levelIds": [
+            162,
             163,
             164
         ]
     },
     {
-        "id": 60,
+        "id": 284,
         "name": {
-            "EN": "Leaping Charm",
-            "FR": "Talisman ninjutsu",
-            "JP": "跳躍の護石",
-            "IT": "Amuleto tuffo",
-            "DE": "Luftsprung-Talisman",
-            "KR": "도약의 호석",
-            "CN": "跳躍護石"
+            "EN": "Whetstone Charm"
         },
         "levelIds": [
             165,
-            166
+            166,
+            167
         ]
     },
     {
-        "id": 61,
+        "id": 285,
         "name": {
-            "EN": "Bombardier Charm",
-            "FR": "Talisman infernal",
-            "JP": "爆師の護石",
-            "IT": "Amuleto bomba",
-            "DE": "Bombardier-Talisman",
-            "KR": "폭파수의 호석",
-            "CN": "爆師護石"
+            "EN": "Blast Charm"
         },
         "levelIds": [
-            167,
             168,
-            169
+            169,
+            170
         ]
     },
     {
-        "id": 62,
+        "id": 286,
         "name": {
-            "EN": "Mushroom Charm",
-            "FR": "Talisman champignon",
-            "JP": "茸好の護石",
-            "IT": "Amuleto fungo",
-            "DE": "Pilz-Talisman",
-            "KR": "버섯 애호가의 호석",
-            "CN": "茸好護石"
+            "EN": "Dragon Charm"
         },
         "levelIds": [
-            170,
-            171
-        ]
-    },
-    {
-        "id": 63,
-        "name": {
-            "EN": "Awakening Charm",
-            "FR": "Talisman de l'éveil",
-            "JP": "覚醒の護石",
-            "IT": "Amuleto risveglio",
-            "DE": "Erwachen-Talisman",
-            "KR": "각성의 호석",
-            "CN": "覺醒護石"
-        },
-        "levelIds": [
+            171,
             172,
             173
         ]
     },
     {
-        "id": 64,
+        "id": 287,
         "name": {
-            "EN": "Handicraft Charm",
-            "FR": "Talisman du forgeron",
-            "JP": "匠の護石",
-            "IT": "Amuleto artigiano",
-            "DE": "Handwerk-Talisman",
-            "KR": "장인의 호석",
-            "CN": "匠之護石"
+            "EN": "Wyrmsbane Charm"
         },
         "levelIds": [
             174,
             175,
-            176
-        ]
-    },
-    {
-        "id": 65,
-        "name": {
-            "EN": "Mud Puppy Charm",
-            "FR": "Bracelet du fervent",
-            "JP": "泥浴びの護石",
-            "IT": "Amuleto melma",
-            "DE": "Schlamm-Talisman",
-            "KR": "진흙투성이의 호석",
-            "CN": "泥浴護石"
-        },
-        "levelIds": [
-            177
-        ]
-    },
-    {
-        "id": 66,
-        "name": {
-            "EN": "Trickshot Charm",
-            "FR": "Bracelet du scélérat",
-            "JP": "仕掛け弾の護石",
-            "IT": "Amuleto preciso",
-            "DE": "Kunstschuss-Talisman",
-            "KR": "특수탄의 호석",
-            "CN": "陷阱彈護石"
-        },
-        "levelIds": [
+            176,
+            177,
             178
         ]
     },
     {
-        "id": 67,
+        "id": 288,
         "name": {
-            "EN": "Hunter's Life Charm",
-            "FR": "Bracelet du ranger",
-            "JP": "狩猟生活の護石",
-            "IT": "Amuleto survivalista",
-            "DE": "Jägerleben-Talisman",
-            "KR": "수렵생활의 호석",
-            "CN": "狩獵生活護石"
+            "EN": "Demolition Charm"
         },
         "levelIds": [
-            179
+            179,
+            180,
+            181,
+            182
         ]
     },
     {
-        "id": 68,
+        "id": 289,
         "name": {
-            "EN": "Procurer's Charm",
-            "FR": "Bracelet du margoulin",
-            "JP": "調達の護石",
-            "IT": "Amuleto procacciatore",
-            "DE": "Vermittler-Talisman",
-            "KR": "조달의 호석 ",
-            "CN": "調查達人護石"
+            "EN": "Draw Charm"
         },
         "levelIds": [
-            180
-        ]
-    },
-    {
-        "id": 69,
-        "name": {
-            "EN": "Gatherer's Charm",
-            "FR": "Bracelet du rapineur",
-            "JP": "採集鉄人の護石",
-            "IT": "Amuleto raccoglitore",
-            "DE": "Sammler-Talisman",
-            "KR": "채집 철인의 호석",
-            "CN": "採集鐵人護石"
-        },
-        "levelIds": [
-            181
-        ]
-    },
-    {
-        "id": 70,
-        "name": {
-            "EN": "Guard Charm",
-            "FR": "Talisma de fer",
-            "JP": "耐防の護石",
-            "IT": "Amuleto blocco",
-            "DE": "Block-Talisman",
-            "KR": "내방어의 호석",
-            "CN": "耐防護石"
-        },
-        "levelIds": [
-            182,
             183,
             184
         ]
     },
     {
-        "id": 71,
+        "id": 290,
         "name": {
-            "EN": "Earplugs Charm",
-            "FR": "Talisman de banshee",
-            "JP": "耳栓の護石",
-            "IT": "Amuleto udito",
-            "DE": "Ohrstöpsel-Talisman",
-            "KR": "귀마개의 호석",
-            "CN": "耳塞護石"
+            "EN": "Trickshot Charm"
         },
         "levelIds": [
-            185,
+            185
+        ]
+    },
+    {
+        "id": 291,
+        "name": {
+            "EN": "Marathon Charm"
+        },
+        "levelIds": [
             186,
-            187
+            187,
+            188
         ]
     },
     {
-        "id": 72,
+        "id": 292,
         "name": {
-            "EN": "Tremor Charm",
-            "FR": "Talisman de terre",
-            "JP": "耐震の護石",
-            "IT": "Amuleto sisma",
-            "DE": "Beben-Talisman",
-            "KR": "내진의 호석",
-            "CN": "耐震護石"
+            "EN": "Fitness Charm"
         },
         "levelIds": [
-            188,
-            189
-        ]
-    },
-    {
-        "id": 73,
-        "name": {
-            "EN": "Exploiter Charm",
-            "FR": "Talisman de cruauté",
-            "JP": "痛撃の護石",
-            "IT": "Amuleto abuso",
-            "DE": "Vorteil-Talisman",
-            "KR": "통격의 호석",
-            "CN": "痛擊護石"
-        },
-        "levelIds": [
+            189,
             190,
-            191
+            191,
+            192
         ]
     },
     {
-        "id": 74,
+        "id": 293,
         "name": {
-            "EN": "Focus Charm",
-            "FR": "Talisman de clarté",
-            "JP": "集中の護石",
-            "IT": "Amuleto concentrato",
-            "DE": "Fokus-Talisman",
-            "KR": "집중의 호석",
-            "CN": "集中護石"
+            "EN": "Surge Charm"
         },
         "levelIds": [
-            192,
-            193
-        ]
-    },
-    {
-        "id": 75,
-        "name": {
-            "EN": "Breaker Charm",
-            "FR": "Talisman du briseur",
-            "JP": "重撃の護石",
-            "IT": "Amuleto lesione",
-            "DE": "Brecher-Talisman",
-            "KR": "중격의 호석",
-            "CN": "重擊護石"
-        },
-        "levelIds": [
+            193,
             194,
             195
         ]
     },
     {
-        "id": 76,
+        "id": 294,
         "name": {
-            "EN": "Fury Charm",
-            "FR": "Talisman du fureur",
-            "JP": "逆上の護石",
-            "IT": "Amuleto furia",
-            "DE": "Zorn-Talisman",
-            "KR": "역상의 호석",
-            "CN": "逆上護石"
+            "EN": "Leaping Charm"
         },
         "levelIds": [
             196,
-            197
+            197,
+            198
         ]
     },
     {
-        "id": 77,
+        "id": 295,
         "name": {
-            "EN": "Grit Charm",
-            "FR": "Talisman du courage",
-            "JP": "底力の護石",
-            "IT": "Amuleto grinta",
-            "DE": "Schneid-Talisman",
-            "KR": "저력의 호석",
-            "CN": "底力護石"
+            "EN": "Bombardier Charm"
         },
         "levelIds": [
-            198,
-            199
-        ]
-    },
-    {
-        "id": 78,
-        "name": {
-            "EN": "Maintenance Charm",
-            "FR": "Talisman du ranger",
-            "JP": "整備の護石",
-            "IT": "Amuleto dedicato",
-            "DE": "Wartung-Talisman",
-            "KR": "정비의 호석",
-            "CN": "整備護石"
-        },
-        "levelIds": [
+            199,
             200,
-            201,
-            202
+            201
         ]
     },
     {
-        "id": 79,
+        "id": 296,
         "name": {
-            "EN": "Power Charm",
-            "FR": "Talisman de puissance",
-            "JP": "全開の護石",
-            "IT": "Amuleto forza",
-            "DE": "Kraft-Talisman",
-            "KR": "전개의 호석",
-            "CN": "全開護石"
+            "EN": "Mushroom Charm"
         },
         "levelIds": [
+            202,
             203,
             204
         ]
     },
     {
-        "id": 80,
+        "id": 297,
         "name": {
-            "EN": "Challenger Charm",
-            "FR": "Talisman du courage",
-            "JP": "挑戦の護石",
-            "IT": "Amuleto sfidante",
-            "DE": "Hetzer-Talisman",
-            "KR": "도전의 호석",
-            "CN": "挑戰護石"
+            "EN": "Awakening Charm"
         },
         "levelIds": [
             205,
-            206
+            206,
+            207
         ]
     },
     {
-        "id": 81,
+        "id": 298,
         "name": {
-            "EN": "Unscathed Charm",
-            "FR": "Talisman du triomphe",
-            "JP": "無傷の護石",
-            "IT": "Amuleto illeso",
-            "DE": "Unversehrt-Talisman",
-            "KR": "건강제일의 호석",
-            "CN": "無傷護石"
+            "EN": "Handicraft Charm"
         },
         "levelIds": [
-            207,
-            208
-        ]
-    },
-    {
-        "id": 82,
-        "name": {
-            "EN": "Mighty Charm",
-            "FR": "Talisman du fervent",
-            "JP": "渾身の護石",
-            "IT": "Amuleto possente",
-            "DE": "Macht-Talisman",
-            "KR": "혼신의 호석",
-            "CN": "渾身護石"
-        },
-        "levelIds": [
+            208,
             209,
-            210
+            210,
+            211
         ]
     },
     {
-        "id": 83,
+        "id": 299,
         "name": {
-            "EN": "Impact Charm",
-            "FR": "Talisman d'acier",
-            "JP": "耐衝の護石",
-            "IT": "Amuleto impatto",
-            "DE": "Treffer-Talisman",
-            "KR": "내충격의 호석",
-            "CN": "耐衝護石"
+            "EN": "Mud Puppy Charm"
         },
         "levelIds": [
-            211,
             212
         ]
     },
     {
-        "id": 84,
+        "id": 300,
         "name": {
-            "EN": "Miasma Charm",
-            "FR": "Talisman impie",
-            "JP": "耐瘴の護石",
-            "IT": "Amuleto effluvio",
-            "DE": "Miasma-Talisman",
-            "KR": "독기 내성의 호석",
-            "CN": "耐瘴護石"
+            "EN": "Hunter's Life Charm"
         },
         "levelIds": [
-            213,
-            214,
+            213
+        ]
+    },
+    {
+        "id": 301,
+        "name": {
+            "EN": "Procurer's Charm"
+        },
+        "levelIds": [
+            214
+        ]
+    },
+    {
+        "id": 302,
+        "name": {
+            "EN": "Gatherer's Charm"
+        },
+        "levelIds": [
             215
         ]
     },
     {
-        "id": 85,
+        "id": 303,
         "name": {
-            "EN": "Normal Shots Charm",
-            "FR": "Talisman du tireur",
-            "JP": "通常弾の護石",
-            "IT": "Amuleto normale",
-            "DE": "StandardboostTalismn",
-            "KR": "통상탄의 호석",
-            "CN": "通常彈護石"
+            "EN": "Guard Charm"
         },
         "levelIds": [
-            216
-        ]
-    },
-    {
-        "id": 86,
-        "name": {
-            "EN": "Clearmind Charm",
-            "FR": "Bracelet de pureté",
-            "JP": "心頭滅却の護石",
-            "IT": "Amuleto mente lucida",
-            "DE": "Klarer-Kopf-Talisman",
-            "KR": "심두멸각의 호석",
-            "CN": "心靜自然涼護石"
-        },
-        "levelIds": [
-            217
-        ]
-    },
-    {
-        "id": 87,
-        "name": {
-            "EN": "Rider's Charm",
-            "FR": "Bracelet d'agilité",
-            "JP": "騎手の護石",
-            "IT": "Amuleto cavaliere",
-            "DE": "Reiter-Talisman",
-            "KR": "기수의 호석",
-            "CN": "騎手護石"
-        },
-        "levelIds": [
+            216,
+            217,
             218
         ]
     },
     {
-        "id": 88,
+        "id": 304,
         "name": {
-            "EN": "Surveyor's Charm",
-            "FR": "Bracelet du savant",
-            "JP": "調査達人の護石",
-            "IT": "Amuleto indagatore",
-            "DE": "Vermesser-Talisman",
-            "KR": "조사달인의 호석",
-            "CN": "調查達人護石"
+            "EN": "Earplugs Charm"
         },
         "levelIds": [
-            219
-        ]
-    },
-    {
-        "id": 89,
-        "name": {
-            "EN": "Critical Charm",
-            "FR": "Talisman de furie",
-            "JP": "超心の護石",
-            "IT": "Amuleto critico",
-            "DE": "Kritischer-Talisman",
-            "KR": "초회심의 호석",
-            "CN": "超心護石"
-        },
-        "levelIds": [
-            220
-        ]
-    },
-    {
-        "id": 90,
-        "name": {
-            "EN": "Invigorate Charm",
-            "FR": "Talisman de pouvoir",
-            "JP": "昴揚の護石",
-            "IT": "Amuleto vigore",
-            "DE": "Kräftigung-Talisman",
-            "KR": "앙양의 호석",
-            "CN": "昂揚護石"
-        },
-        "levelIds": [
+            219,
+            220,
             221,
             222
         ]
     },
     {
-        "id": 91,
+        "id": 305,
         "name": {
-            "EN": "Penetration Charm",
-            "FR": "Talisman de douleur",
-            "JP": "貫通弾の護石",
-            "IT": "Amuleto perforazione",
-            "DE": "Durchdring-Talisman",
-            "KR": "관통탄의 호석",
-            "CN": "貫通彈護石"
+            "EN": "Tremor Charm"
         },
         "levelIds": [
-            223
-        ]
-    },
-    {
-        "id": 92,
-        "name": {
-            "EN": "Dispersal Charm",
-            "FR": "Talisman du massacre",
-            "JP": "散弾の護石",
-            "IT": "Amuleto ventaglio",
-            "DE": "Zerstreu-Talisman",
-            "KR": "산탄의 호석",
-            "CN": "散彈護石"
-        },
-        "levelIds": [
-            224
-        ]
-    },
-    {
-        "id": 93,
-        "name": {
-            "EN": "Poison Coating Charm",
-            "FR": "Talisman du cancer",
-            "JP": "毒瓶の護石",
-            "IT": "Amuleto applica veleno",
-            "DE": "Giftschicht-Talisman",
-            "KR": "독병의 호석 ",
-            "CN": "毒瓶護石"
-        },
-        "levelIds": [
+            223,
+            224,
             225
         ]
     },
     {
-        "id": 94,
+        "id": 306,
         "name": {
-            "EN": "Para Coating Charm",
-            "FR": "Talisman du scorpion",
-            "JP": "麻痺瓶の護石",
-            "IT": "Amuleto applica paralisi",
-            "DE": "Lähmschicht-Talisman",
-            "KR": "마비병의 호석",
-            "CN": "麻痹瓶護石"
+            "EN": "Exploiter Charm"
         },
         "levelIds": [
-            226
-        ]
-    },
-    {
-        "id": 95,
-        "name": {
-            "EN": "Sleep Coating Charm",
-            "FR": "Talisman du verseau",
-            "JP": "睡眠瓶の護石",
-            "IT": "Amuleto applica sonno",
-            "DE": "SchlafschichtTalisman",
-            "KR": "수면병의 호석",
-            "CN": "睡眠瓶護石"
-        },
-        "levelIds": [
+            226,
             227
         ]
     },
     {
-        "id": 96,
+        "id": 307,
         "name": {
-            "EN": "Blast Coating Charm",
-            "FR": "Talisman du taureau",
-            "JP": "爆破瓶の護石",
-            "IT": "Amuleto applica scoppio",
-            "DE": "ExplosionsschchtTalmn",
-            "KR": "폭파병의 호석",
-            "CN": "爆破瓶護石"
+            "EN": "Focus Charm"
         },
         "levelIds": [
-            228
-        ]
-    },
-    {
-        "id": 97,
-        "name": {
-            "EN": "Geomancy Charm",
-            "FR": "Bracelet du géomancien",
-            "JP": "風水の護石",
-            "IT": "Amuleto geomanzia",
-            "DE": "Geomantik-Talisman",
-            "KR": "풍수의 호석",
-            "CN": "風水護石"
-        },
-        "levelIds": [
-            229
-        ]
-    },
-    {
-        "id": 98,
-        "name": {
-            "EN": "Gale Charm",
-            "FR": "Bracelet du typhon",
-            "JP": "疾風の護石",
-            "IT": "Amuleto scivolata",
-            "DE": "Sturmwind-Talisman",
-            "KR": "질풍의 호석",
-            "CN": "疾風護石"
-        },
-        "levelIds": [
+            228,
+            229,
             230
         ]
     },
     {
-        "id": 99,
+        "id": 308,
         "name": {
-            "EN": "Wyrmslayer Charm",
-            "FR": "Bracelet du dragon",
-            "JP": "減龍の護石",
-            "IT": "Amuleto anziano",
-            "DE": "LindwurmtöterTalismn",
-            "KR": "파룡의 호석",
-            "CN": "滅龍護石"
+            "EN": "Breaker Charm"
         },
         "levelIds": [
-            231
-        ]
-    },
-    {
-        "id": 100,
-        "name": {
-            "EN": "Bulwark Charm",
-            "FR": "Bracelet de protection",
-            "JP": "堅守の護石",
-            "IT": "Amuleto guardia",
-            "DE": "Bollwerk-Talisman",
-            "KR": "견수의 호석",
-            "CN": "堅守護石"
-        },
-        "levelIds": [
-            232
-        ]
-    },
-    {
-        "id": 101,
-        "name": {
-            "EN": "Fair Wind Charm",
-            "FR": "Bracelet de la Cinquième",
-            "JP": "追い風の護石",
-            "IT": "Amuleto vento propizio",
-            "DE": "Talisman der Fünften",
-            "KR": "순풍의 호석",
-            "CN": "追風護石"
-        },
-        "levelIds": [
+            231,
+            232,
             233
+        ]
+    },
+    {
+        "id": 309,
+        "name": {
+            "EN": "Fury Charm"
+        },
+        "levelIds": [
+            234,
+            235,
+            236,
+            237
+        ]
+    },
+    {
+        "id": 310,
+        "name": {
+            "EN": "Grit Charm"
+        },
+        "levelIds": [
+            238,
+            239,
+            240,
+            241,
+            242
+        ]
+    },
+    {
+        "id": 311,
+        "name": {
+            "EN": "Maintenance Charm"
+        },
+        "levelIds": [
+            243,
+            244,
+            245
+        ]
+    },
+    {
+        "id": 312,
+        "name": {
+            "EN": "Power Charm"
+        },
+        "levelIds": [
+            246,
+            247,
+            248,
+            249
+        ]
+    },
+    {
+        "id": 313,
+        "name": {
+            "EN": "Challenger Charm"
+        },
+        "levelIds": [
+            250,
+            251,
+            252,
+            253
+        ]
+    },
+    {
+        "id": 314,
+        "name": {
+            "EN": "Unscathed Charm"
+        },
+        "levelIds": [
+            254,
+            255,
+            256
+        ]
+    },
+    {
+        "id": 315,
+        "name": {
+            "EN": "Mighty Charm"
+        },
+        "levelIds": [
+            257,
+            258
+        ]
+    },
+    {
+        "id": 316,
+        "name": {
+            "EN": "Impact Charm"
+        },
+        "levelIds": [
+            259,
+            260,
+            261
+        ]
+    },
+    {
+        "id": 317,
+        "name": {
+            "EN": "Miasma Charm"
+        },
+        "levelIds": [
+            262,
+            263,
+            264
+        ]
+    },
+    {
+        "id": 318,
+        "name": {
+            "EN": "Normal Shots Charm"
+        },
+        "levelIds": [
+            265,
+            266
+        ]
+    },
+    {
+        "id": 319,
+        "name": {
+            "EN": "Clearmind Charm"
+        },
+        "levelIds": [
+            267
+        ]
+    },
+    {
+        "id": 320,
+        "name": {
+            "EN": "Rider's Charm"
+        },
+        "levelIds": [
+            268
+        ]
+    },
+    {
+        "id": 321,
+        "name": {
+            "EN": "Surveyor's Charm"
+        },
+        "levelIds": [
+            269
+        ]
+    },
+    {
+        "id": 322,
+        "name": {
+            "EN": "Critical Charm"
+        },
+        "levelIds": [
+            270,
+            271
+        ]
+    },
+    {
+        "id": 323,
+        "name": {
+            "EN": "Invigorate Charm"
+        },
+        "levelIds": [
+            272,
+            273,
+            274
+        ]
+    },
+    {
+        "id": 324,
+        "name": {
+            "EN": "Penetration Charm"
+        },
+        "levelIds": [
+            275,
+            276
+        ]
+    },
+    {
+        "id": 325,
+        "name": {
+            "EN": "Dispersal Charm"
+        },
+        "levelIds": [
+            277,
+            278
+        ]
+    },
+    {
+        "id": 326,
+        "name": {
+            "EN": "Poison Coating Charm"
+        },
+        "levelIds": [
+            279
+        ]
+    },
+    {
+        "id": 327,
+        "name": {
+            "EN": "Para Coating Charm"
+        },
+        "levelIds": [
+            280
+        ]
+    },
+    {
+        "id": 328,
+        "name": {
+            "EN": "Sleep Coating Charm"
+        },
+        "levelIds": [
+            281
+        ]
+    },
+    {
+        "id": 329,
+        "name": {
+            "EN": "Blast Coating Charm"
+        },
+        "levelIds": [
+            282
+        ]
+    },
+    {
+        "id": 330,
+        "name": {
+            "EN": "Geomancy Charm"
+        },
+        "levelIds": [
+            283
+        ]
+    },
+    {
+        "id": 331,
+        "name": {
+            "EN": "Gale Charm"
+        },
+        "levelIds": [
+            284
+        ]
+    },
+    {
+        "id": 332,
+        "name": {
+            "EN": "Wyrmslayer Charm"
+        },
+        "levelIds": [
+            285
+        ]
+    },
+    {
+        "id": 333,
+        "name": {
+            "EN": "Bulwark Charm"
+        },
+        "levelIds": [
+            286
+        ]
+    },
+    {
+        "id": 334,
+        "name": {
+            "EN": "Fair Wind Charm"
+        },
+        "levelIds": [
+            287
+        ]
+    },
+    {
+        "id": 335,
+        "name": {
+            "EN": "Special Shot Charm"
+        },
+        "levelIds": [
+            288,
+            289
+        ]
+    },
+    {
+        "id": 336,
+        "name": {
+            "EN": "Guardian Charm"
+        },
+        "levelIds": [
+            290,
+            291,
+            292
+        ]
+    },
+    {
+        "id": 337,
+        "name": {
+            "EN": "Phoenix Charm"
+        },
+        "levelIds": [
+            293,
+            294
+        ]
+    },
+    {
+        "id": 338,
+        "name": {
+            "EN": "Adamantine Charm"
+        },
+        "levelIds": [
+            295
+        ]
+    },
+    {
+        "id": 339,
+        "name": {
+            "EN": "Sealer's Charm"
+        },
+        "levelIds": [
+            296
+        ]
+    },
+    {
+        "id": 340,
+        "name": {
+            "EN": "Razor Sharp Charm"
+        },
+        "levelIds": [
+            297
+        ]
+    },
+    {
+        "id": 341,
+        "name": {
+            "EN": "Gutsy Charm"
+        },
+        "levelIds": [
+            298
         ]
     }
 ]

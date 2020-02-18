@@ -1,18 +1,124 @@
 [
     {
-        "id": 0,
+        "id": 1,
         "name": {
-            "EN": "Anjanath Power",
-            "FR": "Pouvoir de l'Anjanath",
-            "JP": "蛮顎竜の力",
-            "IT": "Forza dell'Anjanath",
-            "DE": "Anjanath-Macht",
-            "KR": "만악룡의 힘",
-            "CN": "蠻顎龍之力"
+            "EN": "Anjanath Power"
         },
         "parts": [
             {
                 "id": 0,
+                "requiredArmorPieceCount": 3,
+                "abilityIds": [
+                    311
+                ]
+            }
+        ]
+    },
+    {
+        "id": 2,
+        "name": {
+            "EN": "Legiana Blessing"
+        },
+        "parts": [
+            {
+                "id": 1,
+                "requiredArmorPieceCount": 3,
+                "abilityIds": [
+                    324
+                ]
+            }
+        ]
+    },
+    {
+        "id": 3,
+        "name": {
+            "EN": "Odogaron Power"
+        },
+        "parts": [
+            {
+                "id": 2,
+                "requiredArmorPieceCount": 3,
+                "abilityIds": [
+                    326
+                ]
+            }
+        ]
+    },
+    {
+        "id": 4,
+        "name": {
+            "EN": "Rathalos Power"
+        },
+        "parts": [
+            {
+                "id": 3,
+                "requiredArmorPieceCount": 3,
+                "abilityIds": [
+                    313
+                ]
+            }
+        ]
+    },
+    {
+        "id": 5,
+        "name": {
+            "EN": "Diablos Power"
+        },
+        "parts": [
+            {
+                "id": 4,
+                "requiredArmorPieceCount": 3,
+                "abilityIds": [
+                    315
+                ]
+            }
+        ]
+    },
+    {
+        "id": 6,
+        "name": {
+            "EN": "Kirin Blessing"
+        },
+        "parts": [
+            {
+                "id": 5,
+                "requiredArmorPieceCount": 4,
+                "abilityIds": [
+                    317
+                ]
+            }
+        ]
+    },
+    {
+        "id": 7,
+        "name": {
+            "EN": "Anjanath Will"
+        },
+        "parts": [
+            {
+                "id": 6,
+                "requiredArmorPieceCount": 2,
+                "abilityIds": [
+                    311
+                ]
+            },
+            {
+                "id": 7,
+                "requiredArmorPieceCount": 4,
+                "abilityIds": [
+                    312
+                ]
+            }
+        ]
+    },
+    {
+        "id": 8,
+        "name": {
+            "EN": "Pink Rathian Mastery"
+        },
+        "parts": [
+            {
+                "id": 10,
                 "requiredArmorPieceCount": 3,
                 "abilityIds": [
                     310
@@ -21,19 +127,13 @@
         ]
     },
     {
-        "id": 1,
+        "id": 9,
         "name": {
-            "EN": "Legiana Blessing",
-            "FR": "Bénédiction du Legiana",
-            "JP": "風漂竜の恩恵",
-            "IT": "Benedizione del Legiana",
-            "DE": "Legiana-Segen",
-            "KR": "풍표룡의 은혜",
-            "CN": "風漂龍的恩惠"
+            "EN": "Zorah Magdaros Mastery"
         },
         "parts": [
             {
-                "id": 1,
+                "id": 12,
                 "requiredArmorPieceCount": 3,
                 "abilityIds": [
                     323
@@ -42,62 +142,43 @@
         ]
     },
     {
-        "id": 2,
+        "id": 10,
         "name": {
-            "EN": "Odogaron Power",
-            "FR": "Pouvoir de l'Odogaron",
-            "JP": "惨爪竜の力",
-            "IT": "Forza dell'Odogaron",
-            "DE": "Odogaron-Macht",
-            "KR": "참조룡의 힘",
-            "CN": "慘爪龍之力"
+            "EN": "Odogaron Mastery"
         },
         "parts": [
             {
-                "id": 2,
-                "requiredArmorPieceCount": 3,
+                "id": 18,
+                "requiredArmorPieceCount": 2,
                 "abilityIds": [
-                    325
+                    326
+                ]
+            },
+            {
+                "id": 19,
+                "requiredArmorPieceCount": 4,
+                "abilityIds": [
+                    327
                 ]
             }
         ]
     },
     {
-        "id": 3,
+        "id": 11,
         "name": {
-            "EN": "Rathalos Power",
-            "FR": "Pouvoir du Rathalos",
-            "JP": "火竜の力",
-            "IT": "Forza del Rathalos",
-            "DE": "Rathalos-Macht",
-            "KR": "화룡의 힘",
-            "CN": "火龍之力"
+            "EN": "Rathalos Mastery"
         },
         "parts": [
             {
-                "id": 3,
-                "requiredArmorPieceCount": 3,
+                "id": 22,
+                "requiredArmorPieceCount": 2,
                 "abilityIds": [
-                    312
+                    313
                 ]
-            }
-        ]
-    },
-    {
-        "id": 4,
-        "name": {
-            "EN": "Diablos Power",
-            "FR": "Pouvoir du Diablos",
-            "JP": "角竜の力",
-            "IT": "Forza del Diablos",
-            "DE": "Diablos-Kraft",
-            "KR": "각룡의 힘",
-            "CN": "角龍之力"
-        },
-        "parts": [
+            },
             {
-                "id": 4,
-                "requiredArmorPieceCount": 3,
+                "id": 23,
+                "requiredArmorPieceCount": 4,
                 "abilityIds": [
                     314
                 ]
@@ -105,19 +186,20 @@
         ]
     },
     {
-        "id": 5,
+        "id": 12,
         "name": {
-            "EN": "Kirin Blessing",
-            "FR": "Bénédiction du Kirin",
-            "JP": "幻獣の恩恵",
-            "IT": "Benedizione del Kirin",
-            "DE": "Kirin-Segen",
-            "KR": "환수의 은혜",
-            "CN": "幻獸的恩惠"
+            "EN": "Diablos Mastery"
         },
         "parts": [
             {
-                "id": 5,
+                "id": 30,
+                "requiredArmorPieceCount": 2,
+                "abilityIds": [
+                    315
+                ]
+            },
+            {
+                "id": 31,
                 "requiredArmorPieceCount": 4,
                 "abilityIds": [
                     316
@@ -126,222 +208,13 @@
         ]
     },
     {
-        "id": 6,
-        "name": {
-            "EN": "Anjanath Will",
-            "FR": "Volonté de l'Anjanath",
-            "JP": "蛮顎竜の闘志",
-            "IT": "Volontà dell'Anjanath",
-            "DE": "Anjanath-Wille",
-            "KR": "만악룡의 투지",
-            "CN": "蠻顎龍之鬥志"
-        },
-        "parts": [
-            {
-                "id": 6,
-                "requiredArmorPieceCount": 2,
-                "abilityIds": [
-                    310
-                ]
-            },
-            {
-                "id": 7,
-                "requiredArmorPieceCount": 4,
-                "abilityIds": [
-                    311
-                ]
-            }
-        ]
-    },
-    {
-        "id": 7,
-        "name": {
-            "EN": "Pink Rathian Mastery",
-            "FR": "Secret du Rathian sakura",
-            "JP": "桜火竜の奥義",
-            "IT": "Esperto Rathian rosa",
-            "DE": "RosaRathianMeisterung",
-            "KR": "앵화룡의 비기",
-            "CN": "櫻火龍之奧秘"
-        },
-        "parts": [
-            {
-                "id": 8,
-                "requiredArmorPieceCount": 3,
-                "abilityIds": [
-                    309
-                ]
-            }
-        ]
-    },
-    {
-        "id": 8,
-        "name": {
-            "EN": "Zorah Magdaros Mastery",
-            "FR": "Maitrise du Zorah Magdaros",
-            "JP": "熔山龍の奥義",
-            "IT": "Esperto Zorah Magdaros",
-            "DE": "ZorahMagdarosMeisterung",
-            "KR": "용산룡의 비기",
-            "CN": "熔山龍的奧秘"
-        },
-        "parts": [
-            {
-                "id": 9,
-                "requiredArmorPieceCount": 3,
-                "abilityIds": [
-                    322
-                ]
-            }
-        ]
-    },
-    {
-        "id": 9,
-        "name": {
-            "EN": "Legiana Favor",
-            "FR": "Grâce du Legiana",
-            "JP": "風漂竜の恩寵",
-            "IT": "Benevolenza del Legiana",
-            "DE": "Legiana-Gefallen",
-            "KR": "풍표룡의 은총",
-            "CN": "風漂龍的恩寵"
-        },
-        "parts": [
-            {
-                "id": 10,
-                "requiredArmorPieceCount": 2,
-                "abilityIds": [
-                    323
-                ]
-            },
-            {
-                "id": 11,
-                "requiredArmorPieceCount": 4,
-                "abilityIds": [
-                    324
-                ]
-            }
-        ]
-    },
-    {
-        "id": 10,
-        "name": {
-            "EN": "Odogaron Mastery",
-            "FR": "Maitrise de l'Odogaron",
-            "JP": "惨爪竜の奥義",
-            "IT": "Esperto Odogaron",
-            "DE": "Odogaron-Meisterung",
-            "KR": "참조룡의 비기",
-            "CN": "慘爪龍的奧秘"
-        },
-        "parts": [
-            {
-                "id": 12,
-                "requiredArmorPieceCount": 2,
-                "abilityIds": [
-                    325
-                ]
-            },
-            {
-                "id": 13,
-                "requiredArmorPieceCount": 4,
-                "abilityIds": [
-                    326
-                ]
-            }
-        ]
-    },
-    {
-        "id": 11,
-        "name": {
-            "EN": "Rathalos Mastery",
-            "FR": "Secret du Rathalos",
-            "JP": "火竜の奥義",
-            "IT": "Esperto Rathalos",
-            "DE": "Rathalos-Meisterung",
-            "KR": "화룡의 비기",
-            "CN": "火龍的奧秘"
-        },
-        "parts": [
-            {
-                "id": 14,
-                "requiredArmorPieceCount": 2,
-                "abilityIds": [
-                    312
-                ]
-            },
-            {
-                "id": 15,
-                "requiredArmorPieceCount": 4,
-                "abilityIds": [
-                    313
-                ]
-            }
-        ]
-    },
-    {
-        "id": 12,
-        "name": {
-            "EN": "Diablos Mastery",
-            "FR": "Secret du Diablos",
-            "JP": "角竜の奥義",
-            "IT": "Esperto Diablos",
-            "DE": "Diablos-Meisterung",
-            "KR": "각룡의 비기",
-            "CN": "角龍的奧秘"
-        },
-        "parts": [
-            {
-                "id": 16,
-                "requiredArmorPieceCount": 2,
-                "abilityIds": [
-                    314
-                ]
-            },
-            {
-                "id": 17,
-                "requiredArmorPieceCount": 4,
-                "abilityIds": [
-                    315
-                ]
-            }
-        ]
-    },
-    {
         "id": 13,
         "name": {
-            "EN": "Uragaan Protection",
-            "FR": "Protection de l'Uragaan",
-            "JP": "爆鎚竜の守護",
-            "IT": "Protezione dell'Uragaan",
-            "DE": "Uragaan-Schutz",
-            "KR": "폭추룡의 수호",
-            "CN": "爆鎚龍的守護"
+            "EN": "Uragaan Protection"
         },
         "parts": [
             {
-                "id": 18,
-                "requiredArmorPieceCount": 3,
-                "abilityIds": [
-                    317
-                ]
-            }
-        ]
-    },
-    {
-        "id": 14,
-        "name": {
-            "EN": "Bazelgeuse Protection",
-            "FR": "Protection de Bazelgeuse",
-            "JP": "爆鱗竜の守護",
-            "IT": "Protezione del Bazelgeuse",
-            "DE": "Bazelgeuse-Schutz",
-            "KR": "폭린룡의 수호",
-            "CN": "爆鱗龍的守護"
-        },
-        "parts": [
-            {
-                "id": 19,
+                "id": 38,
                 "requiredArmorPieceCount": 3,
                 "abilityIds": [
                     318
@@ -350,40 +223,13 @@
         ]
     },
     {
-        "id": 15,
+        "id": 14,
         "name": {
-            "EN": "Nergigante Hunger",
-            "FR": "Faim du Nergigante",
-            "JP": "滅尽龍の飢餓",
-            "IT": "Fame del Nergigante",
-            "DE": "Nergigante-Hunger",
-            "KR": "멸진룡의 굶주림",
-            "CN": "滅盡龍的飢餓"
+            "EN": "Bazelgeuse Protection"
         },
         "parts": [
             {
-                "id": 20,
-                "requiredArmorPieceCount": 3,
-                "abilityIds": [
-                    307
-                ]
-            }
-        ]
-    },
-    {
-        "id": 16,
-        "name": {
-            "EN": "Teostra Technique",
-            "FR": "Technique du Teostra",
-            "JP": "炎王龍の武技",
-            "IT": "Tecnica del Teostra",
-            "DE": "Teostra-Technik",
-            "KR": "염왕룡의 무예",
-            "CN": "炎王龍的武技"
-        },
-        "parts": [
-            {
-                "id": 21,
+                "id": 40,
                 "requiredArmorPieceCount": 3,
                 "abilityIds": [
                     319
@@ -392,19 +238,28 @@
         ]
     },
     {
-        "id": 17,
+        "id": 15,
         "name": {
-            "EN": "Kushala Daora Flight",
-            "FR": "Envol du Kushala Daora",
-            "JP": "鋼龍の飛翔",
-            "IT": "Volo del Kushala Daora",
-            "DE": "Kushala-Daora-Flug",
-            "KR": "강룡의 비상",
-            "CN": "鋼龍的飛翔"
+            "EN": "Nergigante Hunger"
         },
         "parts": [
             {
-                "id": 22,
+                "id": 42,
+                "requiredArmorPieceCount": 3,
+                "abilityIds": [
+                    308
+                ]
+            }
+        ]
+    },
+    {
+        "id": 16,
+        "name": {
+            "EN": "Teostra Technique"
+        },
+        "parts": [
+            {
+                "id": 44,
                 "requiredArmorPieceCount": 3,
                 "abilityIds": [
                     320
@@ -413,61 +268,13 @@
         ]
     },
     {
-        "id": 18,
+        "id": 17,
         "name": {
-            "EN": "Vaal Hazak Vitality",
-            "FR": "Vitalité du Vaal Hazak",
-            "JP": "屍套龍の命脈",
-            "IT": "Vitalità del Vaal Hazak",
-            "DE": "Vaal-Hazak-Lebenskraft",
-            "KR": "시투룡의 명맥",
-            "CN": "尸套龍的命脈"
+            "EN": "Kushala Daora Flight"
         },
         "parts": [
             {
-                "id": 23,
-                "requiredArmorPieceCount": 3,
-                "abilityIds": [
-                    308
-                ]
-            }
-        ]
-    },
-    {
-        "id": 19,
-        "name": {
-            "EN": "Kirin Favor",
-            "FR": "Grâce du Kirin",
-            "JP": "幻獣の恩寵",
-            "IT": "Benevolenza del Kirin",
-            "DE": "Kirin-Gefallen",
-            "KR": "환수의 은총",
-            "CN": "幻獸的恩寵"
-        },
-        "parts": [
-            {
-                "id": 24,
-                "requiredArmorPieceCount": 3,
-                "abilityIds": [
-                    316
-                ]
-            }
-        ]
-    },
-    {
-        "id": 20,
-        "name": {
-            "EN": "Xeno'jiiva Divinity",
-            "FR": "Divinité du Xeno'jiiva",
-            "JP": "冥灯龍の神秘",
-            "IT": "Spirito dello Xeno'jiiva",
-            "DE": "Xeno'jiiva-Göttlichkeit",
-            "KR": "명등룡의 신비",
-            "CN": "冥燈龍的神秘"
-        },
-        "parts": [
-            {
-                "id": 25,
+                "id": 46,
                 "requiredArmorPieceCount": 3,
                 "abilityIds": [
                     321
@@ -476,40 +283,58 @@
         ]
     },
     {
-        "id": 21,
+        "id": 18,
         "name": {
-            "EN": "Guild Guidance",
-            "FR": "Guidance de la Guilde",
-            "JP": "ギルドの導き",
-            "IT": "Assistenza della Gilda",
-            "DE": "Gildenführung",
-            "KR": "길드의 안내",
-            "CN": "公會的引導"
+            "EN": "Vaal Hazak Vitality"
         },
         "parts": [
             {
-                "id": 26,
-                "requiredArmorPieceCount": 4,
+                "id": 48,
+                "requiredArmorPieceCount": 3,
                 "abilityIds": [
-                    332
+                    309
                 ]
             }
         ]
     },
     {
-        "id": 22,
+        "id": 19,
         "name": {
-            "EN": "Commission Guidance",
-            "FR": "Guidance de la Commission",
-            "JP": "調査団の導き",
-            "IT": "Assistenza della Commissione",
-            "DE": "Kommissionsführung",
-            "KR": "조사단의 안내",
-            "CN": "調查團的指引"
+            "EN": "Kirin Favor"
         },
         "parts": [
             {
-                "id": 27,
+                "id": 50,
+                "requiredArmorPieceCount": 3,
+                "abilityIds": [
+                    317
+                ]
+            }
+        ]
+    },
+    {
+        "id": 20,
+        "name": {
+            "EN": "Xeno'jiiva Divinity"
+        },
+        "parts": [
+            {
+                "id": 52,
+                "requiredArmorPieceCount": 3,
+                "abilityIds": [
+                    322
+                ]
+            }
+        ]
+    },
+    {
+        "id": 21,
+        "name": {
+            "EN": "Guild Guidance"
+        },
+        "parts": [
+            {
+                "id": 54,
                 "requiredArmorPieceCount": 4,
                 "abilityIds": [
                     333
@@ -518,29 +343,38 @@
         ]
     },
     {
-        "id": 23,
+        "id": 22,
         "name": {
-            "EN": "Lunastra Favor",
-            "FR": "Grâce de la Lunastra",
-            "JP": "炎妃龍の恩寵",
-            "IT": "Auspicio della Lunastra",
-            "DE": "Lunastra-Vorteil",
-            "KR": "염비룡의 은총",
-            "CN": "炎妃龍的恩寵"
+            "EN": "Commission Guidance"
         },
         "parts": [
             {
-                "id": 28,
+                "id": 56,
+                "requiredArmorPieceCount": 4,
+                "abilityIds": [
+                    334
+                ]
+            }
+        ]
+    },
+    {
+        "id": 23,
+        "name": {
+            "EN": "Legiana Favor"
+        },
+        "parts": [
+            {
+                "id": 14,
                 "requiredArmorPieceCount": 2,
                 "abilityIds": [
-                    311
+                    324
                 ]
             },
             {
-                "id": 29,
+                "id": 15,
                 "requiredArmorPieceCount": 4,
                 "abilityIds": [
-                    313
+                    325
                 ]
             }
         ]
@@ -548,27 +382,21 @@
     {
         "id": 24,
         "name": {
-            "EN": "Soul of the Dragoon",
-            "FR": "Âme du chevalier dragon",
-            "JP": "竜騎士の証",
-            "IT": "Anima di Dragoon",
-            "DE": "Dragoon-Kristall",
-            "KR": "용기사의 증표",
-            "CN": "龍騎士之証"
+            "EN": "Lunastra Favor"
         },
         "parts": [
             {
-                "id": 30,
+                "id": 59,
                 "requiredArmorPieceCount": 2,
                 "abilityIds": [
-                    334
+                    312
                 ]
             },
             {
-                "id": 31,
+                "id": 60,
                 "requiredArmorPieceCount": 4,
                 "abilityIds": [
-                    319
+                    314
                 ]
             }
         ]
@@ -576,20 +404,14 @@
     {
         "id": 25,
         "name": {
-            "EN": "Astera Blessing",
-            "FR": "Bénédiction d'Astera",
-            "JP": "アステラの祝福",
-            "IT": "Benedizione di Astera",
-            "DE": "Astera-Segen",
-            "KR": "아스테라의 축복",
-            "CN": "星辰的祝福"
+            "EN": "Anjanath Dominance"
         },
         "parts": [
             {
-                "id": 32,
-                "requiredArmorPieceCount": 5,
+                "id": 75,
+                "requiredArmorPieceCount": 2,
                 "abilityIds": [
-                    332
+                    312
                 ]
             }
         ]
@@ -597,27 +419,630 @@
     {
         "id": 26,
         "name": {
-            "EN": "Witcher's Knowledge",
-            "FR": "Savoir du sorceleur",
-            "JP": "ウィッチャーの心得",
-            "IT": "Sapienza del witcher",
-            "DE": "Hexerwissen",
-            "KR": "위쳐의 마음가짐",
-            "CN": "Witcher's Knowledge"
+            "EN": "Rathian Essence"
         },
         "parts": [
             {
-                "id": 33,
+                "id": 77,
                 "requiredArmorPieceCount": 2,
                 "abilityIds": [
-                    335
+                    310
+                ]
+            }
+        ]
+    },
+    {
+        "id": 27,
+        "name": {
+            "EN": "Ancient Divinity"
+        },
+        "parts": [
+            {
+                "id": 83,
+                "requiredArmorPieceCount": 2,
+                "abilityIds": [
+                    323
+                ]
+            }
+        ]
+    },
+    {
+        "id": 28,
+        "name": {
+            "EN": "Commission Alchemy"
+        },
+        "parts": [
+            {
+                "id": 85,
+                "requiredArmorPieceCount": 3,
+                "abilityIds": [
+                    341
+                ]
+            }
+        ]
+    },
+    {
+        "id": 29,
+        "name": {
+            "EN": "Guild Pride"
+        },
+        "parts": [
+            {
+                "id": 87,
+                "requiredArmorPieceCount": 2,
+                "abilityIds": [
+                    324
                 ]
             },
             {
-                "id": 34,
+                "id": 88,
                 "requiredArmorPieceCount": 4,
                 "abilityIds": [
+                    334
+                ]
+            }
+        ]
+    },
+    {
+        "id": 30,
+        "name": {
+            "EN": "Nergigante Ambition"
+        },
+        "parts": [
+            {
+                "id": 91,
+                "requiredArmorPieceCount": 2,
+                "abilityIds": [
                     308
+                ]
+            }
+        ]
+    },
+    {
+        "id": 31,
+        "name": {
+            "EN": "Silver Rathalos Essence"
+        },
+        "parts": [
+            {
+                "id": 93,
+                "requiredArmorPieceCount": 2,
+                "abilityIds": [
+                    342
+                ]
+            },
+            {
+                "id": 94,
+                "requiredArmorPieceCount": 4,
+                "abilityIds": [
+                    343
+                ]
+            }
+        ]
+    },
+    {
+        "id": 32,
+        "name": {
+            "EN": "Gold Rathian Essence"
+        },
+        "parts": [
+            {
+                "id": 97,
+                "requiredArmorPieceCount": 2,
+                "abilityIds": [
+                    346
+                ]
+            },
+            {
+                "id": 98,
+                "requiredArmorPieceCount": 4,
+                "abilityIds": [
+                    347
+                ]
+            }
+        ]
+    },
+    {
+        "id": 33,
+        "name": {
+            "EN": "Zinogre Essence"
+        },
+        "parts": [
+            {
+                "id": 101,
+                "requiredArmorPieceCount": 3,
+                "abilityIds": [
+                    349
+                ]
+            }
+        ]
+    },
+    {
+        "id": 34,
+        "name": {
+            "EN": "Zorah Magdaros Essence"
+        },
+        "parts": [
+            {
+                "id": 103,
+                "requiredArmorPieceCount": 3,
+                "abilityIds": [
+                    353
+                ]
+            }
+        ]
+    },
+    {
+        "id": 35,
+        "name": {
+            "EN": "Shara Ishvalda Divinity"
+        },
+        "parts": [
+            {
+                "id": 105,
+                "requiredArmorPieceCount": 4,
+                "abilityIds": [
+                    359
+                ]
+            },
+            {
+                "id": 106,
+                "requiredArmorPieceCount": 5,
+                "abilityIds": [
+                    360
+                ]
+            }
+        ]
+    },
+    {
+        "id": 36,
+        "name": {
+            "EN": "Namielle Divinity"
+        },
+        "parts": [
+            {
+                "id": 109,
+                "requiredArmorPieceCount": 2,
+                "abilityIds": [
+                    361
+                ]
+            },
+            {
+                "id": 110,
+                "requiredArmorPieceCount": 4,
+                "abilityIds": [
+                    362
+                ]
+            }
+        ]
+    },
+    {
+        "id": 37,
+        "name": {
+            "EN": "Kirin Divinity"
+        },
+        "parts": [
+            {
+                "id": 113,
+                "requiredArmorPieceCount": 3,
+                "abilityIds": [
+                    333
+                ]
+            }
+        ]
+    },
+    {
+        "id": 38,
+        "name": {
+            "EN": "Vaal Soulvein"
+        },
+        "parts": [
+            {
+                "id": 119,
+                "requiredArmorPieceCount": 2,
+                "abilityIds": [
+                    309
+                ]
+            }
+        ]
+    },
+    {
+        "id": 39,
+        "name": {
+            "EN": "Velkhana Divinity"
+        },
+        "parts": [
+            {
+                "id": 121,
+                "requiredArmorPieceCount": 2,
+                "abilityIds": [
+                    313
+                ]
+            },
+            {
+                "id": 122,
+                "requiredArmorPieceCount": 4,
+                "abilityIds": [
+                    363
+                ]
+            }
+        ]
+    },
+    {
+        "id": 40,
+        "name": {
+            "EN": "Deviljho Essence"
+        },
+        "parts": [
+            {
+                "id": 129,
+                "requiredArmorPieceCount": 3,
+                "abilityIds": [
+                    364
+                ]
+            }
+        ]
+    },
+    {
+        "id": 41,
+        "name": {
+            "EN": "Bazelgeuse Ambition"
+        },
+        "parts": [
+            {
+                "id": 131,
+                "requiredArmorPieceCount": 2,
+                "abilityIds": [
+                    319
+                ]
+            }
+        ]
+    },
+    {
+        "id": 42,
+        "name": {
+            "EN": "Instructor's Guidance"
+        },
+        "parts": [
+            {
+                "id": 133,
+                "requiredArmorPieceCount": 2,
+                "abilityIds": [
+                    317
+                ]
+            }
+        ]
+    },
+    {
+        "id": 43,
+        "name": {
+            "EN": "Tigrex Essence"
+        },
+        "parts": [
+            {
+                "id": 135,
+                "requiredArmorPieceCount": 3,
+                "abilityIds": [
+                    365
+                ]
+            }
+        ]
+    },
+    {
+        "id": 44,
+        "name": {
+            "EN": "Brachydios Essence"
+        },
+        "parts": [
+            {
+                "id": 139,
+                "requiredArmorPieceCount": 3,
+                "abilityIds": [
+                    366
+                ]
+            }
+        ]
+    },
+    {
+        "id": 45,
+        "name": {
+            "EN": "Soul of the Dragoon"
+        },
+        "parts": [
+            {
+                "id": 64,
+                "requiredArmorPieceCount": 2,
+                "abilityIds": [
+                    367
+                ]
+            },
+            {
+                "id": 65,
+                "requiredArmorPieceCount": 4,
+                "abilityIds": [
+                    320
+                ]
+            }
+        ]
+    },
+    {
+        "id": 46,
+        "name": {
+            "EN": "Witcher's Knowledge"
+        },
+        "parts": [
+            {
+                "id": 192,
+                "requiredArmorPieceCount": 2,
+                "abilityIds": [
+                    368
+                ]
+            },
+            {
+                "id": 193,
+                "requiredArmorPieceCount": 4,
+                "abilityIds": [
+                    309
+                ]
+            }
+        ]
+    },
+    {
+        "id": 48,
+        "name": {
+            "EN": "Barioth Hidden Art"
+        },
+        "parts": [
+            {
+                "id": 169,
+                "requiredArmorPieceCount": 2,
+                "abilityIds": [
+                    326
+                ]
+            }
+        ]
+    },
+    {
+        "id": 49,
+        "name": {
+            "EN": "Diablos Ambition"
+        },
+        "parts": [
+            {
+                "id": 161,
+                "requiredArmorPieceCount": 3,
+                "abilityIds": [
+                    393
+                ]
+            }
+        ]
+    },
+    {
+        "id": 51,
+        "name": {
+            "EN": "Legiana Ambition"
+        },
+        "parts": [
+            {
+                "id": 157,
+                "requiredArmorPieceCount": 3,
+                "abilityIds": [
+                    325
+                ]
+            }
+        ]
+    },
+    {
+        "id": 52,
+        "name": {
+            "EN": "Odogaron Essence"
+        },
+        "parts": [
+            {
+                "id": 153,
+                "requiredArmorPieceCount": 3,
+                "abilityIds": [
+                    327
+                ]
+            }
+        ]
+    },
+    {
+        "id": 53,
+        "name": {
+            "EN": "Uragaan Ambition"
+        },
+        "parts": [
+            {
+                "id": 151,
+                "requiredArmorPieceCount": 2,
+                "abilityIds": [
+                    318
+                ]
+            }
+        ]
+    },
+    {
+        "id": 55,
+        "name": {
+            "EN": "Nargacuga Essence"
+        },
+        "parts": [
+            {
+                "id": 149,
+                "requiredArmorPieceCount": 3,
+                "abilityIds": [
+                    395
+                ]
+            }
+        ]
+    },
+    {
+        "id": 57,
+        "name": {
+            "EN": "Rajang's Rage"
+        },
+        "parts": [
+            {
+                "id": 143,
+                "requiredArmorPieceCount": 2,
+                "abilityIds": [
+                    314
+                ]
+            },
+            {
+                "id": 144,
+                "requiredArmorPieceCount": 4,
+                "abilityIds": [
+                    327
+                ]
+            }
+        ]
+    },
+    {
+        "id": 58,
+        "name": {
+            "EN": "Glavenus Essence"
+        },
+        "parts": [
+            {
+                "id": 141,
+                "requiredArmorPieceCount": 3,
+                "abilityIds": [
+                    396
+                ]
+            }
+        ]
+    },
+    {
+        "id": 63,
+        "name": {
+            "EN": "Rathalos Essence"
+        },
+        "parts": [
+            {
+                "id": 165,
+                "requiredArmorPieceCount": 3,
+                "abilityIds": [
+                    314
+                ]
+            }
+        ]
+    },
+    {
+        "id": 65,
+        "name": {
+            "EN": "Lunastra Essence"
+        },
+        "parts": [
+            {
+                "id": 171,
+                "requiredArmorPieceCount": 3,
+                "abilityIds": [
+                    397
+                ]
+            }
+        ]
+    },
+    {
+        "id": 66,
+        "name": {
+            "EN": "Survivor"
+        },
+        "parts": [
+            {
+                "id": 173,
+                "requiredArmorPieceCount": 2,
+                "abilityIds": [
+                    398
+                ]
+            },
+            {
+                "id": 174,
+                "requiredArmorPieceCount": 4,
+                "abilityIds": [
+                    366
+                ]
+            }
+        ]
+    },
+    {
+        "id": 68,
+        "name": {
+            "EN": "Safi'jiiva Seal"
+        },
+        "parts": [
+            {
+                "id": 179,
+                "requiredArmorPieceCount": 3,
+                "abilityIds": [
+                    402
+                ]
+            },
+            {
+                "id": 180,
+                "requiredArmorPieceCount": 5,
+                "abilityIds": [
+                    403
+                ]
+            }
+        ]
+    },
+    {
+        "id": 69,
+        "name": {
+            "EN": "Power Cell"
+        },
+        "parts": [
+            {
+                "id": 197,
+                "requiredArmorPieceCount": 5,
+                "abilityIds": [
+                    412
+                ]
+            }
+        ]
+    },
+    {
+        "id": 70,
+        "name": {
+            "EN": "Appreciation Blessing"
+        },
+        "parts": [
+            {
+                "id": 194,
+                "requiredArmorPieceCount": 3,
+                "abilityIds": [
+                    414
+                ]
+            },
+            {
+                "id": 195,
+                "requiredArmorPieceCount": 5,
+                "abilityIds": [
+                    413
+                ]
+            }
+        ]
+    },
+    {
+        "id": 71,
+        "name": {
+            "EN": "Joyful Blessing"
+        },
+        "parts": [
+            {
+                "id": 183,
+                "requiredArmorPieceCount": 3,
+                "abilityIds": [
+                    416
+                ]
+            },
+            {
+                "id": 184,
+                "requiredArmorPieceCount": 5,
+                "abilityIds": [
+                    415
                 ]
             }
         ]

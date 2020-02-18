@@ -15,6 +15,24 @@ namespace MHArmory.MhwDbDataSource
     {
         private readonly ILogger logger;
         private readonly bool hasWriteAccess;
+        private readonly object loadLock = new object();
+        private readonly Dictionary<string, string> localizationKeys = new Dictionary<string, string>() { { "fr", "FR" }, { "de", "DE" }, { "zh", "CN" } };
+        private readonly string DB_KEY_SKILLS = "skills";
+        private readonly string DB_KEY_DECORATIONS = "decorations";
+        private readonly string DB_KEY_ARMORS = "armor";
+        private readonly string DB_KEY_ARMOR_SETS = "armor/sets";
+        private readonly string DB_KEY_CHARMS = "charms";
+        private readonly string DB_KEY_ITEMS = "items";
+
+        private Task loadTask;
+        private IAbility[] abilities;
+        private ISkill[] skills;
+        private IArmorPiece[] armors;
+        private ICharm[] charms;
+        private IJewel[] jewels;
+        private ILocalizedItem[] localizedItems;
+
+        public string Description { get; } = "MHW-DB";
 
         public DataSource(ILogger logger, bool hasWriteAccess)
         {
@@ -22,78 +40,68 @@ namespace MHArmory.MhwDbDataSource
             this.hasWriteAccess = hasWriteAccess;
         }
 
+        private async Task load()
+        {
+            lock (loadLock)
+            {
+                if (loadTask == null)
+                    loadTask = LoadData();
+            }
+            await loadTask;
+        }
+
         public async Task<IAbility[]> GetAbilities()
         {
-            if (loadTask == null)
-                loadTask = LoadData(null);
-
-            await loadTask;
-
+            await load();
             return abilities;
         }
 
         public async Task<ISkill[]> GetSkills()
         {
-            if (loadTask == null)
-                loadTask = LoadData(null);
-
-            await loadTask;
-
+            await load();
             return skills;
         }
 
         public async Task<IArmorPiece[]> GetArmorPieces()
         {
-            if (loadTask == null)
-                loadTask = LoadData(null);
-
-            await loadTask;
-
+            await load();
             return armors;
         }
 
         public async Task<ICharm[]> GetCharms()
         {
-            if (loadTask == null)
-                loadTask = LoadData(null);
-
-            await loadTask;
-
+            await load();
             return charms;
         }
 
         public async Task<IJewel[]> GetJewels()
         {
-            if (loadTask == null)
-                loadTask = LoadData(null);
-
-            await loadTask;
-
+            await load();
             return jewels;
         }
 
-        private Task loadTask;
-
-        private IAbility[] abilities;
-        private ISkill[] skills;
-        private IArmorPiece[] armors;
-        private ICharm[] charms;
-        private IJewel[] jewels;
-
-        public string Description { get; } = "http://mhw-db.com";
-
-        private async Task LoadData(ILogger logger)
+        public async Task<ILocalizedItem[]> GetCraftMaterials()
         {
-            await LoadSkillsData(logger);
+            await load();
+            return localizedItems;
+        }
 
-            await Task.WhenAll( // <- this must be called after LoadSkillsData
-                LoadArmorsData(logger),
-                LoadCharmsData(logger),
-                LoadJewelsData(logger)
+
+        private async Task LoadData()
+        {
+            await Task.WhenAll(
+                LoadSkillsData(),
+                LoadItemData()
+            );
+
+            await Task.WhenAll( // <- this must be called after LoadSkillsData and LoadItemData
+                LoadArmorsData(),
+                LoadCharmsData(),
+                LoadJewelsData()
             );
         }
 
-        private async Task<IList<T>> LoadBase<T>(string api, ILogger logger)
+        private async Task<IList<T>> LoadBase<T>(string api)
         {
             string content;
 
@@ -128,297 +136,332 @@ namespace MHArmory.MhwDbDataSource
             return null;
         }
 
-        private async Task LoadArmorsData(ILogger logger)
+        private async Task LoadItemData()
         {
-            Task<IList<ArmorPiecePrimitive>> armorTask = LoadBase<ArmorPiecePrimitive>("armor", logger);
-            Task<IList<ArmorSetPrimitive>> setsTask = LoadBase<ArmorSetPrimitive>("armor/sets", logger);
-
-            await Task.WhenAll(armorTask, setsTask);
-
-            IList<ArmorPiecePrimitive> armorResult = armorTask.Result;
-            IList<ArmorSetPrimitive> setsResult = setsTask.Result;
-
-            if (armorResult == null || setsResult == null)
-                return;
-
-            var allArmors = new IArmorPiece[armorResult.Count];
-
-            for (int i = 0; i < allArmors.Length; i++)
+            Task<IList<ItemPrimitive>> itemTask = LoadBase<ItemPrimitive>(DB_KEY_ITEMS);
+            var itemLocalizations = new Dictionary<string, Task<IList<ItemPrimitive>>>();
+            foreach (KeyValuePair<string, string> localization in localizationKeys)
             {
-                var localAbilities = new IAbility[armorResult[i].Abilities.Count];
-
-                for (int j = 0; j < localAbilities.Length; j++)
-                {
-                    int skillId = armorResult[i].Abilities[j].SkillId;
-                    int abilityLevel = armorResult[i].Abilities[j].Level;
-
-                    ISkill skill = skills.FirstOrDefault(s => s.Id == skillId);
-                    IAbility ability = abilities.FirstOrDefault(a => a.Skill.Id == skillId && a.Level == abilityLevel);
-
-                    localAbilities[j] = new Ability(skill, abilityLevel, ability.Description);
-                }
-
-                allArmors[i] = new DataStructures.ArmorPiece(armorResult[i], localAbilities);
+                itemLocalizations[localization.Value] = LoadBase<ItemPrimitive>(localization.Key + "/" + DB_KEY_ITEMS);
             }
+
+            IList<ItemPrimitive> itemResult = await itemTask;
+
+            if (itemResult == null)
+            {
+                logger?.LogError("Query for all items failed");
+                return;
+            }
+
+            var allItems = new Dictionary<int, DataStructures.LocalizedItem>();
+            foreach(ItemPrimitive item in itemResult)
+            {
+                allItems[item.Id] = new DataStructures.LocalizedItem(item);
+            }
+
+            foreach (KeyValuePair<string, Task<IList<ItemPrimitive>>> localizationQuery in itemLocalizations)
+            {
+                IList<ItemPrimitive> localization = await localizationQuery.Value;
+                if (localization == null)
+                {
+                    logger?.LogError($"Query for item localization '{localizationQuery.Key}' failed");
+                    continue;
+                }
+                foreach (ItemPrimitive item in localization)
+                {
+                    allItems[item.Id].AddLocalization(localizationQuery.Key, item);
+                }
+            }
+
+            localizedItems = allItems.Values.ToArray();
+        }
+
+        private async Task LoadArmorsData()
+        {
+            Task<IList<ArmorPiecePrimitive>> armorTask = LoadBase<ArmorPiecePrimitive>(DB_KEY_ARMORS);
+            var armorLocalizations = new Dictionary<string, Task<IList<ArmorPiecePrimitive>>>();
+            foreach (KeyValuePair<string, string> localization in localizationKeys)
+            {
+                armorLocalizations[localization.Value] = LoadBase<ArmorPiecePrimitive>(localization.Key + "/" + DB_KEY_ARMORS);
+            }
+            Task<IList<ArmorSetPrimitive>> setsTask = LoadBase<ArmorSetPrimitive>(DB_KEY_ARMOR_SETS);
+            var armorSetLocalizations = new Dictionary<string, Task<IList<ArmorSetPrimitive>>>();
+            foreach (KeyValuePair<string, string> localization in localizationKeys)
+            {
+                armorSetLocalizations[localization.Value] = LoadBase<ArmorSetPrimitive>(localization.Key + "/" + DB_KEY_ARMOR_SETS);
+            }
+
+            IList <ArmorPiecePrimitive> armorResult = await armorTask;
+
+            if (armorResult == null)
+            {
+                logger?.LogError("Query for all armors failed");
+                return;
+            }
+
+            var allArmors = new Dictionary<int, DataStructures.ArmorPiece>();
+
+            foreach(ArmorPiecePrimitive primitive in armorResult)
+            {
+                IAbility[] localAbilities = primitive.Abilities.Select(x => GetAbility(x.SkillId, x.Level)).ToArray();
+                if (allArmors.ContainsKey(primitive.Id))
+                    throw new InvalidOperationException($"Armor identifier with ID '{primitive.Id}' and Name '{primitive.Name}' is a duplicate");
+                else
+                    allArmors[primitive.Id] = new DataStructures.ArmorPiece(primitive, localAbilities, GetCraftingMaterials(primitive.Crafting.Materials));
+            }
+
+            foreach (KeyValuePair<string, Task<IList<ArmorPiecePrimitive>>> localizationQuery in armorLocalizations)
+            {
+                IList<ArmorPiecePrimitive> localization = await localizationQuery.Value;
+                if (localization == null)
+                {
+                    logger?.LogError($"Query for armor localization '{localizationQuery.Key}' failed");
+                    continue;
+                }
+                foreach (ArmorPiecePrimitive armor in localization)
+                {
+                    allArmors[armor.Id].AddLocalization(localizationQuery.Key, armor);
+                }
+            }
+
+            IList<ArmorSetPrimitive> setsResult = await setsTask;
+            if(setsResult == null)
+            {
+                logger?.LogError("Query for all armor sets failed");
+                return;
+            }
+            var allArmorSetBoni = new Dictionary<int, Tuple<ArmorSetBonus, List<IArmorPiece>>>();
+            int armorSetSkillpartId = 0;
 
             foreach (ArmorSetPrimitive armorSetPrimitive in setsResult)
             {
-                var setArmorPieces = new IArmorPiece[armorSetPrimitive.ArmorPieces.Length];
-                for (int i = 0; i < armorSetPrimitive.ArmorPieces.Length; i++)
-                    setArmorPieces[i] = allArmors.FirstOrDefault(x => x.Id == armorSetPrimitive.ArmorPieces[i].ArmorPieceId);
-
-                List<IArmorSetSkill> armorSetSkills = null;
-
+                var setArmorPieces = new List<IArmorPiece>();
+                foreach(ArmorPieceIdPrimitive primitive in armorSetPrimitive.ArmorPieces)
+                {
+                    DataStructures.ArmorPiece armor = allArmors[primitive.ArmorPieceId];
+                    armor.Id = armorSetPrimitive.Id; // The UI later groups the armors by their ID
+                    setArmorPieces.Add(armor);
+                }
+                
                 if (armorSetPrimitive.Bonus != null)
                 {
-                    armorSetSkills = new List<IArmorSetSkill>();
+                    var armorSetSkills = new List<IArmorSetSkillPart>();
                     foreach (ArmorSetBonusRankPrimitive bonusRank in armorSetPrimitive.Bonus.Ranks)
                     {
                         IAbility[] setAbilities = abilities.Where(a => a.Skill.Id == bonusRank.Skill.SkillId && a.Level == bonusRank.Skill.Level).ToArray();
-                        armorSetSkills.Add(new ArmorSetSkill(bonusRank.PieceCount, setAbilities));
+                        armorSetSkills.Add(new ArmorSetSkillPart(armorSetSkillpartId, bonusRank.PieceCount, setAbilities));
+                        ++armorSetSkillpartId;
                     }
+                    var armorSetBonus = new ArmorSetBonus(armorSetPrimitive.Bonus, armorSetSkills.ToArray());
+                    allArmorSetBoni[armorSetPrimitive.Id] = new Tuple<ArmorSetBonus, List<IArmorPiece>>(armorSetBonus, setArmorPieces);
                 }
 
-                var armorSet = new ArmorSet(armorSetPrimitive.Id, false, setArmorPieces, armorSetSkills?.ToArray());
+                // Infos about complete Armor sets can not be found in the MWH-DB
+                //var armorSet = new FullArmorSet(armorSetPrimitive.Id, setArmorPieces.ToArray());
 
-                foreach (DataStructures.ArmorPiece armorPiece in setArmorPieces)
-                    armorPiece.UpdateArmorSet(armorSet);
+                //foreach (DataStructures.ArmorPiece armorPiece in setArmorPieces)
+                //    armorPiece.FullArmorSet = armorSet;
+            }
+            foreach(KeyValuePair<string, Task<IList<ArmorSetPrimitive>>> task in armorSetLocalizations)
+            {
+                IList<ArmorSetPrimitive> localization = await task.Value;
+                if (localization == null)
+                {
+                    logger?.LogError($"Query for armor sets localization '{task.Key}' failed");
+                    continue;
+                }
+                foreach (ArmorSetPrimitive armorSet in localization)
+                {
+                    if (armorSet.Bonus == null)
+                        continue;
+                    if (allArmorSetBoni.ContainsKey(armorSet.Id))
+                        allArmorSetBoni[armorSet.Id].Item1.AddLocalization(task.Key, armorSet.Bonus);
+                    else
+                        logger?.LogError($"Armor set with ID '{armorSet.Id}' in language '{task.Key}' does not exist in the original");
+                }
+            }
+            foreach(KeyValuePair<int, Tuple<ArmorSetBonus, List<IArmorPiece>>> armorSetBonus in allArmorSetBoni)
+            {
+                foreach(DataStructures.ArmorPiece armor in armorSetBonus.Value.Item2)
+                {
+                    var boni = new IArmorSetSkill[1];
+                    boni[0] = armorSetBonus.Value.Item1;
+                    armor.UpdateArmorSetBoni(boni);
+                }
             }
 
-            armors = allArmors;
+            armors = allArmors.Values.ToArray();
         }
 
-        private async Task LoadSkillsData(ILogger logger)
+        private async Task LoadSkillsData()
         {
-            IList<SkillPrimitive> result = await LoadBase<SkillPrimitive>("skills", logger);
+            Task<IList<SkillPrimitive>> query = LoadBase<SkillPrimitive>(DB_KEY_SKILLS);
+            var localizationQueries = new Dictionary<string, Task<IList<SkillPrimitive>>>();
+            foreach(KeyValuePair<string, string> localization in localizationKeys)
+            {
+                localizationQueries[localization.Value] = LoadBase<SkillPrimitive>(localization.Key + "/" + DB_KEY_SKILLS);
+            }
 
+
+            var allSkills = new Dictionary<int, DataStructures.Skill>();
+
+            IList<SkillPrimitive> result = await query;
             if (result == null)
+            {
+                logger?.LogError("Query for all skills failed");
                 return;
-
-            var allAbilities = new HashSet<IAbility>();
-            var allSkills = new ISkill[result.Count];
-            int localSkillCount = 0;
-
+            }
             foreach (SkillPrimitive skillPrimitive in result)
             {
-                var skill = new DataStructures.Skill(skillPrimitive.Id, skillPrimitive.Name, skillPrimitive.Description);
-                var localAbilities = new IAbility[skillPrimitive.Abilities.Count];
-                int localAbilityCount = 0;
+                var skill = new DataStructures.Skill(skillPrimitive);
 
-                foreach (AbilityPrimitive abilityPrimitive in skillPrimitive.Abilities)
+                if(allSkills.ContainsKey(skill.Id))
+                    logger?.LogError($"Skill identifier with ID '{skill.Id}' and Name '{skill.Name}' is a duplicate");
+                else
+                    allSkills[skill.Id] = skill;
+            }
+
+            foreach(KeyValuePair<string, Task<IList<SkillPrimitive>>> localizationQuery in localizationQueries)
+            {
+                IList<SkillPrimitive> localization = await localizationQuery.Value;
+                if(localization == null)
                 {
-                    var ability = new Ability(skill, abilityPrimitive.Level, abilityPrimitive.Description);
+                    logger?.LogError($"Query for skills localization '{localizationQuery.Key}' failed");
+                    continue;
+                }
+                foreach(SkillPrimitive skill in localization)
+                {
+                    allSkills[skill.Id].AddLocalization(localizationQuery.Key, skill);
+                }
+            }
+
+            skills = allSkills.Values.ToArray();
+            var allAbilities = new HashSet<IAbility>();
+            foreach (ISkill skill in skills)
+            {
+                foreach (DataStructures.Ability ability in skill.Abilities)
+                {
                     if (allAbilities.Add(ability) == false)
                         logger?.LogError($"Ability identifier 'skill {ability.Skill.Name} level {ability.Level}' is a duplicate");
-                    localAbilities[localAbilityCount++] = ability;
                 }
-
-                skill.SetAbilities(localAbilities);
-
-                allSkills[localSkillCount++] = skill;
             }
-
             abilities = allAbilities.ToArray();
-            skills = allSkills;
         }
 
-        private async Task LoadCharmsData(ILogger logger)
+        private async Task LoadCharmsData()
         {
-            IList<CharmPrimitive> result = await LoadBase<CharmPrimitive>("charms", logger);
+            var localizationQueries = new Dictionary<string, Task<IList<CharmPrimitive>>>();
+            Task<IList<CharmPrimitive>> query = LoadBase<CharmPrimitive>(DB_KEY_CHARMS);
+            foreach (KeyValuePair<string, string> localization in localizationKeys)
+            {
+                localizationQueries[localization.Value] = LoadBase<CharmPrimitive>(localization.Key + "/" + DB_KEY_CHARMS);
+            }
+
+
+            IList<CharmPrimitive> result = await query;
 
             if (result == null)
-                return;
-
-            var localCharms = new ICharm[result.Count];
-
-            for (int i = 0; i < localCharms.Length; i++)
             {
-                CharmPrimitive currentCharmPrimitive = result[i];
+                logger?.LogError("Query for all charms failed");
+                return;
+            }
 
-                var charmLevels = new DataStructures.CharmLevel[currentCharmPrimitive.Levels.Count];
-
+            var localCharms = new Dictionary<int, DataStructures.Charm>();
+            int currentCharmLevelId = 0;
+            foreach(CharmPrimitive charmPrimitive in result)
+            {
+                var charm = new DataStructures.Charm(charmPrimitive);
+                var charmLevels = new DataStructures.CharmLevel[charmPrimitive.Levels.Count];
                 for (int j = 0; j < charmLevels.Length; j++)
                 {
-                    IAbility[] localAbilities = currentCharmPrimitive.Levels[j].Abilitites.Select(x => CreateAbility(x.SkillId, x.Level)).ToArray();
-                    charmLevels[j] = new DataStructures.CharmLevel(i + 1, currentCharmPrimitive.Levels[j], localAbilities);
+                    IAbility[] localAbilities = charmPrimitive.Levels[j].Abilitites.Select(x => GetAbility(x.SkillId, x.Level)).ToArray();
+                    charmLevels[j] = new DataStructures.CharmLevel(currentCharmLevelId, charmPrimitive.Levels[j], localAbilities, GetCraftingMaterials(charmPrimitive.Levels[j].Crafting.Materials));
+                    ++currentCharmLevelId;
                 }
-
-                localCharms[i] = new Charm(i + 1, currentCharmPrimitive.Name, charmLevels);
+                charm.SetCharmLevels(charmLevels);
+                if (localCharms.ContainsKey(charm.Id))
+                    logger?.LogError($"Charm identifier with ID '{charm.Id}' and Name '{charm.Name}' is a duplicate");
+                else
+                    localCharms[charm.Id] = charm;
             }
 
-            charms = localCharms;
+
+            foreach (KeyValuePair<string, Task<IList<CharmPrimitive>>> localizationQuery in localizationQueries)
+            {
+                IList<CharmPrimitive> localization = await localizationQuery.Value;
+                if (localization == null)
+                {
+                    logger?.LogError($"Query for charms localization '{localizationQuery.Key}' failed");
+                    continue;
+                }
+                foreach (CharmPrimitive charm in localization)
+                {
+                    localCharms[charm.Id].AddLocalization(localizationQuery.Key, charm);
+                }
+            }
+
+            charms = localCharms.Values.ToArray();
         }
 
-        private async Task LoadJewelsData(ILogger logger)
+        private async Task LoadJewelsData()
         {
-            IList<JewelPrimitive> result = await LoadBase<JewelPrimitive>("decorations", logger);
+            var localizationQueries = new Dictionary<string, Task<IList<JewelPrimitive>>>();
+            Task<IList<JewelPrimitive>> query = LoadBase<JewelPrimitive>(DB_KEY_DECORATIONS);
+            foreach (KeyValuePair<string, string> localization in localizationKeys)
+            {
+                localizationQueries[localization.Value] = LoadBase<JewelPrimitive>(localization.Key + "/" + DB_KEY_DECORATIONS);
+            }
+
+
+            IList<JewelPrimitive> result = await query;
 
             if (result == null)
-                return;
-
-            var localJewels = new DataStructures.Jewel[result.Count];
-
-            for (int i = 0; i < localJewels.Length; i++)
             {
-                IAbility[] localAbilities = result[i].Abilitites.Select(a => CreateAbility(a.SkillId, a.Level)).ToArray();
-                localJewels[i] = new DataStructures.Jewel(result[i], localAbilities);
+                logger?.LogError("Query for all decorations failed");
+                return;
             }
 
-            jewels = localJewels;
-        }
+            var localJewels = new Dictionary<int, DataStructures.Jewel>();
 
-        private Ability CreateAbility(int skillId, int level)
-        {
-            IAbility localAbility = abilities.FirstOrDefault(a => a.Skill.Id == skillId && a.Level == level);
-            ISkill localSkill = skills.FirstOrDefault(s => s.Id == skillId);
-
-            return new Ability(localSkill, level, localAbility.Description);
-        }
-
-        // ***** Conversion methods *****
-
-        public void ConvertArmorPieces(IEnumerable<IArmorPiece> armorPieces, string outputFilename)
-        {
-            ConvertMany(armorPieces, outputFilename, ConvertArmorPiece);
-        }
-
-        public void ConvertSkills(IEnumerable<ISkill> skills, string outputFilename)
-        {
-            ConvertMany(skills, outputFilename, ConvertSkill);
-        }
-
-        public void ConvertCharms(IEnumerable<ICharm> charms, string outputFilename)
-        {
-            ConvertMany(charms, outputFilename, ConvertCharm);
-        }
-
-        public void ConvertJewels(IEnumerable<IJewel> jewels, string outputFilename)
-        {
-            ConvertMany(jewels, outputFilename, ConvertJewel);
-        }
-
-        // --------------------------------------------------------
-
-        private void ConvertMany<TSource, TTarget>(IEnumerable<TSource> source, string outputFilename, Func<TSource, TTarget> convert)
-        {
-            IList<TTarget> primitives = source
-                .Select(convert)
-                .ToList();
-
-            string content = JsonConvert.SerializeObject(primitives, Formatting.Indented);
-
-            File.WriteAllText(outputFilename, content);
-        }
-
-        private ArmorPiecePrimitive ConvertArmorPiece(IArmorPiece armorPiece)
-        {
-            return new ArmorPiecePrimitive
+            foreach(JewelPrimitive jewelPrimitive in result)
             {
-                Abilities = armorPiece.Abilities.Select(ConvertArmorAbility).ToList(),
-                Assets = null,
-                Attributes = new ArmorPieceAttributesPrimitive
+                IAbility[] localAbilities = jewelPrimitive.Abilitites.Select(a => GetAbility(a.SkillId, a.Level)).ToArray();
+                if (localJewels.ContainsKey(jewelPrimitive.Id))
+                    logger?.LogError($"Decoration identifier with ID '{jewelPrimitive.Id}' and Name '{jewelPrimitive.Name}' is a duplicate");
+                else
+                    localJewels[jewelPrimitive.Id] = new DataStructures.Jewel(jewelPrimitive, localAbilities);
+            }
+
+            foreach(KeyValuePair<string, Task<IList<JewelPrimitive>>> localizationQuery in localizationQueries)
+            {
+                IList<JewelPrimitive> localization = await localizationQuery.Value;
+                if (localization == null)
                 {
-                    RequiredGender = DataStructures.ArmorPieceAttributes.GenderToString(armorPiece.Attributes.RequiredGender)
-                },
-                Defense = ConvertDefense(armorPiece.Defense),
-                Id = armorPiece.Id,
-                Name = armorPiece.Name,
-                Rarity = armorPiece.Rarity,
-                Resistances = ConvertResistances(armorPiece.Resistances),
-                Slots = ConvertSlots(armorPiece.Slots),
-                Type = armorPiece.Type
-            };
+                    logger?.LogError($"Query for decoration localization '{localizationQuery.Key}' failed");
+                    continue;
+                }
+                foreach (JewelPrimitive jewel in localization)
+                {
+                    localJewels[jewel.Id].AddLocalization(localizationQuery.Key, jewel);
+                }
+            }
+
+            jewels = localJewels.Values.ToArray();
         }
 
-        private ArmorAbilityPrimitive ConvertArmorAbility(IAbility ability)
+        private ICraftMaterial[] GetCraftingMaterials(CraftingCostPrimitive[] primitives)
         {
-            return new ArmorAbilityPrimitive
+            var materials = new ICraftMaterial[primitives.Length];
+            for(int i = 0; i< primitives.Length;++i)
             {
-                SkillId = ability.Skill.Id,
-                Level = ability.Level,
-            };
+                materials[i] = new CraftMaterial(localizedItems.FirstOrDefault(x => x.Id == primitives[i].Item.Id), primitives[i].Quantity);
+            }
+            return materials;
         }
 
-        private ArmorPieceDefensePrimitive ConvertDefense(IArmorPieceDefense defense)
+        private IAbility GetAbility(int skillId, int level)
         {
-            return new ArmorPieceDefensePrimitive
-            {
-                Base = defense.Base,
-                Max = defense.Max,
-                Augmented = defense.Augmented
-            };
-        }
-
-        private ArmorPieceResistancesPrimitive ConvertResistances(IArmorPieceResistances resistances)
-        {
-            return new ArmorPieceResistancesPrimitive
-            {
-                Fire = resistances.Fire,
-                Water = resistances.Water,
-                Thunder = resistances.Thunder,
-                Ice = resistances.Ice,
-                Dragon = resistances.Dragon
-            };
-        }
-
-        private IList<ArmorSlotRank> ConvertSlots(int[] slots)
-        {
-            return slots
-                .Select(x => new ArmorSlotRank { Rank = x })
-                .ToList();
-        }
-
-        private SkillPrimitive ConvertSkill(ISkill skill)
-        {
-            return new SkillPrimitive
-            {
-                Id = skill.Id,
-                Name = skill.Name,
-                Description = skill.Description,
-                Abilities = skill.Abilities.Select(ConvertSkillAbility).ToList()
-            };
-        }
-
-        private AbilityPrimitive ConvertSkillAbility(IAbility ability)
-        {
-            return new AbilityPrimitive
-            {
-                SkillId = ability.Skill.Id,
-                Level = ability.Level,
-                Description = ability.Description
-            };
-        }
-
-        private CharmPrimitive ConvertCharm(ICharm charm)
-        {
-            return new CharmPrimitive
-            {
-                Name = charm.Name,
-                Levels = charm.Levels.Select(ConvertCharmLevel).ToList()
-            };
-        }
-
-        private CharmLevelPrimitive ConvertCharmLevel(ICharmLevel charmLevel)
-        {
-            return new CharmLevelPrimitive
-            {
-                Name = charmLevel.Name,
-                Level = charmLevel.Level,
-                Rarity = charmLevel.Rarity,
-                Abilitites = charmLevel.Abilities.Select(x => new AbilityIdPrimitive { SkillId = x.Skill.Id, Level = x.Level }).ToList()
-            };
-        }
-
-        private JewelPrimitive ConvertJewel(IJewel jewel)
-        {
-            return new JewelPrimitive
-            {
-                Id = jewel.Id,
-                Name = jewel.Name,
-                Rarity = jewel.Rarity,
-                SlotSize = jewel.SlotSize,
-                Abilitites = jewel.Abilities.Select(x => new AbilityIdPrimitive { SkillId = x.Skill.Id, Level = x.Level }).ToList()
-            };
+            return abilities.FirstOrDefault(a => a.Skill.Id == skillId && a.Level == level);
         }
     }
 }
