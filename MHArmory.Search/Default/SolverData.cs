@@ -7,7 +7,7 @@ using System.Linq;
 
 namespace MHArmory.Search.Default
 {
-    public class SolverData : ISolverData
+    public class SolverData : ISolverData, IConfigurable
     {
         public const double MinimumAverageSkillCompletionRatio = 0.75;
 
@@ -21,6 +21,8 @@ namespace MHArmory.Search.Default
         public SolverDataJewelModel[] AllJewels { get; private set; }
         public IAbility[] DesiredAbilities { get; private set; }
 
+        public bool IncludeLowerTier { get; set; }
+
         private List<SolverDataEquipmentModel> inputHeads;
         private List<SolverDataEquipmentModel> inputChests;
         private List<SolverDataEquipmentModel> inputGloves;
@@ -28,13 +30,21 @@ namespace MHArmory.Search.Default
         private List<SolverDataEquipmentModel> inputLegs;
         private List<SolverDataEquipmentModel> inputCharms;
         private List<SolverDataJewelModel> inputJewels;
+        enum HunterRank { LowRank, HighRank, MasterRank};
+        private HunterRank hunterRank;
 
         private int maxSkillCountPerArmorPiece;
 
         public string Name { get; } = "Armory - Default";
         public string Author { get; } = "TanukiSharp";
         public string Description { get; } = "Default solver data processor";
-        public int Version { get; } = 1;
+        public int Version { get; } = 2;
+
+
+        public SolverData()
+        {
+            SolverDataViewModel.LoadSettings(this);
+        }
 
         public void Setup(
             IEquipment weapon,
@@ -61,8 +71,19 @@ namespace MHArmory.Search.Default
             maxSkills = Math.Max(maxSkills, inputGloves.MaxOrZero(x => x.Equipment.Abilities.Length));
             maxSkills = Math.Max(maxSkills, inputWaists.MaxOrZero(x => x.Equipment.Abilities.Length));
             maxSkills = Math.Max(maxSkills, inputLegs.MaxOrZero(x => x.Equipment.Abilities.Length));
-
             maxSkillCountPerArmorPiece = maxSkills;
+
+            int maxRarity = inputHeads.MaxOrZero(x => x.Equipment.Rarity);
+            maxRarity = Math.Max(maxSkills, inputChests.MaxOrZero(x => x.Equipment.Rarity));
+            maxRarity = Math.Max(maxSkills, inputGloves.MaxOrZero(x => x.Equipment.Rarity));
+            maxRarity = Math.Max(maxSkills, inputWaists.MaxOrZero(x => x.Equipment.Rarity));
+            maxRarity = Math.Max(maxSkills, inputLegs.MaxOrZero(x => x.Equipment.Rarity));
+            if (maxRarity > 8)
+                hunterRank = HunterRank.MasterRank;
+            else if (maxRarity > 4)
+                hunterRank = HunterRank.HighRank;
+            else
+                hunterRank = HunterRank.LowRank;
 
             Weapon = weapon;
             DesiredAbilities = desiredAbilities.ToArray();
@@ -72,12 +93,14 @@ namespace MHArmory.Search.Default
             UpdateReferences();
         }
 
+
         private void ProcessInputData()
         {
             RemoveJewelsNotMatchingAnySkill();
             RemoveJewelsMatchingExcludedSkills();
 
             RemoveEquipmentsBySkillExclusion();
+            RemoveEquipmentsByRarity();
 
             ComputeMatchingSkillCount();
 
@@ -146,11 +169,35 @@ namespace MHArmory.Search.Default
             RemoveEquipmentsBySkillExclusion(excludedAbilities, inputLegs);
             RemoveEquipmentsBySkillExclusion(excludedAbilities, inputCharms);
         }
-
+        
         private void RemoveEquipmentsBySkillExclusion(IList<IAbility> excludedAbilities, List<SolverDataEquipmentModel> equipments)
         {
             equipments.RemoveAll(e => e.Equipment.Abilities.Any(a => excludedAbilities.Any(x => DataUtility.AreAbilitiesOnSameSkill(a, x))));
         }
+
+        private void RemoveEquipmentsByRarity()
+        {
+            RemoveEquipmentsByRarity(inputHeads);
+            RemoveEquipmentsByRarity(inputChests);
+            RemoveEquipmentsByRarity(inputGloves);
+            RemoveEquipmentsByRarity(inputWaists);
+            RemoveEquipmentsByRarity(inputLegs);
+        }
+
+        private void RemoveEquipmentsByRarity(List<SolverDataEquipmentModel> equipments)
+        {
+            if (IncludeLowerTier)
+                return;
+            if (hunterRank == HunterRank.LowRank)
+                return;
+            int minimumRarity = 1;
+            if (hunterRank == HunterRank.HighRank)
+                minimumRarity = 5;
+            else
+                minimumRarity = 9;
+            equipments.RemoveAll(e => e.Equipment.Rarity < minimumRarity);
+        }
+
 
         private void DeleteMarkedEquipments()
         {
@@ -350,6 +397,12 @@ namespace MHArmory.Search.Default
                     legs.Where(x => x.Equipment.Id == leg.Id).MarkAsSelected();
                 }
             }
+        }
+
+        public void Configure()
+        {
+            var window = new SolverDataConfigurationWindow(this);
+            window.ShowDialog();
         }
     }
 
