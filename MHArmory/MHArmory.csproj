@@ -474,6 +474,9 @@
   <ItemGroup>
     <Resource Include="HelpText\TextualSkillSelection.html" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icons\Jewels\Jewel4.svg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <PreBuildEvent>call "$(ProjectDir)PreBuildEventGitInfo.bat" "$(ProjectDir)"</PreBuildEvent>
