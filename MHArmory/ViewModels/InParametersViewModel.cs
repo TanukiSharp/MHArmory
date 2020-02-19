@@ -164,7 +164,7 @@ namespace MHArmory.ViewModels
                 UseEquipmentOverride = config.EquipmentOverride.UseOverride;
 
                 if (config.Rarity <= 0)
-                    Rarity = 9; // initial rarity, maximum one
+                    Rarity = 12; // initial rarity, maximum one
                 else
                     Rarity = config.Rarity;
 

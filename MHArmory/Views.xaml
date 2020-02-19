@@ -223,6 +223,9 @@
                     <TextBlock>7</TextBlock>
                     <TextBlock>8</TextBlock>
                     <TextBlock>9</TextBlock>
+                    <TextBlock>10</TextBlock>
+                    <TextBlock>11</TextBlock>
+                    <TextBlock>12</TextBlock>
                 </ComboBox>
             </StackPanel>
 
