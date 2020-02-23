@@ -30,10 +30,12 @@ namespace MHArmory.Search.Default
         private List<SolverDataEquipmentModel> inputLegs;
         private List<SolverDataEquipmentModel> inputCharms;
         private List<SolverDataJewelModel> inputJewels;
-        enum HunterRank { LowRank, HighRank, MasterRank};
-        private HunterRank hunterRank;
 
+        enum HunterRank { LowRank, HighRank, MasterRank };
+        private HunterRank hunterRank;
         private int maxSkillCountPerArmorPiece;
+        private int maxSlotSize;
+        private int maxJewelId;
 
         public string Name { get; } = "Armory - Default";
         public string Author { get; } = "TanukiSharp";
@@ -85,6 +87,15 @@ namespace MHArmory.Search.Default
             else
                 hunterRank = HunterRank.LowRank;
 
+            int slotSize = inputHeads.MaxOrZero(x => x.Equipment.Slots.DefaultIfEmpty(0).Max());
+            slotSize = Math.Max(maxSkills, inputChests.MaxOrZero(x => x.Equipment.Slots.DefaultIfEmpty(0).Max()));
+            slotSize = Math.Max(maxSkills, inputGloves.MaxOrZero(x => x.Equipment.Slots.DefaultIfEmpty(0).Max()));
+            slotSize = Math.Max(maxSkills, inputWaists.MaxOrZero(x => x.Equipment.Slots.DefaultIfEmpty(0).Max()));
+            slotSize = Math.Max(maxSkills, inputLegs.MaxOrZero(x => x.Equipment.Slots.DefaultIfEmpty(0).Max()));
+            maxSlotSize = slotSize;
+
+            maxJewelId = inputJewels.Max(j => j.Jewel.Id);
+
             Weapon = weapon;
             DesiredAbilities = desiredAbilities.ToArray();
 
@@ -96,7 +107,10 @@ namespace MHArmory.Search.Default
 
         private void ProcessInputData()
         {
+            RemoveUnfittingJewels();
             RemoveJewelsNotMatchingAnySkill();
+            CreateGenericJewels();
+
             RemoveJewelsMatchingExcludedSkills();
 
             RemoveEquipmentsBySkillExclusion();
@@ -136,6 +150,38 @@ namespace MHArmory.Search.Default
             inputJewels.RemoveAll(j => j.Jewel.Abilities.Any(a => IsMatchingExcludedSkill(a)));
         }
 
+        private void RemoveUnfittingJewels()
+        {
+            inputJewels.RemoveAll(j => j.Jewel.SlotSize > maxSlotSize);
+        }
+
+        private void CreateGenericJewels()
+        {
+            foreach (IAbility ability in DesiredAbilities)
+            {
+                IEnumerable<SolverDataJewelModel> genericJewels =
+                    inputJewels
+                        .Where(j => j.Jewel.Abilities.Length > 1)
+                        .Where(j => j.Jewel.Abilities.Any(a => IsMatchingDesiredAbilities(a)))
+                        .Where(j => j.Jewel.Abilities.All(a => IsMatchingDesiredAbilities(a)) == false);
+                if (genericJewels.Count() == 0)
+                    continue;
+                ++maxJewelId;
+                var name = new Dictionary<string, string>()
+                {
+                    { "EN", $"Any level 4 Deco with '{ability.Skill.Name["EN"]}' skill"}
+                };
+                var generic = new Jewel(maxJewelId, name, 0, 4, new IAbility[] { ability });
+                int count = 0;
+                foreach(SolverDataJewelModel jewel in genericJewels)
+                {
+                    count += jewel.Available;
+                    inputJewels.Remove(jewel);
+                }
+                inputJewels.Add(new SolverDataJewelModel(generic, count, true));
+            }
+        }
+
         private bool IsMatchingDesiredAbilities(IAbility ability)
         {
             foreach (IAbility desiredAbility in DesiredAbilities)
@@ -169,7 +215,7 @@ namespace MHArmory.Search.Default
             RemoveEquipmentsBySkillExclusion(excludedAbilities, inputLegs);
             RemoveEquipmentsBySkillExclusion(excludedAbilities, inputCharms);
         }
-        
+
         private void RemoveEquipmentsBySkillExclusion(IList<IAbility> excludedAbilities, List<SolverDataEquipmentModel> equipments)
         {
             equipments.RemoveAll(e => e.Equipment.Abilities.Any(a => excludedAbilities.Any(x => DataUtility.AreAbilitiesOnSameSkill(a, x))));
@@ -322,8 +368,20 @@ namespace MHArmory.Search.Default
                     e.AverageSkillCompletionRatio >= MinimumAverageSkillCompletionRatio ||
                     e.MatchingSkillTotalLevel >= maxSkillCountPerArmorPiece ||
                     (e.MatchingSkillTotalLevel == e.Equipment.Abilities.Length && e.Equipment.Slots.Length > 0) ||
-                    (e.Equipment.Slots.Length >= 2 && e.Equipment.Slots.Count(x => x >= 2) >= 1);
+                    HasRankAppropiateSlots(e.Equipment);
             }
+        }
+
+        private bool HasRankAppropiateSlots(IEquipment equipment)
+        {
+            int sum = equipment.Slots.Sum();
+            if (hunterRank == HunterRank.MasterRank)
+                return sum > 6;
+            if (hunterRank == HunterRank.HighRank)
+                return sum > 3;
+            if (hunterRank == HunterRank.LowRank)
+                return sum > 0; // Does LR armor even have slots?
+            return false;
         }
 
         private void UnselectLessPoweredCharms()
