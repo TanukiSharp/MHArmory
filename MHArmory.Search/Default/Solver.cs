@@ -27,7 +27,8 @@ namespace MHArmory.Search.Default
 
         private readonly ObjectPool<List<ArmorSetJewelResult>> jewelResultObjectPool = new ObjectPool<List<ArmorSetJewelResult>>(() => new List<ArmorSetJewelResult>());
         private readonly ObjectPool<int[]> availableSlotsObjectPool = new ObjectPool<int[]>(() => new int[4]);
-        private readonly ObjectPool<Dictionary<IArmorSetSkillPart, int>> armorSetSkillPartsObjectPool = new ObjectPool<Dictionary<IArmorSetSkillPart, int>>(() => new Dictionary<IArmorSetSkillPart, int>(ArmorSetSkillPartEqualityComparer.Default));
+        private static readonly ObjectPool<Dictionary<IArmorSetSkillPart, int>> armorSetSkillPartsObjectPool =
+            new ObjectPool<Dictionary<IArmorSetSkillPart, int>>(() => new Dictionary<IArmorSetSkillPart, int>(SolverUtils.ArmorSetSkillPartEqualityComparer.Default));
 
         private void ReturnSlotsArray(int[] slotsArray)
         {
@@ -68,7 +69,7 @@ namespace MHArmory.Search.Default
             {
                 int armorAbilityTotal = 0;
 
-                if (IsAbilityMatchingArmorSet(ability, equipments))
+                if (SolverUtils.IsAbilityMatchingArmorSet(ability, equipments, armorSetSkillPartsObjectPool))
                     continue;
 
                 foreach (IEquipment equipment in equipments)
@@ -138,66 +139,6 @@ namespace MHArmory.Search.Default
             };
         }
 
-        private bool IsAbilityMatchingArmorSet(IAbility ability, IEquipment[] armorPieces)
-        {
-            Dictionary<IArmorSetSkillPart, int> armorSetSkillParts = armorSetSkillPartsObjectPool.GetObject();
-
-            void Done()
-            {
-                armorSetSkillParts.Clear();
-                armorSetSkillPartsObjectPool.PutObject(armorSetSkillParts);
-            }
-
-            foreach (IEquipment equipment in armorPieces)
-            {
-                var armorPiece = equipment as IArmorPiece;
-
-                if (armorPiece == null)
-                    continue;
-
-                if (armorPiece.ArmorSetSkills == null)
-                    continue;
-
-                foreach (IArmorSetSkill armorSetSkill in armorPiece.ArmorSetSkills)
-                {
-                    foreach (IArmorSetSkillPart armorSetSkillPart in armorSetSkill.Parts)
-                    {
-                        foreach (IAbility a in armorSetSkillPart.GrantedSkills)
-                        {
-                            if (a.Skill.Id == ability.Skill.Id)
-                            {
-                                if (armorSetSkillParts.TryGetValue(armorSetSkillPart, out int value) == false)
-                                    value = 0;
-
-                                armorSetSkillParts[armorSetSkillPart] = value + 1;
-                            }
-                        }
-                    }
-                }
-            }
-
-            if (armorSetSkillParts.Count > 0)
-            {
-                foreach (KeyValuePair<IArmorSetSkillPart, int> armorSetSkillPartKeyValue in armorSetSkillParts)
-                {
-                    if (armorSetSkillPartKeyValue.Value >= armorSetSkillPartKeyValue.Key.RequiredArmorPieces)
-                    {
-                        foreach (IAbility x in armorSetSkillPartKeyValue.Key.GrantedSkills)
-                        {
-                            if (x.Skill.Id == ability.Skill.Id)
-                            {
-                                Done();
-                                return true;
-                            }
-                        }
-                    }
-                }
-            }
-
-            Done();
-            return false;
-        }
-
         private static bool ConsumeSlots(int[] availableSlots, int jewelSize, int jewelCount)
         {
             for (int i = jewelSize - 1; i < availableSlots.Length; i++)
@@ -218,27 +159,6 @@ namespace MHArmory.Search.Default
             }
 
             return jewelCount <= 0;
-        }
-
-        private class ArmorSetSkillPartEqualityComparer : IEqualityComparer<IArmorSetSkillPart>
-        {
-            public static readonly IEqualityComparer<IArmorSetSkillPart> Default = new ArmorSetSkillPartEqualityComparer();
-
-            public bool Equals(IArmorSetSkillPart x, IArmorSetSkillPart y)
-            {
-                if (x == null || y == null)
-                    return false;
-
-                return x.Id == y.Id;
-            }
-
-            public int GetHashCode(IArmorSetSkillPart obj)
-            {
-                if (obj == null)
-                    return 0;
-
-                return obj.Id;
-            }
         }
     }
 }

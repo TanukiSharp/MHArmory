@@ -3,12 +3,34 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using MHArmory.Core;
 using MHArmory.Core.DataStructures;
 
 namespace MHArmory.Search.Default
 {
     public static class SolverUtils
     {
+        public class ArmorSetSkillPartEqualityComparer : IEqualityComparer<IArmorSetSkillPart>
+        {
+            public static readonly IEqualityComparer<IArmorSetSkillPart> Default = new ArmorSetSkillPartEqualityComparer();
+
+            public bool Equals(IArmorSetSkillPart x, IArmorSetSkillPart y)
+            {
+                if (x == null || y == null)
+                    return false;
+
+                return x.Id == y.Id;
+            }
+
+            public int GetHashCode(IArmorSetSkillPart obj)
+            {
+                if (obj == null)
+                    return 0;
+
+                return obj.Id;
+            }
+        }
+
         public static bool IsAnyFullArmorSet(IEquipment[] equipments)
         {
             foreach (IEquipment equipment in equipments)
@@ -51,6 +73,67 @@ namespace MHArmory.Search.Default
                 count++;
 
             return count;
+        }
+
+
+        public static bool IsAbilityMatchingArmorSet(IAbility ability, IEquipment[] armorPieces, ObjectPool<Dictionary<IArmorSetSkillPart, int>> armorSetSkillPartsObjectPool)
+        {
+            Dictionary<IArmorSetSkillPart, int> armorSetSkillParts = armorSetSkillPartsObjectPool.GetObject();
+
+            void Done()
+            {
+                armorSetSkillParts.Clear();
+                armorSetSkillPartsObjectPool.PutObject(armorSetSkillParts);
+            }
+
+            foreach (IEquipment equipment in armorPieces)
+            {
+                var armorPiece = equipment as IArmorPiece;
+
+                if (armorPiece == null)
+                    continue;
+
+                if (armorPiece.ArmorSetSkills == null)
+                    continue;
+
+                foreach (IArmorSetSkill armorSetSkill in armorPiece.ArmorSetSkills)
+                {
+                    foreach (IArmorSetSkillPart armorSetSkillPart in armorSetSkill.Parts)
+                    {
+                        foreach (IAbility a in armorSetSkillPart.GrantedSkills)
+                        {
+                            if (a.Skill.Id == ability.Skill.Id)
+                            {
+                                if (armorSetSkillParts.TryGetValue(armorSetSkillPart, out int value) == false)
+                                    value = 0;
+
+                                armorSetSkillParts[armorSetSkillPart] = value + 1;
+                            }
+                        }
+                    }
+                }
+            }
+
+            if (armorSetSkillParts.Count > 0)
+            {
+                foreach (KeyValuePair<IArmorSetSkillPart, int> armorSetSkillPartKeyValue in armorSetSkillParts)
+                {
+                    if (armorSetSkillPartKeyValue.Value >= armorSetSkillPartKeyValue.Key.RequiredArmorPieces)
+                    {
+                        foreach (IAbility x in armorSetSkillPartKeyValue.Key.GrantedSkills)
+                        {
+                            if (x.Skill.Id == ability.Skill.Id)
+                            {
+                                Done();
+                                return true;
+                            }
+                        }
+                    }
+                }
+            }
+
+            Done();
+            return false;
         }
     }
 }
