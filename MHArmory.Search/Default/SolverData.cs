@@ -160,15 +160,12 @@ namespace MHArmory.Search.Default
             bool isGenericJewel(SolverDataJewelModel jewel, IAbility ability)
             {
                 return jewel.Jewel.Abilities.Length > 1 &&
-                        jewel.Jewel.Abilities.Any(a => a == ability) &&
+                        jewel.Jewel.Abilities.Any(a => a.Skill == ability.Skill) &&
                         jewel.Jewel.Abilities.All(a => IsMatchingDesiredAbilities(a)) == false;
             }
             foreach (IAbility ability in DesiredAbilities)
             {
-
                 IEnumerable<SolverDataJewelModel> genericJewels = inputJewels.Where(j => isGenericJewel(j, ability));
-                if (genericJewels.Count() == 0)
-                    continue;
                 ++maxJewelId;
                 var name = new Dictionary<string, string>()
                 {
@@ -177,7 +174,13 @@ namespace MHArmory.Search.Default
                 var generic = new Jewel(maxJewelId, name, 0, 4, new IAbility[] { ability });
                 int count = 0;
                 foreach(SolverDataJewelModel jewel in genericJewels)
-                    count += jewel.Available;
+                {
+                    if (int.MaxValue - jewel.Available < count)
+                        count = int.MaxValue;
+                    else
+                        count += jewel.Available;
+
+                }
                 inputJewels.RemoveAll(j => isGenericJewel(j, ability));
                 inputJewels.Add(new SolverDataJewelModel(generic, count, true));
             }

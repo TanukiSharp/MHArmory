@@ -75,65 +75,33 @@ namespace MHArmory.Search.Default
             return count;
         }
 
-
-        public static bool IsAbilityMatchingArmorSet(IAbility ability, IEquipment[] armorPieces, ObjectPool<Dictionary<IArmorSetSkillPart, int>> armorSetSkillPartsObjectPool)
+        public static int ConsumeSlots(int[] availableSlots, int jewelSize, int jewelCount, bool limitToExactSlotsize = false)
         {
-            Dictionary<IArmorSetSkillPart, int> armorSetSkillParts = armorSetSkillPartsObjectPool.GetObject();
-
-            void Done()
+            int slotted = 0;
+            for (int i = jewelSize - 1; i < availableSlots.Length; i++)
             {
-                armorSetSkillParts.Clear();
-                armorSetSkillPartsObjectPool.PutObject(armorSetSkillParts);
-            }
-
-            foreach (IEquipment equipment in armorPieces)
-            {
-                var armorPiece = equipment as IArmorPiece;
-
-                if (armorPiece == null)
-                    continue;
-
-                if (armorPiece.ArmorSetSkills == null)
-                    continue;
-
-                foreach (IArmorSetSkill armorSetSkill in armorPiece.ArmorSetSkills)
+                if (availableSlots[i] <= 0)
                 {
-                    foreach (IArmorSetSkillPart armorSetSkillPart in armorSetSkill.Parts)
-                    {
-                        foreach (IAbility a in armorSetSkillPart.GrantedSkills)
-                        {
-                            if (a.Skill.Id == ability.Skill.Id)
-                            {
-                                if (armorSetSkillParts.TryGetValue(armorSetSkillPart, out int value) == false)
-                                    value = 0;
+                    if (limitToExactSlotsize)
+                        return slotted;
+                    else
+                        continue;
+                }
 
-                                armorSetSkillParts[armorSetSkillPart] = value + 1;
-                            }
-                        }
-                    }
+                if (availableSlots[i] >= jewelCount)
+                {
+                    availableSlots[i] -= jewelCount;
+                    return jewelCount;
+                }
+                else
+                {
+                    jewelCount -= availableSlots[i];
+                    slotted += availableSlots[i];
+                    availableSlots[i] = 0;
                 }
             }
 
-            if (armorSetSkillParts.Count > 0)
-            {
-                foreach (KeyValuePair<IArmorSetSkillPart, int> armorSetSkillPartKeyValue in armorSetSkillParts)
-                {
-                    if (armorSetSkillPartKeyValue.Value >= armorSetSkillPartKeyValue.Key.RequiredArmorPieces)
-                    {
-                        foreach (IAbility x in armorSetSkillPartKeyValue.Key.GrantedSkills)
-                        {
-                            if (x.Skill.Id == ability.Skill.Id)
-                            {
-                                Done();
-                                return true;
-                            }
-                        }
-                    }
-                }
-            }
-
-            Done();
-            return false;
+            return slotted;
         }
     }
 }

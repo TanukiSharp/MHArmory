@@ -7023,7 +7023,8 @@
     {
         "id": 193,
         "name": {
-            "EN": "Banbaro Coil α+"
+            "EN": "Banbaro Coil α+",
+            "CN": "精英·猛牛龙腰甲阿尔法"
         },
         "rarity": 9,
         "slots": [
@@ -7793,7 +7794,8 @@
     {
         "id": 225,
         "name": {
-            "EN": "Banbaro Coil β+"
+            "EN": "Banbaro Coil β+",
+            "CN": "精英·猛牛龙腰甲贝塔"
         },
         "rarity": 9,
         "slots": [

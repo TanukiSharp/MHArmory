@@ -7207,7 +7207,8 @@
     {
         "id": 193,
         "name": {
-            "EN": "Banbaro Mail α+"
+            "EN": "Banbaro Mail α+",
+            "CN": "精英·猛牛龙胸甲阿尔法"
         },
         "rarity": 9,
         "slots": [
@@ -8038,7 +8039,8 @@
     {
         "id": 225,
         "name": {
-            "EN": "Banbaro Mail β+"
+            "EN": "Banbaro Mail β+",
+            "CN": "精英·猛牛龙胸甲贝塔"
         },
         "rarity": 9,
         "slots": [

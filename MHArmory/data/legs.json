@@ -7209,7 +7209,8 @@
     {
         "id": 193,
         "name": {
-            "EN": "Banbaro Greaves α+"
+            "EN": "Banbaro Greaves α+",
+            "CN": "精英·猛牛龙护腿阿尔法"
         },
         "rarity": 9,
         "slots": [
@@ -8008,7 +8009,8 @@
     {
         "id": 225,
         "name": {
-            "EN": "Banbaro Greaves β+"
+            "EN": "Banbaro Greaves β+",
+            "CN": "精英·猛牛龙护腿贝塔"
         },
         "rarity": 9,
         "slots": [

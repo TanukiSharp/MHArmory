@@ -27,7 +27,7 @@ namespace MHArmory.Search.Default
 
         private readonly ObjectPool<List<ArmorSetJewelResult>> jewelResultObjectPool = new ObjectPool<List<ArmorSetJewelResult>>(() => new List<ArmorSetJewelResult>());
         private readonly ObjectPool<int[]> availableSlotsObjectPool = new ObjectPool<int[]>(() => new int[4]);
-        private static readonly ObjectPool<Dictionary<IArmorSetSkillPart, int>> armorSetSkillPartsObjectPool =
+        private readonly ObjectPool<Dictionary<IArmorSetSkillPart, int>> armorSetSkillPartsObjectPool =
             new ObjectPool<Dictionary<IArmorSetSkillPart, int>>(() => new Dictionary<IArmorSetSkillPart, int>(SolverUtils.ArmorSetSkillPartEqualityComparer.Default));
 
         private void ReturnSlotsArray(int[] slotsArray)
@@ -69,7 +69,7 @@ namespace MHArmory.Search.Default
             {
                 int armorAbilityTotal = 0;
 
-                if (SolverUtils.IsAbilityMatchingArmorSet(ability, equipments, armorSetSkillPartsObjectPool))
+                if (IsAbilityMatchingArmorSet(ability, equipments))
                     continue;
 
                 foreach (IEquipment equipment in equipments)
@@ -111,7 +111,7 @@ namespace MHArmory.Search.Default
                         return ArmorSetSearchResult.NoMatch;
                     }
 
-                    if (ConsumeSlots(availableSlots, j.Jewel.SlotSize, requiredJewelCount) == false)
+                    if (SolverUtils.ConsumeSlots(availableSlots, j.Jewel.SlotSize, requiredJewelCount) == requiredJewelCount)
                     {
                         OnArmorSetMismatch();
                         return ArmorSetSearchResult.NoMatch;
@@ -139,26 +139,64 @@ namespace MHArmory.Search.Default
             };
         }
 
-        private static bool ConsumeSlots(int[] availableSlots, int jewelSize, int jewelCount)
+        private bool IsAbilityMatchingArmorSet(IAbility ability, IEquipment[] armorPieces)
         {
-            for (int i = jewelSize - 1; i < availableSlots.Length; i++)
+            Dictionary<IArmorSetSkillPart, int> armorSetSkillParts = armorSetSkillPartsObjectPool.GetObject();
+
+            void Done()
             {
-                if (availableSlots[i] <= 0)
+                armorSetSkillParts.Clear();
+                armorSetSkillPartsObjectPool.PutObject(armorSetSkillParts);
+            }
+
+            foreach (IEquipment equipment in armorPieces)
+            {
+                var armorPiece = equipment as IArmorPiece;
+
+                if (armorPiece == null)
                     continue;
 
-                if (availableSlots[i] >= jewelCount)
+                if (armorPiece.ArmorSetSkills == null)
+                    continue;
+
+                foreach (IArmorSetSkill armorSetSkill in armorPiece.ArmorSetSkills)
                 {
-                    availableSlots[i] -= jewelCount;
-                    return true;
-                }
-                else
-                {
-                    jewelCount -= availableSlots[i];
-                    availableSlots[i] = 0;
+                    foreach (IArmorSetSkillPart armorSetSkillPart in armorSetSkill.Parts)
+                    {
+                        foreach (IAbility a in armorSetSkillPart.GrantedSkills)
+                        {
+                            if (a.Skill.Id == ability.Skill.Id)
+                            {
+                                if (armorSetSkillParts.TryGetValue(armorSetSkillPart, out int value) == false)
+                                    value = 0;
+
+                                armorSetSkillParts[armorSetSkillPart] = value + 1;
+                            }
+                        }
+                    }
                 }
             }
 
-            return jewelCount <= 0;
+            if (armorSetSkillParts.Count > 0)
+            {
+                foreach (KeyValuePair<IArmorSetSkillPart, int> armorSetSkillPartKeyValue in armorSetSkillParts)
+                {
+                    if (armorSetSkillPartKeyValue.Value >= armorSetSkillPartKeyValue.Key.RequiredArmorPieces)
+                    {
+                        foreach (IAbility x in armorSetSkillPartKeyValue.Key.GrantedSkills)
+                        {
+                            if (x.Skill.Id == ability.Skill.Id)
+                            {
+                                Done();
+                                return true;
+                            }
+                        }
+                    }
+                }
+            }
+
+            Done();
+            return false;
         }
     }
 }

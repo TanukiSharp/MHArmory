@@ -27,7 +27,8 @@ namespace MHArmory.Search.Iceborne
             foreach (SolverDataJewelModel jewel in allJewelsWithSkill)
             {
                 TotalSkillLevels += jewel.Available * jewel.Jewel.Abilities.First(j => j.Skill == Skill).Level;
-                if (jewel.Jewel.SlotSize > 3)
+                if (jewel.Jewel.SlotSize > 3 &&
+                    (!jewel.Generic || jewel.Available > 0)) // we add a generic deco even if there are none
                     HasLevel4Deco = true;
 
                 if (jewel.Generic)
@@ -37,6 +38,11 @@ namespace MHArmory.Search.Iceborne
                 else
                     SingleSkillDecos[jewel.Jewel.Abilities[0].Level - 1] = jewel;
             }
+        }
+
+        public void SortMultiSkillDecos(Dictionary<ISkill, int> skillCombinations)
+        {
+            MultiSkillDecos.OrderBy(d => skillCombinations[d.Jewel.Abilities.First(a => a.Skill != Skill).Skill]);
         }
     }
 }

@@ -7767,7 +7767,8 @@
     {
         "id": 193,
         "name": {
-            "EN": "Banbaro Helm α+"
+            "EN": "Banbaro Helm α+",
+            "CN": "精英·猛牛龙头盔阿尔法"
         },
         "rarity": 9,
         "slots": [
@@ -8630,7 +8631,8 @@
     {
         "id": 225,
         "name": {
-            "EN": "Banbaro Helm β+"
+            "EN": "Banbaro Helm β+",
+            "CN": "精英·猛牛龙头盔贝塔"
         },
         "rarity": 9,
         "slots": [

@@ -7177,7 +7177,8 @@
     {
         "id": 193,
         "name": {
-            "EN": "Banbaro Vambraces α+"
+            "EN": "Banbaro Vambraces α+",
+            "CN": "精英·猛牛龙腕甲阿尔法"
         },
         "rarity": 9,
         "slots": [
@@ -7974,7 +7975,8 @@
     {
         "id": 225,
         "name": {
-            "EN": "Banbaro Vambraces β+"
+            "EN": "Banbaro Vambraces β+",
+            "CN": "精英·猛牛龙腕甲贝塔"
         },
         "rarity": 9,
         "slots": [
