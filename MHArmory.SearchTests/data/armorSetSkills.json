@@ -1,0 +1,1050 @@
+[
+    {
+        "id": 1,
+        "name": {
+            "EN": "Anjanath Power"
+        },
+        "parts": [
+            {
+                "id": 0,
+                "requiredArmorPieceCount": 3,
+                "abilityIds": [
+                    311
+                ]
+            }
+        ]
+    },
+    {
+        "id": 2,
+        "name": {
+            "EN": "Legiana Blessing"
+        },
+        "parts": [
+            {
+                "id": 1,
+                "requiredArmorPieceCount": 3,
+                "abilityIds": [
+                    324
+                ]
+            }
+        ]
+    },
+    {
+        "id": 3,
+        "name": {
+            "EN": "Odogaron Power"
+        },
+        "parts": [
+            {
+                "id": 2,
+                "requiredArmorPieceCount": 3,
+                "abilityIds": [
+                    326
+                ]
+            }
+        ]
+    },
+    {
+        "id": 4,
+        "name": {
+            "EN": "Rathalos Power"
+        },
+        "parts": [
+            {
+                "id": 3,
+                "requiredArmorPieceCount": 3,
+                "abilityIds": [
+                    313
+                ]
+            }
+        ]
+    },
+    {
+        "id": 5,
+        "name": {
+            "EN": "Diablos Power"
+        },
+        "parts": [
+            {
+                "id": 4,
+                "requiredArmorPieceCount": 3,
+                "abilityIds": [
+                    315
+                ]
+            }
+        ]
+    },
+    {
+        "id": 6,
+        "name": {
+            "EN": "Kirin Blessing"
+        },
+        "parts": [
+            {
+                "id": 5,
+                "requiredArmorPieceCount": 4,
+                "abilityIds": [
+                    317
+                ]
+            }
+        ]
+    },
+    {
+        "id": 7,
+        "name": {
+            "EN": "Anjanath Will"
+        },
+        "parts": [
+            {
+                "id": 6,
+                "requiredArmorPieceCount": 2,
+                "abilityIds": [
+                    311
+                ]
+            },
+            {
+                "id": 7,
+                "requiredArmorPieceCount": 4,
+                "abilityIds": [
+                    312
+                ]
+            }
+        ]
+    },
+    {
+        "id": 8,
+        "name": {
+            "EN": "Pink Rathian Mastery"
+        },
+        "parts": [
+            {
+                "id": 10,
+                "requiredArmorPieceCount": 3,
+                "abilityIds": [
+                    310
+                ]
+            }
+        ]
+    },
+    {
+        "id": 9,
+        "name": {
+            "EN": "Zorah Magdaros Mastery"
+        },
+        "parts": [
+            {
+                "id": 12,
+                "requiredArmorPieceCount": 3,
+                "abilityIds": [
+                    323
+                ]
+            }
+        ]
+    },
+    {
+        "id": 10,
+        "name": {
+            "EN": "Odogaron Mastery"
+        },
+        "parts": [
+            {
+                "id": 18,
+                "requiredArmorPieceCount": 2,
+                "abilityIds": [
+                    326
+                ]
+            },
+            {
+                "id": 19,
+                "requiredArmorPieceCount": 4,
+                "abilityIds": [
+                    327
+                ]
+            }
+        ]
+    },
+    {
+        "id": 11,
+        "name": {
+            "EN": "Rathalos Mastery"
+        },
+        "parts": [
+            {
+                "id": 22,
+                "requiredArmorPieceCount": 2,
+                "abilityIds": [
+                    313
+                ]
+            },
+            {
+                "id": 23,
+                "requiredArmorPieceCount": 4,
+                "abilityIds": [
+                    314
+                ]
+            }
+        ]
+    },
+    {
+        "id": 12,
+        "name": {
+            "EN": "Diablos Mastery"
+        },
+        "parts": [
+            {
+                "id": 30,
+                "requiredArmorPieceCount": 2,
+                "abilityIds": [
+                    315
+                ]
+            },
+            {
+                "id": 31,
+                "requiredArmorPieceCount": 4,
+                "abilityIds": [
+                    316
+                ]
+            }
+        ]
+    },
+    {
+        "id": 13,
+        "name": {
+            "EN": "Uragaan Protection"
+        },
+        "parts": [
+            {
+                "id": 38,
+                "requiredArmorPieceCount": 3,
+                "abilityIds": [
+                    318
+                ]
+            }
+        ]
+    },
+    {
+        "id": 14,
+        "name": {
+            "EN": "Bazelgeuse Protection"
+        },
+        "parts": [
+            {
+                "id": 40,
+                "requiredArmorPieceCount": 3,
+                "abilityIds": [
+                    319
+                ]
+            }
+        ]
+    },
+    {
+        "id": 15,
+        "name": {
+            "EN": "Nergigante Hunger"
+        },
+        "parts": [
+            {
+                "id": 42,
+                "requiredArmorPieceCount": 3,
+                "abilityIds": [
+                    308
+                ]
+            }
+        ]
+    },
+    {
+        "id": 16,
+        "name": {
+            "EN": "Teostra Technique"
+        },
+        "parts": [
+            {
+                "id": 44,
+                "requiredArmorPieceCount": 3,
+                "abilityIds": [
+                    320
+                ]
+            }
+        ]
+    },
+    {
+        "id": 17,
+        "name": {
+            "EN": "Kushala Daora Flight"
+        },
+        "parts": [
+            {
+                "id": 46,
+                "requiredArmorPieceCount": 3,
+                "abilityIds": [
+                    321
+                ]
+            }
+        ]
+    },
+    {
+        "id": 18,
+        "name": {
+            "EN": "Vaal Hazak Vitality"
+        },
+        "parts": [
+            {
+                "id": 48,
+                "requiredArmorPieceCount": 3,
+                "abilityIds": [
+                    309
+                ]
+            }
+        ]
+    },
+    {
+        "id": 19,
+        "name": {
+            "EN": "Kirin Favor"
+        },
+        "parts": [
+            {
+                "id": 50,
+                "requiredArmorPieceCount": 3,
+                "abilityIds": [
+                    317
+                ]
+            }
+        ]
+    },
+    {
+        "id": 20,
+        "name": {
+            "EN": "Xeno'jiiva Divinity"
+        },
+        "parts": [
+            {
+                "id": 52,
+                "requiredArmorPieceCount": 3,
+                "abilityIds": [
+                    322
+                ]
+            }
+        ]
+    },
+    {
+        "id": 21,
+        "name": {
+            "EN": "Guild Guidance"
+        },
+        "parts": [
+            {
+                "id": 54,
+                "requiredArmorPieceCount": 4,
+                "abilityIds": [
+                    333
+                ]
+            }
+        ]
+    },
+    {
+        "id": 22,
+        "name": {
+            "EN": "Commission Guidance"
+        },
+        "parts": [
+            {
+                "id": 56,
+                "requiredArmorPieceCount": 4,
+                "abilityIds": [
+                    334
+                ]
+            }
+        ]
+    },
+    {
+        "id": 23,
+        "name": {
+            "EN": "Legiana Favor"
+        },
+        "parts": [
+            {
+                "id": 14,
+                "requiredArmorPieceCount": 2,
+                "abilityIds": [
+                    324
+                ]
+            },
+            {
+                "id": 15,
+                "requiredArmorPieceCount": 4,
+                "abilityIds": [
+                    325
+                ]
+            }
+        ]
+    },
+    {
+        "id": 24,
+        "name": {
+            "EN": "Lunastra Favor"
+        },
+        "parts": [
+            {
+                "id": 59,
+                "requiredArmorPieceCount": 2,
+                "abilityIds": [
+                    312
+                ]
+            },
+            {
+                "id": 60,
+                "requiredArmorPieceCount": 4,
+                "abilityIds": [
+                    314
+                ]
+            }
+        ]
+    },
+    {
+        "id": 25,
+        "name": {
+            "EN": "Anjanath Dominance"
+        },
+        "parts": [
+            {
+                "id": 75,
+                "requiredArmorPieceCount": 2,
+                "abilityIds": [
+                    312
+                ]
+            }
+        ]
+    },
+    {
+        "id": 26,
+        "name": {
+            "EN": "Rathian Essence"
+        },
+        "parts": [
+            {
+                "id": 77,
+                "requiredArmorPieceCount": 2,
+                "abilityIds": [
+                    310
+                ]
+            }
+        ]
+    },
+    {
+        "id": 27,
+        "name": {
+            "EN": "Ancient Divinity"
+        },
+        "parts": [
+            {
+                "id": 83,
+                "requiredArmorPieceCount": 2,
+                "abilityIds": [
+                    323
+                ]
+            }
+        ]
+    },
+    {
+        "id": 28,
+        "name": {
+            "EN": "Commission Alchemy"
+        },
+        "parts": [
+            {
+                "id": 85,
+                "requiredArmorPieceCount": 3,
+                "abilityIds": [
+                    341
+                ]
+            }
+        ]
+    },
+    {
+        "id": 29,
+        "name": {
+            "EN": "Guild Pride"
+        },
+        "parts": [
+            {
+                "id": 87,
+                "requiredArmorPieceCount": 2,
+                "abilityIds": [
+                    324
+                ]
+            },
+            {
+                "id": 88,
+                "requiredArmorPieceCount": 4,
+                "abilityIds": [
+                    334
+                ]
+            }
+        ]
+    },
+    {
+        "id": 30,
+        "name": {
+            "EN": "Nergigante Ambition"
+        },
+        "parts": [
+            {
+                "id": 91,
+                "requiredArmorPieceCount": 2,
+                "abilityIds": [
+                    308
+                ]
+            }
+        ]
+    },
+    {
+        "id": 31,
+        "name": {
+            "EN": "Silver Rathalos Essence"
+        },
+        "parts": [
+            {
+                "id": 93,
+                "requiredArmorPieceCount": 2,
+                "abilityIds": [
+                    342
+                ]
+            },
+            {
+                "id": 94,
+                "requiredArmorPieceCount": 4,
+                "abilityIds": [
+                    343
+                ]
+            }
+        ]
+    },
+    {
+        "id": 32,
+        "name": {
+            "EN": "Gold Rathian Essence"
+        },
+        "parts": [
+            {
+                "id": 97,
+                "requiredArmorPieceCount": 2,
+                "abilityIds": [
+                    346
+                ]
+            },
+            {
+                "id": 98,
+                "requiredArmorPieceCount": 4,
+                "abilityIds": [
+                    347
+                ]
+            }
+        ]
+    },
+    {
+        "id": 33,
+        "name": {
+            "EN": "Zinogre Essence"
+        },
+        "parts": [
+            {
+                "id": 101,
+                "requiredArmorPieceCount": 3,
+                "abilityIds": [
+                    349
+                ]
+            }
+        ]
+    },
+    {
+        "id": 34,
+        "name": {
+            "EN": "Zorah Magdaros Essence"
+        },
+        "parts": [
+            {
+                "id": 103,
+                "requiredArmorPieceCount": 3,
+                "abilityIds": [
+                    353
+                ]
+            }
+        ]
+    },
+    {
+        "id": 35,
+        "name": {
+            "EN": "Shara Ishvalda Divinity"
+        },
+        "parts": [
+            {
+                "id": 105,
+                "requiredArmorPieceCount": 4,
+                "abilityIds": [
+                    359
+                ]
+            },
+            {
+                "id": 106,
+                "requiredArmorPieceCount": 5,
+                "abilityIds": [
+                    360
+                ]
+            }
+        ]
+    },
+    {
+        "id": 36,
+        "name": {
+            "EN": "Namielle Divinity"
+        },
+        "parts": [
+            {
+                "id": 109,
+                "requiredArmorPieceCount": 2,
+                "abilityIds": [
+                    361
+                ]
+            },
+            {
+                "id": 110,
+                "requiredArmorPieceCount": 4,
+                "abilityIds": [
+                    362
+                ]
+            }
+        ]
+    },
+    {
+        "id": 37,
+        "name": {
+            "EN": "Kirin Divinity"
+        },
+        "parts": [
+            {
+                "id": 113,
+                "requiredArmorPieceCount": 3,
+                "abilityIds": [
+                    333
+                ]
+            }
+        ]
+    },
+    {
+        "id": 38,
+        "name": {
+            "EN": "Vaal Soulvein"
+        },
+        "parts": [
+            {
+                "id": 119,
+                "requiredArmorPieceCount": 2,
+                "abilityIds": [
+                    309
+                ]
+            }
+        ]
+    },
+    {
+        "id": 39,
+        "name": {
+            "EN": "Velkhana Divinity"
+        },
+        "parts": [
+            {
+                "id": 121,
+                "requiredArmorPieceCount": 2,
+                "abilityIds": [
+                    313
+                ]
+            },
+            {
+                "id": 122,
+                "requiredArmorPieceCount": 4,
+                "abilityIds": [
+                    363
+                ]
+            }
+        ]
+    },
+    {
+        "id": 40,
+        "name": {
+            "EN": "Deviljho Essence"
+        },
+        "parts": [
+            {
+                "id": 129,
+                "requiredArmorPieceCount": 3,
+                "abilityIds": [
+                    364
+                ]
+            }
+        ]
+    },
+    {
+        "id": 41,
+        "name": {
+            "EN": "Bazelgeuse Ambition"
+        },
+        "parts": [
+            {
+                "id": 131,
+                "requiredArmorPieceCount": 2,
+                "abilityIds": [
+                    319
+                ]
+            }
+        ]
+    },
+    {
+        "id": 42,
+        "name": {
+            "EN": "Instructor's Guidance"
+        },
+        "parts": [
+            {
+                "id": 133,
+                "requiredArmorPieceCount": 2,
+                "abilityIds": [
+                    317
+                ]
+            }
+        ]
+    },
+    {
+        "id": 43,
+        "name": {
+            "EN": "Tigrex Essence"
+        },
+        "parts": [
+            {
+                "id": 135,
+                "requiredArmorPieceCount": 3,
+                "abilityIds": [
+                    365
+                ]
+            }
+        ]
+    },
+    {
+        "id": 44,
+        "name": {
+            "EN": "Brachydios Essence"
+        },
+        "parts": [
+            {
+                "id": 139,
+                "requiredArmorPieceCount": 3,
+                "abilityIds": [
+                    366
+                ]
+            }
+        ]
+    },
+    {
+        "id": 45,
+        "name": {
+            "EN": "Soul of the Dragoon"
+        },
+        "parts": [
+            {
+                "id": 64,
+                "requiredArmorPieceCount": 2,
+                "abilityIds": [
+                    367
+                ]
+            },
+            {
+                "id": 65,
+                "requiredArmorPieceCount": 4,
+                "abilityIds": [
+                    320
+                ]
+            }
+        ]
+    },
+    {
+        "id": 46,
+        "name": {
+            "EN": "Witcher's Knowledge"
+        },
+        "parts": [
+            {
+                "id": 192,
+                "requiredArmorPieceCount": 2,
+                "abilityIds": [
+                    368
+                ]
+            },
+            {
+                "id": 193,
+                "requiredArmorPieceCount": 4,
+                "abilityIds": [
+                    309
+                ]
+            }
+        ]
+    },
+    {
+        "id": 48,
+        "name": {
+            "EN": "Barioth Hidden Art"
+        },
+        "parts": [
+            {
+                "id": 169,
+                "requiredArmorPieceCount": 2,
+                "abilityIds": [
+                    326
+                ]
+            }
+        ]
+    },
+    {
+        "id": 49,
+        "name": {
+            "EN": "Diablos Ambition"
+        },
+        "parts": [
+            {
+                "id": 161,
+                "requiredArmorPieceCount": 3,
+                "abilityIds": [
+                    393
+                ]
+            }
+        ]
+    },
+    {
+        "id": 51,
+        "name": {
+            "EN": "Legiana Ambition"
+        },
+        "parts": [
+            {
+                "id": 157,
+                "requiredArmorPieceCount": 3,
+                "abilityIds": [
+                    325
+                ]
+            }
+        ]
+    },
+    {
+        "id": 52,
+        "name": {
+            "EN": "Odogaron Essence"
+        },
+        "parts": [
+            {
+                "id": 153,
+                "requiredArmorPieceCount": 3,
+                "abilityIds": [
+                    327
+                ]
+            }
+        ]
+    },
+    {
+        "id": 53,
+        "name": {
+            "EN": "Uragaan Ambition"
+        },
+        "parts": [
+            {
+                "id": 151,
+                "requiredArmorPieceCount": 2,
+                "abilityIds": [
+                    318
+                ]
+            }
+        ]
+    },
+    {
+        "id": 55,
+        "name": {
+            "EN": "Nargacuga Essence"
+        },
+        "parts": [
+            {
+                "id": 149,
+                "requiredArmorPieceCount": 3,
+                "abilityIds": [
+                    395
+                ]
+            }
+        ]
+    },
+    {
+        "id": 57,
+        "name": {
+            "EN": "Rajang's Rage"
+        },
+        "parts": [
+            {
+                "id": 143,
+                "requiredArmorPieceCount": 2,
+                "abilityIds": [
+                    314
+                ]
+            },
+            {
+                "id": 144,
+                "requiredArmorPieceCount": 4,
+                "abilityIds": [
+                    327
+                ]
+            }
+        ]
+    },
+    {
+        "id": 58,
+        "name": {
+            "EN": "Glavenus Essence"
+        },
+        "parts": [
+            {
+                "id": 141,
+                "requiredArmorPieceCount": 3,
+                "abilityIds": [
+                    396
+                ]
+            }
+        ]
+    },
+    {
+        "id": 63,
+        "name": {
+            "EN": "Rathalos Essence"
+        },
+        "parts": [
+            {
+                "id": 165,
+                "requiredArmorPieceCount": 3,
+                "abilityIds": [
+                    314
+                ]
+            }
+        ]
+    },
+    {
+        "id": 65,
+        "name": {
+            "EN": "Lunastra Essence"
+        },
+        "parts": [
+            {
+                "id": 171,
+                "requiredArmorPieceCount": 3,
+                "abilityIds": [
+                    397
+                ]
+            }
+        ]
+    },
+    {
+        "id": 66,
+        "name": {
+            "EN": "Survivor"
+        },
+        "parts": [
+            {
+                "id": 173,
+                "requiredArmorPieceCount": 2,
+                "abilityIds": [
+                    398
+                ]
+            },
+            {
+                "id": 174,
+                "requiredArmorPieceCount": 4,
+                "abilityIds": [
+                    366
+                ]
+            }
+        ]
+    },
+    {
+        "id": 68,
+        "name": {
+            "EN": "Safi'jiiva Seal"
+        },
+        "parts": [
+            {
+                "id": 179,
+                "requiredArmorPieceCount": 3,
+                "abilityIds": [
+                    402
+                ]
+            },
+            {
+                "id": 180,
+                "requiredArmorPieceCount": 5,
+                "abilityIds": [
+                    403
+                ]
+            }
+        ]
+    },
+    {
+        "id": 69,
+        "name": {
+            "EN": "Power Cell"
+        },
+        "parts": [
+            {
+                "id": 197,
+                "requiredArmorPieceCount": 5,
+                "abilityIds": [
+                    412
+                ]
+            }
+        ]
+    },
+    {
+        "id": 70,
+        "name": {
+            "EN": "Appreciation Blessing"
+        },
+        "parts": [
+            {
+                "id": 194,
+                "requiredArmorPieceCount": 3,
+                "abilityIds": [
+                    414
+                ]
+            },
+            {
+                "id": 195,
+                "requiredArmorPieceCount": 5,
+                "abilityIds": [
+                    413
+                ]
+            }
+        ]
+    },
+    {
+        "id": 71,
+        "name": {
+            "EN": "Joyful Blessing"
+        },
+        "parts": [
+            {
+                "id": 183,
+                "requiredArmorPieceCount": 3,
+                "abilityIds": [
+                    416
+                ]
+            },
+            {
+                "id": 184,
+                "requiredArmorPieceCount": 5,
+                "abilityIds": [
+                    415
+                ]
+            }
+        ]
+    }
+]

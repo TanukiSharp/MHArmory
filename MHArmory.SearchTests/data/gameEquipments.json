@@ -1,0 +1,6077 @@
+[
+    {
+        "id": 1,
+        "type": 1,
+        "name": "Hunter's Headgear"
+    },
+    {
+        "id": 1,
+        "type": 2,
+        "name": "Hunter's Mail"
+    },
+    {
+        "id": 1,
+        "type": 3,
+        "name": "Hunter's Vambraces"
+    },
+    {
+        "id": 1,
+        "type": 4,
+        "name": "Hunter's Coil"
+    },
+    {
+        "id": 1,
+        "type": 5,
+        "name": "Hunter's Greaves"
+    },
+    {
+        "id": 2,
+        "type": 1,
+        "name": "Leather Headgear"
+    },
+    {
+        "id": 2,
+        "type": 2,
+        "name": "Leather Mail"
+    },
+    {
+        "id": 2,
+        "type": 3,
+        "name": "Leather Gloves"
+    },
+    {
+        "id": 2,
+        "type": 4,
+        "name": "Leather Belt"
+    },
+    {
+        "id": 2,
+        "type": 5,
+        "name": "Leather Trousers"
+    },
+    {
+        "id": 3,
+        "type": 1,
+        "name": "Anja Helm"
+    },
+    {
+        "id": 3,
+        "type": 2,
+        "name": "Anja Mail"
+    },
+    {
+        "id": 3,
+        "type": 3,
+        "name": "Anja Vambraces"
+    },
+    {
+        "id": 3,
+        "type": 4,
+        "name": "Anja Coil"
+    },
+    {
+        "id": 3,
+        "type": 5,
+        "name": "Anja Greaves"
+    },
+    {
+        "id": 4,
+        "type": 1,
+        "name": "Jagras Helm"
+    },
+    {
+        "id": 4,
+        "type": 2,
+        "name": "Jagras Mail"
+    },
+    {
+        "id": 4,
+        "type": 3,
+        "name": "Jagras Vambraces"
+    },
+    {
+        "id": 4,
+        "type": 4,
+        "name": "Jagras Coil"
+    },
+    {
+        "id": 4,
+        "type": 5,
+        "name": "Jagras Greaves"
+    },
+    {
+        "id": 5,
+        "type": 1,
+        "name": "Bone Helm"
+    },
+    {
+        "id": 5,
+        "type": 2,
+        "name": "Bone Mail"
+    },
+    {
+        "id": 5,
+        "type": 3,
+        "name": "Bone Vambraces"
+    },
+    {
+        "id": 5,
+        "type": 4,
+        "name": "Bone Coil"
+    },
+    {
+        "id": 5,
+        "type": 5,
+        "name": "Bone Greaves"
+    },
+    {
+        "id": 6,
+        "type": 1,
+        "name": "Alloy Helm"
+    },
+    {
+        "id": 6,
+        "type": 2,
+        "name": "Alloy Mail"
+    },
+    {
+        "id": 6,
+        "type": 3,
+        "name": "Alloy Vambraces"
+    },
+    {
+        "id": 6,
+        "type": 4,
+        "name": "Alloy Coil"
+    },
+    {
+        "id": 6,
+        "type": 5,
+        "name": "Alloy Greaves"
+    },
+    {
+        "id": 8,
+        "type": 5,
+        "name": "Gajau Boots"
+    },
+    {
+        "id": 9,
+        "type": 1,
+        "name": "Vespoid Helm"
+    },
+    {
+        "id": 9,
+        "type": 2,
+        "name": "Vespoid Mail"
+    },
+    {
+        "id": 9,
+        "type": 3,
+        "name": "Vespoid Vambraces"
+    },
+    {
+        "id": 9,
+        "type": 4,
+        "name": "Vespoid Coil"
+    },
+    {
+        "id": 9,
+        "type": 5,
+        "name": "Vespoid Greaves"
+    },
+    {
+        "id": 10,
+        "type": 1,
+        "name": "Kulu Headpiece"
+    },
+    {
+        "id": 10,
+        "type": 2,
+        "name": "Kulu Mail"
+    },
+    {
+        "id": 10,
+        "type": 3,
+        "name": "Kulu Vambraces"
+    },
+    {
+        "id": 10,
+        "type": 4,
+        "name": "Kulu Coil"
+    },
+    {
+        "id": 10,
+        "type": 5,
+        "name": "Kulu Greaves"
+    },
+    {
+        "id": 11,
+        "type": 1,
+        "name": "Pukei Hood"
+    },
+    {
+        "id": 11,
+        "type": 2,
+        "name": "Pukei Mail"
+    },
+    {
+        "id": 11,
+        "type": 3,
+        "name": "Pukei Vambraces"
+    },
+    {
+        "id": 11,
+        "type": 4,
+        "name": "Pukei Coil"
+    },
+    {
+        "id": 11,
+        "type": 5,
+        "name": "Pukei Greaves"
+    },
+    {
+        "id": 12,
+        "type": 1,
+        "name": "Jyura Helm"
+    },
+    {
+        "id": 12,
+        "type": 2,
+        "name": "Jyura Mail"
+    },
+    {
+        "id": 12,
+        "type": 3,
+        "name": "Jyura Vambraces"
+    },
+    {
+        "id": 12,
+        "type": 4,
+        "name": "Jyura Coil"
+    },
+    {
+        "id": 12,
+        "type": 5,
+        "name": "Jyura Greaves"
+    },
+    {
+        "id": 13,
+        "type": 1,
+        "name": "Barroth Helm"
+    },
+    {
+        "id": 13,
+        "type": 2,
+        "name": "Barroth Mail"
+    },
+    {
+        "id": 13,
+        "type": 3,
+        "name": "Barroth Vambraces"
+    },
+    {
+        "id": 13,
+        "type": 4,
+        "name": "Barroth Coil"
+    },
+    {
+        "id": 13,
+        "type": 5,
+        "name": "Barroth Greaves"
+    },
+    {
+        "id": 14,
+        "type": 1,
+        "name": "Kadachi Helm"
+    },
+    {
+        "id": 14,
+        "type": 2,
+        "name": "Kadachi Mail"
+    },
+    {
+        "id": 14,
+        "type": 3,
+        "name": "Kadachi Vambraces"
+    },
+    {
+        "id": 14,
+        "type": 4,
+        "name": "Kadachi Coil"
+    },
+    {
+        "id": 14,
+        "type": 5,
+        "name": "Kadachi Greaves"
+    },
+    {
+        "id": 15,
+        "type": 1,
+        "name": "Chainmail Headgear"
+    },
+    {
+        "id": 15,
+        "type": 2,
+        "name": "Chainmail Vest"
+    },
+    {
+        "id": 15,
+        "type": 3,
+        "name": "Chainmail Gloves"
+    },
+    {
+        "id": 15,
+        "type": 4,
+        "name": "Chainmail Belt"
+    },
+    {
+        "id": 15,
+        "type": 5,
+        "name": "Chainmail Trousers"
+    },
+    {
+        "id": 18,
+        "type": 1,
+        "name": "Hornetaur Helm"
+    },
+    {
+        "id": 18,
+        "type": 2,
+        "name": "Hornetaur Mail"
+    },
+    {
+        "id": 18,
+        "type": 3,
+        "name": "Hornetaur Vambraces"
+    },
+    {
+        "id": 18,
+        "type": 4,
+        "name": "Hornetaur Coil"
+    },
+    {
+        "id": 18,
+        "type": 5,
+        "name": "Hornetaur Greaves"
+    },
+    {
+        "id": 20,
+        "type": 1,
+        "name": "King Beetle Vertex"
+    },
+    {
+        "id": 20,
+        "type": 2,
+        "name": "King Beetle Thorax"
+    },
+    {
+        "id": 20,
+        "type": 3,
+        "name": "King Beetle Brachia"
+    },
+    {
+        "id": 20,
+        "type": 4,
+        "name": "King Beetle Elytra"
+    },
+    {
+        "id": 20,
+        "type": 5,
+        "name": "King Beetle Crura"
+    },
+    {
+        "id": 21,
+        "type": 1,
+        "name": "Rathian Helm"
+    },
+    {
+        "id": 21,
+        "type": 2,
+        "name": "Rathian Mail"
+    },
+    {
+        "id": 21,
+        "type": 3,
+        "name": "Rathian Vambraces"
+    },
+    {
+        "id": 21,
+        "type": 4,
+        "name": "Rathian Coil"
+    },
+    {
+        "id": 21,
+        "type": 5,
+        "name": "Rathian Greaves"
+    },
+    {
+        "id": 22,
+        "type": 1,
+        "name": "Girros Mask"
+    },
+    {
+        "id": 22,
+        "type": 2,
+        "name": "Girros Mail"
+    },
+    {
+        "id": 22,
+        "type": 3,
+        "name": "Girros Vambraces"
+    },
+    {
+        "id": 22,
+        "type": 4,
+        "name": "Girros Coil"
+    },
+    {
+        "id": 22,
+        "type": 5,
+        "name": "Girros Greaves"
+    },
+    {
+        "id": 23,
+        "type": 1,
+        "name": "Tzitzi Headgear"
+    },
+    {
+        "id": 23,
+        "type": 2,
+        "name": "Tzitzi Mail"
+    },
+    {
+        "id": 23,
+        "type": 3,
+        "name": "Tzitzi Vambraces"
+    },
+    {
+        "id": 23,
+        "type": 4,
+        "name": "Tzitzi Coil"
+    },
+    {
+        "id": 23,
+        "type": 5,
+        "name": "Tzitzi Greaves"
+    },
+    {
+        "id": 24,
+        "type": 1,
+        "name": "Lumu Hat"
+    },
+    {
+        "id": 24,
+        "type": 2,
+        "name": "Lumu Mail"
+    },
+    {
+        "id": 24,
+        "type": 3,
+        "name": "Lumu Vambraces"
+    },
+    {
+        "id": 24,
+        "type": 4,
+        "name": "Lumu Coil"
+    },
+    {
+        "id": 24,
+        "type": 5,
+        "name": "Lumu Greaves"
+    },
+    {
+        "id": 25,
+        "type": 1,
+        "name": "High Metal Helm"
+    },
+    {
+        "id": 25,
+        "type": 2,
+        "name": "High Metal Mail"
+    },
+    {
+        "id": 25,
+        "type": 3,
+        "name": "High Metal Braces"
+    },
+    {
+        "id": 25,
+        "type": 4,
+        "name": "High Metal Coil"
+    },
+    {
+        "id": 25,
+        "type": 5,
+        "name": "High Metal Greaves"
+    },
+    {
+        "id": 26,
+        "type": 1,
+        "name": "Death Stench Brain"
+    },
+    {
+        "id": 26,
+        "type": 2,
+        "name": "Death Stench Muscle"
+    },
+    {
+        "id": 26,
+        "type": 3,
+        "name": "Death Stench Grip"
+    },
+    {
+        "id": 26,
+        "type": 4,
+        "name": "Death Stench Bowels"
+    },
+    {
+        "id": 26,
+        "type": 5,
+        "name": "Death Stench Heel"
+    },
+    {
+        "id": 27,
+        "type": 1,
+        "name": "Legiana Helm"
+    },
+    {
+        "id": 27,
+        "type": 2,
+        "name": "Legiana Mail"
+    },
+    {
+        "id": 27,
+        "type": 3,
+        "name": "Legiana Vambraces"
+    },
+    {
+        "id": 27,
+        "type": 4,
+        "name": "Legiana Coil"
+    },
+    {
+        "id": 27,
+        "type": 5,
+        "name": "Legiana Greaves"
+    },
+    {
+        "id": 28,
+        "type": 1,
+        "name": "Baan Helm"
+    },
+    {
+        "id": 28,
+        "type": 2,
+        "name": "Baan Mail"
+    },
+    {
+        "id": 28,
+        "type": 3,
+        "name": "Baan Vambraces"
+    },
+    {
+        "id": 28,
+        "type": 4,
+        "name": "Baan Coil"
+    },
+    {
+        "id": 28,
+        "type": 5,
+        "name": "Baan Greaves"
+    },
+    {
+        "id": 29,
+        "type": 1,
+        "name": "Odogaron Helm"
+    },
+    {
+        "id": 29,
+        "type": 2,
+        "name": "Odogaron Mail"
+    },
+    {
+        "id": 29,
+        "type": 3,
+        "name": "Odogaron Vambraces"
+    },
+    {
+        "id": 29,
+        "type": 4,
+        "name": "Odogaron Coil"
+    },
+    {
+        "id": 29,
+        "type": 5,
+        "name": "Odogaron Greaves"
+    },
+    {
+        "id": 31,
+        "type": 1,
+        "name": "Ingot Helm"
+    },
+    {
+        "id": 31,
+        "type": 2,
+        "name": "Ingot Mail"
+    },
+    {
+        "id": 31,
+        "type": 3,
+        "name": "Ingot Vambraces"
+    },
+    {
+        "id": 31,
+        "type": 4,
+        "name": "Ingot Coil"
+    },
+    {
+        "id": 31,
+        "type": 5,
+        "name": "Ingot Greaves"
+    },
+    {
+        "id": 33,
+        "type": 1,
+        "name": "Rathalos Helm"
+    },
+    {
+        "id": 33,
+        "type": 2,
+        "name": "Rathalos Mail"
+    },
+    {
+        "id": 33,
+        "type": 3,
+        "name": "Rathalos Vambraces"
+    },
+    {
+        "id": 33,
+        "type": 4,
+        "name": "Rathalos Coil"
+    },
+    {
+        "id": 33,
+        "type": 5,
+        "name": "Rathalos Greaves"
+    },
+    {
+        "id": 34,
+        "type": 1,
+        "name": "Diablos Helm"
+    },
+    {
+        "id": 34,
+        "type": 2,
+        "name": "Diablos Mail"
+    },
+    {
+        "id": 34,
+        "type": 3,
+        "name": "Diablos Vambraces"
+    },
+    {
+        "id": 34,
+        "type": 4,
+        "name": "Diablos Coil"
+    },
+    {
+        "id": 34,
+        "type": 5,
+        "name": "Diablos Greaves"
+    },
+    {
+        "id": 35,
+        "type": 1,
+        "name": "Kirin Horn"
+    },
+    {
+        "id": 35,
+        "type": 2,
+        "name": "Kirin Jacket"
+    },
+    {
+        "id": 35,
+        "type": 3,
+        "name": "Kirin Longarms"
+    },
+    {
+        "id": 35,
+        "type": 4,
+        "name": "Kirin Hoop"
+    },
+    {
+        "id": 35,
+        "type": 5,
+        "name": "Kirin Leg Guards"
+    },
+    {
+        "id": 36,
+        "type": 1,
+        "name": "Brigade Lobos"
+    },
+    {
+        "id": 36,
+        "type": 2,
+        "name": "Brigade Suit"
+    },
+    {
+        "id": 36,
+        "type": 3,
+        "name": "Brigade Vambraces"
+    },
+    {
+        "id": 36,
+        "type": 4,
+        "name": "Brigade Coil"
+    },
+    {
+        "id": 36,
+        "type": 5,
+        "name": "Brigade Boots"
+    },
+    {
+        "id": 37,
+        "type": 1,
+        "name": "Pulverizing Feather"
+    },
+    {
+        "id": 39,
+        "type": 1,
+        "name": "Leather Headgear α"
+    },
+    {
+        "id": 39,
+        "type": 2,
+        "name": "Leather Mail α"
+    },
+    {
+        "id": 39,
+        "type": 3,
+        "name": "Leather Gloves α"
+    },
+    {
+        "id": 39,
+        "type": 4,
+        "name": "Leather Belt α"
+    },
+    {
+        "id": 39,
+        "type": 5,
+        "name": "Leather Trousers α"
+    },
+    {
+        "id": 40,
+        "type": 1,
+        "name": "Leather Headgear β"
+    },
+    {
+        "id": 40,
+        "type": 2,
+        "name": "Leather Mail β"
+    },
+    {
+        "id": 40,
+        "type": 3,
+        "name": "Leather Gloves β"
+    },
+    {
+        "id": 40,
+        "type": 4,
+        "name": "Leather Belt β"
+    },
+    {
+        "id": 40,
+        "type": 5,
+        "name": "Leather Trousers β"
+    },
+    {
+        "id": 41,
+        "type": 1,
+        "name": "Hunter's Headgear α"
+    },
+    {
+        "id": 41,
+        "type": 2,
+        "name": "Hunter's Mail α"
+    },
+    {
+        "id": 41,
+        "type": 3,
+        "name": "Hunter's Vambraces α"
+    },
+    {
+        "id": 41,
+        "type": 4,
+        "name": "Hunter's Coil α"
+    },
+    {
+        "id": 41,
+        "type": 5,
+        "name": "Hunter's Greaves α"
+    },
+    {
+        "id": 42,
+        "type": 1,
+        "name": "Hunter's Headgear β"
+    },
+    {
+        "id": 42,
+        "type": 2,
+        "name": "Hunter's Mail β"
+    },
+    {
+        "id": 42,
+        "type": 3,
+        "name": "Hunter's Vambraces β"
+    },
+    {
+        "id": 42,
+        "type": 4,
+        "name": "Hunter's Coil β"
+    },
+    {
+        "id": 42,
+        "type": 5,
+        "name": "Hunter's Greaves β"
+    },
+    {
+        "id": 43,
+        "type": 1,
+        "name": "Bone Helm α"
+    },
+    {
+        "id": 43,
+        "type": 2,
+        "name": "Bone Mail α"
+    },
+    {
+        "id": 43,
+        "type": 3,
+        "name": "Bone Vambraces α"
+    },
+    {
+        "id": 43,
+        "type": 4,
+        "name": "Bone Coil α"
+    },
+    {
+        "id": 43,
+        "type": 5,
+        "name": "Bone Greaves α"
+    },
+    {
+        "id": 44,
+        "type": 1,
+        "name": "Bone Helm β"
+    },
+    {
+        "id": 44,
+        "type": 2,
+        "name": "Bone Mail β"
+    },
+    {
+        "id": 44,
+        "type": 3,
+        "name": "Bone Vambraces β"
+    },
+    {
+        "id": 44,
+        "type": 4,
+        "name": "Bone Coil β"
+    },
+    {
+        "id": 44,
+        "type": 5,
+        "name": "Bone Greaves β"
+    },
+    {
+        "id": 45,
+        "type": 1,
+        "name": "Alloy Helm α"
+    },
+    {
+        "id": 45,
+        "type": 2,
+        "name": "Alloy Mail α"
+    },
+    {
+        "id": 45,
+        "type": 3,
+        "name": "Alloy Vambraces α"
+    },
+    {
+        "id": 45,
+        "type": 4,
+        "name": "Alloy Coil α"
+    },
+    {
+        "id": 45,
+        "type": 5,
+        "name": "Alloy Greaves α"
+    },
+    {
+        "id": 46,
+        "type": 1,
+        "name": "Alloy Helm β"
+    },
+    {
+        "id": 46,
+        "type": 2,
+        "name": "Alloy Mail β"
+    },
+    {
+        "id": 46,
+        "type": 3,
+        "name": "Alloy Vambraces β"
+    },
+    {
+        "id": 46,
+        "type": 4,
+        "name": "Alloy Coil β"
+    },
+    {
+        "id": 46,
+        "type": 5,
+        "name": "Alloy Greaves β"
+    },
+    {
+        "id": 49,
+        "type": 5,
+        "name": "Gajau Boots α"
+    },
+    {
+        "id": 50,
+        "type": 5,
+        "name": "Gajau Boots β"
+    },
+    {
+        "id": 51,
+        "type": 1,
+        "name": "Vespoid Helm α"
+    },
+    {
+        "id": 51,
+        "type": 2,
+        "name": "Vespoid Mail α"
+    },
+    {
+        "id": 51,
+        "type": 3,
+        "name": "Vespoid Vambraces α"
+    },
+    {
+        "id": 51,
+        "type": 4,
+        "name": "Vespoid Coil α"
+    },
+    {
+        "id": 51,
+        "type": 5,
+        "name": "Vespoid Greaves α"
+    },
+    {
+        "id": 52,
+        "type": 1,
+        "name": "Vespoid Helm β"
+    },
+    {
+        "id": 52,
+        "type": 2,
+        "name": "Vespoid Mail β"
+    },
+    {
+        "id": 52,
+        "type": 3,
+        "name": "Vespoid Vambraces β"
+    },
+    {
+        "id": 52,
+        "type": 4,
+        "name": "Vespoid Coil β"
+    },
+    {
+        "id": 52,
+        "type": 5,
+        "name": "Vespoid Greaves β"
+    },
+    {
+        "id": 55,
+        "type": 2,
+        "name": "Barnos Jacket α"
+    },
+    {
+        "id": 56,
+        "type": 2,
+        "name": "Barnos Jacket β"
+    },
+    {
+        "id": 57,
+        "type": 1,
+        "name": "Hornetaur Helm α"
+    },
+    {
+        "id": 57,
+        "type": 2,
+        "name": "Hornetaur Mail α"
+    },
+    {
+        "id": 57,
+        "type": 3,
+        "name": "Hornetaur Vambraces α"
+    },
+    {
+        "id": 57,
+        "type": 4,
+        "name": "Hornetaur Coil α"
+    },
+    {
+        "id": 57,
+        "type": 5,
+        "name": "Hornetaur Greaves α"
+    },
+    {
+        "id": 58,
+        "type": 1,
+        "name": "Hornetaur Helm β"
+    },
+    {
+        "id": 58,
+        "type": 2,
+        "name": "Hornetaur Mail β"
+    },
+    {
+        "id": 58,
+        "type": 3,
+        "name": "Hornetaur Vambraces β"
+    },
+    {
+        "id": 58,
+        "type": 4,
+        "name": "Hornetaur Coil β"
+    },
+    {
+        "id": 58,
+        "type": 5,
+        "name": "Hornetaur Greaves β"
+    },
+    {
+        "id": 61,
+        "type": 1,
+        "name": "Jagras Helm α"
+    },
+    {
+        "id": 61,
+        "type": 2,
+        "name": "Jagras Mail α"
+    },
+    {
+        "id": 61,
+        "type": 3,
+        "name": "Jagras Vambraces α"
+    },
+    {
+        "id": 61,
+        "type": 4,
+        "name": "Jagras Coil α"
+    },
+    {
+        "id": 61,
+        "type": 5,
+        "name": "Jagras Greaves α"
+    },
+    {
+        "id": 62,
+        "type": 1,
+        "name": "Jagras Helm β"
+    },
+    {
+        "id": 62,
+        "type": 2,
+        "name": "Jagras Mail β"
+    },
+    {
+        "id": 62,
+        "type": 3,
+        "name": "Jagras Vambraces β"
+    },
+    {
+        "id": 62,
+        "type": 4,
+        "name": "Jagras Coil β"
+    },
+    {
+        "id": 62,
+        "type": 5,
+        "name": "Jagras Greaves β"
+    },
+    {
+        "id": 63,
+        "type": 1,
+        "name": "Kulu Headpiece α"
+    },
+    {
+        "id": 63,
+        "type": 2,
+        "name": "Kulu Mail α"
+    },
+    {
+        "id": 63,
+        "type": 3,
+        "name": "Kulu Vambraces α"
+    },
+    {
+        "id": 63,
+        "type": 4,
+        "name": "Kulu Coil α"
+    },
+    {
+        "id": 63,
+        "type": 5,
+        "name": "Kulu Greaves α"
+    },
+    {
+        "id": 64,
+        "type": 1,
+        "name": "Kulu Headpiece β"
+    },
+    {
+        "id": 64,
+        "type": 2,
+        "name": "Kulu Mail β"
+    },
+    {
+        "id": 64,
+        "type": 3,
+        "name": "Kulu Vambraces β"
+    },
+    {
+        "id": 64,
+        "type": 4,
+        "name": "Kulu Coil β"
+    },
+    {
+        "id": 64,
+        "type": 5,
+        "name": "Kulu Greaves β"
+    },
+    {
+        "id": 65,
+        "type": 1,
+        "name": "Pukei Hood α"
+    },
+    {
+        "id": 65,
+        "type": 2,
+        "name": "Pukei Mail α"
+    },
+    {
+        "id": 65,
+        "type": 3,
+        "name": "Pukei Vambraces α"
+    },
+    {
+        "id": 65,
+        "type": 4,
+        "name": "Pukei Coil α"
+    },
+    {
+        "id": 65,
+        "type": 5,
+        "name": "Pukei Greaves α"
+    },
+    {
+        "id": 66,
+        "type": 1,
+        "name": "Pukei Hood β"
+    },
+    {
+        "id": 66,
+        "type": 2,
+        "name": "Pukei Mail β"
+    },
+    {
+        "id": 66,
+        "type": 3,
+        "name": "Pukei Vambraces β"
+    },
+    {
+        "id": 66,
+        "type": 4,
+        "name": "Pukei Coil β"
+    },
+    {
+        "id": 66,
+        "type": 5,
+        "name": "Pukei Greaves β"
+    },
+    {
+        "id": 67,
+        "type": 1,
+        "name": "Jyura Helm α"
+    },
+    {
+        "id": 67,
+        "type": 2,
+        "name": "Jyura Mail α"
+    },
+    {
+        "id": 67,
+        "type": 3,
+        "name": "Jyura Vambraces α"
+    },
+    {
+        "id": 67,
+        "type": 4,
+        "name": "Jyura Coil α"
+    },
+    {
+        "id": 67,
+        "type": 5,
+        "name": "Jyura Greaves α"
+    },
+    {
+        "id": 68,
+        "type": 1,
+        "name": "Jyura Helm β"
+    },
+    {
+        "id": 68,
+        "type": 2,
+        "name": "Jyura Mail β"
+    },
+    {
+        "id": 68,
+        "type": 3,
+        "name": "Jyura Vambraces β"
+    },
+    {
+        "id": 68,
+        "type": 4,
+        "name": "Jyura Coil β"
+    },
+    {
+        "id": 68,
+        "type": 5,
+        "name": "Jyura Greaves β"
+    },
+    {
+        "id": 69,
+        "type": 1,
+        "name": "Barroth Helm α"
+    },
+    {
+        "id": 69,
+        "type": 2,
+        "name": "Barroth Mail α"
+    },
+    {
+        "id": 69,
+        "type": 3,
+        "name": "Barroth Vambraces α"
+    },
+    {
+        "id": 69,
+        "type": 4,
+        "name": "Barroth Coil α"
+    },
+    {
+        "id": 69,
+        "type": 5,
+        "name": "Barroth Greaves α"
+    },
+    {
+        "id": 70,
+        "type": 1,
+        "name": "Barroth Helm β"
+    },
+    {
+        "id": 70,
+        "type": 2,
+        "name": "Barroth Mail β"
+    },
+    {
+        "id": 70,
+        "type": 3,
+        "name": "Barroth Vambraces β"
+    },
+    {
+        "id": 70,
+        "type": 4,
+        "name": "Barroth Coil β"
+    },
+    {
+        "id": 70,
+        "type": 5,
+        "name": "Barroth Greaves β"
+    },
+    {
+        "id": 71,
+        "type": 1,
+        "name": "Kadachi Helm α"
+    },
+    {
+        "id": 71,
+        "type": 2,
+        "name": "Kadachi Mail α"
+    },
+    {
+        "id": 71,
+        "type": 3,
+        "name": "Kadachi Vambraces α"
+    },
+    {
+        "id": 71,
+        "type": 4,
+        "name": "Kadachi Coil α"
+    },
+    {
+        "id": 71,
+        "type": 5,
+        "name": "Kadachi Greaves α"
+    },
+    {
+        "id": 72,
+        "type": 1,
+        "name": "Kadachi Helm β"
+    },
+    {
+        "id": 72,
+        "type": 2,
+        "name": "Kadachi Mail β"
+    },
+    {
+        "id": 72,
+        "type": 3,
+        "name": "Kadachi Vambraces β"
+    },
+    {
+        "id": 72,
+        "type": 4,
+        "name": "Kadachi Coil β"
+    },
+    {
+        "id": 72,
+        "type": 5,
+        "name": "Kadachi Greaves β"
+    },
+    {
+        "id": 73,
+        "type": 1,
+        "name": "Rathian Helm α"
+    },
+    {
+        "id": 73,
+        "type": 2,
+        "name": "Rathian Mail α"
+    },
+    {
+        "id": 73,
+        "type": 3,
+        "name": "Rathian Vambraces α"
+    },
+    {
+        "id": 73,
+        "type": 4,
+        "name": "Rathian Coil α"
+    },
+    {
+        "id": 73,
+        "type": 5,
+        "name": "Rathian Greaves α"
+    },
+    {
+        "id": 74,
+        "type": 1,
+        "name": "Rathian Helm β"
+    },
+    {
+        "id": 74,
+        "type": 2,
+        "name": "Rathian Mail β"
+    },
+    {
+        "id": 74,
+        "type": 3,
+        "name": "Rathian Vambraces β"
+    },
+    {
+        "id": 74,
+        "type": 4,
+        "name": "Rathian Coil β"
+    },
+    {
+        "id": 74,
+        "type": 5,
+        "name": "Rathian Greaves β"
+    },
+    {
+        "id": 75,
+        "type": 1,
+        "name": "Girros Mask α"
+    },
+    {
+        "id": 75,
+        "type": 2,
+        "name": "Girros Mail α"
+    },
+    {
+        "id": 75,
+        "type": 3,
+        "name": "Girros Vambraces α"
+    },
+    {
+        "id": 75,
+        "type": 4,
+        "name": "Girros Coil α"
+    },
+    {
+        "id": 75,
+        "type": 5,
+        "name": "Girros Greaves α"
+    },
+    {
+        "id": 76,
+        "type": 1,
+        "name": "Girros Mask β"
+    },
+    {
+        "id": 76,
+        "type": 2,
+        "name": "Girros Mail β"
+    },
+    {
+        "id": 76,
+        "type": 3,
+        "name": "Girros Vambraces β"
+    },
+    {
+        "id": 76,
+        "type": 4,
+        "name": "Girros Coil β"
+    },
+    {
+        "id": 76,
+        "type": 5,
+        "name": "Girros Greaves β"
+    },
+    {
+        "id": 77,
+        "type": 1,
+        "name": "Tzitzi Headgear α"
+    },
+    {
+        "id": 77,
+        "type": 2,
+        "name": "Tzitzi Mail α"
+    },
+    {
+        "id": 77,
+        "type": 3,
+        "name": "Tzitzi Vambraces α"
+    },
+    {
+        "id": 77,
+        "type": 4,
+        "name": "Tzitzi Coil α"
+    },
+    {
+        "id": 77,
+        "type": 5,
+        "name": "Tzitzi Greaves α"
+    },
+    {
+        "id": 78,
+        "type": 1,
+        "name": "Tzitzi Headgear β"
+    },
+    {
+        "id": 78,
+        "type": 2,
+        "name": "Tzitzi Mail β"
+    },
+    {
+        "id": 78,
+        "type": 3,
+        "name": "Tzitzi Vambraces β"
+    },
+    {
+        "id": 78,
+        "type": 4,
+        "name": "Tzitzi Coil β"
+    },
+    {
+        "id": 78,
+        "type": 5,
+        "name": "Tzitzi Greaves β"
+    },
+    {
+        "id": 79,
+        "type": 1,
+        "name": "Lumu Hat α"
+    },
+    {
+        "id": 79,
+        "type": 2,
+        "name": "Lumu Mail α"
+    },
+    {
+        "id": 79,
+        "type": 3,
+        "name": "Lumu Vambraces α"
+    },
+    {
+        "id": 79,
+        "type": 4,
+        "name": "Lumu Coil α"
+    },
+    {
+        "id": 79,
+        "type": 5,
+        "name": "Lumu Greaves α"
+    },
+    {
+        "id": 80,
+        "type": 1,
+        "name": "Lumu Hat β"
+    },
+    {
+        "id": 80,
+        "type": 2,
+        "name": "Lumu Mail β"
+    },
+    {
+        "id": 80,
+        "type": 3,
+        "name": "Lumu Vambraces β"
+    },
+    {
+        "id": 80,
+        "type": 4,
+        "name": "Lumu Coil β"
+    },
+    {
+        "id": 80,
+        "type": 5,
+        "name": "Lumu Greaves β"
+    },
+    {
+        "id": 81,
+        "type": 1,
+        "name": "Odogaron Helm α"
+    },
+    {
+        "id": 81,
+        "type": 2,
+        "name": "Odogaron Mail α"
+    },
+    {
+        "id": 81,
+        "type": 3,
+        "name": "Odogaron Vambraces α"
+    },
+    {
+        "id": 81,
+        "type": 4,
+        "name": "Odogaron Coil α"
+    },
+    {
+        "id": 81,
+        "type": 5,
+        "name": "Odogaron Greaves α"
+    },
+    {
+        "id": 82,
+        "type": 1,
+        "name": "Odogaron Helm β"
+    },
+    {
+        "id": 82,
+        "type": 2,
+        "name": "Odogaron Mail β"
+    },
+    {
+        "id": 82,
+        "type": 3,
+        "name": "Odogaron Vambraces β"
+    },
+    {
+        "id": 82,
+        "type": 4,
+        "name": "Odogaron Coil β"
+    },
+    {
+        "id": 82,
+        "type": 5,
+        "name": "Odogaron Greaves β"
+    },
+    {
+        "id": 83,
+        "type": 1,
+        "name": "Dodogama Helm α"
+    },
+    {
+        "id": 83,
+        "type": 2,
+        "name": "Dodogama Mail α"
+    },
+    {
+        "id": 83,
+        "type": 3,
+        "name": "Dodogama Vambraces α"
+    },
+    {
+        "id": 83,
+        "type": 4,
+        "name": "Dodogama Coil α"
+    },
+    {
+        "id": 83,
+        "type": 5,
+        "name": "Dodogama Greaves α"
+    },
+    {
+        "id": 84,
+        "type": 1,
+        "name": "Dodogama Helm β"
+    },
+    {
+        "id": 84,
+        "type": 2,
+        "name": "Dodogama Mail β"
+    },
+    {
+        "id": 84,
+        "type": 3,
+        "name": "Dodogama Vambraces β"
+    },
+    {
+        "id": 84,
+        "type": 4,
+        "name": "Dodogama Coil β"
+    },
+    {
+        "id": 84,
+        "type": 5,
+        "name": "Dodogama Greaves β"
+    },
+    {
+        "id": 85,
+        "type": 1,
+        "name": "Lavasioth Helm α"
+    },
+    {
+        "id": 85,
+        "type": 2,
+        "name": "Lavasioth Mail α"
+    },
+    {
+        "id": 85,
+        "type": 3,
+        "name": "Lavasioth Vambraces α"
+    },
+    {
+        "id": 85,
+        "type": 4,
+        "name": "Lavasioth Coil α"
+    },
+    {
+        "id": 85,
+        "type": 5,
+        "name": "Lavasioth Greaves α"
+    },
+    {
+        "id": 86,
+        "type": 1,
+        "name": "Lavasioth Helm β"
+    },
+    {
+        "id": 86,
+        "type": 2,
+        "name": "Lavasioth Mail β"
+    },
+    {
+        "id": 86,
+        "type": 3,
+        "name": "Lavasioth Vambraces β"
+    },
+    {
+        "id": 86,
+        "type": 4,
+        "name": "Lavasioth Coil β"
+    },
+    {
+        "id": 86,
+        "type": 5,
+        "name": "Lavasioth Greaves β"
+    },
+    {
+        "id": 87,
+        "type": 1,
+        "name": "Rath Heart Helm α"
+    },
+    {
+        "id": 87,
+        "type": 2,
+        "name": "Rath Heart Mail α"
+    },
+    {
+        "id": 87,
+        "type": 3,
+        "name": "Rath Heart Braces α"
+    },
+    {
+        "id": 87,
+        "type": 4,
+        "name": "Rath Heart Coil α"
+    },
+    {
+        "id": 87,
+        "type": 5,
+        "name": "Rath Heart Greaves α"
+    },
+    {
+        "id": 88,
+        "type": 1,
+        "name": "Rath Heart Helm β"
+    },
+    {
+        "id": 88,
+        "type": 2,
+        "name": "Rath Heart Mail β"
+    },
+    {
+        "id": 88,
+        "type": 3,
+        "name": "Rath Heart Braces β"
+    },
+    {
+        "id": 88,
+        "type": 4,
+        "name": "Rath Heart Coil β"
+    },
+    {
+        "id": 88,
+        "type": 5,
+        "name": "Rath Heart Greaves β"
+    },
+    {
+        "id": 89,
+        "type": 1,
+        "name": "High Metal Helm α"
+    },
+    {
+        "id": 89,
+        "type": 2,
+        "name": "High Metal Mail α"
+    },
+    {
+        "id": 89,
+        "type": 3,
+        "name": "High Metal Braces α"
+    },
+    {
+        "id": 89,
+        "type": 4,
+        "name": "High Metal Coil α"
+    },
+    {
+        "id": 89,
+        "type": 5,
+        "name": "High Metal Greaves α"
+    },
+    {
+        "id": 90,
+        "type": 1,
+        "name": "High Metal Helm β"
+    },
+    {
+        "id": 90,
+        "type": 2,
+        "name": "High Metal Mail β"
+    },
+    {
+        "id": 90,
+        "type": 3,
+        "name": "High Metal Braces β"
+    },
+    {
+        "id": 90,
+        "type": 4,
+        "name": "High Metal Coil β"
+    },
+    {
+        "id": 90,
+        "type": 5,
+        "name": "High Metal Greaves β"
+    },
+    {
+        "id": 91,
+        "type": 1,
+        "name": "Ingot Helm α"
+    },
+    {
+        "id": 91,
+        "type": 2,
+        "name": "Ingot Mail α"
+    },
+    {
+        "id": 91,
+        "type": 3,
+        "name": "Ingot Vambraces α"
+    },
+    {
+        "id": 91,
+        "type": 4,
+        "name": "Ingot Coil α"
+    },
+    {
+        "id": 91,
+        "type": 5,
+        "name": "Ingot Greaves α"
+    },
+    {
+        "id": 92,
+        "type": 1,
+        "name": "Ingot Helm β"
+    },
+    {
+        "id": 92,
+        "type": 2,
+        "name": "Ingot Mail β"
+    },
+    {
+        "id": 92,
+        "type": 3,
+        "name": "Ingot Vambraces β"
+    },
+    {
+        "id": 92,
+        "type": 4,
+        "name": "Ingot Coil β"
+    },
+    {
+        "id": 92,
+        "type": 5,
+        "name": "Ingot Greaves β"
+    },
+    {
+        "id": 93,
+        "type": 1,
+        "name": "Anja Helm α"
+    },
+    {
+        "id": 93,
+        "type": 2,
+        "name": "Anja Mail α"
+    },
+    {
+        "id": 93,
+        "type": 3,
+        "name": "Anja Vambraces α"
+    },
+    {
+        "id": 93,
+        "type": 4,
+        "name": "Anja Coil α"
+    },
+    {
+        "id": 93,
+        "type": 5,
+        "name": "Anja Greaves α"
+    },
+    {
+        "id": 94,
+        "type": 1,
+        "name": "Anja Helm β"
+    },
+    {
+        "id": 94,
+        "type": 2,
+        "name": "Anja Mail β"
+    },
+    {
+        "id": 94,
+        "type": 3,
+        "name": "Anja Vambraces β"
+    },
+    {
+        "id": 94,
+        "type": 4,
+        "name": "Anja Coil β"
+    },
+    {
+        "id": 94,
+        "type": 5,
+        "name": "Anja Greaves β"
+    },
+    {
+        "id": 95,
+        "type": 1,
+        "name": "Legiana Helm α"
+    },
+    {
+        "id": 95,
+        "type": 2,
+        "name": "Legiana Mail α"
+    },
+    {
+        "id": 95,
+        "type": 3,
+        "name": "Legiana Vambraces α"
+    },
+    {
+        "id": 95,
+        "type": 4,
+        "name": "Legiana Coil α"
+    },
+    {
+        "id": 95,
+        "type": 5,
+        "name": "Legiana Greaves α"
+    },
+    {
+        "id": 96,
+        "type": 1,
+        "name": "Legiana Helm β"
+    },
+    {
+        "id": 96,
+        "type": 2,
+        "name": "Legiana Mail β"
+    },
+    {
+        "id": 96,
+        "type": 3,
+        "name": "Legiana Vambraces β"
+    },
+    {
+        "id": 96,
+        "type": 4,
+        "name": "Legiana Coil β"
+    },
+    {
+        "id": 96,
+        "type": 5,
+        "name": "Legiana Greaves β"
+    },
+    {
+        "id": 97,
+        "type": 1,
+        "name": "Baan Helm α"
+    },
+    {
+        "id": 97,
+        "type": 2,
+        "name": "Baan Mail α"
+    },
+    {
+        "id": 97,
+        "type": 3,
+        "name": "Baan Vambraces α"
+    },
+    {
+        "id": 97,
+        "type": 4,
+        "name": "Baan Coil α"
+    },
+    {
+        "id": 97,
+        "type": 5,
+        "name": "Baan Greaves α"
+    },
+    {
+        "id": 98,
+        "type": 1,
+        "name": "Baan Helm β"
+    },
+    {
+        "id": 98,
+        "type": 2,
+        "name": "Baan Mail β"
+    },
+    {
+        "id": 98,
+        "type": 3,
+        "name": "Baan Vambraces β"
+    },
+    {
+        "id": 98,
+        "type": 4,
+        "name": "Baan Coil β"
+    },
+    {
+        "id": 98,
+        "type": 5,
+        "name": "Baan Greaves β"
+    },
+    {
+        "id": 99,
+        "type": 1,
+        "name": "Vaal Hazak Helm α"
+    },
+    {
+        "id": 99,
+        "type": 2,
+        "name": "Vaal Hazak Mail α"
+    },
+    {
+        "id": 99,
+        "type": 3,
+        "name": "Vaal Hazak Braces α"
+    },
+    {
+        "id": 99,
+        "type": 4,
+        "name": "Vaal Hazak Coil α"
+    },
+    {
+        "id": 99,
+        "type": 5,
+        "name": "Vaal Hazak Greaves α"
+    },
+    {
+        "id": 100,
+        "type": 1,
+        "name": "Vaal Hazak Helm β"
+    },
+    {
+        "id": 100,
+        "type": 2,
+        "name": "Vaal Hazak Mail β"
+    },
+    {
+        "id": 100,
+        "type": 3,
+        "name": "Vaal Hazak Braces β"
+    },
+    {
+        "id": 100,
+        "type": 4,
+        "name": "Vaal Hazak Coil β"
+    },
+    {
+        "id": 100,
+        "type": 5,
+        "name": "Vaal Hazak Greaves β"
+    },
+    {
+        "id": 101,
+        "type": 1,
+        "name": "Rathalos Helm α"
+    },
+    {
+        "id": 101,
+        "type": 2,
+        "name": "Rathalos Mail α"
+    },
+    {
+        "id": 101,
+        "type": 3,
+        "name": "Rathalos Vambraces α"
+    },
+    {
+        "id": 101,
+        "type": 4,
+        "name": "Rathalos Coil α"
+    },
+    {
+        "id": 101,
+        "type": 5,
+        "name": "Rathalos Greaves α"
+    },
+    {
+        "id": 102,
+        "type": 1,
+        "name": "Rathalos Helm β"
+    },
+    {
+        "id": 102,
+        "type": 2,
+        "name": "Rathalos Mail β"
+    },
+    {
+        "id": 102,
+        "type": 3,
+        "name": "Rathalos Vambraces β"
+    },
+    {
+        "id": 102,
+        "type": 4,
+        "name": "Rathalos Coil β"
+    },
+    {
+        "id": 102,
+        "type": 5,
+        "name": "Rathalos Greaves β"
+    },
+    {
+        "id": 103,
+        "type": 1,
+        "name": "Diablos Helm α"
+    },
+    {
+        "id": 103,
+        "type": 2,
+        "name": "Diablos Mail α"
+    },
+    {
+        "id": 103,
+        "type": 3,
+        "name": "Diablos Vambraces α"
+    },
+    {
+        "id": 103,
+        "type": 4,
+        "name": "Diablos Coil α"
+    },
+    {
+        "id": 103,
+        "type": 5,
+        "name": "Diablos Greaves α"
+    },
+    {
+        "id": 104,
+        "type": 1,
+        "name": "Diablos Helm β"
+    },
+    {
+        "id": 104,
+        "type": 2,
+        "name": "Diablos Mail β"
+    },
+    {
+        "id": 104,
+        "type": 3,
+        "name": "Diablos Vambraces β"
+    },
+    {
+        "id": 104,
+        "type": 4,
+        "name": "Diablos Coil β"
+    },
+    {
+        "id": 104,
+        "type": 5,
+        "name": "Diablos Greaves β"
+    },
+    {
+        "id": 105,
+        "type": 1,
+        "name": "Kirin Horn α"
+    },
+    {
+        "id": 105,
+        "type": 2,
+        "name": "Kirin Jacket α"
+    },
+    {
+        "id": 105,
+        "type": 3,
+        "name": "Kirin Longarms α"
+    },
+    {
+        "id": 105,
+        "type": 4,
+        "name": "Kirin Hoop α"
+    },
+    {
+        "id": 105,
+        "type": 5,
+        "name": "Kirin Leg Guards α"
+    },
+    {
+        "id": 106,
+        "type": 1,
+        "name": "Kirin Horn β"
+    },
+    {
+        "id": 106,
+        "type": 2,
+        "name": "Kirin Jacket β"
+    },
+    {
+        "id": 106,
+        "type": 3,
+        "name": "Kirin Longarms β"
+    },
+    {
+        "id": 106,
+        "type": 4,
+        "name": "Kirin Hoop β"
+    },
+    {
+        "id": 106,
+        "type": 5,
+        "name": "Kirin Leg Guards β"
+    },
+    {
+        "id": 107,
+        "type": 1,
+        "name": "Nergigante Helm α"
+    },
+    {
+        "id": 107,
+        "type": 2,
+        "name": "Nergigante Mail α"
+    },
+    {
+        "id": 107,
+        "type": 3,
+        "name": "Nergigante Vambraces α"
+    },
+    {
+        "id": 107,
+        "type": 4,
+        "name": "Nergigante Coil α"
+    },
+    {
+        "id": 107,
+        "type": 5,
+        "name": "Nergigante Greaves α"
+    },
+    {
+        "id": 108,
+        "type": 1,
+        "name": "Nergigante Helm β"
+    },
+    {
+        "id": 108,
+        "type": 2,
+        "name": "Nergigante Mail β"
+    },
+    {
+        "id": 108,
+        "type": 3,
+        "name": "Nergigante Vambraces β"
+    },
+    {
+        "id": 108,
+        "type": 4,
+        "name": "Nergigante Coil β"
+    },
+    {
+        "id": 108,
+        "type": 5,
+        "name": "Nergigante Greaves β"
+    },
+    {
+        "id": 109,
+        "type": 1,
+        "name": "Uragaan Helm α"
+    },
+    {
+        "id": 109,
+        "type": 2,
+        "name": "Uragaan Mail α"
+    },
+    {
+        "id": 109,
+        "type": 3,
+        "name": "Uragaan Vambraces α"
+    },
+    {
+        "id": 109,
+        "type": 4,
+        "name": "Uragaan Coil α"
+    },
+    {
+        "id": 109,
+        "type": 5,
+        "name": "Uragaan Greaves α"
+    },
+    {
+        "id": 110,
+        "type": 1,
+        "name": "Uragaan Helm β"
+    },
+    {
+        "id": 110,
+        "type": 2,
+        "name": "Uragaan Mail β"
+    },
+    {
+        "id": 110,
+        "type": 3,
+        "name": "Uragaan Vambraces β"
+    },
+    {
+        "id": 110,
+        "type": 4,
+        "name": "Uragaan Coil β"
+    },
+    {
+        "id": 110,
+        "type": 5,
+        "name": "Uragaan Greaves β"
+    },
+    {
+        "id": 111,
+        "type": 1,
+        "name": "Rath Soul Helm α"
+    },
+    {
+        "id": 111,
+        "type": 2,
+        "name": "Rath Soul Mail α"
+    },
+    {
+        "id": 111,
+        "type": 3,
+        "name": "Rath Soul Braces α"
+    },
+    {
+        "id": 111,
+        "type": 4,
+        "name": "Rath Soul Coil α"
+    },
+    {
+        "id": 111,
+        "type": 5,
+        "name": "Rath Soul Greaves α"
+    },
+    {
+        "id": 112,
+        "type": 1,
+        "name": "Rath Soul Helm β"
+    },
+    {
+        "id": 112,
+        "type": 2,
+        "name": "Rath Soul Mail β"
+    },
+    {
+        "id": 112,
+        "type": 3,
+        "name": "Rath Soul Braces β"
+    },
+    {
+        "id": 112,
+        "type": 4,
+        "name": "Rath Soul Coil β"
+    },
+    {
+        "id": 112,
+        "type": 5,
+        "name": "Rath Soul Greaves β"
+    },
+    {
+        "id": 113,
+        "type": 1,
+        "name": "Diablos Nero Helm α"
+    },
+    {
+        "id": 113,
+        "type": 2,
+        "name": "Diablos Nero Mail α"
+    },
+    {
+        "id": 113,
+        "type": 3,
+        "name": "Diablos Nero Braces α"
+    },
+    {
+        "id": 113,
+        "type": 4,
+        "name": "Diablos Nero Coil α"
+    },
+    {
+        "id": 113,
+        "type": 5,
+        "name": "Diablos Nero Greaves α"
+    },
+    {
+        "id": 114,
+        "type": 1,
+        "name": "Diablos Nero Helm β"
+    },
+    {
+        "id": 114,
+        "type": 2,
+        "name": "Diablos Nero Mail β"
+    },
+    {
+        "id": 114,
+        "type": 3,
+        "name": "Diablos Nero Braces β"
+    },
+    {
+        "id": 114,
+        "type": 4,
+        "name": "Diablos Nero Coil β"
+    },
+    {
+        "id": 114,
+        "type": 5,
+        "name": "Diablos Nero Greaves β"
+    },
+    {
+        "id": 115,
+        "type": 1,
+        "name": "Bazel Helm α"
+    },
+    {
+        "id": 115,
+        "type": 2,
+        "name": "Bazel Mail α"
+    },
+    {
+        "id": 115,
+        "type": 3,
+        "name": "Bazel Vambraces α"
+    },
+    {
+        "id": 115,
+        "type": 4,
+        "name": "Bazel Coil α"
+    },
+    {
+        "id": 115,
+        "type": 5,
+        "name": "Bazel Greaves α"
+    },
+    {
+        "id": 116,
+        "type": 1,
+        "name": "Bazel Helm β"
+    },
+    {
+        "id": 116,
+        "type": 2,
+        "name": "Bazel Mail β"
+    },
+    {
+        "id": 116,
+        "type": 3,
+        "name": "Bazel Vambraces β"
+    },
+    {
+        "id": 116,
+        "type": 4,
+        "name": "Bazel Coil β"
+    },
+    {
+        "id": 116,
+        "type": 5,
+        "name": "Bazel Greaves β"
+    },
+    {
+        "id": 117,
+        "type": 1,
+        "name": "King Beetle Vertex α"
+    },
+    {
+        "id": 117,
+        "type": 2,
+        "name": "King Beetle Thorax α"
+    },
+    {
+        "id": 117,
+        "type": 3,
+        "name": "King Beetle Brachia α"
+    },
+    {
+        "id": 117,
+        "type": 4,
+        "name": "King Beetle Elytra α"
+    },
+    {
+        "id": 117,
+        "type": 5,
+        "name": "King Beetle Crura α"
+    },
+    {
+        "id": 118,
+        "type": 1,
+        "name": "King Beetle Vertex β"
+    },
+    {
+        "id": 118,
+        "type": 2,
+        "name": "King Beetle Thorax β"
+    },
+    {
+        "id": 118,
+        "type": 3,
+        "name": "King Beetle Brachia β"
+    },
+    {
+        "id": 118,
+        "type": 4,
+        "name": "King Beetle Elytra β"
+    },
+    {
+        "id": 118,
+        "type": 5,
+        "name": "King Beetle Crura β"
+    },
+    {
+        "id": 119,
+        "type": 1,
+        "name": "Brigade Lobos α"
+    },
+    {
+        "id": 119,
+        "type": 2,
+        "name": "Brigade Suit α"
+    },
+    {
+        "id": 119,
+        "type": 3,
+        "name": "Brigade Vambraces α"
+    },
+    {
+        "id": 119,
+        "type": 4,
+        "name": "Brigade Coil α"
+    },
+    {
+        "id": 119,
+        "type": 5,
+        "name": "Brigade Boots α"
+    },
+    {
+        "id": 120,
+        "type": 1,
+        "name": "Brigade Lobos β"
+    },
+    {
+        "id": 120,
+        "type": 2,
+        "name": "Brigade Suit β"
+    },
+    {
+        "id": 120,
+        "type": 3,
+        "name": "Brigade Vambraces β"
+    },
+    {
+        "id": 120,
+        "type": 4,
+        "name": "Brigade Coil β"
+    },
+    {
+        "id": 120,
+        "type": 5,
+        "name": "Brigade Boots β"
+    },
+    {
+        "id": 121,
+        "type": 1,
+        "name": "Damascus Helm α"
+    },
+    {
+        "id": 121,
+        "type": 2,
+        "name": "Damascus Mail α"
+    },
+    {
+        "id": 121,
+        "type": 3,
+        "name": "Damascus Vambraces α"
+    },
+    {
+        "id": 121,
+        "type": 4,
+        "name": "Damascus Coil α"
+    },
+    {
+        "id": 121,
+        "type": 5,
+        "name": "Damascus Greaves α"
+    },
+    {
+        "id": 122,
+        "type": 1,
+        "name": "Damascus Helm β"
+    },
+    {
+        "id": 122,
+        "type": 2,
+        "name": "Damascus Mail β"
+    },
+    {
+        "id": 122,
+        "type": 3,
+        "name": "Damascus Vambraces β"
+    },
+    {
+        "id": 122,
+        "type": 4,
+        "name": "Damascus Coil β"
+    },
+    {
+        "id": 122,
+        "type": 5,
+        "name": "Damascus Greaves β"
+    },
+    {
+        "id": 123,
+        "type": 1,
+        "name": "Dober Helm α"
+    },
+    {
+        "id": 123,
+        "type": 2,
+        "name": "Dober Mail α"
+    },
+    {
+        "id": 123,
+        "type": 3,
+        "name": "Dober Vambraces α"
+    },
+    {
+        "id": 123,
+        "type": 4,
+        "name": "Dober Coil α"
+    },
+    {
+        "id": 123,
+        "type": 5,
+        "name": "Dober Greaves α"
+    },
+    {
+        "id": 124,
+        "type": 1,
+        "name": "Dober Helm β"
+    },
+    {
+        "id": 124,
+        "type": 2,
+        "name": "Dober Mail β"
+    },
+    {
+        "id": 124,
+        "type": 3,
+        "name": "Dober Vambraces β"
+    },
+    {
+        "id": 124,
+        "type": 4,
+        "name": "Dober Coil β"
+    },
+    {
+        "id": 124,
+        "type": 5,
+        "name": "Dober Greaves β"
+    },
+    {
+        "id": 125,
+        "type": 1,
+        "name": "Xeno'jiiva Headgear α"
+    },
+    {
+        "id": 125,
+        "type": 2,
+        "name": "Xeno'jiiva Hide α"
+    },
+    {
+        "id": 125,
+        "type": 3,
+        "name": "Xeno'jiiva Claws α"
+    },
+    {
+        "id": 125,
+        "type": 4,
+        "name": "Xeno'jiiva Spine α"
+    },
+    {
+        "id": 125,
+        "type": 5,
+        "name": "Xeno'jiiva Spurs α"
+    },
+    {
+        "id": 126,
+        "type": 1,
+        "name": "Xeno'jiiva Headgear β"
+    },
+    {
+        "id": 126,
+        "type": 2,
+        "name": "Xeno'jiiva Hide β"
+    },
+    {
+        "id": 126,
+        "type": 3,
+        "name": "Xeno'jiiva Claws β"
+    },
+    {
+        "id": 126,
+        "type": 4,
+        "name": "Xeno'jiiva Spine β"
+    },
+    {
+        "id": 126,
+        "type": 5,
+        "name": "Xeno'jiiva Spurs β"
+    },
+    {
+        "id": 127,
+        "type": 1,
+        "name": "Kaiser Crown α"
+    },
+    {
+        "id": 127,
+        "type": 2,
+        "name": "Kaiser Mail α"
+    },
+    {
+        "id": 127,
+        "type": 3,
+        "name": "Kaiser Vambraces α"
+    },
+    {
+        "id": 127,
+        "type": 4,
+        "name": "Kaiser Coil α"
+    },
+    {
+        "id": 127,
+        "type": 5,
+        "name": "Kaiser Greaves α"
+    },
+    {
+        "id": 128,
+        "type": 1,
+        "name": "Kaiser Crown β"
+    },
+    {
+        "id": 128,
+        "type": 2,
+        "name": "Kaiser Mail β"
+    },
+    {
+        "id": 128,
+        "type": 3,
+        "name": "Kaiser Vambraces β"
+    },
+    {
+        "id": 128,
+        "type": 4,
+        "name": "Kaiser Coil β"
+    },
+    {
+        "id": 128,
+        "type": 5,
+        "name": "Kaiser Greaves β"
+    },
+    {
+        "id": 129,
+        "type": 1,
+        "name": "Kushala Glare α"
+    },
+    {
+        "id": 129,
+        "type": 2,
+        "name": "Kushala Cista α"
+    },
+    {
+        "id": 129,
+        "type": 3,
+        "name": "Kushala Grip α"
+    },
+    {
+        "id": 129,
+        "type": 4,
+        "name": "Kushala Cocoon α"
+    },
+    {
+        "id": 129,
+        "type": 5,
+        "name": "Kushala Crus α"
+    },
+    {
+        "id": 130,
+        "type": 1,
+        "name": "Kushala Glare β"
+    },
+    {
+        "id": 130,
+        "type": 2,
+        "name": "Kushala Cista β"
+    },
+    {
+        "id": 130,
+        "type": 3,
+        "name": "Kushala Grip β"
+    },
+    {
+        "id": 130,
+        "type": 4,
+        "name": "Kushala Cocoon β"
+    },
+    {
+        "id": 130,
+        "type": 5,
+        "name": "Kushala Crus β"
+    },
+    {
+        "id": 131,
+        "type": 1,
+        "name": "Death Stench Brain α"
+    },
+    {
+        "id": 131,
+        "type": 2,
+        "name": "Death Stench Muscle α"
+    },
+    {
+        "id": 131,
+        "type": 3,
+        "name": "Death Stench Grip α"
+    },
+    {
+        "id": 131,
+        "type": 4,
+        "name": "Death Stench Bowels α"
+    },
+    {
+        "id": 131,
+        "type": 5,
+        "name": "Death Stench Heel α"
+    },
+    {
+        "id": 132,
+        "type": 1,
+        "name": "Death Stench Brain β"
+    },
+    {
+        "id": 132,
+        "type": 2,
+        "name": "Death Stench Muscle β"
+    },
+    {
+        "id": 132,
+        "type": 3,
+        "name": "Death Stench Grip β"
+    },
+    {
+        "id": 132,
+        "type": 4,
+        "name": "Death Stench Bowels β"
+    },
+    {
+        "id": 132,
+        "type": 5,
+        "name": "Death Stench Heel β"
+    },
+    {
+        "id": 133,
+        "type": 1,
+        "name": "Guild Cross Circlet α"
+    },
+    {
+        "id": 133,
+        "type": 2,
+        "name": "Guild Cross Suit α"
+    },
+    {
+        "id": 133,
+        "type": 3,
+        "name": "Guild Cross Vambraces α"
+    },
+    {
+        "id": 133,
+        "type": 4,
+        "name": "Guild Cross Coil α"
+    },
+    {
+        "id": 133,
+        "type": 5,
+        "name": "Guild Cross Boots α"
+    },
+    {
+        "id": 134,
+        "type": 1,
+        "name": "Guild Cross Circlet β"
+    },
+    {
+        "id": 134,
+        "type": 2,
+        "name": "Guild Cross Suit β"
+    },
+    {
+        "id": 134,
+        "type": 3,
+        "name": "Guild Cross Vambraces β"
+    },
+    {
+        "id": 134,
+        "type": 4,
+        "name": "Guild Cross Coil β"
+    },
+    {
+        "id": 134,
+        "type": 5,
+        "name": "Guild Cross Boots β"
+    },
+    {
+        "id": 137,
+        "type": 1,
+        "name": "Zorah Headgear α"
+    },
+    {
+        "id": 137,
+        "type": 2,
+        "name": "Zorah Hide α"
+    },
+    {
+        "id": 137,
+        "type": 3,
+        "name": "Zorah Claws α"
+    },
+    {
+        "id": 137,
+        "type": 4,
+        "name": "Zorah Spine α"
+    },
+    {
+        "id": 137,
+        "type": 5,
+        "name": "Zorah Spurs α"
+    },
+    {
+        "id": 138,
+        "type": 1,
+        "name": "Zorah Headgear β"
+    },
+    {
+        "id": 138,
+        "type": 2,
+        "name": "Zorah Hide β"
+    },
+    {
+        "id": 138,
+        "type": 3,
+        "name": "Zorah Claws β"
+    },
+    {
+        "id": 138,
+        "type": 4,
+        "name": "Zorah Spine β"
+    },
+    {
+        "id": 138,
+        "type": 5,
+        "name": "Zorah Spurs β"
+    },
+    {
+        "id": 141,
+        "type": 3,
+        "name": "Empress Vambraces"
+    },
+    {
+        "id": 141,
+        "type": 4,
+        "name": "Empress Tassets"
+    },
+    {
+        "id": 141,
+        "type": 5,
+        "name": "Empress Greaves"
+    },
+    {
+        "id": 143,
+        "type": 3,
+        "name": "Escadora Armguards"
+    },
+    {
+        "id": 143,
+        "type": 4,
+        "name": "Escadora Might"
+    },
+    {
+        "id": 143,
+        "type": 5,
+        "name": "Escadora Sheath"
+    },
+    {
+        "id": 145,
+        "type": 1,
+        "name": "Blossom Layered Head"
+    },
+    {
+        "id": 145,
+        "type": 2,
+        "name": "Blossom Layered Chest"
+    },
+    {
+        "id": 145,
+        "type": 3,
+        "name": "Harvest Layered Arms"
+    },
+    {
+        "id": 145,
+        "type": 4,
+        "name": "Harvest Layered Torso"
+    },
+    {
+        "id": 145,
+        "type": 5,
+        "name": "Harvest Layered Legs"
+    },
+    {
+        "id": 146,
+        "type": 1,
+        "name": "Diver Layered Head"
+    },
+    {
+        "id": 146,
+        "type": 2,
+        "name": "Diver Layered Chest"
+    },
+    {
+        "id": 146,
+        "type": 3,
+        "name": "Orion Layered Arms"
+    },
+    {
+        "id": 146,
+        "type": 4,
+        "name": "Orion Layered Coat"
+    },
+    {
+        "id": 146,
+        "type": 5,
+        "name": "Orion Layered Boots"
+    },
+    {
+        "id": 147,
+        "type": 1,
+        "name": "Chainmail Headgear α"
+    },
+    {
+        "id": 147,
+        "type": 2,
+        "name": "Chainmail Armor α"
+    },
+    {
+        "id": 147,
+        "type": 3,
+        "name": "Chainmail Gloves α"
+    },
+    {
+        "id": 147,
+        "type": 4,
+        "name": "Chainmail Belt α"
+    },
+    {
+        "id": 147,
+        "type": 5,
+        "name": "Chainmail Trousers α"
+    },
+    {
+        "id": 148,
+        "type": 1,
+        "name": "Chainmail Headgear β"
+    },
+    {
+        "id": 148,
+        "type": 2,
+        "name": "Chainmail Armor β"
+    },
+    {
+        "id": 148,
+        "type": 3,
+        "name": "Chainmail Gloves β"
+    },
+    {
+        "id": 148,
+        "type": 4,
+        "name": "Chainmail Belt β"
+    },
+    {
+        "id": 148,
+        "type": 5,
+        "name": "Chainmail Trousers β"
+    },
+    {
+        "id": 149,
+        "type": 1,
+        "name": "Skull Mask α"
+    },
+    {
+        "id": 149,
+        "type": 2,
+        "name": "Commission Jacket α"
+    },
+    {
+        "id": 149,
+        "type": 3,
+        "name": "Commission Vambraces α"
+    },
+    {
+        "id": 149,
+        "type": 4,
+        "name": "Commission Belt α"
+    },
+    {
+        "id": 149,
+        "type": 5,
+        "name": "Commission Pants α"
+    },
+    {
+        "id": 150,
+        "type": 1,
+        "name": "Skull Mask β"
+    },
+    {
+        "id": 150,
+        "type": 2,
+        "name": "Commission Jacket β"
+    },
+    {
+        "id": 150,
+        "type": 3,
+        "name": "Commission Vambraces β"
+    },
+    {
+        "id": 150,
+        "type": 4,
+        "name": "Commission Belt β"
+    },
+    {
+        "id": 150,
+        "type": 5,
+        "name": "Commission Pants β"
+    },
+    {
+        "id": 151,
+        "type": 1,
+        "name": "Commission Gorget α"
+    },
+    {
+        "id": 151,
+        "type": 2,
+        "name": "Brigade Layered Chest"
+    },
+    {
+        "id": 151,
+        "type": 3,
+        "name": "Blossom Layered Arms"
+    },
+    {
+        "id": 151,
+        "type": 4,
+        "name": "Blossom Layered Torso"
+    },
+    {
+        "id": 151,
+        "type": 5,
+        "name": "Blossom Layered Legs"
+    },
+    {
+        "id": 152,
+        "type": 1,
+        "name": "Commission Gorget β"
+    },
+    {
+        "id": 152,
+        "type": 2,
+        "name": "Guild Cross Layered Chest"
+    },
+    {
+        "id": 152,
+        "type": 3,
+        "name": "Diver Layered Arms"
+    },
+    {
+        "id": 152,
+        "type": 4,
+        "name": "Diver Layered Torso"
+    },
+    {
+        "id": 152,
+        "type": 5,
+        "name": "Diver Layered Legs"
+    },
+    {
+        "id": 153,
+        "type": 1,
+        "name": "Faux Felyne α"
+    },
+    {
+        "id": 153,
+        "type": 2,
+        "name": "Harvest Layered Chest"
+    },
+    {
+        "id": 153,
+        "type": 3,
+        "name": "Gala Suit Layered Arms"
+    },
+    {
+        "id": 153,
+        "type": 4,
+        "name": "Gala Suit Layered Torso"
+    },
+    {
+        "id": 153,
+        "type": 5,
+        "name": "Gala Suit Layered Legs"
+    },
+    {
+        "id": 154,
+        "type": 1,
+        "name": "Mosswine Mask α"
+    },
+    {
+        "id": 154,
+        "type": 2,
+        "name": "Orion Layered Vest"
+    },
+    {
+        "id": 155,
+        "type": 1,
+        "name": "Brigade Layered Head"
+    },
+    {
+        "id": 155,
+        "type": 2,
+        "name": "Gala Suit Layered Chest"
+    },
+    {
+        "id": 156,
+        "type": 1,
+        "name": "Guild Cross Layered Head"
+    },
+    {
+        "id": 157,
+        "type": 1,
+        "name": "Harvest Layered Head"
+    },
+    {
+        "id": 158,
+        "type": 1,
+        "name": "Orion Layered Cap"
+    },
+    {
+        "id": 159,
+        "type": 1,
+        "name": "Gala Suit Layered Head"
+    },
+    {
+        "id": 159,
+        "type": 2,
+        "name": "Butterfly Thorax"
+    },
+    {
+        "id": 159,
+        "type": 3,
+        "name": "Butterfly Brachia"
+    },
+    {
+        "id": 159,
+        "type": 4,
+        "name": "Butterfly Elytra"
+    },
+    {
+        "id": 159,
+        "type": 5,
+        "name": "Butterfly Crura"
+    },
+    {
+        "id": 160,
+        "type": 2,
+        "name": "Butterfly Thorax α"
+    },
+    {
+        "id": 160,
+        "type": 3,
+        "name": "Butterfly Brachia α"
+    },
+    {
+        "id": 160,
+        "type": 4,
+        "name": "Butterfly Elytra α"
+    },
+    {
+        "id": 160,
+        "type": 5,
+        "name": "Butterfly Crura α"
+    },
+    {
+        "id": 161,
+        "type": 2,
+        "name": "Butterfly Thorax β"
+    },
+    {
+        "id": 161,
+        "type": 3,
+        "name": "Butterfly Brachia β"
+    },
+    {
+        "id": 161,
+        "type": 4,
+        "name": "Butterfly Elytra β"
+    },
+    {
+        "id": 161,
+        "type": 5,
+        "name": "Butterfly Crura β"
+    },
+    {
+        "id": 162,
+        "type": 2,
+        "name": "Twitch Layered Chest Armor"
+    },
+    {
+        "id": 162,
+        "type": 3,
+        "name": "Brigade Layered Arms"
+    },
+    {
+        "id": 162,
+        "type": 4,
+        "name": "Brigade Layered Torso"
+    },
+    {
+        "id": 162,
+        "type": 5,
+        "name": "Brigade Layered Legs"
+    },
+    {
+        "id": 163,
+        "type": 2,
+        "name": "Twitch Prime T-shirt"
+    },
+    {
+        "id": 163,
+        "type": 3,
+        "name": "Guild Cross Layered Arms"
+    },
+    {
+        "id": 163,
+        "type": 4,
+        "name": "Guild Cross Layered Torso"
+    },
+    {
+        "id": 163,
+        "type": 5,
+        "name": "Guild Cross Layered Legs"
+    },
+    {
+        "id": 164,
+        "type": 2,
+        "name": "Origin Mail"
+    },
+    {
+        "id": 164,
+        "type": 3,
+        "name": "Kestodon Guards"
+    },
+    {
+        "id": 164,
+        "type": 4,
+        "name": "Origin Coil"
+    },
+    {
+        "id": 164,
+        "type": 5,
+        "name": "Origin Greaves"
+    },
+    {
+        "id": 165,
+        "type": 3,
+        "name": "Kestodon Guards α"
+    },
+    {
+        "id": 166,
+        "type": 1,
+        "name": "Gastodon Horn α"
+    },
+    {
+        "id": 166,
+        "type": 3,
+        "name": "Kestodon Guards β"
+    },
+    {
+        "id": 167,
+        "type": 1,
+        "name": "Gastodon Horn β"
+    },
+    {
+        "id": 167,
+        "type": 3,
+        "name": "Origin Vambraces"
+    },
+    {
+        "id": 168,
+        "type": 1,
+        "name": "Shamos Goggles"
+    },
+    {
+        "id": 169,
+        "type": 1,
+        "name": "Butterfly Vertex"
+    },
+    {
+        "id": 170,
+        "type": 1,
+        "name": "Butterfly Vertex α"
+    },
+    {
+        "id": 171,
+        "type": 1,
+        "name": "Butterfly Vertex β"
+    },
+    {
+        "id": 172,
+        "type": 1,
+        "name": "Twitch Layered Head Armor"
+    },
+    {
+        "id": 173,
+        "type": 1,
+        "name": "Twitch Prime Cap"
+    },
+    {
+        "id": 174,
+        "type": 1,
+        "name": "Shamos Goggles α"
+    },
+    {
+        "id": 175,
+        "type": 1,
+        "name": "Shamos Goggles β"
+    },
+    {
+        "id": 176,
+        "type": 1,
+        "name": "Origin Helm"
+    },
+    {
+        "id": 181,
+        "type": 1,
+        "name": "Dragonseal Earrings α"
+    },
+    {
+        "id": 183,
+        "type": 1,
+        "name": "Strategist Spectacles α"
+    },
+    {
+        "id": 185,
+        "type": 1,
+        "name": "Dragonking Eyepatch α"
+    },
+    {
+        "id": 190,
+        "type": 1,
+        "name": "Hunter's Headgear"
+    },
+    {
+        "id": 190,
+        "type": 2,
+        "name": "Hunter's Armor"
+    },
+    {
+        "id": 190,
+        "type": 3,
+        "name": "Hunter's Gloves"
+    },
+    {
+        "id": 190,
+        "type": 4,
+        "name": "Hunter's Faulds"
+    },
+    {
+        "id": 190,
+        "type": 5,
+        "name": "Hunter's Leggings"
+    },
+    {
+        "id": 191,
+        "type": 1,
+        "name": "Kulve Taroth's Fury α"
+    },
+    {
+        "id": 191,
+        "type": 2,
+        "name": "Kulve Taroth's Ire α"
+    },
+    {
+        "id": 191,
+        "type": 3,
+        "name": "Kulve Taroth's Rage α"
+    },
+    {
+        "id": 191,
+        "type": 4,
+        "name": "Kulve Taroth's Malice α"
+    },
+    {
+        "id": 191,
+        "type": 5,
+        "name": "Kulve Taroth's Wrath α"
+    },
+    {
+        "id": 192,
+        "type": 1,
+        "name": "Kulve Taroth's Fury β"
+    },
+    {
+        "id": 192,
+        "type": 2,
+        "name": "Kulve Taroth's Ire β"
+    },
+    {
+        "id": 192,
+        "type": 3,
+        "name": "Kulve Taroth's Rage β"
+    },
+    {
+        "id": 192,
+        "type": 4,
+        "name": "Kulve Taroth's Malice β"
+    },
+    {
+        "id": 192,
+        "type": 5,
+        "name": "Kulve Taroth's Wrath β"
+    },
+    {
+        "id": 193,
+        "type": 1,
+        "name": "Blossom Headgear"
+    },
+    {
+        "id": 193,
+        "type": 2,
+        "name": "Blossom Vest"
+    },
+    {
+        "id": 193,
+        "type": 3,
+        "name": "Blossom Cuffs"
+    },
+    {
+        "id": 193,
+        "type": 4,
+        "name": "Blossom Coat"
+    },
+    {
+        "id": 193,
+        "type": 5,
+        "name": "Blossom Boots"
+    },
+    {
+        "id": 194,
+        "type": 1,
+        "name": "Diver's Mask"
+    },
+    {
+        "id": 194,
+        "type": 2,
+        "name": "Diver's Suit"
+    },
+    {
+        "id": 194,
+        "type": 3,
+        "name": "Diver's Braces"
+    },
+    {
+        "id": 194,
+        "type": 4,
+        "name": "Diver's Belt"
+    },
+    {
+        "id": 194,
+        "type": 5,
+        "name": "Diver's Boots"
+    },
+    {
+        "id": 195,
+        "type": 1,
+        "name": "Harvest Flor"
+    },
+    {
+        "id": 195,
+        "type": 2,
+        "name": "Harvest Tronco"
+    },
+    {
+        "id": 195,
+        "type": 3,
+        "name": "Harvest Trama"
+    },
+    {
+        "id": 195,
+        "type": 4,
+        "name": "Harvest Hoja"
+    },
+    {
+        "id": 195,
+        "type": 5,
+        "name": "Harvest Raiz"
+    },
+    {
+        "id": 196,
+        "type": 1,
+        "name": "Orion Cap"
+    },
+    {
+        "id": 196,
+        "type": 2,
+        "name": "Orion Vest"
+    },
+    {
+        "id": 196,
+        "type": 3,
+        "name": "Orion Vambraces"
+    },
+    {
+        "id": 196,
+        "type": 4,
+        "name": "Orion Coat"
+    },
+    {
+        "id": 196,
+        "type": 5,
+        "name": "Orion Boots"
+    },
+    {
+        "id": 197,
+        "type": 1,
+        "name": "Gala Suit Top Hat"
+    },
+    {
+        "id": 197,
+        "type": 2,
+        "name": "Gala Suit Jacket"
+    },
+    {
+        "id": 197,
+        "type": 3,
+        "name": "Gala Suit Cuffs"
+    },
+    {
+        "id": 197,
+        "type": 4,
+        "name": "Gala Suit Tail"
+    },
+    {
+        "id": 197,
+        "type": 5,
+        "name": "Gala Suit Slacks"
+    },
+    {
+        "id": 200,
+        "type": 1,
+        "name": "Samurai Head"
+    },
+    {
+        "id": 200,
+        "type": 2,
+        "name": "Samurai Chest"
+    },
+    {
+        "id": 200,
+        "type": 3,
+        "name": "Samurai Arms"
+    },
+    {
+        "id": 200,
+        "type": 4,
+        "name": "Samurai Torso"
+    },
+    {
+        "id": 200,
+        "type": 5,
+        "name": "Samurai Legs"
+    },
+    {
+        "id": 201,
+        "type": 1,
+        "name": "Vangis Helm α"
+    },
+    {
+        "id": 201,
+        "type": 2,
+        "name": "Vangis Mail α"
+    },
+    {
+        "id": 201,
+        "type": 3,
+        "name": "Vangis Vambraces α"
+    },
+    {
+        "id": 201,
+        "type": 4,
+        "name": "Vangis Coil α"
+    },
+    {
+        "id": 201,
+        "type": 5,
+        "name": "Vangis Greaves α"
+    },
+    {
+        "id": 202,
+        "type": 1,
+        "name": "Vangis Helm β"
+    },
+    {
+        "id": 202,
+        "type": 2,
+        "name": "Vangis Mail β"
+    },
+    {
+        "id": 202,
+        "type": 3,
+        "name": "Vangis Vambraces β"
+    },
+    {
+        "id": 202,
+        "type": 4,
+        "name": "Vangis Coil β"
+    },
+    {
+        "id": 202,
+        "type": 5,
+        "name": "Vangis Greaves β"
+    },
+    {
+        "id": 203,
+        "type": 1,
+        "name": "Kulve Taroth's Fury"
+    },
+    {
+        "id": 203,
+        "type": 2,
+        "name": "Kulve Taroth's Ire"
+    },
+    {
+        "id": 203,
+        "type": 3,
+        "name": "Kulve Taroth's Rage"
+    },
+    {
+        "id": 203,
+        "type": 4,
+        "name": "Kulve Taroth's Malice"
+    },
+    {
+        "id": 203,
+        "type": 5,
+        "name": "Kulve Taroth's Wrath"
+    },
+    {
+        "id": 204,
+        "type": 1,
+        "name": "Bushi Kabuto \"Sabi\""
+    },
+    {
+        "id": 204,
+        "type": 2,
+        "name": "Bushi Muneate \"Sabi\""
+    },
+    {
+        "id": 204,
+        "type": 3,
+        "name": "Bushi Kote \"Sabi\""
+    },
+    {
+        "id": 204,
+        "type": 4,
+        "name": "Bushi Koshiate \"Sabi\""
+    },
+    {
+        "id": 204,
+        "type": 5,
+        "name": "Bushi Suneate \"Sabi\""
+    },
+    {
+        "id": 205,
+        "type": 1,
+        "name": "Bushi Kabuto \"Homare\""
+    },
+    {
+        "id": 205,
+        "type": 2,
+        "name": "Bushi Muneate \"Homare\""
+    },
+    {
+        "id": 205,
+        "type": 3,
+        "name": "Bushi Kote \"Homare\""
+    },
+    {
+        "id": 205,
+        "type": 4,
+        "name": "Bushi Koshiate \"Homare\""
+    },
+    {
+        "id": 205,
+        "type": 5,
+        "name": "Bushi Suneate \"Homare\""
+    },
+    {
+        "id": 206,
+        "type": 1,
+        "name": "Drachen Armet α"
+    },
+    {
+        "id": 206,
+        "type": 2,
+        "name": "Drachen Mail α"
+    },
+    {
+        "id": 206,
+        "type": 3,
+        "name": "Drachen Vambraces α"
+    },
+    {
+        "id": 206,
+        "type": 4,
+        "name": "Drachen Coil α"
+    },
+    {
+        "id": 206,
+        "type": 5,
+        "name": "Drachen Greaves α"
+    },
+    {
+        "id": 207,
+        "type": 1,
+        "name": "Blossom Headgear α"
+    },
+    {
+        "id": 207,
+        "type": 2,
+        "name": "Blossom Vest α"
+    },
+    {
+        "id": 207,
+        "type": 3,
+        "name": "Blossom Cuffs α"
+    },
+    {
+        "id": 207,
+        "type": 4,
+        "name": "Blossom Coat α"
+    },
+    {
+        "id": 207,
+        "type": 5,
+        "name": "Blossom Boots α"
+    },
+    {
+        "id": 208,
+        "type": 1,
+        "name": "Diver's Mask α"
+    },
+    {
+        "id": 208,
+        "type": 2,
+        "name": "Diver's Suit α"
+    },
+    {
+        "id": 208,
+        "type": 3,
+        "name": "Diver's Braces α"
+    },
+    {
+        "id": 208,
+        "type": 4,
+        "name": "Diver's Belt α"
+    },
+    {
+        "id": 208,
+        "type": 5,
+        "name": "Diver's Boots α"
+    },
+    {
+        "id": 209,
+        "type": 1,
+        "name": "Harvest Flor α"
+    },
+    {
+        "id": 209,
+        "type": 2,
+        "name": "Harvest Tronco α"
+    },
+    {
+        "id": 209,
+        "type": 3,
+        "name": "Harvest Trama α"
+    },
+    {
+        "id": 209,
+        "type": 4,
+        "name": "Harvest Hoja α"
+    },
+    {
+        "id": 209,
+        "type": 5,
+        "name": "Harvest Raiz α"
+    },
+    {
+        "id": 210,
+        "type": 1,
+        "name": "Orion Cap α"
+    },
+    {
+        "id": 210,
+        "type": 2,
+        "name": "Orion Vest α"
+    },
+    {
+        "id": 210,
+        "type": 3,
+        "name": "Orion Vambraces α"
+    },
+    {
+        "id": 210,
+        "type": 4,
+        "name": "Orion Coat α"
+    },
+    {
+        "id": 210,
+        "type": 5,
+        "name": "Orion Boots α"
+    },
+    {
+        "id": 211,
+        "type": 1,
+        "name": "Gala Suit Top Hat α"
+    },
+    {
+        "id": 211,
+        "type": 2,
+        "name": "Gala Suit Jacket α"
+    },
+    {
+        "id": 211,
+        "type": 3,
+        "name": "Gala Suit Cuffs α"
+    },
+    {
+        "id": 211,
+        "type": 4,
+        "name": "Gala Suit Tail α"
+    },
+    {
+        "id": 211,
+        "type": 5,
+        "name": "Gala Suit Slacks α"
+    },
+    {
+        "id": 212,
+        "type": 1,
+        "name": "Butterfly Vertex"
+    },
+    {
+        "id": 212,
+        "type": 2,
+        "name": "Butterfly Thorax"
+    },
+    {
+        "id": 212,
+        "type": 3,
+        "name": "Butterfly Brachia"
+    },
+    {
+        "id": 212,
+        "type": 4,
+        "name": "Butterfly Elytra"
+    },
+    {
+        "id": 212,
+        "type": 5,
+        "name": "Butterfly Crura"
+    },
+    {
+        "id": 213,
+        "type": 1,
+        "name": "Butterfly Vertex α"
+    },
+    {
+        "id": 213,
+        "type": 2,
+        "name": "Butterfly Thorax α"
+    },
+    {
+        "id": 213,
+        "type": 3,
+        "name": "Butterfly Brachia α"
+    },
+    {
+        "id": 213,
+        "type": 4,
+        "name": "Butterfly Elytra α"
+    },
+    {
+        "id": 213,
+        "type": 5,
+        "name": "Butterfly Crura α"
+    },
+    {
+        "id": 214,
+        "type": 1,
+        "name": "Butterfly Vertex β"
+    },
+    {
+        "id": 214,
+        "type": 2,
+        "name": "Butterfly Thorax β"
+    },
+    {
+        "id": 214,
+        "type": 3,
+        "name": "Butterfly Brachia β"
+    },
+    {
+        "id": 214,
+        "type": 4,
+        "name": "Butterfly Elytra β"
+    },
+    {
+        "id": 214,
+        "type": 5,
+        "name": "Butterfly Crura β"
+    },
+    {
+        "id": 215,
+        "type": 1,
+        "name": "Queen Beetle Vertex"
+    },
+    {
+        "id": 215,
+        "type": 2,
+        "name": "Queen Beetle Thorax"
+    },
+    {
+        "id": 215,
+        "type": 3,
+        "name": "Queen Beetle Brachia"
+    },
+    {
+        "id": 215,
+        "type": 4,
+        "name": "Queen Beetle Elytra"
+    },
+    {
+        "id": 215,
+        "type": 5,
+        "name": "Queen Beetle Crura"
+    },
+    {
+        "id": 216,
+        "type": 1,
+        "name": "Queen Beetle Vertex α"
+    },
+    {
+        "id": 216,
+        "type": 2,
+        "name": "Queen Beetle Thorax α"
+    },
+    {
+        "id": 216,
+        "type": 3,
+        "name": "Queen Beetle Brachia α"
+    },
+    {
+        "id": 216,
+        "type": 4,
+        "name": "Queen Beetle Elytra α"
+    },
+    {
+        "id": 216,
+        "type": 5,
+        "name": "Queen Beetle Crura α"
+    },
+    {
+        "id": 217,
+        "type": 1,
+        "name": "Queen Beetle Vertex β"
+    },
+    {
+        "id": 217,
+        "type": 2,
+        "name": "Queen Beetle Thorax β"
+    },
+    {
+        "id": 217,
+        "type": 3,
+        "name": "Queen Beetle Brachia β"
+    },
+    {
+        "id": 217,
+        "type": 4,
+        "name": "Queen Beetle Elytra β"
+    },
+    {
+        "id": 217,
+        "type": 5,
+        "name": "Queen Beetle Crura β"
+    },
+    {
+        "id": 218,
+        "type": 1,
+        "name": "Vaal Hazak Helm γ"
+    },
+    {
+        "id": 218,
+        "type": 2,
+        "name": "Vaal Hazak Mail γ"
+    },
+    {
+        "id": 218,
+        "type": 3,
+        "name": "Vaal Hazak Braces γ"
+    },
+    {
+        "id": 218,
+        "type": 4,
+        "name": "Vaal Hazak Coil γ"
+    },
+    {
+        "id": 218,
+        "type": 5,
+        "name": "Vaal Hazak Greaves γ"
+    },
+    {
+        "id": 219,
+        "type": 1,
+        "name": "Kirin Horn γ"
+    },
+    {
+        "id": 219,
+        "type": 2,
+        "name": "Kirin Jacket γ"
+    },
+    {
+        "id": 219,
+        "type": 3,
+        "name": "Kirin Longarms γ"
+    },
+    {
+        "id": 219,
+        "type": 4,
+        "name": "Kirin Hoop γ"
+    },
+    {
+        "id": 219,
+        "type": 5,
+        "name": "Kirin Leg Guards γ"
+    },
+    {
+        "id": 220,
+        "type": 1,
+        "name": "Kaiser Crown γ"
+    },
+    {
+        "id": 220,
+        "type": 2,
+        "name": "Kaiser Mail γ"
+    },
+    {
+        "id": 220,
+        "type": 3,
+        "name": "Kaiser Vambraces γ"
+    },
+    {
+        "id": 220,
+        "type": 4,
+        "name": "Kaiser Coil γ"
+    },
+    {
+        "id": 220,
+        "type": 5,
+        "name": "Kaiser Greaves γ"
+    },
+    {
+        "id": 221,
+        "type": 1,
+        "name": "Kushala Glare γ"
+    },
+    {
+        "id": 221,
+        "type": 2,
+        "name": "Kushala Cista γ"
+    },
+    {
+        "id": 221,
+        "type": 3,
+        "name": "Kushala Grip γ"
+    },
+    {
+        "id": 221,
+        "type": 5,
+        "name": "Kushala Crus γ"
+    },
+    {
+        "id": 222,
+        "type": 1,
+        "name": "Nergigante Helm γ"
+    },
+    {
+        "id": 222,
+        "type": 2,
+        "name": "Nergigante Mail γ"
+    },
+    {
+        "id": 222,
+        "type": 3,
+        "name": "Nergigante Vambraces γ"
+    },
+    {
+        "id": 222,
+        "type": 4,
+        "name": "Kushala Cocoon γ"
+    },
+    {
+        "id": 222,
+        "type": 5,
+        "name": "Nergigante Greaves γ"
+    },
+    {
+        "id": 223,
+        "type": 1,
+        "name": "Zorah Headgear γ"
+    },
+    {
+        "id": 223,
+        "type": 2,
+        "name": "Zorah Hide γ"
+    },
+    {
+        "id": 223,
+        "type": 3,
+        "name": "Zorah Claws γ"
+    },
+    {
+        "id": 223,
+        "type": 4,
+        "name": "Nergigante Coil γ"
+    },
+    {
+        "id": 223,
+        "type": 5,
+        "name": "Zorah Spurs γ"
+    },
+    {
+        "id": 224,
+        "type": 1,
+        "name": "Xeno'jiiva Headgear γ"
+    },
+    {
+        "id": 224,
+        "type": 2,
+        "name": "Xeno'jiiva Hide γ"
+    },
+    {
+        "id": 224,
+        "type": 3,
+        "name": "Xeno'jiiva Claws γ"
+    },
+    {
+        "id": 224,
+        "type": 4,
+        "name": "Zorah Spine γ"
+    },
+    {
+        "id": 224,
+        "type": 5,
+        "name": "Xeno'jiiva Spurs γ"
+    },
+    {
+        "id": 226,
+        "type": 4,
+        "name": "Xeno'jiiva Spine γ"
+    },
+    {
+        "id": 229,
+        "type": 1,
+        "name": "Azure Starlord Crown α"
+    },
+    {
+        "id": 229,
+        "type": 2,
+        "name": "Azure Starlord Armor α"
+    },
+    {
+        "id": 229,
+        "type": 3,
+        "name": "Azure Starlord Gauntlets α"
+    },
+    {
+        "id": 229,
+        "type": 5,
+        "name": "Azure Starlord Guards α"
+    },
+    {
+        "id": 230,
+        "type": 1,
+        "name": "Dante's Hair α"
+    },
+    {
+        "id": 230,
+        "type": 2,
+        "name": "Dante's Coat α"
+    },
+    {
+        "id": 230,
+        "type": 3,
+        "name": "Dante's Gloves α"
+    },
+    {
+        "id": 230,
+        "type": 5,
+        "name": "Dante's Leather Boots α"
+    },
+    {
+        "id": 231,
+        "type": 1,
+        "name": "Empress Crown α"
+    },
+    {
+        "id": 231,
+        "type": 2,
+        "name": "Empress Mail α"
+    },
+    {
+        "id": 231,
+        "type": 3,
+        "name": "Empress Vambraces α"
+    },
+    {
+        "id": 231,
+        "type": 4,
+        "name": "Azure Starlord Tassets α"
+    },
+    {
+        "id": 231,
+        "type": 5,
+        "name": "Empress Greaves α"
+    },
+    {
+        "id": 232,
+        "type": 1,
+        "name": "Empress Crown β"
+    },
+    {
+        "id": 232,
+        "type": 2,
+        "name": "Empress Mail β"
+    },
+    {
+        "id": 232,
+        "type": 3,
+        "name": "Empress Vambraces β"
+    },
+    {
+        "id": 232,
+        "type": 4,
+        "name": "Dante's Belt α"
+    },
+    {
+        "id": 232,
+        "type": 5,
+        "name": "Empress Greaves β"
+    },
+    {
+        "id": 233,
+        "type": 1,
+        "name": "Sealed Eyepatch α"
+    },
+    {
+        "id": 233,
+        "type": 2,
+        "name": "Butterfly Layered Chest"
+    },
+    {
+        "id": 233,
+        "type": 3,
+        "name": "Butterfly Layered Arms"
+    },
+    {
+        "id": 233,
+        "type": 4,
+        "name": "Empress Coil α"
+    },
+    {
+        "id": 233,
+        "type": 5,
+        "name": "Butterfly Layered Legs"
+    },
+    {
+        "id": 234,
+        "type": 1,
+        "name": "Shadow Shades α"
+    },
+    {
+        "id": 234,
+        "type": 2,
+        "name": "Death Stench Layered Chest"
+    },
+    {
+        "id": 234,
+        "type": 3,
+        "name": "Death Stench Layered Arms"
+    },
+    {
+        "id": 234,
+        "type": 4,
+        "name": "Empress Coil β"
+    },
+    {
+        "id": 234,
+        "type": 5,
+        "name": "Death Stench Layered Legs"
+    },
+    {
+        "id": 235,
+        "type": 1,
+        "name": "Kulu-Ya-Ku Head α"
+    },
+    {
+        "id": 235,
+        "type": 2,
+        "name": "Dante Layered Chest"
+    },
+    {
+        "id": 235,
+        "type": 3,
+        "name": "Dante Layered Arms"
+    },
+    {
+        "id": 235,
+        "type": 4,
+        "name": "Butterfly Layered Torso"
+    },
+    {
+        "id": 235,
+        "type": 5,
+        "name": "Dante Layered Legs"
+    },
+    {
+        "id": 236,
+        "type": 1,
+        "name": "Wiggler Head α"
+    },
+    {
+        "id": 236,
+        "type": 2,
+        "name": "Drachen Layered Mail"
+    },
+    {
+        "id": 236,
+        "type": 3,
+        "name": "Drachen Layered Arms"
+    },
+    {
+        "id": 236,
+        "type": 4,
+        "name": "Death Stench Layered Torso"
+    },
+    {
+        "id": 236,
+        "type": 5,
+        "name": "Drachen Layered Greaves"
+    },
+    {
+        "id": 237,
+        "type": 1,
+        "name": "Butterfly Layered Head"
+    },
+    {
+        "id": 237,
+        "type": 2,
+        "name": "Commission Layered Chest"
+    },
+    {
+        "id": 237,
+        "type": 3,
+        "name": "Commission Layered Arms"
+    },
+    {
+        "id": 237,
+        "type": 4,
+        "name": "Dante Layered Torso"
+    },
+    {
+        "id": 237,
+        "type": 5,
+        "name": "Commission Layered Legs"
+    },
+    {
+        "id": 238,
+        "type": 1,
+        "name": "Death Stench Layered Head"
+    },
+    {
+        "id": 238,
+        "type": 2,
+        "name": "Origin Layered Chest"
+    },
+    {
+        "id": 238,
+        "type": 3,
+        "name": "Origin Layered Arms"
+    },
+    {
+        "id": 238,
+        "type": 4,
+        "name": "Drachen Layered Coil"
+    },
+    {
+        "id": 238,
+        "type": 5,
+        "name": "Origin Layered Legs"
+    },
+    {
+        "id": 239,
+        "type": 1,
+        "name": "Dante Layered Head"
+    },
+    {
+        "id": 239,
+        "type": 2,
+        "name": "Beetle Layered Chest"
+    },
+    {
+        "id": 239,
+        "type": 3,
+        "name": "Beetle Layered Arms"
+    },
+    {
+        "id": 239,
+        "type": 4,
+        "name": "Commission Layered Torso"
+    },
+    {
+        "id": 239,
+        "type": 5,
+        "name": "Beetle Layered Legs"
+    },
+    {
+        "id": 240,
+        "type": 1,
+        "name": "Drachen Layered Armet"
+    },
+    {
+        "id": 240,
+        "type": 4,
+        "name": "Origin Layered Torso"
+    },
+    {
+        "id": 241,
+        "type": 1,
+        "name": "Commission Layered Head"
+    },
+    {
+        "id": 241,
+        "type": 4,
+        "name": "Beetle Layered Torso"
+    },
+    {
+        "id": 242,
+        "type": 1,
+        "name": "Origin Layered Head"
+    },
+    {
+        "id": 242,
+        "type": 2,
+        "name": "Empress Mail γ"
+    },
+    {
+        "id": 242,
+        "type": 3,
+        "name": "Empress Vambraces γ"
+    },
+    {
+        "id": 242,
+        "type": 5,
+        "name": "Empress Greaves γ"
+    },
+    {
+        "id": 243,
+        "type": 1,
+        "name": "Beetle Layered Head"
+    },
+    {
+        "id": 244,
+        "type": 4,
+        "name": "Empress Coil γ"
+    },
+    {
+        "id": 245,
+        "type": 1,
+        "name": "Shadow Shades Layered Head"
+    },
+    {
+        "id": 246,
+        "type": 1,
+        "name": "Mosswine Mask Layered Head"
+    },
+    {
+        "id": 247,
+        "type": 1,
+        "name": "Faux Felyne Layered Head"
+    },
+    {
+        "id": 247,
+        "type": 2,
+        "name": "Kulve Taroth's Ire γ"
+    },
+    {
+        "id": 247,
+        "type": 3,
+        "name": "Kulve Taroth's Rage γ"
+    },
+    {
+        "id": 247,
+        "type": 5,
+        "name": "Kulve Taroth's Wrath γ"
+    },
+    {
+        "id": 248,
+        "type": 1,
+        "name": "Sealed Eyepatch Layered Armor"
+    },
+    {
+        "id": 249,
+        "type": 1,
+        "name": "Wiggler Head Layered Armor"
+    },
+    {
+        "id": 249,
+        "type": 4,
+        "name": "Kulve Taroth's Malice γ"
+    },
+    {
+        "id": 250,
+        "type": 1,
+        "name": "Skull Mask Layered Head"
+    },
+    {
+        "id": 251,
+        "type": 1,
+        "name": "Kulu-Ya-Ku Layered Head"
+    },
+    {
+        "id": 253,
+        "type": 1,
+        "name": "Empress Crown γ"
+    },
+    {
+        "id": 258,
+        "type": 1,
+        "name": "Kulve Taroth's Fury γ"
+    },
+    {
+        "id": 292,
+        "type": 1,
+        "name": "Sakura Layered Head"
+    },
+    {
+        "id": 292,
+        "type": 2,
+        "name": "Sakura Layered Chest"
+    },
+    {
+        "id": 292,
+        "type": 3,
+        "name": "Sakura Layered Arms"
+    },
+    {
+        "id": 292,
+        "type": 4,
+        "name": "Sakura Layered Torso"
+    },
+    {
+        "id": 292,
+        "type": 5,
+        "name": "Sakura Layered Legs"
+    },
+    {
+        "id": 293,
+        "type": 1,
+        "name": "Geralt's Head α"
+    },
+    {
+        "id": 293,
+        "type": 2,
+        "name": "Geralt's Body α"
+    },
+    {
+        "id": 293,
+        "type": 3,
+        "name": "Geralt's Arms α"
+    },
+    {
+        "id": 293,
+        "type": 4,
+        "name": "Geralt's Torso α"
+    },
+    {
+        "id": 293,
+        "type": 5,
+        "name": "Geralt's Legs α"
+    },
+    {
+        "id": 294,
+        "type": 1,
+        "name": "Ciri's Head α"
+    },
+    {
+        "id": 294,
+        "type": 2,
+        "name": "Ciri's Body α"
+    },
+    {
+        "id": 294,
+        "type": 3,
+        "name": "Ciri's Arms α"
+    },
+    {
+        "id": 294,
+        "type": 4,
+        "name": "Ciri's Torso α"
+    },
+    {
+        "id": 294,
+        "type": 5,
+        "name": "Ciri's Legs α"
+    },
+    {
+        "id": 295,
+        "type": 1,
+        "name": "Geralt Layered Head"
+    },
+    {
+        "id": 295,
+        "type": 2,
+        "name": "Geralt Layered Chest"
+    },
+    {
+        "id": 295,
+        "type": 3,
+        "name": "Geralt Layered Arms"
+    },
+    {
+        "id": 295,
+        "type": 4,
+        "name": "Geralt Layered Torso"
+    },
+    {
+        "id": 295,
+        "type": 5,
+        "name": "Geralt Layered Legs"
+    },
+    {
+        "id": 296,
+        "type": 1,
+        "name": "Ciri Layered Head"
+    },
+    {
+        "id": 296,
+        "type": 2,
+        "name": "Ciri Layered Chest"
+    },
+    {
+        "id": 296,
+        "type": 3,
+        "name": "Ciri Layered Arms"
+    },
+    {
+        "id": 296,
+        "type": 4,
+        "name": "Ciri Layered Torso"
+    },
+    {
+        "id": 296,
+        "type": 5,
+        "name": "Ciri Layered Legs"
+    },
+    {
+        "id": 297,
+        "type": 1,
+        "name": "Bayek Layered Head"
+    },
+    {
+        "id": 297,
+        "type": 2,
+        "name": "Bayek Layered Chest"
+    },
+    {
+        "id": 297,
+        "type": 3,
+        "name": "Bayek Layered Arms"
+    },
+    {
+        "id": 297,
+        "type": 4,
+        "name": "Bayek Layered Torso"
+    },
+    {
+        "id": 297,
+        "type": 5,
+        "name": "Bayek Layered Legs"
+    },
+    {
+        "id": 298,
+        "type": 1,
+        "name": "Aloy's Head γ"
+    },
+    {
+        "id": 298,
+        "type": 2,
+        "name": "Aloy's Body γ"
+    },
+    {
+        "id": 298,
+        "type": 3,
+        "name": "Aloy's Arms γ"
+    },
+    {
+        "id": 298,
+        "type": 4,
+        "name": "Aloy's Torso γ"
+    },
+    {
+        "id": 298,
+        "type": 5,
+        "name": "Aloy's Leggings γ"
+    },
+    {
+        "id": 299,
+        "type": 1,
+        "name": "Aloy Layered Head"
+    },
+    {
+        "id": 299,
+        "type": 2,
+        "name": "Aloy Layered Chest"
+    },
+    {
+        "id": 299,
+        "type": 3,
+        "name": "Aloy Layered Arms"
+    },
+    {
+        "id": 299,
+        "type": 4,
+        "name": "Aloy Layered Torso"
+    },
+    {
+        "id": 299,
+        "type": 5,
+        "name": "Aloy Layered Legs"
+    },
+    {
+        "id": 0,
+        "type": 6,
+        "name": "Poison Charm I"
+    },
+    {
+        "id": 1,
+        "type": 6,
+        "name": "Poison Charm II"
+    },
+    {
+        "id": 2,
+        "type": 6,
+        "name": "Poison Charm III"
+    },
+    {
+        "id": 3,
+        "type": 6,
+        "name": "Attack Charm I"
+    },
+    {
+        "id": 4,
+        "type": 6,
+        "name": "Attack Charm II"
+    },
+    {
+        "id": 5,
+        "type": 6,
+        "name": "Attack Charm III"
+    },
+    {
+        "id": 6,
+        "type": 6,
+        "name": "Defense Charm I"
+    },
+    {
+        "id": 7,
+        "type": 6,
+        "name": "Defense Charm II"
+    },
+    {
+        "id": 8,
+        "type": 6,
+        "name": "Defense Charm III"
+    },
+    {
+        "id": 9,
+        "type": 6,
+        "name": "Paralysis Charm I"
+    },
+    {
+        "id": 10,
+        "type": 6,
+        "name": "Paralysis Charm II"
+    },
+    {
+        "id": 11,
+        "type": 6,
+        "name": "Paralysis Charm III"
+    },
+    {
+        "id": 12,
+        "type": 6,
+        "name": "Sleep Charm I"
+    },
+    {
+        "id": 13,
+        "type": 6,
+        "name": "Sleep Charm II"
+    },
+    {
+        "id": 14,
+        "type": 6,
+        "name": "Sleep Charm III"
+    },
+    {
+        "id": 15,
+        "type": 6,
+        "name": "Stun Charm I"
+    },
+    {
+        "id": 16,
+        "type": 6,
+        "name": "Stun Charm II"
+    },
+    {
+        "id": 17,
+        "type": 6,
+        "name": "Stun Charm III"
+    },
+    {
+        "id": 18,
+        "type": 6,
+        "name": "Blast Charm I"
+    },
+    {
+        "id": 19,
+        "type": 6,
+        "name": "Blast Charm II"
+    },
+    {
+        "id": 20,
+        "type": 6,
+        "name": "Blast Charm III"
+    },
+    {
+        "id": 21,
+        "type": 6,
+        "name": "Bleed Charm I"
+    },
+    {
+        "id": 22,
+        "type": 6,
+        "name": "Bleed Charm II"
+    },
+    {
+        "id": 23,
+        "type": 6,
+        "name": "Bleed Charm III"
+    },
+    {
+        "id": 24,
+        "type": 6,
+        "name": "Guard Charm I"
+    },
+    {
+        "id": 25,
+        "type": 6,
+        "name": "Guard Charm II"
+    },
+    {
+        "id": 26,
+        "type": 6,
+        "name": "Guard Charm III"
+    },
+    {
+        "id": 27,
+        "type": 6,
+        "name": "Resist Charm I"
+    },
+    {
+        "id": 28,
+        "type": 6,
+        "name": "Resist Charm II"
+    },
+    {
+        "id": 29,
+        "type": 6,
+        "name": "Resist Charm III"
+    },
+    {
+        "id": 30,
+        "type": 6,
+        "name": "Earplugs Charm I"
+    },
+    {
+        "id": 31,
+        "type": 6,
+        "name": "Windproof Charm I"
+    },
+    {
+        "id": 32,
+        "type": 6,
+        "name": "Tremor Charm I"
+    },
+    {
+        "id": 33,
+        "type": 6,
+        "name": "Tremor Charm II"
+    },
+    {
+        "id": 34,
+        "type": 6,
+        "name": "Health Charm I"
+    },
+    {
+        "id": 35,
+        "type": 6,
+        "name": "Health Charm II"
+    },
+    {
+        "id": 36,
+        "type": 6,
+        "name": "Health Charm III"
+    },
+    {
+        "id": 37,
+        "type": 6,
+        "name": "Recovery Charm I"
+    },
+    {
+        "id": 38,
+        "type": 6,
+        "name": "Recovery Charm II"
+    },
+    {
+        "id": 39,
+        "type": 6,
+        "name": "Recovery Charm III"
+    },
+    {
+        "id": 40,
+        "type": 6,
+        "name": "Speed Heal Charm I"
+    },
+    {
+        "id": 41,
+        "type": 6,
+        "name": "Speed Heal Charm II"
+    },
+    {
+        "id": 42,
+        "type": 6,
+        "name": "Fire Charm I"
+    },
+    {
+        "id": 43,
+        "type": 6,
+        "name": "Fire Charm II"
+    },
+    {
+        "id": 44,
+        "type": 6,
+        "name": "Fire Charm III"
+    },
+    {
+        "id": 45,
+        "type": 6,
+        "name": "Water Charm I"
+    },
+    {
+        "id": 46,
+        "type": 6,
+        "name": "Water Charm II"
+    },
+    {
+        "id": 47,
+        "type": 6,
+        "name": "Water Charm III"
+    },
+    {
+        "id": 48,
+        "type": 6,
+        "name": "Ice Charm I"
+    },
+    {
+        "id": 49,
+        "type": 6,
+        "name": "Ice Charm II"
+    },
+    {
+        "id": 50,
+        "type": 6,
+        "name": "Ice Charm III"
+    },
+    {
+        "id": 51,
+        "type": 6,
+        "name": "Thunder Charm I"
+    },
+    {
+        "id": 52,
+        "type": 6,
+        "name": "Thunder Charm II"
+    },
+    {
+        "id": 53,
+        "type": 6,
+        "name": "Thunder Charm III"
+    },
+    {
+        "id": 54,
+        "type": 6,
+        "name": "Dragon Charm I"
+    },
+    {
+        "id": 55,
+        "type": 6,
+        "name": "Dragon Charm II"
+    },
+    {
+        "id": 56,
+        "type": 6,
+        "name": "Dragon Charm III"
+    },
+    {
+        "id": 57,
+        "type": 6,
+        "name": "Blight Charm I"
+    },
+    {
+        "id": 58,
+        "type": 6,
+        "name": "Blight Charm II"
+    },
+    {
+        "id": 59,
+        "type": 6,
+        "name": "Blight Charm III"
+    },
+    {
+        "id": 60,
+        "type": 6,
+        "name": "Blaze Charm I"
+    },
+    {
+        "id": 61,
+        "type": 6,
+        "name": "Blaze Charm II"
+    },
+    {
+        "id": 62,
+        "type": 6,
+        "name": "Blaze Charm III"
+    },
+    {
+        "id": 63,
+        "type": 6,
+        "name": "Flood Charm I"
+    },
+    {
+        "id": 64,
+        "type": 6,
+        "name": "Flood Charm II"
+    },
+    {
+        "id": 65,
+        "type": 6,
+        "name": "Flood Charm III"
+    },
+    {
+        "id": 66,
+        "type": 6,
+        "name": "Frost Charm I"
+    },
+    {
+        "id": 67,
+        "type": 6,
+        "name": "Frost Charm II"
+    },
+    {
+        "id": 68,
+        "type": 6,
+        "name": "Frost Charm III"
+    },
+    {
+        "id": 69,
+        "type": 6,
+        "name": "Shock Charm I"
+    },
+    {
+        "id": 70,
+        "type": 6,
+        "name": "Shock Charm II"
+    },
+    {
+        "id": 71,
+        "type": 6,
+        "name": "Shock Charm III"
+    },
+    {
+        "id": 72,
+        "type": 6,
+        "name": "Wyrmsbane Charm I"
+    },
+    {
+        "id": 73,
+        "type": 6,
+        "name": "Wyrmsbane Charm II"
+    },
+    {
+        "id": 74,
+        "type": 6,
+        "name": "Wyrmsbane Charm III"
+    },
+    {
+        "id": 75,
+        "type": 6,
+        "name": "Venom Charm I"
+    },
+    {
+        "id": 76,
+        "type": 6,
+        "name": "Venom Charm II"
+    },
+    {
+        "id": 77,
+        "type": 6,
+        "name": "Venom Charm III"
+    },
+    {
+        "id": 78,
+        "type": 6,
+        "name": "Immobilize Charm I"
+    },
+    {
+        "id": 79,
+        "type": 6,
+        "name": "Immobilize Charm II"
+    },
+    {
+        "id": 80,
+        "type": 6,
+        "name": "Immobilize Charm III"
+    },
+    {
+        "id": 81,
+        "type": 6,
+        "name": "Tranq Charm I"
+    },
+    {
+        "id": 82,
+        "type": 6,
+        "name": "Tranq Charm II"
+    },
+    {
+        "id": 83,
+        "type": 6,
+        "name": "Tranq Charm III"
+    },
+    {
+        "id": 84,
+        "type": 6,
+        "name": "Demolition Charm I"
+    },
+    {
+        "id": 85,
+        "type": 6,
+        "name": "Demolition Charm II"
+    },
+    {
+        "id": 86,
+        "type": 6,
+        "name": "Demolition Charm III"
+    },
+    {
+        "id": 87,
+        "type": 6,
+        "name": "Master's Charm I"
+    },
+    {
+        "id": 88,
+        "type": 6,
+        "name": "Master's Charm II"
+    },
+    {
+        "id": 89,
+        "type": 6,
+        "name": "Master's Charm III"
+    },
+    {
+        "id": 90,
+        "type": 6,
+        "name": "Critical Charm I"
+    },
+    {
+        "id": 91,
+        "type": 6,
+        "name": "Critical Charm II"
+    },
+    {
+        "id": 92,
+        "type": 6,
+        "name": "Exploiter Charm I"
+    },
+    {
+        "id": 93,
+        "type": 6,
+        "name": "Exploiter Charm II"
+    },
+    {
+        "id": 94,
+        "type": 6,
+        "name": "Focus Charm I"
+    },
+    {
+        "id": 95,
+        "type": 6,
+        "name": "Focus Charm II"
+    },
+    {
+        "id": 96,
+        "type": 6,
+        "name": "Invigorate Charm I"
+    },
+    {
+        "id": 97,
+        "type": 6,
+        "name": "Invigorate Charm II"
+    },
+    {
+        "id": 99,
+        "type": 6,
+        "name": "Draw Charm I"
+    },
+    {
+        "id": 100,
+        "type": 6,
+        "name": "Draw Charm II"
+    },
+    {
+        "id": 101,
+        "type": 6,
+        "name": "Breaker Charm I"
+    },
+    {
+        "id": 102,
+        "type": 6,
+        "name": "Breaker Charm II"
+    },
+    {
+        "id": 103,
+        "type": 6,
+        "name": "KO Charm I"
+    },
+    {
+        "id": 104,
+        "type": 6,
+        "name": "KO Charm II"
+    },
+    {
+        "id": 105,
+        "type": 6,
+        "name": "Enervate Charm I"
+    },
+    {
+        "id": 106,
+        "type": 6,
+        "name": "Enervate Charm II"
+    },
+    {
+        "id": 107,
+        "type": 6,
+        "name": "Enervate Charm III"
+    },
+    {
+        "id": 108,
+        "type": 6,
+        "name": "Power Charm I"
+    },
+    {
+        "id": 109,
+        "type": 6,
+        "name": "Power Charm II"
+    },
+    {
+        "id": 110,
+        "type": 6,
+        "name": "Challenger Charm I"
+    },
+    {
+        "id": 111,
+        "type": 6,
+        "name": "Challenger Charm II"
+    },
+    {
+        "id": 112,
+        "type": 6,
+        "name": "Unscathed Charm I"
+    },
+    {
+        "id": 113,
+        "type": 6,
+        "name": "Unscathed Charm II"
+    },
+    {
+        "id": 116,
+        "type": 6,
+        "name": "Fury Charm I"
+    },
+    {
+        "id": 117,
+        "type": 6,
+        "name": "Fury Charm II"
+    },
+    {
+        "id": 121,
+        "type": 6,
+        "name": "Special Shot Charm I"
+    },
+    {
+        "id": 122,
+        "type": 6,
+        "name": "Special Shot Charm II"
+    },
+    {
+        "id": 123,
+        "type": 6,
+        "name": "Artillery Charm I"
+    },
+    {
+        "id": 124,
+        "type": 6,
+        "name": "Artillery Charm II"
+    },
+    {
+        "id": 125,
+        "type": 6,
+        "name": "Artillery Charm III"
+    },
+    {
+        "id": 128,
+        "type": 6,
+        "name": "Marathon Charm I"
+    },
+    {
+        "id": 129,
+        "type": 6,
+        "name": "Marathon Charm II"
+    },
+    {
+        "id": 130,
+        "type": 6,
+        "name": "Fitness Charm I"
+    },
+    {
+        "id": 131,
+        "type": 6,
+        "name": "Fitness Charm II"
+    },
+    {
+        "id": 132,
+        "type": 6,
+        "name": "Surge Charm I"
+    },
+    {
+        "id": 133,
+        "type": 6,
+        "name": "Surge Charm II"
+    },
+    {
+        "id": 134,
+        "type": 6,
+        "name": "Hungerless Charm I"
+    },
+    {
+        "id": 135,
+        "type": 6,
+        "name": "Hungerless Charm II"
+    },
+    {
+        "id": 136,
+        "type": 6,
+        "name": "Hungerless Charm III"
+    },
+    {
+        "id": 137,
+        "type": 6,
+        "name": "Evasion Charm I"
+    },
+    {
+        "id": 138,
+        "type": 6,
+        "name": "Evasion Charm II"
+    },
+    {
+        "id": 139,
+        "type": 6,
+        "name": "Leaping Charm I"
+    },
+    {
+        "id": 140,
+        "type": 6,
+        "name": "Leaping Charm II"
+    },
+    {
+        "id": 141,
+        "type": 6,
+        "name": "Ironside Charm I"
+    },
+    {
+        "id": 142,
+        "type": 6,
+        "name": "Ironside Charm II"
+    },
+    {
+        "id": 143,
+        "type": 6,
+        "name": "Ironside Charm III"
+    },
+    {
+        "id": 144,
+        "type": 6,
+        "name": "Sheath Charm I"
+    },
+    {
+        "id": 145,
+        "type": 6,
+        "name": "Sheath Charm II"
+    },
+    {
+        "id": 146,
+        "type": 6,
+        "name": "Sheath Charm III"
+    },
+    {
+        "id": 147,
+        "type": 6,
+        "name": "Friendship Charm I"
+    },
+    {
+        "id": 148,
+        "type": 6,
+        "name": "Friendship Charm II"
+    },
+    {
+        "id": 149,
+        "type": 6,
+        "name": "Friendship Charm III"
+    },
+    {
+        "id": 150,
+        "type": 6,
+        "name": "Extension Charm I"
+    },
+    {
+        "id": 151,
+        "type": 6,
+        "name": "Extension Charm II"
+    },
+    {
+        "id": 152,
+        "type": 6,
+        "name": "Extension Charm III"
+    },
+    {
+        "id": 153,
+        "type": 6,
+        "name": "Glutton's Charm I"
+    },
+    {
+        "id": 154,
+        "type": 6,
+        "name": "Glutton's Charm II"
+    },
+    {
+        "id": 155,
+        "type": 6,
+        "name": "Glutton's Charm III"
+    },
+    {
+        "id": 156,
+        "type": 6,
+        "name": "Whetstone Charm I"
+    },
+    {
+        "id": 157,
+        "type": 6,
+        "name": "Whetstone Charm II"
+    },
+    {
+        "id": 158,
+        "type": 6,
+        "name": "Whetstone Charm III"
+    },
+    {
+        "id": 159,
+        "type": 6,
+        "name": "Bombardier Charm I"
+    },
+    {
+        "id": 160,
+        "type": 6,
+        "name": "Bombardier Charm II"
+    },
+    {
+        "id": 161,
+        "type": 6,
+        "name": "Bombardier Charm III"
+    },
+    {
+        "id": 162,
+        "type": 6,
+        "name": "Mushroom Charm I"
+    },
+    {
+        "id": 163,
+        "type": 6,
+        "name": "Mushroom Charm II"
+    },
+    {
+        "id": 164,
+        "type": 6,
+        "name": "Mushroom Charm III"
+    },
+    {
+        "id": 165,
+        "type": 6,
+        "name": "Blessing Charm I"
+    },
+    {
+        "id": 166,
+        "type": 6,
+        "name": "Blessing Charm II"
+    },
+    {
+        "id": 167,
+        "type": 6,
+        "name": "Blessing Charm III"
+    },
+    {
+        "id": 168,
+        "type": 6,
+        "name": "Rally Charm I"
+    },
+    {
+        "id": 169,
+        "type": 6,
+        "name": "Rally Charm II"
+    },
+    {
+        "id": 170,
+        "type": 6,
+        "name": "Rally Charm III"
+    },
+    {
+        "id": 171,
+        "type": 6,
+        "name": "Botany Charm I"
+    },
+    {
+        "id": 172,
+        "type": 6,
+        "name": "Botany Charm II"
+    },
+    {
+        "id": 173,
+        "type": 6,
+        "name": "Botany Charm III"
+    },
+    {
+        "id": 174,
+        "type": 6,
+        "name": "Geology Charm I"
+    },
+    {
+        "id": 175,
+        "type": 6,
+        "name": "Geology Charm II"
+    },
+    {
+        "id": 176,
+        "type": 6,
+        "name": "Geology Charm III"
+    },
+    {
+        "id": 177,
+        "type": 6,
+        "name": "Mighty Charm I"
+    },
+    {
+        "id": 178,
+        "type": 6,
+        "name": "Mighty Charm II"
+    },
+    {
+        "id": 179,
+        "type": 6,
+        "name": "Slinger Charm I"
+    },
+    {
+        "id": 180,
+        "type": 6,
+        "name": "Slinger Charm II"
+    },
+    {
+        "id": 181,
+        "type": 6,
+        "name": "Slinger Charm III"
+    },
+    {
+        "id": 182,
+        "type": 6,
+        "name": "Stealth Charm I"
+    },
+    {
+        "id": 183,
+        "type": 6,
+        "name": "Stealth Charm II"
+    },
+    {
+        "id": 184,
+        "type": 6,
+        "name": "Stealth Charm III"
+    },
+    {
+        "id": 185,
+        "type": 6,
+        "name": "Impact Charm I"
+    },
+    {
+        "id": 186,
+        "type": 6,
+        "name": "Impact Charm II"
+    },
+    {
+        "id": 188,
+        "type": 6,
+        "name": "Smoke Charm I"
+    },
+    {
+        "id": 189,
+        "type": 6,
+        "name": "Smoke Charm II"
+    },
+    {
+        "id": 190,
+        "type": 6,
+        "name": "Smoke Charm III"
+    },
+    {
+        "id": 191,
+        "type": 6,
+        "name": "Mirewalker Charm I"
+    },
+    {
+        "id": 192,
+        "type": 6,
+        "name": "Mirewalker Charm II"
+    },
+    {
+        "id": 193,
+        "type": 6,
+        "name": "Mirewalker Charm III"
+    },
+    {
+        "id": 194,
+        "type": 6,
+        "name": "Insect Charm I"
+    },
+    {
+        "id": 195,
+        "type": 6,
+        "name": "Insect Charm II"
+    },
+    {
+        "id": 196,
+        "type": 6,
+        "name": "Insect Charm III"
+    },
+    {
+        "id": 197,
+        "type": 6,
+        "name": "Miasma Charm I"
+    },
+    {
+        "id": 198,
+        "type": 6,
+        "name": "Miasma Charm II"
+    },
+    {
+        "id": 199,
+        "type": 6,
+        "name": "Miasma Charm III"
+    },
+    {
+        "id": 200,
+        "type": 6,
+        "name": "Intimidator Charm I"
+    },
+    {
+        "id": 201,
+        "type": 6,
+        "name": "Intimidator Charm II"
+    },
+    {
+        "id": 202,
+        "type": 6,
+        "name": "Intimidator Charm III"
+    },
+    {
+        "id": 203,
+        "type": 6,
+        "name": "Fair Wind Charm"
+    },
+    {
+        "id": 204,
+        "type": 6,
+        "name": "Blessing Charm"
+    },
+    {
+        "id": 205,
+        "type": 6,
+        "name": "Frontrunner Charm"
+    },
+    {
+        "id": 206,
+        "type": 6,
+        "name": "Raider's Charm"
+    },
+    {
+        "id": 207,
+        "type": 6,
+        "name": "Strategist's Charm"
+    },
+    {
+        "id": 208,
+        "type": 6,
+        "name": "Mud Puppy Charm"
+    },
+    {
+        "id": 209,
+        "type": 6,
+        "name": "Trickshot Charm"
+    },
+    {
+        "id": 210,
+        "type": 6,
+        "name": "Clearmind Charm"
+    },
+    {
+        "id": 211,
+        "type": 6,
+        "name": "Rider's Charm"
+    },
+    {
+        "id": 212,
+        "type": 6,
+        "name": "Hunter's Life Charm"
+    },
+    {
+        "id": 213,
+        "type": 6,
+        "name": "Procurer's Charm"
+    },
+    {
+        "id": 214,
+        "type": 6,
+        "name": "Gatherer's Charm"
+    },
+    {
+        "id": 215,
+        "type": 6,
+        "name": "Surveyor's Charm"
+    },
+    {
+        "id": 216,
+        "type": 6,
+        "name": "Geomancy Charm"
+    },
+    {
+        "id": 217,
+        "type": 6,
+        "name": "Normal Shots Charm"
+    },
+    {
+        "id": 218,
+        "type": 6,
+        "name": "Penetration Charm"
+    },
+    {
+        "id": 219,
+        "type": 6,
+        "name": "Dispersal Charm"
+    },
+    {
+        "id": 220,
+        "type": 6,
+        "name": "Poison Coating Charm"
+    },
+    {
+        "id": 221,
+        "type": 6,
+        "name": "Para Coating Charm"
+    },
+    {
+        "id": 222,
+        "type": 6,
+        "name": "Sleep Coating Charm"
+    },
+    {
+        "id": 223,
+        "type": 6,
+        "name": "Blast Coating Charm"
+    },
+    {
+        "id": 225,
+        "type": 6,
+        "name": "Fortification Charm"
+    },
+    {
+        "id": 227,
+        "type": 6,
+        "name": "Performer's Charm"
+    },
+    {
+        "id": 228,
+        "type": 6,
+        "name": "Capacity Charm"
+    },
+    {
+        "id": 229,
+        "type": 6,
+        "name": "Heavy Artillery Charm I"
+    },
+    {
+        "id": 230,
+        "type": 6,
+        "name": "Heavy Artillery Charm II"
+    },
+    {
+        "id": 231,
+        "type": 6,
+        "name": "Light Eater's Charm"
+    },
+    {
+        "id": 232,
+        "type": 6,
+        "name": "Tracker Charm"
+    },
+    {
+        "id": 233,
+        "type": 6,
+        "name": "Gale Charm"
+    },
+    {
+        "id": 234,
+        "type": 6,
+        "name": "Wyrmslayer Charm"
+    },
+    {
+        "id": 235,
+        "type": 6,
+        "name": "Bulwark Charm"
+    },
+    {
+        "id": 236,
+        "type": 6,
+        "name": "Fitness Charm III"
+    },
+    {
+        "id": 248,
+        "type": 6,
+        "name": "Awakening Charm I"
+    },
+    {
+        "id": 249,
+        "type": 6,
+        "name": "Awakening Charm II"
+    },
+    {
+        "id": 250,
+        "type": 6,
+        "name": "Handicraft Charm I"
+    },
+    {
+        "id": 251,
+        "type": 6,
+        "name": "Handicraft Charm II"
+    },
+    {
+        "id": 252,
+        "type": 6,
+        "name": "Handicraft Charm III"
+    },
+    {
+        "id": 253,
+        "type": 6,
+        "name": "Grit Charm I"
+    },
+    {
+        "id": 254,
+        "type": 6,
+        "name": "Grit Charm II"
+    },
+    {
+        "id": 255,
+        "type": 6,
+        "name": "Maintenance Charm I"
+    },
+    {
+        "id": 256,
+        "type": 6,
+        "name": "Maintenance Charm II"
+    },
+    {
+        "id": 257,
+        "type": 6,
+        "name": "Maintenance Charm III"
+    },
+    {
+        "id": 258,
+        "type": 6,
+        "name": "Earplugs Charm II"
+    },
+    {
+        "id": 259,
+        "type": 6,
+        "name": "Earplugs Charm III"
+    },
+    {
+        "id": 260,
+        "type": 6,
+        "name": "Windproof Charm II"
+    },
+    {
+        "id": 261,
+        "type": 6,
+        "name": "Windproof Charm III"
+    },
+    {
+        "id": 262,
+        "type": 6,
+        "name": "Evasion Charm III"
+    },
+    {
+        "id": 263,
+        "type": 6,
+        "name": "KO Charm III"
+    },
+    {
+        "id": 264,
+        "type": 6,
+        "name": "Speed Heal Charm III"
+    }
+]

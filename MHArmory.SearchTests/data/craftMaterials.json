@@ -1,0 +1,7118 @@
+[
+    {
+        "id": 1,
+        "values": {
+            "EN": "Potion"
+        }
+    },
+    {
+        "id": 2,
+        "values": {
+            "EN": "Mega Potion"
+        }
+    },
+    {
+        "id": 3,
+        "values": {
+            "EN": "Max Potion"
+        }
+    },
+    {
+        "id": 4,
+        "values": {
+            "EN": "Ancient Potion"
+        }
+    },
+    {
+        "id": 5,
+        "values": {
+            "EN": "Antidote"
+        }
+    },
+    {
+        "id": 6,
+        "values": {
+            "EN": "Herbal Medicine"
+        }
+    },
+    {
+        "id": 7,
+        "values": {
+            "EN": "Nulberry"
+        }
+    },
+    {
+        "id": 8,
+        "values": {
+            "EN": "Energy Drink"
+        }
+    },
+    {
+        "id": 9,
+        "values": {
+            "EN": "Ration"
+        }
+    },
+    {
+        "id": 10,
+        "values": {
+            "EN": "Rare Steak"
+        }
+    },
+    {
+        "id": 11,
+        "values": {
+            "EN": "Well-done Steak"
+        }
+    },
+    {
+        "id": 12,
+        "values": {
+            "EN": "Burnt Meat"
+        }
+    },
+    {
+        "id": 13,
+        "values": {
+            "EN": "Cool Drink"
+        }
+    },
+    {
+        "id": 14,
+        "values": {
+            "EN": "Nutrients"
+        }
+    },
+    {
+        "id": 15,
+        "values": {
+            "EN": "Mega Nutrients"
+        }
+    },
+    {
+        "id": 16,
+        "values": {
+            "EN": "Immunizer"
+        }
+    },
+    {
+        "id": 17,
+        "values": {
+            "EN": "Astera Jerky"
+        }
+    },
+    {
+        "id": 18,
+        "values": {
+            "EN": "Dash Juice"
+        }
+    },
+    {
+        "id": 20,
+        "values": {
+            "EN": "Might Seed"
+        }
+    },
+    {
+        "id": 21,
+        "values": {
+            "EN": "Demondrug"
+        }
+    },
+    {
+        "id": 22,
+        "values": {
+            "EN": "Mega Demondrug"
+        }
+    },
+    {
+        "id": 23,
+        "values": {
+            "EN": "Might Pill"
+        }
+    },
+    {
+        "id": 24,
+        "values": {
+            "EN": "Adamant Seed"
+        }
+    },
+    {
+        "id": 25,
+        "values": {
+            "EN": "Armorskin"
+        }
+    },
+    {
+        "id": 26,
+        "values": {
+            "EN": "Mega Armorskin"
+        }
+    },
+    {
+        "id": 27,
+        "values": {
+            "EN": "Adamant Pill"
+        }
+    },
+    {
+        "id": 28,
+        "values": {
+            "EN": "Lifepowder"
+        }
+    },
+    {
+        "id": 29,
+        "values": {
+            "EN": "Herbal Powder"
+        }
+    },
+    {
+        "id": 30,
+        "values": {
+            "EN": "Demon Powder"
+        }
+    },
+    {
+        "id": 31,
+        "values": {
+            "EN": "Hardshell Powder"
+        }
+    },
+    {
+        "id": 32,
+        "values": {
+            "EN": "Honey"
+        }
+    },
+    {
+        "id": 33,
+        "values": {
+            "EN": "Herb"
+        }
+    },
+    {
+        "id": 34,
+        "values": {
+            "EN": "Antidote Herb"
+        }
+    },
+    {
+        "id": 35,
+        "values": {
+            "EN": "Fire Herb"
+        }
+    },
+    {
+        "id": 36,
+        "values": {
+            "EN": "Flowfern"
+        }
+    },
+    {
+        "id": 37,
+        "values": {
+            "EN": "Snow Herb"
+        }
+    },
+    {
+        "id": 38,
+        "values": {
+            "EN": "Sleep Herb"
+        }
+    },
+    {
+        "id": 39,
+        "values": {
+            "EN": "Ivy"
+        }
+    },
+    {
+        "id": 40,
+        "values": {
+            "EN": "Smokenut"
+        }
+    },
+    {
+        "id": 41,
+        "values": {
+            "EN": "Dragonfell Berry"
+        }
+    },
+    {
+        "id": 42,
+        "values": {
+            "EN": "Blue Mushroom"
+        }
+    },
+    {
+        "id": 43,
+        "values": {
+            "EN": "Mandragora"
+        }
+    },
+    {
+        "id": 44,
+        "values": {
+            "EN": "Nitroshroom"
+        }
+    },
+    {
+        "id": 45,
+        "values": {
+            "EN": "Devil's Blight"
+        }
+    },
+    {
+        "id": 46,
+        "values": {
+            "EN": "Parashroom"
+        }
+    },
+    {
+        "id": 47,
+        "values": {
+            "EN": "Toadstool"
+        }
+    },
+    {
+        "id": 48,
+        "values": {
+            "EN": "Exciteshroom"
+        }
+    },
+    {
+        "id": 49,
+        "values": {
+            "EN": "Chillshroom"
+        }
+    },
+    {
+        "id": 50,
+        "values": {
+            "EN": "Bitterbug"
+        }
+    },
+    {
+        "id": 51,
+        "values": {
+            "EN": "Flashbug"
+        }
+    },
+    {
+        "id": 52,
+        "values": {
+            "EN": "Godbug"
+        }
+    },
+    {
+        "id": 53,
+        "values": {
+            "EN": "Thunderbug"
+        }
+    },
+    {
+        "id": 54,
+        "values": {
+            "EN": "Baitbug"
+        }
+    },
+    {
+        "id": 55,
+        "values": {
+            "EN": "Kelbi Horn"
+        }
+    },
+    {
+        "id": 56,
+        "values": {
+            "EN": "Dash Extract"
+        }
+    },
+    {
+        "id": 57,
+        "values": {
+            "EN": "Nourishing Extract"
+        }
+    },
+    {
+        "id": 58,
+        "values": {
+            "EN": "Screamer Sac"
+        }
+    },
+    {
+        "id": 59,
+        "values": {
+            "EN": "Catalyst"
+        }
+    },
+    {
+        "id": 60,
+        "values": {
+            "EN": "Tranq Bomb"
+        }
+    },
+    {
+        "id": 61,
+        "values": {
+            "EN": "Flash Pod"
+        }
+    },
+    {
+        "id": 62,
+        "values": {
+            "EN": "Screamer Pod"
+        }
+    },
+    {
+        "id": 63,
+        "values": {
+            "EN": "Dung Pod"
+        }
+    },
+    {
+        "id": 64,
+        "values": {
+            "EN": "Smoke Bomb"
+        }
+    },
+    {
+        "id": 65,
+        "values": {
+            "EN": "Poison Smoke Bomb"
+        }
+    },
+    {
+        "id": 66,
+        "values": {
+            "EN": "Farcaster"
+        }
+    },
+    {
+        "id": 67,
+        "values": {
+            "EN": "Raw Meat"
+        }
+    },
+    {
+        "id": 68,
+        "values": {
+            "EN": "Poisoned Meat"
+        }
+    },
+    {
+        "id": 69,
+        "values": {
+            "EN": "Tinged Meat"
+        }
+    },
+    {
+        "id": 70,
+        "values": {
+            "EN": "Drugged Meat"
+        }
+    },
+    {
+        "id": 71,
+        "values": {
+            "EN": "Gunpowder"
+        }
+    },
+    {
+        "id": 72,
+        "values": {
+            "EN": "Small Barrel"
+        }
+    },
+    {
+        "id": 73,
+        "values": {
+            "EN": "Barrel Bomb"
+        }
+    },
+    {
+        "id": 74,
+        "values": {
+            "EN": "Bounce Bomb"
+        }
+    },
+    {
+        "id": 75,
+        "values": {
+            "EN": "Mega Bounce Bomb"
+        }
+    },
+    {
+        "id": 76,
+        "values": {
+            "EN": "Large Barrel"
+        }
+    },
+    {
+        "id": 77,
+        "values": {
+            "EN": "Large Barrel Bomb"
+        }
+    },
+    {
+        "id": 78,
+        "values": {
+            "EN": "Mega Barrel Bomb"
+        }
+    },
+    {
+        "id": 79,
+        "values": {
+            "EN": "Spider Web"
+        }
+    },
+    {
+        "id": 80,
+        "values": {
+            "EN": "Net"
+        }
+    },
+    {
+        "id": 81,
+        "values": {
+            "EN": "Trap Tool"
+        }
+    },
+    {
+        "id": 82,
+        "values": {
+            "EN": "Pitfall Trap"
+        }
+    },
+    {
+        "id": 83,
+        "values": {
+            "EN": "Shock Trap"
+        }
+    },
+    {
+        "id": 84,
+        "values": {
+            "EN": "Rolled-up Dung"
+        }
+    },
+    {
+        "id": 85,
+        "values": {
+            "EN": "Dung"
+        }
+    },
+    {
+        "id": 86,
+        "values": {
+            "EN": "Arowana Bait"
+        }
+    },
+    {
+        "id": 87,
+        "values": {
+            "EN": "Gunpowderfish Bait"
+        }
+    },
+    {
+        "id": 88,
+        "values": {
+            "EN": "Goldenfish Bait"
+        }
+    },
+    {
+        "id": 89,
+        "values": {
+            "EN": "Boomerang"
+        }
+    },
+    {
+        "id": 90,
+        "values": {
+            "EN": "Binoculars"
+        }
+    },
+    {
+        "id": 91,
+        "values": {
+            "EN": "Powercharm"
+        }
+    },
+    {
+        "id": 92,
+        "values": {
+            "EN": "Powertalon"
+        }
+    },
+    {
+        "id": 93,
+        "values": {
+            "EN": "Armorcharm"
+        }
+    },
+    {
+        "id": 94,
+        "values": {
+            "EN": "Armortalon"
+        }
+    },
+    {
+        "id": 95,
+        "values": {
+            "EN": "Needleberry"
+        }
+    },
+    {
+        "id": 96,
+        "values": {
+            "EN": "Blastnut"
+        }
+    },
+    {
+        "id": 97,
+        "values": {
+            "EN": "Dragonstrike Nut"
+        }
+    },
+    {
+        "id": 98,
+        "values": {
+            "EN": "Slashberry"
+        }
+    },
+    {
+        "id": 99,
+        "values": {
+            "EN": "Latchberry"
+        }
+    },
+    {
+        "id": 100,
+        "values": {
+            "EN": "Bomberry"
+        }
+    },
+    {
+        "id": 101,
+        "values": {
+            "EN": "Flamenut"
+        }
+    },
+    {
+        "id": 102,
+        "values": {
+            "EN": "Blazenut"
+        }
+    },
+    {
+        "id": 103,
+        "values": {
+            "EN": "Gunpowder Level 2"
+        }
+    },
+    {
+        "id": 105,
+        "values": {
+            "EN": "Whetfish Fin"
+        }
+    },
+    {
+        "id": 106,
+        "values": {
+            "EN": "Whetfish Fin+"
+        }
+    },
+    {
+        "id": 107,
+        "values": {
+            "EN": "Sushifish Scale"
+        }
+    },
+    {
+        "id": 108,
+        "values": {
+            "EN": "Great Sushifish Scale"
+        }
+    },
+    {
+        "id": 109,
+        "values": {
+            "EN": "Gunpowderfish Scale"
+        }
+    },
+    {
+        "id": 110,
+        "values": {
+            "EN": "Great Gunpowderfish Scale"
+        }
+    },
+    {
+        "id": 111,
+        "values": {
+            "EN": "Burst Arowana Scale"
+        }
+    },
+    {
+        "id": 112,
+        "values": {
+            "EN": "Great Burst Arowana Scale"
+        }
+    },
+    {
+        "id": 113,
+        "values": {
+            "EN": "Bomb Arowana Scale"
+        }
+    },
+    {
+        "id": 114,
+        "values": {
+            "EN": "Great Bomb Arowana Scale"
+        }
+    },
+    {
+        "id": 115,
+        "values": {
+            "EN": "Empty Phial"
+        }
+    },
+    {
+        "id": 116,
+        "values": {
+            "EN": "Iron Ore"
+        }
+    },
+    {
+        "id": 117,
+        "values": {
+            "EN": "Machalite Ore"
+        }
+    },
+    {
+        "id": 118,
+        "values": {
+            "EN": "Dragonite Ore"
+        }
+    },
+    {
+        "id": 119,
+        "values": {
+            "EN": "Carbalite Ore"
+        }
+    },
+    {
+        "id": 120,
+        "values": {
+            "EN": "Fucium Ore"
+        }
+    },
+    {
+        "id": 121,
+        "values": {
+            "EN": "Earth Crystal"
+        }
+    },
+    {
+        "id": 122,
+        "values": {
+            "EN": "Coral Crystal - Rarity 4"
+        }
+    },
+    {
+        "id": 123,
+        "values": {
+            "EN": "Dragonvein Crystal"
+        }
+    },
+    {
+        "id": 124,
+        "values": {
+            "EN": "Lightcrystal"
+        }
+    },
+    {
+        "id": 125,
+        "values": {
+            "EN": "Novacrystal"
+        }
+    },
+    {
+        "id": 126,
+        "values": {
+            "EN": "Firecell Stone"
+        }
+    },
+    {
+        "id": 127,
+        "values": {
+            "EN": "Aquacore Ore"
+        }
+    },
+    {
+        "id": 128,
+        "values": {
+            "EN": "Spiritcore Ore"
+        }
+    },
+    {
+        "id": 129,
+        "values": {
+            "EN": "Dreamcore Ore"
+        }
+    },
+    {
+        "id": 130,
+        "values": {
+            "EN": "Dragoncore Ore"
+        }
+    },
+    {
+        "id": 131,
+        "values": {
+            "EN": "Armor Sphere"
+        }
+    },
+    {
+        "id": 132,
+        "values": {
+            "EN": "Armor Sphere+"
+        }
+    },
+    {
+        "id": 133,
+        "values": {
+            "EN": "Advanced Armor Sphere"
+        }
+    },
+    {
+        "id": 134,
+        "values": {
+            "EN": "Hard Armor Sphere"
+        }
+    },
+    {
+        "id": 135,
+        "values": {
+            "EN": "Heavy Armor Sphere"
+        }
+    },
+    {
+        "id": 136,
+        "values": {
+            "EN": "Sturdy Bone"
+        }
+    },
+    {
+        "id": 137,
+        "values": {
+            "EN": "Quality Bone"
+        }
+    },
+    {
+        "id": 138,
+        "values": {
+            "EN": "Ancient Bone"
+        }
+    },
+    {
+        "id": 139,
+        "values": {
+            "EN": "Boulder Bone"
+        }
+    },
+    {
+        "id": 140,
+        "values": {
+            "EN": "Coral Bone"
+        }
+    },
+    {
+        "id": 141,
+        "values": {
+            "EN": "Warped Bone"
+        }
+    },
+    {
+        "id": 142,
+        "values": {
+            "EN": "Brutal Bone"
+        }
+    },
+    {
+        "id": 143,
+        "values": {
+            "EN": "Dragonbone Relic"
+        }
+    },
+    {
+        "id": 144,
+        "values": {
+            "EN": "Unknown Skull"
+        }
+    },
+    {
+        "id": 145,
+        "values": {
+            "EN": "Great Hornfly"
+        }
+    },
+    {
+        "id": 146,
+        "values": {
+            "EN": "Sinister Cloth"
+        }
+    },
+    {
+        "id": 147,
+        "values": {
+            "EN": "Monster Bone S"
+        }
+    },
+    {
+        "id": 148,
+        "values": {
+            "EN": "Monster Bone M"
+        }
+    },
+    {
+        "id": 149,
+        "values": {
+            "EN": "Monster Bone L"
+        }
+    },
+    {
+        "id": 150,
+        "values": {
+            "EN": "Monster Bone+"
+        }
+    },
+    {
+        "id": 151,
+        "values": {
+            "EN": "Monster Keenbone"
+        }
+    },
+    {
+        "id": 152,
+        "values": {
+            "EN": "Monster Hardbone"
+        }
+    },
+    {
+        "id": 153,
+        "values": {
+            "EN": "Elder Dragon Bone"
+        }
+    },
+    {
+        "id": 154,
+        "values": {
+            "EN": "Sharp Claw"
+        }
+    },
+    {
+        "id": 155,
+        "values": {
+            "EN": "Piercing Claw"
+        }
+    },
+    {
+        "id": 156,
+        "values": {
+            "EN": "Monster Fluid"
+        }
+    },
+    {
+        "id": 157,
+        "values": {
+            "EN": "Monster Broth"
+        }
+    },
+    {
+        "id": 158,
+        "values": {
+            "EN": "Poison Sac"
+        }
+    },
+    {
+        "id": 159,
+        "values": {
+            "EN": "Toxin Sac"
+        }
+    },
+    {
+        "id": 160,
+        "values": {
+            "EN": "Paralysis Sac"
+        }
+    },
+    {
+        "id": 161,
+        "values": {
+            "EN": "Omniplegia Sac"
+        }
+    },
+    {
+        "id": 162,
+        "values": {
+            "EN": "Sleep Sac"
+        }
+    },
+    {
+        "id": 163,
+        "values": {
+            "EN": "Coma Sac"
+        }
+    },
+    {
+        "id": 164,
+        "values": {
+            "EN": "Flame Sac"
+        }
+    },
+    {
+        "id": 165,
+        "values": {
+            "EN": "Inferno Sac"
+        }
+    },
+    {
+        "id": 166,
+        "values": {
+            "EN": "Aqua Sac"
+        }
+    },
+    {
+        "id": 167,
+        "values": {
+            "EN": "Torrent Sac"
+        }
+    },
+    {
+        "id": 168,
+        "values": {
+            "EN": "Frost Sac"
+        }
+    },
+    {
+        "id": 169,
+        "values": {
+            "EN": "Freezer Sac"
+        }
+    },
+    {
+        "id": 170,
+        "values": {
+            "EN": "Electro Sac"
+        }
+    },
+    {
+        "id": 171,
+        "values": {
+            "EN": "Thunder Sac"
+        }
+    },
+    {
+        "id": 172,
+        "values": {
+            "EN": "Bird Wyvern Gem"
+        }
+    },
+    {
+        "id": 173,
+        "values": {
+            "EN": "Wyvern Gem"
+        }
+    },
+    {
+        "id": 174,
+        "values": {
+            "EN": "Elder Dragon Blood"
+        }
+    },
+    {
+        "id": 175,
+        "values": {
+            "EN": "Mosswine Hide"
+        }
+    },
+    {
+        "id": 176,
+        "values": {
+            "EN": "Warm Pelt"
+        }
+    },
+    {
+        "id": 177,
+        "values": {
+            "EN": "High-quality Pelt"
+        }
+    },
+    {
+        "id": 178,
+        "values": {
+            "EN": "Vespoid Shell"
+        }
+    },
+    {
+        "id": 179,
+        "values": {
+            "EN": "Vespoid Carapace"
+        }
+    },
+    {
+        "id": 180,
+        "values": {
+            "EN": "Vespoid Wing"
+        }
+    },
+    {
+        "id": 181,
+        "values": {
+            "EN": "Vespoid Innerwing"
+        }
+    },
+    {
+        "id": 182,
+        "values": {
+            "EN": "Hornetaur Shell"
+        }
+    },
+    {
+        "id": 183,
+        "values": {
+            "EN": "Hornetaur Wing"
+        }
+    },
+    {
+        "id": 184,
+        "values": {
+            "EN": "Hornetaur Head"
+        }
+    },
+    {
+        "id": 185,
+        "values": {
+            "EN": "Hornetaur Carapace"
+        }
+    },
+    {
+        "id": 186,
+        "values": {
+            "EN": "Hornetaur Innerwing"
+        }
+    },
+    {
+        "id": 187,
+        "values": {
+            "EN": "Gajau Skin"
+        }
+    },
+    {
+        "id": 188,
+        "values": {
+            "EN": "Gajau Whisker"
+        }
+    },
+    {
+        "id": 189,
+        "values": {
+            "EN": "Gajau Scale"
+        }
+    },
+    {
+        "id": 190,
+        "values": {
+            "EN": "Grand Gajau Whisker"
+        }
+    },
+    {
+        "id": 191,
+        "values": {
+            "EN": "Wingdrake Hide"
+        }
+    },
+    {
+        "id": 192,
+        "values": {
+            "EN": "Wingdrake Hide+"
+        }
+    },
+    {
+        "id": 193,
+        "values": {
+            "EN": "Barnos Hide+"
+        }
+    },
+    {
+        "id": 194,
+        "values": {
+            "EN": "Barnos Talon"
+        }
+    },
+    {
+        "id": 195,
+        "values": {
+            "EN": "Kestodon Shell"
+        }
+    },
+    {
+        "id": 196,
+        "values": {
+            "EN": "Kestodon Scalp"
+        }
+    },
+    {
+        "id": 197,
+        "values": {
+            "EN": "Kestodon Carapace"
+        }
+    },
+    {
+        "id": 198,
+        "values": {
+            "EN": "Gastodon Carapace"
+        }
+    },
+    {
+        "id": 199,
+        "values": {
+            "EN": "Gastodon Horn"
+        }
+    },
+    {
+        "id": 200,
+        "values": {
+            "EN": "Jagras Scale"
+        }
+    },
+    {
+        "id": 201,
+        "values": {
+            "EN": "Jagras Hide"
+        }
+    },
+    {
+        "id": 202,
+        "values": {
+            "EN": "Jagras Scale+"
+        }
+    },
+    {
+        "id": 203,
+        "values": {
+            "EN": "Jagras Hide+"
+        }
+    },
+    {
+        "id": 204,
+        "values": {
+            "EN": "Shamos Scale"
+        }
+    },
+    {
+        "id": 205,
+        "values": {
+            "EN": "Shamos Hide"
+        }
+    },
+    {
+        "id": 206,
+        "values": {
+            "EN": "Shamos Scale+"
+        }
+    },
+    {
+        "id": 207,
+        "values": {
+            "EN": "Shamos Hide+"
+        }
+    },
+    {
+        "id": 208,
+        "values": {
+            "EN": "Girros Scale"
+        }
+    },
+    {
+        "id": 209,
+        "values": {
+            "EN": "Girros Hide"
+        }
+    },
+    {
+        "id": 210,
+        "values": {
+            "EN": "Girros Fang"
+        }
+    },
+    {
+        "id": 211,
+        "values": {
+            "EN": "Girros Scale+"
+        }
+    },
+    {
+        "id": 212,
+        "values": {
+            "EN": "Girros Hide+"
+        }
+    },
+    {
+        "id": 213,
+        "values": {
+            "EN": "Great Jagras Scale"
+        }
+    },
+    {
+        "id": 214,
+        "values": {
+            "EN": "Great Jagras Hide"
+        }
+    },
+    {
+        "id": 215,
+        "values": {
+            "EN": "Great Jagras Mane"
+        }
+    },
+    {
+        "id": 216,
+        "values": {
+            "EN": "Great Jagras Claw"
+        }
+    },
+    {
+        "id": 217,
+        "values": {
+            "EN": "Great Jagras Scale+"
+        }
+    },
+    {
+        "id": 218,
+        "values": {
+            "EN": "Great Jagras Hide+"
+        }
+    },
+    {
+        "id": 219,
+        "values": {
+            "EN": "Great Jagras Claw+"
+        }
+    },
+    {
+        "id": 220,
+        "values": {
+            "EN": "Kulu-Ya-Ku Scale"
+        }
+    },
+    {
+        "id": 221,
+        "values": {
+            "EN": "Kulu-Ya-Ku Hide"
+        }
+    },
+    {
+        "id": 222,
+        "values": {
+            "EN": "Kulu-Ya-Ku Plume"
+        }
+    },
+    {
+        "id": 223,
+        "values": {
+            "EN": "Kulu-Ya-Ku Beak"
+        }
+    },
+    {
+        "id": 224,
+        "values": {
+            "EN": "Kulu-Ya-Ku Scale+"
+        }
+    },
+    {
+        "id": 225,
+        "values": {
+            "EN": "Kulu-Ya-Ku Hide+"
+        }
+    },
+    {
+        "id": 226,
+        "values": {
+            "EN": "Kulu-Ya-Ku Plume+"
+        }
+    },
+    {
+        "id": 227,
+        "values": {
+            "EN": "Kulu-Ya-Ku Beak+"
+        }
+    },
+    {
+        "id": 228,
+        "values": {
+            "EN": "Pukei-Pukei Scale"
+        }
+    },
+    {
+        "id": 229,
+        "values": {
+            "EN": "Pukei-Pukei Shell"
+        }
+    },
+    {
+        "id": 230,
+        "values": {
+            "EN": "Pukei-Pukei Quill"
+        }
+    },
+    {
+        "id": 231,
+        "values": {
+            "EN": "Pukei-Pukei Sac"
+        }
+    },
+    {
+        "id": 232,
+        "values": {
+            "EN": "Pukei-Pukei Tail"
+        }
+    },
+    {
+        "id": 233,
+        "values": {
+            "EN": "Pukei-Pukei Scale+"
+        }
+    },
+    {
+        "id": 234,
+        "values": {
+            "EN": "Pukei-Pukei Carapace"
+        }
+    },
+    {
+        "id": 235,
+        "values": {
+            "EN": "Pukei-Pukei Wing"
+        }
+    },
+    {
+        "id": 236,
+        "values": {
+            "EN": "Pukei-Pukei Sac+"
+        }
+    },
+    {
+        "id": 237,
+        "values": {
+            "EN": "Barroth Shell"
+        }
+    },
+    {
+        "id": 238,
+        "values": {
+            "EN": "Barroth Ridge"
+        }
+    },
+    {
+        "id": 239,
+        "values": {
+            "EN": "Barroth Claw"
+        }
+    },
+    {
+        "id": 240,
+        "values": {
+            "EN": "Barroth Scalp"
+        }
+    },
+    {
+        "id": 241,
+        "values": {
+            "EN": "Barroth Tail"
+        }
+    },
+    {
+        "id": 242,
+        "values": {
+            "EN": "Fertile Mud"
+        }
+    },
+    {
+        "id": 243,
+        "values": {
+            "EN": "Barroth Carapace"
+        }
+    },
+    {
+        "id": 244,
+        "values": {
+            "EN": "Barroth Ridge+"
+        }
+    },
+    {
+        "id": 245,
+        "values": {
+            "EN": "Barroth Claw+"
+        }
+    },
+    {
+        "id": 246,
+        "values": {
+            "EN": "Jyuratodus Scale"
+        }
+    },
+    {
+        "id": 247,
+        "values": {
+            "EN": "Jyuratodus Shell"
+        }
+    },
+    {
+        "id": 248,
+        "values": {
+            "EN": "Jyuratodus Fang"
+        }
+    },
+    {
+        "id": 249,
+        "values": {
+            "EN": "Jyuratodus Fin"
+        }
+    },
+    {
+        "id": 250,
+        "values": {
+            "EN": "Jyuratodus Scale+"
+        }
+    },
+    {
+        "id": 251,
+        "values": {
+            "EN": "Jyuratodus Carapace"
+        }
+    },
+    {
+        "id": 252,
+        "values": {
+            "EN": "Jyuratodus Fang+"
+        }
+    },
+    {
+        "id": 253,
+        "values": {
+            "EN": "Jyuratodus Fin+"
+        }
+    },
+    {
+        "id": 254,
+        "values": {
+            "EN": "Tobi-Kadachi Scale"
+        }
+    },
+    {
+        "id": 255,
+        "values": {
+            "EN": "Tobi-Kadachi Pelt"
+        }
+    },
+    {
+        "id": 256,
+        "values": {
+            "EN": "Tobi-Kadachi Membrane"
+        }
+    },
+    {
+        "id": 257,
+        "values": {
+            "EN": "Tobi-Kadachi Claw"
+        }
+    },
+    {
+        "id": 258,
+        "values": {
+            "EN": "Tobi-Kadachi Electrode"
+        }
+    },
+    {
+        "id": 259,
+        "values": {
+            "EN": "Tobi-Kadachi Scale+"
+        }
+    },
+    {
+        "id": 260,
+        "values": {
+            "EN": "Tobi-Kadachi Pelt+"
+        }
+    },
+    {
+        "id": 261,
+        "values": {
+            "EN": "Tobi-Kadachi Claw+"
+        }
+    },
+    {
+        "id": 262,
+        "values": {
+            "EN": "Tobi-Kadachi Electrode+"
+        }
+    },
+    {
+        "id": 263,
+        "values": {
+            "EN": "Anjanath Scale"
+        }
+    },
+    {
+        "id": 264,
+        "values": {
+            "EN": "Anjanath Pelt"
+        }
+    },
+    {
+        "id": 265,
+        "values": {
+            "EN": "Anjanath Fang"
+        }
+    },
+    {
+        "id": 266,
+        "values": {
+            "EN": "Anjanath Nosebone"
+        }
+    },
+    {
+        "id": 267,
+        "values": {
+            "EN": "Anjanath Tail"
+        }
+    },
+    {
+        "id": 268,
+        "values": {
+            "EN": "Anjanath Plate"
+        }
+    },
+    {
+        "id": 269,
+        "values": {
+            "EN": "Anjanath Scale+"
+        }
+    },
+    {
+        "id": 270,
+        "values": {
+            "EN": "Anjanath Pelt+"
+        }
+    },
+    {
+        "id": 271,
+        "values": {
+            "EN": "Anjanath Fang+"
+        }
+    },
+    {
+        "id": 272,
+        "values": {
+            "EN": "Anjanath Nosebone+"
+        }
+    },
+    {
+        "id": 273,
+        "values": {
+            "EN": "Anjanath Gem"
+        }
+    },
+    {
+        "id": 274,
+        "values": {
+            "EN": "Rathian Scale"
+        }
+    },
+    {
+        "id": 275,
+        "values": {
+            "EN": "Rathian Shell"
+        }
+    },
+    {
+        "id": 276,
+        "values": {
+            "EN": "Rathian Webbing"
+        }
+    },
+    {
+        "id": 277,
+        "values": {
+            "EN": "Rathian Spike"
+        }
+    },
+    {
+        "id": 278,
+        "values": {
+            "EN": "Rathian Plate"
+        }
+    },
+    {
+        "id": 279,
+        "values": {
+            "EN": "Rathian Scale+"
+        }
+    },
+    {
+        "id": 280,
+        "values": {
+            "EN": "Rathian Carapace"
+        }
+    },
+    {
+        "id": 281,
+        "values": {
+            "EN": "Rathian Spike+"
+        }
+    },
+    {
+        "id": 282,
+        "values": {
+            "EN": "Rathian Ruby"
+        }
+    },
+    {
+        "id": 283,
+        "values": {
+            "EN": "Pink Rathian Scale+"
+        }
+    },
+    {
+        "id": 284,
+        "values": {
+            "EN": "Pink Rathian Carapace"
+        }
+    },
+    {
+        "id": 285,
+        "values": {
+            "EN": "Tzitzi-Ya-Ku Scale"
+        }
+    },
+    {
+        "id": 286,
+        "values": {
+            "EN": "Tzitzi-Ya-Ku Hide"
+        }
+    },
+    {
+        "id": 287,
+        "values": {
+            "EN": "Tzitzi-Ya-Ku Claw"
+        }
+    },
+    {
+        "id": 288,
+        "values": {
+            "EN": "Tzitzi-Ya-Ku Photophore"
+        }
+    },
+    {
+        "id": 289,
+        "values": {
+            "EN": "Tzitzi-Ya-Ku Scale+"
+        }
+    },
+    {
+        "id": 290,
+        "values": {
+            "EN": "Tzitzi-Ya-Ku Hide+"
+        }
+    },
+    {
+        "id": 291,
+        "values": {
+            "EN": "Tzitzi-Ya-Ku Claw+"
+        }
+    },
+    {
+        "id": 292,
+        "values": {
+            "EN": "Tzitzi-Ya-Ku Photophore+"
+        }
+    },
+    {
+        "id": 293,
+        "values": {
+            "EN": "Paolumu Pelt"
+        }
+    },
+    {
+        "id": 294,
+        "values": {
+            "EN": "Paolumu Scale"
+        }
+    },
+    {
+        "id": 295,
+        "values": {
+            "EN": "Paolumu Shell"
+        }
+    },
+    {
+        "id": 296,
+        "values": {
+            "EN": "Paolumu Webbing"
+        }
+    },
+    {
+        "id": 297,
+        "values": {
+            "EN": "Paolumu Pelt+"
+        }
+    },
+    {
+        "id": 298,
+        "values": {
+            "EN": "Paolumu Scale+"
+        }
+    },
+    {
+        "id": 299,
+        "values": {
+            "EN": "Paolumu Carapace+"
+        }
+    },
+    {
+        "id": 300,
+        "values": {
+            "EN": "Paolumu Wing"
+        }
+    },
+    {
+        "id": 301,
+        "values": {
+            "EN": "Great Girros Scale"
+        }
+    },
+    {
+        "id": 302,
+        "values": {
+            "EN": "Great Girros Hide"
+        }
+    },
+    {
+        "id": 303,
+        "values": {
+            "EN": "Great Girros Hood"
+        }
+    },
+    {
+        "id": 304,
+        "values": {
+            "EN": "Great Girros Fang"
+        }
+    },
+    {
+        "id": 305,
+        "values": {
+            "EN": "Great Girros Tail"
+        }
+    },
+    {
+        "id": 306,
+        "values": {
+            "EN": "Great Girros Scale+"
+        }
+    },
+    {
+        "id": 307,
+        "values": {
+            "EN": "Great Girros Hide+"
+        }
+    },
+    {
+        "id": 308,
+        "values": {
+            "EN": "Great Girros Hood+"
+        }
+    },
+    {
+        "id": 309,
+        "values": {
+            "EN": "Great Girros Fang+"
+        }
+    },
+    {
+        "id": 310,
+        "values": {
+            "EN": "Radobaan Scale"
+        }
+    },
+    {
+        "id": 311,
+        "values": {
+            "EN": "Radobaan Shell"
+        }
+    },
+    {
+        "id": 312,
+        "values": {
+            "EN": "Radobaan Oilshell"
+        }
+    },
+    {
+        "id": 313,
+        "values": {
+            "EN": "Wyvern Bonemass"
+        }
+    },
+    {
+        "id": 314,
+        "values": {
+            "EN": "Radobaan Marrow"
+        }
+    },
+    {
+        "id": 315,
+        "values": {
+            "EN": "Radobaan Scale+"
+        }
+    },
+    {
+        "id": 316,
+        "values": {
+            "EN": "Radobaan Carapace"
+        }
+    },
+    {
+        "id": 317,
+        "values": {
+            "EN": "Radobaan Medulla"
+        }
+    },
+    {
+        "id": 318,
+        "values": {
+            "EN": "Legiana Scale"
+        }
+    },
+    {
+        "id": 319,
+        "values": {
+            "EN": "Legiana Hide"
+        }
+    },
+    {
+        "id": 320,
+        "values": {
+            "EN": "Legiana Claw"
+        }
+    },
+    {
+        "id": 321,
+        "values": {
+            "EN": "Legiana Webbing"
+        }
+    },
+    {
+        "id": 322,
+        "values": {
+            "EN": "Legiana Tail Webbing"
+        }
+    },
+    {
+        "id": 323,
+        "values": {
+            "EN": "Legiana Plate"
+        }
+    },
+    {
+        "id": 324,
+        "values": {
+            "EN": "Legiana Scale+"
+        }
+    },
+    {
+        "id": 325,
+        "values": {
+            "EN": "Legiana Hide+"
+        }
+    },
+    {
+        "id": 326,
+        "values": {
+            "EN": "Legiana Claw+"
+        }
+    },
+    {
+        "id": 327,
+        "values": {
+            "EN": "Legiana Wing"
+        }
+    },
+    {
+        "id": 328,
+        "values": {
+            "EN": "Legiana Gem"
+        }
+    },
+    {
+        "id": 329,
+        "values": {
+            "EN": "Odogaron Scale"
+        }
+    },
+    {
+        "id": 330,
+        "values": {
+            "EN": "Odogaron Sinew"
+        }
+    },
+    {
+        "id": 331,
+        "values": {
+            "EN": "Odogaron Claw"
+        }
+    },
+    {
+        "id": 332,
+        "values": {
+            "EN": "Odogaron Fang"
+        }
+    },
+    {
+        "id": 333,
+        "values": {
+            "EN": "Odogaron Tail"
+        }
+    },
+    {
+        "id": 334,
+        "values": {
+            "EN": "Odogaron Plate"
+        }
+    },
+    {
+        "id": 335,
+        "values": {
+            "EN": "Odogaron Scale+"
+        }
+    },
+    {
+        "id": 336,
+        "values": {
+            "EN": "Odogaron Sinew+"
+        }
+    },
+    {
+        "id": 337,
+        "values": {
+            "EN": "Odogaron Claw+"
+        }
+    },
+    {
+        "id": 338,
+        "values": {
+            "EN": "Odogaron Fang+"
+        }
+    },
+    {
+        "id": 339,
+        "values": {
+            "EN": "Odogaron Gem"
+        }
+    },
+    {
+        "id": 340,
+        "values": {
+            "EN": "Rathalos Scale"
+        }
+    },
+    {
+        "id": 341,
+        "values": {
+            "EN": "Rathalos Shell"
+        }
+    },
+    {
+        "id": 342,
+        "values": {
+            "EN": "Rathalos Webbing"
+        }
+    },
+    {
+        "id": 343,
+        "values": {
+            "EN": "Rathalos Tail"
+        }
+    },
+    {
+        "id": 344,
+        "values": {
+            "EN": "Rath Wingtalon"
+        }
+    },
+    {
+        "id": 345,
+        "values": {
+            "EN": "Rathalos Marrow"
+        }
+    },
+    {
+        "id": 346,
+        "values": {
+            "EN": "Rathalos Plate"
+        }
+    },
+    {
+        "id": 347,
+        "values": {
+            "EN": "Rathalos Scale+"
+        }
+    },
+    {
+        "id": 348,
+        "values": {
+            "EN": "Rathalos Carapace"
+        }
+    },
+    {
+        "id": 349,
+        "values": {
+            "EN": "Rathalos Wing"
+        }
+    },
+    {
+        "id": 350,
+        "values": {
+            "EN": "Rathalos Medulla"
+        }
+    },
+    {
+        "id": 351,
+        "values": {
+            "EN": "Rathalos Ruby"
+        }
+    },
+    {
+        "id": 352,
+        "values": {
+            "EN": "Azure Rathalos Scale+"
+        }
+    },
+    {
+        "id": 353,
+        "values": {
+            "EN": "Azure Rathalos Carapace"
+        }
+    },
+    {
+        "id": 354,
+        "values": {
+            "EN": "Azure Rathalos Tail"
+        }
+    },
+    {
+        "id": 355,
+        "values": {
+            "EN": "Azure Rathalos Wing"
+        }
+    },
+    {
+        "id": 356,
+        "values": {
+            "EN": "Diablos Shell"
+        }
+    },
+    {
+        "id": 357,
+        "values": {
+            "EN": "Diablos Ridge"
+        }
+    },
+    {
+        "id": 358,
+        "values": {
+            "EN": "Diablos Tailcase"
+        }
+    },
+    {
+        "id": 359,
+        "values": {
+            "EN": "Diablos Fang"
+        }
+    },
+    {
+        "id": 360,
+        "values": {
+            "EN": "Twisted Horn"
+        }
+    },
+    {
+        "id": 361,
+        "values": {
+            "EN": "Diablos Marrow"
+        }
+    },
+    {
+        "id": 362,
+        "values": {
+            "EN": "Diablos Carapace"
+        }
+    },
+    {
+        "id": 363,
+        "values": {
+            "EN": "Diablos Ridge+"
+        }
+    },
+    {
+        "id": 364,
+        "values": {
+            "EN": "Majestic Horn"
+        }
+    },
+    {
+        "id": 365,
+        "values": {
+            "EN": "Blos Medulla"
+        }
+    },
+    {
+        "id": 366,
+        "values": {
+            "EN": "Black Diablos Carapace"
+        }
+    },
+    {
+        "id": 367,
+        "values": {
+            "EN": "Black Diablos Ridge+"
+        }
+    },
+    {
+        "id": 368,
+        "values": {
+            "EN": "Black Spiral Horn+"
+        }
+    },
+    {
+        "id": 369,
+        "values": {
+            "EN": "Kirin Hide"
+        }
+    },
+    {
+        "id": 370,
+        "values": {
+            "EN": "Kirin Tail"
+        }
+    },
+    {
+        "id": 371,
+        "values": {
+            "EN": "Kirin Mane"
+        }
+    },
+    {
+        "id": 372,
+        "values": {
+            "EN": "Kirin Thunderhorn"
+        }
+    },
+    {
+        "id": 373,
+        "values": {
+            "EN": "Kirin Hide+"
+        }
+    },
+    {
+        "id": 374,
+        "values": {
+            "EN": "Kirin Thundertail"
+        }
+    },
+    {
+        "id": 375,
+        "values": {
+            "EN": "Kirin Azure Horn"
+        }
+    },
+    {
+        "id": 376,
+        "values": {
+            "EN": "Zorah Magdaros Heat Scale"
+        }
+    },
+    {
+        "id": 377,
+        "values": {
+            "EN": "Zorah Magdaros Carapace"
+        }
+    },
+    {
+        "id": 378,
+        "values": {
+            "EN": "Zorah Magdaros Ridge"
+        }
+    },
+    {
+        "id": 379,
+        "values": {
+            "EN": "Zorah Magdaros Pleura"
+        }
+    },
+    {
+        "id": 380,
+        "values": {
+            "EN": "Zorah Magdaros Magma"
+        }
+    },
+    {
+        "id": 381,
+        "values": {
+            "EN": "Zorah Magdaros Gem"
+        }
+    },
+    {
+        "id": 382,
+        "values": {
+            "EN": "Dodogama Scale+"
+        }
+    },
+    {
+        "id": 383,
+        "values": {
+            "EN": "Dodogama Hide+"
+        }
+    },
+    {
+        "id": 384,
+        "values": {
+            "EN": "Dodogama Jaw"
+        }
+    },
+    {
+        "id": 385,
+        "values": {
+            "EN": "Dodogama Talon"
+        }
+    },
+    {
+        "id": 386,
+        "values": {
+            "EN": "Dodogama Tail"
+        }
+    },
+    {
+        "id": 387,
+        "values": {
+            "EN": "Lavasioth Scale+"
+        }
+    },
+    {
+        "id": 388,
+        "values": {
+            "EN": "Lavasioth Carapace"
+        }
+    },
+    {
+        "id": 389,
+        "values": {
+            "EN": "Lavasioth Fang+"
+        }
+    },
+    {
+        "id": 390,
+        "values": {
+            "EN": "Lavasioth Fin+"
+        }
+    },
+    {
+        "id": 391,
+        "values": {
+            "EN": "Uragaan Scale+"
+        }
+    },
+    {
+        "id": 392,
+        "values": {
+            "EN": "Uragaan Carapace"
+        }
+    },
+    {
+        "id": 393,
+        "values": {
+            "EN": "Uragaan Jaw"
+        }
+    },
+    {
+        "id": 394,
+        "values": {
+            "EN": "Uragaan Scute"
+        }
+    },
+    {
+        "id": 395,
+        "values": {
+            "EN": "Uragaan Marrow"
+        }
+    },
+    {
+        "id": 396,
+        "values": {
+            "EN": "Uragaan Ruby"
+        }
+    },
+    {
+        "id": 397,
+        "values": {
+            "EN": "Lava Nugget"
+        }
+    },
+    {
+        "id": 398,
+        "values": {
+            "EN": "Bazelgeuse Scale+"
+        }
+    },
+    {
+        "id": 399,
+        "values": {
+            "EN": "Bazelgeuse Carapace"
+        }
+    },
+    {
+        "id": 400,
+        "values": {
+            "EN": "Bazelgeuse Tail"
+        }
+    },
+    {
+        "id": 401,
+        "values": {
+            "EN": "Bazelgeuse Fuse"
+        }
+    },
+    {
+        "id": 402,
+        "values": {
+            "EN": "Bazelgeuse Talon"
+        }
+    },
+    {
+        "id": 403,
+        "values": {
+            "EN": "Bazelgeuse Wing"
+        }
+    },
+    {
+        "id": 404,
+        "values": {
+            "EN": "Bazelgeuse Gem"
+        }
+    },
+    {
+        "id": 405,
+        "values": {
+            "EN": "Immortal Dragonscale"
+        }
+    },
+    {
+        "id": 406,
+        "values": {
+            "EN": "Nergigante Carapace"
+        }
+    },
+    {
+        "id": 407,
+        "values": {
+            "EN": "Nergigante Tail"
+        }
+    },
+    {
+        "id": 408,
+        "values": {
+            "EN": "Nergigante Horn+"
+        }
+    },
+    {
+        "id": 409,
+        "values": {
+            "EN": "Nergigante Talon"
+        }
+    },
+    {
+        "id": 410,
+        "values": {
+            "EN": "Nergigante Regrowth Plate"
+        }
+    },
+    {
+        "id": 411,
+        "values": {
+            "EN": "Nergigante Gem"
+        }
+    },
+    {
+        "id": 412,
+        "values": {
+            "EN": "Deceased Scale"
+        }
+    },
+    {
+        "id": 413,
+        "values": {
+            "EN": "Vaal Hazak Carapace"
+        }
+    },
+    {
+        "id": 414,
+        "values": {
+            "EN": "Vaal Hazak Membrane"
+        }
+    },
+    {
+        "id": 415,
+        "values": {
+            "EN": "Vaal Hazak Tail"
+        }
+    },
+    {
+        "id": 416,
+        "values": {
+            "EN": "Vaal Hazak Fang+"
+        }
+    },
+    {
+        "id": 417,
+        "values": {
+            "EN": "Vaal Hazak Talon"
+        }
+    },
+    {
+        "id": 418,
+        "values": {
+            "EN": "Vaal Hazak Wing"
+        }
+    },
+    {
+        "id": 419,
+        "values": {
+            "EN": "Vaal Hazak Gem"
+        }
+    },
+    {
+        "id": 420,
+        "values": {
+            "EN": "Teostra Carapace"
+        }
+    },
+    {
+        "id": 421,
+        "values": {
+            "EN": "Teostra Mane"
+        }
+    },
+    {
+        "id": 422,
+        "values": {
+            "EN": "Teostra Tail"
+        }
+    },
+    {
+        "id": 423,
+        "values": {
+            "EN": "Teostra Horn+"
+        }
+    },
+    {
+        "id": 424,
+        "values": {
+            "EN": "Fire Dragon Scale+"
+        }
+    },
+    {
+        "id": 425,
+        "values": {
+            "EN": "Teostra Claw+"
+        }
+    },
+    {
+        "id": 426,
+        "values": {
+            "EN": "Teostra Webbing"
+        }
+    },
+    {
+        "id": 427,
+        "values": {
+            "EN": "Teostra Powder"
+        }
+    },
+    {
+        "id": 428,
+        "values": {
+            "EN": "Teostra Gem"
+        }
+    },
+    {
+        "id": 429,
+        "values": {
+            "EN": "Daora Carapace"
+        }
+    },
+    {
+        "id": 430,
+        "values": {
+            "EN": "Daora Dragon Scale+"
+        }
+    },
+    {
+        "id": 431,
+        "values": {
+            "EN": "Daora Webbing"
+        }
+    },
+    {
+        "id": 432,
+        "values": {
+            "EN": "Daora Horn+"
+        }
+    },
+    {
+        "id": 433,
+        "values": {
+            "EN": "Daora Tail"
+        }
+    },
+    {
+        "id": 434,
+        "values": {
+            "EN": "Daora Claw+"
+        }
+    },
+    {
+        "id": 435,
+        "values": {
+            "EN": "Daora Gem"
+        }
+    },
+    {
+        "id": 436,
+        "values": {
+            "EN": "Xeno'jiiva Soulscale"
+        }
+    },
+    {
+        "id": 437,
+        "values": {
+            "EN": "Xeno'jiiva Shell"
+        }
+    },
+    {
+        "id": 438,
+        "values": {
+            "EN": "Xeno'jiiva Veil"
+        }
+    },
+    {
+        "id": 439,
+        "values": {
+            "EN": "Xeno'jiiva Tail"
+        }
+    },
+    {
+        "id": 440,
+        "values": {
+            "EN": "Xeno'jiiva Horn"
+        }
+    },
+    {
+        "id": 441,
+        "values": {
+            "EN": "Xeno'jiiva Claw"
+        }
+    },
+    {
+        "id": 442,
+        "values": {
+            "EN": "Xeno'jiiva Wing"
+        }
+    },
+    {
+        "id": 443,
+        "values": {
+            "EN": "Xeno'jiiva Gem"
+        }
+    },
+    {
+        "id": 444,
+        "values": {
+            "EN": "Tailraider Voucher"
+        }
+    },
+    {
+        "id": 445,
+        "values": {
+            "EN": "Gajalaka Sketch"
+        }
+    },
+    {
+        "id": 446,
+        "values": {
+            "EN": "Black Bandage"
+        }
+    },
+    {
+        "id": 447,
+        "values": {
+            "EN": "Black Crystal Ticket"
+        }
+    },
+    {
+        "id": 448,
+        "values": {
+            "EN": "Wiggler Ticket"
+        }
+    },
+    {
+        "id": 449,
+        "values": {
+            "EN": "Watcher Lens"
+        }
+    },
+    {
+        "id": 450,
+        "values": {
+            "EN": "Nora Brave Trophy"
+        }
+    },
+    {
+        "id": 451,
+        "values": {
+            "EN": "SFV Ticket"
+        }
+    },
+    {
+        "id": 452,
+        "values": {
+            "EN": "Azure Star Shard"
+        }
+    },
+    {
+        "id": 453,
+        "values": {
+            "EN": "Mysterious Feystone"
+        }
+    },
+    {
+        "id": 454,
+        "values": {
+            "EN": "Glowing Feystone"
+        }
+    },
+    {
+        "id": 455,
+        "values": {
+            "EN": "Worn Feystone"
+        }
+    },
+    {
+        "id": 456,
+        "values": {
+            "EN": "Warped Feystone"
+        }
+    },
+    {
+        "id": 457,
+        "values": {
+            "EN": "Sullied Streamstone"
+        }
+    },
+    {
+        "id": 458,
+        "values": {
+            "EN": "Shining Streamstone"
+        }
+    },
+    {
+        "id": 459,
+        "values": {
+            "EN": "Streamstone Shard"
+        }
+    },
+    {
+        "id": 460,
+        "values": {
+            "EN": "Streamstone"
+        }
+    },
+    {
+        "id": 461,
+        "values": {
+            "EN": "Gleaming Streamstone"
+        }
+    },
+    {
+        "id": 462,
+        "values": {
+            "EN": "Warrior's Streamstone: Sword"
+        }
+    },
+    {
+        "id": 463,
+        "values": {
+            "EN": "Warrior's Streamstone: Blade"
+        }
+    },
+    {
+        "id": 464,
+        "values": {
+            "EN": "Warrior's Streamstone: Hammer"
+        }
+    },
+    {
+        "id": 465,
+        "values": {
+            "EN": "Warrior's Streamstone: Lance"
+        }
+    },
+    {
+        "id": 466,
+        "values": {
+            "EN": "Warrior's Streamstone: Axe"
+        }
+    },
+    {
+        "id": 467,
+        "values": {
+            "EN": "Warrior's Streamstone: Shaft"
+        }
+    },
+    {
+        "id": 468,
+        "values": {
+            "EN": "Warrior's Streamstone: Ranged"
+        }
+    },
+    {
+        "id": 469,
+        "values": {
+            "EN": "Hero's Streamstone: Sword"
+        }
+    },
+    {
+        "id": 470,
+        "values": {
+            "EN": "Hero's Streamstone: Blade"
+        }
+    },
+    {
+        "id": 471,
+        "values": {
+            "EN": "Hero's Streamstone: Hammer"
+        }
+    },
+    {
+        "id": 472,
+        "values": {
+            "EN": "Hero's Streamstone: Lance"
+        }
+    },
+    {
+        "id": 473,
+        "values": {
+            "EN": "Hero's Streamstone: Axe"
+        }
+    },
+    {
+        "id": 474,
+        "values": {
+            "EN": "Hero's Streamstone: Shaft"
+        }
+    },
+    {
+        "id": 475,
+        "values": {
+            "EN": "Hero's Streamstone: Ranged"
+        }
+    },
+    {
+        "id": 476,
+        "values": {
+            "EN": "Voucher"
+        }
+    },
+    {
+        "id": 477,
+        "values": {
+            "EN": "First Wyverian Print"
+        }
+    },
+    {
+        "id": 478,
+        "values": {
+            "EN": "Deluxe First Wyverian Print"
+        }
+    },
+    {
+        "id": 479,
+        "values": {
+            "EN": "Steel Wyverian Print"
+        }
+    },
+    {
+        "id": 480,
+        "values": {
+            "EN": "Silver Wyverian Print"
+        }
+    },
+    {
+        "id": 481,
+        "values": {
+            "EN": "Gold Wyverian Print"
+        }
+    },
+    {
+        "id": 482,
+        "values": {
+            "EN": "Commendation"
+        }
+    },
+    {
+        "id": 483,
+        "values": {
+            "EN": "High Commendation"
+        }
+    },
+    {
+        "id": 484,
+        "values": {
+            "EN": "Research Commission Ticket"
+        }
+    },
+    {
+        "id": 485,
+        "values": {
+            "EN": "Pukei Coin"
+        }
+    },
+    {
+        "id": 486,
+        "values": {
+            "EN": "Kulu Coin"
+        }
+    },
+    {
+        "id": 487,
+        "values": {
+            "EN": "Rathian Coin"
+        }
+    },
+    {
+        "id": 488,
+        "values": {
+            "EN": "Tzitzi Coin"
+        }
+    },
+    {
+        "id": 489,
+        "values": {
+            "EN": "Barroth Coin"
+        }
+    },
+    {
+        "id": 490,
+        "values": {
+            "EN": "Gama Coin"
+        }
+    },
+    {
+        "id": 491,
+        "values": {
+            "EN": "Rathalos Coin"
+        }
+    },
+    {
+        "id": 492,
+        "values": {
+            "EN": "Brute Coin"
+        }
+    },
+    {
+        "id": 493,
+        "values": {
+            "EN": "Flying Coin"
+        }
+    },
+    {
+        "id": 494,
+        "values": {
+            "EN": "Pinnacle Coin"
+        }
+    },
+    {
+        "id": 495,
+        "values": {
+            "EN": "Hunter King Coin"
+        }
+    },
+    {
+        "id": 496,
+        "values": {
+            "EN": "Ace Hunter Coin"
+        }
+    },
+    {
+        "id": 497,
+        "values": {
+            "EN": "Steel Egg"
+        }
+    },
+    {
+        "id": 498,
+        "values": {
+            "EN": "Silver Egg"
+        }
+    },
+    {
+        "id": 499,
+        "values": {
+            "EN": "Golden Egg"
+        }
+    },
+    {
+        "id": 500,
+        "values": {
+            "EN": "Chipped Scale"
+        }
+    },
+    {
+        "id": 501,
+        "values": {
+            "EN": "Large Scale"
+        }
+    },
+    {
+        "id": 502,
+        "values": {
+            "EN": "Beautiful Scale"
+        }
+    },
+    {
+        "id": 503,
+        "values": {
+            "EN": "Lustrous Scale"
+        }
+    },
+    {
+        "id": 504,
+        "values": {
+            "EN": "Glimmering Scale"
+        }
+    },
+    {
+        "id": 505,
+        "values": {
+            "EN": "Bhernastone"
+        }
+    },
+    {
+        "id": 506,
+        "values": {
+            "EN": "Dundormarin"
+        }
+    },
+    {
+        "id": 507,
+        "values": {
+            "EN": "Loc Lac Ore"
+        }
+    },
+    {
+        "id": 508,
+        "values": {
+            "EN": "Val Habar Quartz"
+        }
+    },
+    {
+        "id": 509,
+        "values": {
+            "EN": "Minegardenite"
+        }
+    },
+    {
+        "id": 510,
+        "values": {
+            "EN": "Golden Scale"
+        }
+    },
+    {
+        "id": 511,
+        "values": {
+            "EN": "Golden Scale+"
+        }
+    },
+    {
+        "id": 512,
+        "values": {
+            "EN": "Platinum Scale"
+        }
+    },
+    {
+        "id": 513,
+        "values": {
+            "EN": "Platinum Scale+"
+        }
+    },
+    {
+        "id": 514,
+        "values": {
+            "EN": "Gilded Scale"
+        }
+    },
+    {
+        "id": 515,
+        "values": {
+            "EN": "Gilded Scale+"
+        }
+    },
+    {
+        "id": 516,
+        "values": {
+            "EN": "Deviljho Scale"
+        }
+    },
+    {
+        "id": 517,
+        "values": {
+            "EN": "Deviljho Hide"
+        }
+    },
+    {
+        "id": 518,
+        "values": {
+            "EN": "Deviljho Tallfang"
+        }
+    },
+    {
+        "id": 519,
+        "values": {
+            "EN": "Deviljho Talon"
+        }
+    },
+    {
+        "id": 520,
+        "values": {
+            "EN": "Deviljho Scalp"
+        }
+    },
+    {
+        "id": 521,
+        "values": {
+            "EN": "Deviljho Tail"
+        }
+    },
+    {
+        "id": 522,
+        "values": {
+            "EN": "Deviljho Saliva"
+        }
+    },
+    {
+        "id": 523,
+        "values": {
+            "EN": "Deviljho Gem"
+        }
+    },
+    {
+        "id": 524,
+        "values": {
+            "EN": "Kulu-Ya-Ku Ticket"
+        }
+    },
+    {
+        "id": 525,
+        "values": {
+            "EN": "Spring Blossom Ticket"
+        }
+    },
+    {
+        "id": 526,
+        "values": {
+            "EN": "Master Craftsman's Blueprint"
+        }
+    },
+    {
+        "id": 528,
+        "values": {
+            "EN": "Spring Insect Field Guide"
+        }
+    },
+    {
+        "id": 529,
+        "values": {
+            "EN": "Kulve Taroth Golden Scale"
+        }
+    },
+    {
+        "id": 530,
+        "values": {
+            "EN": "Kulve Taroth Golden Shell"
+        }
+    },
+    {
+        "id": 531,
+        "values": {
+            "EN": "Kulve Taroth Golden Nugget"
+        }
+    },
+    {
+        "id": 532,
+        "values": {
+            "EN": "Kulve Taroth Golden Spiralhorn"
+        }
+    },
+    {
+        "id": 533,
+        "values": {
+            "EN": "Kulve Taroth Golden Tailshell"
+        }
+    },
+    {
+        "id": 534,
+        "values": {
+            "EN": "Kulve Taroth Golden Glimstone"
+        }
+    },
+    {
+        "id": 536,
+        "values": {
+            "EN": "Blossom Fireworks"
+        }
+    },
+    {
+        "id": 537,
+        "values": {
+            "EN": "Tranq Ammo"
+        }
+    },
+    {
+        "id": 538,
+        "values": {
+            "EN": "Power Coating"
+        }
+    },
+    {
+        "id": 539,
+        "values": {
+            "EN": "Close Range Coating"
+        }
+    },
+    {
+        "id": 540,
+        "values": {
+            "EN": "Poison Coating"
+        }
+    },
+    {
+        "id": 541,
+        "values": {
+            "EN": "Paralysis Coating"
+        }
+    },
+    {
+        "id": 542,
+        "values": {
+            "EN": "Sleep Coating"
+        }
+    },
+    {
+        "id": 543,
+        "values": {
+            "EN": "Blast Coating"
+        }
+    },
+    {
+        "id": 544,
+        "values": {
+            "EN": "Normal Ammo 1"
+        }
+    },
+    {
+        "id": 545,
+        "values": {
+            "EN": "Normal Ammo 2"
+        }
+    },
+    {
+        "id": 546,
+        "values": {
+            "EN": "Normal Ammo 3"
+        }
+    },
+    {
+        "id": 547,
+        "values": {
+            "EN": "Pierce Ammo 1"
+        }
+    },
+    {
+        "id": 548,
+        "values": {
+            "EN": "Pierce Ammo 3"
+        }
+    },
+    {
+        "id": 549,
+        "values": {
+            "EN": "Spread Ammo 1"
+        }
+    },
+    {
+        "id": 550,
+        "values": {
+            "EN": "Spread Ammo 2"
+        }
+    },
+    {
+        "id": 551,
+        "values": {
+            "EN": "Spread Ammo 3"
+        }
+    },
+    {
+        "id": 552,
+        "values": {
+            "EN": "Sticky Ammo 1"
+        }
+    },
+    {
+        "id": 553,
+        "values": {
+            "EN": "Sticky Ammo 2"
+        }
+    },
+    {
+        "id": 554,
+        "values": {
+            "EN": "Sticky Ammo 3"
+        }
+    },
+    {
+        "id": 555,
+        "values": {
+            "EN": "Cluster Bomb 1"
+        }
+    },
+    {
+        "id": 556,
+        "values": {
+            "EN": "Cluster Bomb 2"
+        }
+    },
+    {
+        "id": 557,
+        "values": {
+            "EN": "Cluster Bomb 3"
+        }
+    },
+    {
+        "id": 558,
+        "values": {
+            "EN": "Slicing Ammo"
+        }
+    },
+    {
+        "id": 559,
+        "values": {
+            "EN": "Flaming Ammo"
+        }
+    },
+    {
+        "id": 560,
+        "values": {
+            "EN": "Water Ammo"
+        }
+    },
+    {
+        "id": 561,
+        "values": {
+            "EN": "Thunder Ammo"
+        }
+    },
+    {
+        "id": 562,
+        "values": {
+            "EN": "Freeze Ammo"
+        }
+    },
+    {
+        "id": 563,
+        "values": {
+            "EN": "Dragon Ammo"
+        }
+    },
+    {
+        "id": 564,
+        "values": {
+            "EN": "Poison Ammo 1"
+        }
+    },
+    {
+        "id": 565,
+        "values": {
+            "EN": "Poison Ammo 2"
+        }
+    },
+    {
+        "id": 566,
+        "values": {
+            "EN": "Paralysis Ammo 1"
+        }
+    },
+    {
+        "id": 567,
+        "values": {
+            "EN": "Paralysis Ammo 2"
+        }
+    },
+    {
+        "id": 568,
+        "values": {
+            "EN": "Sleep Ammo 1"
+        }
+    },
+    {
+        "id": 569,
+        "values": {
+            "EN": "Sleep Ammo 2"
+        }
+    },
+    {
+        "id": 570,
+        "values": {
+            "EN": "Exhaust Ammo 1"
+        }
+    },
+    {
+        "id": 571,
+        "values": {
+            "EN": "Exhaust Ammo 2"
+        }
+    },
+    {
+        "id": 572,
+        "values": {
+            "EN": "Recover Ammo 1"
+        }
+    },
+    {
+        "id": 573,
+        "values": {
+            "EN": "Recover Ammo 2"
+        }
+    },
+    {
+        "id": 574,
+        "values": {
+            "EN": "Demon Ammo"
+        }
+    },
+    {
+        "id": 575,
+        "values": {
+            "EN": "Armor Ammo"
+        }
+    },
+    {
+        "id": 576,
+        "values": {
+            "EN": "Wyvern Ammo"
+        }
+    },
+    {
+        "id": 577,
+        "values": {
+            "EN": "Gunpowder Level 3"
+        }
+    },
+    {
+        "id": 579,
+        "values": {
+            "EN": "Azure Stargem"
+        }
+    },
+    {
+        "id": 580,
+        "values": {
+            "EN": "Red Orb"
+        }
+    },
+    {
+        "id": 581,
+        "values": {
+            "EN": "Aetheryte Shard"
+        }
+    },
+    {
+        "id": 584,
+        "values": {
+            "EN": "First Fleet Ticket"
+        }
+    },
+    {
+        "id": 585,
+        "values": {
+            "EN": "Kirin Ticket"
+        }
+    },
+    {
+        "id": 586,
+        "values": {
+            "EN": "Behemoth Mane"
+        }
+    },
+    {
+        "id": 587,
+        "values": {
+            "EN": "Behemoth Bone"
+        }
+    },
+    {
+        "id": 588,
+        "values": {
+            "EN": "Behemoth Great Horn"
+        }
+    },
+    {
+        "id": 589,
+        "values": {
+            "EN": "Behemoth Shearclaw"
+        }
+    },
+    {
+        "id": 590,
+        "values": {
+            "EN": "Behemoth Tail"
+        }
+    },
+    {
+        "id": 591,
+        "values": {
+            "EN": "Lunastra Scale+"
+        }
+    },
+    {
+        "id": 592,
+        "values": {
+            "EN": "Lunastra Carapace"
+        }
+    },
+    {
+        "id": 593,
+        "values": {
+            "EN": "Lunastra Mane"
+        }
+    },
+    {
+        "id": 594,
+        "values": {
+            "EN": "Lunastra Wing"
+        }
+    },
+    {
+        "id": 595,
+        "values": {
+            "EN": "Lunastra Tail"
+        }
+    },
+    {
+        "id": 596,
+        "values": {
+            "EN": "Lunastra Horn"
+        }
+    },
+    {
+        "id": 597,
+        "values": {
+            "EN": "Lunastra Gem"
+        }
+    },
+    {
+        "id": 598,
+        "values": {
+            "EN": "Wyvern Tear"
+        }
+    },
+    {
+        "id": 599,
+        "values": {
+            "EN": "Large Wyvern Tear"
+        }
+    },
+    {
+        "id": 600,
+        "values": {
+            "EN": "Dragon Treasure"
+        }
+    },
+    {
+        "id": 601,
+        "values": {
+            "EN": "Vaal Hazak Ticket"
+        }
+    },
+    {
+        "id": 602,
+        "values": {
+            "EN": "Kulve Taroth Emperor Nugget"
+        }
+    },
+    {
+        "id": 603,
+        "values": {
+            "EN": "Lunastra Ticket"
+        }
+    },
+    {
+        "id": 604,
+        "values": {
+            "EN": "Eltalite Ore"
+        }
+    },
+    {
+        "id": 605,
+        "values": {
+            "EN": "Xeno'jiiva Ticket"
+        }
+    },
+    {
+        "id": 606,
+        "values": {
+            "EN": "Zorah Magdaros Ticket"
+        }
+    },
+    {
+        "id": 607,
+        "values": {
+            "EN": "Nergigante Ticket"
+        }
+    },
+    {
+        "id": 608,
+        "values": {
+            "EN": "Kushala Daora Ticket"
+        }
+    },
+    {
+        "id": 609,
+        "values": {
+            "EN": "Teostra Ticket"
+        }
+    },
+    {
+        "id": 611,
+        "values": {
+            "EN": "Research Commission Ticket+"
+        }
+    },
+    {
+        "id": 612,
+        "values": {
+            "EN": "Steam Ticket"
+        }
+    },
+    {
+        "id": 613,
+        "values": {
+            "EN": "Tigrex Coin"
+        }
+    },
+    {
+        "id": 614,
+        "values": {
+            "EN": "Hero King Coin"
+        }
+    },
+    {
+        "id": 615,
+        "values": {
+            "EN": "Ancient Fragment"
+        }
+    },
+    {
+        "id": 616,
+        "values": {
+            "EN": "Banbaro Coin"
+        }
+    },
+    {
+        "id": 617,
+        "values": {
+            "EN": "Black Belt Coin"
+        }
+    },
+    {
+        "id": 618,
+        "values": {
+            "EN": "Boaboa Ticket"
+        }
+    },
+    {
+        "id": 619,
+        "values": {
+            "EN": "Conqueror's Seal"
+        }
+    },
+    {
+        "id": 620,
+        "values": {
+            "EN": "Freezer Ticket"
+        }
+    },
+    {
+        "id": 621,
+        "values": {
+            "EN": "Glavenus Coin"
+        }
+    },
+    {
+        "id": 622,
+        "values": {
+            "EN": "Nargacuga Coin"
+        }
+    },
+    {
+        "id": 623,
+        "values": {
+            "EN": "Odogaron Coin"
+        }
+    },
+    {
+        "id": 624,
+        "values": {
+            "EN": "Paolumu Coin"
+        }
+    },
+    {
+        "id": 625,
+        "values": {
+            "EN": "Pearlspring Ticket"
+        }
+    },
+    {
+        "id": 626,
+        "values": {
+            "EN": "Thermae Ticket"
+        }
+    },
+    {
+        "id": 627,
+        "values": {
+            "EN": "Zinogre Coin"
+        }
+    },
+    {
+        "id": 628,
+        "values": {
+            "EN": "Aloy Ticket"
+        }
+    },
+    {
+        "id": 629,
+        "values": {
+            "EN": "Ancient Leshen Skull"
+        }
+    },
+    {
+        "id": 630,
+        "values": {
+            "EN": "Mutagen"
+        }
+    },
+    {
+        "id": 631,
+        "values": {
+            "EN": "Leshen Skull"
+        }
+    },
+    {
+        "id": 632,
+        "values": {
+            "EN": "Mega Man Ticket"
+        }
+    },
+    {
+        "id": 633,
+        "values": {
+            "EN": "SFV Ticket II"
+        }
+    },
+    {
+        "id": 634,
+        "values": {
+            "EN": "SFV Ticket III"
+        }
+    },
+    {
+        "id": 635,
+        "values": {
+            "EN": "Appreciation Ticket"
+        }
+    },
+    {
+        "id": 636,
+        "values": {
+            "EN": "Autumn Harvest Ticket"
+        }
+    },
+    {
+        "id": 637,
+        "values": {
+            "EN": "Beetle Ticket"
+        }
+    },
+    {
+        "id": 638,
+        "values": {
+            "EN": "Bristly Crake Ticket"
+        }
+    },
+    {
+        "id": 639,
+        "values": {
+            "EN": "Bushi Ticket"
+        }
+    },
+    {
+        "id": 640,
+        "values": {
+            "EN": "Downy Crake Ticket"
+        }
+    },
+    {
+        "id": 641,
+        "values": {
+            "EN": "Faux Ticket"
+        }
+    },
+    {
+        "id": 642,
+        "values": {
+            "EN": "Faux Ticket II"
+        }
+    },
+    {
+        "id": 643,
+        "values": {
+            "EN": "Faux Ticket III"
+        }
+    },
+    {
+        "id": 644,
+        "values": {
+            "EN": "Summer Insect Field Guide"
+        }
+    },
+    {
+        "id": 645,
+        "values": {
+            "EN": "Summer Twilight Ticket"
+        }
+    },
+    {
+        "id": 646,
+        "values": {
+            "EN": "Winter Star Ticket"
+        }
+    },
+    {
+        "id": 648,
+        "values": {
+            "EN": "Pierce Ammo 2"
+        }
+    },
+    {
+        "id": 649,
+        "values": {
+            "EN": "Twilight Fireworks"
+        }
+    },
+    {
+        "id": 650,
+        "values": {
+            "EN": "Harvest Fireworks"
+        }
+    },
+    {
+        "id": 651,
+        "values": {
+            "EN": "Star Fireworks"
+        }
+    },
+    {
+        "id": 652,
+        "values": {
+            "EN": "Appreciation Fireworks"
+        }
+    },
+    {
+        "id": 653,
+        "values": {
+            "EN": "Hot Drink"
+        }
+    },
+    {
+        "id": 654,
+        "values": {
+            "EN": "Fulgurbug"
+        }
+    },
+    {
+        "id": 655,
+        "values": {
+            "EN": "Gloamgrass Bud"
+        }
+    },
+    {
+        "id": 656,
+        "values": {
+            "EN": "Hot Pepper"
+        }
+    },
+    {
+        "id": 657,
+        "values": {
+            "EN": "Shadowcore Ore"
+        }
+    },
+    {
+        "id": 658,
+        "values": {
+            "EN": "Phantomcore Ore"
+        }
+    },
+    {
+        "id": 659,
+        "values": {
+            "EN": "Purecrystal"
+        }
+    },
+    {
+        "id": 660,
+        "values": {
+            "EN": "Bathycite Ore"
+        }
+    },
+    {
+        "id": 661,
+        "values": {
+            "EN": "Gracium"
+        }
+    },
+    {
+        "id": 662,
+        "values": {
+            "EN": "Meldspar Ore"
+        }
+    },
+    {
+        "id": 663,
+        "values": {
+            "EN": "Spiritvein Crystal"
+        }
+    },
+    {
+        "id": 664,
+        "values": {
+            "EN": "Dragonvein Coal"
+        }
+    },
+    {
+        "id": 665,
+        "values": {
+            "EN": "Dragonvein Shard"
+        }
+    },
+    {
+        "id": 666,
+        "values": {
+            "EN": "Dragonbone Artifact"
+        }
+    },
+    {
+        "id": 667,
+        "values": {
+            "EN": "Monster Slogbone"
+        }
+    },
+    {
+        "id": 668,
+        "values": {
+            "EN": "Monster Solidbone"
+        }
+    },
+    {
+        "id": 669,
+        "values": {
+            "EN": "Conflagrant Sac"
+        }
+    },
+    {
+        "id": 670,
+        "values": {
+            "EN": "Cryo Sac"
+        }
+    },
+    {
+        "id": 671,
+        "values": {
+            "EN": "Deadly Poison Sac"
+        }
+    },
+    {
+        "id": 672,
+        "values": {
+            "EN": "Flood Sac"
+        }
+    },
+    {
+        "id": 673,
+        "values": {
+            "EN": "Frozen Bone"
+        }
+    },
+    {
+        "id": 674,
+        "values": {
+            "EN": "Large Wyvern Gem"
+        }
+    },
+    {
+        "id": 675,
+        "values": {
+            "EN": "Lightning Sac"
+        }
+    },
+    {
+        "id": 676,
+        "values": {
+            "EN": "Monster Toughbone"
+        }
+    },
+    {
+        "id": 677,
+        "values": {
+            "EN": "Thick Bone"
+        }
+    },
+    {
+        "id": 678,
+        "values": {
+            "EN": "Torpor Sac"
+        }
+    },
+    {
+        "id": 679,
+        "values": {
+            "EN": "Ultraplegia Sac"
+        }
+    },
+    {
+        "id": 680,
+        "values": {
+            "EN": "Ancient Cursed Bone"
+        }
+    },
+    {
+        "id": 681,
+        "values": {
+            "EN": "Ancient Leshen Antlers"
+        }
+    },
+    {
+        "id": 682,
+        "values": {
+            "EN": "Ancient Leshen Claw"
+        }
+    },
+    {
+        "id": 683,
+        "values": {
+            "EN": "Cursed Bone"
+        }
+    },
+    {
+        "id": 684,
+        "values": {
+            "EN": "Leshen Antlers"
+        }
+    },
+    {
+        "id": 685,
+        "values": {
+            "EN": "Leshen Claw"
+        }
+    },
+    {
+        "id": 686,
+        "values": {
+            "EN": "Leshen Resin"
+        }
+    },
+    {
+        "id": 687,
+        "values": {
+            "EN": "Anteka Antler"
+        }
+    },
+    {
+        "id": 688,
+        "values": {
+            "EN": "Prized Pelt"
+        }
+    },
+    {
+        "id": 689,
+        "values": {
+            "EN": "Barnos Hardclaw"
+        }
+    },
+    {
+        "id": 690,
+        "values": {
+            "EN": "Cortos Hardclaw"
+        }
+    },
+    {
+        "id": 691,
+        "values": {
+            "EN": "Wingdrake Finehide"
+        }
+    },
+    {
+        "id": 692,
+        "values": {
+            "EN": "Hornetaur Razorwing"
+        }
+    },
+    {
+        "id": 693,
+        "values": {
+            "EN": "Monster Essence"
+        }
+    },
+    {
+        "id": 694,
+        "values": {
+            "EN": "Vespoid Razorwing"
+        }
+    },
+    {
+        "id": 695,
+        "values": {
+            "EN": "Lavasioth Cortex"
+        }
+    },
+    {
+        "id": 696,
+        "values": {
+            "EN": "Lavasioth Grandfin"
+        }
+    },
+    {
+        "id": 697,
+        "values": {
+            "EN": "Lavasioth Hardfang"
+        }
+    },
+    {
+        "id": 698,
+        "values": {
+            "EN": "Lavasioth Shard"
+        }
+    },
+    {
+        "id": 699,
+        "values": {
+            "EN": "Beotodus Cortex"
+        }
+    },
+    {
+        "id": 700,
+        "values": {
+            "EN": "Beotodus Grandfin"
+        }
+    },
+    {
+        "id": 701,
+        "values": {
+            "EN": "Beotodus Hardhorn"
+        }
+    },
+    {
+        "id": 702,
+        "values": {
+            "EN": "Beotodus Shard"
+        }
+    },
+    {
+        "id": 703,
+        "values": {
+            "EN": "Gajau Thickhide"
+        }
+    },
+    {
+        "id": 704,
+        "values": {
+            "EN": "Jyuratodus Cortex"
+        }
+    },
+    {
+        "id": 705,
+        "values": {
+            "EN": "Jyuratodus Grandfin"
+        }
+    },
+    {
+        "id": 706,
+        "values": {
+            "EN": "Jyuratodus Hardfang"
+        }
+    },
+    {
+        "id": 707,
+        "values": {
+            "EN": "Jyuratodus Shard"
+        }
+    },
+    {
+        "id": 708,
+        "values": {
+            "EN": "Steel Gajau Whisker"
+        }
+    },
+    {
+        "id": 709,
+        "values": {
+            "EN": "Garuga Auricle"
+        }
+    },
+    {
+        "id": 710,
+        "values": {
+            "EN": "Garuga Cortex"
+        }
+    },
+    {
+        "id": 711,
+        "values": {
+            "EN": "Garuga Fellwing"
+        }
+    },
+    {
+        "id": 712,
+        "values": {
+            "EN": "Garuga Lash"
+        }
+    },
+    {
+        "id": 713,
+        "values": {
+            "EN": "Garuga Shard"
+        }
+    },
+    {
+        "id": 714,
+        "values": {
+            "EN": "Garuga Silverpelt"
+        }
+    },
+    {
+        "id": 715,
+        "values": {
+            "EN": "Fancy Beak"
+        }
+    },
+    {
+        "id": 716,
+        "values": {
+            "EN": "Scratched Shell"
+        }
+    },
+    {
+        "id": 717,
+        "values": {
+            "EN": "Coral Pukei-Pukei Cortex"
+        }
+    },
+    {
+        "id": 718,
+        "values": {
+            "EN": "Coral Pukei-Pukei Fellwing"
+        }
+    },
+    {
+        "id": 719,
+        "values": {
+            "EN": "Large Coral Pukei-Pukei Sac"
+        }
+    },
+    {
+        "id": 720,
+        "values": {
+            "EN": "Coral Pukei-Pukei Lash"
+        }
+    },
+    {
+        "id": 721,
+        "values": {
+            "EN": "Coral Pukei-Pukei Shard"
+        }
+    },
+    {
+        "id": 722,
+        "values": {
+            "EN": "Fey Wyvern Gem"
+        }
+    },
+    {
+        "id": 723,
+        "values": {
+            "EN": "Large Kulu-Ya-Ku Beak"
+        }
+    },
+    {
+        "id": 724,
+        "values": {
+            "EN": "Large Kulu-Ya-Ku Plume"
+        }
+    },
+    {
+        "id": 725,
+        "values": {
+            "EN": "Kulu-Ya-Ku Shard"
+        }
+    },
+    {
+        "id": 726,
+        "values": {
+            "EN": "Kulu-Ya-Ku Thickhide"
+        }
+    },
+    {
+        "id": 727,
+        "values": {
+            "EN": "Pukei-Pukei Cortex"
+        }
+    },
+    {
+        "id": 728,
+        "values": {
+            "EN": "Pukei-Pukei Fellwing"
+        }
+    },
+    {
+        "id": 729,
+        "values": {
+            "EN": "Large Pukei-Pukei Sac"
+        }
+    },
+    {
+        "id": 730,
+        "values": {
+            "EN": "Pukei-Pukei Lash"
+        }
+    },
+    {
+        "id": 731,
+        "values": {
+            "EN": "Tzitzi-Ya-Ku Hardclaw"
+        }
+    },
+    {
+        "id": 732,
+        "values": {
+            "EN": "Tzitzi-Ya-Ku Photomembrane"
+        }
+    },
+    {
+        "id": 733,
+        "values": {
+            "EN": "Tzitzi-Ya-Ku Shard"
+        }
+    },
+    {
+        "id": 734,
+        "values": {
+            "EN": "Tzitzi-Ya-Ku Thickhide"
+        }
+    },
+    {
+        "id": 735,
+        "values": {
+            "EN": "Gold Rajang Pelt+"
+        }
+    },
+    {
+        "id": 736,
+        "values": {
+            "EN": "Rajang Hardhorn"
+        }
+    },
+    {
+        "id": 737,
+        "values": {
+            "EN": "Rajang Tail"
+        }
+    },
+    {
+        "id": 738,
+        "values": {
+            "EN": "Rajang Hardclaw"
+        }
+    },
+    {
+        "id": 739,
+        "values": {
+            "EN": "Rajang Wildpelt"
+        }
+    },
+    {
+        "id": 740,
+        "values": {
+            "EN": "Ebony Odogaron Mantle"
+        }
+    },
+    {
+        "id": 741,
+        "values": {
+            "EN": "Odogaron Mantle"
+        }
+    },
+    {
+        "id": 742,
+        "values": {
+            "EN": "Zinogre Skymerald"
+        }
+    },
+    {
+        "id": 743,
+        "values": {
+            "EN": "Ebony Odogaron Hardclaw"
+        }
+    },
+    {
+        "id": 744,
+        "values": {
+            "EN": "Ebony Odogaron Hardfang"
+        }
+    },
+    {
+        "id": 745,
+        "values": {
+            "EN": "Ebony Odogaron Lash"
+        }
+    },
+    {
+        "id": 746,
+        "values": {
+            "EN": "Ebony Odogaron Shard"
+        }
+    },
+    {
+        "id": 747,
+        "values": {
+            "EN": "Hard Ebony Odogaron Sinew"
+        }
+    },
+    {
+        "id": 748,
+        "values": {
+            "EN": "Odogaron Hardclaw"
+        }
+    },
+    {
+        "id": 749,
+        "values": {
+            "EN": "Odogaron Hardfang"
+        }
+    },
+    {
+        "id": 750,
+        "values": {
+            "EN": "Odogaron Lash"
+        }
+    },
+    {
+        "id": 751,
+        "values": {
+            "EN": "Odogaron Shard"
+        }
+    },
+    {
+        "id": 752,
+        "values": {
+            "EN": "Hard Odogaron Sinew"
+        }
+    },
+    {
+        "id": 753,
+        "values": {
+            "EN": "Dodogama Hardclaw"
+        }
+    },
+    {
+        "id": 754,
+        "values": {
+            "EN": "Dodogama Lash"
+        }
+    },
+    {
+        "id": 755,
+        "values": {
+            "EN": "Dodogama Mandible"
+        }
+    },
+    {
+        "id": 756,
+        "values": {
+            "EN": "Dodogama Shard"
+        }
+    },
+    {
+        "id": 757,
+        "values": {
+            "EN": "Dodogama Thickhide"
+        }
+    },
+    {
+        "id": 758,
+        "values": {
+            "EN": "Gastodon Husk"
+        }
+    },
+    {
+        "id": 759,
+        "values": {
+            "EN": "Girros Shard"
+        }
+    },
+    {
+        "id": 760,
+        "values": {
+            "EN": "Great Girros Hardhood"
+        }
+    },
+    {
+        "id": 761,
+        "values": {
+            "EN": "Great Girros Hardfang"
+        }
+    },
+    {
+        "id": 762,
+        "values": {
+            "EN": "Great Girros Lash"
+        }
+    },
+    {
+        "id": 763,
+        "values": {
+            "EN": "Great Girros Shard"
+        }
+    },
+    {
+        "id": 764,
+        "values": {
+            "EN": "Great Girros Thickhide"
+        }
+    },
+    {
+        "id": 765,
+        "values": {
+            "EN": "Great Jagras Hardclaw"
+        }
+    },
+    {
+        "id": 766,
+        "values": {
+            "EN": "Great Jagras Mane+"
+        }
+    },
+    {
+        "id": 767,
+        "values": {
+            "EN": "Great Jagras Shard"
+        }
+    },
+    {
+        "id": 768,
+        "values": {
+            "EN": "Great Jagras Thickhide"
+        }
+    },
+    {
+        "id": 769,
+        "values": {
+            "EN": "Jagras Shard"
+        }
+    },
+    {
+        "id": 770,
+        "values": {
+            "EN": "Kestodon Husk"
+        }
+    },
+    {
+        "id": 771,
+        "values": {
+            "EN": "Tough Claw"
+        }
+    },
+    {
+        "id": 772,
+        "values": {
+            "EN": "Shamos Shard"
+        }
+    },
+    {
+        "id": 773,
+        "values": {
+            "EN": "Tobi-Kadachi Cathode"
+        }
+    },
+    {
+        "id": 774,
+        "values": {
+            "EN": "Tobi-Kadachi Hardclaw"
+        }
+    },
+    {
+        "id": 775,
+        "values": {
+            "EN": "Tobi-Kadachi Membrane+"
+        }
+    },
+    {
+        "id": 776,
+        "values": {
+            "EN": "Tobi-Kadachi Shard"
+        }
+    },
+    {
+        "id": 777,
+        "values": {
+            "EN": "Tobi-Kadachi Thickfur"
+        }
+    },
+    {
+        "id": 778,
+        "values": {
+            "EN": "Viper Tobi-Kadachi Hardclaw"
+        }
+    },
+    {
+        "id": 779,
+        "values": {
+            "EN": "Viper Tobi-Kadachi Membrane+"
+        }
+    },
+    {
+        "id": 780,
+        "values": {
+            "EN": "Viper Tobi-Kadachi Shard"
+        }
+    },
+    {
+        "id": 781,
+        "values": {
+            "EN": "Viper Tobi-Kadachi Thickfur"
+        }
+    },
+    {
+        "id": 782,
+        "values": {
+            "EN": "Viper Tobi-Kadachi Thorn"
+        }
+    },
+    {
+        "id": 783,
+        "values": {
+            "EN": "Wulg Thickfur"
+        }
+    },
+    {
+        "id": 784,
+        "values": {
+            "EN": "Zinogre Cortex"
+        }
+    },
+    {
+        "id": 785,
+        "values": {
+            "EN": "Zinogre Deathly Shocker"
+        }
+    },
+    {
+        "id": 786,
+        "values": {
+            "EN": "Zinogre Electrofur+"
+        }
+    },
+    {
+        "id": 787,
+        "values": {
+            "EN": "Zinogre Hardclaw"
+        }
+    },
+    {
+        "id": 788,
+        "values": {
+            "EN": "Zinogre Hardhorn"
+        }
+    },
+    {
+        "id": 789,
+        "values": {
+            "EN": "Zinogre Lash"
+        }
+    },
+    {
+        "id": 790,
+        "values": {
+            "EN": "Deviljho Crook"
+        }
+    },
+    {
+        "id": 791,
+        "values": {
+            "EN": "Black Blood"
+        }
+    },
+    {
+        "id": 792,
+        "values": {
+            "EN": "Brachydios Pallium"
+        }
+    },
+    {
+        "id": 793,
+        "values": {
+            "EN": "Deviljho Blackpiel"
+        }
+    },
+    {
+        "id": 794,
+        "values": {
+            "EN": "Deviljho Flail"
+        }
+    },
+    {
+        "id": 795,
+        "values": {
+            "EN": "Deviljho Ripper"
+        }
+    },
+    {
+        "id": 796,
+        "values": {
+            "EN": "Deviljho Shard"
+        }
+    },
+    {
+        "id": 797,
+        "values": {
+            "EN": "Glavenus Mantle"
+        }
+    },
+    {
+        "id": 798,
+        "values": {
+            "EN": "Uragaan Scute+"
+        }
+    },
+    {
+        "id": 799,
+        "values": {
+            "EN": "Vile Fang"
+        }
+    },
+    {
+        "id": 800,
+        "values": {
+            "EN": "Acidic Glavenus Cortex"
+        }
+    },
+    {
+        "id": 801,
+        "values": {
+            "EN": "Acidic Glavenus Hardfang"
+        }
+    },
+    {
+        "id": 802,
+        "values": {
+            "EN": "Acidic Glavenus Shard"
+        }
+    },
+    {
+        "id": 803,
+        "values": {
+            "EN": "Acidic Glavenus Spineshell"
+        }
+    },
+    {
+        "id": 804,
+        "values": {
+            "EN": "Acidic Glavenus Tailedge"
+        }
+    },
+    {
+        "id": 805,
+        "values": {
+            "EN": "Brachydios Cortex"
+        }
+    },
+    {
+        "id": 806,
+        "values": {
+            "EN": "Brachydios Crown"
+        }
+    },
+    {
+        "id": 807,
+        "values": {
+            "EN": "Fine Brachydios Ebonshell"
+        }
+    },
+    {
+        "id": 808,
+        "values": {
+            "EN": "Brachydios Lash"
+        }
+    },
+    {
+        "id": 809,
+        "values": {
+            "EN": "Brachydios Pounder+"
+        }
+    },
+    {
+        "id": 810,
+        "values": {
+            "EN": "Fulgur Anjanath Hardfang"
+        }
+    },
+    {
+        "id": 811,
+        "values": {
+            "EN": "Heavy Fulgur Anjanath Nosebone"
+        }
+    },
+    {
+        "id": 812,
+        "values": {
+            "EN": "Fulgur Anjanath Lash"
+        }
+    },
+    {
+        "id": 813,
+        "values": {
+            "EN": "Fulgur Anjanath Mantle"
+        }
+    },
+    {
+        "id": 814,
+        "values": {
+            "EN": "Fulgur Anjanath Shard"
+        }
+    },
+    {
+        "id": 815,
+        "values": {
+            "EN": "Fulgur Anjanath Thickfur"
+        }
+    },
+    {
+        "id": 816,
+        "values": {
+            "EN": "Glavenus Cortex"
+        }
+    },
+    {
+        "id": 817,
+        "values": {
+            "EN": "Glavenus Hardfang"
+        }
+    },
+    {
+        "id": 818,
+        "values": {
+            "EN": "Glavenus Hellshell"
+        }
+    },
+    {
+        "id": 819,
+        "values": {
+            "EN": "Glavenus Shard"
+        }
+    },
+    {
+        "id": 820,
+        "values": {
+            "EN": "Glavenus Tailedge"
+        }
+    },
+    {
+        "id": 821,
+        "values": {
+            "EN": "Glowing Slime"
+        }
+    },
+    {
+        "id": 822,
+        "values": {
+            "EN": "Honed Acidcryst"
+        }
+    },
+    {
+        "id": 823,
+        "values": {
+            "EN": "Molten Bursa"
+        }
+    },
+    {
+        "id": 824,
+        "values": {
+            "EN": "Uragaan Cortex"
+        }
+    },
+    {
+        "id": 827,
+        "values": {
+            "EN": "Uragaan Shard"
+        }
+    },
+    {
+        "id": 828,
+        "values": {
+            "EN": "Anjanath Hardfang"
+        }
+    },
+    {
+        "id": 829,
+        "values": {
+            "EN": "Heavy Anjanath Nosebone"
+        }
+    },
+    {
+        "id": 830,
+        "values": {
+            "EN": "Anjanath Lash"
+        }
+    },
+    {
+        "id": 831,
+        "values": {
+            "EN": "Anjanath Mantle"
+        }
+    },
+    {
+        "id": 832,
+        "values": {
+            "EN": "Anjanath Shard"
+        }
+    },
+    {
+        "id": 833,
+        "values": {
+            "EN": "Anjanath Fur"
+        }
+    },
+    {
+        "id": 834,
+        "values": {
+            "EN": "Banbaro Chine"
+        }
+    },
+    {
+        "id": 835,
+        "values": {
+            "EN": "Banbaro Great Horn"
+        }
+    },
+    {
+        "id": 836,
+        "values": {
+            "EN": "Banbaro Cortex"
+        }
+    },
+    {
+        "id": 837,
+        "values": {
+            "EN": "Banbaro Lash"
+        }
+    },
+    {
+        "id": 838,
+        "values": {
+            "EN": "Barroth Chine"
+        }
+    },
+    {
+        "id": 839,
+        "values": {
+            "EN": "Barroth Cortex"
+        }
+    },
+    {
+        "id": 840,
+        "values": {
+            "EN": "Barroth Crown"
+        }
+    },
+    {
+        "id": 841,
+        "values": {
+            "EN": "Barroth Hardclaw"
+        }
+    },
+    {
+        "id": 842,
+        "values": {
+            "EN": "Barroth Lash"
+        }
+    },
+    {
+        "id": 843,
+        "values": {
+            "EN": "Large Wyvern Bonemass"
+        }
+    },
+    {
+        "id": 844,
+        "values": {
+            "EN": "Radobaan Cortex"
+        }
+    },
+    {
+        "id": 845,
+        "values": {
+            "EN": "Radobaan Oilshell+"
+        }
+    },
+    {
+        "id": 846,
+        "values": {
+            "EN": "Radobaan Shard"
+        }
+    },
+    {
+        "id": 847,
+        "values": {
+            "EN": "Rich Mud"
+        }
+    },
+    {
+        "id": 848,
+        "values": {
+            "EN": "Bazelgeuse Mantle"
+        }
+    },
+    {
+        "id": 849,
+        "values": {
+            "EN": "Bazelgeuse Flail"
+        }
+    },
+    {
+        "id": 850,
+        "values": {
+            "EN": "Bazelgeuse Hardclaw"
+        }
+    },
+    {
+        "id": 851,
+        "values": {
+            "EN": "Bazelgeuse Shard"
+        }
+    },
+    {
+        "id": 852,
+        "values": {
+            "EN": "Diablos Hardhorn"
+        }
+    },
+    {
+        "id": 853,
+        "values": {
+            "EN": "Distilled Blast Fluid"
+        }
+    },
+    {
+        "id": 854,
+        "values": {
+            "EN": "Flickering Silvershell"
+        }
+    },
+    {
+        "id": 855,
+        "values": {
+            "EN": "Gold Rathian Cortex"
+        }
+    },
+    {
+        "id": 856,
+        "values": {
+            "EN": "Gold Rathian Shard"
+        }
+    },
+    {
+        "id": 857,
+        "values": {
+            "EN": "Gold Rathian Surspike"
+        }
+    },
+    {
+        "id": 858,
+        "values": {
+            "EN": "Nargacuga Mantle"
+        }
+    },
+    {
+        "id": 859,
+        "values": {
+            "EN": "Rath Gleam"
+        }
+    },
+    {
+        "id": 860,
+        "values": {
+            "EN": "Rathalos Mantle"
+        }
+    },
+    {
+        "id": 861,
+        "values": {
+            "EN": "Scorching Silverwing"
+        }
+    },
+    {
+        "id": 862,
+        "values": {
+            "EN": "Silver Rathalos Cortex"
+        }
+    },
+    {
+        "id": 863,
+        "values": {
+            "EN": "Silver Rathalos Fellwing"
+        }
+    },
+    {
+        "id": 864,
+        "values": {
+            "EN": "Silver Rathalos Lash"
+        }
+    },
+    {
+        "id": 865,
+        "values": {
+            "EN": "Silver Rathalos Shard"
+        }
+    },
+    {
+        "id": 866,
+        "values": {
+            "EN": "Tigrex Mantle"
+        }
+    },
+    {
+        "id": 867,
+        "values": {
+            "EN": "Amber Hardfang"
+        }
+    },
+    {
+        "id": 868,
+        "values": {
+            "EN": "Azure Rathalos Cortex"
+        }
+    },
+    {
+        "id": 869,
+        "values": {
+            "EN": "Azure Rathalos Fellwing"
+        }
+    },
+    {
+        "id": 870,
+        "values": {
+            "EN": "Azure Rathalos Lash"
+        }
+    },
+    {
+        "id": 871,
+        "values": {
+            "EN": "Azure Rathalos Shard"
+        }
+    },
+    {
+        "id": 872,
+        "values": {
+            "EN": "Barioth Cortex"
+        }
+    },
+    {
+        "id": 873,
+        "values": {
+            "EN": "Barioth Greatspike"
+        }
+    },
+    {
+        "id": 874,
+        "values": {
+            "EN": "Barioth Hardclaw"
+        }
+    },
+    {
+        "id": 875,
+        "values": {
+            "EN": "Barioth Lash"
+        }
+    },
+    {
+        "id": 876,
+        "values": {
+            "EN": "Barioth Thickfur"
+        }
+    },
+    {
+        "id": 877,
+        "values": {
+            "EN": "Black Diablos Chine"
+        }
+    },
+    {
+        "id": 878,
+        "values": {
+            "EN": "Black Diablos Cortex"
+        }
+    },
+    {
+        "id": 879,
+        "values": {
+            "EN": "Blackcurl Stouthorn"
+        }
+    },
+    {
+        "id": 880,
+        "values": {
+            "EN": "Blackcurl Tyranthorn"
+        }
+    },
+    {
+        "id": 883,
+        "values": {
+            "EN": "Brute Tigrex Cortex"
+        }
+    },
+    {
+        "id": 884,
+        "values": {
+            "EN": "Brute Tigrex Hardclaw"
+        }
+    },
+    {
+        "id": 885,
+        "values": {
+            "EN": "Brute Tigrex Hardfang"
+        }
+    },
+    {
+        "id": 886,
+        "values": {
+            "EN": "Brute Tigrex Shard"
+        }
+    },
+    {
+        "id": 887,
+        "values": {
+            "EN": "Diablos Chine"
+        }
+    },
+    {
+        "id": 888,
+        "values": {
+            "EN": "Diablos Cortex"
+        }
+    },
+    {
+        "id": 889,
+        "values": {
+            "EN": "Diablos Tailcase+"
+        }
+    },
+    {
+        "id": 890,
+        "values": {
+            "EN": "Legiana Fellwing"
+        }
+    },
+    {
+        "id": 891,
+        "values": {
+            "EN": "Legiana Hardclaw"
+        }
+    },
+    {
+        "id": 892,
+        "values": {
+            "EN": "Legiana Mantle"
+        }
+    },
+    {
+        "id": 893,
+        "values": {
+            "EN": "Legiana Shard"
+        }
+    },
+    {
+        "id": 894,
+        "values": {
+            "EN": "Legiana Tail Webbing+"
+        }
+    },
+    {
+        "id": 895,
+        "values": {
+            "EN": "Legiana Thickhide"
+        }
+    },
+    {
+        "id": 896,
+        "values": {
+            "EN": "Nargacuga Blackfur+"
+        }
+    },
+    {
+        "id": 897,
+        "values": {
+            "EN": "Nargacuga Cutwing+"
+        }
+    },
+    {
+        "id": 898,
+        "values": {
+            "EN": "Nargacuga Hardfang"
+        }
+    },
+    {
+        "id": 899,
+        "values": {
+            "EN": "Nargacuga Lash"
+        }
+    },
+    {
+        "id": 900,
+        "values": {
+            "EN": "Nargacuga Shard"
+        }
+    },
+    {
+        "id": 901,
+        "values": {
+            "EN": "Nargacuga Tailspear"
+        }
+    },
+    {
+        "id": 902,
+        "values": {
+            "EN": "Obsidian Icetalon"
+        }
+    },
+    {
+        "id": 903,
+        "values": {
+            "EN": "Rathalos Cortex"
+        }
+    },
+    {
+        "id": 904,
+        "values": {
+            "EN": "Rathalos Fellwing"
+        }
+    },
+    {
+        "id": 905,
+        "values": {
+            "EN": "Rathalos Lash"
+        }
+    },
+    {
+        "id": 906,
+        "values": {
+            "EN": "Rath Wingtalon+"
+        }
+    },
+    {
+        "id": 908,
+        "values": {
+            "EN": "Rathalos Shard"
+        }
+    },
+    {
+        "id": 909,
+        "values": {
+            "EN": "Rimed Hide"
+        }
+    },
+    {
+        "id": 910,
+        "values": {
+            "EN": "Stark Wing"
+        }
+    },
+    {
+        "id": 911,
+        "values": {
+            "EN": "Tigrex Cortex"
+        }
+    },
+    {
+        "id": 912,
+        "values": {
+            "EN": "Tigrex Hardclaw"
+        }
+    },
+    {
+        "id": 913,
+        "values": {
+            "EN": "Tigrex Hardfang"
+        }
+    },
+    {
+        "id": 914,
+        "values": {
+            "EN": "Tigrex Lash"
+        }
+    },
+    {
+        "id": 915,
+        "values": {
+            "EN": "Tigrex Shard"
+        }
+    },
+    {
+        "id": 916,
+        "values": {
+            "EN": "Twisted Stouthorn"
+        }
+    },
+    {
+        "id": 917,
+        "values": {
+            "EN": "Twisted Bravehorn"
+        }
+    },
+    {
+        "id": 918,
+        "values": {
+            "EN": "Nightshade Paolumu Fellwing"
+        }
+    },
+    {
+        "id": 919,
+        "values": {
+            "EN": "Nightshade Paolumu Shard"
+        }
+    },
+    {
+        "id": 920,
+        "values": {
+            "EN": "Nightshade Paolumu Thickfur"
+        }
+    },
+    {
+        "id": 921,
+        "values": {
+            "EN": "Paolumu Cortex"
+        }
+    },
+    {
+        "id": 922,
+        "values": {
+            "EN": "Paolumu Fellwing"
+        }
+    },
+    {
+        "id": 923,
+        "values": {
+            "EN": "Paolumu Shard"
+        }
+    },
+    {
+        "id": 924,
+        "values": {
+            "EN": "Paolumu Thickfur"
+        }
+    },
+    {
+        "id": 925,
+        "values": {
+            "EN": "Pink Rathian Cortex"
+        }
+    },
+    {
+        "id": 926,
+        "values": {
+            "EN": "Pink Rathian Shard"
+        }
+    },
+    {
+        "id": 927,
+        "values": {
+            "EN": "Rathian Cortex"
+        }
+    },
+    {
+        "id": 928,
+        "values": {
+            "EN": "Rathian Mantle"
+        }
+    },
+    {
+        "id": 929,
+        "values": {
+            "EN": "Rathian Shard"
+        }
+    },
+    {
+        "id": 930,
+        "values": {
+            "EN": "Rathian Surspike"
+        }
+    },
+    {
+        "id": 931,
+        "values": {
+            "EN": "Rathian Weave"
+        }
+    },
+    {
+        "id": 932,
+        "values": {
+            "EN": "Large Elder Dragon Bone"
+        }
+    },
+    {
+        "id": 933,
+        "values": {
+            "EN": "Large Elder Dragon Gem"
+        }
+    },
+    {
+        "id": 934,
+        "values": {
+            "EN": "Shara Ishvalda Gem"
+        }
+    },
+    {
+        "id": 935,
+        "values": {
+            "EN": "Velkhana Crystal"
+        }
+    },
+    {
+        "id": 936,
+        "values": {
+            "EN": "Annihilating Greathorn"
+        }
+    },
+    {
+        "id": 937,
+        "values": {
+            "EN": "Crystal Shard"
+        }
+    },
+    {
+        "id": 938,
+        "values": {
+            "EN": "Daora Cortex"
+        }
+    },
+    {
+        "id": 939,
+        "values": {
+            "EN": "Daora Fellwing"
+        }
+    },
+    {
+        "id": 940,
+        "values": {
+            "EN": "Daora Hardclaw"
+        }
+    },
+    {
+        "id": 941,
+        "values": {
+            "EN": "Daora Hardhorn"
+        }
+    },
+    {
+        "id": 942,
+        "values": {
+            "EN": "Daora Lash"
+        }
+    },
+    {
+        "id": 943,
+        "values": {
+            "EN": "Daora Shard"
+        }
+    },
+    {
+        "id": 944,
+        "values": {
+            "EN": "Deathweaver Membrane"
+        }
+    },
+    {
+        "id": 945,
+        "values": {
+            "EN": "Deceased Shard"
+        }
+    },
+    {
+        "id": 946,
+        "values": {
+            "EN": "Eternal Regrowth Plate"
+        }
+    },
+    {
+        "id": 948,
+        "values": {
+            "EN": "Fire Dragon Hardclaw"
+        }
+    },
+    {
+        "id": 949,
+        "values": {
+            "EN": "Hellfire Shard"
+        }
+    },
+    {
+        "id": 950,
+        "values": {
+            "EN": "Immortal Shard"
+        }
+    },
+    {
+        "id": 951,
+        "values": {
+            "EN": "Kirin Azure Horn+"
+        }
+    },
+    {
+        "id": 952,
+        "values": {
+            "EN": "Kirin Finehide"
+        }
+    },
+    {
+        "id": 953,
+        "values": {
+            "EN": "Kirin Silvermane"
+        }
+    },
+    {
+        "id": 954,
+        "values": {
+            "EN": "Kirin Thundertail+"
+        }
+    },
+    {
+        "id": 955,
+        "values": {
+            "EN": "Lunastra Cortex"
+        }
+    },
+    {
+        "id": 956,
+        "values": {
+            "EN": "Lunastra Fellwing"
+        }
+    },
+    {
+        "id": 957,
+        "values": {
+            "EN": "Lunastra Hardhorn"
+        }
+    },
+    {
+        "id": 958,
+        "values": {
+            "EN": "Lunastra Lash"
+        }
+    },
+    {
+        "id": 959,
+        "values": {
+            "EN": "Lunastra Mane+"
+        }
+    },
+    {
+        "id": 960,
+        "values": {
+            "EN": "Lunastra Shard"
+        }
+    },
+    {
+        "id": 961,
+        "values": {
+            "EN": "Namielle Fellwing"
+        }
+    },
+    {
+        "id": 962,
+        "values": {
+            "EN": "Namielle Finehide"
+        }
+    },
+    {
+        "id": 963,
+        "values": {
+            "EN": "Namielle Hardclaw"
+        }
+    },
+    {
+        "id": 964,
+        "values": {
+            "EN": "Namielle Lash"
+        }
+    },
+    {
+        "id": 965,
+        "values": {
+            "EN": "Namielle Whisker"
+        }
+    },
+    {
+        "id": 966,
+        "values": {
+            "EN": "Nergigante Cortex"
+        }
+    },
+    {
+        "id": 967,
+        "values": {
+            "EN": "Nergigante Flail"
+        }
+    },
+    {
+        "id": 968,
+        "values": {
+            "EN": "Nergigante Hardclaw"
+        }
+    },
+    {
+        "id": 969,
+        "values": {
+            "EN": "Pure Dragon Blood"
+        }
+    },
+    {
+        "id": 970,
+        "values": {
+            "EN": "Shadowpierce Fang"
+        }
+    },
+    {
+        "id": 971,
+        "values": {
+            "EN": "Shara Ishvalda Boulderplate"
+        }
+    },
+    {
+        "id": 972,
+        "values": {
+            "EN": "Shara Ishvalda Petalstone"
+        }
+    },
+    {
+        "id": 973,
+        "values": {
+            "EN": "Shara Ishvalda Tenderclaw"
+        }
+    },
+    {
+        "id": 974,
+        "values": {
+            "EN": "Shara Ishvalda Tenderplate"
+        }
+    },
+    {
+        "id": 975,
+        "values": {
+            "EN": "Shara Ishvalda Tenderscale"
+        }
+    },
+    {
+        "id": 976,
+        "values": {
+            "EN": "Teostra Cortex"
+        }
+    },
+    {
+        "id": 977,
+        "values": {
+            "EN": "Teostra Hardhorn"
+        }
+    },
+    {
+        "id": 978,
+        "values": {
+            "EN": "Teostra Lash"
+        }
+    },
+    {
+        "id": 979,
+        "values": {
+            "EN": "Teostra Mane+"
+        }
+    },
+    {
+        "id": 980,
+        "values": {
+            "EN": "Vaal Hazak Fellwing"
+        }
+    },
+    {
+        "id": 981,
+        "values": {
+            "EN": "Vaal Hazak Flail"
+        }
+    },
+    {
+        "id": 982,
+        "values": {
+            "EN": "Vaal Hazak Hardclaw"
+        }
+    },
+    {
+        "id": 983,
+        "values": {
+            "EN": "Vaal Hazak Cortex"
+        }
+    },
+    {
+        "id": 984,
+        "values": {
+            "EN": "Velkhana Cortex"
+        }
+    },
+    {
+        "id": 985,
+        "values": {
+            "EN": "Velkhana Crownhorn"
+        }
+    },
+    {
+        "id": 986,
+        "values": {
+            "EN": "Velkhana Fellwing"
+        }
+    },
+    {
+        "id": 987,
+        "values": {
+            "EN": "Velkhana Lash"
+        }
+    },
+    {
+        "id": 988,
+        "values": {
+            "EN": "Glamour Prism"
+        }
+    },
+    {
+        "id": 989,
+        "values": {
+            "EN": "Great Spiritvein Gem"
+        }
+    },
+    {
+        "id": 990,
+        "values": {
+            "EN": "Spiritvein Gem"
+        }
+    },
+    {
+        "id": 991,
+        "values": {
+            "EN": "Guiding Forest Crystal"
+        }
+    },
+    {
+        "id": 992,
+        "values": {
+            "EN": "Guiding Magma Crystal"
+        }
+    },
+    {
+        "id": 993,
+        "values": {
+            "EN": "Guiding Coral Crystal"
+        }
+    },
+    {
+        "id": 994,
+        "values": {
+            "EN": "Guiding Effluvial Crystal"
+        }
+    },
+    {
+        "id": 995,
+        "values": {
+            "EN": "Guiding Wasteland Crystal"
+        }
+    },
+    {
+        "id": 996,
+        "values": {
+            "EN": "Elder Dragonvein Bone"
+        }
+    },
+    {
+        "id": 997,
+        "values": {
+            "EN": "Elder Spiritvein Bone"
+        }
+    },
+    {
+        "id": 998,
+        "values": {
+            "EN": "Guiding Forest Dragonbone"
+        }
+    },
+    {
+        "id": 999,
+        "values": {
+            "EN": "Guiding Volcanic Dragonbone"
+        }
+    },
+    {
+        "id": 1000,
+        "values": {
+            "EN": "Guiding Coral Dragonbone"
+        }
+    },
+    {
+        "id": 1001,
+        "values": {
+            "EN": "Guiding Rotted Dragonbone"
+        }
+    },
+    {
+        "id": 1002,
+        "values": {
+            "EN": "Guiding Wasteland Dragonbone"
+        }
+    },
+    {
+        "id": 1003,
+        "values": {
+            "EN": "Aurora Crownhorn"
+        }
+    },
+    {
+        "id": 1004,
+        "values": {
+            "EN": "Azure Mane"
+        }
+    },
+    {
+        "id": 1005,
+        "values": {
+            "EN": "Enchanting Finehide"
+        }
+    },
+    {
+        "id": 1006,
+        "values": {
+            "EN": "Extinction Greathorn"
+        }
+    },
+    {
+        "id": 1007,
+        "values": {
+            "EN": "Hellfire Mane"
+        }
+    },
+    {
+        "id": 1008,
+        "values": {
+            "EN": "Solemn Azure Horn"
+        }
+    },
+    {
+        "id": 1009,
+        "values": {
+            "EN": "Stormcall Steelwing"
+        }
+    },
+    {
+        "id": 1010,
+        "values": {
+            "EN": "Tempered Azure Horn"
+        }
+    },
+    {
+        "id": 1011,
+        "values": {
+            "EN": "Tempered Azure Mane"
+        }
+    },
+    {
+        "id": 1012,
+        "values": {
+            "EN": "Tempered Crownhorn"
+        }
+    },
+    {
+        "id": 1013,
+        "values": {
+            "EN": "Tempered Crimson Mane"
+        }
+    },
+    {
+        "id": 1014,
+        "values": {
+            "EN": "Tempered Steelwing"
+        }
+    },
+    {
+        "id": 1015,
+        "values": {
+            "EN": "Tempered Trancehide"
+        }
+    },
+    {
+        "id": 1016,
+        "values": {
+            "EN": "Tempered Twilight Fang"
+        }
+    },
+    {
+        "id": 1017,
+        "values": {
+            "EN": "Twilight Fang"
+        }
+    },
+    {
+        "id": 1018,
+        "values": {
+            "EN": "Bloodstained Ebonhide"
+        }
+    },
+    {
+        "id": 1019,
+        "values": {
+            "EN": "Crimson Blastscale"
+        }
+    },
+    {
+        "id": 1020,
+        "values": {
+            "EN": "Moonlight Scale"
+        }
+    },
+    {
+        "id": 1021,
+        "values": {
+            "EN": "Scorching Scale"
+        }
+    },
+    {
+        "id": 1022,
+        "values": {
+            "EN": "Tempered Blastscale"
+        }
+    },
+    {
+        "id": 1023,
+        "values": {
+            "EN": "Spattered Hide"
+        }
+    },
+    {
+        "id": 1024,
+        "values": {
+            "EN": "Spiritvein Gem Shard"
+        }
+    },
+    {
+        "id": 1025,
+        "values": {
+            "EN": "Prosperous Crystal"
+        }
+    },
+    {
+        "id": 1026,
+        "values": {
+            "EN": "Hellfire Crystal"
+        }
+    },
+    {
+        "id": 1027,
+        "values": {
+            "EN": "Deepsea Crystal"
+        }
+    },
+    {
+        "id": 1028,
+        "values": {
+            "EN": "Twilight Crystal"
+        }
+    },
+    {
+        "id": 1029,
+        "values": {
+            "EN": "Serene Crystal"
+        }
+    },
+    {
+        "id": 1030,
+        "values": {
+            "EN": "Dragonvein Solidbone"
+        }
+    },
+    {
+        "id": 1031,
+        "values": {
+            "EN": "Spiritvein Solidbone"
+        }
+    },
+    {
+        "id": 1032,
+        "values": {
+            "EN": "Slumbering Greatbone"
+        }
+    },
+    {
+        "id": 1033,
+        "values": {
+            "EN": "Dragonscorched Wildbone"
+        }
+    },
+    {
+        "id": 1034,
+        "values": {
+            "EN": "Vibrant Crimsonbone"
+        }
+    },
+    {
+        "id": 1035,
+        "values": {
+            "EN": "Afflicted Frenzybone"
+        }
+    },
+    {
+        "id": 1036,
+        "values": {
+            "EN": "Tempered Cragbone"
+        }
+    },
+    {
+        "id": 1037,
+        "values": {
+            "EN": "Blackcurl Temperhorn"
+        }
+    },
+    {
+        "id": 1038,
+        "values": {
+            "EN": "Tempered Gold Scale"
+        }
+    },
+    {
+        "id": 1039,
+        "values": {
+            "EN": "Tempered Silver Scale"
+        }
+    },
+    {
+        "id": 1040,
+        "values": {
+            "EN": "Tempered Glimmerpelt"
+        }
+    },
+    {
+        "id": 1041,
+        "values": {
+            "EN": "Bloodthirsty Glimmerpelt"
+        }
+    },
+    {
+        "id": 1042,
+        "values": {
+            "EN": "Charged Deathly Shocker"
+        }
+    },
+    {
+        "id": 1043,
+        "values": {
+            "EN": "Fatal Rendclaw"
+        }
+    },
+    {
+        "id": 1044,
+        "values": {
+            "EN": "Soulrender Talon"
+        }
+    },
+    {
+        "id": 1045,
+        "values": {
+            "EN": "Tempered Rendclaw"
+        }
+    },
+    {
+        "id": 1046,
+        "values": {
+            "EN": "Tempered Shocker"
+        }
+    },
+    {
+        "id": 1047,
+        "values": {
+            "EN": "Tempered Talon"
+        }
+    },
+    {
+        "id": 1048,
+        "values": {
+            "EN": "Crackling Thunderpelt"
+        }
+    },
+    {
+        "id": 1049,
+        "values": {
+            "EN": "Glossy Ebonshell"
+        }
+    },
+    {
+        "id": 1050,
+        "values": {
+            "EN": "Honed Tailblade"
+        }
+    },
+    {
+        "id": 1051,
+        "values": {
+            "EN": "Metallic Scute"
+        }
+    },
+    {
+        "id": 1052,
+        "values": {
+            "EN": "Smoldering Tailedge"
+        }
+    },
+    {
+        "id": 1053,
+        "values": {
+            "EN": "Tempered Ebonshell"
+        }
+    },
+    {
+        "id": 1054,
+        "values": {
+            "EN": "Tempered Scute"
+        }
+    },
+    {
+        "id": 1055,
+        "values": {
+            "EN": "Tempered Tailblade"
+        }
+    },
+    {
+        "id": 1056,
+        "values": {
+            "EN": "Tempered Tailedge"
+        }
+    },
+    {
+        "id": 1057,
+        "values": {
+            "EN": "Tempered Thunderpelt"
+        }
+    },
+    {
+        "id": 1058,
+        "values": {
+            "EN": "Assassin Cutwing"
+        }
+    },
+    {
+        "id": 1059,
+        "values": {
+            "EN": "Azure Scale"
+        }
+    },
+    {
+        "id": 1061,
+        "values": {
+            "EN": "King's Scale"
+        }
+    },
+    {
+        "id": 1062,
+        "values": {
+            "EN": "Shuddering Darkjaw"
+        }
+    },
+    {
+        "id": 1063,
+        "values": {
+            "EN": "Smooth Icehide"
+        }
+    },
+    {
+        "id": 1064,
+        "values": {
+            "EN": "Strongman's Jaw"
+        }
+    },
+    {
+        "id": 1065,
+        "values": {
+            "EN": "Tempered Azure Scale"
+        }
+    },
+    {
+        "id": 1066,
+        "values": {
+            "EN": "Tempered Cutwing"
+        }
+    },
+    {
+        "id": 1067,
+        "values": {
+            "EN": "Tempered Ebonjaw"
+        }
+    },
+    {
+        "id": 1068,
+        "values": {
+            "EN": "Tempered Icehide"
+        }
+    },
+    {
+        "id": 1069,
+        "values": {
+            "EN": "Tempered Jaw"
+        }
+    },
+    {
+        "id": 1070,
+        "values": {
+            "EN": "Tempered Red Scale"
+        }
+    },
+    {
+        "id": 1071,
+        "values": {
+            "EN": "Twisted Temperhorn"
+        }
+    },
+    {
+        "id": 1072,
+        "values": {
+            "EN": "Incandescent Magmafin"
+        }
+    },
+    {
+        "id": 1073,
+        "values": {
+            "EN": "Tempered Magmafin"
+        }
+    },
+    {
+        "id": 1074,
+        "values": {
+            "EN": "Sinister Silverpelt"
+        }
+    },
+    {
+        "id": 1075,
+        "values": {
+            "EN": "Tempered Silverpelt"
+        }
+    },
+    {
+        "id": 1076,
+        "values": {
+            "EN": "Decayed Crystal"
+        }
+    },
+    {
+        "id": 1077,
+        "values": {
+            "EN": "Forest Crystal"
+        }
+    },
+    {
+        "id": 1078,
+        "values": {
+            "EN": "Magma Crystal"
+        }
+    },
+    {
+        "id": 1079,
+        "values": {
+            "EN": "Melted Crystal"
+        }
+    },
+    {
+        "id": 1082,
+        "values": {
+            "EN": "Coral Crystal - Rarity 9"
+        }
+    },
+    {
+        "id": 1083,
+        "values": {
+            "EN": "Pale Crystal"
+        }
+    },
+    {
+        "id": 1084,
+        "values": {
+            "EN": "Distorted Crystal"
+        }
+    },
+    {
+        "id": 1085,
+        "values": {
+            "EN": "Effluvial Crystal"
+        }
+    },
+    {
+        "id": 1086,
+        "values": {
+            "EN": "Cracked Crystal"
+        }
+    },
+    {
+        "id": 1087,
+        "values": {
+            "EN": "Wasteland Crystal"
+        }
+    },
+    {
+        "id": 1088,
+        "values": {
+            "EN": "Fierce Dragonvein Bone"
+        }
+    },
+    {
+        "id": 1089,
+        "values": {
+            "EN": "Heavy Dragonvein Bone"
+        }
+    },
+    {
+        "id": 1090,
+        "values": {
+            "EN": "Spiritvein Slogbone"
+        }
+    },
+    {
+        "id": 1091,
+        "values": {
+            "EN": "Mossy Greatbone"
+        }
+    },
+    {
+        "id": 1092,
+        "values": {
+            "EN": "Woodland Greatbone"
+        }
+    },
+    {
+        "id": 1093,
+        "values": {
+            "EN": "Simmering Wildbone"
+        }
+    },
+    {
+        "id": 1094,
+        "values": {
+            "EN": "Volcanic Wildbone"
+        }
+    },
+    {
+        "id": 1095,
+        "values": {
+            "EN": "Coral Crimsonbone"
+        }
+    },
+    {
+        "id": 1096,
+        "values": {
+            "EN": "Vivid Crimsonbone"
+        }
+    },
+    {
+        "id": 1097,
+        "values": {
+            "EN": "Effluvial Frenzybone"
+        }
+    },
+    {
+        "id": 1098,
+        "values": {
+            "EN": "Malformed Frenzybone"
+        }
+    },
+    {
+        "id": 1099,
+        "values": {
+            "EN": "Wasteland Cragbone"
+        }
+    },
+    {
+        "id": 1100,
+        "values": {
+            "EN": "Weathered Cragbone"
+        }
+    },
+    {
+        "id": 1101,
+        "values": {
+            "EN": "Blinding Cathode"
+        }
+    },
+    {
+        "id": 1102,
+        "values": {
+            "EN": "Heavy Jaw"
+        }
+    },
+    {
+        "id": 1103,
+        "values": {
+            "EN": "Night Hood"
+        }
+    },
+    {
+        "id": 1104,
+        "values": {
+            "EN": "Rugged Mane"
+        }
+    },
+    {
+        "id": 1105,
+        "values": {
+            "EN": "Tempered Cathode"
+        }
+    },
+    {
+        "id": 1106,
+        "values": {
+            "EN": "Ancient Great Horn"
+        }
+    },
+    {
+        "id": 1107,
+        "values": {
+            "EN": "Flickering Flamepelt"
+        }
+    },
+    {
+        "id": 1108,
+        "values": {
+            "EN": "Inkstained Oilshell+"
+        }
+    },
+    {
+        "id": 1109,
+        "values": {
+            "EN": "Muddy Crown"
+        }
+    },
+    {
+        "id": 1110,
+        "values": {
+            "EN": "Tempered Crown"
+        }
+    },
+    {
+        "id": 1111,
+        "values": {
+            "EN": "Tempered Flamepelt"
+        }
+    },
+    {
+        "id": 1112,
+        "values": {
+            "EN": "Tempered Great Horn"
+        }
+    },
+    {
+        "id": 1113,
+        "values": {
+            "EN": "Tempered Oilshell+"
+        }
+    },
+    {
+        "id": 1114,
+        "values": {
+            "EN": "Obsidian Fur"
+        }
+    },
+    {
+        "id": 1115,
+        "values": {
+            "EN": "Pink Scale"
+        }
+    },
+    {
+        "id": 1116,
+        "values": {
+            "EN": "Queen's Scale"
+        }
+    },
+    {
+        "id": 1117,
+        "values": {
+            "EN": "Rubbery Shell"
+        }
+    },
+    {
+        "id": 1118,
+        "values": {
+            "EN": "Tempered Green Scale"
+        }
+    },
+    {
+        "id": 1119,
+        "values": {
+            "EN": "Tempered Hide"
+        }
+    },
+    {
+        "id": 1120,
+        "values": {
+            "EN": "Tempered Pink Scale"
+        }
+    },
+    {
+        "id": 1121,
+        "values": {
+            "EN": "Tempered Rubbery Shell"
+        }
+    },
+    {
+        "id": 1122,
+        "values": {
+            "EN": "Colorful Plume"
+        }
+    },
+    {
+        "id": 1123,
+        "values": {
+            "EN": "Dazzling Photophore+"
+        }
+    },
+    {
+        "id": 1124,
+        "values": {
+            "EN": "Fragrant Poison Sac"
+        }
+    },
+    {
+        "id": 1125,
+        "values": {
+            "EN": "Hydrated Sac"
+        }
+    },
+    {
+        "id": 1126,
+        "values": {
+            "EN": "Tempered Poison Sac"
+        }
+    },
+    {
+        "id": 1127,
+        "values": {
+            "EN": "Tempered Torrent Sac"
+        }
+    },
+    {
+        "id": 1128,
+        "values": {
+            "EN": "Hunter Runestone"
+        }
+    },
+    {
+        "id": 1129,
+        "values": {
+            "EN": "Golden Fragment"
+        }
+    },
+    {
+        "id": 1130,
+        "values": {
+            "EN": "Golden Chunk"
+        }
+    },
+    {
+        "id": 1131,
+        "values": {
+            "EN": "Gold Chip Fragment"
+        }
+    },
+    {
+        "id": 1132,
+        "values": {
+            "EN": "Dissolved Weapon"
+        }
+    },
+    {
+        "id": 1133,
+        "values": {
+            "EN": "Melded Weapon"
+        }
+    },
+    {
+        "id": 1134,
+        "values": {
+            "EN": "Sublimated Weapon"
+        }
+    },
+    {
+        "id": 1135,
+        "values": {
+            "EN": "Emerald Shell"
+        }
+    },
+    {
+        "id": 1136,
+        "values": {
+            "EN": "Senu's Feather"
+        }
+    },
+    {
+        "id": 1137,
+        "values": {
+            "EN": "Nekker Card (Weapon)"
+        }
+    },
+    {
+        "id": 1138,
+        "values": {
+            "EN": "Nekker Card (Armor)"
+        }
+    },
+    {
+        "id": 1139,
+        "values": {
+            "EN": "Gourmet Voucher"
+        }
+    },
+    {
+        "id": 1140,
+        "values": {
+            "EN": "King Armor Sphere"
+        }
+    },
+    {
+        "id": 1141,
+        "values": {
+            "EN": "True Armor Sphere"
+        }
+    },
+    {
+        "id": 1142,
+        "values": {
+            "EN": "Pukei-Pukei Shard"
+        }
+    },
+    {
+        "id": 1143,
+        "values": {
+            "EN": "Uragaan Jaw+"
+        }
+    },
+    {
+        "id": 1144,
+        "values": {
+            "EN": "Uragaan Pallium"
+        }
+    },
+    {
+        "id": 1145,
+        "values": {
+            "EN": "Velkhana Hardclaw"
+        }
+    },
+    {
+        "id": 1146,
+        "values": {
+            "EN": "Teostra Fellwing"
+        }
+    },
+    {
+        "id": 1147,
+        "values": {
+            "EN": "Celestial Wyverian Print"
+        }
+    },
+    {
+        "id": 1148,
+        "values": {
+            "EN": "Giant Scale"
+        }
+    },
+    {
+        "id": 1149,
+        "values": {
+            "EN": "Magnificent Scale"
+        }
+    },
+    {
+        "id": 1150,
+        "values": {
+            "EN": "Dragonvein Coal Chunk"
+        }
+    },
+    {
+        "id": 1151,
+        "values": {
+            "EN": "Sublime First Wyverian Print"
+        }
+    },
+    {
+        "id": 1152,
+        "values": {
+            "EN": "Giant Dragonvein Coal"
+        }
+    },
+    {
+        "id": 1153,
+        "values": {
+            "EN": "Rajang Hardfang"
+        }
+    },
+    {
+        "id": 1154,
+        "values": {
+            "EN": "Black Eagle Blueprint"
+        }
+    },
+    {
+        "id": 1155,
+        "values": {
+            "EN": "S.T.A.R.S. Badge"
+        }
+    },
+    {
+        "id": 1156,
+        "values": {
+            "EN": "Wiggler Pot"
+        }
+    },
+    {
+        "id": 1157,
+        "values": {
+            "EN": "Banuk Warrior Symbol"
+        }
+    },
+    {
+        "id": 1158,
+        "values": {
+            "EN": "Stygian Zinogre Dragonhold"
+        }
+    },
+    {
+        "id": 1159,
+        "values": {
+            "EN": "Stygian Zinogre  Skymerald"
+        }
+    },
+    {
+        "id": 1160,
+        "values": {
+            "EN": "Stygian Zinogre Hardclaw"
+        }
+    },
+    {
+        "id": 1161,
+        "values": {
+            "EN": "Stygian Zinogre Dragonlocks"
+        }
+    },
+    {
+        "id": 1162,
+        "values": {
+            "EN": "Stygian Zinogre Hardhorn"
+        }
+    },
+    {
+        "id": 1163,
+        "values": {
+            "EN": "Stygian Zinogre Cortex"
+        }
+    },
+    {
+        "id": 1164,
+        "values": {
+            "EN": "Dracophage Bug"
+        }
+    },
+    {
+        "id": 1165,
+        "values": {
+            "EN": "Stygian Zinogre Lash"
+        }
+    },
+    {
+        "id": 1166,
+        "values": {
+            "EN": "Safi'jiiva Hardhorn"
+        }
+    },
+    {
+        "id": 1167,
+        "values": {
+            "EN": "Safi'jiiva Shard"
+        }
+    },
+    {
+        "id": 1168,
+        "values": {
+            "EN": "Safi'jiiva Fellwing"
+        }
+    },
+    {
+        "id": 1169,
+        "values": {
+            "EN": "Zionium Crystal"
+        }
+    },
+    {
+        "id": 1170,
+        "values": {
+            "EN": "Safi'jiiva Cortex"
+        }
+    },
+    {
+        "id": 1171,
+        "values": {
+            "EN": "Safi'jiiva Hardclaw"
+        }
+    },
+    {
+        "id": 1172,
+        "values": {
+            "EN": "Pulsing Dragonshell"
+        }
+    },
+    {
+        "id": 1173,
+        "values": {
+            "EN": "Safi'jiiva Lash"
+        }
+    },
+    {
+        "id": 1174,
+        "values": {
+            "EN": "Annihilating Temperhorn"
+        }
+    },
+    {
+        "id": 1175,
+        "values": {
+            "EN": "Tempered Dragonhold"
+        }
+    },
+    {
+        "id": 1176,
+        "values": {
+            "EN": "Frozen Crystal"
+        }
+    },
+    {
+        "id": 1177,
+        "values": {
+            "EN": "Rime Crystal"
+        }
+    },
+    {
+        "id": 1178,
+        "values": {
+            "EN": "Daybreak Crystal"
+        }
+    },
+    {
+        "id": 1179,
+        "values": {
+            "EN": "Guiding Rime Crystal"
+        }
+    },
+    {
+        "id": 1180,
+        "values": {
+            "EN": "Hoary Icebone"
+        }
+    },
+    {
+        "id": 1181,
+        "values": {
+            "EN": "Tundra Icebone"
+        }
+    },
+    {
+        "id": 1182,
+        "values": {
+            "EN": "Everfrost Icebone"
+        }
+    },
+    {
+        "id": 1183,
+        "values": {
+            "EN": "Guiding Tundra Dragonbone"
+        }
+    },
+    {
+        "id": 1184,
+        "values": {
+            "EN": "Gushing Dragonhold"
+        }
+    },
+    {
+        "id": 1185,
+        "values": {
+            "EN": "Tempered Icefang"
+        }
+    },
+    {
+        "id": 1186,
+        "values": {
+            "EN": "Tempered Frosthide"
+        }
+    },
+    {
+        "id": 1187,
+        "values": {
+            "EN": "Coldblooded Icefang"
+        }
+    },
+    {
+        "id": 1188,
+        "values": {
+            "EN": "Enticing Viperthorn"
+        }
+    },
+    {
+        "id": 1189,
+        "values": {
+            "EN": "Tempered Viperthorn"
+        }
+    },
+    {
+        "id": 1190,
+        "values": {
+            "EN": "Crystal Frozenhide"
+        }
+    },
+    {
+        "id": 1191,
+        "values": {
+            "EN": "Vip Gratitude Ticket"
+        }
+    },
+    {
+        "id": 1192,
+        "values": {
+            "EN": "VIP Joyful Ticket"
+        }
+    },
+    {
+        "id": 1193,
+        "values": {
+            "EN": "Unity Symbol"
+        }
+    },
+    {
+        "id": 1194,
+        "values": {
+            "EN": "Meaty Canteen Ticket"
+        }
+    },
+    {
+        "id": 1195,
+        "values": {
+            "EN": "Pickaxe Ticket"
+        }
+    },
+    {
+        "id": 1196,
+        "values": {
+            "EN": "Fest Ticket"
+        }
+    },
+    {
+        "id": 1197,
+        "values": {
+            "EN": "Bluegleam"
+        }
+    },
+    {
+        "id": 1198,
+        "values": {
+            "EN": "Wyverian Ticket"
+        }
+    },
+    {
+        "id": 1199,
+        "values": {
+            "EN": "Sealed Dragon Cloth"
+        }
+    },
+    {
+        "id": 1200,
+        "values": {
+            "EN": "Penguin Ticket"
+        }
+    },
+    {
+        "id": 1201,
+        "values": {
+            "EN": "Buff Ticket"
+        }
+    },
+    {
+        "id": 1202,
+        "values": {
+            "EN": "Daemon Ticket"
+        }
+    },
+    {
+        "id": 1203,
+        "values": {
+            "EN": "Gratitude Ticket"
+        }
+    },
+    {
+        "id": 1204,
+        "values": {
+            "EN": "Joyful Ticket"
+        }
+    }
+]

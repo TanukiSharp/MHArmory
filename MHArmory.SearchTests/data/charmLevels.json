@@ -1,0 +1,7549 @@
+[
+    {
+        "id": 0,
+        "name": {
+            "EN": "Poison Charm 1"
+        },
+        "level": 1,
+        "rarity": 3,
+        "abilityIds": [
+            1
+        ],
+        "craftMaterials": [
+            {
+                "id": 231,
+                "quantity": 1
+            },
+            {
+                "id": 232,
+                "quantity": 2
+            },
+            {
+                "id": 121,
+                "quantity": 4
+            },
+            {
+                "id": 127,
+                "quantity": 1
+            }
+        ]
+    },
+    {
+        "id": 1,
+        "name": {
+            "EN": "Poison Charm 2"
+        },
+        "level": 2,
+        "rarity": 5,
+        "abilityIds": [
+            2
+        ],
+        "craftMaterials": [
+            {
+                "id": 236,
+                "quantity": 2
+            },
+            {
+                "id": 235,
+                "quantity": 2
+            },
+            {
+                "id": 123,
+                "quantity": 3
+            },
+            {
+                "id": 128,
+                "quantity": 1
+            }
+        ]
+    },
+    {
+        "id": 2,
+        "name": {
+            "EN": "Poison Charm 3"
+        },
+        "level": 3,
+        "rarity": 6,
+        "abilityIds": [
+            3
+        ],
+        "craftMaterials": [
+            {
+                "id": 351,
+                "quantity": 1
+            },
+            {
+                "id": 349,
+                "quantity": 2
+            },
+            {
+                "id": 126,
+                "quantity": 1
+            },
+            {
+                "id": 129,
+                "quantity": 1
+            }
+        ]
+    },
+    {
+        "id": 3,
+        "name": {
+            "EN": "Attack Charm 1"
+        },
+        "level": 1,
+        "rarity": 3,
+        "abilityIds": [
+            39
+        ],
+        "craftMaterials": [
+            {
+                "id": 136,
+                "quantity": 4
+            },
+            {
+                "id": 139,
+                "quantity": 4
+            },
+            {
+                "id": 124,
+                "quantity": 1
+            },
+            {
+                "id": 127,
+                "quantity": 1
+            }
+        ]
+    },
+    {
+        "id": 4,
+        "name": {
+            "EN": "Attack Charm 2"
+        },
+        "level": 2,
+        "rarity": 5,
+        "abilityIds": [
+            40
+        ],
+        "craftMaterials": [
+            {
+                "id": 137,
+                "quantity": 3
+            },
+            {
+                "id": 143,
+                "quantity": 1
+            },
+            {
+                "id": 125,
+                "quantity": 1
+            },
+            {
+                "id": 128,
+                "quantity": 1
+            }
+        ]
+    },
+    {
+        "id": 5,
+        "name": {
+            "EN": "Attack Charm 3"
+        },
+        "level": 3,
+        "rarity": 7,
+        "abilityIds": [
+            41
+        ],
+        "craftMaterials": [
+            {
+                "id": 153,
+                "quantity": 2
+            },
+            {
+                "id": 483,
+                "quantity": 1
+            },
+            {
+                "id": 142,
+                "quantity": 2
+            },
+            {
+                "id": 129,
+                "quantity": 1
+            }
+        ]
+    },
+    {
+        "id": 6,
+        "name": {
+            "EN": "Attack Charm 4"
+        },
+        "level": 4,
+        "rarity": 11,
+        "abilityIds": [
+            42
+        ],
+        "craftMaterials": [
+            {
+                "id": 936,
+                "quantity": 3
+            },
+            {
+                "id": 852,
+                "quantity": 1
+            },
+            {
+                "id": 933,
+                "quantity": 1
+            },
+            {
+                "id": 658,
+                "quantity": 1
+            }
+        ]
+    },
+    {
+        "id": 7,
+        "name": {
+            "EN": "Defense Charm 1"
+        },
+        "level": 1,
+        "rarity": 3,
+        "abilityIds": [
+            46
+        ],
+        "craftMaterials": [
+            {
+                "id": 118,
+                "quantity": 4
+            },
+            {
+                "id": 117,
+                "quantity": 4
+            },
+            {
+                "id": 124,
+                "quantity": 1
+            },
+            {
+                "id": 127,
+                "quantity": 1
+            }
+        ]
+    },
+    {
+        "id": 8,
+        "name": {
+            "EN": "Defense Charm 2"
+        },
+        "level": 2,
+        "rarity": 5,
+        "abilityIds": [
+            47
+        ],
+        "craftMaterials": [
+            {
+                "id": 119,
+                "quantity": 6
+            },
+            {
+                "id": 118,
+                "quantity": 8
+            },
+            {
+                "id": 125,
+                "quantity": 1
+            },
+            {
+                "id": 128,
+                "quantity": 1
+            }
+        ]
+    },
+    {
+        "id": 9,
+        "name": {
+            "EN": "Defense Charm 3"
+        },
+        "level": 3,
+        "rarity": 6,
+        "abilityIds": [
+            48
+        ],
+        "craftMaterials": [
+            {
+                "id": 120,
+                "quantity": 6
+            },
+            {
+                "id": 119,
+                "quantity": 8
+            },
+            {
+                "id": 126,
+                "quantity": 1
+            },
+            {
+                "id": 129,
+                "quantity": 1
+            }
+        ]
+    },
+    {
+        "id": 10,
+        "name": {
+            "EN": "Defense Charm 4"
+        },
+        "level": 4,
+        "rarity": 9,
+        "abilityIds": [
+            49
+        ],
+        "craftMaterials": []
+    },
+    {
+        "id": 11,
+        "name": {
+            "EN": "Defense Charm 5"
+        },
+        "level": 5,
+        "rarity": 11,
+        "abilityIds": [
+            50
+        ],
+        "craftMaterials": []
+    },
+    {
+        "id": 12,
+        "name": {
+            "EN": "Paralysis Charm 1"
+        },
+        "level": 1,
+        "rarity": 3,
+        "abilityIds": [
+            4
+        ],
+        "craftMaterials": [
+            {
+                "id": 303,
+                "quantity": 1
+            },
+            {
+                "id": 304,
+                "quantity": 2
+            },
+            {
+                "id": 141,
+                "quantity": 6
+            },
+            {
+                "id": 127,
+                "quantity": 1
+            }
+        ]
+    },
+    {
+        "id": 13,
+        "name": {
+            "EN": "Paralysis Charm 2"
+        },
+        "level": 2,
+        "rarity": 5,
+        "abilityIds": [
+            5
+        ],
+        "craftMaterials": [
+            {
+                "id": 308,
+                "quantity": 2
+            },
+            {
+                "id": 161,
+                "quantity": 4
+            },
+            {
+                "id": 123,
+                "quantity": 3
+            },
+            {
+                "id": 128,
+                "quantity": 1
+            }
+        ]
+    },
+    {
+        "id": 14,
+        "name": {
+            "EN": "Paralysis Charm 3"
+        },
+        "level": 3,
+        "rarity": 7,
+        "abilityIds": [
+            6
+        ],
+        "craftMaterials": [
+            {
+                "id": 428,
+                "quantity": 1
+            },
+            {
+                "id": 423,
+                "quantity": 2
+            },
+            {
+                "id": 126,
+                "quantity": 1
+            },
+            {
+                "id": 129,
+                "quantity": 1
+            }
+        ]
+    },
+    {
+        "id": 15,
+        "name": {
+            "EN": "Sleep Charm 1"
+        },
+        "level": 1,
+        "rarity": 3,
+        "abilityIds": [
+            7
+        ],
+        "craftMaterials": [
+            {
+                "id": 314,
+                "quantity": 1
+            },
+            {
+                "id": 312,
+                "quantity": 2
+            },
+            {
+                "id": 122,
+                "quantity": 3
+            },
+            {
+                "id": 127,
+                "quantity": 1
+            }
+        ]
+    },
+    {
+        "id": 16,
+        "name": {
+            "EN": "Sleep Charm 2"
+        },
+        "level": 2,
+        "rarity": 5,
+        "abilityIds": [
+            8
+        ],
+        "craftMaterials": [
+            {
+                "id": 317,
+                "quantity": 1
+            },
+            {
+                "id": 312,
+                "quantity": 3
+            },
+            {
+                "id": 123,
+                "quantity": 3
+            },
+            {
+                "id": 128,
+                "quantity": 1
+            }
+        ]
+    },
+    {
+        "id": 17,
+        "name": {
+            "EN": "Sleep Charm 3"
+        },
+        "level": 3,
+        "rarity": 6,
+        "abilityIds": [
+            9
+        ],
+        "craftMaterials": [
+            {
+                "id": 396,
+                "quantity": 1
+            },
+            {
+                "id": 393,
+                "quantity": 2
+            },
+            {
+                "id": 126,
+                "quantity": 1
+            },
+            {
+                "id": 129,
+                "quantity": 1
+            }
+        ]
+    },
+    {
+        "id": 18,
+        "name": {
+            "EN": "Stun Charm 1"
+        },
+        "level": 1,
+        "rarity": 3,
+        "abilityIds": [
+            10
+        ],
+        "craftMaterials": [
+            {
+                "id": 288,
+                "quantity": 1
+            },
+            {
+                "id": 287,
+                "quantity": 2
+            },
+            {
+                "id": 122,
+                "quantity": 4
+            },
+            {
+                "id": 127,
+                "quantity": 1
+            }
+        ]
+    },
+    {
+        "id": 19,
+        "name": {
+            "EN": "Stun Charm 2"
+        },
+        "level": 2,
+        "rarity": 5,
+        "abilityIds": [
+            11
+        ],
+        "craftMaterials": [
+            {
+                "id": 292,
+                "quantity": 2
+            },
+            {
+                "id": 291,
+                "quantity": 2
+            },
+            {
+                "id": 125,
+                "quantity": 1
+            },
+            {
+                "id": 128,
+                "quantity": 1
+            }
+        ]
+    },
+    {
+        "id": 20,
+        "name": {
+            "EN": "Stun Charm 3"
+        },
+        "level": 3,
+        "rarity": 6,
+        "abilityIds": [
+            12
+        ],
+        "craftMaterials": [
+            {
+                "id": 368,
+                "quantity": 3
+            },
+            {
+                "id": 367,
+                "quantity": 2
+            },
+            {
+                "id": 142,
+                "quantity": 2
+            },
+            {
+                "id": 129,
+                "quantity": 1
+            }
+        ]
+    },
+    {
+        "id": 21,
+        "name": {
+            "EN": "Windproof Charm 1"
+        },
+        "level": 1,
+        "rarity": 3,
+        "abilityIds": [
+            28
+        ],
+        "craftMaterials": [
+            {
+                "id": 296,
+                "quantity": 3
+            },
+            {
+                "id": 295,
+                "quantity": 5
+            },
+            {
+                "id": 122,
+                "quantity": 3
+            },
+            {
+                "id": 127,
+                "quantity": 1
+            }
+        ]
+    },
+    {
+        "id": 22,
+        "name": {
+            "EN": "Windproof Charm 2"
+        },
+        "level": 2,
+        "rarity": 5,
+        "abilityIds": [
+            29
+        ],
+        "craftMaterials": [
+            {
+                "id": 300,
+                "quantity": 3
+            },
+            {
+                "id": 173,
+                "quantity": 2
+            },
+            {
+                "id": 123,
+                "quantity": 1
+            },
+            {
+                "id": 128,
+                "quantity": 1
+            }
+        ]
+    },
+    {
+        "id": 23,
+        "name": {
+            "EN": "Windproof Charm 3"
+        },
+        "level": 3,
+        "rarity": 6,
+        "abilityIds": [
+            30
+        ],
+        "craftMaterials": [
+            {
+                "id": 355,
+                "quantity": 3
+            },
+            {
+                "id": 351,
+                "quantity": 1
+            },
+            {
+                "id": 125,
+                "quantity": 1
+            },
+            {
+                "id": 129,
+                "quantity": 1
+            }
+        ]
+    },
+    {
+        "id": 24,
+        "name": {
+            "EN": "Windproof Charm 4"
+        },
+        "level": 4,
+        "rarity": 11,
+        "abilityIds": [
+            31
+        ],
+        "craftMaterials": []
+    },
+    {
+        "id": 25,
+        "name": {
+            "EN": "Windproof Charm 5"
+        },
+        "level": 5,
+        "rarity": 12,
+        "abilityIds": [
+            32
+        ],
+        "craftMaterials": []
+    },
+    {
+        "id": 26,
+        "name": {
+            "EN": "Health Charm 1"
+        },
+        "level": 1,
+        "rarity": 3,
+        "abilityIds": [
+            53
+        ],
+        "craftMaterials": [
+            {
+                "id": 278,
+                "quantity": 1
+            },
+            {
+                "id": 276,
+                "quantity": 3
+            },
+            {
+                "id": 121,
+                "quantity": 3
+            },
+            {
+                "id": 127,
+                "quantity": 1
+            }
+        ]
+    },
+    {
+        "id": 27,
+        "name": {
+            "EN": "Health Charm 2"
+        },
+        "level": 2,
+        "rarity": 5,
+        "abilityIds": [
+            54
+        ],
+        "craftMaterials": [
+            {
+                "id": 282,
+                "quantity": 1
+            },
+            {
+                "id": 277,
+                "quantity": 2
+            },
+            {
+                "id": 123,
+                "quantity": 3
+            },
+            {
+                "id": 128,
+                "quantity": 1
+            }
+        ]
+    },
+    {
+        "id": 28,
+        "name": {
+            "EN": "Health Charm 3"
+        },
+        "level": 3,
+        "rarity": 7,
+        "abilityIds": [
+            55
+        ],
+        "craftMaterials": [
+            {
+                "id": 411,
+                "quantity": 1
+            },
+            {
+                "id": 409,
+                "quantity": 2
+            },
+            {
+                "id": 142,
+                "quantity": 2
+            },
+            {
+                "id": 129,
+                "quantity": 1
+            }
+        ]
+    },
+    {
+        "id": 29,
+        "name": {
+            "EN": "Recovery Charm 1"
+        },
+        "level": 1,
+        "rarity": 3,
+        "abilityIds": [
+            56
+        ],
+        "craftMaterials": [
+            {
+                "id": 278,
+                "quantity": 1
+            },
+            {
+                "id": 277,
+                "quantity": 2
+            },
+            {
+                "id": 121,
+                "quantity": 3
+            },
+            {
+                "id": 127,
+                "quantity": 1
+            }
+        ]
+    },
+    {
+        "id": 30,
+        "name": {
+            "EN": "Recovery Charm 2"
+        },
+        "level": 2,
+        "rarity": 6,
+        "abilityIds": [
+            57
+        ],
+        "craftMaterials": [
+            {
+                "id": 284,
+                "quantity": 2
+            },
+            {
+                "id": 281,
+                "quantity": 1
+            },
+            {
+                "id": 125,
+                "quantity": 1
+            },
+            {
+                "id": 128,
+                "quantity": 1
+            }
+        ]
+    },
+    {
+        "id": 31,
+        "name": {
+            "EN": "Recovery Charm 3"
+        },
+        "level": 3,
+        "rarity": 7,
+        "abilityIds": [
+            58
+        ],
+        "craftMaterials": [
+            {
+                "id": 411,
+                "quantity": 1
+            },
+            {
+                "id": 409,
+                "quantity": 2
+            },
+            {
+                "id": 142,
+                "quantity": 2
+            },
+            {
+                "id": 129,
+                "quantity": 1
+            }
+        ]
+    },
+    {
+        "id": 32,
+        "name": {
+            "EN": "Fire Charm 1"
+        },
+        "level": 1,
+        "rarity": 3,
+        "abilityIds": [
+            62
+        ],
+        "craftMaterials": [
+            {
+                "id": 268,
+                "quantity": 1
+            },
+            {
+                "id": 265,
+                "quantity": 2
+            },
+            {
+                "id": 141,
+                "quantity": 3
+            },
+            {
+                "id": 127,
+                "quantity": 1
+            }
+        ]
+    },
+    {
+        "id": 33,
+        "name": {
+            "EN": "Fire Charm 2"
+        },
+        "level": 2,
+        "rarity": 5,
+        "abilityIds": [
+            63
+        ],
+        "craftMaterials": [
+            {
+                "id": 273,
+                "quantity": 1
+            },
+            {
+                "id": 271,
+                "quantity": 2
+            },
+            {
+                "id": 121,
+                "quantity": 4
+            },
+            {
+                "id": 128,
+                "quantity": 1
+            }
+        ]
+    },
+    {
+        "id": 34,
+        "name": {
+            "EN": "Fire Charm 3"
+        },
+        "level": 3,
+        "rarity": 7,
+        "abilityIds": [
+            64
+        ],
+        "craftMaterials": [
+            {
+                "id": 483,
+                "quantity": 1
+            },
+            {
+                "id": 351,
+                "quantity": 1
+            },
+            {
+                "id": 165,
+                "quantity": 3
+            },
+            {
+                "id": 129,
+                "quantity": 1
+            }
+        ]
+    },
+    {
+        "id": 35,
+        "name": {
+            "EN": "Water Charm 1"
+        },
+        "level": 1,
+        "rarity": 3,
+        "abilityIds": [
+            65
+        ],
+        "craftMaterials": [
+            {
+                "id": 249,
+                "quantity": 3
+            },
+            {
+                "id": 248,
+                "quantity": 3
+            },
+            {
+                "id": 121,
+                "quantity": 6
+            },
+            {
+                "id": 127,
+                "quantity": 1
+            }
+        ]
+    },
+    {
+        "id": 36,
+        "name": {
+            "EN": "Water Charm 2"
+        },
+        "level": 2,
+        "rarity": 5,
+        "abilityIds": [
+            66
+        ],
+        "craftMaterials": [
+            {
+                "id": 253,
+                "quantity": 3
+            },
+            {
+                "id": 252,
+                "quantity": 2
+            },
+            {
+                "id": 122,
+                "quantity": 4
+            },
+            {
+                "id": 128,
+                "quantity": 1
+            }
+        ]
+    },
+    {
+        "id": 37,
+        "name": {
+            "EN": "Water Charm 3"
+        },
+        "level": 3,
+        "rarity": 7,
+        "abilityIds": [
+            67
+        ],
+        "craftMaterials": [
+            {
+                "id": 483,
+                "quantity": 1
+            },
+            {
+                "id": 173,
+                "quantity": 1
+            },
+            {
+                "id": 167,
+                "quantity": 3
+            },
+            {
+                "id": 129,
+                "quantity": 1
+            }
+        ]
+    },
+    {
+        "id": 38,
+        "name": {
+            "EN": "Thunder Charm 1"
+        },
+        "level": 1,
+        "rarity": 3,
+        "abilityIds": [
+            71
+        ],
+        "craftMaterials": [
+            {
+                "id": 258,
+                "quantity": 1
+            },
+            {
+                "id": 257,
+                "quantity": 2
+            },
+            {
+                "id": 138,
+                "quantity": 6
+            },
+            {
+                "id": 127,
+                "quantity": 1
+            }
+        ]
+    },
+    {
+        "id": 39,
+        "name": {
+            "EN": "Thunder Charm 2"
+        },
+        "level": 2,
+        "rarity": 5,
+        "abilityIds": [
+            72
+        ],
+        "craftMaterials": [
+            {
+                "id": 262,
+                "quantity": 1
+            },
+            {
+                "id": 261,
+                "quantity": 2
+            },
+            {
+                "id": 121,
+                "quantity": 4
+            },
+            {
+                "id": 128,
+                "quantity": 1
+            }
+        ]
+    },
+    {
+        "id": 40,
+        "name": {
+            "EN": "Thunder Charm 3"
+        },
+        "level": 3,
+        "rarity": 7,
+        "abilityIds": [
+            73
+        ],
+        "craftMaterials": [
+            {
+                "id": 483,
+                "quantity": 1
+            },
+            {
+                "id": 173,
+                "quantity": 1
+            },
+            {
+                "id": 171,
+                "quantity": 3
+            },
+            {
+                "id": 129,
+                "quantity": 1
+            }
+        ]
+    },
+    {
+        "id": 41,
+        "name": {
+            "EN": "Blaze Charm 1"
+        },
+        "level": 1,
+        "rarity": 3,
+        "abilityIds": [
+            80
+        ],
+        "craftMaterials": [
+            {
+                "id": 268,
+                "quantity": 1
+            },
+            {
+                "id": 265,
+                "quantity": 2
+            },
+            {
+                "id": 141,
+                "quantity": 3
+            },
+            {
+                "id": 127,
+                "quantity": 1
+            }
+        ]
+    },
+    {
+        "id": 42,
+        "name": {
+            "EN": "Blaze Charm 2"
+        },
+        "level": 2,
+        "rarity": 6,
+        "abilityIds": [
+            81
+        ],
+        "craftMaterials": [
+            {
+                "id": 390,
+                "quantity": 3
+            },
+            {
+                "id": 389,
+                "quantity": 2
+            },
+            {
+                "id": 121,
+                "quantity": 6
+            },
+            {
+                "id": 128,
+                "quantity": 1
+            }
+        ]
+    },
+    {
+        "id": 43,
+        "name": {
+            "EN": "Blaze Charm 3"
+        },
+        "level": 3,
+        "rarity": 7,
+        "abilityIds": [
+            82
+        ],
+        "craftMaterials": [
+            {
+                "id": 428,
+                "quantity": 1
+            },
+            {
+                "id": 423,
+                "quantity": 2
+            },
+            {
+                "id": 165,
+                "quantity": 3
+            },
+            {
+                "id": 129,
+                "quantity": 1
+            }
+        ]
+    },
+    {
+        "id": 44,
+        "name": {
+            "EN": "Blaze Charm 4"
+        },
+        "level": 4,
+        "rarity": 10,
+        "abilityIds": [
+            83
+        ],
+        "craftMaterials": []
+    },
+    {
+        "id": 45,
+        "name": {
+            "EN": "Blaze Charm 5"
+        },
+        "level": 5,
+        "rarity": 11,
+        "abilityIds": [
+            84
+        ],
+        "craftMaterials": []
+    },
+    {
+        "id": 46,
+        "name": {
+            "EN": "Flood Charm 1"
+        },
+        "level": 1,
+        "rarity": 3,
+        "abilityIds": [
+            85
+        ],
+        "craftMaterials": [
+            {
+                "id": 249,
+                "quantity": 2
+            },
+            {
+                "id": 248,
+                "quantity": 2
+            },
+            {
+                "id": 121,
+                "quantity": 3
+            },
+            {
+                "id": 127,
+                "quantity": 1
+            }
+        ]
+    },
+    {
+        "id": 47,
+        "name": {
+            "EN": "Flood Charm 2"
+        },
+        "level": 2,
+        "rarity": 5,
+        "abilityIds": [
+            86
+        ],
+        "craftMaterials": [
+            {
+                "id": 253,
+                "quantity": 3
+            },
+            {
+                "id": 252,
+                "quantity": 2
+            },
+            {
+                "id": 122,
+                "quantity": 6
+            },
+            {
+                "id": 128,
+                "quantity": 1
+            }
+        ]
+    },
+    {
+        "id": 48,
+        "name": {
+            "EN": "Flood Charm 3"
+        },
+        "level": 3,
+        "rarity": 7,
+        "abilityIds": [
+            87
+        ],
+        "craftMaterials": [
+            {
+                "id": 419,
+                "quantity": 1
+            },
+            {
+                "id": 417,
+                "quantity": 2
+            },
+            {
+                "id": 167,
+                "quantity": 3
+            },
+            {
+                "id": 129,
+                "quantity": 1
+            }
+        ]
+    },
+    {
+        "id": 49,
+        "name": {
+            "EN": "Flood Charm 4"
+        },
+        "level": 4,
+        "rarity": 10,
+        "abilityIds": [
+            88
+        ],
+        "craftMaterials": []
+    },
+    {
+        "id": 50,
+        "name": {
+            "EN": "Flood Charm 5"
+        },
+        "level": 5,
+        "rarity": 11,
+        "abilityIds": [
+            89
+        ],
+        "craftMaterials": []
+    },
+    {
+        "id": 51,
+        "name": {
+            "EN": "Shock Charm 1"
+        },
+        "level": 1,
+        "rarity": 3,
+        "abilityIds": [
+            95
+        ],
+        "craftMaterials": [
+            {
+                "id": 258,
+                "quantity": 2
+            },
+            {
+                "id": 257,
+                "quantity": 2
+            },
+            {
+                "id": 138,
+                "quantity": 4
+            },
+            {
+                "id": 127,
+                "quantity": 1
+            }
+        ]
+    },
+    {
+        "id": 52,
+        "name": {
+            "EN": "Shock Charm 2"
+        },
+        "level": 2,
+        "rarity": 5,
+        "abilityIds": [
+            96
+        ],
+        "craftMaterials": [
+            {
+                "id": 262,
+                "quantity": 2
+            },
+            {
+                "id": 261,
+                "quantity": 2
+            },
+            {
+                "id": 121,
+                "quantity": 6
+            },
+            {
+                "id": 128,
+                "quantity": 1
+            }
+        ]
+    },
+    {
+        "id": 53,
+        "name": {
+            "EN": "Shock Charm 3"
+        },
+        "level": 3,
+        "rarity": 7,
+        "abilityIds": [
+            97
+        ],
+        "craftMaterials": [
+            {
+                "id": 375,
+                "quantity": 1
+            },
+            {
+                "id": 374,
+                "quantity": 2
+            },
+            {
+                "id": 171,
+                "quantity": 3
+            },
+            {
+                "id": 129,
+                "quantity": 1
+            }
+        ]
+    },
+    {
+        "id": 54,
+        "name": {
+            "EN": "Shock Charm 4"
+        },
+        "level": 4,
+        "rarity": 10,
+        "abilityIds": [
+            98
+        ],
+        "craftMaterials": []
+    },
+    {
+        "id": 55,
+        "name": {
+            "EN": "Shock Charm 5"
+        },
+        "level": 5,
+        "rarity": 11,
+        "abilityIds": [
+            99
+        ],
+        "craftMaterials": []
+    },
+    {
+        "id": 56,
+        "name": {
+            "EN": "Venom Charm 1"
+        },
+        "level": 1,
+        "rarity": 3,
+        "abilityIds": [
+            105
+        ],
+        "craftMaterials": [
+            {
+                "id": 278,
+                "quantity": 1
+            },
+            {
+                "id": 277,
+                "quantity": 1
+            },
+            {
+                "id": 121,
+                "quantity": 3
+            },
+            {
+                "id": 127,
+                "quantity": 1
+            }
+        ]
+    },
+    {
+        "id": 57,
+        "name": {
+            "EN": "Venom Charm 2"
+        },
+        "level": 2,
+        "rarity": 6,
+        "abilityIds": [
+            106
+        ],
+        "craftMaterials": [
+            {
+                "id": 284,
+                "quantity": 2
+            },
+            {
+                "id": 281,
+                "quantity": 1
+            },
+            {
+                "id": 119,
+                "quantity": 4
+            },
+            {
+                "id": 128,
+                "quantity": 1
+            }
+        ]
+    },
+    {
+        "id": 58,
+        "name": {
+            "EN": "Venom Charm 3"
+        },
+        "level": 3,
+        "rarity": 7,
+        "abilityIds": [
+            107
+        ],
+        "craftMaterials": [
+            {
+                "id": 483,
+                "quantity": 1
+            },
+            {
+                "id": 282,
+                "quantity": 1
+            },
+            {
+                "id": 159,
+                "quantity": 3
+            },
+            {
+                "id": 129,
+                "quantity": 1
+            }
+        ]
+    },
+    {
+        "id": 59,
+        "name": {
+            "EN": "Venom Charm 4"
+        },
+        "level": 4,
+        "rarity": 11,
+        "abilityIds": [
+            381
+        ],
+        "craftMaterials": []
+    },
+    {
+        "id": 60,
+        "name": {
+            "EN": "Immobilize Charm 1"
+        },
+        "level": 1,
+        "rarity": 3,
+        "abilityIds": [
+            108
+        ],
+        "craftMaterials": [
+            {
+                "id": 303,
+                "quantity": 2
+            },
+            {
+                "id": 304,
+                "quantity": 2
+            },
+            {
+                "id": 141,
+                "quantity": 4
+            },
+            {
+                "id": 127,
+                "quantity": 1
+            }
+        ]
+    },
+    {
+        "id": 61,
+        "name": {
+            "EN": "Immobilize Charm 2"
+        },
+        "level": 2,
+        "rarity": 5,
+        "abilityIds": [
+            109
+        ],
+        "craftMaterials": [
+            {
+                "id": 308,
+                "quantity": 1
+            },
+            {
+                "id": 309,
+                "quantity": 2
+            },
+            {
+                "id": 119,
+                "quantity": 4
+            },
+            {
+                "id": 128,
+                "quantity": 1
+            }
+        ]
+    },
+    {
+        "id": 62,
+        "name": {
+            "EN": "Immobilize Charm 3"
+        },
+        "level": 3,
+        "rarity": 7,
+        "abilityIds": [
+            110
+        ],
+        "craftMaterials": [
+            {
+                "id": 483,
+                "quantity": 1
+            },
+            {
+                "id": 173,
+                "quantity": 1
+            },
+            {
+                "id": 161,
+                "quantity": 3
+            },
+            {
+                "id": 129,
+                "quantity": 1
+            }
+        ]
+    },
+    {
+        "id": 63,
+        "name": {
+            "EN": "Immobilize Charm 4"
+        },
+        "level": 4,
+        "rarity": 11,
+        "abilityIds": [
+            379
+        ],
+        "craftMaterials": []
+    },
+    {
+        "id": 64,
+        "name": {
+            "EN": "Tranq Charm 1"
+        },
+        "level": 1,
+        "rarity": 3,
+        "abilityIds": [
+            111
+        ],
+        "craftMaterials": [
+            {
+                "id": 314,
+                "quantity": 1
+            },
+            {
+                "id": 312,
+                "quantity": 2
+            },
+            {
+                "id": 122,
+                "quantity": 3
+            },
+            {
+                "id": 127,
+                "quantity": 1
+            }
+        ]
+    },
+    {
+        "id": 65,
+        "name": {
+            "EN": "Tranq Charm 2"
+        },
+        "level": 2,
+        "rarity": 5,
+        "abilityIds": [
+            112
+        ],
+        "craftMaterials": [
+            {
+                "id": 317,
+                "quantity": 1
+            },
+            {
+                "id": 312,
+                "quantity": 3
+            },
+            {
+                "id": 119,
+                "quantity": 4
+            },
+            {
+                "id": 128,
+                "quantity": 1
+            }
+        ]
+    },
+    {
+        "id": 66,
+        "name": {
+            "EN": "Tranq Charm 3"
+        },
+        "level": 3,
+        "rarity": 7,
+        "abilityIds": [
+            113
+        ],
+        "craftMaterials": [
+            {
+                "id": 483,
+                "quantity": 1
+            },
+            {
+                "id": 419,
+                "quantity": 1
+            },
+            {
+                "id": 163,
+                "quantity": 3
+            },
+            {
+                "id": 129,
+                "quantity": 1
+            }
+        ]
+    },
+    {
+        "id": 67,
+        "name": {
+            "EN": "Tranq Charm 4"
+        },
+        "level": 4,
+        "rarity": 11,
+        "abilityIds": [
+            382
+        ],
+        "craftMaterials": []
+    },
+    {
+        "id": 68,
+        "name": {
+            "EN": "KO Charm 1"
+        },
+        "level": 1,
+        "rarity": 3,
+        "abilityIds": [
+            153
+        ],
+        "craftMaterials": [
+            {
+                "id": 314,
+                "quantity": 1
+            },
+            {
+                "id": 312,
+                "quantity": 2
+            },
+            {
+                "id": 122,
+                "quantity": 3
+            },
+            {
+                "id": 127,
+                "quantity": 1
+            }
+        ]
+    },
+    {
+        "id": 69,
+        "name": {
+            "EN": "KO Charm 2"
+        },
+        "level": 2,
+        "rarity": 5,
+        "abilityIds": [
+            154
+        ],
+        "craftMaterials": [
+            {
+                "id": 317,
+                "quantity": 1
+            },
+            {
+                "id": 312,
+                "quantity": 3
+            },
+            {
+                "id": 141,
+                "quantity": 6
+            },
+            {
+                "id": 128,
+                "quantity": 1
+            }
+        ]
+    },
+    {
+        "id": 70,
+        "name": {
+            "EN": "KO Charm 3"
+        },
+        "level": 3,
+        "rarity": 7,
+        "abilityIds": [
+            155
+        ],
+        "craftMaterials": [
+            {
+                "id": 428,
+                "quantity": 1
+            },
+            {
+                "id": 423,
+                "quantity": 2
+            },
+            {
+                "id": 126,
+                "quantity": 1
+            },
+            {
+                "id": 129,
+                "quantity": 1
+            }
+        ]
+    },
+    {
+        "id": 71,
+        "name": {
+            "EN": "Enervate Charm 1"
+        },
+        "level": 1,
+        "rarity": 3,
+        "abilityIds": [
+            156
+        ],
+        "craftMaterials": [
+            {
+                "id": 240,
+                "quantity": 2
+            },
+            {
+                "id": 239,
+                "quantity": 2
+            },
+            {
+                "id": 121,
+                "quantity": 3
+            },
+            {
+                "id": 127,
+                "quantity": 1
+            }
+        ]
+    },
+    {
+        "id": 72,
+        "name": {
+            "EN": "Enervate Charm 2"
+        },
+        "level": 2,
+        "rarity": 5,
+        "abilityIds": [
+            157
+        ],
+        "craftMaterials": [
+            {
+                "id": 240,
+                "quantity": 3
+            },
+            {
+                "id": 245,
+                "quantity": 2
+            },
+            {
+                "id": 141,
+                "quantity": 6
+            },
+            {
+                "id": 128,
+                "quantity": 1
+            }
+        ]
+    },
+    {
+        "id": 73,
+        "name": {
+            "EN": "Enervate Charm 3"
+        },
+        "level": 3,
+        "rarity": 6,
+        "abilityIds": [
+            158
+        ],
+        "craftMaterials": [
+            {
+                "id": 365,
+                "quantity": 1
+            },
+            {
+                "id": 359,
+                "quantity": 3
+            },
+            {
+                "id": 142,
+                "quantity": 2
+            },
+            {
+                "id": 129,
+                "quantity": 1
+            }
+        ]
+    },
+    {
+        "id": 74,
+        "name": {
+            "EN": "Artillery Charm 1"
+        },
+        "level": 1,
+        "rarity": 3,
+        "abilityIds": [
+            190
+        ],
+        "craftMaterials": [
+            {
+                "id": 268,
+                "quantity": 1
+            },
+            {
+                "id": 265,
+                "quantity": 2
+            },
+            {
+                "id": 141,
+                "quantity": 3
+            },
+            {
+                "id": 127,
+                "quantity": 1
+            }
+        ]
+    },
+    {
+        "id": 75,
+        "name": {
+            "EN": "Artillery Charm 2"
+        },
+        "level": 2,
+        "rarity": 5,
+        "abilityIds": [
+            191
+        ],
+        "craftMaterials": [
+            {
+                "id": 273,
+                "quantity": 1
+            },
+            {
+                "id": 271,
+                "quantity": 2
+            },
+            {
+                "id": 125,
+                "quantity": 1
+            },
+            {
+                "id": 128,
+                "quantity": 1
+            }
+        ]
+    },
+    {
+        "id": 76,
+        "name": {
+            "EN": "Artillery Charm 3"
+        },
+        "level": 3,
+        "rarity": 7,
+        "abilityIds": [
+            192
+        ],
+        "craftMaterials": [
+            {
+                "id": 428,
+                "quantity": 1
+            },
+            {
+                "id": 423,
+                "quantity": 2
+            },
+            {
+                "id": 126,
+                "quantity": 1
+            },
+            {
+                "id": 129,
+                "quantity": 1
+            }
+        ]
+    },
+    {
+        "id": 77,
+        "name": {
+            "EN": "Hungerless Charm 1"
+        },
+        "level": 1,
+        "rarity": 3,
+        "abilityIds": [
+            207
+        ],
+        "craftMaterials": [
+            {
+                "id": 210,
+                "quantity": 2
+            },
+            {
+                "id": 209,
+                "quantity": 4
+            },
+            {
+                "id": 122,
+                "quantity": 3
+            },
+            {
+                "id": 127,
+                "quantity": 1
+            }
+        ]
+    },
+    {
+        "id": 78,
+        "name": {
+            "EN": "Hungerless Charm 2"
+        },
+        "level": 2,
+        "rarity": 5,
+        "abilityIds": [
+            208
+        ],
+        "craftMaterials": [
+            {
+                "id": 203,
+                "quantity": 6
+            },
+            {
+                "id": 202,
+                "quantity": 8
+            },
+            {
+                "id": 124,
+                "quantity": 1
+            },
+            {
+                "id": 128,
+                "quantity": 1
+            }
+        ]
+    },
+    {
+        "id": 79,
+        "name": {
+            "EN": "Hungerless Charm 3"
+        },
+        "level": 3,
+        "rarity": 6,
+        "abilityIds": [
+            209
+        ],
+        "craftMaterials": [
+            {
+                "id": 173,
+                "quantity": 1
+            },
+            {
+                "id": 120,
+                "quantity": 5
+            },
+            {
+                "id": 143,
+                "quantity": 1
+            },
+            {
+                "id": 129,
+                "quantity": 1
+            }
+        ]
+    },
+    {
+        "id": 80,
+        "name": {
+            "EN": "Ironside Charm 1"
+        },
+        "level": 1,
+        "rarity": 3,
+        "abilityIds": [
+            218
+        ],
+        "craftMaterials": [
+            {
+                "id": 314,
+                "quantity": 1
+            },
+            {
+                "id": 312,
+                "quantity": 2
+            },
+            {
+                "id": 122,
+                "quantity": 3
+            },
+            {
+                "id": 127,
+                "quantity": 1
+            }
+        ]
+    },
+    {
+        "id": 81,
+        "name": {
+            "EN": "Ironside Charm 2"
+        },
+        "level": 2,
+        "rarity": 5,
+        "abilityIds": [
+            219
+        ],
+        "craftMaterials": [
+            {
+                "id": 317,
+                "quantity": 1
+            },
+            {
+                "id": 312,
+                "quantity": 3
+            },
+            {
+                "id": 125,
+                "quantity": 1
+            },
+            {
+                "id": 128,
+                "quantity": 1
+            }
+        ]
+    },
+    {
+        "id": 82,
+        "name": {
+            "EN": "Ironside Charm 3"
+        },
+        "level": 3,
+        "rarity": 7,
+        "abilityIds": [
+            220
+        ],
+        "craftMaterials": [
+            {
+                "id": 419,
+                "quantity": 1
+            },
+            {
+                "id": 417,
+                "quantity": 2
+            },
+            {
+                "id": 126,
+                "quantity": 1
+            },
+            {
+                "id": 129,
+                "quantity": 1
+            }
+        ]
+    },
+    {
+        "id": 83,
+        "name": {
+            "EN": "Ironside Charm 4"
+        },
+        "level": 4,
+        "rarity": 11,
+        "abilityIds": [
+            221
+        ],
+        "craftMaterials": []
+    },
+    {
+        "id": 84,
+        "name": {
+            "EN": "Ironside Charm 5"
+        },
+        "level": 5,
+        "rarity": 12,
+        "abilityIds": [
+            222
+        ],
+        "craftMaterials": []
+    },
+    {
+        "id": 85,
+        "name": {
+            "EN": "Friendship Charm 1"
+        },
+        "level": 1,
+        "rarity": 3,
+        "abilityIds": [
+            226
+        ],
+        "craftMaterials": [
+            {
+                "id": 288,
+                "quantity": 2
+            },
+            {
+                "id": 287,
+                "quantity": 2
+            },
+            {
+                "id": 122,
+                "quantity": 4
+            },
+            {
+                "id": 127,
+                "quantity": 1
+            }
+        ]
+    },
+    {
+        "id": 86,
+        "name": {
+            "EN": "Friendship Charm 2"
+        },
+        "level": 2,
+        "rarity": 5,
+        "abilityIds": [
+            227
+        ],
+        "craftMaterials": [
+            {
+                "id": 292,
+                "quantity": 1
+            },
+            {
+                "id": 291,
+                "quantity": 2
+            },
+            {
+                "id": 125,
+                "quantity": 1
+            },
+            {
+                "id": 128,
+                "quantity": 1
+            }
+        ]
+    },
+    {
+        "id": 87,
+        "name": {
+            "EN": "Friendship Charm 3"
+        },
+        "level": 3,
+        "rarity": 7,
+        "abilityIds": [
+            228
+        ],
+        "craftMaterials": [
+            {
+                "id": 174,
+                "quantity": 1
+            },
+            {
+                "id": 483,
+                "quantity": 1
+            },
+            {
+                "id": 142,
+                "quantity": 2
+            },
+            {
+                "id": 129,
+                "quantity": 1
+            }
+        ]
+    },
+    {
+        "id": 88,
+        "name": {
+            "EN": "Friendship Charm 4"
+        },
+        "level": 4,
+        "rarity": 11,
+        "abilityIds": [
+            229
+        ],
+        "craftMaterials": []
+    },
+    {
+        "id": 89,
+        "name": {
+            "EN": "Friendship Charm 5"
+        },
+        "level": 5,
+        "rarity": 12,
+        "abilityIds": [
+            230
+        ],
+        "craftMaterials": []
+    },
+    {
+        "id": 90,
+        "name": {
+            "EN": "Extension Charm 1"
+        },
+        "level": 1,
+        "rarity": 3,
+        "abilityIds": [
+            231
+        ],
+        "craftMaterials": [
+            {
+                "id": 223,
+                "quantity": 2
+            },
+            {
+                "id": 222,
+                "quantity": 2
+            },
+            {
+                "id": 138,
+                "quantity": 4
+            },
+            {
+                "id": 127,
+                "quantity": 1
+            }
+        ]
+    },
+    {
+        "id": 91,
+        "name": {
+            "EN": "Extension Charm 2"
+        },
+        "level": 2,
+        "rarity": 6,
+        "abilityIds": [
+            232
+        ],
+        "craftMaterials": [
+            {
+                "id": 284,
+                "quantity": 2
+            },
+            {
+                "id": 281,
+                "quantity": 1
+            },
+            {
+                "id": 125,
+                "quantity": 1
+            },
+            {
+                "id": 128,
+                "quantity": 1
+            }
+        ]
+    },
+    {
+        "id": 92,
+        "name": {
+            "EN": "Extension Charm 3"
+        },
+        "level": 3,
+        "rarity": 7,
+        "abilityIds": [
+            233
+        ],
+        "craftMaterials": [
+            {
+                "id": 483,
+                "quantity": 1
+            },
+            {
+                "id": 433,
+                "quantity": 1
+            },
+            {
+                "id": 126,
+                "quantity": 1
+            },
+            {
+                "id": 129,
+                "quantity": 1
+            }
+        ]
+    },
+    {
+        "id": 93,
+        "name": {
+            "EN": "Glutton's Charm 1"
+        },
+        "level": 1,
+        "rarity": 3,
+        "abilityIds": [
+            235
+        ],
+        "craftMaterials": [
+            {
+                "id": 215,
+                "quantity": 2
+            },
+            {
+                "id": 216,
+                "quantity": 2
+            },
+            {
+                "id": 138,
+                "quantity": 4
+            },
+            {
+                "id": 127,
+                "quantity": 1
+            }
+        ]
+    },
+    {
+        "id": 94,
+        "name": {
+            "EN": "Glutton's Charm 2"
+        },
+        "level": 2,
+        "rarity": 5,
+        "abilityIds": [
+            236
+        ],
+        "craftMaterials": [
+            {
+                "id": 273,
+                "quantity": 1
+            },
+            {
+                "id": 271,
+                "quantity": 2
+            },
+            {
+                "id": 125,
+                "quantity": 1
+            },
+            {
+                "id": 128,
+                "quantity": 1
+            }
+        ]
+    },
+    {
+        "id": 95,
+        "name": {
+            "EN": "Glutton's Charm 3"
+        },
+        "level": 3,
+        "rarity": 7,
+        "abilityIds": [
+            237
+        ],
+        "craftMaterials": [
+            {
+                "id": 411,
+                "quantity": 1
+            },
+            {
+                "id": 409,
+                "quantity": 2
+            },
+            {
+                "id": 137,
+                "quantity": 2
+            },
+            {
+                "id": 129,
+                "quantity": 1
+            }
+        ]
+    },
+    {
+        "id": 96,
+        "name": {
+            "EN": "Blessing Charm 1"
+        },
+        "level": 1,
+        "rarity": 3,
+        "abilityIds": [
+            252
+        ],
+        "craftMaterials": [
+            {
+                "id": 296,
+                "quantity": 2
+            },
+            {
+                "id": 293,
+                "quantity": 3
+            },
+            {
+                "id": 140,
+                "quantity": 4
+            },
+            {
+                "id": 127,
+                "quantity": 1
+            }
+        ]
+    },
+    {
+        "id": 97,
+        "name": {
+            "EN": "Blessing Charm 2"
+        },
+        "level": 2,
+        "rarity": 5,
+        "abilityIds": [
+            253
+        ],
+        "craftMaterials": [
+            {
+                "id": 300,
+                "quantity": 2
+            },
+            {
+                "id": 297,
+                "quantity": 4
+            },
+            {
+                "id": 136,
+                "quantity": 6
+            },
+            {
+                "id": 128,
+                "quantity": 1
+            }
+        ]
+    },
+    {
+        "id": 98,
+        "name": {
+            "EN": "Blessing Charm 3"
+        },
+        "level": 3,
+        "rarity": 7,
+        "abilityIds": [
+            254
+        ],
+        "craftMaterials": [
+            {
+                "id": 483,
+                "quantity": 1
+            },
+            {
+                "id": 143,
+                "quantity": 1
+            },
+            {
+                "id": 142,
+                "quantity": 2
+            },
+            {
+                "id": 129,
+                "quantity": 1
+            }
+        ]
+    },
+    {
+        "id": 99,
+        "name": {
+            "EN": "Rally Charm 1"
+        },
+        "level": 1,
+        "rarity": 3,
+        "abilityIds": [
+            255
+        ],
+        "craftMaterials": [
+            {
+                "id": 444,
+                "quantity": 1
+            },
+            {
+                "id": 146,
+                "quantity": 1
+            },
+            {
+                "id": 124,
+                "quantity": 1
+            },
+            {
+                "id": 127,
+                "quantity": 1
+            }
+        ]
+    },
+    {
+        "id": 100,
+        "name": {
+            "EN": "Rally Charm 2"
+        },
+        "level": 2,
+        "rarity": 5,
+        "abilityIds": [
+            256
+        ],
+        "craftMaterials": [
+            {
+                "id": 444,
+                "quantity": 2
+            },
+            {
+                "id": 124,
+                "quantity": 2
+            },
+            {
+                "id": 136,
+                "quantity": 6
+            },
+            {
+                "id": 128,
+                "quantity": 1
+            }
+        ]
+    },
+    {
+        "id": 101,
+        "name": {
+            "EN": "Rally Charm 3"
+        },
+        "level": 3,
+        "rarity": 7,
+        "abilityIds": [
+            257
+        ],
+        "craftMaterials": [
+            {
+                "id": 444,
+                "quantity": 3
+            },
+            {
+                "id": 483,
+                "quantity": 2
+            },
+            {
+                "id": 137,
+                "quantity": 2
+            },
+            {
+                "id": 129,
+                "quantity": 1
+            }
+        ]
+    },
+    {
+        "id": 102,
+        "name": {
+            "EN": "Rally Charm 4"
+        },
+        "level": 4,
+        "rarity": 9,
+        "abilityIds": [
+            258
+        ],
+        "craftMaterials": []
+    },
+    {
+        "id": 103,
+        "name": {
+            "EN": "Rally Charm 5"
+        },
+        "level": 5,
+        "rarity": 10,
+        "abilityIds": [
+            259
+        ],
+        "craftMaterials": []
+    },
+    {
+        "id": 104,
+        "name": {
+            "EN": "Botany Charm 1"
+        },
+        "level": 1,
+        "rarity": 3,
+        "abilityIds": [
+            260
+        ],
+        "craftMaterials": [
+            {
+                "id": 138,
+                "quantity": 3
+            },
+            {
+                "id": 139,
+                "quantity": 3
+            },
+            {
+                "id": 124,
+                "quantity": 1
+            },
+            {
+                "id": 127,
+                "quantity": 1
+            }
+        ]
+    },
+    {
+        "id": 105,
+        "name": {
+            "EN": "Botany Charm 2"
+        },
+        "level": 2,
+        "rarity": 5,
+        "abilityIds": [
+            261
+        ],
+        "craftMaterials": [
+            {
+                "id": 137,
+                "quantity": 3
+            },
+            {
+                "id": 143,
+                "quantity": 1
+            },
+            {
+                "id": 121,
+                "quantity": 6
+            },
+            {
+                "id": 128,
+                "quantity": 1
+            }
+        ]
+    },
+    {
+        "id": 106,
+        "name": {
+            "EN": "Botany Charm 3"
+        },
+        "level": 3,
+        "rarity": 7,
+        "abilityIds": [
+            262
+        ],
+        "craftMaterials": [
+            {
+                "id": 483,
+                "quantity": 1
+            },
+            {
+                "id": 125,
+                "quantity": 1
+            },
+            {
+                "id": 137,
+                "quantity": 2
+            },
+            {
+                "id": 129,
+                "quantity": 1
+            }
+        ]
+    },
+    {
+        "id": 107,
+        "name": {
+            "EN": "Botany Charm 4"
+        },
+        "level": 4,
+        "rarity": 9,
+        "abilityIds": [
+            263
+        ],
+        "craftMaterials": []
+    },
+    {
+        "id": 108,
+        "name": {
+            "EN": "Geology Charm 1"
+        },
+        "level": 1,
+        "rarity": 3,
+        "abilityIds": [
+            264
+        ],
+        "craftMaterials": [
+            {
+                "id": 118,
+                "quantity": 4
+            },
+            {
+                "id": 117,
+                "quantity": 4
+            },
+            {
+                "id": 124,
+                "quantity": 1
+            },
+            {
+                "id": 127,
+                "quantity": 1
+            }
+        ]
+    },
+    {
+        "id": 109,
+        "name": {
+            "EN": "Geology Charm 2"
+        },
+        "level": 2,
+        "rarity": 5,
+        "abilityIds": [
+            265
+        ],
+        "craftMaterials": [
+            {
+                "id": 119,
+                "quantity": 6
+            },
+            {
+                "id": 118,
+                "quantity": 8
+            },
+            {
+                "id": 124,
+                "quantity": 2
+            },
+            {
+                "id": 128,
+                "quantity": 1
+            }
+        ]
+    },
+    {
+        "id": 110,
+        "name": {
+            "EN": "Geology Charm 3"
+        },
+        "level": 3,
+        "rarity": 7,
+        "abilityIds": [
+            266
+        ],
+        "craftMaterials": [
+            {
+                "id": 483,
+                "quantity": 1
+            },
+            {
+                "id": 125,
+                "quantity": 1
+            },
+            {
+                "id": 126,
+                "quantity": 1
+            },
+            {
+                "id": 129,
+                "quantity": 1
+            }
+        ]
+    },
+    {
+        "id": 111,
+        "name": {
+            "EN": "Slinger Charm 1"
+        },
+        "level": 1,
+        "rarity": 3,
+        "abilityIds": [
+            270
+        ],
+        "craftMaterials": [
+            {
+                "id": 314,
+                "quantity": 1
+            },
+            {
+                "id": 312,
+                "quantity": 2
+            },
+            {
+                "id": 122,
+                "quantity": 3
+            },
+            {
+                "id": 127,
+                "quantity": 1
+            }
+        ]
+    },
+    {
+        "id": 112,
+        "name": {
+            "EN": "Slinger Charm 2"
+        },
+        "level": 2,
+        "rarity": 5,
+        "abilityIds": [
+            271
+        ],
+        "craftMaterials": [
+            {
+                "id": 317,
+                "quantity": 1
+            },
+            {
+                "id": 312,
+                "quantity": 3
+            },
+            {
+                "id": 143,
+                "quantity": 1
+            },
+            {
+                "id": 128,
+                "quantity": 1
+            }
+        ]
+    },
+    {
+        "id": 113,
+        "name": {
+            "EN": "Slinger Charm 3"
+        },
+        "level": 3,
+        "rarity": 7,
+        "abilityIds": [
+            272
+        ],
+        "craftMaterials": [
+            {
+                "id": 483,
+                "quantity": 1
+            },
+            {
+                "id": 172,
+                "quantity": 1
+            },
+            {
+                "id": 126,
+                "quantity": 1
+            },
+            {
+                "id": 129,
+                "quantity": 1
+            }
+        ]
+    },
+    {
+        "id": 114,
+        "name": {
+            "EN": "Stealth Charm 1"
+        },
+        "level": 1,
+        "rarity": 3,
+        "abilityIds": [
+            273
+        ],
+        "craftMaterials": [
+            {
+                "id": 215,
+                "quantity": 2
+            },
+            {
+                "id": 216,
+                "quantity": 2
+            },
+            {
+                "id": 124,
+                "quantity": 1
+            },
+            {
+                "id": 127,
+                "quantity": 1
+            }
+        ]
+    },
+    {
+        "id": 115,
+        "name": {
+            "EN": "Stealth Charm 2"
+        },
+        "level": 2,
+        "rarity": 6,
+        "abilityIds": [
+            274
+        ],
+        "craftMaterials": [
+            {
+                "id": 390,
+                "quantity": 3
+            },
+            {
+                "id": 389,
+                "quantity": 2
+            },
+            {
+                "id": 143,
+                "quantity": 3
+            },
+            {
+                "id": 128,
+                "quantity": 1
+            }
+        ]
+    },
+    {
+        "id": 116,
+        "name": {
+            "EN": "Stealth Charm 3"
+        },
+        "level": 3,
+        "rarity": 7,
+        "abilityIds": [
+            275
+        ],
+        "craftMaterials": [
+            {
+                "id": 483,
+                "quantity": 1
+            },
+            {
+                "id": 172,
+                "quantity": 1
+            },
+            {
+                "id": 137,
+                "quantity": 2
+            },
+            {
+                "id": 129,
+                "quantity": 1
+            }
+        ]
+    },
+    {
+        "id": 117,
+        "name": {
+            "EN": "Smoke Charm 1"
+        },
+        "level": 1,
+        "rarity": 3,
+        "abilityIds": [
+            282
+        ],
+        "craftMaterials": [
+            {
+                "id": 231,
+                "quantity": 2
+            },
+            {
+                "id": 232,
+                "quantity": 2
+            },
+            {
+                "id": 121,
+                "quantity": 2
+            },
+            {
+                "id": 127,
+                "quantity": 1
+            }
+        ]
+    },
+    {
+        "id": 118,
+        "name": {
+            "EN": "Smoke Charm 2"
+        },
+        "level": 2,
+        "rarity": 5,
+        "abilityIds": [
+            283
+        ],
+        "craftMaterials": [
+            {
+                "id": 173,
+                "quantity": 1
+            },
+            {
+                "id": 482,
+                "quantity": 5
+            },
+            {
+                "id": 121,
+                "quantity": 6
+            },
+            {
+                "id": 128,
+                "quantity": 1
+            }
+        ]
+    },
+    {
+        "id": 119,
+        "name": {
+            "EN": "Smoke Charm 3"
+        },
+        "level": 3,
+        "rarity": 7,
+        "abilityIds": [
+            284
+        ],
+        "craftMaterials": [
+            {
+                "id": 483,
+                "quantity": 1
+            },
+            {
+                "id": 172,
+                "quantity": 1
+            },
+            {
+                "id": 126,
+                "quantity": 1
+            },
+            {
+                "id": 129,
+                "quantity": 1
+            }
+        ]
+    },
+    {
+        "id": 120,
+        "name": {
+            "EN": "Mirewalker Charm 1"
+        },
+        "level": 1,
+        "rarity": 3,
+        "abilityIds": [
+            285
+        ],
+        "craftMaterials": [
+            {
+                "id": 249,
+                "quantity": 2
+            },
+            {
+                "id": 248,
+                "quantity": 2
+            },
+            {
+                "id": 121,
+                "quantity": 4
+            },
+            {
+                "id": 127,
+                "quantity": 1
+            }
+        ]
+    },
+    {
+        "id": 121,
+        "name": {
+            "EN": "Mirewalker Charm 2"
+        },
+        "level": 2,
+        "rarity": 5,
+        "abilityIds": [
+            286
+        ],
+        "craftMaterials": [
+            {
+                "id": 253,
+                "quantity": 3
+            },
+            {
+                "id": 252,
+                "quantity": 2
+            },
+            {
+                "id": 122,
+                "quantity": 6
+            },
+            {
+                "id": 128,
+                "quantity": 1
+            }
+        ]
+    },
+    {
+        "id": 122,
+        "name": {
+            "EN": "Mirewalker Charm 3"
+        },
+        "level": 3,
+        "rarity": 6,
+        "abilityIds": [
+            287
+        ],
+        "craftMaterials": [
+            {
+                "id": 173,
+                "quantity": 1
+            },
+            {
+                "id": 482,
+                "quantity": 5
+            },
+            {
+                "id": 140,
+                "quantity": 6
+            },
+            {
+                "id": 129,
+                "quantity": 1
+            }
+        ]
+    },
+    {
+        "id": 123,
+        "name": {
+            "EN": "Insect Charm 1"
+        },
+        "level": 1,
+        "rarity": 3,
+        "abilityIds": [
+            291
+        ],
+        "craftMaterials": [
+            {
+                "id": 180,
+                "quantity": 2
+            },
+            {
+                "id": 178,
+                "quantity": 2
+            },
+            {
+                "id": 138,
+                "quantity": 4
+            },
+            {
+                "id": 127,
+                "quantity": 1
+            }
+        ]
+    },
+    {
+        "id": 124,
+        "name": {
+            "EN": "Insect Charm 2"
+        },
+        "level": 2,
+        "rarity": 5,
+        "abilityIds": [
+            292
+        ],
+        "craftMaterials": [
+            {
+                "id": 181,
+                "quantity": 4
+            },
+            {
+                "id": 179,
+                "quantity": 6
+            },
+            {
+                "id": 124,
+                "quantity": 2
+            },
+            {
+                "id": 128,
+                "quantity": 1
+            }
+        ]
+    },
+    {
+        "id": 125,
+        "name": {
+            "EN": "Insect Charm 3"
+        },
+        "level": 3,
+        "rarity": 6,
+        "abilityIds": [
+            293
+        ],
+        "craftMaterials": [
+            {
+                "id": 173,
+                "quantity": 1
+            },
+            {
+                "id": 482,
+                "quantity": 5
+            },
+            {
+                "id": 137,
+                "quantity": 2
+            },
+            {
+                "id": 129,
+                "quantity": 1
+            }
+        ]
+    },
+    {
+        "id": 126,
+        "name": {
+            "EN": "Intimidator Charm 1"
+        },
+        "level": 1,
+        "rarity": 3,
+        "abilityIds": [
+            305
+        ],
+        "craftMaterials": [
+            {
+                "id": 303,
+                "quantity": 2
+            },
+            {
+                "id": 304,
+                "quantity": 2
+            },
+            {
+                "id": 141,
+                "quantity": 4
+            },
+            {
+                "id": 127,
+                "quantity": 1
+            }
+        ]
+    },
+    {
+        "id": 127,
+        "name": {
+            "EN": "Intimidator Charm 2"
+        },
+        "level": 2,
+        "rarity": 5,
+        "abilityIds": [
+            306
+        ],
+        "craftMaterials": [
+            {
+                "id": 215,
+                "quantity": 3
+            },
+            {
+                "id": 219,
+                "quantity": 2
+            },
+            {
+                "id": 139,
+                "quantity": 6
+            },
+            {
+                "id": 128,
+                "quantity": 1
+            }
+        ]
+    },
+    {
+        "id": 128,
+        "name": {
+            "EN": "Intimidator Charm 3"
+        },
+        "level": 3,
+        "rarity": 6,
+        "abilityIds": [
+            307
+        ],
+        "craftMaterials": [
+            {
+                "id": 351,
+                "quantity": 1
+            },
+            {
+                "id": 349,
+                "quantity": 2
+            },
+            {
+                "id": 141,
+                "quantity": 4
+            },
+            {
+                "id": 129,
+                "quantity": 1
+            }
+        ]
+    },
+    {
+        "id": 129,
+        "name": {
+            "EN": "Heavy Artillery Charm 1"
+        },
+        "level": 1,
+        "rarity": 3,
+        "abilityIds": [
+            193
+        ],
+        "craftMaterials": [
+            {
+                "id": 118,
+                "quantity": 4
+            },
+            {
+                "id": 287,
+                "quantity": 3
+            },
+            {
+                "id": 124,
+                "quantity": 1
+            },
+            {
+                "id": 127,
+                "quantity": 1
+            }
+        ]
+    },
+    {
+        "id": 130,
+        "name": {
+            "EN": "Heavy Artillery Charm 2"
+        },
+        "level": 2,
+        "rarity": 5,
+        "abilityIds": [
+            194
+        ],
+        "craftMaterials": [
+            {
+                "id": 380,
+                "quantity": 3
+            },
+            {
+                "id": 379,
+                "quantity": 1
+            },
+            {
+                "id": 123,
+                "quantity": 3
+            },
+            {
+                "id": 127,
+                "quantity": 1
+            }
+        ]
+    },
+    {
+        "id": 131,
+        "name": {
+            "EN": "Light Eater's Charm"
+        },
+        "level": 1,
+        "rarity": 3,
+        "abilityIds": [
+            234
+        ],
+        "craftMaterials": [
+            {
+                "id": 184,
+                "quantity": 4
+            },
+            {
+                "id": 183,
+                "quantity": 6
+            },
+            {
+                "id": 304,
+                "quantity": 3
+            },
+            {
+                "id": 127,
+                "quantity": 1
+            }
+        ]
+    },
+    {
+        "id": 132,
+        "name": {
+            "EN": "Tracker Charm"
+        },
+        "level": 1,
+        "rarity": 3,
+        "abilityIds": [
+            297
+        ],
+        "craftMaterials": [
+            {
+                "id": 266,
+                "quantity": 1
+            },
+            {
+                "id": 264,
+                "quantity": 5
+            },
+            {
+                "id": 240,
+                "quantity": 2
+            },
+            {
+                "id": 127,
+                "quantity": 1
+            }
+        ]
+    },
+    {
+        "id": 133,
+        "name": {
+            "EN": "Fortification Charm"
+        },
+        "level": 1,
+        "rarity": 3,
+        "abilityIds": [
+            179
+        ],
+        "craftMaterials": [
+            {
+                "id": 146,
+                "quantity": 3
+            },
+            {
+                "id": 265,
+                "quantity": 3
+            },
+            {
+                "id": 141,
+                "quantity": 5
+            },
+            {
+                "id": 127,
+                "quantity": 1
+            }
+        ]
+    },
+    {
+        "id": 134,
+        "name": {
+            "EN": "Performer's Charm"
+        },
+        "level": 1,
+        "rarity": 3,
+        "abilityIds": [
+            186
+        ],
+        "craftMaterials": [
+            {
+                "id": 303,
+                "quantity": 3
+            },
+            {
+                "id": 231,
+                "quantity": 5
+            },
+            {
+                "id": 136,
+                "quantity": 5
+            },
+            {
+                "id": 127,
+                "quantity": 1
+            }
+        ]
+    },
+    {
+        "id": 135,
+        "name": {
+            "EN": "Performer's Charm 2"
+        },
+        "level": 2,
+        "rarity": 9,
+        "abilityIds": [
+            337
+        ],
+        "craftMaterials": []
+    },
+    {
+        "id": 136,
+        "name": {
+            "EN": "Capacity Charm"
+        },
+        "level": 1,
+        "rarity": 3,
+        "abilityIds": [
+            187
+        ],
+        "craftMaterials": [
+            {
+                "id": 118,
+                "quantity": 8
+            },
+            {
+                "id": 344,
+                "quantity": 3
+            },
+            {
+                "id": 124,
+                "quantity": 2
+            },
+            {
+                "id": 127,
+                "quantity": 1
+            }
+        ]
+    },
+    {
+        "id": 137,
+        "name": {
+            "EN": "Bleed Charm 1"
+        },
+        "level": 1,
+        "rarity": 4,
+        "abilityIds": [
+            17
+        ],
+        "craftMaterials": [
+            {
+                "id": 334,
+                "quantity": 1
+            },
+            {
+                "id": 332,
+                "quantity": 2
+            },
+            {
+                "id": 141,
+                "quantity": 4
+            },
+            {
+                "id": 127,
+                "quantity": 1
+            }
+        ]
+    },
+    {
+        "id": 138,
+        "name": {
+            "EN": "Bleed Charm 2"
+        },
+        "level": 2,
+        "rarity": 6,
+        "abilityIds": [
+            18
+        ],
+        "craftMaterials": [
+            {
+                "id": 339,
+                "quantity": 1
+            },
+            {
+                "id": 337,
+                "quantity": 2
+            },
+            {
+                "id": 125,
+                "quantity": 1
+            },
+            {
+                "id": 128,
+                "quantity": 1
+            }
+        ]
+    },
+    {
+        "id": 139,
+        "name": {
+            "EN": "Bleed Charm 3"
+        },
+        "level": 3,
+        "rarity": 7,
+        "abilityIds": [
+            19
+        ],
+        "craftMaterials": [
+            {
+                "id": 419,
+                "quantity": 1
+            },
+            {
+                "id": 417,
+                "quantity": 2
+            },
+            {
+                "id": 142,
+                "quantity": 2
+            },
+            {
+                "id": 129,
+                "quantity": 1
+            }
+        ]
+    },
+    {
+        "id": 140,
+        "name": {
+            "EN": "Speed Heal Charm 1"
+        },
+        "level": 1,
+        "rarity": 4,
+        "abilityIds": [
+            59
+        ],
+        "craftMaterials": [
+            {
+                "id": 482,
+                "quantity": 1
+            },
+            {
+                "id": 136,
+                "quantity": 3
+            },
+            {
+                "id": 124,
+                "quantity": 1
+            },
+            {
+                "id": 127,
+                "quantity": 1
+            }
+        ]
+    },
+    {
+        "id": 141,
+        "name": {
+            "EN": "Speed Heal Charm 2"
+        },
+        "level": 2,
+        "rarity": 6,
+        "abilityIds": [
+            60
+        ],
+        "craftMaterials": [
+            {
+                "id": 390,
+                "quantity": 3
+            },
+            {
+                "id": 389,
+                "quantity": 2
+            },
+            {
+                "id": 125,
+                "quantity": 1
+            },
+            {
+                "id": 128,
+                "quantity": 1
+            }
+        ]
+    },
+    {
+        "id": 142,
+        "name": {
+            "EN": "Speed Heal Charm 3"
+        },
+        "level": 3,
+        "rarity": 7,
+        "abilityIds": [
+            61
+        ],
+        "craftMaterials": [
+            {
+                "id": 419,
+                "quantity": 1
+            },
+            {
+                "id": 418,
+                "quantity": 2
+            },
+            {
+                "id": 142,
+                "quantity": 2
+            },
+            {
+                "id": 129,
+                "quantity": 1
+            }
+        ]
+    },
+    {
+        "id": 143,
+        "name": {
+            "EN": "Ice Charm 1"
+        },
+        "level": 1,
+        "rarity": 4,
+        "abilityIds": [
+            68
+        ],
+        "craftMaterials": [
+            {
+                "id": 323,
+                "quantity": 1
+            },
+            {
+                "id": 320,
+                "quantity": 2
+            },
+            {
+                "id": 122,
+                "quantity": 3
+            },
+            {
+                "id": 127,
+                "quantity": 1
+            }
+        ]
+    },
+    {
+        "id": 144,
+        "name": {
+            "EN": "Ice Charm 2"
+        },
+        "level": 2,
+        "rarity": 6,
+        "abilityIds": [
+            69
+        ],
+        "craftMaterials": [
+            {
+                "id": 173,
+                "quantity": 1
+            },
+            {
+                "id": 326,
+                "quantity": 2
+            },
+            {
+                "id": 122,
+                "quantity": 4
+            },
+            {
+                "id": 128,
+                "quantity": 1
+            }
+        ]
+    },
+    {
+        "id": 145,
+        "name": {
+            "EN": "Ice Charm 3"
+        },
+        "level": 3,
+        "rarity": 7,
+        "abilityIds": [
+            70
+        ],
+        "craftMaterials": [
+            {
+                "id": 483,
+                "quantity": 1
+            },
+            {
+                "id": 328,
+                "quantity": 1
+            },
+            {
+                "id": 169,
+                "quantity": 3
+            },
+            {
+                "id": 129,
+                "quantity": 1
+            }
+        ]
+    },
+    {
+        "id": 146,
+        "name": {
+            "EN": "Blight Charm 1"
+        },
+        "level": 1,
+        "rarity": 4,
+        "abilityIds": [
+            77
+        ],
+        "craftMaterials": [
+            {
+                "id": 372,
+                "quantity": 1
+            },
+            {
+                "id": 371,
+                "quantity": 2
+            },
+            {
+                "id": 140,
+                "quantity": 3
+            },
+            {
+                "id": 127,
+                "quantity": 1
+            }
+        ]
+    },
+    {
+        "id": 147,
+        "name": {
+            "EN": "Blight Charm 2"
+        },
+        "level": 2,
+        "rarity": 7,
+        "abilityIds": [
+            78
+        ],
+        "craftMaterials": [
+            {
+                "id": 375,
+                "quantity": 1
+            },
+            {
+                "id": 374,
+                "quantity": 2
+            },
+            {
+                "id": 125,
+                "quantity": 1
+            },
+            {
+                "id": 129,
+                "quantity": 1
+            }
+        ]
+    },
+    {
+        "id": 148,
+        "name": {
+            "EN": "Blight Charm 3"
+        },
+        "level": 3,
+        "rarity": 8,
+        "abilityIds": [
+            79
+        ],
+        "craftMaterials": [
+            {
+                "id": 435,
+                "quantity": 1
+            },
+            {
+                "id": 439,
+                "quantity": 2
+            },
+            {
+                "id": 142,
+                "quantity": 2
+            },
+            {
+                "id": 130,
+                "quantity": 1
+            }
+        ]
+    },
+    {
+        "id": 149,
+        "name": {
+            "EN": "Frost Charm 1"
+        },
+        "level": 1,
+        "rarity": 3,
+        "abilityIds": [
+            90
+        ],
+        "craftMaterials": [
+            {
+                "id": 323,
+                "quantity": 1
+            },
+            {
+                "id": 320,
+                "quantity": 2
+            },
+            {
+                "id": 122,
+                "quantity": 3
+            },
+            {
+                "id": 127,
+                "quantity": 1
+            }
+        ]
+    },
+    {
+        "id": 150,
+        "name": {
+            "EN": "Frost Charm 2"
+        },
+        "level": 2,
+        "rarity": 6,
+        "abilityIds": [
+            91
+        ],
+        "craftMaterials": [
+            {
+                "id": 328,
+                "quantity": 1
+            },
+            {
+                "id": 326,
+                "quantity": 2
+            },
+            {
+                "id": 122,
+                "quantity": 6
+            },
+            {
+                "id": 128,
+                "quantity": 1
+            }
+        ]
+    },
+    {
+        "id": 151,
+        "name": {
+            "EN": "Frost Charm 3"
+        },
+        "level": 3,
+        "rarity": 7,
+        "abilityIds": [
+            92
+        ],
+        "craftMaterials": [
+            {
+                "id": 435,
+                "quantity": 1
+            },
+            {
+                "id": 433,
+                "quantity": 1
+            },
+            {
+                "id": 169,
+                "quantity": 3
+            },
+            {
+                "id": 129,
+                "quantity": 1
+            }
+        ]
+    },
+    {
+        "id": 152,
+        "name": {
+            "EN": "Frost Charm 4"
+        },
+        "level": 4,
+        "rarity": 11,
+        "abilityIds": [
+            93
+        ],
+        "craftMaterials": []
+    },
+    {
+        "id": 153,
+        "name": {
+            "EN": "Frost Charm 5"
+        },
+        "level": 5,
+        "rarity": 12,
+        "abilityIds": [
+            94
+        ],
+        "craftMaterials": []
+    },
+    {
+        "id": 154,
+        "name": {
+            "EN": "Master's Charm 1"
+        },
+        "level": 1,
+        "rarity": 4,
+        "abilityIds": [
+            123
+        ],
+        "craftMaterials": [
+            {
+                "id": 334,
+                "quantity": 1
+            },
+            {
+                "id": 332,
+                "quantity": 2
+            },
+            {
+                "id": 141,
+                "quantity": 3
+            },
+            {
+                "id": 127,
+                "quantity": 1
+            }
+        ]
+    },
+    {
+        "id": 155,
+        "name": {
+            "EN": "Master's Charm 2"
+        },
+        "level": 2,
+        "rarity": 6,
+        "abilityIds": [
+            124
+        ],
+        "craftMaterials": [
+            {
+                "id": 339,
+                "quantity": 1
+            },
+            {
+                "id": 337,
+                "quantity": 2
+            },
+            {
+                "id": 137,
+                "quantity": 3
+            },
+            {
+                "id": 128,
+                "quantity": 1
+            }
+        ]
+    },
+    {
+        "id": 156,
+        "name": {
+            "EN": "Master's Charm 3"
+        },
+        "level": 3,
+        "rarity": 7,
+        "abilityIds": [
+            125
+        ],
+        "craftMaterials": [
+            {
+                "id": 411,
+                "quantity": 1
+            },
+            {
+                "id": 409,
+                "quantity": 2
+            },
+            {
+                "id": 142,
+                "quantity": 2
+            },
+            {
+                "id": 129,
+                "quantity": 1
+            }
+        ]
+    },
+    {
+        "id": 157,
+        "name": {
+            "EN": "Master's Charm 4"
+        },
+        "level": 4,
+        "rarity": 11,
+        "abilityIds": [
+            126
+        ],
+        "craftMaterials": []
+    },
+    {
+        "id": 158,
+        "name": {
+            "EN": "Evasion Charm 1"
+        },
+        "level": 1,
+        "rarity": 4,
+        "abilityIds": [
+            210
+        ],
+        "craftMaterials": [
+            {
+                "id": 322,
+                "quantity": 2
+            },
+            {
+                "id": 320,
+                "quantity": 2
+            },
+            {
+                "id": 122,
+                "quantity": 3
+            },
+            {
+                "id": 127,
+                "quantity": 1
+            }
+        ]
+    },
+    {
+        "id": 159,
+        "name": {
+            "EN": "Evasion Charm 2"
+        },
+        "level": 2,
+        "rarity": 6,
+        "abilityIds": [
+            211
+        ],
+        "craftMaterials": [
+            {
+                "id": 328,
+                "quantity": 1
+            },
+            {
+                "id": 326,
+                "quantity": 2
+            },
+            {
+                "id": 120,
+                "quantity": 1
+            },
+            {
+                "id": 128,
+                "quantity": 1
+            }
+        ]
+    },
+    {
+        "id": 160,
+        "name": {
+            "EN": "Evasion Charm 3"
+        },
+        "level": 3,
+        "rarity": 6,
+        "abilityIds": [
+            212
+        ],
+        "craftMaterials": [
+            {
+                "id": 435,
+                "quantity": 1
+            },
+            {
+                "id": 433,
+                "quantity": 1
+            },
+            {
+                "id": 142,
+                "quantity": 2
+            },
+            {
+                "id": 129,
+                "quantity": 1
+            }
+        ]
+    },
+    {
+        "id": 161,
+        "name": {
+            "EN": "Evasion Charm 4"
+        },
+        "level": 4,
+        "rarity": 7,
+        "abilityIds": [
+            213
+        ],
+        "craftMaterials": []
+    },
+    {
+        "id": 162,
+        "name": {
+            "EN": "Sheath Charm 1"
+        },
+        "level": 1,
+        "rarity": 4,
+        "abilityIds": [
+            223
+        ],
+        "craftMaterials": [
+            {
+                "id": 361,
+                "quantity": 1
+            },
+            {
+                "id": 359,
+                "quantity": 2
+            },
+            {
+                "id": 121,
+                "quantity": 3
+            },
+            {
+                "id": 127,
+                "quantity": 1
+            }
+        ]
+    },
+    {
+        "id": 163,
+        "name": {
+            "EN": "Sheath Charm 2"
+        },
+        "level": 2,
+        "rarity": 6,
+        "abilityIds": [
+            224
+        ],
+        "craftMaterials": [
+            {
+                "id": 390,
+                "quantity": 1
+            },
+            {
+                "id": 389,
+                "quantity": 2
+            },
+            {
+                "id": 125,
+                "quantity": 1
+            },
+            {
+                "id": 128,
+                "quantity": 1
+            }
+        ]
+    },
+    {
+        "id": 164,
+        "name": {
+            "EN": "Sheath Charm 3"
+        },
+        "level": 3,
+        "rarity": 8,
+        "abilityIds": [
+            225
+        ],
+        "craftMaterials": [
+            {
+                "id": 404,
+                "quantity": 1
+            },
+            {
+                "id": 440,
+                "quantity": 1
+            },
+            {
+                "id": 126,
+                "quantity": 1
+            },
+            {
+                "id": 129,
+                "quantity": 1
+            }
+        ]
+    },
+    {
+        "id": 165,
+        "name": {
+            "EN": "Whetstone Charm 1"
+        },
+        "level": 1,
+        "rarity": 4,
+        "abilityIds": [
+            238
+        ],
+        "craftMaterials": [
+            {
+                "id": 334,
+                "quantity": 1
+            },
+            {
+                "id": 332,
+                "quantity": 2
+            },
+            {
+                "id": 141,
+                "quantity": 3
+            },
+            {
+                "id": 127,
+                "quantity": 1
+            }
+        ]
+    },
+    {
+        "id": 166,
+        "name": {
+            "EN": "Whetstone Charm 2"
+        },
+        "level": 2,
+        "rarity": 6,
+        "abilityIds": [
+            239
+        ],
+        "craftMaterials": [
+            {
+                "id": 339,
+                "quantity": 1
+            },
+            {
+                "id": 337,
+                "quantity": 2
+            },
+            {
+                "id": 125,
+                "quantity": 1
+            },
+            {
+                "id": 128,
+                "quantity": 1
+            }
+        ]
+    },
+    {
+        "id": 167,
+        "name": {
+            "EN": "Whetstone Charm 3"
+        },
+        "level": 3,
+        "rarity": 7,
+        "abilityIds": [
+            240
+        ],
+        "craftMaterials": [
+            {
+                "id": 411,
+                "quantity": 1
+            },
+            {
+                "id": 409,
+                "quantity": 2
+            },
+            {
+                "id": 126,
+                "quantity": 1
+            },
+            {
+                "id": 129,
+                "quantity": 1
+            }
+        ]
+    },
+    {
+        "id": 168,
+        "name": {
+            "EN": "Blast Charm 1"
+        },
+        "level": 1,
+        "rarity": 5,
+        "abilityIds": [
+            14
+        ],
+        "craftMaterials": [
+            {
+                "id": 384,
+                "quantity": 1
+            },
+            {
+                "id": 385,
+                "quantity": 2
+            },
+            {
+                "id": 126,
+                "quantity": 1
+            },
+            {
+                "id": 128,
+                "quantity": 1
+            }
+        ]
+    },
+    {
+        "id": 169,
+        "name": {
+            "EN": "Blast Charm 2"
+        },
+        "level": 2,
+        "rarity": 6,
+        "abilityIds": [
+            15
+        ],
+        "craftMaterials": [
+            {
+                "id": 404,
+                "quantity": 1
+            },
+            {
+                "id": 402,
+                "quantity": 2
+            },
+            {
+                "id": 125,
+                "quantity": 1
+            },
+            {
+                "id": 128,
+                "quantity": 1
+            }
+        ]
+    },
+    {
+        "id": 170,
+        "name": {
+            "EN": "Blast Charm 3"
+        },
+        "level": 3,
+        "rarity": 7,
+        "abilityIds": [
+            16
+        ],
+        "craftMaterials": [
+            {
+                "id": 428,
+                "quantity": 1
+            },
+            {
+                "id": 423,
+                "quantity": 2
+            },
+            {
+                "id": 126,
+                "quantity": 1
+            },
+            {
+                "id": 129,
+                "quantity": 1
+            }
+        ]
+    },
+    {
+        "id": 171,
+        "name": {
+            "EN": "Dragon Charm 1"
+        },
+        "level": 1,
+        "rarity": 5,
+        "abilityIds": [
+            74
+        ],
+        "craftMaterials": [
+            {
+                "id": 143,
+                "quantity": 1
+            },
+            {
+                "id": 137,
+                "quantity": 3
+            },
+            {
+                "id": 123,
+                "quantity": 3
+            },
+            {
+                "id": 128,
+                "quantity": 1
+            }
+        ]
+    },
+    {
+        "id": 172,
+        "name": {
+            "EN": "Dragon Charm 2"
+        },
+        "level": 2,
+        "rarity": 6,
+        "abilityIds": [
+            75
+        ],
+        "craftMaterials": [
+            {
+                "id": 396,
+                "quantity": 1
+            },
+            {
+                "id": 393,
+                "quantity": 1
+            },
+            {
+                "id": 123,
+                "quantity": 1
+            },
+            {
+                "id": 128,
+                "quantity": 1
+            }
+        ]
+    },
+    {
+        "id": 173,
+        "name": {
+            "EN": "Dragon Charm 3"
+        },
+        "level": 3,
+        "rarity": 7,
+        "abilityIds": [
+            76
+        ],
+        "craftMaterials": [
+            {
+                "id": 174,
+                "quantity": 1
+            },
+            {
+                "id": 419,
+                "quantity": 1
+            },
+            {
+                "id": 143,
+                "quantity": 3
+            },
+            {
+                "id": 129,
+                "quantity": 1
+            }
+        ]
+    },
+    {
+        "id": 174,
+        "name": {
+            "EN": "Wyrmsbane Charm 1"
+        },
+        "level": 1,
+        "rarity": 5,
+        "abilityIds": [
+            100
+        ],
+        "craftMaterials": [
+            {
+                "id": 143,
+                "quantity": 1
+            },
+            {
+                "id": 137,
+                "quantity": 3
+            },
+            {
+                "id": 123,
+                "quantity": 2
+            },
+            {
+                "id": 128,
+                "quantity": 1
+            }
+        ]
+    },
+    {
+        "id": 175,
+        "name": {
+            "EN": "Wyrmsbane Charm 2"
+        },
+        "level": 2,
+        "rarity": 7,
+        "abilityIds": [
+            101
+        ],
+        "craftMaterials": [
+            {
+                "id": 419,
+                "quantity": 1
+            },
+            {
+                "id": 417,
+                "quantity": 2
+            },
+            {
+                "id": 123,
+                "quantity": 4
+            },
+            {
+                "id": 129,
+                "quantity": 1
+            }
+        ]
+    },
+    {
+        "id": 176,
+        "name": {
+            "EN": "Wyrmsbane Charm 3"
+        },
+        "level": 3,
+        "rarity": 8,
+        "abilityIds": [
+            102
+        ],
+        "craftMaterials": [
+            {
+                "id": 443,
+                "quantity": 1
+            },
+            {
+                "id": 441,
+                "quantity": 2
+            },
+            {
+                "id": 143,
+                "quantity": 3
+            },
+            {
+                "id": 129,
+                "quantity": 1
+            }
+        ]
+    },
+    {
+        "id": 177,
+        "name": {
+            "EN": "Wyrmsbane Charm 4"
+        },
+        "level": 4,
+        "rarity": 11,
+        "abilityIds": [
+            103
+        ],
+        "craftMaterials": []
+    },
+    {
+        "id": 178,
+        "name": {
+            "EN": "Wyrmsbane Charm 5"
+        },
+        "level": 5,
+        "rarity": 12,
+        "abilityIds": [
+            104
+        ],
+        "craftMaterials": []
+    },
+    {
+        "id": 179,
+        "name": {
+            "EN": "Demolition Charm 1"
+        },
+        "level": 1,
+        "rarity": 5,
+        "abilityIds": [
+            114
+        ],
+        "craftMaterials": [
+            {
+                "id": 384,
+                "quantity": 2
+            },
+            {
+                "id": 385,
+                "quantity": 2
+            },
+            {
+                "id": 126,
+                "quantity": 1
+            },
+            {
+                "id": 128,
+                "quantity": 1
+            }
+        ]
+    },
+    {
+        "id": 180,
+        "name": {
+            "EN": "Demolition Charm 2"
+        },
+        "level": 2,
+        "rarity": 6,
+        "abilityIds": [
+            115
+        ],
+        "craftMaterials": [
+            {
+                "id": 404,
+                "quantity": 1
+            },
+            {
+                "id": 402,
+                "quantity": 2
+            },
+            {
+                "id": 119,
+                "quantity": 4
+            },
+            {
+                "id": 129,
+                "quantity": 1
+            }
+        ]
+    },
+    {
+        "id": 181,
+        "name": {
+            "EN": "Demolition Charm 3"
+        },
+        "level": 3,
+        "rarity": 8,
+        "abilityIds": [
+            116
+        ],
+        "craftMaterials": [
+            {
+                "id": 428,
+                "quantity": 1
+            },
+            {
+                "id": 437,
+                "quantity": 3
+            },
+            {
+                "id": 126,
+                "quantity": 1
+            },
+            {
+                "id": 129,
+                "quantity": 1
+            }
+        ]
+    },
+    {
+        "id": 182,
+        "name": {
+            "EN": "Demolition Charm 4"
+        },
+        "level": 4,
+        "rarity": 11,
+        "abilityIds": [
+            371
+        ],
+        "craftMaterials": []
+    },
+    {
+        "id": 183,
+        "name": {
+            "EN": "Draw Charm 1"
+        },
+        "level": 1,
+        "rarity": 5,
+        "abilityIds": [
+            147
+        ],
+        "craftMaterials": [
+            {
+                "id": 361,
+                "quantity": 1
+            },
+            {
+                "id": 359,
+                "quantity": 3
+            },
+            {
+                "id": 121,
+                "quantity": 3
+            },
+            {
+                "id": 128,
+                "quantity": 1
+            }
+        ]
+    },
+    {
+        "id": 184,
+        "name": {
+            "EN": "Draw Charm 2"
+        },
+        "level": 2,
+        "rarity": 7,
+        "abilityIds": [
+            148
+        ],
+        "craftMaterials": [
+            {
+                "id": 428,
+                "quantity": 1
+            },
+            {
+                "id": 423,
+                "quantity": 2
+            },
+            {
+                "id": 120,
+                "quantity": 1
+            },
+            {
+                "id": 129,
+                "quantity": 1
+            }
+        ]
+    },
+    {
+        "id": 185,
+        "name": {
+            "EN": "Trickshot Charm 1"
+        },
+        "level": 1,
+        "rarity": 5,
+        "abilityIds": [
+            36,
+            289
+        ],
+        "craftMaterials": [
+            {
+                "id": 245,
+                "quantity": 2
+            },
+            {
+                "id": 292,
+                "quantity": 3
+            },
+            {
+                "id": 124,
+                "quantity": 2
+            },
+            {
+                "id": 128,
+                "quantity": 2
+            }
+        ]
+    },
+    {
+        "id": 186,
+        "name": {
+            "EN": "Marathon Charm 1"
+        },
+        "level": 1,
+        "rarity": 5,
+        "abilityIds": [
+            195
+        ],
+        "craftMaterials": [
+            {
+                "id": 240,
+                "quantity": 2
+            },
+            {
+                "id": 245,
+                "quantity": 2
+            },
+            {
+                "id": 123,
+                "quantity": 3
+            },
+            {
+                "id": 128,
+                "quantity": 1
+            }
+        ]
+    },
+    {
+        "id": 187,
+        "name": {
+            "EN": "Marathon Charm 2"
+        },
+        "level": 2,
+        "rarity": 8,
+        "abilityIds": [
+            196
+        ],
+        "craftMaterials": [
+            {
+                "id": 443,
+                "quantity": 1
+            },
+            {
+                "id": 438,
+                "quantity": 2
+            },
+            {
+                "id": 120,
+                "quantity": 1
+            },
+            {
+                "id": 129,
+                "quantity": 1
+            }
+        ]
+    },
+    {
+        "id": 188,
+        "name": {
+            "EN": "Marathon Charm 3"
+        },
+        "level": 3,
+        "rarity": 12,
+        "abilityIds": [
+            197
+        ],
+        "craftMaterials": []
+    },
+    {
+        "id": 189,
+        "name": {
+            "EN": "Fitness Charm 1"
+        },
+        "level": 1,
+        "rarity": 5,
+        "abilityIds": [
+            198
+        ],
+        "craftMaterials": [
+            {
+                "id": 262,
+                "quantity": 2
+            },
+            {
+                "id": 261,
+                "quantity": 2
+            },
+            {
+                "id": 123,
+                "quantity": 3
+            },
+            {
+                "id": 128,
+                "quantity": 1
+            }
+        ]
+    },
+    {
+        "id": 190,
+        "name": {
+            "EN": "Fitness Charm 2"
+        },
+        "level": 2,
+        "rarity": 6,
+        "abilityIds": [
+            199
+        ],
+        "craftMaterials": [
+            {
+                "id": 339,
+                "quantity": 1
+            },
+            {
+                "id": 337,
+                "quantity": 2
+            },
+            {
+                "id": 120,
+                "quantity": 1
+            },
+            {
+                "id": 129,
+                "quantity": 1
+            }
+        ]
+    },
+    {
+        "id": 191,
+        "name": {
+            "EN": "Fitness Charm 3"
+        },
+        "level": 3,
+        "rarity": 7,
+        "abilityIds": [
+            200
+        ],
+        "craftMaterials": [
+            {
+                "id": 435,
+                "quantity": 1
+            },
+            {
+                "id": 434,
+                "quantity": 1
+            },
+            {
+                "id": 122,
+                "quantity": 3
+            },
+            {
+                "id": 129,
+                "quantity": 1
+            }
+        ]
+    },
+    {
+        "id": 192,
+        "name": {
+            "EN": "Fitness Charm 4"
+        },
+        "level": 4,
+        "rarity": 11,
+        "abilityIds": [
+            201
+        ],
+        "craftMaterials": []
+    },
+    {
+        "id": 193,
+        "name": {
+            "EN": "Surge Charm 1"
+        },
+        "level": 1,
+        "rarity": 5,
+        "abilityIds": [
+            204
+        ],
+        "craftMaterials": [
+            {
+                "id": 300,
+                "quantity": 2
+            },
+            {
+                "id": 297,
+                "quantity": 3
+            },
+            {
+                "id": 143,
+                "quantity": 3
+            },
+            {
+                "id": 128,
+                "quantity": 1
+            }
+        ]
+    },
+    {
+        "id": 194,
+        "name": {
+            "EN": "Surge Charm 2"
+        },
+        "level": 2,
+        "rarity": 7,
+        "abilityIds": [
+            205
+        ],
+        "craftMaterials": [
+            {
+                "id": 411,
+                "quantity": 1
+            },
+            {
+                "id": 409,
+                "quantity": 2
+            },
+            {
+                "id": 120,
+                "quantity": 1
+            },
+            {
+                "id": 129,
+                "quantity": 1
+            }
+        ]
+    },
+    {
+        "id": 195,
+        "name": {
+            "EN": "Surge Charm 3"
+        },
+        "level": 3,
+        "rarity": 12,
+        "abilityIds": [
+            206
+        ],
+        "craftMaterials": []
+    },
+    {
+        "id": 196,
+        "name": {
+            "EN": "Leaping Charm 1"
+        },
+        "level": 1,
+        "rarity": 5,
+        "abilityIds": [
+            215
+        ],
+        "craftMaterials": [
+            {
+                "id": 262,
+                "quantity": 2
+            },
+            {
+                "id": 261,
+                "quantity": 2
+            },
+            {
+                "id": 123,
+                "quantity": 3
+            },
+            {
+                "id": 128,
+                "quantity": 1
+            }
+        ]
+    },
+    {
+        "id": 197,
+        "name": {
+            "EN": "Leaping Charm 2"
+        },
+        "level": 2,
+        "rarity": 7,
+        "abilityIds": [
+            216
+        ],
+        "craftMaterials": [
+            {
+                "id": 435,
+                "quantity": 1
+            },
+            {
+                "id": 433,
+                "quantity": 1
+            },
+            {
+                "id": 126,
+                "quantity": 1
+            },
+            {
+                "id": 129,
+                "quantity": 1
+            }
+        ]
+    },
+    {
+        "id": 198,
+        "name": {
+            "EN": "Leaping Charm 3"
+        },
+        "level": 3,
+        "rarity": 12,
+        "abilityIds": [
+            217
+        ],
+        "craftMaterials": []
+    },
+    {
+        "id": 199,
+        "name": {
+            "EN": "Bombardier Charm 1"
+        },
+        "level": 1,
+        "rarity": 5,
+        "abilityIds": [
+            241
+        ],
+        "craftMaterials": [
+            {
+                "id": 384,
+                "quantity": 2
+            },
+            {
+                "id": 385,
+                "quantity": 2
+            },
+            {
+                "id": 126,
+                "quantity": 1
+            },
+            {
+                "id": 128,
+                "quantity": 1
+            }
+        ]
+    },
+    {
+        "id": 200,
+        "name": {
+            "EN": "Bombardier Charm 2"
+        },
+        "level": 2,
+        "rarity": 6,
+        "abilityIds": [
+            242
+        ],
+        "craftMaterials": [
+            {
+                "id": 404,
+                "quantity": 1
+            },
+            {
+                "id": 402,
+                "quantity": 2
+            },
+            {
+                "id": 125,
+                "quantity": 1
+            },
+            {
+                "id": 128,
+                "quantity": 1
+            }
+        ]
+    },
+    {
+        "id": 201,
+        "name": {
+            "EN": "Bombardier Charm 3"
+        },
+        "level": 3,
+        "rarity": 7,
+        "abilityIds": [
+            243
+        ],
+        "craftMaterials": [
+            {
+                "id": 428,
+                "quantity": 1
+            },
+            {
+                "id": 423,
+                "quantity": 2
+            },
+            {
+                "id": 126,
+                "quantity": 1
+            },
+            {
+                "id": 129,
+                "quantity": 1
+            }
+        ]
+    },
+    {
+        "id": 202,
+        "name": {
+            "EN": "Mushroom Charm 1"
+        },
+        "level": 1,
+        "rarity": 5,
+        "abilityIds": [
+            244
+        ],
+        "craftMaterials": [
+            {
+                "id": 482,
+                "quantity": 1
+            },
+            {
+                "id": 175,
+                "quantity": 5
+            },
+            {
+                "id": 125,
+                "quantity": 1
+            },
+            {
+                "id": 129,
+                "quantity": 1
+            }
+        ]
+    },
+    {
+        "id": 203,
+        "name": {
+            "EN": "Mushroom Charm 2"
+        },
+        "level": 2,
+        "rarity": 8,
+        "abilityIds": [
+            245
+        ],
+        "craftMaterials": [
+            {
+                "id": 484,
+                "quantity": 1
+            },
+            {
+                "id": 483,
+                "quantity": 1
+            },
+            {
+                "id": 125,
+                "quantity": 1
+            },
+            {
+                "id": 130,
+                "quantity": 1
+            }
+        ]
+    },
+    {
+        "id": 204,
+        "name": {
+            "EN": "Mushroom Charm 3"
+        },
+        "level": 3,
+        "rarity": 11,
+        "abilityIds": [
+            246
+        ],
+        "craftMaterials": []
+    },
+    {
+        "id": 205,
+        "name": {
+            "EN": "Awakening Charm 1"
+        },
+        "level": 1,
+        "rarity": 5,
+        "abilityIds": [
+            120
+        ],
+        "craftMaterials": [
+            {
+                "id": 381,
+                "quantity": 1
+            },
+            {
+                "id": 380,
+                "quantity": 5
+            },
+            {
+                "id": 123,
+                "quantity": 4
+            },
+            {
+                "id": 127,
+                "quantity": 1
+            }
+        ]
+    },
+    {
+        "id": 206,
+        "name": {
+            "EN": "Awakening Charm 2"
+        },
+        "level": 2,
+        "rarity": 7,
+        "abilityIds": [
+            121
+        ],
+        "craftMaterials": [
+            {
+                "id": 375,
+                "quantity": 1
+            },
+            {
+                "id": 374,
+                "quantity": 1
+            },
+            {
+                "id": 125,
+                "quantity": 1
+            },
+            {
+                "id": 129,
+                "quantity": 1
+            }
+        ]
+    },
+    {
+        "id": 207,
+        "name": {
+            "EN": "Awakening Charm 3"
+        },
+        "level": 3,
+        "rarity": 12,
+        "abilityIds": [
+            122
+        ],
+        "craftMaterials": []
+    },
+    {
+        "id": 208,
+        "name": {
+            "EN": "Handicraft Charm 1"
+        },
+        "level": 1,
+        "rarity": 5,
+        "abilityIds": [
+            142
+        ],
+        "craftMaterials": [
+            {
+                "id": 381,
+                "quantity": 1
+            },
+            {
+                "id": 379,
+                "quantity": 3
+            },
+            {
+                "id": 123,
+                "quantity": 4
+            },
+            {
+                "id": 128,
+                "quantity": 1
+            }
+        ]
+    },
+    {
+        "id": 209,
+        "name": {
+            "EN": "Handicraft Charm 2"
+        },
+        "level": 2,
+        "rarity": 7,
+        "abilityIds": [
+            143
+        ],
+        "craftMaterials": [
+            {
+                "id": 435,
+                "quantity": 1
+            },
+            {
+                "id": 433,
+                "quantity": 1
+            },
+            {
+                "id": 173,
+                "quantity": 1
+            },
+            {
+                "id": 129,
+                "quantity": 1
+            }
+        ]
+    },
+    {
+        "id": 210,
+        "name": {
+            "EN": "Handicraft Charm 3"
+        },
+        "level": 3,
+        "rarity": 8,
+        "abilityIds": [
+            144
+        ],
+        "craftMaterials": [
+            {
+                "id": 484,
+                "quantity": 1
+            },
+            {
+                "id": 443,
+                "quantity": 1
+            },
+            {
+                "id": 441,
+                "quantity": 2
+            },
+            {
+                "id": 130,
+                "quantity": 1
+            }
+        ]
+    },
+    {
+        "id": 211,
+        "name": {
+            "EN": "Handicraft Charm 4"
+        },
+        "level": 4,
+        "rarity": 12,
+        "abilityIds": [
+            145
+        ],
+        "craftMaterials": []
+    },
+    {
+        "id": 212,
+        "name": {
+            "EN": "Mud Puppy Charm"
+        },
+        "level": 1,
+        "rarity": 5,
+        "abilityIds": [
+            13,
+            203
+        ],
+        "craftMaterials": [
+            {
+                "id": 252,
+                "quantity": 2
+            },
+            {
+                "id": 262,
+                "quantity": 3
+            },
+            {
+                "id": 123,
+                "quantity": 5
+            },
+            {
+                "id": 128,
+                "quantity": 2
+            }
+        ]
+    },
+    {
+        "id": 213,
+        "name": {
+            "EN": "Hunter's Life Charm"
+        },
+        "level": 1,
+        "rarity": 5,
+        "abilityIds": [
+            247,
+            300
+        ],
+        "craftMaterials": [
+            {
+                "id": 177,
+                "quantity": 3
+            },
+            {
+                "id": 176,
+                "quantity": 5
+            },
+            {
+                "id": 155,
+                "quantity": 5
+            },
+            {
+                "id": 128,
+                "quantity": 1
+            }
+        ]
+    },
+    {
+        "id": 214,
+        "name": {
+            "EN": "Procurer's Charm"
+        },
+        "level": 1,
+        "rarity": 5,
+        "abilityIds": [
+            248,
+            250
+        ],
+        "craftMaterials": [
+            {
+                "id": 197,
+                "quantity": 5
+            },
+            {
+                "id": 196,
+                "quantity": 5
+            },
+            {
+                "id": 179,
+                "quantity": 5
+            },
+            {
+                "id": 128,
+                "quantity": 1
+            }
+        ]
+    },
+    {
+        "id": 215,
+        "name": {
+            "EN": "Gatherer's Charm"
+        },
+        "level": 1,
+        "rarity": 5,
+        "abilityIds": [
+            249,
+            251
+        ],
+        "craftMaterials": [
+            {
+                "id": 175,
+                "quantity": 5
+            },
+            {
+                "id": 202,
+                "quantity": 5
+            },
+            {
+                "id": 203,
+                "quantity": 5
+            },
+            {
+                "id": 128,
+                "quantity": 1
+            }
+        ]
+    },
+    {
+        "id": 216,
+        "name": {
+            "EN": "Guard Charm 1"
+        },
+        "level": 1,
+        "rarity": 6,
+        "abilityIds": [
+            20
+        ],
+        "craftMaterials": [
+            {
+                "id": 194,
+                "quantity": 3
+            },
+            {
+                "id": 193,
+                "quantity": 3
+            },
+            {
+                "id": 142,
+                "quantity": 6
+            },
+            {
+                "id": 128,
+                "quantity": 1
+            }
+        ]
+    },
+    {
+        "id": 217,
+        "name": {
+            "EN": "Guard Charm 2"
+        },
+        "level": 2,
+        "rarity": 6,
+        "abilityIds": [
+            21
+        ],
+        "craftMaterials": [
+            {
+                "id": 173,
+                "quantity": 1
+            },
+            {
+                "id": 126,
+                "quantity": 1
+            },
+            {
+                "id": 118,
+                "quantity": 6
+            },
+            {
+                "id": 128,
+                "quantity": 1
+            }
+        ]
+    },
+    {
+        "id": 218,
+        "name": {
+            "EN": "Guard Charm 3"
+        },
+        "level": 3,
+        "rarity": 7,
+        "abilityIds": [
+            22
+        ],
+        "craftMaterials": [
+            {
+                "id": 174,
+                "quantity": 1
+            },
+            {
+                "id": 483,
+                "quantity": 1
+            },
+            {
+                "id": 123,
+                "quantity": 2
+            },
+            {
+                "id": 129,
+                "quantity": 1
+            }
+        ]
+    },
+    {
+        "id": 219,
+        "name": {
+            "EN": "Earplugs Charm 1"
+        },
+        "level": 1,
+        "rarity": 6,
+        "abilityIds": [
+            23
+        ],
+        "craftMaterials": [
+            {
+                "id": 365,
+                "quantity": 1
+            },
+            {
+                "id": 364,
+                "quantity": 2
+            },
+            {
+                "id": 126,
+                "quantity": 2
+            },
+            {
+                "id": 129,
+                "quantity": 1
+            }
+        ]
+    },
+    {
+        "id": 220,
+        "name": {
+            "EN": "Earplugs Charm 2"
+        },
+        "level": 2,
+        "rarity": 6,
+        "abilityIds": [
+            24
+        ],
+        "craftMaterials": [
+            {
+                "id": 404,
+                "quantity": 1
+            },
+            {
+                "id": 402,
+                "quantity": 2
+            },
+            {
+                "id": 125,
+                "quantity": 1
+            },
+            {
+                "id": 129,
+                "quantity": 1
+            }
+        ]
+    },
+    {
+        "id": 221,
+        "name": {
+            "EN": "Earplugs Charm 3"
+        },
+        "level": 3,
+        "rarity": 8,
+        "abilityIds": [
+            25
+        ],
+        "craftMaterials": [
+            {
+                "id": 428,
+                "quantity": 1
+            },
+            {
+                "id": 423,
+                "quantity": 2
+            },
+            {
+                "id": 173,
+                "quantity": 1
+            },
+            {
+                "id": 130,
+                "quantity": 1
+            }
+        ]
+    },
+    {
+        "id": 222,
+        "name": {
+            "EN": "Earplugs Charm 4"
+        },
+        "level": 4,
+        "rarity": 12,
+        "abilityIds": [
+            410
+        ],
+        "craftMaterials": []
+    },
+    {
+        "id": 223,
+        "name": {
+            "EN": "Tremor Charm 1"
+        },
+        "level": 1,
+        "rarity": 6,
+        "abilityIds": [
+            33
+        ],
+        "craftMaterials": [
+            {
+                "id": 365,
+                "quantity": 1
+            },
+            {
+                "id": 363,
+                "quantity": 2
+            },
+            {
+                "id": 126,
+                "quantity": 1
+            },
+            {
+                "id": 129,
+                "quantity": 1
+            }
+        ]
+    },
+    {
+        "id": 224,
+        "name": {
+            "EN": "Tremor Charm 2"
+        },
+        "level": 2,
+        "rarity": 7,
+        "abilityIds": [
+            34
+        ],
+        "craftMaterials": [
+            {
+                "id": 419,
+                "quantity": 1
+            },
+            {
+                "id": 417,
+                "quantity": 2
+            },
+            {
+                "id": 125,
+                "quantity": 1
+            },
+            {
+                "id": 129,
+                "quantity": 1
+            }
+        ]
+    },
+    {
+        "id": 225,
+        "name": {
+            "EN": "Tremor Charm 3"
+        },
+        "level": 3,
+        "rarity": 12,
+        "abilityIds": [
+            35
+        ],
+        "craftMaterials": []
+    },
+    {
+        "id": 226,
+        "name": {
+            "EN": "Exploiter Charm 1"
+        },
+        "level": 1,
+        "rarity": 6,
+        "abilityIds": [
+            133
+        ],
+        "craftMaterials": [
+            {
+                "id": 346,
+                "quantity": 1
+            },
+            {
+                "id": 350,
+                "quantity": 1
+            },
+            {
+                "id": 125,
+                "quantity": 1
+            },
+            {
+                "id": 129,
+                "quantity": 1
+            }
+        ]
+    },
+    {
+        "id": 227,
+        "name": {
+            "EN": "Exploiter Charm 2"
+        },
+        "level": 2,
+        "rarity": 8,
+        "abilityIds": [
+            134
+        ],
+        "craftMaterials": [
+            {
+                "id": 428,
+                "quantity": 1
+            },
+            {
+                "id": 423,
+                "quantity": 2
+            },
+            {
+                "id": 126,
+                "quantity": 1
+            },
+            {
+                "id": 130,
+                "quantity": 1
+            }
+        ]
+    },
+    {
+        "id": 228,
+        "name": {
+            "EN": "Focus Charm 1"
+        },
+        "level": 1,
+        "rarity": 6,
+        "abilityIds": [
+            136
+        ],
+        "craftMaterials": [
+            {
+                "id": 365,
+                "quantity": 1
+            },
+            {
+                "id": 363,
+                "quantity": 2
+            },
+            {
+                "id": 126,
+                "quantity": 1
+            },
+            {
+                "id": 128,
+                "quantity": 1
+            }
+        ]
+    },
+    {
+        "id": 229,
+        "name": {
+            "EN": "Focus Charm 2"
+        },
+        "level": 2,
+        "rarity": 7,
+        "abilityIds": [
+            137
+        ],
+        "craftMaterials": [
+            {
+                "id": 419,
+                "quantity": 1
+            },
+            {
+                "id": 417,
+                "quantity": 2
+            },
+            {
+                "id": 120,
+                "quantity": 1
+            },
+            {
+                "id": 129,
+                "quantity": 1
+            }
+        ]
+    },
+    {
+        "id": 230,
+        "name": {
+            "EN": "Focus Charm 3"
+        },
+        "level": 3,
+        "rarity": 12,
+        "abilityIds": [
+            138
+        ],
+        "craftMaterials": []
+    },
+    {
+        "id": 231,
+        "name": {
+            "EN": "Breaker Charm 1"
+        },
+        "level": 1,
+        "rarity": 6,
+        "abilityIds": [
+            150
+        ],
+        "craftMaterials": [
+            {
+                "id": 395,
+                "quantity": 1
+            },
+            {
+                "id": 393,
+                "quantity": 2
+            },
+            {
+                "id": 126,
+                "quantity": 1
+            },
+            {
+                "id": 128,
+                "quantity": 1
+            }
+        ]
+    },
+    {
+        "id": 232,
+        "name": {
+            "EN": "Breaker Charm 2"
+        },
+        "level": 2,
+        "rarity": 8,
+        "abilityIds": [
+            151
+        ],
+        "craftMaterials": [
+            {
+                "id": 428,
+                "quantity": 1
+            },
+            {
+                "id": 436,
+                "quantity": 6
+            },
+            {
+                "id": 126,
+                "quantity": 1
+            },
+            {
+                "id": 129,
+                "quantity": 1
+            }
+        ]
+    },
+    {
+        "id": 233,
+        "name": {
+            "EN": "Breaker Charm 3"
+        },
+        "level": 3,
+        "rarity": 11,
+        "abilityIds": [
+            152
+        ],
+        "craftMaterials": []
+    },
+    {
+        "id": 234,
+        "name": {
+            "EN": "Fury Charm 1"
+        },
+        "level": 1,
+        "rarity": 6,
+        "abilityIds": [
+            180
+        ],
+        "craftMaterials": [
+            {
+                "id": 368,
+                "quantity": 1
+            },
+            {
+                "id": 363,
+                "quantity": 2
+            },
+            {
+                "id": 126,
+                "quantity": 1
+            },
+            {
+                "id": 128,
+                "quantity": 1
+            }
+        ]
+    },
+    {
+        "id": 235,
+        "name": {
+            "EN": "Fury Charm 2"
+        },
+        "level": 2,
+        "rarity": 8,
+        "abilityIds": [
+            181
+        ],
+        "craftMaterials": [
+            {
+                "id": 411,
+                "quantity": 1
+            },
+            {
+                "id": 436,
+                "quantity": 6
+            },
+            {
+                "id": 126,
+                "quantity": 1
+            },
+            {
+                "id": 129,
+                "quantity": 1
+            }
+        ]
+    },
+    {
+        "id": 236,
+        "name": {
+            "EN": "Fury Charm 3"
+        },
+        "level": 3,
+        "rarity": 11,
+        "abilityIds": [
+            182
+        ],
+        "craftMaterials": []
+    },
+    {
+        "id": 237,
+        "name": {
+            "EN": "Fury Charm 4"
+        },
+        "level": 4,
+        "rarity": 12,
+        "abilityIds": [
+            183
+        ],
+        "craftMaterials": []
+    },
+    {
+        "id": 238,
+        "name": {
+            "EN": "Grit Charm 1"
+        },
+        "level": 1,
+        "rarity": 6,
+        "abilityIds": [
+            174
+        ],
+        "craftMaterials": [
+            {
+                "id": 365,
+                "quantity": 1
+            },
+            {
+                "id": 363,
+                "quantity": 2
+            },
+            {
+                "id": 126,
+                "quantity": 1
+            },
+            {
+                "id": 128,
+                "quantity": 1
+            }
+        ]
+    },
+    {
+        "id": 239,
+        "name": {
+            "EN": "Grit Charm 2"
+        },
+        "level": 2,
+        "rarity": 7,
+        "abilityIds": [
+            175
+        ],
+        "craftMaterials": [
+            {
+                "id": 435,
+                "quantity": 1
+            },
+            {
+                "id": 433,
+                "quantity": 2
+            },
+            {
+                "id": 123,
+                "quantity": 3
+            },
+            {
+                "id": 129,
+                "quantity": 1
+            }
+        ]
+    },
+    {
+        "id": 240,
+        "name": {
+            "EN": "Grit Charm 3"
+        },
+        "level": 3,
+        "rarity": 11,
+        "abilityIds": [
+            176
+        ],
+        "craftMaterials": []
+    },
+    {
+        "id": 241,
+        "name": {
+            "EN": "Grit Charm 4"
+        },
+        "level": 4,
+        "rarity": 12,
+        "abilityIds": [
+            177
+        ],
+        "craftMaterials": []
+    },
+    {
+        "id": 242,
+        "name": {
+            "EN": "Grit Charm 5"
+        },
+        "level": 5,
+        "rarity": 12,
+        "abilityIds": [
+            178
+        ],
+        "craftMaterials": []
+    },
+    {
+        "id": 243,
+        "name": {
+            "EN": "Maintenance Charm 1"
+        },
+        "level": 1,
+        "rarity": 6,
+        "abilityIds": [
+            301
+        ],
+        "craftMaterials": [
+            {
+                "id": 284,
+                "quantity": 2
+            },
+            {
+                "id": 277,
+                "quantity": 2
+            },
+            {
+                "id": 142,
+                "quantity": 3
+            },
+            {
+                "id": 128,
+                "quantity": 1
+            }
+        ]
+    },
+    {
+        "id": 244,
+        "name": {
+            "EN": "Maintenance Charm 2"
+        },
+        "level": 2,
+        "rarity": 7,
+        "abilityIds": [
+            302
+        ],
+        "craftMaterials": [
+            {
+                "id": 428,
+                "quantity": 1
+            },
+            {
+                "id": 423,
+                "quantity": 2
+            },
+            {
+                "id": 137,
+                "quantity": 2
+            },
+            {
+                "id": 129,
+                "quantity": 1
+            }
+        ]
+    },
+    {
+        "id": 245,
+        "name": {
+            "EN": "Maintenance Charm 3"
+        },
+        "level": 3,
+        "rarity": 8,
+        "abilityIds": [
+            303
+        ],
+        "craftMaterials": [
+            {
+                "id": 419,
+                "quantity": 1
+            },
+            {
+                "id": 438,
+                "quantity": 2
+            },
+            {
+                "id": 123,
+                "quantity": 2
+            },
+            {
+                "id": 129,
+                "quantity": 1
+            }
+        ]
+    },
+    {
+        "id": 246,
+        "name": {
+            "EN": "Power Charm 1"
+        },
+        "level": 1,
+        "rarity": 7,
+        "abilityIds": [
+            161
+        ],
+        "craftMaterials": [
+            {
+                "id": 423,
+                "quantity": 3
+            },
+            {
+                "id": 421,
+                "quantity": 2
+            },
+            {
+                "id": 125,
+                "quantity": 1
+            },
+            {
+                "id": 129,
+                "quantity": 1
+            }
+        ]
+    },
+    {
+        "id": 247,
+        "name": {
+            "EN": "Power Charm 2"
+        },
+        "level": 2,
+        "rarity": 8,
+        "abilityIds": [
+            162
+        ],
+        "craftMaterials": []
+    },
+    {
+        "id": 248,
+        "name": {
+            "EN": "Power Charm 3"
+        },
+        "level": 3,
+        "rarity": 11,
+        "abilityIds": [
+            163
+        ],
+        "craftMaterials": []
+    },
+    {
+        "id": 249,
+        "name": {
+            "EN": "Power Charm 4"
+        },
+        "level": 4,
+        "rarity": 12,
+        "abilityIds": [
+            164
+        ],
+        "craftMaterials": []
+    },
+    {
+        "id": 250,
+        "name": {
+            "EN": "Challenger Charm 1"
+        },
+        "level": 1,
+        "rarity": 7,
+        "abilityIds": [
+            166
+        ],
+        "craftMaterials": [
+            {
+                "id": 411,
+                "quantity": 1
+            },
+            {
+                "id": 408,
+                "quantity": 2
+            },
+            {
+                "id": 125,
+                "quantity": 1
+            },
+            {
+                "id": 129,
+                "quantity": 1
+            }
+        ]
+    },
+    {
+        "id": 251,
+        "name": {
+            "EN": "Challenger Charm 2"
+        },
+        "level": 2,
+        "rarity": 8,
+        "abilityIds": [
+            167
+        ],
+        "craftMaterials": [
+            {
+                "id": 411,
+                "quantity": 1
+            },
+            {
+                "id": 409,
+                "quantity": 2
+            },
+            {
+                "id": 120,
+                "quantity": 1
+            },
+            {
+                "id": 130,
+                "quantity": 1
+            }
+        ]
+    },
+    {
+        "id": 252,
+        "name": {
+            "EN": "Challenger Charm 3"
+        },
+        "level": 3,
+        "rarity": 11,
+        "abilityIds": [
+            168
+        ],
+        "craftMaterials": []
+    },
+    {
+        "id": 253,
+        "name": {
+            "EN": "Challenger Charm 4"
+        },
+        "level": 4,
+        "rarity": 12,
+        "abilityIds": [
+            169
+        ],
+        "craftMaterials": []
+    },
+    {
+        "id": 254,
+        "name": {
+            "EN": "Unscathed Charm 1"
+        },
+        "level": 1,
+        "rarity": 7,
+        "abilityIds": [
+            171
+        ],
+        "craftMaterials": [
+            {
+                "id": 419,
+                "quantity": 1
+            },
+            {
+                "id": 416,
+                "quantity": 2
+            },
+            {
+                "id": 125,
+                "quantity": 1
+            },
+            {
+                "id": 129,
+                "quantity": 1
+            }
+        ]
+    },
+    {
+        "id": 255,
+        "name": {
+            "EN": "Unscathed Charm 2"
+        },
+        "level": 2,
+        "rarity": 8,
+        "abilityIds": [
+            172
+        ],
+        "craftMaterials": [
+            {
+                "id": 419,
+                "quantity": 1
+            },
+            {
+                "id": 417,
+                "quantity": 2
+            },
+            {
+                "id": 120,
+                "quantity": 1
+            },
+            {
+                "id": 130,
+                "quantity": 1
+            }
+        ]
+    },
+    {
+        "id": 256,
+        "name": {
+            "EN": "Unscathed Charm 3"
+        },
+        "level": 3,
+        "rarity": 12,
+        "abilityIds": [
+            173
+        ],
+        "craftMaterials": [
+            {
+                "id": 1174,
+                "quantity": 5
+            },
+            {
+                "id": 1183,
+                "quantity": 3
+            },
+            {
+                "id": 989,
+                "quantity": 1
+            },
+            {
+                "id": 657,
+                "quantity": 1
+            }
+        ]
+    },
+    {
+        "id": 257,
+        "name": {
+            "EN": "Mighty Charm 1"
+        },
+        "level": 1,
+        "rarity": 7,
+        "abilityIds": [
+            267
+        ],
+        "craftMaterials": [
+            {
+                "id": 411,
+                "quantity": 1
+            },
+            {
+                "id": 408,
+                "quantity": 2
+            },
+            {
+                "id": 125,
+                "quantity": 1
+            },
+            {
+                "id": 129,
+                "quantity": 1
+            }
+        ]
+    },
+    {
+        "id": 258,
+        "name": {
+            "EN": "Mighty Charm 2"
+        },
+        "level": 2,
+        "rarity": 8,
+        "abilityIds": [
+            268
+        ],
+        "craftMaterials": [
+            {
+                "id": 443,
+                "quantity": 1
+            },
+            {
+                "id": 439,
+                "quantity": 2
+            },
+            {
+                "id": 125,
+                "quantity": 1
+            },
+            {
+                "id": 130,
+                "quantity": 1
+            }
+        ]
+    },
+    {
+        "id": 259,
+        "name": {
+            "EN": "Impact Charm 1"
+        },
+        "level": 1,
+        "rarity": 7,
+        "abilityIds": [
+            276
+        ],
+        "craftMaterials": [
+            {
+                "id": 443,
+                "quantity": 1
+            },
+            {
+                "id": 440,
+                "quantity": 2
+            },
+            {
+                "id": 126,
+                "quantity": 1
+            },
+            {
+                "id": 129,
+                "quantity": 1
+            }
+        ]
+    },
+    {
+        "id": 260,
+        "name": {
+            "EN": "Impact Charm 2"
+        },
+        "level": 2,
+        "rarity": 8,
+        "abilityIds": [
+            277
+        ],
+        "craftMaterials": [
+            {
+                "id": 435,
+                "quantity": 1
+            },
+            {
+                "id": 437,
+                "quantity": 5
+            },
+            {
+                "id": 153,
+                "quantity": 2
+            },
+            {
+                "id": 130,
+                "quantity": 1
+            }
+        ]
+    },
+    {
+        "id": 261,
+        "name": {
+            "EN": "Impact Charm 3"
+        },
+        "level": 3,
+        "rarity": 11,
+        "abilityIds": [
+            278
+        ],
+        "craftMaterials": []
+    },
+    {
+        "id": 262,
+        "name": {
+            "EN": "Miasma Charm 1"
+        },
+        "level": 1,
+        "rarity": 7,
+        "abilityIds": [
+            294
+        ],
+        "craftMaterials": [
+            {
+                "id": 419,
+                "quantity": 1
+            },
+            {
+                "id": 416,
+                "quantity": 2
+            },
+            {
+                "id": 125,
+                "quantity": 1
+            },
+            {
+                "id": 129,
+                "quantity": 1
+            }
+        ]
+    },
+    {
+        "id": 263,
+        "name": {
+            "EN": "Miasma Charm 2"
+        },
+        "level": 2,
+        "rarity": 7,
+        "abilityIds": [
+            295
+        ],
+        "craftMaterials": [
+            {
+                "id": 419,
+                "quantity": 1
+            },
+            {
+                "id": 417,
+                "quantity": 2
+            },
+            {
+                "id": 124,
+                "quantity": 2
+            },
+            {
+                "id": 129,
+                "quantity": 1
+            }
+        ]
+    },
+    {
+        "id": 264,
+        "name": {
+            "EN": "Miasma Charm 3"
+        },
+        "level": 3,
+        "rarity": 8,
+        "abilityIds": [
+            296
+        ],
+        "craftMaterials": [
+            {
+                "id": 483,
+                "quantity": 3
+            },
+            {
+                "id": 442,
+                "quantity": 2
+            },
+            {
+                "id": 143,
+                "quantity": 3
+            },
+            {
+                "id": 129,
+                "quantity": 1
+            }
+        ]
+    },
+    {
+        "id": 265,
+        "name": {
+            "EN": "Normal Shots Charm"
+        },
+        "level": 1,
+        "rarity": 7,
+        "abilityIds": [
+            117
+        ],
+        "craftMaterials": [
+            {
+                "id": 483,
+                "quantity": 2
+            },
+            {
+                "id": 173,
+                "quantity": 1
+            },
+            {
+                "id": 172,
+                "quantity": 2
+            },
+            {
+                "id": 129,
+                "quantity": 1
+            }
+        ]
+    },
+    {
+        "id": 266,
+        "name": {
+            "EN": "Normal Shots Charm 2"
+        },
+        "level": 2,
+        "rarity": 11,
+        "abilityIds": [
+            352
+        ],
+        "craftMaterials": []
+    },
+    {
+        "id": 267,
+        "name": {
+            "EN": "Clearmind Charm"
+        },
+        "level": 1,
+        "rarity": 7,
+        "abilityIds": [
+            37,
+            38
+        ],
+        "craftMaterials": [
+            {
+                "id": 428,
+                "quantity": 1
+            },
+            {
+                "id": 419,
+                "quantity": 1
+            },
+            {
+                "id": 413,
+                "quantity": 5
+            },
+            {
+                "id": 129,
+                "quantity": 2
+            }
+        ]
+    },
+    {
+        "id": 268,
+        "name": {
+            "EN": "Rider's Charm"
+        },
+        "level": 1,
+        "rarity": 7,
+        "abilityIds": [
+            159,
+            281
+        ],
+        "craftMaterials": [
+            {
+                "id": 435,
+                "quantity": 1
+            },
+            {
+                "id": 328,
+                "quantity": 1
+            },
+            {
+                "id": 324,
+                "quantity": 5
+            },
+            {
+                "id": 129,
+                "quantity": 2
+            }
+        ]
+    },
+    {
+        "id": 269,
+        "name": {
+            "EN": "Surveyor's Charm"
+        },
+        "level": 1,
+        "rarity": 7,
+        "abilityIds": [
+            279,
+            290
+        ],
+        "craftMaterials": [
+            {
+                "id": 411,
+                "quantity": 1
+            },
+            {
+                "id": 376,
+                "quantity": 5
+            },
+            {
+                "id": 380,
+                "quantity": 3
+            },
+            {
+                "id": 129,
+                "quantity": 2
+            }
+        ]
+    },
+    {
+        "id": 270,
+        "name": {
+            "EN": "Critical Charm 1"
+        },
+        "level": 1,
+        "rarity": 8,
+        "abilityIds": [
+            130
+        ],
+        "craftMaterials": [
+            {
+                "id": 351,
+                "quantity": 1
+            },
+            {
+                "id": 282,
+                "quantity": 1
+            },
+            {
+                "id": 443,
+                "quantity": 1
+            },
+            {
+                "id": 130,
+                "quantity": 1
+            }
+        ]
+    },
+    {
+        "id": 271,
+        "name": {
+            "EN": "Critical Charm 2"
+        },
+        "level": 2,
+        "rarity": 12,
+        "abilityIds": [
+            131
+        ],
+        "craftMaterials": []
+    },
+    {
+        "id": 272,
+        "name": {
+            "EN": "Invigorate Charm 1"
+        },
+        "level": 1,
+        "rarity": 7,
+        "abilityIds": [
+            139
+        ],
+        "craftMaterials": [
+            {
+                "id": 443,
+                "quantity": 1
+            },
+            {
+                "id": 440,
+                "quantity": 1
+            },
+            {
+                "id": 125,
+                "quantity": 1
+            },
+            {
+                "id": 129,
+                "quantity": 1
+            }
+        ]
+    },
+    {
+        "id": 273,
+        "name": {
+            "EN": "Invigorate Charm 2"
+        },
+        "level": 2,
+        "rarity": 8,
+        "abilityIds": [
+            140
+        ],
+        "craftMaterials": [
+            {
+                "id": 411,
+                "quantity": 1
+            },
+            {
+                "id": 441,
+                "quantity": 2
+            },
+            {
+                "id": 126,
+                "quantity": 3
+            },
+            {
+                "id": 130,
+                "quantity": 1
+            }
+        ]
+    },
+    {
+        "id": 274,
+        "name": {
+            "EN": "Invigorate Charm 3"
+        },
+        "level": 3,
+        "rarity": 11,
+        "abilityIds": [
+            141
+        ],
+        "craftMaterials": []
+    },
+    {
+        "id": 275,
+        "name": {
+            "EN": "Penetration Charm"
+        },
+        "level": 1,
+        "rarity": 8,
+        "abilityIds": [
+            118
+        ],
+        "craftMaterials": [
+            {
+                "id": 484,
+                "quantity": 1
+            },
+            {
+                "id": 443,
+                "quantity": 1
+            },
+            {
+                "id": 439,
+                "quantity": 3
+            },
+            {
+                "id": 130,
+                "quantity": 1
+            }
+        ]
+    },
+    {
+        "id": 276,
+        "name": {
+            "EN": "Penetration Charm 2"
+        },
+        "level": 2,
+        "rarity": 11,
+        "abilityIds": [
+            380
+        ],
+        "craftMaterials": []
+    },
+    {
+        "id": 277,
+        "name": {
+            "EN": "Dispersal Charm"
+        },
+        "level": 1,
+        "rarity": 8,
+        "abilityIds": [
+            119
+        ],
+        "craftMaterials": [
+            {
+                "id": 484,
+                "quantity": 1
+            },
+            {
+                "id": 411,
+                "quantity": 1
+            },
+            {
+                "id": 407,
+                "quantity": 3
+            },
+            {
+                "id": 130,
+                "quantity": 1
+            }
+        ]
+    },
+    {
+        "id": 278,
+        "name": {
+            "EN": "Dispersal Charm 2"
+        },
+        "level": 2,
+        "rarity": 11,
+        "abilityIds": [
+            348
+        ],
+        "craftMaterials": []
+    },
+    {
+        "id": 279,
+        "name": {
+            "EN": "Poison Coating Charm"
+        },
+        "level": 1,
+        "rarity": 8,
+        "abilityIds": [
+            328
+        ],
+        "craftMaterials": [
+            {
+                "id": 282,
+                "quantity": 1
+            },
+            {
+                "id": 281,
+                "quantity": 3
+            },
+            {
+                "id": 159,
+                "quantity": 3
+            },
+            {
+                "id": 130,
+                "quantity": 1
+            }
+        ]
+    },
+    {
+        "id": 280,
+        "name": {
+            "EN": "Para Coating Charm"
+        },
+        "level": 1,
+        "rarity": 8,
+        "abilityIds": [
+            329
+        ],
+        "craftMaterials": [
+            {
+                "id": 308,
+                "quantity": 5
+            },
+            {
+                "id": 305,
+                "quantity": 5
+            },
+            {
+                "id": 161,
+                "quantity": 3
+            },
+            {
+                "id": 130,
+                "quantity": 1
+            }
+        ]
+    },
+    {
+        "id": 281,
+        "name": {
+            "EN": "Sleep Coating Charm"
+        },
+        "level": 1,
+        "rarity": 8,
+        "abilityIds": [
+            330
+        ],
+        "craftMaterials": [
+            {
+                "id": 317,
+                "quantity": 1
+            },
+            {
+                "id": 173,
+                "quantity": 2
+            },
+            {
+                "id": 163,
+                "quantity": 3
+            },
+            {
+                "id": 130,
+                "quantity": 1
+            }
+        ]
+    },
+    {
+        "id": 282,
+        "name": {
+            "EN": "Blast Coating Charm"
+        },
+        "level": 1,
+        "rarity": 8,
+        "abilityIds": [
+            331
+        ],
+        "craftMaterials": [
+            {
+                "id": 404,
+                "quantity": 1
+            },
+            {
+                "id": 400,
+                "quantity": 3
+            },
+            {
+                "id": 401,
+                "quantity": 3
+            },
+            {
+                "id": 130,
+                "quantity": 1
+            }
+        ]
+    },
+    {
+        "id": 283,
+        "name": {
+            "EN": "Geomancy Charm"
+        },
+        "level": 1,
+        "rarity": 8,
+        "abilityIds": [
+            298,
+            299
+        ],
+        "craftMaterials": [
+            {
+                "id": 443,
+                "quantity": 1
+            },
+            {
+                "id": 438,
+                "quantity": 3
+            },
+            {
+                "id": 421,
+                "quantity": 2
+            },
+            {
+                "id": 129,
+                "quantity": 2
+            }
+        ]
+    },
+    {
+        "id": 284,
+        "name": {
+            "EN": "Gale Charm"
+        },
+        "level": 1,
+        "rarity": 8,
+        "abilityIds": [
+            160,
+            304
+        ],
+        "craftMaterials": [
+            {
+                "id": 484,
+                "quantity": 1
+            },
+            {
+                "id": 339,
+                "quantity": 1
+            },
+            {
+                "id": 328,
+                "quantity": 1
+            },
+            {
+                "id": 130,
+                "quantity": 2
+            }
+        ]
+    },
+    {
+        "id": 285,
+        "name": {
+            "EN": "Wyrmslayer Charm"
+        },
+        "level": 1,
+        "rarity": 8,
+        "abilityIds": [
+            100,
+            332
+        ],
+        "craftMaterials": [
+            {
+                "id": 484,
+                "quantity": 1
+            },
+            {
+                "id": 443,
+                "quantity": 1
+            },
+            {
+                "id": 417,
+                "quantity": 1
+            },
+            {
+                "id": 130,
+                "quantity": 2
+            }
+        ]
+    },
+    {
+        "id": 286,
+        "name": {
+            "EN": "Bulwark Charm"
+        },
+        "level": 1,
+        "rarity": 8,
+        "abilityIds": [
+            185,
+            318
+        ],
+        "craftMaterials": [
+            {
+                "id": 484,
+                "quantity": 1
+            },
+            {
+                "id": 364,
+                "quantity": 2
+            },
+            {
+                "id": 368,
+                "quantity": 2
+            },
+            {
+                "id": 130,
+                "quantity": 2
+            }
+        ]
+    },
+    {
+        "id": 287,
+        "name": {
+            "EN": "Fair Wind Charm"
+        },
+        "level": 1,
+        "rarity": 3,
+        "abilityIds": [
+            39,
+            252
+        ],
+        "craftMaterials": []
+    },
+    {
+        "id": 288,
+        "name": {
+            "EN": "Special Shot Charm 1"
+        },
+        "level": 1,
+        "rarity": 5,
+        "abilityIds": [
+            188
+        ],
+        "craftMaterials": []
+    },
+    {
+        "id": 289,
+        "name": {
+            "EN": "Special Shot Charm 2"
+        },
+        "level": 2,
+        "rarity": 8,
+        "abilityIds": [
+            189
+        ],
+        "craftMaterials": []
+    },
+    {
+        "id": 290,
+        "name": {
+            "EN": "Guardian Charm 1"
+        },
+        "level": 1,
+        "rarity": 9,
+        "abilityIds": [
+            338
+        ],
+        "craftMaterials": []
+    },
+    {
+        "id": 291,
+        "name": {
+            "EN": "Guardian Charm 2"
+        },
+        "level": 2,
+        "rarity": 10,
+        "abilityIds": [
+            339
+        ],
+        "craftMaterials": []
+    },
+    {
+        "id": 292,
+        "name": {
+            "EN": "Guardian Charm 3"
+        },
+        "level": 3,
+        "rarity": 12,
+        "abilityIds": [
+            340
+        ],
+        "craftMaterials": []
+    },
+    {
+        "id": 293,
+        "name": {
+            "EN": "Phoenix Charm 1"
+        },
+        "level": 1,
+        "rarity": 11,
+        "abilityIds": [
+            356
+        ],
+        "craftMaterials": []
+    },
+    {
+        "id": 294,
+        "name": {
+            "EN": "Phoenix Charm 2"
+        },
+        "level": 2,
+        "rarity": 12,
+        "abilityIds": [
+            357
+        ],
+        "craftMaterials": []
+    },
+    {
+        "id": 295,
+        "name": {
+            "EN": "Adamantine Charm 1"
+        },
+        "level": 1,
+        "rarity": 11,
+        "abilityIds": [
+            315,
+            316
+        ],
+        "craftMaterials": []
+    },
+    {
+        "id": 296,
+        "name": {
+            "EN": "Sealer's Charm 1"
+        },
+        "level": 1,
+        "rarity": 11,
+        "abilityIds": [
+            311,
+            332
+        ],
+        "craftMaterials": []
+    },
+    {
+        "id": 297,
+        "name": {
+            "EN": "Razor Sharp Charm 1"
+        },
+        "level": 1,
+        "rarity": 11,
+        "abilityIds": [
+            322
+        ],
+        "craftMaterials": []
+    },
+    {
+        "id": 298,
+        "name": {
+            "EN": "Gutsy Charm 1"
+        },
+        "level": 1,
+        "rarity": 11,
+        "abilityIds": [
+            319
+        ],
+        "craftMaterials": []
+    }
+]

@@ -1,0 +1,3250 @@
+[
+    {
+        "id": 1,
+        "level": 1,
+        "description": {
+            "EN": "Reduces the number of times you take poison damage.",
+            "CN": "减少受到中毒伤害的次数"
+        }
+    },
+    {
+        "id": 2,
+        "level": 2,
+        "description": {
+            "EN": "Greatly reduces the number of times you take poison damage.",
+            "CN": "大幅减少受到中毒伤害的次数"
+        }
+    },
+    {
+        "id": 3,
+        "level": 3,
+        "description": {
+            "EN": "Prevents poison.",
+            "CN": "不会变为中毒状态"
+        }
+    },
+    {
+        "id": 4,
+        "level": 1,
+        "description": {
+            "EN": "Reduces the duration of paralysis by 30%.",
+            "CN": "减少麻痹状态的时间30%"
+        }
+    },
+    {
+        "id": 5,
+        "level": 2,
+        "description": {
+            "EN": "Reduces the duration of paralysis by 60%.",
+            "CN": "减少麻痹状态的时间60%"
+        }
+    },
+    {
+        "id": 6,
+        "level": 3,
+        "description": {
+            "EN": "Prevents paralysis.",
+            "CN": "不会变为麻痹状态"
+        }
+    },
+    {
+        "id": 7,
+        "level": 1,
+        "description": {
+            "EN": "Reduces the duration of sleep by 30%.",
+            "CN": "减少睡眠状态的时间30%"
+        }
+    },
+    {
+        "id": 8,
+        "level": 2,
+        "description": {
+            "EN": "Reduces the duration of sleep by 60%.",
+            "CN": "减少睡眠状态的时间60%"
+        }
+    },
+    {
+        "id": 9,
+        "level": 3,
+        "description": {
+            "EN": "Prevents sleep.",
+            "CN": "不会变为睡眠状态"
+        }
+    },
+    {
+        "id": 10,
+        "level": 1,
+        "description": {
+            "EN": "Reduces the duration of stun by 60%.",
+            "CN": "昏厥状态的时间减少60%"
+        }
+    },
+    {
+        "id": 11,
+        "level": 2,
+        "description": {
+            "EN": "Reduces the duration of stun by 90%.",
+            "CN": "昏厥状态的时间减少90%"
+        }
+    },
+    {
+        "id": 12,
+        "level": 3,
+        "description": {
+            "EN": "Prevents stun.",
+            "CN": "不会变为昏厥状态"
+        }
+    },
+    {
+        "id": 13,
+        "level": 1,
+        "description": {
+            "EN": "Reduces limits on movement speed and evasion.",
+            "CN": "减轻移动速度、回避行动的限制"
+        }
+    },
+    {
+        "id": 14,
+        "level": 1,
+        "description": {
+            "EN": "Delays blastblight and reduces blast damage.",
+            "CN": "延长爆破前的间隔时间，减轻爆破时受到的伤害"
+        }
+    },
+    {
+        "id": 15,
+        "level": 2,
+        "description": {
+            "EN": "Greatly delays blastblight and greatly reduces blast damage.",
+            "CN": "更加延长爆破前的间隔时间，大幅减轻爆破时受到的伤害"
+        }
+    },
+    {
+        "id": 16,
+        "level": 3,
+        "description": {
+            "EN": "Prevents blastblight.",
+            "CN": "不会变为爆破异常状态"
+        }
+    },
+    {
+        "id": 17,
+        "level": 1,
+        "description": {
+            "EN": "Reduces damage while bleeding.",
+            "CN": "将减轻裂伤状态造成的伤害"
+        }
+    },
+    {
+        "id": 18,
+        "level": 2,
+        "description": {
+            "EN": "Greatly reduces damage while bleeding.",
+            "CN": "大幅减轻裂伤状态造成的伤害"
+        }
+    },
+    {
+        "id": 19,
+        "level": 3,
+        "description": {
+            "EN": "Prevents bleeding.",
+            "CN": "不会变为裂伤状态"
+        }
+    },
+    {
+        "id": 20,
+        "level": 1,
+        "description": {
+            "EN": "Reduces the duration of Defense Down by 50%.",
+            "CN": "防御力下降状态的时间减少50%"
+        }
+    },
+    {
+        "id": 21,
+        "level": 2,
+        "description": {
+            "EN": "Reduces the duration of Defense Down by 75%.",
+            "CN": "防御力下降状态的时间减少75%"
+        }
+    },
+    {
+        "id": 22,
+        "level": 3,
+        "description": {
+            "EN": "Prevents Defense Down.",
+            "CN": "不会变为防御力下降状态"
+        }
+    },
+    {
+        "id": 23,
+        "level": 1,
+        "description": {
+            "EN": "Slightly reduces the effects of weak monster roars.",
+            "CN": "小幅减轻咆哮【小】的影响"
+        }
+    },
+    {
+        "id": 24,
+        "level": 2,
+        "description": {
+            "EN": "Reduces the effects of weak monster roars.",
+            "CN": "减轻咆哮【小】的影响"
+        }
+    },
+    {
+        "id": 25,
+        "level": 3,
+        "description": {
+            "EN": "Nullifies weak monster roars.",
+            "CN": "使咆哮【小】无效"
+        }
+    },
+    {
+        "id": 28,
+        "level": 1,
+        "description": {
+            "EN": "Slightly reduces the effects of minor wind pressure.",
+            "CN": "小幅减轻风压【小】"
+        }
+    },
+    {
+        "id": 29,
+        "level": 2,
+        "description": {
+            "EN": "Reduces the effects of minor wind pressure.",
+            "CN": "减轻风压【小】"
+        }
+    },
+    {
+        "id": 30,
+        "level": 3,
+        "description": {
+            "EN": "Negates minor wind pressure.",
+            "CN": "使风压【小】无效"
+        }
+    },
+    {
+        "id": 31,
+        "level": 4,
+        "description": {
+            "EN": "Negates minor wind pressure and reduces the effects of major wind pressure.",
+            "CN": "使风压【小】无效，减轻风压【大】"
+        }
+    },
+    {
+        "id": 32,
+        "level": 5,
+        "description": {
+            "EN": "Negates minor and major wind pressure.",
+            "CN": "使风压【大】【小】无效"
+        }
+    },
+    {
+        "id": 33,
+        "level": 1,
+        "description": {
+            "EN": "Nullifies minor ground tremors.",
+            "CN": "使震动【小】无效"
+        }
+    },
+    {
+        "id": 34,
+        "level": 2,
+        "description": {
+            "EN": "Nullifies minor ground tremors and reduces the effects of major ground tremors.",
+            "CN": "使震动【小】无效，减轻震动【大】的影响"
+        }
+    },
+    {
+        "id": 35,
+        "level": 3,
+        "description": {
+            "EN": "Nullifies minor and major ground tremors.",
+            "CN": "使震动【小】【大】无效"
+        }
+    },
+    {
+        "id": 36,
+        "level": 1,
+        "description": {
+            "EN": "Makes slinger dung pods more effective at making monsters run away.",
+            "CN": "提高逃离投射器异臭弹的效果"
+        }
+    },
+    {
+        "id": 37,
+        "level": 1,
+        "description": {
+            "EN": "Nullifies damage from effluvia and reduces damage from acids.",
+            "CN": "使瘴气雾霾无效，减轻酸造成的伤害"
+        }
+    },
+    {
+        "id": 38,
+        "level": 1,
+        "description": {
+            "EN": "Nullfies heat damage.",
+            "CN": "使热造成的伤害无效"
+        }
+    },
+    {
+        "id": 39,
+        "level": 1,
+        "description": {
+            "EN": "Attack +3",
+            "CN": "基础攻击力+3"
+        }
+    },
+    {
+        "id": 40,
+        "level": 2,
+        "description": {
+            "EN": "Attack +6",
+            "CN": "基础攻击力+6"
+        }
+    },
+    {
+        "id": 41,
+        "level": 3,
+        "description": {
+            "EN": "Attack +9",
+            "CN": "基础攻击力+9"
+        }
+    },
+    {
+        "id": 42,
+        "level": 4,
+        "description": {
+            "EN": "Attack +12 Affinity +5%",
+            "CN": "基础攻击力+12、会心率+5%"
+        }
+    },
+    {
+        "id": 43,
+        "level": 5,
+        "description": {
+            "EN": "Attack +15 Affinity +5%",
+            "CN": "基础攻击力+15、会心率+5%"
+        }
+    },
+    {
+        "id": 44,
+        "level": 6,
+        "description": {
+            "EN": "Attack +18 Affinity +5%",
+            "CN": "基础攻击力+18、会心率+5%"
+        }
+    },
+    {
+        "id": 45,
+        "level": 7,
+        "description": {
+            "EN": "Attack +21 Affinity +5%",
+            "CN": "基础攻击力+21、会心率+5%"
+        }
+    },
+    {
+        "id": 46,
+        "level": 1,
+        "description": {
+            "EN": "Defense +5",
+            "CN": "防御力+5"
+        }
+    },
+    {
+        "id": 47,
+        "level": 2,
+        "description": {
+            "EN": "Defense +10",
+            "CN": "防御力+10"
+        }
+    },
+    {
+        "id": 48,
+        "level": 3,
+        "description": {
+            "EN": "Defense +5%\nBonus: +10",
+            "CN": "防御力变为1.05倍，防御力+10"
+        }
+    },
+    {
+        "id": 49,
+        "level": 4,
+        "description": {
+            "EN": "Defense +5%\nBonus: +20\nAll Elemental Resistances +3",
+            "CN": "防御力变为1.05倍，防御力+20、全属性耐性值+3"
+        }
+    },
+    {
+        "id": 50,
+        "level": 5,
+        "description": {
+            "EN": "Defense +8%\nBonus: +20\nAll Elemental Resistances +3",
+            "CN": "防御力变为1.08倍，防御力+20、全属性耐性值+3"
+        }
+    },
+    {
+        "id": 51,
+        "level": 6,
+        "description": {
+            "EN": "Defense +8%\nBonus: +35\nAll Elemental Resistances +5",
+            "CN": "防御力变为1.08倍，防御力+35、全属性耐性值+5"
+        }
+    },
+    {
+        "id": 52,
+        "level": 7,
+        "description": {
+            "EN": "Defense +10%\nBonus: +35\nAll Elemental Resistances +5",
+            "CN": "防御力变为1.1倍，防御力+35、全属性耐性值+5"
+        }
+    },
+    {
+        "id": 53,
+        "level": 1,
+        "description": {
+            "EN": "Health +15",
+            "CN": "体力+15"
+        }
+    },
+    {
+        "id": 54,
+        "level": 2,
+        "description": {
+            "EN": "Health +30",
+            "CN": "体力+30"
+        }
+    },
+    {
+        "id": 55,
+        "level": 3,
+        "description": {
+            "EN": "Health +50",
+            "CN": "体力+50"
+        }
+    },
+    {
+        "id": 56,
+        "level": 1,
+        "description": {
+            "EN": "Recovery +10%",
+            "CN": "回复量1.1倍"
+        }
+    },
+    {
+        "id": 57,
+        "level": 2,
+        "description": {
+            "EN": "Recovery +20%",
+            "CN": "回复量1.2倍"
+        }
+    },
+    {
+        "id": 58,
+        "level": 3,
+        "description": {
+            "EN": "Recovery +30%",
+            "CN": "回复量1.3倍"
+        }
+    },
+    {
+        "id": 59,
+        "level": 1,
+        "description": {
+            "EN": "Doubles the speed at which you heal recoverable damage.",
+            "CN": "红色槽的自动回复速度2倍"
+        }
+    },
+    {
+        "id": 60,
+        "level": 2,
+        "description": {
+            "EN": "Triples the speed at which you heal recoverable damage.",
+            "CN": "红色槽的自动回复速度3倍"
+        }
+    },
+    {
+        "id": 61,
+        "level": 3,
+        "description": {
+            "EN": "Quadruples the speed at which you heal recoverable damage.",
+            "CN": "红色槽的自动回复速度4倍"
+        }
+    },
+    {
+        "id": 62,
+        "level": 1,
+        "description": {
+            "EN": "Fire resistance +6",
+            "CN": "火耐性+6"
+        }
+    },
+    {
+        "id": 63,
+        "level": 2,
+        "description": {
+            "EN": "Fire resistance +12",
+            "CN": "火耐性+12"
+        }
+    },
+    {
+        "id": 64,
+        "level": 3,
+        "description": {
+            "EN": "Fire resistance +20 Defense +10",
+            "CN": "火耐性+20、防御力+10"
+        }
+    },
+    {
+        "id": 65,
+        "level": 1,
+        "description": {
+            "EN": "Water resistance +6",
+            "CN": "水耐性+6"
+        }
+    },
+    {
+        "id": 66,
+        "level": 2,
+        "description": {
+            "EN": "Water resistance +12",
+            "CN": "水耐性+12"
+        }
+    },
+    {
+        "id": 67,
+        "level": 3,
+        "description": {
+            "EN": "Water resistance +20 Defense +10",
+            "CN": "水耐性+20、防御力+10"
+        }
+    },
+    {
+        "id": 68,
+        "level": 1,
+        "description": {
+            "EN": "Ice resistance +6",
+            "CN": "冰耐性+6"
+        }
+    },
+    {
+        "id": 69,
+        "level": 2,
+        "description": {
+            "EN": "Ice resistance +12",
+            "CN": "冰耐性+12"
+        }
+    },
+    {
+        "id": 70,
+        "level": 3,
+        "description": {
+            "EN": "Ice resistance +20 Defense +10",
+            "CN": "冰耐性+20、防御力+10"
+        }
+    },
+    {
+        "id": 71,
+        "level": 1,
+        "description": {
+            "EN": "Thunder resistance +6",
+            "CN": "雷耐性+6"
+        }
+    },
+    {
+        "id": 72,
+        "level": 2,
+        "description": {
+            "EN": "Thunder resistance +12",
+            "CN": "雷耐性+12"
+        }
+    },
+    {
+        "id": 73,
+        "level": 3,
+        "description": {
+            "EN": "Thunder resistance +20 Defense +10",
+            "CN": "雷耐性+20、防御力+10"
+        }
+    },
+    {
+        "id": 74,
+        "level": 1,
+        "description": {
+            "EN": "Dragon resistance +6",
+            "CN": "龙耐性+6"
+        }
+    },
+    {
+        "id": 75,
+        "level": 2,
+        "description": {
+            "EN": "Dragon resistance +12",
+            "CN": "龙耐性+12"
+        }
+    },
+    {
+        "id": 76,
+        "level": 3,
+        "description": {
+            "EN": "Dragon resistance +20 Defense +10",
+            "CN": "龙耐性+20、防御力+10"
+        }
+    },
+    {
+        "id": 77,
+        "level": 1,
+        "description": {
+            "EN": "Reduces the duration of all elemental blights by 50%.",
+            "CN": "所有属性异常状态的效果时间减少50%"
+        }
+    },
+    {
+        "id": 78,
+        "level": 2,
+        "description": {
+            "EN": "Reduces the duration of all elemental blights by 75%.",
+            "CN": "所有属性异常状态的效果时间减少75%"
+        }
+    },
+    {
+        "id": 79,
+        "level": 3,
+        "description": {
+            "EN": "Nullifies all elemental blights.",
+            "CN": "使全属性异常状态无效"
+        }
+    },
+    {
+        "id": 80,
+        "level": 1,
+        "description": {
+            "EN": "Fire attack +30",
+            "CN": "火属性攻击值+30"
+        }
+    },
+    {
+        "id": 81,
+        "level": 2,
+        "description": {
+            "EN": "Fire attack +60",
+            "CN": "火属性攻击值+60"
+        }
+    },
+    {
+        "id": 82,
+        "level": 3,
+        "description": {
+            "EN": "Fire attack +100",
+            "CN": "火属性攻击值+100"
+        }
+    },
+    {
+        "id": 83,
+        "level": 4,
+        "description": {
+            "EN": "Fire attack +5% Bonus: +100",
+            "CN": "火属性攻击值变为1.05倍，火属性攻击值+100"
+        }
+    },
+    {
+        "id": 84,
+        "level": 5,
+        "description": {
+            "EN": "Fire attack +10% Bonus: +100",
+            "CN": "火属性攻击值变为1.1倍，火属性攻击值+100"
+        }
+    },
+    {
+        "id": 85,
+        "level": 1,
+        "description": {
+            "EN": "Water attack +30",
+            "CN": "水属性攻击值+30"
+        }
+    },
+    {
+        "id": 86,
+        "level": 2,
+        "description": {
+            "EN": "Water attack +60",
+            "CN": "水属性攻击值+60"
+        }
+    },
+    {
+        "id": 87,
+        "level": 3,
+        "description": {
+            "EN": "Water attack +100",
+            "CN": "水属性攻击值+100"
+        }
+    },
+    {
+        "id": 88,
+        "level": 4,
+        "description": {
+            "EN": "Water attack +5% Bonus: +100",
+            "CN": "水属性攻击值变为1.05倍，水属性攻击值+100"
+        }
+    },
+    {
+        "id": 89,
+        "level": 5,
+        "description": {
+            "EN": "Water attack +10% Bonus: +100",
+            "CN": "水属性攻击值变为1.1倍，水属性攻击值+100"
+        }
+    },
+    {
+        "id": 90,
+        "level": 1,
+        "description": {
+            "EN": "Ice attack +30",
+            "CN": "冰属性攻击值+30"
+        }
+    },
+    {
+        "id": 91,
+        "level": 2,
+        "description": {
+            "EN": "Ice attack +60",
+            "CN": "冰属性攻击值+60"
+        }
+    },
+    {
+        "id": 92,
+        "level": 3,
+        "description": {
+            "EN": "Ice attack +100",
+            "CN": "冰属性攻击值+100"
+        }
+    },
+    {
+        "id": 93,
+        "level": 4,
+        "description": {
+            "EN": "Ice attack +5% Bonus: +100",
+            "CN": "冰属性攻击值变为1.05倍，冰属性攻击值+100"
+        }
+    },
+    {
+        "id": 94,
+        "level": 5,
+        "description": {
+            "EN": "Ice attack +10% Bonus: +100",
+            "CN": "冰属性攻击值变为1.1倍，冰属性攻击值+100"
+        }
+    },
+    {
+        "id": 95,
+        "level": 1,
+        "description": {
+            "EN": "Thunder attack +30",
+            "CN": "雷属性攻击值+30"
+        }
+    },
+    {
+        "id": 96,
+        "level": 2,
+        "description": {
+            "EN": "Thunder attack +60",
+            "CN": "雷属性攻击值+60"
+        }
+    },
+    {
+        "id": 97,
+        "level": 3,
+        "description": {
+            "EN": "Thunder attack +100",
+            "CN": "雷属性攻击值+100"
+        }
+    },
+    {
+        "id": 98,
+        "level": 4,
+        "description": {
+            "EN": "Thunder attack +5% Bonus: +100",
+            "CN": "雷属性攻击值变为1.05倍，雷属性攻击值+100"
+        }
+    },
+    {
+        "id": 99,
+        "level": 5,
+        "description": {
+            "EN": "Thunder attack +10% Bonus: +100",
+            "CN": "雷属性攻击值变为1.1倍，雷属性攻击值+100"
+        }
+    },
+    {
+        "id": 100,
+        "level": 1,
+        "description": {
+            "EN": "Dragon attack +30",
+            "CN": "龙属性攻击值+30"
+        }
+    },
+    {
+        "id": 101,
+        "level": 2,
+        "description": {
+            "EN": "Dragon attack +60",
+            "CN": "龙属性攻击值+60"
+        }
+    },
+    {
+        "id": 102,
+        "level": 3,
+        "description": {
+            "EN": "Dragon attack +100",
+            "CN": "龙属性攻击值+100"
+        }
+    },
+    {
+        "id": 103,
+        "level": 4,
+        "description": {
+            "EN": "Dragon attack +5% Bonus: +100",
+            "CN": "龙属性攻击值变为1.05倍，龙属性攻击值+100"
+        }
+    },
+    {
+        "id": 104,
+        "level": 5,
+        "description": {
+            "EN": "Dragon attack +10% Bonus: +100",
+            "CN": "龙属性攻击值变为1.1倍，龙属性攻击值+100"
+        }
+    },
+    {
+        "id": 105,
+        "level": 1,
+        "description": {
+            "EN": "Poison buildup +5% Bonus: +10",
+            "CN": "毒素累积值变为1.05倍，毒素累积值+10"
+        }
+    },
+    {
+        "id": 106,
+        "level": 2,
+        "description": {
+            "EN": "Poison buildup +10% Bonus: +10",
+            "CN": "毒素累积值变为1.1倍，毒素累积值+10"
+        }
+    },
+    {
+        "id": 107,
+        "level": 3,
+        "description": {
+            "EN": "Poison buildup +20% Bonus: +10",
+            "CN": "毒素累积值变为1.2倍，毒素累积值+10"
+        }
+    },
+    {
+        "id": 108,
+        "level": 1,
+        "description": {
+            "EN": "Paralysis buildup +5% Bonus: +10",
+            "CN": "麻痹累积值变为1.05倍，麻痹累积值+10"
+        }
+    },
+    {
+        "id": 109,
+        "level": 2,
+        "description": {
+            "EN": "Paralysis buildup +10% Bonus: +10",
+            "CN": "麻痹累积值变为1.1倍，麻痹累积值+10"
+        }
+    },
+    {
+        "id": 110,
+        "level": 3,
+        "description": {
+            "EN": "Paralysis buildup +20% Bonus: +10",
+            "CN": "麻痹累积值变为1.2倍，麻痹累积值+10"
+        }
+    },
+    {
+        "id": 111,
+        "level": 1,
+        "description": {
+            "EN": "Sleep buildup +5% Bonus: +10",
+            "CN": "睡眠累积值变为1.05倍，睡眠累积值+10"
+        }
+    },
+    {
+        "id": 112,
+        "level": 2,
+        "description": {
+            "EN": "Sleep buildup +10% Bonus: +10",
+            "CN": "睡眠累积值变为1.1倍，睡眠累积值+10"
+        }
+    },
+    {
+        "id": 113,
+        "level": 3,
+        "description": {
+            "EN": "Sleep buildup +20% Bonus: +10",
+            "CN": "睡眠累积值变为1.2倍，睡眠累积值+10"
+        }
+    },
+    {
+        "id": 114,
+        "level": 1,
+        "description": {
+            "EN": "Blast buildup +5% Bonus: +10",
+            "CN": "爆破累积值变为1.05倍，爆破累积值+10"
+        }
+    },
+    {
+        "id": 115,
+        "level": 2,
+        "description": {
+            "EN": "Blast buildup +10% Bonus: +10",
+            "CN": "爆破累积值变为1.1倍，爆破累积值+10"
+        }
+    },
+    {
+        "id": 116,
+        "level": 3,
+        "description": {
+            "EN": "Blast buildup +20% Bonus: +10",
+            "CN": "爆破累积值变为1.2倍，爆破累积值+10"
+        }
+    },
+    {
+        "id": 117,
+        "level": 1,
+        "description": {
+            "EN": "Increases the power of normal ammo and normal arrows.",
+            "CN": "通常弹、通常箭的威力提升"
+        }
+    },
+    {
+        "id": 118,
+        "level": 1,
+        "description": {
+            "EN": "Increases the power of piercing ammo and Dragon Piercer.",
+            "CN": "贯通弹、龙之箭的威力提升"
+        }
+    },
+    {
+        "id": 119,
+        "level": 1,
+        "description": {
+            "EN": "Increases the attack power of spread ammo, power shot arrows, and Thousand Dragons.",
+            "CN": "提升散弹、刚射、龙之千矢的威力"
+        }
+    },
+    {
+        "id": 120,
+        "level": 1,
+        "description": {
+            "EN": "Draws out 33% of hidden element and expands clip size for some ammo.",
+            "CN": "激发出1/3的隐藏属性。/增加部分弹药装填数。"
+        }
+    },
+    {
+        "id": 121,
+        "level": 2,
+        "description": {
+            "EN": "Draws out 66% of hidden element and expands clip size for some ammo.",
+            "CN": "激发出2/3的隐藏属性。/增加多数弹药装填数。"
+        }
+    },
+    {
+        "id": 122,
+        "level": 3,
+        "description": {
+            "EN": "Draws out 100% of hidden element and expands clip size for some ammo.",
+            "CN": "激发出100%的隐藏属性。/几乎增加所有弹药装填数。"
+        }
+    },
+    {
+        "id": 123,
+        "level": 1,
+        "description": {
+            "EN": "Affinity +5%",
+            "CN": "会心率+5%"
+        }
+    },
+    {
+        "id": 124,
+        "level": 2,
+        "description": {
+            "EN": "Affinity +10%",
+            "CN": "会心率+10%"
+        }
+    },
+    {
+        "id": 125,
+        "level": 3,
+        "description": {
+            "EN": "Affinity +15%",
+            "CN": "会心率+15%"
+        }
+    },
+    {
+        "id": 126,
+        "level": 4,
+        "description": {
+            "EN": "Affinity +20%",
+            "CN": "会心率+20%"
+        }
+    },
+    {
+        "id": 127,
+        "level": 5,
+        "description": {
+            "EN": "Affinity +25%",
+            "CN": "会心率+25%"
+        }
+    },
+    {
+        "id": 128,
+        "level": 6,
+        "description": {
+            "EN": "Affinity +30%",
+            "CN": "会心率+30%"
+        }
+    },
+    {
+        "id": 129,
+        "level": 7,
+        "description": {
+            "EN": "Affinity +40%",
+            "CN": "会心率+40%"
+        }
+    },
+    {
+        "id": 130,
+        "level": 1,
+        "description": {
+            "EN": "Increases damage dealt by critical hits by 30%.",
+            "CN": "会心攻击时的伤害倍率增强为1.3倍"
+        }
+    },
+    {
+        "id": 131,
+        "level": 2,
+        "description": {
+            "EN": "Increases damage dealt by critical hits by 35%.",
+            "CN": "会心攻击时的伤害倍率增强为1.35倍"
+        }
+    },
+    {
+        "id": 132,
+        "level": 3,
+        "description": {
+            "EN": "Increases damage dealt by critical hits by 40%.",
+            "CN": "会心攻击时的伤害倍率增强为1.4倍"
+        }
+    },
+    {
+        "id": 133,
+        "level": 1,
+        "description": {
+            "EN": "Attacks that hit weak spots have 10% increased affinity, with an extra 5% on wounded parts.",
+            "CN": "攻击有效部位时，会心率+10% 若有受伤再+5%"
+        }
+    },
+    {
+        "id": 134,
+        "level": 2,
+        "description": {
+            "EN": "Attacks that hit weak spots have 15% increased affinity, with an extra 15% on wounded parts.",
+            "CN": "攻击有效部位时，会心率+15% 若有受伤再+15%"
+        }
+    },
+    {
+        "id": 135,
+        "level": 3,
+        "description": {
+            "EN": "Attacks that hit weak spots have 30% increased affinity, with an extra 20% on wounded parts.",
+            "CN": "攻击有效部位时，会心率+30% 若有受伤再+20%"
+        }
+    },
+    {
+        "id": 136,
+        "level": 1,
+        "description": {
+            "EN": "Increases gauge fill rate by 5% and reduces charge times by 5%.",
+            "CN": "槽上升率5%提升，蓄力时间缩短5%"
+        }
+    },
+    {
+        "id": 137,
+        "level": 2,
+        "description": {
+            "EN": "Increases gauge fill rate by 10% and reduces charge times by 10%.",
+            "CN": "槽上升率10%提升，蓄力时间缩短10%"
+        }
+    },
+    {
+        "id": 138,
+        "level": 3,
+        "description": {
+            "EN": "Increases gauge fill rate by 20% and reduces charge times by 15%.",
+            "CN": "槽上升率20%提升，蓄力时间缩短15%"
+        }
+    },
+    {
+        "id": 139,
+        "level": 1,
+        "description": {
+            "EN": "Bonus duration +10%",
+            "CN": "稍微延长强化时间"
+        }
+    },
+    {
+        "id": 140,
+        "level": 2,
+        "description": {
+            "EN": "Bonus duration +20%",
+            "CN": "延长强化时间"
+        }
+    },
+    {
+        "id": 141,
+        "level": 3,
+        "description": {
+            "EN": "Bonus duration +30%",
+            "CN": "大幅延长强化时间"
+        }
+    },
+    {
+        "id": 142,
+        "level": 1,
+        "description": {
+            "EN": "Weapon sharpness +10",
+            "CN": "武器锐利度+10"
+        }
+    },
+    {
+        "id": 143,
+        "level": 2,
+        "description": {
+            "EN": "Weapon sharpness +20",
+            "CN": "武器锐利度+20"
+        }
+    },
+    {
+        "id": 144,
+        "level": 3,
+        "description": {
+            "EN": "Weapon sharpness +30",
+            "CN": "武器锐利度+30"
+        }
+    },
+    {
+        "id": 145,
+        "level": 4,
+        "description": {
+            "EN": "Weapon sharpness +40",
+            "CN": "武器锐利度+40"
+        }
+    },
+    {
+        "id": 146,
+        "level": 5,
+        "description": {
+            "EN": "Weapon sharpness +50",
+            "CN": "武器锐利度+50"
+        }
+    },
+    {
+        "id": 147,
+        "level": 1,
+        "description": {
+            "EN": "Draw attack affinity +30%",
+            "CN": "武器拔刀攻击的会心率+30%"
+        }
+    },
+    {
+        "id": 148,
+        "level": 2,
+        "description": {
+            "EN": "Draw attack affinity +60%",
+            "CN": "武器拔刀攻击的会心率+60%"
+        }
+    },
+    {
+        "id": 149,
+        "level": 3,
+        "description": {
+            "EN": "Draw attack affinity +100%",
+            "CN": "武器拔刀攻击的会心率+100%"
+        }
+    },
+    {
+        "id": 150,
+        "level": 1,
+        "description": {
+            "EN": "Part damage +10%",
+            "CN": "对部位的累积伤害1.1倍"
+        }
+    },
+    {
+        "id": 151,
+        "level": 2,
+        "description": {
+            "EN": "Part damage +20%",
+            "CN": "对部位的累积伤害1.2倍"
+        }
+    },
+    {
+        "id": 152,
+        "level": 3,
+        "description": {
+            "EN": "Part damage +30%",
+            "CN": "对部位的累积伤害1.3倍"
+        }
+    },
+    {
+        "id": 153,
+        "level": 1,
+        "description": {
+            "EN": "Stun power +20%",
+            "CN": "昏厥威力1.2倍"
+        }
+    },
+    {
+        "id": 154,
+        "level": 2,
+        "description": {
+            "EN": "Stun power +30%",
+            "CN": "昏厥威力1.3倍"
+        }
+    },
+    {
+        "id": 155,
+        "level": 3,
+        "description": {
+            "EN": "Stun power +40%",
+            "CN": "昏厥威力1.4倍"
+        }
+    },
+    {
+        "id": 156,
+        "level": 1,
+        "description": {
+            "EN": "Exhaust power +20%",
+            "CN": "减气威力1.2倍"
+        }
+    },
+    {
+        "id": 157,
+        "level": 2,
+        "description": {
+            "EN": "Exhaust power +30%",
+            "CN": "减气威力1.3倍"
+        }
+    },
+    {
+        "id": 158,
+        "level": 3,
+        "description": {
+            "EN": "Exhaust power +40%",
+            "CN": "减气威力1.4倍"
+        }
+    },
+    {
+        "id": 159,
+        "level": 1,
+        "description": {
+            "EN": "Makes it easier to mount monsters and down mounted monsters.",
+            "CN": "容易骑乘怪物，更容易在骑乘状态下成功"
+        }
+    },
+    {
+        "id": 160,
+        "level": 1,
+        "description": {
+            "EN": "Jumping attack power +30%",
+            "CN": "跳跃攻击的威力变为1.3倍"
+        }
+    },
+    {
+        "id": 161,
+        "level": 1,
+        "description": {
+            "EN": "While active, increases affinity by 10% and reduces stamina depletion by 30%.",
+            "CN": "技能发动时，会心率+10% 耐力消耗量减少30%"
+        }
+    },
+    {
+        "id": 162,
+        "level": 2,
+        "description": {
+            "EN": "While active, increases affinity by 20% and reduces stamina depletion by 30%.",
+            "CN": "技能发动时，会心率+20% 耐力消耗量减少30%"
+        }
+    },
+    {
+        "id": 163,
+        "level": 3,
+        "description": {
+            "EN": "While active, increases affinity by 30% and reduces stamina depletion by 50%.",
+            "CN": "技能发动时，会心率+30% 耐力消耗量减少50%"
+        }
+    },
+    {
+        "id": 164,
+        "level": 4,
+        "description": {
+            "EN": "While active, increases affinity by 40% and reduces stamina depletion by 50%.",
+            "CN": "技能发动时，会心率+40% 耐力消耗量减少50%"
+        }
+    },
+    {
+        "id": 165,
+        "level": 5,
+        "description": {
+            "EN": "While active, increases affinity by 50% and reduces stamina depletion by 50%.",
+            "CN": "技能发动时，会心率+50% 耐力消耗量减少50%"
+        }
+    },
+    {
+        "id": 166,
+        "level": 1,
+        "description": {
+            "EN": "While active, grants attack +4 and increases affinity by 5%.",
+            "CN": "技能发动时，基础攻击力+4 会心率+5%"
+        }
+    },
+    {
+        "id": 167,
+        "level": 2,
+        "description": {
+            "EN": "While active, grants attack +8 and increases affinity by 5%.",
+            "CN": "技能发动时，基础攻击力+8 会心率+5%"
+        }
+    },
+    {
+        "id": 168,
+        "level": 3,
+        "description": {
+            "EN": "While active, grants attack +12 and increases affinity by 7%.",
+            "CN": "技能发动时，基础攻击力+12 会心率+7%"
+        }
+    },
+    {
+        "id": 169,
+        "level": 4,
+        "description": {
+            "EN": "While active, grants attack +16 and increases affinity by 7%.",
+            "CN": "技能发动时，基础攻击力+16 会心率+7%"
+        }
+    },
+    {
+        "id": 170,
+        "level": 5,
+        "description": {
+            "EN": "While active, grants attack +20 and increases affinity by 10%.",
+            "CN": "技能发动时，基础攻击力+20 会心率+10%"
+        }
+    },
+    {
+        "id": 171,
+        "level": 1,
+        "description": {
+            "EN": "While active, grants attack +5.",
+            "CN": "技能发动时，基础攻击力+5"
+        }
+    },
+    {
+        "id": 172,
+        "level": 2,
+        "description": {
+            "EN": "While active, grants attack +10.",
+            "CN": "技能发动时，基础攻击力+10"
+        }
+    },
+    {
+        "id": 173,
+        "level": 3,
+        "description": {
+            "EN": "While active, grants attack +20.",
+            "CN": "技能发动时，基础攻击力+20"
+        }
+    },
+    {
+        "id": 174,
+        "level": 1,
+        "description": {
+            "EN": "While active, increases defense by 50 points",
+            "CN": "技能发动时，防御力+50"
+        }
+    },
+    {
+        "id": 175,
+        "level": 2,
+        "description": {
+            "EN": "While active, increases attack power by 5% and increases defense by 50 points.",
+            "CN": "技能发动时，攻击力1.05倍 防御力+50"
+        }
+    },
+    {
+        "id": 176,
+        "level": 3,
+        "description": {
+            "EN": "While active, increases attack power by 5% and increases defense by 100 points.",
+            "CN": "技能发动时，攻击力1.05倍 防御力+100"
+        }
+    },
+    {
+        "id": 177,
+        "level": 4,
+        "description": {
+            "EN": "While active, increases attack power by 10% and increases defense by 100 points.",
+            "CN": "技能发动时，攻击力1.1倍 防御力+100"
+        }
+    },
+    {
+        "id": 178,
+        "level": 5,
+        "description": {
+            "EN": "While active, increases attack power by 15% and increases defense by 100 points.",
+            "CN": "技能发动时，攻击力1.15倍 防御力+100"
+        }
+    },
+    {
+        "id": 179,
+        "level": 1,
+        "description": {
+            "EN": "Increases attack by 10% and defense by 15% with each use.",
+            "CN": "每次攻击力1.1倍、防御力1.15倍"
+        }
+    },
+    {
+        "id": 180,
+        "level": 1,
+        "description": {
+            "EN": "While active, grants attack +5.",
+            "CN": "技能发动时，基础攻击力+5"
+        }
+    },
+    {
+        "id": 181,
+        "level": 2,
+        "description": {
+            "EN": "While active, grants attack +10.",
+            "CN": "技能发动时，基础攻击力+10"
+        }
+    },
+    {
+        "id": 182,
+        "level": 3,
+        "description": {
+            "EN": "While active, grants attack +15.",
+            "CN": "技能发动时，基础攻击力+15"
+        }
+    },
+    {
+        "id": 183,
+        "level": 4,
+        "description": {
+            "EN": "While active, grants attack +20.",
+            "CN": "技能发动时，基础攻击力+20"
+        }
+    },
+    {
+        "id": 184,
+        "level": 5,
+        "description": {
+            "EN": "While active, grants attack +25.",
+            "CN": "技能发动时，基础攻击力+25"
+        }
+    },
+    {
+        "id": 185,
+        "level": 1,
+        "description": {
+            "EN": "While active, greatly improves evasion invulnerability time and reduces stamina depletion.",
+            "CN": "技能发动时，大幅延长回避性能的无敌时间，并减少耐力消耗量"
+        }
+    },
+    {
+        "id": 186,
+        "level": 1,
+        "description": {
+            "EN": "Extends melody effect duration and increases health recovery.",
+            "CN": "延长狩猎笛的旋律效果时间，体力回复量的上升率提升"
+        }
+    },
+    {
+        "id": 187,
+        "level": 1,
+        "description": {
+            "EN": "Loading capacity +1",
+            "CN": "装填数+1"
+        }
+    },
+    {
+        "id": 188,
+        "level": 1,
+        "description": {
+            "EN": "Increases the power of bowgun special ammo and Dragon Piercer by 10%.",
+            "CN": "弩枪的特殊弹药与弓的龙之箭、龙之千矢威力变为1.1倍"
+        }
+    },
+    {
+        "id": 189,
+        "level": 2,
+        "description": {
+            "EN": "Increases the power of bowgun special ammo and Dragon Piercer by 20%.",
+            "CN": "弩枪的特殊弹药与弓的龙之箭、龙之千矢威力变为1.2倍"
+        }
+    },
+    {
+        "id": 190,
+        "level": 1,
+        "description": {
+            "EN": "Increases power of each attack by 10% and reduces Wyvern's Fire cooldown by 15%.",
+            "CN": "对象的攻击威力1.1倍，减少龙击炮的冷却时间15%"
+        }
+    },
+    {
+        "id": 191,
+        "level": 2,
+        "description": {
+            "EN": "Increases power of each attack by 20% and reduces Wyvern's Fire cooldown by 30%.",
+            "CN": "对象的攻击威力1.2倍，减少龙击炮的冷却时间30%"
+        }
+    },
+    {
+        "id": 192,
+        "level": 3,
+        "description": {
+            "EN": "Increases power of each attack by 30% and reduces Wyvern's Fire cooldown by 50%.",
+            "CN": "对象的攻击威力1.3倍，减少龙击炮的冷却时间50%"
+        }
+    },
+    {
+        "id": 193,
+        "level": 1,
+        "description": {
+            "EN": "Firepower +50%",
+            "CN": "威力1.5倍"
+        }
+    },
+    {
+        "id": 194,
+        "level": 2,
+        "description": {
+            "EN": "Firepower +100%",
+            "CN": "威力2.0倍"
+        }
+    },
+    {
+        "id": 195,
+        "level": 1,
+        "description": {
+            "EN": "Reduces continuous stamina depletion by 15%.",
+            "CN": "持续耐力消耗量减少15%"
+        }
+    },
+    {
+        "id": 196,
+        "level": 2,
+        "description": {
+            "EN": "Reduces continuous stamina depletion by 30%.",
+            "CN": "持续耐力消耗量减少30%"
+        }
+    },
+    {
+        "id": 197,
+        "level": 3,
+        "description": {
+            "EN": "Reduces continuous stamina depletion by 50%.",
+            "CN": "持续耐力消耗量减少50%"
+        }
+    },
+    {
+        "id": 198,
+        "level": 1,
+        "description": {
+            "EN": "Reduces fixed stamina depletion by 10%.",
+            "CN": "固定耐力消耗量减少10%"
+        }
+    },
+    {
+        "id": 199,
+        "level": 2,
+        "description": {
+            "EN": "Reduces fixed stamina depletion by 20%.",
+            "CN": "固定耐力消耗量减少20%"
+        }
+    },
+    {
+        "id": 200,
+        "level": 3,
+        "description": {
+            "EN": "Reduces fixed stamina depletion by 30%.",
+            "CN": "固定耐力消耗量减少30%"
+        }
+    },
+    {
+        "id": 201,
+        "level": 4,
+        "description": {
+            "EN": "Reduces fixed stamina depletion by 40%.",
+            "CN": "固定耐力消耗量减少40%"
+        }
+    },
+    {
+        "id": 202,
+        "level": 5,
+        "description": {
+            "EN": "Reduces fixed stamina depletion by 50%.",
+            "CN": "固定耐力消耗量减少50%"
+        }
+    },
+    {
+        "id": 203,
+        "level": 1,
+        "description": {
+            "EN": "Enables Leap of Faith.",
+            "CN": "可发动技能"
+        }
+    },
+    {
+        "id": 204,
+        "level": 1,
+        "description": {
+            "EN": "Stamina recovery speed +10%",
+            "CN": "回复速度1.1倍"
+        }
+    },
+    {
+        "id": 205,
+        "level": 2,
+        "description": {
+            "EN": "Stamina recovery speed +20%",
+            "CN": "回复速度1.2倍"
+        }
+    },
+    {
+        "id": 206,
+        "level": 3,
+        "description": {
+            "EN": "Stamina recovery speed +30%",
+            "CN": "回复速度1.3倍"
+        }
+    },
+    {
+        "id": 207,
+        "level": 1,
+        "description": {
+            "EN": "Extends the time until your stamina cap decreases by 50%.",
+            "CN": "到减少的时间延长50%"
+        }
+    },
+    {
+        "id": 208,
+        "level": 2,
+        "description": {
+            "EN": "Extends the time until your stamina cap decreases by 100%.",
+            "CN": "到减少的时间延长100%"
+        }
+    },
+    {
+        "id": 209,
+        "level": 3,
+        "description": {
+            "EN": "Prevents your stamina cap from decreasing.",
+            "CN": "使耐力最大值的减少无效"
+        }
+    },
+    {
+        "id": 210,
+        "level": 1,
+        "description": {
+            "EN": "Very slightly increases invulnerability window.",
+            "CN": "无敌时间极小幅延长"
+        }
+    },
+    {
+        "id": 211,
+        "level": 2,
+        "description": {
+            "EN": "Slightly increases invulnerability window.",
+            "CN": "无敌时间小幅延长"
+        }
+    },
+    {
+        "id": 212,
+        "level": 3,
+        "description": {
+            "EN": "Increases invulnerability window.",
+            "CN": "延长无敌时间"
+        }
+    },
+    {
+        "id": 213,
+        "level": 4,
+        "description": {
+            "EN": "Greatly increases invulnerability window.",
+            "CN": "大幅延长无敌时间"
+        }
+    },
+    {
+        "id": 214,
+        "level": 5,
+        "description": {
+            "EN": "Massively increases invulnerability window.",
+            "CN": "极大幅延长无敌时间"
+        }
+    },
+    {
+        "id": 215,
+        "level": 1,
+        "description": {
+            "EN": "Slightly extends evasion distance.",
+            "CN": "回避距离小幅延长"
+        }
+    },
+    {
+        "id": 216,
+        "level": 2,
+        "description": {
+            "EN": "Extends evasion distance.",
+            "CN": "延长回避距离"
+        }
+    },
+    {
+        "id": 217,
+        "level": 3,
+        "description": {
+            "EN": "Greatly extends evasion distance.",
+            "CN": "大幅延长回避距离"
+        }
+    },
+    {
+        "id": 218,
+        "level": 1,
+        "description": {
+            "EN": "Very slightly decreases the impact of attacks.",
+            "CN": "小幅减少攻击的威力"
+        }
+    },
+    {
+        "id": 219,
+        "level": 2,
+        "description": {
+            "EN": "Slightly decreases the impact of attacks and reduces stamina depletion by 15%.",
+            "CN": "小幅减少攻击的威力，减少耐力消费量15%"
+        }
+    },
+    {
+        "id": 220,
+        "level": 3,
+        "description": {
+            "EN": "Greatly decreases the impact of attacks and redcues stamina depletion by 15%.",
+            "CN": "大幅减少攻击的威力，减少耐力消耗量15%"
+        }
+    },
+    {
+        "id": 221,
+        "level": 4,
+        "description": {
+            "EN": "Greatly decreases the impact of attacks and redcues stamina depletion by 30%.",
+            "CN": "大幅减少攻击的威力，减少耐力消耗量30%"
+        }
+    },
+    {
+        "id": 222,
+        "level": 5,
+        "description": {
+            "EN": "Greatly decreases the impact of attacks and redcues stamina depletion by 50%.",
+            "CN": "极大幅减少攻击的威力，减少耐力消耗量50%"
+        }
+    },
+    {
+        "id": 223,
+        "level": 1,
+        "description": {
+            "EN": "Slightly increases sheathing speed.",
+            "CN": "速度小幅上升"
+        }
+    },
+    {
+        "id": 224,
+        "level": 2,
+        "description": {
+            "EN": "Moderately increases sheathing speed.",
+            "CN": "速度上升"
+        }
+    },
+    {
+        "id": 225,
+        "level": 3,
+        "description": {
+            "EN": "Greatly increases sheathing speed.",
+            "CN": "速度大幅上升"
+        }
+    },
+    {
+        "id": 226,
+        "level": 1,
+        "description": {
+            "EN": "Items affect nearby allies with 33% of their efficacy.",
+            "CN": "给予周围的同伴1/3的效果"
+        }
+    },
+    {
+        "id": 227,
+        "level": 2,
+        "description": {
+            "EN": "Items affect nearby allies in a wider radius with 33% of their efficacy.",
+            "CN": "给予大范围内的同伴1/3的效果"
+        }
+    },
+    {
+        "id": 228,
+        "level": 3,
+        "description": {
+            "EN": "Items affect nearby allies in a wider radius with 66% of their efficacy.",
+            "CN": "给予大范围内的同伴2/3的效果"
+        }
+    },
+    {
+        "id": 229,
+        "level": 4,
+        "description": {
+            "EN": "Items affect nearby allies in a much wider radius with 66% of their efficacy.",
+            "CN": "给予极大范围内的同伴2/3的效果"
+        }
+    },
+    {
+        "id": 230,
+        "level": 5,
+        "description": {
+            "EN": "Items affect nearby allies in a wider radius with full efficacy.",
+            "CN": "给予极大范围内的同伴同样的效果"
+        }
+    },
+    {
+        "id": 231,
+        "level": 1,
+        "description": {
+            "EN": "Item effect duration +10%",
+            "CN": "效果时间1.1倍"
+        }
+    },
+    {
+        "id": 232,
+        "level": 2,
+        "description": {
+            "EN": "Item effect duration +25%",
+            "CN": "效果时间1.25倍"
+        }
+    },
+    {
+        "id": 233,
+        "level": 3,
+        "description": {
+            "EN": "Item effect duration +50%",
+            "CN": "效果时间1.5倍"
+        }
+    },
+    {
+        "id": 234,
+        "level": 1,
+        "description": {
+            "EN": "Activates 25% of the time.",
+            "CN": "效果发动几率25%"
+        }
+    },
+    {
+        "id": 235,
+        "level": 1,
+        "description": {
+            "EN": "Slightly increases item use speed.",
+            "CN": "速度小幅上升"
+        }
+    },
+    {
+        "id": 236,
+        "level": 2,
+        "description": {
+            "EN": "Moderately increases item use speed.",
+            "CN": "速度上升"
+        }
+    },
+    {
+        "id": 237,
+        "level": 3,
+        "description": {
+            "EN": "Greatly increases item use speed.",
+            "CN": "速度大幅上升"
+        }
+    },
+    {
+        "id": 238,
+        "level": 1,
+        "description": {
+            "EN": "Removes one cycle from the sharpening process.",
+            "CN": "省略研磨动作1次"
+        }
+    },
+    {
+        "id": 239,
+        "level": 2,
+        "description": {
+            "EN": "Removes two cycles from the sharpening process.",
+            "CN": "省略研磨动作2次"
+        }
+    },
+    {
+        "id": 240,
+        "level": 3,
+        "description": {
+            "EN": "Removes three cycles from the sharpening process.",
+            "CN": "省略研磨动作3次"
+        }
+    },
+    {
+        "id": 241,
+        "level": 1,
+        "description": {
+            "EN": "Explosive power +10%",
+            "CN": "威力1.1倍"
+        }
+    },
+    {
+        "id": 242,
+        "level": 2,
+        "description": {
+            "EN": "Explosive power +20%",
+            "CN": "威力1.2倍"
+        }
+    },
+    {
+        "id": 243,
+        "level": 3,
+        "description": {
+            "EN": "Explosive power +30%",
+            "CN": "威力1.3倍"
+        }
+    },
+    {
+        "id": 244,
+        "level": 1,
+        "description": {
+            "EN": "Lets you digest blue mushrooms and toadstools.",
+            "CN": "已可食用蓝蘑菇与毒菇"
+        }
+    },
+    {
+        "id": 245,
+        "level": 2,
+        "description": {
+            "EN": "Additionally lets you digest nitroshrooms and parashrooms.",
+            "CN": "追加可食用硝化伞菇与麻痹菇"
+        }
+    },
+    {
+        "id": 246,
+        "level": 3,
+        "description": {
+            "EN": "Additionally lets you digest mandragoras, devil's blight, and exciteshrooms.",
+            "CN": "追加可食用曼陀罗、鬼硝化伞菇与心跳加速菇"
+        }
+    },
+    {
+        "id": 247,
+        "level": 1,
+        "description": {
+            "EN": "Increases the time window for reeling in fish, and makes it easier to catch large fish.",
+            "CN": "延长钓起鱼的时间，就更容易钓起大鱼"
+        }
+    },
+    {
+        "id": 248,
+        "level": 1,
+        "description": {
+            "EN": "Increases movement speed while transporting and reduces downtime on landings.",
+            "CN": "搬运时的移动速度提上升，减轻着地时的反作用力"
+        }
+    },
+    {
+        "id": 249,
+        "level": 1,
+        "description": {
+            "EN": "Speeds up gathering and prevents knockbacks while gathering.",
+            "CN": "采集行动时，速度上升&硬直无效"
+        }
+    },
+    {
+        "id": 250,
+        "level": 1,
+        "description": {
+            "EN": "One extra honey per gather.",
+            "CN": "蜂蜜取得数+1"
+        }
+    },
+    {
+        "id": 251,
+        "level": 1,
+        "description": {
+            "EN": "Prevents knockback while carving.",
+            "CN": "剥取中，硬直无效"
+        }
+    },
+    {
+        "id": 252,
+        "level": 1,
+        "description": {
+            "EN": "While active, reduces damage taken by 15%.",
+            "CN": "效果发动时，伤害减轻15%"
+        }
+    },
+    {
+        "id": 253,
+        "level": 2,
+        "description": {
+            "EN": "While active, reduces damage taken by 30%.",
+            "CN": "效果发动时，伤害减轻30%"
+        }
+    },
+    {
+        "id": 254,
+        "level": 3,
+        "description": {
+            "EN": "While active, reduces damage taken by 50%.",
+            "CN": "效果发动时，伤害减轻50%"
+        }
+    },
+    {
+        "id": 255,
+        "level": 1,
+        "description": {
+            "EN": "Increases Palico attack power and defense by 5%.",
+            "CN": "随从的攻击力与防御力变为1.05倍"
+        }
+    },
+    {
+        "id": 256,
+        "level": 2,
+        "description": {
+            "EN": "Increases Palico attack power and defense by 10%.",
+            "CN": "随从的攻击力与防御力变为1.1倍"
+        }
+    },
+    {
+        "id": 257,
+        "level": 3,
+        "description": {
+            "EN": "Increases Palico attack power and defense by 15%.",
+            "CN": "随从的攻击力与防御力变为1.15倍"
+        }
+    },
+    {
+        "id": 258,
+        "level": 4,
+        "description": {
+            "EN": "Increases Palico attack power and defense by 20%.",
+            "CN": "随从的攻击力与防御力变为1.2倍"
+        }
+    },
+    {
+        "id": 259,
+        "level": 5,
+        "description": {
+            "EN": "Increases Palico attack power and defense by 25%.",
+            "CN": "随从的攻击力与防御力变为1.25倍"
+        }
+    },
+    {
+        "id": 260,
+        "level": 1,
+        "description": {
+            "EN": "One extra consumable herb item per gather.",
+            "CN": "草系消耗道具的取得数+1"
+        }
+    },
+    {
+        "id": 261,
+        "level": 2,
+        "description": {
+            "EN": "One extra consumable herb, fruit, nut, or seed item per gather.",
+            "CN": "追加实、种系消耗道具的取得数+1"
+        }
+    },
+    {
+        "id": 262,
+        "level": 3,
+        "description": {
+            "EN": "One extra consumable herb, fruit, nut, seed, or insect item per gather.",
+            "CN": "追加虫系消耗道具的取得数+1"
+        }
+    },
+    {
+        "id": 263,
+        "level": 4,
+        "description": {
+            "EN": "One extra consumable herb, fruit, nut, seed, insect or mushroom item per gather.",
+            "CN": "追加菇系消耗道具的取得数+1"
+        }
+    },
+    {
+        "id": 264,
+        "level": 1,
+        "description": {
+            "EN": "Allows you to gather one extra time from bonepiles.",
+            "CN": "骸骨采集点的采集次数+1"
+        }
+    },
+    {
+        "id": 265,
+        "level": 2,
+        "description": {
+            "EN": "Allows you to gather one extra time from bonepiles and special item gathering points.",
+            "CN": "追加特产采集点的采集次数+1"
+        }
+    },
+    {
+        "id": 266,
+        "level": 3,
+        "description": {
+            "EN": "Allows you to gather one extra time from bonepiles, gathering points, and mining outcrops.",
+            "CN": "追加矿石采掘点的采集次数+1"
+        }
+    },
+    {
+        "id": 267,
+        "level": 1,
+        "description": {
+            "EN": "While active, increases affinity by 10%.",
+            "CN": "效果发动时，会心率+10%"
+        }
+    },
+    {
+        "id": 268,
+        "level": 2,
+        "description": {
+            "EN": "While active, increases affinity by 20%.",
+            "CN": "效果发动时，会心率+20%"
+        }
+    },
+    {
+        "id": 269,
+        "level": 3,
+        "description": {
+            "EN": "While active, increases affinity by 30%.",
+            "CN": "效果发动时，会心率+30%"
+        }
+    },
+    {
+        "id": 270,
+        "level": 1,
+        "description": {
+            "EN": "Increases the loading capacity for slinger ammo collected from the ground or plants.",
+            "CN": "小幅增加在地面或植物取得的弹药装填数"
+        }
+    },
+    {
+        "id": 271,
+        "level": 2,
+        "description": {
+            "EN": "In addition, increases the loading capacity for some slinger ammo dropped by monsters.",
+            "CN": "再小幅增加一部分怪物掉落的弹药装填数"
+        }
+    },
+    {
+        "id": 272,
+        "level": 3,
+        "description": {
+            "EN": "In addition, increases the loading capacity for all slinger ammo dropped by monsters.",
+            "CN": "再小幅增加所有怪物掉落的弹药装填数"
+        }
+    },
+    {
+        "id": 273,
+        "level": 1,
+        "description": {
+            "EN": "Makes it slightly easier for monsters to lose sight of you.",
+            "CN": "追丢的几率小幅提高"
+        }
+    },
+    {
+        "id": 274,
+        "level": 2,
+        "description": {
+            "EN": "Makes it moderately easier for monsters to lose sight of you.",
+            "CN": "追丢的几率提高"
+        }
+    },
+    {
+        "id": 275,
+        "level": 3,
+        "description": {
+            "EN": "Makes it much easier for monsters to lose sight of you.",
+            "CN": "追丢的几率大幅提高"
+        }
+    },
+    {
+        "id": 276,
+        "level": 1,
+        "description": {
+            "EN": "Prevents knockbacks.",
+            "CN": "使后仰无效。操虫棍萃取效果部分效果上升。"
+        }
+    },
+    {
+        "id": 277,
+        "level": 2,
+        "description": {
+            "EN": "Prevents standard knockbacks. Tripping is reduced to a knockback. Increases some Kinsect extract effects.",
+            "CN": "使后仰无效。将屁股着地减轻为后仰状态。操虫棍萃取效果部分效果上升。"
+        }
+    },
+    {
+        "id": 278,
+        "level": 3,
+        "description": {
+            "EN": "Prevents knockbacks and tripping. Increases some Kinsect extract effects.",
+            "CN": "使后仰、屁股着地无效。操虫棍萃取效果部分效果上升。"
+        }
+    },
+    {
+        "id": 279,
+        "level": 1,
+        "description": {
+            "EN": "Expands your scoutflies' detection range.",
+            "CN": "反应距离扩张"
+        }
+    },
+    {
+        "id": 280,
+        "level": 1,
+        "description": {
+            "EN": "Increases movement speed while crouching.",
+            "CN": "加快蹲下时的移动速度"
+        }
+    },
+    {
+        "id": 281,
+        "level": 1,
+        "description": {
+            "EN": "Negates knockback during jumps.",
+            "CN": "跳跃中，硬直无效"
+        }
+    },
+    {
+        "id": 282,
+        "level": 1,
+        "description": {
+            "EN": "Interactables restore an additional 50 health.",
+            "CN": "体力追加回复50"
+        }
+    },
+    {
+        "id": 283,
+        "level": 2,
+        "description": {
+            "EN": "Interactables restore an additional 80 health.",
+            "CN": "体力追加回复80"
+        }
+    },
+    {
+        "id": 284,
+        "level": 3,
+        "description": {
+            "EN": "Interactables restore an additional 100 health.",
+            "CN": "体力追加回复100"
+        }
+    },
+    {
+        "id": 285,
+        "level": 1,
+        "description": {
+            "EN": "Prevents lowered movement speed.",
+            "CN": "移动速度不会减慢"
+        }
+    },
+    {
+        "id": 286,
+        "level": 2,
+        "description": {
+            "EN": "Increases your evade window and prevents lowered movement speed.",
+            "CN": "移动速度不会减慢，回避性能上升"
+        }
+    },
+    {
+        "id": 287,
+        "level": 3,
+        "description": {
+            "EN": "Greatly increases your evade window and prevents lowered movement speed.",
+            "CN": "移动速度不会减慢，回避性能更加上升"
+        }
+    },
+    {
+        "id": 288,
+        "level": 1,
+        "description": {
+            "EN": "Reduces stamina depletion while climbing by 50%.",
+            "CN": "耐力消耗量减少50%"
+        }
+    },
+    {
+        "id": 289,
+        "level": 1,
+        "description": {
+            "EN": "Increases the success rate of flash effects.",
+            "CN": "闪光弹范围扩大"
+        }
+    },
+    {
+        "id": 290,
+        "level": 1,
+        "description": {
+            "EN": "Speeds up progress on research levels and special investigations.",
+            "CN": "更容易调查及研究大型怪物"
+        }
+    },
+    {
+        "id": 291,
+        "level": 1,
+        "description": {
+            "EN": "Increases the chances of a corpse being left behind.",
+            "CN": "残骸保留的几率提高"
+        }
+    },
+    {
+        "id": 292,
+        "level": 2,
+        "description": {
+            "EN": "Greatly increases the chances of a corpse being left behind.",
+            "CN": "残骸保留的几率大幅提高"
+        }
+    },
+    {
+        "id": 293,
+        "level": 3,
+        "description": {
+            "EN": "Makes it so corpses will always be left behind.",
+            "CN": "必定会有残骸保留"
+        }
+    },
+    {
+        "id": 294,
+        "level": 1,
+        "description": {
+            "EN": "Reduces effluvial buildup.",
+            "CN": "减轻瘴气侵蚀的影响"
+        }
+    },
+    {
+        "id": 295,
+        "level": 2,
+        "description": {
+            "EN": "Greatly reduces effluvial buildup.",
+            "CN": "大幅减轻瘴气侵蚀的影响"
+        }
+    },
+    {
+        "id": 296,
+        "level": 3,
+        "description": {
+            "EN": "Prevents effluvial buildup.",
+            "CN": "使瘴气侵蚀状态无效"
+        }
+    },
+    {
+        "id": 297,
+        "level": 1,
+        "description": {
+            "EN": "Increases gauge fill rate by 50%.",
+            "CN": "取得痕迹时的槽上升量1.5倍"
+        }
+    },
+    {
+        "id": 298,
+        "level": 1,
+        "description": {
+            "EN": "Increases the likelihood of rare gathering points respawning.",
+            "CN": "发生几率提升"
+        }
+    },
+    {
+        "id": 299,
+        "level": 1,
+        "description": {
+            "EN": "Marks rare sites on the wildlife map.",
+            "CN": "在生态地图上标记"
+        }
+    },
+    {
+        "id": 300,
+        "level": 1,
+        "description": {
+            "EN": "Makes it easier to cook well-done steaks.",
+            "CN": "更容易烤出烤熟的肉"
+        }
+    },
+    {
+        "id": 301,
+        "level": 1,
+        "description": {
+            "EN": "Shortens time until reuse by 10%.",
+            "CN": "再使用时间缩短10%"
+        }
+    },
+    {
+        "id": 302,
+        "level": 2,
+        "description": {
+            "EN": "Shortens time until reuse by 20%.",
+            "CN": "再使用时间缩短20%"
+        }
+    },
+    {
+        "id": 303,
+        "level": 3,
+        "description": {
+            "EN": "Shortens time until reuse by 30%.",
+            "CN": "再使用时间缩短30%"
+        }
+    },
+    {
+        "id": 304,
+        "level": 1,
+        "description": {
+            "EN": "+30% Affinity for 15 seconds after sliding.",
+            "CN": "可发动技能"
+        }
+    },
+    {
+        "id": 305,
+        "level": 1,
+        "description": {
+            "EN": "Discourages monsters from engaging you even if you've been spotted.",
+            "CN": "即使被发现也不容易进入战斗状态"
+        }
+    },
+    {
+        "id": 306,
+        "level": 2,
+        "description": {
+            "EN": "Highly discourages monsters from engaging you even if you've been spotted.",
+            "CN": "即使被发现也几乎不会进入战斗状态"
+        }
+    },
+    {
+        "id": 307,
+        "level": 3,
+        "description": {
+            "EN": "Prevents monsters from engaging you even if you've been spotted.",
+            "CN": "即使被发现也不会变为战斗状态"
+        }
+    },
+    {
+        "id": 308,
+        "level": 1,
+        "description": {
+            "EN": "Regenerates your health as you continually attack a monster. Recovery varies by weapon.",
+            "CN": "发动技能效果"
+        }
+    },
+    {
+        "id": 309,
+        "level": 1,
+        "description": {
+            "EN": "Allows recovery to exceed the red portion of the health gauge.",
+            "CN": ""
+        }
+    },
+    {
+        "id": 310,
+        "level": 1,
+        "description": {
+            "EN": "Extends the duration of your poison's effect on monsters.",
+            "CN": ""
+        }
+    },
+    {
+        "id": 311,
+        "level": 1,
+        "description": {
+            "EN": "Temporarily reduces stamina depletion when health is at 40% or lower.",
+            "CN": ""
+        }
+    },
+    {
+        "id": 312,
+        "level": 1,
+        "description": {
+            "EN": "Increases stamina cap.",
+            "CN": ""
+        }
+    },
+    {
+        "id": 313,
+        "level": 1,
+        "description": {
+            "EN": "Increases elemental damage (fire, water, thunder, ice, dragon) when landing critical hits.",
+            "CN": ""
+        }
+    },
+    {
+        "id": 314,
+        "level": 1,
+        "description": {
+            "EN": "Prevents attacks from being deflected. Also shortens the distance before ammo and arrows reach maximum power.",
+            "CN": ""
+        }
+    },
+    {
+        "id": 315,
+        "level": 1,
+        "description": {
+            "EN": "Raises attack as your weapon loses sharpness. Also boosts ranged weapon melee attacks and odds of stunning.",
+            "CN": ""
+        }
+    },
+    {
+        "id": 316,
+        "level": 1,
+        "description": {
+            "EN": "Powers up non-elemental weapons you have equipped.",
+            "CN": "无属性武器的基础攻击力提高"
+        }
+    },
+    {
+        "id": 317,
+        "level": 1,
+        "description": {
+            "EN": "High chance of increased capture rewards. (No effect when joining mid-quest.)",
+            "CN": ""
+        }
+    },
+    {
+        "id": 318,
+        "level": 1,
+        "description": {
+            "EN": "Allows you to guard against ordinarily unblockable attacks.",
+            "CN": ""
+        }
+    },
+    {
+        "id": 319,
+        "level": 1,
+        "description": {
+            "EN": "Above a certain health threshold, you withstand an attack that would normally cart you (once only).",
+            "CN": ""
+        }
+    },
+    {
+        "id": 320,
+        "level": 1,
+        "description": {
+            "EN": "Prevents your weapon from losing sharpness during critical hits.",
+            "CN": ""
+        }
+    },
+    {
+        "id": 321,
+        "level": 1,
+        "description": {
+            "EN": "Negates all wind pressure.",
+            "CN": ""
+        }
+    },
+    {
+        "id": 322,
+        "level": 1,
+        "description": {
+            "EN": "Halves sharpness loss. For bows and bowguns, shots have a chance not to expend coatings or ammo.",
+            "CN": ""
+        }
+    },
+    {
+        "id": 323,
+        "level": 1,
+        "description": {
+            "EN": "Increases abnormal status effect damage (paralysis, poison, sleep, blast) when landing critical hits.",
+            "CN": ""
+        }
+    },
+    {
+        "id": 324,
+        "level": 1,
+        "description": {
+            "EN": "Good chance of increased quest rewards. (No effect when joining mid-quest.)",
+            "CN": ""
+        }
+    },
+    {
+        "id": 325,
+        "level": 1,
+        "description": {
+            "EN": "Increases max bow charge level by one.",
+            "CN": ""
+        }
+    },
+    {
+        "id": 326,
+        "level": 1,
+        "description": {
+            "EN": "Adds a stun effect to draw attacks and slightly increases attack power.",
+            "CN": ""
+        }
+    },
+    {
+        "id": 327,
+        "level": 1,
+        "description": {
+            "EN": "Weapon sharpness does not decrease for a set time after sharpening.",
+            "CN": ""
+        }
+    },
+    {
+        "id": 328,
+        "level": 1,
+        "description": {
+            "EN": "Lets you use poison coating.",
+            "CN": "变成可装备毒瓶"
+        }
+    },
+    {
+        "id": 329,
+        "level": 1,
+        "description": {
+            "EN": "Lets you use paralysis coating.",
+            "CN": "变成可装备麻痹瓶"
+        }
+    },
+    {
+        "id": 330,
+        "level": 1,
+        "description": {
+            "EN": "Lets you use sleep coating.",
+            "CN": "变为可装备睡眠瓶"
+        }
+    },
+    {
+        "id": 331,
+        "level": 1,
+        "description": {
+            "EN": "Lets you use blast coating.",
+            "CN": "变成可装备爆破瓶"
+        }
+    },
+    {
+        "id": 332,
+        "level": 1,
+        "description": {
+            "EN": "Boosts Elderseal one level.",
+            "CN": "强化龙封力一个阶段"
+        }
+    },
+    {
+        "id": 333,
+        "level": 1,
+        "description": {
+            "EN": "High chance of increased quest rewards. (No effect when joining mid-quest.)",
+            "CN": ""
+        }
+    },
+    {
+        "id": 334,
+        "level": 1,
+        "description": {
+            "EN": "Lets you carve one additional time. (No effect when joining mid-quest.)",
+            "CN": ""
+        }
+    },
+    {
+        "id": 335,
+        "level": 4,
+        "description": {
+            "EN": "While active, increases affinity by 40%.",
+            "CN": "效果发动时，会心率+40%"
+        }
+    },
+    {
+        "id": 336,
+        "level": 5,
+        "description": {
+            "EN": "Increases affinity by 40% as soon as the stamina gauge is full.",
+            "CN": "维持耐力计量表全满时，会心率+40%"
+        }
+    },
+    {
+        "id": 337,
+        "level": 2,
+        "description": {
+            "EN": "Greatly increases the effect duration of hunting horn melodies.",
+            "CN": "更加延长狩猎笛的旋律效果时间"
+        }
+    },
+    {
+        "id": 338,
+        "level": 1,
+        "description": {
+            "EN": "While active, increases attack power by 5%.",
+            "CN": "技能发动时，攻击力1.05倍"
+        }
+    },
+    {
+        "id": 339,
+        "level": 2,
+        "description": {
+            "EN": "While active, increases attack power by 10%.",
+            "CN": "技能发动时，攻击力1.1倍"
+        }
+    },
+    {
+        "id": 340,
+        "level": 3,
+        "description": {
+            "EN": "While active, increases attack power by 15%.",
+            "CN": "技能发动时，攻击力1.15倍"
+        }
+    },
+    {
+        "id": 341,
+        "level": 1,
+        "description": {
+            "EN": "Raises the maximum level of the Bombardier skill.",
+            "CN": ""
+        }
+    },
+    {
+        "id": 342,
+        "level": 1,
+        "description": {
+            "EN": "Raises the maximum level of the Slinger Capacity skill.",
+            "CN": ""
+        }
+    },
+    {
+        "id": 343,
+        "level": 1,
+        "description": {
+            "EN": "Greatly increases elemental damage (fire, water, thunder, ice, dragon) when landing critical hits.",
+            "CN": ""
+        }
+    },
+    {
+        "id": 344,
+        "level": 4,
+        "description": {
+            "EN": "While active, reduces damage taken by 60%.",
+            "CN": "效果发动时，伤害减轻60%"
+        }
+    },
+    {
+        "id": 345,
+        "level": 5,
+        "description": {
+            "EN": "While active, reduces damage taken by 60%. Skill becomes easier to activate as well.",
+            "CN": "效果发动时，伤害减轻60% 更容易发动效果。"
+        }
+    },
+    {
+        "id": 346,
+        "level": 1,
+        "description": {
+            "EN": "Raises the maximum level of the Divine Blessing skill.",
+            "CN": ""
+        }
+    },
+    {
+        "id": 347,
+        "level": 1,
+        "description": {
+            "EN": "Greatly increases status effect damage (paralysis, poison, sleep, blast) when landing critical hits.",
+            "CN": ""
+        }
+    },
+    {
+        "id": 348,
+        "level": 2,
+        "description": {
+            "EN": "Greatly increases the attack power of spread ammo, power shot arrows, and Thousand Dragons.",
+            "CN": "更加提升散弹、刚射、龙之千矢的威力"
+        }
+    },
+    {
+        "id": 349,
+        "level": 1,
+        "description": {
+            "EN": "Raises the maximum level of the Latent Power skill.",
+            "CN": ""
+        }
+    },
+    {
+        "id": 350,
+        "level": 6,
+        "description": {
+            "EN": "While active, increases affinity by 50% and reduces stamina depletion by 50%. Triggers easier.",
+            "CN": "技能发动时，会心率+50% 耐力消耗量减少50%，更容易发动效果"
+        }
+    },
+    {
+        "id": 351,
+        "level": 7,
+        "description": {
+            "EN": "While active, increases affinity by 60% and reduces stamina depletion by 50%. Triggers easier.",
+            "CN": "技能发动时，会心率+60% 耐力消耗量减少50%，更容易发动效果"
+        }
+    },
+    {
+        "id": 352,
+        "level": 2,
+        "description": {
+            "EN": "Greatly increases the power of normal ammo and normal arrows.",
+            "CN": "更加提升通常弹、通常箭的威力"
+        }
+    },
+    {
+        "id": 353,
+        "level": 1,
+        "description": {
+            "EN": "Raises the maximum level of the Artillery skill.",
+            "CN": ""
+        }
+    },
+    {
+        "id": 354,
+        "level": 4,
+        "description": {
+            "EN": "Increases power of each attack by 40% and reduces Wyvern's Fire cooldown by 60%.",
+            "CN": "对象的攻击威力1.4倍，减少龙击炮的冷却时间60%"
+        }
+    },
+    {
+        "id": 355,
+        "level": 5,
+        "description": {
+            "EN": "Increases power of each attack by 50% and reduces Wyvern's Fire cooldown by 70%.",
+            "CN": "对象的攻击威力1.5倍，减少龙击炮的冷却时间70%"
+        }
+    },
+    {
+        "id": 356,
+        "level": 1,
+        "description": {
+            "EN": "While active, grants attack +12, element attack power +30, and status buildup + 5%.",
+            "CN": "技能发动时，基础攻击力+12 属性值+30 状态异常的累积值变为1.05倍"
+        }
+    },
+    {
+        "id": 357,
+        "level": 2,
+        "description": {
+            "EN": "While active, grants attack +15, element attack power +60, and status buildup + 10%.",
+            "CN": "技能发动时，基础攻击力+15 属性值+60 状态异常的累积值变为1.1倍"
+        }
+    },
+    {
+        "id": 358,
+        "level": 3,
+        "description": {
+            "EN": "While active, grants attack +18, element attack power +90, and status buildup + 15%.",
+            "CN": "技能发动时，基础攻击力+18 属性值+90 状态异常的累积值变为1.15倍"
+        }
+    },
+    {
+        "id": 359,
+        "level": 1,
+        "description": {
+            "EN": "While wearing a mantle, gain Windproof Lv3, Earplugs Lv3, Tremor Res Lv3, and Flinch Free.",
+            "CN": ""
+        }
+    },
+    {
+        "id": 360,
+        "level": 1,
+        "description": {
+            "EN": "While wearing a mantle, gain Tremor Resistance Lv3, Earplugs Lv5, max Windproof, and Flinch Free.",
+            "CN": ""
+        }
+    },
+    {
+        "id": 361,
+        "level": 1,
+        "description": {
+            "EN": "Continually attacking a monster activates Free Element/Ammo Up Lv2 and increases elemental damage.",
+            "CN": ""
+        }
+    },
+    {
+        "id": 362,
+        "level": 1,
+        "description": {
+            "EN": "Continually attacking a monster activates Free Element/Ammo Up Lv3 and increases elemental damage.",
+            "CN": ""
+        }
+    },
+    {
+        "id": 363,
+        "level": 1,
+        "description": {
+            "EN": "An aura of frost builds when your weapon is sheathed, raising attack. Wanes each melee hit or shot fired.",
+            "CN": ""
+        }
+    },
+    {
+        "id": 364,
+        "level": 1,
+        "description": {
+            "EN": "Raises the maximum level of the Stamina Thief skill.",
+            "CN": ""
+        }
+    },
+    {
+        "id": 365,
+        "level": 1,
+        "description": {
+            "EN": "Raises the maximum level of the Free Meal skill.",
+            "CN": ""
+        }
+    },
+    {
+        "id": 366,
+        "level": 1,
+        "description": {
+            "EN": "Raises the maximum level of the Agitator skill.",
+            "CN": ""
+        }
+    },
+    {
+        "id": 367,
+        "level": 1,
+        "description": {
+            "EN": "Elemental damage increased for jumping attacks.",
+            "CN": ""
+        }
+    },
+    {
+        "id": 368,
+        "level": 1,
+        "description": {
+            "EN": "Only those who complete the rigorous witcher training are allowed to use the powerful magic of the Igni Sign."
+        }
+    },
+    {
+        "id": 369,
+        "level": 6,
+        "description": {
+            "EN": "While active, grants Attack +24 and increases Affinity by 15%",
+            "CN": "技能发动时，基础攻击力+24 会心率+15%"
+        }
+    },
+    {
+        "id": 370,
+        "level": 7,
+        "description": {
+            "EN": "While active, grants Attack +28 and increases Affinity by 20%",
+            "CN": "技能发动时，基础攻击力+28 会心率+20%"
+        }
+    },
+    {
+        "id": 371,
+        "level": 4,
+        "description": {
+            "EN": "Blast buildup +30% Bonus: +10",
+            "CN": "爆破累积值变为1.3倍，爆破累积值+10"
+        }
+    },
+    {
+        "id": 372,
+        "level": 4,
+        "description": {
+            "EN": "Explosive power +40%",
+            "CN": "威力1.4倍"
+        }
+    },
+    {
+        "id": 373,
+        "level": 5,
+        "description": {
+            "EN": "Explosive power +50%",
+            "CN": "威力1.5倍"
+        }
+    },
+    {
+        "id": 374,
+        "level": 6,
+        "description": {
+            "EN": "Dragon attack +20% Bonus: +100",
+            "CN": "龙属性攻击值变为1.2倍，龙属性攻击值+100"
+        }
+    },
+    {
+        "id": 375,
+        "level": 6,
+        "description": {
+            "EN": "Fire attack +20% Bonus: +100",
+            "CN": "火属性攻击值变为1.2倍，火属性攻击值+100"
+        }
+    },
+    {
+        "id": 376,
+        "level": 2,
+        "description": {
+            "EN": "Activates 50% of the time.",
+            "CN": "效果发动机率50%"
+        }
+    },
+    {
+        "id": 377,
+        "level": 3,
+        "description": {
+            "EN": "Activates 75% of the time.",
+            "CN": "效果发动机率75%"
+        }
+    },
+    {
+        "id": 378,
+        "level": 6,
+        "description": {
+            "EN": "Ice attack +20% Bonus: +100",
+            "CN": "冰属性攻击值变为1.2倍，冰属性攻击值+100"
+        }
+    },
+    {
+        "id": 379,
+        "level": 4,
+        "description": {
+            "EN": "Paralysis buildup +30% Bonus: +10",
+            "CN": "麻痹累积值变为1.3倍，麻痹累积值+10"
+        }
+    },
+    {
+        "id": 380,
+        "level": 2,
+        "description": {
+            "EN": "Greatly increases the power of piercing ammo and Dragon Piercer.",
+            "CN": "更加提升贯通弹、龙之箭的威力"
+        }
+    },
+    {
+        "id": 381,
+        "level": 4,
+        "description": {
+            "EN": "Poison buildup +30% Bonus: +10",
+            "CN": "毒的累积值变为1.3倍，毒的累积值+10"
+        }
+    },
+    {
+        "id": 382,
+        "level": 4,
+        "description": {
+            "EN": "Sleep buildup +30% Bonus: +10",
+            "CN": "睡眠累积值变为1.3倍，睡眠累积值+10"
+        }
+    },
+    {
+        "id": 383,
+        "level": 4,
+        "description": {
+            "EN": "Stun power +50%",
+            "CN": "昏厥威力1.5倍"
+        }
+    },
+    {
+        "id": 384,
+        "level": 5,
+        "description": {
+            "EN": "Stun power +60%",
+            "CN": "昏厥威力1.6倍"
+        }
+    },
+    {
+        "id": 385,
+        "level": 4,
+        "description": {
+            "EN": "Exhaust power +50%",
+            "CN": "减气威力1.5倍"
+        }
+    },
+    {
+        "id": 386,
+        "level": 5,
+        "description": {
+            "EN": "Exhaust power +60%",
+            "CN": "减气威力1.6倍"
+        }
+    },
+    {
+        "id": 387,
+        "level": 6,
+        "description": {
+            "EN": "Thunder attack +20% Bonus: +100",
+            "CN": "雷属性攻击值变为1.2倍，雷属性攻击值+100"
+        }
+    },
+    {
+        "id": 388,
+        "level": 4,
+        "description": {
+            "EN": "Shortens time until reuse by 40%.",
+            "CN": "再使用时间缩短40%"
+        }
+    },
+    {
+        "id": 389,
+        "level": 5,
+        "description": {
+            "EN": "Shortens time until reuse by 50%.",
+            "CN": "再使用时间缩短50%"
+        }
+    },
+    {
+        "id": 390,
+        "level": 6,
+        "description": {
+            "EN": "Water attack +20% Bonus: +100",
+            "CN": "水属性攻击值变为1.2倍，水属性攻击值+100"
+        }
+    },
+    {
+        "id": 391,
+        "level": 4,
+        "description": {
+            "EN": "Increases the loading capacity for the slinger ammo collected from the ground or plants even more",
+            "CN": "从地面或植物取得的弹药装填数进一步增加"
+        }
+    },
+    {
+        "id": 392,
+        "level": 5,
+        "description": {
+            "EN": "Increases the loading capacity for all slinger ammo",
+            "CN": "所有弹药的装填数进一步增加"
+        }
+    },
+    {
+        "id": 393,
+        "level": 1,
+        "description": {
+            "EN": "Raises the maximum level of the Slugger skill to 5.",
+            "CN": ""
+        }
+    },
+    {
+        "id": 395,
+        "level": 1,
+        "description": {
+            "EN": "Greatly reduces sharpness loss. Bows and bowguns have a chance not to expend coatings or ammo.",
+            "CN": ""
+        }
+    },
+    {
+        "id": 396,
+        "level": 1,
+        "description": {
+            "EN": "Raises  the maximum level of the Maximum Might skill.",
+            "CN": ""
+        }
+    },
+    {
+        "id": 397,
+        "level": 1,
+        "description": {
+            "EN": "Raises the maximum level of the Tool Specialist skill.",
+            "CN": ""
+        }
+    },
+    {
+        "id": 398,
+        "level": 1,
+        "description": {
+            "EN": "Prevents zombie and effluvial buildup.",
+            "CN": ""
+        }
+    },
+    {
+        "id": 399,
+        "level": 1,
+        "description": {
+            "EN": "Increases the attention drawn when attacking a monster."
+        }
+    },
+    {
+        "id": 400,
+        "level": 1,
+        "description": {
+            "EN": "Allows you to quickly recover from heavy attacks that blow you back when you have your weapon unsheathed."
+        }
+    },
+    {
+        "id": 401,
+        "level": 1,
+        "description": {
+            "EN": "Activates skill effect.",
+            "CN": "发动技能效果"
+        }
+    },
+    {
+        "id": 402,
+        "level": 1,
+        "description": {
+            "EN": "Elem., abnormal status, & affinity up with weapon drawn. Take damage when attacking, but can be recovered by continually attacking.",
+            "CN": ""
+        }
+    },
+    {
+        "id": 403,
+        "level": 1,
+        "description": {
+            "EN": "Enhances attacks even more with weapon drawn. Take damage when attacking, but can be recovered by continually attacking.",
+            "CN": ""
+        }
+    },
+    {
+        "id": 410,
+        "level": 4,
+        "description": {
+            "EN": "Nullifies weak monster roars and reduces the effects of strong monster roars.",
+            "CN": "使咆哮【小】无效，减轻咆哮【大】的影响"
+        }
+    },
+    {
+        "id": 411,
+        "level": 5,
+        "description": {
+            "EN": "Nullifies weak and strong monster roars.",
+            "CN": "使咆哮【小】【大】无效"
+        }
+    },
+    {
+        "id": 412,
+        "level": 1,
+        "description": {
+            "EN": "Increases defense and eliminates damage reactions. Taking several hits knoocks it out, but reactivates over time."
+        }
+    },
+    {
+        "id": 413,
+        "level": 1,
+        "description": {
+            "EN": "Greatly increases odds of getting special Grand Appreciation rewards. (No effect when joining mid-quest.)"
+        }
+    },
+    {
+        "id": 414,
+        "level": 1,
+        "description": {
+            "EN": "Increases odds of getting special Grand Appreciation rewards. (No effect when joining mid-quest.)"
+        }
+    },
+    {
+        "id": 415,
+        "level": 1,
+        "description": {
+            "EN": "Greatly increases odds of getting special Holiday Joy rewards. (No effect when joining mid-quest.)"
+        }
+    },
+    {
+        "id": 416,
+        "level": 1,
+        "description": {
+            "EN": "Increases odds of getting special Holiday Joy rewards. (No effect when joining mid-quest.)"
+        }
+    }
+]
