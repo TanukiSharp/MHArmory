@@ -100,7 +100,7 @@ namespace MHArmory.Search.Iceborne.Tests
             var solver = new IceborneSolver();
             var cancellationToken = new System.Threading.CancellationToken();
             IList<ArmorSetSearchResult> armors = await solver.SearchArmorSets(solverData, cancellationToken);
-            Assert.AreEqual(armors.Count, 1);
+            Assert.AreEqual(1, armors.Count);
         }
 
         [TestMethod()]
@@ -133,7 +133,7 @@ namespace MHArmory.Search.Iceborne.Tests
             var solver = new IceborneSolver();
             var cancellationToken = new System.Threading.CancellationToken();
             IList<ArmorSetSearchResult> armors = await solver.SearchArmorSets(solverData, cancellationToken);
-            Assert.AreEqual(armors.Count, 1);
+            Assert.AreEqual(1, armors.Count);
         }
 
         [TestMethod()]
@@ -166,7 +166,7 @@ namespace MHArmory.Search.Iceborne.Tests
             var solver = new IceborneSolver();
             var cancellationToken = new System.Threading.CancellationToken();
             IList<ArmorSetSearchResult> armors = await solver.SearchArmorSets(solverData, cancellationToken);
-            Assert.AreEqual(armors.Count, 1);
+            Assert.AreEqual(1, armors.Count);
         }
 
         [TestMethod()]
@@ -199,7 +199,7 @@ namespace MHArmory.Search.Iceborne.Tests
             var solver = new IceborneSolver();
             var cancellationToken = new System.Threading.CancellationToken();
             IList<ArmorSetSearchResult> armors = await solver.SearchArmorSets(solverData, cancellationToken);
-            Assert.AreEqual(armors.Count, 1);
+            Assert.AreEqual(1, armors.Count);
         }
 
         [TestMethod()]
@@ -232,7 +232,7 @@ namespace MHArmory.Search.Iceborne.Tests
             var solver = new IceborneSolver();
             var cancellationToken = new System.Threading.CancellationToken();
             IList<ArmorSetSearchResult> armors = await solver.SearchArmorSets(solverData, cancellationToken);
-            Assert.AreEqual(armors.Count, 1);
+            Assert.AreEqual(1, armors.Count);
         }
 
         [TestMethod()]
@@ -266,7 +266,7 @@ namespace MHArmory.Search.Iceborne.Tests
             var solver = new IceborneSolver();
             var cancellationToken = new System.Threading.CancellationToken();
             IList<ArmorSetSearchResult> armors = await solver.SearchArmorSets(solverData, cancellationToken);
-            Assert.AreEqual(armors.Count, 1);
+            Assert.AreEqual(1, armors.Count);
         }
 
         [TestMethod()]
@@ -301,7 +301,7 @@ namespace MHArmory.Search.Iceborne.Tests
             var solver = new IceborneSolver();
             var cancellationToken = new System.Threading.CancellationToken();
             IList<ArmorSetSearchResult> armors = await solver.SearchArmorSets(solverData, cancellationToken);
-            Assert.AreEqual(armors.Count, 1);
+            Assert.AreEqual(1, armors.Count);
         }
 
         [TestMethod()]
@@ -335,7 +335,7 @@ namespace MHArmory.Search.Iceborne.Tests
             var solver = new IceborneSolver();
             var cancellationToken = new System.Threading.CancellationToken();
             IList<ArmorSetSearchResult> armors = await solver.SearchArmorSets(solverData, cancellationToken);
-            Assert.AreEqual(armors.Count, 1);
+            Assert.AreEqual(1, armors.Count);
         }
 
 
@@ -360,8 +360,8 @@ namespace MHArmory.Search.Iceborne.Tests
 
             };
             solverData.Setup(weapon, heads, chests, gloves, waists, legs, charms.SelectMany(c => c.Levels), decos.Select(d => new Contracts.SolverDataJewelModel(d, int.MaxValue)), desiredAbilities);
-            DeselectOther(solverData.AllHeads, "Silver Solhelm α+");
-            DeselectOther(solverData.AllChests, "Silver Solmail α+");
+            DeselectOther(solverData.AllHeads, "Silver Solhelm β+");
+            DeselectOther(solverData.AllChests, "Silver Solmail β+");
             DeselectOther(solverData.AllGloves, "Silver Solbraces β+");
             DeselectOther(solverData.AllWaists, "Silver Solcoil β+");
             DeselectOther(solverData.AllLegs, "Garuga Greaves β+");
@@ -369,7 +369,7 @@ namespace MHArmory.Search.Iceborne.Tests
             var solver = new IceborneSolver();
             var cancellationToken = new System.Threading.CancellationToken();
             IList<ArmorSetSearchResult> armors = await solver.SearchArmorSets(solverData, cancellationToken);
-            Assert.AreEqual(armors.Count, 1);
+            Assert.AreEqual(1, armors.Count);
         }
 
         [TestMethod()]
@@ -394,8 +394,8 @@ namespace MHArmory.Search.Iceborne.Tests
 
             };
             solverData.Setup(weapon, heads, chests, gloves, waists, legs, charms.SelectMany(c => c.Levels), decos.Select(d => new Contracts.SolverDataJewelModel(d, int.MaxValue)), desiredAbilities);
-            DeselectOther(solverData.AllHeads, "Silver Solhelm α+");
-            DeselectOther(solverData.AllChests, "Silver Solmail α+");
+            DeselectOther(solverData.AllHeads, "Silver Solhelm β+");
+            DeselectOther(solverData.AllChests, "Silver Solmail β+");
             DeselectOther(solverData.AllGloves, "Silver Solbraces β+");
             DeselectOther(solverData.AllWaists, "Silver Solcoil β+");
             DeselectOther(solverData.AllLegs, "Garuga Greaves β+");
@@ -403,7 +403,7 @@ namespace MHArmory.Search.Iceborne.Tests
             var solver = new IceborneSolver();
             var cancellationToken = new System.Threading.CancellationToken();
             IList<ArmorSetSearchResult> armors = await solver.SearchArmorSets(solverData, cancellationToken);
-            Assert.AreEqual(armors.Count, 1);
+            Assert.AreEqual(1, armors.Count);
         }
 
         [TestMethod()]
@@ -439,7 +439,7 @@ namespace MHArmory.Search.Iceborne.Tests
             var solver = new IceborneSolver();
             var cancellationToken = new System.Threading.CancellationToken();
             IList<ArmorSetSearchResult> armors = await solver.SearchArmorSets(solverData, cancellationToken);
-            Assert.AreEqual(armors.Count, 1);
+            Assert.AreEqual(1, armors.Count);
         }
 
         [TestMethod()]
@@ -476,7 +476,7 @@ namespace MHArmory.Search.Iceborne.Tests
             var solver = new IceborneSolver();
             var cancellationToken = new System.Threading.CancellationToken();
             IList<ArmorSetSearchResult> armors = await solver.SearchArmorSets(solverData, cancellationToken);
-            Assert.AreEqual(armors.Count, 1);
+            Assert.AreEqual(1, armors.Count);
         }
 
         [TestMethod()]
@@ -510,7 +510,7 @@ namespace MHArmory.Search.Iceborne.Tests
             var solver = new IceborneSolver();
             var cancellationToken = new System.Threading.CancellationToken();
             IList<ArmorSetSearchResult> armors = await solver.SearchArmorSets(solverData, cancellationToken);
-            Assert.AreEqual(armors.Count, 1);
+            Assert.AreEqual(1, armors.Count);
         }
 
         [TestMethod()]
@@ -544,7 +544,7 @@ namespace MHArmory.Search.Iceborne.Tests
             var solver = new IceborneSolver();
             var cancellationToken = new System.Threading.CancellationToken();
             IList<ArmorSetSearchResult> armors = await solver.SearchArmorSets(solverData, cancellationToken);
-            Assert.AreEqual(armors.Count, 1);
+            Assert.AreEqual(1, armors.Count);
         }
 
         [TestMethod()]
@@ -578,7 +578,7 @@ namespace MHArmory.Search.Iceborne.Tests
             var solver = new IceborneSolver();
             var cancellationToken = new System.Threading.CancellationToken();
             IList<ArmorSetSearchResult> armors = await solver.SearchArmorSets(solverData, cancellationToken);
-            Assert.AreEqual(armors.Count, 1);
+            Assert.AreEqual(1, armors.Count);
         }
 
         [TestMethod()]
@@ -612,7 +612,40 @@ namespace MHArmory.Search.Iceborne.Tests
             var solver = new IceborneSolver();
             var cancellationToken = new System.Threading.CancellationToken();
             IList<ArmorSetSearchResult> armors = await solver.SearchArmorSets(solverData, cancellationToken);
-            Assert.AreEqual(armors.Count, 1);
+            Assert.AreEqual(1, armors.Count);
+        }
+
+        [TestMethod()]
+        public async Task SearchTest_DB_AnjaTrueCriticalElement_ShouldNotBeFound()
+        {
+            var weapon = new Weapon(0, WeaponType.DualBlades, new int[] { }, new IAbility[0], null);
+            var solverData = new SolverData();
+            var desiredAbilities = new IAbility[]
+            {
+                new Ability(getSkillByName("Critical Eye"), 7, new Dictionary<string, string>()),
+                new Ability(getSkillByName("Fire Attack"), 6, new Dictionary<string, string>()),
+                new Ability(getSkillByName("Windproof"), 3, new Dictionary<string, string>()),
+                new Ability(getSkillByName("Critical Boost"), 3, new Dictionary<string, string>()),
+                new Ability(getSkillByName("Weakness Exploit"), 3, new Dictionary<string, string>()),
+                new Ability(getSkillByName("Item Prolonger"), 3, new Dictionary<string, string>()),
+                new Ability(getSkillByName("Slinger Capacity"), 3, new Dictionary<string, string>()),
+                new Ability(getSkillByName("Handicraft"), 2, new Dictionary<string, string>()),
+                new Ability(getSkillByName("Agitator"), 2, new Dictionary<string, string>()),
+                new Ability(getSkillByName("Protective Polish"), 1, new Dictionary<string, string>()),
+                new Ability(getSkillByName("Slinger Capacity Secret"), 1, new Dictionary<string, string>()),
+                new Ability(getSkillByName("True Critical Element"), 1, new Dictionary<string, string>()),
+            };
+            solverData.Setup(weapon, heads, chests, gloves, waists, legs, charms.SelectMany(c => c.Levels), decos.Select(d => new Contracts.SolverDataJewelModel(d, int.MaxValue)), desiredAbilities);
+            DeselectOther(solverData.AllHeads, "Silver Solhelm β+");
+            DeselectOther(solverData.AllChests, "Silver Solmail β+");
+            DeselectOther(solverData.AllGloves, "Silver Solbraces β+");
+            DeselectOther(solverData.AllWaists, "Silver Solcoil β+");
+            DeselectOther(solverData.AllLegs, "Rex Roar Greaves β+");
+            DeselectOther(solverData.AllCharms, "Blaze Charm 5");
+            var solver = new IceborneSolver();
+            var cancellationToken = new System.Threading.CancellationToken();
+            IList<ArmorSetSearchResult> armors = await solver.SearchArmorSets(solverData, cancellationToken);
+            Assert.AreEqual(0, armors.Count);
         }
     }
 }

@@ -19,12 +19,8 @@ namespace MHArmory.Search.Iceborne
         public override int Version { get; } = 1;
 
         private Dictionary<ISkill, DecoCollection> decos = new Dictionary<ISkill, DecoCollection>();
-        private List<ISkill> noJewelSkills;
-        private List<ISkill> noLevel4DecoSkills;
-        private List<ISkill> onlyLevel4DecoSkills;
-        private List<ISkill> level4DecoSkills;
-        private List<ISkill>[] multiLevelDecoSkills = new List<ISkill>[3];
         private Dictionary<ISkill, int> desiredAbilities;
+        private List<SolverDataJewelModel> allDecos;
 
         public void Dispose()
         {
@@ -92,17 +88,11 @@ namespace MHArmory.Search.Iceborne
          * This function checks that the given armor set can fit all the desired skills.
          * For this it will do the following:
          *      Gather all skills already present on the armor.
-         *      Check if every skill is present where no decos are available.
-         *      Inserts all decos which have no multiskill/multilevel decos.
-         *      Inserts all decos which have only multiskill/multilevel decos.
-         *      Inserts all decos which have 4 points in a single skill.
-         *      Inserts all decos which have 3 points in a single skill.
-         *      Inserts all decos which have 2 points in a single skill.
-         *      Inserts all decos with multiple skills in the following order:
-         *          Decos with another unfullfilled skill.
-         *          Decos which can improve another desired skill.
-         *      Inserts remaining generic decos .
-         *      Inserts single skill single level decos.
+         *      Make a quick check if enough decos for every missing skillpoint is available.
+         *      Try to fit the presorted deco list into the armour set.
+         *          The first run Tries to not waste/improve skill points and a deco is limited to its own slotsize.
+         *          The second run can waste/improve skill points and the deco is no longer limited to its own slotsize.
+         *      Check if every desired Ability is satisfied.
          */
         protected override ArmorSetSearchResult IsArmorSetMatching(IEquipment weapon, IEquipment[] equips)
         {
@@ -135,263 +125,58 @@ namespace MHArmory.Search.Iceborne
                 return GetRemainingSkillLevels(skill) <= 0;
             }
 
-            /**
-             * returns true if deco could be added, otherwise false
-             */
-            int AddDeco(ref int remainingLevels, IJewel deco, int skillLevels, int count, bool limitToExactSlotsize = false)
-            {
-                int slotted = SolverUtils.ConsumeSlots(availableSlots, deco.SlotSize, count, limitToExactSlotsize);
-                if (slotted > 0)
-                {
-                    remainingLevels -= skillLevels * slotted;
-                    usedDecos.AddDecos(deco, slotted);
-                    abilities.AddDecos(deco, slotted);
-                }
-                return slotted;
-            }
-
-            void AddMultiLevelDeco(ISkill skill, SolverDataJewelModel deco, ref int remainingLevels, bool canOvershoot = false)
-            {
-                if (deco == null)
-                    return;
-
-                int remainingDecos = deco.Available - usedDecos[deco.Jewel];
-                if (remainingDecos == 0)
-                    return;
-
-                int skillLevels = deco.Jewel.Abilities[0].Level;
-                int decosNeeded = remainingLevels / skillLevels;
-                if (decosNeeded > 0)
-                {
-                    int use = Math.Min(decosNeeded, remainingDecos);
-                    if (AddDeco(ref remainingLevels, deco.Jewel, skillLevels, use) != use)
-                        return;
-                    if (remainingDecos == use || remainingLevels == 0)
-                        return;
-                }
-
-                if (canOvershoot ||
-                   (remainingLevels > 1 && skill.MaxLevel > desiredAbilities[skill]))
-                    AddDeco(ref remainingLevels, deco.Jewel, skillLevels, 1);
-            }
-
-            void AddMultiLevelDecos(DecoCollection decoCollection, ref int remainingLevels, bool canOvershoot = false)
-            {
-                for (int i = 4; i > 1 && remainingLevels > 0; --i)
-                {
-                    AddMultiLevelDeco(decoCollection.Skill, decoCollection.SingleSkillDecos[i - 1], ref remainingLevels, true);
-                }
-            }
-
-            void AddMultiskillDeco(ISkill skill, SolverDataJewelModel deco, ref int remainingLevels, bool canImproveOtherSkill = false)
-            {
-                if (deco == null)
-                    return;
-
-                int remainingDecos = deco.Available - usedDecos[deco.Jewel];
-                if (remainingDecos == 0)
-                    return;
-
-                ISkill otherSkill = deco.Jewel.Abilities.First(a => a.Skill != skill).Skill;
-                int remainingLevelsOtherSkill = GetRemainingSkillLevels(otherSkill);
-                if (remainingLevelsOtherSkill > 0)
-                {
-                    int use = Math.Min(remainingLevels, Math.Min(remainingLevelsOtherSkill, remainingDecos));
-                    if (AddDeco(ref remainingLevels, deco.Jewel, 1, use) != use)
-                        return;
-                    if (use == remainingDecos || remainingLevels == 0)
-                        return;
-                    remainingDecos -= use;
-                }
-
-                if (canImproveOtherSkill)
-                {
-                    int improvableOtherSkillLevels = otherSkill.MaxLevel - abilities[otherSkill];
-                    if (improvableOtherSkillLevels > 0)
-                    {
-                        int use = Math.Min(remainingLevels, Math.Min(remainingDecos, improvableOtherSkillLevels));
-                        if (AddDeco(ref remainingLevels, deco.Jewel, 1, use) != use)
-                            return;
-                    }
-                }
-            }
-
-            void AddMultiSkillDecos(DecoCollection decoCollection, ref int remainingLevels, bool canImproveOtherSkill = false)
-            {
-                foreach (SolverDataJewelModel deco in decoCollection.MultiSkillDecos)
-                {
-                    AddMultiskillDeco(decoCollection.Skill, deco, ref remainingLevels, true);
-                    if (remainingLevels <= 0)
-                        break;
-                }
-            }
-
-            void AddGenericDecos(DecoCollection decoCollection, ref int remainingLevels)
-            {
-                SolverDataJewelModel genericDeco = decoCollection.GenericLevel4Deco;
-                int remainingDecos = genericDeco.Available - usedDecos[genericDeco.Jewel];
-                int use = Math.Min(remainingDecos, remainingLevels);
-                if (AddDeco(ref remainingLevels, genericDeco.Jewel, 1, use) != use)
-                    return;
-
-                if (remainingLevels <= 0)
-                    return;
-
-                foreach (SolverDataJewelModel deco in decoCollection.MultiSkillDecos)
-                {
-                    int remaining = deco.Available - usedDecos[deco.Jewel];
-                    if (remaining == 0)
-                        continue;
-
-                    int use2 = Math.Min(remaining, remainingLevels);
-                    int slotted = SolverUtils.ConsumeSlots(availableSlots, deco.Jewel.SlotSize, use);
-                    if(slotted > 0)
-                    {
-                        remainingLevels -= slotted;
-                        usedDecos.AddDecos(deco.Jewel, slotted);
-                        abilities.AddDecos(genericDeco.Jewel, slotted);
-                    }
-
-                    if (remainingLevels < 0)
-                        return;
-                }
-            }
-
-            void AddBelowLevel4Decos(ISkill skill, SolverDataJewelModel deco, ref int remainingLevels, bool limitToExactSlotsize = false)
-            {
-                if (deco == null)
-                    return;
-                int remainingDecos = deco.Available - usedDecos[deco.Jewel];
-                if (remainingDecos == 0)
-                    return;
-
-                int use = Math.Min(remainingDecos, remainingLevels);
-                AddDeco(ref remainingLevels, deco.Jewel, 1, use, limitToExactSlotsize);
-            }
-
             SolverUtils.AccumulateAvailableSlots(weapon, availableSlots);
             foreach (IEquipment equipment in equips)
                 SolverUtils.AccumulateAvailableSlots(equipment, availableSlots);
 
             GetArmorSkills(equips, abilities);
 
-            foreach (ISkill skill in noJewelSkills)
+            // Quickckeck if we have enough decos
+            foreach (KeyValuePair<ISkill, int> skills in desiredAbilities)
             {
-                if (!IsAbilityFullfilled(skill))
+                int remaining = skills.Value - abilities[skills.Key];
+                if (remaining <= 0)
+                    continue;
+                if (decos[skills.Key].TotalSkillLevels < remaining)
                 {
                     OnArmorSetMismatch();
                     return ArmorSetSearchResult.NoMatch;
                 }
             }
 
-            foreach (ISkill skill in noLevel4DecoSkills)
+            /**
+             * returns the number of decos slotted
+             */
+            int AddDeco(IJewel deco, int count, bool limitToExactSlotsize = false)
             {
-                int remainingLevels = GetRemainingSkillLevels(skill);
-                if (remainingLevels <= 0)
-                    continue;
-
-                SolverDataJewelModel jewel = decos[skill].SingleSkillDecos[0];
-                if (jewel.Available < remainingLevels)
+                int slotted = SolverUtils.ConsumeSlots(availableSlots, deco.SlotSize, count, limitToExactSlotsize);
+                if (slotted > 0)
                 {
-                    OnArmorSetMismatch();
-                    return ArmorSetSearchResult.NoMatch;
+                    usedDecos.AddDecos(deco, slotted);
+                    abilities.AddDecos(deco, slotted);
                 }
-
-                int tmp = remainingLevels;
-                if(AddDeco(ref remainingLevels, jewel.Jewel, 1, remainingLevels) != tmp)
-                {
-                    OnArmorSetMismatch();
-                    return ArmorSetSearchResult.NoMatch;
-                }
+                return slotted;
             }
 
-            foreach (ISkill skill in onlyLevel4DecoSkills)
+            foreach (SolverDataJewelModel solverData in allDecos)
             {
-                int remainingLevels = GetRemainingSkillLevels(skill);
-                if (remainingLevels <= 0)
+                int min = Math.Min(solverData.Jewel.Abilities.Min(a => GetRemainingSkillLevels(a.Skill) / a.Level), solverData.Available);
+                if (min <= 0)
                     continue;
-
-                DecoCollection decoCollection = decos[skill];
-
-                AddMultiLevelDecos(decoCollection, ref remainingLevels);
-                if (remainingLevels <= 0)
-                    continue;
-
-                AddMultiSkillDecos(decoCollection, ref remainingLevels);
-                if (remainingLevels <= 0)
-                    continue;
-
-                AddMultiSkillDecos(decoCollection, ref remainingLevels, true);
-                if (remainingLevels <= 0)
-                    continue;
-
-                AddMultiLevelDecos(decoCollection, ref remainingLevels, true);
-                if (remainingLevels <= 0)
-                    continue;
-
-                AddGenericDecos(decoCollection, ref remainingLevels);
-                if (remainingLevels > 0)
-                {
-                    OnArmorSetMismatch();
-                    return ArmorSetSearchResult.NoMatch;
-                }
+                AddDeco(solverData.Jewel, min, true);
             }
 
-            for (int i = 4; i > 1; --i)
+            foreach (SolverDataJewelModel solverData in allDecos)
             {
-                foreach (ISkill skill in multiLevelDecoSkills[i - 2])
-                {
-                    int remainingLevels = GetRemainingSkillLevels(skill);
-                    if (remainingLevels <= 0)
-                        continue;
-                    AddMultiLevelDeco(skill, decos[skill].SingleSkillDecos[i - 1], ref remainingLevels);
-                }
+                int min = Math.Min(solverData.Jewel.Abilities.Max(a => (int)Math.Ceiling(1.0 * GetRemainingSkillLevels(a.Skill) / a.Level)), solverData.Available - usedDecos[solverData.Jewel]);
+                if (min <= 0)
+                    continue;
+                AddDeco(solverData.Jewel, min, false);
             }
 
-            foreach(ISkill skill in level4DecoSkills)
+            foreach (KeyValuePair<ISkill, int> pair in desiredAbilities)
             {
-                int remainingLevels = GetRemainingSkillLevels(skill);
-                if (remainingLevels <= 0)
-                    continue;
-
-                DecoCollection decoCollection = decos[skill];
-
-                AddMultiSkillDecos(decoCollection, ref remainingLevels);
-                if (remainingLevels <= 0)
-                    continue;
-
-                AddBelowLevel4Decos(skill, decoCollection.SingleSkillDecos[0], ref remainingLevels, true);
-            }
-
-            foreach(ISkill skill in level4DecoSkills)
-            {
-                if(SolverUtils.AreAllSlotsUsed(availableSlots))
-                {
-                    OnArmorSetMismatch();
-                    return ArmorSetSearchResult.NoMatch;
-                }
-
-                int remainingLevels = GetRemainingSkillLevels(skill);
-                if (remainingLevels <= 0)
-                    continue;
-
-                DecoCollection decoCollection = decos[skill];
-
-                AddMultiSkillDecos(decoCollection, ref remainingLevels, true);
-                if (remainingLevels <= 0)
-                    continue;
-
-                AddBelowLevel4Decos(skill, decoCollection.SingleSkillDecos[0], ref remainingLevels, false);
-                if (remainingLevels <= 0)
-                    continue;
-
-                AddMultiLevelDecos(decoCollection, ref remainingLevels, true);
-                if (remainingLevels <= 0)
-                    continue;
-
-                AddGenericDecos(decoCollection, ref remainingLevels);
-
-                if(remainingLevels > 0)
+                if (!IsAbilityFullfilled(pair.Key))
                 {
                     OnArmorSetMismatch();
                     return ArmorSetSearchResult.NoMatch;
@@ -399,15 +184,17 @@ namespace MHArmory.Search.Iceborne
             }
 
             // Sanity Check for testing
-            foreach(KeyValuePair<ISkill, int> pair in desiredAbilities)
+            foreach (SolverDataJewelModel deco in allDecos)
             {
-                if (!IsAbilityFullfilled(pair.Key))
+                if (usedDecos[deco.Jewel] > deco.Available)
                 {
-                    throw new InvalidProgramException("Sanity Check failed");
+                    throw new InvalidProgramException("Sanity Check failed: more decos used than available");
                     //OnArmorSetMismatch();
                     //return ArmorSetSearchResult.NoMatch;
                 }
             }
+
+
             var set = new ArmorSetSearchResult
             {
                 IsMatch = true,
@@ -426,37 +213,14 @@ namespace MHArmory.Search.Iceborne
             }
 
             this.desiredAbilities = desiredAbilities.ToDictionary(x => x.Skill, x => x.Level);
+            var skillToSlotsize = decos.Values.ToDictionary(x => x.Skill, x => x.SingleSkillDecos[0] == null ? 4 : x.SingleSkillDecos[0].Jewel.SlotSize);
 
-            noJewelSkills = decos.Values
-                .Where(x => x.TotalSkillLevels == 0)
-                .Select(x => x.Skill)
+            allDecos = matchingJewels
+                .Where(x => x.Available > 0)
+                .OrderByDescending(x => x.Jewel.Abilities.Sum(a => a.Level))
+                .ThenByDescending(x => x.Jewel.Abilities.Sum(a => skillToSlotsize[a.Skill]))
+                .ThenByDescending(x => x.Jewel.SlotSize)
                 .ToList();
-
-            noLevel4DecoSkills = decos.Values
-                .Where(x => x.TotalSkillLevels > 0 && x.HasLevel4Deco == false)
-                .OrderByDescending(x => x.SingleSkillDecos[0].Jewel.SlotSize)
-                .Select(x => x.Skill)
-                .ToList();
-
-            onlyLevel4DecoSkills = decos.Values
-                .Where(x => x.HasLevel4Deco && x.SingleSkillDecos[0] == null)
-                .Select(x => x.Skill)
-                .ToList();
-
-            level4DecoSkills = decos.Values
-                .Where(x => x.HasLevel4Deco && x.SingleSkillDecos[0] != null)
-                .OrderByDescending(x => x.SingleSkillDecos[0].Jewel.SlotSize)
-                .Select(x => x.Skill)
-                .ToList();
-
-            for (int i = 4; i > 1; --i)
-            {
-                multiLevelDecoSkills[i - 2] = decos.Values
-                    .Where(j => j.HasLevel4Deco && j.SingleSkillDecos[i - 1] != null)
-                    .OrderByDescending(x => x.SingleSkillDecos[0]?.Jewel.SlotSize)
-                    .Select(x => x.Skill)
-                    .ToList();
-            }
 
             var combinations = decos.Values
                 .Where(x => x.MultiSkillDecos.Count > 0)

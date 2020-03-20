@@ -26,7 +26,8 @@ namespace MHArmory.Search.Iceborne
             MultiSkillDecos = new List<SolverDataJewelModel>();
             foreach (SolverDataJewelModel jewel in allJewelsWithSkill)
             {
-                TotalSkillLevels += jewel.Available * jewel.Jewel.Abilities.First(j => j.Skill == Skill).Level;
+                // we have to limit this calculation to not get overflows
+                TotalSkillLevels += Math.Min(jewel.Available, Skill.MaxLevel) * jewel.Jewel.Abilities.First(j => j.Skill == Skill).Level;
                 if (jewel.Jewel.SlotSize > 3 &&
                     (!jewel.Generic || jewel.Available > 0)) // we add a generic deco even if there are none
                     HasLevel4Deco = true;

@@ -171,7 +171,7 @@ namespace MHArmory.Search.Default
                 {
                     { "EN", $"Any level 4 Deco with '{ability.Skill.Name["EN"]}' skill"}
                 };
-                var generic = new Jewel(maxJewelId, name, 0, 4, new IAbility[] { ability });
+                var generic = new Jewel(maxJewelId, name, 0, 4, new IAbility[] { new Ability(ability.Skill, 1, ability.Description) });
                 int count = 0;
                 foreach(SolverDataJewelModel jewel in genericJewels)
                 {
