@@ -157,6 +157,8 @@ namespace MHArmory.Search.Default
 
         private void CreateGenericJewels()
         {
+            if (hunterRank != HunterRank.MasterRank)
+                return;
             bool isGenericJewel(SolverDataJewelModel jewel, IAbility ability)
             {
                 return jewel.Jewel.Abilities.Length > 1 &&

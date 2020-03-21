@@ -11,11 +11,11 @@ using System.Threading.Tasks;
 
 namespace MHArmory.Search.Iceborne
 {
-    public class IceborneSolver : SolverBase, IDisposable
+    public sealed class IceborneSolver : SolverBase, IDisposable
     {
         public override string Name { get; } = "Iceborne - Default";
         public new string Author { get; } = "ChaosSaber";
-        public override string Description { get; } = "Default Search for Iceborne Data";
+        public override string Description { get; } = "Default search algorithm for MR";
         public override int Version { get; } = 1;
 
         private Dictionary<ISkill, DecoCollection> decos = new Dictionary<ISkill, DecoCollection>();

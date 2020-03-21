@@ -15,7 +15,7 @@ namespace MHArmory.Search.Default
     public sealed class Solver : SolverBase, IDisposable
     {
         public override string Name { get; } = "Armory - Default";
-        public override string Description { get; } = "Default search algorithm";
+        public override string Description { get; } = "Default search algorithm (only use for LR and HR)";
         public override int Version { get; } = 1;
 
         public void Dispose()
@@ -111,7 +111,7 @@ namespace MHArmory.Search.Default
                         return ArmorSetSearchResult.NoMatch;
                     }
 
-                    if (SolverUtils.ConsumeSlots(availableSlots, j.Jewel.SlotSize, requiredJewelCount) == requiredJewelCount)
+                    if (SolverUtils.ConsumeSlots(availableSlots, j.Jewel.SlotSize, requiredJewelCount) != requiredJewelCount)
                     {
                         OnArmorSetMismatch();
                         return ArmorSetSearchResult.NoMatch;
