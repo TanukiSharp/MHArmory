@@ -530,9 +530,6 @@ namespace MHArmory.Search.Iceborne.Tests
                 new Ability(getSkillByName("Attack Boost"), 7, new Dictionary<string, string>()),
                 new Ability(getSkillByName("Blast Attack"), 2, new Dictionary<string, string>()),
                 new Ability(getSkillByName("Handicraft"), 5, new Dictionary<string, string>()),
-                new Ability(getSkillByName("Divine Blessing"), 1, new Dictionary<string, string>()),
-
-
             };
             solverData.Setup(weapon, heads, chests, gloves, waists, legs, charms.SelectMany(c => c.Levels), decos.Select(d => new Contracts.SolverDataJewelModel(d, int.MaxValue)), desiredAbilities);
             DeselectOther(solverData.AllHeads, "Kaiser Crown β+");

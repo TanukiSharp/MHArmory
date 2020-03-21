@@ -218,7 +218,7 @@ namespace MHArmory.Search.Iceborne
             allDecos = matchingJewels
                 .Where(x => x.Available > 0)
                 .OrderByDescending(x => x.Jewel.Abilities.Sum(a => a.Level))
-                .ThenByDescending(x => x.Jewel.Abilities.Sum(a => skillToSlotsize[a.Skill]))
+                .ThenByDescending(x => x.Jewel.Abilities.Sum(a => skillToSlotsize[a.Skill] * a.Level))
                 .ThenByDescending(x => x.Jewel.SlotSize)
                 .ToList();
 

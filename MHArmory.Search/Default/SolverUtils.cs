@@ -91,7 +91,8 @@ namespace MHArmory.Search.Default
                 if (availableSlots[i] >= jewelCount)
                 {
                     availableSlots[i] -= jewelCount;
-                    return jewelCount;
+                    slotted += jewelCount;
+                    return slotted;
                 }
                 else
                 {
@@ -99,6 +100,8 @@ namespace MHArmory.Search.Default
                     slotted += availableSlots[i];
                     availableSlots[i] = 0;
                 }
+                if (limitToExactSlotsize)
+                    return slotted;
             }
 
             return slotted;
