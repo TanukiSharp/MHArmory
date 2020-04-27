@@ -896,7 +896,9 @@
             175,
             176,
             177,
-            178
+            178,
+            418,
+            419
         ]
     },
     {
@@ -2585,6 +2587,42 @@
         },
         "abilityIds": [
             416
+        ]
+    },
+    {
+        "id": 174,
+        "name": {
+            "EN": "Heroics Secret"
+        },
+        "description": {
+            "EN": "Raises the maximum level of the Heroics skill."
+        },
+        "abilityIds": [
+            417
+        ]
+    },
+    {
+        "id": 175,
+        "name": {
+            "EN": "Full Bloom's Gift"
+        },
+        "description": {
+            "EN": "Increases odds of getting special Full Bloom rewards."
+        },
+        "abilityIds": [
+            420
+        ]
+    },
+    {
+        "id": 176,
+        "name": {
+            "EN": "Full Bloom's Gratitude"
+        },
+        "description": {
+            "EN": "Greatly increases odds of getting special Full Bloom rewards."
+        },
+        "abilityIds": [
+            421
         ]
     }
 ]

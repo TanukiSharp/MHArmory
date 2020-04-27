@@ -11923,5 +11923,273 @@
             "gender": 3
         },
         "craftMaterials": []
+    },
+    {
+        "id": 355,
+        "name": {
+            "EN": "Grand God's Peer Arms α+"
+        },
+        "rarity": 12,
+        "slots": [
+            2,
+            2
+        ],
+        "abilityIds": [
+            48,
+            205
+        ],
+        "defense": {
+            "base": 170,
+            "max": 0,
+            "augmented": 0
+        },
+        "resistances": {
+            "fire": 2,
+            "water": 0,
+            "thunder": -5,
+            "ice": 3,
+            "dragon": 2
+        },
+        "attributes": {
+            "gender": 3
+        },
+        "armorSetSkillIds": [
+            72
+        ],
+        "craftMaterials": []
+    },
+    {
+        "id": 356,
+        "name": {
+            "EN": "Grand God's Peer Arms β+"
+        },
+        "rarity": 12,
+        "slots": [
+            4,
+            2,
+            1
+        ],
+        "abilityIds": [
+            205
+        ],
+        "defense": {
+            "base": 170,
+            "max": 0,
+            "augmented": 0
+        },
+        "resistances": {
+            "fire": 2,
+            "water": 0,
+            "thunder": -5,
+            "ice": 3,
+            "dragon": 2
+        },
+        "attributes": {
+            "gender": 3
+        },
+        "armorSetSkillIds": [
+            72
+        ],
+        "craftMaterials": []
+    },
+    {
+        "id": 357,
+        "name": {
+            "EN": "Brachydium Braces α+"
+        },
+        "rarity": 12,
+        "slots": [
+            2,
+            2
+        ],
+        "abilityIds": [
+            167,
+            192
+        ],
+        "defense": {
+            "base": 170,
+            "max": 0,
+            "augmented": 0
+        },
+        "resistances": {
+            "fire": 3,
+            "water": -2,
+            "thunder": -3,
+            "ice": 1,
+            "dragon": 1
+        },
+        "attributes": {
+            "gender": 3
+        },
+        "armorSetSkillIds": [
+            73
+        ],
+        "craftMaterials": []
+    },
+    {
+        "id": 358,
+        "name": {
+            "EN": "Brachydium Braces β+"
+        },
+        "rarity": 12,
+        "slots": [
+            4,
+            4
+        ],
+        "abilityIds": [
+            167
+        ],
+        "defense": {
+            "base": 170,
+            "max": 0,
+            "augmented": 0
+        },
+        "resistances": {
+            "fire": 3,
+            "water": -2,
+            "thunder": -3,
+            "ice": 1,
+            "dragon": 1
+        },
+        "attributes": {
+            "gender": 3
+        },
+        "armorSetSkillIds": [
+            73
+        ],
+        "craftMaterials": []
+    },
+    {
+        "id": 359,
+        "name": {
+            "EN": "Rose Arms α+"
+        },
+        "rarity": 10,
+        "slots": [
+            4
+        ],
+        "abilityIds": [
+            303
+        ],
+        "defense": {
+            "base": 150,
+            "max": 0,
+            "augmented": 0
+        },
+        "resistances": {
+            "fire": 4,
+            "water": 1,
+            "thunder": 1,
+            "ice": 1,
+            "dragon": 1
+        },
+        "attributes": {
+            "gender": 3
+        },
+        "armorSetSkillIds": [
+            74
+        ],
+        "craftMaterials": []
+    },
+    {
+        "id": 360,
+        "name": {
+            "EN": "Kulve Taroth's Rage α+"
+        },
+        "rarity": 12,
+        "slots": [
+            3,
+            2
+        ],
+        "abilityIds": [
+            130,
+            228
+        ],
+        "defense": {
+            "base": 176,
+            "max": 0,
+            "augmented": 0
+        },
+        "resistances": {
+            "fire": 4,
+            "water": -2,
+            "thunder": -2,
+            "ice": 3,
+            "dragon": -4
+        },
+        "attributes": {
+            "gender": 3
+        },
+        "armorSetSkillIds": [
+            75
+        ],
+        "craftMaterials": []
+    },
+    {
+        "id": 361,
+        "name": {
+            "EN": "Kulve Taroth's Rage β+"
+        },
+        "rarity": 12,
+        "slots": [
+            4,
+            4
+        ],
+        "abilityIds": [
+            130
+        ],
+        "defense": {
+            "base": 176,
+            "max": 0,
+            "augmented": 0
+        },
+        "resistances": {
+            "fire": 4,
+            "water": -2,
+            "thunder": -2,
+            "ice": 3,
+            "dragon": -4
+        },
+        "attributes": {
+            "gender": 3
+        },
+        "armorSetSkillIds": [
+            75
+        ],
+        "craftMaterials": []
+    },
+    {
+        "id": 362,
+        "name": {
+            "EN": "Tentacle Gloves γ+"
+        },
+        "rarity": 12,
+        "slots": [
+            4,
+            2
+        ],
+        "abilityIds": [
+            77,
+            197
+        ],
+        "defense": {
+            "base": 176,
+            "max": 0,
+            "augmented": 0
+        },
+        "resistances": {
+            "fire": -3,
+            "water": 4,
+            "thunder": 0,
+            "ice": 3,
+            "dragon": -2
+        },
+        "attributes": {
+            "gender": 3
+        },
+        "armorSetSkillIds": [
+            36
+        ],
+        "craftMaterials": []
     }
 ]

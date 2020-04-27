@@ -205,6 +205,18 @@
     {
         "id": 7,
         "name": {
+            "EN": "Attack Charm 5"
+        },
+        "level": 5,
+        "rarity": 12,
+        "abilityIds": [
+            43
+        ],
+        "craftMaterials": []
+    },
+    {
+        "id": 8,
+        "name": {
             "EN": "Defense Charm 1"
         },
         "level": 1,
@@ -232,7 +244,7 @@
         ]
     },
     {
-        "id": 8,
+        "id": 9,
         "name": {
             "EN": "Defense Charm 2"
         },
@@ -261,7 +273,7 @@
         ]
     },
     {
-        "id": 9,
+        "id": 10,
         "name": {
             "EN": "Defense Charm 3"
         },
@@ -290,7 +302,7 @@
         ]
     },
     {
-        "id": 10,
+        "id": 11,
         "name": {
             "EN": "Defense Charm 4"
         },
@@ -302,7 +314,7 @@
         "craftMaterials": []
     },
     {
-        "id": 11,
+        "id": 12,
         "name": {
             "EN": "Defense Charm 5"
         },
@@ -314,7 +326,7 @@
         "craftMaterials": []
     },
     {
-        "id": 12,
+        "id": 13,
         "name": {
             "EN": "Paralysis Charm 1"
         },
@@ -343,7 +355,7 @@
         ]
     },
     {
-        "id": 13,
+        "id": 14,
         "name": {
             "EN": "Paralysis Charm 2"
         },
@@ -372,7 +384,7 @@
         ]
     },
     {
-        "id": 14,
+        "id": 15,
         "name": {
             "EN": "Paralysis Charm 3"
         },
@@ -401,7 +413,7 @@
         ]
     },
     {
-        "id": 15,
+        "id": 16,
         "name": {
             "EN": "Sleep Charm 1"
         },
@@ -430,7 +442,7 @@
         ]
     },
     {
-        "id": 16,
+        "id": 17,
         "name": {
             "EN": "Sleep Charm 2"
         },
@@ -459,7 +471,7 @@
         ]
     },
     {
-        "id": 17,
+        "id": 18,
         "name": {
             "EN": "Sleep Charm 3"
         },
@@ -488,7 +500,7 @@
         ]
     },
     {
-        "id": 18,
+        "id": 19,
         "name": {
             "EN": "Stun Charm 1"
         },
@@ -517,7 +529,7 @@
         ]
     },
     {
-        "id": 19,
+        "id": 20,
         "name": {
             "EN": "Stun Charm 2"
         },
@@ -546,7 +558,7 @@
         ]
     },
     {
-        "id": 20,
+        "id": 21,
         "name": {
             "EN": "Stun Charm 3"
         },
@@ -575,7 +587,7 @@
         ]
     },
     {
-        "id": 21,
+        "id": 22,
         "name": {
             "EN": "Windproof Charm 1"
         },
@@ -604,7 +616,7 @@
         ]
     },
     {
-        "id": 22,
+        "id": 23,
         "name": {
             "EN": "Windproof Charm 2"
         },
@@ -633,7 +645,7 @@
         ]
     },
     {
-        "id": 23,
+        "id": 24,
         "name": {
             "EN": "Windproof Charm 3"
         },
@@ -662,7 +674,7 @@
         ]
     },
     {
-        "id": 24,
+        "id": 25,
         "name": {
             "EN": "Windproof Charm 4"
         },
@@ -674,7 +686,7 @@
         "craftMaterials": []
     },
     {
-        "id": 25,
+        "id": 26,
         "name": {
             "EN": "Windproof Charm 5"
         },
@@ -686,7 +698,7 @@
         "craftMaterials": []
     },
     {
-        "id": 26,
+        "id": 27,
         "name": {
             "EN": "Health Charm 1"
         },
@@ -715,7 +727,7 @@
         ]
     },
     {
-        "id": 27,
+        "id": 28,
         "name": {
             "EN": "Health Charm 2"
         },
@@ -744,7 +756,7 @@
         ]
     },
     {
-        "id": 28,
+        "id": 29,
         "name": {
             "EN": "Health Charm 3"
         },
@@ -773,7 +785,7 @@
         ]
     },
     {
-        "id": 29,
+        "id": 30,
         "name": {
             "EN": "Recovery Charm 1"
         },
@@ -802,7 +814,7 @@
         ]
     },
     {
-        "id": 30,
+        "id": 31,
         "name": {
             "EN": "Recovery Charm 2"
         },
@@ -831,7 +843,7 @@
         ]
     },
     {
-        "id": 31,
+        "id": 32,
         "name": {
             "EN": "Recovery Charm 3"
         },
@@ -860,7 +872,7 @@
         ]
     },
     {
-        "id": 32,
+        "id": 33,
         "name": {
             "EN": "Fire Charm 1"
         },
@@ -889,7 +901,7 @@
         ]
     },
     {
-        "id": 33,
+        "id": 34,
         "name": {
             "EN": "Fire Charm 2"
         },
@@ -918,7 +930,7 @@
         ]
     },
     {
-        "id": 34,
+        "id": 35,
         "name": {
             "EN": "Fire Charm 3"
         },
@@ -947,7 +959,7 @@
         ]
     },
     {
-        "id": 35,
+        "id": 36,
         "name": {
             "EN": "Water Charm 1"
         },
@@ -976,7 +988,7 @@
         ]
     },
     {
-        "id": 36,
+        "id": 37,
         "name": {
             "EN": "Water Charm 2"
         },
@@ -1005,7 +1017,7 @@
         ]
     },
     {
-        "id": 37,
+        "id": 38,
         "name": {
             "EN": "Water Charm 3"
         },
@@ -1034,7 +1046,7 @@
         ]
     },
     {
-        "id": 38,
+        "id": 39,
         "name": {
             "EN": "Thunder Charm 1"
         },
@@ -1063,7 +1075,7 @@
         ]
     },
     {
-        "id": 39,
+        "id": 40,
         "name": {
             "EN": "Thunder Charm 2"
         },
@@ -1092,7 +1104,7 @@
         ]
     },
     {
-        "id": 40,
+        "id": 41,
         "name": {
             "EN": "Thunder Charm 3"
         },
@@ -1121,7 +1133,7 @@
         ]
     },
     {
-        "id": 41,
+        "id": 42,
         "name": {
             "EN": "Blaze Charm 1"
         },
@@ -1150,7 +1162,7 @@
         ]
     },
     {
-        "id": 42,
+        "id": 43,
         "name": {
             "EN": "Blaze Charm 2"
         },
@@ -1179,7 +1191,7 @@
         ]
     },
     {
-        "id": 43,
+        "id": 44,
         "name": {
             "EN": "Blaze Charm 3"
         },
@@ -1208,7 +1220,7 @@
         ]
     },
     {
-        "id": 44,
+        "id": 45,
         "name": {
             "EN": "Blaze Charm 4"
         },
@@ -1220,7 +1232,7 @@
         "craftMaterials": []
     },
     {
-        "id": 45,
+        "id": 46,
         "name": {
             "EN": "Blaze Charm 5"
         },
@@ -1232,7 +1244,7 @@
         "craftMaterials": []
     },
     {
-        "id": 46,
+        "id": 47,
         "name": {
             "EN": "Flood Charm 1"
         },
@@ -1261,7 +1273,7 @@
         ]
     },
     {
-        "id": 47,
+        "id": 48,
         "name": {
             "EN": "Flood Charm 2"
         },
@@ -1290,7 +1302,7 @@
         ]
     },
     {
-        "id": 48,
+        "id": 49,
         "name": {
             "EN": "Flood Charm 3"
         },
@@ -1319,7 +1331,7 @@
         ]
     },
     {
-        "id": 49,
+        "id": 50,
         "name": {
             "EN": "Flood Charm 4"
         },
@@ -1331,7 +1343,7 @@
         "craftMaterials": []
     },
     {
-        "id": 50,
+        "id": 51,
         "name": {
             "EN": "Flood Charm 5"
         },
@@ -1343,7 +1355,7 @@
         "craftMaterials": []
     },
     {
-        "id": 51,
+        "id": 52,
         "name": {
             "EN": "Shock Charm 1"
         },
@@ -1372,7 +1384,7 @@
         ]
     },
     {
-        "id": 52,
+        "id": 53,
         "name": {
             "EN": "Shock Charm 2"
         },
@@ -1401,7 +1413,7 @@
         ]
     },
     {
-        "id": 53,
+        "id": 54,
         "name": {
             "EN": "Shock Charm 3"
         },
@@ -1430,7 +1442,7 @@
         ]
     },
     {
-        "id": 54,
+        "id": 55,
         "name": {
             "EN": "Shock Charm 4"
         },
@@ -1442,7 +1454,7 @@
         "craftMaterials": []
     },
     {
-        "id": 55,
+        "id": 56,
         "name": {
             "EN": "Shock Charm 5"
         },
@@ -1454,7 +1466,7 @@
         "craftMaterials": []
     },
     {
-        "id": 56,
+        "id": 57,
         "name": {
             "EN": "Venom Charm 1"
         },
@@ -1483,7 +1495,7 @@
         ]
     },
     {
-        "id": 57,
+        "id": 58,
         "name": {
             "EN": "Venom Charm 2"
         },
@@ -1512,7 +1524,7 @@
         ]
     },
     {
-        "id": 58,
+        "id": 59,
         "name": {
             "EN": "Venom Charm 3"
         },
@@ -1541,7 +1553,7 @@
         ]
     },
     {
-        "id": 59,
+        "id": 60,
         "name": {
             "EN": "Venom Charm 4"
         },
@@ -1553,7 +1565,7 @@
         "craftMaterials": []
     },
     {
-        "id": 60,
+        "id": 61,
         "name": {
             "EN": "Immobilize Charm 1"
         },
@@ -1582,7 +1594,7 @@
         ]
     },
     {
-        "id": 61,
+        "id": 62,
         "name": {
             "EN": "Immobilize Charm 2"
         },
@@ -1611,7 +1623,7 @@
         ]
     },
     {
-        "id": 62,
+        "id": 63,
         "name": {
             "EN": "Immobilize Charm 3"
         },
@@ -1640,7 +1652,7 @@
         ]
     },
     {
-        "id": 63,
+        "id": 64,
         "name": {
             "EN": "Immobilize Charm 4"
         },
@@ -1652,7 +1664,7 @@
         "craftMaterials": []
     },
     {
-        "id": 64,
+        "id": 65,
         "name": {
             "EN": "Tranq Charm 1"
         },
@@ -1681,7 +1693,7 @@
         ]
     },
     {
-        "id": 65,
+        "id": 66,
         "name": {
             "EN": "Tranq Charm 2"
         },
@@ -1710,7 +1722,7 @@
         ]
     },
     {
-        "id": 66,
+        "id": 67,
         "name": {
             "EN": "Tranq Charm 3"
         },
@@ -1739,7 +1751,7 @@
         ]
     },
     {
-        "id": 67,
+        "id": 68,
         "name": {
             "EN": "Tranq Charm 4"
         },
@@ -1751,7 +1763,7 @@
         "craftMaterials": []
     },
     {
-        "id": 68,
+        "id": 69,
         "name": {
             "EN": "KO Charm 1"
         },
@@ -1780,7 +1792,7 @@
         ]
     },
     {
-        "id": 69,
+        "id": 70,
         "name": {
             "EN": "KO Charm 2"
         },
@@ -1809,7 +1821,7 @@
         ]
     },
     {
-        "id": 70,
+        "id": 71,
         "name": {
             "EN": "KO Charm 3"
         },
@@ -1838,7 +1850,7 @@
         ]
     },
     {
-        "id": 71,
+        "id": 72,
         "name": {
             "EN": "Enervate Charm 1"
         },
@@ -1867,7 +1879,7 @@
         ]
     },
     {
-        "id": 72,
+        "id": 73,
         "name": {
             "EN": "Enervate Charm 2"
         },
@@ -1896,7 +1908,7 @@
         ]
     },
     {
-        "id": 73,
+        "id": 74,
         "name": {
             "EN": "Enervate Charm 3"
         },
@@ -1925,7 +1937,7 @@
         ]
     },
     {
-        "id": 74,
+        "id": 75,
         "name": {
             "EN": "Artillery Charm 1"
         },
@@ -1954,7 +1966,7 @@
         ]
     },
     {
-        "id": 75,
+        "id": 76,
         "name": {
             "EN": "Artillery Charm 2"
         },
@@ -1983,7 +1995,7 @@
         ]
     },
     {
-        "id": 76,
+        "id": 77,
         "name": {
             "EN": "Artillery Charm 3"
         },
@@ -2012,7 +2024,7 @@
         ]
     },
     {
-        "id": 77,
+        "id": 78,
         "name": {
             "EN": "Hungerless Charm 1"
         },
@@ -2041,7 +2053,7 @@
         ]
     },
     {
-        "id": 78,
+        "id": 79,
         "name": {
             "EN": "Hungerless Charm 2"
         },
@@ -2070,7 +2082,7 @@
         ]
     },
     {
-        "id": 79,
+        "id": 80,
         "name": {
             "EN": "Hungerless Charm 3"
         },
@@ -2099,7 +2111,7 @@
         ]
     },
     {
-        "id": 80,
+        "id": 81,
         "name": {
             "EN": "Ironside Charm 1"
         },
@@ -2128,7 +2140,7 @@
         ]
     },
     {
-        "id": 81,
+        "id": 82,
         "name": {
             "EN": "Ironside Charm 2"
         },
@@ -2157,7 +2169,7 @@
         ]
     },
     {
-        "id": 82,
+        "id": 83,
         "name": {
             "EN": "Ironside Charm 3"
         },
@@ -2186,7 +2198,7 @@
         ]
     },
     {
-        "id": 83,
+        "id": 84,
         "name": {
             "EN": "Ironside Charm 4"
         },
@@ -2198,7 +2210,7 @@
         "craftMaterials": []
     },
     {
-        "id": 84,
+        "id": 85,
         "name": {
             "EN": "Ironside Charm 5"
         },
@@ -2210,7 +2222,7 @@
         "craftMaterials": []
     },
     {
-        "id": 85,
+        "id": 86,
         "name": {
             "EN": "Friendship Charm 1"
         },
@@ -2239,7 +2251,7 @@
         ]
     },
     {
-        "id": 86,
+        "id": 87,
         "name": {
             "EN": "Friendship Charm 2"
         },
@@ -2268,7 +2280,7 @@
         ]
     },
     {
-        "id": 87,
+        "id": 88,
         "name": {
             "EN": "Friendship Charm 3"
         },
@@ -2297,7 +2309,7 @@
         ]
     },
     {
-        "id": 88,
+        "id": 89,
         "name": {
             "EN": "Friendship Charm 4"
         },
@@ -2309,7 +2321,7 @@
         "craftMaterials": []
     },
     {
-        "id": 89,
+        "id": 90,
         "name": {
             "EN": "Friendship Charm 5"
         },
@@ -2321,7 +2333,7 @@
         "craftMaterials": []
     },
     {
-        "id": 90,
+        "id": 91,
         "name": {
             "EN": "Extension Charm 1"
         },
@@ -2350,7 +2362,7 @@
         ]
     },
     {
-        "id": 91,
+        "id": 92,
         "name": {
             "EN": "Extension Charm 2"
         },
@@ -2379,7 +2391,7 @@
         ]
     },
     {
-        "id": 92,
+        "id": 93,
         "name": {
             "EN": "Extension Charm 3"
         },
@@ -2408,7 +2420,7 @@
         ]
     },
     {
-        "id": 93,
+        "id": 94,
         "name": {
             "EN": "Glutton's Charm 1"
         },
@@ -2437,7 +2449,7 @@
         ]
     },
     {
-        "id": 94,
+        "id": 95,
         "name": {
             "EN": "Glutton's Charm 2"
         },
@@ -2466,7 +2478,7 @@
         ]
     },
     {
-        "id": 95,
+        "id": 96,
         "name": {
             "EN": "Glutton's Charm 3"
         },
@@ -2495,7 +2507,7 @@
         ]
     },
     {
-        "id": 96,
+        "id": 97,
         "name": {
             "EN": "Blessing Charm 1"
         },
@@ -2524,7 +2536,7 @@
         ]
     },
     {
-        "id": 97,
+        "id": 98,
         "name": {
             "EN": "Blessing Charm 2"
         },
@@ -2553,7 +2565,7 @@
         ]
     },
     {
-        "id": 98,
+        "id": 99,
         "name": {
             "EN": "Blessing Charm 3"
         },
@@ -2582,7 +2594,7 @@
         ]
     },
     {
-        "id": 99,
+        "id": 100,
         "name": {
             "EN": "Rally Charm 1"
         },
@@ -2611,7 +2623,7 @@
         ]
     },
     {
-        "id": 100,
+        "id": 101,
         "name": {
             "EN": "Rally Charm 2"
         },
@@ -2640,7 +2652,7 @@
         ]
     },
     {
-        "id": 101,
+        "id": 102,
         "name": {
             "EN": "Rally Charm 3"
         },
@@ -2669,7 +2681,7 @@
         ]
     },
     {
-        "id": 102,
+        "id": 103,
         "name": {
             "EN": "Rally Charm 4"
         },
@@ -2681,7 +2693,7 @@
         "craftMaterials": []
     },
     {
-        "id": 103,
+        "id": 104,
         "name": {
             "EN": "Rally Charm 5"
         },
@@ -2693,7 +2705,7 @@
         "craftMaterials": []
     },
     {
-        "id": 104,
+        "id": 105,
         "name": {
             "EN": "Botany Charm 1"
         },
@@ -2722,7 +2734,7 @@
         ]
     },
     {
-        "id": 105,
+        "id": 106,
         "name": {
             "EN": "Botany Charm 2"
         },
@@ -2751,7 +2763,7 @@
         ]
     },
     {
-        "id": 106,
+        "id": 107,
         "name": {
             "EN": "Botany Charm 3"
         },
@@ -2780,7 +2792,7 @@
         ]
     },
     {
-        "id": 107,
+        "id": 108,
         "name": {
             "EN": "Botany Charm 4"
         },
@@ -2792,7 +2804,7 @@
         "craftMaterials": []
     },
     {
-        "id": 108,
+        "id": 109,
         "name": {
             "EN": "Geology Charm 1"
         },
@@ -2821,7 +2833,7 @@
         ]
     },
     {
-        "id": 109,
+        "id": 110,
         "name": {
             "EN": "Geology Charm 2"
         },
@@ -2850,7 +2862,7 @@
         ]
     },
     {
-        "id": 110,
+        "id": 111,
         "name": {
             "EN": "Geology Charm 3"
         },
@@ -2879,7 +2891,7 @@
         ]
     },
     {
-        "id": 111,
+        "id": 112,
         "name": {
             "EN": "Slinger Charm 1"
         },
@@ -2908,7 +2920,7 @@
         ]
     },
     {
-        "id": 112,
+        "id": 113,
         "name": {
             "EN": "Slinger Charm 2"
         },
@@ -2937,7 +2949,7 @@
         ]
     },
     {
-        "id": 113,
+        "id": 114,
         "name": {
             "EN": "Slinger Charm 3"
         },
@@ -2966,7 +2978,7 @@
         ]
     },
     {
-        "id": 114,
+        "id": 115,
         "name": {
             "EN": "Stealth Charm 1"
         },
@@ -2995,7 +3007,7 @@
         ]
     },
     {
-        "id": 115,
+        "id": 116,
         "name": {
             "EN": "Stealth Charm 2"
         },
@@ -3024,7 +3036,7 @@
         ]
     },
     {
-        "id": 116,
+        "id": 117,
         "name": {
             "EN": "Stealth Charm 3"
         },
@@ -3053,7 +3065,7 @@
         ]
     },
     {
-        "id": 117,
+        "id": 118,
         "name": {
             "EN": "Smoke Charm 1"
         },
@@ -3082,7 +3094,7 @@
         ]
     },
     {
-        "id": 118,
+        "id": 119,
         "name": {
             "EN": "Smoke Charm 2"
         },
@@ -3111,7 +3123,7 @@
         ]
     },
     {
-        "id": 119,
+        "id": 120,
         "name": {
             "EN": "Smoke Charm 3"
         },
@@ -3140,7 +3152,7 @@
         ]
     },
     {
-        "id": 120,
+        "id": 121,
         "name": {
             "EN": "Mirewalker Charm 1"
         },
@@ -3169,7 +3181,7 @@
         ]
     },
     {
-        "id": 121,
+        "id": 122,
         "name": {
             "EN": "Mirewalker Charm 2"
         },
@@ -3198,7 +3210,7 @@
         ]
     },
     {
-        "id": 122,
+        "id": 123,
         "name": {
             "EN": "Mirewalker Charm 3"
         },
@@ -3227,7 +3239,7 @@
         ]
     },
     {
-        "id": 123,
+        "id": 124,
         "name": {
             "EN": "Insect Charm 1"
         },
@@ -3256,7 +3268,7 @@
         ]
     },
     {
-        "id": 124,
+        "id": 125,
         "name": {
             "EN": "Insect Charm 2"
         },
@@ -3285,7 +3297,7 @@
         ]
     },
     {
-        "id": 125,
+        "id": 126,
         "name": {
             "EN": "Insect Charm 3"
         },
@@ -3314,7 +3326,7 @@
         ]
     },
     {
-        "id": 126,
+        "id": 127,
         "name": {
             "EN": "Intimidator Charm 1"
         },
@@ -3343,7 +3355,7 @@
         ]
     },
     {
-        "id": 127,
+        "id": 128,
         "name": {
             "EN": "Intimidator Charm 2"
         },
@@ -3372,7 +3384,7 @@
         ]
     },
     {
-        "id": 128,
+        "id": 129,
         "name": {
             "EN": "Intimidator Charm 3"
         },
@@ -3401,7 +3413,7 @@
         ]
     },
     {
-        "id": 129,
+        "id": 130,
         "name": {
             "EN": "Heavy Artillery Charm 1"
         },
@@ -3430,7 +3442,7 @@
         ]
     },
     {
-        "id": 130,
+        "id": 131,
         "name": {
             "EN": "Heavy Artillery Charm 2"
         },
@@ -3459,7 +3471,7 @@
         ]
     },
     {
-        "id": 131,
+        "id": 132,
         "name": {
             "EN": "Light Eater's Charm"
         },
@@ -3488,7 +3500,7 @@
         ]
     },
     {
-        "id": 132,
+        "id": 133,
         "name": {
             "EN": "Tracker Charm"
         },
@@ -3517,7 +3529,7 @@
         ]
     },
     {
-        "id": 133,
+        "id": 134,
         "name": {
             "EN": "Fortification Charm"
         },
@@ -3546,7 +3558,7 @@
         ]
     },
     {
-        "id": 134,
+        "id": 135,
         "name": {
             "EN": "Performer's Charm"
         },
@@ -3575,7 +3587,7 @@
         ]
     },
     {
-        "id": 135,
+        "id": 136,
         "name": {
             "EN": "Performer's Charm 2"
         },
@@ -3587,7 +3599,7 @@
         "craftMaterials": []
     },
     {
-        "id": 136,
+        "id": 137,
         "name": {
             "EN": "Capacity Charm"
         },
@@ -3616,7 +3628,7 @@
         ]
     },
     {
-        "id": 137,
+        "id": 138,
         "name": {
             "EN": "Bleed Charm 1"
         },
@@ -3645,7 +3657,7 @@
         ]
     },
     {
-        "id": 138,
+        "id": 139,
         "name": {
             "EN": "Bleed Charm 2"
         },
@@ -3674,7 +3686,7 @@
         ]
     },
     {
-        "id": 139,
+        "id": 140,
         "name": {
             "EN": "Bleed Charm 3"
         },
@@ -3703,7 +3715,7 @@
         ]
     },
     {
-        "id": 140,
+        "id": 141,
         "name": {
             "EN": "Speed Heal Charm 1"
         },
@@ -3732,7 +3744,7 @@
         ]
     },
     {
-        "id": 141,
+        "id": 142,
         "name": {
             "EN": "Speed Heal Charm 2"
         },
@@ -3761,7 +3773,7 @@
         ]
     },
     {
-        "id": 142,
+        "id": 143,
         "name": {
             "EN": "Speed Heal Charm 3"
         },
@@ -3790,7 +3802,7 @@
         ]
     },
     {
-        "id": 143,
+        "id": 144,
         "name": {
             "EN": "Ice Charm 1"
         },
@@ -3819,7 +3831,7 @@
         ]
     },
     {
-        "id": 144,
+        "id": 145,
         "name": {
             "EN": "Ice Charm 2"
         },
@@ -3848,7 +3860,7 @@
         ]
     },
     {
-        "id": 145,
+        "id": 146,
         "name": {
             "EN": "Ice Charm 3"
         },
@@ -3877,7 +3889,7 @@
         ]
     },
     {
-        "id": 146,
+        "id": 147,
         "name": {
             "EN": "Blight Charm 1"
         },
@@ -3906,7 +3918,7 @@
         ]
     },
     {
-        "id": 147,
+        "id": 148,
         "name": {
             "EN": "Blight Charm 2"
         },
@@ -3935,7 +3947,7 @@
         ]
     },
     {
-        "id": 148,
+        "id": 149,
         "name": {
             "EN": "Blight Charm 3"
         },
@@ -3964,7 +3976,7 @@
         ]
     },
     {
-        "id": 149,
+        "id": 150,
         "name": {
             "EN": "Frost Charm 1"
         },
@@ -3993,7 +4005,7 @@
         ]
     },
     {
-        "id": 150,
+        "id": 151,
         "name": {
             "EN": "Frost Charm 2"
         },
@@ -4022,7 +4034,7 @@
         ]
     },
     {
-        "id": 151,
+        "id": 152,
         "name": {
             "EN": "Frost Charm 3"
         },
@@ -4051,7 +4063,7 @@
         ]
     },
     {
-        "id": 152,
+        "id": 153,
         "name": {
             "EN": "Frost Charm 4"
         },
@@ -4063,7 +4075,7 @@
         "craftMaterials": []
     },
     {
-        "id": 153,
+        "id": 154,
         "name": {
             "EN": "Frost Charm 5"
         },
@@ -4075,7 +4087,7 @@
         "craftMaterials": []
     },
     {
-        "id": 154,
+        "id": 155,
         "name": {
             "EN": "Master's Charm 1"
         },
@@ -4104,7 +4116,7 @@
         ]
     },
     {
-        "id": 155,
+        "id": 156,
         "name": {
             "EN": "Master's Charm 2"
         },
@@ -4133,7 +4145,7 @@
         ]
     },
     {
-        "id": 156,
+        "id": 157,
         "name": {
             "EN": "Master's Charm 3"
         },
@@ -4162,7 +4174,7 @@
         ]
     },
     {
-        "id": 157,
+        "id": 158,
         "name": {
             "EN": "Master's Charm 4"
         },
@@ -4174,7 +4186,7 @@
         "craftMaterials": []
     },
     {
-        "id": 158,
+        "id": 159,
         "name": {
             "EN": "Evasion Charm 1"
         },
@@ -4203,7 +4215,7 @@
         ]
     },
     {
-        "id": 159,
+        "id": 160,
         "name": {
             "EN": "Evasion Charm 2"
         },
@@ -4232,7 +4244,7 @@
         ]
     },
     {
-        "id": 160,
+        "id": 161,
         "name": {
             "EN": "Evasion Charm 3"
         },
@@ -4261,19 +4273,31 @@
         ]
     },
     {
-        "id": 161,
+        "id": 162,
         "name": {
             "EN": "Evasion Charm 4"
         },
         "level": 4,
-        "rarity": 7,
+        "rarity": 12,
         "abilityIds": [
             213
         ],
         "craftMaterials": []
     },
     {
-        "id": 162,
+        "id": 163,
+        "name": {
+            "EN": "Evasion Charm 5"
+        },
+        "level": 5,
+        "rarity": 12,
+        "abilityIds": [
+            214
+        ],
+        "craftMaterials": []
+    },
+    {
+        "id": 164,
         "name": {
             "EN": "Sheath Charm 1"
         },
@@ -4302,7 +4326,7 @@
         ]
     },
     {
-        "id": 163,
+        "id": 165,
         "name": {
             "EN": "Sheath Charm 2"
         },
@@ -4331,7 +4355,7 @@
         ]
     },
     {
-        "id": 164,
+        "id": 166,
         "name": {
             "EN": "Sheath Charm 3"
         },
@@ -4360,7 +4384,7 @@
         ]
     },
     {
-        "id": 165,
+        "id": 167,
         "name": {
             "EN": "Whetstone Charm 1"
         },
@@ -4389,7 +4413,7 @@
         ]
     },
     {
-        "id": 166,
+        "id": 168,
         "name": {
             "EN": "Whetstone Charm 2"
         },
@@ -4418,7 +4442,7 @@
         ]
     },
     {
-        "id": 167,
+        "id": 169,
         "name": {
             "EN": "Whetstone Charm 3"
         },
@@ -4447,7 +4471,7 @@
         ]
     },
     {
-        "id": 168,
+        "id": 170,
         "name": {
             "EN": "Blast Charm 1"
         },
@@ -4476,7 +4500,7 @@
         ]
     },
     {
-        "id": 169,
+        "id": 171,
         "name": {
             "EN": "Blast Charm 2"
         },
@@ -4505,7 +4529,7 @@
         ]
     },
     {
-        "id": 170,
+        "id": 172,
         "name": {
             "EN": "Blast Charm 3"
         },
@@ -4534,7 +4558,7 @@
         ]
     },
     {
-        "id": 171,
+        "id": 173,
         "name": {
             "EN": "Dragon Charm 1"
         },
@@ -4563,7 +4587,7 @@
         ]
     },
     {
-        "id": 172,
+        "id": 174,
         "name": {
             "EN": "Dragon Charm 2"
         },
@@ -4592,7 +4616,7 @@
         ]
     },
     {
-        "id": 173,
+        "id": 175,
         "name": {
             "EN": "Dragon Charm 3"
         },
@@ -4621,7 +4645,7 @@
         ]
     },
     {
-        "id": 174,
+        "id": 176,
         "name": {
             "EN": "Wyrmsbane Charm 1"
         },
@@ -4650,7 +4674,7 @@
         ]
     },
     {
-        "id": 175,
+        "id": 177,
         "name": {
             "EN": "Wyrmsbane Charm 2"
         },
@@ -4679,7 +4703,7 @@
         ]
     },
     {
-        "id": 176,
+        "id": 178,
         "name": {
             "EN": "Wyrmsbane Charm 3"
         },
@@ -4708,7 +4732,7 @@
         ]
     },
     {
-        "id": 177,
+        "id": 179,
         "name": {
             "EN": "Wyrmsbane Charm 4"
         },
@@ -4720,7 +4744,7 @@
         "craftMaterials": []
     },
     {
-        "id": 178,
+        "id": 180,
         "name": {
             "EN": "Wyrmsbane Charm 5"
         },
@@ -4732,7 +4756,7 @@
         "craftMaterials": []
     },
     {
-        "id": 179,
+        "id": 181,
         "name": {
             "EN": "Demolition Charm 1"
         },
@@ -4761,7 +4785,7 @@
         ]
     },
     {
-        "id": 180,
+        "id": 182,
         "name": {
             "EN": "Demolition Charm 2"
         },
@@ -4790,7 +4814,7 @@
         ]
     },
     {
-        "id": 181,
+        "id": 183,
         "name": {
             "EN": "Demolition Charm 3"
         },
@@ -4819,7 +4843,7 @@
         ]
     },
     {
-        "id": 182,
+        "id": 184,
         "name": {
             "EN": "Demolition Charm 4"
         },
@@ -4831,7 +4855,7 @@
         "craftMaterials": []
     },
     {
-        "id": 183,
+        "id": 185,
         "name": {
             "EN": "Draw Charm 1"
         },
@@ -4860,7 +4884,7 @@
         ]
     },
     {
-        "id": 184,
+        "id": 186,
         "name": {
             "EN": "Draw Charm 2"
         },
@@ -4889,7 +4913,7 @@
         ]
     },
     {
-        "id": 185,
+        "id": 187,
         "name": {
             "EN": "Trickshot Charm 1"
         },
@@ -4919,7 +4943,7 @@
         ]
     },
     {
-        "id": 186,
+        "id": 188,
         "name": {
             "EN": "Marathon Charm 1"
         },
@@ -4948,7 +4972,7 @@
         ]
     },
     {
-        "id": 187,
+        "id": 189,
         "name": {
             "EN": "Marathon Charm 2"
         },
@@ -4977,7 +5001,7 @@
         ]
     },
     {
-        "id": 188,
+        "id": 190,
         "name": {
             "EN": "Marathon Charm 3"
         },
@@ -4989,7 +5013,7 @@
         "craftMaterials": []
     },
     {
-        "id": 189,
+        "id": 191,
         "name": {
             "EN": "Fitness Charm 1"
         },
@@ -5018,7 +5042,7 @@
         ]
     },
     {
-        "id": 190,
+        "id": 192,
         "name": {
             "EN": "Fitness Charm 2"
         },
@@ -5047,7 +5071,7 @@
         ]
     },
     {
-        "id": 191,
+        "id": 193,
         "name": {
             "EN": "Fitness Charm 3"
         },
@@ -5076,7 +5100,7 @@
         ]
     },
     {
-        "id": 192,
+        "id": 194,
         "name": {
             "EN": "Fitness Charm 4"
         },
@@ -5088,7 +5112,7 @@
         "craftMaterials": []
     },
     {
-        "id": 193,
+        "id": 195,
         "name": {
             "EN": "Surge Charm 1"
         },
@@ -5117,7 +5141,7 @@
         ]
     },
     {
-        "id": 194,
+        "id": 196,
         "name": {
             "EN": "Surge Charm 2"
         },
@@ -5146,7 +5170,7 @@
         ]
     },
     {
-        "id": 195,
+        "id": 197,
         "name": {
             "EN": "Surge Charm 3"
         },
@@ -5158,7 +5182,7 @@
         "craftMaterials": []
     },
     {
-        "id": 196,
+        "id": 198,
         "name": {
             "EN": "Leaping Charm 1"
         },
@@ -5187,7 +5211,7 @@
         ]
     },
     {
-        "id": 197,
+        "id": 199,
         "name": {
             "EN": "Leaping Charm 2"
         },
@@ -5216,7 +5240,7 @@
         ]
     },
     {
-        "id": 198,
+        "id": 200,
         "name": {
             "EN": "Leaping Charm 3"
         },
@@ -5228,7 +5252,7 @@
         "craftMaterials": []
     },
     {
-        "id": 199,
+        "id": 201,
         "name": {
             "EN": "Bombardier Charm 1"
         },
@@ -5257,7 +5281,7 @@
         ]
     },
     {
-        "id": 200,
+        "id": 202,
         "name": {
             "EN": "Bombardier Charm 2"
         },
@@ -5286,7 +5310,7 @@
         ]
     },
     {
-        "id": 201,
+        "id": 203,
         "name": {
             "EN": "Bombardier Charm 3"
         },
@@ -5315,7 +5339,7 @@
         ]
     },
     {
-        "id": 202,
+        "id": 204,
         "name": {
             "EN": "Mushroom Charm 1"
         },
@@ -5344,7 +5368,7 @@
         ]
     },
     {
-        "id": 203,
+        "id": 205,
         "name": {
             "EN": "Mushroom Charm 2"
         },
@@ -5373,7 +5397,7 @@
         ]
     },
     {
-        "id": 204,
+        "id": 206,
         "name": {
             "EN": "Mushroom Charm 3"
         },
@@ -5385,7 +5409,7 @@
         "craftMaterials": []
     },
     {
-        "id": 205,
+        "id": 207,
         "name": {
             "EN": "Awakening Charm 1"
         },
@@ -5414,7 +5438,7 @@
         ]
     },
     {
-        "id": 206,
+        "id": 208,
         "name": {
             "EN": "Awakening Charm 2"
         },
@@ -5443,7 +5467,7 @@
         ]
     },
     {
-        "id": 207,
+        "id": 209,
         "name": {
             "EN": "Awakening Charm 3"
         },
@@ -5455,7 +5479,7 @@
         "craftMaterials": []
     },
     {
-        "id": 208,
+        "id": 210,
         "name": {
             "EN": "Handicraft Charm 1"
         },
@@ -5484,7 +5508,7 @@
         ]
     },
     {
-        "id": 209,
+        "id": 211,
         "name": {
             "EN": "Handicraft Charm 2"
         },
@@ -5513,7 +5537,7 @@
         ]
     },
     {
-        "id": 210,
+        "id": 212,
         "name": {
             "EN": "Handicraft Charm 3"
         },
@@ -5542,7 +5566,7 @@
         ]
     },
     {
-        "id": 211,
+        "id": 213,
         "name": {
             "EN": "Handicraft Charm 4"
         },
@@ -5554,7 +5578,7 @@
         "craftMaterials": []
     },
     {
-        "id": 212,
+        "id": 214,
         "name": {
             "EN": "Mud Puppy Charm"
         },
@@ -5584,7 +5608,7 @@
         ]
     },
     {
-        "id": 213,
+        "id": 215,
         "name": {
             "EN": "Hunter's Life Charm"
         },
@@ -5614,7 +5638,7 @@
         ]
     },
     {
-        "id": 214,
+        "id": 216,
         "name": {
             "EN": "Procurer's Charm"
         },
@@ -5644,7 +5668,7 @@
         ]
     },
     {
-        "id": 215,
+        "id": 217,
         "name": {
             "EN": "Gatherer's Charm"
         },
@@ -5674,7 +5698,7 @@
         ]
     },
     {
-        "id": 216,
+        "id": 218,
         "name": {
             "EN": "Guard Charm 1"
         },
@@ -5703,7 +5727,7 @@
         ]
     },
     {
-        "id": 217,
+        "id": 219,
         "name": {
             "EN": "Guard Charm 2"
         },
@@ -5732,7 +5756,7 @@
         ]
     },
     {
-        "id": 218,
+        "id": 220,
         "name": {
             "EN": "Guard Charm 3"
         },
@@ -5761,7 +5785,7 @@
         ]
     },
     {
-        "id": 219,
+        "id": 221,
         "name": {
             "EN": "Earplugs Charm 1"
         },
@@ -5790,7 +5814,7 @@
         ]
     },
     {
-        "id": 220,
+        "id": 222,
         "name": {
             "EN": "Earplugs Charm 2"
         },
@@ -5819,7 +5843,7 @@
         ]
     },
     {
-        "id": 221,
+        "id": 223,
         "name": {
             "EN": "Earplugs Charm 3"
         },
@@ -5848,7 +5872,7 @@
         ]
     },
     {
-        "id": 222,
+        "id": 224,
         "name": {
             "EN": "Earplugs Charm 4"
         },
@@ -5860,7 +5884,7 @@
         "craftMaterials": []
     },
     {
-        "id": 223,
+        "id": 225,
         "name": {
             "EN": "Tremor Charm 1"
         },
@@ -5889,7 +5913,7 @@
         ]
     },
     {
-        "id": 224,
+        "id": 226,
         "name": {
             "EN": "Tremor Charm 2"
         },
@@ -5918,7 +5942,7 @@
         ]
     },
     {
-        "id": 225,
+        "id": 227,
         "name": {
             "EN": "Tremor Charm 3"
         },
@@ -5930,7 +5954,7 @@
         "craftMaterials": []
     },
     {
-        "id": 226,
+        "id": 228,
         "name": {
             "EN": "Exploiter Charm 1"
         },
@@ -5959,7 +5983,7 @@
         ]
     },
     {
-        "id": 227,
+        "id": 229,
         "name": {
             "EN": "Exploiter Charm 2"
         },
@@ -5988,7 +6012,7 @@
         ]
     },
     {
-        "id": 228,
+        "id": 230,
         "name": {
             "EN": "Focus Charm 1"
         },
@@ -6017,7 +6041,7 @@
         ]
     },
     {
-        "id": 229,
+        "id": 231,
         "name": {
             "EN": "Focus Charm 2"
         },
@@ -6046,7 +6070,7 @@
         ]
     },
     {
-        "id": 230,
+        "id": 232,
         "name": {
             "EN": "Focus Charm 3"
         },
@@ -6058,7 +6082,7 @@
         "craftMaterials": []
     },
     {
-        "id": 231,
+        "id": 233,
         "name": {
             "EN": "Breaker Charm 1"
         },
@@ -6087,7 +6111,7 @@
         ]
     },
     {
-        "id": 232,
+        "id": 234,
         "name": {
             "EN": "Breaker Charm 2"
         },
@@ -6116,7 +6140,7 @@
         ]
     },
     {
-        "id": 233,
+        "id": 235,
         "name": {
             "EN": "Breaker Charm 3"
         },
@@ -6128,7 +6152,7 @@
         "craftMaterials": []
     },
     {
-        "id": 234,
+        "id": 236,
         "name": {
             "EN": "Fury Charm 1"
         },
@@ -6157,7 +6181,7 @@
         ]
     },
     {
-        "id": 235,
+        "id": 237,
         "name": {
             "EN": "Fury Charm 2"
         },
@@ -6186,7 +6210,7 @@
         ]
     },
     {
-        "id": 236,
+        "id": 238,
         "name": {
             "EN": "Fury Charm 3"
         },
@@ -6198,7 +6222,7 @@
         "craftMaterials": []
     },
     {
-        "id": 237,
+        "id": 239,
         "name": {
             "EN": "Fury Charm 4"
         },
@@ -6210,7 +6234,19 @@
         "craftMaterials": []
     },
     {
-        "id": 238,
+        "id": 240,
+        "name": {
+            "EN": "Fury Charm 5"
+        },
+        "level": 5,
+        "rarity": 12,
+        "abilityIds": [
+            184
+        ],
+        "craftMaterials": []
+    },
+    {
+        "id": 241,
         "name": {
             "EN": "Grit Charm 1"
         },
@@ -6239,7 +6275,7 @@
         ]
     },
     {
-        "id": 239,
+        "id": 242,
         "name": {
             "EN": "Grit Charm 2"
         },
@@ -6268,7 +6304,7 @@
         ]
     },
     {
-        "id": 240,
+        "id": 243,
         "name": {
             "EN": "Grit Charm 3"
         },
@@ -6280,7 +6316,7 @@
         "craftMaterials": []
     },
     {
-        "id": 241,
+        "id": 244,
         "name": {
             "EN": "Grit Charm 4"
         },
@@ -6292,7 +6328,7 @@
         "craftMaterials": []
     },
     {
-        "id": 242,
+        "id": 245,
         "name": {
             "EN": "Grit Charm 5"
         },
@@ -6304,7 +6340,7 @@
         "craftMaterials": []
     },
     {
-        "id": 243,
+        "id": 246,
         "name": {
             "EN": "Maintenance Charm 1"
         },
@@ -6333,7 +6369,7 @@
         ]
     },
     {
-        "id": 244,
+        "id": 247,
         "name": {
             "EN": "Maintenance Charm 2"
         },
@@ -6362,7 +6398,7 @@
         ]
     },
     {
-        "id": 245,
+        "id": 248,
         "name": {
             "EN": "Maintenance Charm 3"
         },
@@ -6391,7 +6427,7 @@
         ]
     },
     {
-        "id": 246,
+        "id": 249,
         "name": {
             "EN": "Power Charm 1"
         },
@@ -6420,7 +6456,7 @@
         ]
     },
     {
-        "id": 247,
+        "id": 250,
         "name": {
             "EN": "Power Charm 2"
         },
@@ -6432,7 +6468,7 @@
         "craftMaterials": []
     },
     {
-        "id": 248,
+        "id": 251,
         "name": {
             "EN": "Power Charm 3"
         },
@@ -6444,7 +6480,7 @@
         "craftMaterials": []
     },
     {
-        "id": 249,
+        "id": 252,
         "name": {
             "EN": "Power Charm 4"
         },
@@ -6456,7 +6492,19 @@
         "craftMaterials": []
     },
     {
-        "id": 250,
+        "id": 253,
+        "name": {
+            "EN": "Power Charm 5"
+        },
+        "level": 5,
+        "rarity": 12,
+        "abilityIds": [
+            165
+        ],
+        "craftMaterials": []
+    },
+    {
+        "id": 254,
         "name": {
             "EN": "Challenger Charm 1"
         },
@@ -6485,7 +6533,7 @@
         ]
     },
     {
-        "id": 251,
+        "id": 255,
         "name": {
             "EN": "Challenger Charm 2"
         },
@@ -6514,7 +6562,7 @@
         ]
     },
     {
-        "id": 252,
+        "id": 256,
         "name": {
             "EN": "Challenger Charm 3"
         },
@@ -6526,7 +6574,7 @@
         "craftMaterials": []
     },
     {
-        "id": 253,
+        "id": 257,
         "name": {
             "EN": "Challenger Charm 4"
         },
@@ -6538,7 +6586,19 @@
         "craftMaterials": []
     },
     {
-        "id": 254,
+        "id": 258,
+        "name": {
+            "EN": "Challenger Charm 5"
+        },
+        "level": 5,
+        "rarity": 12,
+        "abilityIds": [
+            170
+        ],
+        "craftMaterials": []
+    },
+    {
+        "id": 259,
         "name": {
             "EN": "Unscathed Charm 1"
         },
@@ -6567,7 +6627,7 @@
         ]
     },
     {
-        "id": 255,
+        "id": 260,
         "name": {
             "EN": "Unscathed Charm 2"
         },
@@ -6596,7 +6656,7 @@
         ]
     },
     {
-        "id": 256,
+        "id": 261,
         "name": {
             "EN": "Unscathed Charm 3"
         },
@@ -6625,7 +6685,7 @@
         ]
     },
     {
-        "id": 257,
+        "id": 262,
         "name": {
             "EN": "Mighty Charm 1"
         },
@@ -6654,7 +6714,7 @@
         ]
     },
     {
-        "id": 258,
+        "id": 263,
         "name": {
             "EN": "Mighty Charm 2"
         },
@@ -6683,7 +6743,19 @@
         ]
     },
     {
-        "id": 259,
+        "id": 264,
+        "name": {
+            "EN": "Mighty Charm 3"
+        },
+        "level": 3,
+        "rarity": 12,
+        "abilityIds": [
+            269
+        ],
+        "craftMaterials": []
+    },
+    {
+        "id": 265,
         "name": {
             "EN": "Impact Charm 1"
         },
@@ -6712,7 +6784,7 @@
         ]
     },
     {
-        "id": 260,
+        "id": 266,
         "name": {
             "EN": "Impact Charm 2"
         },
@@ -6741,7 +6813,7 @@
         ]
     },
     {
-        "id": 261,
+        "id": 267,
         "name": {
             "EN": "Impact Charm 3"
         },
@@ -6753,7 +6825,7 @@
         "craftMaterials": []
     },
     {
-        "id": 262,
+        "id": 268,
         "name": {
             "EN": "Miasma Charm 1"
         },
@@ -6782,7 +6854,7 @@
         ]
     },
     {
-        "id": 263,
+        "id": 269,
         "name": {
             "EN": "Miasma Charm 2"
         },
@@ -6811,7 +6883,7 @@
         ]
     },
     {
-        "id": 264,
+        "id": 270,
         "name": {
             "EN": "Miasma Charm 3"
         },
@@ -6840,7 +6912,7 @@
         ]
     },
     {
-        "id": 265,
+        "id": 271,
         "name": {
             "EN": "Normal Shots Charm"
         },
@@ -6869,7 +6941,7 @@
         ]
     },
     {
-        "id": 266,
+        "id": 272,
         "name": {
             "EN": "Normal Shots Charm 2"
         },
@@ -6881,7 +6953,7 @@
         "craftMaterials": []
     },
     {
-        "id": 267,
+        "id": 273,
         "name": {
             "EN": "Clearmind Charm"
         },
@@ -6911,7 +6983,7 @@
         ]
     },
     {
-        "id": 268,
+        "id": 274,
         "name": {
             "EN": "Rider's Charm"
         },
@@ -6941,7 +7013,7 @@
         ]
     },
     {
-        "id": 269,
+        "id": 275,
         "name": {
             "EN": "Surveyor's Charm"
         },
@@ -6971,7 +7043,7 @@
         ]
     },
     {
-        "id": 270,
+        "id": 276,
         "name": {
             "EN": "Critical Charm 1"
         },
@@ -7000,7 +7072,7 @@
         ]
     },
     {
-        "id": 271,
+        "id": 277,
         "name": {
             "EN": "Critical Charm 2"
         },
@@ -7012,7 +7084,7 @@
         "craftMaterials": []
     },
     {
-        "id": 272,
+        "id": 278,
         "name": {
             "EN": "Invigorate Charm 1"
         },
@@ -7041,7 +7113,7 @@
         ]
     },
     {
-        "id": 273,
+        "id": 279,
         "name": {
             "EN": "Invigorate Charm 2"
         },
@@ -7070,7 +7142,7 @@
         ]
     },
     {
-        "id": 274,
+        "id": 280,
         "name": {
             "EN": "Invigorate Charm 3"
         },
@@ -7082,7 +7154,7 @@
         "craftMaterials": []
     },
     {
-        "id": 275,
+        "id": 281,
         "name": {
             "EN": "Penetration Charm"
         },
@@ -7111,7 +7183,7 @@
         ]
     },
     {
-        "id": 276,
+        "id": 282,
         "name": {
             "EN": "Penetration Charm 2"
         },
@@ -7123,7 +7195,7 @@
         "craftMaterials": []
     },
     {
-        "id": 277,
+        "id": 283,
         "name": {
             "EN": "Dispersal Charm"
         },
@@ -7152,7 +7224,7 @@
         ]
     },
     {
-        "id": 278,
+        "id": 284,
         "name": {
             "EN": "Dispersal Charm 2"
         },
@@ -7164,7 +7236,7 @@
         "craftMaterials": []
     },
     {
-        "id": 279,
+        "id": 285,
         "name": {
             "EN": "Poison Coating Charm"
         },
@@ -7193,7 +7265,7 @@
         ]
     },
     {
-        "id": 280,
+        "id": 286,
         "name": {
             "EN": "Para Coating Charm"
         },
@@ -7222,7 +7294,7 @@
         ]
     },
     {
-        "id": 281,
+        "id": 287,
         "name": {
             "EN": "Sleep Coating Charm"
         },
@@ -7251,7 +7323,7 @@
         ]
     },
     {
-        "id": 282,
+        "id": 288,
         "name": {
             "EN": "Blast Coating Charm"
         },
@@ -7280,7 +7352,7 @@
         ]
     },
     {
-        "id": 283,
+        "id": 289,
         "name": {
             "EN": "Geomancy Charm"
         },
@@ -7310,7 +7382,7 @@
         ]
     },
     {
-        "id": 284,
+        "id": 290,
         "name": {
             "EN": "Gale Charm"
         },
@@ -7340,7 +7412,7 @@
         ]
     },
     {
-        "id": 285,
+        "id": 291,
         "name": {
             "EN": "Wyrmslayer Charm"
         },
@@ -7370,7 +7442,7 @@
         ]
     },
     {
-        "id": 286,
+        "id": 292,
         "name": {
             "EN": "Bulwark Charm"
         },
@@ -7400,7 +7472,7 @@
         ]
     },
     {
-        "id": 287,
+        "id": 293,
         "name": {
             "EN": "Fair Wind Charm"
         },
@@ -7413,7 +7485,7 @@
         "craftMaterials": []
     },
     {
-        "id": 288,
+        "id": 294,
         "name": {
             "EN": "Special Shot Charm 1"
         },
@@ -7425,7 +7497,7 @@
         "craftMaterials": []
     },
     {
-        "id": 289,
+        "id": 295,
         "name": {
             "EN": "Special Shot Charm 2"
         },
@@ -7437,7 +7509,7 @@
         "craftMaterials": []
     },
     {
-        "id": 290,
+        "id": 296,
         "name": {
             "EN": "Guardian Charm 1"
         },
@@ -7449,7 +7521,7 @@
         "craftMaterials": []
     },
     {
-        "id": 291,
+        "id": 297,
         "name": {
             "EN": "Guardian Charm 2"
         },
@@ -7461,7 +7533,7 @@
         "craftMaterials": []
     },
     {
-        "id": 292,
+        "id": 298,
         "name": {
             "EN": "Guardian Charm 3"
         },
@@ -7473,7 +7545,7 @@
         "craftMaterials": []
     },
     {
-        "id": 293,
+        "id": 299,
         "name": {
             "EN": "Phoenix Charm 1"
         },
@@ -7485,7 +7557,7 @@
         "craftMaterials": []
     },
     {
-        "id": 294,
+        "id": 300,
         "name": {
             "EN": "Phoenix Charm 2"
         },
@@ -7497,7 +7569,7 @@
         "craftMaterials": []
     },
     {
-        "id": 295,
+        "id": 301,
         "name": {
             "EN": "Adamantine Charm 1"
         },
@@ -7510,7 +7582,7 @@
         "craftMaterials": []
     },
     {
-        "id": 296,
+        "id": 302,
         "name": {
             "EN": "Sealer's Charm 1"
         },
@@ -7523,7 +7595,7 @@
         "craftMaterials": []
     },
     {
-        "id": 297,
+        "id": 303,
         "name": {
             "EN": "Razor Sharp Charm 1"
         },
@@ -7535,7 +7607,7 @@
         "craftMaterials": []
     },
     {
-        "id": 298,
+        "id": 304,
         "name": {
             "EN": "Gutsy Charm 1"
         },

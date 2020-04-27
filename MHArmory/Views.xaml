@@ -183,6 +183,17 @@
             </StackPanel>
 
             <Rectangle Style="{StaticResource sep}"/>
+            
+            <StackPanel VerticalAlignment="Stretch">
+                <TextBlock Text="Weapon set bonus:" VerticalAlignment="Center" Margin="2"/>
+                <StackPanel Orientation="Horizontal" VerticalAlignment="Stretch">
+                    <!--<TextBlock Text="" VerticalAlignment="Center" Margin="2"/>-->
+                    <Button Content="Select" Margin="2" Command="{Binding OpenWeaponSetBonusSelectorCommand, Mode=OneTime}" bhv:ToolTipEx.Content="Select the set boni the weapon has." ToolTipService.ShowOnDisabled="True"/>
+                    <Button Content="?" MinWidth="20" Margin="2" Padding="4" VerticalAlignment="Center" Command="{x:Static local:RoutedCommands.OpenIntegratedHelp}" CommandParameter="WeaponSetBonus" bhv:ToolTipEx.Content="Show help about weapon set bonus selector"/>
+                </StackPanel>
+            </StackPanel>
+
+            <Rectangle Style="{StaticResource sep}"/>
 
             <StackPanel VerticalAlignment="Stretch">
                 <TextBlock Text="Decorations override:" Margin="2"/>

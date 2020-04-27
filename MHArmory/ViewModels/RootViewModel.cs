@@ -27,6 +27,7 @@ namespace MHArmory.ViewModels
         public ICommand OpenDecorationsOverrideCommand { get; }
         public ICommand OpenEquipmentOverrideCommand { get; }
         public ICommand OpenSearchResultProcessingCommand { get; }
+        public ICommand OpenWeaponSetBonusSelectorCommand { get; }
 
         public ICommand AboutCommand { get; }
 
@@ -102,6 +103,7 @@ namespace MHArmory.ViewModels
             OpenDecorationsOverrideCommand = new AnonymousCommand(OpenDecorationsOverride);
             OpenEquipmentOverrideCommand = new AnonymousCommand(OpenEquipmentOverride);
             OpenSearchResultProcessingCommand = new AnonymousCommand(OpenSearchResultProcessing);
+            OpenWeaponSetBonusSelectorCommand = new AnonymousCommand(OpenWeaponSetBonusSelector);
 
             AboutCommand = new AnonymousCommand(OnAbout);
 
@@ -225,6 +227,11 @@ namespace MHArmory.ViewModels
         private void OpenSearchResultProcessing()
         {
             RoutedCommands.OpenSearchResultProcessing.ExecuteIfPossible(null);
+        }
+
+        private void OpenWeaponSetBonusSelector()
+        {
+            RoutedCommands.OpenWeaponSetBonusSelector.ExecuteIfPossible(null);
         }
 
         private ExtensionCategoryViewModelBase GetExtensionCategory(ExtensionCategory category)

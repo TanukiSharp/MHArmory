@@ -44,9 +44,24 @@ namespace MHArmory.Search.Iceborne
             availableSlotsObjectPool.PutObject(slotsArray);
         }
 
-        private void GetArmorSkills(IEquipment[] equips, AbilityMap abilities)
+        private void GetArmorSkills(IEquipment[] equips, AbilityMap abilities, IEquipment weapon)
         {
             Dictionary<IArmorSetSkillPart, int> armorSetSkillParts = armorSetSkillPartsObjectPool.GetObject();
+
+            void AddArmorSetSkills(IArmorSetSkill[] setSkills)
+            {
+
+                foreach (IArmorSetSkill armorSetSkill in setSkills)
+                {
+                    foreach (IArmorSetSkillPart armorSetSkillPart in armorSetSkill.Parts)
+                    {
+                        if (armorSetSkillParts.ContainsKey(armorSetSkillPart))
+                            ++armorSetSkillParts[armorSetSkillPart];
+                        else
+                            armorSetSkillParts[armorSetSkillPart] = 1;
+                    }
+                }
+            }
             foreach (IEquipment equipment in equips)
             {
                 if (equipment == null)
@@ -60,18 +75,11 @@ namespace MHArmory.Search.Iceborne
                     continue;
                 if (armorPiece.ArmorSetSkills == null)
                     continue;
-
-                foreach (IArmorSetSkill armorSetSkill in armorPiece.ArmorSetSkills)
-                {
-                    foreach (IArmorSetSkillPart armorSetSkillPart in armorSetSkill.Parts)
-                    {
-                        if (armorSetSkillParts.ContainsKey(armorSetSkillPart))
-                            ++armorSetSkillParts[armorSetSkillPart];
-                        else
-                            armorSetSkillParts[armorSetSkillPart] = 1;
-                    }
-                }
+                AddArmorSetSkills(armorPiece.ArmorSetSkills);
             }
+
+            var weaponPiece = weapon as Weapon;
+            AddArmorSetSkills(weaponPiece.ArmorSetSkills);
 
             foreach (KeyValuePair<IArmorSetSkillPart, int> armorSetSkillPartKeyValue in armorSetSkillParts.Where(p => p.Value >= p.Key.RequiredArmorPieces))
             {
@@ -129,7 +137,7 @@ namespace MHArmory.Search.Iceborne
             foreach (IEquipment equipment in equips)
                 SolverUtils.AccumulateAvailableSlots(equipment, availableSlots);
 
-            GetArmorSkills(equips, abilities);
+            GetArmorSkills(equips, abilities, weapon);
 
             // Quickckeck if we have enough decos
             foreach (KeyValuePair<ISkill, int> skills in desiredAbilities)

@@ -23,6 +23,7 @@ namespace MHArmory.Search.Iceborne.Tests
         private readonly ICharm[] charms;
         private readonly ISkill[] skills;
         private readonly IJewel[] decos;
+        private readonly IList<IArmorSetSkill> armorSetSkills;
 
         public IceborneSolverTests()
         {
@@ -31,6 +32,7 @@ namespace MHArmory.Search.Iceborne.Tests
             Task<ICharm[]> taskCharms = source.GetCharms();
             Task<ISkill[]> taskSkills = source.GetSkills();
             Task<IJewel[]> taskDecos = source.GetJewels();
+            Task<IList<IArmorSetSkill>> taskSetSkills = source.GetArmorSetSkills();
             IArmorPiece[] armorPieces = taskArmor.Result;
             heads = armorPieces.Where(x => x.Type == EquipmentType.Head).ToList();
             chests = armorPieces.Where(x => x.Type == EquipmentType.Chest).ToList();
@@ -40,6 +42,7 @@ namespace MHArmory.Search.Iceborne.Tests
             charms = taskCharms.Result;
             skills = taskSkills.Result;
             decos = taskDecos.Result;
+            armorSetSkills = taskSetSkills.Result;
         }
 
         private ISkill getSkillByName(string name)
@@ -70,6 +73,13 @@ namespace MHArmory.Search.Iceborne.Tests
                 throw new ArgumentException($"Equipment with name {name} not found");
         }
 
+        private IArmorSetSkill[] GetArmorSetSkillsByName(string name)
+        {
+            IArmorSetSkill[] skills = armorSetSkills.Where(s => s.Name["EN"] == name).ToArray();
+            if (skills.Length == 0)
+                throw new InvalidOperationException($"Armor set skill with name {name} does not exist");
+            return skills;
+        }
 
         [TestMethod()]
         public async Task SearchTest_GS_AcidShredder()
@@ -643,6 +653,39 @@ namespace MHArmory.Search.Iceborne.Tests
             var cancellationToken = new System.Threading.CancellationToken();
             IList<ArmorSetSearchResult> armors = await solver.SearchArmorSets(solverData, cancellationToken);
             Assert.AreEqual(0, armors.Count);
+        }
+
+        [TestMethod()]
+        public async Task SearchTest_LBG_SafiAquaShot_NargacugaEssence()
+        {
+            var weapon = new Weapon(0, WeaponType.LightBowgun, new int[] { 4}, new IAbility[0], null, GetArmorSetSkillsByName("Nargacuga Essence"));
+            var solverData = new SolverData();
+            var desiredAbilities = new IAbility[]
+            {
+                new Ability(getSkillByName("Agitator"), 4, new Dictionary<string, string>()),
+                new Ability(getSkillByName("True Razor Sharp/Spare Shot"), 1, new Dictionary<string, string>()),
+                new Ability(getSkillByName("Artillery Secret"), 1, new Dictionary<string, string>()),
+                new Ability(getSkillByName("Artillery"), 5, new Dictionary<string, string>()),
+                new Ability(getSkillByName("Attack Boost"), 4, new Dictionary<string, string>()),
+                new Ability(getSkillByName("Peak Performance"), 3, new Dictionary<string, string>()),
+                new Ability(getSkillByName("Tremor Resistance"), 3, new Dictionary<string, string>()),
+                new Ability(getSkillByName("Free Elem/Ammo Up"), 3, new Dictionary<string, string>()),
+                new Ability(getSkillByName("Slugger"), 3, new Dictionary<string, string>()),
+                new Ability(getSkillByName("Flinch Free"), 2, new Dictionary<string, string>()),
+                new Ability(getSkillByName("Piercing Shots"), 1, new Dictionary<string, string>()),
+                new Ability(getSkillByName("Evade Window"), 1, new Dictionary<string, string>()),
+            };
+            solverData.Setup(weapon, heads, chests, gloves, waists, legs, charms.SelectMany(c => c.Levels), decos.Select(d => new Contracts.SolverDataJewelModel(d, int.MaxValue)), desiredAbilities);
+            DeselectOther(solverData.AllHeads, "Nargacuga Helm α+");
+            DeselectOther(solverData.AllChests, "Zorah Hide α+");
+            DeselectOther(solverData.AllGloves, "Zorah Claws β+");
+            DeselectOther(solverData.AllWaists, "Zorah Spine α+");
+            DeselectOther(solverData.AllLegs, "Nargacuga Greaves α+");
+            DeselectOther(solverData.AllCharms, "Awakening Charm 3");
+            var solver = new IceborneSolver();
+            var cancellationToken = new System.Threading.CancellationToken();
+            IList<ArmorSetSearchResult> armors = await solver.SearchArmorSets(solverData, cancellationToken);
+            Assert.AreEqual(1, armors.Count);
         }
     }
 }

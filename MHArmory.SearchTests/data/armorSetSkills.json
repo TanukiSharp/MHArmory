@@ -1046,5 +1046,93 @@
                 ]
             }
         ]
+    },
+    {
+        "id": 72,
+        "name": {
+            "EN": "Rajang Will"
+        },
+        "parts": [
+            {
+                "id": 198,
+                "requiredArmorPieceCount": 2,
+                "abilityIds": [
+                    396
+                ]
+            },
+            {
+                "id": 199,
+                "requiredArmorPieceCount": 4,
+                "abilityIds": [
+                    417
+                ]
+            }
+        ]
+    },
+    {
+        "id": 73,
+        "name": {
+            "EN": "Brachydios Will"
+        },
+        "parts": [
+            {
+                "id": 202,
+                "requiredArmorPieceCount": 2,
+                "abilityIds": [
+                    366
+                ]
+            },
+            {
+                "id": 203,
+                "requiredArmorPieceCount": 4,
+                "abilityIds": [
+                    353
+                ]
+            }
+        ]
+    },
+    {
+        "id": 74,
+        "name": {
+            "EN": "Full Bloom Blessing"
+        },
+        "parts": [
+            {
+                "id": 206,
+                "requiredArmorPieceCount": 3,
+                "abilityIds": [
+                    420
+                ]
+            },
+            {
+                "id": 207,
+                "requiredArmorPieceCount": 5,
+                "abilityIds": [
+                    421
+                ]
+            }
+        ]
+    },
+    {
+        "id": 75,
+        "name": {
+            "EN": "Kulve Taroth Essence"
+        },
+        "parts": [
+            {
+                "id": 208,
+                "requiredArmorPieceCount": 2,
+                "abilityIds": [
+                    319
+                ]
+            },
+            {
+                "id": 209,
+                "requiredArmorPieceCount": 4,
+                "abilityIds": [
+                    365
+                ]
+            }
+        ]
     }
 ]

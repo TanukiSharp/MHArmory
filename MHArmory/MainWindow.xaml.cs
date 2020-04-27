@@ -51,6 +51,7 @@ namespace MHArmory
             CommandBindings.Add(RoutedCommands.CreateCommandBinding(RoutedCommands.OpenSearchResultProcessing, OpenSearchResultProcessing));
             CommandBindings.Add(RoutedCommands.CreateCommandBinding(RoutedCommands.OpenWeapons, OpenWeapons));
             CommandBindings.Add(RoutedCommands.CreateCommandBinding(RoutedCommands.OpenExtensions, OpenExtensions));
+            CommandBindings.Add(RoutedCommands.CreateCommandBinding(RoutedCommands.OpenWeaponSetBonusSelector, OpenWeaponSetBonusSelector));
 
             CommandBindings.Add(RoutedCommands.CreateCommandBinding(ApplicationCommands.New, OnNewLoadout));
             CommandBindings.Add(RoutedCommands.CreateCommandBinding(RoutedCommands.ResetLoadout, OnResetLoadout));
@@ -236,6 +237,11 @@ namespace MHArmory
                 WindowManager.InitializeWindow(new ExtensionsWindow(rootViewModel) { Owner = this });
 
             WindowManager.Show<ExtensionsWindow>();
+        }
+
+        private void OpenWeaponSetBonusSelector(object obj)
+        {
+
         }
 
         private LoadoutManager loadoutManager;

@@ -19,7 +19,8 @@
             3,
             4,
             5,
-            6
+            6,
+            7
         ]
     },
     {
@@ -28,11 +29,11 @@
             "EN": "Defense Charm"
         },
         "levelIds": [
-            7,
             8,
             9,
             10,
-            11
+            11,
+            12
         ]
     },
     {
@@ -41,9 +42,9 @@
             "EN": "Paralysis Charm"
         },
         "levelIds": [
-            12,
             13,
-            14
+            14,
+            15
         ]
     },
     {
@@ -52,9 +53,9 @@
             "EN": "Sleep Charm"
         },
         "levelIds": [
-            15,
             16,
-            17
+            17,
+            18
         ]
     },
     {
@@ -63,9 +64,9 @@
             "EN": "Stun Charm"
         },
         "levelIds": [
-            18,
             19,
-            20
+            20,
+            21
         ]
     },
     {
@@ -74,11 +75,11 @@
             "EN": "Windproof Charm"
         },
         "levelIds": [
-            21,
             22,
             23,
             24,
-            25
+            25,
+            26
         ]
     },
     {
@@ -87,9 +88,9 @@
             "EN": "Health Charm"
         },
         "levelIds": [
-            26,
             27,
-            28
+            28,
+            29
         ]
     },
     {
@@ -98,9 +99,9 @@
             "EN": "Recovery Charm"
         },
         "levelIds": [
-            29,
             30,
-            31
+            31,
+            32
         ]
     },
     {
@@ -109,9 +110,9 @@
             "EN": "Fire Charm"
         },
         "levelIds": [
-            32,
             33,
-            34
+            34,
+            35
         ]
     },
     {
@@ -120,9 +121,9 @@
             "EN": "Water Charm"
         },
         "levelIds": [
-            35,
             36,
-            37
+            37,
+            38
         ]
     },
     {
@@ -131,9 +132,9 @@
             "EN": "Thunder Charm"
         },
         "levelIds": [
-            38,
             39,
-            40
+            40,
+            41
         ]
     },
     {
@@ -142,11 +143,11 @@
             "EN": "Blaze Charm"
         },
         "levelIds": [
-            41,
             42,
             43,
             44,
-            45
+            45,
+            46
         ]
     },
     {
@@ -155,11 +156,11 @@
             "EN": "Flood Charm"
         },
         "levelIds": [
-            46,
             47,
             48,
             49,
-            50
+            50,
+            51
         ]
     },
     {
@@ -168,11 +169,11 @@
             "EN": "Shock Charm"
         },
         "levelIds": [
-            51,
             52,
             53,
             54,
-            55
+            55,
+            56
         ]
     },
     {
@@ -181,10 +182,10 @@
             "EN": "Venom Charm"
         },
         "levelIds": [
-            56,
             57,
             58,
-            59
+            59,
+            60
         ]
     },
     {
@@ -193,10 +194,10 @@
             "EN": "Immobilize Charm"
         },
         "levelIds": [
-            60,
             61,
             62,
-            63
+            63,
+            64
         ]
     },
     {
@@ -205,10 +206,10 @@
             "EN": "Tranq Charm"
         },
         "levelIds": [
-            64,
             65,
             66,
-            67
+            67,
+            68
         ]
     },
     {
@@ -217,9 +218,9 @@
             "EN": "KO Charm"
         },
         "levelIds": [
-            68,
             69,
-            70
+            70,
+            71
         ]
     },
     {
@@ -228,9 +229,9 @@
             "EN": "Enervate Charm"
         },
         "levelIds": [
-            71,
             72,
-            73
+            73,
+            74
         ]
     },
     {
@@ -239,9 +240,9 @@
             "EN": "Artillery Charm"
         },
         "levelIds": [
-            74,
             75,
-            76
+            76,
+            77
         ]
     },
     {
@@ -250,9 +251,9 @@
             "EN": "Hungerless Charm"
         },
         "levelIds": [
-            77,
             78,
-            79
+            79,
+            80
         ]
     },
     {
@@ -261,11 +262,11 @@
             "EN": "Ironside Charm"
         },
         "levelIds": [
-            80,
             81,
             82,
             83,
-            84
+            84,
+            85
         ]
     },
     {
@@ -274,11 +275,11 @@
             "EN": "Friendship Charm"
         },
         "levelIds": [
-            85,
             86,
             87,
             88,
-            89
+            89,
+            90
         ]
     },
     {
@@ -287,9 +288,9 @@
             "EN": "Extension Charm"
         },
         "levelIds": [
-            90,
             91,
-            92
+            92,
+            93
         ]
     },
     {
@@ -298,9 +299,9 @@
             "EN": "Glutton's Charm"
         },
         "levelIds": [
-            93,
             94,
-            95
+            95,
+            96
         ]
     },
     {
@@ -309,9 +310,9 @@
             "EN": "Blessing Charm"
         },
         "levelIds": [
-            96,
             97,
-            98
+            98,
+            99
         ]
     },
     {
@@ -320,11 +321,11 @@
             "EN": "Rally Charm"
         },
         "levelIds": [
-            99,
             100,
             101,
             102,
-            103
+            103,
+            104
         ]
     },
     {
@@ -333,10 +334,10 @@
             "EN": "Botany Charm"
         },
         "levelIds": [
-            104,
             105,
             106,
-            107
+            107,
+            108
         ]
     },
     {
@@ -345,9 +346,9 @@
             "EN": "Geology Charm"
         },
         "levelIds": [
-            108,
             109,
-            110
+            110,
+            111
         ]
     },
     {
@@ -356,9 +357,9 @@
             "EN": "Slinger Charm"
         },
         "levelIds": [
-            111,
             112,
-            113
+            113,
+            114
         ]
     },
     {
@@ -367,9 +368,9 @@
             "EN": "Stealth Charm"
         },
         "levelIds": [
-            114,
             115,
-            116
+            116,
+            117
         ]
     },
     {
@@ -378,9 +379,9 @@
             "EN": "Smoke Charm"
         },
         "levelIds": [
-            117,
             118,
-            119
+            119,
+            120
         ]
     },
     {
@@ -389,9 +390,9 @@
             "EN": "Mirewalker Charm"
         },
         "levelIds": [
-            120,
             121,
-            122
+            122,
+            123
         ]
     },
     {
@@ -400,9 +401,9 @@
             "EN": "Insect Charm"
         },
         "levelIds": [
-            123,
             124,
-            125
+            125,
+            126
         ]
     },
     {
@@ -411,9 +412,9 @@
             "EN": "Intimidator Charm"
         },
         "levelIds": [
-            126,
             127,
-            128
+            128,
+            129
         ]
     },
     {
@@ -422,8 +423,8 @@
             "EN": "Heavy Artillery Charm"
         },
         "levelIds": [
-            129,
-            130
+            130,
+            131
         ]
     },
     {
@@ -432,7 +433,7 @@
             "EN": "Light Eater's Charm"
         },
         "levelIds": [
-            131
+            132
         ]
     },
     {
@@ -441,7 +442,7 @@
             "EN": "Tracker Charm"
         },
         "levelIds": [
-            132
+            133
         ]
     },
     {
@@ -450,7 +451,7 @@
             "EN": "Fortification Charm"
         },
         "levelIds": [
-            133
+            134
         ]
     },
     {
@@ -459,8 +460,8 @@
             "EN": "Performer's Charm"
         },
         "levelIds": [
-            134,
-            135
+            135,
+            136
         ]
     },
     {
@@ -469,7 +470,7 @@
             "EN": "Capacity Charm"
         },
         "levelIds": [
-            136
+            137
         ]
     },
     {
@@ -478,9 +479,9 @@
             "EN": "Bleed Charm"
         },
         "levelIds": [
-            137,
             138,
-            139
+            139,
+            140
         ]
     },
     {
@@ -489,9 +490,9 @@
             "EN": "Speed Heal Charm"
         },
         "levelIds": [
-            140,
             141,
-            142
+            142,
+            143
         ]
     },
     {
@@ -500,9 +501,9 @@
             "EN": "Ice Charm"
         },
         "levelIds": [
-            143,
             144,
-            145
+            145,
+            146
         ]
     },
     {
@@ -511,9 +512,9 @@
             "EN": "Blight Charm"
         },
         "levelIds": [
-            146,
             147,
-            148
+            148,
+            149
         ]
     },
     {
@@ -522,11 +523,11 @@
             "EN": "Frost Charm"
         },
         "levelIds": [
-            149,
             150,
             151,
             152,
-            153
+            153,
+            154
         ]
     },
     {
@@ -535,10 +536,10 @@
             "EN": "Master's Charm"
         },
         "levelIds": [
-            154,
             155,
             156,
-            157
+            157,
+            158
         ]
     },
     {
@@ -547,10 +548,11 @@
             "EN": "Evasion Charm"
         },
         "levelIds": [
-            158,
             159,
             160,
-            161
+            161,
+            162,
+            163
         ]
     },
     {
@@ -559,9 +561,9 @@
             "EN": "Sheath Charm"
         },
         "levelIds": [
-            162,
-            163,
-            164
+            164,
+            165,
+            166
         ]
     },
     {
@@ -570,9 +572,9 @@
             "EN": "Whetstone Charm"
         },
         "levelIds": [
-            165,
-            166,
-            167
+            167,
+            168,
+            169
         ]
     },
     {
@@ -581,9 +583,9 @@
             "EN": "Blast Charm"
         },
         "levelIds": [
-            168,
-            169,
-            170
+            170,
+            171,
+            172
         ]
     },
     {
@@ -592,9 +594,9 @@
             "EN": "Dragon Charm"
         },
         "levelIds": [
-            171,
-            172,
-            173
+            173,
+            174,
+            175
         ]
     },
     {
@@ -603,11 +605,11 @@
             "EN": "Wyrmsbane Charm"
         },
         "levelIds": [
-            174,
-            175,
             176,
             177,
-            178
+            178,
+            179,
+            180
         ]
     },
     {
@@ -616,10 +618,10 @@
             "EN": "Demolition Charm"
         },
         "levelIds": [
-            179,
-            180,
             181,
-            182
+            182,
+            183,
+            184
         ]
     },
     {
@@ -628,8 +630,8 @@
             "EN": "Draw Charm"
         },
         "levelIds": [
-            183,
-            184
+            185,
+            186
         ]
     },
     {
@@ -638,7 +640,7 @@
             "EN": "Trickshot Charm"
         },
         "levelIds": [
-            185
+            187
         ]
     },
     {
@@ -647,9 +649,9 @@
             "EN": "Marathon Charm"
         },
         "levelIds": [
-            186,
-            187,
-            188
+            188,
+            189,
+            190
         ]
     },
     {
@@ -658,10 +660,10 @@
             "EN": "Fitness Charm"
         },
         "levelIds": [
-            189,
-            190,
             191,
-            192
+            192,
+            193,
+            194
         ]
     },
     {
@@ -670,9 +672,9 @@
             "EN": "Surge Charm"
         },
         "levelIds": [
-            193,
-            194,
-            195
+            195,
+            196,
+            197
         ]
     },
     {
@@ -681,9 +683,9 @@
             "EN": "Leaping Charm"
         },
         "levelIds": [
-            196,
-            197,
-            198
+            198,
+            199,
+            200
         ]
     },
     {
@@ -692,9 +694,9 @@
             "EN": "Bombardier Charm"
         },
         "levelIds": [
-            199,
-            200,
-            201
+            201,
+            202,
+            203
         ]
     },
     {
@@ -703,9 +705,9 @@
             "EN": "Mushroom Charm"
         },
         "levelIds": [
-            202,
-            203,
-            204
+            204,
+            205,
+            206
         ]
     },
     {
@@ -714,9 +716,9 @@
             "EN": "Awakening Charm"
         },
         "levelIds": [
-            205,
-            206,
-            207
+            207,
+            208,
+            209
         ]
     },
     {
@@ -725,10 +727,10 @@
             "EN": "Handicraft Charm"
         },
         "levelIds": [
-            208,
-            209,
             210,
-            211
+            211,
+            212,
+            213
         ]
     },
     {
@@ -737,7 +739,7 @@
             "EN": "Mud Puppy Charm"
         },
         "levelIds": [
-            212
+            214
         ]
     },
     {
@@ -746,7 +748,7 @@
             "EN": "Hunter's Life Charm"
         },
         "levelIds": [
-            213
+            215
         ]
     },
     {
@@ -755,7 +757,7 @@
             "EN": "Procurer's Charm"
         },
         "levelIds": [
-            214
+            216
         ]
     },
     {
@@ -764,7 +766,7 @@
             "EN": "Gatherer's Charm"
         },
         "levelIds": [
-            215
+            217
         ]
     },
     {
@@ -773,9 +775,9 @@
             "EN": "Guard Charm"
         },
         "levelIds": [
-            216,
-            217,
-            218
+            218,
+            219,
+            220
         ]
     },
     {
@@ -784,10 +786,10 @@
             "EN": "Earplugs Charm"
         },
         "levelIds": [
-            219,
-            220,
             221,
-            222
+            222,
+            223,
+            224
         ]
     },
     {
@@ -796,9 +798,9 @@
             "EN": "Tremor Charm"
         },
         "levelIds": [
-            223,
-            224,
-            225
+            225,
+            226,
+            227
         ]
     },
     {
@@ -807,8 +809,8 @@
             "EN": "Exploiter Charm"
         },
         "levelIds": [
-            226,
-            227
+            228,
+            229
         ]
     },
     {
@@ -817,9 +819,9 @@
             "EN": "Focus Charm"
         },
         "levelIds": [
-            228,
-            229,
-            230
+            230,
+            231,
+            232
         ]
     },
     {
@@ -828,9 +830,9 @@
             "EN": "Breaker Charm"
         },
         "levelIds": [
-            231,
-            232,
-            233
+            233,
+            234,
+            235
         ]
     },
     {
@@ -839,10 +841,11 @@
             "EN": "Fury Charm"
         },
         "levelIds": [
-            234,
-            235,
             236,
-            237
+            237,
+            238,
+            239,
+            240
         ]
     },
     {
@@ -851,11 +854,11 @@
             "EN": "Grit Charm"
         },
         "levelIds": [
-            238,
-            239,
-            240,
             241,
-            242
+            242,
+            243,
+            244,
+            245
         ]
     },
     {
@@ -864,9 +867,9 @@
             "EN": "Maintenance Charm"
         },
         "levelIds": [
-            243,
-            244,
-            245
+            246,
+            247,
+            248
         ]
     },
     {
@@ -875,10 +878,11 @@
             "EN": "Power Charm"
         },
         "levelIds": [
-            246,
-            247,
-            248,
-            249
+            249,
+            250,
+            251,
+            252,
+            253
         ]
     },
     {
@@ -887,10 +891,11 @@
             "EN": "Challenger Charm"
         },
         "levelIds": [
-            250,
-            251,
-            252,
-            253
+            254,
+            255,
+            256,
+            257,
+            258
         ]
     },
     {
@@ -899,9 +904,9 @@
             "EN": "Unscathed Charm"
         },
         "levelIds": [
-            254,
-            255,
-            256
+            259,
+            260,
+            261
         ]
     },
     {
@@ -910,8 +915,9 @@
             "EN": "Mighty Charm"
         },
         "levelIds": [
-            257,
-            258
+            262,
+            263,
+            264
         ]
     },
     {
@@ -920,9 +926,9 @@
             "EN": "Impact Charm"
         },
         "levelIds": [
-            259,
-            260,
-            261
+            265,
+            266,
+            267
         ]
     },
     {
@@ -931,9 +937,9 @@
             "EN": "Miasma Charm"
         },
         "levelIds": [
-            262,
-            263,
-            264
+            268,
+            269,
+            270
         ]
     },
     {
@@ -942,8 +948,8 @@
             "EN": "Normal Shots Charm"
         },
         "levelIds": [
-            265,
-            266
+            271,
+            272
         ]
     },
     {
@@ -952,7 +958,7 @@
             "EN": "Clearmind Charm"
         },
         "levelIds": [
-            267
+            273
         ]
     },
     {
@@ -961,7 +967,7 @@
             "EN": "Rider's Charm"
         },
         "levelIds": [
-            268
+            274
         ]
     },
     {
@@ -970,7 +976,7 @@
             "EN": "Surveyor's Charm"
         },
         "levelIds": [
-            269
+            275
         ]
     },
     {
@@ -979,8 +985,8 @@
             "EN": "Critical Charm"
         },
         "levelIds": [
-            270,
-            271
+            276,
+            277
         ]
     },
     {
@@ -989,9 +995,9 @@
             "EN": "Invigorate Charm"
         },
         "levelIds": [
-            272,
-            273,
-            274
+            278,
+            279,
+            280
         ]
     },
     {
@@ -1000,8 +1006,8 @@
             "EN": "Penetration Charm"
         },
         "levelIds": [
-            275,
-            276
+            281,
+            282
         ]
     },
     {
@@ -1010,8 +1016,8 @@
             "EN": "Dispersal Charm"
         },
         "levelIds": [
-            277,
-            278
+            283,
+            284
         ]
     },
     {
@@ -1020,7 +1026,7 @@
             "EN": "Poison Coating Charm"
         },
         "levelIds": [
-            279
+            285
         ]
     },
     {
@@ -1029,7 +1035,7 @@
             "EN": "Para Coating Charm"
         },
         "levelIds": [
-            280
+            286
         ]
     },
     {
@@ -1038,7 +1044,7 @@
             "EN": "Sleep Coating Charm"
         },
         "levelIds": [
-            281
+            287
         ]
     },
     {
@@ -1047,7 +1053,7 @@
             "EN": "Blast Coating Charm"
         },
         "levelIds": [
-            282
+            288
         ]
     },
     {
@@ -1056,7 +1062,7 @@
             "EN": "Geomancy Charm"
         },
         "levelIds": [
-            283
+            289
         ]
     },
     {
@@ -1065,7 +1071,7 @@
             "EN": "Gale Charm"
         },
         "levelIds": [
-            284
+            290
         ]
     },
     {
@@ -1074,7 +1080,7 @@
             "EN": "Wyrmslayer Charm"
         },
         "levelIds": [
-            285
+            291
         ]
     },
     {
@@ -1083,7 +1089,7 @@
             "EN": "Bulwark Charm"
         },
         "levelIds": [
-            286
+            292
         ]
     },
     {
@@ -1092,7 +1098,7 @@
             "EN": "Fair Wind Charm"
         },
         "levelIds": [
-            287
+            293
         ]
     },
     {
@@ -1101,8 +1107,8 @@
             "EN": "Special Shot Charm"
         },
         "levelIds": [
-            288,
-            289
+            294,
+            295
         ]
     },
     {
@@ -1111,9 +1117,9 @@
             "EN": "Guardian Charm"
         },
         "levelIds": [
-            290,
-            291,
-            292
+            296,
+            297,
+            298
         ]
     },
     {
@@ -1122,8 +1128,8 @@
             "EN": "Phoenix Charm"
         },
         "levelIds": [
-            293,
-            294
+            299,
+            300
         ]
     },
     {
@@ -1132,7 +1138,7 @@
             "EN": "Adamantine Charm"
         },
         "levelIds": [
-            295
+            301
         ]
     },
     {
@@ -1141,7 +1147,7 @@
             "EN": "Sealer's Charm"
         },
         "levelIds": [
-            296
+            302
         ]
     },
     {
@@ -1150,7 +1156,7 @@
             "EN": "Razor Sharp Charm"
         },
         "levelIds": [
-            297
+            303
         ]
     },
     {
@@ -1159,7 +1165,7 @@
             "EN": "Gutsy Charm"
         },
         "levelIds": [
-            298
+            304
         ]
     }
 ]

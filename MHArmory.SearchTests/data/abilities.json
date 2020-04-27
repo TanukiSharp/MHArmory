@@ -3246,5 +3246,40 @@
         "description": {
             "EN": "Increases odds of getting special Holiday Joy rewards. (No effect when joining mid-quest.)"
         }
+    },
+    {
+        "id": 417,
+        "level": 1,
+        "description": {
+            "EN": "Raises the maximum level of the Heroics skill."
+        }
+    },
+    {
+        "id": 418,
+        "level": 6,
+        "description": {
+            "EN": "While active, increases attack power by 25% and increases defense by 150 points."
+        }
+    },
+    {
+        "id": 419,
+        "level": 7,
+        "description": {
+            "EN": "While active, increases attack power by 40% and increases defense by 150 points."
+        }
+    },
+    {
+        "id": 420,
+        "level": 1,
+        "description": {
+            "EN": "Increases odds of getting special Full Bloom rewards."
+        }
+    },
+    {
+        "id": 421,
+        "level": 1,
+        "description": {
+            "EN": "Greatly increases odds of getting special Full Bloom rewards."
+        }
     }
 ]

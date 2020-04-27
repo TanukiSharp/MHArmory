@@ -134,6 +134,7 @@ namespace MHArmory.ViewModels
 
         public ICommand OpenDecorationsOverrideCommand { get { return root.OpenDecorationsOverrideCommand; } }
         public ICommand OpenEquipmentOverrideCommand { get { return root.OpenEquipmentOverrideCommand; } }
+        public ICommand OpenWeaponSetBonusSelectorCommand { get { return root.OpenWeaponSetBonusSelectorCommand; } }
 
         public InParametersViewModel(RootViewModel root)
         {
