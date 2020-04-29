@@ -23,7 +23,7 @@ namespace MHArmory.Search.Iceborne.Tests
         private readonly ICharm[] charms;
         private readonly ISkill[] skills;
         private readonly IJewel[] decos;
-        private readonly IList<IArmorSetSkill> armorSetSkills;
+        private readonly IArmorSetSkill[] armorSetSkills;
 
         public IceborneSolverTests()
         {
@@ -32,7 +32,7 @@ namespace MHArmory.Search.Iceborne.Tests
             Task<ICharm[]> taskCharms = source.GetCharms();
             Task<ISkill[]> taskSkills = source.GetSkills();
             Task<IJewel[]> taskDecos = source.GetJewels();
-            Task<IList<IArmorSetSkill>> taskSetSkills = source.GetArmorSetSkills();
+            Task<IArmorSetSkill[]> taskSetSkills = source.GetArmorSetSkills();
             IArmorPiece[] armorPieces = taskArmor.Result;
             heads = armorPieces.Where(x => x.Type == EquipmentType.Head).ToList();
             chests = armorPieces.Where(x => x.Type == EquipmentType.Chest).ToList();

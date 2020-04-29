@@ -32,6 +32,7 @@ namespace MHArmory.ViewModels
         public ICommand AboutCommand { get; }
 
         public event EventHandler AbilitiesChanged;
+        public event EventHandler WeaponSetBonusChanged;
 
         public ExtensionSelectorViewModel Extensions { get; }
 
@@ -46,6 +47,8 @@ namespace MHArmory.ViewModels
             get { return selectedAbilities; }
             set { SetValue(ref selectedAbilities, value); }
         }
+
+        public IEnumerable<ArmorSetBonusViewModel> SelectedArmorSetBonuses { get; set; }
 
         public SearchResultProcessingViewModel SearchResultProcessing { get; }
 
@@ -317,7 +320,8 @@ namespace MHArmory.ViewModels
                 .ToList();
 
             int[] weaponSlots = InParameters.Slots.Select(x => x.Value).ToArray();
-            var solverDataWeapon = new Weapon(-1, (WeaponType)(-1), weaponSlots, new IAbility[0], null);
+            IArmorSetSkill[] weaponSetBonuses = SelectedArmorSetBonuses.Where(x => x.IsChecked).Select(x => x.armorSetSkill).ToArray();
+            var solverDataWeapon = new Weapon(-1, (WeaponType)(-1), weaponSlots, new IAbility[0], null, weaponSetBonuses);
 
             solverData.Setup(
                 solverDataWeapon,
@@ -456,6 +460,29 @@ namespace MHArmory.ViewModels
                 }
 
                 abilityChangingDispatcherOperation = Dispatcher.BeginInvoke((Action<object>)SelectedAbilitiesChangedDone, this);
+            }
+        }
+
+        private DispatcherOperation WeaponSetBonusChangingDispatcherOperation;
+
+        internal void SelectedWeaponSetBonusChanged()
+        {
+            if (WeaponSetBonusChangingDispatcherOperation == null)
+            {
+                void SelectedWeaponSetBonusChangedDone(object arg)
+                {
+                    var self = (RootViewModel)arg;
+
+                    try
+                    {
+                        self.WeaponSetBonusChanged?.Invoke(self, EventArgs.Empty);
+                    }
+                    finally
+                    {
+                        self.WeaponSetBonusChangingDispatcherOperation = null;
+                    }
+                }
+                WeaponSetBonusChangingDispatcherOperation = Dispatcher.BeginInvoke((Action<object>)SelectedWeaponSetBonusChangedDone, this);
             }
         }
 

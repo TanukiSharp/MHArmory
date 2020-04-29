@@ -26,6 +26,7 @@ namespace MHArmory
 
         private SkillSelectorWindow skillSelectorWindow;
         private AdvancedSearchWindow advancedSearchWindow;
+        private ArmorSetBonusSelectorWindow ArmorSetBonusSelectorWindow;
 
         public MainWindow()
         {
@@ -84,6 +85,9 @@ namespace MHArmory
             advancedSearchWindow = new AdvancedSearchWindow(rootViewModel) { Owner = this };
             WindowManager.InitializeWindow(advancedSearchWindow);
 
+            ArmorSetBonusSelectorWindow = new ArmorSetBonusSelectorWindow { Owner = this };
+            WindowManager.InitializeWindow(ArmorSetBonusSelectorWindow);
+
             if (await LoadData() == false)
             {
                 Application.Current.Shutdown();
@@ -138,8 +142,9 @@ namespace MHArmory
             IArmorPiece[] armors = await source.GetArmorPieces();
             ICharm[] charms = await source.GetCharms();
             IJewel[] jewels = await source.GetJewels();
+            IArmorSetSkill[] armorSetSkills = await source.GetArmorSetSkills();
 
-            if (skills == null || armors == null || charms == null || jewels == null)
+            if (skills == null || armors == null || charms == null || jewels == null || armorSetSkills == null)
             {
                 CloseApplicationBecauseOfDataSource(source.Description);
                 return false;
@@ -158,10 +163,19 @@ namespace MHArmory
 
             rootViewModel.SelectedAbilities = allAbilities;
 
+            IList<ArmorSetBonusViewModel> allSetBonuses = armorSetSkills
+                .OrderBy(x => x.Id)
+                .Select(x => new ArmorSetBonusViewModel(x, rootViewModel, ArmorSetBonusSelectorWindow.ArmorSetSelector))
+                .ToList();
+            ArmorSetBonusSelectorWindow.ArmorSetSelector.SetBonuses = allSetBonuses;
+            rootViewModel.SelectedArmorSetBonuses = allSetBonuses;
+
+
             GlobalData.Instance.SetSkills(skills);
             GlobalData.Instance.SetArmors(armors);
             GlobalData.Instance.Charms = charms.SelectMany(x => x.Levels).ToList();
             GlobalData.Instance.Jewels = jewels;
+            GlobalData.Instance.ArmorSetSkills = armorSetSkills;
 
             rootViewModel.SetAllEquipments(
                 armors.Select(x => new ArmorPieceViewModel(rootViewModel, x))
@@ -241,7 +255,7 @@ namespace MHArmory
 
         private void OpenWeaponSetBonusSelector(object obj)
         {
-
+            WindowManager.Show<ArmorSetBonusSelectorWindow>();
         }
 
         private LoadoutManager loadoutManager;

@@ -187,8 +187,11 @@
             <StackPanel VerticalAlignment="Stretch">
                 <TextBlock Text="Weapon set bonus:" VerticalAlignment="Center" Margin="2"/>
                 <StackPanel Orientation="Horizontal" VerticalAlignment="Stretch">
-                    <!--<TextBlock Text="" VerticalAlignment="Center" Margin="2"/>-->
-                    <Button Content="Select" Margin="2" Command="{Binding OpenWeaponSetBonusSelectorCommand, Mode=OneTime}" bhv:ToolTipEx.Content="Select the set boni the weapon has." ToolTipService.ShowOnDisabled="True"/>
+                    <TextBlock x:Name="lvl" Focusable="False" VerticalAlignment="Center" Margin="0 0 8 0">
+                        <Run Text="{Binding WeaponSetBonusesSelected, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
+                        <Run Text="selected"/>
+                    </TextBlock>
+                    <Button Content="Select" Margin="2" Command="{Binding OpenWeaponSetBonusSelectorCommand, Mode=OneTime}" Padding="4" bhv:ToolTipEx.Content="Select the set bonuses the weapon has." ToolTipService.ShowOnDisabled="True"/>
                     <Button Content="?" MinWidth="20" Margin="2" Padding="4" VerticalAlignment="Center" Command="{x:Static local:RoutedCommands.OpenIntegratedHelp}" CommandParameter="WeaponSetBonus" bhv:ToolTipEx.Content="Show help about weapon set bonus selector"/>
                 </StackPanel>
             </StackPanel>
@@ -650,6 +653,62 @@
                 </ItemsControl>
             </StackPanel>
             <ListBox Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" ItemsSource="{Binding Skills, Mode=OneWay}" ItemTemplate="{StaticResource SkillView}" VirtualizingPanel.IsVirtualizing="False" VirtualizingPanel.ScrollUnit="Pixel" Focusable="False">
+                <ListBox.ItemContainerStyle>
+                    <Style TargetType="{x:Type ListBoxItem}">
+                        <Setter Property="Template">
+                            <Setter.Value>
+                                <ControlTemplate TargetType="{x:Type ListBoxItem}">
+                                    <Border Name="root" Padding="2" SnapsToDevicePixels="True" Focusable="False">
+                                        <ContentPresenter Focusable="False"/>
+                                    </Border>
+                                    <ControlTemplate.Triggers>
+                                        <DataTrigger Binding="{Binding IsVisible}" Value="False">
+                                            <Setter TargetName="root" Property="Visibility" Value="Collapsed"/>
+                                        </DataTrigger>
+                                    </ControlTemplate.Triggers>
+                                </ControlTemplate>
+                            </Setter.Value>
+                        </Setter>
+                        <Setter Property="Focusable" Value="False"/>
+                    </Style>
+                </ListBox.ItemContainerStyle>
+            </ListBox>
+        </DockPanel>
+    </DataTemplate>
+
+    <DataTemplate x:Key="ArmorSetPartSkillView">
+        <StackPanel Orientation="Horizontal">
+            <TextBlock x:Name="lvl" Focusable="False">
+                <Run Text="{Binding RequiredArmorPieces, Mode=OneTime}"/>
+                <Run Text="Pieces"/>
+            </TextBlock>
+            <ItemsControl ItemsSource="{Binding GrantedSkills, Mode=OneTime, Converter={StaticResource AbilityToViewModelValueConverter}}" ItemTemplate="{StaticResource StandaloneAbilityView}" Margin="32 0 0 0" Focusable="False"/>
+        </StackPanel>
+    </DataTemplate>
+    
+    <DataTemplate x:Key="ArmorSetBonusView">
+        <StackPanel Orientation="Vertical" Focusable="False">
+            <CheckBox Focusable="False" HorizontalContentAlignment="Left" Margin="0" Padding="5 3 5 3" IsChecked="{Binding IsChecked, Mode=TwoWay}" VerticalContentAlignment="Center">
+                <TextBlock Text="{mxt:Localization Name}" FontSize="12" FontWeight="Bold" VerticalAlignment="Center"/>
+            </CheckBox>
+            <ItemsControl ItemsSource="{Binding Parts, Mode=OneTime}" ItemTemplate="{StaticResource ArmorSetPartSkillView}" Focusable="False" Margin="32 0 0 0"/>
+        </StackPanel>
+    </DataTemplate>
+
+    <DataTemplate x:Key="ArmorSetBonusSelectorView">
+        <DockPanel LastChildFill="True">
+            <StackPanel DockPanel.Dock="Top">
+                <DockPanel LastChildFill="True">
+                    <TextBlock DockPanel.Dock="Left" Text="Filter: " Margin="4" VerticalAlignment="Center"/>
+                    <StackPanel DockPanel.Dock="Right" Orientation="Horizontal">
+                        <RadioButton Content="All" IsChecked="{Binding VisibilityModeAll, Mode=OneWayToSource, FallbackValue=true}" bhv:ToolTipEx.Content="See all available armor set bonuses" Style="{StaticResource SelectorRadioButton}"/>
+                        <RadioButton Content="Selected" IsChecked="{Binding VisibilityModeSelected, Mode=OneWayToSource}" bhv:ToolTipEx.Content="See only selected armor set bonuses" Style="{StaticResource SelectorRadioButton}"/>
+                        <RadioButton Content="Unselected" IsChecked="{Binding VisibilityModeUnselected, Mode=OneWayToSource}" bhv:ToolTipEx.Content="See only unselected armor set bonuses" Style="{StaticResource SelectorRadioButton}"/>
+                    </StackPanel>
+                    <TextBox Margin="2" Padding="3" FocusManager.FocusedElement="{Binding RelativeSource={RelativeSource Self}}" Text="{Binding SearchText, UpdateSourceTrigger=PropertyChanged}" bhv:TextBoxFocusOnEmptyBehavior.IsAttached="True"/>
+                </DockPanel>
+            </StackPanel>
+            <ListBox Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" ItemsSource="{Binding SetBonuses, Mode=OneWay}" ItemTemplate="{StaticResource ArmorSetBonusView}" VirtualizingPanel.IsVirtualizing="False" VirtualizingPanel.ScrollUnit="Pixel" Focusable="False">
                 <ListBox.ItemContainerStyle>
                     <Style TargetType="{x:Type ListBoxItem}">
                         <Setter Property="Template">

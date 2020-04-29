@@ -463,5 +463,10 @@ namespace MHArmory.MhwDbDataSource
         {
             return abilities.FirstOrDefault(a => a.Skill.Id == skillId && a.Level == level);
         }
+
+        public Task<IArmorSetSkill[]> GetArmorSetSkills()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

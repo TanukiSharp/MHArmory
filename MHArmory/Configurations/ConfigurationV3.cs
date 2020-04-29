@@ -17,6 +17,8 @@ namespace MHArmory.Configurations
     {
         [JsonProperty("weaponSlots")]
         public int[] WeaponSlots { get; set; }
+        [JsonProperty("weaponSetBonuses")]
+        public string[] WeaponSetBonuses { get; set; }
         [JsonProperty("skills")]
         public SkillLoadoutItemConfigurationV2[] Skills { get; set; }
     }

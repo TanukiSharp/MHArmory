@@ -66,14 +66,20 @@ namespace MHArmory
         {
             this.rootViewModel = rootViewModel;
             this.rootViewModel.AbilitiesChanged += RootViewModel_AbilitiesChanged;
+            this.rootViewModel.WeaponSetBonusChanged += RootViewModel_WeaponSetBonusChanged;
         }
 
         public void Dispose()
         {
             rootViewModel.AbilitiesChanged -= RootViewModel_AbilitiesChanged;
+            rootViewModel.WeaponSetBonusChanged -= RootViewModel_WeaponSetBonusChanged;
         }
 
         private void RootViewModel_AbilitiesChanged(object sender, EventArgs e)
+        {
+            IsModified = true;
+        }
+        private void RootViewModel_WeaponSetBonusChanged(object sender, EventArgs e)
         {
             IsModified = true;
         }
@@ -154,7 +160,7 @@ namespace MHArmory
 
             if (loadoutName == null || loadoutConfig == null)
             {
-                var loadoutWindow = new LoadoutWindow(false, currentLoadoutName, rootViewModel.SelectedAbilities)
+                var loadoutWindow = new LoadoutWindow(false, currentLoadoutName, rootViewModel.SelectedAbilities, rootViewModel.SelectedArmorSetBonuses)
                 {
                     Owner = Application.Current.MainWindow
                 };
@@ -202,6 +208,13 @@ namespace MHArmory
 
             foreach (AbilityViewModel ability in rootViewModel.SelectedAbilities)
                 ability.IsChecked = loadoutViewModel.Abilities.Any(a => a.SkillId == ability.SkillId && a.Level == ability.Level);
+
+            foreach (ArmorSetBonusViewModel setBonus in rootViewModel.SelectedArmorSetBonuses)
+            {
+                setBonus.IsChecked = loadoutViewModel.WeaponSetBonuses.Any(x =>
+                    x.armorSetSkill.Id == setBonus.armorSetSkill.Id
+                );
+            }
         }
 
         private void LoadLoadoutFromConfig(SkillLoadoutItemConfigurationV3 loadoutConfig)
@@ -221,6 +234,16 @@ namespace MHArmory
                     x.Level == ability.Level
                 );
             }
+
+            if(loadoutConfig.WeaponSetBonuses != null)
+            {
+                foreach (ArmorSetBonusViewModel setBonus in rootViewModel.SelectedArmorSetBonuses)
+                {
+                    setBonus.IsChecked = loadoutConfig.WeaponSetBonuses.Any(x =>
+                        x == Core.Localization.GetDefault(setBonus.Name)
+                    );
+                }
+            }
         }
 
         private bool InternalSave()
@@ -237,6 +260,7 @@ namespace MHArmory
                 loadoutConfig[CurrentLoadoutName] = new SkillLoadoutItemConfigurationV3
                 {
                     WeaponSlots = rootViewModel.InParameters.Slots.Where(x => x.Value > 0).Select(x => x.Value).ToArray(),
+                    WeaponSetBonuses = rootViewModel.SelectedArmorSetBonuses.Where(x => x.IsChecked).Select(x => Core.Localization.GetDefault(x.Name)).ToArray(),
                     Skills = CreateSelectedSkillsArray()
                 };
 
@@ -300,7 +324,7 @@ namespace MHArmory
                     return false;
             }
 
-            var loadoutWindow = new LoadoutWindow(true, currentLoadoutName, rootViewModel.SelectedAbilities)
+            var loadoutWindow = new LoadoutWindow(true, currentLoadoutName, rootViewModel.SelectedAbilities, rootViewModel.SelectedArmorSetBonuses)
             {
                 Owner = Application.Current.MainWindow
             };
