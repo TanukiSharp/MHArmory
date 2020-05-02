@@ -135,8 +135,39 @@ namespace MHArmory.ViewModels
 
         private void UpdateAvailability()
         {
-            if (jewels != null)
-                IsAvailable = jewels.All(x => x.Rarity <= root.InParameters.Rarity);
+            isAvailable = false;
+            if (jewels != null && jewels.Count > 0)
+                IsAvailable |= jewels.Any(x => x.Rarity <= root.InParameters.Rarity);
+            if (GlobalData.Instance.Charms != null) 
+                IsAvailable |= GlobalData.Instance.Charms.Where(c => c.Abilities.Any(a => a.Skill == skill)).Any(c => c.Rarity <= root.InParameters.Rarity);
+            bool CheckSkillOnEquipment(IList<IArmorPiece> equipment)
+            {
+                if (equipment == null)
+                    return false;
+                bool CheckCompatibility(IArmorPiece armorPiece)
+                {
+                    if (armorPiece.Abilities.Any(a => a.Skill == skill))
+                        return true;
+                    if(armorPiece.ArmorSetSkills != null)
+                    {
+                        foreach (IArmorSetSkill setSkill in armorPiece.ArmorSetSkills)
+                        {
+                            foreach (IArmorSetSkillPart part in setSkill.Parts)
+                            {
+                                if (part.GrantedSkills.Any(a => a.Skill == skill))
+                                    return true;
+                            }
+                        }
+                    }
+                    return false;
+                }
+                return equipment.Where(x => CheckCompatibility(x)).Any(x => x.Rarity <= root.InParameters.Rarity);
+            }
+            IsAvailable |= CheckSkillOnEquipment(GlobalData.Instance.Heads);
+            IsAvailable |= CheckSkillOnEquipment(GlobalData.Instance.Chests);
+            IsAvailable |= CheckSkillOnEquipment(GlobalData.Instance.Gloves);
+            IsAvailable |= CheckSkillOnEquipment(GlobalData.Instance.Waists);
+            IsAvailable |= CheckSkillOnEquipment(GlobalData.Instance.Legs);
         }
 
         public bool HasCheckedAbility

@@ -76,10 +76,10 @@ namespace MHArmory.Search.Default
             maxSkillCountPerArmorPiece = maxSkills;
 
             int maxRarity = inputHeads.MaxOrZero(x => x.Equipment.Rarity);
-            maxRarity = Math.Max(maxSkills, inputChests.MaxOrZero(x => x.Equipment.Rarity));
-            maxRarity = Math.Max(maxSkills, inputGloves.MaxOrZero(x => x.Equipment.Rarity));
-            maxRarity = Math.Max(maxSkills, inputWaists.MaxOrZero(x => x.Equipment.Rarity));
-            maxRarity = Math.Max(maxSkills, inputLegs.MaxOrZero(x => x.Equipment.Rarity));
+            maxRarity = Math.Max(maxRarity, inputChests.MaxOrZero(x => x.Equipment.Rarity));
+            maxRarity = Math.Max(maxRarity, inputGloves.MaxOrZero(x => x.Equipment.Rarity));
+            maxRarity = Math.Max(maxRarity, inputWaists.MaxOrZero(x => x.Equipment.Rarity));
+            maxRarity = Math.Max(maxRarity, inputLegs.MaxOrZero(x => x.Equipment.Rarity));
             if (maxRarity > 8)
                 hunterRank = HunterRank.MasterRank;
             else if (maxRarity > 4)
@@ -88,10 +88,10 @@ namespace MHArmory.Search.Default
                 hunterRank = HunterRank.LowRank;
 
             int slotSize = inputHeads.MaxOrZero(x => x.Equipment.Slots.DefaultIfEmpty(0).Max());
-            slotSize = Math.Max(maxSkills, inputChests.MaxOrZero(x => x.Equipment.Slots.DefaultIfEmpty(0).Max()));
-            slotSize = Math.Max(maxSkills, inputGloves.MaxOrZero(x => x.Equipment.Slots.DefaultIfEmpty(0).Max()));
-            slotSize = Math.Max(maxSkills, inputWaists.MaxOrZero(x => x.Equipment.Slots.DefaultIfEmpty(0).Max()));
-            slotSize = Math.Max(maxSkills, inputLegs.MaxOrZero(x => x.Equipment.Slots.DefaultIfEmpty(0).Max()));
+            slotSize = Math.Max(slotSize, inputChests.MaxOrZero(x => x.Equipment.Slots.DefaultIfEmpty(0).Max()));
+            slotSize = Math.Max(slotSize, inputGloves.MaxOrZero(x => x.Equipment.Slots.DefaultIfEmpty(0).Max()));
+            slotSize = Math.Max(slotSize, inputWaists.MaxOrZero(x => x.Equipment.Slots.DefaultIfEmpty(0).Max()));
+            slotSize = Math.Max(slotSize, inputLegs.MaxOrZero(x => x.Equipment.Slots.DefaultIfEmpty(0).Max()));
             maxSlotSize = slotSize;
 
             maxJewelId = inputJewels.Max(j => j.Jewel.Id);

@@ -810,6 +810,11 @@ namespace MHArmory.AthenaAssDataSource
 
             return result;
         }
+
+        public Task<IArmorSetSkill[]> GetArmorSetSkills()
+        {
+            throw new NotImplementedException();
+        }
     }
 
     internal static class AbiliyOperators

@@ -150,6 +150,12 @@ namespace MHArmory
                 return false;
             }
 
+            GlobalData.Instance.SetSkills(skills);
+            GlobalData.Instance.SetArmors(armors);
+            GlobalData.Instance.Charms = charms.SelectMany(x => x.Levels).ToList();
+            GlobalData.Instance.Jewels = jewels;
+            GlobalData.Instance.ArmorSetSkills = armorSetSkills;
+
             IList<SkillViewModel> allSkills = skills
                 .OrderBy(x => x.Id)
                 .Select(x => new SkillViewModel(x, jewels.Where(j => j.Abilities.Any(a => a.Skill.Id == x.Id)).ToList(), rootViewModel, skillSelectorWindow.SkillSelector))
@@ -169,13 +175,6 @@ namespace MHArmory
                 .ToList();
             ArmorSetBonusSelectorWindow.ArmorSetSelector.SetBonuses = allSetBonuses;
             rootViewModel.SelectedArmorSetBonuses = allSetBonuses;
-
-
-            GlobalData.Instance.SetSkills(skills);
-            GlobalData.Instance.SetArmors(armors);
-            GlobalData.Instance.Charms = charms.SelectMany(x => x.Levels).ToList();
-            GlobalData.Instance.Jewels = jewels;
-            GlobalData.Instance.ArmorSetSkills = armorSetSkills;
 
             rootViewModel.SetAllEquipments(
                 armors.Select(x => new ArmorPieceViewModel(rootViewModel, x))
