@@ -66,6 +66,9 @@
       <DependentUpon>AboutWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="Aliases.cs" />
+    <Compile Include="ArmorSetBonusSelectorWindow.xaml.cs">
+      <DependentUpon>ArmorSetBonusSelectorWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="AutoUpdate\AutoUpdater.cs" />
     <Compile Include="AutoUpdate\EventArguments.cs" />
     <Compile Include="Configurations\ConfigurationV3.cs" />
@@ -100,6 +103,7 @@
       <DependentUpon>EquipmentExplorerWindow.xaml</DependentUpon>
     </Compile>
     <Resource Include="HelpText\KeyboardShortcuts.html" />
+    <Resource Include="HelpText\WeaponSetBonus.html" />
     <Compile Include="HelpWindow.xaml.cs">
       <DependentUpon>HelpWindow.xaml</DependentUpon>
     </Compile>
@@ -138,6 +142,8 @@
     <Compile Include="ValueConverters\SortCriteriaNameValueConverter.cs" />
     <Compile Include="ViewModels\AdvancedSearchViewModel.cs" />
     <Compile Include="ViewModels\ArmorPieceTypesViewModel.cs" />
+    <Compile Include="ViewModels\ArmorSetBonusSelectorViewModel.cs" />
+    <Compile Include="ViewModels\ArmorSetBonusViewModel.cs" />
     <Compile Include="ViewModels\ArmorSetViewModel.cs" />
     <Compile Include="ViewModels\AutoUpdateViewModel.cs" />
     <Compile Include="ViewModels\DecorationsOverrideViewModel.cs" />
@@ -172,6 +178,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="AdvancedSearchWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ArmorSetBonusSelectorWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -473,6 +483,9 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="HelpText\TextualSkillSelection.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icons\Jewels\Jewel4.svg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>

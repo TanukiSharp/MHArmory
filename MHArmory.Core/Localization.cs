@@ -10,12 +10,12 @@ namespace MHArmory.Core
         public static readonly Dictionary<string, string> AvailableLanguageCodes = new Dictionary<string, string>
         {
             ["EN"] = "English",
-            ["FR"] = "Français",
-            ["JP"] = "日本語",
-            ["IT"] = "Italiano",
-            ["DE"] = "Deutsch",
-            ["KR"] = "한국어",
-            ["CN"] = "中文繁體",
+            //["FR"] = "Français",
+            //["JP"] = "日本語",
+            //["IT"] = "Italiano",
+            //["DE"] = "Deutsch",
+            //["KR"] = "한국어",
+            //["CN"] = "中文繁體",
         };
 
         public const string DefaultLanguage = "EN";

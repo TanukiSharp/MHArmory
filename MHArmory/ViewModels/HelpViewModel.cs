@@ -17,7 +17,8 @@ namespace MHArmory.ViewModels
         KeyboardShortcuts,
         Sorting,
         Grouping,
-        TextualSkillSelection
+        TextualSkillSelection,
+        WeaponSetBonus
     }
 
     public class HelpViewModel : ViewModelBase

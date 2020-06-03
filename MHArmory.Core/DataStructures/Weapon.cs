@@ -45,14 +45,16 @@ namespace MHArmory.Core.DataStructures
         public IAbility[] Abilities { get; }
         public IEvent Event { get; }
         public ICraftMaterial[] CraftMaterials { get; }
+        public IArmorSetSkill[] ArmorSetSkills { get; }
 
-        public Weapon(int id, WeaponType weaponType, int[] slots, IAbility[] abilities, IEvent evt)
+        public Weapon(int id, WeaponType weaponType, int[] slots, IAbility[] abilities, IEvent evt, IArmorSetSkill[] armorSetSkills = null)
         {
             Id = id;
             WeaponType = weaponType;
             Slots = slots;
             Abilities = abilities;
             Event = evt;
+            ArmorSetSkills = armorSetSkills ?? Array.Empty<IArmorSetSkill>();
         }
 
         public Weapon(int id, Dictionary<string, string> name, WeaponType weaponType, int rarity, int[] slots, IAbility[] abilities, IEvent evt)

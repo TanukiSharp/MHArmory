@@ -1,0 +1,13 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:pnl="clr-namespace:MHArmory.Core.WPF.Panels;assembly=MHArmory.Core.WPF">
+
+    <DataTemplate x:Key="SolverDataConfigurationView">
+        <pnl:KeyValueGrid>
+            <!-- First row of the grid -->
+            <TextBlock Text="Include lower rank armor:" VerticalAlignment="Center" ToolTip="Ranks are Low Rank (1-4), High Rank (5-8) and Master Rank(9+)"/>
+            <CheckBox IsChecked="{Binding IncludeLowerTier}" Margin="4" Padding="2" VerticalAlignment="Center" />
+        </pnl:KeyValueGrid>
+    </DataTemplate>
+
+</ResourceDictionary>

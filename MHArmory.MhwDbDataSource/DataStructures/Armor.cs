@@ -25,12 +25,33 @@ namespace MHArmory.MhwDbDataSource.DataStructures
         public ArmorSetBonusRankPrimitive[] Ranks { get; set; }
     }
 
+    internal class ArmorSetBonus : IArmorSetSkill
+    {
+        public int Id { get; private set; }
+
+        public Dictionary<string, string> Name { get; private set; } = new Dictionary<string, string>();
+
+        public IArmorSetSkillPart[] Parts { get; private set; }
+
+        internal ArmorSetBonus(ArmorSetBonusPrimitive primitive, IArmorSetSkillPart[] parts)
+        {
+            Id = primitive.Id;
+            Parts = parts;
+            AddLocalization("EN", primitive);
+        }
+        internal void AddLocalization(string languageKey, ArmorSetBonusPrimitive primitive)
+        {
+            if (primitive.Name != null)
+                Name[languageKey] = primitive.Name;
+        }
+    }
+
     internal class ArmorPieceIdPrimitive
     {
         [JsonProperty("id")]
         public int ArmorPieceId { get; set; }
     }
-
+    
     internal class ArmorSetPrimitive
     {
         [JsonProperty("id")]
@@ -137,7 +158,7 @@ namespace MHArmory.MhwDbDataSource.DataStructures
         [JsonProperty("name")]
         public string Name { get; set; }
         [JsonProperty("type")]
-        public EquipmentType Type { get; set; }
+        public string Type { get; set; }
         [JsonProperty("rarity")]
         public int Rarity { get; set; }
         [JsonProperty("defense")]
@@ -152,12 +173,15 @@ namespace MHArmory.MhwDbDataSource.DataStructures
         public IList<ArmorAbilityPrimitive> Abilities { get; set; }
         [JsonProperty("assets")]
         public ArmorPieceAssets Assets { get; set; }
+        [JsonProperty("crafting")]
+        public CraftingPrimitive Crafting { get; set; }
+
     }
 
     internal class ArmorPiece : IArmorPiece
     {
-        public int Id { get; }
-        public string Name { get; }
+        public int Id { get; set; }
+        public Dictionary<string, string> Name { get; } = new Dictionary<string, string>();
         public EquipmentType Type { get; }
         public int Rarity { get; }
         public IArmorPieceDefense Defense { get; }
@@ -165,16 +189,17 @@ namespace MHArmory.MhwDbDataSource.DataStructures
         public IArmorPieceAttributes Attributes { get; }
         public int[] Slots { get; }
         public IAbility[] Abilities { get; }
-        public IArmorSetSkill[] ArmorSetSkills { get; }
+        public IArmorSetSkill[] ArmorSetSkills { get; private set; }
         public IArmorPieceAssets Assets { get; }
-        public IArmorSet ArmorSet { get; private set; }
+        public IFullArmorSet FullArmorSet { get; set; }
         public IEvent Event { get; }
 
-        public ArmorPiece(ArmorPiecePrimitive primitive, IAbility[] abilities)
+        public ICraftMaterial[] CraftMaterials { get; }
+
+        public ArmorPiece(ArmorPiecePrimitive primitive, IAbility[] abilities, ICraftMaterial[] materials)
         {
             Id = primitive.Id;
-            Name = FixName(MapToGameName(primitive.Name));
-            Type = primitive.Type;
+            Type = EquipmentTypeFromString(primitive.Type);
             Rarity = primitive.Rarity;
             Defense = primitive.Defense;
             Resistances = primitive.Resistances;
@@ -182,12 +207,35 @@ namespace MHArmory.MhwDbDataSource.DataStructures
             Slots = primitive.Slots.Select(x => x.Rank).ToArray();
             Abilities = abilities;
             Assets = primitive.Assets;
-            ArmorSet = null;
+            FullArmorSet = null;
+            CraftMaterials = materials;
+            AddLocalization("EN", primitive);
         }
 
-        internal void UpdateArmorSet(IArmorSet armorSet)
+        private EquipmentType EquipmentTypeFromString(string str)
         {
-            ArmorSet = armorSet;
+            if (str == "head")
+                return EquipmentType.Head;
+            if (str == "chest")
+                return EquipmentType.Chest;
+            if (str == "gloves")
+                return EquipmentType.Gloves;
+            if (str == "waist")
+                return EquipmentType.Waist;
+            if (str == "legs")
+                return EquipmentType.Legs;
+            throw new InvalidOperationException($"'{str}' is not a valid Equipmenttype");
+        }
+
+        internal void AddLocalization(string languageKey, ArmorPiecePrimitive primitive)
+        {
+            if (primitive.Name != null)
+                Name[languageKey] = MapToGameName(primitive.Name);
+        }
+
+        internal void UpdateArmorSetBoni(IArmorSetSkill[] boni)
+        {
+            ArmorSetSkills = boni;
         }
 
         private string MapToGameName(string name)
@@ -201,19 +249,18 @@ namespace MHArmory.MhwDbDataSource.DataStructures
             if (name.EndsWith(" Gamma"))
                 return name.Substring(0, name.Length - 5) + "γ";
 
+            if (name.EndsWith(" Alpha +"))
+                return name.Substring(0, name.Length - 7) + "α+";
+
+            if (name.EndsWith(" Beta +"))
+                return name.Substring(0, name.Length - 6) + "β+";
+
+            if (name.EndsWith(" Gamma +"))
+                return name.Substring(0, name.Length - 7) + "γ+";
+
             return name;
         }
-
-        private string FixName(string name)
-        {
-            if (name == "Death Stench Heels")
-                return "Death Stench Heel";
-            if (name == "Kulu-Yaku Head α")
-                return "Kulu-Ya-Ku Head α";
-
-            return name;
-        }
-
+        
         public override string ToString()
         {
             return $"{Name} ({Abilities.Length} abilities)";

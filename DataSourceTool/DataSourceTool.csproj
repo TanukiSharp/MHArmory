@@ -11,6 +11,7 @@
     <ProjectReference Include="..\MHArmory.ArmoryDataSource\MHArmory.ArmoryDataSource.csproj" />
     <ProjectReference Include="..\MHArmory.AthenaAssDataSource\MHArmory.AthenaAssDataSource.csproj" />
     <ProjectReference Include="..\MHArmory.Core\MHArmory.Core.csproj" />
+    <ProjectReference Include="..\MHArmory.MhwDbDataSource\MHArmory.MhwDbDataSource.csproj" />
   </ItemGroup>
 
 </Project>

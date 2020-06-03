@@ -20,6 +20,7 @@ namespace MHArmory
         public IList<ISkill> Skills { get; private set; }
         public IList<ICharmLevel> Charms { get; set; }
         public IList<IJewel> Jewels { get; set; }
+        public IList<IArmorSetSkill> ArmorSetSkills { get; set; }
 
         public IList<IArmorPiece> Heads { get; private set; }
         public IList<IArmorPiece> Chests { get; private set; }

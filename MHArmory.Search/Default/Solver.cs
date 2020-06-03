@@ -15,7 +15,7 @@ namespace MHArmory.Search.Default
     public sealed class Solver : SolverBase, IDisposable
     {
         public override string Name { get; } = "Armory - Default";
-        public override string Description { get; } = "Default search algorithm";
+        public override string Description { get; } = "Default search algorithm (only use for LR and HR)";
         public override int Version { get; } = 1;
 
         public void Dispose()
@@ -26,8 +26,9 @@ namespace MHArmory.Search.Default
         }
 
         private readonly ObjectPool<List<ArmorSetJewelResult>> jewelResultObjectPool = new ObjectPool<List<ArmorSetJewelResult>>(() => new List<ArmorSetJewelResult>());
-        private readonly ObjectPool<int[]> availableSlotsObjectPool = new ObjectPool<int[]>(() => new int[3]);
-        private readonly ObjectPool<Dictionary<IArmorSetSkillPart, int>> armorSetSkillPartsObjectPool = new ObjectPool<Dictionary<IArmorSetSkillPart, int>>(() => new Dictionary<IArmorSetSkillPart, int>(ArmorSetSkillPartEqualityComparer.Default));
+        private readonly ObjectPool<int[]> availableSlotsObjectPool = new ObjectPool<int[]>(() => new int[4]);
+        private readonly ObjectPool<Dictionary<IArmorSetSkillPart, int>> armorSetSkillPartsObjectPool =
+            new ObjectPool<Dictionary<IArmorSetSkillPart, int>>(() => new Dictionary<IArmorSetSkillPart, int>(SolverUtils.ArmorSetSkillPartEqualityComparer.Default));
 
         private void ReturnSlotsArray(int[] slotsArray)
         {
@@ -110,7 +111,7 @@ namespace MHArmory.Search.Default
                         return ArmorSetSearchResult.NoMatch;
                     }
 
-                    if (ConsumeSlots(availableSlots, j.Jewel.SlotSize, requiredJewelCount) == false)
+                    if (SolverUtils.ConsumeSlots(availableSlots, j.Jewel.SlotSize, requiredJewelCount) != requiredJewelCount)
                     {
                         OnArmorSetMismatch();
                         return ArmorSetSearchResult.NoMatch;
@@ -196,49 +197,6 @@ namespace MHArmory.Search.Default
 
             Done();
             return false;
-        }
-
-        private static bool ConsumeSlots(int[] availableSlots, int jewelSize, int jewelCount)
-        {
-            for (int i = jewelSize - 1; i < availableSlots.Length; i++)
-            {
-                if (availableSlots[i] <= 0)
-                    continue;
-
-                if (availableSlots[i] >= jewelCount)
-                {
-                    availableSlots[i] -= jewelCount;
-                    return true;
-                }
-                else
-                {
-                    jewelCount -= availableSlots[i];
-                    availableSlots[i] = 0;
-                }
-            }
-
-            return jewelCount <= 0;
-        }
-
-        private class ArmorSetSkillPartEqualityComparer : IEqualityComparer<IArmorSetSkillPart>
-        {
-            public static readonly IEqualityComparer<IArmorSetSkillPart> Default = new ArmorSetSkillPartEqualityComparer();
-
-            public bool Equals(IArmorSetSkillPart x, IArmorSetSkillPart y)
-            {
-                if (x == null || y == null)
-                    return false;
-
-                return x.Id == y.Id;
-            }
-
-            public int GetHashCode(IArmorSetSkillPart obj)
-            {
-                if (obj == null)
-                    return 0;
-
-                return obj.Id;
-            }
         }
     }
 }

@@ -25,10 +25,14 @@ namespace MHArmory.MhwDbDataSource.DataStructures
         public int Rarity { get; set; }
         [JsonProperty("skills")]
         public IList<AbilityIdPrimitive> Abilitites { get; set; }
+        [JsonProperty("crafting")]
+        public CraftingPrimitive Crafting { get; set; }
     }
 
     internal class CharmPrimitive
     {
+        [JsonProperty("id")]
+        public int Id { get; set; }
         [JsonProperty("name")]
         public string Name { get; set; }
         [JsonProperty("ranks")]
@@ -40,20 +44,30 @@ namespace MHArmory.MhwDbDataSource.DataStructures
         public ICharm Charm { get; private set; }
         public int Id { get; }
         public EquipmentType Type { get; } = EquipmentType.Charm;
-        public string Name { get; }
+        public Dictionary<string, string> Name { get; private set; } = new Dictionary<string, string>();
         public int Level { get; }
         public int Rarity { get; }
         public int[] Slots { get; } = Array.Empty<int>();
         public IAbility[] Abilities { get; }
         public IEvent Event { get; }
 
-        internal CharmLevel(int id, CharmLevelPrimitive currentCharmLevelPrimitive, IAbility[] abilities)
+
+        public ICraftMaterial[] CraftMaterials { get; }
+
+        internal CharmLevel(int id, CharmLevelPrimitive currentCharmLevelPrimitive, IAbility[] abilities, ICraftMaterial[] materials)
         {
             Id = id;
-            Name = currentCharmLevelPrimitive.Name;
             Level = currentCharmLevelPrimitive.Level;
             Rarity = currentCharmLevelPrimitive.Rarity;
             Abilities = abilities;
+            CraftMaterials = materials;
+            AddLocalization("EN", currentCharmLevelPrimitive);
+        }
+
+        internal void AddLocalization(string languageKey, CharmLevelPrimitive primitive)
+        {
+            if (primitive.Name != null)
+                Name[languageKey] = primitive.Name;
         }
 
         public void UpdateCharm(ICharm charm)
@@ -64,6 +78,51 @@ namespace MHArmory.MhwDbDataSource.DataStructures
         public override string ToString()
         {
             return $"{Name}";
+        }
+    }
+    
+    internal class Charm : ICharm
+    {
+        public int Id { get; private set; }
+
+        public Dictionary<string, string> Name { get; private set; } = new Dictionary<string, string>();
+
+        public ICharmLevel[] Levels { get; private set; }
+
+        internal Charm(CharmPrimitive primitive)
+        {
+            Id = primitive.Id;
+            Levels = null;
+            Name["EN"] = primitive.Name;
+        }
+
+        internal void SetCharmLevels(ICharmLevel[] levels)
+        {
+            Levels = levels;
+        }
+
+        internal void AddLocalization(string languageKey, CharmPrimitive primitive)
+        {
+            if (primitive.Name != null)
+                Name[languageKey] = primitive.Name;
+            if(primitive.Levels.Count != Levels.Length)
+                throw new InvalidOperationException($"Charm with ID '{primitive.Id}' in language '{languageKey}' has different number of levels ('{Levels.Length}' vs '{primitive.Levels.Count}')");
+
+            foreach (CharmLevelPrimitive charmLevelPrimitive in primitive.Levels)
+            {
+                bool found = false;
+                foreach(CharmLevel level in Levels)
+                {
+                    if(level.Level == charmLevelPrimitive.Level)
+                    {
+                        found = true;
+                        level.AddLocalization(languageKey, charmLevelPrimitive);
+                        break;
+                    }
+                }
+                if (!found)
+                    throw new InvalidOperationException($"Charm with ID '{primitive.Id}' in language '{languageKey}' has charm level with level '{charmLevelPrimitive.Level}' which is not present in the original");
+            }
         }
     }
 }

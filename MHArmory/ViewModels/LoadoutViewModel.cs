@@ -39,8 +39,9 @@ namespace MHArmory.ViewModels
 
         public int[] WeaponSlots { get; }
         public AbilityViewModel[] Abilities { get; }
+        public ArmorSetBonusViewModel[] WeaponSetBonuses { get; }
 
-        public LoadoutViewModel(bool isManageMode, string name, AbilityViewModel[] abilities, int[] weaponSlots, LoadoutSelectorViewModel parent)
+        public LoadoutViewModel(bool isManageMode, string name, AbilityViewModel[] abilities, int[] weaponSlots, LoadoutSelectorViewModel parent, ArmorSetBonusViewModel[] weaponSetBonuses)
         {
             this.parent = parent;
 
@@ -49,6 +50,7 @@ namespace MHArmory.ViewModels
             Name = name;
             WeaponSlots = weaponSlots.Where(x => x > 0).ToArray();
             Abilities = abilities;
+            WeaponSetBonuses = weaponSetBonuses;
 
             RenameCommand = new AnonymousCommand(OnRename);
             MoveUpCommand = new AnonymousCommand(OnMoveUp);
@@ -106,13 +108,15 @@ namespace MHArmory.ViewModels
 
         private readonly Action<bool?> endFunc;
         private readonly IEnumerable<AbilityViewModel> abilities;
+        private readonly IEnumerable<ArmorSetBonusViewModel> weaponSetBonuses;
 
-        public LoadoutSelectorViewModel(bool isManageMode, Action<bool?> endFunc, IEnumerable<AbilityViewModel> abilities)
+        public LoadoutSelectorViewModel(bool isManageMode, Action<bool?> endFunc, IEnumerable<AbilityViewModel> abilities, IEnumerable<ArmorSetBonusViewModel> weaponSetBonuses)
         {
             IsManageMode = isManageMode;
 
             this.endFunc = endFunc;
             this.abilities = abilities;
+            this.weaponSetBonuses = weaponSetBonuses;
 
             AcceptCommand = new AnonymousCommand(OnAccept);
             CancelCommand = new AnonymousCommand(OnCancel);
@@ -123,7 +127,7 @@ namespace MHArmory.ViewModels
                 return;
 
             Loadouts = new ObservableCollection<LoadoutViewModel>(
-                loadoutConfig.Select(x => new LoadoutViewModel(isManageMode, x.Key, CreateAbilities(x.Value.Skills), x.Value.WeaponSlots, this))
+                loadoutConfig.Select(x => new LoadoutViewModel(isManageMode, x.Key, CreateAbilities(x.Value.Skills), x.Value.WeaponSlots, this, CreateWeaponSetBonuses(x.Value.WeaponSetBonuses)))
             );
 
             if (Loadouts.Count > 1)
@@ -153,6 +157,20 @@ namespace MHArmory.ViewModels
             foreach (SkillLoadoutItemConfigurationV2 item in abilityInfo)
             {
                 AbilityViewModel found = abilities.FirstOrDefault(a => Localization.GetDefault(a.SkillName) == item.SkillName && a.Level == item.Level);
+                if (found != null)
+                    result.Add(found);
+            }
+
+            return result.ToArray();
+        }
+
+        private ArmorSetBonusViewModel[] CreateWeaponSetBonuses(string[] setBonuses)
+        {
+            var result = new List<ArmorSetBonusViewModel>();
+
+            foreach (string setBonus in setBonuses)
+            {
+                ArmorSetBonusViewModel found = weaponSetBonuses.FirstOrDefault(w => Localization.GetDefault(w.Name) == setBonus);
                 if (found != null)
                     result.Add(found);
             }

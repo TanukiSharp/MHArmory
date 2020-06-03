@@ -17,6 +17,7 @@ namespace MHArmory
         public static readonly ICommand OpenSearchResultProcessing = new RoutedCommand("OpenSearchResultProcessing", typeof(RoutedCommands));
         public static readonly ICommand OpenWeapons = new RoutedCommand("OpenWeapons", typeof(RoutedCommand));
         public static readonly ICommand OpenExtensions = new RoutedCommand("OpenExtensions", typeof(RoutedCommands));
+        public static readonly ICommand OpenWeaponSetBonusSelector = new RoutedCommand("OpenWeaponSetBonusSelector", typeof(RoutedCommands));
 
         //public static readonly ICommand NewLoadout = new RoutedCommand("NewLoadout", typeof(RoutedCommands));
         public static readonly ICommand ResetLoadout = new RoutedCommand("ResetLoadout", typeof(RoutedCommands));

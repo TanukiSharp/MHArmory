@@ -13,5 +13,6 @@ namespace MHArmory.Core
         Task<ISkill[]> GetSkills();
         Task<ICharm[]> GetCharms();
         Task<IJewel[]> GetJewels();
+        Task<IArmorSetSkill[]> GetArmorSetSkills();
     }
 }

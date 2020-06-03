@@ -115,6 +115,9 @@ namespace MHArmory.Core
 
         private string ReadRawDataFromCache(string api, ILogger logger)
         {
+            if (!hasWriteAccess)
+                return null;
+
             string[] files;
 
             try

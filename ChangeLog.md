@@ -1,5 +1,9 @@
 # Change log
 
+## 0.1.0.0 (??)
+- initial release for Monster Hunter World Iceborne armour sets.
+
+
 ## 0.0.9.7 (??)
 
 - Improved search algorithm performance by 2 to 2.5.<br/>

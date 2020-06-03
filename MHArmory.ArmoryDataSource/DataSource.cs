@@ -46,6 +46,19 @@ namespace MHArmory.ArmoryDataSource
         }
 
         private IList<IArmorSetSkill> armorSetSkills;
+        private Task<IArmorSetSkill[]> armorSetSkillsTask;
+        public Task<IArmorSetSkill[]> GetArmorSetSkills()
+        {
+            if (armorSetSkillsTask != null)
+                return armorSetSkillsTask;
+
+            FetchSkills();
+            FetchArmorSetSkills();
+
+            armorSetSkillsTask = Task.FromResult(armorSetSkills.ToArray());
+
+            return armorSetSkillsTask;
+        }
 
         private void FetchArmorSetSkills()
         {

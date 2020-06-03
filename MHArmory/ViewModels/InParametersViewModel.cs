@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -46,11 +47,28 @@ namespace MHArmory.ViewModels
         }
     }
 
-    public class InParametersViewModel : ViewModelBase
+    public class InParametersViewModel : ViewModelBase, INotifyPropertyChanged
     {
         private readonly RootViewModel root;
 
         public ValueViewModel<int>[] Slots { get; }
+
+        private int weaponSetBonusesSelected = 0;
+        public int WeaponSetBonusesSelected 
+        {
+            get { return weaponSetBonusesSelected; } 
+            set 
+            {
+                SetValue(ref weaponSetBonusesSelected, value);
+            } 
+        }
+
+
+        // OnProperyChanged("WeaponSetBonusesSelected");
+        private void RootViewModel_WeaponSetBonusChanged(object sender, EventArgs e)
+        {
+            WeaponSetBonusesSelected = root.SelectedArmorSetBonuses.Count(x => x.IsChecked);
+        }
 
         private bool useDecorationsOverride;
         public bool UseDecorationsOverride
@@ -134,6 +152,7 @@ namespace MHArmory.ViewModels
 
         public ICommand OpenDecorationsOverrideCommand { get { return root.OpenDecorationsOverrideCommand; } }
         public ICommand OpenEquipmentOverrideCommand { get { return root.OpenEquipmentOverrideCommand; } }
+        public ICommand OpenWeaponSetBonusSelectorCommand { get { return root.OpenWeaponSetBonusSelectorCommand; } }
 
         public InParametersViewModel(RootViewModel root)
         {
@@ -142,6 +161,8 @@ namespace MHArmory.ViewModels
             Slots = new ValueViewModel<int>[3];
             for (int i = 0; i < Slots.Length; i++)
                 Slots[i] = new ValueViewModel<int>(WeaponSlotsChanged);
+
+            this.root.WeaponSetBonusChanged += RootViewModel_WeaponSetBonusChanged;
         }
 
         private bool isLoadingConfiguration;
@@ -164,7 +185,7 @@ namespace MHArmory.ViewModels
                 UseEquipmentOverride = config.EquipmentOverride.UseOverride;
 
                 if (config.Rarity <= 0)
-                    Rarity = 9; // initial rarity, maximum one
+                    Rarity = 12; // initial rarity, maximum one
                 else
                     Rarity = config.Rarity;
 

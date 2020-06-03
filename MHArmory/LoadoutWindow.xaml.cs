@@ -31,11 +31,11 @@ namespace MHArmory
 
         public bool IsCurrentLoadoutRenamed { get; private set; }
 
-        public LoadoutWindow(bool isManageMode, string selectedLoadoutName, IEnumerable<AbilityViewModel> abilities)
+        public LoadoutWindow(bool isManageMode, string selectedLoadoutName, IEnumerable<AbilityViewModel> abilities, IEnumerable<ArmorSetBonusViewModel> weaponSetBonuses)
         {
             InitializeComponent();
 
-            loadoutSelectorViewModel = new LoadoutSelectorViewModel(isManageMode, OnEnd, abilities);
+            loadoutSelectorViewModel = new LoadoutSelectorViewModel(isManageMode, OnEnd, abilities, weaponSetBonuses);
 
             if (selectedLoadoutName == null)
                 loadoutSelectorViewModel.SelectedLoadout = null;

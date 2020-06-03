@@ -3,12 +3,34 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using MHArmory.Core;
 using MHArmory.Core.DataStructures;
 
 namespace MHArmory.Search.Default
 {
     public static class SolverUtils
     {
+        public class ArmorSetSkillPartEqualityComparer : IEqualityComparer<IArmorSetSkillPart>
+        {
+            public static readonly IEqualityComparer<IArmorSetSkillPart> Default = new ArmorSetSkillPartEqualityComparer();
+
+            public bool Equals(IArmorSetSkillPart x, IArmorSetSkillPart y)
+            {
+                if (x == null || y == null)
+                    return false;
+
+                return x.Id == y.Id;
+            }
+
+            public int GetHashCode(IArmorSetSkillPart obj)
+            {
+                if (obj == null)
+                    return 0;
+
+                return obj.Id;
+            }
+        }
+
         public static bool IsAnyFullArmorSet(IEquipment[] equipments)
         {
             foreach (IEquipment equipment in equipments)
@@ -51,6 +73,38 @@ namespace MHArmory.Search.Default
                 count++;
 
             return count;
+        }
+
+        public static int ConsumeSlots(int[] availableSlots, int jewelSize, int jewelCount, bool limitToExactSlotsize = false)
+        {
+            int slotted = 0;
+            for (int i = jewelSize - 1; i < availableSlots.Length; i++)
+            {
+                if (availableSlots[i] <= 0)
+                {
+                    if (limitToExactSlotsize)
+                        return slotted;
+                    else
+                        continue;
+                }
+
+                if (availableSlots[i] >= jewelCount)
+                {
+                    availableSlots[i] -= jewelCount;
+                    slotted += jewelCount;
+                    return slotted;
+                }
+                else
+                {
+                    jewelCount -= availableSlots[i];
+                    slotted += availableSlots[i];
+                    availableSlots[i] = 0;
+                }
+                if (limitToExactSlotsize)
+                    return slotted;
+            }
+
+            return slotted;
         }
     }
 }
