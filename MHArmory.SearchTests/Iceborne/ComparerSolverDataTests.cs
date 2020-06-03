@@ -46,6 +46,11 @@ namespace MHArmory.Search.Iceborne.Tests
             return new SolverDataJewelModel(new Jewel(id, new Dictionary<string, string>(), 12, slotSize, abilities), available, generic);
         }
 
+        private static IArmorSetSkill CreateArmorSetSkill(int id, int skill)
+        {
+            return new ArmorSetSkill(id, new Dictionary<string, string>(), new IArmorSetSkillPart[] { new ArmorSetSkillPart(id, 1, new IAbility[] { CreateAbility(CreateSkill(skill), 1) }) });
+        }
+
         [TestMethod()]
         public void SetupSortOutExcludedSkillsTest()
         {
@@ -1061,6 +1066,156 @@ namespace MHArmory.Search.Iceborne.Tests
             Assert.Equals(2, comparer.AllLegs.Count());
             Assert.IsTrue(comparer.AllLegs[0].IsSelected);
             Assert.IsFalse(comparer.AllLegs[1].IsSelected);
+        }
+
+        [TestMethod()]
+        public void SetupComparable_WorseButWithSetBonus_Test()
+        {
+            var comparer = new ComparerSolverData();
+            comparer.IfEqualUseArmorWithBetterSlots = false;
+
+            IEnumerable<IArmorPiece> CreateArmors(EquipmentType type)
+            {
+                return new List<IArmorPiece>()
+                {
+                    CreateArmor(0, type, 12, new int[] {}, new IAbility[] {CreateAbility(CreateSkill(0), 1)}, null),
+                    CreateArmor(1, type, 12, new int[] {}, new IAbility[] {CreateAbility(CreateSkill(2), 1)}, new IArmorSetSkill[] { CreateArmorSetSkill(0, 1) }),
+                };
+            }
+
+            IEnumerable<IArmorPiece> heads = CreateArmors(EquipmentType.Head);
+            IEnumerable<IArmorPiece> chests = CreateArmors(EquipmentType.Chest);
+            IEnumerable<IArmorPiece> arms = CreateArmors(EquipmentType.Gloves);
+            IEnumerable<IArmorPiece> waist = CreateArmors(EquipmentType.Waist);
+            IEnumerable<IArmorPiece> legs = CreateArmors(EquipmentType.Legs);
+            var charms = new List<ICharmLevel>();
+            var decos = new List<SolverDataJewelModel> ();
+
+            comparer.Setup(CreateWeapon(), heads, chests, arms, waist, legs, charms, decos, new IAbility[] { CreateAbility(CreateSkill(0), 7), CreateAbility(CreateSkill(1), 7) });
+
+            Assert.Equals(2, comparer.AllHeads.Count());
+            Assert.IsTrue(comparer.AllHeads[0].IsSelected);
+            Assert.IsTrue(comparer.AllHeads[1].IsSelected);
+
+            Assert.Equals(2, comparer.AllChests.Count());
+            Assert.IsTrue(comparer.AllChests[0].IsSelected);
+            Assert.IsTrue(comparer.AllChests[1].IsSelected);
+
+            Assert.Equals(2, comparer.AllGloves.Count());
+            Assert.IsTrue(comparer.AllGloves[0].IsSelected);
+            Assert.IsTrue(comparer.AllGloves[1].IsSelected);
+
+            Assert.Equals(2, comparer.AllWaists.Count());
+            Assert.IsTrue(comparer.AllWaists[0].IsSelected);
+            Assert.IsTrue(comparer.AllWaists[1].IsSelected);
+
+            Assert.Equals(2, comparer.AllLegs.Count());
+            Assert.IsTrue(comparer.AllLegs[0].IsSelected);
+            Assert.IsTrue(comparer.AllLegs[1].IsSelected);
+        }
+
+        [TestMethod()]
+        public void SetupComparable_2WorseButWithSetBonus_1betterThenOther_Test()
+        {
+            var comparer = new ComparerSolverData();
+            comparer.IfEqualUseArmorWithBetterSlots = false;
+
+            IEnumerable<IArmorPiece> CreateArmors(EquipmentType type)
+            {
+                return new List<IArmorPiece>()
+                {
+                    CreateArmor(0, type, 12, new int[] {}, new IAbility[] {CreateAbility(CreateSkill(0), 2)}, null),
+                    CreateArmor(1, type, 12, new int[] {}, new IAbility[] {CreateAbility(CreateSkill(2), 1)}, new IArmorSetSkill[] { CreateArmorSetSkill(0, 1) }),
+                    CreateArmor(1, type, 12, new int[] {}, new IAbility[] {CreateAbility(CreateSkill(0), 1)}, new IArmorSetSkill[] { CreateArmorSetSkill(0, 1) }),
+                };
+            }
+
+            IEnumerable<IArmorPiece> heads = CreateArmors(EquipmentType.Head);
+            IEnumerable<IArmorPiece> chests = CreateArmors(EquipmentType.Chest);
+            IEnumerable<IArmorPiece> arms = CreateArmors(EquipmentType.Gloves);
+            IEnumerable<IArmorPiece> waist = CreateArmors(EquipmentType.Waist);
+            IEnumerable<IArmorPiece> legs = CreateArmors(EquipmentType.Legs);
+            var charms = new List<ICharmLevel>();
+            var decos = new List<SolverDataJewelModel>();
+
+            comparer.Setup(CreateWeapon(), heads, chests, arms, waist, legs, charms, decos, new IAbility[] { CreateAbility(CreateSkill(0), 7), CreateAbility(CreateSkill(1), 7) });
+
+            Assert.Equals(3, comparer.AllHeads.Count());
+            Assert.IsTrue(comparer.AllHeads[0].IsSelected);
+            Assert.IsFalse(comparer.AllHeads[1].IsSelected);
+            Assert.IsTrue(comparer.AllHeads[2].IsSelected);
+
+            Assert.Equals(3, comparer.AllChests.Count());
+            Assert.IsTrue(comparer.AllChests[0].IsSelected);
+            Assert.IsFalse(comparer.AllChests[1].IsSelected);
+            Assert.IsTrue(comparer.AllChests[2].IsSelected);
+
+            Assert.Equals(3, comparer.AllGloves.Count());
+            Assert.IsTrue(comparer.AllGloves[0].IsSelected);
+            Assert.IsFalse(comparer.AllGloves[1].IsSelected);
+            Assert.IsTrue(comparer.AllGloves[2].IsSelected);
+
+            Assert.Equals(3, comparer.AllWaists.Count());
+            Assert.IsTrue(comparer.AllWaists[0].IsSelected);
+            Assert.IsFalse(comparer.AllWaists[1].IsSelected);
+            Assert.IsTrue(comparer.AllWaists[2].IsSelected);
+
+            Assert.Equals(3, comparer.AllLegs.Count());
+            Assert.IsTrue(comparer.AllLegs[0].IsSelected);
+            Assert.IsFalse(comparer.AllLegs[1].IsSelected);
+            Assert.IsTrue(comparer.AllLegs[2].IsSelected);
+        }
+
+        [TestMethod()]
+        public void SetupComparable_2WorseButWithSetBonus_differentSets_Test()
+        {
+            var comparer = new ComparerSolverData();
+            comparer.IfEqualUseArmorWithBetterSlots = false;
+
+            IEnumerable<IArmorPiece> CreateArmors(EquipmentType type)
+            {
+                return new List<IArmorPiece>()
+                {
+                    CreateArmor(0, type, 12, new int[] {}, new IAbility[] {CreateAbility(CreateSkill(0), 2)}, null),
+                    CreateArmor(1, type, 12, new int[] {}, new IAbility[] {CreateAbility(CreateSkill(2), 1)}, new IArmorSetSkill[] { CreateArmorSetSkill(0, 1) }),
+                    CreateArmor(1, type, 12, new int[] {}, new IAbility[] {CreateAbility(CreateSkill(0), 1)}, new IArmorSetSkill[] { CreateArmorSetSkill(1, 1) }),
+                };
+            }
+
+            IEnumerable<IArmorPiece> heads = CreateArmors(EquipmentType.Head);
+            IEnumerable<IArmorPiece> chests = CreateArmors(EquipmentType.Chest);
+            IEnumerable<IArmorPiece> arms = CreateArmors(EquipmentType.Gloves);
+            IEnumerable<IArmorPiece> waist = CreateArmors(EquipmentType.Waist);
+            IEnumerable<IArmorPiece> legs = CreateArmors(EquipmentType.Legs);
+            var charms = new List<ICharmLevel>();
+            var decos = new List<SolverDataJewelModel>();
+
+            comparer.Setup(CreateWeapon(), heads, chests, arms, waist, legs, charms, decos, new IAbility[] { CreateAbility(CreateSkill(0), 7), CreateAbility(CreateSkill(1), 7) });
+
+            Assert.Equals(3, comparer.AllHeads.Count());
+            Assert.IsTrue(comparer.AllHeads[0].IsSelected);
+            Assert.IsTrue(comparer.AllHeads[1].IsSelected);
+            Assert.IsTrue(comparer.AllHeads[2].IsSelected);
+
+            Assert.Equals(3, comparer.AllChests.Count());
+            Assert.IsTrue(comparer.AllChests[0].IsSelected);
+            Assert.IsTrue(comparer.AllChests[1].IsSelected);
+            Assert.IsTrue(comparer.AllChests[2].IsSelected);
+
+            Assert.Equals(3, comparer.AllGloves.Count());
+            Assert.IsTrue(comparer.AllGloves[0].IsSelected);
+            Assert.IsTrue(comparer.AllGloves[1].IsSelected);
+            Assert.IsTrue(comparer.AllGloves[2].IsSelected);
+
+            Assert.Equals(3, comparer.AllWaists.Count());
+            Assert.IsTrue(comparer.AllWaists[0].IsSelected);
+            Assert.IsTrue(comparer.AllWaists[1].IsSelected);
+            Assert.IsTrue(comparer.AllWaists[2].IsSelected);
+
+            Assert.Equals(3, comparer.AllLegs.Count());
+            Assert.IsTrue(comparer.AllLegs[0].IsSelected);
+            Assert.IsTrue(comparer.AllLegs[1].IsSelected);
+            Assert.IsTrue(comparer.AllLegs[2].IsSelected);
         }
     }
 }
