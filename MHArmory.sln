@@ -22,19 +22,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MHWSaveUtils", "MHWSaveUtil
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MHArmory.Search.Contracts", "MHArmory.Search.Contracts\MHArmory.Search.Contracts.csproj", "{46E1D053-5670-4B4E-B5DD-B09358B5D36A}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MHArmory.Search", "MHArmory.Search\MHArmory.Search.csproj", "{EFC218F1-AAE3-499A-A26C-85878B8CEC3A}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MHArmory.Core.WPF", "MHArmory.Core.WPF\MHArmory.Core.WPF.csproj", "{0F590F55-0EEF-4F1B-ABBB-1D561BCEAD48}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MHArmory", "MHArmory\MHArmory.csproj", "{B0A72C5D-4CE0-4417-BD68-B902B8C00EC6}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MHWMasterDataUtils.Core", "MHWMasterDataUtils\MHWMasterDataUtils.Core\MHWMasterDataUtils.Core.csproj", "{CCEC18D6-21C1-421F-9A38-4A7D71E7AB32}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MHArmory.Core.WPF2", "MHArmory.Core.WPF\MHArmory.Core.WPF2.csproj", "{BCB6B6BF-6FAC-40EC-A53C-B04636CA0646}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MHArmory.Core.WPF", "MHArmory.Core.WPF\MHArmory.Core.WPF.csproj", "{BCB6B6BF-6FAC-40EC-A53C-B04636CA0646}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MHArmory.Search2", "MHArmory.Search\MHArmory.Search2.csproj", "{35721E89-76D8-4366-8C62-1A93EAFE772C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MHArmory.Search", "MHArmory.Search\MHArmory.Search.csproj", "{35721E89-76D8-4366-8C62-1A93EAFE772C}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MHArmory2", "MHArmory\MHArmory2.csproj", "{386C2B0A-96DF-4296-A3F0-0C1764D827F0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MHArmory", "MHArmory\MHArmory.csproj", "{386C2B0A-96DF-4296-A3F0-0C1764D827F0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -70,18 +64,6 @@ Global
 		{46E1D053-5670-4B4E-B5DD-B09358B5D36A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{46E1D053-5670-4B4E-B5DD-B09358B5D36A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{46E1D053-5670-4B4E-B5DD-B09358B5D36A}.Release|Any CPU.Build.0 = Release|Any CPU
-		{EFC218F1-AAE3-499A-A26C-85878B8CEC3A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{EFC218F1-AAE3-499A-A26C-85878B8CEC3A}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{EFC218F1-AAE3-499A-A26C-85878B8CEC3A}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{EFC218F1-AAE3-499A-A26C-85878B8CEC3A}.Release|Any CPU.Build.0 = Release|Any CPU
-		{0F590F55-0EEF-4F1B-ABBB-1D561BCEAD48}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{0F590F55-0EEF-4F1B-ABBB-1D561BCEAD48}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{0F590F55-0EEF-4F1B-ABBB-1D561BCEAD48}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{0F590F55-0EEF-4F1B-ABBB-1D561BCEAD48}.Release|Any CPU.Build.0 = Release|Any CPU
-		{B0A72C5D-4CE0-4417-BD68-B902B8C00EC6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{B0A72C5D-4CE0-4417-BD68-B902B8C00EC6}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{B0A72C5D-4CE0-4417-BD68-B902B8C00EC6}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{B0A72C5D-4CE0-4417-BD68-B902B8C00EC6}.Release|Any CPU.Build.0 = Release|Any CPU
 		{CCEC18D6-21C1-421F-9A38-4A7D71E7AB32}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{CCEC18D6-21C1-421F-9A38-4A7D71E7AB32}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CCEC18D6-21C1-421F-9A38-4A7D71E7AB32}.Release|Any CPU.ActiveCfg = Release|Any CPU
