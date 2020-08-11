@@ -4,15 +4,18 @@ using System.Linq;
 using System.Net.Http;
 using MHArmory.ArmoryDataSource.DataStructures;
 using Newtonsoft.Json;
+using System.Threading.Tasks;
 
 namespace DataSourceTool
 {
     class Program
     {
-        static void Main(string[] args)
+        static async Task Main(string[] args)
         {
+            await new GameMasterDataImporter().Run();
+
             //// Loads data from Athena ASS and export to Armory format
-            new Exporter().Run(args).Wait();
+            //new Exporter().Run(args).Wait();
 
             //// Export the gameEquipments.json file from chunk*.pkg files
             //new Equipments().Run(args).Wait();
