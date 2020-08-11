@@ -5,3 +5,4 @@
 [submodule "MHWMasterDataUtils"]
 	path = MHWMasterDataUtils
 	url = git@github.com:TanukiSharp/MHWMasterDataUtils.git
+	branch = master
