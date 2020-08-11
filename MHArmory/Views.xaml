@@ -2,11 +2,11 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:local="clr-namespace:MHArmory"
                     xmlns:localcvt="clr-namespace:MHArmory.ValueConverters"
-                    xmlns:cvt="clr-namespace:MHArmory.Core.WPF.ValueConverters;assembly=MHArmory.Core.WPF"
-                    xmlns:bhv="clr-namespace:MHArmory.Core.WPF.Behaviors;assembly=MHArmory.Core.WPF"
-                    xmlns:ctrl="clr-namespace:MHArmory.Core.WPF.Controls;assembly=MHArmory.Core.WPF"
-                    xmlns:mxt="clr-namespace:MHArmory.Core.WPF.MarkupExtensions;assembly=MHArmory.Core.WPF"
-                    xmlns:pnl="clr-namespace:MHArmory.Core.WPF.Panels;assembly=MHArmory.Core.WPF">
+                    xmlns:cvt="clr-namespace:MHArmory.Core.WPF.ValueConverters;assembly=MHArmory.Core.WPF2"
+                    xmlns:bhv="clr-namespace:MHArmory.Core.WPF.Behaviors;assembly=MHArmory.Core.WPF2"
+                    xmlns:ctrl="clr-namespace:MHArmory.Core.WPF.Controls;assembly=MHArmory.Core.WPF2"
+                    xmlns:mxt="clr-namespace:MHArmory.Core.WPF.MarkupExtensions;assembly=MHArmory.Core.WPF2"
+                    xmlns:pnl="clr-namespace:MHArmory.Core.WPF.Panels;assembly=MHArmory.Core.WPF2">
 
     <localcvt:AbilityToViewModelValueConverter x:Key="AbilityToViewModelValueConverter"/>
     <localcvt:SortCriteriaNameValueConverter x:Key="SortCriteriaNameValueConverter"/>

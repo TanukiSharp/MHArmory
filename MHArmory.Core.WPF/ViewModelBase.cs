@@ -4,7 +4,7 @@ using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using System.Windows.Threading;
 
-[assembly:InternalsVisibleTo("MHArmory")]
+[assembly:InternalsVisibleTo("MHArmory2")]
 
 namespace MHArmory.Core.WPF
 {
