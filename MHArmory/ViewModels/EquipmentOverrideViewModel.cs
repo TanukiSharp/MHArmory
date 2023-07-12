@@ -101,14 +101,16 @@ namespace MHArmory.ViewModels
 
                 if (baseName == null)
                 {
-                    baseName = eqp.Name[language];
-                    firstPartMinLength = baseName.Length;
-                    lastPartMinLength = baseName.Length;
-                    continue;
+                    if (eqp.Name.TryGetValue(language, out baseName))
+                    {
+                        firstPartMinLength = baseName.Length;
+                        lastPartMinLength = baseName.Length;
+                    }
                 }
 
                 int c;
-                string name = eqp.Name[language];
+                if (eqp.Name.TryGetValue(language, out string name) == false)
+                    continue;
 
                 for (c = 0; c < name.Length && c < baseName.Length; c++)
                 {
@@ -130,7 +132,14 @@ namespace MHArmory.ViewModels
             }
 
             if (firstPartMinLength == 0)
-                return equipments.First().Name[language]; // FIXME: Quick and dirty fallback, need to add sets game data for proper fix
+            {
+                Dictionary<string, string> name = equipments.First().Name;
+
+                if (name.TryGetValue(language, out string result)) // FIXME: Quick and dirty fallback, need to add sets game data for proper fix
+                    return result;
+
+                return "<unknown>";
+            }
 
             if (lastPartMinLength == 0 || firstPartMinLength == lastPartMinLength)
             {

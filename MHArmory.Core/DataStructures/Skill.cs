@@ -10,6 +10,7 @@ namespace MHArmory.Core.DataStructures
         int Id { get; }
         ISkill Skill { get; }
         int Level { get; }
+        Dictionary<string, string> Name { get; }
         Dictionary<string, string> Description { get; }
     }
 
@@ -36,20 +37,22 @@ namespace MHArmory.Core.DataStructures
 
     public class Ability : IAbility
     {
-        public Ability(ISkill skill, int level, Dictionary<string, string> description)
+        public Ability(ISkill skill, int level, Dictionary<string, string> name, Dictionary<string, string> description)
         {
             Skill = skill;
             Level = level;
+            Name = name;
             Description = description;
 
             hashCode = $"{Localization.GetDefault(Skill.Name)}|{Level}".GetHashCode();
         }
 
-        private int hashCode;
+        private readonly int hashCode;
 
         public int Id { get; private set; }
         public ISkill Skill { get; }
         public int Level { get; }
+        public Dictionary<string, string> Name { get; private set; }
         public Dictionary<string, string> Description { get; private set; }
 
         public void Update(int id, Dictionary<string, string> description)

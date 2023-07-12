@@ -114,7 +114,7 @@ namespace MHArmory.ViewModels
                 .ToList();
 
             // Insert the "skill exlusion" item at position 0.
-            Abilities.Insert(0, new AbilityViewModel(new Ability(skill, 0, ExcludeText), this));
+            Abilities.Insert(0, new AbilityViewModel(new Ability(skill, 0, null, ExcludeText), this));
 
             UpdateAvailability();
         }

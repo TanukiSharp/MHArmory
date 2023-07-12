@@ -15,97 +15,112 @@ namespace DataSourceTool
 {
     public class Exporter
     {
+        private readonly MasterDataDownloader downloader = new MasterDataDownloader(true);
+
         public async Task Run(string[] args)
         {
-            ILogger logger = new ConsoleLogger();
-
-            //var httpClient = new HttpClient();
-            //Task<string> fetchWeaponsTask = httpClient.GetStringAsync("https://mhw-db.com/weapons?p={\"slug\":false,\"crafting\":false,\"assets\":false}");
-
-            IDataSource source = new MHArmory.AthenaAssDataSource.DataSource(logger, null, null);
-
-            IList<IArmorPiece> armorPieces = (await source.GetArmorPieces()).OrderBy(x => x.Id).ToList();
-            IList<ISkill> skills = (await source.GetSkills()).OrderBy(x => x.Id).ToList();
-            IList<ICharm> charms = (await source.GetCharms()).OrderBy(x => x.Id).ToList();
-            IList<IJewel> jewels = (await source.GetJewels()).OrderBy(x => x.Id).ToList();
-            IList<ILocalizedItem> craftMaterials = (await source.GetCraftMaterials()).OrderBy(x => x.Id).ToList();
-
-            IList<IAbility> abilities = skills
-                .SelectMany(x => x.Abilities)
-                .Distinct(AbilityEqualityComparer.Default)
-                .OrderBy(x => x.Id)
-                .ToList();
-
             string solutionPath = Common.FindSolutionPath();
             if (solutionPath == null)
                 throw new InvalidOperationException($"Could not find solution path for '{Common.SolutionFilename}'");
 
             string outputPath = Path.Combine(solutionPath, "MHArmory", "data");
 
-            if (Directory.Exists(outputPath) == false)
-                Directory.CreateDirectory(outputPath);
-            //--------------------------------------------------------------------------
+            //ILogger logger = new ConsoleLogger();
 
-            Common.SerializeJson(Path.Combine(outputPath, $"{nameof(craftMaterials)}.json"), Export(craftMaterials));
+            ////var httpClient = new HttpClient();
+            ////Task<string> fetchWeaponsTask = httpClient.GetStringAsync("https://mhw-db.com/weapons?p={\"slug\":false,\"crafting\":false,\"assets\":false}");
 
-            //--------------------------------------------------------------------------
+            //IDataSource source = new MHArmory.AthenaAssDataSource.DataSource(logger, null, null);
 
+            //IList<IArmorPiece> armorPieces = (await source.GetArmorPieces()).OrderBy(x => x.Id).ToList();
+            //IList<ISkill> skills = (await source.GetSkills()).OrderBy(x => x.Id).ToList();
+            //IList<ICharm> charms = (await source.GetCharms()).OrderBy(x => x.Id).ToList();
+            //IList<IJewel> jewels = (await source.GetJewels()).OrderBy(x => x.Id).ToList();
+            //IList<ILocalizedItem> craftMaterials = (await source.GetCraftMaterials()).OrderBy(x => x.Id).ToList();
+
+            //IList<IAbility> abilities = skills
+            //    .SelectMany(x => x.Abilities)
+            //    .Distinct(AbilityEqualityComparer.Default)
+            //    .OrderBy(x => x.Id)
+            //    .ToList();
+
+            //string solutionPath = Common.FindSolutionPath();
+            //if (solutionPath == null)
+            //    throw new InvalidOperationException($"Could not find solution path for '{Common.SolutionFilename}'");
+
+            //string outputPath = Path.Combine(solutionPath, "MHArmory", "data");
+
+            //if (Directory.Exists(outputPath) == false)
+            //    Directory.CreateDirectory(outputPath);
+            ////--------------------------------------------------------------------------
+
+            //Common.SerializeJson(Path.Combine(outputPath, $"{nameof(craftMaterials)}.json"), Export(craftMaterials));
+
+            ////--------------------------------------------------------------------------
+
+            //Common.SerializeJson(Path.Combine(outputPath, $"{nameof(abilities)}.json"), Export(abilities));
+
+            ////--------------------------------------------------------------------------
+
+            //IEnumerable<IArmorPiece> heads = armorPieces.Where(x => x.Type == EquipmentType.Head);
+            //IEnumerable<IArmorPiece> chests = armorPieces.Where(x => x.Type == EquipmentType.Chest);
+            //IEnumerable<IArmorPiece> arms = armorPieces.Where(x => x.Type == EquipmentType.Gloves);
+            //IEnumerable<IArmorPiece> waists = armorPieces.Where(x => x.Type == EquipmentType.Waist);
+            //IEnumerable<IArmorPiece> legs = armorPieces.Where(x => x.Type == EquipmentType.Legs);
+
+            //Common.SerializeJson(Path.Combine(outputPath, $"{nameof(heads)}.json"), Export(heads));
+            //Common.SerializeJson(Path.Combine(outputPath, $"{nameof(chests)}.json"), Export(chests));
+            //Common.SerializeJson(Path.Combine(outputPath, $"{nameof(arms)}.json"), Export(arms));
+            //Common.SerializeJson(Path.Combine(outputPath, $"{nameof(waists)}.json"), Export(waists));
+            //Common.SerializeJson(Path.Combine(outputPath, $"{nameof(legs)}.json"), Export(legs));
+
+            ////--------------------------------------------------------------------------
+
+            //IList<IArmorSetSkill> armorSetSkills = armorPieces
+            //    .Where(x => x.ArmorSetSkills != null && x.ArmorSetSkills.Length > 0)
+            //    .SelectMany(x => x.ArmorSetSkills)
+            //    .Distinct(new LambdaEqualityComparer<IArmorSetSkill>((x, y) => x.Id == y.Id, x => x.Id))
+            //    .OrderBy(x => x.Id)
+            //    .ToList();
+            //Common.SerializeJson(Path.Combine(outputPath, $"{nameof(armorSetSkills)}.json"), Export(armorSetSkills));
+
+            ////--------------------------------------------------------------------------
+
+            //IList<IFullArmorSet> fullArmorSets = armorPieces
+            //    .Select(x => x.FullArmorSet)
+            //    .Where(x => x != null)
+            //    .Distinct(new LambdaEqualityComparer<IFullArmorSet>((x, y) => x.Id == y.Id, x => x.Id))
+            //    .OrderBy(x => x.Id)
+            //    .ToList();
+            //Common.SerializeJson(Path.Combine(outputPath, $"{nameof(fullArmorSets)}.json"), Export(fullArmorSets));
+
+            ////--------------------------------------------------------------------------
+
+            //IList<ICharmLevel> charmLevels = charms
+            //    .SelectMany(x => x.Levels)
+            //    .Distinct(new LambdaEqualityComparer<ICharmLevel>((x, y) => x.Id == y.Id, x => x.Id))
+            //    .OrderBy(x => x.Id)
+            //    .ToList();
+            //Common.SerializeJson(Path.Combine(outputPath, $"{nameof(charmLevels)}.json"), Export(charmLevels));
+
+            ////--------------------------------------------------------------------------
+
+            //Common.SerializeJson(Path.Combine(outputPath, $"{nameof(charms)}.json"), Export(charms));
+
+            ////--------------------------------------------------------------------------
+
+            //Common.SerializeJson(Path.Combine(outputPath, $"{nameof(skills)}.json"), Export(skills));
+
+            ////--------------------------------------------------------------------------
+
+            //Common.SerializeJson(Path.Combine(outputPath, $"{nameof(jewels)}.json"), Export(jewels));
+
+            IAbility[] abilities = await AbilitiesImporter.Run(downloader);
             Common.SerializeJson(Path.Combine(outputPath, $"{nameof(abilities)}.json"), Export(abilities));
 
-            //--------------------------------------------------------------------------
-
-            IEnumerable<IArmorPiece> heads = armorPieces.Where(x => x.Type == EquipmentType.Head);
-            IEnumerable<IArmorPiece> chests = armorPieces.Where(x => x.Type == EquipmentType.Chest);
-            IEnumerable<IArmorPiece> arms = armorPieces.Where(x => x.Type == EquipmentType.Gloves);
-            IEnumerable<IArmorPiece> waists = armorPieces.Where(x => x.Type == EquipmentType.Waist);
-            IEnumerable<IArmorPiece> legs = armorPieces.Where(x => x.Type == EquipmentType.Legs);
-
-            Common.SerializeJson(Path.Combine(outputPath, $"{nameof(heads)}.json"), Export(heads));
-            Common.SerializeJson(Path.Combine(outputPath, $"{nameof(chests)}.json"), Export(chests));
-            Common.SerializeJson(Path.Combine(outputPath, $"{nameof(arms)}.json"), Export(arms));
-            Common.SerializeJson(Path.Combine(outputPath, $"{nameof(waists)}.json"), Export(waists));
-            Common.SerializeJson(Path.Combine(outputPath, $"{nameof(legs)}.json"), Export(legs));
-
-            //--------------------------------------------------------------------------
-
-            IList<IArmorSetSkill> armorSetSkills = armorPieces
-                .Where(x => x.ArmorSetSkills != null && x.ArmorSetSkills.Length > 0)
-                .SelectMany(x => x.ArmorSetSkills)
-                .Distinct(new LambdaEqualityComparer<IArmorSetSkill>((x, y) => x.Id == y.Id, x => x.Id))
-                .OrderBy(x => x.Id)
-                .ToList();
-            Common.SerializeJson(Path.Combine(outputPath, $"{nameof(armorSetSkills)}.json"), Export(armorSetSkills));
-
-            //--------------------------------------------------------------------------
-
-            IList<IFullArmorSet> fullArmorSets = armorPieces
-                .Select(x => x.FullArmorSet)
-                .Where(x => x != null)
-                .Distinct(new LambdaEqualityComparer<IFullArmorSet>((x, y) => x.Id == y.Id, x => x.Id))
-                .OrderBy(x => x.Id)
-                .ToList();
-            Common.SerializeJson(Path.Combine(outputPath, $"{nameof(fullArmorSets)}.json"), Export(fullArmorSets));
-
-            //--------------------------------------------------------------------------
-
-            IList<ICharmLevel> charmLevels = charms
-                .SelectMany(x => x.Levels)
-                .Distinct(new LambdaEqualityComparer<ICharmLevel>((x, y) => x.Id == y.Id, x => x.Id))
-                .OrderBy(x => x.Id)
-                .ToList();
-            Common.SerializeJson(Path.Combine(outputPath, $"{nameof(charmLevels)}.json"), Export(charmLevels));
-
-            //--------------------------------------------------------------------------
-
-            Common.SerializeJson(Path.Combine(outputPath, $"{nameof(charms)}.json"), Export(charms));
-
-            //--------------------------------------------------------------------------
-
+            ISkill[] skills = await SkillImporter.Run(downloader);
             Common.SerializeJson(Path.Combine(outputPath, $"{nameof(skills)}.json"), Export(skills));
 
-            //--------------------------------------------------------------------------
-
-            Common.SerializeJson(Path.Combine(outputPath, $"{nameof(jewels)}.json"), Export(jewels));
         }
 
         private object Export(IEnumerable<ILocalizedItem> craftMaterials)
@@ -119,10 +134,11 @@ namespace DataSourceTool
 
         private object Export(IEnumerable<IAbility> abilities)
         {
-            return abilities.Select((x, i) => new AbilityPrimitive
+            return abilities.Select(x => new AbilityPrimitive
             {
-                Id = i,
+                Id = x.Id,
                 Level = x.Level,
+                Name = x.Name,
                 Description = x.Description
             });
         }

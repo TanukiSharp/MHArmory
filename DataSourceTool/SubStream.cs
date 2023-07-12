@@ -6,7 +6,7 @@ using System.Text;
 namespace DataSourceTool
 {
     // Taken from here: https://social.msdn.microsoft.com/Forums/vstudio/en-US/c409b63b-37df-40ca-9322-458ffe06ea48/how-to-access-part-of-a-filestream-or-memorystream?forum=netfxbcl
-    // Modified to be reused
+    // Modified to be reusable
 
     public class SubStream : Stream
     {
